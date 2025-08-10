@@ -1,0 +1,90 @@
+{
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/-16f": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---aba-d70"
+    }
+  },
+  "/-44f": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---22-d-307"
+  },
+  "/-0c1": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/competitions/-cce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-261-4c8"
+  },
+  "/getting-started/-e2e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-54-c-40b"
+  },
+  "/microlearning/-735": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---microlearning-06-b-163"
+  },
+  "/quiz/-9eb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quiz-f-4-f-e9f"
+  },
+  "/quiz/creating-quiz-a48": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quiz-creating-quiz-516-c27"
+  },
+  "/quiz/managing-questions-456": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quiz-managing-questionscb-8-6d7"
+  },
+  "/quiz/quiz-reports-74d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quiz-quiz-reports-53-c-b27"
+  },
+  "/quiz/quiz-settings-414": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quiz-quiz-settings-91-b-767"
+  }
+}

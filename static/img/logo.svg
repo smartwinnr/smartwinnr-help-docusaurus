@@ -1,0 +1,7 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="40" height="40" rx="8" fill="#2e8b57"/>
+<path d="M8 14L20 8L32 14L20 20L8 14Z" fill="#ffffff"/>
+<path d="M8 20L20 14L32 20L20 26L8 20Z" fill="#ffffff" fill-opacity="0.8"/>
+<path d="M8 26L20 20L32 26L20 32L8 26Z" fill="#ffffff" fill-opacity="0.6"/>
+<text x="20" y="36" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="4" font-weight="bold">SW</text>
+</svg>

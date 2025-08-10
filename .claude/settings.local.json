@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(tsx test-config.js:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm start)",
+      "Bash(npx docusaurus start:*)",
+      "Bash(npm run clear:*)",
+      "Bash(mv:*)",
+      "Bash(find:*)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)"
+    ],
+    "deny": []
+  }
+}

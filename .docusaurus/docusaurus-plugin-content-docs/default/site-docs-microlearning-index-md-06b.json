@@ -1,0 +1,27 @@
+{
+  "id": "microlearning/index",
+  "title": "Microlearning with SmartFeeds",
+  "description": "Deliver just-in-time learning through bite-sized, engaging content that fits into your team's daily workflow.",
+  "source": "@site/docs/microlearning/index.md",
+  "sourceDirName": "microlearning",
+  "slug": "/microlearning/",
+  "permalink": "/microlearning/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Settings",
+    "permalink": "/quiz/quiz-settings"
+  },
+  "next": {
+    "title": "Sales Competitions",
+    "permalink": "/competitions/"
+  }
+}

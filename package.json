@@ -1,0 +1,42 @@
+{
+  "name": "help_smartwinnr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc",
+    "chatbot:start": "tsx services/chatbot/server.ts",
+    "chatbot:dev": "tsx watch services/chatbot/server.ts",
+    "dev": "concurrently \"npm run start\" \"npm run chatbot:dev\"",
+    "index-docs": "node --import ./node_modules/ts-node/esm.mjs -e \"import('./services/chatbot/indexDocs.mjs').then(m => m.indexDocumentation())\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.864.0",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "chromadb": "^3.0.11",
+    "concurrently": "^9.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.10",
+    "openai": "^5.12.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "uuid": "^11.1.0"
+  }
+}

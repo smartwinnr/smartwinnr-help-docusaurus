@@ -1,0 +1,68 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "getting-started/index",
+          "docs": [
+            {
+              "id": "competitions/index",
+              "path": "/competitions/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/index",
+              "path": "/getting-started/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "microlearning/index",
+              "path": "/microlearning/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quiz/creating-quiz",
+              "path": "/quiz/creating-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quiz/index",
+              "path": "/quiz/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quiz/managing-questions",
+              "path": "/quiz/managing-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quiz/quiz-reports",
+              "path": "/quiz/quiz-reports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quiz/quiz-settings",
+              "path": "/quiz/quiz-settings",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/getting-started/",
+                "label": "getting-started/index"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
