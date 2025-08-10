@@ -105,6 +105,45 @@
   align-items: center;
 }
 
+/* Mobile navbar fixes */
+@media (max-width: 996px) {
+  .navbar {
+    min-height: 60px;
+    padding: 0 1rem;
+  }
+  
+  .navbar__inner {
+    flex-wrap: nowrap;
+  }
+  
+  .navbar__toggle {
+    display: flex !important;
+    color: var(--ifm-navbar-link-color);
+    margin-right: 0.75rem;
+    order: 1;
+    z-index: 1000;
+  }
+  
+  .navbar__brand {
+    flex: 1;
+    order: 2;
+  }
+  
+  .navbar__logo {
+    height: 40px;
+  }
+  
+  .navbar__items--right {
+    order: 3;
+    margin-left: auto;
+  }
+  
+  /* Hide regular navbar items on mobile */
+  .navbar__items:not(.navbar__items--right) .navbar__item {
+    display: none;
+  }
+}
+
 .navbar__title {
   font-weight: 600;
   color: #1a202c;
@@ -133,6 +172,69 @@
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-color-emphasis-200);
   background-color: var(--ifm-background-surface-color);
+}
+
+/* Mobile sidebar improvements */
+@media (max-width: 996px) {
+  /* Reset and use default Docusaurus mobile sidebar styling */
+  .navbar-sidebar {
+    /* Let Docusaurus handle positioning and display */
+  }
+  
+  /* Ensure sidebar content is visible */
+  .navbar-sidebar__items {
+    display: block;
+    padding: 0;
+    overflow-y: auto;
+  }
+  
+  /* Style the menu items clearly */
+  .navbar-sidebar .menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--ifm-background-color);
+  }
+  
+  .navbar-sidebar .menu__list-item {
+    margin: 0;
+    display: block;
+  }
+  
+  .navbar-sidebar .menu__link {
+    display: block;
+    padding: 12px 24px;
+    color: var(--ifm-font-color-base);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+  
+  .navbar-sidebar .menu__link:hover {
+    background: var(--ifm-color-emphasis-200);
+    text-decoration: none;
+  }
+  
+  .navbar-sidebar .menu__link--active {
+    background: var(--ifm-color-primary-lighter);
+    color: var(--ifm-color-primary-dark);
+    font-weight: 600;
+  }
+
+  /* Mobile sidebar toggle button */
+  .navbar__toggle {
+    display: flex !important;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .navbar__toggle:hover {
+    background: var(--ifm-color-emphasis-200);
+  }
 }
 
 .menu {

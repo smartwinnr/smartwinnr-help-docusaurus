@@ -17,7 +17,9 @@
       "WebFetch(domain:fly.io)",
       "Bash(cp:*)",
       "Bash(kill:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npx docusaurus swizzle:*)",
+      "WebFetch(domain:developer.helpscout.com)"
     ],
     "deny": []
   }

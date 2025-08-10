@@ -203,14 +203,16 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 996px) {
   .navbar__search {
     margin-right: 0.5rem;
   }
   
   .navbar__search-button {
     min-width: auto;
-    padding: 6px;
+    padding: 6px 8px;
+    background: transparent;
+    border: 1px solid var(--ifm-color-emphasis-400);
   }
   
   .navbar__search-text {
@@ -219,5 +221,17 @@
   
   .navbar__search-key {
     display: none;
+  }
+
+  .search-modal-content {
+    width: 95%;
+    max-height: 85vh;
+    margin-top: 5vh;
+  }
+  
+  .search-modal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }
