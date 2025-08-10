@@ -1,0 +1,30 @@
+{
+  "id": "getting-started/user-onboarding",
+  "title": "User Onboarding Guide",
+  "description": "Step-by-step onboarding guide for SmartWinnr users and learners",
+  "source": "@site/docs/getting-started/user-onboarding.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/user-onboarding",
+  "permalink": "/getting-started/user-onboarding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/user-onboarding.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "User Onboarding Guide",
+    "description": "Step-by-step onboarding guide for SmartWinnr users and learners",
+    "slug": "user-onboarding",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Profile & Settings",
+    "permalink": "/getting-started/profile-settings"
+  },
+  "next": {
+    "title": "App Management",
+    "permalink": "/getting-started/app-management"
+  }
+}

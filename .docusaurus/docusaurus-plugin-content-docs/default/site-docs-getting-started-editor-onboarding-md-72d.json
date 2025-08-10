@@ -1,0 +1,30 @@
+{
+  "id": "getting-started/editor-onboarding",
+  "title": "Editor Onboarding Guide",
+  "description": "Step-by-step onboarding guide for SmartWinnr editors and content creators",
+  "source": "@site/docs/getting-started/editor-onboarding.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/editor-onboarding",
+  "permalink": "/getting-started/editor-onboarding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/editor-onboarding.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Editor Onboarding Guide",
+    "description": "Step-by-step onboarding guide for SmartWinnr editors and content creators",
+    "slug": "editor-onboarding",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manager Onboarding Guide",
+    "permalink": "/getting-started/manager-onboarding"
+  },
+  "next": {
+    "title": "Manager Features",
+    "permalink": "/getting-started/manager-features"
+  }
+}

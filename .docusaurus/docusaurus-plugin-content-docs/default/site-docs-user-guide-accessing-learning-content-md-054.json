@@ -1,0 +1,30 @@
+{
+  "id": "user-guide/accessing-learning-content",
+  "title": "Accessing Learning Content",
+  "description": "Complete guide for users on how to access and consume learning content in SmartWinnr",
+  "source": "@site/docs/user-guide/accessing-learning-content.md",
+  "sourceDirName": "user-guide",
+  "slug": "/user-guide/accessing-learning-content",
+  "permalink": "/user-guide/accessing-learning-content",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/user-guide/accessing-learning-content.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Accessing Learning Content",
+    "description": "Complete guide for users on how to access and consume learning content in SmartWinnr",
+    "slug": "accessing-learning-content",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Taking Assessments",
+    "permalink": "/user-guide/taking-assessments"
+  },
+  "next": {
+    "title": "Manager Tools",
+    "permalink": "/manager-guide/manager-guide"
+  }
+}

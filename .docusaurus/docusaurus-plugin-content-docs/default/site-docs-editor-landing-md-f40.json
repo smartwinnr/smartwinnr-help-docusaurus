@@ -1,0 +1,30 @@
+{
+  "id": "editor-landing",
+  "title": "Editor & Trainer Hub",
+  "description": "Central hub for SmartWinnr editors and trainers - content creation, quiz design, and performance analytics",
+  "source": "@site/docs/editor-landing.md",
+  "sourceDirName": ".",
+  "slug": "/editor-landing",
+  "permalink": "/editor-landing",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/editor-landing.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Editor & Trainer Hub",
+    "description": "Central hub for SmartWinnr editors and trainers - content creation, quiz design, and performance analytics",
+    "slug": "editor-landing",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Coaching Team Members",
+    "permalink": "/manager-guide/coaching-team-members"
+  },
+  "next": {
+    "title": "👑 Administrator Hub",
+    "permalink": "/admin-landing"
+  }
+}

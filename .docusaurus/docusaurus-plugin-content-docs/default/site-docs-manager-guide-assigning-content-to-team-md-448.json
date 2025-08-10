@@ -1,0 +1,30 @@
+{
+  "id": "manager-guide/assigning-content-to-team",
+  "title": "Assigning Content to Team",
+  "description": "Complete guide for managers on how to effectively assign learning content, quizzes, and assessments to team members",
+  "source": "@site/docs/manager-guide/assigning-content-to-team.md",
+  "sourceDirName": "manager-guide",
+  "slug": "/manager-guide/assigning-content-to-team",
+  "permalink": "/manager-guide/assigning-content-to-team",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/manager-guide/assigning-content-to-team.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Assigning Content to Team",
+    "description": "Complete guide for managers on how to effectively assign learning content, quizzes, and assessments to team members",
+    "slug": "assigning-content-to-team",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Monitoring Team Performance",
+    "permalink": "/manager-guide/monitoring-team-performance"
+  },
+  "next": {
+    "title": "Coaching Team Members",
+    "permalink": "/manager-guide/coaching-team-members"
+  }
+}

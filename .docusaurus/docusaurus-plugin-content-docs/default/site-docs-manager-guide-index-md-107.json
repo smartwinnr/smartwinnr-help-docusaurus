@@ -1,0 +1,30 @@
+{
+  "id": "manager-guide/index",
+  "title": "Manager Tools",
+  "description": "Complete guide for SmartWinnr managers - team analytics, performance monitoring, and coaching tools",
+  "source": "@site/docs/manager-guide/index.md",
+  "sourceDirName": "manager-guide",
+  "slug": "/manager-guide/manager-guide",
+  "permalink": "/manager-guide/manager-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/manager-guide/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Manager Tools",
+    "description": "Complete guide for SmartWinnr managers - team analytics, performance monitoring, and coaching tools",
+    "slug": "manager-guide",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Accessing Learning Content",
+    "permalink": "/user-guide/accessing-learning-content"
+  },
+  "next": {
+    "title": "Team Analytics Dashboard",
+    "permalink": "/manager-guide/team-analytics-dashboard"
+  }
+}

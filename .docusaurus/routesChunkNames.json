@@ -49,18 +49,22 @@
     },
     "config": "config---search-5-e-9-7f5"
   },
-  "/-953": {
+  "/-ef3": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-87c": {
+  "/-9e2": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-650": {
+  "/-400": {
     "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/admin-landing-c20": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-landingafe-598"
   },
   "/admin/-42a": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -422,6 +426,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---competitions-what-is-kpi-gamification-615-91f"
   },
+  "/editor-landing-161": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---editor-landingf-40-4fe"
+  },
   "/getting-started/about-smartwinnr-5fb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-about-smartwinnrb-74-b8d"
@@ -430,6 +438,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-account-setup-login-401-2b8"
   },
+  "/getting-started/admin-onboarding-cbd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-admin-onboardingce-5-37f"
+  },
   "/getting-started/app-management-f48": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-app-management-856-ea1"
@@ -437,6 +449,10 @@
   "/getting-started/browser-and-device-support-0fe": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-browser-and-device-support-3-fc-bce"
+  },
+  "/getting-started/editor-onboarding-194": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-editor-onboarding-72-d-629"
   },
   "/getting-started/how-can-i-change-my-language-in-smartwinnr-app-bff": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -486,6 +502,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-manager-features-280-254"
   },
+  "/getting-started/manager-onboarding-bfd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-manager-onboardingef-5-f45"
+  },
   "/getting-started/my-account-is-locked-what-should-i-do-adb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-my-account-is-locked-what-should-i-do-04-b-9b4"
@@ -497,6 +517,10 @@
   "/getting-started/switching-to-manager-view-79a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-switching-to-manager-view-3-f-2-535"
+  },
+  "/getting-started/user-onboarding-714": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-user-onboarding-0-e-9-58c"
   },
   "/getting-started/what-if-i-ve-forgotten-my-password-ee3": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -686,11 +710,31 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---learning-what-is-khubd-3-c-086"
   },
+  "/manager-guide/assigning-content-to-team-c11": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---manager-guide-assigning-content-to-team-448-e9c"
+  },
+  "/manager-guide/coaching-team-members-3e2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---manager-guide-coaching-team-memberscdb-c22"
+  },
+  "/manager-guide/manager-guide-20f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---manager-guide-manager-guide-107-7bc"
+  },
+  "/manager-guide/monitoring-team-performance-ae4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---manager-guide-monitoring-team-performancefa-5-c89"
+  },
+  "/manager-guide/team-analytics-dashboard-144": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---manager-guide-team-analytics-dashboard-6-f-5-2cb"
+  },
   "/microlearning/-fff": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---microlearning-06-b-163"
   },
-  "/mobile/-4fd": {
+  "/mobile/-83c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---mobile-65-a-d4c"
   },
@@ -1061,6 +1105,22 @@
   "/troubleshooting/troubleshoot-for-common-error-code-6cc": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---troubleshooting-troubleshoot-for-common-error-codef-2-f-a59"
+  },
+  "/user-guide/accessing-learning-content-f43": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---user-guide-accessing-learning-content-054-202"
+  },
+  "/user-guide/mobile-app-navigation-74e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---user-guide-mobile-app-navigation-2-ca-0af"
+  },
+  "/user-guide/taking-assessments-033": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---user-guide-taking-assessments-13-d-693"
+  },
+  "/user-guide/user-guide-482": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---user-guide-user-guide-858-7cf"
   },
   "/-185": {
     "__comp": "__comp---theme-doc-item-178-a40",

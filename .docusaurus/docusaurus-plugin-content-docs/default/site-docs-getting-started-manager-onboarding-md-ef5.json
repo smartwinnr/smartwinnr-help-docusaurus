@@ -1,0 +1,30 @@
+{
+  "id": "getting-started/manager-onboarding",
+  "title": "Manager Onboarding Guide",
+  "description": "Step-by-step onboarding guide for SmartWinnr managers and team leads",
+  "source": "@site/docs/getting-started/manager-onboarding.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/manager-onboarding",
+  "permalink": "/getting-started/manager-onboarding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/manager-onboarding.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Manager Onboarding Guide",
+    "description": "Step-by-step onboarding guide for SmartWinnr managers and team leads",
+    "slug": "manager-onboarding",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "App Management",
+    "permalink": "/getting-started/app-management"
+  },
+  "next": {
+    "title": "Editor Onboarding Guide",
+    "permalink": "/getting-started/editor-onboarding"
+  }
+}

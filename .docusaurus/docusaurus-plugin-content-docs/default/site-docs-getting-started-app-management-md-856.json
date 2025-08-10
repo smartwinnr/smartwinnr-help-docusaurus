@@ -24,11 +24,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Profile & Settings",
-    "permalink": "/getting-started/profile-settings"
+    "title": "User Onboarding Guide",
+    "permalink": "/getting-started/user-onboarding"
   },
   "next": {
-    "title": "Manager Features",
-    "permalink": "/getting-started/manager-features"
+    "title": "Manager Onboarding Guide",
+    "permalink": "/getting-started/manager-onboarding"
   }
 }

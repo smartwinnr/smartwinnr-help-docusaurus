@@ -80,9 +80,39 @@ The platform is organized into these main sections:
 - **AI Assistant**: Use our intelligent chatbot for instant help (coming soon)
 :::
 
-## Choose Your Path
+## Choose Your Path by Role
 
-Select the area you'd like to explore based on your role and needs:
+SmartWinnr serves different roles with specific features and workflows. Select your role to get started with a tailored experience:
+
+<div className="cards-grid">
+  <div className="feature-card">
+    <h3>👤 User / Learner</h3>
+    <p>I'm here to learn, take quizzes, and participate in competitions. I want to access learning content and track my progress.</p>
+    <p><a href="./user-onboarding">Start as User →</a></p>
+  </div>
+  
+  <div className="feature-card">
+    <h3>👔 Manager / Team Lead</h3>
+    <p>I manage a team and need to monitor performance, assign content, and coach team members using analytics.</p>
+    <p><a href="./manager-onboarding">Start as Manager →</a></p>
+  </div>
+  
+  <div className="feature-card">
+    <h3>✏️ Editor / Trainer</h3>
+    <p>I create and manage learning content, design quizzes, and set up competitions for learners.</p>
+    <p><a href="./editor-onboarding">Start as Editor →</a></p>
+  </div>
+
+  <div className="feature-card">
+    <h3>👑 Administrator</h3>
+    <p>I manage the entire SmartWinnr system, user accounts, configurations, and organizational settings.</p>
+    <p><a href="./admin-onboarding">Start as Administrator →</a></p>
+  </div>
+</div>
+
+## Quick Access by Feature
+
+Or jump directly to specific features you need:
 
 <div className="cards-grid">
   <div className="feature-card">
@@ -101,5 +131,11 @@ Select the area you'd like to explore based on your role and needs:
     <h3>📱 Microlearning</h3>
     <p>Deploy SmartFeeds content and create continuous learning experiences for your organization.</p>
     <p><a href="/microlearning">Deploy SmartFeeds →</a></p>
+  </div>
+
+  <div className="feature-card">
+    <h3>📊 Analytics & Reports</h3>
+    <p>Track performance, generate insights, and make data-driven decisions with comprehensive analytics.</p>
+    <p><a href="/reports">View Analytics →</a></p>
   </div>
 </div>

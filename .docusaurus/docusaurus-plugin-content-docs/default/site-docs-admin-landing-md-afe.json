@@ -1,0 +1,30 @@
+{
+  "id": "admin-landing",
+  "title": "Administrator Hub",
+  "description": "Central command center for SmartWinnr administrators - system management, analytics, and organizational control",
+  "source": "@site/docs/admin-landing.md",
+  "sourceDirName": ".",
+  "slug": "/admin-landing",
+  "permalink": "/admin-landing",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin-landing.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Administrator Hub",
+    "description": "Central command center for SmartWinnr administrators - system management, analytics, and organizational control",
+    "slug": "admin-landing",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "✏️ Editor & Trainer Hub",
+    "permalink": "/editor-landing"
+  },
+  "next": {
+    "title": "Creating Quizzes",
+    "permalink": "/quizzes/creating-quizzes"
+  }
+}

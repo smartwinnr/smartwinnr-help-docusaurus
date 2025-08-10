@@ -1,0 +1,30 @@
+{
+  "id": "manager-guide/coaching-team-members",
+  "title": "Coaching Team Members",
+  "description": "Comprehensive guide for managers on coaching team members using SmartWinnr data and tools",
+  "source": "@site/docs/manager-guide/coaching-team-members.md",
+  "sourceDirName": "manager-guide",
+  "slug": "/manager-guide/coaching-team-members",
+  "permalink": "/manager-guide/coaching-team-members",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/manager-guide/coaching-team-members.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Coaching Team Members",
+    "description": "Comprehensive guide for managers on coaching team members using SmartWinnr data and tools",
+    "slug": "coaching-team-members",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Assigning Content to Team",
+    "permalink": "/manager-guide/assigning-content-to-team"
+  },
+  "next": {
+    "title": "✏️ Editor & Trainer Hub",
+    "permalink": "/editor-landing"
+  }
+}

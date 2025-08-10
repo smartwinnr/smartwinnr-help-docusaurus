@@ -1,0 +1,30 @@
+{
+  "id": "user-guide/mobile-app-navigation",
+  "title": "Mobile App Navigation",
+  "description": "Master the SmartWinnr mobile app interface and navigation",
+  "source": "@site/docs/user-guide/mobile-app-navigation.md",
+  "sourceDirName": "user-guide",
+  "slug": "/user-guide/mobile-app-navigation",
+  "permalink": "/user-guide/mobile-app-navigation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/user-guide/mobile-app-navigation.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Mobile App Navigation",
+    "description": "Master the SmartWinnr mobile app interface and navigation",
+    "slug": "mobile-app-navigation",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "User Experience",
+    "permalink": "/user-guide/user-guide"
+  },
+  "next": {
+    "title": "Taking Assessments",
+    "permalink": "/user-guide/taking-assessments"
+  }
+}

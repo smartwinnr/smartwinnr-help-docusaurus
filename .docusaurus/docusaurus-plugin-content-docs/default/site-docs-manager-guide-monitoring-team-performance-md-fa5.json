@@ -1,0 +1,30 @@
+{
+  "id": "manager-guide/monitoring-team-performance",
+  "title": "Monitoring Team Performance",
+  "description": "Best practices for tracking, analyzing, and improving team performance in SmartWinnr",
+  "source": "@site/docs/manager-guide/monitoring-team-performance.md",
+  "sourceDirName": "manager-guide",
+  "slug": "/manager-guide/monitoring-team-performance",
+  "permalink": "/manager-guide/monitoring-team-performance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/manager-guide/monitoring-team-performance.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Monitoring Team Performance",
+    "description": "Best practices for tracking, analyzing, and improving team performance in SmartWinnr",
+    "slug": "monitoring-team-performance",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Team Analytics Dashboard",
+    "permalink": "/manager-guide/team-analytics-dashboard"
+  },
+  "next": {
+    "title": "Assigning Content to Team",
+    "permalink": "/manager-guide/assigning-content-to-team"
+  }
+}

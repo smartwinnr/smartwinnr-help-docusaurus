@@ -11,6 +11,11 @@
           "mainDocId": "getting-started/index",
           "docs": [
             {
+              "id": "admin-landing",
+              "path": "/admin-landing",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "admin/advanced-options-for-projects",
               "path": "/admin/advanced-options-for-projects",
               "sidebar": "tutorialSidebar"
@@ -461,6 +466,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "editor-landing",
+              "path": "/editor-landing",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "getting-started/about-smartwinnr",
               "path": "/getting-started/about-smartwinnr",
               "sidebar": "tutorialSidebar"
@@ -471,6 +481,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "getting-started/admin-onboarding",
+              "path": "/getting-started/admin-onboarding",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "getting-started/app-management",
               "path": "/getting-started/app-management",
               "sidebar": "tutorialSidebar"
@@ -478,6 +493,11 @@
             {
               "id": "getting-started/browser-and-device-support",
               "path": "/getting-started/browser-and-device-support",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/editor-onboarding",
+              "path": "/getting-started/editor-onboarding",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -546,6 +566,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "getting-started/manager-onboarding",
+              "path": "/getting-started/manager-onboarding",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "getting-started/my-account-is-locked-what-should-i-do",
               "path": "/getting-started/my-account-is-locked-what-should-i-do",
               "sidebar": "tutorialSidebar"
@@ -558,6 +583,11 @@
             {
               "id": "getting-started/switching-to-manager-view",
               "path": "/getting-started/switching-to-manager-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/user-onboarding",
+              "path": "/getting-started/user-onboarding",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -796,12 +826,38 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "manager-guide/assigning-content-to-team",
+              "path": "/manager-guide/assigning-content-to-team",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "manager-guide/coaching-team-members",
+              "path": "/manager-guide/coaching-team-members",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "manager-guide/index",
+              "path": "/manager-guide/manager-guide",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "manager-guide/monitoring-team-performance",
+              "path": "/manager-guide/monitoring-team-performance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "manager-guide/team-analytics-dashboard",
+              "path": "/manager-guide/team-analytics-dashboard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "microlearning/index",
               "path": "/microlearning/"
             },
             {
               "id": "mobile/index",
-              "path": "/mobile/"
+              "path": "/mobile/",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "quiz/creating-quiz",
@@ -1256,6 +1312,26 @@
             {
               "id": "troubleshooting/troubleshoot-for-common-error-code",
               "path": "/troubleshooting/troubleshoot-for-common-error-code",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "user-guide/accessing-learning-content",
+              "path": "/user-guide/accessing-learning-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "user-guide/index",
+              "path": "/user-guide/user-guide",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "user-guide/mobile-app-navigation",
+              "path": "/user-guide/mobile-app-navigation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "user-guide/taking-assessments",
+              "path": "/user-guide/taking-assessments",
               "sidebar": "tutorialSidebar"
             }
           ],

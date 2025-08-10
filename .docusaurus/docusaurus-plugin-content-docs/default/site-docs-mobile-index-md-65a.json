@@ -16,5 +16,14 @@
     "title": "Mobile",
     "description": "Mobile app features and mobile-specific functionality.",
     "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Changing/Updating configuration for an Organization",
+    "permalink": "/admin/changing-updating-configuration-for-an-organization"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/troubleshooting/"
   }
 }

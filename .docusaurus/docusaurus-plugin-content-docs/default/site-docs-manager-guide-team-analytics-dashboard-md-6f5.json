@@ -1,0 +1,30 @@
+{
+  "id": "manager-guide/team-analytics-dashboard",
+  "title": "Team Analytics Dashboard",
+  "description": "Complete guide to using SmartWinnr's team analytics dashboard for performance monitoring and insights",
+  "source": "@site/docs/manager-guide/team-analytics-dashboard.md",
+  "sourceDirName": "manager-guide",
+  "slug": "/manager-guide/team-analytics-dashboard",
+  "permalink": "/manager-guide/team-analytics-dashboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/manager-guide/team-analytics-dashboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Team Analytics Dashboard",
+    "description": "Complete guide to using SmartWinnr's team analytics dashboard for performance monitoring and insights",
+    "slug": "team-analytics-dashboard",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manager Tools",
+    "permalink": "/manager-guide/manager-guide"
+  },
+  "next": {
+    "title": "Monitoring Team Performance",
+    "permalink": "/manager-guide/monitoring-team-performance"
+  }
+}

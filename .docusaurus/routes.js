@@ -44,16 +44,22 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '953'),
+    component: ComponentCreator('/', 'ef3'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '87c'),
+        component: ComponentCreator('/', '9e2'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '650'),
+            component: ComponentCreator('/', '400'),
             routes: [
+              {
+                path: '/admin-landing',
+                component: ComponentCreator('/admin-landing', 'c20'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
               {
                 path: '/admin/',
                 component: ComponentCreator('/admin/', '42a'),
@@ -595,6 +601,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/editor-landing',
+                component: ComponentCreator('/editor-landing', '161'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/getting-started/about-smartwinnr',
                 component: ComponentCreator('/getting-started/about-smartwinnr', '5fb'),
                 exact: true,
@@ -607,6 +619,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/getting-started/admin-onboarding',
+                component: ComponentCreator('/getting-started/admin-onboarding', 'cbd'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/getting-started/app-management',
                 component: ComponentCreator('/getting-started/app-management', 'f48'),
                 exact: true,
@@ -615,6 +633,12 @@ export default [
               {
                 path: '/getting-started/browser-and-device-support',
                 component: ComponentCreator('/getting-started/browser-and-device-support', '0fe'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/getting-started/editor-onboarding',
+                component: ComponentCreator('/getting-started/editor-onboarding', '194'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -691,6 +715,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/getting-started/manager-onboarding',
+                component: ComponentCreator('/getting-started/manager-onboarding', 'bfd'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/getting-started/my-account-is-locked-what-should-i-do',
                 component: ComponentCreator('/getting-started/my-account-is-locked-what-should-i-do', 'adb'),
                 exact: true,
@@ -705,6 +735,12 @@ export default [
               {
                 path: '/getting-started/switching-to-manager-view',
                 component: ComponentCreator('/getting-started/switching-to-manager-view', '79a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/getting-started/user-onboarding',
+                component: ComponentCreator('/getting-started/user-onboarding', '714'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -991,14 +1027,45 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/manager-guide/assigning-content-to-team',
+                component: ComponentCreator('/manager-guide/assigning-content-to-team', 'c11'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/manager-guide/coaching-team-members',
+                component: ComponentCreator('/manager-guide/coaching-team-members', '3e2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/manager-guide/manager-guide',
+                component: ComponentCreator('/manager-guide/manager-guide', '20f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/manager-guide/monitoring-team-performance',
+                component: ComponentCreator('/manager-guide/monitoring-team-performance', 'ae4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/manager-guide/team-analytics-dashboard',
+                component: ComponentCreator('/manager-guide/team-analytics-dashboard', '144'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/microlearning/',
                 component: ComponentCreator('/microlearning/', 'fff'),
                 exact: true
               },
               {
                 path: '/mobile/',
-                component: ComponentCreator('/mobile/', '4fd'),
-                exact: true
+                component: ComponentCreator('/mobile/', '83c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
               },
               {
                 path: '/quiz/',
@@ -1544,6 +1611,30 @@ export default [
               {
                 path: '/troubleshooting/troubleshoot-for-common-error-code',
                 component: ComponentCreator('/troubleshooting/troubleshoot-for-common-error-code', '6cc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/user-guide/accessing-learning-content',
+                component: ComponentCreator('/user-guide/accessing-learning-content', 'f43'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/user-guide/mobile-app-navigation',
+                component: ComponentCreator('/user-guide/mobile-app-navigation', '74e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/user-guide/taking-assessments',
+                component: ComponentCreator('/user-guide/taking-assessments', '033'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/user-guide/user-guide',
+                component: ComponentCreator('/user-guide/user-guide', '482'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
