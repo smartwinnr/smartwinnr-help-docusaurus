@@ -14,7 +14,10 @@
       "Bash(npm run:*)",
       "Bash(curl:*)",
       "Bash(lsof:*)",
-      "WebFetch(domain:fly.io)"
+      "WebFetch(domain:fly.io)",
+      "Bash(cp:*)",
+      "Bash(kill:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

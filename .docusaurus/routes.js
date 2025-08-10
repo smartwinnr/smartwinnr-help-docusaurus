@@ -39,25 +39,19 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '16f'),
+    component: ComponentCreator('/', '7fc'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '44f'),
+        component: ComponentCreator('/', '989'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '0c1'),
+            component: ComponentCreator('/', '0b4'),
             routes: [
               {
                 path: '/competitions/',
                 component: ComponentCreator('/competitions/', 'cce'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/getting-started/',
-                component: ComponentCreator('/getting-started/', 'e2e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -94,6 +88,12 @@ export default [
               {
                 path: '/quiz/quiz-settings',
                 component: ComponentCreator('/quiz/quiz-settings', '414'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/',
+                component: ComponentCreator('/', '185'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

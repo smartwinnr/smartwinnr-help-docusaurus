@@ -4,8 +4,8 @@
   "description": "Welcome to SmartWinnr! This comprehensive guide will help you get started with our complete sales gamification and learning platform.",
   "source": "@site/docs/getting-started/index.md",
   "sourceDirName": "getting-started",
-  "slug": "/getting-started/",
-  "permalink": "/getting-started/",
+  "slug": "/",
+  "permalink": "/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/index.md",
@@ -13,7 +13,8 @@
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
-    "sidebar_position": 1
+    "sidebar_position": 1,
+    "slug": "/"
   },
   "sidebar": "tutorialSidebar",
   "next": {

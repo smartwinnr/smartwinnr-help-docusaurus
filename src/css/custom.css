@@ -93,6 +93,18 @@
   font-size: 1.125rem;
 }
 
+.navbar__logo {
+  height: 64px;
+  width: auto;
+  margin-right: 0.75rem;
+}
+
+/* Make navbar taller to accommodate larger logo */
+.navbar {
+  min-height: 80px;
+  align-items: center;
+}
+
 .navbar__title {
   font-weight: 600;
   color: #1a202c;

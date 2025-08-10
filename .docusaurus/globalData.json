@@ -17,7 +17,7 @@
             },
             {
               "id": "getting-started/index",
-              "path": "/getting-started/",
+              "path": "/",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -55,7 +55,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/getting-started/",
+                "path": "/",
                 "label": "getting-started/index"
               }
             }

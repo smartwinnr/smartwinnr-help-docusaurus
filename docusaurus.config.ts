@@ -43,7 +43,8 @@ const config: Config = {
       title: 'SmartWinnr Help',
       logo: {
         alt: 'SmartWinnr Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo_blue.svg',
+        srcDark: 'img/logo_white.png',
       },
       items: [
         {
