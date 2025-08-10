@@ -1,0 +1,36 @@
+{
+  "id": "learning/what-is-khub",
+  "title": "What is KHub?",
+  "description": "",
+  "source": "@site/docs/learning/what-is-khub.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/what-is-khub",
+  "permalink": "/learning/what-is-khub",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/what-is-khub.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 145,
+  "frontMatter": {
+    "title": "What is KHub?",
+    "description": "",
+    "slug": "what-is-khub",
+    "sidebar_position": 145,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae88db624c71b7985a587",
+    "helpscout_url": "https://help.smartwinnr.com/article/145-what-is-khub"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view the SmartPath Analytics.",
+    "permalink": "/learning/how-to-view-the-smartpath-analytics"
+  },
+  "next": {
+    "title": "How can I create folders and items in KHub?",
+    "permalink": "/learning/how-can-i-create-folders-and-items-in-khub"
+  }
+}

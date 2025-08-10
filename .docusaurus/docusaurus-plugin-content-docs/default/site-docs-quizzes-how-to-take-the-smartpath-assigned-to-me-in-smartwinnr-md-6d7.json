@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "permalink": "/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 265,
+  "frontMatter": {
+    "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+    "description": "",
+    "slug": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+    "sidebar_position": 265,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "610775ae64a230081ba1b1b8",
+    "helpscout_url": "https://help.smartwinnr.com/article/265-how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Editors evaluate Long Answer Questions?",
+    "permalink": "/quizzes/how-editors-evaluate-long-answer-questions"
+  },
+  "next": {
+    "title": "How to create Re-order Questions ?",
+    "permalink": "/quizzes/how-to-create-re-order-questions"
+  }
+}

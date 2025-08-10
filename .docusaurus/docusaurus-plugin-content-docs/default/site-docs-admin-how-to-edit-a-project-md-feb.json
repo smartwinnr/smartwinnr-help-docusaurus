@@ -1,0 +1,36 @@
+{
+  "id": "admin/how-to-edit-a-project",
+  "title": "How to edit a project?",
+  "description": "",
+  "source": "@site/docs/admin/how-to-edit-a-project.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/how-to-edit-a-project",
+  "permalink": "/admin/how-to-edit-a-project",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin/how-to-edit-a-project.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 187,
+  "frontMatter": {
+    "title": "How to edit a project?",
+    "description": "",
+    "slug": "how-to-edit-a-project",
+    "sidebar_position": 187,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb30c60b11ce44f639323f",
+    "helpscout_url": "https://help.smartwinnr.com/article/187-how-to-edit-a-project"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a new Project?",
+    "permalink": "/admin/how-to-create-a-new-project"
+  },
+  "next": {
+    "title": "Advanced options for projects",
+    "permalink": "/admin/advanced-options-for-projects"
+  }
+}

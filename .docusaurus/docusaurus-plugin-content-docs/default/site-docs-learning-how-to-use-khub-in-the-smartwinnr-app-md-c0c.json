@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-use-khub-in-the-smartwinnr-app",
+  "title": "How to use KHub in the SmartWinnr app?",
+  "description": "",
+  "source": "@site/docs/learning/how-to-use-khub-in-the-smartwinnr-app.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-use-khub-in-the-smartwinnr-app",
+  "permalink": "/learning/how-to-use-khub-in-the-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-use-khub-in-the-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 150,
+  "frontMatter": {
+    "title": "How to use KHub in the SmartWinnr app?",
+    "description": "",
+    "slug": "how-to-use-khub-in-the-smartwinnr-app",
+    "sidebar_position": 150,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaec3c7129911ba1b21de9",
+    "helpscout_url": "https://help.smartwinnr.com/article/150-how-to-use-khub-in-the-smartwinnr-app"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I view KHub Analytics?",
+    "permalink": "/learning/how-can-i-view-khub-analytics"
+  },
+  "next": {
+    "title": "How to add a Recording to a SmartFeed?",
+    "permalink": "/learning/how-to-add-a-recording-to-a-smartfeed"
+  }
+}

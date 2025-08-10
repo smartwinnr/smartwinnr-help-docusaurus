@@ -1,0 +1,36 @@
+{
+  "id": "competitions/what-is-a-challenge",
+  "title": "What is a Challenge?",
+  "description": "",
+  "source": "@site/docs/competitions/what-is-a-challenge.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/what-is-a-challenge",
+  "permalink": "/competitions/what-is-a-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/what-is-a-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 178,
+  "frontMatter": {
+    "title": "What is a Challenge?",
+    "description": "",
+    "slug": "what-is-a-challenge",
+    "sidebar_position": 178,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb1597a5d295659b369c89",
+    "helpscout_url": "https://help.smartwinnr.com/article/178-what-is-a-challenge"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to upload KPI data?",
+    "permalink": "/competitions/how-to-upload-kpi-data"
+  },
+  "next": {
+    "title": "How to create an Individual Challenge?",
+    "permalink": "/competitions/how-to-create-an-individual-challenge"
+  }
+}

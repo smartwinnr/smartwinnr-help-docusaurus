@@ -1,0 +1,29 @@
+{
+  "id": "reports/index",
+  "title": "Reports",
+  "description": "Analytics, reporting, and data visualization.",
+  "source": "@site/docs/reports/index.md",
+  "sourceDirName": "reports",
+  "slug": "/reports/",
+  "permalink": "/reports/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Reports",
+    "description": "Analytics, reporting, and data visualization.",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to delete a Survey",
+    "permalink": "/surveys/how-to-delete-a-survey"
+  },
+  "next": {
+    "title": "How to Create a form?",
+    "permalink": "/reports/how-to-create-a-form"
+  }
+}

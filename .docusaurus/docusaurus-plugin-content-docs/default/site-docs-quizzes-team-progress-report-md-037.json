@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/team-progress-report",
+  "title": "Team Progress Report",
+  "description": "",
+  "source": "@site/docs/quizzes/team-progress-report.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/team-progress-report",
+  "permalink": "/quizzes/team-progress-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/team-progress-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 199,
+  "frontMatter": {
+    "title": "Team Progress Report",
+    "description": "",
+    "slug": "team-progress-report",
+    "sidebar_position": 199,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdbab410b11ce44f6393516",
+    "helpscout_url": "https://help.smartwinnr.com/article/199-download-reports"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Wise Analytics",
+    "permalink": "/quizzes/quiz-wise-analytics"
+  },
+  "next": {
+    "title": "Quiz Comparison Report",
+    "permalink": "/quizzes/quiz-comparison-report"
+  }
+}

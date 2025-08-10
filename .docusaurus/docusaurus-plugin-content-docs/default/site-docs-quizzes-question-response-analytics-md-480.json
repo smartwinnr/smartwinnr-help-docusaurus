@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/question-response-analytics",
+  "title": "Question Response Analytics",
+  "description": "",
+  "source": "@site/docs/quizzes/question-response-analytics.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/question-response-analytics",
+  "permalink": "/quizzes/question-response-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/question-response-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 56,
+  "frontMatter": {
+    "title": "Question Response Analytics",
+    "description": "",
+    "slug": "question-response-analytics",
+    "sidebar_position": 56,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4998236980410c9123856",
+    "helpscout_url": "https://help.smartwinnr.com/article/56-question-response-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/quizzes/detailed-quiz-analytics"
+  },
+  "next": {
+    "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+    "permalink": "/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr"
+  }
+}

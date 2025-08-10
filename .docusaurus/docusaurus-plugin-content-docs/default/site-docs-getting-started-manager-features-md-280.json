@@ -1,0 +1,34 @@
+{
+  "id": "getting-started/manager-features",
+  "title": "Manager Features",
+  "description": "Guide for switching between user and manager views",
+  "source": "@site/docs/getting-started/manager-features.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/manager-features",
+  "permalink": "/getting-started/manager-features",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/manager-features.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Manager Features",
+    "description": "Guide for switching between user and manager views",
+    "slug": "manager-features",
+    "sidebar_position": 4,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "App Management",
+    "permalink": "/getting-started/app-management"
+  },
+  "next": {
+    "title": "What is SmartWinnr?",
+    "permalink": "/getting-started/what-is-smartwinnr"
+  }
+}

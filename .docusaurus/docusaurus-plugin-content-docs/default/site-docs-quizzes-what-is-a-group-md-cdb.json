@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/what-is-a-group",
+  "title": "What is a Group?",
+  "description": "",
+  "source": "@site/docs/quizzes/what-is-a-group.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/what-is-a-group",
+  "permalink": "/quizzes/what-is-a-group",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/what-is-a-group.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 128,
+  "frontMatter": {
+    "title": "What is a Group?",
+    "description": "",
+    "slug": "what-is-a-group",
+    "sidebar_position": 128,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda55167129911ba1b21b2c",
+    "helpscout_url": "https://help.smartwinnr.com/article/128-what-is-a-group"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to activate or deactivate a user?",
+    "permalink": "/quizzes/how-to-activate-or-deactivate-a-user"
+  },
+  "next": {
+    "title": "How to send quizzes, surveys and content using group?",
+    "permalink": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group"
+  }
+}

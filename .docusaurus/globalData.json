@@ -11,8 +11,528 @@
           "mainDocId": "getting-started/index",
           "docs": [
             {
+              "id": "admin/advanced-options-for-projects",
+              "path": "/admin/advanced-options-for-projects",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/bulk-custom-notifications",
+              "path": "/admin/bulk-custom-notifications",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/changing-updating-configuration-for-an-organization",
+              "path": "/admin/changing-updating-configuration-for-an-organization",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/create-users-individually",
+              "path": "/admin/create-users-individually",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/custom-notifications",
+              "path": "/admin/custom-notifications",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-an-admin-change-anyone-s-password",
+              "path": "/admin/how-can-an-admin-change-anyone-s-password",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-i-answer-a-query",
+              "path": "/admin/how-can-i-answer-a-query",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-i-change-the-password-for-a-user-account",
+              "path": "/admin/how-can-i-change-the-password-for-a-user-account",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-i-contact-smartwinnr-team",
+              "path": "/admin/how-can-i-contact-smartwinnr-team",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-i-submit-a-form-from-chat",
+              "path": "/admin/how-can-i-submit-a-form-from-chat",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-can-i-submit-a-form-from-left-menu",
+              "path": "/admin/how-can-i-submit-a-form-from-left-menu",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-a-new-division",
+              "path": "/admin/how-to-add-a-new-division",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-change-targets",
+              "path": "/admin/how-to-add-change-targets",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-new-contacts",
+              "path": "/admin/how-to-add-new-contacts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-new-form-submission",
+              "path": "/admin/how-to-add-new-form-submission",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-new-rule",
+              "path": "/admin/how-to-add-new-rule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-add-or-remove-users-to-a-chat-group",
+              "path": "/admin/how-to-add-or-remove-users-to-a-chat-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-approve-reject-a-form-submission",
+              "path": "/admin/how-to-approve-reject-a-form-submission",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-change-company-logo",
+              "path": "/admin/how-to-change-company-logo",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-create-a-group",
+              "path": "/admin/how-to-create-a-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-create-a-new-project",
+              "path": "/admin/how-to-create-a-new-project",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-download-a-chat",
+              "path": "/admin/how-to-download-a-chat",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-edit-a-form-on-submitted-by-a-user",
+              "path": "/admin/how-to-edit-a-form-on-submitted-by-a-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-edit-a-project",
+              "path": "/admin/how-to-edit-a-project",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-enable-a-chat-group",
+              "path": "/admin/how-to-enable-a-chat-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-post-a-query-from-the-smartwinnr-app",
+              "path": "/admin/how-to-post-a-query-from-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-submit-a-form-on-behalf-of-a-user",
+              "path": "/admin/how-to-submit-a-form-on-behalf-of-a-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-track-my-organizational-resource-usage",
+              "path": "/admin/how-to-track-my-organizational-resource-usage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-use-qresolve-in-the-smartwinnr-app",
+              "path": "/admin/how-to-use-qresolve-in-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-view-an-audit-log",
+              "path": "/admin/how-to-view-an-audit-log",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-view-existing-contacts",
+              "path": "/admin/how-to-view-existing-contacts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-to-view-notifications",
+              "path": "/admin/how-to-view-notifications",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+              "path": "/admin/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/index",
+              "path": "/admin/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/manage-password-policy",
+              "path": "/admin/manage-password-policy",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/search-users",
+              "path": "/admin/search-users",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/what-are-chat-groups",
+              "path": "/admin/what-are-chat-groups",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/what-is-my-username-and-password",
+              "path": "/admin/what-is-my-username-and-password",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/what-is-qresolve",
+              "path": "/admin/what-is-qresolve",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/what-is-the-purpose-of-notifications",
+              "path": "/admin/what-is-the-purpose-of-notifications",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "admin/when-are-chat-groups-needed",
+              "path": "/admin/when-are-chat-groups-needed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/create-a-coaching",
+              "path": "/coaching/create-a-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-do-i-upload-a-coaching-video",
+              "path": "/coaching/how-do-i-upload-a-coaching-video",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+              "path": "/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-add-competencies-for-field-coaching",
+              "path": "/coaching/how-to-add-competencies-for-field-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-create-a-video-coaching-assignment",
+              "path": "/coaching/how-to-create-a-video-coaching-assignment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-create-field-coaching",
+              "path": "/coaching/how-to-create-field-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-create-field-coaching-template",
+              "path": "/coaching/how-to-create-field-coaching-template",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-enable-the-streaming-links-for-video-coaching",
+              "path": "/coaching/how-to-enable-the-streaming-links-for-video-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-reset-a-coaching-video",
+              "path": "/coaching/how-to-reset-a-coaching-video",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+              "path": "/coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-review-a-video-coaching-assignment",
+              "path": "/coaching/how-to-review-a-video-coaching-assignment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-review-field-coaching-from-managers-view-in-mobile",
+              "path": "/coaching/how-to-review-field-coaching-from-managers-view-in-mobile",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-set-competencies",
+              "path": "/coaching/how-to-set-competencies",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-share-a-coaching-video",
+              "path": "/coaching/how-to-share-a-coaching-video",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-upload-audio-recording-for-coaching",
+              "path": "/coaching/how-to-upload-audio-recording-for-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-upload-screen-recording-for-coaching",
+              "path": "/coaching/how-to-upload-screen-recording-for-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/how-to-upload-video-recording-for-coaching",
+              "path": "/coaching/how-to-upload-video-recording-for-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/index",
+              "path": "/coaching/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "coaching/what-is-my-team-coaching",
+              "path": "/coaching/what-is-my-team-coaching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/define-kpis",
+              "path": "/competitions/define-kpis",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-can-i-gamify-a-smartpath",
+              "path": "/competitions/how-can-i-gamify-a-smartpath",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-can-i-view-a-competition-leaderboard",
+              "path": "/competitions/how-can-i-view-a-competition-leaderboard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-do-i-view-the-kpi-scorecard",
+              "path": "/competitions/how-do-i-view-the-kpi-scorecard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+              "path": "/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app",
+              "path": "/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-a-challenge-to-the-competition",
+              "path": "/competitions/how-to-add-a-challenge-to-the-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-a-form-to-competition",
+              "path": "/competitions/how-to-add-a-form-to-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-a-scorecard-to-a-competition",
+              "path": "/competitions/how-to-add-a-scorecard-to-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-different-activities-to-a-challenge",
+              "path": "/competitions/how-to-add-different-activities-to-a-challenge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-observers-to-the-competition-leaderboard",
+              "path": "/competitions/how-to-add-observers-to-the-competition-leaderboard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-smartfeed-within-a-competition",
+              "path": "/competitions/how-to-add-smartfeed-within-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-add-the-scorecard-to-leaderboard",
+              "path": "/competitions/how-to-add-the-scorecard-to-leaderboard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-award-points-on-badge-assignment",
+              "path": "/competitions/how-to-award-points-on-badge-assignment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-a-group-challenge",
+              "path": "/competitions/how-to-create-a-group-challenge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-a-manager-challenge",
+              "path": "/competitions/how-to-create-a-manager-challenge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-an-individual-challenge",
+              "path": "/competitions/how-to-create-an-individual-challenge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-badges",
+              "path": "/competitions/how-to-create-badges",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-certifcates",
+              "path": "/competitions/how-to-create-certifcates",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-create-kpi",
+              "path": "/competitions/how-to-create-kpi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-upload-kpi-data",
+              "path": "/competitions/how-to-upload-kpi-data",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
+              "path": "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "competitions/index",
               "path": "/competitions/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/leaderboards-of-a-competition",
+              "path": "/competitions/leaderboards-of-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/question-bank",
+              "path": "/competitions/question-bank",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/understand-game-concepts",
+              "path": "/competitions/understand-game-concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/what-are-kpi-reports",
+              "path": "/competitions/what-are-kpi-reports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/what-is-a-challenge",
+              "path": "/competitions/what-is-a-challenge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/what-is-an-achievement",
+              "path": "/competitions/what-is-an-achievement",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "competitions/what-is-kpi-gamification",
+              "path": "/competitions/what-is-kpi-gamification",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/about-smartwinnr",
+              "path": "/getting-started/about-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/account-setup-login",
+              "path": "/getting-started/account-setup-login",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/app-management",
+              "path": "/getting-started/app-management",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/browser-and-device-support",
+              "path": "/getting-started/browser-and-device-support",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-change-my-language-in-smartwinnr-app",
+              "path": "/getting-started/how-can-i-change-my-language-in-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-change-my-password-for-smartwinnr",
+              "path": "/getting-started/how-can-i-change-my-password-for-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-change-my-profile-image",
+              "path": "/getting-started/how-can-i-change-my-profile-image",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-check-the-app-version-web-view-version",
+              "path": "/getting-started/how-can-i-check-the-app-version-web-view-version",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-enable-push-notification-for-smartwinnr-app",
+              "path": "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-can-i-login-to-smartwinnr-app",
+              "path": "/getting-started/how-can-i-login-to-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-do-i-unlock-an-account",
+              "path": "/getting-started/how-do-i-unlock-an-account",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-to-resend-account-invitation",
+              "path": "/getting-started/how-to-resend-account-invitation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-to-update-the-smartwinnr-app-from-app-view",
+              "path": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-to-update-the-smartwinnr-app-from-web-view",
+              "path": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/how-to-update-the-smartwinnr-app-web-view",
+              "path": "/getting-started/how-to-update-the-smartwinnr-app-web-view",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -21,33 +541,721 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "microlearning/index",
-              "path": "/microlearning/",
+              "id": "getting-started/manager-features",
+              "path": "/getting-started/manager-features",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/my-account-is-locked-what-should-i-do",
+              "path": "/getting-started/my-account-is-locked-what-should-i-do",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/profile-settings",
+              "path": "/getting-started/profile-settings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/switching-to-manager-view",
+              "path": "/getting-started/switching-to-manager-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/what-if-i-ve-forgotten-my-password",
+              "path": "/getting-started/what-if-i-ve-forgotten-my-password",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/what-if-i-ve-forgotten-my-pin",
+              "path": "/getting-started/what-if-i-ve-forgotten-my-pin",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/what-is-smartwinnr",
+              "path": "/getting-started/what-is-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-can-i-create-folders-and-items-in-khub",
+              "path": "/learning/how-can-i-create-folders-and-items-in-khub",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-can-i-edit-a-khub-folder-name",
+              "path": "/learning/how-can-i-edit-a-khub-folder-name",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-can-i-edit-a-khub-item",
+              "path": "/learning/how-can-i-edit-a-khub-item",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-can-i-view-khub-analytics",
+              "path": "/learning/how-can-i-view-khub-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-do-i-like-a-smartfeed",
+              "path": "/learning/how-do-i-like-a-smartfeed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-import-question-is-different-from-add-new-question",
+              "path": "/learning/how-import-question-is-different-from-add-new-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-access-the-scorm-course-from-the-smartwinnr-app",
+              "path": "/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-a-image-to-your-content",
+              "path": "/learning/how-to-add-a-image-to-your-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+              "path": "/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-a-recording-to-a-smartfeed",
+              "path": "/learning/how-to-add-a-recording-to-a-smartfeed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-a-video-to-a-question",
+              "path": "/learning/how-to-add-a-video-to-a-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-a-video-to-your-content",
+              "path": "/learning/how-to-add-a-video-to-your-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-an-audio-file-to-a-question",
+              "path": "/learning/how-to-add-an-audio-file-to-a-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-an-audio-file-to-your-content",
+              "path": "/learning/how-to-add-an-audio-file-to-your-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-an-image-to-the-question",
+              "path": "/learning/how-to-add-an-image-to-the-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-learning-sessions-in-smartpath-module",
+              "path": "/learning/how-to-add-learning-sessions-in-smartpath-module",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-add-reference-to-an-external-link-to-your-content",
+              "path": "/learning/how-to-add-reference-to-an-external-link-to-your-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+              "path": "/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-attach-pdf-file-to-your-content",
+              "path": "/learning/how-to-attach-pdf-file-to-your-content",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-create-a-module-for-smartpath",
+              "path": "/learning/how-to-create-a-module-for-smartpath",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-create-a-smartfeed",
+              "path": "/learning/how-to-create-a-smartfeed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-create-a-smartpath",
+              "path": "/learning/how-to-create-a-smartpath",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-create-smartpath-with-learning-sessions",
+              "path": "/learning/how-to-create-smartpath-with-learning-sessions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-delete-smartfeeds",
+              "path": "/learning/how-to-delete-smartfeeds",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-download-share-a-smartfeed-in-smartpath",
+              "path": "/learning/how-to-download-share-a-smartfeed-in-smartpath",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-edit-a-smartfeed",
+              "path": "/learning/how-to-edit-a-smartfeed",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-edit-a-smartpath",
+              "path": "/learning/how-to-edit-a-smartpath",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-embed-a-link-into-the-question",
+              "path": "/learning/how-to-embed-a-link-into-the-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-mark-the-attendance-for-users-in-learning-sessions",
+              "path": "/learning/how-to-mark-the-attendance-for-users-in-learning-sessions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-send-a-smartfeed-multiple-times",
+              "path": "/learning/how-to-send-a-smartfeed-multiple-times",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+              "path": "/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-send-the-smartfeed-to-teams",
+              "path": "/learning/how-to-send-the-smartfeed-to-teams",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-use-khub-in-the-smartwinnr-app",
+              "path": "/learning/how-to-use-khub-in-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-view-all-the-smartfeeds",
+              "path": "/learning/how-to-view-all-the-smartfeeds",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-view-smartfeed-analytics",
+              "path": "/learning/how-to-view-smartfeed-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/how-to-view-the-smartpath-analytics",
+              "path": "/learning/how-to-view-the-smartpath-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/index",
+              "path": "/learning/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/knowledge-hub-khub",
+              "path": "/learning/knowledge-hub-khub",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/smartfeed-management",
+              "path": "/learning/smartfeed-management",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/smartpath-management",
+              "path": "/learning/smartpath-management",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/understanding-recent-trending-and-latest-khub-items",
+              "path": "/learning/understanding-recent-trending-and-latest-khub-items",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/what-are-smartfeeds",
+              "path": "/learning/what-are-smartfeeds",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/what-are-smartpaths",
+              "path": "/learning/what-are-smartpaths",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "learning/what-is-khub",
+              "path": "/learning/what-is-khub",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "microlearning/index",
+              "path": "/microlearning/"
+            },
+            {
+              "id": "mobile/index",
+              "path": "/mobile/"
             },
             {
               "id": "quiz/creating-quiz",
-              "path": "/quiz/creating-quiz",
-              "sidebar": "tutorialSidebar"
+              "path": "/quiz/creating-quiz"
             },
             {
               "id": "quiz/index",
-              "path": "/quiz/",
-              "sidebar": "tutorialSidebar"
+              "path": "/quiz/"
             },
             {
               "id": "quiz/managing-questions",
-              "path": "/quiz/managing-questions",
-              "sidebar": "tutorialSidebar"
+              "path": "/quiz/managing-questions"
             },
             {
               "id": "quiz/quiz-reports",
-              "path": "/quiz/quiz-reports",
-              "sidebar": "tutorialSidebar"
+              "path": "/quiz/quiz-reports"
             },
             {
               "id": "quiz/quiz-settings",
-              "path": "/quiz/quiz-settings",
+              "path": "/quiz/quiz-settings"
+            },
+            {
+              "id": "quizzes/create-users-in-bulk",
+              "path": "/quizzes/create-users-in-bulk",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/creating-quizzes",
+              "path": "/quizzes/creating-quizzes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/delete-users",
+              "path": "/quizzes/delete-users",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/detailed-quiz-analytics",
+              "path": "/quizzes/detailed-quiz-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team",
+              "path": "/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-can-i-download-the-smartwinnr-app",
+              "path": "/quizzes/how-can-i-download-the-smartwinnr-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-can-i-duplicate-a-quiz",
+              "path": "/quizzes/how-can-i-duplicate-a-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-do-i-give-access-permission-to-other-editors",
+              "path": "/quizzes/how-do-i-give-access-permission-to-other-editors",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-editors-evaluate-long-answer-questions",
+              "path": "/quizzes/how-editors-evaluate-long-answer-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-activate-automatic-reminders-for-your-quizzes",
+              "path": "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-activate-or-deactivate-a-user",
+              "path": "/quizzes/how-to-activate-or-deactivate-a-user",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-add-a-quiz-to-a-competition",
+              "path": "/quizzes/how-to-add-a-quiz-to-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-add-a-survey-to-a-competition",
+              "path": "/quizzes/how-to-add-a-survey-to-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr",
+              "path": "/quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-competition",
+              "path": "/quizzes/how-to-create-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-drag-and-drop-into-image-question",
+              "path": "/quizzes/how-to-create-a-drag-and-drop-into-image-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-drag-and-drop-into-text-question",
+              "path": "/quizzes/how-to-create-a-drag-and-drop-into-text-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-hotspot-question",
+              "path": "/quizzes/how-to-create-a-hotspot-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-manual-quiz",
+              "path": "/quizzes/how-to-create-a-manual-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-matching-question",
+              "path": "/quizzes/how-to-create-a-matching-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-a-missing-words-question",
+              "path": "/quizzes/how-to-create-a-missing-words-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-an-automatic-quiz",
+              "path": "/quizzes/how-to-create-an-automatic-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-fill-in-the-blank-questions",
+              "path": "/quizzes/how-to-create-fill-in-the-blank-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-long-answer-questions",
+              "path": "/quizzes/how-to-create-long-answer-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-multiple-choice-questions",
+              "path": "/quizzes/how-to-create-multiple-choice-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-numeric-type-questions",
+              "path": "/quizzes/how-to-create-numeric-type-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-create-re-order-questions",
+              "path": "/quizzes/how-to-create-re-order-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-duplicate-a-quiz-in-a-competition",
+              "path": "/quizzes/how-to-duplicate-a-quiz-in-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-edit-a-question",
+              "path": "/quizzes/how-to-edit-a-question",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-edit-the-form-submission-from-manager-s-view",
+              "path": "/quizzes/how-to-edit-the-form-submission-from-manager-s-view",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-find-the-progress-of-your-team-in-quizzes",
+              "path": "/quizzes/how-to-find-the-progress-of-your-team-in-quizzes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+              "path": "/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-import-scorm-course-into-smartwinnr",
+              "path": "/quizzes/how-to-import-scorm-course-into-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-manage-quiz-configurations",
+              "path": "/quizzes/how-to-manage-quiz-configurations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-open-and-close-a-quiz",
+              "path": "/quizzes/how-to-open-and-close-a-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-send-quizzes-surveys-and-content-using-group",
+              "path": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-set-reminder-for-your-tasks",
+              "path": "/quizzes/how-to-set-reminder-for-your-tasks",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+              "path": "/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-update-question-response",
+              "path": "/quizzes/how-to-update-question-response",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/how-to-upload-questions-in-bulk-using-import-questions",
+              "path": "/quizzes/how-to-upload-questions-in-bulk-using-import-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/index",
+              "path": "/quizzes/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/learner-overall-report",
+              "path": "/quizzes/learner-overall-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/learner-report-by-learner-individual-report-analytics",
+              "path": "/quizzes/learner-report-by-learner-individual-report-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/question-response-analytics",
+              "path": "/quizzes/question-response-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/question-structure",
+              "path": "/quizzes/question-structure",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-administration",
+              "path": "/quizzes/quiz-administration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-analytics-reports",
+              "path": "/quizzes/quiz-analytics-reports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-analytics-through-charts",
+              "path": "/quizzes/quiz-analytics-through-charts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-comparison-report",
+              "path": "/quizzes/quiz-comparison-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-types",
+              "path": "/quizzes/quiz-types",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/quiz-wise-analytics",
+              "path": "/quizzes/quiz-wise-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/short-answer-with-multiple-options",
+              "path": "/quizzes/short-answer-with-multiple-options",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/team-analytics",
+              "path": "/quizzes/team-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/team-progress-report",
+              "path": "/quizzes/team-progress-report",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/understanding-knowledge-categories",
+              "path": "/quizzes/understanding-knowledge-categories",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/what-is-a-competition",
+              "path": "/quizzes/what-is-a-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/what-is-a-group",
+              "path": "/quizzes/what-is-a-group",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/what-is-a-rule",
+              "path": "/quizzes/what-is-a-rule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/what-is-audit-log",
+              "path": "/quizzes/what-is-audit-log",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quizzes/what-is-smartwinnr-quiz-analytics",
+              "path": "/quizzes/what-is-smartwinnr-quiz-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/detailed-explanation-of-reports",
+              "path": "/reports/detailed-explanation-of-reports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/form-analytics",
+              "path": "/reports/form-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-managers-approve-form",
+              "path": "/reports/how-managers-approve-form",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-add-approvers-to-a-form",
+              "path": "/reports/how-to-add-approvers-to-a-form",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-create-a-field-mapping",
+              "path": "/reports/how-to-create-a-field-mapping",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-create-a-form",
+              "path": "/reports/how-to-create-a-form",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-create-a-scorecard",
+              "path": "/reports/how-to-create-a-scorecard",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-create-sales-tv",
+              "path": "/reports/how-to-create-sales-tv",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/how-to-view-project",
+              "path": "/reports/how-to-view-project",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/index",
+              "path": "/reports/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/user-login-reports",
+              "path": "/reports/user-login-reports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/what-are-field-mappings",
+              "path": "/reports/what-are-field-mappings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/what-are-scorecards",
+              "path": "/reports/what-are-scorecards",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reports/widgets",
+              "path": "/reports/widgets",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-add-a-video-coaching-to-the-competition",
+              "path": "/surveys/how-to-add-a-video-coaching-to-the-competition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-assign-a-survey",
+              "path": "/surveys/how-to-assign-a-survey",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-create-a-survey",
+              "path": "/surveys/how-to-create-a-survey",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-create-a-survey-template",
+              "path": "/surveys/how-to-create-a-survey-template",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-delete-a-survey",
+              "path": "/surveys/how-to-delete-a-survey",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/how-to-duplicate-a-survey-and-survey-template",
+              "path": "/surveys/how-to-duplicate-a-survey-and-survey-template",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/index",
+              "path": "/surveys/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/survey-analytics",
+              "path": "/surveys/survey-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/survey-template-analytics",
+              "path": "/surveys/survey-template-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/what-are-the-different-question-types-in-a-survey-survey-template",
+              "path": "/surveys/what-are-the-different-question-types-in-a-survey-survey-template",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "surveys/what-is-the-difference-between-a-survey-and-a-survey-template",
+              "path": "/surveys/what-is-the-difference-between-a-survey-and-a-survey-template",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "troubleshooting/index",
+              "path": "/troubleshooting/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "troubleshooting/troubleshoot-for-common-error-code",
+              "path": "/troubleshooting/troubleshoot-for-common-error-code",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -55,8 +1263,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/",
-                "label": "getting-started/index"
+                "path": "/getting-started/account-setup-login",
+                "label": "getting-started/account-setup-login"
               }
             }
           }

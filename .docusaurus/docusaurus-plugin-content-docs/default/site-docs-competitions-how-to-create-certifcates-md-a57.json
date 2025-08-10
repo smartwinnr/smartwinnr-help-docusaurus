@@ -1,0 +1,36 @@
+{
+  "id": "competitions/how-to-create-certifcates",
+  "title": "How to create Certifcates",
+  "description": "",
+  "source": "@site/docs/competitions/how-to-create-certifcates.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/how-to-create-certifcates",
+  "permalink": "/competitions/how-to-create-certifcates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/how-to-create-certifcates.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 194,
+  "frontMatter": {
+    "title": "How to create Certifcates",
+    "description": "",
+    "slug": "how-to-create-certifcates",
+    "sidebar_position": 194,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb50c1b624c71b7985a730",
+    "helpscout_url": "https://help.smartwinnr.com/article/194-how-to-create-an-achievements"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is an Achievement?",
+    "permalink": "/competitions/what-is-an-achievement"
+  },
+  "next": {
+    "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+    "permalink": "/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+  }
+}

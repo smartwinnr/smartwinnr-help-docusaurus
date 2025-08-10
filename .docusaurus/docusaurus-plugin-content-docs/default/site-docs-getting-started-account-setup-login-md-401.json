@@ -1,0 +1,30 @@
+{
+  "id": "getting-started/account-setup-login",
+  "title": "Account Setup & Login",
+  "description": "Complete guide for logging in, password recovery, and account troubleshooting",
+  "source": "@site/docs/getting-started/account-setup-login.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/account-setup-login",
+  "permalink": "/getting-started/account-setup-login",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/account-setup-login.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Account Setup & Login",
+    "description": "Complete guide for logging in, password recovery, and account troubleshooting",
+    "slug": "account-setup-login",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Getting Started with SmartWinnr",
+    "permalink": "/"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/what-is-smartwinnr",
+  "title": "What is SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/getting-started/what-is-smartwinnr.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/what-is-smartwinnr",
+  "permalink": "/getting-started/what-is-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/what-is-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "What is SmartWinnr?",
+    "description": "",
+    "slug": "what-is-smartwinnr",
+    "sidebar_position": 4,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fcc6288de1bfa158fb55b9b",
+    "helpscout_url": "https://help.smartwinnr.com/article/4-what-is-smartwinnr"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manager Features",
+    "permalink": "/getting-started/manager-features"
+  },
+  "next": {
+    "title": "About SmartWinnr",
+    "permalink": "/getting-started/about-smartwinnr"
+  }
+}

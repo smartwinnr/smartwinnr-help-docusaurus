@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/how-can-i-login-to-smartwinnr-app",
+  "title": "How can I login to SmartWinnr App?",
+  "description": "",
+  "source": "@site/docs/getting-started/how-can-i-login-to-smartwinnr-app.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/how-can-i-login-to-smartwinnr-app",
+  "permalink": "/getting-started/how-can-i-login-to-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/how-can-i-login-to-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "How can I login to SmartWinnr App?",
+    "description": "",
+    "slug": "how-can-i-login-to-smartwinnr-app",
+    "sidebar_position": 10,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fce03e7d580ce55a38b4d36",
+    "helpscout_url": "https://help.smartwinnr.com/article/10-how-can-i-login-to-smartwinnr-app"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About SmartWinnr",
+    "permalink": "/getting-started/about-smartwinnr"
+  },
+  "next": {
+    "title": "What if I've forgotten my password?",
+    "permalink": "/getting-started/what-if-i-ve-forgotten-my-password"
+  }
+}

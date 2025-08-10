@@ -1,7 +1,7 @@
 {
   "id": "getting-started/index",
   "title": "Getting Started with SmartWinnr",
-  "description": "Welcome to SmartWinnr! This comprehensive guide will help you get started with our complete sales gamification and learning platform.",
+  "description": "Welcome to SmartWinnr! This comprehensive guide will help you get started with our mobile-first sales productivity platform.",
   "source": "@site/docs/getting-started/index.md",
   "sourceDirName": "getting-started",
   "slug": "/",
@@ -17,8 +17,12 @@
     "slug": "/"
   },
   "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Account Setup & Login",
+    "permalink": "/getting-started/account-setup-login"
+  },
   "next": {
-    "title": "Quiz Overview",
-    "permalink": "/quiz/"
+    "title": "Profile & Settings",
+    "permalink": "/getting-started/profile-settings"
   }
 }

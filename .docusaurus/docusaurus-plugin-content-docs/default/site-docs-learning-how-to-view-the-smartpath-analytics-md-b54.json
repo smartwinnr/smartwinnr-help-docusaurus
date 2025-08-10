@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-view-the-smartpath-analytics",
+  "title": "How to view the SmartPath Analytics.",
+  "description": "",
+  "source": "@site/docs/learning/how-to-view-the-smartpath-analytics.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-view-the-smartpath-analytics",
+  "permalink": "/learning/how-to-view-the-smartpath-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-view-the-smartpath-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 80,
+  "frontMatter": {
+    "title": "How to view the SmartPath Analytics.",
+    "description": "",
+    "slug": "how-to-view-the-smartpath-analytics",
+    "sidebar_position": 80,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd713dc23119734ee37f0cb",
+    "helpscout_url": "https://help.smartwinnr.com/article/80-how-to-view-the-smartpath-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to edit a SmartPath.",
+    "permalink": "/learning/how-to-edit-a-smartpath"
+  },
+  "next": {
+    "title": "What is KHub?",
+    "permalink": "/learning/what-is-khub"
+  }
+}

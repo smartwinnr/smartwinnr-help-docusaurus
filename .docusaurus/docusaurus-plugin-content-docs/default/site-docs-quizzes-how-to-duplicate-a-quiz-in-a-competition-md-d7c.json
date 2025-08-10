@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/how-to-duplicate-a-quiz-in-a-competition",
+  "title": "How to Duplicate a quiz in a Competition?",
+  "description": "",
+  "source": "@site/docs/quizzes/how-to-duplicate-a-quiz-in-a-competition.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/how-to-duplicate-a-quiz-in-a-competition",
+  "permalink": "/quizzes/how-to-duplicate-a-quiz-in-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/how-to-duplicate-a-quiz-in-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 108,
+  "frontMatter": {
+    "title": "How to Duplicate a quiz in a Competition?",
+    "description": "",
+    "slug": "how-to-duplicate-a-quiz-in-a-competition",
+    "sidebar_position": 108,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda263d27288b7f895d60b7",
+    "helpscout_url": "https://help.smartwinnr.com/article/108-how-to-duplicate-a-quiz-in-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Survey to a Competition?",
+    "permalink": "/quizzes/how-to-add-a-survey-to-a-competition"
+  },
+  "next": {
+    "title": "How to manage Quiz configurations?",
+    "permalink": "/quizzes/how-to-manage-quiz-configurations"
+  }
+}

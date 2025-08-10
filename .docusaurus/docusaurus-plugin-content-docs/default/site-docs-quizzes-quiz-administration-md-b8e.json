@@ -1,0 +1,34 @@
+{
+  "id": "quizzes/quiz-administration",
+  "title": "Quiz Administration",
+  "description": "Complete guide for managing quiz settings, permissions, and operations",
+  "source": "@site/docs/quizzes/quiz-administration.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/quiz-administration",
+  "permalink": "/quizzes/quiz-administration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/quiz-administration.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Quiz Administration",
+    "description": "Complete guide for managing quiz settings, permissions, and operations",
+    "slug": "quiz-administration",
+    "sidebar_position": 2,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Management",
+    "permalink": "/quizzes/"
+  },
+  "next": {
+    "title": "Quiz Analytics & Reports",
+    "permalink": "/quizzes/quiz-analytics-reports"
+  }
+}

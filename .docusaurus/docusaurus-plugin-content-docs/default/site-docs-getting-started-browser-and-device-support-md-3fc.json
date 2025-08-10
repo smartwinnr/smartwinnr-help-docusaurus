@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/browser-and-device-support",
+  "title": "Browser and Device Support",
+  "description": "",
+  "source": "@site/docs/getting-started/browser-and-device-support.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/browser-and-device-support",
+  "permalink": "/getting-started/browser-and-device-support",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/browser-and-device-support.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 23,
+  "frontMatter": {
+    "title": "Browser and Device Support",
+    "description": "",
+    "slug": "browser-and-device-support",
+    "sidebar_position": 23,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fce4541eb7cc612aa3557b4",
+    "helpscout_url": "https://help.smartwinnr.com/article/23-browser-and-device-support"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I enable push notification for SmartWinnr App?",
+    "permalink": "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app"
+  },
+  "next": {
+    "title": "Switching to Manager View",
+    "permalink": "/getting-started/switching-to-manager-view"
+  }
+}

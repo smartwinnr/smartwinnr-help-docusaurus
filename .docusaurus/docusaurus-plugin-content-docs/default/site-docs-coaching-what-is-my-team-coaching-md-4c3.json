@@ -1,0 +1,36 @@
+{
+  "id": "coaching/what-is-my-team-coaching",
+  "title": "What is 'My Team Coaching'?",
+  "description": "",
+  "source": "@site/docs/coaching/what-is-my-team-coaching.md",
+  "sourceDirName": "coaching",
+  "slug": "/coaching/what-is-my-team-coaching",
+  "permalink": "/coaching/what-is-my-team-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching/what-is-my-team-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 89,
+  "frontMatter": {
+    "title": "What is 'My Team Coaching'?",
+    "description": "",
+    "slug": "what-is-my-team-coaching",
+    "sidebar_position": 89,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd758ea7129911ba1b20b11",
+    "helpscout_url": "https://help.smartwinnr.com/article/89-what-is-my-team-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to share a Coaching Video.",
+    "permalink": "/coaching/how-to-share-a-coaching-video"
+  },
+  "next": {
+    "title": "How to set competencies.",
+    "permalink": "/coaching/how-to-set-competencies"
+  }
+}

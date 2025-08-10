@@ -1,0 +1,36 @@
+{
+  "id": "competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
+  "title": "How to view the data and leaderboard for Scorecard",
+  "description": "",
+  "source": "@site/docs/competitions/how-to-view-the-data-and-leaderboard-for-scorecard.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
+  "permalink": "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/how-to-view-the-data-and-leaderboard-for-scorecard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 231,
+  "frontMatter": {
+    "title": "How to view the data and leaderboard for Scorecard",
+    "description": "",
+    "slug": "how-to-view-the-data-and-leaderboard-for-scorecard",
+    "sidebar_position": 231,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "603cf4db661b720174a71d5e",
+    "helpscout_url": "https://help.smartwinnr.com/article/231-how-to-view-the-data-and-leaderboard-for-scorecard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Form to Competition?",
+    "permalink": "/competitions/how-to-add-a-form-to-competition"
+  },
+  "next": {
+    "title": "How to add observers to the Competition Leaderboard?",
+    "permalink": "/competitions/how-to-add-observers-to-the-competition-leaderboard"
+  }
+}

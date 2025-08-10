@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/what-is-a-rule",
+  "title": "What is a Rule?",
+  "description": "",
+  "source": "@site/docs/quizzes/what-is-a-rule.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/what-is-a-rule",
+  "permalink": "/quizzes/what-is-a-rule",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/what-is-a-rule.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 141,
+  "frontMatter": {
+    "title": "What is a Rule?",
+    "description": "",
+    "slug": "what-is-a-rule",
+    "sidebar_position": 141,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaddc6b624c71b7985a570",
+    "helpscout_url": "https://help.smartwinnr.com/article/141-what-is-a-rule"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is Audit Log?",
+    "permalink": "/quizzes/what-is-audit-log"
+  },
+  "next": {
+    "title": "How do I give access permission to other editors?",
+    "permalink": "/quizzes/how-do-i-give-access-permission-to-other-editors"
+  }
+}

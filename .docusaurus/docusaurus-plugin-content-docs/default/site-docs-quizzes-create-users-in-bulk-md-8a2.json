@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/create-users-in-bulk",
+  "title": "Create users in bulk",
+  "description": "",
+  "source": "@site/docs/quizzes/create-users-in-bulk.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/create-users-in-bulk",
+  "permalink": "/quizzes/create-users-in-bulk",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/create-users-in-bulk.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 118,
+  "frontMatter": {
+    "title": "Create users in bulk",
+    "description": "",
+    "slug": "create-users-in-bulk",
+    "sidebar_position": 118,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda4abb27288b7f895d61dd",
+    "helpscout_url": "https://help.smartwinnr.com/article/118-create-users-in-bulk"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to manage Quiz configurations?",
+    "permalink": "/quizzes/how-to-manage-quiz-configurations"
+  },
+  "next": {
+    "title": "Delete users",
+    "permalink": "/quizzes/delete-users"
+  }
+}

@@ -14,14 +14,5 @@
   "sidebarPosition": 5,
   "frontMatter": {
     "sidebar_position": 5
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Reports",
-    "permalink": "/quiz/quiz-reports"
-  },
-  "next": {
-    "title": "Microlearning with SmartFeeds",
-    "permalink": "/microlearning/"
   }
 }

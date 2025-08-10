@@ -1,0 +1,34 @@
+{
+  "id": "quizzes/quiz-analytics-reports",
+  "title": "Quiz Analytics & Reports",
+  "description": "Comprehensive guide to understanding quiz performance through analytics and reporting",
+  "source": "@site/docs/quizzes/quiz-analytics-reports.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/quiz-analytics-reports",
+  "permalink": "/quizzes/quiz-analytics-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/quiz-analytics-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Quiz Analytics & Reports",
+    "description": "Comprehensive guide to understanding quiz performance through analytics and reporting",
+    "slug": "quiz-analytics-reports",
+    "sidebar_position": 3,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Administration",
+    "permalink": "/quizzes/quiz-administration"
+  },
+  "next": {
+    "title": "How can I download the SmartWinnr app?",
+    "permalink": "/quizzes/how-can-i-download-the-smartwinnr-app"
+  }
+}

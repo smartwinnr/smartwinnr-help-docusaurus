@@ -1,0 +1,36 @@
+{
+  "id": "learning/understanding-recent-trending-and-latest-khub-items",
+  "title": "Understanding recent, trending and latest KHub items",
+  "description": "",
+  "source": "@site/docs/learning/understanding-recent-trending-and-latest-khub-items.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/understanding-recent-trending-and-latest-khub-items",
+  "permalink": "/learning/understanding-recent-trending-and-latest-khub-items",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/understanding-recent-trending-and-latest-khub-items.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 148,
+  "frontMatter": {
+    "title": "Understanding recent, trending and latest KHub items",
+    "description": "",
+    "slug": "understanding-recent-trending-and-latest-khub-items",
+    "sidebar_position": 148,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae9d67129911ba1b21de5",
+    "helpscout_url": "https://help.smartwinnr.com/article/148-understanding-recent-trending-and-latest-khub-items"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I edit a KHub item?",
+    "permalink": "/learning/how-can-i-edit-a-khub-item"
+  },
+  "next": {
+    "title": "How can I view KHub Analytics?",
+    "permalink": "/learning/how-can-i-view-khub-analytics"
+  }
+}

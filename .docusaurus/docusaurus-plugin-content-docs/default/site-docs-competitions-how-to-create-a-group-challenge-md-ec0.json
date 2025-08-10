@@ -1,0 +1,36 @@
+{
+  "id": "competitions/how-to-create-a-group-challenge",
+  "title": "How to create a Group Challenge?",
+  "description": "",
+  "source": "@site/docs/competitions/how-to-create-a-group-challenge.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/how-to-create-a-group-challenge",
+  "permalink": "/competitions/how-to-create-a-group-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/how-to-create-a-group-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 180,
+  "frontMatter": {
+    "title": "How to create a Group Challenge?",
+    "description": "",
+    "slug": "how-to-create-a-group-challenge",
+    "sidebar_position": 180,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb1646a5d295659b369c8d",
+    "helpscout_url": "https://help.smartwinnr.com/article/180-how-to-create-a-group-challenge"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create an Individual Challenge?",
+    "permalink": "/competitions/how-to-create-an-individual-challenge"
+  },
+  "next": {
+    "title": "How to create a Manager Challenge?",
+    "permalink": "/competitions/how-to-create-a-manager-challenge"
+  }
+}

@@ -5,11 +5,11 @@ slug: /
 
 # Getting Started with SmartWinnr
 
-Welcome to SmartWinnr! This comprehensive guide will help you get started with our complete sales gamification and learning platform.
+Welcome to SmartWinnr! This comprehensive guide will help you get started with our mobile-first sales productivity platform.
 
 ## What is SmartWinnr?
 
-SmartWinnr is a complete sales gamification platform that helps organizations drive performance through intelligent engagement, structured learning, and competitive gamification.
+SmartWinnr is the world's number 1 mobile-first Sales Productivity platform that drives sales learning, coaching, and contests through a single comprehensive platform.
 
 <div className="cards-grid">
   <div className="feature-card">
@@ -47,7 +47,9 @@ SmartWinnr is a complete sales gamification platform that helps organizations dr
 
 ### 1. First Login
 
-Navigate to [app.smartwinnr.com](https://app.smartwinnr.com) and log in using the credentials provided by your administrator. Complete your profile setup to personalize your SmartWinnr experience.
+Download the SmartWinnr app or navigate to [app.smartwinnr.com](https://app.smartwinnr.com) and log in using the credentials provided by your administrator. Complete your profile setup to personalize your SmartWinnr experience.
+
+**Need help getting started?** Check out our [Account Setup & Login](./account-setup-login) guide for detailed instructions.
 
 ### 2. Dashboard Overview
 

@@ -1,0 +1,36 @@
+{
+  "id": "coaching/how-to-enable-the-streaming-links-for-video-coaching",
+  "title": "How to enable the Streaming Links for Video Coaching",
+  "description": "",
+  "source": "@site/docs/coaching/how-to-enable-the-streaming-links-for-video-coaching.md",
+  "sourceDirName": "coaching",
+  "slug": "/coaching/how-to-enable-the-streaming-links-for-video-coaching",
+  "permalink": "/coaching/how-to-enable-the-streaming-links-for-video-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching/how-to-enable-the-streaming-links-for-video-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 241,
+  "frontMatter": {
+    "title": "How to enable the Streaming Links for Video Coaching",
+    "description": "",
+    "slug": "how-to-enable-the-streaming-links-for-video-coaching",
+    "sidebar_position": 241,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a63037eb3af44cc120a9d0",
+    "helpscout_url": "https://help.smartwinnr.com/article/241-how-to-enable-the-streaming-links-for-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add Competencies for Field Coaching",
+    "permalink": "/coaching/how-to-add-competencies-for-field-coaching"
+  },
+  "next": {
+    "title": "How to review Field Coaching from Managers View in Mobile",
+    "permalink": "/coaching/how-to-review-field-coaching-from-managers-view-in-mobile"
+  }
+}

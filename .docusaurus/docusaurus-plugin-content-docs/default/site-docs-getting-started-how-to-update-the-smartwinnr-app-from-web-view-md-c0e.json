@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/how-to-update-the-smartwinnr-app-from-web-view",
+  "title": "How to update the SmartWinnr App from Web View",
+  "description": "",
+  "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-from-web-view.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view",
+  "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/how-to-update-the-smartwinnr-app-from-web-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 291,
+  "frontMatter": {
+    "title": "How to update the SmartWinnr App from Web View",
+    "description": "",
+    "slug": "how-to-update-the-smartwinnr-app-from-web-view",
+    "sidebar_position": 291,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "66d0ceaea62a7505fcf37c07",
+    "helpscout_url": "https://help.smartwinnr.com/article/291-how-to-update-the-smartwinnr-app-from-web-view"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to update the SmartWinnr App from App View",
+    "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view"
+  },
+  "next": {
+    "title": "Creating Quizzes",
+    "permalink": "/quizzes/creating-quizzes"
+  }
+}

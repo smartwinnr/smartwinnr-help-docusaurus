@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-create-a-smartfeed",
+  "title": "How to create a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/learning/how-to-create-a-smartfeed.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-create-a-smartfeed",
+  "permalink": "/learning/how-to-create-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-create-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 27,
+  "frontMatter": {
+    "title": "How to create a SmartFeed?",
+    "description": "",
+    "slug": "how-to-create-a-smartfeed",
+    "sidebar_position": 27,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd10365db2fa3720c7d7a2f",
+    "helpscout_url": "https://help.smartwinnr.com/article/27-how-to-create-a-smartfeed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What are SmartFeeds?",
+    "permalink": "/learning/what-are-smartfeeds"
+  },
+  "next": {
+    "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+    "permalink": "/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
+  }
+}

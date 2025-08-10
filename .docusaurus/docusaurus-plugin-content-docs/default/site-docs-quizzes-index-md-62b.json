@@ -1,0 +1,29 @@
+{
+  "id": "quizzes/index",
+  "title": "Quiz Management",
+  "description": "Comprehensive guide for creating, managing, and analyzing quizzes",
+  "source": "@site/docs/quizzes/index.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/",
+  "permalink": "/quizzes/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Quiz Management",
+    "description": "Comprehensive guide for creating, managing, and analyzing quizzes",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating Quizzes",
+    "permalink": "/quizzes/creating-quizzes"
+  },
+  "next": {
+    "title": "Quiz Administration",
+    "permalink": "/quizzes/quiz-administration"
+  }
+}

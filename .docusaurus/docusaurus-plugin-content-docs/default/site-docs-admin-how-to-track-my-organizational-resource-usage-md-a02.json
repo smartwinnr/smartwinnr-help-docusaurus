@@ -1,0 +1,36 @@
+{
+  "id": "admin/how-to-track-my-organizational-resource-usage",
+  "title": "How to track my organizational resource usage?",
+  "description": "",
+  "source": "@site/docs/admin/how-to-track-my-organizational-resource-usage.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/how-to-track-my-organizational-resource-usage",
+  "permalink": "/admin/how-to-track-my-organizational-resource-usage",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin/how-to-track-my-organizational-resource-usage.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 116,
+  "frontMatter": {
+    "title": "How to track my organizational resource usage?",
+    "description": "",
+    "slug": "how-to-track-my-organizational-resource-usage",
+    "sidebar_position": 116,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda496f0b11ce44f6392e44",
+    "helpscout_url": "https://help.smartwinnr.com/article/116-how-to-track-my-organizational-resource-usage"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manage password policy",
+    "permalink": "/admin/manage-password-policy"
+  },
+  "next": {
+    "title": "Create users individually",
+    "permalink": "/admin/create-users-individually"
+  }
+}

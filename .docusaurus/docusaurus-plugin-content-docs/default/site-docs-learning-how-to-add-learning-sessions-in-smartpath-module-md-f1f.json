@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-add-learning-sessions-in-smartpath-module",
+  "title": "How to add Learning Sessions In SmartPath Module?",
+  "description": "",
+  "source": "@site/docs/learning/how-to-add-learning-sessions-in-smartpath-module.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-add-learning-sessions-in-smartpath-module",
+  "permalink": "/learning/how-to-add-learning-sessions-in-smartpath-module",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-add-learning-sessions-in-smartpath-module.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 242,
+  "frontMatter": {
+    "title": "How to add Learning Sessions In SmartPath Module?",
+    "description": "",
+    "slug": "how-to-add-learning-sessions-in-smartpath-module",
+    "sidebar_position": 242,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a645beeb3af44cc120aa6d",
+    "helpscout_url": "https://help.smartwinnr.com/article/242-how-to-add-learning-sessions-in-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Recording to a SmartFeed?",
+    "permalink": "/learning/how-to-add-a-recording-to-a-smartfeed"
+  },
+  "next": {
+    "title": "How to Create SmartPath with Learning Sessions?",
+    "permalink": "/learning/how-to-create-smartpath-with-learning-sessions"
+  }
+}

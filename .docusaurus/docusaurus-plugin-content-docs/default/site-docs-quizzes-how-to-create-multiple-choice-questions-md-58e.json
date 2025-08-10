@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/how-to-create-multiple-choice-questions",
+  "title": "How to create 'Multiple-Choice Questions'.",
+  "description": "",
+  "source": "@site/docs/quizzes/how-to-create-multiple-choice-questions.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/how-to-create-multiple-choice-questions",
+  "permalink": "/quizzes/how-to-create-multiple-choice-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/how-to-create-multiple-choice-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 40,
+  "frontMatter": {
+    "title": "How to create 'Multiple-Choice Questions'.",
+    "description": "",
+    "slug": "how-to-create-multiple-choice-questions",
+    "sidebar_position": 40,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd45c1523119734ee37ed79",
+    "helpscout_url": "https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding knowledge categories",
+    "permalink": "/quizzes/understanding-knowledge-categories"
+  },
+  "next": {
+    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "permalink": "/quizzes/how-to-create-fill-in-the-blank-questions"
+  }
+}

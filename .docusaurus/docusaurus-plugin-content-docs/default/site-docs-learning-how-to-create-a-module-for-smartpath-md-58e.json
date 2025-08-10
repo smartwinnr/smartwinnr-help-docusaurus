@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-create-a-module-for-smartpath",
+  "title": "How to create a module for SmartPath.",
+  "description": "",
+  "source": "@site/docs/learning/how-to-create-a-module-for-smartpath.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-create-a-module-for-smartpath",
+  "permalink": "/learning/how-to-create-a-module-for-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-create-a-module-for-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 76,
+  "frontMatter": {
+    "title": "How to create a module for SmartPath.",
+    "description": "",
+    "slug": "how-to-create-a-module-for-smartpath",
+    "sidebar_position": 76,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd6f70a23119734ee37f088",
+    "helpscout_url": "https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add an 'Audio file' to a question.",
+    "permalink": "/learning/how-to-add-an-audio-file-to-a-question"
+  },
+  "next": {
+    "title": "What are SmartPaths.",
+    "permalink": "/learning/what-are-smartpaths"
+  }
+}

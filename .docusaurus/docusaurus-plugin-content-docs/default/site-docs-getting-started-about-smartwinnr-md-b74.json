@@ -1,0 +1,34 @@
+{
+  "id": "getting-started/about-smartwinnr",
+  "title": "About SmartWinnr",
+  "description": "Introduction to SmartWinnr platform and its key features",
+  "source": "@site/docs/getting-started/about-smartwinnr.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/about-smartwinnr",
+  "permalink": "/getting-started/about-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/about-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "About SmartWinnr",
+    "description": "Introduction to SmartWinnr platform and its key features",
+    "slug": "about-smartwinnr",
+    "sidebar_position": 5,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is SmartWinnr?",
+    "permalink": "/getting-started/what-is-smartwinnr"
+  },
+  "next": {
+    "title": "How can I login to SmartWinnr App?",
+    "permalink": "/getting-started/how-can-i-login-to-smartwinnr-app"
+  }
+}

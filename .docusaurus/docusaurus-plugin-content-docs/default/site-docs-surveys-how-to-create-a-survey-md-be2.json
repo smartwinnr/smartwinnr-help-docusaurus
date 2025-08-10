@@ -1,0 +1,36 @@
+{
+  "id": "surveys/how-to-create-a-survey",
+  "title": "How to create a 'Survey'.",
+  "description": "",
+  "source": "@site/docs/surveys/how-to-create-a-survey.md",
+  "sourceDirName": "surveys",
+  "slug": "/surveys/how-to-create-a-survey",
+  "permalink": "/surveys/how-to-create-a-survey",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/surveys/how-to-create-a-survey.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 58,
+  "frontMatter": {
+    "title": "How to create a 'Survey'.",
+    "description": "",
+    "slug": "how-to-create-a-survey",
+    "sidebar_position": 58,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd49bd14eb32171b80374c6",
+    "helpscout_url": "https://help.smartwinnr.com/article/58-how-can-i-create-a-survey"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Surveys",
+    "permalink": "/surveys/"
+  },
+  "next": {
+    "title": "How to assign a Survey.",
+    "permalink": "/surveys/how-to-assign-a-survey"
+  }
+}

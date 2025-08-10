@@ -1,0 +1,36 @@
+{
+  "id": "admin/how-to-create-a-group",
+  "title": "How to create a group?",
+  "description": "",
+  "source": "@site/docs/admin/how-to-create-a-group.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/how-to-create-a-group",
+  "permalink": "/admin/how-to-create-a-group",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin/how-to-create-a-group.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 129,
+  "frontMatter": {
+    "title": "How to create a group?",
+    "description": "",
+    "slug": "how-to-create-a-group",
+    "sidebar_position": 129,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda5572a5d295659b369917",
+    "helpscout_url": "https://help.smartwinnr.com/article/129-how-to-create-a-group"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can an Admin change anyone's password?",
+    "permalink": "/admin/how-can-an-admin-change-anyone-s-password"
+  },
+  "next": {
+    "title": "How to Add a new Division?",
+    "permalink": "/admin/how-to-add-a-new-division"
+  }
+}

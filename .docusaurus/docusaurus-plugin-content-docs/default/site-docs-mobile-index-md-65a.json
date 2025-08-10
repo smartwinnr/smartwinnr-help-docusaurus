@@ -1,0 +1,20 @@
+{
+  "id": "mobile/index",
+  "title": "Mobile",
+  "description": "Mobile app features and mobile-specific functionality.",
+  "source": "@site/docs/mobile/index.md",
+  "sourceDirName": "mobile",
+  "slug": "/mobile/",
+  "permalink": "/mobile/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/mobile/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Mobile",
+    "description": "Mobile app features and mobile-specific functionality.",
+    "sidebar_position": 1
+  }
+}

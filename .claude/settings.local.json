@@ -19,7 +19,12 @@
       "Bash(kill:*)",
       "Bash(rm:*)",
       "Bash(npx docusaurus swizzle:*)",
-      "WebFetch(domain:developer.helpscout.com)"
+      "WebFetch(domain:developer.helpscout.com)",
+      "Bash(chmod:*)",
+      "Bash(grep:*)",
+      "Bash(tsx:*)",
+      "Bash(pkill:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

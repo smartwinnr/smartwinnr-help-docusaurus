@@ -1,0 +1,36 @@
+{
+  "id": "competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+  "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
+  "description": "",
+  "source": "@site/docs/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+  "permalink": "/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 207,
+  "frontMatter": {
+    "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
+    "description": "",
+    "slug": "how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+    "sidebar_position": 207,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60001addcfe30d219ccd7a03",
+    "helpscout_url": "https://help.smartwinnr.com/article/207-how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+    "permalink": "/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "How to add a Form to Competition?",
+    "permalink": "/competitions/how-to-add-a-form-to-competition"
+  }
+}

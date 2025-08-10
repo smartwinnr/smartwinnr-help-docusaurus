@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/how-to-update-the-smartwinnr-app-web-view",
+  "title": "How to update the SmartWinnr App/Web View?",
+  "description": "",
+  "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-web-view.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/how-to-update-the-smartwinnr-app-web-view",
+  "permalink": "/getting-started/how-to-update-the-smartwinnr-app-web-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/how-to-update-the-smartwinnr-app-web-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20,
+  "frontMatter": {
+    "title": "How to update the SmartWinnr App/Web View?",
+    "description": "",
+    "slug": "how-to-update-the-smartwinnr-app-web-view",
+    "sidebar_position": 20,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fce3d864664bd7a123eb4ea",
+    "helpscout_url": "https://help.smartwinnr.com/article/20-how-to-update-the-smartwinnr-app-web-view"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I check the App version/Web view version?",
+    "permalink": "/getting-started/how-can-i-check-the-app-version-web-view-version"
+  },
+  "next": {
+    "title": "How can I enable push notification for SmartWinnr App?",
+    "permalink": "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app"
+  }
+}

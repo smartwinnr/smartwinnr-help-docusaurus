@@ -49,46 +49,1018 @@
     },
     "config": "config---search-5-e-9-7f5"
   },
-  "/-7fc": {
+  "/-953": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-989": {
+  "/-87c": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-0b4": {
+  "/-650": {
     "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/admin/-42a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-7-e-2-42c"
+  },
+  "/admin/advanced-options-for-projects-dbe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-advanced-options-for-projectsa-1-d-5d1"
+  },
+  "/admin/bulk-custom-notifications-234": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-bulk-custom-notifications-845-fe5"
+  },
+  "/admin/changing-updating-configuration-for-an-organization-b35": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-changing-updating-configuration-for-an-organization-782-1a4"
+  },
+  "/admin/create-users-individually-932": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-create-users-individually-385-8ec"
+  },
+  "/admin/custom-notifications-a80": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-custom-notifications-85-f-b23"
+  },
+  "/admin/how-can-an-admin-change-anyone-s-password-cc0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-an-admin-change-anyone-s-password-0-df-9ba"
+  },
+  "/admin/how-can-i-answer-a-query-499": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-i-answer-a-querye-9-d-4a6"
+  },
+  "/admin/how-can-i-change-the-password-for-a-user-account-092": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-i-change-the-password-for-a-user-accountad-6-fd1"
+  },
+  "/admin/how-can-i-contact-smartwinnr-team-bea": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-i-contact-smartwinnr-team-3-e-6-ae8"
+  },
+  "/admin/how-can-i-submit-a-form-from-chat-c35": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-i-submit-a-form-from-chatd-4-c-8df"
+  },
+  "/admin/how-can-i-submit-a-form-from-left-menu-e45": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-can-i-submit-a-form-from-left-menueab-c97"
+  },
+  "/admin/how-to-add-a-new-division-074": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-a-new-divisionce-3-337"
+  },
+  "/admin/how-to-add-change-targets-525": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-change-targetsfac-213"
+  },
+  "/admin/how-to-add-new-contacts-2c2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-new-contacts-497-d71"
+  },
+  "/admin/how-to-add-new-form-submission-dea": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-new-form-submissioneba-a41"
+  },
+  "/admin/how-to-add-new-rule-ebf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-new-rulea-26-3b6"
+  },
+  "/admin/how-to-add-or-remove-users-to-a-chat-group-5c6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-add-or-remove-users-to-a-chat-group-8-aa-8ec"
+  },
+  "/admin/how-to-approve-reject-a-form-submission-a31": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-approve-reject-a-form-submission-84-d-684"
+  },
+  "/admin/how-to-change-company-logo-bbf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-change-company-logo-6-d-3-160"
+  },
+  "/admin/how-to-create-a-group-b74": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-create-a-group-729-20d"
+  },
+  "/admin/how-to-create-a-new-project-fb6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-create-a-new-project-2-e-7-9e2"
+  },
+  "/admin/how-to-download-a-chat-e4b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-download-a-chate-9-d-7eb"
+  },
+  "/admin/how-to-edit-a-form-on-submitted-by-a-user-2be": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-edit-a-form-on-submitted-by-a-userb-21-f99"
+  },
+  "/admin/how-to-edit-a-project-689": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-edit-a-projectfeb-0d6"
+  },
+  "/admin/how-to-enable-a-chat-group-89a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-enable-a-chat-group-307-f7e"
+  },
+  "/admin/how-to-post-a-query-from-the-smartwinnr-app-f44": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-post-a-query-from-the-smartwinnr-app-26-d-c19"
+  },
+  "/admin/how-to-submit-a-form-on-behalf-of-a-user-a52": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-submit-a-form-on-behalf-of-a-user-82-f-34e"
+  },
+  "/admin/how-to-track-my-organizational-resource-usage-f89": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-track-my-organizational-resource-usagea-02-d7f"
+  },
+  "/admin/how-to-use-qresolve-in-the-smartwinnr-app-692": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-use-qresolve-in-the-smartwinnr-appb-7-e-39a"
+  },
+  "/admin/how-to-view-an-audit-log-99f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-view-an-audit-logf-77-90a"
+  },
+  "/admin/how-to-view-existing-contacts-768": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-view-existing-contactsbff-0a0"
+  },
+  "/admin/how-to-view-notifications-1fe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-to-view-notifications-2-f-3-223"
+  },
+  "/admin/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-abb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-how-users-can-see-the-evaluation-and-scores-for-long-answer-question-6-e-1-b20"
+  },
+  "/admin/manage-password-policy-5bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-manage-password-policyfcb-25a"
+  },
+  "/admin/search-users-e45": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-search-usersccc-ba5"
+  },
+  "/admin/what-are-chat-groups-205": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-what-are-chat-groups-248-dd3"
+  },
+  "/admin/what-is-my-username-and-password-8dc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-what-is-my-username-and-passwordcbb-62f"
+  },
+  "/admin/what-is-qresolve-537": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-what-is-qresolvef-07-539"
+  },
+  "/admin/what-is-the-purpose-of-notifications-4d8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-what-is-the-purpose-of-notifications-660-888"
+  },
+  "/admin/when-are-chat-groups-needed-1cc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---admin-when-are-chat-groups-needed-7-d-5-75b"
+  },
+  "/coaching/-964": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-81-f-263"
+  },
+  "/coaching/create-a-coaching-9f3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-create-a-coaching-92-c-7d3"
+  },
+  "/coaching/how-do-i-upload-a-coaching-video-e36": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-do-i-upload-a-coaching-videocfb-f9c"
+  },
+  "/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-fe5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-7-f-1-d99"
+  },
+  "/coaching/how-to-add-competencies-for-field-coaching-08f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-add-competencies-for-field-coachingca-4-301"
+  },
+  "/coaching/how-to-create-a-video-coaching-assignment-f68": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-create-a-video-coaching-assignmentb-67-07c"
+  },
+  "/coaching/how-to-create-field-coaching-72e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-create-field-coachingad-7-88f"
+  },
+  "/coaching/how-to-create-field-coaching-template-c64": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-create-field-coaching-template-78-f-eba"
+  },
+  "/coaching/how-to-enable-the-streaming-links-for-video-coaching-258": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-enable-the-streaming-links-for-video-coachingdbe-eaa"
+  },
+  "/coaching/how-to-reset-a-coaching-video-4bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-reset-a-coaching-video-0-ca-fcc"
+  },
+  "/coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-b1e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-54-b-51f"
+  },
+  "/coaching/how-to-review-a-video-coaching-assignment-cfa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-review-a-video-coaching-assignment-866-06c"
+  },
+  "/coaching/how-to-review-field-coaching-from-managers-view-in-mobile-170": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-review-field-coaching-from-managers-view-in-mobileef-6-00d"
+  },
+  "/coaching/how-to-set-competencies-bfb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-set-competenciesf-27-835"
+  },
+  "/coaching/how-to-share-a-coaching-video-245": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-share-a-coaching-video-54-e-7a0"
+  },
+  "/coaching/how-to-upload-audio-recording-for-coaching-64c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-upload-audio-recording-for-coaching-0-ed-6ea"
+  },
+  "/coaching/how-to-upload-screen-recording-for-coaching-549": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-upload-screen-recording-for-coaching-6-be-a6c"
+  },
+  "/coaching/how-to-upload-video-recording-for-coaching-0ee": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-how-to-upload-video-recording-for-coaching-528-406"
+  },
+  "/coaching/what-is-my-team-coaching-903": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---coaching-what-is-my-team-coaching-4-c-3-f49"
   },
   "/competitions/-cce": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---competitions-261-4c8"
   },
-  "/microlearning/-735": {
+  "/competitions/define-kpis-d35": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-define-kpis-08-d-78c"
+  },
+  "/competitions/how-can-i-gamify-a-smartpath-fe8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-can-i-gamify-a-smartpath-9-f-7-397"
+  },
+  "/competitions/how-can-i-view-a-competition-leaderboard-1ce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-can-i-view-a-competition-leaderboard-41-f-5c3"
+  },
+  "/competitions/how-do-i-view-the-kpi-scorecard-b7f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-do-i-view-the-kpi-scorecardb-5-c-50c"
+  },
+  "/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-851": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-9-e-9-930"
+  },
+  "/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-b57": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-822-7a7"
+  },
+  "/competitions/how-to-add-a-challenge-to-the-competition-0ec": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-a-challenge-to-the-competitionec-1-74d"
+  },
+  "/competitions/how-to-add-a-form-to-competition-176": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-a-form-to-competition-65-a-b48"
+  },
+  "/competitions/how-to-add-a-scorecard-to-a-competition-c5c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-a-scorecard-to-a-competition-27-d-02d"
+  },
+  "/competitions/how-to-add-different-activities-to-a-challenge-846": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-different-activities-to-a-challenge-87-c-151"
+  },
+  "/competitions/how-to-add-observers-to-the-competition-leaderboard-1ed": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-observers-to-the-competition-leaderboard-490-bf1"
+  },
+  "/competitions/how-to-add-smartfeed-within-a-competition-67c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-smartfeed-within-a-competition-92-a-9bf"
+  },
+  "/competitions/how-to-add-the-scorecard-to-leaderboard-030": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-add-the-scorecard-to-leaderboard-547-056"
+  },
+  "/competitions/how-to-award-points-on-badge-assignment-efa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-award-points-on-badge-assignmentaba-ef1"
+  },
+  "/competitions/how-to-create-a-group-challenge-43a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-a-group-challengeec-0-9d6"
+  },
+  "/competitions/how-to-create-a-manager-challenge-4da": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-a-manager-challenge-32-f-f65"
+  },
+  "/competitions/how-to-create-an-individual-challenge-4e3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-an-individual-challenge-804-f7c"
+  },
+  "/competitions/how-to-create-badges-517": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-badgesb-40-77e"
+  },
+  "/competitions/how-to-create-certifcates-154": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-certifcatesa-57-136"
+  },
+  "/competitions/how-to-create-kpi-609": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-create-kpia-5-a-026"
+  },
+  "/competitions/how-to-upload-kpi-data-ce4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-upload-kpi-data-050-6d0"
+  },
+  "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard-ecf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-how-to-view-the-data-and-leaderboard-for-scorecard-49-e-3be"
+  },
+  "/competitions/leaderboards-of-a-competition-080": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-leaderboards-of-a-competition-6-d-6-faa"
+  },
+  "/competitions/question-bank-ee1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-question-bank-0-f-7-f72"
+  },
+  "/competitions/understand-game-concepts-037": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-understand-game-conceptsc-4-e-402"
+  },
+  "/competitions/what-are-kpi-reports-f72": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-what-are-kpi-reports-53-d-b1e"
+  },
+  "/competitions/what-is-a-challenge-fe1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-what-is-a-challenge-988-fbf"
+  },
+  "/competitions/what-is-an-achievement-a8d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-what-is-an-achievementd-61-691"
+  },
+  "/competitions/what-is-kpi-gamification-c0a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---competitions-what-is-kpi-gamification-615-91f"
+  },
+  "/getting-started/about-smartwinnr-5fb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-about-smartwinnrb-74-b8d"
+  },
+  "/getting-started/account-setup-login-b5c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-account-setup-login-401-2b8"
+  },
+  "/getting-started/app-management-f48": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-app-management-856-ea1"
+  },
+  "/getting-started/browser-and-device-support-0fe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-browser-and-device-support-3-fc-bce"
+  },
+  "/getting-started/how-can-i-change-my-language-in-smartwinnr-app-bff": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-change-my-language-in-smartwinnr-app-358-b2f"
+  },
+  "/getting-started/how-can-i-change-my-password-for-smartwinnr-130": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-change-my-password-for-smartwinnrf-72-676"
+  },
+  "/getting-started/how-can-i-change-my-profile-image-df9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-change-my-profile-image-494-79d"
+  },
+  "/getting-started/how-can-i-check-the-app-version-web-view-version-33d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-check-the-app-version-web-view-version-007-aed"
+  },
+  "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app-9f2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-enable-push-notification-for-smartwinnr-appa-60-52f"
+  },
+  "/getting-started/how-can-i-login-to-smartwinnr-app-538": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-can-i-login-to-smartwinnr-appf-51-dc6"
+  },
+  "/getting-started/how-do-i-unlock-an-account-c62": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-do-i-unlock-an-accountfb-0-cbf"
+  },
+  "/getting-started/how-to-resend-account-invitation-a8d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-to-resend-account-invitation-79-c-ae2"
+  },
+  "/getting-started/how-to-update-the-smartwinnr-app-from-app-view-762": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-to-update-the-smartwinnr-app-from-app-viewf-0-b-0e1"
+  },
+  "/getting-started/how-to-update-the-smartwinnr-app-from-web-view-1b4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-to-update-the-smartwinnr-app-from-web-viewc-0-e-481"
+  },
+  "/getting-started/how-to-update-the-smartwinnr-app-web-view-414": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-how-to-update-the-smartwinnr-app-web-view-660-d9b"
+  },
+  "/getting-started/manager-features-fbe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-manager-features-280-254"
+  },
+  "/getting-started/my-account-is-locked-what-should-i-do-adb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-my-account-is-locked-what-should-i-do-04-b-9b4"
+  },
+  "/getting-started/profile-settings-5c2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-profile-settings-0-be-5fc"
+  },
+  "/getting-started/switching-to-manager-view-79a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-switching-to-manager-view-3-f-2-535"
+  },
+  "/getting-started/what-if-i-ve-forgotten-my-password-ee3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-what-if-i-ve-forgotten-my-password-7-d-7-6fe"
+  },
+  "/getting-started/what-if-i-ve-forgotten-my-pin-191": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-what-if-i-ve-forgotten-my-pin-616-133"
+  },
+  "/getting-started/what-is-smartwinnr-8c1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-what-is-smartwinnr-17-c-abd"
+  },
+  "/learning/-641": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-10-c-d38"
+  },
+  "/learning/how-can-i-create-folders-and-items-in-khub-94c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-can-i-create-folders-and-items-in-khubed-8-c6b"
+  },
+  "/learning/how-can-i-edit-a-khub-folder-name-8bf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-can-i-edit-a-khub-folder-nameefa-d9b"
+  },
+  "/learning/how-can-i-edit-a-khub-item-51e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-can-i-edit-a-khub-itembf-1-d80"
+  },
+  "/learning/how-can-i-view-khub-analytics-799": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-can-i-view-khub-analytics-493-edc"
+  },
+  "/learning/how-do-i-like-a-smartfeed-a43": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-do-i-like-a-smartfeede-82-bd0"
+  },
+  "/learning/how-import-question-is-different-from-add-new-question-721": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-import-question-is-different-from-add-new-question-562-f5e"
+  },
+  "/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app-100": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-access-the-scorm-course-from-the-smartwinnr-appf-8-d-af2"
+  },
+  "/learning/how-to-add-a-image-to-your-content-687": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-a-image-to-your-contenta-6-d-e62"
+  },
+  "/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-f93": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-a-powerpoint-presentation-ppt-to-smartfeede-62-89f"
+  },
+  "/learning/how-to-add-a-recording-to-a-smartfeed-688": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-a-recording-to-a-smartfeed-8-fc-ec8"
+  },
+  "/learning/how-to-add-a-video-to-a-question-6a5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-a-video-to-a-questiond-49-d7c"
+  },
+  "/learning/how-to-add-a-video-to-your-content-6c3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-a-video-to-your-content-34-d-5fd"
+  },
+  "/learning/how-to-add-an-audio-file-to-a-question-e6e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-an-audio-file-to-a-questionc-6-a-6b1"
+  },
+  "/learning/how-to-add-an-audio-file-to-your-content-ece": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-an-audio-file-to-your-contentb-7-b-a8b"
+  },
+  "/learning/how-to-add-an-image-to-the-question-1a7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-an-image-to-the-questioneb-5-f45"
+  },
+  "/learning/how-to-add-learning-sessions-in-smartpath-module-239": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-learning-sessions-in-smartpath-modulef-1-f-15e"
+  },
+  "/learning/how-to-add-reference-to-an-external-link-to-your-content-28b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-add-reference-to-an-external-link-to-your-contentf-4-a-fa1"
+  },
+  "/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-e03": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-3-e-8-291"
+  },
+  "/learning/how-to-attach-pdf-file-to-your-content-024": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-attach-pdf-file-to-your-content-3-e-9-511"
+  },
+  "/learning/how-to-create-a-module-for-smartpath-63a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-create-a-module-for-smartpath-58-e-c3b"
+  },
+  "/learning/how-to-create-a-smartfeed-9da": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-create-a-smartfeed-17-d-745"
+  },
+  "/learning/how-to-create-a-smartpath-006": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-create-a-smartpatheeb-cae"
+  },
+  "/learning/how-to-create-smartpath-with-learning-sessions-af3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-create-smartpath-with-learning-sessions-415-a81"
+  },
+  "/learning/how-to-delete-smartfeeds-fe2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-delete-smartfeeds-05-f-4f0"
+  },
+  "/learning/how-to-download-share-a-smartfeed-in-smartpath-fad": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-download-share-a-smartfeed-in-smartpath-93-d-353"
+  },
+  "/learning/how-to-edit-a-smartfeed-8b5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-edit-a-smartfeed-1-ed-4d7"
+  },
+  "/learning/how-to-edit-a-smartpath-cb7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-edit-a-smartpath-3-c-6-1c6"
+  },
+  "/learning/how-to-embed-a-link-into-the-question-b4a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-embed-a-link-into-the-question-3-e-7-f67"
+  },
+  "/learning/how-to-mark-the-attendance-for-users-in-learning-sessions-0f9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-mark-the-attendance-for-users-in-learning-sessionsf-95-87a"
+  },
+  "/learning/how-to-send-a-smartfeed-multiple-times-569": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-send-a-smartfeed-multiple-times-060-929"
+  },
+  "/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-897": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-5-f-4-743"
+  },
+  "/learning/how-to-send-the-smartfeed-to-teams-478": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-send-the-smartfeed-to-teams-880-7f9"
+  },
+  "/learning/how-to-use-khub-in-the-smartwinnr-app-227": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-use-khub-in-the-smartwinnr-appc-0-c-059"
+  },
+  "/learning/how-to-view-all-the-smartfeeds-187": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-view-all-the-smartfeedsb-65-1a6"
+  },
+  "/learning/how-to-view-smartfeed-analytics-e0a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-view-smartfeed-analytics-6-d-7-94f"
+  },
+  "/learning/how-to-view-the-smartpath-analytics-b89": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-how-to-view-the-smartpath-analyticsb-54-eb7"
+  },
+  "/learning/knowledge-hub-khub-fa2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-knowledge-hub-khub-301-f09"
+  },
+  "/learning/smartfeed-management-e36": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-smartfeed-management-68-a-791"
+  },
+  "/learning/smartpath-management-0b6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-smartpath-management-99-c-da6"
+  },
+  "/learning/understanding-recent-trending-and-latest-khub-items-736": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-understanding-recent-trending-and-latest-khub-items-2-e-2-de8"
+  },
+  "/learning/what-are-smartfeeds-608": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-what-are-smartfeeds-78-c-aa0"
+  },
+  "/learning/what-are-smartpaths-df8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-what-are-smartpaths-955-6b6"
+  },
+  "/learning/what-is-khub-13d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---learning-what-is-khubd-3-c-086"
+  },
+  "/microlearning/-fff": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---microlearning-06-b-163"
   },
-  "/quiz/-9eb": {
+  "/mobile/-4fd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---mobile-65-a-d4c"
+  },
+  "/quiz/-714": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---quiz-f-4-f-e9f"
   },
-  "/quiz/creating-quiz-a48": {
+  "/quiz/creating-quiz-cd0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---quiz-creating-quiz-516-c27"
   },
-  "/quiz/managing-questions-456": {
+  "/quiz/managing-questions-1fe": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---quiz-managing-questionscb-8-6d7"
   },
-  "/quiz/quiz-reports-74d": {
+  "/quiz/quiz-reports-c4f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---quiz-quiz-reports-53-c-b27"
   },
-  "/quiz/quiz-settings-414": {
+  "/quiz/quiz-settings-92f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---quiz-quiz-settings-91-b-767"
+  },
+  "/quizzes/-969": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-62-b-d4e"
+  },
+  "/quizzes/create-users-in-bulk-1b2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-create-users-in-bulk-8-a-2-bc1"
+  },
+  "/quizzes/creating-quizzes-5ba": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-creating-quizzesb-3-a-fff"
+  },
+  "/quizzes/delete-users-8de": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-delete-usersfdd-e4b"
+  },
+  "/quizzes/detailed-quiz-analytics-841": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-detailed-quiz-analytics-8-d-3-701"
+  },
+  "/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team-33a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-finding-status-and-scores-for-quizzes-assigned-to-your-team-5-a-7-b8a"
+  },
+  "/quizzes/how-can-i-download-the-smartwinnr-app-f35": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-can-i-download-the-smartwinnr-app-422-71f"
+  },
+  "/quizzes/how-can-i-duplicate-a-quiz-17a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-can-i-duplicate-a-quiz-372-deb"
+  },
+  "/quizzes/how-do-i-give-access-permission-to-other-editors-e69": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-do-i-give-access-permission-to-other-editors-90-f-680"
+  },
+  "/quizzes/how-editors-evaluate-long-answer-questions-4db": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-editors-evaluate-long-answer-questions-4-d-6-d7a"
+  },
+  "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes-93f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-activate-automatic-reminders-for-your-quizzes-77-e-5de"
+  },
+  "/quizzes/how-to-activate-or-deactivate-a-user-420": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-activate-or-deactivate-a-user-260-63a"
+  },
+  "/quizzes/how-to-add-a-quiz-to-a-competition-b9f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-add-a-quiz-to-a-competition-2-c-0-9f9"
+  },
+  "/quizzes/how-to-add-a-survey-to-a-competition-5bc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-add-a-survey-to-a-competition-3-fb-ab7"
+  },
+  "/quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr-099": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-answer-long-answer-type-questions-in-smartwinnr-457-77a"
+  },
+  "/quizzes/how-to-create-a-competition-1df": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-competition-96-d-a07"
+  },
+  "/quizzes/how-to-create-a-drag-and-drop-into-image-question-955": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-drag-and-drop-into-image-questiond-6-a-ec4"
+  },
+  "/quizzes/how-to-create-a-drag-and-drop-into-text-question-a0e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-drag-and-drop-into-text-question-07-c-746"
+  },
+  "/quizzes/how-to-create-a-hotspot-question-db4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-hotspot-question-8-eb-7c5"
+  },
+  "/quizzes/how-to-create-a-manual-quiz-5ef": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-manual-quiz-5-c-7-cb9"
+  },
+  "/quizzes/how-to-create-a-matching-question-9bc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-matching-question-6-e-7-1cb"
+  },
+  "/quizzes/how-to-create-a-missing-words-question-260": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-a-missing-words-questionf-9-f-148"
+  },
+  "/quizzes/how-to-create-an-automatic-quiz-d20": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-an-automatic-quiz-02-c-5ba"
+  },
+  "/quizzes/how-to-create-fill-in-the-blank-questions-0f8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-fill-in-the-blank-questions-2-b-5-b5f"
+  },
+  "/quizzes/how-to-create-long-answer-questions-c54": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-long-answer-questions-929-c53"
+  },
+  "/quizzes/how-to-create-multiple-choice-questions-1e5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-multiple-choice-questions-58-e-7b0"
+  },
+  "/quizzes/how-to-create-numeric-type-questions-d4c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-numeric-type-questionse-21-89c"
+  },
+  "/quizzes/how-to-create-re-order-questions-432": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-create-re-order-questionsdf-6-722"
+  },
+  "/quizzes/how-to-duplicate-a-quiz-in-a-competition-cbf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-duplicate-a-quiz-in-a-competitiond-7-c-dce"
+  },
+  "/quizzes/how-to-edit-a-question-cf1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-edit-a-questionca-3-072"
+  },
+  "/quizzes/how-to-edit-the-form-submission-from-manager-s-view-ef5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-edit-the-form-submission-from-manager-s-viewd-73-86e"
+  },
+  "/quizzes/how-to-find-the-progress-of-your-team-in-quizzes-d1e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-find-the-progress-of-your-team-in-quizzes-854-065"
+  },
+  "/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-3cd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-1-a-8-3a5"
+  },
+  "/quizzes/how-to-import-scorm-course-into-smartwinnr-6e4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-import-scorm-course-into-smartwinnr-7-a-5-238"
+  },
+  "/quizzes/how-to-manage-quiz-configurations-5b1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-manage-quiz-configurations-9-ed-a4a"
+  },
+  "/quizzes/how-to-open-and-close-a-quiz-24a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-open-and-close-a-quizb-85-52b"
+  },
+  "/quizzes/how-to-send-quizzes-surveys-and-content-using-group-a68": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-send-quizzes-surveys-and-content-using-group-597-91a"
+  },
+  "/quizzes/how-to-set-reminder-for-your-tasks-92a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-set-reminder-for-your-tasks-67-f-dd7"
+  },
+  "/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-647": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-6-d-7-a29"
+  },
+  "/quizzes/how-to-update-question-response-e63": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-update-question-responsedd-1-14c"
+  },
+  "/quizzes/how-to-upload-questions-in-bulk-using-import-questions-d0e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-how-to-upload-questions-in-bulk-using-import-questions-237-e3c"
+  },
+  "/quizzes/learner-overall-report-3af": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-learner-overall-report-9-a-4-a27"
+  },
+  "/quizzes/learner-report-by-learner-individual-report-analytics-af1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-learner-report-by-learner-individual-report-analytics-2-ba-fcb"
+  },
+  "/quizzes/question-response-analytics-f18": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-question-response-analytics-480-00b"
+  },
+  "/quizzes/question-structure-202": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-question-structureafb-0f2"
+  },
+  "/quizzes/quiz-administration-05f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-administrationb-8-e-255"
+  },
+  "/quizzes/quiz-analytics-reports-7f1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-analytics-reports-664-927"
+  },
+  "/quizzes/quiz-analytics-through-charts-0cf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-analytics-through-charts-238-d0b"
+  },
+  "/quizzes/quiz-comparison-report-0c0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-comparison-report-841-80f"
+  },
+  "/quizzes/quiz-types-616": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-types-225-512"
+  },
+  "/quizzes/quiz-wise-analytics-275": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-quiz-wise-analytics-152-7de"
+  },
+  "/quizzes/short-answer-with-multiple-options-cbd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-short-answer-with-multiple-options-14-e-8e8"
+  },
+  "/quizzes/team-analytics-0d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-team-analytics-3-f-9-cb3"
+  },
+  "/quizzes/team-progress-report-4f7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-team-progress-report-037-338"
+  },
+  "/quizzes/understanding-knowledge-categories-9e4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-understanding-knowledge-categories-7-f-7-2d0"
+  },
+  "/quizzes/what-is-a-competition-f91": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-what-is-a-competitioncd-4-ce9"
+  },
+  "/quizzes/what-is-a-group-a08": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-what-is-a-groupcdb-72f"
+  },
+  "/quizzes/what-is-a-rule-218": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-what-is-a-rule-5-d-3-f8d"
+  },
+  "/quizzes/what-is-audit-log-2f4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-what-is-audit-log-5-ac-508"
+  },
+  "/quizzes/what-is-smartwinnr-quiz-analytics-443": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---quizzes-what-is-smartwinnr-quiz-analyticsf-3-b-ec4"
+  },
+  "/reports/-ab1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-432-7a6"
+  },
+  "/reports/detailed-explanation-of-reports-fc3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-detailed-explanation-of-reports-74-b-d58"
+  },
+  "/reports/form-analytics-bbb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-form-analytics-668-93b"
+  },
+  "/reports/how-managers-approve-form-deb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-managers-approve-formd-84-5f5"
+  },
+  "/reports/how-to-add-approvers-to-a-form-e04": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-add-approvers-to-a-forme-5-c-a91"
+  },
+  "/reports/how-to-create-a-field-mapping-cd9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-create-a-field-mapping-7-f-0-80e"
+  },
+  "/reports/how-to-create-a-form-880": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-create-a-form-158-f07"
+  },
+  "/reports/how-to-create-a-scorecard-261": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-create-a-scorecardae-1-9f2"
+  },
+  "/reports/how-to-create-sales-tv-dd0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-create-sales-tv-13-f-ee2"
+  },
+  "/reports/how-to-view-project-d45": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-how-to-view-projectdbd-ff2"
+  },
+  "/reports/user-login-reports-b37": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-user-login-reportsef-6-903"
+  },
+  "/reports/what-are-field-mappings-0f5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-what-are-field-mappingseac-c51"
+  },
+  "/reports/what-are-scorecards-566": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-what-are-scorecardsd-02-2ab"
+  },
+  "/reports/widgets-42d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---reports-widgetsd-0-f-acb"
+  },
+  "/surveys/-7f1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-5-f-7-005"
+  },
+  "/surveys/how-to-add-a-video-coaching-to-the-competition-38c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-add-a-video-coaching-to-the-competition-97-b-0eb"
+  },
+  "/surveys/how-to-assign-a-survey-fa8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-assign-a-survey-062-2a9"
+  },
+  "/surveys/how-to-create-a-survey-987": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-create-a-surveybe-2-bf7"
+  },
+  "/surveys/how-to-create-a-survey-template-b7f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-create-a-survey-templatec-87-687"
+  },
+  "/surveys/how-to-delete-a-survey-0dd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-delete-a-survey-652-cc3"
+  },
+  "/surveys/how-to-duplicate-a-survey-and-survey-template-55a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-how-to-duplicate-a-survey-and-survey-template-7-aa-704"
+  },
+  "/surveys/survey-analytics-863": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-survey-analyticsbac-726"
+  },
+  "/surveys/survey-template-analytics-09c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-survey-template-analyticsbfb-506"
+  },
+  "/surveys/what-are-the-different-question-types-in-a-survey-survey-template-fbe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-what-are-the-different-question-types-in-a-survey-survey-templatec-62-e46"
+  },
+  "/surveys/what-is-the-difference-between-a-survey-and-a-survey-template-74f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---surveys-what-is-the-difference-between-a-survey-and-a-survey-templated-91-673"
+  },
+  "/troubleshooting/-693": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---troubleshooting-d-65-bc5"
+  },
+  "/troubleshooting/troubleshoot-for-common-error-code-6cc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---troubleshooting-troubleshoot-for-common-error-codef-2-f-a59"
   },
   "/-185": {
     "__comp": "__comp---theme-doc-item-178-a40",

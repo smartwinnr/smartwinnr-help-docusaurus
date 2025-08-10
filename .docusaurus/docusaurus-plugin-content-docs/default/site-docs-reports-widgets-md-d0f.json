@@ -1,0 +1,36 @@
+{
+  "id": "reports/widgets",
+  "title": "Widgets",
+  "description": "",
+  "source": "@site/docs/reports/widgets.md",
+  "sourceDirName": "reports",
+  "slug": "/reports/widgets",
+  "permalink": "/reports/widgets",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports/widgets.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 257,
+  "frontMatter": {
+    "title": "Widgets",
+    "description": "",
+    "slug": "widgets",
+    "sidebar_position": 257,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60deaa9261c60c534bd6b92e",
+    "helpscout_url": "https://help.smartwinnr.com/article/257-widgets"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add Approvers to a Form",
+    "permalink": "/reports/how-to-add-approvers-to-a-form"
+  },
+  "next": {
+    "title": "Admin",
+    "permalink": "/admin/"
+  }
+}

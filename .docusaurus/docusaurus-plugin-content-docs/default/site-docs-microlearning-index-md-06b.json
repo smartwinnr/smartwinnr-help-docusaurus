@@ -14,14 +14,5 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Settings",
-    "permalink": "/quiz/quiz-settings"
-  },
-  "next": {
-    "title": "Sales Competitions",
-    "permalink": "/competitions/"
   }
 }

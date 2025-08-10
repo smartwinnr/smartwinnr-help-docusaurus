@@ -17,7 +17,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Microlearning with SmartFeeds",
-    "permalink": "/microlearning/"
+    "title": "Create a Coaching",
+    "permalink": "/coaching/create-a-coaching"
+  },
+  "next": {
+    "title": "Question bank",
+    "permalink": "/competitions/question-bank"
   }
 }

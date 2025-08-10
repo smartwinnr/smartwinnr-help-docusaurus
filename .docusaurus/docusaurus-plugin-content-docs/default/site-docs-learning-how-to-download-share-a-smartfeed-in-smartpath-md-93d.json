@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-download-share-a-smartfeed-in-smartpath",
+  "title": "How to download/Share  a smartfeed in smartpath",
+  "description": "",
+  "source": "@site/docs/learning/how-to-download-share-a-smartfeed-in-smartpath.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-download-share-a-smartfeed-in-smartpath",
+  "permalink": "/learning/how-to-download-share-a-smartfeed-in-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-download-share-a-smartfeed-in-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 273,
+  "frontMatter": {
+    "title": "How to download/Share  a smartfeed in smartpath",
+    "description": "",
+    "slug": "how-to-download-share-a-smartfeed-in-smartpath",
+    "sidebar_position": 273,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6309b2f090c29a3d732c2441",
+    "helpscout_url": "https://help.smartwinnr.com/article/273-how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to access the SCORM course from the SmartWinnr app ?",
+    "permalink": "/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "How can I edit a KHub folder name ?",
+    "permalink": "/learning/how-can-i-edit-a-khub-folder-name"
+  }
+}

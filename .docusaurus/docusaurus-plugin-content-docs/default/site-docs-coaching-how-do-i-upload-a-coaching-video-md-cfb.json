@@ -1,0 +1,36 @@
+{
+  "id": "coaching/how-do-i-upload-a-coaching-video",
+  "title": "How do I upload a coaching video?",
+  "description": "",
+  "source": "@site/docs/coaching/how-do-i-upload-a-coaching-video.md",
+  "sourceDirName": "coaching",
+  "slug": "/coaching/how-do-i-upload-a-coaching-video",
+  "permalink": "/coaching/how-do-i-upload-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching/how-do-i-upload-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 86,
+  "frontMatter": {
+    "title": "How do I upload a coaching video?",
+    "description": "",
+    "slug": "how-do-i-upload-a-coaching-video",
+    "sidebar_position": 86,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd728293d1d2a5b1c5ea4c8",
+    "helpscout_url": "https://help.smartwinnr.com/article/86-how-do-i-upload-a-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Video Coaching assignment.",
+    "permalink": "/coaching/how-to-create-a-video-coaching-assignment"
+  },
+  "next": {
+    "title": "How to review a video coaching assignment.",
+    "permalink": "/coaching/how-to-review-a-video-coaching-assignment"
+  }
+}

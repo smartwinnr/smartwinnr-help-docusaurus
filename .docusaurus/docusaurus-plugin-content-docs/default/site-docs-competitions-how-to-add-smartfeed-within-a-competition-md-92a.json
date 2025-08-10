@@ -1,0 +1,36 @@
+{
+  "id": "competitions/how-to-add-smartfeed-within-a-competition",
+  "title": "How to add smartfeed within a Competition",
+  "description": "",
+  "source": "@site/docs/competitions/how-to-add-smartfeed-within-a-competition.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/how-to-add-smartfeed-within-a-competition",
+  "permalink": "/competitions/how-to-add-smartfeed-within-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/how-to-add-smartfeed-within-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 289,
+  "frontMatter": {
+    "title": "How to add smartfeed within a Competition",
+    "description": "",
+    "slug": "how-to-add-smartfeed-within-a-competition",
+    "sidebar_position": 289,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "665cc161463661770bfb12d6",
+    "helpscout_url": "https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Award Points on Badge Assignment",
+    "permalink": "/competitions/how-to-award-points-on-badge-assignment"
+  },
+  "next": {
+    "title": "Surveys",
+    "permalink": "/surveys/"
+  }
+}

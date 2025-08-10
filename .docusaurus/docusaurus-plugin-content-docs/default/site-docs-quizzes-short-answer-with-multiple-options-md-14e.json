@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/short-answer-with-multiple-options",
+  "title": "Short Answer With Multiple Options",
+  "description": "",
+  "source": "@site/docs/quizzes/short-answer-with-multiple-options.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/short-answer-with-multiple-options",
+  "permalink": "/quizzes/short-answer-with-multiple-options",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/short-answer-with-multiple-options.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 280,
+  "frontMatter": {
+    "title": "Short Answer With Multiple Options",
+    "description": "",
+    "slug": "short-answer-with-multiple-options",
+    "sidebar_position": 280,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "64115177a0408f7cb1038c2d",
+    "helpscout_url": "https://help.smartwinnr.com/article/280-short-answer-with-multiple-options"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to ‘Open’ and ‘Close’ a Quiz",
+    "permalink": "/quizzes/how-to-open-and-close-a-quiz"
+  },
+  "next": {
+    "title": "How to create a 'Drag and Drop into Text question '.",
+    "permalink": "/quizzes/how-to-create-a-drag-and-drop-into-text-question"
+  }
+}

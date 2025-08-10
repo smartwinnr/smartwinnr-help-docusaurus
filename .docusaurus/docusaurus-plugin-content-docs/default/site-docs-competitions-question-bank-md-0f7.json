@@ -1,0 +1,36 @@
+{
+  "id": "competitions/question-bank",
+  "title": "Question bank",
+  "description": "",
+  "source": "@site/docs/competitions/question-bank.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/question-bank",
+  "permalink": "/competitions/question-bank",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/question-bank.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 39,
+  "frontMatter": {
+    "title": "Question bank",
+    "description": "",
+    "slug": "question-bank",
+    "sidebar_position": 39,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4545236980410c9123806",
+    "helpscout_url": "https://help.smartwinnr.com/article/39-question-bank"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sales Competitions",
+    "permalink": "/competitions/"
+  },
+  "next": {
+    "title": "How can I Gamify a SmartPath?",
+    "permalink": "/competitions/how-can-i-gamify-a-smartpath"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/how-to-edit-a-question",
+  "title": "How to edit a question?",
+  "description": "",
+  "source": "@site/docs/quizzes/how-to-edit-a-question.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/how-to-edit-a-question",
+  "permalink": "/quizzes/how-to-edit-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/how-to-edit-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 202,
+  "frontMatter": {
+    "title": "How to edit a question?",
+    "description": "",
+    "slug": "how-to-edit-a-question",
+    "sidebar_position": 202,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5ffc7b6c66df373cab7081aa",
+    "helpscout_url": "https://help.smartwinnr.com/article/202-how-to-edit-a-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question Structure",
+    "permalink": "/quizzes/question-structure"
+  },
+  "next": {
+    "title": "How to Set Reminder for your Tasks",
+    "permalink": "/quizzes/how-to-set-reminder-for-your-tasks"
+  }
+}

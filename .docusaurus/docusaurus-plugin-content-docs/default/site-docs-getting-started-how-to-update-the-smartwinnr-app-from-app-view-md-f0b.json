@@ -1,0 +1,36 @@
+{
+  "id": "getting-started/how-to-update-the-smartwinnr-app-from-app-view",
+  "title": "How to update the SmartWinnr App from App View",
+  "description": "",
+  "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-from-app-view.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view",
+  "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/how-to-update-the-smartwinnr-app-from-app-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 290,
+  "frontMatter": {
+    "title": "How to update the SmartWinnr App from App View",
+    "description": "",
+    "slug": "how-to-update-the-smartwinnr-app-from-app-view",
+    "sidebar_position": 290,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "66d0cb66d816d165867bf4de",
+    "helpscout_url": "https://help.smartwinnr.com/article/290-httpshelpsmartwinnrcomarticle290-how-can-i-update-the-smartwinnr-app-from-the-app-view"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I unlock an account?",
+    "permalink": "/getting-started/how-do-i-unlock-an-account"
+  },
+  "next": {
+    "title": "How to update the SmartWinnr App from Web View",
+    "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view"
+  }
+}

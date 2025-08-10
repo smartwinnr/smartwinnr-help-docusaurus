@@ -1,0 +1,34 @@
+{
+  "id": "getting-started/app-management",
+  "title": "App Management",
+  "description": "Guide for updating the SmartWinnr app, checking versions, and system requirements",
+  "source": "@site/docs/getting-started/app-management.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/app-management",
+  "permalink": "/getting-started/app-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/app-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "App Management",
+    "description": "Guide for updating the SmartWinnr app, checking versions, and system requirements",
+    "slug": "app-management",
+    "sidebar_position": 3,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Profile & Settings",
+    "permalink": "/getting-started/profile-settings"
+  },
+  "next": {
+    "title": "Manager Features",
+    "permalink": "/getting-started/manager-features"
+  }
+}

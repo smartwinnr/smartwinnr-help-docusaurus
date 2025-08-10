@@ -1,0 +1,36 @@
+{
+  "id": "reports/what-are-scorecards",
+  "title": "What are Scorecards?",
+  "description": "",
+  "source": "@site/docs/reports/what-are-scorecards.md",
+  "sourceDirName": "reports",
+  "slug": "/reports/what-are-scorecards",
+  "permalink": "/reports/what-are-scorecards",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports/what-are-scorecards.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 175,
+  "frontMatter": {
+    "title": "What are Scorecards?",
+    "description": "",
+    "slug": "what-are-scorecards",
+    "sidebar_position": 175,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0e92a5d295659b369c6c",
+    "helpscout_url": "https://help.smartwinnr.com/article/175-what-are-scorecards"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Field Mapping?",
+    "permalink": "/reports/how-to-create-a-field-mapping"
+  },
+  "next": {
+    "title": "How to create a Scorecard?",
+    "permalink": "/reports/how-to-create-a-scorecard"
+  }
+}

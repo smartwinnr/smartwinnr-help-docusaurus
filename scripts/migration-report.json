@@ -1,0 +1,1816 @@
+{
+  "summary": {
+    "successful": 226,
+    "failed": 0
+  },
+  "results": [
+    {
+      "id": "5fd45c1523119734ee37ed79",
+      "title": "How to create 'Multiple-Choice Questions'.",
+      "folder": "quiz",
+      "filename": "how-to-create-multiple-choice-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "641a2df7d6394b6fc7ed9fb2",
+      "title": "How to create a missing words question?",
+      "folder": "quiz",
+      "filename": "how-to-create-a-missing-words-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "641a2e5bdf67f62fb768a4ca",
+      "title": "How to create a Drag and Drop into Image Question?",
+      "folder": "quiz",
+      "filename": "how-to-create-a-drag-and-drop-into-image-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "64115177a0408f7cb1038c2d",
+      "title": "Short Answer With Multiple Options",
+      "folder": "quiz",
+      "filename": "short-answer-with-multiple-options.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6411592461f16344e3a359c8",
+      "title": "How to create a 'Drag and Drop into Text question '.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-drag-and-drop-into-text-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd10365db2fa3720c7d7a2f",
+      "title": "How to create a SmartFeed?",
+      "folder": "getting-started",
+      "filename": "how-to-create-a-smartfeed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6451ac447fbafd6b38243f84",
+      "title": "How to create 'Numeric Type Questions'",
+      "folder": "quiz",
+      "filename": "how-to-create-numeric-type-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd46a20c868cb6df3a80ff5",
+      "title": "How to create a 'Matching Question'.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-matching-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd72036c868cb6df3a813bf",
+      "title": "How to create a Video Coaching assignment.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-video-coaching-assignment.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4623dc868cb6df3a80fe9",
+      "title": "How to create 'Fill-In-The-Blank' Questions.",
+      "folder": "quiz",
+      "filename": "how-to-create-fill-in-the-blank-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd48eb723119734ee37eda5",
+      "title": "Quiz types",
+      "folder": "quiz",
+      "filename": "quiz-types.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fcf7718da652271f08d3f5e",
+      "title": "What are SmartFeeds?",
+      "folder": "forms",
+      "filename": "what-are-smartfeeds.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda26d77129911ba1b219c1",
+      "title": "Leaderboards of a competition",
+      "folder": "competitions",
+      "filename": "leaderboards-of-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd1082c80488e39007cbd4c",
+      "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+      "folder": "forms",
+      "filename": "how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd6f70a23119734ee37f088",
+      "title": "How to create a module for SmartPath.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-module-for-smartpath.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4640136980410c912381c",
+      "title": "How to create a 'Hotspot Question'.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-hotspot-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd711e636980410c9123b73",
+      "title": "How to create a SmartPath.",
+      "folder": "smartpath",
+      "filename": "how-to-create-a-smartpath.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd48f1123119734ee37eda6",
+      "title": "How to create an automatic quiz?",
+      "folder": "quiz",
+      "filename": "how-to-create-an-automatic-quiz.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4521236980410c9123802",
+      "title": "Understanding knowledge categories",
+      "folder": "quiz",
+      "filename": "understanding-knowledge-categories.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd490113d1d2a5b1c5ea153",
+      "title": "How to create a manual quiz?",
+      "folder": "quiz",
+      "filename": "how-to-create-a-manual-quiz.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4e5ddc868cb6df3a8109f",
+      "title": "How to add a video to your content?",
+      "folder": "forms",
+      "filename": "how-to-add-a-video-to-your-content.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd49bd14eb32171b80374c6",
+      "title": "How to create a 'Survey'.",
+      "folder": "quiz",
+      "filename": "how-to-create-a-survey.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4545236980410c9123806",
+      "title": "Question bank",
+      "folder": "competitions",
+      "filename": "question-bank.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6106badbb37d837a3d0df896",
+      "title": "How to Mark the attendance for Users  in Learning Sessions?",
+      "folder": "users",
+      "filename": "how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60b8befc4dda6972e0931f8a",
+      "title": "How to Create SmartPath with Learning Sessions?",
+      "folder": "quiz",
+      "filename": "how-to-create-smartpath-with-learning-sessions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdae8ca27288b7f895d64e3",
+      "title": "How can I create folders and items in KHub?",
+      "folder": "forms",
+      "filename": "how-can-i-create-folders-and-items-in-khub.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5ffc6928bb5c6f7434e0f991",
+      "title": "Question Structure",
+      "folder": "quiz",
+      "filename": "question-structure.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a4febd13fd125a39b4516e",
+      "title": "How to create Field Coaching",
+      "folder": "competitions",
+      "filename": "how-to-create-field-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda5572a5d295659b369917",
+      "title": "How to create a group?",
+      "folder": "getting-started",
+      "filename": "how-to-create-a-group.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60e1fc479e87cb3d01249e3c",
+      "title": "How to create 'Long Answer' Questions?",
+      "folder": "quiz",
+      "filename": "how-to-create-long-answer-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdae88db624c71b7985a587",
+      "title": "What is KHub?",
+      "folder": "getting-started",
+      "filename": "what-is-khub.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60deaa9261c60c534bd6b92e",
+      "title": "Widgets",
+      "folder": "reports",
+      "filename": "widgets.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9ac9fa5d295659b36957e",
+      "title": "What is a Competition?",
+      "folder": "quiz",
+      "filename": "what-is-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd8c043b624c71b798599c8",
+      "title": "How to Create a form?",
+      "folder": "reports",
+      "filename": "how-to-create-a-form.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd496523d1d2a5b1c5ea15c",
+      "title": "Detailed Quiz Analytics",
+      "folder": "quiz",
+      "filename": "detailed-quiz-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62b3e9dd0729834c424f8fad",
+      "title": "How to Import SCORM course into SmartWinnr?",
+      "folder": "quiz",
+      "filename": "how-to-import-scorm-course-into-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60f9c61c766e8844fc34922e",
+      "title": "How Editors evaluate Long Answer Questions?",
+      "folder": "quiz",
+      "filename": "how-editors-evaluate-long-answer-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb1597a5d295659b369c89",
+      "title": "What is a Challenge?",
+      "folder": "getting-started",
+      "filename": "what-is-a-challenge.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd113efb6c6251cd1c34bc5",
+      "title": "How to view SmartFeed Analytics?",
+      "folder": "reports",
+      "filename": "how-to-view-smartfeed-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd72ca536980410c9123bbe",
+      "title": "How to share a Coaching Video.",
+      "folder": "competitions",
+      "filename": "how-to-share-a-coaching-video.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd713dc23119734ee37f0cb",
+      "title": "How to view the SmartPath Analytics.",
+      "folder": "quiz",
+      "filename": "how-to-view-the-smartpath-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd72b2fc868cb6df3a813e5",
+      "title": "How to review a video coaching assignment.",
+      "folder": "coaching",
+      "filename": "how-to-review-a-video-coaching-assignment.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd49470c868cb6df3a8102a",
+      "title": "How to activate automatic reminders for your quizzes",
+      "folder": "quiz",
+      "filename": "how-to-activate-automatic-reminders-for-your-quizzes.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb13f67129911ba1b21e6b",
+      "title": "How to create a Scorecard?",
+      "folder": "reports",
+      "filename": "how-to-create-a-scorecard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd10c66b6c6251cd1c34b95",
+      "title": "How to edit a SmartFeed?",
+      "folder": "getting-started",
+      "filename": "how-to-edit-a-smartfeed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9adaa7129911ba1b2173b",
+      "title": "How to add a Quiz to a competition?",
+      "folder": "quiz",
+      "filename": "how-to-add-a-quiz-to-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a645beeb3af44cc120aa6d",
+      "title": "How to add Learning Sessions In SmartPath Module?",
+      "folder": "quiz",
+      "filename": "how-to-add-learning-sessions-in-smartpath-module.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd49e6623119734ee37edbd",
+      "title": "How to assign a Survey.",
+      "folder": "quiz",
+      "filename": "how-to-assign-a-survey.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4a80723119734ee37edd6",
+      "title": "What is the difference between a Survey and a Survey Template?",
+      "folder": "surveys",
+      "filename": "what-is-the-difference-between-a-survey-and-a-survey-template.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd10f0ba72c62318a4c08b7",
+      "title": "How to send the SmartFeed to Teams?",
+      "folder": "getting-started",
+      "filename": "how-to-send-the-smartfeed-to-teams.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd714514eb32171b80377f9",
+      "title": "How can I Gamify a SmartPath?",
+      "folder": "competitions",
+      "filename": "how-can-i-gamify-a-smartpath.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4a51b23119734ee37edce",
+      "title": "What are the different question types in a Survey /Survey Template?",
+      "folder": "surveys",
+      "filename": "what-are-the-different-question-types-in-a-survey-survey-template.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd7119336980410c9123b70",
+      "title": "What are SmartPaths.",
+      "folder": "quiz",
+      "filename": "what-are-smartpaths.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0e92a5d295659b369c6c",
+      "title": "What are Scorecards?",
+      "folder": "forms",
+      "filename": "what-are-scorecards.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4a44e36980410c9123862",
+      "title": "How to create a 'Survey Template'.",
+      "folder": "surveys",
+      "filename": "how-to-create-a-survey-template.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb086ea5d295659b369c51",
+      "title": "Custom Notifications",
+      "folder": "forms",
+      "filename": "custom-notifications.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0817b624c71b7985a5e5",
+      "title": "What is the purpose of notifications?",
+      "folder": "forms",
+      "filename": "what-is-the-purpose-of-notifications.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda55167129911ba1b21b2c",
+      "title": "What is a Group?",
+      "folder": "quiz",
+      "filename": "what-is-a-group.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd48497c868cb6df3a81016",
+      "title": "How to upload questions in bulk using 'Import Questions'.",
+      "folder": "quiz",
+      "filename": "how-to-upload-questions-in-bulk-using-import-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5ffc7b6c66df373cab7081aa",
+      "title": "How to edit a question?",
+      "folder": "quiz",
+      "filename": "how-to-edit-a-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4bb1b4eb32171b80374ff",
+      "title": "How to add a 'Video' to a question.",
+      "folder": "getting-started",
+      "filename": "how-to-add-a-video-to-a-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda5620b624c71b7985a2d0",
+      "title": "How to send quizzes, surveys and content using group?",
+      "folder": "quiz",
+      "filename": "how-to-send-quizzes-surveys-and-content-using-group.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0c4f0b11ce44f63931c0",
+      "title": "How to create KPI?",
+      "folder": "kpi-gamification",
+      "filename": "how-to-create-kpi.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdbab410b11ce44f6393516",
+      "title": "Team Progress Report",
+      "folder": "quiz",
+      "filename": "team-progress-report.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4955723119734ee37edb5",
+      "title": "What is SmartWinnr Quiz Analytics?",
+      "folder": "quiz",
+      "filename": "what-is-smartwinnr-quiz-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4939923119734ee37edac",
+      "title": "How can I duplicate a quiz?",
+      "folder": "quiz",
+      "filename": "how-can-i-duplicate-a-quiz.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62ad5954cb3c130081c15b53",
+      "title": "How to create Re-order Questions ?",
+      "folder": "quiz",
+      "filename": "how-to-create-re-order-questions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdae9650b11ce44f639315d",
+      "title": "How can I edit a KHub item?",
+      "folder": "getting-started",
+      "filename": "how-can-i-edit-a-khub-item.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "600a9329b9a8501b295d308e",
+      "title": "How to add a Form to Competition?",
+      "folder": "competitions",
+      "filename": "how-to-add-a-form-to-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0c19a5d295659b369c5f",
+      "title": "Define KPIs",
+      "folder": "kpi-gamification",
+      "filename": "define-kpis.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4845e36980410c9123839",
+      "title": "How 'Import question' is  different from 'Add New Question'?",
+      "folder": "getting-started",
+      "filename": "how-import-question-is-different-from-add-new-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4ebed3d1d2a5b1c5ea1d5",
+      "title": "How to attach PDF file to your content?",
+      "folder": "getting-started",
+      "filename": "how-to-attach-pdf-file-to-your-content.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb9acd27288b7f895d6884",
+      "title": "Team Analytics",
+      "folder": "quiz",
+      "filename": "team-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "600850fdcfe30d219ccd99f3",
+      "title": "How to Approve/Reject a Form Submission",
+      "folder": "forms",
+      "filename": "how-to-approve-reject-a-form-submission.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4be483d1d2a5b1c5ea19b",
+      "title": "How to embed a link into the question",
+      "folder": "getting-started",
+      "filename": "how-to-embed-a-link-into-the-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a5315013fd125a39b45357",
+      "title": "How to add the Scorecard to Leaderboard",
+      "folder": "competitions",
+      "filename": "how-to-add-the-scorecard-to-leaderboard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda2e397129911ba1b21a07",
+      "title": "Survey Analytics",
+      "folder": "surveys",
+      "filename": "survey-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60c1f6cea6d12c2cd643e794",
+      "title": "Learner Overall Report",
+      "folder": "quiz",
+      "filename": "learner-overall-report.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda2c167129911ba1b219fb",
+      "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+      "folder": "surveys",
+      "filename": "how-to-duplicate-a-survey-and-survey-template.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4ea8523119734ee37ee1f",
+      "title": "How to add a image to your content?",
+      "folder": "getting-started",
+      "filename": "how-to-add-a-image-to-your-content.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9ff840b11ce44f6392c14",
+      "title": "How to add a Scorecard to a Competition?",
+      "folder": "competitions",
+      "filename": "how-to-add-a-scorecard-to-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60bf40d2a6d12c2cd643da33",
+      "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+      "folder": "getting-started",
+      "filename": "how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6464dc077d89467e9da79320",
+      "title": "How to reset a coaching video",
+      "folder": "coaching",
+      "filename": "how-to-reset-a-coaching-video.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda24cfa5d295659b3697bf",
+      "title": "How to add a challenge to the competition?",
+      "folder": "competitions",
+      "filename": "how-to-add-a-challenge-to-the-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9d20127288b7f895d5e73",
+      "title": "How to add a Survey to a Competition?",
+      "folder": "quiz",
+      "filename": "how-to-add-a-survey-to-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd11017db2fa3720c7d7aae",
+      "title": "How to view all the SmartFeeds?",
+      "folder": "getting-started",
+      "filename": "how-to-view-all-the-smartfeeds.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd7592d0b11ce44f6391e82",
+      "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+      "folder": "quiz",
+      "filename": "how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb14bf27288b7f895d6570",
+      "title": "How to add/change targets?",
+      "folder": "forms",
+      "filename": "how-to-add-change-targets.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a60efceb3af44cc120a91b",
+      "title": "How to add a Recording to a SmartFeed?",
+      "folder": "forms",
+      "filename": "how-to-add-a-recording-to-a-smartfeed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4eaf9c868cb6df3a810a3",
+      "title": "How to add reference to an external link to your content?",
+      "folder": "quiz",
+      "filename": "how-to-add-reference-to-an-external-link-to-your-content.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0e290b11ce44f63931c7",
+      "title": "How to upload KPI data?",
+      "folder": "kpi-gamification",
+      "filename": "how-to-upload-kpi-data.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a370cfeb3af44cc12099d5",
+      "title": "How to add observers to the Competition Leaderboard?",
+      "folder": "competitions",
+      "filename": "how-to-add-observers-to-the-competition-leaderboard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda263d27288b7f895d60b7",
+      "title": "How to Duplicate a quiz in a Competition?",
+      "folder": "quiz",
+      "filename": "how-to-duplicate-a-quiz-in-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda04347129911ba1b218a5",
+      "title": "How to add a Video Coaching to the competition?",
+      "folder": "surveys",
+      "filename": "how-to-add-a-video-coaching-to-the-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb31fb0b11ce44f6393244",
+      "title": "Advanced options for projects",
+      "folder": "getting-started",
+      "filename": "advanced-options-for-projects.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd48e84c868cb6df3a8101f",
+      "title": "Troubleshoot for common error code",
+      "folder": "getting-started",
+      "filename": "troubleshoot-for-common-error-code.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4998236980410c9123856",
+      "title": "Question Response Analytics",
+      "folder": "quiz",
+      "filename": "question-response-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4bccec868cb6df3a8106b",
+      "title": "How to add an 'Image' to the question.",
+      "folder": "getting-started",
+      "filename": "how-to-add-an-image-to-the-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0be80b11ce44f63931bb",
+      "title": "Understand Game Concepts",
+      "folder": "competitions",
+      "filename": "understand-game-concepts.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60bb39acfca38f033a7da5dc",
+      "title": "How to Edit a Form on submitted by a user?",
+      "folder": "users",
+      "filename": "how-to-edit-a-form-on-submitted-by-a-user.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0cd97129911ba1b21e50",
+      "title": "How to create a Field Mapping?",
+      "folder": "reports",
+      "filename": "how-to-create-a-field-mapping.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb2e27b624c71b7985a678",
+      "title": "How to create a new Project?",
+      "folder": "getting-started",
+      "filename": "how-to-create-a-new-project.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb1843a5d295659b369c92",
+      "title": "What are KPI Reports?",
+      "folder": "kpi-gamification",
+      "filename": "what-are-kpi-reports.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb15d60b11ce44f63931e1",
+      "title": "How to create an Individual Challenge?",
+      "folder": "forms",
+      "filename": "how-to-create-an-individual-challenge.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb08a97129911ba1b21e3d",
+      "title": "Bulk Custom Notifications",
+      "folder": "getting-started",
+      "filename": "bulk-custom-notifications.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd4eb633d1d2a5b1c5ea1d3",
+      "title": "How to add an audio file to your content?",
+      "folder": "forms",
+      "filename": "how-to-add-an-audio-file-to-your-content.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd623d336980410c9123a23",
+      "title": "How to add an 'Audio file' to a question.",
+      "folder": "getting-started",
+      "filename": "how-to-add-an-audio-file-to-a-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaebcca5d295659b369c02",
+      "title": "How can I view KHub Analytics?",
+      "folder": "forms",
+      "filename": "how-can-i-view-khub-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5ffd689766df373cab70860b",
+      "title": "Survey Template Analytics",
+      "folder": "surveys",
+      "filename": "survey-template-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "64649da87d89467e9da791da",
+      "title": "How to create Badges",
+      "folder": "getting-started",
+      "filename": "how-to-create-badges.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaf5650b11ce44f6393174",
+      "title": "What are Chat Groups?",
+      "folder": "getting-started",
+      "filename": "what-are-chat-groups.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60c206d796768369c70bc6b4",
+      "title": "Learner Report - By Learner (Individual Report Analytics)",
+      "folder": "quiz",
+      "filename": "learner-report-by-learner-individual-report-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60099176c64fe14d0e1fd224",
+      "title": "Form Analytics",
+      "folder": "reports",
+      "filename": "form-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaf691a5d295659b369c17",
+      "title": "How to add or remove users to a chat group?",
+      "folder": "users",
+      "filename": "how-to-add-or-remove-users-to-a-chat-group.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb168a0b11ce44f63931e3",
+      "title": "How to create a Manager Challenge?",
+      "folder": "competitions",
+      "filename": "how-to-create-a-manager-challenge.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "665cc161463661770bfb12d6",
+      "title": "How to add smartfeed within a Competition",
+      "folder": "competitions",
+      "filename": "how-to-add-smartfeed-within-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb188b0b11ce44f63931e7",
+      "title": "Detailed explanation of reports",
+      "folder": "reports",
+      "filename": "detailed-explanation-of-reports.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd10d1a0ca0c372c6f09327",
+      "title": "How to send a SmartFeed multiple times?",
+      "folder": "getting-started",
+      "filename": "how-to-send-a-smartfeed-multiple-times.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60bb69c690777e23fb8ada49",
+      "title": "How to Submit a Form on behalf of a User",
+      "folder": "users",
+      "filename": "how-to-submit-a-form-on-behalf-of-a-user.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9ba357129911ba1b21757",
+      "title": "How to create a competition?",
+      "folder": "quiz",
+      "filename": "how-to-create-a-competition.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb1646a5d295659b369c8d",
+      "title": "How to create a Group Challenge?",
+      "folder": "forms",
+      "filename": "how-to-create-a-group-challenge.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaf6350b11ce44f6393177",
+      "title": "How to Enable a Chat Group?",
+      "folder": "getting-started",
+      "filename": "how-to-enable-a-chat-group.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaf7eeb624c71b7985a5ad",
+      "title": "How to download a chat?",
+      "folder": "getting-started",
+      "filename": "how-to-download-a-chat.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a63037eb3af44cc120a9d0",
+      "title": "How to enable the Streaming Links for Video Coaching",
+      "folder": "coaching",
+      "filename": "how-to-enable-the-streaming-links-for-video-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a61bb227c86942e8069e4d",
+      "title": "How to add Different  Activities to a Challenge?",
+      "folder": "quiz",
+      "filename": "how-to-add-different-activities-to-a-challenge.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "64ec366fab3ec13db0b391bd",
+      "title": "How to delete a Survey",
+      "folder": "surveys",
+      "filename": "how-to-delete-a-survey.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb30c60b11ce44f639323f",
+      "title": "How to edit a project?",
+      "folder": "forms",
+      "filename": "how-to-edit-a-project.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb2f387129911ba1b21ece",
+      "title": "How to view Project?",
+      "folder": "reports",
+      "filename": "how-to-view-project.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaf5db7129911ba1b21dfa",
+      "title": "When are chat groups needed?",
+      "folder": "getting-started",
+      "filename": "when-are-chat-groups-needed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60bb5a63f6392f0aaff521ab",
+      "title": "How to add Approvers to a Form",
+      "folder": "reports",
+      "filename": "how-to-add-approvers-to-a-form.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdba102a5d295659b369f9f",
+      "title": "Quiz Wise Analytics",
+      "folder": "quiz",
+      "filename": "quiz-wise-analytics.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd713904eb32171b80377f7",
+      "title": "How to edit a SmartPath.",
+      "folder": "smartpath",
+      "filename": "how-to-edit-a-smartpath.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd112c50ca0c372c6f09352",
+      "title": "How to delete SmartFeeds?",
+      "folder": "getting-started",
+      "filename": "how-to-delete-smartfeeds.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb50c1b624c71b7985a730",
+      "title": "How to create Certifcates",
+      "folder": "getting-started",
+      "filename": "how-to-create-certifcates.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb74880b11ce44f63933a3",
+      "title": "How do I give access permission to other editors?",
+      "folder": "quiz",
+      "filename": "how-do-i-give-access-permission-to-other-editors.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5ffc22a3551e0c2853f3af84",
+      "title": "Quiz Comparison Report",
+      "folder": "quiz",
+      "filename": "quiz-comparison-report.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6001bb40c64fe14d0e1fb5a3",
+      "title": "How to Set Reminder for your Tasks",
+      "folder": "quiz",
+      "filename": "how-to-set-reminder-for-your-tasks.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "66448bf460cfc03ad3491583",
+      "title": "How to Award Points on Badge Assignment",
+      "folder": "competitions",
+      "filename": "how-to-award-points-on-badge-assignment.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fcc6288de1bfa158fb55b9b",
+      "title": "What is SmartWinnr?",
+      "folder": "coaching",
+      "filename": "what-is-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "607e8df03149d33a19c6e5e3",
+      "title": "How to Update question response",
+      "folder": "quiz",
+      "filename": "how-to-update-question-response.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0cafa5d295659b369c60",
+      "title": "What are Field Mappings?",
+      "folder": "getting-started",
+      "filename": "what-are-field-mappings.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb509ab624c71b7985a72e",
+      "title": "What is an Achievement?",
+      "folder": "getting-started",
+      "filename": "what-is-an-achievement.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "66d0cb66d816d165867bf4de",
+      "title": "How to update the SmartWinnr App from App View",
+      "folder": "getting-started",
+      "filename": "how-to-update-the-smartwinnr-app-from-app-view.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60b9e109fd393f6bf704a9f2",
+      "title": "How to create Sales TV",
+      "folder": "quiz",
+      "filename": "how-to-create-sales-tv.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0bb6a5d295659b369c5d",
+      "title": "What is KPI Gamification?",
+      "folder": "competitions",
+      "filename": "what-is-kpi-gamification.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "603cf4db661b720174a71d5e",
+      "title": "How to view the data and leaderboard for Scorecard",
+      "folder": "getting-started",
+      "filename": "how-to-view-the-data-and-leaderboard-for-scorecard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6317a3ed4cde766bbe1426fe",
+      "title": "How can I edit a KHub folder name ?",
+      "folder": "getting-started",
+      "filename": "how-can-i-edit-a-khub-folder-name.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "631fbb2490c29a3d732c6e6e",
+      "title": "How to review a field coaching as a manager/2nd level manager",
+      "folder": "coaching",
+      "filename": "how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6309b2f090c29a3d732c2441",
+      "title": "How to download/Share  a smartfeed in smartpath",
+      "folder": "smartpath",
+      "filename": "how-to-download-share-a-smartfeed-in-smartpath.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "631c9fb5c713d51da3edd565",
+      "title": "How to ‘Open’ and ‘Close’ a Quiz",
+      "folder": "quiz",
+      "filename": "how-to-open-and-close-a-quiz.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6324e1941ec1962d58a8036e",
+      "title": "How to archive a SmartPath and unhide them in future if needed.",
+      "folder": "smartpath",
+      "filename": "how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6778cfe33656557cafadaee0",
+      "title": "Create a Coaching",
+      "folder": "coaching",
+      "filename": "create-a-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce0dce4664bd7a123eb3e2",
+      "title": "What is my Username and Password?",
+      "folder": "users",
+      "filename": "what-is-my-username-and-password.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce03e7d580ce55a38b4d36",
+      "title": "How can I login to SmartWinnr App?",
+      "folder": "getting-started",
+      "filename": "how-can-i-login-to-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce1bf84664bd7a123eb447",
+      "title": "What if I've forgotten my password?",
+      "folder": "getting-started",
+      "filename": "what-if-i-ve-forgotten-my-password.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaec3c7129911ba1b21de9",
+      "title": "How to use KHub in the SmartWinnr app?",
+      "folder": "forms",
+      "filename": "how-to-use-khub-in-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce219904cebe5254a298fa",
+      "title": "My Account is locked - what should I do?",
+      "folder": "getting-started",
+      "filename": "my-account-is-locked-what-should-i-do.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce026bde1bfa158fb55e2d",
+      "title": "How can I download the SmartWinnr app?",
+      "folder": "quiz",
+      "filename": "how-can-i-download-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce43c3eb7cc612aa3557ae",
+      "title": "How can I contact SmartWinnr Team?",
+      "folder": "forms",
+      "filename": "how-can-i-contact-smartwinnr-team.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce210dde1bfa158fb55ed9",
+      "title": "What if I've forgotten my PIN?",
+      "folder": "getting-started",
+      "filename": "what-if-i-ve-forgotten-my-pin.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce244aeb7cc612aa355702",
+      "title": "How can I change my password for SmartWinnr?",
+      "folder": "getting-started",
+      "filename": "how-can-i-change-my-password-for-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce3d864664bd7a123eb4ea",
+      "title": "How to update the SmartWinnr App/Web View?",
+      "folder": "getting-started",
+      "filename": "how-to-update-the-smartwinnr-app-web-view.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce355804cebe5254a29954",
+      "title": "How can I check the App version/Web view version?",
+      "folder": "getting-started",
+      "filename": "how-can-i-check-the-app-version-web-view-version.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce4541eb7cc612aa3557b4",
+      "title": "Browser and Device Support",
+      "folder": "getting-started",
+      "filename": "browser-and-device-support.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce2291eb7cc612aa3556fa",
+      "title": "How can I change my profile image?",
+      "folder": "getting-started",
+      "filename": "how-can-i-change-my-profile-image.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd98ecb27288b7f895d5ddc",
+      "title": "Switching to Manager View",
+      "folder": "getting-started",
+      "filename": "switching-to-manager-view.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce33cad580ce55a38b4e2c",
+      "title": "How can I change my language in SmartWinnr App?",
+      "folder": "getting-started",
+      "filename": "how-can-i-change-my-language-in-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60003222c64fe14d0e1fac76",
+      "title": "What is QResolve?...",
+      "folder": "forms",
+      "filename": "what-is-qresolve.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd728293d1d2a5b1c5ea4c8",
+      "title": "How do I upload a coaching video?",
+      "folder": "coaching",
+      "filename": "how-do-i-upload-a-coaching-video.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb40777129911ba1b21f1a",
+      "title": "How can I view a competition Leaderboard?",
+      "folder": "competitions",
+      "filename": "how-can-i-view-a-competition-leaderboard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd99582a5d295659b36954f",
+      "title": "How To Find The Progress Of Your Team In Quizzes",
+      "folder": "quiz",
+      "filename": "how-to-find-the-progress-of-your-team-in-quizzes.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd1110180488e39007cbd8f",
+      "title": "How do I like a SmartFeed?",
+      "folder": "getting-started",
+      "filename": "how-do-i-like-a-smartfeed.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb04a37129911ba1b21e2a",
+      "title": "How to use QResolve in the SmartWinnr app?",
+      "folder": "getting-started",
+      "filename": "how-to-use-qresolve-in-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb05910b11ce44f63931a2",
+      "title": "How can I answer a Query ?",
+      "folder": "getting-started",
+      "filename": "how-can-i-answer-a-query.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62a3071392cb8c175b46bb56",
+      "title": "How to upload Video Recording for Coaching",
+      "folder": "coaching",
+      "filename": "how-to-upload-video-recording-for-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60001addcfe30d219ccd7a03",
+      "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
+      "folder": "kpi-gamification",
+      "filename": "how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb0522b624c71b7985a5d7",
+      "title": "How to post a Query from the SmartWinnr app?",
+      "folder": "getting-started",
+      "filename": "how-to-post-a-query-from-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd997c6a5d295659b369555",
+      "title": "Quiz Analytics through Charts",
+      "folder": "quiz",
+      "filename": "quiz-analytics-through-charts.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb421527288b7f895d662f",
+      "title": "How do I view the KPI scorecard?",
+      "folder": "kpi-gamification",
+      "filename": "how-do-i-view-the-kpi-scorecard.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "603c7d19b3ebfb109b586e66",
+      "title": "How can I submit a Form from Chat",
+      "folder": "forms",
+      "filename": "how-can-i-submit-a-form-from-chat.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "600868c4cfe30d219ccd9aa9",
+      "title": "How managers Approve  Form",
+      "folder": "reports",
+      "filename": "how-managers-approve-form.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd9ab587129911ba1b21733",
+      "title": "Finding  Status and Scores for Quizzes assigned to your Team",
+      "folder": "quiz",
+      "filename": "finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60086bd71c64ad47e4b711c2",
+      "title": "How can I submit a Form from Left Menu",
+      "folder": "forms",
+      "filename": "how-can-i-submit-a-form-from-left-menu.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6106ee53b55c2b04bf6da2c0",
+      "title": "How to Mark the attendance for Users  in Learning Sessions?",
+      "folder": "users",
+      "filename": "how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62b450c10b51ec1ae83f9bf8",
+      "title": "How to access the SCORM course from the SmartWinnr app ?",
+      "folder": "getting-started",
+      "filename": "how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60f9c51c6ffe270af2a91817",
+      "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
+      "folder": "users",
+      "filename": "how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62aa1c6df6341f7edc2a55ee",
+      "title": "How to upload Screen Recording for Coaching",
+      "folder": "coaching",
+      "filename": "how-to-upload-screen-recording-for-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fce42e9eb7cc612aa3557ab",
+      "title": "How can I enable push notification for SmartWinnr App?",
+      "folder": "getting-started",
+      "filename": "how-can-i-enable-push-notification-for-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdae9d67129911ba1b21de5",
+      "title": "Understanding recent, trending and latest KHub items",
+      "folder": "getting-started",
+      "filename": "understanding-recent-trending-and-latest-khub-items.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60f9c0126ffe270af2a917d6",
+      "title": "How to Answer Long  Answer type Questions in SmartWinnr?",
+      "folder": "quiz",
+      "filename": "how-to-answer-long-answer-type-questions-in-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "62a2fa1957320007925236d9",
+      "title": "How to upload Audio Recording for Coaching",
+      "folder": "coaching",
+      "filename": "how-to-upload-audio-recording-for-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdb083d27288b7f895d6541",
+      "title": "How to view notifications?",
+      "folder": "getting-started",
+      "filename": "how-to-view-notifications.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "610775ae64a230081ba1b1b8",
+      "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+      "folder": "quiz",
+      "filename": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fffe8aa2e764327f87be765",
+      "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+      "folder": "competitions",
+      "filename": "how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "603748758502d1120e90b0ed",
+      "title": "How Manager can check the status of the Coachings assigned to My Team",
+      "folder": "coaching",
+      "filename": "how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd758ea7129911ba1b20b11",
+      "title": "What is 'My Team Coaching'?",
+      "folder": "coaching",
+      "filename": "what-is-my-team-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "66d0ceaea62a7505fcf37c07",
+      "title": "How to update the SmartWinnr App from Web View",
+      "folder": "getting-started",
+      "filename": "how-to-update-the-smartwinnr-app-from-web-view.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a8fdf51df47a61c5ad43c7",
+      "title": "How to review Field Coaching from Managers View in Mobile",
+      "folder": "coaching",
+      "filename": "how-to-review-field-coaching-from-managers-view-in-mobile.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60b762f59c887a0dfc555a3b",
+      "title": "How to edit the form submission from manager's view",
+      "folder": "quiz",
+      "filename": "how-to-edit-the-form-submission-from-manager-s-view.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a8e21fdca0fd46b93580f6",
+      "title": "How to review Field Coaching from Managers View in Mobile",
+      "folder": "coaching",
+      "filename": "how-to-review-field-coaching-from-managers-view-in-mobile.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60b77f6d9c887a0dfc555ad2",
+      "title": "How to add new form submission",
+      "folder": "forms",
+      "filename": "how-to-add-new-form-submission.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda4ff50b11ce44f6392e68",
+      "title": "How to activate or deactivate a user?",
+      "folder": "quiz",
+      "filename": "how-to-activate-or-deactivate-a-user.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdae19bb624c71b7985a579",
+      "title": "User Login reports",
+      "folder": "reports",
+      "filename": "user-login-reports.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda52ada5d295659b36990a",
+      "title": "How do I unlock an account?",
+      "folder": "getting-started",
+      "filename": "how-do-i-unlock-an-account.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda4abb27288b7f895d61dd",
+      "title": "Create users in bulk",
+      "folder": "quiz",
+      "filename": "create-users-in-bulk.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda513db624c71b7985a2a8",
+      "title": "How can I change the password for a user account?",
+      "folder": "users",
+      "filename": "how-can-i-change-the-password-for-a-user-account.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda45eaa5d295659b36989e",
+      "title": "How to manage Quiz configurations?",
+      "folder": "quiz",
+      "filename": "how-to-manage-quiz-configurations.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a50e4827c86942e80697e9",
+      "title": "How to create Field Coaching Template",
+      "folder": "coaching",
+      "filename": "how-to-create-field-coaching-template.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda51a0b624c71b7985a2ab",
+      "title": "How can an Admin change anyone's password?",
+      "folder": "users",
+      "filename": "how-can-an-admin-change-anyone-s-password.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda4f4a0b11ce44f6392e62",
+      "title": "Create users individually",
+      "folder": "users",
+      "filename": "create-users-individually.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda4f87b624c71b7985a29a",
+      "title": "Delete users",
+      "folder": "quiz",
+      "filename": "delete-users.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fd75963a5d295659b36893f",
+      "title": "How to set competencies.",
+      "folder": "coaching",
+      "filename": "how-to-set-competencies.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdadc3e7129911ba1b21dbe",
+      "title": "How to Add new contacts?",
+      "folder": "forms",
+      "filename": "how-to-add-new-contacts.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda50d7b624c71b7985a2a4",
+      "title": "How to resend account invitation?",
+      "folder": "getting-started",
+      "filename": "how-to-resend-account-invitation.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda509f27288b7f895d61ff",
+      "title": "Search users",
+      "folder": "users",
+      "filename": "search-users.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdadd747129911ba1b21dc5",
+      "title": "How to Add new rule?",
+      "folder": "forms",
+      "filename": "how-to-add-new-rule.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda49060b11ce44f6392e3f",
+      "title": "Manage password policy",
+      "folder": "getting-started",
+      "filename": "manage-password-policy.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda496f0b11ce44f6392e44",
+      "title": "How to track my organizational resource usage?",
+      "folder": "getting-started",
+      "filename": "how-to-track-my-organizational-resource-usage.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdadcca7129911ba1b21dc1",
+      "title": "What is Audit Log?",
+      "folder": "quiz",
+      "filename": "what-is-audit-log.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdadcf77129911ba1b21dc2",
+      "title": "How to view an Audit Log?",
+      "folder": "forms",
+      "filename": "how-to-view-an-audit-log.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "60a50e711df47a61c5ad2f4d",
+      "title": "How to add Competencies for Field Coaching",
+      "folder": "coaching",
+      "filename": "how-to-add-competencies-for-field-coaching.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fda48bca5d295659b3698b1",
+      "title": "How to change company logo?",
+      "folder": "forms",
+      "filename": "how-to-change-company-logo.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdaddc6b624c71b7985a570",
+      "title": "What is a Rule?",
+      "folder": "quiz",
+      "filename": "what-is-a-rule.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdadc160b11ce44f639313f",
+      "title": "How to view existing contacts?",
+      "folder": "getting-started",
+      "filename": "how-to-view-existing-contacts.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "5fdad976b624c71b7985a56b",
+      "title": "How to Add a new Division?",
+      "folder": "getting-started",
+      "filename": "how-to-add-a-new-division.md",
+      "images": 0,
+      "status": "success"
+    },
+    {
+      "id": "6332221b9c3e7c7d6a1aca3e",
+      "title": "Changing/Updating configuration for an Organization",
+      "folder": "getting-started",
+      "filename": "changing-updating-configuration-for-an-organization.md",
+      "images": 0,
+      "status": "success"
+    }
+  ]
+}

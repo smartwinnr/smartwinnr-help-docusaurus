@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-import-question-is-different-from-add-new-question",
+  "title": "How 'Import question' is  different from 'Add New Question'?",
+  "description": "",
+  "source": "@site/docs/learning/how-import-question-is-different-from-add-new-question.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-import-question-is-different-from-add-new-question",
+  "permalink": "/learning/how-import-question-is-different-from-add-new-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-import-question-is-different-from-add-new-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 45,
+  "frontMatter": {
+    "title": "How 'Import question' is  different from 'Add New Question'?",
+    "description": "",
+    "slug": "how-import-question-is-different-from-add-new-question",
+    "sidebar_position": 45,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4845e36980410c9123839",
+    "helpscout_url": "https://help.smartwinnr.com/article/45-how-is-it-different-from-add-new-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view SmartFeed Analytics?",
+    "permalink": "/learning/how-to-view-smartfeed-analytics"
+  },
+  "next": {
+    "title": "How to add a 'Video' to a question.",
+    "permalink": "/learning/how-to-add-a-video-to-a-question"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/how-to-create-a-competition",
+  "title": "How to create a competition?",
+  "description": "",
+  "source": "@site/docs/quizzes/how-to-create-a-competition.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/how-to-create-a-competition",
+  "permalink": "/quizzes/how-to-create-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/how-to-create-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 103,
+  "frontMatter": {
+    "title": "How to create a competition?",
+    "description": "",
+    "slug": "how-to-create-a-competition",
+    "sidebar_position": 103,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd9ba357129911ba1b21757",
+    "helpscout_url": "https://help.smartwinnr.com/article/103-how-to-create-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Quiz to a competition?",
+    "permalink": "/quizzes/how-to-add-a-quiz-to-a-competition"
+  },
+  "next": {
+    "title": "How to add a Survey to a Competition?",
+    "permalink": "/quizzes/how-to-add-a-survey-to-a-competition"
+  }
+}

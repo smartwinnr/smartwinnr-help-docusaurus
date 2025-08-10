@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-send-a-smartfeed-multiple-times",
+  "title": "How to send a SmartFeed multiple times?",
+  "description": "",
+  "source": "@site/docs/learning/how-to-send-a-smartfeed-multiple-times.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-send-a-smartfeed-multiple-times",
+  "permalink": "/learning/how-to-send-a-smartfeed-multiple-times",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-send-a-smartfeed-multiple-times.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "title": "How to send a SmartFeed multiple times?",
+    "description": "",
+    "slug": "how-to-send-a-smartfeed-multiple-times",
+    "sidebar_position": 30,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd10d1a0ca0c372c6f09327",
+    "helpscout_url": "https://help.smartwinnr.com/article/30-how-to-send-a-smartfeed-multiple-times"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to edit a SmartFeed?",
+    "permalink": "/learning/how-to-edit-a-smartfeed"
+  },
+  "next": {
+    "title": "How to send the SmartFeed to Teams?",
+    "permalink": "/learning/how-to-send-the-smartfeed-to-teams"
+  }
+}

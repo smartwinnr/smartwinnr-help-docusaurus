@@ -1,0 +1,34 @@
+{
+  "id": "learning/smartfeed-management",
+  "title": "SmartFeed Management",
+  "description": "Complete guide for creating, managing, and distributing SmartFeeds",
+  "source": "@site/docs/learning/smartfeed-management.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/smartfeed-management",
+  "permalink": "/learning/smartfeed-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/smartfeed-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "SmartFeed Management",
+    "description": "Complete guide for creating, managing, and distributing SmartFeeds",
+    "slug": "smartfeed-management",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Learning & Training",
+    "permalink": "/learning/"
+  },
+  "next": {
+    "title": "SmartPath Management",
+    "permalink": "/learning/smartpath-management"
+  }
+}

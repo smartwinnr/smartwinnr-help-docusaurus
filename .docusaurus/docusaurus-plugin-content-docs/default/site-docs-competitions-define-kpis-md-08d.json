@@ -1,0 +1,36 @@
+{
+  "id": "competitions/define-kpis",
+  "title": "Define KPIs",
+  "description": "",
+  "source": "@site/docs/competitions/define-kpis.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/define-kpis",
+  "permalink": "/competitions/define-kpis",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/define-kpis.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 170,
+  "frontMatter": {
+    "title": "Define KPIs",
+    "description": "",
+    "slug": "define-kpis",
+    "sidebar_position": 170,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0c19a5d295659b369c5f",
+    "helpscout_url": "https://help.smartwinnr.com/article/170-define-kpis"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understand Game Concepts",
+    "permalink": "/competitions/understand-game-concepts"
+  },
+  "next": {
+    "title": "How to create KPI?",
+    "permalink": "/competitions/how-to-create-kpi"
+  }
+}

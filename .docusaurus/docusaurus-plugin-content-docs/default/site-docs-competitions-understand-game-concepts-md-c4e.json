@@ -1,0 +1,36 @@
+{
+  "id": "competitions/understand-game-concepts",
+  "title": "Understand Game Concepts",
+  "description": "",
+  "source": "@site/docs/competitions/understand-game-concepts.md",
+  "sourceDirName": "competitions",
+  "slug": "/competitions/understand-game-concepts",
+  "permalink": "/competitions/understand-game-concepts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions/understand-game-concepts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 169,
+  "frontMatter": {
+    "title": "Understand Game Concepts",
+    "description": "",
+    "slug": "understand-game-concepts",
+    "sidebar_position": 169,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0be80b11ce44f63931bb",
+    "helpscout_url": "https://help.smartwinnr.com/article/169-understand-game-concepts"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is KPI Gamification?",
+    "permalink": "/competitions/what-is-kpi-gamification"
+  },
+  "next": {
+    "title": "Define KPIs",
+    "permalink": "/competitions/define-kpis"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "admin/how-to-view-notifications",
+  "title": "How to view notifications?",
+  "description": "",
+  "source": "@site/docs/admin/how-to-view-notifications.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/how-to-view-notifications",
+  "permalink": "/admin/how-to-view-notifications",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin/how-to-view-notifications.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 164,
+  "frontMatter": {
+    "title": "How to view notifications?",
+    "description": "",
+    "slug": "how-to-view-notifications",
+    "sidebar_position": 164,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb083d27288b7f895d6541",
+    "helpscout_url": "https://help.smartwinnr.com/article/164-how-to-view-notifications"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is the purpose of notifications?",
+    "permalink": "/admin/what-is-the-purpose-of-notifications"
+  },
+  "next": {
+    "title": "Custom Notifications",
+    "permalink": "/admin/custom-notifications"
+  }
+}

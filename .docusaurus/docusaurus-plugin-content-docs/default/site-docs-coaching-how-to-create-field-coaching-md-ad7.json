@@ -1,0 +1,36 @@
+{
+  "id": "coaching/how-to-create-field-coaching",
+  "title": "How to create Field Coaching",
+  "description": "",
+  "source": "@site/docs/coaching/how-to-create-field-coaching.md",
+  "sourceDirName": "coaching",
+  "slug": "/coaching/how-to-create-field-coaching",
+  "permalink": "/coaching/how-to-create-field-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching/how-to-create-field-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 235,
+  "frontMatter": {
+    "title": "How to create Field Coaching",
+    "description": "",
+    "slug": "how-to-create-field-coaching",
+    "sidebar_position": 235,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a4febd13fd125a39b4516e",
+    "helpscout_url": "https://help.smartwinnr.com/article/235-how-to-create-field-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "permalink": "/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+  },
+  "next": {
+    "title": "How to create Field Coaching Template",
+    "permalink": "/coaching/how-to-create-field-coaching-template"
+  }
+}

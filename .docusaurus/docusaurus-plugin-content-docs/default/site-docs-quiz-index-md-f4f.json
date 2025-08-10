@@ -14,14 +14,5 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Getting Started with SmartWinnr",
-    "permalink": "/"
-  },
-  "next": {
-    "title": "Creating a Quiz",
-    "permalink": "/quiz/creating-quiz"
   }
 }

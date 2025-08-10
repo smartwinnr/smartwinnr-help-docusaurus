@@ -14,14 +14,5 @@
   "sidebarPosition": 2,
   "frontMatter": {
     "sidebar_position": 2
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Overview",
-    "permalink": "/quiz/"
-  },
-  "next": {
-    "title": "Managing Questions",
-    "permalink": "/quiz/managing-questions"
   }
 }

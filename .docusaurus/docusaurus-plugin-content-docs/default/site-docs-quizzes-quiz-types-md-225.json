@@ -1,0 +1,36 @@
+{
+  "id": "quizzes/quiz-types",
+  "title": "Quiz types",
+  "description": "",
+  "source": "@site/docs/quizzes/quiz-types.md",
+  "sourceDirName": "quizzes",
+  "slug": "/quizzes/quiz-types",
+  "permalink": "/quizzes/quiz-types",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quizzes/quiz-types.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 48,
+  "frontMatter": {
+    "title": "Quiz types",
+    "description": "",
+    "slug": "quiz-types",
+    "sidebar_position": 48,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd48eb723119734ee37eda5",
+    "helpscout_url": "https://help.smartwinnr.com/article/48-quiz-types"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to upload questions in bulk using 'Import Questions'.",
+    "permalink": "/quizzes/how-to-upload-questions-in-bulk-using-import-questions"
+  },
+  "next": {
+    "title": "How to create an automatic quiz?",
+    "permalink": "/quizzes/how-to-create-an-automatic-quiz"
+  }
+}

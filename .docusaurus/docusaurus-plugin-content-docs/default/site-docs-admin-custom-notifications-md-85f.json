@@ -1,0 +1,36 @@
+{
+  "id": "admin/custom-notifications",
+  "title": "Custom Notifications",
+  "description": "",
+  "source": "@site/docs/admin/custom-notifications.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/custom-notifications",
+  "permalink": "/admin/custom-notifications",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/admin/custom-notifications.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 165,
+  "frontMatter": {
+    "title": "Custom Notifications",
+    "description": "",
+    "slug": "custom-notifications",
+    "sidebar_position": 165,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb086ea5d295659b369c51",
+    "helpscout_url": "https://help.smartwinnr.com/article/165-custom-notifications"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view notifications?",
+    "permalink": "/admin/how-to-view-notifications"
+  },
+  "next": {
+    "title": "Bulk Custom Notifications",
+    "permalink": "/admin/bulk-custom-notifications"
+  }
+}

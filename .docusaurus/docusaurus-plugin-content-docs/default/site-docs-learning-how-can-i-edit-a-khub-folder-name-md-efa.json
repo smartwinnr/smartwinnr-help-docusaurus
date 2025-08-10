@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-can-i-edit-a-khub-folder-name",
+  "title": "How can I edit a KHub folder name ?",
+  "description": "",
+  "source": "@site/docs/learning/how-can-i-edit-a-khub-folder-name.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-can-i-edit-a-khub-folder-name",
+  "permalink": "/learning/how-can-i-edit-a-khub-folder-name",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-can-i-edit-a-khub-folder-name.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 275,
+  "frontMatter": {
+    "title": "How can I edit a KHub folder name ?",
+    "description": "",
+    "slug": "how-can-i-edit-a-khub-folder-name",
+    "sidebar_position": 275,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6317a3ed4cde766bbe1426fe",
+    "helpscout_url": "https://help.smartwinnr.com/article/275-how-to-edit-folder-name-in-khub"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to download/Share  a smartfeed in smartpath",
+    "permalink": "/learning/how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "next": {
+    "title": "How to archive a SmartPath and unhide them in future if needed.",
+    "permalink": "/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+  }
+}

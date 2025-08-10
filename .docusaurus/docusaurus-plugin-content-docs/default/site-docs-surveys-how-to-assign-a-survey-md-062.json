@@ -1,0 +1,36 @@
+{
+  "id": "surveys/how-to-assign-a-survey",
+  "title": "How to assign a Survey.",
+  "description": "",
+  "source": "@site/docs/surveys/how-to-assign-a-survey.md",
+  "sourceDirName": "surveys",
+  "slug": "/surveys/how-to-assign-a-survey",
+  "permalink": "/surveys/how-to-assign-a-survey",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/surveys/how-to-assign-a-survey.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 60,
+  "frontMatter": {
+    "title": "How to assign a Survey.",
+    "description": "",
+    "slug": "how-to-assign-a-survey",
+    "sidebar_position": 60,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd49e6623119734ee37edbd",
+    "helpscout_url": "https://help.smartwinnr.com/article/60-assign-a-survey"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a 'Survey'.",
+    "permalink": "/surveys/how-to-create-a-survey"
+  },
+  "next": {
+    "title": "How to create a 'Survey Template'.",
+    "permalink": "/surveys/how-to-create-a-survey-template"
+  }
+}

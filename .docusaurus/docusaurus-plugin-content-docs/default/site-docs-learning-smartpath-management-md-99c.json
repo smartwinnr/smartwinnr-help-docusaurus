@@ -1,0 +1,34 @@
+{
+  "id": "learning/smartpath-management",
+  "title": "SmartPath Management",
+  "description": "Complete guide for creating and managing structured learning paths",
+  "source": "@site/docs/learning/smartpath-management.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/smartpath-management",
+  "permalink": "/learning/smartpath-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/smartpath-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "SmartPath Management",
+    "description": "Complete guide for creating and managing structured learning paths",
+    "slug": "smartpath-management",
+    "sidebar_position": 2,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "SmartFeed Management",
+    "permalink": "/learning/smartfeed-management"
+  },
+  "next": {
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/learning/knowledge-hub-khub"
+  }
+}

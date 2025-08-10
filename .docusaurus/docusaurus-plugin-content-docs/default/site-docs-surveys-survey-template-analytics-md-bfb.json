@@ -1,0 +1,36 @@
+{
+  "id": "surveys/survey-template-analytics",
+  "title": "Survey Template Analytics",
+  "description": "",
+  "source": "@site/docs/surveys/survey-template-analytics.md",
+  "sourceDirName": "surveys",
+  "slug": "/surveys/survey-template-analytics",
+  "permalink": "/surveys/survey-template-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/surveys/survey-template-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 204,
+  "frontMatter": {
+    "title": "Survey Template Analytics",
+    "description": "",
+    "slug": "survey-template-analytics",
+    "sidebar_position": 204,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5ffd689766df373cab70860b",
+    "helpscout_url": "https://help.smartwinnr.com/article/204-survey-template-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Survey Analytics",
+    "permalink": "/surveys/survey-analytics"
+  },
+  "next": {
+    "title": "How to delete a Survey",
+    "permalink": "/surveys/how-to-delete-a-survey"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "reports/how-managers-approve-form",
+  "title": "How managers Approve  Form",
+  "description": "",
+  "source": "@site/docs/reports/how-managers-approve-form.md",
+  "sourceDirName": "reports",
+  "slug": "/reports/how-managers-approve-form",
+  "permalink": "/reports/how-managers-approve-form",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports/how-managers-approve-form.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 224,
+  "frontMatter": {
+    "title": "How managers Approve  Form",
+    "description": "",
+    "slug": "how-managers-approve-form",
+    "sidebar_position": 224,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "600868c4cfe30d219ccd9aa9",
+    "helpscout_url": "https://help.smartwinnr.com/article/224-how-managers-approve-kpi-submission-form"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view Project?",
+    "permalink": "/reports/how-to-view-project"
+  },
+  "next": {
+    "title": "Form Analytics",
+    "permalink": "/reports/form-analytics"
+  }
+}

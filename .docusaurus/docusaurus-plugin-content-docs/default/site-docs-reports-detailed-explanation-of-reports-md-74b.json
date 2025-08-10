@@ -1,0 +1,36 @@
+{
+  "id": "reports/detailed-explanation-of-reports",
+  "title": "Detailed explanation of reports",
+  "description": "",
+  "source": "@site/docs/reports/detailed-explanation-of-reports.md",
+  "sourceDirName": "reports",
+  "slug": "/reports/detailed-explanation-of-reports",
+  "permalink": "/reports/detailed-explanation-of-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports/detailed-explanation-of-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 183,
+  "frontMatter": {
+    "title": "Detailed explanation of reports",
+    "description": "",
+    "slug": "detailed-explanation-of-reports",
+    "sidebar_position": 183,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb188b0b11ce44f63931e7",
+    "helpscout_url": "https://help.smartwinnr.com/article/183-detailed-explanation-of-reports"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Scorecard?",
+    "permalink": "/reports/how-to-create-a-scorecard"
+  },
+  "next": {
+    "title": "How to view Project?",
+    "permalink": "/reports/how-to-view-project"
+  }
+}

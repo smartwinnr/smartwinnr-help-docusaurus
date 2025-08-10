@@ -1,0 +1,36 @@
+{
+  "id": "learning/how-to-add-a-video-to-a-question",
+  "title": "How to add a 'Video' to a question.",
+  "description": "",
+  "source": "@site/docs/learning/how-to-add-a-video-to-a-question.md",
+  "sourceDirName": "learning",
+  "slug": "/learning/how-to-add-a-video-to-a-question",
+  "permalink": "/learning/how-to-add-a-video-to-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning/how-to-add-a-video-to-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 64,
+  "frontMatter": {
+    "title": "How to add a 'Video' to a question.",
+    "description": "",
+    "slug": "how-to-add-a-video-to-a-question",
+    "sidebar_position": 64,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4bb1b4eb32171b80374ff",
+    "helpscout_url": "https://help.smartwinnr.com/article/64-how-to-add-a-video-to-a-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How 'Import question' is  different from 'Add New Question'?",
+    "permalink": "/learning/how-import-question-is-different-from-add-new-question"
+  },
+  "next": {
+    "title": "How to add an 'Image' to the question.",
+    "permalink": "/learning/how-to-add-an-image-to-the-question"
+  }
+}
