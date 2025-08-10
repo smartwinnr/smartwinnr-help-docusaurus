@@ -13,7 +13,8 @@
       "Bash(find:*)",
       "Bash(npm run:*)",
       "Bash(curl:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "WebFetch(domain:fly.io)"
     ],
     "deny": []
   }
