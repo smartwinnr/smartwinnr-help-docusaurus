@@ -6,7 +6,7 @@
 export default {
   "title": "SmartWinnr Help Center",
   "tagline": "Private Documentation for SmartWinnr Users",
-  "favicon": "img/favicon.svg",
+  "favicon": "img/favicon.ico",
   "url": "https://help.smartwinnr.com",
   "baseUrl": "/",
   "onBrokenLinks": "throw",

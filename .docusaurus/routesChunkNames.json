@@ -42,6 +42,13 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
+  "/search-be6": {
+    "__comp": "__comp---site-src-pages-search-tsxaef-1a7",
+    "__context": {
+      "plugin": "plugin---searcha-74-06a"
+    },
+    "config": "config---search-5-e-9-7f5"
+  },
   "/-7fc": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
@@ -85,6 +92,6 @@
   },
   "/-185": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getting-started-54-c-40b"
+    "content": "content---54-c-f24"
   }
 }
