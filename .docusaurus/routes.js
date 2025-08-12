@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'ef3'),
+    component: ComponentCreator('/', 'cd9'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '9e2'),
+        component: ComponentCreator('/', '21a'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '400'),
+            component: ComponentCreator('/', '7a7'),
             routes: [
               {
                 path: '/admin-landing',
@@ -305,6 +305,16 @@ export default [
                 component: ComponentCreator('/admin/when-are-chat-groups-needed', '1cc'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/AUTOMATED_IMAGE_GENERATION',
+                component: ComponentCreator('/AUTOMATED_IMAGE_GENERATION', 'b49'),
+                exact: true
+              },
+              {
+                path: '/AUTOMATED_SCREENSHOT_CAPTURE',
+                component: ComponentCreator('/AUTOMATED_SCREENSHOT_CAPTURE', '626'),
+                exact: true
               },
               {
                 path: '/coaching/',
@@ -599,6 +609,11 @@ export default [
                 component: ComponentCreator('/competitions/what-is-kpi-gamification', 'c0a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/complete-menu-tree-structure',
+                component: ComponentCreator('/complete-menu-tree-structure', 'c34'),
+                exact: true
               },
               {
                 path: '/editor-landing',
@@ -1055,6 +1070,11 @@ export default [
                 component: ComponentCreator('/manager-guide/team-analytics-dashboard', '144'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/menu-tree-structure',
+                component: ComponentCreator('/menu-tree-structure', '533'),
+                exact: true
               },
               {
                 path: '/microlearning/',

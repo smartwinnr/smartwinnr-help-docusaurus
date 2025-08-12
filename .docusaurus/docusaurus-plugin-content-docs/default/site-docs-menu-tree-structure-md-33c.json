@@ -1,0 +1,15 @@
+{
+  "id": "menu-tree-structure",
+  "title": "SmartWinnr Documentation Menu Tree Structure",
+  "description": "Based on the current sidebars.ts configuration and actual file structure, here is the complete left menu organization:",
+  "source": "@site/docs/menu-tree-structure.md",
+  "sourceDirName": ".",
+  "slug": "/menu-tree-structure",
+  "permalink": "/menu-tree-structure",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/menu-tree-structure.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

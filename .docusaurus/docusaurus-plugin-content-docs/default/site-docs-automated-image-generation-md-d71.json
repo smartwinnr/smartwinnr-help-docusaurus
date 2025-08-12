@@ -1,0 +1,15 @@
+{
+  "id": "AUTOMATED_IMAGE_GENERATION",
+  "title": "Automated Screenshot Capture System",
+  "description": "Overview",
+  "source": "@site/docs/AUTOMATED_IMAGE_GENERATION.md",
+  "sourceDirName": ".",
+  "slug": "/AUTOMATED_IMAGE_GENERATION",
+  "permalink": "/AUTOMATED_IMAGE_GENERATION",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/AUTOMATED_IMAGE_GENERATION.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

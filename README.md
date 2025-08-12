@@ -171,28 +171,113 @@ curl -X POST http://localhost:3002/api/chat \
 └── sidebars.ts                     # Navigation structure
 ```
 
-## Automated Image Generation (Planned)
+## Automated Screenshot Capture System
 
-The documentation structure is designed to support automated image generation after production pushes:
+**Status: Implementation Ready** | **Full Plan**: [AUTOMATED_SCREENSHOT_CAPTURE.md](./docs/AUTOMATED_SCREENSHOT_CAPTURE.md)
 
-### Image Identification System
-- **Image Mapping File**: `/static/img/image-mapping.json` contains comprehensive metadata for each image
-- **Usage Tracking**: Each image entry includes which documents use it
-- **Source Attribution**: Original URLs and sources for reference
-- **Content Context**: Alt text and descriptions for AI-generated replacements
+A comprehensive Puppeteer-based system to automatically capture real screenshots from SmartWinnr test environments, replacing outdated HelpScout screenshots with current, accurate UI images.
 
-### Automation-Ready Features
-- **Structured Metadata**: JSON mapping with all image details
-- **Category Organization**: Images organized by functional areas
-- **Usage Context**: Clear understanding of where and how images are used
-- **File Naming**: Descriptive, consistent naming convention
+### System Overview
+- **Target Systems**: SmartWinnr Admin Portal + Manager/User Portal
+- **Current Scale**: 681 screenshots to be captured and maintained
+- **Technology**: Puppeteer with multi-portal authentication
+- **Automation Level**: 95% automated capture with quality controls
+- **Estimated Timeline**: 4 weeks (3 phases)
+- **ROI**: $13,700 annual value, 9-month payback
 
-### Integration Points
-The system provides hooks for:
-1. **Post-deployment image scanning** - Identify images needing updates
-2. **Context-aware generation** - Use document context and alt text for AI image generation
-3. **Automated replacement** - Update markdown files with new image paths
-4. **Version tracking** - Maintain history of image changes
+### Key Features
+
+#### 🎯 **Multi-Portal Screenshot Capture**
+- **Admin Portal**: Desktop screenshots (1440x900px) from https://app.smartwinnr.com/
+- **Manager/User Portal**: iPad screenshots (1024x768px) from https://web.smartwinnr.com/
+- **Authentication**: Dedicated test accounts for each role (Admin, Manager, User)
+- **Smart Navigation**: Optimized page navigation and session management
+
+#### 🔄 **Automated Processing**
+- **Batch Capture**: Process multiple screenshots efficiently
+- **Quality Control**: Automatic validation and optimization
+- **Error Handling**: Retry logic and failure recovery
+- **Change Detection**: Monitor frontend changes for screenshot updates
+
+#### 📊 **Management & Integration**
+- **Mapping Integration**: Seamless integration with existing image-mapping.json
+- **File Organization**: Structured storage in `/static/img/screenshots/`
+- **Version Control**: Track screenshot changes and enable rollbacks
+- **CI/CD Ready**: Designed for future frontend deployment integration
+
+### Implementation Phases
+
+#### **Phase 1: Foundation** (Week 1)
+- Puppeteer setup and authentication system
+- Basic single screenshot capture for proof of concept
+- Credential management and security setup
+
+#### **Phase 2: Batch Processing** (Week 2-3)
+- Multi-screenshot capture system
+- Image mapping integration and replacement
+- Quality control and validation systems
+
+#### **Phase 3: Automation** (Week 4)
+- Batch processing for all 681 screenshots
+- Change detection and automated triggers
+- Monitoring and analytics dashboard
+
+### Technical Specifications
+
+#### **Screenshot Standards**
+- **Format**: PNG (lossless compression)
+- **Admin Resolution**: 1440x900px (desktop)
+- **Manager/User Resolution**: 1024x768px (iPad)
+- **Naming**: `[portal]_[section]_[feature]_[view]_[YYYYMMDD].png`
+
+#### **Target Environments**
+- **Test Server**: Dedicated test environment with dummy data
+- **Admin Portal**: https://app.smartwinnr.com/ (separate system)
+- **Manager/User Portal**: https://web.smartwinnr.com/ (unified system)
+- **Authentication**: Username/password with dedicated test accounts
+
+#### **Directory Structure**
+```
+/static/img/screenshots/
+├── admin/          # Admin portal screenshots
+├── manager/        # Manager view screenshots
+├── user/          # User view screenshots
+└── screenshot-mapping.json
+```
+
+### Current Infrastructure
+
+#### **Screenshot Mapping System**
+- **Enhanced Metadata**: Extended image-mapping.json with capture specifications
+- **Portal Routing**: Automatic portal and role detection
+- **Dependency Tracking**: Manage authentication and page dependencies
+- **Quality Metrics**: Capture success rates and validation
+
+#### **Automation-Ready Features**
+- **Session Management**: Persistent authentication across captures
+- **Smart Selectors**: Flexible element targeting with fallbacks
+- **Error Recovery**: Retry logic and alternative capture methods
+- **Resource Optimization**: Memory and performance management
+
+### Cost Structure
+- **Development**: $10,500 one-time setup
+- **Operational**: ~$60/month (hosting, storage, monitoring)
+- **Annual Savings**: $13,700 (time savings + maintenance efficiency)
+- **Per Screenshot Cost**: <$0.15 total cost including capture and processing
+
+### Rollout Plan
+1. **Single Screenshot Pilot**: Proof of concept with one manager portal screenshot
+2. **Section Pilot**: Complete "Getting Started" section (10-15 screenshots)
+3. **Full Deployment**: All 681 screenshots across both portals
+4. **CI/CD Integration**: Automated capture on frontend changes
+
+### Next Steps
+1. **Week 1**: Setup Puppeteer, authentication, and single screenshot capture
+2. **Week 2**: Implement batch processing and mapping integration
+3. **Week 3**: Deploy section pilot and quality validation
+4. **Week 4**: Full deployment with monitoring and analytics
+
+*See [AUTOMATED_SCREENSHOT_CAPTURE.md](./docs/AUTOMATED_SCREENSHOT_CAPTURE.md) for complete technical specifications, implementation details, and code examples.*
 
 ## Environment Configuration
 

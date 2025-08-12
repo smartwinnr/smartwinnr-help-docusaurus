@@ -1,0 +1,15 @@
+{
+  "id": "complete-menu-tree-structure",
+  "title": "Complete SmartWinnr Documentation Menu Tree Structure",
+  "description": "Here is the exhaustive listing of all files in each section of the documentation:",
+  "source": "@site/docs/complete-menu-tree-structure.md",
+  "sourceDirName": ".",
+  "slug": "/complete-menu-tree-structure",
+  "permalink": "/complete-menu-tree-structure",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/complete-menu-tree-structure.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

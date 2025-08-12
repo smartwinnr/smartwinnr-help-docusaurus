@@ -1,0 +1,15 @@
+{
+  "id": "AUTOMATED_SCREENSHOT_CAPTURE",
+  "title": "Automated Screenshot Capture System",
+  "description": "Overview",
+  "source": "@site/docs/AUTOMATED_SCREENSHOT_CAPTURE.md",
+  "sourceDirName": ".",
+  "slug": "/AUTOMATED_SCREENSHOT_CAPTURE",
+  "permalink": "/AUTOMATED_SCREENSHOT_CAPTURE",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/AUTOMATED_SCREENSHOT_CAPTURE.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

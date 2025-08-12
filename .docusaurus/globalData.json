@@ -221,6 +221,14 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "AUTOMATED_IMAGE_GENERATION",
+              "path": "/AUTOMATED_IMAGE_GENERATION"
+            },
+            {
+              "id": "AUTOMATED_SCREENSHOT_CAPTURE",
+              "path": "/AUTOMATED_SCREENSHOT_CAPTURE"
+            },
+            {
               "id": "coaching/create-a-coaching",
               "path": "/coaching/create-a-coaching",
               "sidebar": "tutorialSidebar"
@@ -464,6 +472,10 @@
               "id": "competitions/what-is-kpi-gamification",
               "path": "/competitions/what-is-kpi-gamification",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "complete-menu-tree-structure",
+              "path": "/complete-menu-tree-structure"
             },
             {
               "id": "editor-landing",
@@ -849,6 +861,10 @@
               "id": "manager-guide/team-analytics-dashboard",
               "path": "/manager-guide/team-analytics-dashboard",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "menu-tree-structure",
+              "path": "/menu-tree-structure"
             },
             {
               "id": "microlearning/index",
