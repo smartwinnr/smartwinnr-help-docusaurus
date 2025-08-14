@@ -99,7 +99,9 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
       urlPath = urlPath.replace(/\/+/g, '/');
       if (urlPath === '') urlPath = '/';
       
-      window.location.href = urlPath;
+      // Use window.location.assign for proper navigation that doesn't cause URL duplication
+      // This ensures we navigate to the absolute URL correctly
+      window.location.assign(window.location.origin + urlPath);
     }
     
     setIsOpen(false);
