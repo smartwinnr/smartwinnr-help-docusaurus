@@ -9,11 +9,11 @@ last_update:
 helpscout_id: 5fdb0bb6a5d295659b369c5d
 helpscout_url: https://help.smartwinnr.com/article/168-what-is-kpi-gamification
 ---
-Organizational success is measured in terms of key performance indicators (KPI). These KPIs are set at an organization level, then tailored for each business unit, business function, and ultimately, an individual employee. 
+Organizational success is measured in terms of key performance indicators (KPI). These KPIs are set at an organization level, then tailored for each business unit, business function, and ultimately, an individual employee.
 
 Gamifying these KPI's helps in motivating your team to achieve higher targets. It provides an excellent opportunity to communicate corporate goals to employees and to align them with those goals.
 
-SmartWinnr brings to you an entire suite of Gamification capabilities that enable different types of gaming. Here is how Gamification helps in improving employee engagement. 
+SmartWinnr brings to you an entire suite of Gamification capabilities that enable different types of gaming. Here is how Gamification helps in improving employee engagement.
 
 ### Gamification to engage different roles
 
@@ -29,7 +29,7 @@ Salespeople are competitive by nature. Gamification leverages this competitive s
 
 ### Keep the competition alive and the scores up to date
 
-Leaderboards encourage players to focus on all aspects of the game. Gamification uses points assigned to each KPI and earned by individual players and entire teams to determine weekly standings for players and teams, and standings for specific KPIs. 
+Leaderboards encourage players to focus on all aspects of the game. Gamification uses points assigned to each KPI and earned by individual players and entire teams to determine weekly standings for players and teams, and standings for specific KPIs.
 
 ### Increase motivation with leaderboards, badges, and awards
 

@@ -9,12 +9,14 @@ Configure quiz behavior, security, and accessibility options for optimal learnin
 ## Configuration Options
 
 ### Security Settings
+
 - Prevent cheating mechanisms
 - Browser restrictions
 - Time limits and lockdowns
 - Attempt limitations
 
 ### Accessibility Features
+
 - Screen reader compatibility
 - Keyboard navigation
 - High contrast modes

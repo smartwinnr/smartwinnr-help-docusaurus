@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/51-how-can-i-duplicate-a-quiz
 ---
 ## **Duplicate a Quiz**
 
-You can duplicate an existing quiz. The quiz name, description and questions in the quiz will get copied into the new quiz. 
+You can duplicate an existing quiz. The quiz name, description and questions in the quiz will get copied into the new quiz.
 
 You will have to add the people to whom you want to send the quiz to.
 

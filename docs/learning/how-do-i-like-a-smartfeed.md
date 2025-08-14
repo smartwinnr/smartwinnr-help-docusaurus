@@ -21,11 +21,11 @@ It opens the following screen where you will see a list of SmartFeeds that are a
 
 ![](/img/learning/helpscout-image-28417e47.png)
 
-Each of these SmartFeeds will have a "**Like**" button at the bottom. Click on this "**Like**" button to like a particular SmartFeed that you found interesting. 
+Each of these SmartFeeds will have a "**Like**" button at the bottom. Click on this "**Like**" button to like a particular SmartFeed that you found interesting.
 
 ![](/img/learning/helpscout-image-5c572bb2.png)
 
-There are 4 types of like options available for you. 
+There are 4 types of like options available for you.
 
 ![](/img/learning/helpscout-image-6a1142dd.png)
 

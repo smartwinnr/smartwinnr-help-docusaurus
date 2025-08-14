@@ -33,7 +33,7 @@ You can also change the  _Cover Image_ and _Color_ of the module card by usi
 
 [![](/img/learning/helpscout-image-9ed8200f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015004b1f25b9041beb997d/file-JHjOQfvCWt.png)
 
-Once you are done filling up these details, _click_ on the **'Save Module'** _button_. 
+Once you are done filling up these details, _click_ on the **'Save Module'** _button_.
 
 Now, you will be taken to the next step in creating a module.  
 
@@ -55,7 +55,7 @@ To create a segment, _choose_ the appropriate option in **'Select Segment Type'
 
 [![](/img/learning/helpscout-image-36225d9c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60153205ac2f834ec5383776/file-Hy8HNmZA4u.png)
 
-_It will take you to the page where you have to enter all the details related to creating a particular segment._ 
+_It will take you to the page where you have to enter all the details related to creating a particular segment._
 
 Check out the links below to know how to create each of the segments:
 
@@ -77,13 +77,13 @@ It will open the following pop-up asking you to confirm if you would like to dup
 
 [![](/img/learning/helpscout-image-1ca1bacf.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60154f421f25b9041beb99c9/file-fj60FeElWP.png)
 
-Click on **'YES'** and the _segment gets added_ to the module successfully. 
+Click on **'YES'** and the _segment gets added_ to the module successfully.
 
 It will get displayed in a module as shown in the screenshot below:
 
 [![](/img/learning/helpscout-image-16ce30a1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601553931f25b9041beb99d1/file-3LkZR31WsW.png)
 
-You can add multiple segments to a module. You can _click_ on the **'Reorder Segments'** button at the top right corner to re-order the segments in modules. 
+You can add multiple segments to a module. You can _click_ on the **'Reorder Segments'** button at the top right corner to re-order the segments in modules.
 
 **[](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601533951f25b9041beb99a8/file-0ELs6SQEjv.png)[![](/img/learning/helpscout-image-927e130e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601534b4a4cefb30ae5c5913/file-9Rw5FWwxi1.png)**
 
@@ -98,8 +98,9 @@ You can add multiple segments to a module. You can _click_ on the **'Reorder
 **_For example, you could choose to give access to the next segment in the module depending on:_**
 
 ***   _If the previous segment is completed or not_
-*   _On a particular date_
-*   _And, if the participant has scored a certain threshold score in the previous segment_**
+
+* _On a particular date_
+* _And, if the participant has scored a certain threshold score in the previous segment_**
 
 **_Please note that the rules can be applied only from the second segment of a segment_**
 
@@ -107,7 +108,7 @@ You can add multiple segments to a module. You can _click_ on the **'Reorder
 
 **[![](/img/learning/helpscout-image-135d95f0.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60153e24ac2f834ec538378c/file-StawLcg2XI.png)**
 
-****1. Day Wise:** If you select the **'****Type'** as _Day Wise_, then you have to select a day and time at which the segment can be accessed. Once you enter these details, _click_ on the **'****Add Rule**' button to add the segment successfully.**
+****1. Day Wise:** If you select the**'****Type'** as _Day Wise_, then you have to select a day and time at which the segment can be accessed. Once you enter these details, _click_ on the**'****Add Rule**' button to add the segment successfully.**
 
 **[![](/img/learning/helpscout-image-ace1e2e8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601542a71f25b9041beb99b9/file-kHSoB0CJlr.png)**
 
@@ -117,7 +118,7 @@ You can add multiple segments to a module. You can _click_ on the **'Reorder
 
 ****3\. By Score:** If you select this option, you have to choose a segment in _Segments_ and set criteria. You can _set a Score_ and _a Comparator_ \- _**'Less Than'**, **'Greater Than'**, **'Equal To'**._**
 
-**_Only upon achieving the threshold score that is set for this segment, the participant will be able to access the next segment._** 
+**_Only upon achieving the threshold score that is set for this segment, the participant will be able to access the next segment._**
 
 **For example, you can say that only if someone gets a score of 2 in the previous segment, he will be able to access the next segment.**
 

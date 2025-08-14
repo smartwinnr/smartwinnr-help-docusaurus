@@ -42,6 +42,7 @@ When you switch to manager view, you get access to:
 ### Switching Back to User View
 
 To switch back to user view, simply:
+
 1. Click on your profile image again
 2. Toggle the switch back to the **user side**
 3. The menu and interface will revert to the standard user experience

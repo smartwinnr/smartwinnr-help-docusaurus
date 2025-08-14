@@ -32,8 +32,8 @@ Step 4. Tap on ' **Next Button**' at the top right corner after completing the f
 
 **_You can have various learning sessions added to your SmartPath._** Learning sessions are virtual/classroom sessions conducted as part of your training with SmartPath. There are two type of learning sessions available in SmartWinnr:
 
-*   Classroom Learning Session - This is basically an offline classroom session where the training is scheduled on SmartWinnr and you have to attend the classroom training session physically. 
-*   Virtual Learning Session - This is an online session conducted on any virtual platform like Zoom, Google meet, etc where the learning session can be scheduled under the Smartwinnr platform. 
+* Classroom Learning Session - This is basically an offline classroom session where the training is scheduled on SmartWinnr and you have to attend the classroom training session physically.
+* Virtual Learning Session - This is an online session conducted on any virtual platform like Zoom, Google meet, etc where the learning session can be scheduled under the Smartwinnr platform.
 
 If you have a learning session added to your SmartPath, you will find the details of the same under the learning session activity.
 
@@ -47,7 +47,7 @@ If you have a learning session added to your SmartPath, you will find the detail
 
 ![](/img/quizzes/helpscout-image-54cd2398.png)
 
-Tap on the link or copy the link to your browser to log in to the virtual session. 
+Tap on the link or copy the link to your browser to log in to the virtual session.
 
 Note: Your learning session will be marked as 'Completed' only once the instructor who conducted the training mark your attendance for the learning session
 

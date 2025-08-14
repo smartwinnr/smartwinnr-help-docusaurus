@@ -13,5 +13,5 @@ Achievement is a reward that a user gets on completion of a certain task.
 
 in SmartWinnr there are two types of achievements
 
-*   Badges
-*   Certificates
+* Badges
+* Certificates

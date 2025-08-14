@@ -25,13 +25,13 @@ Now, on the import questions page, click on the 'Download Template' button at th
 
 Double click on the CSV file to open it.
 
-You can open a CSV file with your Excel application. 
+You can open a CSV file with your Excel application.
 
 This is how a sample CSV file will look like:
 
 [![](/img/quizzes/helpscout-image-816d148c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd488ef23119734ee37eda0/file-viH3XdpDyG.png)
 
-It gives samples of all the 3 types of questions that you can create through this method. 
+It gives samples of all the 3 types of questions that you can create through this method.
 
 **Step:2 Add questions to the CSV**
 
@@ -45,7 +45,7 @@ Open the downloaded CSV file and fill all the fields in it. Here are various fie
 
 **Answer options:** These fields contain the answer options for a question.
 
-**Correct option:** This field contains the correct answer to a question. 
+**Correct option:** This field contains the correct answer to a question.
 
 **Matching Left and Matching Right:** This field contains the left and right matching answers for a matching question.
 
@@ -61,14 +61,14 @@ There are certain mandatory fields that have to be filled in order to upload the
 
 **Do's:**
 
-1.  Make sure all the mandatory fields in the CSV are filled.
-2.  Make sure the values that you fill are correct and are in accordance with the pre-defined categories.
+1. Make sure all the mandatory fields in the CSV are filled.
+2. Make sure the values that you fill are correct and are in accordance with the pre-defined categories.
 
 **Don't:**
 
-1.  Do not add or remove a column
-2.  Do not change the order of the columns
-3.  Keep the column headers as they are
+1. Do not add or remove a column
+2. Do not change the order of the columns
+3. Keep the column headers as they are
 
 Once the CSV file is filled with all the questions and necessary information, it will be ready to be uploaded.
 
@@ -92,7 +92,7 @@ In case there are any missing or incorrect values in the CSV file, then it displ
 
 **View Logs and Check Questions**
 
-You can view the log status by clicking on the ' **View Logs**' button. 
+You can view the log status by clicking on the ' **View Logs**' button.
 
 [![](/img/quizzes/helpscout-image-85c65715.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489ee36980410c912383b/file-Ie7QamTmvr.png)
 

@@ -29,7 +29,7 @@ Event: It is the set of actions based on which notifications would be triggered.
 
 Different types of events are shown below.
 
-                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/1092) 
+                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/1092)
 
 Based on the Selected Object type, "Event" dropdown elements will be loaded from which the Admin has to select the required event.
 
@@ -41,8 +41,8 @@ Rules will only be triggered if the status type is active.
 
 Admin needs to select the status type:
 
-*   Active
-*   Inactive
+* Active
+* Inactive
 
 Selected Object:
 
@@ -60,10 +60,10 @@ This will determine the type of action that will be triggered for an active rule
 
 Admin needs to select the "Action Type", which can be an "email" or it can be an "Assign" type where furthermore the user needs to select the Object Type:
 
-*   Point
-*   Badge 
+* Point
+* Badge
 
-And fill the fields corresponding to each Object type. 
+And fill the fields corresponding to each Object type.
 
 ## Conditions
 

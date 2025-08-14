@@ -25,6 +25,6 @@ Additionally, there is also separate analytics available for the multiple-choice
 
 It will open the following pop-up where you can see
 
-*   The question,
-*   The correct option to the question
-*   And the graph that shows all the options of the question and analytics of the number of responses each option has received.
+* The question,
+* The correct option to the question
+* And the graph that shows all the options of the question and analytics of the number of responses each option has received.

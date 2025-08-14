@@ -11,13 +11,13 @@ helpscout_url: https://help.smartwinnr.com/article/38-understanding-knowledge-ca
 ---
 ## **Why do we need Knowledge categories?**
 
-Categories are a way to structure your business-critical knowledge into different areas or topics. These reflect your business objectives, targets set for the sales teams, and more. 
+Categories are a way to structure your business-critical knowledge into different areas or topics. These reflect your business objectives, targets set for the sales teams, and more.
 
 Multiple categories can reflect:
 
-*   Your Products, Offers, Solutions, or Services,
-*   Attributes of a Product like Features, Advantages, Benefits, Pricing
-*   Information that a new joinee needs to know to function effectively like About Your Industry, About Your Company, Your Policies, Your Competitors,
+* Your Products, Offers, Solutions, or Services,
+* Attributes of a Product like Features, Advantages, Benefits, Pricing
+* Information that a new joinee needs to know to function effectively like About Your Industry, About Your Company, Your Policies, Your Competitors,
 
 This can be a sample of categories:
 

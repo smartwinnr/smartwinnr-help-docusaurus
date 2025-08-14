@@ -9,20 +9,20 @@ last_update:
 helpscout_id: 5fd4640136980410c912381c
 helpscout_url: https://help.smartwinnr.com/article/42-how-to-create-a-hotspot-question
 ---
-**A  HotSpot refers to a pre-defined range of pixel coordinates within an image which when clicked indicates a correct answer. The Hotspot question allows the participants to indicate the answer by clicking a specific area of an image.** 
+**A  HotSpot refers to a pre-defined range of pixel coordinates within an image which when clicked indicates a correct answer. The Hotspot question allows the participants to indicate the answer by clicking a specific area of an image.**
 
 **Below are the steps to create a Hotspot question:**
 
-1.  Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2.  Click on the **'Add New Question'** button at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
-3.  On the **'Create new Question'** select the **'Question Type'** as **‘Hotspot’.[![](/img/quizzes/helpscout-image-562b8bf2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c18811c64ad47e4b723cf/file-wWJgpL2Py2.png)**
-4.  Enter your question in the **‘Question’** field. [![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
-5.  Upload the image that you want the participants to click on. _Do note that the maximum size of the image that you can upload is 2MB.[![](/img/quizzes/helpscout-image-c54e75b5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c19a71c64ad47e4b723d4/file-Irs9fHOFF2.png)_
-6.  Use your mouse pointer to select the correct area. _You might need multiple clicks to define the outline._ [![](/img/quizzes/helpscout-image-02271f70.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c1a40c64fe14d0e1fde2b/file-9UEttmexxQ.png)_Undo: This button lets you undo the last selection.  
+1. Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on the **'Add New Question'** button at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+3. On the **'Create new Question'** select the **'Question Type'** as **‘Hotspot’.[![](/img/quizzes/helpscout-image-562b8bf2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c18811c64ad47e4b723cf/file-wWJgpL2Py2.png)**
+4. Enter your question in the **‘Question’** field. [![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
+5. Upload the image that you want the participants to click on. _Do note that the maximum size of the image that you can upload is 2MB.[![](/img/quizzes/helpscout-image-c54e75b5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c19a71c64ad47e4b723d4/file-Irs9fHOFF2.png)_
+6. Use your mouse pointer to select the correct area. _You might need multiple clicks to define the outline._ [![](/img/quizzes/helpscout-image-02271f70.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c1a40c64fe14d0e1fde2b/file-9UEttmexxQ.png)_Undo: This button lets you undo the last selection.  
     Clear Selection: This button allows you to clear the entire selection that you have made.  
     Change Image: This button allows you to change the image._
-7.  Use ‘Feedback’ if you want to add additional information to a question.  _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
-8.  In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
+7. Use ‘Feedback’ if you want to add additional information to a question.  _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
+8. In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 
 **Question**
 
@@ -50,7 +50,7 @@ Images or pictures can be sent with a question by clicking on the image icon. Th
 
 **Links**
 
-You can also insert a link with the question by clicking on the links icon. 
+You can also insert a link with the question by clicking on the links icon.
 
 [Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
 
@@ -70,6 +70,6 @@ Once you have filled in the required details of the question, click on the 'Save
 
 **How do the participants see the question?**
 
-Once you have created the Hotspot question and sent this question to the participants, this is how it will appear on their mobile app. They can click on the image. If they point out the area correctly, they have answered the question correctly. 
+Once you have created the Hotspot question and sent this question to the participants, this is how it will appear on their mobile app. They can click on the image. If they point out the area correctly, they have answered the question correctly.
 
 [![](/img/quizzes/helpscout-image-dccc50ea.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4674fc868cb6df3a80ff4/file-OJwgpbGNqT.png)

@@ -23,7 +23,7 @@ Fill up the title and description with the details of the coaching and select th
 
 After filling up all the required segments, click on the "Save" icon.
 
-## Step 2: Fill in the Rating Description.
+## Step 2: Fill in the Rating Description
 
 Now fill in the ratings as per your requirements as shown below.
 
@@ -35,7 +35,7 @@ Now fill in the ratings as per your requirements as shown below.
 
 Click on the "Save" icon after filling up all the required segments.
 
-## Step 3: Select the competencies and add them.
+## Step 3: Select the competencies and add them
 
 In this step, select the competencies, which match with the competition.
 
@@ -43,7 +43,7 @@ In this step, select the competencies, which match with the competition.
 
 Click on the "Save" icon after filling up all the required segments.
 
-## Step 4: Fill out the section required for the competition.
+## Step 4: Fill out the section required for the competition
 
 In this step, fill in with all the required information and use this image for reference purposes.
 
@@ -73,7 +73,7 @@ Fill in the name and description and the fields with the required display name a
 
 **Editable by and steps:** Here you can choose any user who can edit the steps.
 
-## Step 5: Select the users and their coaches to check their performance.
+## Step 5: Select the users and their coaches to check their performance
 
 ![](/img/coaching/helpscout-image-db5d3425.jpg)
 

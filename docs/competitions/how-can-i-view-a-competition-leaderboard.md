@@ -17,13 +17,9 @@ Open the SmartWinnr app > Tap on the Competition tab.
 
 Click on any competition from the list you want to see the leaderboard.
 
-  
-
 It opens the following page where you can see the competition scores of each participant.
 
 ![](/img/competitions/helpscout-image-17dbbbea.png)
-
-  
 
 If a team leaderboard is added to your competition, click on the "Competition team Leaderboard". It opens the popup where you can see can choose to view a team leaderboard.
 
@@ -31,7 +27,7 @@ If a team leaderboard is added to your competition, click on the "Competition te
 
 It will display the rankings of the teams in your competition.
 
-If you click on the team leaderboard name, it will open the following screen where you will get to see a detailed team leaderboard with scores and members of the team.     
+If you click on the team leaderboard name, it will open the following screen where you will get to see a detailed team leaderboard with scores and members of the team.
 
 ![](/img/competitions/helpscout-image-5df8ccf2.png)
 

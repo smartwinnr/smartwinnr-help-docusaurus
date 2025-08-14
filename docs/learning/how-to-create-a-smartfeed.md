@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/27-how-to-create-a-smartfeed
 ---
 Login to SmartWinnr Backend Portal.
 
-Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartFeeds > View All SmartFeeds.** 
+Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartFeeds > View All SmartFeeds.**
 
 It will open the following page:
 
@@ -27,13 +27,13 @@ You will see the **'Create SmartFeed'** screen:
 
 ## Content-Type
 
-SmartWinnr allows you to create SmartFeeds with various types of content like images, videos, audios, PDF, and Powerpoint presentations. 
+SmartWinnr allows you to create SmartFeeds with various types of content like images, videos, audios, PDF, and Powerpoint presentations.
 
-*   If you would like to create SmartFeeds with plain text, images, audios, PDF, or reference to any external links, you can choose the content type as '**SmartFeed'**.
+* If you would like to create SmartFeeds with plain text, images, audios, PDF, or reference to any external links, you can choose the content type as '**SmartFeed'**.
 
 ![](/img/learning/helpscout-image-c6804a74.png)
 
-*   If you would like to send a Powerpoint presentation as a SmartFeed, you can choose the content type as '**Presentation'**.
+* If you would like to send a Powerpoint presentation as a SmartFeed, you can choose the content type as '**Presentation'**.
 
 ![](/img/learning/helpscout-image-2c215166.png)
 
@@ -47,11 +47,11 @@ You will see this list of languages only if different languages have been enable
 
 ## SmartFeed Title
 
-You can choose a title for the SmartFeed you are sending. This will be visible to the recipients. 
+You can choose a title for the SmartFeed you are sending. This will be visible to the recipients.
 
 Ideally, this title should sum up what the SmartFeed is about
 
-Add the title under the SmartFeed Title section. 
+Add the title under the SmartFeed Title section.
 
 ![](/img/learning/helpscout-image-43a30d3a.png)
 
@@ -99,7 +99,7 @@ Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on 
 
 If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/72-how-to-attach-pdf-file-to-your-content)
 
-Following is how a SmartFeed with PDF file appears in the SmartWinnr app. 
+Following is how a SmartFeed with PDF file appears in the SmartWinnr app.
 
 ![](/img/learning/helpscout-image-f02003e9.png)
 
@@ -117,7 +117,7 @@ You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add 
 
 ## Settings
 
-In the settings section, you get to choose when to send out a particular SmartFeed. You can send it right away by choosing the 'Send Now' option or schedule to send it at a later date. 
+In the settings section, you get to choose when to send out a particular SmartFeed. You can send it right away by choosing the 'Send Now' option or schedule to send it at a later date.
 
 Also, you get to choose the expiration of the SmartFeed. Choosing 'Never' will make the SmartFeed always available or set an expiry date after which the SmartFeed won't be visible.
 

@@ -3,6 +3,7 @@
 Here is the exhaustive listing of all files in each section of the documentation:
 
 ## 🚀 Getting Started (Expanded by default) - 25 Files
+
 ```
 📁 Getting Started
 ├── 📄 Getting Started with SmartWinnr (index.md)
@@ -37,6 +38,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ## 🎯 Role-Based Guides (Expanded by default) - 11 Files Total
 
 ### 👤 User Experience (Collapsed) - 4 Files
+
 ```
 📁 User Experience
 ├── 📄 SmartWinnr for Users (index.md)
@@ -46,6 +48,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ### 👔 Manager Tools (Collapsed) - 5 Files
+
 ```
 📁 Manager Tools
 ├── 📄 SmartWinnr for Managers (index.md)
@@ -56,6 +59,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ### Single Page Links - 2 Files
+
 ```
 ├── 📄 ✏️ Editor & Trainer Hub (editor-landing.md)
 └── 📄 👑 Administrator Hub (admin-landing.md)
@@ -64,6 +68,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ## 📝 Quiz Management (Collapsed) - 60+ Files Total
 
 ### /quiz/ Directory - 5 Files (New Consolidated)
+
 ```
 📁 Quiz (New Consolidated Structure)
 ├── 📄 Quiz Management Overview (index.md)
@@ -74,6 +79,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ### /quizzes/ Directory - 55 Files (Legacy Detailed)
+
 ```
 📁 Quizzes (Legacy Detailed Structure)
 ├── 📄 Quizzes Overview (index.md)
@@ -141,6 +147,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ## 📚 Learning & Training (Collapsed) - 47 Files
 
 ### /learning/ Directory - 46 Files
+
 ```
 📁 Learning & Training
 ├── 📄 Learning Overview (index.md)
@@ -190,12 +197,14 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ### /microlearning/ Directory - 1 File
+
 ```
 📁 Microlearning (Legacy)
 └── 📄 Microlearning Overview (index.md)
 ```
 
 ## 🎯 Coaching & Performance (Collapsed) - 18 Files
+
 ```
 📁 Coaching & Performance
 ├── 📄 Coaching Overview (index.md)
@@ -220,6 +229,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 🏆 Competitions & Gamification (Collapsed) - 27 Files
+
 ```
 📁 Competitions & Gamification
 ├── 📄 Competitions Overview (index.md)
@@ -255,6 +265,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 📋 Surveys & Feedback (Collapsed) - 10 Files
+
 ```
 📁 Surveys & Feedback
 ├── 📄 Surveys Overview (index.md)
@@ -271,6 +282,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 📊 Reports & Analytics (Collapsed) - 14 Files
+
 ```
 📁 Reports & Analytics
 ├── 📄 Reports Overview (index.md)
@@ -290,6 +302,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 👥 Administration (Collapsed) - 45 Files
+
 ```
 📁 Administration
 ├── 📄 Administration Overview (index.md)
@@ -336,12 +349,14 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 📱 Mobile Experience (Collapsed) - 1 File
+
 ```
 📁 Mobile Experience
 └── 📄 Mobile Overview (index.md)
 ```
 
 ## 🔧 Troubleshooting (Collapsed) - 2 Files
+
 ```
 📁 Troubleshooting
 ├── 📄 Troubleshooting Overview (index.md)
@@ -349,6 +364,7 @@ Here is the exhaustive listing of all files in each section of the documentation
 ```
 
 ## 📄 Root Level Pages - 2 Files
+
 ```
 ├── 📄 ✏️ Editor & Trainer Hub (editor-landing.md)
 └── 📄 👑 Administrator Hub (admin-landing.md)

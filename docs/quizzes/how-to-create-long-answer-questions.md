@@ -13,33 +13,33 @@ helpscout_url: https://help.smartwinnr.com/article/258-how-to-create-short-answe
 
 Here is how you can create a 'Long answer' question.
 
-*   Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+* Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
 
 ![](/img/quizzes/helpscout-image-1461afec.jpg)
 
-*   Click on the '**Add Question**' button at the _**top right corner.**_
+* Click on the '**Add Question**' button at the _**top right corner.**_
 
 ![](/img/quizzes/helpscout-image-c60dbae3.jpg)
 
-*   On the '**Create new Question**' select the '**Question Type**' as ‘**Long Answer**’.
+* On the '**Create new Question**' select the '**Question Type**' as ‘**Long Answer**’.
 
 ![](/img/quizzes/helpscout-image-28d51b9f.jpg)
 
-*   Enter your question in the ‘**Question’ field**. 
+* Enter your question in the ‘**Question’ field**.
 
 ![](/img/quizzes/helpscout-image-9b05b667.jpg)
 
-*   Specify the maximum point to be given to the question in the field - '**Maximum allowed points**'. Here the editor can decide the maximum value of points that an editor can provide to a question.
+* Specify the maximum point to be given to the question in the field - '**Maximum allowed points**'. Here the editor can decide the maximum value of points that an editor can provide to a question.
 
 ![](/img/quizzes/helpscout-image-7908b93f.jpg)
 
-*   Use ‘**Feedback**’ if you want to add additional information to a question. _(**Optional**) : The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
+* Use ‘**Feedback**’ if you want to add additional information to a question. _(**Optional**) : The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
 
 ![](/img/quizzes/helpscout-image-2ccb9b42.jpg)
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
 
-*   In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select **one or more categories** that best defines a question.
+* In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select **one or more categories** that best defines a question.
 
 ![](/img/quizzes/helpscout-image-20b3826c.jpg)
 
@@ -50,7 +50,7 @@ Then copy the text from Notepad into the SmartWinnr → Question box.
 
 **Question**
 
-You can have various elements like Simple Text, Videos, Images, Links, or Audio for the question. 
+You can have various elements like Simple Text, Videos, Images, Links, or Audio for the question.
 
 **Text**
 
@@ -70,7 +70,7 @@ Images or pictures can be sent with a question by clicking on the image icon. Th
 
 **Links**
 
-You can also insert a link with the question by clicking on the links icon. 
+You can also insert a link with the question by clicking on the links icon.
 
 [Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
 
@@ -86,14 +86,14 @@ You can change the language of the question by clicking on the " **Change Langua
 
 Choose the language to which you want to change and then click on the " **Save**" button.
 
-*   Once you have filled in the required details of the question, click on the ' **Save New Question**' button in order to save the question.
+* Once you have filled in the required details of the question, click on the ' **Save New Question**' button in order to save the question.
 
 ## How do the participants see the question?
 
-*   This is an example of how the participants see the Long Answer question in the User View.
+* This is an example of how the participants see the Long Answer question in the User View.
 
 ![](/img/quizzes/helpscout-image-ede7e426.png)
 
-*   To know how the editors evaluate the Long Answer questions, please click the link given below.
+* To know how the editors evaluate the Long Answer questions, please click the link given below.
 
     [How the editors evaluate the Long Answer questions?](https://help.smartwinnr.com/article/262-how-editors-evaluate-long-answer-questions )

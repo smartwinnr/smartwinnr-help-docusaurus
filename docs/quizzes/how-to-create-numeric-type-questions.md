@@ -9,33 +9,33 @@ last_update:
 helpscout_id: 6451ac447fbafd6b38243f84
 helpscout_url: https://help.smartwinnr.com/article/284-how-to-create-numeric-type-questions
 ---
-#### SmartWinnr offers a wide range of question types that you can choose from for your quiz.
+#### SmartWinnr offers a wide range of question types that you can choose from for your quiz
 
-#### In Numeric Type question, you provide a numeric value as the answer and define an error margin if the user provide an answer within the error margin he will get point according to the define grade for that option.
+#### In Numeric Type question, you provide a numeric value as the answer and define an error margin if the user provide an answer within the error margin he will get point according to the define grade for that option
 
 ### **Below are the steps to follow in order to create a Numeric Type Question:**
 
-1.  Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2.  Click on the **'Add New Question'** button at the _top right corner_.
+1. Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on the **'Add New Question'** button at the _top right corner_.
 
 ![](/img/quizzes/helpscout-image-f789e91a.png)
 
-3.  On the **'Create new Question'** select the **'Question Type'** as **‘Numeric’**.
+3. On the **'Create new Question'** select the **'Question Type'** as **‘Numeric’**.
 
 ![](/img/quizzes/helpscout-image-bdfc5b79.jpg)
 
-4.  Enter your question in the **‘Question’** field.
+4. Enter your question in the **‘Question’** field.
 
 ![](/img/quizzes/helpscout-image-368a4079.jpg)
 
-5.  Enter the numeric answer in the "Answer" field. Then you can provide the error margin. _for ex. If you provide 1 as error margin and the correct answer is 50, then if the user enters 49 or 51 he will get the percentage of points as defined in the Grade._
-6.  Define grade next to it. _For ex. if you want to gve 100% of the points to the correct option or 50% for the partial correct option you can define in the "Grade" field._
+5. Enter the numeric answer in the "Answer" field. Then you can provide the error margin. _for ex. If you provide 1 as error margin and the correct answer is 50, then if the user enters 49 or 51 he will get the percentage of points as defined in the Grade._
+6. Define grade next to it. _For ex. if you want to gve 100% of the points to the correct option or 50% for the partial correct option you can define in the "Grade" field._
 
 ![](/img/quizzes/helpscout-image-358f266e.jpg)
 
 **Question Feedback**
 
-Use ‘Correct Feedback’ and **'Incorrect Feedback'** if you want to add additional information to a question.  (Optional) 
+Use ‘Correct Feedback’ and **'Incorrect Feedback'** if you want to add additional information to a question.  (Optional)
 
 _The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
 

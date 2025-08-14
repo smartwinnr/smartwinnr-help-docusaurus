@@ -31,25 +31,25 @@ This section shows all the KHub items that are trending (recent and mostly searc
 
 ## New
 
-This section shows the newly added KHub items. 
+This section shows the newly added KHub items.
 
-                                                      ![](https://support.smartwinnr.com/api/v1/attachments/729) 
+                                                      ![](https://support.smartwinnr.com/api/v1/attachments/729)
 
 ## Favourites
 
-This section shows the KHub items which you have marked as favorite. 
+This section shows the KHub items which you have marked as favorite.
 
-                                                     ![](https://support.smartwinnr.com/api/v1/attachments/730) 
+                                                     ![](https://support.smartwinnr.com/api/v1/attachments/730)
 
-There is an option to view your KHub items in a Folder or ListView. Click on the "Folders" icon at the top right corner of the screen to change the view of the KHub items to folder view. 
+There is an option to view your KHub items in a Folder or ListView. Click on the "Folders" icon at the top right corner of the screen to change the view of the KHub items to folder view.
 
 ![](https://lh4.googleusercontent.com/bH_Ij7KFfUQQrBy2BkQ7tGic6B0QBy3Tt_y7dHlQxPHHMsu85tVl4ZPq4Y25Uv_4FwU_ubNDVUEuLkduxBvbwuLWt_iS98voDkUWaZFVpDgAtBwQTI4FJpyvp8pF9zlHzWODBFf3)
 
-This shows the KHub items in the form of folders. Then click on the "grid view" icon at the top right corner here in order to get a grid view of these KHub folders. 
+This shows the KHub items in the form of folders. Then click on the "grid view" icon at the top right corner here in order to get a grid view of these KHub folders.
 
 ![](https://lh4.googleusercontent.com/Fx9mBekwv5DFZR0XpnVd3feUv-fPep9Ua5tY8ii-42FvZqN2SJfZcbB2DBcIIjyxqA5Vl1V4GDn59kQi80Khc3u0Z8sLvRmnVe3wRwfMrikvPDI5LBaUh77966ldFNMIBzBx-wUd)
 
-It opens the following screen where all the KHub items are shown in the grid view. 
+It opens the following screen where all the KHub items are shown in the grid view.
 
 ![](https://lh6.googleusercontent.com/O0yBTdxg7RCgJx5Esq6yz0sjmU-tBZ-JHEP_m9UmU-WpFB-VvFx7ttdIsyyarluzWkybTUjrV9dzCPqlb05kf_708QBxNyuQj9TiVpnFGXvZvf-tH0SMz-PhKBJNLf6WetkpitNh)
 

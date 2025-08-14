@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fdb0c4f0b11ce44f63931c0
 helpscout_url: https://help.smartwinnr.com/article/171-how-to-create-kpi
 ---
-In the previous article, we learned about how KPIs are selected. In this article, we will see how to create a KPI within SmartWinnr. 
+In the previous article, we learned about how KPIs are selected. In this article, we will see how to create a KPI within SmartWinnr.
 
 Go to ADMIN > KPI Settings > Definitions > Click on 'Add New KPI' button on the top corner
 
@@ -25,7 +25,7 @@ Select the type of measurement - whether its sum of revenue, number of calls.
 
 * * *
 
-_If you are counting the number of calls, the metric type should be 'Sum'._ 
+_If you are counting the number of calls, the metric type should be 'Sum'._
 
 * * *
 
@@ -35,7 +35,7 @@ Select the format of the KPI. E.g. Select 'Number' if it's 'Number of Calls'. Se
 
 ### Select Categories
 
-Select a category to map the KPI's with specific skill areas of reps. This is an optional field. Filling this field is crucial if you want to see a correlation between how training and other skill improvements are affecting their performance. 
+Select a category to map the KPI's with specific skill areas of reps. This is an optional field. Filling this field is crucial if you want to see a correlation between how training and other skill improvements are affecting their performance.
 
 Here are some examples of how KPI Definitions can be created:
 

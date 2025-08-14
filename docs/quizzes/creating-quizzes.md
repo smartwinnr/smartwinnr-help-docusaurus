@@ -15,9 +15,11 @@ last_update:
 SmartWinnr offers two main types of quizzes:
 
 ### Manual Quiz
+
 A quiz where you manually select and add questions from the question bank or create new questions specifically for that quiz.
 
 ### Automatic Quiz  
+
 A quiz where questions are automatically selected based on specified criteria like knowledge categories, difficulty levels, or tags.
 
 ## Creating a Manual Quiz
@@ -54,9 +56,11 @@ A quiz where questions are automatically selected based on specified criteria li
 SmartWinnr supports a wide variety of question types to create engaging and comprehensive assessments:
 
 ### 1. Multiple Choice Questions (MCQ)
+
 Allow participants to choose one or more answers from provided options.
 
 **How to create:**
+
 1. Go to **Question Bank > Add New Question**
 2. Select **'Multiple Choice'** as question type
 3. Enter your question text
@@ -65,9 +69,11 @@ Allow participants to choose one or more answers from provided options.
 6. Set difficulty level and categories
 
 ### 2. Fill-in-the-Blank Questions
+
 Participants must fill in missing words or phrases in a sentence.
 
 **How to create:**
+
 1. Select **'Fill in the Blank'** question type
 2. Write the question with blanks marked as underscores or brackets
 3. Specify the correct answers for each blank
@@ -75,9 +81,11 @@ Participants must fill in missing words or phrases in a sentence.
 5. Add explanations and categorization
 
 ### 3. Long Answer Questions
+
 Open-ended questions requiring detailed written responses that need manual evaluation.
 
 **How to create:**
+
 1. Select **'Long Answer'** question type
 2. Write the question prompt
 3. Provide evaluation criteria or rubric
@@ -85,9 +93,11 @@ Open-ended questions requiring detailed written responses that need manual evalu
 5. Assign to evaluators for manual scoring
 
 ### 4. Numeric Questions
+
 Questions where the answer is a specific number or numerical value.
 
 **How to create:**
+
 1. Select **'Numeric'** question type
 2. Enter the question text
 3. Set the correct numerical answer
@@ -95,9 +105,11 @@ Questions where the answer is a specific number or numerical value.
 5. Add units if applicable
 
 ### 5. Short Answer with Multiple Options
+
 Similar to MCQ but with shorter text-based options.
 
 **How to create:**
+
 1. Select **'Short Answer with Multiple Options'**
 2. Enter question text
 3. Add short text-based answer options
@@ -105,9 +117,11 @@ Similar to MCQ but with shorter text-based options.
 5. Configure display settings
 
 ### 6. Matching Questions
+
 Participants match items from one list with items from another list.
 
 **How to create:**
+
 1. Select **'Matching'** question type
 2. Create the first list of items
 3. Create the second list of items to match
@@ -115,9 +129,11 @@ Participants match items from one list with items from another list.
 5. Set whether partial scoring is allowed
 
 ### 7. Re-order Questions
+
 Participants must arrange items in the correct sequence.
 
 **How to create:**
+
 1. Select **'Re-order'** question type
 2. Enter the question prompt
 3. Add items that need to be ordered
@@ -125,9 +141,11 @@ Participants must arrange items in the correct sequence.
 5. Set scoring method (all or nothing vs. partial credit)
 
 ### 8. Missing Words Questions
+
 Participants select the correct word to complete a sentence from a dropdown.
 
 **How to create:**
+
 1. Select **'Missing Words'** question type
 2. Write the sentence with placeholders
 3. Create dropdown options for each missing word
@@ -137,9 +155,11 @@ Participants select the correct word to complete a sentence from a dropdown.
 ### 9. Drag and Drop Questions
 
 #### Drag and Drop into Text
+
 Participants drag text elements to correct positions within a passage.
 
 **How to create:**
+
 1. Select **'Drag and Drop into Text'**
 2. Create the base text with drop zones
 3. Create draggable text elements  
@@ -147,9 +167,11 @@ Participants drag text elements to correct positions within a passage.
 5. Set feedback for correct/incorrect drops
 
 #### Drag and Drop into Image
+
 Participants drag labels or elements onto specific areas of an image.
 
 **How to create:**
+
 1. Select **'Drag and Drop into Image'**
 2. Upload the base image
 3. Define drop zones on the image
@@ -157,9 +179,11 @@ Participants drag labels or elements onto specific areas of an image.
 5. Set correct element-zone combinations
 
 ### 10. Hotspot Questions
+
 Participants click on specific areas of an image to answer the question.
 
 **How to create:**
+
 1. Select **'Hotspot'** question type
 2. Upload an image
 3. Define clickable areas (hotspots) on the image
@@ -169,29 +193,34 @@ Participants click on specific areas of an image to answer the question.
 ## Best Practices for Quiz Creation
 
 ### Question Writing
+
 - Keep questions clear and concise
 - Avoid ambiguous wording
 - Use appropriate difficulty levels for your audience
 - Include diverse question types for engagement
 
 ### Answer Options
+
 - Ensure one clearly correct answer for MCQ
 - Make distractors plausible but clearly incorrect
 - Keep answer length consistent
 - Randomize answer order when possible
 
 ### Explanations
+
 - Always provide explanations for correct answers
 - Include learning objectives or references
 - Keep explanations educational, not just confirmatory
 
 ### Quiz Structure
+
 - Start with easier questions to build confidence
 - Mix question types throughout the quiz
 - Group related questions logically
 - End with a summary or key takeaway
 
 ### Technical Considerations
+
 - Test all media elements (images, videos, audio)
 - Ensure questions display properly on mobile devices
 - Set appropriate time limits

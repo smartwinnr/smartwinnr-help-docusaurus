@@ -15,7 +15,7 @@ Go to EDITOR > Settings > Groups. Click on a group. It opens the below page:
 
 ![](/img/admin/helpscout-image-7de389b4.png)
 
-  Click on "**Group Members**" tab from here. Then, click on the "**Edit Members**" button. 
+  Click on "**Group Members**" tab from here. Then, click on the "**Edit Members**" button.
 
 ![](/img/admin/helpscout-image-7277d39c.png)
 

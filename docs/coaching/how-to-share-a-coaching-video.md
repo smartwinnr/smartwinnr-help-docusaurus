@@ -29,12 +29,12 @@ On this page,select the users with whom you wish to share the video. You can als
 
 Once you have selected the users, click on the 'Share Video' button. The video will then get shared with the selected users successfully.
 
-The users with whom the video has been shared will get an email notification about it. Below is the screenshot of the email notification. 
+The users with whom the video has been shared will get an email notification about it. Below is the screenshot of the email notification.
 
                                                                              [![](/img/coaching/helpscout-image-ce5d3822.png)  
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6001b5652e764327f87bf1cf/file-0pYU0tvPf9.png)
 
-Now, click on the 'View Video' button which opens the following page with the video.                                       
+Now, click on the 'View Video' button which opens the following page with the video.
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6001b5652e764327f87bf1cf/file-0pYU0tvPf9.png)
 

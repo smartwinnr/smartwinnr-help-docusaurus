@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/116-how-to-track-my-organizat
 ---
 Manage your Organizational resource usage
 
-You can view the resource usage in your organization by going to ADMIN > Resource Usage and selecting the Resource Usage tab. By default, the resource usage for your current license period is displayed. You can view the usage for any arbitrary period by changing the date range. 
+You can view the resource usage in your organization by going to ADMIN > Resource Usage and selecting the Resource Usage tab. By default, the resource usage for your current license period is displayed. You can view the usage for any arbitrary period by changing the date range.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/935)
 

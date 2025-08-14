@@ -1,0 +1,71 @@
+stages:
+  - lint
+  - build
+  - deploy
+
+# Documentation Style Guide Validation
+doc-style-check:
+  stage: lint
+  image: node:18
+  script:
+    - npm ci
+    - npm run lint:docs
+  only:
+    changes:
+      - docs/**/*.md
+      - templates/**/*.md
+      - "*.md"
+  allow_failure: false
+  artifacts:
+    reports:
+      junit: markdownlint-report.xml
+    paths:
+      - markdownlint-report.xml
+    expire_in: 1 week
+
+# Documentation Build Test
+doc-build-test:
+  stage: build
+  image: node:18
+  script:
+    - npm ci
+    - npm run build
+  only:
+    changes:
+      - docs/**/*.md
+      - src/**/*
+      - "*.ts"
+      - "*.js"
+      - "*.json"
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 hour
+
+# Deploy to staging (example)
+deploy-staging:
+  stage: deploy
+  image: node:18
+  script:
+    - echo "Deploy to staging environment"
+    # Add actual deployment commands here
+  only:
+    - merge_requests
+  environment:
+    name: staging
+    url: https://help-staging.smartwinnr.com
+
+# Deploy to production (example)
+deploy-production:
+  stage: deploy
+  image: node:18
+  script:
+    - echo "Deploy to production environment"
+    # Add actual deployment commands here
+  only:
+    - main
+    - master
+  environment:
+    name: production
+    url: https://help.smartwinnr.com
+  when: manual

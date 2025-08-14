@@ -35,7 +35,7 @@ The editor can also write a brief description of the achievement in the "Descrip
 
 After all the fields are successfully filled Click on "Create Achievement", the new achievement will be added.
 
-Once the Badge is getting created, you have to assign the user to whom you would like to give the Badge. 
+Once the Badge is getting created, you have to assign the user to whom you would like to give the Badge.
 
 Click on the 'Assign' option to assign the badge to the users.
 

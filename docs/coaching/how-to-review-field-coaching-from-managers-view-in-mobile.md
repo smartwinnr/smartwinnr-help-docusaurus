@@ -11,39 +11,39 @@ helpscout_url: https://help.smartwinnr.com/article/244-how-to-review-field-coach
 ---
 How to open Field Coaching in Manager view:
 
-*   Log in to the web using your username and password.
-*   Open Left Menu >>Click on Profile at the top left corner.
-*   Change the toggle button to the  Manager side. This will activate the Manager View
+* Log in to the web using your username and password.
+* Open Left Menu >>Click on Profile at the top left corner.
+* Change the toggle button to the  Manager side. This will activate the Manager View
 
 ![](/img/coaching/helpscout-image-d0b2d0cd.png)
 
-*   Open Left Menu>>Field Coaching.
-*   You can see the available coaching here.
-*   Click on the coaching, then you will be able to see a list of your team here
-*   Click on the salesperson you want to coach.
+* Open Left Menu>>Field Coaching.
+* You can see the available coaching here.
+* Click on the coaching, then you will be able to see a list of your team here
+* Click on the salesperson you want to coach.
 
 ![](/img/coaching/helpscout-image-248f0ff0.png)
 
 **How to do Baseline Assessment**
 
-*   Complete the baseline assessment of your salesperson, by clicking on the ‘Baseline Assessment’ button on the top left corner
+* Complete the baseline assessment of your salesperson, by clicking on the ‘Baseline Assessment’ button on the top left corner
 
 ![](/img/coaching/helpscout-image-9876e783.png)
 
-*   Here, you will be able to see the descriptions of the competencies.
+* Here, you will be able to see the descriptions of the competencies.
 
 ![](/img/coaching/helpscout-image-0037afac.png)
 
-*   Click on the ‘Save’ button, after you have completed the rating process
+* Click on the ‘Save’ button, after you have completed the rating process
 
 **How to do Identify Areas of Strength & Areas of Improvement**
 
-*   Click on the button called ‘Strengths and Improvements’ to start the process of identifying the sales rep’s areas of strengths and areas of improvement. 
-*   You can mark the strengths using a green checkmark and areas of improvement by using a red checkmark
+* Click on the button called ‘Strengths and Improvements’ to start the process of identifying the sales rep’s areas of strengths and areas of improvement.
+* You can mark the strengths using a green checkmark and areas of improvement by using a red checkmark
 
 ![](/img/coaching/helpscout-image-a72ab079.png)
 
-*   Click on “Save’ once you have completed
+* Click on “Save’ once you have completed
 
 **Under this section, you can see the active coaching sessions for the current month. Here you can start a coaching session.**
 
@@ -57,13 +57,13 @@ Fill out your responses in the area provided.  After entering the details, clic
 
 ![](/img/coaching/helpscout-image-0c29062e.png)
 
-*   Coaching Discussion Planning: enter your coaching planning here.
-*   Coaching Summary: You can enter a coaching summary after a discussion with your sales rep.
+* Coaching Discussion Planning: enter your coaching planning here.
+* Coaching Summary: You can enter a coaching summary after a discussion with your sales rep.
 
 Once you complete these steps click on the “Save” button to save the  Coaching.
 
-*   In step 2(Post Call Coaching), the manager will be able to change the rating of the sales rep based on the performance in the coaching.
-*   Click on the “Change Rating” option in the top right corner then change the rating of the competencies accordingly.
-*   When you have completed entering all details, please click on ‘Complete Coaching’ to submit the coaching
+* In step 2(Post Call Coaching), the manager will be able to change the rating of the sales rep based on the performance in the coaching.
+* Click on the “Change Rating” option in the top right corner then change the rating of the competencies accordingly.
+* When you have completed entering all details, please click on ‘Complete Coaching’ to submit the coaching
 
 Please note that once you have clicked on the ‘**Complete Coaching**’ button, you won’t be able to make any more changes to your coaching session.

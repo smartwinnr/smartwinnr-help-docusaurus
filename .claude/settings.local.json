@@ -24,8 +24,11 @@
       "Bash(grep:*)",
       "Bash(tsx:*)",
       "Bash(pkill:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(npx husky init:*)",
+      "Bash(touch:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

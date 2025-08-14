@@ -17,7 +17,7 @@ This page shows various Badges and Certificates that are already existing,
 
 The editor can view Badges and Certificates individually by selecting the type and then by clicking on the search button.
 
-## Adding Achievement 
+## Adding Achievement
 
 Click on the "Add Achievement" following page will open
 
@@ -45,7 +45,7 @@ You can update the image for a certificate by clicking on the picture and add a 
 
 Here you can change the font size and color of the name according to the certificates. Click on Update after completing the process.
 
-Then you have to assign the user to whom you want to give the certificate 
+Then you have to assign the user to whom you want to give the certificate
 
 ![](/img/competitions/helpscout-image-e291ec1a.jpg)
 

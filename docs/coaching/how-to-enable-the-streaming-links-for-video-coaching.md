@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 60a63037eb3af44cc120a9d0
 helpscout_url: https://help.smartwinnr.com/article/241-how-to-enable-the-streaming-links-for-coaching-video
 ---
-Go to Editor > Coaching > Video Coaching > View Coaching.  _Click_ on 'Create Coaching' button. 
+Go to Editor > Coaching > Video Coaching > View Coaching.  _Click_ on 'Create Coaching' button.
 
 ![](/img/coaching/helpscout-image-fce566bf.png)
 

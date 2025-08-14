@@ -15,7 +15,7 @@ You can delete users from SmartWinnr in bulk.
 
 ![](/img/quizzes/helpscout-image-e8ad99d8.png)  
 
-2\. You need to then upload a CSV file with the list of emails for the users who need to be deleted. The column name for the email id list must be “Email Address”. 
+2\. You need to then upload a CSV file with the list of emails for the users who need to be deleted. The column name for the email id list must be “Email Address”.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/859)
 

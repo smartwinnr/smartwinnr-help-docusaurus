@@ -21,28 +21,28 @@ Multiple Choice
 
 In this type of question, the participants are asked to select correct answers from the list of options offered to them. There can be different types of multiple-choice questions:
 
-*   Question with the single correct option
-*   Question with multiple correct options
-*   True and False Question
-*   Yes or No question
+* Question with the single correct option
+* Question with multiple correct options
+* True and False Question
+* Yes or No question
 
 [Click here for more information on Multiple-Choice question](https://smartwinnr.helpscoutdocs.com/article/40-how-to-create-multiple-choice-question)
 
 Fill in the blanks
 
-A Fill in the Blank question consists of a phrase, sentence, or paragraph with a blank space where a participant provides the missing word or words. 
+A Fill in the Blank question consists of a phrase, sentence, or paragraph with a blank space where a participant provides the missing word or words.
 
 [Click here for more information on Fill-in-the-blanks question](https://smartwinnr.helpscoutdocs.com/article/41-how-to-create-fill-in-the-blank-question)
 
 Matching
 
-With Matching questions, participants pair items in one column to items in another column. You can have additional items in the 2nd column that don't match any item. This increases the difficulty as participants cannot guess the correct answers through the process of elimination. 
+With Matching questions, participants pair items in one column to items in another column. You can have additional items in the 2nd column that don't match any item. This increases the difficulty as participants cannot guess the correct answers through the process of elimination.
 
 [Click here for more information on the Matching question](https://smartwinnr.helpscoutdocs.com/article/43-how-to-create-a-matching-question)
 
 Hotspot
 
-A Hotspot question presents an image to the participant and asks to select a particular area as the correct answer. For example, locate the heart in the human anatomy. 
+A Hotspot question presents an image to the participant and asks to select a particular area as the correct answer. For example, locate the heart in the human anatomy.
 
 [Click here for more information on Hotspot question](https://smartwinnr.helpscoutdocs.com/article/42-how-to-create-a-hotspot-question)
 
@@ -52,7 +52,7 @@ Short answer questions are generally open-ended questions that require partici
 
 [Click here for more information on Short answer question](https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions)
 
-Re-Order Question 
+Re-Order Question
 
 Re-order questions where you must drag and drop the answer to a question in the correct order. You can move multiple answers to their desired order and submit them.
 
@@ -62,7 +62,7 @@ Re-order questions where you must drag and drop the answer to a question in the 
 
 ## Question Text
 
-Add the body of the question in this section. Depending on the type of question you select, this section will have the main body text, as well as the options for multiple choice, the correct answer for fill in the blank, matching items for the Matching question, and the main image with the selected portion for Hotspot. 
+Add the body of the question in this section. Depending on the type of question you select, this section will have the main body text, as well as the options for multiple choice, the correct answer for fill in the blank, matching items for the Matching question, and the main image with the selected portion for Hotspot.
 
 SmartWinnr supports questions in different languages. If your organization has 'multiple languages' enabled, you will be able to _'Add Translation'_ for the question. If you don't see this button, contact your SmartWinnr administrator or write to us with your query at _support@smartwinnr.com_
 

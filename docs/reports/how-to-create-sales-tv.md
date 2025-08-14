@@ -27,7 +27,7 @@ You can select the **Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
 
 Leaderboards show you the data of a quiz or a competition to motivate users to perform greatly.
 
-**Leaderboard Type**: You can select the type as **Group leaderboard** to show the score of the teams in a segment. You can select the type as **User leaderboard** to show the score of individual users and You can select the type as **Quiz** and select the particular quiz to show the results in any particular slide. 
+**Leaderboard Type**: You can select the type as **Group leaderboard** to show the score of the teams in a segment. You can select the type as **User leaderboard** to show the score of individual users and You can select the type as **Quiz** and select the particular quiz to show the results in any particular slide.
 
 For Group Leaderboard, you can select the **Competition** and the **Leaderboard** you want to display as per the requirement. Select the Ranking Type on **Total Points** or **Target Achieved**. Ranking Duration can be the time period for a competition or quiz selected on a daily, weekly, and monthly basis.
 

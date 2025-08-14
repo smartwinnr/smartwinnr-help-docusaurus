@@ -13,33 +13,28 @@ In drag and drop into text questions, the participants must drag and drop text 
 
 **Below are the steps to follow in order to create a matching question:**
 
-1.  Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2.  Click on the **'Add New Question'** button at the _top right corner_.
-    
+1. Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on the **'Add New Question'** button at the _top right corner_.
+
     ![](/img/quizzes/helpscout-image-f789e91a.png)
-    
-3.   On the **'Create new Question'** select the **'Question Type'** as **‘Drag And Drop In Text’**.
-    
+
+3.  On the **'Create new Question'** select the **'Question Type'** as **‘Drag And Drop In Text’**.
+
     ![](/img/quizzes/helpscout-image-45d95521.png)
-    
-4.  Enter your question in the **‘Question’** field. Here you first have to add the number of missing words that you want in the question. 
-    
+
+4. Enter your question in the **‘Question’** field. Here you first have to add the number of missing words that you want in the question.
+
     ![](/img/quizzes/helpscout-image-a2a554d1.png)
-    
 
 _For example if_ you _have only 1 missing word in your question, then you will create 1 group of answers for that 1 missing filed._
 
-  
-
-5.  Add the options to be used in that missing filed and select 1 correct option as well. Assign these option to the Group 1 as shown in the image as we only have 1 missing field, So there will be only 1 group.
+5. Add the options to be used in that missing filed and select 1 correct option as well. Assign these option to the Group 1 as shown in the image as we only have 1 missing field, So there will be only 1 group.
 
 ![](/img/quizzes/helpscout-image-db98af6a.jpg)
 
-  
-
 **Question Feedback**
 
-Use ‘Correct Feedback’ and **'Incorrect Feedback'** if you want to add additional information to a question.  (Optional) 
+Use ‘Correct Feedback’ and **'Incorrect Feedback'** if you want to add additional information to a question.  (Optional)
 
 _The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
 

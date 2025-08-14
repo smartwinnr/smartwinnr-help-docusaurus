@@ -15,9 +15,9 @@ Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths.** 
 
 [![](/img/competitions/helpscout-image-ebf41726.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016a10d2042ff6d1b2a9043/file-kfMOibsmCo.png)
 
-_Click_ on Batches option against the SmartPath for which you want to create competition. It opens the following page where you can see the list of batches to whom the SmartPath is assigned. 
+_Click_ on Batches option against the SmartPath for which you want to create competition. It opens the following page where you can see the list of batches to whom the SmartPath is assigned.
 
-Now,  _click_ on the **'_Create Competition_'** button that is to the right-hand side of a batch as shown in the image below. 
+Now,  _click_ on the **'_Create Competition_'** button that is to the right-hand side of a batch as shown in the image below.
 
 ![](/img/competitions/helpscout-image-81780e33.png)
 
@@ -61,7 +61,7 @@ _You cannot change/edit the participants while creating a competition. If you ne
 
 3
 
-### Add Leaderboard of Competition 
+### Add Leaderboard of Competition
 
 This is the step where you can add Leaderboards to the competition. You can create Leaderboards by clicking the ' **Add'** button at the top right corner.
 

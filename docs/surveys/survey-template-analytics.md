@@ -19,7 +19,7 @@ Under the **My Surveys** section select **Survey Type=Survey** Template which
 
 [![](/img/surveys/helpscout-image-6f72e148.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffd6c60fd168b7773533c62/file-xq3UTpdqDt.png)
 
-Now under Analytics click on the chart icon of the survey of which you want to view the analytics.   
+Now under Analytics click on the chart icon of the survey of which you want to view the analytics.
 
 [![](/img/surveys/helpscout-image-c0f74a4f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c1b39b9a8501b295d3663/file-6263tMvNRn.png)
 

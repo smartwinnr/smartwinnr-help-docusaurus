@@ -11,6 +11,7 @@
 ## Environment Variables
 
 ### Development (.env)
+
 ```bash
 # Server Configuration
 API_PORT=3002
@@ -22,6 +23,7 @@ CHROMA_PORT=8000
 ```
 
 ### Production
+
 ```bash
 API_PORT=3002
 CORS_ORIGIN=https://help.smartwinnr.com
@@ -30,6 +32,7 @@ CORS_ORIGIN=https://help.smartwinnr.com
 ## npm Scripts
 
 ### Development Commands
+
 ```bash
 # Start both services (recommended)
 npm run dev
@@ -43,6 +46,7 @@ npm run chatbot:dev   # Chatbot only on port 3002
 ```
 
 ### Production Commands
+
 ```bash
 # Build and serve documentation
 npm run build
@@ -57,12 +61,14 @@ npm run chatbot:start # Starts on port 3002
 If you encounter port conflicts:
 
 ### Documentation Server (Port 3000)
+
 ```bash
 # Use a different port
 docusaurus start --port 3001
 ```
 
 ### Chatbot Server (Port 3002)
+
 ```bash
 # Change API_PORT in .env file
 API_PORT=3003
@@ -74,6 +80,7 @@ API_PORT=3003 npm run chatbot:dev
 ### Update Frontend Configuration
 
 If you change the chatbot port, update the frontend configuration in:
+
 - `src/components/ChatBot/ChatBot.tsx` (API_BASE_URL)
 - Update CORS_ORIGIN in .env to match documentation port
 

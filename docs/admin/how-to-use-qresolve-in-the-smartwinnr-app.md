@@ -15,7 +15,7 @@ Go to the Left Menu > QResolve. It opens the following screen:
 
                                                                                    ![](https://support.smartwinnr.com/api/v1/attachments/693)
 
-  You can click on a particular query to answer it or to view other's answers to it. 
+  You can click on a particular query to answer it or to view other's answers to it.
 
                                                                                     ![](https://support.smartwinnr.com/api/v1/attachments/694)
 
@@ -27,9 +27,9 @@ In order to like a query ,User can click on the Thumbs up Button  And for Disli
 
                                                                                      ![](https://support.smartwinnr.com/api/v1/attachments/695)
 
-You can go to QResolve in the app and then click on the star icon at the top right corner of the screen to view the questions that you have marked as your favourite. 
+You can go to QResolve in the app and then click on the star icon at the top right corner of the screen to view the questions that you have marked as your favourite.
 
-                                                                                      ![](https://support.smartwinnr.com/api/v1/attachments/696) 
+                                                                                      ![](https://support.smartwinnr.com/api/v1/attachments/696)
 
 ### Comment on an answer
 

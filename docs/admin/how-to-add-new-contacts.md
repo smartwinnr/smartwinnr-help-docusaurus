@@ -19,8 +19,8 @@ It will open the following page
 
 You will have to select the following
 
-*   User Identifier: This will help you to identify the user by a unique identifier, for example, a user can be identified by his unique email id or some unique user id.
-*   CSV Delimiter: You will have to select the Delimiter type and then click on the Download template button as shown above.
+* User Identifier: This will help you to identify the user by a unique identifier, for example, a user can be identified by his unique email id or some unique user id.
+* CSV Delimiter: You will have to select the Delimiter type and then click on the Download template button as shown above.
 
 After filling the required information in the downloaded CSV file, you will need to save the file and select the file and click on "Upload".
 

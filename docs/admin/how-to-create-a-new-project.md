@@ -29,12 +29,12 @@ The editor will be able to _Select_ Teams from the available teams from the dr
 
 Clicking on the Create Teams page will open the following page, here the editor would be able to create a new Team group by specifying the values in the following fields:
 
-*   Group Name: The editor needs to specify the group name, which is to be created.
-*   Group Description: The editor needs to specify the group description here.
-*   Group Type:
+* Group Name: The editor needs to specify the group name, which is to be created.
+* Group Description: The editor needs to specify the group description here.
+* Group Type:
 
-1.        Private: This will be limited to specific members
-2.        Public: This will be available to all the members The editor will be able to _Select_ Teams from the available teams from the dropdown, for the project to be created.
+1.       Private: This will be limited to specific members
+2.       Public: This will be available to all the members The editor will be able to _Select_ Teams from the available teams from the dropdown, for the project to be created.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1051)
 
@@ -49,8 +49,6 @@ The editor needs to specify the Due Date for the specified project to be created
 ### 5.Project Status
 
                                                                ![](https://support.smartwinnr.com/api/v1/attachments/1053)
-
-  
 
 The status of the project can be selected from this dropdown. The elements of this dropdown are specified by the admin.
 
@@ -68,11 +66,9 @@ The editor needs to specify the type of notification he/she wants to send the va
 
  Notification Type: There are two types of notifications that the editor can specify Push Messages, emails.
 
-This would help the team members to be updated with various events related to the project. 
+This would help the team members to be updated with various events related to the project.
 
                                                        ![](https://support.smartwinnr.com/api/v1/attachments/1055)
-
-  
 
 After the selection of Notification Type, one more tab is activated namely Notification Trigger, in which the Editor needs to specify when the selected notification will be triggered.
 

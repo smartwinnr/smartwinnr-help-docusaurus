@@ -19,7 +19,7 @@ This will take you through the team Analytics which is represented with several 
 
 ![](https://lh4.googleusercontent.com/nmza_2Ag6Vjj3kRuaGjPDcVg_qdOOB5P0C93_XrNVPRNSie91zIkpsOUSwA_BhRAmxZRxZtl9C_r7zY7ia0FzFDpTvt-L5B6MN7IBagho0WSQiwDH-yd6mqSOE9hYdC--fLwGBWm)
 
-Following are the brief description of each graph in the Team Analytics: 
+Following are the brief description of each graph in the Team Analytics:
 
 ### 1\. Quiz Category-Wise Performance of your Team
 
@@ -43,7 +43,7 @@ Click on the Filter option to filter it with the territory, business function, d
 
 3\. Compare Each Team Member by Quiz Category  
 
-You will be able to select team members and compare their performance across different topics. You can easily identify the areas of improvements and areas of strength of every person in your team. 
+You will be able to select team members and compare their performance across different topics. You can easily identify the areas of improvements and areas of strength of every person in your team.
 
 Click on the 'Select Members' button to select specific members in your team.  
 

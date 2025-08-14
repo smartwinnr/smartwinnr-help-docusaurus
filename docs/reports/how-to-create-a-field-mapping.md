@@ -9,20 +9,20 @@ last_update:
 helpscout_id: 5fdb0cd97129911ba1b21e50
 helpscout_url: https://help.smartwinnr.com/article/173-how-to-create-a-field-mapping
 ---
-A Field Mapping defines the processing logic within SmartWinnr. The entire intent of writing this logic is to ensure that the KPIs that we have defined in Step 1 has data through these field mappings. 
+A Field Mapping defines the processing logic within SmartWinnr. The entire intent of writing this logic is to ensure that the KPIs that we have defined in Step 1 has data through these field mappings.
 
 Here is how you fill various fields while creating a mapping.
 
-The first section is a generic section and defines the overall rule of reading the import data. 
+The first section is a generic section and defines the overall rule of reading the import data.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/898)
 
 Mapping Name: Enter the name of the mapping
 
-Upload Type: Select the relevant upload type. 
+Upload Type: Select the relevant upload type.
 
-*   Individual Record: If the data source (CSV, or data report) has rows by individual deal or call, then select this option. e.g., an agent can make 10 calls in 1 day and each call is a separate row in the data source. So for each of the calls, there is a row in the data source.
-*   Daily Record: If the data source has rows aggregated by date, then select this option. e.g., an agent makes 10 calls in 1 day and 1 row is present in the data source for all the 10 calls for that specific date
+* Individual Record: If the data source (CSV, or data report) has rows by individual deal or call, then select this option. e.g., an agent can make 10 calls in 1 day and each call is a separate row in the data source. So for each of the calls, there is a row in the data source.
+* Daily Record: If the data source has rows aggregated by date, then select this option. e.g., an agent makes 10 calls in 1 day and 1 row is present in the data source for all the 10 calls for that specific date
 
 Sample of Individual Record:
 
@@ -48,11 +48,11 @@ This section defines the mapping between individual columns in your data source 
 
 Each section has the following entries:
 
-*   Field Type: Select the correct field type
-*   Display Name: Enter a display name for this field. This name will be used when you view the uploaded data within SmartWinnr
-*   CSV Column Heading: Column header name in the CSV
-*   Description: Describe this field
-*   'Add Filter' button: Use this button to add a filter for this field. 
+* Field Type: Select the correct field type
+* Display Name: Enter a display name for this field. This name will be used when you view the uploaded data within SmartWinnr
+* CSV Column Heading: Column header name in the CSV
+* Description: Describe this field
+* 'Add Filter' button: Use this button to add a filter for this field.
 
 * * *
 
@@ -64,9 +64,9 @@ _The CSV Column Heading field needs to exactly match the relevant column heade
 
 The first three sections are mandatory. Namely
 
-*   Unique User Id - Uniquely identifies a participant
-*   Date to Credit - The date against which this KPI will be entered 
-*   Unique Record Id - Uniquely defines a record in the data source. This field is mandatory only if you have selected the 'Upload Type' as 'Individual Record'
+* Unique User Id - Uniquely identifies a participant
+* Date to Credit - The date against which this KPI will be entered
+* Unique Record Id - Uniquely defines a record in the data source. This field is mandatory only if you have selected the 'Upload Type' as 'Individual Record'
 
 For the purpose of explanation, we will use this CSV as a sample throughout this page
 
@@ -74,15 +74,15 @@ For the purpose of explanation, we will use this CSV as a sample throughout this
 
 Unique User Id
 
-This is a mandatory field. Map that column in the data source that uniquely identifies the participant. It can be an email address, employee id, etc. 
+This is a mandatory field. Map that column in the data source that uniquely identifies the participant. It can be an email address, employee id, etc.
 
-Our reference CSV shows the 'User' column to be the one that uniquely identifies the participant with an email address. So 'User' goes into the 'CSV Column Heading' field. 
+Our reference CSV shows the 'User' column to be the one that uniquely identifies the participant with an email address. So 'User' goes into the 'CSV Column Heading' field.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/755)
 
 Date to Credit
 
-This is the 2nd mandatory field. Enter the column name in the data source that identifies the date against which this _KPI was completed_. 
+This is the 2nd mandatory field. Enter the column name in the data source that identifies the date against which this _KPI was completed_.
 
 In this example, the column is 'Date'
 
@@ -90,13 +90,13 @@ In this example, the column is 'Date'
 
 * * *
 
-_The 'Date to Credit' field is not the date on which this record was created in the CRM, but the date when the KPI was completed._ 
+_The 'Date to Credit' field is not the date on which this record was created in the CRM, but the date when the KPI was completed._
 
 * * *
 
 Unique Record Id
 
-The 'Unique Record Id' is the field that will map to that column in your data source that uniquely identifies a record row. This can be a transaction number, a row number, or a unique identifier from your source data. 
+The 'Unique Record Id' is the field that will map to that column in your data source that uniquely identifies a record row. This can be a transaction number, a row number, or a unique identifier from your source data.
 
 In this sample, its the 'Transaction Number'
 
@@ -110,7 +110,7 @@ _The 'Unique Record Id' field is mandatory only if you have selected the 'Upload
 
 ### KPIs
 
-Each field mapping must have a KPI as a field. Because the entire intent of writing a Field Mapping is to ensure that the KPIs that we have defined in Step 1 has data through this logic. 
+Each field mapping must have a KPI as a field. Because the entire intent of writing a Field Mapping is to ensure that the KPIs that we have defined in Step 1 has data through this logic.
 
 As a sample, we will take the KPI 'Number of New Signups'. It's defined as a 'Sum' and we will see how to fill values into this KPI.
 
@@ -118,19 +118,19 @@ As a sample, we will take the KPI 'Number of New Signups'. It's defined as a 'Su
 
 We click on the 'Add Field' button to add a field. Next, enter the
 
-*   'Field Type' = KPI,
-*   Select KPI as 'New signups' (this comes from the pre-filled list of [KPI Definitions](https://smartwinnr.drift.help/article/what-are-field-definitions/?v=1556012737058) we created in Step 1)
-*   CSV Column Heading = 'New Signups' (refer to sample CSV mentioned earlier in this article, where 'New Signups' is a column)
-*   Record Operation = Sum
+* 'Field Type' = KPI,
+* Select KPI as 'New signups' (this comes from the pre-filled list of [KPI Definitions](https://smartwinnr.drift.help/article/what-are-field-definitions/?v=1556012737058) we created in Step 1)
+* CSV Column Heading = 'New Signups' (refer to sample CSV mentioned earlier in this article, where 'New Signups' is a column)
+* Record Operation = Sum
 
 ![](https://support.smartwinnr.com/api/v1/attachments/759)
 
 ## Filters
 
-There are 2 types of filters present within SmartWinnr. 
+There are 2 types of filters present within SmartWinnr.
 
-1.  Filter at the overall data level - This filter will help you to restrict data that's imported into SmartWinnr
-2.  Filter at the field level - This filter will help you to restrict data for each field. 
+1. Filter at the overall data level - This filter will help you to restrict data that's imported into SmartWinnr
+2. Filter at the field level - This filter will help you to restrict data for each field.
 
 ### Filter at the Overall Data Level
 
@@ -138,15 +138,15 @@ This filter acts as an overall filter in importing data into SmartWinnr. For exa
 
              ![](https://support.smartwinnr.com/api/v1/attachments/760)
 
-How to Add Filter at an Overall Data Level 
+How to Add Filter at an Overall Data Level
 
 Click on the 'Add Filter' button that you see on the page:
 
                                                                       ![](https://support.smartwinnr.com/api/v1/attachments/761)
 
-Add Filter: This adds filters to the fields based on which you can aggregate or slice the data in the fields. When you click on the 'Add Filter' field, a pop-up will open. 
+Add Filter: This adds filters to the fields based on which you can aggregate or slice the data in the fields. When you click on the 'Add Filter' field, a pop-up will open.
 
-Filter Operation: This lets you choose two operations- OR and AND based on which the filtering will be done. 
+Filter Operation: This lets you choose two operations- OR and AND based on which the filtering will be done.
 
 Filter Key: This lets you choose the field on which filtering will be done.
 
@@ -160,15 +160,15 @@ Once you have entered all the filters, click on the 'Save' button to save the ch
 
 Such filters are extremely helpful when you have to define restrictions at the level of individual fields. For example, if you had to record a new KPI called 'New signups for Product A' in which you have to consider only those signups that are for Product A. And ignore signups for other products.
 
-Create a field for the KPI 'New signups for Product A'. It will still map to the column 'New Signups' but will now have a restriction. Click on this button: 
+Create a field for the KPI 'New signups for Product A'. It will still map to the column 'New Signups' but will now have a restriction. Click on this button:
 
                                                                                          ![](https://support.smartwinnr.com/api/v1/attachments/762)
 
-It will add a section just below the earlier details. Build the logic to ignore all other signups, except for Product A. Note the changes in the screenshot below: 
+It will add a section just below the earlier details. Build the logic to ignore all other signups, except for Product A. Note the changes in the screenshot below:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/763)
 
-Wondering where the 'Product Type' came from? This example brings us to the next type of field that can be added into the Field Mapping, called Helper Fields. 
+Wondering where the 'Product Type' came from? This example brings us to the next type of field that can be added into the Field Mapping, called Helper Fields.
 
 * * *
 
@@ -180,17 +180,17 @@ From this CSV:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/764)
 
-We will now create a new helper field called 'Product Type'. Its Field Type will be String and will have the values mentioned below. 
+We will now create a new helper field called 'Product Type'. Its Field Type will be String and will have the values mentioned below.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/765)
 
 ![](https://support.smartwinnr.com/api/v1/attachments/766)
 
-Such helper fields can be of types Number, Date or String. These are extremely helpful when adding filters at the field level. 
+Such helper fields can be of types Number, Date or String. These are extremely helpful when adding filters at the field level.
 
 * * *
 
-_Thumb rule: Add all the important columns in your data source to the Field Mapping. Even if you don't need them right now, you might need them later on. Adding them as fields in the field mapping will ensure that SmartWinnr will upload the data into its processed table for later use._ 
+_Thumb rule: Add all the important columns in your data source to the Field Mapping. Even if you don't need them right now, you might need them later on. Adding them as fields in the field mapping will ensure that SmartWinnr will upload the data into its processed table for later use._
 
 * * *
 

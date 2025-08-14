@@ -23,7 +23,7 @@ Click on the "Edit" button at the top right corner of the screen. It will open t
 
 ![](/img/quizzes/helpscout-image-ed6761a8.png)
 
-On this page, make all the necessary changes to the question. You can change the question body, the options, the feedback, the categories. 
+On this page, make all the necessary changes to the question. You can change the question body, the options, the feedback, the categories.
 
 You can also add a translation to the question in another language. To add the translation, click on the "Add Translation" button at the top right corner of the Question section.
 

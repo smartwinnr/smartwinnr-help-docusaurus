@@ -21,5 +21,4 @@ Go to Editor > LEARNING AND KNOWLEDGE > Competition > Open the desired Competiti
 
 4\. Click on the same Close Quiz button to close the quiz once the time is over. That will close the quiz. A user who had already started with the quiz, will be able to finish it. But a user who hasn’t started yet, will not be able to start anymore.  
   
-
 ![](/img/quizzes/helpscout-image-9fef80ef.png)

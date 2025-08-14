@@ -15,8 +15,6 @@ Goto Left Menu >> Editor >> Forms >> View All Forms.
 
 ![](/img/admin/helpscout-image-db79f1e3.jpg)
 
-  
-
 Select the form that you want to submit on behalf of a user and click on that form.
 
 ![](/img/admin/helpscout-image-61254edb.jpg)

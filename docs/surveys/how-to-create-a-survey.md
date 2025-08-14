@@ -35,56 +35,55 @@ Since we are creating a survey here select Type = Survey.
 
 **Question Visibility Type:** Here you will get to constrain the visibility of the survey questions to the users.
 
-*   Select **All** to make all the questions visible to the users at once.
-*   Select **Individual** to make individual questions to appear at once.
-*   Select **Section Wise** to create sections of the questions and make them visible to the participants section-wise.[![](/img/surveys/helpscout-image-bedebc65.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)Then, add the title and description of the survey. Give a Start and end date for the survey.  
+* Select **All** to make all the questions visible to the users at once.
+* Select **Individual** to make individual questions to appear at once.
+* Select **Section Wise** to create sections of the questions and make them visible to the participants section-wise.[![](/img/surveys/helpscout-image-bedebc65.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)Then, add the title and description of the survey. Give a Start and end date for the survey.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)  
     **Anonymous response:** If you check this checkbox, the participants will be able to respond to the survey anonymously.  
-      
+
     **Send response to user:** If you check this checkbox, then the participants will receive an email with the responses that he has given for the survey questions.  
-      
-    
-    ### **Schedule  Reminder**
-    
+
+  ### **Schedule  Reminder**
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
+
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
-    
-    This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.    
+
+    This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.
     [Learn How to Add a Reminder for your Survey](https://smartwinnr.helpscoutdocs.com/article/219-how-to-set-reminder-for-quiz-survey)
-    
-    ### Add Questions
-    
+
+  ### Add Questions
+
     [Refer to this article](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template) to know how to add various questions to the survey.  
-    
-    ### Adding Sections to a Survey
-    
+
+  ### Adding Sections to a Survey
+
     If you select  **Question Visibility Type** =  **Section Wise,** then you will get to add sections to a survey. Click on the  **"Add Sections"** button in the  **Sections**.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)  
     It opens the following popup:  
-    ](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)[![](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)  
+](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)[![](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)  
     Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click on the " **Submit**" button.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)  
     Now click on the ' **Add Question**' in each section to add the questions to the section. [Learn the types of questions that you can add to a survey.](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)  

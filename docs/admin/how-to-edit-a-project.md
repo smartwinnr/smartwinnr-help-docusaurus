@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fdb30c60b11ce44f639323f
 helpscout_url: https://help.smartwinnr.com/article/187-how-to-edit-a-project
 ---
-Go to EDITOR>> PROJECT MANAGEMENT >>Project  Management>> Click on the project Name you want to edit. 
+Go to EDITOR>> PROJECT MANAGEMENT >>Project  Management>> Click on the project Name you want to edit.
 
 ![](/img/admin/helpscout-image-a3ab2afe.png)Click on " **Edit**" to edit the Current project.
 
@@ -17,7 +17,6 @@ For more information on Hamburger Menu [Click Here](https://smartwinnr.helpscout
 
 ![](/img/admin/helpscout-image-647e59c8.png) "Project Name", "Project Description" can be changed.
 
-  
 Team members can also be added, a new team can also be created by clicking on the "Create Teams".
 
 Changing the project status is also permitted here.
@@ -36,7 +35,6 @@ The editor can also remove sections from the project by clicking on the "Remove"
 
 ![](/img/admin/helpscout-image-3d2782d1.png)The editor can change the type of notification setting by clicking on the " **Notification Type**", notification triggers can be changed by clicking on the notification triggers.
 
-  
 The editor can also add more notification types here by clicking on the " **Add More**" button on the top right.
 
 The editor can also delete the notification by clicking on the " **Delete icon**" next to each notification type.

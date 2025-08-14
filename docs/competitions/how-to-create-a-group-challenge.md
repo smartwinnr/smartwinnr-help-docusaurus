@@ -19,7 +19,7 @@ Challenge Name: Give the name of the challenge.
 
 Challenge Description: Give a description of the challenge.
 
-Division: Select a business unit for which the challenge is being created. This field will not be visible to you if you have access to only your division. 
+Division: Select a business unit for which the challenge is being created. This field will not be visible to you if you have access to only your division.
 
 KPI: Select a KPI for the challenge.
 
@@ -39,6 +39,6 @@ Select Challenge Pairs: This section lets you select the pairs between whom the
 
              ![](/img/competitions/helpscout-image-16816348.png)
 
-Since you have selected the 'Challenge Type' as 'Group', you will get to select groups as a pair of competitors for the challenge. Click on the 'Add' button, once you have added the pairs of participants. 
+Since you have selected the 'Challenge Type' as 'Group', you will get to select groups as a pair of competitors for the challenge. Click on the 'Add' button, once you have added the pairs of participants.
 
 Then, click on the 'Create' button at the bottom which will successfully create the challenge.

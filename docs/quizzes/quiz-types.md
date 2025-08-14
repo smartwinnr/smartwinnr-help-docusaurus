@@ -17,9 +17,9 @@ Manual quizzes are sent manually by the quiz editor. You can schedule to send th
 
 In the automatic quiz, the SmartWinnr system can automatically send targeted questions to each individual participant based on their past response history. This could be helpful if you have a large question bank but want to send only a few questions per quiz over a period of time to cover the entire question bank. The editor can specify different options in an auto-quiz, including:
 
-*   **The frequency of quiz delivery**: No. of days between successive quiz delivery. For example, if set to 1, every day the SmartWinnr system will send 1 quiz to all the participants assigned to the quiz.
-*   **The number of Questions per Quiz**: Determines how many questions should be sent in each quiz.
-*   **The number of correct responses for a question to stop it from being repeated**: If set to 1, after the participant has answered a question correctly, it will not be repeated.
+* **The frequency of quiz delivery**: No. of days between successive quiz delivery. For example, if set to 1, every day the SmartWinnr system will send 1 quiz to all the participants assigned to the quiz.
+* **The number of Questions per Quiz**: Determines how many questions should be sent in each quiz.
+* **The number of correct responses for a question to stop it from being repeated**: If set to 1, after the participant has answered a question correctly, it will not be repeated.
 
 There are different types of quizzes that can be created within SmartWinnr. You can use this simple list to decide on which quiz type will suit your case.
 

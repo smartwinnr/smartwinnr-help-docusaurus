@@ -15,7 +15,7 @@ Below are the steps to view and check the status of the coaching assignments ass
 
 Log in to the SmartWinnr app.
 
-Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'Coachings'.    
+Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'Coachings'.
 
 ![](/img/coaching/helpscout-image-f663c7bc.png)
 

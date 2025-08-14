@@ -23,7 +23,7 @@ Division: Select a business unit for which the challenge is being created.
 
 KPI: Select a KPI for the challenge.
 
-Challenge Type: This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'Manager' to create a manager challenge. 
+Challenge Type: This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'Manager' to create a manager challenge.
 
 Start Date and End Date: Specify the start date and end date for the challenge.
 
@@ -39,6 +39,6 @@ Select Challenge Pairs: This section lets you select the pairs between whom the
 
            ![](/img/competitions/helpscout-image-042e8d7d.png)
 
-Since you have selected the 'Challenge Type' as 'Manager', you will get to select a pair of managers whose teams will be competing with each other in this competition. Click on the 'Add' button, once you have added the pairs of participants. 
+Since you have selected the 'Challenge Type' as 'Manager', you will get to select a pair of managers whose teams will be competing with each other in this competition. Click on the 'Add' button, once you have added the pairs of participants.
 
 Then, click on the 'Create' button at the bottom which will successfully create the challenge.

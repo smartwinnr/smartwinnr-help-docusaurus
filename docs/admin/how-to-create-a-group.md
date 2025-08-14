@@ -21,7 +21,7 @@ A ‘Public’ group will be visible to all and other Editors will also be able 
 
 ![](https://support.smartwinnr.com/api/v1/attachments/930)
 
-If you choose the Group Type as public, then you need to select the Business Unit and Country to whom this group will be visible. 
+If you choose the Group Type as public, then you need to select the Business Unit and Country to whom this group will be visible.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/931)
 

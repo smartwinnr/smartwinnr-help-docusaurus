@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fce026bde1bfa158fb55e2d
 helpscout_url: https://help.smartwinnr.com/article/9-how-can-i-download-the-smartwinnr-app
 ---
-You can open SmartWinnr from a PC/laptop, as well as through iOS/Android mobile apps. You can use the same username and password to log in to the web portal, as well as the mobile app. 
+You can open SmartWinnr from a PC/laptop, as well as through iOS/Android mobile apps. You can use the same username and password to log in to the web portal, as well as the mobile app.
 
 **Access SmartWinnr from PC or Laptop:** If you want to access SmartWinnr from your laptop or desktop, click on this link: [https://web.smartwinnr.com/](https://web.smartwinnr.com/)
 

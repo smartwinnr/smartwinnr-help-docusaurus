@@ -17,13 +17,13 @@ Go to the Left Menu > LEARNING AND KNOWLEDGE > KHub > Analytics. It will open 
 
 ![](https://support.smartwinnr.com/api/v1/attachments/722)
 
-Also, you have the ability to filter these analytics by country, group, frequency, Name, Email, and Meta Tags. This makes it easy for you to quickly find the analytics that you need. 
+Also, you have the ability to filter these analytics by country, group, frequency, Name, Email, and Meta Tags. This makes it easy for you to quickly find the analytics that you need.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/723)
 
 ## Search
 
-Here you will get to search and select a particular KHub item from the list and view its analytics. 
+Here you will get to search and select a particular KHub item from the list and view its analytics.
 
                                                           ![](https://support.smartwinnr.com/api/v1/attachments/724)
 

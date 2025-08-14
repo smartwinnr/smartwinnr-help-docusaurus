@@ -19,7 +19,7 @@ To review a coaching video, the coach can directly click on the "click here" lin
 
 Step 1: Go to Coaching > Video Coaching > My Reviews.
 
-Step 2: To review coaching of a particular participant, click on the thumbnail of the uploaded video directly or click on 'View All' 
+Step 2: To review coaching of a particular participant, click on the thumbnail of the uploaded video directly or click on 'View All'
 
 button to see all the uploaded coaching videos.
 
@@ -29,14 +29,14 @@ Here, you can search for a particular coaching video by its status- Pending Revi
 
 Step 3: On the review coaching page, review the video from the video editor on the left side.
 
-Step 4: On the right side, use competency sliders to rate the participant. Provide your feedback in the feedback box. 
+Step 4: On the right side, use competency sliders to rate the participant. Provide your feedback in the feedback box.
 
 Step 5: Once you have given your rating and feedback on the coaching, click on the 'Submit Review' button which will submit your feedback successfully.
 
 [![](/img/coaching/helpscout-image-28d7987f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2e1d041fcb56e4047da1a/file-h0qZBCPLrg.png)  
 What happens after a coach submits feedback?
 
-Once you submit your review for a coaching response, the participant will get notified about it through email. Below, is the 
+Once you submit your review for a coaching response, the participant will get notified about it through email. Below, is the
 
 example screenshot of the email, the participant is going to get:
 

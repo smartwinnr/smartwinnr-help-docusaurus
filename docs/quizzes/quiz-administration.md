@@ -27,6 +27,7 @@ To configure default quiz settings:
 ### Badge Thresholds
 
 Set minimum average scores required to achieve different types of badges:
+
 - **Bronze Badge**: Set minimum percentage (e.g., 60%)
 - **Silver Badge**: Set minimum percentage (e.g., 75%)  
 - **Gold Badge**: Set minimum percentage (e.g., 90%)
@@ -34,6 +35,7 @@ Set minimum average scores required to achieve different types of badges:
 ### Quiz Notification Settings
 
 Configure automatic notifications for:
+
 - Quiz assignments
 - Quiz reminders before deadline
 - Quiz completion confirmations
@@ -63,6 +65,7 @@ To close a quiz before its scheduled end time:
 ### Scheduling Quiz Availability
 
 When creating or editing a quiz, you can set:
+
 - **Start date and time**: When the quiz becomes available
 - **End date and time**: When the quiz automatically closes
 - **Duration**: How long participants have to complete the quiz once started
@@ -159,6 +162,7 @@ For immediate notifications:
 ### Import/Export Functions
 
 #### Bulk Question Import
+
 1. Download the question template
 2. Fill in questions following the format
 3. Include all required fields
@@ -166,6 +170,7 @@ For immediate notifications:
 5. Review and approve imported questions
 
 #### Question Export
+
 - Export questions for backup
 - Share question banks between teams
 - Create question libraries for reuse
@@ -196,18 +201,21 @@ For immediate notifications:
 ## Troubleshooting Common Issues
 
 ### Quiz Not Appearing for Users
+
 - Check quiz status (active/inactive)
 - Verify user group assignments
 - Confirm quiz publication date
 - Review user permissions
 
 ### Technical Issues
+
 - **Mobile compatibility**: Test on different devices
 - **Browser support**: Ensure compatibility across browsers
 - **Media loading**: Verify images, videos, and audio files work properly
 - **Time zone issues**: Consider global teams and time differences
 
 ### Performance Issues
+
 - **Large quizzes**: Break into smaller sections if needed
 - **Media-heavy content**: Optimize file sizes
 - **High participation**: Monitor server performance during peak times

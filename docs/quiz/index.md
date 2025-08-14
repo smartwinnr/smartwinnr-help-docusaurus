@@ -9,12 +9,14 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 ## Key Features
 
 ### Quiz Types
+
 - **Knowledge Quiz**: Test understanding of products, processes, or policies
 - **Video Quiz**: Interactive quizzes embedded in video content
 - **Survey Quiz**: Gather feedback and opinions
 - **Timed Quiz**: Add urgency with time limits
 
 ### Question Formats
+
 - Multiple Choice (Single/Multiple answers)
 - True/False
 - Fill in the blanks
@@ -23,6 +25,7 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 - Video questions
 
 ### Advanced Features
+
 - **Question Banks**: Organize questions by category or topic
 - **Randomization**: Shuffle questions and answer options
 - **Adaptive Learning**: Personalize based on performance
@@ -32,6 +35,7 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 ## Getting Started with Quiz
 
 ### Creating Your First Quiz
+
 1. Navigate to **Quiz** → **Create Quiz**
 2. Choose quiz type and settings
 3. Add questions from library or create new ones
@@ -40,6 +44,7 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 6. Schedule or launch immediately
 
 ### Best Practices
+
 - Keep questions clear and concise
 - Use varied question types for engagement
 - Provide immediate feedback
@@ -49,6 +54,7 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 ## Quiz Analytics
 
 Track performance with detailed analytics:
+
 - Individual and team scores
 - Question-level analysis
 - Completion rates

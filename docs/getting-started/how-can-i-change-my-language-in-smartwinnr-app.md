@@ -15,7 +15,7 @@ Open the SmartWinnr app and click on the **hamburger icon** at the top left corn
 
 ![](/img/getting-started/helpscout-image-efc355f6.png)
 
-Here, click on the **profile picture** at the top. It will take you to the following screen: 
+Here, click on the **profile picture** at the top. It will take you to the following screen:
 
 ![](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
 

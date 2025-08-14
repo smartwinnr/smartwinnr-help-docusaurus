@@ -19,11 +19,11 @@ You can also select set the threshold (minimum average score required ) to get a
 
 ### Quiz Notification Setting
 
-You can also set reminders for a quiz, by changing the notification settings. 
+You can also set reminders for a quiz, by changing the notification settings.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1124)
 
-### Multiple attempts configuration 
+### Multiple attempts configuration
 
 Admin can also set the threshold for allowing users to appear for quiz multiple times, by specifying the threshold and also by checking the checkbox, as shown below.
 

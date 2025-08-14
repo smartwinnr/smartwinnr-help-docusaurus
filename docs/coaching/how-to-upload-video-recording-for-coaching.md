@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 62a3071392cb8c175b46bb56
 helpscout_url: https://help.smartwinnr.com/article/268-how-to-record-video-into-video-coaching
 ---
-Follow the below steps to upload your video recording for the coaching assignment. 
+Follow the below steps to upload your video recording for the coaching assignment.
 
 Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.
 

@@ -11,7 +11,6 @@ helpscout_url: https://help.smartwinnr.com/article/72-how-to-attach-pdf-file-to-
 ---
 You can upload a pdf if you want to share product specification sheets or more in your SmartFeed in SmartWinnr.
 
-In the Upload PDF section in SmartFeed, Click on the '**Choose File**' button and then select the required files from the computer to upload. 
+In the Upload PDF section in SmartFeed, Click on the '**Choose File**' button and then select the required files from the computer to upload.
 
-  
 ![](https://support.smartwinnr.com/api/v1/attachments/107)

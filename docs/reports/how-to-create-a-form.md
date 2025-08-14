@@ -27,16 +27,14 @@ Give a catchy name to your form and add a description. Also, set the start date 
 
 SmartWinnr allows you to create two different types of forms. Following are the two types of forms:
 
-*   Acknowledgement
-*   KPI Value Submit Form
+* Acknowledgement
+* KPI Value Submit Form
 
 ### Acknowledgement Form
 
 Acknowledgment Form is a declaration form that may be used to authenticate official documents.
 
-![](/img/reports/helpscout-image-0421f800.png)                                              
-
-  
+![](/img/reports/helpscout-image-0421f800.png)
 
 ### **KPI Value Submit Form**
 
@@ -44,7 +42,7 @@ KPI Value Submit Form is a type of Form which is used to submit KPIs at multipl
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1033)
 
-Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI. 
+Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI.
 
 The below fields will be enabled for both Acknowledgement Form type as well as KPI Value Submit Form type
 
@@ -54,7 +52,7 @@ Select the appropriate fields of use.
 
 **Needs Approval:** Check this option, if you would like to add an approver to the form submitted by users. You can make any editors or the corresponding manager of each user as the approver.
 
-**Generate PDF:** This option enables you to generate the form submission into a PDF format. Also, you can send the PDF automatically to the user by checking the option 'Send PDF To User Automatically'. 
+**Generate PDF:** This option enables you to generate the form submission into a PDF format. Also, you can send the PDF automatically to the user by checking the option 'Send PDF To User Automatically'.
 
 **Allow Visibility of Submissions:** This option helps the editor to see the form submissions of users.
 
@@ -70,7 +68,7 @@ Select the appropriate fields of use.
 
 **Default Date Filter:** This option allows you to set a default date range for the date filter. By default, the submissions within the specified date range will be visible to the approvers.
 
-![](/img/reports/helpscout-image-fd7853ad.png) 
+![](/img/reports/helpscout-image-fd7853ad.png)
 
 ### Submission Rules
 
@@ -95,7 +93,7 @@ There are three types of notifications :
 
 **Notification:** If you need to notify the users through a push notification, select the type as 'Notification' then you have to choose a trigger. For example, if you choose 'Approved' as the notification trigger, then the users will be notified every time when the approver approves their forms.
 
-**Email:** You can also notify the users through email by choosing the 'Email' option as the notification type. 
+**Email:** You can also notify the users through email by choosing the 'Email' option as the notification type.
 
 ![](/img/reports/helpscout-image-808e9066.png)
 
@@ -103,7 +101,7 @@ More than one notification type can be added by clicking on the Add More option
 
 ### Step-2: Add Form Components
 
-Once you have completed the first step in creating a Form, it will take you to the following page where you can add fields to the form. 
+Once you have completed the first step in creating a Form, it will take you to the following page where you can add fields to the form.
 
 ![](/img/reports/helpscout-image-85b9b941.png)  
 
@@ -131,7 +129,7 @@ You get the following:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1042)**Type**
 
-This is the type of data, whether it will be Blank, Pre Populated, Lookup Field. 
+This is the type of data, whether it will be Blank, Pre Populated, Lookup Field.
 
 This will have the following  options  :
 
@@ -143,9 +141,9 @@ This will contain the source of data for the fields.
 
 This is the type of data field
 
-                                                                         ![](https://support.smartwinnr.com/api/v1/attachments/1045) 
+                                                                         ![](https://support.smartwinnr.com/api/v1/attachments/1045)
 
-In the advance section, you can also find the option to set the visibility and value override option for the selected field.                    
+In the advance section, you can also find the option to set the visibility and value override option for the selected field.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1046)
 
@@ -165,16 +163,16 @@ Select the Form  data location
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1029)
 
-This field is for the data location of the form.     
+This field is for the data location of the form.
 
 SmartWinnr provides you two ways to make a form submission:
 
-1.  Via Left Menu >> Forms
-2.  Via Chat
+1. Via Left Menu >> Forms
+2. Via Chat
 
 If the user Selects the Chat option, few more fields related to the chat gets triggered, as shown below
 
-![](https://support.smartwinnr.com/api/v1/attachments/1030)Form Submission Message 
+![](https://support.smartwinnr.com/api/v1/attachments/1030)Form Submission Message
 
 Select the Form Submission Message type.
 
@@ -182,13 +180,11 @@ Select the Form Submission Message type.
 
 You can choose either a Pop-up message or a Sticky header to pass the users on their successful submission.
 
-Pop-up message: Pop-up is simply a notification that communicates certain events to the user. 
+Pop-up message: Pop-up is simply a notification that communicates certain events to the user.
 
 Sticky header: A sticky header is a navigation tool that fixes the menu to the top of the screen as the user scrolls down a page.
 
 ![](/img/reports/helpscout-image-7a49bf1f.png)
-
-                                                  
 
 ![](/img/reports/helpscout-image-31894796.png)
 

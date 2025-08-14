@@ -17,8 +17,8 @@ SmartWinnr provides a very detailed set of analytics on every quiz that you have
 
 This list shows the quizzes that you have created. For every quiz, it shows a summary of
 
-*   **Participation** – The overall participation percentage along with actual numbers. For example, in the screenshot, it shows that the participation for the quiz 'GK TEST' till now is 100%, with 1 person out of 1 have taken the quiz.
-*   **Percentage Score** – The average percentage score of all the people who have taken the quiz till now
-*   **Status** – This shows the status of the quiz – whether its still active, or closed or yet to start
-*   **Analytics** – This is a button that will take you to detailed analytics of the quiz.
-*   **Download report** – This will give you a detailed report on the quiz in an excel format.
+* **Participation** – The overall participation percentage along with actual numbers. For example, in the screenshot, it shows that the participation for the quiz 'GK TEST' till now is 100%, with 1 person out of 1 have taken the quiz.
+* **Percentage Score** – The average percentage score of all the people who have taken the quiz till now
+* **Status** – This shows the status of the quiz – whether its still active, or closed or yet to start
+* **Analytics** – This is a button that will take you to detailed analytics of the quiz.
+* **Download report** – This will give you a detailed report on the quiz in an excel format.

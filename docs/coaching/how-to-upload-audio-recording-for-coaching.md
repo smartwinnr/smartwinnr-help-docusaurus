@@ -15,7 +15,7 @@ Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assig
 
 ![](/img/coaching/helpscout-image-bcacd807.png)
 
-Step:2 On the coaching details page, click on the **“Record Audio”** button to record your audio. 
+Step:2 On the coaching details page, click on the **“Record Audio”** button to record your audio.
 
 ![](/img/coaching/helpscout-image-15fd3ae3.png)
 

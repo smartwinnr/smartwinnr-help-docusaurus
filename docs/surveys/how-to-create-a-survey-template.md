@@ -43,7 +43,7 @@ This is the section where you add questions to the survey
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)Click on the '**Add Question'** button at the right corner of the section to keep adding the questions. SmartWinnr allows you to create different types of questions as per your requirement. [Click here to learn how to add different kinds of question to a survey template](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
 
-### Adding sections to the Survey Template:
+### Adding sections to the Survey Template
 
 If you select  **Question Visibility Type** = **Section Wise,** then you will get to add sections to a survey. Click on the **'Add Sections'** button in the **Sections**.
 

@@ -11,20 +11,20 @@ helpscout_url: https://help.smartwinnr.com/article/104-how-to-add-a-survey-to-a-
 ---
 Here are the steps to add a survey to a competition:
 
-1.  Once you get to the 4th step of creating competition, select Survey in the "Select Task".
-2.  Give a name to the task
-3.  Assign points for the task
-4.  Set a start and end date of the task
+1. Once you get to the 4th step of creating competition, select Survey in the "Select Task".
+2. Give a name to the task
+3. Assign points for the task
+4. Set a start and end date of the task
 
 Below is a screenshot of adding a survey to a competition:
 
 [![](/img/quizzes/helpscout-image-8a9279ae.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600a8b54cfe30d219ccda6fb/file-qTvkuHlvui.png)
 
-Check  the checkbox ‘Choose Participants Manually’ to manually select the participants of the Quiz. This should be used so that you can remove some users from the list. 
+Check  the checkbox ‘Choose Participants Manually’ to manually select the participants of the Quiz. This should be used so that you can remove some users from the list.
 
 The system will ask for the Points for to be given for the survey takers on survey completeion.You can decide the points and fill it out in the given box.
 
-Then, click on the "Create" button which will take you to a page where you can create a new survey and add it to the competition. 
+Then, click on the "Create" button which will take you to a page where you can create a new survey and add it to the competition.
 
 Refer to the articles below to know how to create a survey:
 

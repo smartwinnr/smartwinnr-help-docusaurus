@@ -11,11 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/28-how-to-add-a-powerpoint-pr
 ---
 To create a SmartFeed with PowerPoint presentation, you can follow the below steps:
 
-1.  Goto **Editor > View All SmartFeeds** > Click on the '**Add New SmartFeed**' button at the top right corner. It will take you to the following screen.
-    
+1. Goto **Editor > View All SmartFeeds** > Click on the '**Add New SmartFeed**' button at the top right corner. It will take you to the following screen.
+
     [![](/img/learning/helpscout-image-ebc239b0.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bcfa6b9a8501b295d3612/file-BPyAcIVLlj.png)
-    
-2.  Choose the Content-Type as **'Presentation'**. 
+
+2. Choose the Content-Type as **'Presentation'**.
 
 If you don't see the 'Presentation' option in your view, please write to [support@smartwinnr.com](mailto:support@smartwinnr.com) for the privilege to add presentations to your SmartFeed.
 
@@ -37,7 +37,7 @@ To convert the presentation into JPEG format, you can follow the below steps:
 
 ![](/img/learning/helpscout-image-642aaf79.png)
 
-Once you upload the Presentation which is converted to PDF/ ZIP, SmartWinnr system will automatically revert it back to the presentation mode. This will enable to SmartFeed viewers to view it in the presentation mode.   
+Once you upload the Presentation which is converted to PDF/ ZIP, SmartWinnr system will automatically revert it back to the presentation mode. This will enable to SmartFeed viewers to view it in the presentation mode.
 
 6\. Set the send date, expire date and category for the SmartFeed. [Learn more on send date, expiry date and category value for SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/27-how-to-create-a-smartfeed)
 

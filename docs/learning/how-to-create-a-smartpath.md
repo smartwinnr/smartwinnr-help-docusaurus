@@ -11,9 +11,9 @@ helpscout_url: https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpa
 ---
 _Prerequisite: Please refer to the [article on creating modules](https://smartwinnr.helpscoutdocs.com/article/76-how-can-i-create-a-module-for-smartpath) before you proceed with creating SmartPath_
 
-##### Follow the below steps to create a SmartPath:
+##### Follow the below steps to create a SmartPath
 
-##### 
+#####
 
 Go to EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths. _Click_ on the 'Create SmartPath' button.
 
@@ -23,19 +23,18 @@ It opens the following page where you can enter the details to create your Smart
 
 [![](/img/learning/helpscout-image-efbbcbea.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015578a2042ff6d1b2a8e44/file-kchp2gusWX.png)
 
-##### There are four steps involved in creating a SmartPath:
+##### There are four steps involved in creating a SmartPath
 
 #### 1\. Creating the SmartPath
 
-#### 
+####
 
 The first step involves entering basic details about the SmartPath.
 
-*   Select a **'Business Unit'** for the SmartPath 
-*   Giving a '**Title'** and a short '**description'** for the SmartPath
-    
+* Select a **'Business Unit'** for the SmartPath
+* Giving a '**Title'** and a short '**description'** for the SmartPath
+
     [![](/img/learning/helpscout-image-7e2fc11f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601601b21f25b9041beb9b9a/file-u7n9k1iASa.png)
-    
 
 _In this step_, you can change the language of the SmartPath by clicking on the **'Change Language'** button.
 
@@ -51,7 +50,7 @@ You can also add a  **'Completion Certificate'** that would be awarded to the p
 
 [![](/img/learning/helpscout-image-f6ccc81b.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601605342042ff6d1b2a9005/file-c7gkfLE8Hu.png)
 
-Once you add everything on this page, _Click_ on the **'Save SmartPath'** button. 
+Once you add everything on this page, _Click_ on the **'Save SmartPath'** button.
 
 This will take you to the next step in the creation of SmartPath:
 
@@ -83,9 +82,9 @@ You can also establish some rules for the modules.
 
 For example, you could choose to give access to the next module in the SmartPath depending on:
 
-*   If the previous module is completed or not
-*   On a particular date
-*   And, if the participant has scored a certain threshold score in the previous module
+* If the previous module is completed or not
+* On a particular date
+* And, if the participant has scored a certain threshold score in the previous module
 
 _Please note that the rules can be applied only from the second segment of a module_
 
@@ -109,7 +108,7 @@ As shown in the screenshot below, You can set a Score and a Comparator--  **
 
 ####  3. Assign Batches
 
-#### 
+####
 
 Now the third step is to assign batches of participants to this SmartPath. On the following page, _click_ on the 'View Batches' button at the top right corner of the screen.
 
@@ -143,8 +142,8 @@ Here is the page where you add the coaches:
 
 [![](/img/learning/helpscout-image-1e34e206.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601666d66867724dfc6ede01/file-4fuvfxFvZ6.png)
 
-*   Give the name of the group to whom you are assigning the SmartPath
-*   Select the start and end date of the SmartPath
-*   Select the number of coaches that you are going to assign for each individual's coaching
+* Give the name of the group to whom you are assigning the SmartPath
+* Select the start and end date of the SmartPath
+* Select the number of coaches that you are going to assign for each individual's coaching
 
 Once you fill these details, _click_ on the **'Assign Coach'** button. This will assign the coaches to the coaching successfully.

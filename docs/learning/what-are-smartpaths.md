@@ -19,8 +19,8 @@ Here is a picture that depicts how a SmartPath works:
 
 Consider this scenario-- you want to improve sales effectiveness across your sales team. And, you want your team to excel two important skills here i.e. Effective opening and Objection handling. Here is how SmartPath helps you achieve this:
 
-*   The Smartpath creation follows a bottom-up approach.
-*   Before you create a SmartPath you need to create Modules that go into this SmartPath. So, create the modules- Effective Opening and Objection Handling. 
-*   Next, add segments to these modules. For example, in the above image, Module1: Effective Opening has 1 SmartFeed, 1 Quiz, and 1 Survey as its segments. Similarly, the Module2: Objection Handling handling has 2 SmartFeeds, 2 quizzes, and 2 coachings as its segments. This way you can add as many segments as you like under a module.
-*   Now, that your modules are ready they get encapsulated in the SmartPath-  Sales effectiveness excellence. Your SmartPath is now ready to be shared with your users.
-*   You can re-use all the segments, modules, and SmartPaths you create as many times as you wish.
+* The Smartpath creation follows a bottom-up approach.
+* Before you create a SmartPath you need to create Modules that go into this SmartPath. So, create the modules- Effective Opening and Objection Handling.
+* Next, add segments to these modules. For example, in the above image, Module1: Effective Opening has 1 SmartFeed, 1 Quiz, and 1 Survey as its segments. Similarly, the Module2: Objection Handling handling has 2 SmartFeeds, 2 quizzes, and 2 coachings as its segments. This way you can add as many segments as you like under a module.
+* Now, that your modules are ready they get encapsulated in the SmartPath-  Sales effectiveness excellence. Your SmartPath is now ready to be shared with your users.
+* You can re-use all the segments, modules, and SmartPaths you create as many times as you wish.

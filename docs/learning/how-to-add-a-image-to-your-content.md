@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/69-how-to-add-a-image-to-your
 ---
 Images or pictures can be sent as content in your SmartFeed or attach to your Question in SmartWinnr.
 
-Click on the image icon to attach an image to your SmartFeed or to the question that you create in SmartWinnr. 
+Click on the image icon to attach an image to your SmartFeed or to the question that you create in SmartWinnr.
 
       ![](https://support.smartwinnr.com/api/v1/attachments/101)
 

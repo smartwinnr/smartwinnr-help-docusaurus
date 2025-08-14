@@ -7,12 +7,14 @@ This document outlines the comprehensive plan for implementing an automated scre
 ## System Requirements Analysis
 
 ### Current State
+
 - **Total Images**: 681 mapped images across documentation
 - **Source**: Legacy HelpScout screenshots (outdated)
 - **Target Systems**: Two separate SmartWinnr portals
 - **Infrastructure**: Existing image mapping system ready for integration
 
 ### Target Environments
+
 - **Manager/User Portal**: https://web.smartwinnr.com/ (iPad viewport: 1024x768px)
 - **Admin Portal**: https://app.smartwinnr.com/ (Desktop viewport: 1440x900px)
 - **Test Accounts**: 3 dedicated accounts (User, Manager, Admin)
@@ -44,18 +46,21 @@ This document outlines the comprehensive plan for implementing an automated scre
 ### Component Details
 
 #### 1. Navigation Controller
+
 - **Purpose**: Handles authentication and page navigation
 - **Features**: Multi-account management, session handling, URL routing
 - **Input**: Screenshot requirements, user credentials
 - **Output**: Authenticated browser sessions ready for capture
 
 #### 2. Capture Engine
+
 - **Purpose**: Captures screenshots using Puppeteer
 - **Features**: Viewport management, element selection, timing control
 - **Input**: Page URLs, element selectors, capture specifications
 - **Output**: Raw screenshot images
 
 #### 3. Processing Manager
+
 - **Purpose**: Optimizes and organizes captured screenshots
 - **Features**: Image optimization, file naming, metadata generation
 - **Input**: Raw screenshots, mapping requirements
@@ -66,11 +71,13 @@ This document outlines the comprehensive plan for implementing an automated scre
 ### Phase 1: Foundation Setup (Week 1)
 
 #### 1.1 Environment Setup
+
 ```bash
 npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth
 ```
 
 #### 1.2 Basic Screenshot Capture System
+
 ```javascript
 // New script: scripts/capture-screenshots.js
 class ScreenshotCapture {
@@ -136,6 +143,7 @@ class ScreenshotCapture {
 ```
 
 #### 1.3 Configuration Management
+
 ```javascript
 // config/screenshot-config.js
 module.exports = {
@@ -173,6 +181,7 @@ module.exports = {
 ### Phase 2: Screenshot Mapping & Processing (Week 2)
 
 #### 2.1 Enhanced Image Mapping
+
 ```json
 {
   "screenshots": [
@@ -195,6 +204,7 @@ module.exports = {
 ```
 
 #### 2.2 Automated Mapping Update
+
 ```javascript
 // scripts/update-screenshot-mapping.js
 class ScreenshotMapper {
@@ -214,6 +224,7 @@ class ScreenshotMapper {
 ```
 
 #### 2.3 Quality Control System
+
 ```javascript
 class QualityController {
   async validateScreenshot(imagePath) {
@@ -234,6 +245,7 @@ class QualityController {
 ### Phase 3: Automation & Integration (Week 3-4)
 
 #### 3.1 Batch Processing System
+
 ```javascript
 // scripts/batch-capture.js
 class BatchCapture {
@@ -270,6 +282,7 @@ class BatchCapture {
 ```
 
 #### 3.2 Change Detection System
+
 ```javascript
 // scripts/detect-ui-changes.js
 class ChangeDetector {
@@ -291,6 +304,7 @@ class ChangeDetector {
 ```
 
 #### 3.3 CI/CD Integration (Future)
+
 ```yaml
 # .github/workflows/screenshot-update.yml
 name: Update Screenshots
@@ -334,12 +348,14 @@ jobs:
 ### Screenshot Standards
 
 #### **Resolution & Format**
+
 - **Admin Portal (Desktop)**: 1440x900px
 - **Manager/User Portal (iPad)**: 1024x768px  
 - **Format**: PNG (lossless compression)
 - **Quality**: Full quality, optimized for web
 
 #### **File Naming Convention**
+
 ```
 [portal]_[section]_[feature]_[view]_[YYYYMMDD].png
 
@@ -350,6 +366,7 @@ Examples:
 ```
 
 #### **Directory Structure**
+
 ```
 /static/img/screenshots/
 ├── admin/                    # Admin portal screenshots
@@ -370,6 +387,7 @@ Examples:
 ### Puppeteer Configuration
 
 #### **Browser Settings**
+
 ```javascript
 const browserConfig = {
   headless: true,
@@ -385,6 +403,7 @@ const browserConfig = {
 ```
 
 #### **Page Optimization**
+
 ```javascript
 const pageConfig = {
   waitUntil: 'networkidle2',
@@ -394,6 +413,7 @@ const pageConfig = {
 ```
 
 #### **Screenshot Options**
+
 ```javascript
 const screenshotConfig = {
   type: 'png',
@@ -407,12 +427,14 @@ const screenshotConfig = {
 ## Security & Authentication
 
 ### Credential Management
+
 - **Storage**: Environment variables in `.env` file
 - **Production**: AWS Secrets Manager integration
 - **Rotation**: Monthly credential updates
 - **Access Control**: Principle of least privilege
 
 ### Session Handling
+
 - **Session Persistence**: Maintain authenticated sessions during batch processing
 - **Timeout Handling**: Automatic re-authentication on session expiry
 - **Security Headers**: Handle CSRF tokens and security headers
@@ -421,6 +443,7 @@ const screenshotConfig = {
 ## Error Handling & Recovery
 
 ### Common Scenarios
+
 ```javascript
 class ErrorHandler {
   async handleAuthenticationFailure(page, credentials) {
@@ -450,6 +473,7 @@ class ErrorHandler {
 ```
 
 ### Recovery Strategies
+
 - **Retry Logic**: Exponential backoff for transient failures
 - **Fallback Selectors**: Multiple selector options per screenshot
 - **Partial Success**: Continue batch processing despite individual failures
@@ -458,12 +482,14 @@ class ErrorHandler {
 ## Performance Optimization
 
 ### Capture Efficiency
+
 - **Session Reuse**: Maintain authenticated sessions across captures
 - **Parallel Processing**: Process multiple screenshots concurrently
 - **Smart Navigation**: Optimize page navigation order
 - **Resource Management**: Monitor memory usage and cleanup
 
 ### Image Optimization
+
 ```javascript
 // Post-processing optimization
 const sharp = require('sharp');
@@ -479,12 +505,14 @@ async function optimizeScreenshot(inputPath, outputPath) {
 ## Monitoring & Analytics
 
 ### Capture Metrics
+
 - **Success Rate**: Percentage of successful captures
 - **Processing Time**: Average time per screenshot  
 - **Error Classification**: Types and frequency of failures
 - **Resource Usage**: Memory and CPU consumption
 
 ### Quality Metrics
+
 - **Image Quality**: File size and visual quality checks
 - **Consistency**: Viewport and styling consistency
 - **Completeness**: Coverage of required documentation images
@@ -493,6 +521,7 @@ async function optimizeScreenshot(inputPath, outputPath) {
 ## Testing Strategy
 
 ### Unit Tests
+
 ```javascript
 // test/screenshot-capture.test.js
 describe('Screenshot Capture', () => {
@@ -514,6 +543,7 @@ describe('Screenshot Capture', () => {
 ```
 
 ### Integration Tests
+
 - **End-to-end capture workflow**: Full process from authentication to file save
 - **Cross-portal testing**: Verify both admin and manager/user portals
 - **Batch processing validation**: Test multiple screenshot captures
@@ -522,18 +552,21 @@ describe('Screenshot Capture', () => {
 ## Rollout Plan
 
 ### Phase 1: Single Screenshot Pilot (Week 1)
+
 - **Target**: One simple screenshot from manager portal
 - **Scope**: Basic authentication and capture
 - **Success Criteria**: Successfully capture and save one screenshot
 - **Validation**: Manual comparison with existing screenshot
 
 ### Phase 2: Section Pilot (Week 2-3)  
+
 - **Target**: Complete "Getting Started" section (estimated 10-15 screenshots)
 - **Scope**: Multiple screenshots across different views
 - **Success Criteria**: 90% capture success rate, quality validation
 - **Validation**: Documentation team review
 
 ### Phase 3: Full Deployment (Week 4-8)
+
 - **Target**: All 681 screenshots across all portals
 - **Scope**: Complete automation with batch processing
 - **Success Criteria**: under 5% manual intervention needed
@@ -542,6 +575,7 @@ describe('Screenshot Capture', () => {
 ## Cost Analysis
 
 ### Development Costs
+
 - **Engineering Time**: 80 hours @ $100/hr = $8,000
 - **Infrastructure Setup**: $500 (server setup, tools)
 - **Testing & QA**: $1,500
@@ -549,6 +583,7 @@ describe('Screenshot Capture', () => {
 - **Total Development**: $10,500
 
 ### Operational Costs (Monthly)
+
 - **Server/Hosting**: $30/month (if cloud-hosted)
 - **Test Account Maintenance**: $10/month  
 - **Storage**: $5/month (screenshots)
@@ -556,6 +591,7 @@ describe('Screenshot Capture', () => {
 - **Total Monthly**: $60/month
 
 ### ROI Calculation
+
 - **Manual Screenshot Time**: 15 minutes/screenshot × 681 = 170 hours
 - **Manual Time Value**: 170 hours × $50/hr = $8,500
 - **Maintenance Savings**: 2 hours/week × 52 weeks × $50/hr = $5,200/year
@@ -565,12 +601,14 @@ describe('Screenshot Capture', () => {
 ## Risk Mitigation
 
 ### Technical Risks
+
 - **Authentication Changes**: Monitor login flow changes, maintain multiple auth methods
 - **UI Changes**: Implement flexible selectors, fallback options
 - **Performance Issues**: Resource monitoring, scaling options
 - **Browser Compatibility**: Test with multiple browser versions
 
 ### Operational Risks
+
 - **Test Data Changes**: Coordinate with backend team on test data stability
 - **System Downtime**: Schedule captures during stable periods
 - **Credential Expiry**: Automated credential validation and alerts
@@ -579,12 +617,14 @@ describe('Screenshot Capture', () => {
 ## Success Metrics
 
 ### Quality Metrics
+
 - **Capture Success Rate**: >95% successful screenshot captures
 - **Image Quality Score**: Manual review rating >4.5/5
 - **Processing Time**: under 30 seconds per screenshot average
 - **Error Rate**: under 5% capture failures
 
 ### Efficiency Metrics  
+
 - **Automation Level**: >90% screenshots captured without manual intervention
 - **Time Savings**: 80% reduction in screenshot update time
 - **Coverage**: 100% of required screenshots captured and updated
@@ -593,18 +633,21 @@ describe('Screenshot Capture', () => {
 ## Next Steps
 
 ### Immediate Actions (Week 1)
+
 1. **Environment Setup**: Install Puppeteer and dependencies
 2. **Credential Setup**: Obtain test account credentials for all three roles
 3. **Basic Script**: Create initial authentication and single screenshot capture
 4. **Test Capture**: Capture one screenshot from manager portal as proof of concept
 
 ### Short Term (Week 2-4)
+
 1. **Batch Processing**: Implement multi-screenshot capture system
 2. **Mapping Integration**: Connect with existing image-mapping.json system  
 3. **Quality Control**: Add validation and optimization
 4. **Documentation Update**: Replace first batch of screenshots
 
 ### Long Term (Month 2-3)
+
 1. **CI/CD Integration**: Connect with frontend repository changes
 2. **Change Detection**: Automated detection of UI changes
 3. **Monitoring Dashboard**: Track capture success and quality metrics

@@ -27,7 +27,7 @@ From here, you can click on the " **Open Camera**" to click a picture and upload
 
 ### Adding the profile picture when you first log in
 
-You will be asked to add a profile picture the very first time you log in to SmartWinnr. 
+You will be asked to add a profile picture the very first time you log in to SmartWinnr.
 
 Once you download the app and enter your login credentials to log in, you will see this screen:
 
@@ -37,6 +37,6 @@ Now, click on the **Camera icon** that is marked in the screenshot above. It wi
 
 ![](https://lh6.googleusercontent.com/_Ggm_H5RveEasIyf_u3O_I9cEEsxkw7FkoLGzjSrZ5U1dS5XCUaEFEO7jsjtW4fFjQr5CTO5p8IPvW-t7k8lX1H4ItCRdLT3ytQc-9xV7LiyipMZ5NxlKrHDpO58-Y_UxY8J-Lj3)
 
-In this pop-up, you can click on the " **Open Camera**" option to click a picture and upload it. Or you can choose "**Open Gallery**" option to select a picture from your gallery and upload it. 
+In this pop-up, you can click on the " **Open Camera**" option to click a picture and upload it. Or you can choose "**Open Gallery**" option to select a picture from your gallery and upload it.
 
 ![](https://lh5.googleusercontent.com/bHnfsleuaKEIYVUqj61j8kSybvN9qyNMBRr9DYnmeClaHP-L1OPUEOCjcAekqu890uGhiNFY0JAUPXDevATd6IvDSrhiNQYUcDvXwspZ9fNi3b2Lj-LPJNpnlhEopsl-r_c3FQdO)

@@ -41,11 +41,13 @@ If you have forgotten your password, click on the **'Forgot Password?'** link in
 Enter your username and click on the **'Forgot Password'** button. The username can be your official email id or your mobile number from your welcome SMS or email.
 
 **When the username is your official email id:**
+
 - You will receive an email with a link to reset your password
 - Reset your password using the link
 - Login with your email as username and the new password
 
 **When the username is your mobile number:**
+
 - You will receive an SMS from SmartWinnr with the new password
 - Login with your mobile number as username and the new password
 
@@ -69,12 +71,14 @@ If your account is locked, you will see a message indicating this. To unlock you
 ### User Does Not Exist
 
 If you see a message "user does not exist," it means your SmartWinnr account has not been created by your system administrator. Write to [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
+
 - Your organization name
 - Your official email id
 
 ### Don't Know Your Username
 
 If you don't know your username, write to [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
+
 - Your organization name  
 - Your official email id
 

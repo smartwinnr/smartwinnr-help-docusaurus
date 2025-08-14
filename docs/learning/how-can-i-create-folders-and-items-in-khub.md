@@ -25,7 +25,7 @@ Click on the "Create" button at the top left corner and then click on the "Folde
 
 ![](/img/learning/helpscout-image-a32a6d3d.png)
 
-It opens the following pop-up to create the folder: 
+It opens the following pop-up to create the folder:
 
 ![](/img/learning/helpscout-image-c7f5e965.png)
 
@@ -43,7 +43,7 @@ Open the desired folder in which you would like to add the content/item. Click o
 
 ![](/img/learning/helpscout-image-d2a21f69.png)
 
-It opens the following pop-up to create the item: 
+It opens the following pop-up to create the item:
 
 ![](/img/learning/helpscout-image-776b466c.png)
 
@@ -59,11 +59,11 @@ Change Folder Sequence
 
 This feature lets you change the sequence of the KHub folders. Follow the below steps to change the sequence of your KHub folders:
 
-EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Click on the hamburger menu button at the top right corner of the screen and select "Change folder Sequence". 
+EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Click on the hamburger menu button at the top right corner of the screen and select "Change folder Sequence".
 
 ![](/img/learning/helpscout-image-da53731c.png)
 
-## 
+##
 
 It will open the following popup:
 

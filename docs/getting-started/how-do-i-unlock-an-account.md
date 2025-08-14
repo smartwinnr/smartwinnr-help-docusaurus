@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fda52ada5d295659b36990a
 helpscout_url: https://help.smartwinnr.com/article/126-how-do-i-unlock-an-account
 ---
-An account can be locked if a wrong password is entered 5 times. 
+An account can be locked if a wrong password is entered 5 times.
 
 Once an account is locked, it will stay locked for 20 min. So the participant can wait for 20 minutes for auto-unlock. Otherwise, she can contact the system admin or write to the Smartwinnr support at support@smartwinnr.com to unlock your account.
 

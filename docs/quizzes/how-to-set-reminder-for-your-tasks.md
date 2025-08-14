@@ -34,10 +34,8 @@ This feature lets you set a reminder and schedule it to be delivered to the user
   
 **Message:** This will display the message that will be sent in the reminder. This field will have an auto-generated message but you can change it according to your requirement.
 
-  
 ![](/img/quizzes/helpscout-image-ccc2e114.png)
 
-  
 Once you are done filling all these fields for the reminder, click on the "  **Save**" button. This will add the reminder successfully to the quiz.  
   
 Once you fill all the details on this page, click on the  "Save and Add Questions" to save the quiz.

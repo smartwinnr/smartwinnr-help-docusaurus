@@ -13,12 +13,12 @@ SmartWinnr allows you to upload a CSV file to upload users in bulk. This is usef
 
 Step1:Create Users In Bulk
 
-Go to ADMIN > Manage Users. Click on the “Add Users in Bulk” button from the hamburger menu. 
+Go to ADMIN > Manage Users. Click on the “Add Users in Bulk” button from the hamburger menu.
 
 ![](/img/quizzes/helpscout-image-e8ad99d8.png)  
 Step-2: Checking and Mapping File Sample
 
-The default mapping for your organization will automatically be selected in the top drop-down.If not, contact your system administrator. 
+The default mapping for your organization will automatically be selected in the top drop-down.If not, contact your system administrator.
 
 The uploaded file needs to be of a specific format. You can download the format by clicking on the “Download Sample CSV” button.  
 
@@ -26,13 +26,13 @@ The file needs to be in CSV format. For best result, save the spreadsheet as CSV
 
 ![](https://support.smartwinnr.com/api/v1/attachments/853) ![](https://support.smartwinnr.com/api/v1/attachments/854)
 
-3\. Set password options 
+3\. Set password options
 
 During the user uploads, there are 3 options for setting the user credentials:
 
-*   Set password by user: The user will get an activation link to her email. She needs to click on the email to activate the account and then will be prompted to set the account password. In this option, till the user activates her account, her account status will be in the de-active state and she cannot be assigned quizzes/surveys/SmartFeeds.
-*   Set random password: The system will randomly create a password as per the organizational password policy. The account will be automatically activated. The user will get a welcome mail with the username and password. She can be assigned quizzes/surveys/SmartFeeds immediately.
-*   Set the same password: Same as the above option. Only, in this case, all users who are being created as part of this upload will have the same password set. The admin has to select this password before uploading.
+* Set password by user: The user will get an activation link to her email. She needs to click on the email to activate the account and then will be prompted to set the account password. In this option, till the user activates her account, her account status will be in the de-active state and she cannot be assigned quizzes/surveys/SmartFeeds.
+* Set random password: The system will randomly create a password as per the organizational password policy. The account will be automatically activated. The user will get a welcome mail with the username and password. She can be assigned quizzes/surveys/SmartFeeds immediately.
+* Set the same password: Same as the above option. Only, in this case, all users who are being created as part of this upload will have the same password set. The admin has to select this password before uploading.
 
 4\. Upload CSV file
 

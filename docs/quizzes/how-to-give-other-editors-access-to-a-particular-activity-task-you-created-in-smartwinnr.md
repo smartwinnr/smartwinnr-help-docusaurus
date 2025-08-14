@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/90-how-to-give-permission-to-
 ---
 ### How to give access permission to an activity or task you have created?
 
-Once a task like a quiz, survey, coaching, SmartFeeds, competition etc are created in SmartWinnr, there is an option to provide other editors access to this activity or task. This will help those editors to view and access the analytics and report of the quiz/survey/other activity to which you have given access. 
+Once a task like a quiz, survey, coaching, SmartFeeds, competition etc are created in SmartWinnr, there is an option to provide other editors access to this activity or task. This will help those editors to view and access the analytics and report of the quiz/survey/other activity to which you have given access.
 
 Follow the below steps in order to give other editor access to a task you created in SmartWinnr:
 
@@ -35,7 +35,7 @@ Once you have selected the users, click on the '**Save**' button to save the cha
 
 An editor who has been given permission to access an activity/task will be able to see it under the **others tab** of quiz/survey/smartfeeds/coachings etc.
 
-Below is a screenshot of how an Editor will be able to see the quizzes that he has been given access to. 
+Below is a screenshot of how an Editor will be able to see the quizzes that he has been given access to.
 
 ![](/img/quizzes/helpscout-image-baa4fc60.png)
 

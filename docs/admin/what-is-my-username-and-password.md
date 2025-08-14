@@ -13,7 +13,7 @@ Once your account gets created in SmartWinnr, you will receive a welcome email/S
 
 If your organization has registered your account with the official email id, you will receive the welcome email to your official email id. And if your organization has registered your account with the mobile number, you will receive the welcome SMS to your registered mobile number.
 
-## Activate your Account with the Activation Link:
+## Activate your Account with the Activation Link
 
 If the welcome email contains the activation link, it looks like this:
 
@@ -25,7 +25,7 @@ Click on the button ‘Activate Account’. It will open the following page in y
 
 Enter your new password and click on ‘Set Password’. Remember this password - you will need this password to login to the app later on. Your username is your company email or mobile number to which you have received the welcome email/SMS.
 
-### Activate your Account with the System Generated Password:
+### Activate your Account with the System Generated Password
 
 If the welcome email has the system generated password, it looks like this with your username and password provided in the email:
 

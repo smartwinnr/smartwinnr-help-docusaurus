@@ -36,6 +36,7 @@ const API_BASE_URL = process.env.NODE_ENV === 'development'
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -59,6 +60,20 @@ const ChatBot: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Handle escape key for expanded view
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isExpanded) {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [isExpanded]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -219,9 +234,17 @@ const ChatBot: React.FC = () => {
         )}
       </button>
 
+      {/* Backdrop for expanded view */}
+      {isOpen && isExpanded && (
+        <div 
+          className={styles.chatBackdrop}
+          onClick={() => setIsExpanded(false)}
+        />
+      )}
+
       {/* Chat Window */}
       {isOpen && (
-        <div className={styles.chatWindow}>
+        <div className={`${styles.chatWindow} ${isExpanded ? styles.chatWindowExpanded : ''}`}>
           {/* Header */}
           <div className={styles.chatHeader}>
             <div className={styles.chatTitle}>
@@ -232,6 +255,27 @@ const ChatBot: React.FC = () => {
               </div>
             </div>
             <div className={styles.chatControls}>
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className={styles.expandButton}
+                title={isExpanded ? "Collapse chat" : "Expand chat"}
+              >
+                {isExpanded ? (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="4,14 10,14 10,20"></polyline>
+                    <polyline points="20,10 14,10 14,4"></polyline>
+                    <line x1="14" y1="10" x2="21" y2="3"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <polyline points="9,21 3,21 3,15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                )}
+              </button>
               <button
                 onClick={clearChat}
                 className={styles.clearButton}
@@ -309,7 +353,7 @@ const ChatBot: React.FC = () => {
               </button>
             </div>
             <div className={styles.inputFooter}>
-              Powered by OpenAI • <span className={styles.statusIndicator}>●</span> {isLoading ? 'Thinking...' : 'Ready'}
+              <span className={styles.statusIndicator}>●</span> {isLoading ? 'Thinking...' : 'Ready'}
             </div>
           </div>
         </div>

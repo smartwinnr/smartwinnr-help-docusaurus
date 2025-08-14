@@ -12,6 +12,7 @@ Welcome to your SmartWinnr command center! As an administrator, you're the strat
 ## Your Administrative Command Center 🎛️
 
 ### 👥 **User & Access Management**
+
 Control who has access to what, ensuring security while enabling productivity.
 
 <div className="cards-grid">
@@ -35,6 +36,7 @@ Control who has access to what, ensuring security while enabling productivity.
 </div>
 
 ### ⚙️ **System Configuration**
+
 Fine-tune platform settings for optimal performance and user experience.
 
 <div className="cards-grid">
@@ -58,6 +60,7 @@ Fine-tune platform settings for optimal performance and user experience.
 </div>
 
 ### 📊 **Analytics & Insights**
+
 Monitor system performance and gain insights into organizational learning patterns.
 
 <div className="cards-grid">
@@ -83,6 +86,7 @@ Monitor system performance and gain insights into organizational learning patter
 ## Quick Start Guide 🚀
 
 ### **New Administrator Setup**
+
 1. **🏢 Configure Organization**: Set up company profile and branding
 2. **👥 Import Users**: Bulk import user accounts and assign roles
 3. **🔐 Security Setup**: Configure password policies and access controls
@@ -92,6 +96,7 @@ Monitor system performance and gain insights into organizational learning patter
 **Get Started** → [Administrator Onboarding Guide](./getting-started/admin-onboarding)
 
 ### **Administrative Workflow**
+
 ```mermaid
 graph TD
     A[System Health Check] --> B[User Management]
@@ -105,6 +110,7 @@ graph TD
 ## System Health Dashboard 📊
 
 ### **Critical Metrics to Monitor**
+
 - **⚡ System Performance**: Response times, uptime, and resource usage
 - **👥 User Activity**: Active users, login frequency, and engagement levels
 - **📚 Content Usage**: Most popular content and completion rates
@@ -112,6 +118,7 @@ graph TD
 - **📈 Growth Trends**: User growth and feature adoption over time
 
 ### **Administrative Analytics**
+
 <div className="cards-grid">
   <div className="feature-card">
     <h3>📊 Executive Dashboard</h3>
@@ -135,6 +142,7 @@ graph TD
 ## Advanced Administrative Features 🎯
 
 ### **🤖 Automation & Workflows**
+
 - **User Provisioning**: Automatic account creation from HR systems
 - **Role Assignment**: Rule-based permission allocation
 - **Notification Automation**: Smart alerts based on system events
@@ -142,6 +150,7 @@ graph TD
 - **Compliance Monitoring**: Automated tracking of regulatory requirements
 
 ### **🔧 System Optimization**
+
 - **Performance Tuning**: Database optimization and caching strategies
 - **Load Balancing**: Resource allocation for peak usage periods
 - **Security Hardening**: Advanced threat protection and monitoring
@@ -149,6 +158,7 @@ graph TD
 - **Capacity Planning**: Resource scaling based on growth projections
 
 ### **📈 Enterprise Features**
+
 - **Multi-Tenant Management**: Separate environments for different divisions
 - **API Management**: Custom integrations and third-party connections
 - **Advanced Analytics**: Custom reporting and business intelligence
@@ -158,6 +168,7 @@ graph TD
 ## Administrative Best Practices 💡
 
 ### **🔐 Security First**
+
 - **Regular Audits**: Monthly review of user access and permissions
 - **Password Policies**: Enforce strong authentication requirements
 - **Data Protection**: Implement comprehensive data security measures
@@ -165,6 +176,7 @@ graph TD
 - **Incident Response**: Maintain procedures for security events
 
 ### **👥 User Experience Focus**
+
 - **Smooth Onboarding**: Streamlined new user setup processes
 - **Clear Communication**: Regular updates about system changes
 - **Training Support**: Comprehensive user education programs
@@ -172,6 +184,7 @@ graph TD
 - **Performance Optimization**: Ensure fast, reliable system performance
 
 ### **📊 Data-Driven Management**
+
 - **Metrics Monitoring**: Regular review of key performance indicators
 - **Trend Analysis**: Identify patterns in user behavior and system usage
 - **Proactive Maintenance**: Address issues before they impact users
@@ -181,6 +194,7 @@ graph TD
 ## Administrative Resources 📚
 
 ### **🎓 Administrator Training**
+
 <div className="cards-grid">
   <div className="feature-card">
     <h3>📖 Documentation Hub</h3>
@@ -202,6 +216,7 @@ graph TD
 </div>
 
 ### **🆘 Support & Escalation**
+
 - **Priority Support**: Direct access to technical support team
 - **Emergency Response**: 24/7 support for critical system issues
 - **Implementation Services**: Expert assistance for complex deployments
@@ -221,6 +236,7 @@ graph TD
 | **Integration Hub** | External connections | Configure APIs, manage data flows |
 
 ### **🔄 Data Flow Management**
+
 - **User Data**: Profile management and privacy controls
 - **Learning Data**: Progress tracking and performance analytics
 - **System Data**: Platform usage and performance metrics
@@ -230,6 +246,7 @@ graph TD
 ## Compliance & Governance 📋
 
 ### **🏛️ Regulatory Compliance**
+
 <div className="cards-grid">
   <div className="feature-card">
     <h3>🔒 Data Privacy</h3>
@@ -251,6 +268,7 @@ graph TD
 </div>
 
 ### **📜 Data Governance**
+
 - **Data Classification**: Categorize and protect sensitive information
 - **Retention Policies**: Automated data lifecycle management
 - **Access Controls**: Granular permissions and role-based security
@@ -262,6 +280,7 @@ graph TD
 ### **🎯 Business Impact Measurement**
 
 **Learning ROI Metrics**
+
 - 📊 **Performance Improvement**: Pre/post training effectiveness
 - 💰 **Cost Reduction**: Training cost per employee optimization
 - ⏱️ **Time to Competency**: Faster employee skill development
@@ -269,6 +288,7 @@ graph TD
 - 😊 **Employee Satisfaction**: Engagement and retention improvements
 
 **System ROI Analysis**
+
 - 💻 **Platform Efficiency**: Reduced training delivery costs
 - ⏰ **Time Savings**: Automated processes and self-service capabilities
 - 📈 **Scalability**: Support for organizational growth
@@ -276,6 +296,7 @@ graph TD
 - 🎯 **Strategic Alignment**: Platform support for business objectives
 
 ### **🔮 Future Planning**
+
 - **Capacity Forecasting**: Plan for user growth and feature expansion
 - **Technology Roadmap**: Stay current with platform developments
 - **Integration Strategy**: Plan for new system connections
@@ -303,6 +324,7 @@ Your administrative excellence creates the foundation for organizational success
 </div>
 
 ### **🆘 Administrator Emergency Contacts**
+
 - **Critical Issues**: [urgent-support@smartwinnr.com](mailto:urgent-support@smartwinnr.com)
 - **Security Incidents**: [security@smartwinnr.com](mailto:security@smartwinnr.com)  
 - **Technical Support**: [admin-support@smartwinnr.com](mailto:admin-support@smartwinnr.com)

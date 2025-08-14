@@ -15,7 +15,7 @@ Here is how to go about filling each field to create a scorecard:
 
 ## Step 1: Select Measurement Frequency and KPIs
 
-Business Unit: Select the business unit for which you would like to select the scorecard. In most cases, you might not see this field at all. 
+Business Unit: Select the business unit for which you would like to select the scorecard. In most cases, you might not see this field at all.
 
 Measurement Frequency: Specify how frequently you want to measure the KPIs like daily, weekly, monthly,  quarterly or annually.
 
@@ -33,53 +33,53 @@ Priority: Give a priority to the scorecard here. According to this priority, it
 
 ![](https://support.smartwinnr.com/api/v1/attachments/788)
 
-**KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the 'Add KPI' button. 
+**KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the 'Add KPI' button.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/789)
 
-Here is how to fill the fields to add KPIs. 
+Here is how to fill the fields to add KPIs.
 
 **Visibility**: Choose if you want to make this KPI visible to the users.
 
 **Position**: This determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position, 2 shows it in the second position, and so on.
 
-**Measurement Type:** This field takes two types of values- Actual and Level. 
+**Measurement Type:** This field takes two types of values- Actual and Level.
 
-*   **Actual**: This value lets you give a KPI value and points for that value. Every time a rep achieves the KPI, she will be allotted points. For example, in the below screenshot, for every 20 calls made the rep will be allotted 10 points.
+* **Actual**: This value lets you give a KPI value and points for that value. Every time a rep achieves the KPI, she will be allotted points. For example, in the below screenshot, for every 20 calls made the rep will be allotted 10 points.
 
 ![](/img/reports/helpscout-image-d5e2e2f9.jpg)
 
-Target: Set a target for the KPI. 
+Target: Set a target for the KPI.
 
 Floor: This is the minimum KPI value to achieve in order to get a score.
 
 Ceiling: This is the maximum KPI value after which the score will not be given.
 
-*   **Level**: This lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points. 
+* **Level**: This lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
 ![](/img/reports/helpscout-image-4840b1ca.jpg)
 
-*   **Individual Level:** This is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points. 
+* **Individual Level:** This is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
 ![](/img/reports/helpscout-image-da8bfade.jpg)
 
-*   **Target Actual**: This is similar to the Actual type but the difference is this value is based on the target percentage and not directly based on the uploaded data. Every time a rep reaches a certain percentage, then she will be allotted points. For example, in the below screenshot, when she reaches 20 percent of her target, she received 10 points.
+* **Target Actual**: This is similar to the Actual type but the difference is this value is based on the target percentage and not directly based on the uploaded data. Every time a rep reaches a certain percentage, then she will be allotted points. For example, in the below screenshot, when she reaches 20 percent of her target, she received 10 points.
 
 ![](/img/reports/helpscout-image-09b0d7b9.jpg)
 
-Target: Set a target percentage for the KPI. 
+Target: Set a target percentage for the KPI.
 
 Floor: This is the minimum KPI percentage to achieve in order to get a score.
 
 Ceiling: This is the maximum KPI percentage after which the score will not be given.
 
-*   **Target Level**: This is similar to the Level type but the difference is that it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
+* **Target Level**: This is similar to the Level type but the difference is that it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
 
 ![](/img/reports/helpscout-image-cf4486b5.jpg)
 
 ## Step 2: Select the Sales Reps for the Scorecard
 
-Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the next page where users have to be added to this scorecard. 
+Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the next page where users have to be added to this scorecard.
 
 ![](/img/reports/helpscout-image-f7de0cc5.png)
 
@@ -103,7 +103,7 @@ Choose File: Click on this button and upload your user CSV file
 
 ## Step 3: Change Targets
 
-The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user: 
+The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:
 
 ![](/img/reports/helpscout-image-0b269045.png)
 

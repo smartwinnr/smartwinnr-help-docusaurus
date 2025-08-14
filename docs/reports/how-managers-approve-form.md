@@ -35,7 +35,7 @@ Now, Click on '**save'** button to save Status.
 
 ![](https://lh6.googleusercontent.com/_s-j6TD9LKi7Zsk7eZI8QNPJmbrM6PT4yZF6SSbXhvz65kkgXSX-4WYTcgbV7hv7tb-U5nSNcleNia6c85YkRqopprr5yFEcdAmHdib_qJGfokb-3-TsYhBsaSauBLk58wtL_U5O)
 
-## How to Apply Filter options 
+## How to Apply Filter options
 
 You can filter the form submissions with specific date,status.
 

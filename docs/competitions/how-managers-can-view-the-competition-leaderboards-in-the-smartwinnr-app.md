@@ -17,11 +17,11 @@ It will open the following screen where you will see an individual leaderboard w
 
 ![](/img/competitions/helpscout-image-53e30d45.png)
 
-Here, you can also filter the leaderboard at the top right corner and view the competition results of just your team or you can choose to view the results of all the users that are a part of this leaderboard. 
+Here, you can also filter the leaderboard at the top right corner and view the competition results of just your team or you can choose to view the results of all the users that are a part of this leaderboard.
 
 ![](/img/competitions/helpscout-image-78b6ec20.png)
 
-Besides this individual leaderboard is the team leaderboard. Click on the Teams tab to view the team leaderboard. It opens the following screen where you will be able to see the performance of various teams in the competition. 
+Besides this individual leaderboard is the team leaderboard. Click on the Teams tab to view the team leaderboard. It opens the following screen where you will be able to see the performance of various teams in the competition.
 
 ![](/img/competitions/helpscout-image-8c3fefc8.png)
 

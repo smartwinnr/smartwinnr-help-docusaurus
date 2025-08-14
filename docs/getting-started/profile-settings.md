@@ -25,8 +25,9 @@ To access your profile settings:
 ## Changing Your Password
 
 From the Settings page, click on **Change Password**. You will need to enter:
+
 - Your old password
-- Your new password 
+- Your new password
 - Confirm your new password
 
 Then click on the **Change Password** button to update your password.
@@ -40,6 +41,7 @@ Then click on the **Change Password** button to update your password.
 ### During First Login
 
 You will be asked to add a profile picture the first time you log in to SmartWinnr. Click on the **Camera icon** and choose to either:
+
 - **Open Camera** to take a new picture
 - **Open Gallery** to select an existing picture
 
@@ -60,6 +62,7 @@ You will be asked to add a profile picture the first time you log in to SmartWin
 If multiple languages are enabled for your organization, you can change your language from English to any other available language.
 
 From the Settings page:
+
 1. Click on **Change Language**
 2. Select the language from the list of available languages for your organization
 3. Click **OK** to update your language preference
@@ -71,6 +74,7 @@ From the Settings page:
 Push notifications will alert you on your mobile device every time a new task is assigned to you.
 
 To enable push notifications:
+
 1. From the Settings page, click on **Notification**
 2. Tap on the **toggle button** to switch on notifications in SmartWinnr
 

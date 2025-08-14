@@ -43,7 +43,7 @@ Select the participants you want to send notification and click on Send Notifica
 
 ![](/img/learning/helpscout-image-8f945bfc.jpg)
 
-You can also send reminders to the participant's manager by selecting the dropdown of Send To Manager and click on Advanced and select the Roles as Manager. 
+You can also send reminders to the participant's manager by selecting the dropdown of Send To Manager and click on Advanced and select the Roles as Manager.
 
 ![](/img/learning/helpscout-image-5b333c99.jpg)
 

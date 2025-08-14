@@ -11,9 +11,9 @@ helpscout_url: https://help.smartwinnr.com/article/227-how-to-add-a-form-to-a-co
 ---
 Here are the steps to add a Form to a competition:
 
-1.  Once you get to the 4th step of creating competition, select Form in the "Select Task".
-2.  Give name to the Form.
-3.  Set a start and end date of the task
+1. Once you get to the 4th step of creating competition, select Form in the "Select Task".
+2. Give name to the Form.
+3. Set a start and end date of the task
 
 Below is a screenshot of adding a Form to a competition:
 

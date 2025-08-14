@@ -13,7 +13,7 @@ How to find the quiz status of the team for each quiz
 
 1.Left Menu >> Quiz >> Click on  Quizzes  tab.
 
-2.This will give you the list of quizzes assigned to your team. You can find the active quizzes on the top along with the remaining active days for each quiz. Select the desired quiz from the list.                           
+2.This will give you the list of quizzes assigned to your team. You can find the active quizzes on the top along with the remaining active days for each quiz. Select the desired quiz from the list.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/555)
 
@@ -21,8 +21,6 @@ How to find the quiz status of the team for each quiz
 
 ![](https://support.smartwinnr.com/api/v1/attachments/556)
 
-  
-
-4.To filter with the various completion status, click on the down-arrow at the top-right corner. This will give you the various filter options like -  "All", "Not Started", "In Progress"  and "Completed".                               
+4.To filter with the various completion status, click on the down-arrow at the top-right corner. This will give you the various filter options like -  "All", "Not Started", "In Progress"  and "Completed".
 
 ![](https://support.smartwinnr.com/api/v1/attachments/557)

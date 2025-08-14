@@ -15,11 +15,13 @@ The SmartWinnr AI Chatbot is an intelligent assistant that helps users find info
 ### 2. Environment Setup
 
 1. Copy the `.env.example` to `.env`:
+
    ```bash
    cp .env.example .env
    ```
 
 2. **Add your OpenAI API key** to `.env`:
+
    ```
    OPENAI_API_KEY=your_actual_openai_api_key_here
    ```
@@ -27,6 +29,7 @@ The SmartWinnr AI Chatbot is an intelligent assistant that helps users find info
 ### 3. Install Dependencies
 
 Dependencies are already installed, but if needed:
+
 ```bash
 npm install
 ```
@@ -52,6 +55,7 @@ npm run index-docs
 ```
 
 This will:
+
 - Create embeddings for all documentation files
 - Store them in ChromaDB for fast retrieval
 - Show indexing progress and statistics
@@ -59,11 +63,13 @@ This will:
 ### 6. Start Development Servers
 
 Option A - Run both servers together:
+
 ```bash
 npm run dev
 ```
 
 Option B - Run separately:
+
 ```bash
 # Terminal 1: Docusaurus docs site
 npm start
@@ -83,11 +89,13 @@ The chatbot will appear as a floating widget in the bottom-right corner of the d
 ## 🔧 API Endpoints
 
 ### Chatbot
+
 - `POST /api/chat` - Send a message to the chatbot
 - `GET /api/chat/:id` - Get conversation history
 - `DELETE /api/chat/:id` - Clear conversation
 
 ### Vector Database
+
 - `GET /api/vector/info` - Collection information
 - `POST /api/vector/search` - Search documents directly
 - `POST /api/vector/index` - Re-index documentation
@@ -98,6 +106,7 @@ The chatbot will appear as a floating widget in the bottom-right corner of the d
 ### Environment Variables
 
 #### Local Development
+
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `NODE_ENV` | Environment | development |
@@ -109,6 +118,7 @@ The chatbot will appear as a floating widget in the bottom-right corner of the d
 | `EMBEDDING_MODEL` | OpenAI embedding model | text-embedding-3-small |
 
 #### Production (AWS)
+
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `NODE_ENV` | Environment | production |
@@ -139,6 +149,7 @@ EMBEDDING_MODEL=text-embedding-3-large
 ## 📚 Features
 
 ### Current Features
+
 ✅ Vector-based semantic search  
 ✅ OpenAI integration with GPT-4o-mini  
 ✅ Real-time chat interface  
@@ -148,6 +159,7 @@ EMBEDDING_MODEL=text-embedding-3-large
 ✅ Dark theme support  
 
 ### Coming Soon (when authentication is added)
+
 🔄 Role-based content filtering  
 🔄 User-specific chat history  
 🔄 Admin analytics dashboard  
@@ -155,6 +167,7 @@ EMBEDDING_MODEL=text-embedding-3-large
 ## 🐛 Troubleshooting
 
 ### ChromaDB Issues
+
 ```bash
 # If ChromaDB connection fails
 ps aux | grep chroma  # Check if running
@@ -162,18 +175,22 @@ chroma run --host localhost --port 8000  # Restart
 ```
 
 ### OpenAI API Issues
+
 - Check your API key is valid and has credits
 - Verify the model names in `.env` are correct
 - Check rate limits if getting 429 errors
 
 ### Embedding Issues
+
 ```bash
 # Re-index documentation if search isn't working
 npm run index-docs
 ```
 
 ### Port Conflicts
+
 If ports are in use, update `.env`:
+
 ```env
 API_PORT=3003  # Change chatbot API port
 ```
@@ -181,11 +198,13 @@ API_PORT=3003  # Change chatbot API port
 ## 📊 Monitoring
 
 Check the health endpoint for service status:
+
 ```bash
 curl http://localhost:3002/health
 ```
 
 View collection information:
+
 ```bash
 curl http://localhost:3002/api/vector/info
 ```
@@ -195,6 +214,7 @@ curl http://localhost:3002/api/vector/info
 ### AWS Secrets Manager Setup
 
 1. **Create AWS Secret**:
+
    ```bash
    aws secretsmanager create-secret \
      --name "smartwinnr/openai-api-key" \
@@ -203,6 +223,7 @@ curl http://localhost:3002/api/vector/info
    ```
 
 2. **IAM Permissions**: Your EC2/Lambda needs:
+
    ```json
    {
      "Effect": "Allow",
@@ -215,6 +236,7 @@ curl http://localhost:3002/api/vector/info
    ```
 
 3. **Production Environment**:
+
    ```env
    NODE_ENV=production
    AWS_REGION=us-east-1
@@ -249,6 +271,7 @@ curl http://localhost:3002/api/vector/info
 ## Support
 
 If you encounter issues:
+
 1. Check the troubleshooting section above
 2. Verify all environment variables are set
 3. Ensure ChromaDB is running

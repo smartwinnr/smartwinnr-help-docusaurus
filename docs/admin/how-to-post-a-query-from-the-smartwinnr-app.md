@@ -9,18 +9,18 @@ last_update:
 helpscout_id: 5fdb0522b624c71b7985a5d7
 helpscout_url: https://help.smartwinnr.com/article/160-how-to-post-a-query-from-the-smartwinnr-app
 ---
-Open the SmartWinnr app and go to the left menu bar. Click on "QResolve". 
+Open the SmartWinnr app and go to the left menu bar. Click on "QResolve".
 
-                                                                             ![](https://support.smartwinnr.com/api/v1/attachments/707) 
+                                                                             ![](https://support.smartwinnr.com/api/v1/attachments/707)
 
-  It opens the following screen: 
+  It opens the following screen:
 
-                                                                              ![](https://support.smartwinnr.com/api/v1/attachments/708) 
+                                                                              ![](https://support.smartwinnr.com/api/v1/attachments/708)
 
-Now, click on the "+" button at the bottom right corner of the screen as shown in the above picture. It will open the following screen where you can enter your query: 
+Now, click on the "+" button at the bottom right corner of the screen as shown in the above picture. It will open the following screen where you can enter your query:
 
                                                                               ![](https://support.smartwinnr.com/api/v1/attachments/709)
 
-  You can also choose to post anonymously by checking the option "Post Anonymously".                                                                   
+  You can also choose to post anonymously by checking the option "Post Anonymously".
 
                                                                            ![](https://support.smartwinnr.com/api/v1/attachments/710)

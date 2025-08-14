@@ -27,7 +27,7 @@ Click on the View Button against the pending submission to view the submission d
 
 ![](/img/admin/helpscout-image-5eb84c48.png)
 
-4\. You can now go through the submission details and then approve or reject the submission accordingly. 
+4\. You can now go through the submission details and then approve or reject the submission accordingly.
 
 Select the appropriate status(Approve/Reject) under the 'Status' section. Click on the Change status option to change the status of the submission.
 

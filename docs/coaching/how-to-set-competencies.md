@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fd75963a5d295659b36893f
 helpscout_url: https://help.smartwinnr.com/article/91-how-to-set-competencies
 ---
-Only users with Admin role can add/modify competencies. 
+Only users with Admin role can add/modify competencies.
 
 Competencies provide a way to select skills and behaviors based on which a learner can be evaluated. These competencies can be selected according to the preferences of your organization or a business unit. For example, competencies for the sales department could be effective  opening, creating value, handling objection etc.,
 

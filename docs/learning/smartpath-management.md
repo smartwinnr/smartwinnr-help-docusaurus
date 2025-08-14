@@ -28,6 +28,7 @@ SmartPath creation follows a **bottom-up approach**:
 4. **Deploy** the SmartPath to learners
 
 **Example Scenario**: Improving sales effectiveness
+
 - **SmartPath**: "Sales Effectiveness Excellence"  
 - **Module 1**: "Effective Opening" (contains 1 SmartFeed, 1 Quiz, 1 Survey)
 - **Module 2**: "Objection Handling" (contains 2 SmartFeeds, 2 Quizzes, 2 Coachings)
@@ -208,6 +209,7 @@ Participants can access assigned SmartPaths through:
 ### Learner Experience
 
 When taking a SmartPath, users will:
+
 1. See their assigned learning path with clear progression
 2. Complete modules in the required sequence
 3. Access diverse content types (videos, documents, quizzes)

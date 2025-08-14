@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fce42e9eb7cc612aa3557ab
 helpscout_url: https://help.smartwinnr.com/article/21-how-can-i-enable-push-notification-for-smartwinnr-app
 ---
-When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you, 
+When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you,
 
 Following are the steps to enable push notification for your SmartWinnr app.
 
@@ -17,7 +17,7 @@ Open the SmartWinnr app and click on the **hamburger** icon at the top left corn
 
 ![](/img/getting-started/helpscout-image-efc355f6.png)
 
-Here, click on the **profile picture** at the top. It will take you to the following screen: 
+Here, click on the **profile picture** at the top. It will take you to the following screen:
 
 ![](/img/getting-started/google-image-f42fb7ac.png)
 

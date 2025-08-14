@@ -11,8 +11,8 @@ helpscout_url: https://help.smartwinnr.com/article/4-what-is-smartwinnr
 ---
 SmartWinnr is the world's number 1 mobile-first Sales Productivity platform. It's a single platform through which you can drive
 
-*   Sales Learning
-*   Sales Coaching
-*   Sales Contests
+* Sales Learning
+* Sales Coaching
+* Sales Contests
 
 Different organizations use SmartWinnr for different purpose.

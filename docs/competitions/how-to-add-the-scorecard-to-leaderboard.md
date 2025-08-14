@@ -15,7 +15,7 @@ Here are the steps to add a scorecard leaderboard to a competition:
 
 2\. Select the competition in which you want to add the scorecard leaderboard.
 
-3\. After selecting the competition, click on the 3rd step "View Leaderboards" 
+3\. After selecting the competition, click on the 3rd step "View Leaderboards"
 
 4\. Click on the add icon at the top right side corner.
 
@@ -23,7 +23,7 @@ Here are the steps to add a scorecard leaderboard to a competition:
 
 ![](/img/competitions/helpscout-image-08484184.png)
 
-Add the KPI's in the KPI columns configurations 
+Add the KPI's in the KPI columns configurations
 
 ![](/img/competitions/helpscout-image-93e27110.jpg)
 

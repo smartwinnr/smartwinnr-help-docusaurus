@@ -13,22 +13,21 @@ helpscout_url: https://help.smartwinnr.com/article/97-how-to-find-the-progress-o
 
 SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Manager-View. Below are the steps to find the overall quiz report for each team member.
 
-Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.                                                  
+Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/538)
 
 This page will give you the quiz progress report for your direct reportees along with participation percentage and average score. Here you can also find the number of direct reportees and total reportees reporting to you in SmartWinnr.
 
-*   Direct Report: Users or Managers that directly report to you.
-*   Second level Report: Users or Managers who report to those managers who are reports directly to you.
-*   All Report: Direct Report + Second level Report.
+* Direct Report: Users or Managers that directly report to you.
+* Second level Report: Users or Managers who report to those managers who are reports directly to you.
+* All Report: Direct Report + Second level Report.
 
-You can click on the filter icon on the top right corner to apply the date filter in the quiz report.                                                 
+You can click on the filter icon on the top right corner to apply the date filter in the quiz report.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/539)
 
-  
-You can select the date range and click on "Apply" to successfully apply the date filters.                                                       
+You can select the date range and click on "Apply" to successfully apply the date filters.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/540)
 

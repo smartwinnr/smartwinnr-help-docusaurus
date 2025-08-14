@@ -21,7 +21,7 @@ Once you fill all the details for creating the quiz, navigate to the last sectio
 
 You can also schedule a reminder to an already created quiz. Follow the below steps to set a reminder to an already created quiz:
 
-EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quizzes to which you want to add the reminder. 
+EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quizzes to which you want to add the reminder.
 
 ![](/img/quizzes/helpscout-image-95f12b37.png)It opens the following page:
 
@@ -33,7 +33,7 @@ Then, click on the "Add" button at the top right corner of the  **Schedule Remi
 
 [![](/img/quizzes/helpscout-image-eb826d73.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4906723119734ee37edaa/file-0VAaM8Ffhn.png)
 
-**Send Type:** This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz. 
+**Send Type:** This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
 
 **Date to send:** Here, select the date and time when you want to send the reminder.
 

@@ -15,8 +15,6 @@ Click on the **link** icon to attach an external link to your SmartFeed or to th
 
       ![](https://support.smartwinnr.com/api/v1/attachments/103)
 
-  
-
 Once you click on the link icon, the following pop-up comes up.
 
                           ![](https://support.smartwinnr.com/api/v1/attachments/104)

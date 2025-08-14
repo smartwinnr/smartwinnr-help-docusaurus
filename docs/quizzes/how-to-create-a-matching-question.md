@@ -9,20 +9,20 @@ last_update:
 helpscout_id: 5fd46a20c868cb6df3a80ff5
 helpscout_url: https://help.smartwinnr.com/article/43-how-to-create-a-matching-question
 ---
-**In a matching question, the participants pair the questions in one list with the answers in the other list.** 
+**In a matching question, the participants pair the questions in one list with the answers in the other list.**
 
 **Below are the steps to follow in order to create a matching question:**
 
-1.  Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2.  Click on the **'Add New Question'** button at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
-3.  On the **'Create new Question'** select the **'Question Type'** as **‘Matching’.[![](/img/quizzes/helpscout-image-de9f68b3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c539cc64fe14d0e1fde95/file-0aBeHdpmUd.png)**
-4.  Enter your question in the **‘Question’** field.[![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
-5.  Add the left-hand side and matching right-hand side options in the **'Answer Options'** section. **Distractors** allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty. [Click to know more about distractors.](#distractors)
-    
+1. Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on the **'Add New Question'** button at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+3. On the **'Create new Question'** select the **'Question Type'** as **‘Matching’.[![](/img/quizzes/helpscout-image-de9f68b3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c539cc64fe14d0e1fde95/file-0aBeHdpmUd.png)**
+4. Enter your question in the **‘Question’** field.[![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
+5. Add the left-hand side and matching right-hand side options in the **'Answer Options'** section. **Distractors** allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty. [Click to know more about distractors.](#distractors)
+
     [![](/img/quizzes/helpscout-image-19a17793.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600d8a9ccfe30d219ccdae89/file-iYIevusr9r.png)
-    
-6.  Use ‘Feedback’ if you want to add additional information to a question.  _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
-7.  In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
+
+6. Use ‘Feedback’ if you want to add additional information to a question.  _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
+7. In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 
 ### **Question**
 
@@ -50,7 +50,7 @@ Images or pictures can be sent with a question by clicking on the image icon. Th
 
 **Links**
 
-You can also insert a link with the question by clicking on the links icon. 
+You can also insert a link with the question by clicking on the links icon.
 
 [Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
 
@@ -72,7 +72,7 @@ Add the left-hand side and matching right-hand side options in the 'Answer Optio
 
 [![](/img/quizzes/helpscout-image-3d0937c8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd46ad13d1d2a5b1c5ea13d/file-fyIokALHXr.png)
 
-**Additional Match Possibilities(Distractors):** 
+**Additional Match Possibilities(Distractors):**
 
 Distractors allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty.
 

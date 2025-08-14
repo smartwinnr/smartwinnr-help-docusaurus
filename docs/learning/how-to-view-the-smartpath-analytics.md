@@ -27,11 +27,11 @@ On this page, _click_ on the **'View Batches'** button at the top right corner o
 
 [![](/img/learning/helpscout-image-d4d70690.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016bfd81f25b9041beb9c09/file-8M11BPOFRc.png)
 
-#### This report contains the following sections:
+#### This report contains the following sections
 
 1
 
-####    Overall Participation:
+####    Overall Participation
 
 This shows how many participants have completed the SmartPath, how many are still progressing through it, and how many of them haven't started it yet. All this data is displayed in the form of a donut graph:
 
@@ -39,7 +39,7 @@ This shows how many participants have completed the SmartPath, how many are stil
 
 2
 
-####     Participation By Country:
+####     Participation By Country
 
 This displays a bar graph that shows the percentage of participants who have started the SmartPath by country.
 
@@ -49,13 +49,13 @@ This displays a bar graph that shows the percentage of participants who have sta
 
 ####     Quiz Analytics
 
-##### Categorywise performance for all countries: 
+##### Categorywise performance for all countries
 
 This section gives a bar graph that shows the category-wise performance of all the countries in a quiz.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/845)
 
-##### Performance by Category by Country:
+##### Performance by Category by Country
 
 This section gives a heat map that shows the participant's performance in the quiz by category by country.
 
@@ -85,25 +85,25 @@ You can also view metrics of SmartFeeds, Surveys, etc., by _clicking_ on the re
 
 ####     User Wise Performance
 
-##### This section gives analytics for user-wise performance.
+##### This section gives analytics for user-wise performance
 
 You will get to see each user's progress in the SmartPath completion.
 
 [![](/img/learning/helpscout-image-64c4c3d8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016e35c1f25b9041beb9c3f/file-Q1AruF41VE.png)
 
-##### 
+#####
 
 7
 
-####     Coaching Analytics 
+####     Coaching Analytics
 
-##### Competency wise Performance:.
+##### Competency wise Performance
 
 This section gives a bar graph that shows the analytics of competency wise performance in coaching. You can filter this graph based on different competencies.
 
-![](https://support.smartwinnr.com/api/v1/attachments/842)                                         
+![](https://support.smartwinnr.com/api/v1/attachments/842)
 
-##### Performance by competency by country:
+##### Performance by competency by country
 
 The heatmap in this section shows the participant's performance in coaching by competency and country
 

@@ -27,21 +27,16 @@ This is the minimum value that you have to achieve against a KPI in order to get
 
 **Maximum Value**
 
-  
 This is the maximum threshold value until which points will be allotted to you. Even if you score more than this score, points will not be allotted to you beyond this.
 
 ![](https://lh5.googleusercontent.com/xvg0cvFILr3BGA6HhM8WPczD-pP9jwygz_t8gV_6Q4BNdcG1qQtJAhcfWJPk3xUtFuvJO4QERMAuywGwWCbdoG9axLYt8AWXhF9aUUWqsEWYUgfb6NQbP8liks6BjpyXeftD18eG)
 
 Target
 
-  
-This is the target set for you to achieve against each KPI. 
+This is the target set for you to achieve against each KPI.
 
 ![](https://lh6.googleusercontent.com/ImzYfKrMHZlsw7Vo9rSKR0XAheCnf4nwfqlC6dwwxhMJZfBunX6lb6hokz6Sv9m62T1l5e58NUyTk1K32Yjj4C4AXu-W_w38BLBWGuHZmZyHASHUwM4IOb5nAf0GQMycHKc_8ZHF)
 
- 
-
-  
 Current
 
 This blue bar shows the current achievement so far.
@@ -50,12 +45,10 @@ This blue bar shows the current achievement so far.
 
 Mean
 
-  
 This is the average of all the participant's scores against a KPI.
 
 ![](https://lh4.googleusercontent.com/VNZQ1-O2e50LK_Mui26Ckd6EmIPJH5alnzifxknRI1kOaYGm2ISPJwHisAZactL2xZWyMA85E5BUoyl4-TX2t5QMErgrgAcOcvSo7c97ERlVJqVq9WFHWFGp3gpSOBrSHX9Ad2RJ)
 
 If you click on the “View Details” button, you will get to see more details about your KPI targets and your scores against those targets.  
-                                                                
 
 ![](https://lh6.googleusercontent.com/rj6JDuDUu_DX4nkIZyBAGmeQpTNWYnMoIEkPL_lcjG0BPBZF0F9uEp8RgHhpE3_puILscW4IWVssT8VnH8p3CxlAe_abQvS0XEPtr8rwQCgT8k7-6RSPcC6WB8g1N69B6PsDs788)

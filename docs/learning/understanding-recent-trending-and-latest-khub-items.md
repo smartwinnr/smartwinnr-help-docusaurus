@@ -27,9 +27,9 @@ Recent Searches: As the name suggests, this section shows the KHub items that p
 
                                                          ![](https://support.smartwinnr.com/api/v1/attachments/719)
 
-New: This section shows the newly added KHub items. 
+New: This section shows the newly added KHub items.
 
-                                                         ![](https://support.smartwinnr.com/api/v1/attachments/720) 
+                                                         ![](https://support.smartwinnr.com/api/v1/attachments/720)
 
 Favourites: This section shows items which are added as favourites.
 

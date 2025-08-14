@@ -19,18 +19,17 @@ Any question that you create will get automatically added to the Question Bank.
 
 In the question bank, you have various search options that you can use to search for a question. A particular question can be searched based on:
 
-*   The business unit for which it was created
-*   The name of the person who has created it
-*   And the **'Question Type'**\-- _Multiple Choice, Fill in the blanks, Matching, and Hotspot._
+* The business unit for which it was created
+* The name of the person who has created it
+* And the **'Question Type'**\-- _Multiple Choice, Fill in the blanks, Matching, and Hotspot._
 
-Also, the Question Bank comes with an advanced search. 
+Also, the Question Bank comes with an advanced search.
 
 Click on the **‘Advanced Search’** link to open the **‘Advanced Search’** box.
 
-*   You can search for questions used for a specific competition. 
-*   You can also search for questions in a specific category by entering the category in the 'Category Values' box.
-*   You can search for specific questions by entering your search text in the 'Search' box. 
-    
+* You can search for questions used for a specific competition.
+* You can also search for questions in a specific category by entering the category in the 'Category Values' box.
+* You can search for specific questions by entering your search text in the 'Search' box.
 
 [![](/img/competitions/helpscout-image-d527690e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd455af4eb32171b8037480/file-8Sn9HVYcSo.png)
 

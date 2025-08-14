@@ -13,7 +13,7 @@ Only users with ADMIN roles can create field coaching templates.
 
 If you have the privilege to create Field Coaching templates, you will see the link ‘Templates’ under the Field Coaching Setting under the Admin section of your left menu. Follow the below steps to create a new field coaching template:
 
-## Step 1: Click on the "Create New Template" at the right side corner.
+## Step 1: Click on the "Create New Template" at the right side corner
 
 By clicking on it, you will see the first step of the process shown below.
 
@@ -21,7 +21,7 @@ By clicking on it, you will see the first step of the process shown below.
 
 Enter the title and fill up the description with the details of the field coaching template and click on the "save" icon below.
 
-## Step 2: Add the rating on which you want to score the user.
+## Step 2: Add the rating on which you want to score the user
 
 This is the second step as shown in the picture below.
 
@@ -41,7 +41,7 @@ In this step first, you need to select the competencies and add the description 
 
 After filling up the description, click on the "save" icon in the right corner.
 
-## Step 4: Create the coaching section.
+## Step 4: Create the coaching section
 
 Fill up the section name and description and select all the necessary options by clicking on it as shown below.
 

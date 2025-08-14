@@ -43,28 +43,22 @@ You can also view the top performers in a manager's scorecard by clicking on Vie
 
                                                            ![](https://support.smartwinnr.com/api/v1/attachments/877)
 
-  
-
 It will open the following screen where you will get to see how much each team member has scored against each KPI.
 
                                                                  ![](https://support.smartwinnr.com/api/v1/attachments/878)
-
-  
 
 KPI Filter: You can filter and view the scores by each KPI by clicking on the KPI dropdown at the top right corner.
 
                                                                  ![](https://support.smartwinnr.com/api/v1/attachments/879)
 
-  
-
-*   Scorecards: Here you can filter and choose to display a weekly or a monthly scorecard
+* Scorecards: Here you can filter and choose to display a weekly or a monthly scorecard
 
 ![](https://lh3.googleusercontent.com/nC3-diCnSs8Fhohm8GBPPQtjvebdyB4YGNZ_HuHBlNmgsn7tbo1w_RHCwKaqv8XR-r26Y66_fXAA0dEB6MVfKP7t6-21XfmbPkRauGuGU1LMGVRcU0lMk5E45HgBYHKSmZIVEESE)
 
-*   Date Range: Here you will get to choose to display the current week's scorecard or the last week's scorecard
+* Date Range: Here you will get to choose to display the current week's scorecard or the last week's scorecard
 
 ![](https://lh4.googleusercontent.com/IAoBD3oWJZutuO0FP-0xsx0cod0A2pzhIX7oXEutiF3OUJ6ru9ts_OVmLHbFGYBa2-RysDp8v61e2NqAfIzjSh0A09ISWkX2xzm7fsPnQhY8btODxSlHnzLYdK6usuYNtUQDoKrQ)
 
-*   KPI Group: This filter lets you choose the KPI group to display on the scorecard
+* KPI Group: This filter lets you choose the KPI group to display on the scorecard
 
 ![](https://lh6.googleusercontent.com/Ix59n-Q_50XUp5M41zZNTfpeCWqSTgBUYju0bjogMmAQB6BdldnV03IiGOVOPFFCE_wcTn-rpBChtk58ThtKS9IuQ7wzLMhXw2UG53pK1aOl03oQa9AybNYRFZrr0bodvAmCURgr)

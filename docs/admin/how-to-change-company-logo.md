@@ -17,8 +17,8 @@ Go to ADMIN > Company Settings > Company Profile tab.
 
 The following information can be updated:
 
-*   Organization Name: This name will be shown to all users logged in belonging to your organization.
-*   Primary Administrative Account Email: This email will receive all administrative emails from SmartWinnr.
-*   Company  Logo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
-*   Company App Logo: This logo will be shown in the SmartWinnr iOS and Android apps for all users belonging to your organization.
-*   Company App Header Logo: This logo will be shown in the heade section of SmartWinnr iOS and Android apps.
+* Organization Name: This name will be shown to all users logged in belonging to your organization.
+* Primary Administrative Account Email: This email will receive all administrative emails from SmartWinnr.
+* Company  Logo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
+* Company App Logo: This logo will be shown in the SmartWinnr iOS and Android apps for all users belonging to your organization.
+* Company App Header Logo: This logo will be shown in the heade section of SmartWinnr iOS and Android apps.

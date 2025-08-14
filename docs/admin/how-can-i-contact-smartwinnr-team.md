@@ -17,7 +17,7 @@ Open the SmartWinnr app and click on the **hamburger** icon at the top left corn
 
 ![](/img/admin/helpscout-image-efc355f6.png)
 
-Here, click on the **profile picture** at the top. It will take you to the following screen: 
+Here, click on the **profile picture** at the top. It will take you to the following screen:
 
 ![](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
 
@@ -25,9 +25,9 @@ Click on **_Settings_** icon at the top right corner which is highlighted in red
 
 ![](/img/admin/helpscout-image-acb45ae8.png)
 
-*   _Enter your email id_
-*   _Enter the name of your organization_
-*   _Enter your message_
+* _Enter your email id_
+* _Enter the name of your organization_
+* _Enter your message_
 
 Once you fill-up the details, click on the _Contact Us_ option to send your query to the SmartWinnr support Team.
 

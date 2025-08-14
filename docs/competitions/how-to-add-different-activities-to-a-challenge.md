@@ -11,13 +11,13 @@ helpscout_url: https://help.smartwinnr.com/article/240-how-to-add-activities-ins
 ---
 Follow the below steps in order to challenge activities inside a challenge:
 
-Go to EDITOR > PERFORMANCE > Challenges. Click on the particular challenge for which you want to add the activities. 
+Go to EDITOR > PERFORMANCE > Challenges. Click on the particular challenge for which you want to add the activities.
 
 ![](/img/competitions/helpscout-image-077bd7cd.jpg)
 
 By checking in the send custom notification, you can inform the users by sending them a custom mail about the challenge.
 
-Under settings, 
+Under settings,
 
 **Challenge Type:** You can set the challenge for users, managers, and groups.
 

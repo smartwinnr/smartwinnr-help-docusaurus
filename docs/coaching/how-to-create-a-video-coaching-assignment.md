@@ -21,9 +21,9 @@ A manager or an editor can create a video coaching assignment and then assign it
 
 Creating a video coaching assignment involves the below 3 steps:
 
-*   Step 1: Create coaching details
-*   Step 2: Assign Participants
-*   Step 3: Assign Coaches            
+* Step 1: Create coaching details
+* Step 2: Assign Participants
+* Step 3: Assign Coaches
 
 1
 
@@ -39,24 +39,23 @@ Click on "Enable AI Coach" for the AI Evaluation of the coaching.
 
 ![](/img/coaching/helpscout-image-ecf6879d.jpg)
 
-*   Ideal Duration: Guides the AI on the best duration.
-*   Boost Words: Brand words like company name, brand name.
-*   Keywords to cover: Key words or phrases that needs to be covered by the rep.
-*   Keywords to avoid: Banned words that you don’t want reps to mention.
-*   Scoring: You can adjust the weightage of scoring. Scoring is given between 0 to 100.
-    
+* Ideal Duration: Guides the AI on the best duration.
+* Boost Words: Brand words like company name, brand name.
+* Keywords to cover: Key words or phrases that needs to be covered by the rep.
+* Keywords to avoid: Banned words that you don’t want reps to mention.
+* Scoring: You can adjust the weightage of scoring. Scoring is given between 0 to 100.
 
 ![](/img/coaching/helpscout-image-8e6fe4b5.jpg)
 
 Fill the required coaching details on this page.
 
-*   Coaching Title: A Short descriptive title of the coaching.
-*   Coaching Description: Provide a detailed description of the assignment so that the coaches understands the assignment clearly. E.g. "Give a 30 seconds pitch on the new product".
-*   Sample Video: You can upload a sample video as a reference for the participants. For this, you can get one of your best reps or the trainer to upload a great video that illustrates the lessons and the best practices. This gives the participants an idea about how to proceed with the coaching assignment. 
-*   Start/End Date: If the start date is in the future, the coaching will be scheduled for the future and will get assigned on the specified start date.
-*   Competencies: Select competencies to evaluate coaches. For example, during a product launch, a coach can be assigned on her knowledge about the new product, features, etc. You can also assign a weightage for these competencies. The list of available competencies for your organization is displayed. Contact your System Administrator to add/modify existing competencies. View details at How to set competencies?
-*   Categories: Select a knowledge category related to this coaching assessment. This will be used by SmartWinnr to analyze the correlation between knowledge and coaching.
-*   Set Reminder: This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.   [Learn How to Add a Reminder for your Video Coaching](https://smartwinnr.helpscoutdocs.com/article/219-how-to-set-reminder-for-quiz-survey)
+* Coaching Title: A Short descriptive title of the coaching.
+* Coaching Description: Provide a detailed description of the assignment so that the coaches understands the assignment clearly. E.g. "Give a 30 seconds pitch on the new product".
+* Sample Video: You can upload a sample video as a reference for the participants. For this, you can get one of your best reps or the trainer to upload a great video that illustrates the lessons and the best practices. This gives the participants an idea about how to proceed with the coaching assignment.
+* Start/End Date: If the start date is in the future, the coaching will be scheduled for the future and will get assigned on the specified start date.
+* Competencies: Select competencies to evaluate coaches. For example, during a product launch, a coach can be assigned on her knowledge about the new product, features, etc. You can also assign a weightage for these competencies. The list of available competencies for your organization is displayed. Contact your System Administrator to add/modify existing competencies. View details at How to set competencies?
+* Categories: Select a knowledge category related to this coaching assessment. This will be used by SmartWinnr to analyze the correlation between knowledge and coaching.
+* Set Reminder: This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.   [Learn How to Add a Reminder for your Video Coaching](https://smartwinnr.helpscoutdocs.com/article/219-how-to-set-reminder-for-quiz-survey)
 
 It is recommended to have not more than 3 competencies for a specific coaching session. This helps the coaches to focus on specific areas of improvement.
 
@@ -78,19 +77,19 @@ On this page, select and assign multiple coaches to review a particular coaching
 
 You can assign up to 4 coaches to a coaching assignment.
 
-You will only get to see a list of editors and managers in the drop-down menu to select coaches. 
+You will only get to see a list of editors and managers in the drop-down menu to select coaches.
 
 Here you will get to select yourself and also assign other managers as coaches to a video coaching assignment.  
 
 [![](/img/coaching/helpscout-image-372b346e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1f43f6451e825e3b8fac7/file-5UjuWQaTTu.png)  
 
-Apply coach selection to all the pages: If you check this checkbox, then the same coach that you select here will get applied to all the users across various pages. 
+Apply coach selection to all the pages: If you check this checkbox, then the same coach that you select here will get applied to all the users across various pages.
 
-                                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/574) 
+                                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/574)
 
 Randomly Assign Coaches: This feature helps you when you have a huge number of participants assigned to the coaching. If you select this option,  you can randomly assign the selected coaches to the participants. For example, if you have 100 participants and if you have selected 5 coaches then these 5 coaches will get assigned randomly to the 100 participants.
 
-                                                                                      ![](https://support.smartwinnr.com/api/v1/attachments/575) 
+                                                                                      ![](https://support.smartwinnr.com/api/v1/attachments/575)
 
 What happens after the Coaching is assigned?
 

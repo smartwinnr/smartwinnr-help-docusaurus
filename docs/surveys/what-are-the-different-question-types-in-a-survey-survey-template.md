@@ -13,9 +13,9 @@ helpscout_url: https://help.smartwinnr.com/article/62-what-are-the-different-que
 
 There are 7 Question Types available in a survey template.
 
-Please note that all these questions come with a checkbox "Mark as mandatory". By default, this checkbox is checked which makes it mandatory for the survey takers to answer the question. You can uncheck this if you do not want to make the question mandatory. 
+Please note that all these questions come with a checkbox "Mark as mandatory". By default, this checkbox is checked which makes it mandatory for the survey takers to answer the question. You can uncheck this if you do not want to make the question mandatory.
 
-### 1\. Single Select:
+### 1\. Single Select
 
 Choose this question type when you want the survey taker to choose only one answer to the question.
 

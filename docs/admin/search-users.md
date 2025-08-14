@@ -17,10 +17,10 @@ To search an user, go to ADMIN > Manage Users.
 
 You can search for users by the following attributes;
 
-*   Business Units: Search by Business Units or Divisions
-*   Country: Search by Country or Sub-Divisions
-*   Name: Search by name. Partial name search is also supported.
-*   Email: Search by email. Fully qualified email is required.
-*   Roles: Search by any of the system roles
-*   User Status: Filter by active, pending and deactivate users.
-*   User Tags: Search by any of the User Tags that have been defined in your organization.
+* Business Units: Search by Business Units or Divisions
+* Country: Search by Country or Sub-Divisions
+* Name: Search by name. Partial name search is also supported.
+* Email: Search by email. Fully qualified email is required.
+* Roles: Search by any of the system roles
+* User Status: Filter by active, pending and deactivate users.
+* User Tags: Search by any of the User Tags that have been defined in your organization.

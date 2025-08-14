@@ -26,11 +26,10 @@ Step:3 Here you can click on the screen share icon and record the screen which y
 
 ![](/img/coaching/helpscout-image-2d930bc2.png)
 
-  
 Step:4  Once the screen is recorded successfully. Kindly click on the **“Upload Recorded File”** button to upload that recording file.
 
 ![](/img/coaching/helpscout-image-e879165d.png)
 
-Step:5  After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully. 
+Step:5  After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.
 
 ![](/img/coaching/helpscout-image-6d5d2c36.png)

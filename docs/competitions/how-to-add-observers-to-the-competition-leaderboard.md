@@ -17,7 +17,7 @@ Go to EDITOR > GAMIFICATION AND ENGAGEMENT > Competitions.
 
 ![](/img/competitions/helpscout-image-0953935d.jpg)
 
-**Step 2: After selecting the competition, select the 3rd window "View Leaderboards"** 
+**Step 2: After selecting the competition, select the 3rd window "View Leaderboards"**
 
 ![](/img/competitions/helpscout-image-71a6ff5f.jpg)
 

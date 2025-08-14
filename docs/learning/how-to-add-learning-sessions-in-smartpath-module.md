@@ -11,8 +11,8 @@ helpscout_url: https://help.smartwinnr.com/article/242-how-to-add-learning-sessi
 ---
 SmartWinnr allows you to set up Learning sessions as part of the SmartPath. There are two types of learning sessions available in SmartWinnr:
 
-*   Classroom Learning Session - This is basically an offline classroom session where the training is scheduled on SmartWinnr and users have to attend the classroom training session physically. 
-*   Virtual Learning Session - This is an online session conducted on any virtual platform like Zoom, Google meet, etc where the learning session can be scheduled under the Smartwinnr platform. 
+* Classroom Learning Session - This is basically an offline classroom session where the training is scheduled on SmartWinnr and users have to attend the classroom training session physically.
+* Virtual Learning Session - This is an online session conducted on any virtual platform like Zoom, Google meet, etc where the learning session can be scheduled under the Smartwinnr platform.
 
 To conduct and schedule the learning session, the editor should create a **SmartPath Module** under which the offline classroom session or online Virtual Session can be scheduled. Creating a SmartPath Module for learning sessions is similar to the way we create quizzes/surveys/SmartFeeds in SmartPath Module.
 
@@ -46,8 +46,8 @@ Enter a  **Title** for your session and you can also mention the details about 
 
 Now **select the session type** where you can find two options: **Virtual Session and Classroom Session.**
 
-*   **Virtual Session:** Virtual session says that you are going to conduct your training virtually through some online platform. When you choose the session type as Virtual Session, in the further steps, the system will ask you to provide the link where the meetings can be conducted virtually. (Example: Microsoft Teams, Google Meet)
-*   **Classroom Session:** This is like the normal classroom sessions where the trainer and trainees come in tow a classroom or conference Hall to attend the training. When you choose the session type as Classroom Session, in the further steps, the system will ask you to mention the address of the place where the session will be conducted. 
+* **Virtual Session:** Virtual session says that you are going to conduct your training virtually through some online platform. When you choose the session type as Virtual Session, in the further steps, the system will ask you to provide the link where the meetings can be conducted virtually. (Example: Microsoft Teams, Google Meet)
+* **Classroom Session:** This is like the normal classroom sessions where the trainer and trainees come in tow a classroom or conference Hall to attend the training. When you choose the session type as Classroom Session, in the further steps, the system will ask you to mention the address of the place where the session will be conducted.
 
 ![](/img/learning/helpscout-image-ba1733dc.jpg)
 

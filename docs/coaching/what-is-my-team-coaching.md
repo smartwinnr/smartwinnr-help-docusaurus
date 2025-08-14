@@ -15,7 +15,7 @@ Below are the steps to view the coachings that have been assigned to your team m
 
 Log in to the SmartWinnr app.
 
-Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'My Team'.    
+Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'My Team'.
 
 ![](https://lh5.googleusercontent.com/Jme-owP1voxDwDCqXHJ4PFaiTvxhELwEYgfDXkBpsnUzv_aGTvE_RbV7etnBcWDv4B9dQvRwE0d6TbIGB1kD0CXm19eXn74pQf61lb1m0JHap6JL73eKyUiVNkpNQF6f6ud_3Ss5)
 
@@ -27,7 +27,6 @@ It will show all the response videos submitted by your reportee for the various 
 
 ![](https://lh3.googleusercontent.com/1XJqkeViUn3KojrDsUaclQhFagjFRip5f7BAJKlmN2AC_Cr9OvV2kuMTSwAnxlYlDmjkg8QjUS5H4xXyIWEpHGx2qJtou_lWINj4Vv1mrU6IU0VliVAOUPTAZ2Kr9NvlMn6eOyWr)
 
-  
 You can search for a specific reportee in the search bar available on the top or you can apply a date filter which will give you the coaching assignments within the selected date range.
 
 Click on the **filter** icon at the top right corner to apply the 'Date Range' filter.

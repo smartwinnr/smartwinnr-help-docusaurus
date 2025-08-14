@@ -9,6 +9,7 @@ This guide explains how to deploy the SmartWinnr AI Chatbot to AWS with secure s
 Create a secret in AWS Secrets Manager to store your OpenAI API key securely:
 
 #### Option A: Using AWS CLI
+
 ```bash
 # Create the secret
 aws secretsmanager create-secret \
@@ -26,6 +27,7 @@ aws secretsmanager create-secret \
 ```
 
 #### Option B: Using AWS Console
+
 1. Go to AWS Secrets Manager console
 2. Click "Store a new secret"
 3. Choose "Other type of secret"
@@ -38,7 +40,8 @@ aws secretsmanager create-secret \
 
 Your EC2 instance or Lambda function needs these IAM permissions:
 
-#### IAM Policy JSON:
+#### IAM Policy JSON
+
 ```json
 {
   "Version": "2012-10-17",
@@ -55,12 +58,14 @@ Your EC2 instance or Lambda function needs these IAM permissions:
 }
 ```
 
-#### For EC2 Instance:
+#### For EC2 Instance
+
 1. Create an IAM role with the above policy
 2. Attach the role to your EC2 instance
 3. No additional AWS credentials needed in your application
 
-#### For Lambda Function:
+#### For Lambda Function
+
 1. Add the permissions to your Lambda execution role
 2. No additional AWS credentials needed in your application
 
@@ -69,6 +74,7 @@ Your EC2 instance or Lambda function needs these IAM permissions:
 ### Option 1: AWS EC2 Deployment
 
 #### 1. Launch EC2 Instance
+
 ```bash
 # Launch Ubuntu instance
 aws ec2 run-instances \
@@ -81,6 +87,7 @@ aws ec2 run-instances \
 ```
 
 #### 2. Setup Environment
+
 ```bash
 # SSH into instance
 ssh -i your-key.pem ubuntu@your-instance-ip
@@ -100,6 +107,7 @@ npm install
 ```
 
 #### 3. Production Environment Variables
+
 ```bash
 # Create production .env file
 cat > .env << EOF
@@ -118,6 +126,7 @@ EOF
 ```
 
 #### 4. Start Services
+
 ```bash
 # Start ChromaDB in background
 chroma run --host localhost --port 8000 &
@@ -135,6 +144,7 @@ pm2 save
 ### Option 2: AWS Lambda + API Gateway (Serverless)
 
 #### 1. Package for Lambda
+
 ```bash
 # Install dependencies
 npm install
@@ -145,6 +155,7 @@ zip -r smartwinnr-chatbot.zip . -x "node_modules/chromadb/*" "docs/*" ".git/*"
 ```
 
 #### 2. Lambda Configuration
+
 - Runtime: Node.js 18.x
 - Handler: `services/chatbot/lambda.handler`
 - Memory: 1024 MB
@@ -152,6 +163,7 @@ zip -r smartwinnr-chatbot.zip . -x "node_modules/chromadb/*" "docs/*" ".git/*"
 - Environment Variables: Same as EC2 but without ChromaDB settings
 
 #### 3. API Gateway Setup
+
 - Create REST API
 - Create resources for chat endpoints
 - Configure CORS for your domain
@@ -159,6 +171,7 @@ zip -r smartwinnr-chatbot.zip . -x "node_modules/chromadb/*" "docs/*" ".git/*"
 ### Option 3: AWS ECS (Container)
 
 #### 1. Create Dockerfile
+
 ```dockerfile
 FROM node:18-alpine
 
@@ -174,6 +187,7 @@ CMD ["npm", "run", "chatbot:start"]
 ```
 
 #### 2. Deploy to ECS
+
 ```bash
 # Build and push to ECR
 aws ecr create-repository --repository-name smartwinnr-chatbot
@@ -185,6 +199,7 @@ docker push YOUR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com/smartwinnr-chatbot:late
 ## 🏗️ Infrastructure as Code (Optional)
 
 ### CloudFormation Template
+
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'SmartWinnr Chatbot Infrastructure'
@@ -231,6 +246,7 @@ Parameters:
 ## 🔧 Production Configuration
 
 ### Environment Variables for Production
+
 ```bash
 # Required for production
 NODE_ENV=production
@@ -258,11 +274,13 @@ CHROMA_PORT=8000
 For production, set up HTTPS:
 
 #### Option A: Application Load Balancer (ALB)
+
 1. Create ALB with SSL certificate
 2. Route traffic to your EC2 instances
 3. Update CORS_ORIGIN to use https://
 
 #### Option B: CloudFront Distribution
+
 1. Create CloudFront distribution
 2. Point origin to your EC2/ECS
 3. Use ACM certificate for SSL
@@ -270,6 +288,7 @@ For production, set up HTTPS:
 ## 📊 Monitoring and Logging
 
 ### CloudWatch Integration
+
 ```javascript
 // Add to your server.ts
 import { CloudWatchLogs } from '@aws-sdk/client-cloudwatch-logs';
@@ -288,6 +307,7 @@ const logger = winston.createLogger({
 ```
 
 ### Health Checks
+
 ```bash
 # Create health check endpoint
 curl https://your-domain.com/health
@@ -308,6 +328,7 @@ curl https://your-domain.com/health
 ## 🔄 Secret Rotation
 
 ### Automatic Secret Rotation
+
 ```bash
 # Update secret value
 aws secretsmanager update-secret \
@@ -319,6 +340,7 @@ curl -X POST https://your-domain.com/api/admin/refresh-secrets
 ```
 
 ### Manual Secret Rotation
+
 1. Update secret in AWS Secrets Manager
 2. Call the refresh endpoint or restart application
 3. Monitor logs for successful update
@@ -326,22 +348,26 @@ curl -X POST https://your-domain.com/api/admin/refresh-secrets
 ## 🛡️ Security Best Practices
 
 ### 1. Network Security
+
 - Use VPC with private subnets
 - Security groups with minimal required ports
 - NAT Gateway for outbound internet access
 
 ### 2. IAM Security
+
 - Principle of least privilege
 - Use IAM roles, not access keys
 - Regular audit of permissions
 
 ### 3. Application Security
+
 - Input validation and sanitization
 - Rate limiting for API endpoints
 - CORS configuration for your domain only
 - Secure headers (HSTS, CSP, etc.)
 
 ### 4. Secret Management
+
 - Never commit secrets to code
 - Use AWS Secrets Manager for all secrets
 - Enable secret rotation
@@ -352,6 +378,7 @@ curl -X POST https://your-domain.com/api/admin/refresh-secrets
 ### Common Issues
 
 #### Secret Access Denied
+
 ```bash
 # Check IAM permissions
 aws sts get-caller-identity
@@ -361,6 +388,7 @@ aws secretsmanager get-secret-value --secret-id smartwinnr/openai-api-key
 ```
 
 #### ChromaDB Connection Issues
+
 ```bash
 # Check if ChromaDB is running
 ps aux | grep chroma
@@ -372,12 +400,14 @@ chroma run --host localhost --port 8000 &
 ```
 
 #### High AWS Costs
+
 1. Monitor OpenAI API usage
 2. Implement response caching
 3. Use cheaper models (gpt-4o-mini)
 4. Set API usage limits
 
 ### Monitoring Commands
+
 ```bash
 # Check application logs
 pm2 logs smartwinnr-chatbot
@@ -392,6 +422,7 @@ node -e "import('./services/config/configService.js').then(c => c.configService.
 ## 📞 Support
 
 If you encounter issues:
+
 1. Check CloudWatch logs
 2. Verify IAM permissions
 3. Test secret access manually
@@ -399,6 +430,7 @@ If you encounter issues:
 5. Check security group rules
 
 For additional support, consult:
+
 - AWS Secrets Manager documentation
 - OpenAI API documentation  
 - ChromaDB documentation

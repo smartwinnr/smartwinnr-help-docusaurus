@@ -11,9 +11,9 @@ helpscout_url: https://help.smartwinnr.com/article/107-how-to-add-a-challenge-to
 ---
 Here are the steps to add a challenge to a competition:
 
-1.  Once you get to the 4th step of creating competition, select Challenge in the "Select Task".
-2.  Give a name to the task 
-3.  Select the challenge from the list of challenges created.
+1. Once you get to the 4th step of creating competition, select Challenge in the "Select Task".
+2. Give a name to the task
+3. Select the challenge from the list of challenges created.
 
 Below is a screenshot of adding a challenge to a competition:
 

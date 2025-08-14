@@ -19,7 +19,7 @@ Click on the audio icon in the question or feedback box:
 
 This will open the following popup:
 
-[![](https://file2.api.drift.com/drift-prod-file-uploads/42e6%2F42e6e917e17571b87a5bff50dbd2a75b/ad.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/42e6%2F42e6e917e17571b87a5bff50dbd2a75b/ad.png?mimeType=image%2Fpng)Click on the ‘Choose File’ button to select an audio file from your local file system and click ‘Open’. Then choose 'Submit' button. The selected audio file will get added to the question/feedback. This will appear in the SmartWinnr mobile app from where the participant will be able to play the audio file. 
+[![](https://file2.api.drift.com/drift-prod-file-uploads/42e6%2F42e6e917e17571b87a5bff50dbd2a75b/ad.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/42e6%2F42e6e917e17571b87a5bff50dbd2a75b/ad.png?mimeType=image%2Fpng)Click on the ‘Choose File’ button to select an audio file from your local file system and click ‘Open’. Then choose 'Submit' button. The selected audio file will get added to the question/feedback. This will appear in the SmartWinnr mobile app from where the participant will be able to play the audio file.
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/e1d0%2Fe1d0cee4382709fa22c01022107a49b7/2020-02-25.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/e1d0%2Fe1d0cee4382709fa22c01022107a49b7/2020-02-25.png?mimeType=image%2Fpng)
 

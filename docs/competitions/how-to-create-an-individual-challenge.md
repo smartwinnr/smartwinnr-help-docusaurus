@@ -23,7 +23,7 @@ Division: Select a business unit for which the challenge is being created.
 
 KPI: Select a KPI for the challenge.
 
-Challenge Type: This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'User' to create an individual challenge. 
+Challenge Type: This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'User' to create an individual challenge.
 
 Start Date and End Date: Specify the start date and end date for the challenge.
 
@@ -39,7 +39,7 @@ Select Challenge Pairs: This section lets you select the pairs between whom the
 
              ![](/img/competitions/helpscout-image-0dc68864.png)
 
-Since you have selected the 'Challenge Type' as 'User', you will get to select individual participants as a pair of competitors for the challenge. Click on the 'Add' button, once you have added the pairs of participants. 
+Since you have selected the 'Challenge Type' as 'User', you will get to select individual participants as a pair of competitors for the challenge. Click on the 'Add' button, once you have added the pairs of participants.
 
 You can create multiple pairs very quickly, by continuing to add pairs with the 'Add Pair' button. This is how it will look:
 

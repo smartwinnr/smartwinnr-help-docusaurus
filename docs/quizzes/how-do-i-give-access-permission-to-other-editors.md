@@ -11,11 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/196-how-do-i-give-access-perm
 ---
 As an Editor in SmartWinnr, you can give access permission to various tasks that you create to other editors. Tasks include:
 
-*   Quiz
-*   Survey
-*   SmartFeed
-*   Competitions
-*   Coaching
+* Quiz
+* Survey
+* SmartFeed
+* Competitions
+* Coaching
 
 _This access permission can only be given by the Editors to other Editors._
 
@@ -25,7 +25,7 @@ On the SmartWinnr portal click on your name that gets displayed at the top right
 
 ![](/img/quizzes/helpscout-image-f27f9048.png)
 
-It will take you to the following page: 
+It will take you to the following page:
 
 ![](/img/quizzes/helpscout-image-5511c500.png)
 

@@ -29,6 +29,6 @@ Leaderboard: In this section, you will be able to view a quarterly leaderboard 
 
 ![](/img/quizzes/helpscout-image-9b4aa422.png)
 
-Team Knowledge Profile: This section gives you the total score of all the team members. You can filter these performance results of the participant's by Category, Tags and Date Range. 
+Team Knowledge Profile: This section gives you the total score of all the team members. You can filter these performance results of the participant's by Category, Tags and Date Range.
 
 ![](/img/quizzes/helpscout-image-51461868.png)

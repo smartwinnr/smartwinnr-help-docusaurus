@@ -13,13 +13,13 @@ SmartWinnr provides a very detailed set of analytics on every quiz that you have
 
 Follow the below steps in order to view the quiz-wise analytics:
 
-Go to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. 
+Go to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes.
 
 Click on the 'Analytics' icon of a particular quiz.
 
 ![](/img/quizzes/helpscout-image-99f7f7bd.png)
 
-You can download quiz results from here by clicking on the 'Download Quiz Results' button. 
+You can download quiz results from here by clicking on the 'Download Quiz Results' button.
 
 ![](/img/quizzes/helpscout-image-a02a4255.png)
 
@@ -31,7 +31,7 @@ On this page, you can select the participants you want to send the notification 
 
 Overall Participation:
 
-This gives you a pie chart showing the overall participation percentage along with actual numbers. For example, in the screenshot below, it shows that the participation percentage is 32%. The number of people who have completed the quiz is 10 and the number of people who have not completed it is 21. 
+This gives you a pie chart showing the overall participation percentage along with actual numbers. For example, in the screenshot below, it shows that the participation percentage is 32%. The number of people who have completed the quiz is 10 and the number of people who have not completed it is 21.
 
 ![](/img/quizzes/helpscout-image-7303cabf.png)
 
@@ -41,7 +41,7 @@ Participation: % By Country: This section gives you a bar graph where it shows 
 
 By clicking on the 'Details' button you will be taken to the 'Quiz Participation Details' page where you can see a list of participants who have not started the quiz and the participants who have completed it. You can drill down the participants based on the status of the quiz assigned to them or you can search for a particular participant by entering their name and email address.
 
-Categorywise Performance for All Country: This section gives you the bar graph of the category wise performance for all Countries. 
+Categorywise Performance for All Country: This section gives you the bar graph of the category wise performance for all Countries.
 
 ![](/img/quizzes/helpscout-image-03301bbf.png)
 

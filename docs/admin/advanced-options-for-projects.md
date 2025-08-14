@@ -29,22 +29,22 @@ The editor can Search for the assigned tasks by using the "Search Bar" by select
 
 This page also shows the Users that have been assigned the tasks.
 
-### 
+###
 
-*    Advance Search
+*  Advance Search
 
 Advanced search is a feature that gives the editor "Advanced search features" like:
 
-*   Search by the name of the user to whom the task is assigned
-*   Search by email 
-*   Search by Meta Tag type
-*   Search by Meta Tags
+* Search by the name of the user to whom the task is assigned
+* Search by email
+* Search by Meta Tag type
+* Search by Meta Tags
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1077)
 
-### 
+###
 
-*   Add
+* Add
 
 The editor can also add a new Escalation matrix to the existing project.
 
@@ -54,9 +54,9 @@ To add a new Escalation matrix to the existing project, editor needs to click on
 
 Users can be selected from the Drop Down
 
-### 
+###
 
-*   Escalation Levels
+* Escalation Levels
 
 "Type"
 
@@ -80,7 +80,7 @@ Existing Task statuses , that are local to this project can be seen here.
 
 The editor can also add new Task Status explicitly for the current project by clicking "Add Status" on the top right.
 
-To save the new task Status added, click on "save". 
+To save the new task Status added, click on "save".
 
 ## 3.Access Permission
 
@@ -98,10 +98,8 @@ After the selection of Editors, click on "Save".
 
 Delete is used for deleting the current project.
 
-Clicking on delete will  open the following 
+Clicking on delete will  open the following
 
                                                                   ![](https://support.smartwinnr.com/api/v1/attachments/1081)
-
-  
 
 Click on "Yes"  to delete the existing project.

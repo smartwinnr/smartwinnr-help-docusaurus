@@ -17,7 +17,7 @@ Step 1: Select the left menu>>Go to ADMIN>>Field Coaching Settings>>Competencies
 
 ![](/img/coaching/helpscout-image-71705a60.jpg)
 
-Step 2: Add the competencies by creating a group by clicking on the " Add New " icon. 
+Step 2: Add the competencies by creating a group by clicking on the " Add New " icon.
 
 ![](/img/coaching/helpscout-image-dc66f1db.png)
 

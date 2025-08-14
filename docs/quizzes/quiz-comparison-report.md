@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5ffc22a3551e0c2853f3af84
 helpscout_url: https://help.smartwinnr.com/article/200-quiz-comparison-report
 ---
-Quiz Comparison Report gives you a comparison report on various quizzes that you have created in SmartWinnr. This will help you understand the progress that the quiz- takers have made after each quiz over time. 
+Quiz Comparison Report gives you a comparison report on various quizzes that you have created in SmartWinnr. This will help you understand the progress that the quiz- takers have made after each quiz over time.
 
 To find the Quiz Comparison Report in SmartWinnr, Go to EDITOR >LEARNING AND KNOWLEDGE >Questions and Quizzes> Reports > Quiz Comparison Report. It opens the following page:
 

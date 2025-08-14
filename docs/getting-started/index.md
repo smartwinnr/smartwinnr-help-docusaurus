@@ -75,6 +75,7 @@ The platform is organized into these main sections:
 ## Getting Help
 
 :::tip Need Assistance?
+
 - **Documentation**: Browse the sections in this help center
 - **Administrator**: Contact your SmartWinnr administrator for setup questions
 - **AI Assistant**: Use our intelligent chatbot for instant help (coming soon)

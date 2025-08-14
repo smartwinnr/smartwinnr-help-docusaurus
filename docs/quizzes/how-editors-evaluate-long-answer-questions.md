@@ -19,7 +19,7 @@ In order to evaluate the Long answer questions, the Editor needs to follow the b
 
 ![](/img/quizzes/helpscout-image-1a005e4f.jpg)
 
-2\. On the analytics page, scroll down and go to the section called **Long Answer Analytics**. 
+2\. On the analytics page, scroll down and go to the section called **Long Answer Analytics**.
 
 ![](/img/quizzes/helpscout-image-3e46ed6d.jpg)
 
@@ -39,14 +39,14 @@ Here, **Scroll down** to the section called **Quiz Response**. Here, you can fi
 
 ![](/img/quizzes/helpscout-image-6253111e.jpg)
 
-*   Clicking on the Evaluate button will show the following pop-up where the editor can evaluate and write the feedback for the user. Also, score the user based on his response. 
+* Clicking on the Evaluate button will show the following pop-up where the editor can evaluate and write the feedback for the user. Also, score the user based on his response.
 
 ![](/img/quizzes/helpscout-image-acbaec31.jpg)
 
-*   You can give **points** for the question in the scoring section. Then click on the **Save icon**.
+* You can give **points** for the question in the scoring section. Then click on the **Save icon**.
 
 ![](/img/quizzes/helpscout-image-53d6865d.jpg)
 
-*   The below image is an example of Feedback and scoring by the evaluator.
+* The below image is an example of Feedback and scoring by the evaluator.
 
 ![](/img/quizzes/helpscout-image-488d34f7.jpg)

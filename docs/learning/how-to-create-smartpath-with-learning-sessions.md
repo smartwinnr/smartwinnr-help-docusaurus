@@ -19,7 +19,7 @@ Go to  **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPat
 
 ![](/img/learning/helpscout-image-77d1dd82.jpg)
 
-Enter the **SmartPath Title** and add details about the training in the description. 
+Enter the **SmartPath Title** and add details about the training in the description.
 
 The editor can also add a completion certificate/badge under the Completion Certificate section. Then click on the  **Save SmartPath** button.
 
@@ -43,7 +43,7 @@ In the next step, Click on the **Create Batch** icon at the top right corner.
 
 ![](/img/learning/helpscout-image-769ff4f6.jpg)
 
-It will take you to the following page. Enter the **Batch Name** and duration in which you need to perform the training. Select the start date and the end date with the timing under which the session is conducted. 
+It will take you to the following page. Enter the **Batch Name** and duration in which you need to perform the training. Select the start date and the end date with the timing under which the session is conducted.
 
 Whenever a learning session is added to the SmartPath, you will have an extra section where you will need to enter the details of the learning session conducted for the new batch.
 
@@ -51,10 +51,10 @@ Whenever a learning session is added to the SmartPath, you will have an extra se
 
 Following are the details that we should fill in for the learning session:
 
-*   The **start date/time and end date/time** of the learning session
-*   The **instructor for the session**. The instructor can be the user, manager, or coach who will conduct the training for the users.
-*   For the Virtual session, you will need to enter the link address where the training will be conducted. For example Zoom Link, Google meet link, etc.
-*   For the Classroom session, you will need to enter the location address where the training will be conducted. For example a meeting room in an office or meeting hall at a different location.
+* The **start date/time and end date/time** of the learning session
+* The **instructor for the session**. The instructor can be the user, manager, or coach who will conduct the training for the users.
+* For the Virtual session, you will need to enter the link address where the training will be conducted. For example Zoom Link, Google meet link, etc.
+* For the Classroom session, you will need to enter the location address where the training will be conducted. For example a meeting room in an office or meeting hall at a different location.
 
 The editor can also add reminders for the users notifying them to complete their training and attend the learning session.
 
@@ -64,7 +64,7 @@ The next step is to select the list of users for the batch. And after selecting 
 
 ![](/img/learning/helpscout-image-b2875da9.jpg)
 
-This will successfully create the batch for the SmartPath. 
+This will successfully create the batch for the SmartPath.
 
 ![](/img/learning/helpscout-image-bed13d30.png)Whenever you need to use the same SmartPath for another setup of users, you can go in and create new batches anytime.
 

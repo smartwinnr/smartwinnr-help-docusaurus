@@ -12,6 +12,7 @@ Welcome to SmartWinnr! As a user, you'll be using SmartWinnr to learn, take asse
 ## Your SmartWinnr Journey
 
 ### 🎯 **What You'll Be Doing**
+
 - **📱 Learning on Mobile**: Access content anytime, anywhere through the mobile app
 - **📝 Taking Quizzes**: Complete assessments to test and reinforce your knowledge  
 - **📚 Consuming Content**: Read SmartFeeds and follow SmartPaths for structured learning
@@ -19,7 +20,9 @@ Welcome to SmartWinnr! As a user, you'll be using SmartWinnr to learn, take asse
 - **📊 Tracking Progress**: Monitor your learning journey and achievements
 
 ### 🚀 **Your Learning Experience**
+
 SmartWinnr makes learning engaging through:
+
 - **Bite-sized Content**: Quick, focused learning that fits your schedule
 - **Interactive Quizzes**: Immediate feedback to reinforce learning
 - **Social Learning**: Connect with peers through comments and discussions
@@ -29,12 +32,14 @@ SmartWinnr makes learning engaging through:
 ## Step 1: Download and Login 📱
 
 ### **Get the SmartWinnr App**
+
 1. **📱 Download**: Get SmartWinnr from your device's app store
 2. **🔐 Login Credentials**: Use the username and password provided by your administrator
 3. **✅ First Login**: Complete the initial setup and profile configuration
 
 :::tip Your Login Details
 Your administrator should have provided you with:
+
 - Username or email address
 - Temporary password (you'll be prompted to change it)
 - Organization code (if required)
@@ -45,6 +50,7 @@ Your administrator should have provided you with:
 ## Step 2: Complete Your Profile 👤
 
 ### **Set Up Your Profile**
+
 1. **📷 Profile Photo**: Add a professional photo
 2. **📝 Personal Information**: Complete your details
 3. **🌐 Language Settings**: Choose your preferred language
@@ -52,6 +58,7 @@ Your administrator should have provided you with:
 5. **🎯 Learning Goals**: Set your personal learning objectives
 
 ### **Customize Your Experience**
+
 - **🎨 Theme**: Choose between light and dark modes
 - **📱 Mobile Settings**: Configure offline download preferences  
 - **⏰ Notification Schedule**: Set quiet hours and reminder preferences
@@ -62,21 +69,25 @@ Your administrator should have provided you with:
 ## Step 3: Explore Your Dashboard 🏠
 
 ### **Understanding Your Home Screen**
+
 Your dashboard shows:
 
 **📊 Performance Summary**
+
 - Current learning streak and completion rates
 - Recent quiz scores and improvements
 - Upcoming assignments and deadlines
 - Achievement badges and certificates earned
 
 **🎯 Quick Actions**
+
 - **📝 Take Next Quiz**: Jump to available assessments
 - **📚 Continue Learning**: Resume SmartPaths or browse SmartFeeds
 - **🏆 Join Competition**: Participate in active challenges
 - **📊 View Progress**: Check detailed analytics
 
 **📢 Notifications**
+
 - New assignments from your manager
 - Deadline reminders and updates
 - Achievement celebrations and badges earned
@@ -87,12 +98,14 @@ Your dashboard shows:
 ## Step 4: Take Your First Assessment 📝
 
 ### **Finding and Starting Quizzes**
+
 1. **📝 Quiz Tab**: Navigate to the Quizzes section
 2. **🟢 Available Quizzes**: See what's assigned to you
 3. **📋 Quiz Details**: Review instructions, time limits, and objectives
 4. **▶️ Start Quiz**: Begin your first assessment
 
 ### **During the Quiz**
+
 - **⏰ Time Management**: Keep track of remaining time
 - **❓ Question Types**: Expect multiple choice, fill-in-blank, and more
 - **💡 Take Your Time**: Read questions carefully
@@ -100,6 +113,7 @@ Your dashboard shows:
 - **💾 Auto-Save**: Your progress is saved automatically
 
 ### **After Completion**
+
 - **📊 Immediate Results**: See your score right away
 - **💡 Explanations**: Learn from detailed answer explanations
 - **📈 Progress Tracking**: View how this fits your learning journey
@@ -110,6 +124,7 @@ Your dashboard shows:
 ## Step 5: Engage with Learning Content 📚
 
 ### **Explore SmartFeeds**
+
 SmartFeeds are your daily dose of bite-sized learning:
 
 1. **📱 Browse Feed**: Scroll through personalized content
@@ -119,6 +134,7 @@ SmartFeeds are your daily dose of bite-sized learning:
 5. **🔖 Save**: Bookmark important content for later
 
 ### **Follow SmartPaths**
+
 SmartPaths are structured learning journeys:
 
 1. **🛤️ View Paths**: See assigned or available learning journeys
@@ -128,6 +144,7 @@ SmartPaths are structured learning journeys:
 5. **🎯 Achieve Milestones**: Celebrate completed sections
 
 ### **Use Knowledge Hub**
+
 Your searchable resource library:
 
 1. **🔍 Search Content**: Find specific information quickly  
@@ -141,6 +158,7 @@ Your searchable resource library:
 ## Step 6: Join Your First Competition 🏆
 
 ### **Understanding Competitions**
+
 Competitions make learning fun and social:
 
 - **🎯 Challenges**: Individual or team-based activities
@@ -150,6 +168,7 @@ Competitions make learning fun and social:
 - **👥 Team Spirit**: Collaborate and support teammates
 
 ### **Participating in Competitions**
+
 1. **🏆 Browse Active**: See current competitions you can join
 2. **📋 Read Rules**: Understand objectives and scoring
 3. **🎯 Join Competition**: Participate individually or with team
@@ -157,6 +176,7 @@ Competitions make learning fun and social:
 5. **📊 Track Performance**: Monitor your progress on leaderboards
 
 ### **Maximizing Competition Success**
+
 - **⏰ Stay Active**: Regular participation maintains momentum
 - **🎯 Focus on Quality**: Good scores matter more than speed
 - **🤝 Team Collaboration**: Support teammates in group challenges
@@ -166,9 +186,11 @@ Competitions make learning fun and social:
 ## Step 7: Monitor Your Progress 📊
 
 ### **Personal Analytics Dashboard**
+
 Track your learning journey with:
 
 **📈 Performance Metrics**
+
 - Quiz scores and improvement trends
 - Content consumption and engagement rates  
 - Learning streak and consistency
@@ -176,6 +198,7 @@ Track your learning journey with:
 - Goal progress and achievement rates
 
 **🎯 Skill Development**
+
 - Strengths in different subject areas
 - Areas identified for improvement
 - Skill progression over time
@@ -183,6 +206,7 @@ Track your learning journey with:
 - Career development alignment
 
 **🏆 Achievements & Recognition**
+
 - Badges earned and milestones reached
 - Certificates and credentials obtained
 - Competition rankings and wins
@@ -190,6 +214,7 @@ Track your learning journey with:
 - Manager acknowledgment and praise
 
 ### **Using Analytics for Growth**
+
 - **🎯 Set Learning Goals**: Use data to establish targets
 - **📊 Identify Patterns**: Understand when and how you learn best  
 - **💪 Build on Strengths**: Leverage areas where you excel
@@ -199,18 +224,21 @@ Track your learning journey with:
 ## Your First Week Action Plan 📅
 
 ### **Day 1-2: Setup & Exploration**
+
 - ✅ Download app and complete login
 - ✅ Set up profile and preferences
 - ✅ Explore dashboard and navigation
 - ✅ Take your first quiz
 
 ### **Day 3-4: Learning Engagement**  
+
 - ✅ Browse and engage with SmartFeeds
 - ✅ Start your first SmartPath
 - ✅ Search Knowledge Hub for resources
 - ✅ Join an active competition
 
 ### **Day 5-7: Routine Development**
+
 - ✅ Establish daily learning habits
 - ✅ Complete assigned quizzes and content
 - ✅ Participate in team discussions
@@ -219,6 +247,7 @@ Track your learning journey with:
 ## Success Tips for New Users 💡
 
 ### **🎯 Learning Effectiveness**
+
 - **⏰ Consistent Schedule**: Set aside regular time for learning
 - **📱 Use Mobile Features**: Learn during commutes and breaks
 - **💬 Ask Questions**: Use comments and discussions to clarify doubts
@@ -226,6 +255,7 @@ Track your learning journey with:
 - **🎯 Apply Knowledge**: Try using what you learn in your work
 
 ### **🏆 Competition Success**
+
 - **📊 Quality over Quantity**: Focus on good scores rather than just completion
 - **🤝 Team Collaboration**: Support teammates in group challenges
 - **⏰ Stay Consistent**: Regular participation is better than sporadic bursts
@@ -233,6 +263,7 @@ Track your learning journey with:
 - **🎉 Positive Attitude**: Celebrate others' success and stay motivated
 
 ### **📈 Progress Optimization**
+
 - **📊 Check Analytics Regularly**: Monitor your learning trends
 - **🎯 Set Realistic Goals**: Establish achievable targets
 - **💪 Build on Success**: Use strengths to tackle challenging areas  
@@ -242,12 +273,14 @@ Track your learning journey with:
 ## Getting Help and Support 🤝
 
 ### **📞 When You Need Assistance**
+
 - **🔧 Technical Issues**: Contact your IT support or [support@smartwinnr.com](mailto:support@smartwinnr.com)
 - **📚 Content Questions**: Ask your manager or training coordinator
 - **🎯 Learning Support**: Reach out to your assigned trainer or coach
 - **👥 Peer Help**: Connect with colleagues through the platform
 
 ### **📚 Additional Resources**
+
 - **📖 User Guide**: [Complete User Experience Guide](../user-guide/index.md)
 - **❓ Troubleshooting**: [Common Issues & Solutions](../troubleshooting/index.md)
 - **📱 Mobile Tips**: [Mobile App Navigation](../user-guide/mobile-app-navigation.md)

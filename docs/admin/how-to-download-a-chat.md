@@ -15,7 +15,7 @@ Go to EDITOR > Settings > Groups. Click on an active chat group. Then click on 
 
 ![](https://support.smartwinnr.com/api/v1/attachments/972)
 
-This opens the chat conversation in the group. 
+This opens the chat conversation in the group.
 
 Alternate option : Go to EDITOR > GAMIFICATION AND ENGAGEMENT > Chat.
 

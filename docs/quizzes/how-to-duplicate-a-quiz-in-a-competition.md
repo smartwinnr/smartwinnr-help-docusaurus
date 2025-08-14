@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fda263d27288b7f895d60b7
 helpscout_url: https://help.smartwinnr.com/article/108-how-to-duplicate-a-quiz-in-a-competition
 ---
-When you duplicate a quiz for a competition, automatically the questions added to the quiz will also get duplicated. 
+When you duplicate a quiz for a competition, automatically the questions added to the quiz will also get duplicated.
 
 Please follow the below steps to duplicate a quiz as a part of the competition:
 

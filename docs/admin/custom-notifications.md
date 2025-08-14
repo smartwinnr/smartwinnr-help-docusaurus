@@ -15,11 +15,11 @@ This option will be available only if the user has an editor role in SmartWinnr.
 
 You can follow the below given steps to send a custom notification to sales reps.
 
-Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page 
+Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page
 
 ![](/img/admin/helpscout-image-525b12a8.png)
 
-This page  will provide the logs of custom notifications that have been sent so far 
+This page  will provide the logs of custom notifications that have been sent so far
 
 Editor can also search for notifications by "Date Range", "Business Unit", "Created By".
 
@@ -39,6 +39,6 @@ Kindly note that the notifying message should not be more than 140 character.
 
 Editor needs to select the "Business Unit" , "Country", "Group" for searching the notification recipients.
 
-For "Advanced Search " options [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) and check section 1.1. 
+For "Advanced Search " options [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) and check section 1.1.
 
 After search is complete, Editor can select the recipients and click on "Send Notification".Then the notification is out successfully to the sales reps.

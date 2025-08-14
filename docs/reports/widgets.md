@@ -33,13 +33,13 @@ Team Heatmap will show you the percentage achieved by your sales team for each
 
 ![](https://lh6.googleusercontent.com/56AsBMunnOIYzW8__vo2uM2aRcmqG-NLy0ALWvSYhS6vmzLuZ9sMmP_yNSilnIEl999KEVY7QAO1WvuPb_HPjKbCcpiqQ5Ao_2Y8Mi575ItdP6VyCsR_ZcOva83jZuiJ27fnGSqA)
 
-### 3.Performance Histogram 
+### 3.Performance Histogram
 
 The performance Histogram is a bar graph that tells you the number of reps who have achieved various percentage ranges of their target. For example, in the following screenshot, it says, 1 user has achieved 80-100% of their target in KPI - Calls in the last quarter.
 
 ![](https://lh5.googleusercontent.com/tXQdr3ZSb2W7lEfVn93QGPkZkfy4rZJ4hkru5o3CrUMICzRGVz3KB5IZIlEjiC_iXndu5EF0njS1dtXYRBDklcufoHns5itcUlJX7gyM6_8ZF2qGSXWM-42QxxUKKmMQyUjo0jBn)
 
-### 4.Sync Chart 
+### 4.Sync Chart
 
 Sync Chart will show the aggregate data achieved by your team members for each KPI separately in a chart format. This can help you understand how your team is progressing their performance over a period of time. You can track the progress for different duration of time.
 

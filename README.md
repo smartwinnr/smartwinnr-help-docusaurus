@@ -288,19 +288,73 @@ The project supports both development and production environments:
 
 See `.env.example` for detailed configuration options.
 
-## Contributing
+## Documentation Style Guide & Workflow
 
-### Documentation Updates
-1. Follow the established category structure
-2. Use descriptive alt text for images
-3. Place images in appropriate `/static/img/[category]/` folders
-4. Update image-mapping.json when adding new images
+This project includes automated validation to ensure all documentation follows the [SmartWinnr Help Document Style Guide](./SmartWinnr-Help-Style-Guide.md).
 
-### Image Management
+### Writing New Documentation
+
+1. **Use Templates**: Start with pre-built templates in `/templates/`:
+   - `help-document-template.md` - For step-by-step guides
+   - `feature-overview-template.md` - For feature introductions
+   - `troubleshooting-template.md` - For problem-solving guides
+
+2. **Follow Style Guidelines**: 
+   - Action-oriented titles (e.g., "Upload a Training Video")
+   - American English spelling
+   - Bold UI elements (**Save** button)
+   - Positive framing ("Remember to..." not "Don't forget...")
+   - Short sentences (15-20 words max)
+
+3. **Automated Validation**: 
+   - Run `npm run lint:docs` to check style compliance
+   - Run `npm run lint:docs:fix` to auto-fix formatting issues
+   - Pre-commit hooks automatically check and fix documentation
+
+### Style Validation System
+
+#### Local Development
+```bash
+# Check all documentation for style issues
+npm run lint:docs
+
+# Automatically fix style issues
+npm run lint:docs:fix
+```
+
+#### Git Integration
+- **Pre-commit Hooks**: Automatically validate and fix documentation before commits
+- **GitLab CI/CD**: Merge requests are blocked if documentation fails style checks
+- **Custom Rules**: Enforce action-oriented titles, UI formatting, and tone guidelines
+
+#### Custom Style Rules
+Our markdownlint configuration includes custom rules that enforce:
+- Action-oriented H1 titles
+- Bold formatting for UI elements
+- Positive framing instead of negative language
+- American English spelling
+- Sentence length limits for readability
+
+### Contributing
+
+#### Documentation Updates
+1. **Start with Templates**: Use appropriate template from `/templates/`
+2. **Follow Style Guide**: Adhere to SmartWinnr documentation standards
+3. **Use Validation Tools**: Run `npm run lint:docs:fix` before committing
+4. **Structured Organization**: Place content in appropriate category folders
+5. **Image Management**: Add images to `/static/img/[category]/` folders
+
+#### Image Management
 - **New Images**: Add to appropriate category folder
 - **External Images**: Use migration script or add manually with proper metadata
 - **Naming Convention**: `source-description-hash.extension`
 - **Mapping Updates**: Ensure image-mapping.json stays current
+
+#### Quality Assurance
+- Pre-commit hooks prevent style violations
+- GitLab CI validates all documentation changes
+- Automated fixes maintain consistency
+- Style guide integration ensures professional quality
 
 ## Migration Notes
 

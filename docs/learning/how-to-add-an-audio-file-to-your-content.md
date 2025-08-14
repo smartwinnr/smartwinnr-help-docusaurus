@@ -11,12 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/71-how-to-add-an-audio-file-t
 ---
 You can send an audio file as part of your SmartFeed or you can attach an audio file to your question created in SmartWinnr.
 
-Click on the audio icon to attach the audio file to your SmartFeed or to the question that you create in SmartWinnr.         
+Click on the audio icon to attach the audio file to your SmartFeed or to the question that you create in SmartWinnr.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/105)
 
-  
-Once you click on the audio icon, the following pop-up comes up.     
+Once you click on the audio icon, the following pop-up comes up.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/106)
 

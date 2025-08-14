@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fdb0e290b11ce44f63931c7
 helpscout_url: https://help.smartwinnr.com/article/174-how-to-upload-kpi-data
 ---
-After you have completed creating the Field Mapping ( [How to create a Field Mapping?](https://smartwinnr.helpscoutdocs.com/article/173-how-to-create-a-field-mapping)) , you can upload data into SmartWinnr against this mapping. 
+After you have completed creating the Field Mapping ( [How to create a Field Mapping?](https://smartwinnr.helpscoutdocs.com/article/173-how-to-create-a-field-mapping)) , you can upload data into SmartWinnr against this mapping.
 
 Below are the steps to upload your KPI data:
 
@@ -33,7 +33,7 @@ Upon successful upload of all the fields, it shows the status of each record in 
 
 ![](https://support.smartwinnr.com/api/v1/attachments/776)
 
-In case there are any incorrect values, the status will be shown as 'failed'. 
+In case there are any incorrect values, the status will be shown as 'failed'.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/777)
 
@@ -43,7 +43,7 @@ KPI Mapping: This lets you select the mapping that you would like to use.
 
 ### View KPI Mapping
 
-This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs: 
+This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:
 
             ![](https://support.smartwinnr.com/api/v1/attachments/779)
 
@@ -57,7 +57,7 @@ Add Mapping: This button takes you to the below page where you can make changes
 
 ### View Uploaded Data
 
-This button gives you an overview of all the data that is uploaded. Below is a screenshot of it: 
+This button gives you an overview of all the data that is uploaded. Below is a screenshot of it:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/781)
 

@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 62b3e9dd0729834c424f8fad
 helpscout_url: https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr
 ---
-SmartWinnr has the provision to import SCORM courses. Specifically, version 2004 3rd edition or version 1.2. These SCORM courses can be imported inside the SmartPath module inside SmartWinnr. 
+SmartWinnr has the provision to import SCORM courses. Specifically, version 2004 3rd edition or version 1.2. These SCORM courses can be imported inside the SmartPath module inside SmartWinnr.
 
 Follow the below-given steps to create SCORM course inside SmartPath.
 
@@ -19,17 +19,11 @@ We are considering the 'articulate 360' for exporting the SCORM course and the s
 
 Choose your course from  **articulate 360** and choose the contents that you would like to include in the SCORM course. Then click on the “**Publish**” option on the top right-hand corner of the page highlighted in red and Choose "**LMS"**.
 
-  
-
 ![](/img/quizzes/helpscout-image-11794d99.jpg)
-
-  
 
 Kindly follow the below-given instructions while exporting the SCORM course:
 
 ●      While exporting the SCORM Course, please use the following settings so that it gets uploaded properly into SmartPath - Modules:
-
-  
 
 **Publish Settings:**
 
@@ -39,15 +33,9 @@ Kindly follow the below-given instructions while exporting the SCORM course:
 
 ➔    **Edition -** If LMS is chosen as SCORM 2004, choose the edition as 3rd Edition
 
-  
-
 **Tracking:**
 
-  
-
 You can track progress and completion in different ways:
-
-  
 
 ➔    **Tracking using course completion** - 100% (Set the percentage of the course a learner must finish to mark as completed )
 

@@ -9,12 +9,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Step 1: Quiz Setup
 
 ### Basic Information
+
 1. **Quiz Name**: Choose a descriptive, engaging title
 2. **Description**: Provide context and learning objectives
 3. **Category**: Select appropriate category for organization
 4. **Tags**: Add tags for easy filtering and search
 
 ### Quiz Settings
+
 - **Quiz Type**: Knowledge, Survey, or Video quiz
 - **Duration**: Set time limits (optional)
 - **Attempts**: Allow single or multiple attempts
@@ -24,12 +26,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Step 2: Adding Questions
 
 ### From Question Bank
+
 1. Click **Add from Bank**
 2. Filter by category, difficulty, or tags
 3. Select questions to include
 4. Review and confirm selection
 
 ### Creating New Questions
+
 1. Click **Create New Question**
 2. Choose question type:
    - Multiple Choice (Single Answer)
@@ -39,6 +43,7 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
    - Drag and Drop
 
 ### Question Components
+
 - **Question Text**: Clear, specific question
 - **Answer Options**: Provide all possible answers
 - **Correct Answer**: Mark the correct option(s)
@@ -49,12 +54,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Step 3: Quiz Configuration
 
 ### Scoring Options
+
 - **Points per Question**: Equal or weighted scoring
 - **Negative Marking**: Deduct points for wrong answers
 - **Bonus Questions**: Extra credit opportunities
 - **Pass/Fail Criteria**: Set minimum requirements
 
 ### Display Settings
+
 - **Question Order**: Sequential or randomized
 - **Answer Feedback**: Immediate or end-of-quiz
 - **Progress Indicator**: Show completion percentage
@@ -63,12 +70,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Step 4: Assignment and Scheduling
 
 ### Target Audience
+
 - **Select Users**: Individual assignments
 - **Select Groups**: Team or department-wide
 - **Select Roles**: Role-based assignment
 - **All Users**: Organization-wide deployment
 
 ### Scheduling Options
+
 - **Start Immediately**: Launch upon creation
 - **Scheduled Start**: Set future start date/time
 - **End Date**: Define quiz availability period
@@ -77,12 +86,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Step 5: Review and Launch
 
 ### Preview Mode
+
 1. Use **Preview** to test quiz experience
 2. Check question flow and timing
 3. Verify answer options and feedback
 4. Test on different devices
 
 ### Final Checklist
+
 - [ ] All questions reviewed for accuracy
 - [ ] Scoring settings configured
 - [ ] Target audience selected
@@ -90,6 +101,7 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 - [ ] Notifications enabled
 
 ### Launch Quiz
+
 1. Click **Publish Quiz**
 2. Confirm all settings
 3. Quiz becomes available to assigned users
@@ -98,12 +110,14 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Post-Launch Management
 
 ### Real-time Monitoring
+
 - Track completion rates
 - Monitor average scores
 - Identify struggling participants
 - Review question performance
 
 ### Making Updates
+
 - Edit quiz settings (if no attempts yet)
 - Add additional participants
 - Extend deadlines
@@ -112,6 +126,7 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Tips for Effective Quizzes
 
 ### Content Best Practices
+
 - Use clear, unambiguous language
 - Avoid trick questions
 - Include relevant, practical scenarios
@@ -119,6 +134,7 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 - Provide constructive feedback
 
 ### Engagement Strategies
+
 - Add multimedia elements
 - Create storylines or scenarios
 - Use gamification elements
@@ -128,18 +144,21 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 ## Troubleshooting Common Issues
 
 ### Low Participation
+
 - Send reminder notifications
 - Check assignment accuracy
 - Verify accessibility settings
 - Consider timing and scheduling
 
 ### Poor Performance
+
 - Review question difficulty
 - Analyze specific problem areas
 - Provide additional training resources
 - Consider extending deadlines
 
 ### Technical Issues
+
 - Test on multiple devices/browsers
 - Check multimedia compatibility
 - Verify network connectivity

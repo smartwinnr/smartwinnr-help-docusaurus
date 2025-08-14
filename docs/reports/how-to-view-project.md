@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fdb2f387129911ba1b21ece
 helpscout_url: https://help.smartwinnr.com/article/186-how-to-view-project
 ---
-Go to Editor >> PROJECT MANAGEMENT >> Project  Management 
+Go to Editor >> PROJECT MANAGEMENT >> Project  Management
 
 ![](/img/reports/helpscout-image-fe1bd387.png) Name : Name of the Project.
 
@@ -47,15 +47,15 @@ Clicking on the "+" will prevail in the different options.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1061)
 
-*   Project Name & Project Description
+* Project Name & Project Description
 
 This contains the current project name and the project description.  
 
-*    Teams 
+*  Teams
 
 This contains the teams to which the project has been assigned.
 
-*   View Team Members
+* View Team Members
 
 By Clicking on this button Editor can view the team members by the groups or can also search the team members by using the search bars.
 
@@ -65,11 +65,11 @@ Editor can also view the  "Project Owner Name", "Task Status" , "Project Status
 
 ### 4.Notification Setting
 
-Clicking on the "+"  will prevail the  different options. 
+Clicking on the "+"  will prevail the  different options.
 
     ![](https://support.smartwinnr.com/api/v1/attachments/1063)
 
-### 
+###
 
 Editor can have a glance at the type of notifications that have been assigned for all the tasks in the project.
 
@@ -81,7 +81,7 @@ The Editor can change the sequence of sections by clicking on the "Change Sequen
 
 Editor can also add new Section by clicking on the "Add Section".
 
-*    List View
+*  List View
 
 ### ![](https://support.smartwinnr.com/api/v1/attachments/1065)
 
@@ -99,9 +99,9 @@ The editor can also edit the task assigned by clicking on the edit button as wel
 
 "Change Sequence" allows the Editor to change the sequence of the tasks assigned.
 
-### 
+###
 
-*    Board View
+*  Board View
 
 ### ![](https://support.smartwinnr.com/api/v1/attachments/1067)
 
@@ -109,7 +109,7 @@ This view gives a modular view of each task assigned in a particular section. Th
 
 Tasks assigned under each section can be edited by clicking on the "Edit Task" button.
 
-*    Timeline View
+*  Timeline View
 
 This view gives a better understanding of the task assigned in a particular section. This view gives a Gantt chart timeline view of the task assigned, so Editor gets a better understanding of the tasks that will take lesser time. Based on the time needed for a task to be completed, the Editor could decide the priority of tasks.
 

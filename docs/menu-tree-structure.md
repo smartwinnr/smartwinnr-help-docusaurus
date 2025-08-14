@@ -3,6 +3,7 @@
 Based on the current `sidebars.ts` configuration and actual file structure, here is the complete left menu organization:
 
 ## 🚀 Getting Started (Expanded by default)
+
 ```
 📁 Getting Started
 ├── 📄 Getting Started with SmartWinnr (index.md)
@@ -22,6 +23,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 🎯 Role-Based Guides (Expanded by default)
+
 ```
 📁 Role-Based Guides
 ├── 📁 👤 User Experience (Collapsed)
@@ -40,6 +42,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📝 Quiz Management (Collapsed)
+
 ```
 📁 Quiz Management
 ├── 📄 Quiz Management Overview (index.md)
@@ -51,6 +54,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📚 Learning & Training (Collapsed)
+
 ```
 📁 Learning & Training
 ├── 📄 Learning Overview (index.md)
@@ -66,6 +70,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 🎯 Coaching & Performance (Collapsed)
+
 ```
 📁 Coaching & Performance
 ├── 📄 Coaching Overview (index.md)
@@ -80,6 +85,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 🏆 Competitions & Gamification (Collapsed)
+
 ```
 📁 Competitions & Gamification
 ├── 📄 Competitions Overview (index.md)
@@ -100,6 +106,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📋 Surveys & Feedback (Collapsed)
+
 ```
 📁 Surveys & Feedback
 ├── 📄 Surveys Overview (index.md)
@@ -115,6 +122,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📊 Reports & Analytics (Collapsed)
+
 ```
 📁 Reports & Analytics
 ├── 📄 Reports Overview (index.md)
@@ -134,6 +142,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 👥 Administration (Collapsed)
+
 ```
 📁 Administration
 ├── 📄 Administration Overview (index.md)
@@ -180,12 +189,14 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📱 Mobile Experience (Collapsed)
+
 ```
 📁 Mobile Experience
 └── 📄 Mobile Overview (index.md)
 ```
 
 ## 🔧 Troubleshooting (Collapsed)
+
 ```
 📁 Troubleshooting
 ├── 📄 Troubleshooting Overview (index.md)
@@ -193,6 +204,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ```
 
 ## 📄 Root Level Pages
+
 ```
 ├── 📄 ✏️ Editor & Trainer Hub (editor-landing.md) [Root level standalone page]
 └── 📄 👑 Administrator Hub (admin-landing.md) [Root level standalone page]
@@ -203,8 +215,9 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
 ## Directory Structure Summary
 
 **Total Directories:** 15
+
 - `getting-started/` (25 files)
-- `user-guide/` (4 files) 
+- `user-guide/` (4 files)
 - `manager-guide/` (5 files)
 - `admin/` (45 files)
 - `coaching/` (18 files)
