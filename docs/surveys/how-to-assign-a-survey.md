@@ -1,5 +1,5 @@
 ---
-title: "How to assign a Survey."
+title: "Assign a Survey."
 description: ""
 slug: how-to-assign-a-survey
 sidebar_position: 60

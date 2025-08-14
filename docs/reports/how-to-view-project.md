@@ -1,5 +1,5 @@
 ---
-title: "How to view Project?"
+title: "View Project?"
 description: ""
 slug: how-to-view-project
 sidebar_position: 186

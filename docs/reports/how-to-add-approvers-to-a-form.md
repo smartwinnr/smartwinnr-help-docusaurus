@@ -1,5 +1,5 @@
 ---
-title: "How to add Approvers to a Form"
+title: "Add Approvers to a Form"
 description: ""
 slug: how-to-add-approvers-to-a-form
 sidebar_position: 251

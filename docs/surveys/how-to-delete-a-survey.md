@@ -1,5 +1,5 @@
 ---
-title: "How to delete a Survey"
+title: "Delete a Survey"
 description: ""
 slug: how-to-delete-a-survey
 sidebar_position: 287

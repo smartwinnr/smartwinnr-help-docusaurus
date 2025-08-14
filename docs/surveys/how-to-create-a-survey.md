@@ -1,5 +1,5 @@
 ---
-title: "How to create a 'Survey'."
+title: "Create a 'Survey'."
 description: ""
 slug: how-to-create-a-survey
 sidebar_position: 58

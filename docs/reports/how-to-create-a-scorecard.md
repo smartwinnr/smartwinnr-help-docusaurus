@@ -1,5 +1,5 @@
 ---
-title: "How to create a Scorecard?"
+title: "Create a Scorecard?"
 description: ""
 slug: how-to-create-a-scorecard
 sidebar_position: 176

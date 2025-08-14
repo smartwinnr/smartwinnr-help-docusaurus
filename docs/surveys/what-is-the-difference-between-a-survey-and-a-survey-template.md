@@ -1,5 +1,5 @@
 ---
-title: "What is the difference between a Survey and a Survey Template?"
+title: "About the difference between a Survey and a Survey Template"
 description: ""
 slug: what-is-the-difference-between-a-survey-and-a-survey-template
 sidebar_position: 63

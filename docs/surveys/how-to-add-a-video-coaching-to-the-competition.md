@@ -1,5 +1,5 @@
 ---
-title: "How to add a Video Coaching to the competition?"
+title: "Add a Video Coaching to the competition?"
 description: ""
 slug: how-to-add-a-video-coaching-to-the-competition
 sidebar_position: 106

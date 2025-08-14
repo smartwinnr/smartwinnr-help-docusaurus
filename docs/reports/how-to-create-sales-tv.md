@@ -1,5 +1,5 @@
 ---
-title: "How to create Sales TV"
+title: "Create Sales TV"
 description: ""
 slug: how-to-create-sales-tv
 sidebar_position: 249

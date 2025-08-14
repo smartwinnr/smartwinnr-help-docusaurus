@@ -1,5 +1,5 @@
 ---
-title: "How to create a Field Mapping?"
+title: "Create a Field Mapping?"
 description: ""
 slug: how-to-create-a-field-mapping
 sidebar_position: 173

@@ -1,5 +1,5 @@
 ---
-title: "What are Scorecards?"
+title: "About Scorecards"
 description: ""
 slug: what-are-scorecards
 sidebar_position: 175

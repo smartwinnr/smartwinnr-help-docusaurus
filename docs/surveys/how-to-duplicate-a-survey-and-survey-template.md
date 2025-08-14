@@ -1,5 +1,5 @@
 ---
-title: "How to duplicate a 'Survey' and 'Survey Template'."
+title: "Duplicate a 'Survey' and 'Survey Template'."
 description: ""
 slug: how-to-duplicate-a-survey-and-survey-template
 sidebar_position: 110

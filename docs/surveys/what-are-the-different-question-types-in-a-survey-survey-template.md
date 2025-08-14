@@ -1,5 +1,5 @@
 ---
-title: "What are the different question types in a Survey /Survey Template?"
+title: "About the different question types in a Survey /Survey Template"
 description: ""
 slug: what-are-the-different-question-types-in-a-survey-survey-template
 sidebar_position: 62

@@ -1,5 +1,5 @@
 ---
-title: "How managers Approve  Form"
+title: "How managers Approve Form"
 description: ""
 slug: how-managers-approve-form
 sidebar_position: 224
