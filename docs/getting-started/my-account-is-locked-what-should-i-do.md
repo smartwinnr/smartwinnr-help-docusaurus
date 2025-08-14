@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fce219904cebe5254a298fa
 helpscout_url: https://help.smartwinnr.com/article/14-my-account-is-locked-what-should-i-do
 ---
-Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login error that you will get once your account is locked :
+Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login issue that you will get once your account is locked :
 
 ![](/img/getting-started/helpscout-image-6edfb9b9.png)
 

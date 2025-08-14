@@ -20,7 +20,7 @@ helpscout_url: https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-
 
     [![](/img/quizzes/helpscout-image-885e5130.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0412b9a8501b295d3643/file-rqg981JL7K.png)
 
-5. Enter the appropriate ‘answers’ for the ‘questions’ in the **‘Items’** field.
+5. enter the appropriate ‘answers’ for the ‘questions’ in the ****‘Items’**** field.
 
     [![](/img/quizzes/helpscout-image-c199eb29.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0bce2e764327f87c1a0e/file-im9UpcL4Kh.png)
 
@@ -82,6 +82,6 @@ You can change the language of the question by clicking on the "Change Language"
 
 ![](/img/quizzes/helpscout-image-7788d30f.png)
 
-Choose the language to which you want to change and then click on the "Save" button.
+Choose the language to which you want to change and then click the **Save** button.
 
 Once you have filled in the required details of the question, click on the ' **Save New Question**' button in order to save the question.

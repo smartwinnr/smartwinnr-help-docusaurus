@@ -33,7 +33,7 @@ You can change the category to see other areas by clicking on the Filter button.
 
 2\. Detailed Performance by Quiz Category and Territory
 
-This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.  
+This is a color-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.  
 
                                                                                  ![](https://support.smartwinnr.com/api/v1/attachments/551)
 

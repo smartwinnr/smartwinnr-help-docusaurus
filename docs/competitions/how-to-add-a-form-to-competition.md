@@ -17,4 +17,4 @@ Here are the steps to add a Form to a competition:
 
 Below is a screenshot of adding a Form to a competition:
 
-![](/img/competitions/helpscout-image-569b6eca.png)Select the desired Form you wish to add to the competition.Then, click on the "Create" button.The Form will be added to the competition successfully.
+![](/img/competitions/helpscout-image-569b6eca.png)Select the desired Form you wish to add to the competition.Then, click the **Create** button.The Form will be added to the competition successfully.

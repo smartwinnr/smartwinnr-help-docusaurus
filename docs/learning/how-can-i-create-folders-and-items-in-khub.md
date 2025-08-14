@@ -21,7 +21,7 @@ Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens 
 
 ![](/img/learning/helpscout-image-099c9f19.png)
 
-Click on the "Create" button at the top left corner and then click on the "Folder" option.  
+click the **Create** button at the top left corner and then click on the "Folder" option.  
 
 ![](/img/learning/helpscout-image-a32a6d3d.png)
 
@@ -39,7 +39,7 @@ Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens 
 
 ![](/img/learning/helpscout-image-099c9f19.png)
 
-Open the desired folder in which you would like to add the content/item. Click on the "Create" button at the top left corner and then click on the "Item" option.  
+Open the desired folder in which you would like to add the content/item. click the **Create** button at the top left corner and then click on the "Item" option.  
 
 ![](/img/learning/helpscout-image-d2a21f69.png)
 
@@ -53,7 +53,7 @@ Content: The content of the KHub item goes here. You can give a simple text, vi
 
 Select Category: Select a category for the KHub item here.
 
-Once you have filled all the required details, click on the "Create" button at the bottom of the page and your item gets created inside the folder successfully.
+Once you have filled all the required details, click the **Create** button at the bottom of the page and your item gets created inside the folder successfully.
 
 Change Folder Sequence
 

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/270-drag-and-drop-question
 ---
 #####
 
-Re-order questions are the type where you must drag and drop the answer to a question in the correct order. You can move the answers to their desired order and submit them.
+Re-order questions are the type where you need to drag and drop the answer to a question in the correct order. You can move the answers to their desired order and submit them.
 
 Below are the steps to create a Re-Order question.
 
@@ -68,4 +68,4 @@ You can also send an audio file with the question by clicking on the Audio icon.
 
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
 
-Choose the language to which you want to change and then click on the "Save" button.
+Choose the language to which you want to change and then click the **Save** button.

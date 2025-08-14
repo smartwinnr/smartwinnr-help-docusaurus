@@ -55,7 +55,7 @@ Don't know your username? Contact [support@smartwinnr.com](mailto:support@smartw
 - Your organization name
 - Your official email address
 
-### "User Does Not Exist" Error
+### "User Does Not Exist" issue
 
 This message indicates your SmartWinnr account hasn't been created yet.
 Contact [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
@@ -80,3 +80,6 @@ For enhanced account security:
 - [Change Your SmartWinnr Password](how-can-i-change-my-password-for-smartwinnr.md)
 - [Reset a Forgotten Password](what-if-i-ve-forgotten-my-password.md)
 - [Update Your Profile Settings](how-can-i-change-my-profile-image.md)
+
+
+> **Tip**: Keep your login credentials secure and change default passwords immediately after first login.

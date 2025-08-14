@@ -143,7 +143,7 @@ SmartWinnr offers various types of assessments to help you learn, practice, and 
 - **Review Answers**: Check all responses for completeness
 - **Verify Selections**: Ensure you've selected intended options
 - **Check Flagged Questions**: Revisit any questions marked for review
-- **Proofread Text**: Review written responses for clarity and errors
+- **Proofread Text**: Review written responses for clarity and issues
 
 **Submission Process**
 
@@ -219,7 +219,7 @@ SmartWinnr offers various types of assessments to help you learn, practice, and 
 ### ❓ **Assessment Issues**
 
 - **Unclear Questions**: Flag question and note confusion for review
-- **Technical Errors**: Take screenshots and report to support
+- **Technical issues**: Take screenshots and report to support
 - **Timing Problems**: Contact administrator about technical delays
 - **Access Issues**: Verify you're assigned to the correct assessment
 

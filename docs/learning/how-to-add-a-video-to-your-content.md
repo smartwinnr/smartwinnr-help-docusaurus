@@ -71,8 +71,8 @@ Login to your Brainshark account and then select the video that you want to use.
 
 1. Click on the video icon and the pop-up will come up.
 2. Click on the ‘Upload Video’ tab.
-3. Click on the "Choose File" button
-4.  Choose a video file in your system and then click on the "Submit" button.
+3. click the **Choose File** button
+4.  Choose a video file in your system and then click the **Submit** button.
 
 * * *
 

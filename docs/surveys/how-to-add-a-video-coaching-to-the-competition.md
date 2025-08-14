@@ -22,6 +22,6 @@ Below is a screenshot of adding a Video Coaching to a competition:
 
 Check  the checkbox ‘Choose Participants Manually’ to manually select the participants of the Video Coaching. This should be used so that you can remove some users from the list.
 
-Then, click on the "**Create**" button which will take you to a page where you can create a new survey and add it to the competition. Refer to the articles below to know how to create a survey:
+Then, click the ****Create**** button which will take you to a page where you can create a new survey and add it to the competition. Refer to the articles below to know how to create a survey:
 
 [How can I create a Video Coaching assignment?](https://smartwinnr.helpscoutdocs.com/article/85-how-can-i-create-a-video-coaching-assignment)

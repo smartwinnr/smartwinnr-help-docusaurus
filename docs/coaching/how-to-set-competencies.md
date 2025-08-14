@@ -13,7 +13,7 @@ Only users with Admin role can add/modify competencies.
 
 Competencies provide a way to select skills and behaviors based on which a learner can be evaluated. These competencies can be selected according to the preferences of your organization or a business unit. For example, competencies for the sales department could be effective  opening, creating value, handling objection etc.,
 
-To add/modify competencies go to ADMIN > Coaching Settings. Click on the " **Add New**" button.
+To add/modify competencies go to ADMIN > Coaching Settings. click the ** **Add New**** button.
 
 It will open the following pop up.
 
@@ -27,6 +27,6 @@ Competency Group Identifier: Give a name that uniquely identifies the competenc
 
 Competency Group Display Name: This gives you an option to display the competency group name in various different languages depending on the user's preferred language.
 
-Once you have filled the required details, click on the "Add Competency" button and then click on "Save Competencies".
+Once you have filled the required details, click the **Add Competency** button and then click on "Save Competencies".
 
 The created competencies will get added to the competency settings.

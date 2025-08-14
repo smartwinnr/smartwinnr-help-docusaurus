@@ -19,7 +19,7 @@ Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'My Tea
 
 ![](https://lh5.googleusercontent.com/Jme-owP1voxDwDCqXHJ4PFaiTvxhELwEYgfDXkBpsnUzv_aGTvE_RbV7etnBcWDv4B9dQvRwE0d6TbIGB1kD0CXm19eXn74pQf61lb1m0JHap6JL73eKyUiVNkpNQF6f6ud_3Ss5)
 
-Here you can find all your reportees and the response videos that they have submitted for the coaching assigned to them. Click on the "View Submissions" button to view the submissions by the team members.
+Here you can find all your reportees and the response videos that they have submitted for the coaching assigned to them. click the **View Submissions** button to view the submissions by the team members.
 
 ![](https://lh6.googleusercontent.com/upWPDI7M_Fen7u6SqREqV7UM19aum8EGCWy356V9-7TocIxRKBsFKyVQDlziTIx3wBu4Y5oL-2Rv6DaPwXLMDRy2kGNN_oBibjxpvepp3MNBxvvQ8Mv01gKx5C4NxXm0uZmOU61q)
 

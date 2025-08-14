@@ -84,7 +84,7 @@ You can change the language of the question by clicking on the " **Change Langua
 
 ![](/img/quizzes/helpscout-image-7788d30f.png)
 
-Choose the language to which you want to change and then click on the " **Save**" button.
+Choose the language to which you want to change and then click the ** **Save**** button.
 
 * Once you have filled in the required details of the question, click on the ' **Save New Question**' button in order to save the question.
 

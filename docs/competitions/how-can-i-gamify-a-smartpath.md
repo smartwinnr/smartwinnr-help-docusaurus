@@ -47,7 +47,7 @@ Start Date and End Date: This takes the start and end date of the SmartPath - s
 
 Competition Themes: You can select appropriate theme for the competition.
 
-Once you are done filling up all these details, click on the "Save" button. This saves the competition for the SamrtPath successfully.
+Once you are done filling up all these details, click the **Save** button. This saves the competition for the SamrtPath successfully.
 
 2
 

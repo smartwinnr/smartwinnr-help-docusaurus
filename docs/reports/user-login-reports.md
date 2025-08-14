@@ -40,3 +40,6 @@ After the appropriate setting of filters, you can download the analytics report 
 2. Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format
 
 ![](/img/reports/helpscout-image-e8c5fbb9.png)
+
+
+> **Tip**: Keep your login credentials secure and change default passwords immediately after first login.

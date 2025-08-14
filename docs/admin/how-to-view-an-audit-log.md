@@ -19,7 +19,7 @@ Logs can be viewed for a specific date range by clicking on the date "Date Range
 
                                                                                   ![](https://support.smartwinnr.com/api/v1/attachments/1113)
 
-Select the required and click on apply, logs between that date range will be displayed.
+Select the required and click on apply, logs between that date range displays.
 
 You can also select the "Action" from the drop-down for filtering the Log. The various actions are as follows
 

@@ -19,7 +19,7 @@ Below is a screenshot of adding a challenge to a competition:
 
 ![](/img/competitions/helpscout-image-203cc8fe.png)
 
-Then, click on the "Create" button.  The challenge will be added to the competition successfully.  
+Then, click the **Create** button.  The challenge will be added to the competition successfully.  
 
 Once the challenge is created, you can see the challenge score on the leaderboard as well.
 

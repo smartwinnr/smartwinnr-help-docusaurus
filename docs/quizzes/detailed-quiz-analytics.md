@@ -70,8 +70,8 @@ It will open the following pop-up where you can see
 * The question,
 * The correct option to the question
 * And the graph shows all the options of the question and analytics of the number of responses each option has received.![](/img/quizzes/helpscout-image-03c2bfc4.png)  
-    You can also save this graph as an image or change the colour of the graph. To do so, click on the hamburger icon at the top right corner of the popup. It will give you two options-- " **Save as Image**" and "**Change Color**". Then, click on the "**Save as Image**" option to save this graph as an image. Click on the "**Change Color**" option to change the colour of the graph. Clicking on "**Change Color**" opens the following popup:  
-    ![](/img/quizzes/helpscout-image-5e613c38.png)Here, enter the hex code of the colour of your choice and click on the "Apply" button. This will change the colour of the graph successfully.
+    You can also save this graph as an image or change the color of the graph. To do so, click on the hamburger icon at the top right corner of the popup. It will give you two options-- " **Save as Image**" and "**Change Color**". Then, click on the "**Save as Image**" option to save this graph as an image. Click on the "**Change Color**" option to change the color of the graph. Clicking on "**Change Color**" opens the following popup:  
+    ![](/img/quizzes/helpscout-image-5e613c38.png)Here, enter the hex code of the color of your choice and click the **Apply** button. This will change the color of the graph successfully.
 
 ### **Leaderboard**
 

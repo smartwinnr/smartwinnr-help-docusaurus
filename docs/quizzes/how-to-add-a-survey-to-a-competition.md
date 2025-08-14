@@ -24,7 +24,7 @@ Check  the checkbox ‘Choose Participants Manually’ to manually select the p
 
 The system will ask for the Points for to be given for the survey takers on survey completeion.You can decide the points and fill it out in the given box.
 
-Then, click on the "Create" button which will take you to a page where you can create a new survey and add it to the competition.
+Then, click the **Create** button which will take you to a page where you can create a new survey and add it to the competition.
 
 Refer to the articles below to know how to create a survey:
 

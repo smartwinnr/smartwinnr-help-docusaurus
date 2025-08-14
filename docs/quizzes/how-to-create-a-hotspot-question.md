@@ -64,7 +64,7 @@ You can change the language of the question by clicking on the "Change Language"
 
 [![](https://lh6.googleusercontent.com/BJIC6OVhC5B6QA3TNFprUlxy1gBwj3lwklHfWvc0UUsBF1qjqKOtr3Odr2SzdIra0Pfrd0j6Rm56oN_fNx_ryjhu8LQtDGnZThUl00EssNEbCYnuaJD0IIA6Z87W90Ofp2vn46cy)](https://lh6.googleusercontent.com/BJIC6OVhC5B6QA3TNFprUlxy1gBwj3lwklHfWvc0UUsBF1qjqKOtr3Odr2SzdIra0Pfrd0j6Rm56oN_fNx_ryjhu8LQtDGnZThUl00EssNEbCYnuaJD0IIA6Z87W90Ofp2vn46cy)
 
-Choose the language to which you want to change and then click on the "Save" button.
+Choose the language to which you want to change and then click the **Save** button.
 
 Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
 

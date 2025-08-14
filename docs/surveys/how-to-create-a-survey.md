@@ -84,7 +84,7 @@ Since we are creating a survey here select Type = Survey.
     [![](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)  
     It opens the following popup:  
 ](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)[![](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)  
-    Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click on the " **Submit**" button.  
+    Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click the ** **Submit**** button.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)  
     Now click on the ' **Add Question**' in each section to add the questions to the section. [Learn the types of questions that you can add to a survey.](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)  
     Once you are done filling up all these details, click on the ‘ **Save New Survey**’ button. It will create the survey successfully.

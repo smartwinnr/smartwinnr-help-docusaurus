@@ -15,7 +15,7 @@ EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Open an existing folder and the
 
 ![](/img/learning/helpscout-image-222933a5.png)  
 
-Now, click on the "**Edit**" button at the top right corner. It will open the below page where you can edit the created item.
+Now, click the ****Edit**** button at the top right corner. It will open the below page where you can edit the created item.
 
 ![](/img/learning/helpscout-image-d14320c9.png)  
-Once you make the necessary changes to the KHub item, click on the "**Update**" button at the bottom. This will save your changes successfully.
+Once you make the necessary changes to the KHub item, click the ****Update**** button at the bottom. This will save your changes successfully.

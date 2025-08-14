@@ -37,7 +37,7 @@ Now, click on the "Click Here" link on the above page to add access permissions.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/908)
 
-Here, select a task for which you want to give access permission and select the editors to whom you want to give access. Then, click on the "Save" button. It will successfully give access to that particular task to all the selected editors. Here is how you will be able to see all the permissions that you have given:
+Here, select a task for which you want to give access permission and select the editors to whom you want to give access. Then, click the **Save** button. It will successfully give access to that particular task to all the selected editors. Here is how you will be able to see all the permissions that you have given:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/909)
 

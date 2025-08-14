@@ -17,7 +17,7 @@ Open the SmartWinnr app and go to the left menu bar. Click on "QResolve".
 
                                                                               ![](https://support.smartwinnr.com/api/v1/attachments/708)
 
-Now, click on the "+" button at the bottom right corner of the screen as shown in the above picture. It will open the following screen where you can enter your query:
+Now, click the **+** button at the bottom right corner of the screen as shown in the above picture. It will open the following screen where you can enter your query:
 
                                                                               ![](https://support.smartwinnr.com/api/v1/attachments/709)
 

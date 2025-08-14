@@ -84,9 +84,9 @@ On successful upload, you will be able to see the list of questions in the file 
 
 You can view a question by clicking on the 'View Question' button.
 
-**Common Error codes**
+**Common issue codes**
 
-In case there are any missing or incorrect values in the CSV file, then it displays errors while uploading it. You will get to see the list of errors in the file in 'Validation errors during upload' section.
+In case there are any missing or incorrect values in the CSV file, then it displays issues while uploading it. You will get to see the list of issues in the file in 'Validation issues during upload' section.
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489a423119734ee37eda1/file-QXxeYElTyE.png)[![](/img/quizzes/helpscout-image-e51b8197.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489cec868cb6df3a8101b/file-IwajZ7v9nG.png)
 
@@ -100,10 +100,10 @@ It opens the following page:
 
 ![](/img/quizzes/helpscout-image-e735976e.png)
 
-Here you can see the uploaded questions or errors of a particular entry. Click on the ' **View Questions**' button to see all the questions. Below is the screenshot of how the questions will be displayed.
+Here you can see the uploaded questions or issues of a particular entry. Click on the ' **View Questions**' button to see all the questions. Below is the screenshot of how the questions displays.
 
 [![](/img/quizzes/helpscout-image-d20c9c7f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd48a244eb32171b80374ae/file-hNgPmhfRDl.png)
 
-Click on ' **View Errors**' button to view the errors in the file. Below is the screenshot of how the errors will be displayed.
+Click on ' **View issues**' button to view the issues in the file. Below is the screenshot of how the issues displays.
 
 [![](/img/quizzes/helpscout-image-f59db238.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd48a4ac868cb6df3a8101c/file-UoiRaZBe6C.png)

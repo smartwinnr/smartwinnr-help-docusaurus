@@ -19,4 +19,4 @@ Below is a screenshot of adding a scorecard to a competition:
 
 ![](/img/competitions/helpscout-image-6e1c25c3.png)
 
-Then, click on the "Create" button.  The scorecard will be added to the competition successfully.
+Then, click the **Create** button.  The scorecard will be added to the competition successfully.

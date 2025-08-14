@@ -54,7 +54,7 @@ Short answer questions are generally open-ended questions that require partici
 
 Re-Order Question
 
-Re-order questions where you must drag and drop the answer to a question in the correct order. You can move multiple answers to their desired order and submit them.
+Re-order questions where you need to drag and drop the answer to a question in the correct order. You can move multiple answers to their desired order and submit them.
 
 [Click here for more information on Re-Order question](https://secure.helpscout.net/docs/5fcc5d85de1bfa158fb55b98/article/62ad5954cb3c130081c15b53/)
 

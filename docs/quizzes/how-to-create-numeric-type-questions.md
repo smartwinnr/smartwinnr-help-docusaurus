@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/284-how-to-create-numeric-typ
 ---
 #### SmartWinnr offers a wide range of question types that you can choose from for your quiz
 
-#### In Numeric Type question, you provide a numeric value as the answer and define an error margin if the user provide an answer within the error margin he will get point according to the define grade for that option
+#### In Numeric Type question, you provide a numeric value as the answer and define an issue margin if the user provide an answer within the issue margin he will get point according to the define grade for that option
 
 ### **Below are the steps to follow in order to create a Numeric Type Question:**
 
@@ -28,7 +28,7 @@ helpscout_url: https://help.smartwinnr.com/article/284-how-to-create-numeric-typ
 
 ![](/img/quizzes/helpscout-image-368a4079.jpg)
 
-5. Enter the numeric answer in the "Answer" field. Then you can provide the error margin. _for ex. If you provide 1 as error margin and the correct answer is 50, then if the user enters 49 or 51 he will get the percentage of points as defined in the Grade._
+5. enter the numeric answer in the **"Answer"** field. Then you can provide the issue margin. _for ex. If you provide 1 as issue margin and the correct answer is 50, then if the user enters 49 or 51 he will get the percentage of points as defined in the Grade._
 6. Define grade next to it. _For ex. if you want to gve 100% of the points to the correct option or 50% for the partial correct option you can define in the "Grade" field._
 
 ![](/img/quizzes/helpscout-image-358f266e.jpg)

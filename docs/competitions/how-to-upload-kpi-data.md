@@ -33,7 +33,7 @@ Upon successful upload of all the fields, it shows the status of each record in 
 
 ![](https://support.smartwinnr.com/api/v1/attachments/776)
 
-In case there are any incorrect values, the status will be shown as 'failed'.
+In case there are any incorrect values, the status will be shown as 'unable to completeed'.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/777)
 

@@ -196,4 +196,4 @@ The next step is to assign users to the form.Select the desired participants and
 
 ![](/img/reports/helpscout-image-ce7738c7.png)
 
-You can filter these users based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the users, click on the " **Send to Selected People**" button.
+You can filter these users based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the users, click the ** **Send to Selected People**** button.

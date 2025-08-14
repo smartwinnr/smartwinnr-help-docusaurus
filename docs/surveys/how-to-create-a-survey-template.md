@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/61-how-to-create-a-survey-tem
 ---
 Follow the below steps in order to create a survey template:
 
-Go to **EDITOR >** **LEARNING AND KNOWLEDGE >** **Surveys**. Then, click on the "**Add New Survey**" button at the top right corner of the screen.
+Go to **EDITOR >** **LEARNING AND KNOWLEDGE >** **Surveys**. Then, click the ****Add New Survey**** button at the top right corner of the screen.
 
 [![](/img/surveys/helpscout-image-8981adc3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4a4783d1d2a5b1c5ea179/file-gvbT3H7M1j.png)
 

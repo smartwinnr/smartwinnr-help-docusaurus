@@ -33,7 +33,7 @@ The next step is to add participants to the competition. Select the desired part
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
-You can filter these participants based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the participants, click on the "Save" button to save the selection.
+You can filter these participants based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the participants, click the **Save** button to save the selection.
 
 ### Step-3:Add Leaderboard to the Competition
 
@@ -41,7 +41,7 @@ Next step is adding leaderboards to this competition. You can add multiple leade
 
 Follow the below steps to create these two types of leaderboards for a competition:
 
-Go to the third step. Then click on the "Add" button. It opens the following pop-up:
+Go to the third step. Then click the **Add** button. It opens the following pop-up:
 
 ![](/img/quizzes/helpscout-image-9c0e6912.png)
 
@@ -92,7 +92,7 @@ If you are creating an individual leaderboard (if selected Type as By Partici
 
 You can filter and choose these participants based on Business Unit, Country, Group, Name, Email and Meta Tags.
 
-Once you have entered the required information and selected the desired participants, click on the " **Save**" button. This will successfully create the leaderboard and add it to the competition.
+Once you have entered the required information and selected the desired participants, click the ** **Save**** button. This will successfully create the leaderboard and add it to the competition.
 
 ### Step-4: Add Tasks to the Competition
 

@@ -178,10 +178,10 @@ Effective performance monitoring is crucial for team success. This guide provide
 **Individual Performance Concerns**
 
 - **📉 Declining Scores**: Consistent decrease in assessment performance
-- **⏰ Missed Deadlines**: Regular failure to meet assignment due dates
+- **⏰ Missed Deadlines**: Regular unable to completeure to meet assignment due dates
 - **📱 Reduced Engagement**: Significant drop in platform usage or interaction
 - **🤐 Communication Gaps**: Lack of response to messages or feedback
-- **🎯 Goal Deviation**: Consistent failure to progress toward objectives
+- **🎯 Goal Deviation**: Consistent unable to completeure to progress toward objectives
 
 **Team-Level Warning Signs**
 
@@ -198,7 +198,7 @@ Effective performance monitoring is crucial for team success. This guide provide
 - **🆘 Complete Disengagement**: Team member stops participating entirely
 - **📉 Severe Performance Drop**: Dramatic decline in scores or completion
 - **😰 Expressed Concerns**: Team member reports significant difficulties
-- **⚖️ Compliance Issues**: Failure to meet mandatory training requirements
+- **⚖️ Compliance Issues**: unable to completeure to meet mandatory training requirements
 
 **Team Crisis Situations**
 

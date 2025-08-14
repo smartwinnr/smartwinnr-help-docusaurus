@@ -38,7 +38,7 @@ _When you select 'Individual Record' there are going to be three mandatory field
 
 User Unique SmartWinnr Field: Denotes the field within SmartWinnr that uniquely defines a user. It can be email or any other field that has been decided to be a unique field. If you have admin access, go to Admin > Manage Users > Click on one user > Check the Email field or User Identifier field. The same field will need to be present in your data source.
 
-Default Date Format: Select the date format to the one that will be present in your data source. In case the date in your data source is in the DD/MM/YYYY, then make sure that you specify the same date format in this field as well. For example, if the data source has a date 02/04/2019 and the date format is DD/MM/YY then an error will be thrown during the upload.
+Default Date Format: Select the date format to the one that will be present in your data source. In case the date in your data source is in the DD/MM/YYYY, then make sure that you specify the same date format in this field as well. For example, if the data source has a date 02/04/2019 and the date format is DD/MM/YY then an issue will be thrown during the upload.
 
 * * *
 

@@ -31,7 +31,7 @@ Each quiz analytics dashboard provides:
 - **Completion Rate**: Percentage of assigned users who completed
 - **Average Score**: Mean score across all participants
 - **Time Spent**: Average time taken to complete
-- **Pass/Fail Rate**: Based on configured passing criteria
+- **Pass/unable to complete Rate**: Based on configured passing criteria
 
 #### Question-Level Analysis
 
@@ -155,7 +155,7 @@ Measure participation and engagement:
 - **Bar Charts**: Score comparisons across groups
 - **Line Graphs**: Performance trends over time
 - **Heat Maps**: Category performance by region
-- **Pie Charts**: Pass/fail rate distributions
+- **Pie Charts**: Pass/unable to complete rate distributions
 
 ### Interactive Elements
 

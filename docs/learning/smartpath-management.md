@@ -37,7 +37,7 @@ SmartPath creation follows a **bottom-up approach**:
 
 ### Step 1: Create Modules for SmartPath
 
-Before creating a SmartPath, you must first create the modules that will be included:
+Before creating a SmartPath, you need to first create the modules that will be included:
 
 1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths**
 2. Click **"Create Module"**

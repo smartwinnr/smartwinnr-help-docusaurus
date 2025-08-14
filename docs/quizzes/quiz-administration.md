@@ -1,14 +1,23 @@
 ---
-title: "Quiz Administration"
+title: "Quiz 
+> **Note**: This feature requires Administrator permissions.
+
+Administration"
 description: "Complete guide for managing quiz settings, permissions, and operations"
-slug: quiz-administration
+slug: quiz-
+> **Note**: This feature requires Administrator permissions.
+
+administration
 sidebar_position: 2
 last_update:
   date: 2025-08-10
   author: Documentation Reorganization
 ---
 
-# Quiz Administration
+# Quiz 
+> **Note**: This feature requires Administrator permissions.
+
+Administration
 
 ## Quiz Configurations & Settings
 
@@ -16,7 +25,10 @@ last_update:
 
 To configure default quiz settings:
 
-1. Go to **Admin > Quiz Settings**
+1. Go to **
+> **Note**: This feature requires Administrator permissions.
+
+Admin > Quiz Settings**
 2. Modify default configurations including:
    - **Points for correct answers**
    - **Points for wrong answers** (deduction settings)

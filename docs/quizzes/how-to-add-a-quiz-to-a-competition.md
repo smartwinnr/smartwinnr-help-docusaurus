@@ -24,7 +24,7 @@ Check  the checkbox ‘Choose Participants Manually’ to manually select the p
 
 The system will ask for the Points for correct answer to be given for the quiz takers.You can decide the points and fill it out in the given box.
 
-Then, click on the "**Create**" button which will take you to a page where you can create a new quiz and add it to the competition. Refer to the articles below to know how to create a quiz:
+Then, click the ****Create**** button which will take you to a page where you can create a new quiz and add it to the competition. Refer to the articles below to know how to create a quiz:
 
 [How to create an automatic quiz?](https://smartwinnr.helpscoutdocs.com/article/49-how-to-create-an-automatic-quiz)
 

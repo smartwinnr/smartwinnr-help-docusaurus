@@ -27,9 +27,9 @@ EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Cl
 
 ![](/img/quizzes/helpscout-image-b56a74e4.png)
 
-Now, click on the "Edit" button at the top right corner. Navigate to the last section which is "Schedule Reminder"
+Now, click the **Edit** button at the top right corner. Navigate to the last section which is "Schedule Reminder"
 
-Then, click on the "Add" button at the top right corner of the  **Schedule Reminder** section. It will open the following popup.
+Then, click the **Add** button at the top right corner of the  **Schedule Reminder** section. It will open the following popup.
 
 [![](/img/quizzes/helpscout-image-eb826d73.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4906723119734ee37edaa/file-0VAaM8Ffhn.png)
 
@@ -47,6 +47,6 @@ Then, click on the "Add" button at the top right corner of the  **Schedule Remi
 
 **Message:** This will display the message that will be sent in the reminder. This field will have an auto-generated message but you can change it according to your requirement.
 
-Once you are done filling all these fields for the reminder, click on the " **Save**" button. This will add the reminder successfully to the quiz.
+Once you are done filling all these fields for the reminder, click the ** **Save**** button. This will add the reminder successfully to the quiz.
 
 Once you fill all the details on this page, click on the  **"Save and Add Questions"** to save the quiz.

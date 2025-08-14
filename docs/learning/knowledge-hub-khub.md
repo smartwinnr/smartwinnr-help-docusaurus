@@ -275,7 +275,7 @@ Protect sensitive information:
 - **File Size Limits**: Check maximum file size restrictions
 - **Format Support**: Ensure files are in supported formats
 - **Network Issues**: Verify stable internet connection
-- **Permission Errors**: Confirm upload permissions for your role
+- **Permission issues**: Confirm upload permissions for your role
 
 ### Search Issues  
 

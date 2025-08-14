@@ -290,7 +290,7 @@ Effective content assignment is crucial for team development and performance. Th
 
 - **🔐 Permission Problems**: Verify team member has appropriate access rights
 - **📱 Technical Difficulties**: Check platform compatibility and connectivity
-- **📧 Notification Failures**: Ensure messages are being delivered correctly
+- **📧 Notification unable to completeures**: Ensure messages are being delivered correctly
 - **🔄 Sync Issues**: Confirm assignments are appearing in team member accounts
 
 **Performance Problems**
