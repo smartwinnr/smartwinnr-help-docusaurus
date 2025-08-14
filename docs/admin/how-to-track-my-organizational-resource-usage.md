@@ -1,5 +1,5 @@
 ---
-title: "How to track my organizational resource usage?"
+title: "Track my organizational resource usage?"
 description: ""
 slug: how-to-track-my-organizational-resource-usage
 sidebar_position: 116

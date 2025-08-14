@@ -1,5 +1,5 @@
 ---
-title: "What are KPI Reports?"
+title: "About KPI Reports"
 description: ""
 slug: what-are-kpi-reports
 sidebar_position: 182

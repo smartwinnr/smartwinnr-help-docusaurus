@@ -1,5 +1,5 @@
 ---
-title: "How to add observers to the Competition Leaderboard?"
+title: "Add observers to the Competition Leaderboard?"
 description: ""
 slug: how-to-add-observers-to-the-competition-leaderboard
 sidebar_position: 234

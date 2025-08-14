@@ -1,5 +1,5 @@
 ---
-title: "How to add a challenge to the competition?"
+title: "Add a challenge to the competition?"
 description: ""
 slug: how-to-add-a-challenge-to-the-competition
 sidebar_position: 107

@@ -1,5 +1,5 @@
 ---
-title: "How can I contact SmartWinnr Team?"
+title: "Contact SmartWinnr Team"
 description: ""
 slug: how-can-i-contact-smartwinnr-team
 sidebar_position: 22

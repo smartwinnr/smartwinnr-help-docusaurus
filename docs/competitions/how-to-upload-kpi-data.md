@@ -1,5 +1,5 @@
 ---
-title: "How to upload KPI data?"
+title: "Upload KPI data?"
 description: ""
 slug: how-to-upload-kpi-data
 sidebar_position: 174

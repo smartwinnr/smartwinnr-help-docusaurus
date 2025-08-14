@@ -1,5 +1,5 @@
 ---
-title: "How to add or remove users to a chat group?"
+title: "Add or remove users to a chat group?"
 description: ""
 slug: how-to-add-or-remove-users-to-a-chat-group
 sidebar_position: 155

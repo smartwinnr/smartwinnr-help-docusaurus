@@ -1,5 +1,5 @@
 ---
-title: "How to view existing contacts?"
+title: "View existing contacts?"
 description: ""
 slug: how-to-view-existing-contacts
 sidebar_position: 134

@@ -1,5 +1,5 @@
 ---
-title: "How to create KPI?"
+title: "Create KPI?"
 description: ""
 slug: how-to-create-kpi
 sidebar_position: 171

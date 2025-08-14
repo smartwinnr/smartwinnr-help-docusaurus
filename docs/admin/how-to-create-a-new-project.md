@@ -1,5 +1,5 @@
 ---
-title: "How to create a new Project?"
+title: "Create a new Project?"
 description: ""
 slug: how-to-create-a-new-project
 sidebar_position: 185

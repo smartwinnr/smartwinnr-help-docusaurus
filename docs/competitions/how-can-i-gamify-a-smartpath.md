@@ -1,5 +1,5 @@
 ---
-title: "How can I Gamify a SmartPath?"
+title: "Gamify a SmartPath"
 description: ""
 slug: how-can-i-gamify-a-smartpath
 sidebar_position: 81

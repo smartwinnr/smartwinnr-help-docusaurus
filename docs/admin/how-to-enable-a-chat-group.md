@@ -1,5 +1,5 @@
 ---
-title: "How to Enable a Chat Group?"
+title: "Enable a Chat Group?"
 description: ""
 slug: how-to-enable-a-chat-group
 sidebar_position: 154

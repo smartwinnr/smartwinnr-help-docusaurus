@@ -1,5 +1,5 @@
 ---
-title: "How to Add new contacts?"
+title: "Add new contacts?"
 description: ""
 slug: how-to-add-new-contacts
 sidebar_position: 135

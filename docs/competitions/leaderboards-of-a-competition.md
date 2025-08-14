@@ -1,5 +1,5 @@
 ---
-title: "Leaderboards of a competition"
+title: "Leaderboards of Competition"
 description: ""
 slug: leaderboards-of-a-competition
 sidebar_position: 109

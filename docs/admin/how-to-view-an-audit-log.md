@@ -1,5 +1,5 @@
 ---
-title: "How to view an Audit Log?"
+title: "View an Audit Log?"
 description: ""
 slug: how-to-view-an-audit-log
 sidebar_position: 138

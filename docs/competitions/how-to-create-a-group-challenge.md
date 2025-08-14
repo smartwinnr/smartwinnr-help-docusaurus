@@ -1,5 +1,5 @@
 ---
-title: "How to create a Group Challenge?"
+title: "Create a Group Challenge?"
 description: ""
 slug: how-to-create-a-group-challenge
 sidebar_position: 180

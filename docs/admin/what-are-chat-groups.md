@@ -1,5 +1,5 @@
 ---
-title: "What are Chat Groups?"
+title: "About Chat Groups"
 description: ""
 slug: what-are-chat-groups
 sidebar_position: 152

@@ -1,5 +1,5 @@
 ---
-title: "How to create a group?"
+title: "Create a group?"
 description: ""
 slug: how-to-create-a-group
 sidebar_position: 129

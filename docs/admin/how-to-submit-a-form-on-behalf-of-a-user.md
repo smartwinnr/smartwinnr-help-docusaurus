@@ -1,5 +1,5 @@
 ---
-title: "How to Submit a Form on behalf of a User"
+title: "Submit a Form on behalf of a User"
 description: ""
 slug: how-to-submit-a-form-on-behalf-of-a-user
 sidebar_position: 252

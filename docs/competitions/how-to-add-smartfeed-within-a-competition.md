@@ -1,5 +1,5 @@
 ---
-title: "How to add smartfeed within a Competition"
+title: "Add smartfeed within a Competition"
 description: ""
 slug: how-to-add-smartfeed-within-a-competition
 sidebar_position: 289

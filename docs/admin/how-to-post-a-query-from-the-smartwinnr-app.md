@@ -1,5 +1,5 @@
 ---
-title: "How to post a Query from the SmartWinnr app?"
+title: "Post a Query from the SmartWinnr app?"
 description: ""
 slug: how-to-post-a-query-from-the-smartwinnr-app
 sidebar_position: 160

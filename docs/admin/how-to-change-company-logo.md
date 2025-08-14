@@ -1,5 +1,5 @@
 ---
-title: "How to change company logo?"
+title: "Change company logo?"
 description: ""
 slug: how-to-change-company-logo
 sidebar_position: 114

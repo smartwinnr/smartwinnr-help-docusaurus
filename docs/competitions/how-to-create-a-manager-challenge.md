@@ -1,5 +1,5 @@
 ---
-title: "How to create a Manager Challenge?"
+title: "Create a Manager Challenge?"
 description: ""
 slug: how-to-create-a-manager-challenge
 sidebar_position: 181

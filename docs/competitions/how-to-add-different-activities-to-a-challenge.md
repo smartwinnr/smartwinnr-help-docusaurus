@@ -1,5 +1,5 @@
 ---
-title: "How to add Different  Activities to a Challenge?"
+title: "Add Different Activities to a Challenge?"
 description: ""
 slug: how-to-add-different-activities-to-a-challenge
 sidebar_position: 240

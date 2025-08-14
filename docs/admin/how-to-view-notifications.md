@@ -1,5 +1,5 @@
 ---
-title: "How to view notifications?"
+title: "View notifications?"
 description: ""
 slug: how-to-view-notifications
 sidebar_position: 164

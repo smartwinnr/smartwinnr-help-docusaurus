@@ -1,5 +1,5 @@
 ---
-title: "How to add the Scorecard to Leaderboard"
+title: "Add the Scorecard to Leaderboard"
 description: ""
 slug: how-to-add-the-scorecard-to-leaderboard
 sidebar_position: 238

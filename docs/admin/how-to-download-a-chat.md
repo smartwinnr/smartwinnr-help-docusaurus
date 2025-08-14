@@ -1,5 +1,5 @@
 ---
-title: "How to download a chat?"
+title: "Download a chat?"
 description: ""
 slug: how-to-download-a-chat
 sidebar_position: 156

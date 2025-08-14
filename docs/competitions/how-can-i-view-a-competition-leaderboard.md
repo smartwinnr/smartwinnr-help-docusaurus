@@ -1,5 +1,5 @@
 ---
-title: "How can I view a competition Leaderboard?"
+title: "View a competition Leaderboard"
 description: ""
 slug: how-can-i-view-a-competition-leaderboard
 sidebar_position: 190

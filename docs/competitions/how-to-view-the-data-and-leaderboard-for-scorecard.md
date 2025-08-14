@@ -1,5 +1,5 @@
 ---
-title: "How to view the data and leaderboard for Scorecard"
+title: "View the data and leaderboard for Scorecard"
 description: ""
 slug: how-to-view-the-data-and-leaderboard-for-scorecard
 sidebar_position: 231

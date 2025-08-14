@@ -1,5 +1,5 @@
 ---
-title: "How to use QResolve in the SmartWinnr app?"
+title: "Use QResolve in the SmartWinnr app?"
 description: ""
 slug: how-to-use-qresolve-in-the-smartwinnr-app
 sidebar_position: 159

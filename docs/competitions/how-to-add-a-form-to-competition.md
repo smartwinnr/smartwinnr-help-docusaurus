@@ -1,5 +1,5 @@
 ---
-title: "How to add a Form to Competition?"
+title: "Add a Form to Competition?"
 description: ""
 slug: how-to-add-a-form-to-competition
 sidebar_position: 227

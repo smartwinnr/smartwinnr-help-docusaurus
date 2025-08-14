@@ -1,5 +1,5 @@
 ---
-title: "How do I view the KPI scorecard?"
+title: "View the KPI scorecard"
 description: ""
 slug: how-do-i-view-the-kpi-scorecard
 sidebar_position: 191

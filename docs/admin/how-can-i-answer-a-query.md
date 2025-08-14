@@ -1,5 +1,5 @@
 ---
-title: "How can I answer a Query ?"
+title: "Answer a Query"
 description: ""
 slug: how-can-i-answer-a-query
 sidebar_position: 161

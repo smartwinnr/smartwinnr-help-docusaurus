@@ -1,5 +1,5 @@
 ---
-title: "How to create Badges"
+title: "Create Badges"
 description: ""
 slug: how-to-create-badges
 sidebar_position: 285

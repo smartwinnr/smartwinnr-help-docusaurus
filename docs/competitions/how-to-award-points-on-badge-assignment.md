@@ -1,5 +1,5 @@
 ---
-title: "How to Award Points on Badge Assignment"
+title: "Award Points on Badge Assignment"
 description: ""
 slug: how-to-award-points-on-badge-assignment
 sidebar_position: 288

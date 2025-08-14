@@ -1,5 +1,5 @@
 ---
-title: "How to create Certifcates"
+title: "Create Certifcates"
 description: ""
 slug: how-to-create-certifcates
 sidebar_position: 194

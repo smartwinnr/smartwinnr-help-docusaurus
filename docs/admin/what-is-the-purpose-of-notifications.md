@@ -1,5 +1,5 @@
 ---
-title: "What is the purpose of notifications?"
+title: "About the purpose of notifications"
 description: ""
 slug: what-is-the-purpose-of-notifications
 sidebar_position: 163

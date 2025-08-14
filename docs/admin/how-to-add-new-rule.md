@@ -1,5 +1,5 @@
 ---
-title: "How to Add new rule?"
+title: "Add new rule?"
 description: ""
 slug: how-to-add-new-rule
 sidebar_position: 140

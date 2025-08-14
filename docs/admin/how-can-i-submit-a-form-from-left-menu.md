@@ -1,5 +1,5 @@
 ---
-title: "How can I submit a Form from Left Menu"
+title: "How can I submit Form from Left Menu"
 description: ""
 slug: how-can-i-submit-a-form-from-left-menu
 sidebar_position: 225

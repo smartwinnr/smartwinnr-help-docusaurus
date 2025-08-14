@@ -1,5 +1,5 @@
 ---
-title: "What is KPI Gamification?"
+title: "About KPI Gamification"
 description: ""
 slug: what-is-kpi-gamification
 sidebar_position: 168

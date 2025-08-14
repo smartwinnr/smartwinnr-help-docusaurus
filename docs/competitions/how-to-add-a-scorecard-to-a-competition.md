@@ -1,5 +1,5 @@
 ---
-title: "How to add a Scorecard to a Competition?"
+title: "Add a Scorecard to a Competition?"
 description: ""
 slug: how-to-add-a-scorecard-to-a-competition
 sidebar_position: 105

@@ -1,5 +1,5 @@
 ---
-title: "How can I change the password for a user account?"
+title: "Change the password for a user account"
 description: ""
 slug: how-can-i-change-the-password-for-a-user-account
 sidebar_position: 124

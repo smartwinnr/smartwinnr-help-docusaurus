@@ -1,5 +1,5 @@
 ---
-title: "How can I submit a Form from Chat"
+title: "How can I submit Form from Chat"
 description: ""
 slug: how-can-i-submit-a-form-from-chat
 sidebar_position: 230

@@ -1,5 +1,5 @@
 ---
-title: "How to Approve/Reject a Form Submission"
+title: "Approve/Reject a Form Submission"
 description: ""
 slug: how-to-approve-reject-a-form-submission
 sidebar_position: 223

@@ -1,5 +1,5 @@
 ---
-title: "How to Add a new Division?"
+title: "Add a new Division?"
 description: ""
 slug: how-to-add-a-new-division
 sidebar_position: 132

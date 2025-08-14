@@ -1,5 +1,5 @@
 ---
-title: "How to create an Individual Challenge?"
+title: "Create an Individual Challenge?"
 description: ""
 slug: how-to-create-an-individual-challenge
 sidebar_position: 179

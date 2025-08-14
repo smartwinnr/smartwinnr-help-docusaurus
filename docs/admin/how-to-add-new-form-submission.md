@@ -1,5 +1,5 @@
 ---
-title: "How to add new form submission"
+title: "Add new form submission"
 description: ""
 slug: how-to-add-new-form-submission
 sidebar_position: 247

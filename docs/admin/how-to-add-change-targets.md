@@ -1,5 +1,5 @@
 ---
-title: "How to add/change targets?"
+title: "Add/change targets?"
 description: ""
 slug: how-to-add-change-targets
 sidebar_position: 177

@@ -1,5 +1,5 @@
 ---
-title: "How to edit a project?"
+title: "Edit a project?"
 description: ""
 slug: how-to-edit-a-project
 sidebar_position: 187

@@ -1,5 +1,5 @@
 ---
-title: "What is a Challenge?"
+title: "About a Challenge"
 description: ""
 slug: what-is-a-challenge
 sidebar_position: 178
