@@ -85,10 +85,8 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
     // Navigate to the source document
     const source = result.metadata.source;
     if (source) {
-      // Convert file path to URL path
-      let urlPath = source
-        .replace(/^docs\//, '/') // Remove docs/ prefix and add leading /
-        .replace(/\.md$/, ''); // Remove .md extension
+      // Convert file path to URL path - source should be like "quizzes/understanding-knowledge-categories.md"
+      let urlPath = '/' + source.replace(/\.md$/, ''); // Add leading slash and remove .md extension
       
       // Handle index.md files - remove /index from the end
       if (urlPath.endsWith('/index')) {
@@ -97,7 +95,9 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
       
       // Ensure we don't have double slashes and handle root case
       urlPath = urlPath.replace(/\/+/g, '/');
-      if (urlPath === '') urlPath = '/';
+      if (urlPath === '' || urlPath === '/') urlPath = '/';
+      
+      console.log('Navigating to:', urlPath); // Debug log
       
       // Use window.location.assign for proper navigation that doesn't cause URL duplication
       // This ensures we navigate to the absolute URL correctly
