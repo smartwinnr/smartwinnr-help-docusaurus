@@ -1,5 +1,5 @@
 ---
-title: "What is a Competition?"
+title: "About a Competition"
 description: ""
 slug: what-is-a-competition
 sidebar_position: 101

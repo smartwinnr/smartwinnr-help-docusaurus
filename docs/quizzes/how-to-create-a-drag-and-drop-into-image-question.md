@@ -1,5 +1,5 @@
 ---
-title: "How to create a Drag and Drop into Image Question?"
+title: "Create a Drag and Drop into Image Question?"
 description: ""
 slug: how-to-create-a-drag-and-drop-into-image-question
 sidebar_position: 283

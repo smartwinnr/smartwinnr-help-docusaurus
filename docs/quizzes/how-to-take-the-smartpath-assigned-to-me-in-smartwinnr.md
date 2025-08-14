@@ -1,5 +1,5 @@
 ---
-title: "How to take the SmartPath Assigned to me in SmartWinnr?"
+title: "Take the SmartPath Assigned to me in SmartWinnr?"
 description: ""
 slug: how-to-take-the-smartpath-assigned-to-me-in-smartwinnr
 sidebar_position: 265

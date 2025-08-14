@@ -1,5 +1,5 @@
 ---
-title: "How to share a Coaching Video."
+title: "Share a Coaching Video."
 description: ""
 slug: how-to-share-a-coaching-video
 sidebar_position: 88

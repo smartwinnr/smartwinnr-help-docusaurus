@@ -1,5 +1,5 @@
 ---
-title: "How to create a manual quiz?"
+title: "Create a manual quiz?"
 description: ""
 slug: how-to-create-a-manual-quiz
 sidebar_position: 50

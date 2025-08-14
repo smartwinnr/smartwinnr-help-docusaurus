@@ -1,5 +1,5 @@
 ---
-title: "How to create a SmartFeed?"
+title: "Create a SmartFeed?"
 description: ""
 slug: how-to-create-a-smartfeed
 sidebar_position: 27

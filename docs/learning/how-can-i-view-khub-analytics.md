@@ -1,5 +1,5 @@
 ---
-title: "How can I view KHub Analytics?"
+title: "View KHub Analytics"
 description: ""
 slug: how-can-i-view-khub-analytics
 sidebar_position: 149

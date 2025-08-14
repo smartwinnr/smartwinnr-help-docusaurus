@@ -1,5 +1,5 @@
 ---
-title: "How to add a Survey to a Competition?"
+title: "Add a Survey to a Competition?"
 description: ""
 slug: how-to-add-a-survey-to-a-competition
 sidebar_position: 104

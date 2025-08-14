@@ -1,5 +1,5 @@
 ---
-title: "How to create 'Fill-In-The-Blank' Questions."
+title: "Create 'Fill-In-The-Blank' Questions."
 description: ""
 slug: how-to-create-fill-in-the-blank-questions
 sidebar_position: 41

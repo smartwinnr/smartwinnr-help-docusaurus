@@ -1,5 +1,5 @@
 ---
-title: "How to create 'Numeric Type Questions'"
+title: "Create 'Numeric Type Questions'"
 description: ""
 slug: how-to-create-numeric-type-questions
 sidebar_position: 284

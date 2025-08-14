@@ -1,5 +1,5 @@
 ---
-title: "How to create a SmartPath."
+title: "Create a SmartPath."
 description: ""
 slug: how-to-create-a-smartpath
 sidebar_position: 78

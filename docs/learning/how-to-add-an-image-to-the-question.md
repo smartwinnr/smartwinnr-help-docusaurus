@@ -1,5 +1,5 @@
 ---
-title: "How to add an 'Image' to the question."
+title: "Add an 'Image' to the question."
 description: ""
 slug: how-to-add-an-image-to-the-question
 sidebar_position: 65

@@ -1,5 +1,5 @@
 ---
-title: "How to upload questions in bulk using 'Import Questions'."
+title: "Upload questions in bulk using 'Import Questions'."
 description: ""
 slug: how-to-upload-questions-in-bulk-using-import-questions
 sidebar_position: 46

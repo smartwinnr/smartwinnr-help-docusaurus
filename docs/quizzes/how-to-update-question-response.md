@@ -1,5 +1,5 @@
 ---
-title: "How to Update question response"
+title: "Update question response"
 description: ""
 slug: how-to-update-question-response
 sidebar_position: 232

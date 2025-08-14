@@ -1,5 +1,5 @@
 ---
-title: "What is a Rule?"
+title: "About a Rule"
 description: ""
 slug: what-is-a-rule
 sidebar_position: 141

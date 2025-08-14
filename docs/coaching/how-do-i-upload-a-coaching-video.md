@@ -1,5 +1,5 @@
 ---
-title: "How do I upload a coaching video?"
+title: "Upload a coaching video"
 description: ""
 slug: how-do-i-upload-a-coaching-video
 sidebar_position: 86

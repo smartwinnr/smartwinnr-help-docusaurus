@@ -1,5 +1,5 @@
 ---
-title: "How to Mark the attendance for Users  in Learning Sessions?"
+title: "Mark the attendance for Users in Learning Sessions?"
 description: ""
 slug: how-to-mark-the-attendance-for-users-in-learning-sessions
 sidebar_position: 264

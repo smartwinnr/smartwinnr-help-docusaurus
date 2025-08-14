@@ -1,5 +1,5 @@
 ---
-title: "How to edit a SmartFeed?"
+title: "Edit a SmartFeed?"
 description: ""
 slug: how-to-edit-a-smartfeed
 sidebar_position: 29

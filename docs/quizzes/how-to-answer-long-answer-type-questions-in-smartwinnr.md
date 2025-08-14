@@ -1,5 +1,5 @@
 ---
-title: "How to Answer Long  Answer type Questions in SmartWinnr?"
+title: "Answer Long Answer type Questions in SmartWinnr?"
 description: ""
 slug: how-to-answer-long-answer-type-questions-in-smartwinnr
 sidebar_position: 260

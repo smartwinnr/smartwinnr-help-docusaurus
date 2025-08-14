@@ -1,5 +1,5 @@
 ---
-title: "How to create a missing words question?"
+title: "Create a missing words question?"
 description: ""
 slug: how-to-create-a-missing-words-question
 sidebar_position: 282

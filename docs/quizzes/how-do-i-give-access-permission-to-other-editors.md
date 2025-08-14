@@ -1,5 +1,5 @@
 ---
-title: "How do I give access permission to other editors?"
+title: "Give access permission to other editors"
 description: ""
 slug: how-do-i-give-access-permission-to-other-editors
 sidebar_position: 196

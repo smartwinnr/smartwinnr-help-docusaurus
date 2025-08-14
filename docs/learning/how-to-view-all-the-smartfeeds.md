@@ -1,5 +1,5 @@
 ---
-title: "How to view all the SmartFeeds?"
+title: "View all the SmartFeeds?"
 description: ""
 slug: how-to-view-all-the-smartfeeds
 sidebar_position: 32

@@ -1,5 +1,5 @@
 ---
-title: "How to download/Share  a smartfeed in smartpath"
+title: "Download/Share a smartfeed in smartpath"
 description: ""
 slug: how-to-download-share-a-smartfeed-in-smartpath
 sidebar_position: 273

@@ -1,5 +1,5 @@
 ---
-title: "How 'Import question' is  different from 'Add New Question'?"
+title: "How 'Import question' is different from 'Add New Question'?"
 description: ""
 slug: how-import-question-is-different-from-add-new-question
 sidebar_position: 45

@@ -1,5 +1,5 @@
 ---
-title: "Create a Coaching"
+title: "Create Coaching"
 description: ""
 slug: create-a-coaching
 sidebar_position: 294

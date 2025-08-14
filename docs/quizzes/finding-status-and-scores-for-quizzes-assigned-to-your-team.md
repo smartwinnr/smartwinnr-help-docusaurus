@@ -1,5 +1,5 @@
 ---
-title: "Finding  Status and Scores for Quizzes assigned to your Team"
+title: "Finding Status and Scores for Quizzes assigned to your Team"
 description: ""
 slug: finding-status-and-scores-for-quizzes-assigned-to-your-team
 sidebar_position: 99

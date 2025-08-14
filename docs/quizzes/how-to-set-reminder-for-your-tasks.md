@@ -1,5 +1,5 @@
 ---
-title: "How to Set Reminder for your Tasks"
+title: "Set Reminder for your Tasks"
 description: ""
 slug: how-to-set-reminder-for-your-tasks
 sidebar_position: 219

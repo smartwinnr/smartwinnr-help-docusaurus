@@ -1,5 +1,5 @@
 ---
-title: "How to create a competition?"
+title: "Create a competition?"
 description: ""
 slug: how-to-create-a-competition
 sidebar_position: 103

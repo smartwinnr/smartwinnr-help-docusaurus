@@ -1,5 +1,5 @@
 ---
-title: "What are SmartFeeds?"
+title: "About SmartFeeds"
 description: ""
 slug: what-are-smartfeeds
 sidebar_position: 26

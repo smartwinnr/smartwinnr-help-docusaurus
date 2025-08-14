@@ -1,5 +1,5 @@
 ---
-title: "How to upload Audio Recording for Coaching"
+title: "Upload Audio Recording for Coaching"
 description: ""
 slug: how-to-upload-audio-recording-for-coaching
 sidebar_position: 266

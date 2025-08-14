@@ -1,5 +1,5 @@
 ---
-title: "How to add Learning Sessions In SmartPath Module?"
+title: "Add Learning Sessions In SmartPath Module?"
 description: ""
 slug: how-to-add-learning-sessions-in-smartpath-module
 sidebar_position: 242

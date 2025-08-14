@@ -1,5 +1,5 @@
 ---
-title: "How to reset a coaching video"
+title: "Reset a coaching video"
 description: ""
 slug: how-to-reset-a-coaching-video
 sidebar_position: 286

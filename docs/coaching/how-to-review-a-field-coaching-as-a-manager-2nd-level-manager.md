@@ -1,5 +1,5 @@
 ---
-title: "How to review a field coaching as a manager/2nd level manager"
+title: "Review a field coaching as a manager/2nd level manager"
 description: ""
 slug: how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
 sidebar_position: 277

@@ -1,5 +1,5 @@
 ---
-title: "How to review a video coaching assignment."
+title: "Review a video coaching assignment."
 description: ""
 slug: how-to-review-a-video-coaching-assignment
 sidebar_position: 87

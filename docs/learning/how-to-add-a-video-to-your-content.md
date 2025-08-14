@@ -1,5 +1,5 @@
 ---
-title: "How to add a video to your content?"
+title: "Add a video to your content?"
 description: ""
 slug: how-to-add-a-video-to-your-content
 sidebar_position: 68

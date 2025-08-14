@@ -1,5 +1,5 @@
 ---
-title: "How to create a 'Drag and Drop into Text question '."
+title: "Create a 'Drag and Drop into Text question '."
 description: ""
 slug: how-to-create-a-drag-and-drop-into-text-question
 sidebar_position: 281

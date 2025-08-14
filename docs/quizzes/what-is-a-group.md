@@ -1,5 +1,5 @@
 ---
-title: "What is a Group?"
+title: "About a Group"
 description: ""
 slug: what-is-a-group
 sidebar_position: 128

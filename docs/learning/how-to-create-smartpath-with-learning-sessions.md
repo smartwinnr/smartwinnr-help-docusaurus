@@ -1,5 +1,5 @@
 ---
-title: "How to Create SmartPath with Learning Sessions?"
+title: "Create SmartPath with Learning Sessions?"
 description: ""
 slug: how-to-create-smartpath-with-learning-sessions
 sidebar_position: 248

@@ -1,5 +1,5 @@
 ---
-title: "How can I edit a KHub item?"
+title: "Edit a KHub item"
 description: ""
 slug: how-can-i-edit-a-khub-item
 sidebar_position: 147

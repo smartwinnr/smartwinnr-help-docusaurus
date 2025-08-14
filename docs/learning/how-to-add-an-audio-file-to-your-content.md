@@ -1,5 +1,5 @@
 ---
-title: "How to add an audio file to your content?"
+title: "Add an audio file to your content?"
 description: ""
 slug: how-to-add-an-audio-file-to-your-content
 sidebar_position: 71

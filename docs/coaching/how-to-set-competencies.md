@@ -1,5 +1,5 @@
 ---
-title: "How to set competencies."
+title: "Set competencies."
 description: ""
 slug: how-to-set-competencies
 sidebar_position: 91

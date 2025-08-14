@@ -1,5 +1,5 @@
 ---
-title: "How to create a 'Hotspot Question'."
+title: "Create a 'Hotspot Question'."
 description: ""
 slug: how-to-create-a-hotspot-question
 sidebar_position: 42

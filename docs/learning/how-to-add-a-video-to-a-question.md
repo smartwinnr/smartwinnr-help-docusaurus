@@ -1,5 +1,5 @@
 ---
-title: "How to add a 'Video' to a question."
+title: "Add a 'Video' to a question."
 description: ""
 slug: how-to-add-a-video-to-a-question
 sidebar_position: 64

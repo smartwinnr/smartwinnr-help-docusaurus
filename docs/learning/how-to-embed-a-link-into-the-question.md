@@ -1,5 +1,5 @@
 ---
-title: "How to embed a link into the question"
+title: "Embed a link into the question"
 description: ""
 slug: how-to-embed-a-link-into-the-question
 sidebar_position: 66

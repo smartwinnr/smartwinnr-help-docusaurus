@@ -1,5 +1,5 @@
 ---
-title: "How to create a Video Coaching assignment."
+title: "Create a Video Coaching assignment."
 description: ""
 slug: how-to-create-a-video-coaching-assignment
 sidebar_position: 85

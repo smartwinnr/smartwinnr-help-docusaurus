@@ -1,5 +1,5 @@
 ---
-title: "How to Duplicate a quiz in a Competition?"
+title: "Duplicate a quiz in a Competition?"
 description: ""
 slug: how-to-duplicate-a-quiz-in-a-competition
 sidebar_position: 108

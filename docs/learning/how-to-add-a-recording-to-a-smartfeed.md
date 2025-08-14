@@ -1,5 +1,5 @@
 ---
-title: "How to add a Recording to a SmartFeed?"
+title: "Add a Recording to a SmartFeed?"
 description: ""
 slug: how-to-add-a-recording-to-a-smartfeed
 sidebar_position: 239

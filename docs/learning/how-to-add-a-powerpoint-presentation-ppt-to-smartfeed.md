@@ -1,5 +1,5 @@
 ---
-title: "How to add a PowerPoint Presentation (PPT) to SmartFeed?"
+title: "Add a PowerPoint Presentation (PPT) to SmartFeed?"
 description: ""
 slug: how-to-add-a-powerpoint-presentation-ppt-to-smartfeed
 sidebar_position: 28

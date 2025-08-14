@@ -1,5 +1,5 @@
 ---
-title: "How to attach PDF file to your content?"
+title: "Attach PDF file to your content?"
 description: ""
 slug: how-to-attach-pdf-file-to-your-content
 sidebar_position: 72

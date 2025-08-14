@@ -1,5 +1,5 @@
 ---
-title: "How to add an 'Audio file' to a question."
+title: "Add an 'Audio file' to a question."
 description: ""
 slug: how-to-add-an-audio-file-to-a-question
 sidebar_position: 73

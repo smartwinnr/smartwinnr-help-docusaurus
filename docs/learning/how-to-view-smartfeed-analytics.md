@@ -1,5 +1,5 @@
 ---
-title: "How to view SmartFeed Analytics?"
+title: "View SmartFeed Analytics?"
 description: ""
 slug: how-to-view-smartfeed-analytics
 sidebar_position: 35

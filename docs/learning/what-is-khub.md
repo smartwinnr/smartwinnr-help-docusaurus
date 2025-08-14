@@ -1,5 +1,5 @@
 ---
-title: "What is KHub?"
+title: "About KHub"
 description: ""
 slug: what-is-khub
 sidebar_position: 145

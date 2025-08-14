@@ -1,5 +1,5 @@
 ---
-title: "How to add a image to your content?"
+title: "Add a image to your content?"
 description: ""
 slug: how-to-add-a-image-to-your-content
 sidebar_position: 69

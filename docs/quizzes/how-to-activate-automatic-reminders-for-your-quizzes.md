@@ -1,5 +1,5 @@
 ---
-title: "How to activate automatic reminders for your quizzes"
+title: "Activate automatic reminders for your quizzes"
 description: ""
 slug: how-to-activate-automatic-reminders-for-your-quizzes
 sidebar_position: 52

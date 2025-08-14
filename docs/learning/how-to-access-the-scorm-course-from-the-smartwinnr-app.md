@@ -1,5 +1,5 @@
 ---
-title: "How to access the SCORM course from the SmartWinnr app ?"
+title: "Access the SCORM course from the SmartWinnr app"
 description: ""
 slug: how-to-access-the-scorm-course-from-the-smartwinnr-app
 sidebar_position: 272

@@ -1,5 +1,5 @@
 ---
-title: "How to upload Video Recording for Coaching"
+title: "Upload Video Recording for Coaching"
 description: ""
 slug: how-to-upload-video-recording-for-coaching
 sidebar_position: 268

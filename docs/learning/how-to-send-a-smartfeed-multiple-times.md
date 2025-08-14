@@ -1,5 +1,5 @@
 ---
-title: "How to send a SmartFeed multiple times?"
+title: "Send a SmartFeed multiple times?"
 description: ""
 slug: how-to-send-a-smartfeed-multiple-times
 sidebar_position: 30

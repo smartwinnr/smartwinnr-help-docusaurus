@@ -1,5 +1,5 @@
 ---
-title: "How to create 'Multiple-Choice Questions'."
+title: "Create 'Multiple-Choice Questions'."
 description: ""
 slug: how-to-create-multiple-choice-questions
 sidebar_position: 40

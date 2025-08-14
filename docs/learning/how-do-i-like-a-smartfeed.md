@@ -1,5 +1,5 @@
 ---
-title: "How do I like a SmartFeed?"
+title: "Like a SmartFeed"
 description: ""
 slug: how-do-i-like-a-smartfeed
 sidebar_position: 33

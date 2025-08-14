@@ -1,5 +1,5 @@
 ---
-title: "How to Import SCORM course into SmartWinnr?"
+title: "Import SCORM course into SmartWinnr?"
 description: ""
 slug: how-to-import-scorm-course-into-smartwinnr
 sidebar_position: 271

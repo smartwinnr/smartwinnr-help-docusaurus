@@ -1,5 +1,5 @@
 ---
-title: "How can I edit a KHub folder name ?"
+title: "Edit a KHub folder name"
 description: ""
 slug: how-can-i-edit-a-khub-folder-name
 sidebar_position: 275

@@ -1,5 +1,5 @@
 ---
-title: "How can I create folders and items in KHub?"
+title: "Create folders and items in KHub"
 description: ""
 slug: how-can-i-create-folders-and-items-in-khub
 sidebar_position: 146

@@ -1,5 +1,5 @@
 ---
-title: "How can I download the SmartWinnr app?"
+title: "Download the SmartWinnr app"
 description: ""
 slug: how-can-i-download-the-smartwinnr-app
 sidebar_position: 9

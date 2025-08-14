@@ -1,5 +1,5 @@
 ---
-title: "How to review Field Coaching from Managers View in Mobile"
+title: "Review Field Coaching from Managers View in Mobile"
 description: ""
 slug: how-to-review-field-coaching-from-managers-view-in-mobile
 sidebar_position: 244

@@ -1,5 +1,5 @@
 ---
-title: "How to enable the Streaming Links for Video Coaching"
+title: "Enable the Streaming Links for Video Coaching"
 description: ""
 slug: how-to-enable-the-streaming-links-for-video-coaching
 sidebar_position: 241

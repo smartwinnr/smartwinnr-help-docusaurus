@@ -1,5 +1,5 @@
 ---
-title: "How to create Field Coaching Template"
+title: "Create Field Coaching Template"
 description: ""
 slug: how-to-create-field-coaching-template
 sidebar_position: 236

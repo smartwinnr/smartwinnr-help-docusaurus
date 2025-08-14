@@ -1,5 +1,5 @@
 ---
-title: "How to create 'Long Answer' Questions?"
+title: "Create 'Long Answer' Questions?"
 description: ""
 slug: how-to-create-long-answer-questions
 sidebar_position: 258

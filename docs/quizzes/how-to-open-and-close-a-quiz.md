@@ -1,5 +1,5 @@
 ---
-title: "How to ‘Open’ and ‘Close’ a Quiz"
+title: "‘Open’ and ‘Close’ a Quiz"
 description: ""
 slug: how-to-open-and-close-a-quiz
 sidebar_position: 276

@@ -1,5 +1,5 @@
 ---
-title: "How to create an automatic quiz?"
+title: "Create an automatic quiz?"
 description: ""
 slug: how-to-create-an-automatic-quiz
 sidebar_position: 49

@@ -1,5 +1,5 @@
 ---
-title: "What is SmartWinnr Quiz Analytics?"
+title: "About SmartWinnr Quiz Analytics"
 description: ""
 slug: what-is-smartwinnr-quiz-analytics
 sidebar_position: 53

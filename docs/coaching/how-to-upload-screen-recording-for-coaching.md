@@ -1,5 +1,5 @@
 ---
-title: "How to upload Screen Recording for Coaching"
+title: "Upload Screen Recording for Coaching"
 description: ""
 slug: how-to-upload-screen-recording-for-coaching
 sidebar_position: 269

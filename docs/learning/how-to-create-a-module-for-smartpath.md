@@ -1,5 +1,5 @@
 ---
-title: "How to create a module for SmartPath."
+title: "Create a module for SmartPath."
 description: ""
 slug: how-to-create-a-module-for-smartpath
 sidebar_position: 76

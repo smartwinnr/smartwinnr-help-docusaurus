@@ -1,5 +1,5 @@
 ---
-title: "How to use KHub in the SmartWinnr app?"
+title: "Use KHub in the SmartWinnr app?"
 description: ""
 slug: how-to-use-khub-in-the-smartwinnr-app
 sidebar_position: 150

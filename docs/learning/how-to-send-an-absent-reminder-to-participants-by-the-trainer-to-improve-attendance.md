@@ -1,5 +1,5 @@
 ---
-title: "How to send an Absent Reminder to Participants by the trainer to Improve Attendance"
+title: "Send an Absent Reminder to Participants by the trainer to Improve Attendance"
 description: ""
 slug: how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance
 sidebar_position: 253

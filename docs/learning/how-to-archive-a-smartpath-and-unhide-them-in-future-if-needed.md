@@ -1,5 +1,5 @@
 ---
-title: "How to archive a SmartPath and unhide them in future if needed."
+title: "Archive a SmartPath and unhide them in future if needed."
 description: ""
 slug: how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed
 sidebar_position: 278

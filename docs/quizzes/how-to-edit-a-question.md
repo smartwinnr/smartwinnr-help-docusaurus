@@ -1,5 +1,5 @@
 ---
-title: "How to edit a question?"
+title: "Edit a question?"
 description: ""
 slug: how-to-edit-a-question
 sidebar_position: 202

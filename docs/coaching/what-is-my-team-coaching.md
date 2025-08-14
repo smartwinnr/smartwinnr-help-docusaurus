@@ -1,5 +1,5 @@
 ---
-title: "What is 'My Team Coaching'?"
+title: "About 'My Team Coaching'"
 description: ""
 slug: what-is-my-team-coaching
 sidebar_position: 89

@@ -1,5 +1,5 @@
 ---
-title: "How to activate or deactivate a user?"
+title: "Activate or deactivate a user?"
 description: ""
 slug: how-to-activate-or-deactivate-a-user
 sidebar_position: 121

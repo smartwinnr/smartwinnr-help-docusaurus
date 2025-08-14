@@ -1,5 +1,5 @@
 ---
-title: "How to manage Quiz configurations?"
+title: "Manage Quiz configurations?"
 description: ""
 slug: how-to-manage-quiz-configurations
 sidebar_position: 112

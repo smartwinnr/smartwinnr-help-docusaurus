@@ -1,5 +1,5 @@
 ---
-title: "How to add a Quiz to a competition?"
+title: "Add a Quiz to a competition?"
 description: ""
 slug: how-to-add-a-quiz-to-a-competition
 sidebar_position: 102

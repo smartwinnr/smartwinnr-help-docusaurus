@@ -1,5 +1,5 @@
 ---
-title: "How to delete SmartFeeds?"
+title: "Delete SmartFeeds?"
 description: ""
 slug: how-to-delete-smartfeeds
 sidebar_position: 34

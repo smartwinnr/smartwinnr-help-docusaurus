@@ -1,5 +1,5 @@
 ---
-title: "How to edit the form submission from manager's view"
+title: "Edit the form submission from manager's view"
 description: ""
 slug: how-to-edit-the-form-submission-from-manager-s-view
 sidebar_position: 246

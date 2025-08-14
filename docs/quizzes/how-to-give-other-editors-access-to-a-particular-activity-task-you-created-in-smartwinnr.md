@@ -1,5 +1,5 @@
 ---
-title: "How to give other editors access to a particular activity/task you created in SmartWinnr"
+title: "Give other editors access to a particular activity/task you created in SmartWinnr"
 description: ""
 slug: how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr
 sidebar_position: 90

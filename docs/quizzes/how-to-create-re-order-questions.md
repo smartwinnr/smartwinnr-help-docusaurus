@@ -1,5 +1,5 @@
 ---
-title: "How to create Re-order Questions ?"
+title: "Create Re-order Questions"
 description: ""
 slug: how-to-create-re-order-questions
 sidebar_position: 270

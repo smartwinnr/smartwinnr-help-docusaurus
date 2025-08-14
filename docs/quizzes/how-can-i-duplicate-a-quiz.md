@@ -1,5 +1,5 @@
 ---
-title: "How can I duplicate a quiz?"
+title: "Duplicate a quiz"
 description: ""
 slug: how-can-i-duplicate-a-quiz
 sidebar_position: 51

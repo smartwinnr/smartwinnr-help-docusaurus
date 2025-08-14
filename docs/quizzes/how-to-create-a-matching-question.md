@@ -1,5 +1,5 @@
 ---
-title: "How to create a 'Matching Question'."
+title: "Create a 'Matching Question'."
 description: ""
 slug: how-to-create-a-matching-question
 sidebar_position: 43

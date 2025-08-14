@@ -1,5 +1,5 @@
 ---
-title: "How to send the SmartFeed to Teams?"
+title: "Send the SmartFeed to Teams?"
 description: ""
 slug: how-to-send-the-smartfeed-to-teams
 sidebar_position: 31

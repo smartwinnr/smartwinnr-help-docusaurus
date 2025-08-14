@@ -1,5 +1,5 @@
 ---
-title: "How to edit a SmartPath."
+title: "Edit a SmartPath."
 description: ""
 slug: how-to-edit-a-smartpath
 sidebar_position: 79

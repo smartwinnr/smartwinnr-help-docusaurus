@@ -1,5 +1,5 @@
 ---
-title: "How to add Competencies for Field Coaching"
+title: "Add Competencies for Field Coaching"
 description: ""
 slug: how-to-add-competencies-for-field-coaching
 sidebar_position: 237

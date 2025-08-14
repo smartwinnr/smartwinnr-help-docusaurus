@@ -1,5 +1,5 @@
 ---
-title: "How to send quizzes, surveys and content using group?"
+title: "Send quizzes, surveys and content using group?"
 description: ""
 slug: how-to-send-quizzes-surveys-and-content-using-group
 sidebar_position: 130

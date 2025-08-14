@@ -1,5 +1,5 @@
 ---
-title: "How to add reference to an external link to your content?"
+title: "Add reference to an external link to your content?"
 description: ""
 slug: how-to-add-reference-to-an-external-link-to-your-content
 sidebar_position: 70

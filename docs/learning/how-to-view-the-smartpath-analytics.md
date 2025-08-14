@@ -1,5 +1,5 @@
 ---
-title: "How to view the SmartPath Analytics."
+title: "View the SmartPath Analytics."
 description: ""
 slug: how-to-view-the-smartpath-analytics
 sidebar_position: 80
