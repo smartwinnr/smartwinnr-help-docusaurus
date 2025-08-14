@@ -1,5 +1,5 @@
 ---
-title: "How do I unlock an account?"
+title: "Unlock an account"
 description: ""
 slug: how-do-i-unlock-an-account
 sidebar_position: 126

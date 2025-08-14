@@ -1,5 +1,5 @@
 ---
-title: "How can I change my profile image?"
+title: "Change my profile image"
 description: ""
 slug: how-can-i-change-my-profile-image
 sidebar_position: 15

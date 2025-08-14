@@ -1,5 +1,5 @@
 ---
-title: "What is SmartWinnr?"
+title: "About SmartWinnr"
 description: ""
 slug: what-is-smartwinnr
 sidebar_position: 4

@@ -1,5 +1,5 @@
 ---
-title: "How can I check the App version/Web view version?"
+title: "Check the App version/Web view version"
 description: ""
 slug: how-can-i-check-the-app-version-web-view-version
 sidebar_position: 19

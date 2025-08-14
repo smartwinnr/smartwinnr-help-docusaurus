@@ -1,5 +1,5 @@
 ---
-title: "How to resend account invitation?"
+title: "Resend account invitation?"
 description: ""
 slug: how-to-resend-account-invitation
 sidebar_position: 123

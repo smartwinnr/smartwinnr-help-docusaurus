@@ -1,5 +1,5 @@
 ---
-title: "How to update the SmartWinnr App from Web View"
+title: "Update the SmartWinnr App from Web View"
 description: ""
 slug: how-to-update-the-smartwinnr-app-from-web-view
 sidebar_position: 291

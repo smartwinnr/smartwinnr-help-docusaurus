@@ -1,5 +1,5 @@
 ---
-title: "How can I change my password for SmartWinnr?"
+title: "Change my password for SmartWinnr"
 description: ""
 slug: how-can-i-change-my-password-for-smartwinnr
 sidebar_position: 16

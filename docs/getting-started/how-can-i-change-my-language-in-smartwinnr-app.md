@@ -1,5 +1,5 @@
 ---
-title: "How can I change my language in SmartWinnr App?"
+title: "Change my language in SmartWinnr App"
 description: ""
 slug: how-can-i-change-my-language-in-smartwinnr-app
 sidebar_position: 18

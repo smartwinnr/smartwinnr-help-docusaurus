@@ -1,5 +1,5 @@
 ---
-title: "How can I enable push notification for SmartWinnr App?"
+title: "Enable push notification for SmartWinnr App"
 description: ""
 slug: how-can-i-enable-push-notification-for-smartwinnr-app
 sidebar_position: 21
