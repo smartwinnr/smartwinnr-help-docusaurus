@@ -1,36 +1,82 @@
 ---
-title: "How can I login to SmartWinnr App?"
-description: ""
-slug: how-can-i-login-to-smartwinnr-app
+title: "Login to SmartWinnr App"
+description: "Step-by-step guide to securely access your SmartWinnr mobile app account"
+slug: login-to-smartwinnr-app
 sidebar_position: 10
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
-helpscout_id: 5fce03e7d580ce55a38b4d36
-helpscout_url: https://help.smartwinnr.com/article/10-how-can-i-login-to-smartwinnr-app
+  date: 2025-08-14
+  author: Claude Code Assistant
 ---
-Open the installed SmartWinnr app from your IOS or Android device. This is the icon of the app:
 
-![](/img/getting-started/helpscout-image-ed059308.png)
+Access your SmartWinnr app quickly and securely by following these simple steps.
+This guide covers everything from opening the app to troubleshooting common login issues.
 
-The app will open to show the login screen, similar to the screen below. Enter your username (it can be your company email or mobile number) and click on the  **Next** button.
+## How to Login
 
-![](/img/getting-started/helpscout-image-62e9eca1.png)
+### Step 1: Open the SmartWinnr App
 
-If you don't know your username, please write to us at [support@smartwinnr.com](mailto:support@smartwinnr.com), mentioning your organization name and official email id.
+Launch the SmartWinnr app from your iOS or Android device. Look for this icon:
 
-If you see a message "user does not exist"-- it means that your SmartWinnr account has not been created by your system administrator. Please write to support@smartwinnr.com, mentioning your organization name and official email id.
+![SmartWinnr App Icon](/img/getting-started/helpscout-image-ed059308.png)
 
-Upon clicking **Next**, it will display the field where the password has to be entered. Once you enter your password, click on the **Sign In** button.
+### Step 2: Enter Your Username
 
-![](/img/getting-started/helpscout-image-b27c41fa.png)
+The app displays the login screen. Enter your username in the provided field.
+Your username can be:
 
-The app will remember your password unless you install a new version of the app or uninstall and install the app again.
+- Company email address
+- Mobile number (as configured by your admin)
 
-If you forgot your password, [click here to learn how get your forgotten password](https://smartwinnr.helpscoutdocs.com/article/12-what-if-ive-forgotten-my-password)
+Click the **Next** button to continue.
 
-Once you successfully login to the app, you will see the home screen of the SmartWinnr app. The home screen shows you a dashboard as shown in the picture below,
+![SmartWinnr Login Screen](/img/getting-started/helpscout-image-62e9eca1.png)
 
-![](/img/getting-started/helpscout-image-8f10897d.png)
+### Step 3: Enter Your Password
 
-If you have the system generated password for your account, it is recommended to change the password. [Learn how to change the password for your SmartWinnr account](https://smartwinnr.helpscoutdocs.com/article/16-how-can-i-change-my-password-for-smartwinnr).
+After clicking **Next**, enter your password in the password field.
+Click the **Sign In** button to complete the login process.
+
+![SmartWinnr Password Entry](/img/getting-started/helpscout-image-b27c41fa.png)
+
+> **Note**: The app remembers your password unless you reinstall the application.
+
+### Step 4: Access Your Dashboard
+
+Successful login displays your personalized SmartWinnr dashboard:
+
+![SmartWinnr Dashboard](/img/getting-started/helpscout-image-8f10897d.png)
+
+## Troubleshooting Login Issues
+
+### Unknown Username
+
+Don't know your username? Contact [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
+
+- Your organization name
+- Your official email address
+
+### "User Does Not Exist" Error
+
+This message indicates your SmartWinnr account hasn't been created yet.
+Contact [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
+
+- Your organization name
+- Your official email address
+
+### Forgotten Password
+
+Need to reset your password? See our [password recovery guide](what-if-i-ve-forgotten-my-password.md).
+
+## Security Recommendations
+
+For enhanced account security:
+
+- Change system-generated passwords immediately after first login
+- Use a strong, unique password for your account
+- Learn how to [change your SmartWinnr password](how-can-i-change-my-password-for-smartwinnr.md)
+
+## Related Topics
+
+- [Change Your SmartWinnr Password](how-can-i-change-my-password-for-smartwinnr.md)
+- [Reset a Forgotten Password](what-if-i-ve-forgotten-my-password.md)
+- [Update Your Profile Settings](how-can-i-change-my-profile-image.md)
