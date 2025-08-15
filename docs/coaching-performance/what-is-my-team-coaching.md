@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fd758ea7129911ba1b20b11
 helpscout_url: https://help.smartwinnr.com/article/89-what-is-my-team-coaching
 ---
-'My Team Coaching' enables the manager to view the coaching that has been assigned to all her team members. This way,Â the manager gets to know about the coaching her team members are taking currently.
+'My Team Coaching' enables the manager to view the coaching that has been assigned to all her team members. This way,Âthe manager gets to know about the coaching her team members are taking currently.
 
 Below are the steps to view the coachings that have been assigned to your team members.
 

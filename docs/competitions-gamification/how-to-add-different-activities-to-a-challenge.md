@@ -9,9 +9,9 @@ last_update:
 helpscout_id: 60a61bb227c86942e8069e4d
 helpscout_url: https://help.smartwinnr.com/article/240-how-to-add-activities-inside-a-challenge
 ---
-Follow the below steps in order toÂ challenge activities inside a challenge:
+Follow the below steps in order toÂchallenge activities inside a challenge:
 
-Go to EDITOR >Â PERFORMANCEÂ > Challenges. Click on the particular challenge for which you want to add the activities.
+Go to EDITOR >ÂPERFORMANCEÂ> Challenges. Click on the particular challenge for which you want to add the activities.
 
 ![](/img/competitions/helpscout-image-077bd7cd.jpg)
 
@@ -33,7 +33,7 @@ You can select the activities from the drop-down (Quiz, KPI, and Scorecard Point
 
 ![](/img/competitions/helpscout-image-c6f19337.jpg)
 
-### How to AddÂ  a Quiz to Challenge
+### How to AddÂ a Quiz to Challenge
 
 Quiz: The EDITOR can use the challenge type as Quiz to motivate two different users or teams to improve their knowledge and score high marks in Quiz.
 
@@ -41,13 +41,13 @@ Here you need to select the quiz that you want the user to go through the challe
 
 ![](/img/competitions/helpscout-image-ee7eb00e.jpg)
 
-### How to AddÂ  KPIs to Challenge
+### How to AddÂ KPIs to Challenge
 
 KPI: By selecting a particular KPI, EDITOR can challenge two users or teams in a particular segment (Example: Sales, Revenue)
 
 ![](/img/competitions/helpscout-image-32994a6e.jpg)
 
-### How to AddÂ Â ScorecardsÂ to Challenge
+### How to AddÂÂScorecardsÂto Challenge
 
 Scorecard Points: EDITOR can also challenge by comparing the Scorecard points to motivate the users to perform better.
 

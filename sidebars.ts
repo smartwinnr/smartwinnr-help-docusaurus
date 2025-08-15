@@ -4,7 +4,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: '🚀 Getting Started',
+      label: 'Getting Started',
       collapsed: false,
       items: [
         {
@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📝 Quiz & Assessments',
+      label: 'Quiz & Assessments',
       collapsed: true,
       items: [
         {
@@ -26,7 +26,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🧠 MicroLearning & SmartFeeds',
+      label: 'MicroLearning & SmartFeeds',
       collapsed: true,
       items: [
         {
@@ -37,7 +37,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🛤️ Learning & SmartPaths',
+      label: 'Learning & SmartPaths',
       collapsed: true,
       items: [
         {
@@ -48,7 +48,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📋 Forms & Data Collection',
+      label: 'Forms & Data Collection',
       collapsed: true,
       items: [
         {
@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📚 Knowledge Hub',
+      label: 'Knowledge Hub',
       collapsed: true,
       items: [
         {
@@ -70,7 +70,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📊 Surveys & Feedback',
+      label: 'Surveys & Feedback',
       collapsed: true,
       items: [
         {
@@ -81,7 +81,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📈 Analytics & Reporting',
+      label: 'Analytics & Reporting',
       collapsed: true,
       items: [
         {
@@ -92,7 +92,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🏆 Competitions & Gamification',
+      label: 'Competitions & Gamification',
       collapsed: true,
       items: [
         {
@@ -103,7 +103,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🎯 Coaching & Performance',
+      label: 'Coaching & Performance',
       collapsed: true,
       items: [
         {
@@ -114,7 +114,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '👑 Administration',
+      label: 'Administration',
       collapsed: true,
       items: [
         {
@@ -125,7 +125,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📱 Mobile & Platform Tools',
+      label: 'Mobile & Platform Tools',
       collapsed: true,
       items: [
         {
@@ -136,7 +136,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🆘 Help & Support',
+      label: 'Help & Support',
       collapsed: true,
       items: [
         {

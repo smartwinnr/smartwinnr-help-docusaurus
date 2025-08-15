@@ -11,11 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/250-how-to-edit-and-submit-fo
 ---
 An Editor who has access to the form can edit the submission made by a user
 
-Goto Left Menu >>Â EditorÂ >> Forms >> View All Forms.
+Goto Left Menu >>ÂEditorÂ>> Forms >> View All Forms.
 
 ![](/img/admin/helpscout-image-db79f1e3.jpg)
 
-Select the form you want to edit and go to the analytics page for theÂ form by clicking on the Analytics icon.
+Select the form you want to edit and go to the analytics page for theÂform by clicking on the Analytics icon.
 
 ![](/img/admin/helpscout-image-3edef29b.jpg)
 

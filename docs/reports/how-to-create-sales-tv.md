@@ -23,7 +23,7 @@ Enter the title and description and select the required Business unit and Status
 
 ![](/img/reports/helpscout-image-a6a61790.jpg)
 
-You can select theÂ **Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
+You can select theÂ**Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
 
 Leaderboards show you the data of a quiz or a competition to motivate users to perform greatly.
 

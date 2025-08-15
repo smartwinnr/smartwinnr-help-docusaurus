@@ -9,23 +9,23 @@ last_update:
 helpscout_id: 60e1fc479e87cb3d01249e3c
 helpscout_url: https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions
 ---
-**Long answer questionsÂ are generally open-ended questions that requireÂ participantsÂ to construct a response. Long answer questions require a concise and focused response.**
+**Long answer questionsÂare generally open-ended questions that requireÂparticipantsÂto construct a response. Long answer questions require a concise and focused response.**
 
 Here is how you can create a 'Long answer' question.
 
-* Go toÂ **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+* Go toÂ**EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
 
 ![](/img/quizzes/helpscout-image-1461afec.jpg)
 
-* Click on theÂ '**Add Question**'Â button at theÂ _**top right corner.**_
+* Click on theÂ'**Add Question**'Âbutton at theÂ_**top right corner.**_
 
 ![](/img/quizzes/helpscout-image-c60dbae3.jpg)
 
-* On the '**Create new Question**' select the '**Question Type**' as â€˜**Long Answer**â€™.
+* On the '**Create new Question**' select the '**Question Type**' as **Long Answer**.
 
 ![](/img/quizzes/helpscout-image-28d51b9f.jpg)
 
-* Enter your question in the â€˜**Questionâ€™ field**.
+* Enter your question in the **Question field**.
 
 ![](/img/quizzes/helpscout-image-9b05b667.jpg)
 
@@ -33,7 +33,7 @@ Here is how you can create a 'Long answer' question.
 
 ![](/img/quizzes/helpscout-image-7908b93f.jpg)
 
-* Use â€˜**Feedback**â€™ if you want to add additional information to a question. _(**Optional**) : The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
+* Use **Feedback** if you want to add additional information to a question. _(**Optional**) : The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
 
 ![](/img/quizzes/helpscout-image-2ccb9b42.jpg)
 
@@ -46,7 +46,7 @@ Here is how you can create a 'Long answer' question.
 Microsoft Word adds certain hidden characters and markups to every document. If you directly copy text from a Word document, these hidden artifacts can create a problem, especially on mobile devices. To avoid this issue, if you are copying any question from a Word document, please follow these steps:  
   
 Copy the text from the Word Document into Notepad. This removes all hidden markups.  
-Then copy the text from Notepad into the SmartWinnr â†’ Question box.
+Then copy the text from Notepad into the SmartWinnr  Question box.
 
 **Question**
 
@@ -86,7 +86,7 @@ You can change the language of the question by clicking on the " **Change Langua
 
 Choose the language to which you want to change and then click the ****Save**** button.
 
-* Once you have filled in the required details of the question, click on the 'Â **Save New Question**' button in order to save the question.
+* Once you have filled in the required details of the question, click on the 'Â**Save New Question**' button in order to save the question.
 
 ## How do the participants see the question?
 
@@ -94,6 +94,6 @@ Choose the language to which you want to change and then click the ****Save**** 
 
 ![](/img/quizzes/helpscout-image-ede7e426.png)
 
-* To know how the editors evaluate the Long Answer questions, please click theÂ link given below.
+* To know how the editors evaluate the Long Answer questions, please click theÂlink given below.
 
-Â  Â  [How the editors evaluate the Long Answer questions?](https://help.smartwinnr.com/article/262-how-editors-evaluate-long-answer-questions )
+Â Â [How the editors evaluate the Long Answer questions?](https://help.smartwinnr.com/article/262-how-editors-evaluate-long-answer-questions )

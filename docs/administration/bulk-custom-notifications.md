@@ -26,4 +26,4 @@ Editor needs to select the "User Identifier" type, basically a means by which th
 
 After the "Download Template" button will be activated, Editor needs to download the template and fill the email ids's of the recipients and save them.
 
-After this step Editor should select theÂ  file and click on "Upload".
+After this step Editor should select theÂ file and click on "Upload".

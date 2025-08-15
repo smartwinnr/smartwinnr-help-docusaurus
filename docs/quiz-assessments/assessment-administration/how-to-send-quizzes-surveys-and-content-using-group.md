@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/130-how-to-send-quizzes-surve
 ---
 You can send Quizzes, Surveys, and Content to a pre-defined set of people through Groups.
 
-Select the Group when you are selecting the people to whom you want to send the quiz to. Follow the screenshot below. The ‘Add Group’ link enables you to add a Group in case you don’t have the Group added from before. Once you select the Group, the list of people in the lower section of the page will reflect with the people who have been added to the Group. Next, select the people from the list and click on ‘Save’. The quiz has now been sent to this group.
+Select the Group when you are selecting the people to whom you want to send the quiz to. Follow the screenshot below. The Add Group link enables you to add a Group in case you dont have the Group added from before. Once you select the Group, the list of people in the lower section of the page will reflect with the people who have been added to the Group. Next, select the people from the list and click on Save. The quiz has now been sent to this group.
 
 Only the user with the editor profile can send tasks to groups.
 

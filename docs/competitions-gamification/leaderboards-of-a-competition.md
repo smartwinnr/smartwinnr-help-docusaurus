@@ -11,17 +11,17 @@ helpscout_url: https://help.smartwinnr.com/article/109-leaderboards-of-a-competi
 ---
 Competition can have multiple leaderboards. You can view these leaderboards at an individual or team level.
 
-Individual LeaderboardÂ â€“Â When you create a competition, by default a leaderboard calledÂ Individual Leaderboard get created as part of the competition. This leaderboard will have all the players from the competition added to it.Â Thus it shows the relative rankings of all individuals from all teams who are participating inÂ theÂ competition. It takes into account the actual score of every individual.
+Individual LeaderboardÂÂWhen you create a competition, by default a leaderboard calledÂIndividual Leaderboard get created as part of the competition. This leaderboard will have all the players from the competition added to it.ÂThus it shows the relative rankings of all individuals from all teams who are participating inÂtheÂcompetition. It takes into account the actual score of every individual.
 
 ![](/img/competitions/helpscout-image-491cfc68.png)
 
-Team-wise LeaderboardÂ â€“ If the players in the competition are part of different groups, you can create a Team leaderboard for the competition. The team-wise leaderboard shows the rank and performance of each team that is participating in the competition.
+Team-wise LeaderboardÂ If the players in the competition are part of different groups, you can create a Team leaderboard for the competition. The team-wise leaderboard shows the rank and performance of each team that is participating in the competition.
 
-![](/img/competitions/helpscout-image-45141c2c.png)Custom Leaderboard:Â With a custom leaderboard, you can select a few participants and display their scores and performance in aÂ separate leaderboard. This allows you to view and compare the performance of the selected participants separately.Â Â 
+![](/img/competitions/helpscout-image-45141c2c.png)Custom Leaderboard:ÂWith a custom leaderboard, you can select a few participants and display their scores and performance in aÂseparate leaderboard. This allows you to view and compare the performance of the selected participants separately.ÂÂ
 
 ![](/img/competitions/helpscout-image-873b3b91.png)
 
-It is mandatory to create at least one team leaderboard while creating the competition and add groups to it.Â Â 
+It is mandatory to create at least one team leaderboard while creating the competition and add groups to it.ÂÂ
 
 Automated Leaderboard: Using the leaderboard, you can basically set a time interval with which the leaderboard will be created automatically.
 

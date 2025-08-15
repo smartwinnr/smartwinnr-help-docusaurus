@@ -13,7 +13,7 @@ SmartWinnr provides a very detailed set of analytics on every quiz that you have
 
 Follow the below steps in order to view the quiz-wise analytics:
 
-Go to EDITOR >Â LEARNING AND KNOWLEDGE >Â Questions and Quizzes > View All Quizzes.
+Go to EDITOR >ÂLEARNING AND KNOWLEDGE >ÂQuestions and Quizzes > View All Quizzes.
 
 Click on the 'Analytics' icon of a particular quiz.
 
@@ -35,24 +35,24 @@ This gives you a pie chart showing the overall participation percentage along wi
 
 ![](/img/quizzes/helpscout-image-7303cabf.png)
 
-Participation: % By Country:Â This section gives you a bar graph where it shows the participation percentage byÂ Country.
+Participation: % By Country:ÂThis section gives you a bar graph where it shows the participation percentage byÂCountry.
 
 ![](/img/quizzes/helpscout-image-5460d24f.png)
 
 By clicking on the 'Details' button you will be taken to the 'Quiz Participation Details' page where you can see a list of participants who have not started the quiz and the participants who have completed it. You can drill down the participants based on the status of the quiz assigned to them or you can search for a particular participant by entering their name and email address.
 
-Categorywise Performance for All Country:Â This section gives you the bar graph of the category wise performance for allÂ Countries.
+Categorywise Performance for All Country:ÂThis section gives you the bar graph of the category wise performance for allÂCountries.
 
 ![](/img/quizzes/helpscout-image-03301bbf.png)
 
-Performance By Category ByÂ Country:Â This section gives you a heat map which shows the performance by category and byÂ Country.
+Performance By Category ByÂCountry:ÂThis section gives you a heat map which shows the performance by category and byÂCountry.
 
 ![](/img/quizzes/helpscout-image-071ad529.png)
 
-Questions in Quiz:Â In this section, you can view the list of questions in a quiz and the percentage of correct answers for each question.
+Questions in Quiz:ÂIn this section, you can view the list of questions in a quiz and the percentage of correct answers for each question.
 
 ![](/img/quizzes/helpscout-image-033efac0.png)
 
-Leaderboard:Â In this section, you will be able to view a quarterly leaderboard of performance. You will be able to see a participant's performance over a period of time by clicking on the 'View Analytics' button. You can search for a particular participant by using the 'Country' filter or by entering your search in the 'Search' box'.
+Leaderboard:ÂIn this section, you will be able to view a quarterly leaderboard of performance. You will be able to see a participant's performance over a period of time by clicking on the 'View Analytics' button. You can search for a particular participant by using the 'Country' filter or by entering your search in the 'Search' box'.
 
 ![](/img/quizzes/helpscout-image-93a8a748.png)

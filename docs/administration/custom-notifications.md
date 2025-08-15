@@ -9,23 +9,23 @@ last_update:
 helpscout_id: 5fdb086ea5d295659b369c51
 helpscout_url: https://help.smartwinnr.com/article/165-custom-notifications
 ---
-Custom notification enable you toÂ send a push notification and an email to the sales rep, notifying specific information.
+Custom notification enable you toÂsend a push notification and an email to the sales rep, notifying specific information.
 
 This option will be available only if the user has an editor role in SmartWinnr.
 
 You can follow the below given steps to send a custom notification to sales reps.
 
-Go to Left Menu >Â GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page
+Go to Left Menu >ÂGAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page
 
 ![](/img/admin/helpscout-image-525b12a8.png)
 
-This pageÂ  will provide the logs of custom notifications that have been sent so far
+This pageÂ will provide the logs of custom notifications that have been sent so far
 
 Editor can also search for notifications by "Date Range", "Business Unit", "Created By".
 
 ## Adding a new Custom Notification
 
-In order to add a new custom notification ,Editor needs to click on the "Add Notification"Â  button on the top right.
+In order to add a new custom notification ,Editor needs to click on the "Add Notification"Â button on the top right.
 
 ![](/img/admin/helpscout-image-aaa4fd11.png)
 
@@ -39,6 +39,6 @@ Kindly note that the notifying message should not be more than 140 character.
 
 Editor needs to select the "Business Unit" , "Country", "Group" for searching the notification recipients.
 
-For "Advanced Search " options [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) andÂ check section 1.1.
+For "Advanced Search " options [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) andÂcheck section 1.1.
 
 After search is complete, Editor can select the recipients and click on "Send Notification".Then the notification is out successfully to the sales reps.

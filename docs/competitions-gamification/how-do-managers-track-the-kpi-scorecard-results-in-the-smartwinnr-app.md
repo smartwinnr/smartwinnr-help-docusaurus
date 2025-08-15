@@ -23,7 +23,7 @@ The below screen shows the scorecard of the manager and the scorecards of variou
 
 A scorecard of a reportee who is not a manager differs from the scorecard of the reportee who is a manager. Let's call the scorecard of the manager as Manager Card and the scorecard of a non-manager as User Card and see how they differ.
 
-User card:Â The scorecard of a reportee who is not a manager (who has only the user role) is called a user card. Here is how it looks:
+User card:ÂThe scorecard of a reportee who is not a manager (who has only the user role) is called a user card. Here is how it looks:
 
 ![](/img/competitions/helpscout-image-17a1ae6c.png)
 
@@ -41,24 +41,24 @@ In a manager card, you can drill in further to view the scores of his team membe
 
 You can also view the top performers in a manager's scorecard by clicking on View All at the bottom of the scorecard.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/877)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/877)
 
 It will open the following screen where you will get to see how much each team member has scored against each KPI.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/878)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/878)
 
 KPI Filter: You can filter and view the scores by each KPI by clicking on the KPI dropdown at the top right corner.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/879)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/879)
 
-* Scorecards:Â Here you can filter and choose to display a weekly or a monthly scorecard
+* Scorecards:ÂHere you can filter and choose to display a weekly or a monthly scorecard
 
 ![](https://lh3.googleusercontent.com/nC3-diCnSs8Fhohm8GBPPQtjvebdyB4YGNZ_HuHBlNmgsn7tbo1w_RHCwKaqv8XR-r26Y66_fXAA0dEB6MVfKP7t6-21XfmbPkRauGuGU1LMGVRcU0lMk5E45HgBYHKSmZIVEESE)
 
-* Date Range:Â Here you will get to choose to display the current week's scorecard or the last week's scorecard
+* Date Range:ÂHere you will get to choose to display the current week's scorecard or the last week's scorecard
 
 ![](https://lh4.googleusercontent.com/IAoBD3oWJZutuO0FP-0xsx0cod0A2pzhIX7oXEutiF3OUJ6ru9ts_OVmLHbFGYBa2-RysDp8v61e2NqAfIzjSh0A09ISWkX2xzm7fsPnQhY8btODxSlHnzLYdK6usuYNtUQDoKrQ)
 
-* KPI Group:Â This filter lets you choose the KPI group to display on the scorecard
+* KPI Group:ÂThis filter lets you choose the KPI group to display on the scorecard
 
 ![](https://lh6.googleusercontent.com/Ix59n-Q_50XUp5M41zZNTfpeCWqSTgBUYju0bjogMmAQB6BdldnV03IiGOVOPFFCE_wcTn-rpBChtk58ThtKS9IuQ7wzLMhXw2UG53pK1aOl03oQa9AybNYRFZrr0bodvAmCURgr)

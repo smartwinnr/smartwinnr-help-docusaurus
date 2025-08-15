@@ -11,33 +11,33 @@ helpscout_url: https://help.smartwinnr.com/article/181-how-to-create-a-manager-c
 ---
 Follow the below steps in order to create a manager challenge:
 
-Go to EDITOR >Â Â PERFORMANCEÂ > Challenges. Click on the 'Create Challenge' button.Â  This will open up the following page where you can fill the details of the challenge.
+Go to EDITOR >ÂÂPERFORMANCEÂ> Challenges. Click on the 'Create Challenge' button.Â This will open up the following page where you can fill the details of the challenge.
 
 ![](/img/competitions/helpscout-image-0950bcc9.png)
 
-Challenge Name:Â Give the name of the challenge.
+Challenge Name:ÂGive the name of the challenge.
 
-Challenge Description:Â Give a description of the challenge.
+Challenge Description:ÂGive a description of the challenge.
 
-Division:Â Select a business unit for which the challenge is being created.
+Division:ÂSelect a business unit for which the challenge is being created.
 
-KPI:Â Select a KPI for the challenge.
+KPI:ÂSelect a KPI for the challenge.
 
-Challenge Type:Â This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'Manager' to create a manager challenge.
+Challenge Type:ÂThis is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'Manager' to create a manager challenge.
 
-Start Date and End Date:Â Specify the start date and end date for the challenge.
+Start Date and End Date:ÂSpecify the start date and end date for the challenge.
 
-Win:Â Specify the points to be allotted to the winning side.
+Win:ÂSpecify the points to be allotted to the winning side.
 
-Lose:Â Specify the pints to be allotted to the losing side.
+Lose:ÂSpecify the pints to be allotted to the losing side.
 
-Draw:Â Specify the points to be allotted in case of a draw.
+Draw:ÂSpecify the points to be allotted in case of a draw.
 
-No Points:Â Specify the points to be given if either of the teams does not score any points in the KPI.
+No Points:ÂSpecify the points to be given if either of the teams does not score any points in the KPI.
 
-Select Challenge Pairs:Â This section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button to add pairs of competitors. It opens the following pop-up.
+Select Challenge Pairs:ÂThis section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button to add pairs of competitors. It opens the following pop-up.
 
-Â  Â  Â  Â  Â  Â ![](/img/competitions/helpscout-image-042e8d7d.png)
+Â Â Â Â Â Â![](/img/competitions/helpscout-image-042e8d7d.png)
 
 Since you have selected the 'Challenge Type' as 'Manager', you will get to select a pair of managers whose teams will be competing with each other in this competition. Click on the 'Add' button, once you have added the pairs of participants.
 

@@ -1,6 +1,6 @@
 {
   "id": "quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz",
-  "title": "‘Open’ and ‘Close’ a Quiz",
+  "title": "Open and Close a Quiz",
   "description": "",
   "source": "@site/docs/quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz.md",
   "sourceDirName": "quiz-assessments/assessment-administration",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 276,
   "frontMatter": {
-    "title": "‘Open’ and ‘Close’ a Quiz",
+    "title": "Open and Close a Quiz",
     "description": "",
     "slug": "how-to-open-and-close-a-quiz",
     "sidebar_position": 276,

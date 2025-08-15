@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/235-how-to-create-field-coach
 ---
 Only the user with editor role can create a field coaching
 
-FollowÂ the below steps to create your field coaching to the SmartWinnr account.
+FollowÂthe below steps to create your field coaching to the SmartWinnr account.
 
 ## Step 1: Select the left menu>>Go to Editor>>Field Coaching >>Templates
 
@@ -29,9 +29,9 @@ Now fill in the ratings as per your requirements as shown below.
 
 ![](/img/coaching/helpscout-image-cad1138b.jpg)
 
-**Evaluate Baseline:**Â This allowsÂ the manager to assess the competencies on which the user proceeds with coaching.
+**Evaluate Baseline:**ÂThis allowsÂthe manager to assess the competencies on which the user proceeds with coaching.
 
-**Evaluate Strength Weakness:**Â Based on the strengths and weaknesses of the user, the manager can assess them on different competencies.
+**Evaluate Strength Weakness:**ÂBased on the strengths and weaknesses of the user, the manager can assess them on different competencies.
 
 Click on the "Save" icon after filling up all the required segments.
 
@@ -51,27 +51,27 @@ In this step, fill in with all the required information and use this image for r
 
 Fill in the name and description and the fields with the required display name and mandatory information.
 
-**Section visible to**:Â This section selects whom we want to see the section. Example- Coach.
+**Section visible to**:ÂThis section selects whom we want to see the section. Example- Coach.
 
-**Section Visible in steps:**Â This section also selects the steps that can be visible for the selected category.
+**Section Visible in steps:**ÂThis section also selects the steps that can be visible for the selected category.
 
-**Allow Tab Creation:**Â This allows user and manager to add their comments after the coaching is finished.
+**Allow Tab Creation:**ÂThis allows user and manager to add their comments after the coaching is finished.
 
-**Tab Create By:**Â This section allows the coach or coaches to add their comments based on the section of the coaching.
+**Tab Create By:**ÂThis section allows the coach or coaches to add their comments based on the section of the coaching.
 
-**Tab create in steps:**Â Here this tab allows us to choose which step we want to make visible.
+**Tab create in steps:**ÂHere this tab allows us to choose which step we want to make visible.
 
-**Field type:**Â This tab allows us to select the type of section where the user or manager can enter their comments.
+**Field type:**ÂThis tab allows us to select the type of section where the user or manager can enter their comments.
 
-**Display Name:**Â This allowsÂ you to enter the name which can be displayed.
+**Display Name:**ÂThis allowsÂyou to enter the name which can be displayed.
 
-**Placeholder:**Â This acts as an indicator to show what you need to type in the display name. Example- Enter your name.
+**Placeholder:**ÂThis acts as an indicator to show what you need to type in the display name. Example- Enter your name.
 
-**Visible to:**Â Here you can select the visibility of the step to coach or coachee
+**Visible to:**ÂHere you can select the visibility of the step to coach or coachee
 
-**Visible in Steps:**Â Here this tab allows us to choose which step we want to make visible.
+**Visible in Steps:**ÂHere this tab allows us to choose which step we want to make visible.
 
-**Editable by and steps:**Â Here you can choose any user who can edit the steps.
+**Editable by and steps:**ÂHere you can choose any user who can edit the steps.
 
 ## Step 5: Select the users and their coaches to check their performance
 

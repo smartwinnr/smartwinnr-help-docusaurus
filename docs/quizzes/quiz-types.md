@@ -37,7 +37,7 @@ Pre-training assessment that will happen one-time
 
 Manual Quiz
 
-**Questions and Quizzes > View All Quizzes > Add New Quiz > Quiz Type = ‘Manual’**
+**Questions and Quizzes > View All Quizzes > Add New Quiz > Quiz Type = Manual**
 
 **2**
 
@@ -45,7 +45,7 @@ A quiz (with the same questions) that can be taken multiple times before a minim
 
 Manual Quiz with Multiple Attempts
 
-**Questions and Quizzes > View All Quizzes > Add New Quiz -> Quiz Type = ‘Manual’ and check the ‘Allow multiple attempts' checkbox.**
+**Questions and Quizzes > View All Quizzes > Add New Quiz -> Quiz Type = Manual and check the Allow multiple attempts' checkbox.**
 
 **3**
 
@@ -53,4 +53,4 @@ A quiz with the timer
 
 Manual Quiz with Timer
 
-**Questions and Quizzes > View All Quizzes > Add New Quiz -> Quiz Type = ‘Manual’ and check the ‘Enable timer?’ checkbox.**
+**Questions and Quizzes > View All Quizzes > Add New Quiz -> Quiz Type = Manual and check the Enable timer? checkbox.**

@@ -19,7 +19,7 @@ Here, click on the **profile picture** at the top. It will take you to the follo
 
 ![](https://lh4.googleusercontent.com/zvtTITC7qFS29DeFfkJFOhPwQRE1bpKFjydQ45tuAlaI8CJTnHLBd1kLzbDovk_xbn-twTX8dGP9MhXZahSvE6Ia_KXo7f53KAxxQhYcZic_L7Cy60iOnWW7f4vGXw0qRXkk1bsS)
 
-On this screen, click on the **camera** icon on the profile picture.Â It will take you to the following screen:
+On this screen, click on the **camera** icon on the profile picture.ÂIt will take you to the following screen:
 
 ![](https://lh4.googleusercontent.com/4liyOdBREHprepm1DtI5LJ1eg8WjG6ZYokssGwhluyk2sRT38uALcfKkeWOO_2YfqtrTfhScaFW1rf4TEK0ggVObNSijfI9GT31yYqb3V96e2TeojVrGgizHZ9ZdumTkFAR0cHyA)
 
@@ -33,7 +33,7 @@ Once you download the app and enter your login credentials to log in, you will s
 
 ![](https://lh4.googleusercontent.com/Rc2JPSCbnqg-uUfWsqcuL-LvS2PmHNLm5xr4ZxMNnI7Z8MRF8FYeVqNbiqHPEQTRSyQhjOOcgNys6zHLWCn5n4PbwW0IjWlrENcJI9xh_dXaHvNAyGtU3sWgQ7yBvsF4MFP6_KYk)
 
-Now, click on the **Camera icon** that is marked in the screenshot above.Â It will take you to the following screen:
+Now, click on the **Camera icon** that is marked in the screenshot above.ÂIt will take you to the following screen:
 
 ![](https://lh6.googleusercontent.com/_Ggm_H5RveEasIyf_u3O_I9cEEsxkw7FkoLGzjSrZ5U1dS5XCUaEFEO7jsjtW4fFjQr5CTO5p8IPvW-t7k8lX1H4ItCRdLT3ytQc-9xV7LiyipMZ5NxlKrHDpO58-Y_UxY8J-Lj3)
 

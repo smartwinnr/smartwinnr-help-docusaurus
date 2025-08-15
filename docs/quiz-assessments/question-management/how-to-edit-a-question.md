@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/202-how-to-edit-a-question
 ---
 Follow the below steps in order to edit a question:
 
-EDITOR >Â LEARNING AND KNOWLEDGE >Â Questions and Quizzes > Question Bank. It will open the following page:
+EDITOR >ÂLEARNING AND KNOWLEDGE >ÂQuestions and Quizzes > Question Bank. It will open the following page:
 
 ![](/img/quizzes/helpscout-image-60f53b0b.png)
 
@@ -25,7 +25,7 @@ click the **Edit** button at the top right corner of the screen. It will open th
 
 On this page, make all the necessary changes to the question. You can change the question body, the options, the feedback, the categories.
 
-You can also add a translation to the question in another language. To add the translation, click the **Add Translation** button at the top right corner of theÂ QuestionÂ section.
+You can also add a translation to the question in another language. To add the translation, click the **Add Translation** button at the top right corner of theÂQuestionÂsection.
 
 ![](/img/quizzes/helpscout-image-9a9f72df.png)
 

@@ -19,11 +19,11 @@ If the welcome email contains the activation link, it looks like this:
 
 ![](/img/admin/helpscout-image-4cf35c86.png)
 
-Click on the button ‘Activate Account’. It will open the following page in your browser (Use Chrome or Firefox).
+Click on the button Activate Account. It will open the following page in your browser (Use Chrome or Firefox).
 
 ![](/img/admin/helpscout-image-3e8abb3d.png)
 
-Enter your new password and click on ‘Set Password’. Remember this password - you will need this password to login to the app later on. Your username is your company email or mobile number to which you have received the welcome email/SMS.
+Enter your new password and click on Set Password. Remember this password - you will need this password to login to the app later on. Your username is your company email or mobile number to which you have received the welcome email/SMS.
 
 ### Activate your Account with the System Generated Password
 

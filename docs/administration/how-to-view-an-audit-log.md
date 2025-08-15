@@ -17,12 +17,12 @@ You can see the information about the various existing logs. Information about w
 
 Logs can be viewed for a specific date range by clicking on the date "Date Range".The varied option provided in the date range is shown below
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/1113)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/1113)
 
 Select the required and click on apply, logs between that date range displays.
 
 You can also select the "Action" from the drop-down for filtering the Log. The various actions are as follows
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/1114)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/1114)
 
 Audit Logs can be filtered using the "Task Name" and also the "User Name".

@@ -23,7 +23,7 @@ By default, all analytics displayed are grouped by the SubDivisions (typically c
 
 ![](/img/quizzes/helpscout-image-048e7636.png)
 
-However, you might be interested in viewing the analytics based on Territory, User Types or any other User Tags that are present in your organization. You can do so by setting your preference. Go to Profile->Settings and click on ‘Edit’ on Analytics Grouping.
+However, you might be interested in viewing the analytics based on Territory, User Types or any other User Tags that are present in your organization. You can do so by setting your preference. Go to Profile->Settings and click on Edit on Analytics Grouping.
 
 ![](/img/quizzes/helpscout-image-0dafc67a.png)
 
@@ -35,11 +35,11 @@ Select the appropriate grouping. And then refresh the page to see the new groupi
 
 ### **Participation**
 
-You can view detailed analytics on participation. ‘Overall Participation’ shows the distribution of how many people have already completed vs. how many people have not completed the quiz till now. ‘Participation by Country’ shows the distribution by different countries.
+You can view detailed analytics on participation. Overall Participation shows the distribution of how many people have already completed vs. how many people have not completed the quiz till now. Participation by Country shows the distribution by different countries.
 
 ![](/img/quizzes/helpscout-image-3d9dc815.png)
 
-For detailed information, on who has completed and not completed the quiz, click on the ‘Details’ button. This list shows the details of every individual to whom the quiz had been assigned, their score and status.
+For detailed information, on who has completed and not completed the quiz, click on the Details button. This list shows the details of every individual to whom the quiz had been assigned, their score and status.
 
 ![](/img/quizzes/helpscout-image-447beb2d.png)
 
@@ -53,7 +53,7 @@ Here, the performance metrics are further broken down by Country. This helps to 
 
 ![](/img/quizzes/helpscout-image-6db868ac.png)
 
-If you want to see further details, by different Territories, etc, click on the ‘View Details’ button.
+If you want to see further details, by different Territories, etc, click on the View Details button.
 
 ![](/img/quizzes/helpscout-image-c2554bbc.png)
 
@@ -81,18 +81,18 @@ Every quiz has a real-time leaderboard that shows the relative ranking of quiz t
 
 Clicking on the **download icon** against the leaderboard will download the quiz leaderboard into an excel format.
 
-**View User’s Dashboard**  
-The quizmaster or editor has access to details of an individual’s performance. Click on the ‘View Analytics’ button against each user in the leaderboard to find the individual performance.
+**View Users Dashboard**  
+The quizmaster or editor has access to details of an individuals performance. Click on the View Analytics button against each user in the leaderboard to find the�individual�performance.
 
 ![](/img/quizzes/helpscout-image-ebf675c0.png)
 
 ## **Download Quiz Results**
 
 You can download the quiz results into an excel sheet for further use.  
-Go to Questions and Quizzes in Left Menu → View all quizzes -> Click on the 'View Analytics' button of a quiz → Click on the button ‘Download Quiz Results’ at the top right corner. This will download the entire quiz report into an excel format.  
+Go to Questions and Quizzes in Left Menu  View all quizzes -> Click on the 'View Analytics' button of a quiz  Click on the button Download Quiz Results at the top right corner. This will download the entire quiz report into an excel format.  
 ![](https://file2.api.drift.com/drift-prod-file-uploads/c635%2Fc6350f83cef9a560485e8d6c425cc3c4/quizana.png?mimeType=image%2Fpng)The excel will have the following sheets:
 
-* **Quiz Details** – A high-level overview of the quiz.
-* **Participants Report** – A list of all the participants to whom the quiz had been assigned along with Quiz Completion Status, Quiz Taken date, Percentage Score, etc.
-* **Participants Wise Question Analytics Reports** – This report gives you data on every participant and how they have answered every question in the quiz.
-* **Quiz Questions Details Reports** – This report gives a list of questions that have been added to this quiz.
+* **Quiz Details**� A high-level overview of the quiz.
+* **Participants Report**� A list of all the participants to whom the quiz had been assigned along with Quiz Completion Status, Quiz Taken date, Percentage Score, etc.
+* **Participants Wise Question Analytics Reports**� This report gives you data on every participant and how they have answered every question in the quiz.
+* **Quiz Questions Details Reports**� This report gives a list of questions that have been added to this quiz.

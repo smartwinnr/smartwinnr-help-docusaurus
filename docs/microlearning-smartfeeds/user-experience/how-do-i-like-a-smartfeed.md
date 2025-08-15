@@ -15,7 +15,7 @@ Follow the below steps in the SmartWinnr app/web view to 'Like' a SmartFeed:
 
 Go to the **L****eft Menu bar > SmartFeeds.**
 
-Alternative approach:Â **Go to Learning > SmartFeeds.**
+Alternative approach:Â**Go to Learning > SmartFeeds.**
 
 It opens the following screen where you will see a list of SmartFeeds that are assigned to you.
 

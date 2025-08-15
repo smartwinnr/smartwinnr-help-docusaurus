@@ -11,11 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/29-how-to-edit-a-smartfeed
 ---
 Once the SmartFeed has been sent, there is an option to edit it if anything needs to be changed.
 
-When you click on a particular SmartFeed, You will find an ' **Edit'**Â option at the _top right_ corner.
+When you click on a particular SmartFeed, You will find an ' **Edit'**Âoption at the _top right_ corner.
 
 [![](/img/learning/helpscout-image-990be4d5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff0a7de495a886ca782954b/file-sOpQVX53IJ.png)
 
-Clicking on it will open the belowÂ edit screen where the SmartFeed can be edited.
+Clicking on it will open the belowÂedit screen where the SmartFeed can be edited.
 
 [![](/img/learning/helpscout-image-3e2e00e1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff0a89f495a886ca782954e/file-q1QVuq9S3y.png)
 

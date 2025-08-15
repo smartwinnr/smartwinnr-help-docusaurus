@@ -4,22 +4,25 @@ import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
 import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 
-// Create direct links for docs sections
+// Create direct links for docs sections based on actual sidebar structure
 function DocsMobileMenuItems(): ReactNode {
   const mobileSidebar = useNavbarMobileSidebar();
   const location = useLocation();
   
   const docsItems = [
-    { label: 'Getting Started with SmartWinnr', to: '/' },
-    { label: 'Quiz', to: '/quiz' },
-    { label: 'Microlearning', to: '/microlearning' },
-    { label: 'Competitions', to: '/competitions' },
-    { label: 'KPI Gamification', to: '/kpi-gamification' },
-    { label: 'SmartPath', to: '/smartpath' },
-    { label: 'Reports', to: '/reports' },
-    { label: 'Users', to: '/users' },
-    { label: 'Forms', to: '/forms' },
-    { label: 'Admin', to: '/admin' }
+    { label: '🚀 Getting Started', to: '/getting-started' },
+    { label: '📝 Quiz & Assessments', to: '/quiz-assessments' },
+    { label: '🧠 MicroLearning & SmartFeeds', to: '/microlearning-smartfeeds' },
+    { label: '🛤️ Learning & SmartPaths', to: '/learning-smartpaths' },
+    { label: '📋 Forms & Data Collection', to: '/forms-data-collection' },
+    { label: '📚 Knowledge Hub', to: '/knowledge-hub' },
+    { label: '📊 Surveys & Feedback', to: '/surveys-feedback' },
+    { label: '📈 Analytics & Reporting', to: '/analytics-reporting' },
+    { label: '🏆 Competitions & Gamification', to: '/competitions-gamification' },
+    { label: '🎯 Coaching & Performance', to: '/coaching-performance' },
+    { label: '👑 Administration', to: '/administration' },
+    { label: '📱 Mobile & Platform Tools', to: '/mobile-platform-tools' },
+    { label: '🆘 Help & Support', to: '/help-support' }
   ];
 
   return (
@@ -27,7 +30,7 @@ function DocsMobileMenuItems(): ReactNode {
       {docsItems.map((item, i) => (
         <li key={i} className="menu__list-item">
           <Link
-            className={`menu__link ${location.pathname === item.to ? 'menu__link--active' : ''}`}
+            className={`menu__link ${location.pathname.startsWith(item.to) ? 'menu__link--active' : ''}`}
             to={item.to}
             onClick={() => mobileSidebar.toggle()}
           >

@@ -36,7 +36,7 @@ SmartWinnr's Quiz module helps you create engaging assessments to test knowledge
 
 ### Creating Your First Quiz
 
-1. Navigate to **Quiz** → **Create Quiz**
+1. Navigate to **Quiz**  **Create Quiz**
 2. Choose quiz type and settings
 3. Add questions from library or create new ones
 4. Set scoring and timing options

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/52-how-to-activate-automatic-
 ---
 Automated reminder feature allows you to create and schedule reminders to be delivered to the quiz takers about their assigned quizzes. Below are the steps to set a reminder to a quiz:
 
-Go to **EDITOR >**Â **LEARNING AND KNOWLEDGE >**Â **Questions and Quizzes > View All Quizzes > Add New Quiz.**
+Go to **EDITOR >**Â**LEARNING AND KNOWLEDGE >**Â**Questions and Quizzes > View All Quizzes > Add New Quiz.**
 
 ![](/img/quizzes/helpscout-image-86490f1a.png)
 
@@ -21,7 +21,7 @@ Once you fill all the details for creating the quiz, navigate to the last sectio
 
 You can also schedule a reminder to an already created quiz. Follow the below steps to set a reminder to an already created quiz:
 
-EDITOR >Â LEARNING AND KNOWLEDGE >Â Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quizzes to which you want to add the reminder.
+EDITOR >ÂLEARNING AND KNOWLEDGE >ÂQuestions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quizzes to which you want to add the reminder.
 
 ![](/img/quizzes/helpscout-image-95f12b37.png)It opens the following page:
 
@@ -29,24 +29,24 @@ EDITOR >Â LEARNING AND KNOWLEDGE >Â Questions and Quizzes > View All Quizzes. Cl
 
 Now, click the **Edit** button at the top right corner. Navigate to the last section which is "Schedule Reminder"
 
-Then, click the **Add** button at the top right corner of the Â **Schedule Reminder**Â section. It will open the following popup.
+Then, click the **Add** button at the top right corner of the Â**Schedule Reminder**Âsection. It will open the following popup.
 
 [![](/img/quizzes/helpscout-image-eb826d73.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4906723119734ee37edaa/file-0VAaM8Ffhn.png)
 
-**Send Type:**Â This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
+**Send Type:**ÂThis field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
 
-**Date to send:**Â Here, select the date and time when you want to send the reminder.
+**Date to send:**ÂHere, select the date and time when you want to send the reminder.
 
 **Send before end (In Days**): If you select "**Depends on Quiz End Date**" then you will see this field. Here, enter the number of days before the end date of the quiz when you want to send the reminder.
 
-**Send To:**Â Here you can choose to send it to "**Everyone**" or a "**Group**".
+**Send To:**ÂHere you can choose to send it to "**Everyone**" or a "**Group**".
 
-**Filter By:**Â Here you can filter the quiz takers to whom you want to send the reminder. There are 3 options to choose from-- "All", "Completed", "Not Completed".
+**Filter By:**ÂHere you can filter the quiz takers to whom you want to send the reminder. There are 3 options to choose from-- "All", "Completed", "Not Completed".
 
-**Teams:**Â If you have selected "Group" in the Send To field then you have to select the teams to whom you want to send the reminder.
+**Teams:**ÂIf you have selected "Group" in the Send To field then you have to select the teams to whom you want to send the reminder.
 
-**Message:**Â This will display the message that will be sent in the reminder. This field will have an auto-generated message but you can change it according to your requirement.
+**Message:**ÂThis will display the message that will be sent in the reminder. This field will have an auto-generated message but you can change it according to your requirement.
 
 Once you are done filling all these fields for the reminder, click the ****Save**** button. This will add the reminder successfully to the quiz.
 
-Once you fill all the details on this page, click on theÂ  **"Save and Add Questions"**Â to save the quiz.
+Once you fill all the details on this page, click on theÂ **"Save and Add Questions"**Âto save the quiz.

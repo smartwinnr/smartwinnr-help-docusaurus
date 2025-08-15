@@ -11,8 +11,8 @@ helpscout_url: https://help.smartwinnr.com/article/123-how-to-resend-account-inv
 ---
 ## Resend your account invitation
 
-In case the user is in â€œPendingâ€ state and have not received the invitation email, you can resent the invitation to the user. To resend the account invitation:
+In case the user is in Pending state and have not received the invitation email, you can resent the invitation to the user. To resend the account invitation:
 
-Go to ADMIN > Manage Users. Click on the user you want to resend the invitation to. Then select the â€œResend Invitationâ€ option from the hamburger menu. On clicking â€œResend Invitationâ€, SmartWinnr will resend the activation email.
+Go to ADMIN > Manage Users. Click on the user you want to resend the invitation to. Then select the Resend Invitation option from the hamburger menu. On clicking Resend Invitation, SmartWinnr will resend the activation email.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](/img/getting-started/helpscout-image-e0de297f.png)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](/img/getting-started/helpscout-image-e0de297f.png)

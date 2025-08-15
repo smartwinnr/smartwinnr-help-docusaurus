@@ -15,10 +15,10 @@ Once a survey is created with questions, send the survey to people who can take 
 
 \-It will open the Assign screen shown below. Use the search criteria to select and choose the participants.
 
-\-Once the required participants are selected, click on the ‘ **Send to Selected People**’ button at the bottom.
+\-Once the required participants are selected, click on the  **Send to Selected People** button at the bottom.
 
 You can also select a specific Group of participants to whom you want to send the Survey.  
-Go to Section –‘ Sending Quizzes, Surveys and Content Using Groups’.
+Go to Section  Sending Quizzes, Surveys and Content Using Groups.
 
 [![](/img/surveys/helpscout-image-b617944b.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0c0bcfe30d219ccdace1/file-UaT0iUY7V6.png)
 

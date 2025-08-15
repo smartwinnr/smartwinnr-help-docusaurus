@@ -15,7 +15,7 @@ Only a user with the editor role can create a survey.
 
 Follow the below steps to create a survey through SmartWinnr.
 
-Go to **Editor >Â LEARNING AND KNOWLEDGE >Surveys**. Click on the ' **Add New Survey'**Â button at the top right corner on the below page.
+Go to **Editor >ÂLEARNING AND KNOWLEDGE >Surveys**. Click on the ' **Add New Survey'**Âbutton at the top right corner on the below page.
 
 [![](/img/surveys/helpscout-image-d5a03077.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
 
@@ -25,7 +25,7 @@ It opens the following screen where you fill the details about the survey:
 
 ### **Here is how to fill each of the fields in the Create Survey page**
 
-**Type:**Â Here is where you get to select if you want to create aÂ **Survey**Â or aÂ **Survey Template**. [Learn about the difference between these two](https://smartwinnr.helpscoutdocs.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template).
+**Type:**ÂHere is where you get to select if you want to create aÂ**Survey**Âor aÂ**Survey Template**. [Learn about the difference between these two](https://smartwinnr.helpscoutdocs.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template).
 
 Since we are creating a survey here select Type = Survey.
 
@@ -33,17 +33,17 @@ Since we are creating a survey here select Type = Survey.
 
 [![](/img/surveys/helpscout-image-f64cb751.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49ca723119734ee37edbc/file-wpQ5PNDEho.png)
 
-**Question Visibility Type:**Â Here you will get to constrain the visibility of the survey questions to the users.
+**Question Visibility Type:**ÂHere you will get to constrain the visibility of the survey questions to the users.
 
-* SelectÂ **All**Â to make all the questions visible to the users at once.
-* SelectÂ **Individual**Â to make individual questions to appear at once.
-* SelectÂ **Section Wise**Â to create sections of the questions and make them visible to the participants section-wise.[![](/img/surveys/helpscout-image-bedebc65.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)Then, add the title and description of the survey. Give a Start and end date for the survey.  
+* SelectÂ**All**Âto make all the questions visible to the users at once.
+* SelectÂ**Individual**Âto make individual questions to appear at once.
+* SelectÂ**Section Wise**Âto create sections of the questions and make them visible to the participants section-wise.[![](/img/surveys/helpscout-image-bedebc65.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)Then, add the title and description of the survey. Give a Start and end date for the survey.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)  
-    **Anonymous response:**Â If you check this checkbox, the participants will be able to respond to the survey anonymously.  
+    **Anonymous response:**ÂIf you check this checkbox, the participants will be able to respond to the survey anonymously.  
 
-    **Send response to user:**Â If you check this checkbox, then the participants will receive an email with the responses that he has given for the survey questions.  
+    **Send response to user:**ÂIf you check this checkbox, then the participants will receive an email with the responses that he has given for the survey questions.  
 
-  ### **ScheduleÂ  Reminder**
+  ### **ScheduleÂ Reminder**
 
     [](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
 
@@ -80,11 +80,11 @@ Since we are creating a survey here select Type = Survey.
 
   ### Adding Sections to a Survey
 
-    If you selectÂ  **Question Visibility Type**Â =Â  **Section Wise,**Â then you will get to add sections to a survey. Click on the Â **"Add Sections"**Â button in theÂ  **Sections**.  
+    If you selectÂ **Question Visibility Type**Â=Â **Section Wise,**Âthen you will get to add sections to a survey. Click on the Â**"Add Sections"**Âbutton in theÂ **Sections**.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)  
     It opens the following popup:  
 ](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)[![](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)  
     Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click the ****Submit**** button.  
     [![](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)  
     Now click on the ' **Add Question**' in each section to add the questions to the section. [Learn the types of questions that you can add to a survey.](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)  
-    Once you are done filling up all these details, click on the â€˜ **Save New Survey**â€™ button. It will create the survey successfully.
+    Once you are done filling up all these details, click on the  **Save New Survey** button. It will create the survey successfully.

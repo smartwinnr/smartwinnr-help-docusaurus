@@ -21,7 +21,7 @@ Fill up the form title and description and set up the duration of the form. You 
 
 ![](/img/admin/helpscout-image-3efbe2c6.jpg)
 
-**Is Edit Allowed**\-Â By enabling this will allow the manager to make changes after approving any form submission.
+**Is Edit Allowed**\-ÂBy enabling this will allow the manager to make changes after approving any form submission.
 
 **Needs Approval**\- Enabling this will allow the manager to approve the submission before getting evaluated.
 

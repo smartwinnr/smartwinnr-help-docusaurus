@@ -37,7 +37,7 @@ The editor also needs to upload an appropriate image corresponding to the achiev
 
 After all the fields are successfully filled Click on "Create Achievement", the new achievement will be added.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/1099)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/1099)
 
 You can update the image for a certificate by clicking on the picture and add a box where you can enter the Sales Rep's name.
 

@@ -9,23 +9,23 @@ last_update:
 helpscout_id: 5fd4623dc868cb6df3a80fe9
 helpscout_url: https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-blank-question
 ---
-**The f**ill-in-the-blanks **question allows participantsÂ to write text answers.** _Please note that the answers given by the participants need to exactly match the answers given in the question._
+**The f**ill-in-the-blanks **question allows participantsÂto write text answers.** _Please note that the answers given by the participants need to exactly match the answers given in the question._
 
 **Here is how you can create a 'Fill in the Blanks' question.**
 
-1. Go toÂ **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2. Click on theÂ **'Add New Question'**Â button at the _top right_ _corner_[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
-3. On theÂ **'Create new Question'**Â select theÂ **'Question Type'**Â asÂ **â€˜Fill-in-the-blankâ€™.[![](/img/quizzes/helpscout-image-4a8d2402.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0359cfe30d219ccdacd8/file-i5MFzgcSxe.png)**
-4. Enter your question in the **â€˜Questionâ€™** field.
+1. Go toÂ**EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on theÂ**'Add New Question'**Âbutton at the _top right_ _corner_[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+3. On theÂ**'Create new Question'**Âselect theÂ**'Question Type'**ÂasÂ**Fill-in-the-blank.[![](/img/quizzes/helpscout-image-4a8d2402.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0359cfe30d219ccdacd8/file-i5MFzgcSxe.png)**
+4. Enter your question in the **Question** field.
 
     [![](/img/quizzes/helpscout-image-885e5130.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0412b9a8501b295d3643/file-rqg981JL7K.png)
 
-5. enter the appropriate â€˜answersâ€™ for the â€˜questionsâ€™ in the ****â€˜Itemsâ€™**** field.
+5. enter the appropriate answers for the questions in the ****Items**** field.
 
     [![](/img/quizzes/helpscout-image-c199eb29.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0bce2e764327f87c1a0e/file-im9UpcL4Kh.png)
 
-6. You can select the **â€˜Match Typeâ€™** to be either _â€˜Exact Matchâ€™, â€˜Partial Matchâ€™ or â€˜Ordered Partial Matchâ€™_ for a detailed explanation [click here.](#matchType)
-7. Use â€˜Feedbackâ€™ if you want to add additional information to a question. Â _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
+6. You can select the **Match Type** to be either _Exact Match, Partial Match or Ordered Partial Match_ for a detailed explanation [click here.](#matchType)
+7. Use Feedback if you want to add additional information to a question. Â_(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
 8. In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 
 **A note on copying questions from Microsoft Word  
@@ -33,22 +33,22 @@ helpscout_url: https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-
 Microsoft Word adds certain hidden characters and markups to every document. If you directly copy text from a Word document, these hidden artifacts can create the problem, especially in mobile devices. To avoid this issue, if you are copying any question from a Word document, please follow these steps:  
   
 Copy the text from the Word Document into Notepad. This removes all hidden markups.  
-Then copy the text from Notepad into SmartWinnr â†’ Question box.**
+Then copy the text from Notepad into SmartWinnr  Question box.**
 
 **Question**
 
 For the question, you can have various elements like Simple Text, Videos, Images, Links, or Audio.
 
-The **Match Type**Â option determines how the answer provided by the Quiz taker is matched with the correct answer provided for the question. There are three different match types provided for a fill in the blanks question:
+The **Match Type**Âoption determines how the answer provided by the Quiz taker is matched with the correct answer provided for the question. There are three different match types provided for a fill in the blanks question:
 
 * Exact Match - If the exact match option is selected for your fill in the blank question, the user will be given points only if his answer exactly matches with the answer (including the uppercase and lowercase characters, spelling, etc) provided for the question. For example, if the answer to the question is 'Delhi' with the exact match option, the system will not consider answers like 'Delhi' or 'New Delhi' or 'New Delhi' as correct answers.
-* Partial Match: If the PartialÂ match option is selected for your fill in the blank question, the user will be given points if his answer partially matches with the answer provided for the question. The Partial Match option asks you to enter the Match Threshold for the answer, which is the % to which answer provided by the quiz taker should match with the correct answer for the question. For example, if the answer to the question is 'Delhi' with the Match Threshold set to 60, answers like 'New Delhi' or 'Delhi' will be considered as the correct answer. [![](https://support.smartwinnr.com/api/v1/attachments/451)](https://support.smartwinnr.com/api/v1/attachments/451)
+* Partial Match: If the PartialÂmatch option is selected for your fill in the blank question, the user will be given points if his answer partially matches with the answer provided for the question. The Partial Match option asks you to enter the Match Threshold for the answer, which is the % to which answer provided by the quiz taker should match with the correct answer for the question. For example, if the answer to the question is 'Delhi' with the Match Threshold set to 60, answers like 'New Delhi' or 'Delhi' will be considered as the correct answer. [![](https://support.smartwinnr.com/api/v1/attachments/451)](https://support.smartwinnr.com/api/v1/attachments/451)
 
 You can check if variations of the answer provided will be valid or invalid with the check option against the item.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â [![](/img/quizzes/helpscout-image-83e9dd5c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffea172cfe30d219ccd71ca/file-MgM11OYwFn.png)
+Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ[![](/img/quizzes/helpscout-image-83e9dd5c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffea172cfe30d219ccd71ca/file-MgM11OYwFn.png)
 
-* Ordered Partial Match: If the OrderedÂ PartialÂ match option is selected for your fill in the blank question, the quiz taker will be given points only if his answer and the order of the words in his answer matches with the answer provided for the question. For example, if the answer is 'United States of America' with a match threshold as 85 and the participant has provided his answer as 'The United States' or 'America' will be considered as a valid answer whereas an answer like 'United States America' will be an invalid answer.
+* Ordered Partial Match: If the OrderedÂPartialÂmatch option is selected for your fill in the blank question, the quiz taker will be given points only if his answer and the order of the words in his answer matches with the answer provided for the question. For example, if the answer is 'United States of America' with a match threshold as 85 and the participant has provided his answer as 'The United States' or 'America' will be considered as a valid answer whereas an answer like 'United States America' will be an invalid answer.
 
 **Text**
 

@@ -11,16 +11,16 @@ helpscout_url: https://help.smartwinnr.com/article/160-how-to-post-a-query-from-
 ---
 Open the SmartWinnr app and go to the left menu bar. Click on "QResolve".
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/707)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/707)
 
-Â  It opens the following screen:
+Â It opens the following screen:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/708)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/708)
 
 Now, click the **+** button at the bottom right corner of the screen as shown in the above picture. It will open the following screen where you can enter your query:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/709)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/709)
 
-Â  You can also choose to post anonymously by checking the option "Post Anonymously".
+Â You can also choose to post anonymously by checking the option "Post Anonymously".
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/710)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/710)

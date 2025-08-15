@@ -17,7 +17,7 @@ Click on the **profile picture** at the top of the menu. It will take you to the
 
 ![](/img/getting-started/google-image-f42fb7ac.png)
 
-Click onÂ  Â **Settings** icon at the top right corner highlighted in red_._Â It will take you to the settings page here click onÂ **Change Password**. It will take you to the 'Change Password' page, where you will have to enter your old password and the new password to which it should be updated and re enter the new password. Then click on the **Change Password** option to update the password for your SmartWinnr account.
+Click onÂ Â**Settings** icon at the top right corner highlighted in red_._ÂIt will take you to the settings page here click onÂ**Change Password**. It will take you to the 'Change Password' page, where you will have to enter your old password and the new password to which it should be updated and re enter the new password. Then click on the **Change Password** option to update the password for your SmartWinnr account.
 
 ![](https://lh6.googleusercontent.com/s-P3-RJmoRQ6oScZpClIzqFxpwKMW1RLWZAB-xmfFQPLCl6hAaY9YNeOjAGaidtMGPewwW7MrjlpanbhcXvCgeZN_HZnjSeU6NK0c2xDnuNRQFFBoygyUifnqWyj7JyWj3UdiERM)
 

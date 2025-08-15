@@ -25,22 +25,22 @@ This document outlines the comprehensive plan for implementing an automated scre
 ### Core Components
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                Automated Screenshot Capture                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │   Navigation    │  │   Capture       │  │  Processing │  │
-│  │   Controller    │  │    Engine       │  │   Manager   │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-│           │                     │                   │       │
-│           ▼                     ▼                   ▼       │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │   Puppeteer     │  │  Screenshot     │  │   Image     │  │
-│  │   Browser       │  │   Capture       │  │ Optimization│  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+
+                Automated Screenshot Capture                 
+
+                                                             
+        
+     Navigation         Capture           Processing   
+     Controller          Engine            Manager     
+        
+                                                          
+                                                          
+        
+     Puppeteer         Screenshot          Image       
+     Browser            Capture          Optimization  
+        
+                                                             
+
 ```
 
 ### Component Details
@@ -369,19 +369,19 @@ Examples:
 
 ```
 /static/img/screenshots/
-├── admin/                    # Admin portal screenshots
-│   ├── user-management/
-│   ├── system-config/
-│   └── reports/
-├── manager/                  # Manager view screenshots  
-│   ├── quiz-creation/
-│   ├── team-management/
-│   └── analytics/
-├── user/                     # User view screenshots
-│   ├── dashboard/
-│   ├── quizzes/
-│   └── learning/
-└── screenshot-mapping.json   # Screenshot metadata
+ admin/                    # Admin portal screenshots
+    user-management/
+    system-config/
+    reports/
+ manager/                  # Manager view screenshots  
+    quiz-creation/
+    team-management/
+    analytics/
+ user/                     # User view screenshots
+    dashboard/
+    quizzes/
+    learning/
+ screenshot-mapping.json   # Screenshot metadata
 ```
 
 ### Puppeteer Configuration
@@ -592,9 +592,9 @@ describe('Screenshot Capture', () => {
 
 ### ROI Calculation
 
-- **Manual Screenshot Time**: 15 minutes/screenshot × 681 = 170 hours
-- **Manual Time Value**: 170 hours × $50/hr = $8,500
-- **Maintenance Savings**: 2 hours/week × 52 weeks × $50/hr = $5,200/year
+- **Manual Screenshot Time**: 15 minutes/screenshot � 681 = 170 hours
+- **Manual Time Value**: 170 hours � $50/hr = $8,500
+- **Maintenance Savings**: 2 hours/week � 52 weeks � $50/hr = $5,200/year
 - **Total Annual Value**: $8,500 + $5,200 = $13,700
 - **Payback Period**: 9 months
 

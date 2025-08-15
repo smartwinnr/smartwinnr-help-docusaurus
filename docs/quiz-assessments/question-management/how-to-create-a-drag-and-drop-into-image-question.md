@@ -9,20 +9,20 @@ last_update:
 helpscout_id: 641a2e5bdf67f62fb768a4ca
 helpscout_url: https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-drop-into-image-question
 ---
-##### AÂ Drag and Drop into Image QuestionÂ allows the participants to drag and drop the correct answer to the given image
+##### AÂDrag and Drop into Image QuestionÂallows the participants to drag and drop the correct answer to the given image
 
 ##### Below are the steps to create a missing words question
 
-1. Go toÂ EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.
-2. Click on theÂ 'Add New Question'Â button at theÂ _top right corner_.
+1. Go toÂEDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.
+2. Click on theÂ'Add New Question'Âbutton at theÂ_top right corner_.
 
     ![](/img/quizzes/helpscout-image-c202566f.png)
 
-3. On theÂ 'Create new Question'Â select theÂ 'Question Type'Â asÂ Drag and Drop into Image.
+3. On theÂ'Create new Question'Âselect theÂ'Question Type'ÂasÂDrag and Drop into Image.
 
     ![](/img/quizzes/helpscout-image-8b12fefc.png)
 
-4. Enter your question in theÂ â€˜Questionâ€™Â field.
+4. Enter your question in theÂQuestionÂfield.
 
     ![](/img/quizzes/helpscout-image-f6ab2f99.png)
 
@@ -34,13 +34,13 @@ helpscout_url: https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-
 
 **Question Feedback**
 
-UseÂ â€˜Correct Feedbackâ€™Â andÂ **'Incorrect Feedback'**Â if you want to add additional information to a question. Â (Optional)
+UseÂCorrect FeedbackÂandÂ**'Incorrect Feedback'**Âif you want to add additional information to a question. Â(Optional)
 
 _The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
 
-**SelectÂ Categories**
+**SelectÂCategories**
 
-In SmartWinnr,Â _every question requires at least one category_. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.
+In SmartWinnr,Â_every question requires at least one category_. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.
 
 [![](https://ci3.googleusercontent.com/proxy/Dxio6E9FHcj9pCDrrxc4mRMkENRvHjKKDIUEgIoiUK_DjgMbHelH4NNC7IOZKR4DIU19gS0QF6bGS9FA8kMpX_ntMlO2T2peIrPUkVY7vkLqsgpiyLUozufO8omN6KS-_5jniqAtsQwjNp-tzl2iEmStfo4fx6GiNOFjA2w9-4jVGNUeTPFVkS73P2oYmrZFZQ=s0-d-e1-ft#https://d33v4339jhl8k0.cloudfront.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 

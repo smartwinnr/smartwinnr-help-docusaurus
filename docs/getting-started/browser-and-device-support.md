@@ -17,6 +17,6 @@ SmartWinnr works best with latest Chrome. Firefox and Edge browsers. IE might no
 
 The SmartWinnr App is supported by the following devices:
 
-1.Â Android version above 5
+1.ÂAndroid version above 5
 
-2.Â IOS version 11 and above
+2.ÂIOS version 11 and above

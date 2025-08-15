@@ -21,7 +21,7 @@ Select the Business Unit that you want to check the report. You can also select 
 
 Here you can see the analytics for the Quizzes where you get the total count, questions, average score, and statistics about the quizzes.
 
-Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, andÂ statistics about the SmartPaths.
+Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, andÂstatistics about the SmartPaths.
 
 ![](/img/quizzes/helpscout-image-50ddd60e.jpg)
 

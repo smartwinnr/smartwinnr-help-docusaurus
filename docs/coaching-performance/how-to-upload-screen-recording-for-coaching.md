@@ -15,7 +15,7 @@ Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assig
 
 ![](/img/coaching/helpscout-image-bcacd807.png)
 
-Step:2 On the coaching details page, click on the **“Record Screen”** button to record your screen.
+Step:2�On the coaching details page, click on the **Record Screen** button to record your screen.
 
 ![](/img/coaching/helpscout-image-733f1a91.png)
 
@@ -26,10 +26,10 @@ Step:3 Here you can click on the screen share icon and record the screen which y
 
 ![](/img/coaching/helpscout-image-2d930bc2.png)
 
-Step:4  Once the screen is recorded successfully. Kindly click on the **“Upload Recorded File”** button to upload that recording file.
+Step:4� Once the�screen is recorded successfully. Kindly click on the **Upload Recorded File** button to upload that recording file.
 
 ![](/img/coaching/helpscout-image-e879165d.png)
 
-Step:5  After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.
+Step:5� After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.
 
 ![](/img/coaching/helpscout-image-6d5d2c36.png)

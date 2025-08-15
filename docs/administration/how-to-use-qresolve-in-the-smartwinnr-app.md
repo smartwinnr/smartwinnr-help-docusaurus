@@ -13,26 +13,26 @@ Follow the below steps in order to access QResolve in the SmartWinnr app:
 
 Go to the Left Menu > QResolve. It opens the following screen:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/693)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/693)
 
-Â  You can click on a particular query to answer it or to view other's answers to it.
+Â You can click on a particular query to answer it or to view other's answers to it.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/694)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/694)
 
-Here you can type your answer in the text box and click on the above shownÂ Â button to submit your answer.
+Here you can type your answer in the text box and click on the above shownÂÂbutton to submit your answer.
 
 ### Liking a Query Or Disliking a Query
 
-In order to like a query ,User can click on the Thumbs up ButtonÂ  And for Disliking a query ,User can hit the Thumbs Down button.
+In order to like a query ,User can click on the Thumbs up ButtonÂ And for Disliking a query ,User can hit the Thumbs Down button.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/695)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/695)
 
 You can go to QResolve in the app and then click on the star icon at the top right corner of the screen to view the questions that you have marked as your favourite.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/696)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/696)
 
 ### Comment on an answer
 
-You can also post your reply/comment to an answer. To do that, click on the comments under the answer, enter your comment in the text box and click on theÂ  button next to the comment box.
+You can also post your reply/comment to an answer. To do that, click on the comments under the answer, enter your comment in the text box and click on theÂ button next to the comment box.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/697)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/697)

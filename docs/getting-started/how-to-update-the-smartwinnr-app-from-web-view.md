@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/291-how-to-update-the-smartwi
 ---
 ## Below are the steps to update the SmartWinnr app from Web View
 
-Login the SmartWinnr web view andÂ click on theÂ **profile picture**Â at the top. It will take you to the following screen.Â Click onÂ SettingsÂ icon at the top right corner which is highlighted in red.
+Login the SmartWinnr web view andÂclick on theÂ**profile picture**Âat the top. It will take you to the following screen.ÂClick onÂSettingsÂicon at the top right corner which is highlighted in red.
 
 ![](/img/getting-started/helpscout-image-048ab2ea.png)
 

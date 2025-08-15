@@ -16,7 +16,7 @@ Go to Admin>>Manage Divisions, it will open the following page
 1. Business Unit
 2. Country
 
-* For Adding Division using Business Unit, you need to select the Business unit tab and then click on "Add More Business Unit", it will open the followingÂ  pop up
+* For Adding Division using Business Unit, you need to select the Business unit tab and then click on "Add More Business Unit", it will open the followingÂ pop up
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1121)
 

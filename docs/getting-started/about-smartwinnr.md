@@ -22,47 +22,47 @@ Different organizations use SmartWinnr for various purposes, making it a flexibl
 
 ## Key Features
 
-### 🎯 **Learning & Training**
+### **Learning & Training**
 
 - **SmartFeeds:** Bite-sized content delivery for continuous learning
 - **SmartPaths:** Structured learning journeys with modules and sessions
 - **Knowledge Hub (KHub):** Centralized repository for training materials
 
-### 📝 **Quizzes & Assessments**
+### **Quizzes & Assessments**
 
 - Multiple question types (MCQ, fill-in-blanks, long answers, etc.)
 - Automated and manual quiz creation
 - Comprehensive analytics and reporting
 - Knowledge reinforcement through gamified quizzes
 
-### 🏆 **Competitions & Gamification**
+### **Competitions & Gamification**
 
 - Individual, group, and manager challenges
 - KPI-based competitions and scorecards
 - Badges, certificates, and achievement systems
 - Leaderboards and progress tracking
 
-### 🎯 **Coaching & Performance**
+### **Coaching & Performance**
 
 - Video coaching assignments
 - Field coaching with competency tracking
 - Manager review and feedback systems
 - Performance analytics and insights
 
-### 📊 **Reports & Analytics**
+### **Reports & Analytics**
 
 - Detailed learner progress reports
 - Team performance analytics
 - Quiz and competition insights
 - Custom scorecards and KPI tracking
 
-### 📋 **Surveys & Feedback**
+### **Surveys & Feedback**
 
 - Survey creation and templates
 - Feedback collection and analysis
 - Survey analytics and reporting
 
-### 👥 **Administration**
+### **Administration**
 
 - User management and permissions
 - Organizational configuration

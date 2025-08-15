@@ -27,7 +27,7 @@ Select the desired coaching assignment for which you would like to check the res
 
 ![](/img/coaching/helpscout-image-933357df.png)
 
-You can filter the completion status as Completed and not Completed which will help you to find the list of users who have submitted the response videosÂ and not submitted theÂ response videos for the select coaching assignment.
+You can filter the completion status as Completed and not Completed which will help you to find the list of users who have submitted the response videosÂand not submitted theÂresponse videos for the select coaching assignment.
 
 ![](/img/coaching/helpscout-image-68d58e90.png)
 

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/147-how-can-i-edit-a-khub-ite
 ---
 Once you create a KHub item, you have an option to edit it in case you need to change anything. Below are the steps to edit a KHub item:
 
-EDITOR >Â LEARNING AND KNOWLEDGE >Â KHub > KHub. Open an existing folder and then open the item that you want to edit in it. This opens the following page:
+EDITOR >ÂLEARNING AND KNOWLEDGE >ÂKHub > KHub. Open an existing folder and then open the item that you want to edit in it. This opens the following page:
 
 ![](/img/learning/helpscout-image-222933a5.png)  
 

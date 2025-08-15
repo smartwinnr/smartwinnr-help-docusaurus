@@ -16,12 +16,12 @@ You can change the password of a user by following the below steps.
 Go to
 > **Note**: This feature requires Administrator permissions.
 
-ADMIN > Manage Users. Click on the â€œChange Passwordâ€ button.
+ADMIN > Manage Users. Click on the Change Password button.
 
 Only users with
 > **Note**: This feature requires Administrator permissions.
 
-admin role can change the password. Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](/img/admin/helpscout-image-9d9e0a11.png)
+admin role can change the password. Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](/img/admin/helpscout-image-9d9e0a11.png)
 
 The password you select needs to confirm with your organizational password policy as defined in the SmartWinnr system.
 

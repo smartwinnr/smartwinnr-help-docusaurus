@@ -15,14 +15,14 @@ End users/sales reps can access the SCORM course from their SmartWinnr account b
 
 ![](/img/learning/helpscout-image-06def1a7.png)
 
-2\. Open the SmartPath, it will take you to the following screen. Click on the button with an “**Arrow**” to see the course.
+2\. Open the SmartPath, it will take you to the following screen. Click on the button with an **Arrow** to see the course.
 
 ![](/img/learning/helpscout-image-2ba9d6fe.png)
 
-3\. It will take you to the course. Click on the button “**START PLAYING**” to move to the course.
+3\. It will take you to the course. Click on the button **START PLAYING** to move to the course.
 
 ![](/img/learning/helpscout-image-502b2f7d.png)
 
-4\. Click on the button “**START COURSE**”.It will open the course and the sales rep can take it.
+4\. Click on the button **START COURSE**.It will open the course and the sales rep can take it.
 
 ![](/img/learning/helpscout-image-218e5869.png)

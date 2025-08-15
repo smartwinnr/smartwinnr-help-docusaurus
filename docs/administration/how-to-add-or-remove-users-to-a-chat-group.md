@@ -11,11 +11,11 @@ helpscout_url: https://help.smartwinnr.com/article/155-how-to-add-or-remove-user
 ---
 Follow the below steps in order to add or delete members from the group:
 
-Go to EDITORÂ >Â Settings > Groups. Click on a group. It opens the below page:
+Go to EDITORÂ>ÂSettings > Groups. Click on a group. It opens the below page:
 
 ![](/img/admin/helpscout-image-7de389b4.png)
 
-Â  Click on "**Group Members**" tab from here. Then, click the ****Edit Members**** button.
+Â Click on "**Group Members**" tab from here. Then, click the ****Edit Members**** button.
 
 ![](/img/admin/helpscout-image-7277d39c.png)
 

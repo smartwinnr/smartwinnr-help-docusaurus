@@ -11,13 +11,13 @@ helpscout_url: https://help.smartwinnr.com/article/226-form-analytics
 ---
 Follow the below steps to view Form analytics.
 
-Go to EDITOR >Â PERFORMANCE > Forms > View All Forms.
+Go to EDITOR >ÂPERFORMANCE > Forms > View All Forms.
 
 ![](/img/reports/helpscout-image-4c142f08.png)
 
-Form analytics gives all forms that have been submitted by the users and can be accessed by clicking on theÂ analytics buttonÂ of that form type.
+Form analytics gives all forms that have been submitted by the users and can be accessed by clicking on theÂanalytics buttonÂof that form type.
 
-Now underÂ Analytics, click on the analytics icon against the form for which you want to view the analytics.
+Now underÂAnalytics, click on the analytics icon against the form for which you want to view the analytics.
 
 You will be taken to the following page, where the analytics of the selected form is displayed.
 
@@ -34,9 +34,9 @@ All : If you select the status as 'All' from the available statuses,It will show
 
 Pending : If you filter with status 'Pending',It will show the pending submissions for approval.
 
-Approved :Â If you filter with status 'Approved',It will show the forms that are approved by the approver.
+Approved :ÂIf you filter with status 'Approved',It will show the forms that are approved by the approver.
 
-Rejected :Â If you filter with status 'Rejected',It will show theÂ Â forms that are rejectedÂ by the approver due to some reason.
+Rejected :ÂIf you filter with status 'Rejected',It will show theÂÂforms that are rejectedÂby the approver due to some reason.
 
 * Various Search options: You can filter the submissions with Name,Email,Business Unit and Group.
 
@@ -44,6 +44,6 @@ Rejected :Â If you filter with status 'Rejected',It will show theÂ Â forms that 
 
 You can download the form report using the download option.
 
-Click on the '**Download Report'** Button which is present towards the right corner.Â The report will be downloaded as an excel sheet.
+Click on the '**Download Report'** Button which is present towards the right corner.ÂThe report will be downloaded as an excel sheet.
 
 The report will consists of user responses,approveal status and approver feedback.

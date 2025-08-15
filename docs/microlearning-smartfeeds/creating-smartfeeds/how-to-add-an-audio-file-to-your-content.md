@@ -15,7 +15,7 @@ Click on the audio icon to attach the audio file to your SmartFeed or to the que
 
 ![](https://support.smartwinnr.com/api/v1/attachments/105)
 
-Once you click on the audio icon,Â the following pop-up comes up.
+Once you click on the audio icon,Âthe following pop-up comes up.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/106)
 

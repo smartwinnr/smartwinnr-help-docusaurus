@@ -15,9 +15,9 @@ Once a task like a quiz, survey, coaching, SmartFeeds, competition etc are creat
 
 Follow the below steps in order to give other editor access to a task you created in SmartWinnr:
 
-Go toÂ theÂ task to which you would like to give access. For example, if you need to give access to a quiz that you have created in SmartWinnr, goto Left Menu >> Editor>> Questions and Quizzes >> View all quizzes. Here, select the required quiz for which you would like to give access.
+Go toÂtheÂtask to which you would like to give access. For example, if you need to give access to a quiz that you have created in SmartWinnr, goto Left Menu >> Editor>> Questions and Quizzes >> View all quizzes. Here, select the required quiz for which you would like to give access.
 
-![](/img/quizzes/helpscout-image-daf11918.png)This will take you to the quiz that you have selected.Â Click on the hamburger icon at the top right-hand corner of the page and then choose the 'Access Permission' option.
+![](/img/quizzes/helpscout-image-daf11918.png)This will take you to the quiz that you have selected.ÂClick on the hamburger icon at the top right-hand corner of the page and then choose the 'Access Permission' option.
 
 ![](/img/quizzes/helpscout-image-5115308a.png)
 
@@ -29,9 +29,9 @@ Once you have selected the users, click on the '**Save**' button to save the cha
 
 ### How will it appear to the people who have got permission
 
-An editor who has been given permission to access an activity/task will be able to see it under theÂ **others tab** of quiz/survey/smartfeeds/coachings etc.
+An editor who has been given permission to access an activity/task will be able to see it under theÂ**others tab** of quiz/survey/smartfeeds/coachings etc.
 
-Below is a screenshot of how an Editor will be able to see the quizzes that he has been given accessÂ to.
+Below is a screenshot of how an Editor will be able to see the quizzes that he has been given accessÂto.
 
 ![](/img/quizzes/helpscout-image-baa4fc60.png)
 

@@ -11,50 +11,50 @@ helpscout_url: https://help.smartwinnr.com/article/47-troubleshoot-for-common-er
 ---
 Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:
 
-**1\. Error:**Â Question text can't be empty
+**1\. Error:**ÂQuestion text can't be empty
 
 **Why does this error occur**?:- If you leave a question text column blank.
 
-**How can you fix the error?:-**Â Enter the question text
+**How can you fix the error?:-**ÂEnter the question text
 
-**2\. Error:**Â Internals is not a correct category for this division
+**2\. Error:**ÂInternals is not a correct category for this division
 
 **Why does this error occur**?:- If the given categories do not exist in the division
 
-**How can you fix the error?:-**Â Change the categories, that exists in the selected division or default division (if there is only one division)
+**How can you fix the error?:-**ÂChange the categories, that exists in the selected division or default division (if there is only one division)
 
-**3\. Error:**Â Only one tag is allowed from each category for a division
+**3\. Error:**ÂOnly one tag is allowed from each category for a division
 
 **Why does this error occur**?:- You can't select more than one tags from a single category
 
-**How can you fix the error?:-**Â Keep only one tag from each category.
+**How can you fix the error?:-**ÂKeep only one tag from each category.
 
-**4\. Error:**Â Categories column value can't be blank
+**4\. Error:**ÂCategories column value can't be blank
 
 **Why does this error occur**?:- If you leave a categories column blank.
 
-**How can you fix the error?:-**Â Enter at least one category
+**How can you fix the error?:-**ÂEnter at least one category
 
-**5\. Error:**Â Question type is incorrect. Required values are: \[multiselect, fill in the blanks, matching\]
+**5\. Error:**ÂQuestion type is incorrect. Required values are: \[multiselect, fill in the blanks, matching\]
 
 **Why does this error occur**?:- If question type does not match from \[multiselect, fill in the blanks, matching\]
 
-**How can you fix the error?:-**Â Enter question type from \[multiselect, fill in the blanks, matching\]
+**How can you fix the error?:-**ÂEnter question type from \[multiselect, fill in the blanks, matching\]
 
-**6\. Error:**Â Correct Answer number does not match with given answer options.
+**6\. Error:**ÂCorrect Answer number does not match with given answer options.
 
 **Why does this error occur**?:- If answer options are only 3 and trying to keep the 4th option as the correct option
 
-**How can you fix the error?:-**Â Check your number of answer options and the correct option index number
+**How can you fix the error?:-**ÂCheck your number of answer options and the correct option index number
 
-**7\. Error:**Â Matching left and right side options should be of equal length
+**7\. Error:**ÂMatching left and right side options should be of equal length
 
 **Why does this error occur**?:- If the question type is Matching and you have an unequal number of left and right side options
 
-**How can you fix the error?:-**Â Enter the equal number of matching left and right side options
+**How can you fix the error?:-**ÂEnter the equal number of matching left and right side options
 
 **8\. Error: French language is not allowed in this division.**
 
-**Why does this error occur?:-**Â Specified language is not allowed for the user who is uploading the CSV
+**Why does this error occur?:-**ÂSpecified language is not allowed for the user who is uploading the CSV
 
-**How can you fix the error?:-**Â Enter the allowed language or leave it empty (By default it takes the language of the user)
+**How can you fix the error?:-**ÂEnter the allowed language or leave it empty (By default it takes the language of the user)

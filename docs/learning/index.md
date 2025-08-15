@@ -12,7 +12,7 @@ SmartWinnr's learning system provides comprehensive tools for content delivery, 
 
 Our learning platform supports three main content delivery methods:
 
-### 📱 **SmartFeeds** - Bite-sized Content Delivery
+### **SmartFeeds** - Bite-sized Content Delivery
 
 Short, focused content snippets that reinforce important information without lengthy training sessions. Perfect for:
 
@@ -21,7 +21,7 @@ Short, focused content snippets that reinforce important information without len
 - Just-in-time learning support
 - Regular information sharing
 
-### 🛤️ **SmartPaths** - Structured Learning Journeys
+### **SmartPaths** - Structured Learning Journeys
 
 Organized learning sequences that guide learners through comprehensive skill development. Ideal for:
 
@@ -30,7 +30,7 @@ Organized learning sequences that guide learners through comprehensive skill dev
 - Certification pathways
 - Progressive competency development
 
-### 📚 **Knowledge Hub (KHub)** - Centralized Repository
+### **Knowledge Hub (KHub)** - Centralized Repository
 
 Searchable content library providing instant access to organizational knowledge. Great for:
 

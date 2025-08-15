@@ -13,24 +13,24 @@ Once a document is uploaded in the KHub by the EDITOR, it is then available for 
 
 Open the SmartWinnr app and navigate through the left menu bar. Click on "KHub". It opens the following page:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/717)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/717)
 
 Here, you will be able to see all the KHub items and folders. These items are categorized into 4 categories-- Trending, Recent, New and favorite.
 
 Let us see what each one of this KHub category is about:
 
-Trending:Â This section shows all the KHub items that are trending and are viewed by most people.
+Trending:ÂThis section shows all the KHub items that are trending and are viewed by most people.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/718)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/718)
 
-Recent Searches:Â As the name suggests, this section shows the KHub items that people have recently searched.
+Recent Searches:ÂAs the name suggests, this section shows the KHub items that people have recently searched.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/719)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/719)
 
 New: This section shows the newly added KHub items.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/720)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/720)
 
-Favourites:Â This section shows items which are added as favourites.
+Favourites:ÂThis section shows items which are added as favourites.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/1109)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/1109)

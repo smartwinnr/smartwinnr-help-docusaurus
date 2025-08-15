@@ -11,35 +11,35 @@ helpscout_url: https://help.smartwinnr.com/article/179-how-to-create-an-individu
 ---
 Follow the below steps in order to create an individual challenge:
 
-Go to EDITOR >Â PERFORMANCEÂ > Challenges. Click on the 'Create Challenge' button.Â  This will open up the following page where you can fill the details of the challenge.
+Go to EDITOR >ÂPERFORMANCEÂ> Challenges. Click on the 'Create Challenge' button.Â This will open up the following page where you can fill the details of the challenge.
 
 ![](/img/competitions/helpscout-image-89e48909.png)
 
-Challenge Name:Â Give the name of the challenge.
+Challenge Name:ÂGive the name of the challenge.
 
-Challenge Description:Â Give a description of the challenge.
+Challenge Description:ÂGive a description of the challenge.
 
-Division:Â Select a business unit for which the challenge is being created.
+Division:ÂSelect a business unit for which the challenge is being created.
 
-KPI:Â Select a KPI for the challenge.
+KPI:ÂSelect a KPI for the challenge.
 
-Challenge Type:Â This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'User' to create an individual challenge.
+Challenge Type:ÂThis is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'User' to create an individual challenge.
 
-Start Date and End Date:Â Specify the start date and end date for the challenge.
+Start Date and End Date:ÂSpecify the start date and end date for the challenge.
 
-Win:Â Specify the points to be allotted to the winning side.
+Win:ÂSpecify the points to be allotted to the winning side.
 
-Lose:Â Specify the pints to be allotted to the losing side.
+Lose:ÂSpecify the pints to be allotted to the losing side.
 
-Draw:Â Specify the points to be allotted in case of a draw.
+Draw:ÂSpecify the points to be allotted in case of a draw.
 
-No Points:Â Specify the points to be given if either of the participants does not score any points in the KPI.
+No Points:ÂSpecify the points to be given if either of the participants does not score any points in the KPI.
 
-Select Challenge Pairs:Â This section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button to add pairs of competitors. It opens the following pop-up.
+Select Challenge Pairs:ÂThis section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button to add pairs of competitors. It opens the following pop-up.
 
-Â  Â  Â  Â  Â  Â  Â ![](/img/competitions/helpscout-image-0dc68864.png)
+Â Â Â Â Â Â Â![](/img/competitions/helpscout-image-0dc68864.png)
 
-Since you have selected the 'Challenge Type' as 'User', you will get to select individual participants as a pair of competitorsÂ for the challenge. Click on the 'Add' button, once you have added the pairs of participants.
+Since you have selected the 'Challenge Type' as 'User', you will get to select individual participants as a pair of competitorsÂfor the challenge. Click on the 'Add' button, once you have added the pairs of participants.
 
 You can create multiple pairs very quickly, by continuing to add pairs with the 'Add Pair' button. This is how it will look:
 

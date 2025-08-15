@@ -17,7 +17,7 @@ Click on the above-shown button to reveal the various options of the Hamburger m
 
 The options are as follows:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/1075)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/1075)
 
 ## 1.Escalation Matrix
 
@@ -31,7 +31,7 @@ This page also shows the Users that have been assigned the tasks.
 
 ###
 
-* Â Advance Search
+* ÂAdvance Search
 
 Advanced search is a feature that gives the editor "Advanced search features" like:
 
@@ -98,8 +98,8 @@ After the selection of Editors, click on "Save".
 
 Delete is used for deleting the current project.
 
-Clicking on delete willÂ  open the following
+Clicking on delete willÂ open the following
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/1081)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/1081)
 
-Click on "Yes"Â  to delete the existing project.
+Click on "Yes"Â to delete the existing project.

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/262-how-editors-evaluate-long
 ---
 Evaluation is a systematic process of analyzing the user responses to determine the correctness of the response.
 
-Go to **Editor >Â LEARNING AND KNOWLEDGE >Â Questions and Quizzes > View All Quizzes**
+Go to **Editor >ÂLEARNING AND KNOWLEDGE >ÂQuestions and Quizzes > View All Quizzes**
 
 In order to evaluate the Long answer questions, the Editor needs to follow the below steps.
 
@@ -27,7 +27,7 @@ In order to evaluate the Long answer questions, the Editor needs to follow the b
 
 You can also filter out the candidates based on their evaluation status as shown in the below picture.
 
-**Pending Evaluation** will show users whose evaluationÂ of long answer questionsÂ has not been done yet.
+**Pending Evaluation** will show users whose evaluationÂof long answer questionsÂhas not been done yet.
 
 **Evaluated** will show the users whose evaluation of long answer questions has been done.
 
@@ -35,7 +35,7 @@ You can also filter out the candidates based on their evaluation status as shown
 
 4.On clicking the **analytics icon** against the user will take you to the user-specified analytics page where you can find the knowledge progress and quiz status of the selected user.
 
-Here, **Scroll down** to the section calledÂ **Quiz Response**. Here, you can find the option called **Evaluate** for a long answer question that has to be evaluated. Click on the Evaluate button on the right side to complete the evaluation.
+Here, **Scroll down** to the section calledÂ**Quiz Response**. Here, you can find the option called **Evaluate** for a long answer question that has to be evaluated. Click on the Evaluate button on the right side to complete the evaluation.
 
 ![](/img/quizzes/helpscout-image-6253111e.jpg)
 
@@ -43,10 +43,10 @@ Here, **Scroll down** to the section calledÂ **Quiz Response**. Here, you can fi
 
 ![](/img/quizzes/helpscout-image-acbaec31.jpg)
 
-* You can giveÂ **points** for the question in the scoring section. Then click on theÂ **SaveÂ icon**.
+* You can giveÂ**points** for the question in the scoring section. Then click on theÂ**SaveÂicon**.
 
 ![](/img/quizzes/helpscout-image-53d6865d.jpg)
 
-* The belowÂ image is an example of Feedback and scoring by the evaluator.
+* The belowÂimage is an example of Feedback and scoring by the evaluator.
 
 ![](/img/quizzes/helpscout-image-488d34f7.jpg)

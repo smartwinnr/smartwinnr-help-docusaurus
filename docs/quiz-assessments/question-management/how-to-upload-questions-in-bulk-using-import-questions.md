@@ -37,23 +37,23 @@ It gives samples of all the 3 types of questions that you can create through thi
 
 Open the downloaded CSV file and fill all the fields in it. Here are various fields in the CSV file and how you can fill it out:
 
-**Question Text:**Â This field contains the question text.
+**Question Text:**ÂThis field contains the question text.
 
-**Categories:**Â This field contains the category that a question belongs to. Every question has to be assigned to one or the other category.
+**Categories:**ÂThis field contains the category that a question belongs to. Every question has to be assigned to one or the other category.
 
-**Question Type:**Â This field tells what type a particular question is: MultiSlect, Fill in the blanks, or Matching
+**Question Type:**ÂThis field tells what type a particular question is: MultiSlect, Fill in the blanks, or Matching
 
-**Answer options:**Â These fields contain the answer options for a question.
+**Answer options:**ÂThese fields contain the answer options for a question.
 
-**Correct option:**Â This field contains the correct answer to a question.
+**Correct option:**ÂThis field contains the correct answer to a question.
 
-**Matching Left and Matching Right:**Â This field contains the left and right matching answers for a matching question.
+**Matching Left and Matching Right:**ÂThis field contains the left and right matching answers for a matching question.
 
-**Distractors:**Â This field contains distractors (additional choices on the right side) for a matching question.
+**Distractors:**ÂThis field contains distractors (additional choices on the right side) for a matching question.
 
-**Feedback:**Â You can fill this field with any additional information that you may want to give about a question.
+**Feedback:**ÂYou can fill this field with any additional information that you may want to give about a question.
 
-**Language:**Â This field contains the language in which you want to create the question.
+**Language:**ÂThis field contains the language in which you want to create the question.
 
 There are certain mandatory fields that have to be filled in order to upload the CSV file successfully. The mandatory fields are-- Question text, Categories, Question Type, Answer Options (depends on question type), correct answers(depends upon question type), matching left and matching right (depends upon the question type)
 

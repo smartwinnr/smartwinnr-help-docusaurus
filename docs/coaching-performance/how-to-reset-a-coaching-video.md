@@ -13,7 +13,7 @@ Only Editor who has created the coaching can reset a video coaching assignment.
 
 To reset the coaching video for a user follow below steps:
 
-1. Go to **Editor > Coaching > Video Coaching** > Click on **Analytics** button on the right side.Â Â 
+1. Go to **Editor > Coaching > Video Coaching** > Click on **Analytics** button on the right side.ÂÂ
 
     ![](/img/coaching/helpscout-image-de3ed9d9.jpg)
 

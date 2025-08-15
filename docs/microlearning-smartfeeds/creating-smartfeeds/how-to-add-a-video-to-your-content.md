@@ -9,51 +9,51 @@ last_update:
 helpscout_id: 5fd4e5ddc868cb6df3a8109f
 helpscout_url: https://help.smartwinnr.com/article/68-how-to-add-a-video-to-your-content
 ---
-SmartWinnr allows you to add videos to the content that you share in SmartWinnr.Â You can send videos of products, product demonstrations, customer feedback, customer stories and more. Click on the video icon to attach a video to your SmartFeed or to the question that you create in SmartWinnr. You can add your own videos or videos from YouTube, Box, and Brainshark as the content.
+SmartWinnr allows you to add videos to the content that you share in SmartWinnr.ÂYou can send videos of products, product demonstrations, customer feedback, customer stories and more. Click on the video icon to attach a video to your SmartFeed or to the question that you create in SmartWinnr. You can add your own videos or videos from YouTube, Box, and Brainshark as the content.
 
 ![](/img/learning/helpscout-image-40cd2bd8.png)Once you click on the video icon, the following pop-up comes up.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/89)
+Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/89)
 
-### HowÂ to add a YouTube video to the content?
+### HowÂto add a YouTube video to the content?
 
 1. Click on the video icon and the pop-up will come up.
 2. Search for the video on YouTube.
 3. Copy the URL from YouTube directly into the 'Video URL' box, as shown below.
-4. Click on â€˜Submitâ€™.
+4. Click on Submit.
 5. The video will get embedded into the content.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/90)
+Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/90)
 
 ### How to add a Box video to the content?
 
 1. Click on the video icon and the pop-up will come up.
-2. Click on the â€˜Boxâ€™ tab.
+2. Click on the Box tab.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/91)
+Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/91)
 
-Image URL:Â You can leave it empty. It will take an image by default. This is a thumbnail.
+Image URL:ÂYou can leave it empty. It will take an image by default. This is a thumbnail.
 
-Video Embed Link:Â Go to box.com and then the video that you want to use. Follow the screenshots below to generate the â€˜Video Embed Linkâ€™. Copy this URL into the â€˜Video Embed Linkâ€™ textbox. Please note that only the embed link needs to be copied.
+Video Embed Link:ÂGo to box.com and then the video that you want to use. Follow the screenshots below to generate the Video Embed Link. Copy this URL into the Video Embed Link textbox. Please note that only the embed link needs to be copied.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/92)
+Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/92)
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/94)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/94)
 
-Video Shared Link:Â Go to box.com and then the video that you want to use. Follow the screenshots below to generate the â€˜Video Shared Linkâ€™. Copy this URL into the â€˜Video Shared Linkâ€™ textbox.
+Video Shared Link:ÂGo to box.com and then the video that you want to use. Follow the screenshots below to generate the Video Shared Link. Copy this URL into the Video Shared Link textbox.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/95)
+Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/95)
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/96)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/96)
 
-### How to add a BrainsharkÂ video to the content?
+### How to add a BrainsharkÂvideo to the content?
 
 1. Click on the video icon and the pop-up will come up.
-2. Click on the â€˜Brainsharkâ€™ tab.
+2. Click on the Brainshark tab.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/98)
+Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/98)
 
-Image URLÂ = You can leave it empty. It will take an image by default. This is a thumbnail.
+Image URLÂ= You can leave it empty. It will take an image by default. This is a thumbnail.
 
 Video Embed Link
 
@@ -65,14 +65,14 @@ The Video Embed Link for SmartWinnr = [https://www.brainshark.com/jsdhlksadl/vu?
 
 Video Shared Link
 
-Login to your Brainshark account and then select the video that you want to use. Generate a â€˜shareâ€™ link and copy that into the SmartWinnr video popup.
+Login to your Brainshark account and then select the video that you want to use. Generate a share link and copy that into the SmartWinnr video popup.
 
-### How to add aÂ video from your local computer to the content?
+### How to add aÂvideo from your local computer to the content?
 
 1. Click on the video icon and the pop-up will come up.
-2. Click on the â€˜Upload Videoâ€™ tab.
+2. Click on the Upload Video tab.
 3. click the **Choose File** button
-4. Â Choose a video file in your system and then click the **Submit** button.
+4. ÂChoose a video file in your system and then click the **Submit** button.
 
 * * *
 
@@ -80,4 +80,4 @@ _Kindly note that the video format should be MP4._
 
 ![](https://support.smartwinnr.com/api/v1/attachments/99)
 
-Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/100)
+Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/100)

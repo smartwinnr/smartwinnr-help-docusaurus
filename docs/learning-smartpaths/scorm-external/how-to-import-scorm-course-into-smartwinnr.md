@@ -17,39 +17,39 @@ Follow the below-given steps to create SCORM course inside SmartPath.
 
 We are considering the 'articulate 360' for exporting the SCORM course and the same will be implemented inside the SmartPath module of SmartWinnr.
 
-Choose your course fromÂ  **articulate 360** and choose the contents that you would like to include in the SCORM course. Then click on the â€œ**Publish**â€ option on the top right-hand corner of the page highlighted in red and Choose "**LMS"**.
+Choose your course fromÂ **articulate 360** and choose the contents that you would like to include in the SCORM course. Then click on the **Publish** option on the top right-hand corner of the page highlighted in red and Choose "**LMS"**.
 
 ![](/img/quizzes/helpscout-image-11794d99.jpg)
 
 Kindly follow the below-given instructions while exporting the SCORM course:
 
-â—Â Â Â Â Â  While exporting the SCORM Course, please use the following settings so that it gets uploaded properly into SmartPath - Modules:
+ÂÂÂÂÂ While exporting the SCORM Course, please use the following settings so that it gets uploaded properly into SmartPath - Modules:
 
 **Publish Settings:**
 
 ![](/img/quizzes/helpscout-image-8b41efdd.png)
 
-â”Â Â Â  **LMS -** Choose SCORM 1.2 or SCORM 2004
+ÂÂÂ **LMS -** Choose SCORM 1.2 or SCORM 2004
 
-â”Â Â Â  **Edition -** If LMS is chosen as SCORM 2004, choose the edition as 3rd Edition
+ÂÂÂ **Edition -** If LMS is chosen as SCORM 2004, choose the edition as 3rd Edition
 
 **Tracking:**
 
 You can track progress and completion in different ways:
 
-â”Â Â Â  **Tracking using course completion** - 100% (Set the percentage of the course a learner must finish to mark as completed )
+ÂÂÂ **Tracking using course completion** - 100% (Set the percentage of the course a learner must finish to mark as completed )
 
-â”Â Â Â  **Track using quiz result** - quiz (you can use results from quiz)
+ÂÂÂ **Track using quiz result** - quiz (you can use results from quiz)
 
-â”Â Â Â  **Reporting** - Here we are supporting all the four options available.So, you can use the one that is used in your selected course.
+ÂÂÂ **Reporting** - Here we are supporting all the four options available.So, you can use the one that is used in your selected course.
 
-â”Â Â Â  **Exit Course Link** **\-** This will provide an exit option to learner so that they can easily return to the home page and this will be captured by SmartWinnr.
+ÂÂÂ **Exit Course Link** **\-** This will provide an exit option to learner so that they can easily return to the home page and this will be captured by SmartWinnr.
 
-â”Â Â Â  **Hide Cover Page -** We recommendÂ not to switch off this option. So that the learner is able to understand that the SCORM Course is loading for them.
+ÂÂÂ **Hide Cover Page -** We recommendÂnot to switch off this option. So that the learner is able to understand that the SCORM Course is loading for them.
 
 ### **How to create a module for SmartPath**
 
-Since theÂ SCORM course needs to be imported inside the SmartPath module, you should have to create a module for the SmartPath.
+Since theÂSCORM course needs to be imported inside the SmartPath module, you should have to create a module for the SmartPath.
 
 [Learn how to create a module for SmartPath](https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath)
 

@@ -15,30 +15,30 @@ Re-order questions are the type where you need to drag and drop the answer to a 
 
 Below are the steps to create a Re-Order question.
 
-1. Go toÂ EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.
-2. Click on theÂ 'Add New Question'Â button at theÂ top right corner.Â ![](/img/quizzes/helpscout-image-d1c134e1.png)
-3. On theÂ 'Create new Question'Â select theÂ 'Question Type'Â as the Re-Order Option.![](/img/quizzes/helpscout-image-541a791a.png)
-4. Enter your question in theÂ â€˜Questionâ€™Â field.![](/img/quizzes/helpscout-image-46d875af.png)Â For the question,Â you can have various elements like Simple Text, Videos, Images, Links, or Audio files.
-5. Enter theÂ answer optionsÂ in the correct order for the Re-order question. It is important to fill in the answer option field in the correct order as points will be awarded on the basis of the order entered. (Important)![](/img/quizzes/helpscout-image-ffe2f39b.png)
+1. Go toÂEDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.
+2. Click on theÂ'Add New Question'Âbutton at theÂtop right corner.Â![](/img/quizzes/helpscout-image-d1c134e1.png)
+3. On theÂ'Create new Question'Âselect theÂ'Question Type'Âas the Re-Order Option.![](/img/quizzes/helpscout-image-541a791a.png)
+4. Enter your question in theÂQuestionÂfield.![](/img/quizzes/helpscout-image-46d875af.png)ÂFor the question,Âyou can have various elements like Simple Text, Videos, Images, Links, or Audio files.
+5. Enter theÂanswer optionsÂin the correct order for the Re-order question. It is important to fill in the answer option field in the correct order as points will be awarded on the basis of the order entered. (Important)![](/img/quizzes/helpscout-image-ffe2f39b.png)
 
 **A note on copying questions from Microsoft Word  
   
 Microsoft Word adds certain hidden characters and markups to every document. If you directly copy text from a Word document, these hidden artifacts can create a problem, especially in mobile devices. To avoid this issue, if you are copying any question from a Word document, please follow these steps:  
   
 Copy the text from the Word Document into Notepad. This removes all hidden markups.  
-Then copy the text from Notepad into SmartWinnr â†’ Question box.**
+Then copy the text from Notepad into SmartWinnr  Question box.**
 
 Question Feedback
 
-UseÂ â€˜Feedbackâ€™Â if you want to add additional information to a question. Â ( Optional)
+UseÂFeedbackÂif you want to add additional information to a question. Â( Optional)
 
 The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback.
 
 _![](/img/quizzes/helpscout-image-9b9df1db.png)_
 
-SelectÂ Categories
+SelectÂCategories
 
-In SmartWinnr,Â every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best define a question.
+In SmartWinnr,Âevery question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best define a question.
 
 ![](/img/quizzes/helpscout-image-be0611cf.png)
 

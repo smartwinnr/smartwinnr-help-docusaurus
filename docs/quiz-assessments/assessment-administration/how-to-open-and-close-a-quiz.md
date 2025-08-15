@@ -1,5 +1,5 @@
 ---
-title: "‘Open’ and ‘Close’ a Quiz"
+title: "Open and Close a Quiz"
 description: ""
 slug: how-to-open-and-close-a-quiz
 sidebar_position: 276
@@ -19,6 +19,6 @@ Go to Editor > LEARNING AND KNOWLEDGE > Competition > Open the desired Competiti
 
 3\. To start a quiz, click on the Open Quiz button of a particular quiz.
 
-4\. Click on the same Close Quiz button to close the quiz once the time is over. That will close the quiz. A user who had already started with the quiz, will be able to finish it. But a user who hasn’t started yet, will not be able to start anymore.  
+4\. Click on the same Close Quiz button to close the quiz once the time is over. That will close the quiz. A user who had already started with the quiz, will be able to finish it. But a user who hasnt started yet, will not be able to start anymore.  
   
 ![](/img/quizzes/helpscout-image-9fef80ef.png)

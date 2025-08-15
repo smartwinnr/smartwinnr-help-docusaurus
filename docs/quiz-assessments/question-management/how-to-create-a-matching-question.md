@@ -13,15 +13,15 @@ helpscout_url: https://help.smartwinnr.com/article/43-how-to-create-a-matching-q
 
 **Below are the steps to follow in order to create a matching question:**
 
-1. Go toÂ **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2. Click on theÂ **'Add New Question'**Â button at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
-3. On theÂ **'Create new Question'**Â select theÂ **'Question Type'**Â asÂ **â€˜Matchingâ€™.[![](/img/quizzes/helpscout-image-de9f68b3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c539cc64fe14d0e1fde95/file-0aBeHdpmUd.png)**
-4. Enter your question in the **â€˜Questionâ€™** field.[![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
+1. Go toÂ**EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
+2. Click on theÂ**'Add New Question'**Âbutton at the _top right corner_.[![](/img/quizzes/helpscout-image-f789e91a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+3. On theÂ**'Create new Question'**Âselect theÂ**'Question Type'**ÂasÂ**Matching.[![](/img/quizzes/helpscout-image-de9f68b3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c539cc64fe14d0e1fde95/file-0aBeHdpmUd.png)**
+4. Enter your question in the **Question** field.[![](/img/quizzes/helpscout-image-77d21340.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bfaff1c64ad47e4b723b1/file-BwTmbgYmCY.png)
 5. Add the left-hand side and matching right-hand side options in the **'Answer Options'** section. **Distractors** allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty. [Click to know more about distractors.](#distractors)
 
     [![](/img/quizzes/helpscout-image-19a17793.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600d8a9ccfe30d219ccdae89/file-iYIevusr9r.png)
 
-6. Use â€˜Feedbackâ€™ if you want to add additional information to a question. Â _(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
+6. Use Feedback if you want to add additional information to a question. Â_(Optional) The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos or images to feedback._[![](/img/quizzes/helpscout-image-6cbef2fe.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4617d23119734ee37ed7c/file-4PEsFLewo5.png)
 7. In SmartWinnr, every question requires at least one category. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.[![](/img/quizzes/helpscout-image-40e43cab.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 
 ### **Question**

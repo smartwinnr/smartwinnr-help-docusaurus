@@ -17,7 +17,7 @@ Go to EDITOR > Settings > Groups > Add New Group.
 
 Add a name and description to the new group and select whether you would like the Group to be Public or Private.
 
-A ‘Public’ group will be visible to all and other Editors will also be able to reuse it, while a ‘Private’ group will be visible only to you.
+A Public group will be visible to all and other Editors will also be able to reuse it, while a Private group will be visible only to you.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/930)
 
@@ -27,7 +27,7 @@ If you choose the Group Type as public, then you need to select the Business Uni
 
 Once you have added the required details to create a group, click on the ' **Save And Add Members**' button.
 
-Now, in the next step, add members to this new group. You can select members through the Search/Advanced Search given in the selection screen. Once you have made the necessary selections, click on ‘ **Add Selected Members**’ button at the bottom of the screen. ![](https://support.smartwinnr.com/api/v1/attachments/932)
+Now, in the next step, add members to this new group. You can select members through the Search/Advanced Search given in the selection screen. Once you have made the necessary selections, click on  **Add Selected Members** button at the bottom of the screen. ![](https://support.smartwinnr.com/api/v1/attachments/932)
 
 This will add the new Group. All of your Groups will be visible in the Groups page.
 

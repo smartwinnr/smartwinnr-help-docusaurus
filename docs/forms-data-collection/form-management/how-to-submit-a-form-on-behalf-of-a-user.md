@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/252-how-to-submit-a-form-on-b
 ---
 An Editor who has access to the form can edit the submission made by a user
 
-Goto Left Menu >>Â EditorÂ >> Forms >> View All Forms.
+Goto Left Menu >>ÂEditorÂ>> Forms >> View All Forms.
 
 ![](/img/admin/helpscout-image-db79f1e3.jpg)
 

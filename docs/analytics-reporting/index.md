@@ -27,23 +27,23 @@ Make data-driven decisions with comprehensive analytics and reporting tools that
 
 ## Module Overview
 
-### 📊 Dashboard & Widgets
+### Dashboard & Widgets
 
 Customize your analytics experience with interactive dashboards and configurable widgets for real-time insights.
 
-### 📈 Performance Reports
+### Performance Reports
 
 Access detailed performance analytics covering quizzes, learning paths, competitions, and overall user engagement.
 
-### 📋 Forms & Data Analytics
+### Forms & Data Analytics
 
 Analyze form submissions, approval workflows, and data collection effectiveness.
 
-### 🎯 Sales & KPI Tracking
+### Sales & KPI Tracking
 
 Monitor key performance indicators, sales metrics, and business objectives through integrated reporting.
 
-### 📱 User Behavior Analytics
+### User Behavior Analytics
 
 Understand how users interact with the platform through login reports and usage patterns.
 

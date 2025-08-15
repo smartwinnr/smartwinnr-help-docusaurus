@@ -13,7 +13,7 @@ An Editor who has access to the form can add approver to the form.
 
 You can follow the below given steps to add an approver to the form.
 
-Go to Left Menu >>Â EditorÂ >> Forms >> View All Forms.
+Go to Left Menu >>ÂEditorÂ>> Forms >> View All Forms.
 
 ![](/img/reports/helpscout-image-db79f1e3.jpg)
 
@@ -39,13 +39,13 @@ Initially the approver is not assigned to any of the users.Click on "EDIT" optio
 
 ![](https://lh4.googleusercontent.com/d6MX1pDonpVkOtorvjZ8KKXKfFudtP5KInJ3CENvDXWjWhhhfVS7zj9XOlD66T0umVWQ0PGcr-8bXtLtSyGeUmwtttRM1lLevBSs5fjNTUoq4eFNR9Wph8ZN7id9CFUjbHlGIQEi)
 
-It will take you to the page where you can selectÂ various users at different levels as follows:
+It will take you to the page where you can selectÂvarious users at different levels as follows:
 
 1.Approvers reportees : If you want to assign a approver only for his own reportees, then you need to select "Approvers reportees" from the "select users" dropdown.
 
 ![](https://lh5.googleusercontent.com/I3ZJstWaOT8T1TK34CuHWrkBjAX3Yp5FHUjn5bM3rEchHSforGnVrhAAq5A3pwTqHO_uPBUhY8i47UzlEVGunYuTWlBabKUPeEk-rEWgjNqzM5kt6nMoSeFYdZHFxNnj1PyOHWEn)
 
-2\. All Users :Â If you want to assign theÂ approverÂ for all the users, then you need to select the type as "User" from the dropdown "Selection Type" and "All Users" from the next drop down - Selected Users.
+2\. All Users :ÂIf you want to assign theÂapproverÂfor all the users, then you need to select the type as "User" from the dropdown "Selection Type" and "All Users" from the next drop down - Selected Users.
 
 You can also choose the users by selecting Groups, meta tags from the Selection Type dropdown and select the appropriate group names and meta tag values from the provided drop downs.
 

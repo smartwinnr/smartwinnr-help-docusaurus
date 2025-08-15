@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/234-how-to-add-observers-to-t
 ---
 Only the Org Admin access can add the observers to the competition leaderboards.
 
-Go to EDITOR >Â GAMIFICATION AND ENGAGEMENT >Â Competitions.
+Go to EDITOR >ÂGAMIFICATION AND ENGAGEMENT >ÂCompetitions.
 
 **Step 1: Choose the competition for which you want to add observers.**
 

@@ -13,7 +13,7 @@ Only the users who have an editor role can view KHub analytics
 
 Follow the below steps in order to view the KHub analytics:
 
-Go to the Left Menu >Â LEARNING AND KNOWLEDGE >Â KHub > Analytics. It will open the following page:
+Go to the Left Menu >ÂLEARNING AND KNOWLEDGE >ÂKHub > Analytics. It will open the following page:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/722)
 
@@ -25,7 +25,7 @@ Also, you have the ability to filter these analytics by country, group, frequenc
 
 Here you will get to search and select a particular KHub item from the list and view its analytics.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/724)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/724)
 
 ## Bar Graph
 

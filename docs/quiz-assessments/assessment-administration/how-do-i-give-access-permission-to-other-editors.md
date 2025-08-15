@@ -29,7 +29,7 @@ It will take you to the following page:
 
 ![](/img/quizzes/helpscout-image-5511c500.png)
 
-Here, select theÂ Access PermissionÂ tab. It shows you the following page where you can add access permissions:
+Here, select theÂAccess PermissionÂtab. It shows you the following page where you can add access permissions:
 
 ![](/img/quizzes/helpscout-image-3b49a48d.png)
 

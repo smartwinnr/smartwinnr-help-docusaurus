@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/145-what-is-khub
 ---
 KHub is a knowledge/content repository for your employees to help them excel at their job. This feature lets you share the right content with your team at the right time so that they are prepared to handle any situation.
 
-Product videos, installation manuals, service manuals, sales decks, training videos -Â  you name it. With KHub the right content is just aÂ searchÂ away for your employees. Upload your documents on SmartWinnr and your sales reps can access them from the mobile app anytime, anywhere.
+Product videos, installation manuals, service manuals, sales decks, training videos -Â you name it. With KHub the right content is just aÂsearchÂaway for your employees. Upload your documents on SmartWinnr and your sales reps can access them from the mobile app anytime, anywhere.
 
 ## Multiple Language Support
 
@@ -23,4 +23,4 @@ SmartWinnr is powered by a highly intelligent, intuitive, and accurate search. I
 
 ## Offline Access
 
-SmartWinnr provides offline access to these documents. But only for documents that you select. It wonâ€™t eat up more space on your phone than whatâ€™s needed.
+SmartWinnr provides offline access to these documents. But only for documents that you select. It wont eat up more space on your phone than whats needed.

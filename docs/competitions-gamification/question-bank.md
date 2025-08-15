@@ -25,7 +25,7 @@ In the question bank, you have various search options that you can use to search
 
 Also, the Question Bank comes with an advanced search.
 
-Click on the **‘Advanced Search’** link to open the **‘Advanced Search’** box.
+Click on the **Advanced Search** link to open the **Advanced Search** box.
 
 * You can search for questions used for a specific competition.
 * You can also search for questions in a specific category by entering the category in the 'Category Values' box.
@@ -33,4 +33,4 @@ Click on the **‘Advanced Search’** link to open the **‘Advanced Search’*
 
 [![](/img/competitions/helpscout-image-d527690e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd455af4eb32171b8037480/file-8Sn9HVYcSo.png)
 
-To clear the search, _delete the text_ in the _‘Search’_ box → _Click_ on the _‘Search’_ button again.
+To clear the search, _delete the text_ in the _Search_ box  _Click_ on the _Search_ button again.

@@ -23,5 +23,6 @@
     "MD029": false,
     "MD001": false,
     "MD051": false
-  }
+  },
+  "customRules": ["./custom-markdownlint-rules.js"]
 }

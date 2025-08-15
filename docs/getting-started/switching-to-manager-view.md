@@ -13,7 +13,7 @@ How To Enable Manager View In SmartWinnr
 
 If you have both manager and user roles, you will be able to access both in the SmartWinnr app and web view.
 
-Â Here is how you do that:
+ÂHere is how you do that:
 
 1.Open the SmartWinnr app and click on the profile image at the top left corner. It will take you to the following screen:
 

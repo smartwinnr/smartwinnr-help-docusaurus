@@ -28,4 +28,4 @@ In order to view the analytics report of a particular participant, click on the 
 * Number of quizzes that are pending
 * The overall net score and percentage score of the participant
 * The bar graph that shows the participants performance by category. You can filter this report by category and by Date Range.
-* Finally, the performance of the participant in each quiz. You can filter these results by Date RangeÂ  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](/img/quizzes/helpscout-image-e2394c12.png)
+* Finally, the performance of the participant in each quiz. You can filter these results by Date RangeÂ Â Â Â Â Â Â Â Â Â ÂÂ![](/img/quizzes/helpscout-image-e2394c12.png)

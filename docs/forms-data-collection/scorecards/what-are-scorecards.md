@@ -15,7 +15,7 @@ Scorecards allow you to measure these KPIs daily, weekly, monthly, quarterly, or
 
 ### 1\. Measurement Duration and Target
 
-What sort of duration will work best for a KPI? Some KPIs are best measured daily and some are best measured quarterly.Â  It depends on the KPI and history of achieving the KPI. For example, a sales rep might be able to close the sale of a maximum of 4 capital equipments in a month. So if we were measuring the KPI called 'Number of Capital Equipments Sold', the best measurement duration will be monthly. But you might want to break it down and if one of the goals of your organization is to focus on distributing the sales across the month, then it might make sense to measure it weekly and keep a target of 1 per week. The target needs to be realistic so that reps are motivated when they achieve it.
+What sort of duration will work best for a KPI? Some KPIs are best measured daily and some are best measured quarterly.Â It depends on the KPI and history of achieving the KPI. For example, a sales rep might be able to close the sale of a maximum of 4 capital equipments in a month. So if we were measuring the KPI called 'Number of Capital Equipments Sold', the best measurement duration will be monthly. But you might want to break it down and if one of the goals of your organization is to focus on distributing the sales across the month, then it might make sense to measure it weekly and keep a target of 1 per week. The target needs to be realistic so that reps are motivated when they achieve it.
 
 ### 2\. Scoring
 

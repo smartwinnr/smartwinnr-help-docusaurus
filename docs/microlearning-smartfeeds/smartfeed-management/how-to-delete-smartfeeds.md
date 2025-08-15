@@ -15,7 +15,7 @@ If you simply want to ensure that the SmartFeed is no longer available to the re
 
 Follow the below steps to delete a SmartFeed:
 
-Go to **EDITOR >**Â **LEARNING AND KNOWLEDGE >**Â **SmartFeeds**. Click on a SmartFeed that you want to delete. At the top right corner, click on the **hamburger** icon and choose "**Delete**".
+Go to **EDITOR >**Â**LEARNING AND KNOWLEDGE >**Â**SmartFeeds**. Click on a SmartFeed that you want to delete. At the top right corner, click on the **hamburger** icon and choose "**Delete**".
 
 ![](/img/learning/helpscout-image-cfd0f085.png)
 

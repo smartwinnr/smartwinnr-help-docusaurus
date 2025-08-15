@@ -1,9 +1,27 @@
 #!/usr/bin/env sh
 
-# Run markdown linting on staged files (continue on errors)
-npm run lint:docs:fix || echo "Markdown linting found issues but continuing..."
+echo "🔍 Running pre-commit checks..."
+
+# Run markdown linting and fix what can be auto-fixed
+echo "📝 Running markdown linting with auto-fix..."
+npm run lint:docs:fix || echo "Some linting issues found, continuing with emoji check..."
+
+# Check specifically for emoji violations (this should block the commit)
+echo "🚫 Checking for decorative emojis..."
+EMOJI_VIOLATIONS=$(npm run lint:docs 2>&1 | grep "no-decorative-emojis" || true)
+
+if [ -n "$EMOJI_VIOLATIONS" ]; then
+  echo "❌ COMMIT BLOCKED: Decorative emojis found in documentation!"
+  echo "Enterprise documentation should not contain decorative emojis."
+  echo ""
+  echo "Emoji violations found:"
+  echo "$EMOJI_VIOLATIONS"
+  echo ""
+  echo "Please remove all decorative emojis before committing."
+  exit 1
+fi
 
 # Add any automatically fixed files back to staging
 git add docs/**/*.md
 
-echo "Pre-commit linting completed (non-blocking)"
+echo "✅ Pre-commit checks passed!"

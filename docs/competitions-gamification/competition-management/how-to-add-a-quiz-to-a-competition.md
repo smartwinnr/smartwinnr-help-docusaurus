@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/102-how-to-add-a-quiz-to-a-co
 ---
 Here are the steps to add a quiz to a competition:
 
-1. Once you get to the 4th step of creating competition, selectÂ QuizÂ in the "Select Task".
+1. Once you get to the 4th step of creating competition, selectÂQuizÂin the "Select Task".
 2. Give a name to the task
 3. Assign points for the task
 4. Set a start and end date of the task
@@ -20,7 +20,7 @@ Below is a screenshot of adding a quiz to a competition:
 
 [![](/img/quizzes/helpscout-image-dd40bce8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600a894d2e764327f87c1452/file-tEBJHTwpgp.png)
 
-CheckÂ  the checkbox â€˜Choose Participants Manuallyâ€™ to manually select the participants of theÂ Quiz. This should be used so that you can remove some users from the list.
+CheckÂ the checkbox Choose Participants Manually to manually select the participants of theÂQuiz. This should be used so that you can remove some users from the list.
 
 The system will ask for the Points for correct answer to be given for the quiz takers.You can decide the points and fill it out in the given box.
 

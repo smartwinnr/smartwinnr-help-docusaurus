@@ -19,8 +19,9 @@ module.exports = [
       const overviewWords = ['what', 'overview', 'about', 'introduction', 'guide'];
       
       params.tokens.filter(token => token.tag === "h1").forEach(heading => {
+        if (!heading.children) return; // Skip if no children
         const title = heading.children
-          .filter(child => child.type === "text")
+          .filter(child => child && child.type === "text")
           .map(child => child.content.toLowerCase().trim())
           .join(" ");
         
@@ -151,6 +152,60 @@ module.exports = [
                 lineNumber: token.lineNumber,
                 detail: `Sentence has ${wordCount} words. Consider breaking into shorter sentences (aim for 15-20 words max).`,
                 context: sentence.trim().substring(0, 50) + "..."
+              });
+            }
+          });
+        }
+      });
+    }
+  },
+  {
+    "names": ["no-decorative-emojis"],
+    "description": "Prohibit decorative emojis in enterprise documentation",
+    "tags": ["style-guide", "emojis"],
+    "function": function noDecorativeEmojis(params, onError) {
+      // Common decorative emoji patterns that should be excluded from enterprise docs
+      const emojiPattern = /[\u{1F300}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F900}-\u{1F9FF}\u{1F1E0}-\u{1F1FF}]/gu;
+      
+      // Specific common decorative emojis to catch
+      const specificEmojis = [
+        '🚀', '📝', '📋', '📚', '📊', '📈', '🏆', '🎯', '👑', '📱', '🆘', '🧠', '🛤️',
+        '✨', '🌟', '🔥', '⭐️', '👍', '✅', '⚡️', '🎉', '💡', '🔧', '⚙️', '🎨', '📌',
+        '💫', '🌈', '🚩', '📢', '📣', '🔔', '💬', '💭', '💡', '🎪', '🎨', '🔍', '🔎',
+        '📝', '📄', '📃', '📑', '📜', '📋', '📊', '📈', '📉', '📦', '📧', '📨', '📩',
+        '⏰', '🕒', '⏱️', '⏳', '⌚', '🔗', '🌐', '💾', '💻', '🖥️', '⌨️', '🖱️', '🔌'
+      ];
+      
+      params.tokens.forEach(token => {
+        if (token.type === "text" || token.type === "heading_open" || token.type === "paragraph_open") {
+          let content = '';
+          
+          // Get the actual text content
+          if (token.type === "text") {
+            content = token.content;
+          } else if (token.lineNumber && params.lines[token.lineNumber - 1]) {
+            content = params.lines[token.lineNumber - 1];
+          }
+          
+          // Check for emoji patterns
+          const emojiMatches = content.match(emojiPattern);
+          if (emojiMatches) {
+            emojiMatches.forEach(emoji => {
+              onError({
+                lineNumber: token.lineNumber || 1,
+                detail: `Decorative emoji "${emoji}" found. Remove all decorative emojis from enterprise documentation for professional appearance.`,
+                context: content.substring(Math.max(0, content.indexOf(emoji) - 20), content.indexOf(emoji) + 20)
+              });
+            });
+          }
+          
+          // Check for specific emojis that might be missed by Unicode ranges
+          specificEmojis.forEach(emoji => {
+            if (content.includes(emoji)) {
+              onError({
+                lineNumber: token.lineNumber || 1,
+                detail: `Decorative emoji "${emoji}" found. Remove all decorative emojis from enterprise documentation for professional appearance.`,
+                context: content.substring(Math.max(0, content.indexOf(emoji) - 20), content.indexOf(emoji) + 20)
               });
             }
           });

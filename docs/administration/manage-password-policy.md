@@ -15,9 +15,9 @@ You can set the organization password complexity from this page. Once set, all u
 
 The following options are available:
 
-1. Â Minimum password length:Â The minimum number of characters to be set. This value cannot be lower than 6 for security purpose.
-2. Required at-least one uppercase letter:Â Check if the password should contain at least one uppercase letter.
-3. Required at-least one Number:Â Check if the password should contain at least one uppercase number.
-4. Required at-least one special character:Â Check if the password should contain at least one special character.
+1. ÂMinimum password length:ÂThe minimum number of characters to be set. This value cannot be lower than 6 for security purpose.
+2. Required at-least one uppercase letter:ÂCheck if the password should contain at least one uppercase letter.
+3. Required at-least one Number:ÂCheck if the password should contain at least one uppercase number.
+4. Required at-least one special character:ÂCheck if the password should contain at least one special character.
 
 To set the password policy, at least one of the options 2-4 has to be selected.

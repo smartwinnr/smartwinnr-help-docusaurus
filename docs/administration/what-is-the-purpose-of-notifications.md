@@ -11,8 +11,8 @@ helpscout_url: https://help.smartwinnr.com/article/163-what-is-the-purpose-of-no
 ---
 Provide enough information:
 
-TheÂ purposeÂ behind aÂ notificationÂ is to inform about an event and encourage him to take action. But, for that, he need enough information.
+TheÂpurposeÂbehind aÂnotificationÂis to inform about an event and encourage him to take action. But, for that, he need enough information.
 
-NotificationÂ should haveÂ enough information to help the user to understand theÂ purpose of notificationÂ and what needs to be done.
+NotificationÂshould haveÂenough information to help the user to understand theÂpurpose of notificationÂand what needs to be done.
 
 Notifications are basically a type of reminders that ,keeps the users updated with the assigned tasks ,events, smartfeeds.

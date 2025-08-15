@@ -49,7 +49,7 @@ You will be asked to add a profile picture the first time you log in to SmartWin
 
 ### After You're Already Logged In
 
-1. Navigate to your profile page (hamburger menu → profile picture)
+1. Navigate to your profile page (hamburger menu  profile picture)
 2. Click on the **camera icon** on your profile picture
 3. Choose either:
    - **Open Camera** to take a new picture

@@ -13,8 +13,8 @@ Images or pictures can be sent as content in your SmartFeed or attach to your Qu
 
 Click on the image icon to attach an image to your SmartFeed or to the question that you create in SmartWinnr.
 
-Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/101)
+Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/101)
 
 Then click on the 'Choose File' button to select the required files from the computer.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/139)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/139)

@@ -15,11 +15,11 @@ Following are the list of widgets available in SmartWinnr.
 
 ### 1.KPI Performance List
 
-KPI PerformanceÂ will show you the progress of your direct reportees in a list view. Here you can find the overall growth of your reportees in terms of all the KPIs assigned to them. The performance list will show you the % growth of your direct reportees based on the data uploaded for the various duration.
+KPI PerformanceÂwill show you the progress of your direct reportees in a list view. Here you can find the overall growth of your reportees in terms of all the KPIs assigned to them. The performance list will show you the % growth of your direct reportees based on the data uploaded for the various duration.
 
 For example, in the screenshot below, it says Cate has achieved 68% of her target from all the KPIs assigned to her. Also, you can find a down-arrow showing 13%, which means that her % growth has decreased by 13%.
 
-Â If you are a higher-level manager with multiple levels of reportees under you, you can find your direct reportees' progress in the first place. Clicking on the arrow against each of these direct reportees will help you to drill down to the details of next-level reportees.
+ÂIf you are a higher-level manager with multiple levels of reportees under you, you can find your direct reportees' progress in the first place. Clicking on the arrow against each of these direct reportees will help you to drill down to the details of next-level reportees.
 
 ![](https://lh6.googleusercontent.com/iRRj3AQzHeRNUw0MVPTu9WDSC5fVXKqmoka0_88SGFCDW5Z01xeKx48dQEGw8Hous005_vLiT2Dwr6WuTX2CIqldfrDuJfKJGKnpZ6Blvwc8oCu1zsP0pgdYknxFztHljencUmrc)
 
@@ -27,9 +27,9 @@ Here, you can see the progress for different duration of time by applying the fi
 
 ![](https://lh5.googleusercontent.com/rL5G71kODT7geAmKct5bLxcPatzzvy7E5IclNxoBPMezU91wW0ba8KhN7hKvomkZzV7KlLMTX7rt5OnpyDKUlAAXtAJeQscfloi3FWYb-sH5jY_a1t2nTuFQgPMYcRj6gLuu6jlx)
 
-### 2.Â Team Heatmap
+### 2.ÂTeam Heatmap
 
-Team Heatmap will show you the percentageÂ achievedÂ by your sales team for each KPIs assigned to them. Here, you can find the performance for each member based on the KPIs. For example, in the following screenshot, In the last quarter, Elizabeth Roy has achieved 58% of her target for Calls KPI, 110% of the target for Meeting KPI, and 61% of the target in Renewal Meetings KPI.
+Team Heatmap will show you the percentageÂachievedÂby your sales team for each KPIs assigned to them. Here, you can find the performance for each member based on the KPIs. For example, in the following screenshot, In the last quarter, Elizabeth Roy has achieved 58% of her target for Calls KPI, 110% of the target for Meeting KPI, and 61% of the target in Renewal Meetings KPI.
 
 ![](https://lh6.googleusercontent.com/56AsBMunnOIYzW8__vo2uM2aRcmqG-NLy0ALWvSYhS6vmzLuZ9sMmP_yNSilnIEl999KEVY7QAO1WvuPb_HPjKbCcpiqQ5Ao_2Y8Mi575ItdP6VyCsR_ZcOva83jZuiJ27fnGSqA)
 
@@ -59,6 +59,6 @@ The table widget will show you the actual KPI data in a table format with approp
 
 ### 7.KPI Cards
 
-KPI cards is another time of widget that will tell you about the total target and total achieved data by your team for a fixed duration. This will also help you understand what is the total percentage achieved by your team for each KPI assigned to them in SmartWinnr. For example in the screenshot below, the total target achieved for the team is 1000 (which is the sum of targets of each reportee). And the total call achieved by the team is 50 (which is the sum of calls made by each of theÂ reportee). It also tells you that the total percentage of achievement of your team is 50% of their target.
+KPI cards is another time of widget that will tell you about the total target and total achieved data by your team for a fixed duration. This will also help you understand what is the total percentage achieved by your team for each KPI assigned to them in SmartWinnr. For example in the screenshot below, the total target achieved for the team is 1000 (which is the sum of targets of each reportee). And the total call achieved by the team is 50 (which is the sum of calls made by each of theÂreportee). It also tells you that the total percentage of achievement of your team is 50% of their target.
 
 ![](https://lh6.googleusercontent.com/lidoaFdQBINjq5WYcfo8lPvBxsLmPxcpDMMJV9z83U7NAfTWEYpafww-v73BAGYL6Pfk5Ja3ydGZCvGKuwPTx2tazFpxbr_EPh85IUAKI67qjn2KAWQch6TWl4NSd4gaIIijpaQw)

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/80-how-to-view-the-smartpath-
 ---
 Follow the below steps to view the SmatPath analytics:
 
-Go to EDITOR >Â  **LEARNING AND KNOWLEDGE >Â SmartPaths > View All SmartPaths.** It will open the following page displaying all the created SmartPaths.
+Go to EDITOR >Â **LEARNING AND KNOWLEDGE >ÂSmartPaths > View All SmartPaths.** It will open the following page displaying all the created SmartPaths.
 
 [![](/img/learning/helpscout-image-ebf41726.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016a10d2042ff6d1b2a9043/file-kfMOibsmCo.png)
 
@@ -23,7 +23,7 @@ On this page, _click_ on the **'View Batches'** button at the top right corner o
 
 [![](/img/learning/helpscout-image-018f9c48.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016bed06867724dfc6ede34/file-tw4DQSIhpy.png)
 
-Â Now, _click_ on the **'Analytics'** icon of a particular batch. It will open the following SmartPath analytics report:
+ÂNow, _click_ on the **'Analytics'** icon of a particular batch. It will open the following SmartPath analytics report:
 
 [![](/img/learning/helpscout-image-d4d70690.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016bfd81f25b9041beb9c09/file-8M11BPOFRc.png)
 
@@ -31,7 +31,7 @@ On this page, _click_ on the **'View Batches'** button at the top right corner o
 
 1
 
-#### Â  Â Overall Participation
+#### Â ÂOverall Participation
 
 This shows how many participants have completed the SmartPath, how many are still progressing through it, and how many of them haven't started it yet. All this data is displayed in the form of a donut graph:
 
@@ -39,7 +39,7 @@ This shows how many participants have completed the SmartPath, how many are stil
 
 2
 
-#### Â  Â  Participation By Country
+#### Â Â Participation By Country
 
 This displays a bar graph that shows the percentage of participants who have started the SmartPath by country.
 
@@ -47,7 +47,7 @@ This displays a bar graph that shows the percentage of participants who have sta
 
 4
 
-#### Â  Â  Quiz Analytics
+#### Â Â Quiz Analytics
 
 ##### Categorywise performance for all countries
 
@@ -63,7 +63,7 @@ This section gives a heat map that shows the participant's performance in the qu
 
 5
 
-#### Â  Â  Analytics By Modules and Segments
+#### Â Â Analytics By Modules and Segments
 
 [![](/img/learning/helpscout-image-b5e10ed5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016d8a72042ff6d1b2a907c/file-tTcZ8726vy.png)
 
@@ -77,13 +77,13 @@ Here you can see Overall Participation, Participation by Country, You can also s
 
 [![](/img/learning/helpscout-image-12a22a72.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016dc9fa4cefb30ae5c5b72/file-dfwm5xdOnY.png)
 
-You can also view metrics of SmartFeeds, Surveys, etc., by _clicking_Â on the respective analytics icon.
+You can also view metrics of SmartFeeds, Surveys, etc., by _clicking_Âon the respective analytics icon.
 
 [![](/img/learning/helpscout-image-3e712aee.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016ddc3ac2f834ec5383a06/file-pskRYuI4uq.png)
 
 6
 
-#### Â  Â  User Wise Performance
+#### Â Â User Wise Performance
 
 ##### This section gives analytics for user-wise performance
 
@@ -95,7 +95,7 @@ You will get to see each user's progress in the SmartPath completion.
 
 7
 
-#### Â  Â  Coaching Analytics
+#### Â Â Coaching Analytics
 
 ##### Competency wise Performance
 
@@ -107,4 +107,4 @@ This section gives a bar graph that shows the analytics of competency wise perfo
 
 The heatmap in this section shows the participant's performance in coaching by competency and country
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/640)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/640)

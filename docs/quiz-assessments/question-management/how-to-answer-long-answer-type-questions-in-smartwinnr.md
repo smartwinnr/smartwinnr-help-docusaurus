@@ -17,7 +17,7 @@ You can follow the below steps to answer such Long - answer type Questions in Sm
 
 ![](/img/quizzes/helpscout-image-117d8ee0.png)
 
-* Click on the button “ **START QUIZ**” to start answering the questions in the quiz.
+* Click on the button  **START QUIZ** to start answering the questions in the quiz.
 
 ![](/img/quizzes/helpscout-image-ee44b8f4.png)
 
@@ -33,19 +33,19 @@ H1 and H2 are the heading font feature to convert your text into a heading and _
 
 You can also use the list option to mention the point numbers as an ordered list or you can choose the unordered list (instead of a number, it will come as a point). There is a feature to move your context to left and right size based on your requirement.
 
-* Once you complete answering all the questions, click on the “**SUBMIT QUIZ**” button to submit the quiz.
+* Once you complete answering all the questions, click on the **SUBMIT QUIZ** button to submit the quiz.
 
 ![](https://lh6.googleusercontent.com/-68Tjm_sTZ30XPOdnyKSuCW2i3qAjFiBnaUsnHuW6vn7dAQnuiwaYn4xYmQk02eR0_KZhpNxMl5wqYtD-qHyws1rSdHCIYs4sunLwsYk4e5KTCS0xK2VZR0Cds2Sw09jEUwhD1oq)
 
-* After submitting the quiz, you will be redirected to the quiz leaderboard page. In case **if all the questions in your quiz were long answer questions, the quiz leaderboard will show zero scores until the evaluator evaluates your answers.**
+* After submitting the quiz, you�will be redirected to the quiz leaderboard page. In case **if all the questions in your quiz were long answer questions, the quiz leaderboard will show zero scores until the evaluator evaluates your answers.**
 
 ![](/img/quizzes/helpscout-image-8ba1ab95.png)
 
 * Once the **evaluation is done**, the **score will be visible** on the leaderboard.
 
-##   How to view the Quiz score and Feedback?
+## � How to view the Quiz score and Feedback?
 
-* Once your evaluator evaluates and gives points for each question, your scores and ranking will be available to you on the quiz leaderboard.
+* Once your evaluator evaluates and gives points for each question, your scores and ranking will be available to�you on the quiz leaderboard.
 * To check the leaderboard, select the quiz from the **Completed section tab** and select the quiz.
 
 ![](/img/quizzes/helpscout-image-54a3632f.png)

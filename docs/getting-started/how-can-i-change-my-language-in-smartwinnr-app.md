@@ -19,6 +19,6 @@ Here, click on the **profile picture** at the top. It will take you to the follo
 
 ![](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
 
-Click on theÂ _Settings_ icon at the top right corner highlighted in red then go toÂ the option **Change Language**. It will take you to the following screen where you can select the language from the list of languages available for your organization. Then click on the **OK** option to update the language for your SmartWinnr account.
+Click on theÂ_Settings_ icon at the top right corner highlighted in red then go toÂthe option **Change Language**. It will take you to the following screen where you can select the language from the list of languages available for your organization. Then click on the **OK** option to update the language for your SmartWinnr account.
 
 ![](/img/getting-started/helpscout-image-e81a26e8.png)

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/236-how-to-create-field-coach
 ---
 Only users with ADMIN roles can create field coaching templates.
 
-If you have the privilege to create Field Coaching templates, you will see the link â€˜Templatesâ€™ under the Field Coaching Setting under the Admin section of your left menu. Follow the below steps to create a new field coaching template:
+If you have the privilege to create Field Coaching templates, you will see the link Templates under the Field Coaching Setting under the Admin section of your left menu. Follow the below steps to create a new field coaching template:
 
 ## Step 1: Click on the "Create New Template" at the right side corner
 
@@ -27,19 +27,19 @@ This is the second step as shown in the picture below.
 
 ![](/img/coaching/helpscout-image-368c6674.jpg)
 
-**Evaluate Baseline:** This allowsÂ the manager to assess the competencies on which the user proceeds with coaching.
+**Evaluate Baseline:** This allowsÂthe manager to assess the competencies on which the user proceeds with coaching.
 
 **Evaluate Strength Weakness:** Based on the strengths and weaknesses of the user, the manager can assess them on different competencies.
 
-Fill up the rating description and add the rating and also mention their description as wellÂ and click on the "save" icon below.
+Fill up the rating description and add the rating and also mention their description as wellÂand click on the "save" icon below.
 
-## Step 3: Select the competencies and add theÂ Individual Rating Descriptors
+## Step 3: Select the competencies and add theÂIndividual Rating Descriptors
 
 In this step first, you need to select the competencies and add the description for rating individually as shown below.
 
 ![](/img/coaching/helpscout-image-991816b7.jpg)
 
-After filling up the description,Â click on the "save" icon in the right corner.
+After filling up the description,Âclick on the "save" icon in the right corner.
 
 ## Step 4: Create the coaching section
 
@@ -61,14 +61,14 @@ You can select who can see the results, by clicking on the "visible to" option. 
 
 **Field type:** This tab allows us to select the type of section where the user or manager can enter their comments.
 
-**Display Name:** This allowsÂ you to enter the name which can be displayed.
+**Display Name:** This allowsÂyou to enter the name which can be displayed.
 
 **Placeholder:** This acts as an indicator to show what you need to type in the display name. Example- Enter your name.
 
 **Visible to:** Here you can select the visibility of the step to coach or coachee
 
-**Visible in Steps:**Â Here this tab allows us to choose which step we want to make visible.
+**Visible in Steps:**ÂHere this tab allows us to choose which step we want to make visible.
 
 **Editable by and steps:** Here you can choose any user who can edit the steps.
 
-After adding all the necessary fields,Â click on the "save" icon below. And the Field Coaching Template is created.
+After adding all the necessary fields,Âclick on the "save" icon below. And the Field Coaching Template is created.

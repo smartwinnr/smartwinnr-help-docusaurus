@@ -11,9 +11,9 @@ helpscout_url: https://help.smartwinnr.com/article/103-how-to-create-a-competiti
 ---
 Only users with editor role can create competitions.
 
-If you have the privilege to create Competitions, you will see the link â€˜Competitionsâ€™ under the Editor section of your left menu. Follow the below steps to create a new competition:
+If you have the privilege to create Competitions, you will see the link Competitions under the Editor section of your left menu. Follow the below steps to create a new competition:
 
-Go to EDITOR >Â GAMIFICATION AND ENGAGEMENT >Â Competitions > Add Competition.
+Go to EDITOR >ÂGAMIFICATION AND ENGAGEMENT >ÂCompetitions > Add Competition.
 
 ### Step-1: Add Name, Description, and Dates to the Competition
 
@@ -23,7 +23,7 @@ Apart from this you can add a Theme for the competition and upload a PDF related
 
 ![](/img/quizzes/helpscout-image-a01afb14.png)
 
-Once you are done entering these details, click on the â€˜Saveâ€™ button.
+Once you are done entering these details, click on the Save button.
 
 ### Step-2: Add participants to the Competition
 
@@ -37,7 +37,7 @@ You can filter these participants based on the Business Unit, Country, Group, Na
 
 ### Step-3:Add Leaderboard to the Competition
 
-Next step is adding leaderboards to this competition. You can add multiple leaderboards to a Competition. There are two types ofÂ  leaderboards. One is a team leaderboard and the other is an individual leaderboard.
+Next step is adding leaderboards to this competition. You can add multiple leaderboards to a Competition. There are two types ofÂ leaderboards. One is a team leaderboard and the other is an individual leaderboard.
 
 Follow the below steps to create these two types of leaderboards for a competition:
 
@@ -45,48 +45,48 @@ Go to the third step. Then click the **Add** button. It opens the following pop-
 
 ![](/img/quizzes/helpscout-image-9c0e6912.png)
 
-Type:Â Here select the type of leaderboard that you want to create. SelectingÂ By TeamÂ creates a team leaderboard (These names are pre-defined in SmartWinnr as groups). And, selectingÂ By ParticipantsÂ creates an individual leaderboard.Â Â Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](/img/quizzes/helpscout-image-df3e39b6.png)[
+Type:ÂHere select the type of leaderboard that you want to create. SelectingÂBy TeamÂcreates a team leaderboard (These names are pre-defined in SmartWinnr as groups). And, selectingÂBy ParticipantsÂcreates an individual leaderboard.ÂÂÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](/img/quizzes/helpscout-image-df3e39b6.png)[
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
-Visible To:Â In this section, you could select and control the visibility of the leaderboard. You will have three options here -
+Visible To:ÂIn this section, you could select and control the visibility of the leaderboard. You will have three options here -
 
-* Everyone -Â Makes it visible to everyone in the competition
-* None -Â Makes it visible to no one but you
-* Only Members in LeaderboardÂ - Makes it visible to only the members in the leaderboard
+* Everyone -ÂMakes it visible to everyone in the competition
+* None -ÂMakes it visible to no one but you
+* Only Members in LeaderboardÂ- Makes it visible to only the members in the leaderboard
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-1a60d6c7.png)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-1a60d6c7.png)
 
-Scoring Method:Â Here, select the kind of scoring method that you want to implement for the leaderboard. You have two options here. You can either calculate the sum of the scores or get an average of the scores.
+Scoring Method:ÂHere, select the kind of scoring method that you want to implement for the leaderboard. You have two options here. You can either calculate the sum of the scores or get an average of the scores.
 
 This feature only works for team leaderboards.
 
-Average is mostly selected when you have teams withÂ an unequal number of participants and you want to measure each team on a common scale.
+Average is mostly selected when you have teams withÂan unequal number of participants and you want to measure each team on a common scale.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-cd6ea643.png)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-cd6ea643.png)
 
-Leaderboard Name:Â Give a name to this leaderboard here.
+Leaderboard Name:ÂGive a name to this leaderboard here.
 
 ![](/img/quizzes/helpscout-image-8aca81a5.png)
 
-Show Time:Â Check this option if you want the completion status of Tasks in Leaderboard is to be timed.
+Show Time:ÂCheck this option if you want the completion status of Tasks in Leaderboard is to be timed.
 
 ![](/img/quizzes/helpscout-image-12a5ac3a.png)  
-Show Ranking:Â Check this option if you wantÂ to show usersÂ up toÂ a number of ranking. Here you need to provide the number of ranksÂ up toÂ which you wish to showÂ onÂ the leaderboard.
+Show Ranking:ÂCheck this option if you wantÂto show usersÂup toÂa number of ranking. Here you need to provide the number of ranksÂup toÂwhich you wish to showÂonÂthe leaderboard.
 
 ![](/img/quizzes/helpscout-image-e04b0fcb.png)
 
-Scoring Duration:Â Â In this section, select the time duration during which the scores will be added to the leaderboard. If you selectÂ Always, then the scores will be added throughout the competition. And, if you selectÂ Date, then you have to specify aÂ StartÂ andÂ EndÂ date between which the scores will be added.
+Scoring Duration:ÂÂIn this section, select the time duration during which the scores will be added to the leaderboard. If you selectÂAlways, then the scores will be added throughout the competition. And, if you selectÂDate, then you have to specify aÂStartÂandÂEndÂdate between which the scores will be added.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-0faab515.png)Â  Â  Â  Â [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
+Â Â Â Â Â Â Â Â Â Â [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/quizzes/helpscout-image-0faab515.png)Â Â Â Â[](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
-Teams:Â If you are creating a team leaderboard, then this is the section where you select the team/teams that you want to display on the leaderboard.
+Teams:ÂIf you are creating a team leaderboard, then this is the section where you select the team/teams that you want to display on the leaderboard.
 
 ![](/img/quizzes/helpscout-image-bdd29eab.png)
 
 [
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
-If you are creating an individual leaderboard (if selectedÂ TypeÂ asÂ By Participants)Â then next, you will get to select the participants that will get displayed on the leaderboard.
+If you are creating an individual leaderboard (if selectedÂTypeÂasÂBy Participants)Âthen next, you will get to select the participants that will get displayed on the leaderboard.
 
 ![](/img/quizzes/helpscout-image-a69e9c86.png)
 
@@ -100,12 +100,12 @@ The third step in the process of creating competition is to add tasks to the com
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)[How to add a Quiz to a Competition?](https://smartwinnr.helpscoutdocs.com/article/102-how-to-add-a-quiz-to-a-competition)
 
-[How to add a Survey to a Competition?](https://smartwinnr.helpscoutdocs.com/article/104-how-to-add-a-survey-to-a-competition) Â 
+[How to add a Survey to a Competition?](https://smartwinnr.helpscoutdocs.com/article/104-how-to-add-a-survey-to-a-competition) Â
 
-[How to add a Scorecard to a Competition?](https://smartwinnr.helpscoutdocs.com/article/105-how-to-add-a-scorecard-to-a-competition) Â 
+[How to add a Scorecard to a Competition?](https://smartwinnr.helpscoutdocs.com/article/105-how-to-add-a-scorecard-to-a-competition) Â
 
-[How to add a Video Coaching to a Competition?](https://smartwinnr.helpscoutdocs.com/article/106-how-to-add-a-video-coaching-to-the-competition) Â 
+[How to add a Video Coaching to a Competition?](https://smartwinnr.helpscoutdocs.com/article/106-how-to-add-a-video-coaching-to-the-competition) Â
 
-[How to add a Challenge to a Competition?](https://smartwinnr.helpscoutdocs.com/article/107-how-to-add-a-challenge-to-the-competition) Â 
+[How to add a Challenge to a Competition?](https://smartwinnr.helpscoutdocs.com/article/107-how-to-add-a-challenge-to-the-competition) Â
 
-[How to add a FormÂ to a Competition?](https://smartwinnr.helpscoutdocs.com/article/227-how-to-add-a-form-to-a-competition)
+[How to add a FormÂto a Competition?](https://smartwinnr.helpscoutdocs.com/article/227-how-to-add-a-form-to-a-competition)

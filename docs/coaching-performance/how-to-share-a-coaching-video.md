@@ -17,13 +17,13 @@ Only the users with the Editor/Manager role can share a coaching video.
 
 Follow the below steps to share a video:
 
-Go to your **Left Menu > Coaching > Video Coaching > My Reviews**. On this page click on the '**View All'** button of a particular video.Â  Here you will get to see all the coachings that are created or owned by you.
+Go to your **Left Menu > Coaching > Video Coaching > My Reviews**. On this page click on the '**View All'** button of a particular video.Â Here you will get to see all the coachings that are created or owned by you.
 
 [![](/img/coaching/helpscout-image-eed70a3d.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2e34340f24b1b2aaf6021/file-yE56BxxKr8.png)  
 
 To share a particular video, click on the share button at the right corner. This will open the following page:
 
-Â  Â  Â  Â  Â  Â  Â  Â Â  [![](/img/coaching/helpscout-image-d21347da.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2e4596451e825e3b8fc2e/file-B7EfaZwhWA.png)
+Â Â Â Â Â Â Â ÂÂ [![](/img/coaching/helpscout-image-d21347da.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2e4596451e825e3b8fc2e/file-B7EfaZwhWA.png)
 
 On this page,select the users with whom you wish to share the video. You can also give a message about the video that you are sharing.
 
@@ -31,7 +31,7 @@ Once you have selected the users, click on the 'Share Video' button. The video w
 
 The users with whom the video has been shared will get an email notification about it. Below is the screenshot of the email notification.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  [![](/img/coaching/helpscout-image-ce5d3822.png)  
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ [![](/img/coaching/helpscout-image-ce5d3822.png)  
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6001b5652e764327f87bf1cf/file-0pYU0tvPf9.png)
 
 Now, click on the 'View Video' button which opens the following page with the video.

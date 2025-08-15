@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/177-how-to-add-change-targets
 ---
 Follow the below steps in order to add/change the targets in a scorecard:
 
-Go to EDITOR >Â PERFORMANCE >Â KPIÂ ScorecardsÂ > Scorecards. Click on the scorecard for which you want to edit the target.
+Go to EDITOR >ÂPERFORMANCE >ÂKPIÂScorecardsÂ> Scorecards. Click on the scorecard for which you want to edit the target.
 
 Click on '3', and 'Edit Target'.
 
@@ -19,7 +19,7 @@ Here is how you will get to see the targets of each user:
 
 ![](/img/admin/helpscout-image-ef5253e8.png)  
 
-You can choose to change targets for the entire team by editing in the line of the 'Target'. This will change the target for the entire month. It's an easy and quick way to change target for everyone.Â Â 
+You can choose to change targets for the entire team by editing in the line of the 'Target'. This will change the target for the entire month. It's an easy and quick way to change target for everyone.ÂÂ
 
 ![](/img/admin/helpscout-image-0e32cebf.png)
 

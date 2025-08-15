@@ -5,7 +5,7 @@ slug: manager-guide
 sidebar_position: 1
 ---
 
-# SmartWinnr for Managers 👔
+# SmartWinnr for Managers
 
 Welcome to SmartWinnr! This guide will help you effectively manage your team's learning, performance, and development using SmartWinnr's powerful manager tools.
 
@@ -13,7 +13,7 @@ Welcome to SmartWinnr! This guide will help you effectively manage your team's l
 
 As a SmartWinnr manager, you have comprehensive tools to:
 
-### 📊 **Monitor Team Performance**
+### **Monitor Team Performance**
 
 - View real-time team analytics and progress
 - Track individual and group learning completion
@@ -21,7 +21,7 @@ As a SmartWinnr manager, you have comprehensive tools to:
 - Monitor engagement with learning content
 - Compare team performance against benchmarks
 
-### 🎯 **Assign and Manage Content**
+### **Assign and Manage Content**
 
 - Assign specific quizzes and assessments to team members
 - Create targeted learning paths for skill development
@@ -29,7 +29,7 @@ As a SmartWinnr manager, you have comprehensive tools to:
 - Schedule learning activities and deadlines
 - Track completion rates and engagement levels
 
-### 🏆 **Drive Competition and Engagement**
+### **Drive Competition and Engagement**
 
 - Set up team challenges and competitions
 - Monitor leaderboards and team rankings
@@ -37,7 +37,7 @@ As a SmartWinnr manager, you have comprehensive tools to:
 - Recognize achievements and celebrate success
 - Foster healthy competition within and across teams
 
-### 👥 **Coach and Develop Team Members**
+### **Coach and Develop Team Members**
 
 - Access detailed individual performance analytics
 - Identify coaching opportunities and skill gaps
@@ -45,7 +45,7 @@ As a SmartWinnr manager, you have comprehensive tools to:
 - Track improvement over time
 - Support career development goals
 
-### 📈 **Make Data-Driven Decisions**
+### **Make Data-Driven Decisions**
 
 - Generate comprehensive team reports
 - Analyze trends and patterns in team performance
@@ -58,77 +58,77 @@ As a SmartWinnr manager, you have comprehensive tools to:
 ### 1. **Access Manager View**
 
 Switch to manager mode to access team management tools.
-📖 **Detailed Guide**: [Switching to Manager View](../getting-started/manager-features.md)
+ **Detailed Guide**: [Switching to Manager View](../getting-started/manager-features.md)
 
 ### 2. **Explore Team Dashboard**
 
 Familiarize yourself with team analytics and key performance indicators.
-📖 **Detailed Guide**: [Team Analytics Dashboard](./team-analytics-dashboard.md)
+ **Detailed Guide**: [Team Analytics Dashboard](./team-analytics-dashboard.md)
 
 ### 3. **Review Team Performance**
 
 Check current team status, completion rates, and performance metrics.
-📖 **Detailed Guide**: [Monitoring Team Performance](./monitoring-team-performance.md)
+ **Detailed Guide**: [Monitoring Team Performance](./monitoring-team-performance.md)
 
 ### 4. **Assign Your First Content**
 
 Send quizzes or learning content to team members.
-📖 **Detailed Guide**: [Assigning Content to Team](./assigning-content-to-team.md)
+ **Detailed Guide**: [Assigning Content to Team](./assigning-content-to-team.md)
 
 ### 5. **Set Up Team Coaching**
 
 Begin coaching conversations based on performance data.
-📖 **Detailed Guide**: [Coaching Team Members](./coaching-team-members.md)
+ **Detailed Guide**: [Coaching Team Members](./coaching-team-members.md)
 
 ## Manager Workflow Guide
 
-### 📅 **Daily Management Routine**
+### **Daily Management Routine**
 
-1. **Check Team Dashboard** → Review overnight activity and new submissions
-2. **Monitor Deadlines** → Identify upcoming due dates and at-risk assignments
-3. **Review Performance** → Check latest quiz results and learning progress
-4. **Address Issues** → Follow up with team members who need support
-5. **Plan Next Actions** → Schedule coaching sessions or assign new content
+1. **Check Team Dashboard**  Review overnight activity and new submissions
+2. **Monitor Deadlines**  Identify upcoming due dates and at-risk assignments
+3. **Review Performance**  Check latest quiz results and learning progress
+4. **Address Issues**  Follow up with team members who need support
+5. **Plan Next Actions**  Schedule coaching sessions or assign new content
 
-### 📊 **Weekly Team Review**
+### **Weekly Team Review**
 
-1. **Generate Reports** → Pull weekly performance analytics
-2. **Identify Trends** → Look for patterns in team performance
-3. **Plan Interventions** → Create action plans for struggling team members
-4. **Recognize Success** → Acknowledge high performers and achievements
-5. **Strategic Planning** → Adjust learning plans based on performance data
+1. **Generate Reports**  Pull weekly performance analytics
+2. **Identify Trends**  Look for patterns in team performance
+3. **Plan Interventions**  Create action plans for struggling team members
+4. **Recognize Success**  Acknowledge high performers and achievements
+5. **Strategic Planning**  Adjust learning plans based on performance data
 
-### 📈 **Monthly Strategic Planning**
+### **Monthly Strategic Planning**
 
-1. **Comprehensive Analysis** → Deep dive into monthly performance data
-2. **Skill Gap Assessment** → Identify team-wide training needs
-3. **Goal Setting** → Establish targets for next month
-4. **Resource Planning** → Allocate learning resources effectively
-5. **Performance Reviews** → Conduct formal performance discussions
+1. **Comprehensive Analysis**  Deep dive into monthly performance data
+2. **Skill Gap Assessment**  Identify team-wide training needs
+3. **Goal Setting**  Establish targets for next month
+4. **Resource Planning**  Allocate learning resources effectively
+5. **Performance Reviews**  Conduct formal performance discussions
 
 ## Key Manager Features
 
-### 📊 **Team Analytics Dashboard**
+### **Team Analytics Dashboard**
 
 Your central command center for team management:
 
 **Real-Time Metrics**
 
-- **📈 Completion Rates**: Track assignment completion across your team
-- **🎯 Performance Scores**: Monitor average quiz scores and improvements
-- **⏰ Activity Levels**: See when team members are most active
-- **🏆 Competition Standings**: View team rankings in challenges
-- **📱 Engagement Metrics**: Monitor interaction with learning content
+- **Completion Rates**: Track assignment completion across your team
+- **Performance Scores**: Monitor average quiz scores and improvements
+- **Activity Levels**: See when team members are most active
+- **Competition Standings**: View team rankings in challenges
+- **Engagement Metrics**: Monitor interaction with learning content
 
 **Visual Reporting**
 
-- **📊 Charts and Graphs**: Visual representation of team performance
-- **🗺️ Heat Maps**: Identify strengths and weaknesses by topic
-- **📈 Trend Lines**: Track improvement over time
-- **🎯 Goal Progress**: Monitor advancement toward team objectives
-- **📋 Comparison Views**: Compare individuals or periods
+- **Charts and Graphs**: Visual representation of team performance
+- **Heat Maps**: Identify strengths and weaknesses by topic
+- **Trend Lines**: Track improvement over time
+- **Goal Progress**: Monitor advancement toward team objectives
+- **Comparison Views**: Compare individuals or periods
 
-### 🎯 **Assignment Management**
+### **Assignment Management**
 
 Efficiently manage learning assignments for your team:
 
@@ -148,7 +148,7 @@ Efficiently manage learning assignments for your team:
 - **Follow-up Actions**: Identify who needs additional support
 - **Success Metrics**: Measure effectiveness of assigned content
 
-### 🏆 **Competition Management**
+### **Competition Management**
 
 Drive engagement through friendly competition:
 
@@ -160,7 +160,7 @@ Drive engagement through friendly competition:
 - **Reward Systems**: Manage badges, certificates, and recognition
 - **Motivation Tools**: Use competition data to encourage participation
 
-### 👥 **Individual Coaching Tools**
+### **Individual Coaching Tools**
 
 Support each team member's development:
 
@@ -182,7 +182,7 @@ Support each team member's development:
 
 ## Manager Analytics Deep Dive
 
-### 📊 **Understanding Team Metrics**
+### **Understanding Team Metrics**
 
 **Performance Indicators**
 
@@ -200,7 +200,7 @@ Support each team member's development:
 - **Goal vs. Actual**: Progress toward established targets
 - **Benchmark Analysis**: Performance against industry or company standards
 
-### 📈 **Using Data for Decision Making**
+### **Using Data for Decision Making**
 
 **Identifying Training Needs**
 
@@ -220,7 +220,7 @@ Support each team member's development:
 
 ## Best Practices for Manager Success
 
-### 🎯 **Effective Team Management**
+### **Effective Team Management**
 
 - **Regular Check-ins**: Schedule consistent one-on-one meetings
 - **Clear Expectations**: Communicate learning goals and deadlines
@@ -228,7 +228,7 @@ Support each team member's development:
 - **Constructive Feedback**: Provide specific, actionable guidance
 - **Support Availability**: Be accessible when team needs help
 
-### 📊 **Data-Driven Leadership**
+### **Data-Driven Leadership**
 
 - **Regular Analysis**: Review team data consistently
 - **Trend Identification**: Look for patterns and changes over time
@@ -236,7 +236,7 @@ Support each team member's development:
 - **Evidence-Based Decisions**: Use data to guide management choices
 - **Continuous Improvement**: Adjust strategies based on results
 
-### 🏆 **Motivation and Engagement**
+### **Motivation and Engagement**
 
 - **Gamification**: Use competitions and challenges effectively
 - **Personal Relevance**: Connect learning to individual career goals
@@ -246,7 +246,7 @@ Support each team member's development:
 
 ## Advanced Manager Features
 
-### 🔧 **Customization Options**
+### **Customization Options**
 
 - **Dashboard Personalization**: Configure your manager dashboard
 - **Report Customization**: Create reports tailored to your needs
@@ -254,7 +254,7 @@ Support each team member's development:
 - **Team Grouping**: Organize team members into logical groups
 - **Goal Configuration**: Set team and individual performance targets
 
-### 🤖 **Automation Tools**
+### **Automation Tools**
 
 - **Automatic Assignments**: Set up content to assign automatically
 - **Scheduled Reports**: Receive regular performance updates
@@ -262,7 +262,7 @@ Support each team member's development:
 - **Escalation Workflows**: Set up alerts for performance issues
 - **Progress Notifications**: Get updates on team achievements
 
-### 🔄 **Integration Capabilities**
+### **Integration Capabilities**
 
 - **Calendar Integration**: Sync learning schedules with calendars
 - **HR Systems**: Connect with performance management systems
@@ -272,7 +272,7 @@ Support each team member's development:
 
 ## Troubleshooting and Support
 
-### 🐛 **Common Manager Challenges**
+### **Common Manager Challenges**
 
 - **Low Engagement**: Strategies to increase team participation
 - **Poor Performance**: Approaches to address underperformance
@@ -280,7 +280,7 @@ Support each team member's development:
 - **Technical Issues**: Resolving platform and access problems
 - **Resistance to Learning**: Overcoming team reluctance
 
-### 📞 **Getting Help**
+### **Getting Help**
 
 - **Manager Training**: Access training on using manager tools
 - **Technical Support**: Contact [support@smartwinnr.com](mailto:support@smartwinnr.com)
@@ -290,7 +290,7 @@ Support each team member's development:
 
 ## Manager Success Metrics
 
-### 🎯 **Track Your Management Effectiveness**
+### **Track Your Management Effectiveness**
 
 - **Team Completion Rates**: Monitor assignment completion percentages
 - **Performance Improvement**: Track team score increases over time
@@ -298,7 +298,7 @@ Support each team member's development:
 - **Goal Achievement**: Monitor progress toward team objectives
 - **Individual Development**: Track career growth of team members
 
-### 📈 **Continuous Improvement**
+### **Continuous Improvement**
 
 - **Regular Self-Assessment**: Evaluate your management approach
 - **Team Feedback**: Gather input on management effectiveness

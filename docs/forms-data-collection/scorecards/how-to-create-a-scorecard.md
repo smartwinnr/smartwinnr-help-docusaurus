@@ -15,51 +15,51 @@ Here is how to go about filling each field to create a scorecard:
 
 ## Step 1: Select Measurement Frequency and KPIs
 
-Business Unit:Â Select the business unit for which you would like to select the scorecard. In most cases, you might not see this field at all.
+Business Unit:ÂSelect the business unit for which you would like to select the scorecard. In most cases, you might not see this field at all.
 
-Measurement Frequency:Â Specify how frequently you want to measure the KPIs like daily, weekly, monthly,Â  quarterly or annually.
+Measurement Frequency:ÂSpecify how frequently you want to measure the KPIs like daily, weekly, monthly,Â quarterly or annually.
 
-Status:Â Select the status of the scorecard here. Active or Deactive.
+Status:ÂSelect the status of the scorecard here. Active or Deactive.
 
-Visibility:Â Choose if you want to make this visible to the users or hide it.
+Visibility:ÂChoose if you want to make this visible to the users or hide it.
 
-Priority:Â Give a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "1" here, it will get displayed in the 1st position. If you give "2" here, it will get displayed in the second position.
+Priority:ÂGive a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "1" here, it will get displayed in the 1st position. If you give "2" here, it will get displayed in the second position.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/787)
 
-**Scorecard Name:**Â Give a name to the scorecard here.
+**Scorecard Name:**ÂGive a name to the scorecard here.
 
-**Scorecard Description:**Â Write a short description of the scorecard
+**Scorecard Description:**ÂWrite a short description of the scorecard
 
 ![](https://support.smartwinnr.com/api/v1/attachments/788)
 
-**KPIs Added to this Scorecard:**Â In this section, add the KPIs that you would like to measure in the scorecard by clicking on the 'Add KPI' button.
+**KPIs Added to this Scorecard:**ÂIn this section, add the KPIs that you would like to measure in the scorecard by clicking on the 'Add KPI' button.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/789)
 
 Here is how to fill the fields to add KPIs.
 
-**Visibility**:Â Choose if you want to make this KPI visible to the users.
+**Visibility**:ÂChoose if you want to make this KPI visible to the users.
 
-**Position**:Â This determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position, 2 shows it in the second position, and so on.
+**Position**:ÂThis determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position, 2 shows it in the second position, and so on.
 
-**Measurement Type:**Â This field takes two types of values- Actual and Level.
+**Measurement Type:**ÂThis field takes two types of values- Actual and Level.
 
-* **Actual**:Â This value lets you give a KPI value and points for that value. Every time a rep achieves the KPI, she will be allotted points. For example, in the below screenshot, for every 20 calls made the rep will be allotted 10 points.
+* **Actual**:ÂThis value lets you give a KPI value and points for that value. Every time a rep achieves the KPI, she will be allotted points. For example, in the below screenshot, for every 20 calls made the rep will be allotted 10 points.
 
 ![](/img/reports/helpscout-image-d5e2e2f9.jpg)
 
-Target:Â Set a target for the KPI.
+Target:ÂSet a target for the KPI.
 
-Floor:Â This is the minimum KPI value to achieve in order to get a score.
+Floor:ÂThis is the minimum KPI value to achieve in order to get a score.
 
-Ceiling:Â This is the maximum KPI value after which the score will not be given.
+Ceiling:ÂThis is the maximum KPI value after which the score will not be given.
 
-* **Level**:Â This lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
+* **Level**:ÂThis lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
 ![](/img/reports/helpscout-image-4840b1ca.jpg)
 
-* **Individual Level:**Â This is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
+* **Individual Level:**ÂThis is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
 ![](/img/reports/helpscout-image-da8bfade.jpg)
 
@@ -67,13 +67,13 @@ Ceiling:Â This is the maximum KPI value after which the score will not be given.
 
 ![](/img/reports/helpscout-image-09b0d7b9.jpg)
 
-Target:Â Set a target percentage for the KPI.
+Target:ÂSet a target percentage for the KPI.
 
-Floor:Â This is the minimum KPI percentage to achieve in order to get a score.
+Floor:ÂThis is the minimum KPI percentage to achieve in order to get a score.
 
-Ceiling:Â This is the maximum KPI percentage after which the score will not be given.
+Ceiling:ÂThis is the maximum KPI percentage after which the score will not be given.
 
-* **Target Level**:Â This is similar to the Level type but the difference isÂ that it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
+* **Target Level**:ÂThis is similar to the Level type but the difference isÂthat it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
 
 ![](/img/reports/helpscout-image-cf4486b5.jpg)
 
@@ -87,19 +87,19 @@ Here, you can search the users based on Business Unit, Zone, Group, Name, Email,
 
 Click on the 'Save' button once you have selected the users.
 
-Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the â€œUpload Usersâ€ button. It opens the following screen where you can upload a CSV file that contains your user details:
+Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the Upload Users button. It opens the following screen where you can upload a CSV file that contains your user details:
 
 ![](https://support.smartwinnr.com/api/v1/attachments/793)
 
-Type of action:Â Here, select if you want toÂ Add Users to the scorecard orÂ Remove Users from the scorecard.
+Type of action:ÂHere, select if you want toÂAdd Users to the scorecard orÂRemove Users from the scorecard.
 
-User identifier:Â Choose if you want to identify and upload the users by theirÂ Email AddressÂ orÂ User Identifier
+User identifier:ÂChoose if you want to identify and upload the users by theirÂEmail AddressÂorÂUser Identifier
 
-CSV Delimiter:Â Select the CSV delimiter here--Â CommaÂ orÂ Semicolon
+CSV Delimiter:ÂSelect the CSV delimiter here--ÂCommaÂorÂSemicolon
 
-Download Template:Â You can download the CSV file template here and fill in the user details.
+Download Template:ÂYou can download the CSV file template here and fill in the user details.
 
-Choose File:Â Click on this button and upload your user CSV file
+Choose File:ÂClick on this button and upload your user CSV file
 
 ## Step 3: Change Targets
 

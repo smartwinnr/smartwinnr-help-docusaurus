@@ -19,13 +19,13 @@ Go to EDITOR > KPI > Upload Data. It opens the following page:
 
 ### KPI Mapping
 
-Â Here, select the kind of KPI mapping that you would like to use.
+ÂHere, select the kind of KPI mapping that you would like to use.
 
-Once you choose aÂ KPI MappingÂ you will get to select the KPIs related to it. These KPIs will be available to you in CSV file and you will have to add your values against these KPIs.
+Once you choose aÂKPI MappingÂyou will get to select the KPIs related to it. These KPIs will be available to you in CSV file and you will have to add your values against these KPIs.
 
 Download your CSV file by clicking on the 'Download Sample CSV' button.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/775)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/775)
 
 Then click on the 'Choose File' button and select the CSV file that you want to upload. Next, click on the 'Upload' button to upload it.
 
@@ -37,21 +37,21 @@ In case there are any incorrect values, the status will be shown as 'unable to c
 
 ![](https://support.smartwinnr.com/api/v1/attachments/777)
 
-KPI Mapping:Â This lets you select the mapping that you would like to use.
+KPI Mapping:ÂThis lets you select the mapping that you would like to use.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â  ![](https://support.smartwinnr.com/api/v1/attachments/778)
+Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/778)
 
 ### View KPI Mapping
 
 This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:
 
-Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/779)
+Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/779)
 
 ### Download Sample CSV
 
-Â This button downloads a sample CSV file with all the necessary fields. You can then fill in your data in this CSV file and upload it. This makes it easy for you to map all the fields in your file.
+ÂThis button downloads a sample CSV file with all the necessary fields. You can then fill in your data in this CSV file and upload it. This makes it easy for you to map all the fields in your file.
 
-Add Mapping:Â This button takes you to the below page where you can make changes to the existing CSV fields.
+Add Mapping:ÂThis button takes you to the below page where you can make changes to the existing CSV fields.
 
 ![](/img/competitions/helpscout-image-f6dc3159.png)
 

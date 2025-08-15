@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fdb083d27288b7f895d6541
 helpscout_url: https://help.smartwinnr.com/article/164-how-to-view-notifications
 ---
-Click on NotificationsÂ  from the left menu
+Click on NotificationsÂ from the left menu
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1040)
 

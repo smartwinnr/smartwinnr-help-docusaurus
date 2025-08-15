@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/154-how-to-enable-a-chat-grou
 ---
 Follow the below steps to enable a chat group:
 
-Go to EDITOR > Settings > Groups. Click on a group. Then click on the hamburger iconÂ at the top right corner of the screen then click on theÂ "Enable Chat" button.
+Go to EDITOR > Settings > Groups. Click on a group. Then click on the hamburger iconÂat the top right corner of the screen then click on theÂ"Enable Chat" button.
 
 ![](/img/admin/helpscout-image-e5441225.jpg)
 

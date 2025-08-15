@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/119-create-users-individually
 ---
 You can also create users individually through the SmartWinnr Admin interface.
 
-1. Go to ADMIN > Manage Users. Click on the “Add User” button.
+1. Go to ADMIN > Manage Users. Click on the Add User button.
 2. Fill up all the necessary information. The field description has been given below.
 
 ![](/img/admin/helpscout-image-b04ad18e.png) ![](https://support.smartwinnr.com/api/v1/attachments/856)  

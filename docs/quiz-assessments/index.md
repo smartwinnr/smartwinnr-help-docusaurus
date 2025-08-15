@@ -29,19 +29,19 @@ Create engaging assessments to test knowledge, measure learning progress, and dr
 
 ## Module Overview
 
-### 📝 Creating Assessments
+### Creating Assessments
 
 Learn how to design and build effective assessments that engage learners and measure knowledge accurately.
 
-### ❓ Question Management
+### Question Management
 
 Master the art of question creation with comprehensive guides for all question types, multimedia integration, and question bank management.
 
-### ⚙️ Assessment Administration
+### Assessment Administration
 
 Manage the lifecycle of your assessments from assignment and distribution to access control and security settings.
 
-### 📊 Assessment Analytics
+### Assessment Analytics
 
 Analyze performance data to identify learning gaps, measure effectiveness, and optimize your assessment strategy.
 

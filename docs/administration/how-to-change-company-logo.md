@@ -19,6 +19,6 @@ The following information can be updated:
 
 * Organization Name: This name will be shown to all users logged in belonging to your organization.
 * Primary Administrative Account Email: This email will receive all administrative emails from SmartWinnr.
-* Company Â Logo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
+* Company ÂLogo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
 * Company App Logo: This logo will be shown in the SmartWinnr iOS and Android apps for all users belonging to your organization.
-* Company App Header Logo: This logoÂ will be shown in the heade section of SmartWinnr iOS and Android apps.
+* Company App Header Logo: This logoÂwill be shown in the heade section of SmartWinnr iOS and Android apps.

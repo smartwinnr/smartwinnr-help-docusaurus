@@ -21,7 +21,7 @@ Choose this question type when you want the survey taker to choose only one answ
 
 ### ![](https://file2.api.drift.com/drift-prod-file-uploads/e2b0%2Fe2b04b4f651b9a3b93f097d8dcc8ce46/qstn.png?mimeType=image%2Fpng)**2\. Multiple Select**
 
-Use the question type ‘Multiple Select’ when you need to add a question where the survey takers can select multiple answers.
+Use the question type Multiple Select when you need to add a question where the survey takers can select multiple answers.
 
 ### ![](https://file2.api.drift.com/drift-prod-file-uploads/f28e%2Ff28ee20b05b215f7cb036ed20e235bad/multi.png?mimeType=image%2Fpng)3\. Linear Scale
 
@@ -29,7 +29,7 @@ This type of question is useful when you want to ask your participants to rate s
 
 ### ![](https://file2.api.drift.com/drift-prod-file-uploads/1179%2F11799a004720a75cbaebc29f724e0d26/linear.png?mimeType=image%2Fpng)4\. Short Answer
 
-Use the question type ‘**Short Answer**’ when you need to add a question where the survey takers can write a text for the answer.
+Use the question type **Short Answer** when you need to add a question where the survey takers can write a text for the answer.
 
 ### ![](https://file2.api.drift.com/drift-prod-file-uploads/f14b%2Ff14bd00f8d8133e71fde34ca7eae65a2/short%20ans.png?mimeType=image%2Fpng)5\. Matrix question
 

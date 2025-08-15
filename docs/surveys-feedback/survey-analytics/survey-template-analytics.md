@@ -9,21 +9,21 @@ last_update:
 helpscout_id: 5ffd689766df373cab70860b
 helpscout_url: https://help.smartwinnr.com/article/204-survey-template-analytics
 ---
-Follow the below steps to view analytics inÂ Survey Template.
+Follow the below steps to view analytics inÂSurvey Template.
 
-Go to **EDITOR >Â LEARNING AND KNOWLEDGE >Â Surveys.**
+Go to **EDITOR >ÂLEARNING AND KNOWLEDGE >ÂSurveys.**
 
 [![](/img/surveys/helpscout-image-d5a03077.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
 
-Under the **My Surveys**Â section selectÂ **Survey Type=Survey** TemplateÂ which is present very next to the Date Range.
+Under the **My Surveys**Âsection selectÂ**Survey Type=Survey** TemplateÂwhich is present very next to the Date Range.
 
 [![](/img/surveys/helpscout-image-6f72e148.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffd6c60fd168b7773533c62/file-xq3UTpdqDt.png)
 
-Now underÂ AnalyticsÂ click on the chart icon of the survey of which you want to view the analytics.
+Now underÂAnalyticsÂclick on the chart icon of the survey of which you want to view the analytics.
 
 [![](/img/surveys/helpscout-image-c0f74a4f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c1b39b9a8501b295d3663/file-6263tMvNRn.png)
 
-Â You will be taken to the following page, where the analytics of the selected survey template is displayed.
+ÂYou will be taken to the following page, where the analytics of the selected survey template is displayed.
 
 [![](/img/surveys/helpscout-image-131184aa.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c13c9cfe30d219ccdace9/file-IcasXlxAoH.png)
 
@@ -33,11 +33,11 @@ By Responses: Go to the next tab 'By Responses' in order to get the survey resul
 
 ## Download Report
 
-Select the hamburger menu which is present on the top right corner of the page.Â Â 
+Select the hamburger menu which is present on the top right corner of the page.ÂÂ
 
 [![](/img/surveys/helpscout-image-50151765.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffd6f38551e0c2853f3b650/file-pmjO2dDaBF.png)
 
-Select the type of report you want to download.Â The report will be downloaded as an excel sheet.
+Select the type of report you want to download.ÂThe report will be downloaded as an excel sheet.
 
 ## 1\. Aggregate Report
 

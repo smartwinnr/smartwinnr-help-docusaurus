@@ -13,7 +13,7 @@ Only the user with the EDITOR role can add the SmartFeed into Smartwinnr.
 
 Login to SmartWinnr Backend Portal.
 
-Go toÂ EDITOR >Â LEARNING AND KNOWLEDGE >Â SmartFeeds > View All SmartFeeds.
+Go toÂEDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartFeeds > View All SmartFeeds.
 
 It will open the following page:
 

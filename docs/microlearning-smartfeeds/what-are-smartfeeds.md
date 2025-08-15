@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 5fcf7718da652271f08d3f5e
 helpscout_url: https://help.smartwinnr.com/article/26-what-are-smartfeeds
 ---
-SmartFeeds enable you to send short snippets of information to your teams. It helps to **regularly reinforce important information**, without going through lengthy training sessions.
+SmartFeeds enable you to send short snippets of information to your teams. It helps to�**regularly reinforce important information**, without going through lengthy training sessions.
 
 ## What to send as SmartFeeds?
 
@@ -32,7 +32,7 @@ You can send
 * link to other websites,
 * or an image or a poster
 
-SmartFeeds come in the form of Twitter-like feeds to the teams’ SmartWinnr mobile app and web view.
+SmartFeeds come in the form of Twitter-like feeds to the teams SmartWinnr mobile app and web view.
 
 ## Is the recipient notified when a SmartFeed is sent?
 

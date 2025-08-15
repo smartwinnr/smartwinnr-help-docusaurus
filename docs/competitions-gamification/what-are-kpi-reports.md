@@ -11,6 +11,6 @@ helpscout_url: https://help.smartwinnr.com/article/182-what-are-kpi-reports
 ---
 The KPI Reports provide detailed analytics of the participants in the KPI gamification. Below are the steps to view the reports of KPI gamification:
 
-Go to EDITOR >Â PERFORMANCE >Â KPI Scorecards> Reports. It displays the following page:
+Go to EDITOR >ÂPERFORMANCE >ÂKPI Scorecards> Reports. It displays the following page:
 
 ![](/img/competitions/helpscout-image-55039b7f.png)

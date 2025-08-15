@@ -9,11 +9,11 @@ last_update:
 helpscout_id: 607e8df03149d33a19c6e5e3
 helpscout_url: https://help.smartwinnr.com/article/232-how-to-update-question-response
 ---
-SmartWinnr allows you to update/correct the question response ofÂ  user in a quiz.
+SmartWinnr allows you to update/correct the question response ofÂ user in a quiz.
 
-On changing the user response, theÂ system automatically re-calculates the scores and updates the revised score for all analytics and reports as well.
+On changing the user response, theÂsystem automatically re-calculates the scores and updates the revised score for all analytics and reports as well.
 
-YouÂ can follow the below given steps toÂ update/correct the user response.
+YouÂcan follow the below given steps toÂupdate/correct the user response.
 
 Go to Editor> Questions and Quizzes > Click on the Analytics of the specific quiz.You will be redirected to the analytics page of the quiz.
 
@@ -27,6 +27,6 @@ Click on "**Change Response"** against the user response where you want to make 
 
 ![](/img/quizzes/helpscout-image-004d970d.png)
 
-Update the current responseÂ  and click on "**Save"**
+Update the current responseÂ and click on "**Save"**
 
 ![](/img/quizzes/helpscout-image-e0b66bb2.png)Then the response will be updated successfully.

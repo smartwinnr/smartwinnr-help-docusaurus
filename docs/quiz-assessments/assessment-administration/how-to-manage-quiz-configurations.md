@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/112-how-to-manage-quiz-config
 ---
 Go to Admin>>Quiz Setting, it will open the following page
 
-Quiz setting contains the default settings that were created by the editor while creating the quiz. You can change the points for selecting the correct answer as well as the wrong answer.Â Â 
+Quiz setting contains the default settings that were created by the editor while creating the quiz. You can change the points for selecting the correct answer as well as the wrong answer.ÂÂ
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1123)
 

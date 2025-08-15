@@ -21,7 +21,7 @@ Click on the image icon. This will open the following popup:
 
 ![](/img/learning/helpscout-image-ebfd2ef4.png)
 
-Click on the ‘Choose File’ button to select an image from your local file system and click ‘Open’.
+Click on the Choose File button to select an image from your local file system and click Open.
 
 ![](https://file2.api.drift.com/drift-prod-file-uploads/d334%2Fd334ddd3111772f1dbb7790cf97e591c/image23%20(1).png?mimeType=image%2Fpng)
 

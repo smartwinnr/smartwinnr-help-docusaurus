@@ -13,7 +13,7 @@ Here is how users can access KHub in the SmartWinnr app:
 
 Go to the Left Menu bar > KHub. It will open the following page where you get to see a list of folders and KHub items:
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/726)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/726)
 
 There is a "Search" option at the top of this screen from where KHub items can be searched.
 
@@ -21,31 +21,31 @@ There is a "Search" option at the top of this screen from where KHub items can b
 
 This shows all the KHub items that you have recently searched
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/727)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/727)
 
 ## Trending
 
 This section shows all the KHub items that are trending (recent and mostly searched ones) currently.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/728)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/728)
 
 ## New
 
 This section shows the newly added KHub items.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â Â ![](https://support.smartwinnr.com/api/v1/attachments/729)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/729)
 
 ## Favourites
 
 This section shows the KHub items which you have marked as favorite.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â ![](https://support.smartwinnr.com/api/v1/attachments/730)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/730)
 
-There is an option to view your KHub items in a Folder or ListView. Click on the "Folders"Â icon at the top right corner of the screen to change the view of the KHub items to folder view.
+There is an option to view your KHub items in a Folder or ListView. Click on the "Folders"Âicon at the top right corner of the screen to change the view of the KHub items to folder view.
 
 ![](https://lh4.googleusercontent.com/bH_Ij7KFfUQQrBy2BkQ7tGic6B0QBy3Tt_y7dHlQxPHHMsu85tVl4ZPq4Y25Uv_4FwU_ubNDVUEuLkduxBvbwuLWt_iS98voDkUWaZFVpDgAtBwQTI4FJpyvp8pF9zlHzWODBFf3)
 
-This shows the KHub items in the form of folders. Then click on the "grid view"Â icon at the top right corner here in order to get a grid view of these KHub folders.
+This shows the KHub items in the form of folders. Then click on the "grid view"Âicon at the top right corner here in order to get a grid view of these KHub folders.
 
 ![](https://lh4.googleusercontent.com/Fx9mBekwv5DFZR0XpnVd3feUv-fPep9Ua5tY8ii-42FvZqN2SJfZcbB2DBcIIjyxqA5Vl1V4GDn59kQi80Khc3u0Z8sLvRmnVe3wRwfMrikvPDI5LBaUh77966ldFNMIBzBx-wUd)
 

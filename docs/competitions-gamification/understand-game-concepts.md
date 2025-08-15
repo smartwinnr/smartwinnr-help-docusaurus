@@ -17,7 +17,7 @@ Leaderboards display the performance of contestants in a competition or challeng
 
 ### Scoring
 
-Â A score is given to individual sales reps or a team when they achieve a particular KPI target. These scores add up to their total score for the quarter or year. Then, the scores are put up on a scoreboard which can be seen by everyone in the organization. This gives the employees a way to brag about their success.
+ÂA score is given to individual sales reps or a team when they achieve a particular KPI target. These scores add up to their total score for the quarter or year. Then, the scores are put up on a scoreboard which can be seen by everyone in the organization. This gives the employees a way to brag about their success.
 
 ### Challenges/Contests
 

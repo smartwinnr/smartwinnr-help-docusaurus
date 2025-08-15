@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/27-how-to-create-a-smartfeed
 ---
 Login to SmartWinnr Backend Portal.
 
-Go to **EDITOR >Â LEARNING AND KNOWLEDGE >Â SmartFeeds > View All SmartFeeds.**
+Go to **EDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartFeeds > View All SmartFeeds.**
 
 It will open the following page:
 
@@ -29,17 +29,17 @@ You will see the **'Create SmartFeed'** screen:
 
 SmartWinnr allows you to create SmartFeeds with various types of content like images, videos, audios, PDF, and Powerpoint presentations.
 
-* If you would like to create SmartFeeds with plain text, images,Â audios, PDF, or reference to any external links, you can choose the content type as '**SmartFeed'**.
+* If you would like to create SmartFeeds with plain text, images,Âaudios, PDF, or reference to any external links, you can choose the content type as '**SmartFeed'**.
 
 ![](/img/learning/helpscout-image-c6804a74.png)
 
-* If you would like to send a Powerpoint presentation as a SmartFeed,Â you can choose the content type as '**Presentation'**.
+* If you would like to send a Powerpoint presentation as a SmartFeed,Âyou can choose the content type as '**Presentation'**.
 
 ![](/img/learning/helpscout-image-2c215166.png)
 
 ## Choose Language
 
-You can choose the language in which you want to send the SmartFeed, by clicking on the â€˜ _Change Language_â€™ button on the right. English is chosen as the predefined language.
+You can choose the language in which you want to send the SmartFeed, by clicking on the  _Change Language_ button on the right. English is chosen as the predefined language.
 
 ![](/img/learning/helpscout-image-7788d30f.png)
 
@@ -71,7 +71,7 @@ Following is how a SmartFeed with videos appears in the SmartWinnr app:
 
 ![](/img/learning/helpscout-image-43fc545c.png)
 
-## SendÂ Pictures
+## SendÂPictures
 
 If you would like to add an image to your SmartFeed, [learn how to add an image to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/69-how-to-add-a-image-to-your-content)
 
@@ -79,7 +79,7 @@ Following is how a SmartFeed with an image appears in the SmartWinnr app.
 
 ![](/img/learning/helpscout-image-6503c935.png)
 
-## SendÂ Reference Links
+## SendÂReference Links
 
 If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/70-how-to-add-reference-to-an-external-link-to-your-content)
 
@@ -87,7 +87,7 @@ If you would like to add any reference to an external link in your SmartFeed, [l
 
 ![](/img/learning/helpscout-image-f6ac3677.png)
 
-## SendÂ Audios
+## SendÂAudios
 
 If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/71-how-to-add-an-audio-file-to-your-content)
 
@@ -95,7 +95,7 @@ Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on 
 
 ![](/img/learning/helpscout-image-c4ca5282.png)
 
-## SendÂ PDF Documents
+## SendÂPDF Documents
 
 If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/72-how-to-attach-pdf-file-to-your-content)
 
@@ -111,7 +111,7 @@ This will open the PDF file attached to the SmartFeed as follows.
 
 ![](/img/learning/helpscout-image-c57ea06f.png)
 
-## SendÂ Powerpoint Presentations
+## SendÂPowerpoint Presentations
 
 You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add a PowerPoint presentation to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed)
 
@@ -121,7 +121,7 @@ In the settings section, you get to choose when to send out a particular SmartFe
 
 Also, you get to choose the expiration of the SmartFeed. Choosing 'Never' will make the SmartFeed always available or set an expiry date after which the SmartFeed won't be visible.
 
-The **'Enable Share'**Â option lets you share a SmartFeed through WhatsApp or email.
+The **'Enable Share'**Âoption lets you share a SmartFeed through WhatsApp or email.
 
 ![](/img/learning/helpscout-image-5ccb2670.png)
 

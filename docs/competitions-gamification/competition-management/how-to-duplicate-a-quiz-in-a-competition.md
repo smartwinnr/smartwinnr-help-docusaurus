@@ -13,7 +13,7 @@ When you duplicate a quiz for a competition, automatically the questions added t
 
 Please follow the below steps to duplicate a quiz as a part of the competition:
 
-EDITOR >Â GAMIFICATION AND ENGAGEMENT >Â Competition > View Tasks > Add New Tasks > SelectÂ Type = quiz
+EDITOR >ÂGAMIFICATION AND ENGAGEMENT >ÂCompetition > View Tasks > Add New Tasks > SelectÂType = quiz
 
 Then, click on the 'Duplicate Quiz' option at the bottom.
 

@@ -9,17 +9,17 @@ last_update:
 helpscout_id: 5fda2e397129911ba1b21a07
 helpscout_url: https://help.smartwinnr.com/article/111-survey-analytics
 ---
-Follow the below steps to view analytics inÂ Survey.
+Follow the below steps to view analytics inÂSurvey.
 
-Go to **EDITOR >Â LEARNING AND KNOWLEDGE >Â Surveys.**
+Go to **EDITOR >ÂLEARNING AND KNOWLEDGE >ÂSurveys.**
 
 [![](/img/surveys/helpscout-image-d5a03077.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
 
-Under the ' **My Surveys'** section selectÂ Survey **Type=Survey**Â which is present very next to the Date Range.
+Under the ' **My Surveys'** section selectÂSurvey **Type=Survey**Âwhich is present very next to the Date Range.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  [![](https://support.smartwinnr.com/api/v1/attachments/961)](https://support.smartwinnr.com/api/v1/attachments/961)
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â [![](https://support.smartwinnr.com/api/v1/attachments/961)](https://support.smartwinnr.com/api/v1/attachments/961)
 
-Now underÂ Analytics, click on the analytics icon against the survey for which you want to view the analytics.
+Now underÂAnalytics, click on the analytics icon against the survey for which you want to view the analytics.
   
 You will be taken to the following page, where the analytics of the selected survey is displayed. [![](/img/surveys/helpscout-image-4a26a610.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2f4f7fd168b777353131e/file-Pjl909FijO.png)
 
@@ -37,13 +37,13 @@ The graph related to this question type is displayed using a pie chart by indica
 
 ## 2\. Multi-Select Question
 
-The graphÂ related to this question type is displayed usingÂ a bar graph, the question options are displayed in the y-axis and the percentage of users who responded in shown in the x-axis from the scale of 0 to 1 (where 0=0% and 1.0=100%).
+The graphÂrelated to this question type is displayed usingÂa bar graph, the question options are displayed in the y-axis and the percentage of users who responded in shown in the x-axis from the scale of 0 to 1 (where 0=0% and 1.0=100%).
 
 [![](https://support.smartwinnr.com/api/v1/attachments/976)](https://support.smartwinnr.com/api/v1/attachments/976)
 
 ## 3\. Linear Scale Question
 
-The graphÂ related to this question type is displayed usingÂ a bar graph, from low to high scale value is shown in the x-axis, and the percentage of users responded is displayed on the y-axis(where 0=0% and 1.0=100%).Â Â 
+The graphÂrelated to this question type is displayed usingÂa bar graph, from low to high scale value is shown in the x-axis, and the percentage of users responded is displayed on the y-axis(where 0=0% and 1.0=100%).ÂÂ
 
 [![](https://support.smartwinnr.com/api/v1/attachments/977)](https://support.smartwinnr.com/api/v1/attachments/977)
 
@@ -57,7 +57,7 @@ The graph related to this question type is also displayed using a bar chart. The
 
 ## 6\. Dropdown Question
 
-The graph related to this question type is displayed using a donutÂ chart by indicating the responses in different colors and the percentage of people who responded to that particular option.
+The graph related to this question type is displayed using a donutÂchart by indicating the responses in different colors and the percentage of people who responded to that particular option.
 
 [![](https://support.smartwinnr.com/api/v1/attachments/981)](https://support.smartwinnr.com/api/v1/attachments/981)
 
@@ -71,6 +71,6 @@ Click on the hamburger menu which is present on the top right corner. Now select
 
 #### **Aggregate Report**
 
-This type of report consists of the survey question, responses, and percentage of response for each answer.Click on the Download Report Button which is present towards the right corner.Â The report will be downloaded as an excel sheet.
+This type of report consists of the survey question, responses, and percentage of response for each answer.Click on the Download Report Button which is present towards the right corner.ÂThe report will be downloaded as an excel sheet.
 
-Â  Â  Â Â [![](/img/surveys/helpscout-image-4b4e615a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6002936d2e764327f87bf500/file-g9WtjoH8Sx.png)
+Â Â ÂÂ[![](/img/surveys/helpscout-image-4b4e615a.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6002936d2e764327f87bf500/file-g9WtjoH8Sx.png)

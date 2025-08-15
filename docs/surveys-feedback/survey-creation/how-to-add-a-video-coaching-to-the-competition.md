@@ -11,16 +11,16 @@ helpscout_url: https://help.smartwinnr.com/article/106-how-to-add-a-video-coachi
 ---
 Here are the steps to add a Video Coaching to a competition:
 
-1. Once you get to the 4th step of creating competition, selectÂ Video CoachingÂ in the "Select Task".
+1. Once you get to the 4th step of creating competition, selectÂVideo CoachingÂin the "Select Task".
 2. Give a name to the task
 3. Assign points for the task
 4. Set a start and end date of the task
 
-Below is a screenshot of adding aÂ Video CoachingÂ to a competition:
+Below is a screenshot of adding aÂVideo CoachingÂto a competition:
 
 ![](/img/surveys/helpscout-image-8a8a2422.png)
 
-CheckÂ  the checkbox â€˜Choose Participants Manuallyâ€™ to manually select the participants of the Video Coaching. This should be used so that you can remove some users from the list.
+CheckÂ the checkbox Choose Participants Manually to manually select the participants of the Video Coaching. This should be used so that you can remove some users from the list.
 
 Then, click the ****Create**** button which will take you to a page where you can create a new survey and add it to the competition. Refer to the articles below to know how to create a survey:
 

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/253-how-to-send-an-absent-rem
 ---
 An Editor who has access to the SmartPaths can send the Absent Reminder to the users.
 
-Go toÂ EDITOR >Â LEARNING AND KNOWLEDGE >Â SmartPaths > View All SmartPaths
+Go toÂEDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartPaths > View All SmartPaths
 
 ![](/img/learning/helpscout-image-35b07ab2.jpg)
 

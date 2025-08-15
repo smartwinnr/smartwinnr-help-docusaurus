@@ -27,7 +27,7 @@ Every Question, SmartFeed, and Coaching will be linked to one category or the ot
 
 All measurements and tracking will be based on these categories.
 
-This is an exampleÂ screenshot of how you can measure different aspects of Selling Skills within SmartWinnr:
+This is an exampleÂscreenshot of how you can measure different aspects of Selling Skills within SmartWinnr:
 
 [![](/img/quizzes/helpscout-image-822a5d88.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd45288c868cb6df3a80fe0/file-Il2yXpQflx.png)
 

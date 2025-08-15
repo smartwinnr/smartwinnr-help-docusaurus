@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/61-how-to-create-a-survey-tem
 ---
 Follow the below steps in order to create a survey template:
 
-Go to **EDITOR >**Â **LEARNING AND KNOWLEDGE >**Â **Surveys**. Then, click the ****Add New Survey**** button at the top right corner of the screen.
+Go to **EDITOR >**Â**LEARNING AND KNOWLEDGE >**Â**Surveys**. Then, click the ****Add New Survey**** button at the top right corner of the screen.
 
 [![](/img/surveys/helpscout-image-8981adc3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4a4783d1d2a5b1c5ea179/file-gvbT3H7M1j.png)
 
@@ -21,35 +21,35 @@ It opens the following page:
 
 ### **Here is how to fill each field in the above page**
 
-**Type:**Â Select the type of survey that you want to create here-- Survey or Survey Template. Since here we are discussing on creating the survey template, select the type as **Survey Template**.
+**Type:**ÂSelect the type of survey that you want to create here-- Survey or Survey Template. Since here we are discussing on creating the survey template, select the type as **Survey Template**.
 
-[![](https://file2.api.drift.com/drift-prod-file-uploads/0618%2F0618bdbed9e86bf48bf2621dbcd696df/type.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/0618%2F0618bdbed9e86bf48bf2621dbcd696df/type.png?mimeType=image%2Fpng)**Status:**Â In this section, you can make the survey active or inactive. The survey template will be available to the survey takers when the status is set to **Active**.
+[![](https://file2.api.drift.com/drift-prod-file-uploads/0618%2F0618bdbed9e86bf48bf2621dbcd696df/type.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/0618%2F0618bdbed9e86bf48bf2621dbcd696df/type.png?mimeType=image%2Fpng)**Status:**ÂIn this section, you can make the survey active or inactive. The survey template will be available to the survey takers when the status is set to **Active**.
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/1e94%2F1e944569d97e10053f397b6a094bba61/status.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/1e94%2F1e944569d97e10053f397b6a094bba61/status.png?mimeType=image%2Fpng)
 
-**Question Visibility Type:**Â Here you can set the visibility of the questions. Available options here are Individual, All and Section Wise. So, you can either make all the questions available to the survey takers at once, or you can make the questions appear section-wise, or make each question appear at one by one.
+**Question Visibility Type:**ÂHere you can set the visibility of the questions. Available options here are Individual, All and Section Wise. So, you can either make all the questions available to the survey takers at once, or you can make the questions appear section-wise, or make each question appear at one by one.
 
-[](https://file2.api.drift.com/drift-prod-file-uploads/c7cc%2Fc7cc3178c78ba8c9e03766a176970a9f/Q.png?mimeType=image%2Fpng)**Title:**Â Give the title of the survey template in the title box.
+[](https://file2.api.drift.com/drift-prod-file-uploads/c7cc%2Fc7cc3178c78ba8c9e03766a176970a9f/Q.png?mimeType=image%2Fpng)**Title:**ÂGive the title of the survey template in the title box.
 
-[![](https://file2.api.drift.com/drift-prod-file-uploads/8e90%2F8e90bb3531142ff6440d1675e167da1e/title.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8e90%2F8e90bb3531142ff6440d1675e167da1e/title.png?mimeType=image%2Fpng)**Description:**Â Give the description of the survey template in the description box.
+[![](https://file2.api.drift.com/drift-prod-file-uploads/8e90%2F8e90bb3531142ff6440d1675e167da1e/title.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/8e90%2F8e90bb3531142ff6440d1675e167da1e/title.png?mimeType=image%2Fpng)**Description:**ÂGive the description of the survey template in the description box.
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/985a%2F985a83fc77c6ed4266fb39ee1aca43af/description.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/985a%2F985a83fc77c6ed4266fb39ee1aca43af/description.png?mimeType=image%2Fpng)
 
-**Note:**Â Here, if you check theÂ  '**Send response to user'**Â checkbox then the survey taker will receive his responses of the survey in an email.
+**Note:**ÂHere, if you check theÂ '**Send response to user'**Âcheckbox then the survey taker will receive his responses of the survey in an email.
 
 ### **Questions**
 
 This is the section where you add questions to the survey
 
-[![](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)Click on the '**Add Question'**Â button at the right corner of the section to keep adding the questions. SmartWinnr allows you to create different types of questions as per your requirement. [Click here to learn how to add different kinds of question to a survey template](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
+[![](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/4f21%2F4f210da2e54f4b51e9e58f34788ca011/question.png?mimeType=image%2Fpng)Click on the '**Add Question'**Âbutton at the right corner of the section to keep adding the questions. SmartWinnr allows you to create different types of questions as per your requirement. [Click here to learn how to add different kinds of question to a survey template](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
 
 ### Adding sections to the Survey Template
 
-If you selectÂ  **Question Visibility Type**Â =Â **Section Wise,**Â then you will get to add sections to a survey. Click on theÂ **'Add Sections'**Â button in theÂ **Sections**.
+If you selectÂ **Question Visibility Type**Â=Â**Section Wise,**Âthen you will get to add sections to a survey. Click on theÂ**'Add Sections'**Âbutton in theÂ**Sections**.
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)It opens the following popup:
 
-[![](https://file2.api.drift.com/drift-prod-file-uploads/05f4%2F05f42092f2887063c53f879f90b53df4/section%202.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/05f4%2F05f42092f2887063c53f879f90b53df4/section%202.png?mimeType=image%2Fpng)Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click on the '**Submit'**Â button.
+[![](https://file2.api.drift.com/drift-prod-file-uploads/05f4%2F05f42092f2887063c53f879f90b53df4/section%202.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/05f4%2F05f42092f2887063c53f879f90b53df4/section%202.png?mimeType=image%2Fpng)Here, you can add as many sections as you wish by clicking on the add button. When you are done adding the sections, then click on the '**Submit'**Âbutton.
 
 [![](https://file2.api.drift.com/drift-prod-file-uploads/d1dc%2Fd1dc3f7381aad50776748a86b54ef4e6/s4.png?mimeType=image%2Fpng)](https://file2.api.drift.com/drift-prod-file-uploads/d1dc%2Fd1dc3f7381aad50776748a86b54ef4e6/s4.png?mimeType=image%2Fpng)It will show the created sections in the following way where you can add questions to each section:
 
@@ -57,4 +57,4 @@ If you selectÂ  **Question Visibility Type**Â =Â **Section Wise,**Â then you wil
 
 Now click on the ' **Add Question**' in each section to add the questions to the section. [Learn the types of questions that you can add to a survey template.](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
 
-Once you are done filling up all these details, click on the â€˜ **Save New Survey**â€™ button. It will create the Survey Template successfully.
+Once you are done filling up all these details, click on the  **Save New Survey** button. It will create the Survey Template successfully.

@@ -11,12 +11,12 @@ helpscout_url: https://help.smartwinnr.com/article/70-how-to-add-reference-to-an
 ---
 SmartWinnr allows you to share external links via SmarttFeed. You can also add references to external links in the questions created in SmartWinnr which helps the quiz-takers to refer the links in the questions and answer the questions accordingly.
 
-Click on the **link** icon to attach an external link to your SmartFeed or to the question that you create in SmartWinnr.Â You can add links from DropBox and Box or any other external links as content.
+Click on the **link** icon to attach an external link to your SmartFeed or to the question that you create in SmartWinnr.ÂYou can add links from DropBox and Box or any other external links as content.
 
-Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/103)
+Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/103)
 
 Once you click on the link icon, the following pop-up comes up.
 
-Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  ![](https://support.smartwinnr.com/api/v1/attachments/104)
+Â Â Â Â Â Â Â Â Â Â Â Â Â ![](https://support.smartwinnr.com/api/v1/attachments/104)
 
 Add the link title and the link URL and click on the **submit** button.

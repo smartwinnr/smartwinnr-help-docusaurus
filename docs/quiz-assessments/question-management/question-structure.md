@@ -48,7 +48,7 @@ A Hotspot question presents an image to the participant and asks to select a par
 
 Short Answer
 
-Short answer questionsÂ are generally open-ended questions that requireÂ participantsÂ to construct a response. Short answer questions require a concise and focused response.
+Short answer questionsÂare generally open-ended questions that requireÂparticipantsÂto construct a response. Short answer questions require a concise and focused response.
 
 [Click here for more information on Short answer question](https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions)
 
@@ -64,7 +64,7 @@ Re-order questions where you need to drag and drop the answer to a question in t
 
 Add the body of the question in this section. Depending on the type of question you select, this section will have the main body text, as well as the options for multiple choice, the correct answer for fill in the blank, matching items for the Matching question, and the main image with the selected portion for Hotspot.
 
-SmartWinnr supports questions in different languages. If your organization has 'multiple languages' enabled, you will be able to _'Add Translation'_ for the question. If you don't see this button, contact your SmartWinnr administrator or write to us with your query atÂ _support@smartwinnr.com_
+SmartWinnr supports questions in different languages. If your organization has 'multiple languages' enabled, you will be able to _'Add Translation'_ for the question. If you don't see this button, contact your SmartWinnr administrator or write to us with your query atÂ_support@smartwinnr.com_
 
 3
 

@@ -11,7 +11,7 @@ helpscout_url: https://help.smartwinnr.com/article/87-how-do-i-review-a-video-co
 ---
 Only users with Editor and Manager role can review a coaching video.
 
-The coach of a particular coaching assignment will receive an email once a participant submits his video response to thatÂ assignment. Here is an example screenshot of the email, the coaches are going to receive.Â Â 
+The coach of a particular coaching assignment will receive an email once a participant submits his video response to thatÂassignment. Here is an example screenshot of the email, the coaches are going to receive.ÂÂ
 
 ![](https://support.smartwinnr.com/api/v1/attachments/680)
 

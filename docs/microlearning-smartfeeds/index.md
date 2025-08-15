@@ -32,19 +32,19 @@ SmartFeeds are micro-learning content pieces designed for just-in-time learning.
 
 ## Module Overview
 
-### 📝 Creating SmartFeeds
+### Creating SmartFeeds
 
 Learn how to design engaging micro-content that captures attention and delivers knowledge effectively.
 
-### 📋 SmartFeed Management
+### SmartFeed Management
 
 Master the tools for organizing, distributing, and maintaining your SmartFeed library.
 
-### 👤 User Experience
+### User Experience
 
 Understand how learners interact with SmartFeeds and optimize their learning journey.
 
-### 📊 SmartFeed Analytics
+### SmartFeed Analytics
 
 Measure engagement, effectiveness, and impact of your micro-learning content.
 

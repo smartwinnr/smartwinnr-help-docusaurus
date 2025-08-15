@@ -15,7 +15,7 @@ Open the SmartWinnr app and click on the **hamburger** icon at the top left corn
 
 ![](/img/getting-started/helpscout-image-b82ccd98.png)
 
-Here, click on the **profile picture** at the top. It will take you to the following screen.Â Click onÂ SettingsÂ icon at the top right corner which is highlighted in red.
+Here, click on the **profile picture** at the top. It will take you to the following screen.ÂClick onÂSettingsÂicon at the top right corner which is highlighted in red.
 
 Go to the option **App version**. It will take you to the following screen where you can find the version of the SmartWinnr app installed in your system.
 
@@ -23,7 +23,7 @@ Go to the option **App version**. It will take you to the following screen where
 
 ### Below are the steps to check the version of your SmartWinnr Web View
 
-Login the SmartWinnr web view andÂ click on the **profile picture** at the top. It will take you to the following screen.Â Click onÂ SettingsÂ icon at the top right corner which is highlighted in red.
+Login the SmartWinnr web view andÂclick on the **profile picture** at the top. It will take you to the following screen.ÂClick onÂSettingsÂicon at the top right corner which is highlighted in red.
 
 ![](/img/getting-started/helpscout-image-1b202d63.png)
 

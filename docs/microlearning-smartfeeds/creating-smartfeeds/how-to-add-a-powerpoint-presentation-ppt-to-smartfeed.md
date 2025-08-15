@@ -19,7 +19,7 @@ To create a SmartFeed with PowerPoint presentation, you can follow the below ste
 
 If you don't see the 'Presentation' option in your view, please write to [support@smartwinnr.com](mailto:support@smartwinnr.com) for the privilege to add presentations to your SmartFeed.
 
-3\. The following screen will appear once you select theÂ Content-Type as 'Presentation'.
+3\. The following screen will appear once you select theÂContent-Type as 'Presentation'.
 
 [![](/img/learning/helpscout-image-f1f525e8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bd386cfe30d219ccdacb4/file-Put5b2HZfL.png)
 
@@ -29,11 +29,11 @@ If you don't see the 'Presentation' option in your view, please write to [suppor
 
 SmartFeed can also be added in a Zip file format. In order to upload Zip files, select the ZIP radio button. **We recommend to use ZIP option for creating presentation SmartFeed because it can ensure that the order of your slides in SmartFeed remain the same as what you have in the original PPT.**
 
-To attach aÂ PowerPoint presentation, you will have to first convert the presentation into JPEG format, where each slide is converted as a image file (.jpeg, .jpg, .png) . Once the slides are converted into image, add it to a folder and zip the folder. Once the zip file is ready, upload the same into SmartWinnr.
+To attach aÂPowerPoint presentation, you will have to first convert the presentation into JPEG format, where each slide is converted as a image file (.jpeg, .jpg, .png) . Once the slides are converted into image, add it to a folder and zip the folder. Once the zip file is ready, upload the same into SmartWinnr.
 
-To convert the presentation into JPEG format,Â you can follow the below steps:
+To convert the presentation into JPEG format,Âyou can follow the below steps:
 
-(Go to File>>Export theÂ presentationÂ images into a folder>>save it in a JPEG format)Â Â 
+(Go to File>>Export theÂpresentationÂimages into a folder>>save it in a JPEG format)ÂÂ
 
 ![](/img/learning/helpscout-image-642aaf79.png)
 
