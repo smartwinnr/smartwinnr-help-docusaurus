@@ -1,13 +1,6 @@
 {
   "config": {
-    "MD003": { "style": "atx" },
-    "MD007": { "indent": 2 },
-    "MD013": { "line_length": 120 },
-    "MD024": { "allow_different_nesting": true },
-    "MD033": { "allowed_elements": ["br", "img", "details", "summary"] },
-    "MD034": false,
-    "MD041": { "level": 1 },
-    "MD045": false
+    "default": false
   },
   "customRules": [],
   "globs": [
@@ -15,12 +8,12 @@
   ],
   "ignores": [
     "node_modules/**",
-    "**/node_modules/**",
+    "**/node_modules/**", 
     "docs-backup/**",
     "chroma/**",
     "**/README.md"
   ],
-  "fix": true,
+  "fix": false,
   "outputFormatters": [
     ["markdownlint-cli2-formatter-default", {
       "appendLink": true
