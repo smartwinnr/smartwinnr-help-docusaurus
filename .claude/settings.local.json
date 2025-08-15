@@ -28,7 +28,10 @@
       "Bash(npx husky init:*)",
       "Bash(touch:*)",
       "Bash(git commit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(npx markdownlint-cli2:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
