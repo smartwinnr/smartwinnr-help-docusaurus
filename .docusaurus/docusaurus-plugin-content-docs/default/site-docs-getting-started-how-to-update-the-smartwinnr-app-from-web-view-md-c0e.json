@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-to-update-the-smartwinnr-app-from-web-view",
-  "title": "How to update the SmartWinnr App from Web View",
+  "title": "Update the SmartWinnr App from Web View",
   "description": "",
   "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-from-web-view.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 291,
   "frontMatter": {
-    "title": "How to update the SmartWinnr App from Web View",
+    "title": "Update the SmartWinnr App from Web View",
     "description": "",
     "slug": "how-to-update-the-smartwinnr-app-from-web-view",
     "sidebar_position": 291,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to update the SmartWinnr App from App View",
+    "title": "Update the SmartWinnr App from App View",
     "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view"
   },
   "next": {
-    "title": "User Experience",
-    "permalink": "/user-guide/user-guide"
+    "title": "admin-onboarding",
+    "permalink": "/getting-started/admin-onboarding"
   }
 }

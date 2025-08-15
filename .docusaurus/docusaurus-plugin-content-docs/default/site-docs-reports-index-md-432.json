@@ -19,11 +19,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to delete a Survey",
+    "title": "Delete a Survey",
     "permalink": "/surveys/how-to-delete-a-survey"
   },
   "next": {
-    "title": "How to Create a form?",
+    "title": "Create a form?",
     "permalink": "/reports/how-to-create-a-form"
   }
 }

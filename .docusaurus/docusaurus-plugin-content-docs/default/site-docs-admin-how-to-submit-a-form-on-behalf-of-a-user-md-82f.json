@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-submit-a-form-on-behalf-of-a-user",
-  "title": "How to Submit a Form on behalf of a User",
+  "title": "Submit a Form on behalf of a User",
   "description": "",
   "source": "@site/docs/admin/how-to-submit-a-form-on-behalf-of-a-user.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 252,
   "frontMatter": {
-    "title": "How to Submit a Form on behalf of a User",
+    "title": "Submit a Form on behalf of a User",
     "description": "",
     "slug": "how-to-submit-a-form-on-behalf-of-a-user",
     "sidebar_position": 252,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Edit a Form on submitted by a user?",
+    "title": "Edit a Form on submitted by a user?",
     "permalink": "/admin/how-to-edit-a-form-on-submitted-by-a-user"
   },
   "next": {

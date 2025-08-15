@@ -1,6 +1,6 @@
 {
   "id": "admin/what-is-the-purpose-of-notifications",
-  "title": "What is the purpose of notifications?",
+  "title": "About the purpose of notifications",
   "description": "",
   "source": "@site/docs/admin/what-is-the-purpose-of-notifications.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 163,
   "frontMatter": {
-    "title": "What is the purpose of notifications?",
+    "title": "About the purpose of notifications",
     "description": "",
     "slug": "what-is-the-purpose-of-notifications",
     "sidebar_position": 163,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I answer a Query ?",
+    "title": "Answer a Query",
     "permalink": "/admin/how-can-i-answer-a-query"
   },
   "next": {
-    "title": "How to view notifications?",
+    "title": "View notifications?",
     "permalink": "/admin/how-to-view-notifications"
   }
 }

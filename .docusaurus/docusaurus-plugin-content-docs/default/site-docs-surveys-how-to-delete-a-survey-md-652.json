@@ -1,6 +1,6 @@
 {
   "id": "surveys/how-to-delete-a-survey",
-  "title": "How to delete a Survey",
+  "title": "Delete a Survey",
   "description": "",
   "source": "@site/docs/surveys/how-to-delete-a-survey.md",
   "sourceDirName": "surveys",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 287,
   "frontMatter": {
-    "title": "How to delete a Survey",
+    "title": "Delete a Survey",
     "description": "",
     "slug": "how-to-delete-a-survey",
     "sidebar_position": 287,

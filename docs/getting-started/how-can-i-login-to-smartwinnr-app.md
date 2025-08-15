@@ -81,5 +81,4 @@ For enhanced account security:
 - [Reset a Forgotten Password](what-if-i-ve-forgotten-my-password.md)
 - [Update Your Profile Settings](how-can-i-change-my-profile-image.md)
 
-
 > **Tip**: Keep your login credentials secure and change default passwords immediately after first login.

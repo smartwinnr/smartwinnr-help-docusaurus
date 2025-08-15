@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-can-i-enable-push-notification-for-smartwinnr-app",
-  "title": "How can I enable push notification for SmartWinnr App?",
+  "title": "Enable push notification for SmartWinnr App",
   "description": "",
   "source": "@site/docs/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 21,
   "frontMatter": {
-    "title": "How can I enable push notification for SmartWinnr App?",
+    "title": "Enable push notification for SmartWinnr App",
     "description": "",
     "slug": "how-can-i-enable-push-notification-for-smartwinnr-app",
     "sidebar_position": 21,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to update the SmartWinnr App/Web View?",
+    "title": "Update the SmartWinnr App/Web View?",
     "permalink": "/getting-started/how-to-update-the-smartwinnr-app-web-view"
   },
   "next": {

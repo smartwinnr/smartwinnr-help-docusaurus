@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-a-drag-and-drop-into-text-question",
-  "title": "How to create a 'Drag and Drop into Text question '.",
+  "title": "Create a 'Drag and Drop into Text question '.",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-a-drag-and-drop-into-text-question.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 281,
   "frontMatter": {
-    "title": "How to create a 'Drag and Drop into Text question '.",
+    "title": "Create a 'Drag and Drop into Text question '.",
     "description": "",
     "slug": "how-to-create-a-drag-and-drop-into-text-question",
     "sidebar_position": 281,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/short-answer-with-multiple-options"
   },
   "next": {
-    "title": "How to create a missing words question?",
+    "title": "Create a missing words question?",
     "permalink": "/quizzes/how-to-create-a-missing-words-question"
   }
 }

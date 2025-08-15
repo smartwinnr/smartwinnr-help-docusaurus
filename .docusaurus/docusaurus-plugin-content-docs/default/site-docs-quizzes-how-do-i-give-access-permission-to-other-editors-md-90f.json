@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-do-i-give-access-permission-to-other-editors",
-  "title": "How do I give access permission to other editors?",
+  "title": "Give access permission to other editors",
   "description": "",
   "source": "@site/docs/quizzes/how-do-i-give-access-permission-to-other-editors.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 196,
   "frontMatter": {
-    "title": "How do I give access permission to other editors?",
+    "title": "Give access permission to other editors",
     "description": "",
     "slug": "how-do-i-give-access-permission-to-other-editors",
     "sidebar_position": 196,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is a Rule?",
+    "title": "About a Rule",
     "permalink": "/quizzes/what-is-a-rule"
   },
   "next": {

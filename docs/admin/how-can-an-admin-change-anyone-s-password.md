@@ -20,12 +20,12 @@ admin-change-anyones-password
 ---
 You can change the password of a user by following the below steps.
 
-Go to 
+Go to
 > **Note**: This feature requires Administrator permissions.
 
 ADMIN > Manage Users. Click on the “Change Password” button.
 
-Only users with 
+Only users with
 > **Note**: This feature requires Administrator permissions.
 
 admin role can change the password.                                                 ![](/img/admin/helpscout-image-9d9e0a11.png)
@@ -34,7 +34,7 @@ The password you select needs to confirm with your organizational password polic
 
 The user will not receive any mail on changing the password through this method. You need to communicate the changed password to the user separately.
 
-Only users with 
+Only users with
 > **Note**: This feature requires Administrator permissions.
 
 admin role can change the password.

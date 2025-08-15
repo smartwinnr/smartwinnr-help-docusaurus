@@ -1,6 +1,6 @@
 {
   "id": "quizzes/what-is-a-competition",
-  "title": "What is a Competition?",
+  "title": "About a Competition",
   "description": "",
   "source": "@site/docs/quizzes/what-is-a-competition.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 101,
   "frontMatter": {
-    "title": "What is a Competition?",
+    "title": "About a Competition",
     "description": "",
     "slug": "what-is-a-competition",
     "sidebar_position": 101,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Finding  Status and Scores for Quizzes assigned to your Team",
+    "title": "Finding Status and Scores for Quizzes assigned to your Team",
     "permalink": "/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team"
   },
   "next": {
-    "title": "How to add a Quiz to a competition?",
+    "title": "Add a Quiz to a competition?",
     "permalink": "/quizzes/how-to-add-a-quiz-to-a-competition"
   }
 }

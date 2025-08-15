@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-create-a-scorecard",
-  "title": "How to create a Scorecard?",
+  "title": "Create a Scorecard?",
   "description": "",
   "source": "@site/docs/reports/how-to-create-a-scorecard.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 176,
   "frontMatter": {
-    "title": "How to create a Scorecard?",
+    "title": "Create a Scorecard?",
     "description": "",
     "slug": "how-to-create-a-scorecard",
     "sidebar_position": 176,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What are Scorecards?",
+    "title": "About Scorecards",
     "permalink": "/reports/what-are-scorecards"
   },
   "next": {

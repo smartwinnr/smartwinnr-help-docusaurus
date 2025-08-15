@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-the-scorecard-to-leaderboard",
-  "title": "How to add the Scorecard to Leaderboard",
+  "title": "Add the Scorecard to Leaderboard",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-the-scorecard-to-leaderboard.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 238,
   "frontMatter": {
-    "title": "How to add the Scorecard to Leaderboard",
+    "title": "Add the Scorecard to Leaderboard",
     "description": "",
     "slug": "how-to-add-the-scorecard-to-leaderboard",
     "sidebar_position": 238,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add observers to the Competition Leaderboard?",
+    "title": "Add observers to the Competition Leaderboard?",
     "permalink": "/competitions/how-to-add-observers-to-the-competition-leaderboard"
   },
   "next": {
-    "title": "How to add Different  Activities to a Challenge?",
+    "title": "Add Different Activities to a Challenge?",
     "permalink": "/competitions/how-to-add-different-activities-to-a-challenge"
   }
 }

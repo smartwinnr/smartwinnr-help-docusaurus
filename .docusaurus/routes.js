@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'cd9'),
+    component: ComponentCreator('/', '784'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '21a'),
+        component: ComponentCreator('/', 'def'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '7a7'),
+            component: ComponentCreator('/', '43c'),
             routes: [
               {
                 path: '/admin-landing',
@@ -688,12 +688,6 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/getting-started/how-can-i-login-to-smartwinnr-app',
-                component: ComponentCreator('/getting-started/how-can-i-login-to-smartwinnr-app', '538'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
                 path: '/getting-started/how-do-i-unlock-an-account',
                 component: ComponentCreator('/getting-started/how-do-i-unlock-an-account', 'c62'),
                 exact: true,
@@ -720,6 +714,12 @@ export default [
               {
                 path: '/getting-started/how-to-update-the-smartwinnr-app-web-view',
                 component: ComponentCreator('/getting-started/how-to-update-the-smartwinnr-app-web-view', '414'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/getting-started/login-to-smartwinnr-app',
+                component: ComponentCreator('/getting-started/login-to-smartwinnr-app', '462'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

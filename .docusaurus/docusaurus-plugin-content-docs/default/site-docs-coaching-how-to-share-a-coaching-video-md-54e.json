@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-share-a-coaching-video",
-  "title": "How to share a Coaching Video.",
+  "title": "Share a Coaching Video.",
   "description": "",
   "source": "@site/docs/coaching/how-to-share-a-coaching-video.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 88,
   "frontMatter": {
-    "title": "How to share a Coaching Video.",
+    "title": "Share a Coaching Video.",
     "description": "",
     "slug": "how-to-share-a-coaching-video",
     "sidebar_position": 88,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to review a video coaching assignment.",
+    "title": "Review a video coaching assignment.",
     "permalink": "/coaching/how-to-review-a-video-coaching-assignment"
   },
   "next": {
-    "title": "What is 'My Team Coaching'?",
+    "title": "About 'My Team Coaching'",
     "permalink": "/coaching/what-is-my-team-coaching"
   }
 }

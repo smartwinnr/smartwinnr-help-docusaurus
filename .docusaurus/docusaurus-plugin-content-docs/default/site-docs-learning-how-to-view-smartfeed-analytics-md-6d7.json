@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-view-smartfeed-analytics",
-  "title": "How to view SmartFeed Analytics?",
+  "title": "View SmartFeed Analytics?",
   "description": "",
   "source": "@site/docs/learning/how-to-view-smartfeed-analytics.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 35,
   "frontMatter": {
-    "title": "How to view SmartFeed Analytics?",
+    "title": "View SmartFeed Analytics?",
     "description": "",
     "slug": "how-to-view-smartfeed-analytics",
     "sidebar_position": 35,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to delete SmartFeeds?",
+    "title": "Delete SmartFeeds?",
     "permalink": "/learning/how-to-delete-smartfeeds"
   },
   "next": {
-    "title": "How 'Import question' is  different from 'Add New Question'?",
+    "title": "How 'Import question' is different from 'Add New Question'?",
     "permalink": "/learning/how-import-question-is-different-from-add-new-question"
   }
 }

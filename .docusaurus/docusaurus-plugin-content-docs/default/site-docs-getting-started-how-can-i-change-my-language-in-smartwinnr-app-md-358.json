@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-can-i-change-my-language-in-smartwinnr-app",
-  "title": "How can I change my language in SmartWinnr App?",
+  "title": "Change my language in SmartWinnr App",
   "description": "",
   "source": "@site/docs/getting-started/how-can-i-change-my-language-in-smartwinnr-app.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 18,
   "frontMatter": {
-    "title": "How can I change my language in SmartWinnr App?",
+    "title": "Change my language in SmartWinnr App",
     "description": "",
     "slug": "how-can-i-change-my-language-in-smartwinnr-app",
     "sidebar_position": 18,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I change my password for SmartWinnr?",
+    "title": "Change my password for SmartWinnr",
     "permalink": "/getting-started/how-can-i-change-my-password-for-smartwinnr"
   },
   "next": {
-    "title": "How can I check the App version/Web view version?",
+    "title": "Check the App version/Web view version",
     "permalink": "/getting-started/how-can-i-check-the-app-version-web-view-version"
   }
 }

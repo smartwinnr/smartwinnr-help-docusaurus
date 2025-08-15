@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-can-i-duplicate-a-quiz",
-  "title": "How can I duplicate a quiz?",
+  "title": "Duplicate a quiz",
   "description": "",
   "source": "@site/docs/quizzes/how-can-i-duplicate-a-quiz.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 51,
   "frontMatter": {
-    "title": "How can I duplicate a quiz?",
+    "title": "Duplicate a quiz",
     "description": "",
     "slug": "how-can-i-duplicate-a-quiz",
     "sidebar_position": 51,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a manual quiz?",
+    "title": "Create a manual quiz?",
     "permalink": "/quizzes/how-to-create-a-manual-quiz"
   },
   "next": {
-    "title": "How to activate automatic reminders for your quizzes",
+    "title": "Activate automatic reminders for your quizzes",
     "permalink": "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes"
   }
 }

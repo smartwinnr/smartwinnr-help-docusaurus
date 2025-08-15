@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-embed-a-link-into-the-question",
-  "title": "How to embed a link into the question",
+  "title": "Embed a link into the question",
   "description": "",
   "source": "@site/docs/learning/how-to-embed-a-link-into-the-question.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 66,
   "frontMatter": {
-    "title": "How to embed a link into the question",
+    "title": "Embed a link into the question",
     "description": "",
     "slug": "how-to-embed-a-link-into-the-question",
     "sidebar_position": 66,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add an 'Image' to the question.",
+    "title": "Add an 'Image' to the question.",
     "permalink": "/learning/how-to-add-an-image-to-the-question"
   },
   "next": {
-    "title": "How to add a video to your content?",
+    "title": "Add a video to your content?",
     "permalink": "/learning/how-to-add-a-video-to-your-content"
   }
 }

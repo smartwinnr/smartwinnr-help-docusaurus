@@ -1,6 +1,6 @@
 {
   "id": "surveys/how-to-create-a-survey",
-  "title": "How to create a 'Survey'.",
+  "title": "Create a 'Survey'.",
   "description": "",
   "source": "@site/docs/surveys/how-to-create-a-survey.md",
   "sourceDirName": "surveys",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 58,
   "frontMatter": {
-    "title": "How to create a 'Survey'.",
+    "title": "Create a 'Survey'.",
     "description": "",
     "slug": "how-to-create-a-survey",
     "sidebar_position": 58,
@@ -30,7 +30,7 @@
     "permalink": "/surveys/"
   },
   "next": {
-    "title": "How to assign a Survey.",
+    "title": "Assign a Survey.",
     "permalink": "/surveys/how-to-assign-a-survey"
   }
 }

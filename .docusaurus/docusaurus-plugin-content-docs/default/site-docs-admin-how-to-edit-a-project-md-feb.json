@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-edit-a-project",
-  "title": "How to edit a project?",
+  "title": "Edit a project?",
   "description": "",
   "source": "@site/docs/admin/how-to-edit-a-project.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 187,
   "frontMatter": {
-    "title": "How to edit a project?",
+    "title": "Edit a project?",
     "description": "",
     "slug": "how-to-edit-a-project",
     "sidebar_position": 187,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a new Project?",
+    "title": "Create a new Project?",
     "permalink": "/admin/how-to-create-a-new-project"
   },
   "next": {

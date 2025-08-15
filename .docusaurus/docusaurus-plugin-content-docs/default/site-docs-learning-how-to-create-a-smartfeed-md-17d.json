@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-create-a-smartfeed",
-  "title": "How to create a SmartFeed?",
+  "title": "Create a SmartFeed?",
   "description": "",
   "source": "@site/docs/learning/how-to-create-a-smartfeed.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 27,
   "frontMatter": {
-    "title": "How to create a SmartFeed?",
+    "title": "Create a SmartFeed?",
     "description": "",
     "slug": "how-to-create-a-smartfeed",
     "sidebar_position": 27,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What are SmartFeeds?",
+    "title": "About SmartFeeds",
     "permalink": "/learning/what-are-smartfeeds"
   },
   "next": {
-    "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+    "title": "Add a PowerPoint Presentation (PPT) to SmartFeed?",
     "permalink": "/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
   }
 }

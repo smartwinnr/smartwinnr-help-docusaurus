@@ -1,6 +1,6 @@
 {
   "id": "coaching/create-a-coaching",
-  "title": "Create a Coaching",
+  "title": "Create Coaching",
   "description": "",
   "source": "@site/docs/coaching/create-a-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 294,
   "frontMatter": {
-    "title": "Create a Coaching",
+    "title": "Create Coaching",
     "description": "",
     "slug": "create-a-coaching",
     "sidebar_position": 294,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to reset a coaching video",
+    "title": "Reset a coaching video",
     "permalink": "/coaching/how-to-reset-a-coaching-video"
   },
   "next": {

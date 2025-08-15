@@ -1,6 +1,6 @@
 {
   "id": "reports/what-are-scorecards",
-  "title": "What are Scorecards?",
+  "title": "About Scorecards",
   "description": "",
   "source": "@site/docs/reports/what-are-scorecards.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 175,
   "frontMatter": {
-    "title": "What are Scorecards?",
+    "title": "About Scorecards",
     "description": "",
     "slug": "what-are-scorecards",
     "sidebar_position": 175,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a Field Mapping?",
+    "title": "Create a Field Mapping?",
     "permalink": "/reports/how-to-create-a-field-mapping"
   },
   "next": {
-    "title": "How to create a Scorecard?",
+    "title": "Create a Scorecard?",
     "permalink": "/reports/how-to-create-a-scorecard"
   }
 }

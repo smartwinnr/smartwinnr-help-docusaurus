@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-add-an-audio-file-to-a-question",
-  "title": "How to add an 'Audio file' to a question.",
+  "title": "Add an 'Audio file' to a question.",
   "description": "",
   "source": "@site/docs/learning/how-to-add-an-audio-file-to-a-question.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 73,
   "frontMatter": {
-    "title": "How to add an 'Audio file' to a question.",
+    "title": "Add an 'Audio file' to a question.",
     "description": "",
     "slug": "how-to-add-an-audio-file-to-a-question",
     "sidebar_position": 73,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to attach PDF file to your content?",
+    "title": "Attach PDF file to your content?",
     "permalink": "/learning/how-to-attach-pdf-file-to-your-content"
   },
   "next": {
-    "title": "How to create a module for SmartPath.",
+    "title": "Create a module for SmartPath.",
     "permalink": "/learning/how-to-create-a-module-for-smartpath"
   }
 }

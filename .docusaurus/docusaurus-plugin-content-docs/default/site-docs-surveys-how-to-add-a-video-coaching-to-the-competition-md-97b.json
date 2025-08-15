@@ -1,6 +1,6 @@
 {
   "id": "surveys/how-to-add-a-video-coaching-to-the-competition",
-  "title": "How to add a Video Coaching to the competition?",
+  "title": "Add a Video Coaching to the competition?",
   "description": "",
   "source": "@site/docs/surveys/how-to-add-a-video-coaching-to-the-competition.md",
   "sourceDirName": "surveys",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 106,
   "frontMatter": {
-    "title": "How to add a Video Coaching to the competition?",
+    "title": "Add a Video Coaching to the competition?",
     "description": "",
     "slug": "how-to-add-a-video-coaching-to-the-competition",
     "sidebar_position": 106,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is the difference between a Survey and a Survey Template?",
+    "title": "About the difference between a Survey and a Survey Template",
     "permalink": "/surveys/what-is-the-difference-between-a-survey-and-a-survey-template"
   },
   "next": {
-    "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+    "title": "Duplicate a 'Survey' and 'Survey Template'.",
     "permalink": "/surveys/how-to-duplicate-a-survey-and-survey-template"
   }
 }

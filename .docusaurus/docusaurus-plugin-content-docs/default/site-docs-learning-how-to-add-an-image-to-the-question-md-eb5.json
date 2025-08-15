@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-add-an-image-to-the-question",
-  "title": "How to add an 'Image' to the question.",
+  "title": "Add an 'Image' to the question.",
   "description": "",
   "source": "@site/docs/learning/how-to-add-an-image-to-the-question.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 65,
   "frontMatter": {
-    "title": "How to add an 'Image' to the question.",
+    "title": "Add an 'Image' to the question.",
     "description": "",
     "slug": "how-to-add-an-image-to-the-question",
     "sidebar_position": 65,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add a 'Video' to a question.",
+    "title": "Add a 'Video' to a question.",
     "permalink": "/learning/how-to-add-a-video-to-a-question"
   },
   "next": {
-    "title": "How to embed a link into the question",
+    "title": "Embed a link into the question",
     "permalink": "/learning/how-to-embed-a-link-into-the-question"
   }
 }

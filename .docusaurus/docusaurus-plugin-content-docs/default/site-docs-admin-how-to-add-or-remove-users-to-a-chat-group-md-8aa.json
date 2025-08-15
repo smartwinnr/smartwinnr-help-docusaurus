@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-add-or-remove-users-to-a-chat-group",
-  "title": "How to add or remove users to a chat group?",
+  "title": "Add or remove users to a chat group?",
   "description": "",
   "source": "@site/docs/admin/how-to-add-or-remove-users-to-a-chat-group.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 155,
   "frontMatter": {
-    "title": "How to add or remove users to a chat group?",
+    "title": "Add or remove users to a chat group?",
     "description": "",
     "slug": "how-to-add-or-remove-users-to-a-chat-group",
     "sidebar_position": 155,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Enable a Chat Group?",
+    "title": "Enable a Chat Group?",
     "permalink": "/admin/how-to-enable-a-chat-group"
   },
   "next": {
-    "title": "How to download a chat?",
+    "title": "Download a chat?",
     "permalink": "/admin/how-to-download-a-chat"
   }
 }

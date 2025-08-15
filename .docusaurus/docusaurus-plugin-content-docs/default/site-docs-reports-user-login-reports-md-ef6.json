@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Create a form?",
+    "title": "Create a form?",
     "permalink": "/reports/how-to-create-a-form"
   },
   "next": {
-    "title": "What are Field Mappings?",
+    "title": "About Field Mappings",
     "permalink": "/reports/what-are-field-mappings"
   }
 }

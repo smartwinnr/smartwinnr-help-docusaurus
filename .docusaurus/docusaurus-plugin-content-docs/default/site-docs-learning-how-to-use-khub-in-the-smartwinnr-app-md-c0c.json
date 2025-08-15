@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-use-khub-in-the-smartwinnr-app",
-  "title": "How to use KHub in the SmartWinnr app?",
+  "title": "Use KHub in the SmartWinnr app?",
   "description": "",
   "source": "@site/docs/learning/how-to-use-khub-in-the-smartwinnr-app.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 150,
   "frontMatter": {
-    "title": "How to use KHub in the SmartWinnr app?",
+    "title": "Use KHub in the SmartWinnr app?",
     "description": "",
     "slug": "how-to-use-khub-in-the-smartwinnr-app",
     "sidebar_position": 150,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I view KHub Analytics?",
+    "title": "View KHub Analytics",
     "permalink": "/learning/how-can-i-view-khub-analytics"
   },
   "next": {
-    "title": "How to add a Recording to a SmartFeed?",
+    "title": "Add a Recording to a SmartFeed?",
     "permalink": "/learning/how-to-add-a-recording-to-a-smartfeed"
   }
 }

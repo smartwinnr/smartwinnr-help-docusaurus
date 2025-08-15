@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-upload-audio-recording-for-coaching",
-  "title": "How to upload Audio Recording for Coaching",
+  "title": "Upload Audio Recording for Coaching",
   "description": "",
   "source": "@site/docs/coaching/how-to-upload-audio-recording-for-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 266,
   "frontMatter": {
-    "title": "How to upload Audio Recording for Coaching",
+    "title": "Upload Audio Recording for Coaching",
     "description": "",
     "slug": "how-to-upload-audio-recording-for-coaching",
     "sidebar_position": 266,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to review Field Coaching from Managers View in Mobile",
+    "title": "Review Field Coaching from Managers View in Mobile",
     "permalink": "/coaching/how-to-review-field-coaching-from-managers-view-in-mobile"
   },
   "next": {
-    "title": "How to upload Video Recording for Coaching",
+    "title": "Upload Video Recording for Coaching",
     "permalink": "/coaching/how-to-upload-video-recording-for-coaching"
   }
 }

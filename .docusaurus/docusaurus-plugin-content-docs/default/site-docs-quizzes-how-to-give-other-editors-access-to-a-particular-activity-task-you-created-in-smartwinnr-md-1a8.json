@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
-  "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+  "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
   "description": "",
   "source": "@site/docs/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 90,
   "frontMatter": {
-    "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+    "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
     "description": "",
     "slug": "how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
     "sidebar_position": 90,

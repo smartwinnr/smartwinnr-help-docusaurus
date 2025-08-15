@@ -1,6 +1,6 @@
 {
   "id": "learning/how-can-i-edit-a-khub-item",
-  "title": "How can I edit a KHub item?",
+  "title": "Edit a KHub item",
   "description": "",
   "source": "@site/docs/learning/how-can-i-edit-a-khub-item.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 147,
   "frontMatter": {
-    "title": "How can I edit a KHub item?",
+    "title": "Edit a KHub item",
     "description": "",
     "slug": "how-can-i-edit-a-khub-item",
     "sidebar_position": 147,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I create folders and items in KHub?",
+    "title": "Create folders and items in KHub",
     "permalink": "/learning/how-can-i-create-folders-and-items-in-khub"
   },
   "next": {

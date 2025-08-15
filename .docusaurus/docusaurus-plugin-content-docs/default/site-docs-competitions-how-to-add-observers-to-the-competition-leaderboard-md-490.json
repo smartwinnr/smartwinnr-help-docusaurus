@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-observers-to-the-competition-leaderboard",
-  "title": "How to add observers to the Competition Leaderboard?",
+  "title": "Add observers to the Competition Leaderboard?",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-observers-to-the-competition-leaderboard.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 234,
   "frontMatter": {
-    "title": "How to add observers to the Competition Leaderboard?",
+    "title": "Add observers to the Competition Leaderboard?",
     "description": "",
     "slug": "how-to-add-observers-to-the-competition-leaderboard",
     "sidebar_position": 234,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to view the data and leaderboard for Scorecard",
+    "title": "View the data and leaderboard for Scorecard",
     "permalink": "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard"
   },
   "next": {
-    "title": "How to add the Scorecard to Leaderboard",
+    "title": "Add the Scorecard to Leaderboard",
     "permalink": "/competitions/how-to-add-the-scorecard-to-leaderboard"
   }
 }

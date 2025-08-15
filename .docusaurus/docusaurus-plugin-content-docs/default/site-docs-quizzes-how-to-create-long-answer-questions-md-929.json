@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-long-answer-questions",
-  "title": "How to create 'Long Answer' Questions?",
+  "title": "Create 'Long Answer' Questions?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-long-answer-questions.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 258,
   "frontMatter": {
-    "title": "How to create 'Long Answer' Questions?",
+    "title": "Create 'Long Answer' Questions?",
     "description": "",
     "slug": "how-to-create-long-answer-questions",
     "sidebar_position": 258,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/learner-report-by-learner-individual-report-analytics"
   },
   "next": {
-    "title": "How to Answer Long  Answer type Questions in SmartWinnr?",
+    "title": "Answer Long Answer type Questions in SmartWinnr?",
     "permalink": "/quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
-  "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+  "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
   "description": "",
   "source": "@site/docs/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 253,
   "frontMatter": {
-    "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
     "description": "",
     "slug": "how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
     "sidebar_position": 253,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Create SmartPath with Learning Sessions?",
+    "title": "Create SmartPath with Learning Sessions?",
     "permalink": "/learning/how-to-create-smartpath-with-learning-sessions"
   },
   "next": {
-    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "title": "Mark the attendance for Users in Learning Sessions?",
     "permalink": "/learning/how-to-mark-the-attendance-for-users-in-learning-sessions"
   }
 }

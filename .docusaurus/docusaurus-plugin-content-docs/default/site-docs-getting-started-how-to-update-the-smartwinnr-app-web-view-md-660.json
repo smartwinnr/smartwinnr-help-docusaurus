@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-to-update-the-smartwinnr-app-web-view",
-  "title": "How to update the SmartWinnr App/Web View?",
+  "title": "Update the SmartWinnr App/Web View?",
   "description": "",
   "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-web-view.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 20,
   "frontMatter": {
-    "title": "How to update the SmartWinnr App/Web View?",
+    "title": "Update the SmartWinnr App/Web View?",
     "description": "",
     "slug": "how-to-update-the-smartwinnr-app-web-view",
     "sidebar_position": 20,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I check the App version/Web view version?",
+    "title": "Check the App version/Web view version",
     "permalink": "/getting-started/how-can-i-check-the-app-version-web-view-version"
   },
   "next": {
-    "title": "How can I enable push notification for SmartWinnr App?",
+    "title": "Enable push notification for SmartWinnr App",
     "permalink": "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app"
   }
 }

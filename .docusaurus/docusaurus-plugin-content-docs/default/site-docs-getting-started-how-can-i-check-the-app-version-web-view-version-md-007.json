@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-can-i-check-the-app-version-web-view-version",
-  "title": "How can I check the App version/Web view version?",
+  "title": "Check the App version/Web view version",
   "description": "",
   "source": "@site/docs/getting-started/how-can-i-check-the-app-version-web-view-version.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 19,
   "frontMatter": {
-    "title": "How can I check the App version/Web view version?",
+    "title": "Check the App version/Web view version",
     "description": "",
     "slug": "how-can-i-check-the-app-version-web-view-version",
     "sidebar_position": 19,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I change my language in SmartWinnr App?",
+    "title": "Change my language in SmartWinnr App",
     "permalink": "/getting-started/how-can-i-change-my-language-in-smartwinnr-app"
   },
   "next": {
-    "title": "How to update the SmartWinnr App/Web View?",
+    "title": "Update the SmartWinnr App/Web View?",
     "permalink": "/getting-started/how-to-update-the-smartwinnr-app-web-view"
   }
 }

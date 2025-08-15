@@ -1,6 +1,6 @@
 {
   "id": "learning/how-can-i-view-khub-analytics",
-  "title": "How can I view KHub Analytics?",
+  "title": "View KHub Analytics",
   "description": "",
   "source": "@site/docs/learning/how-can-i-view-khub-analytics.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 149,
   "frontMatter": {
-    "title": "How can I view KHub Analytics?",
+    "title": "View KHub Analytics",
     "description": "",
     "slug": "how-can-i-view-khub-analytics",
     "sidebar_position": 149,
@@ -30,7 +30,7 @@
     "permalink": "/learning/understanding-recent-trending-and-latest-khub-items"
   },
   "next": {
-    "title": "How to use KHub in the SmartWinnr app?",
+    "title": "Use KHub in the SmartWinnr app?",
     "permalink": "/learning/how-to-use-khub-in-the-smartwinnr-app"
   }
 }

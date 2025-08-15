@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-create-certifcates",
-  "title": "How to create Certifcates",
+  "title": "Create Certifcates",
   "description": "",
   "source": "@site/docs/competitions/how-to-create-certifcates.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 194,
   "frontMatter": {
-    "title": "How to create Certifcates",
+    "title": "Create Certifcates",
     "description": "",
     "slug": "how-to-create-certifcates",
     "sidebar_position": 194,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is an Achievement?",
+    "title": "About an Achievement",
     "permalink": "/competitions/what-is-an-achievement"
   },
   "next": {

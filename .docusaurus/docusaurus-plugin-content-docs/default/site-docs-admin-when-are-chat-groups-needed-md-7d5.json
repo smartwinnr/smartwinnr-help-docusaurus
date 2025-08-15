@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What are Chat Groups?",
+    "title": "About Chat Groups",
     "permalink": "/admin/what-are-chat-groups"
   },
   "next": {
-    "title": "How to Enable a Chat Group?",
+    "title": "Enable a Chat Group?",
     "permalink": "/admin/how-to-enable-a-chat-group"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-to-update-the-smartwinnr-app-from-app-view",
-  "title": "How to update the SmartWinnr App from App View",
+  "title": "Update the SmartWinnr App from App View",
   "description": "",
   "source": "@site/docs/getting-started/how-to-update-the-smartwinnr-app-from-app-view.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 290,
   "frontMatter": {
-    "title": "How to update the SmartWinnr App from App View",
+    "title": "Update the SmartWinnr App from App View",
     "description": "",
     "slug": "how-to-update-the-smartwinnr-app-from-app-view",
     "sidebar_position": 290,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How do I unlock an account?",
+    "title": "Unlock an account",
     "permalink": "/getting-started/how-do-i-unlock-an-account"
   },
   "next": {
-    "title": "How to update the SmartWinnr App from Web View",
+    "title": "Update the SmartWinnr App from Web View",
     "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view"
   }
 }

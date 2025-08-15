@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-view-all-the-smartfeeds",
-  "title": "How to view all the SmartFeeds?",
+  "title": "View all the SmartFeeds?",
   "description": "",
   "source": "@site/docs/learning/how-to-view-all-the-smartfeeds.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 32,
   "frontMatter": {
-    "title": "How to view all the SmartFeeds?",
+    "title": "View all the SmartFeeds?",
     "description": "",
     "slug": "how-to-view-all-the-smartfeeds",
     "sidebar_position": 32,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to send the SmartFeed to Teams?",
+    "title": "Send the SmartFeed to Teams?",
     "permalink": "/learning/how-to-send-the-smartfeed-to-teams"
   },
   "next": {
-    "title": "How do I like a SmartFeed?",
+    "title": "Like a SmartFeed",
     "permalink": "/learning/how-do-i-like-a-smartfeed"
   }
 }

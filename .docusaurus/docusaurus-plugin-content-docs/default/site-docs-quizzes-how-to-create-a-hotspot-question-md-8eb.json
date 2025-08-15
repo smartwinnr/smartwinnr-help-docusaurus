@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-a-hotspot-question",
-  "title": "How to create a 'Hotspot Question'.",
+  "title": "Create a 'Hotspot Question'.",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-a-hotspot-question.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 42,
   "frontMatter": {
-    "title": "How to create a 'Hotspot Question'.",
+    "title": "Create a 'Hotspot Question'.",
     "description": "",
     "slug": "how-to-create-a-hotspot-question",
     "sidebar_position": 42,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "title": "Create 'Fill-In-The-Blank' Questions.",
     "permalink": "/quizzes/how-to-create-fill-in-the-blank-questions"
   },
   "next": {
-    "title": "How to create a 'Matching Question'.",
+    "title": "Create a 'Matching Question'.",
     "permalink": "/quizzes/how-to-create-a-matching-question"
   }
 }

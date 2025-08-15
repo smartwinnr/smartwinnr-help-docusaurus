@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-edit-a-form-on-submitted-by-a-user",
-  "title": "How to Edit a Form on submitted by a user?",
+  "title": "Edit a Form on submitted by a user?",
   "description": "",
   "source": "@site/docs/admin/how-to-edit-a-form-on-submitted-by-a-user.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 250,
   "frontMatter": {
-    "title": "How to Edit a Form on submitted by a user?",
+    "title": "Edit a Form on submitted by a user?",
     "description": "",
     "slug": "how-to-edit-a-form-on-submitted-by-a-user",
     "sidebar_position": 250,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add new form submission",
+    "title": "Add new form submission",
     "permalink": "/admin/how-to-add-new-form-submission"
   },
   "next": {
-    "title": "How to Submit a Form on behalf of a User",
+    "title": "Submit a Form on behalf of a User",
     "permalink": "/admin/how-to-submit-a-form-on-behalf-of-a-user"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "competitions/what-is-kpi-gamification",
-  "title": "What is KPI Gamification?",
+  "title": "About KPI Gamification",
   "description": "",
   "source": "@site/docs/competitions/what-is-kpi-gamification.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 168,
   "frontMatter": {
-    "title": "What is KPI Gamification?",
+    "title": "About KPI Gamification",
     "description": "",
     "slug": "what-is-kpi-gamification",
     "sidebar_position": 168,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Leaderboards of a competition",
+    "title": "Leaderboards of Competition",
     "permalink": "/competitions/leaderboards-of-a-competition"
   },
   "next": {

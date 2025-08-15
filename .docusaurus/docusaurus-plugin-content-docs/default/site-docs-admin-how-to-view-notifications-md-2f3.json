@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-view-notifications",
-  "title": "How to view notifications?",
+  "title": "View notifications?",
   "description": "",
   "source": "@site/docs/admin/how-to-view-notifications.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 164,
   "frontMatter": {
-    "title": "How to view notifications?",
+    "title": "View notifications?",
     "description": "",
     "slug": "how-to-view-notifications",
     "sidebar_position": 164,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is the purpose of notifications?",
+    "title": "About the purpose of notifications",
     "permalink": "/admin/what-is-the-purpose-of-notifications"
   },
   "next": {

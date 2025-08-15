@@ -14,7 +14,8 @@ last_update:
   author: Documentation Reorganization
 ---
 
-# Quiz 
+# Quiz
+>
 > **Note**: This feature requires Administrator permissions.
 
 Administration
@@ -26,15 +27,17 @@ Administration
 To configure default quiz settings:
 
 1. Go to **
+
 > **Note**: This feature requires Administrator permissions.
 
 Admin > Quiz Settings**
 2. Modify default configurations including:
-   - **Points for correct answers**
-   - **Points for wrong answers** (deduction settings)
-   - **Time limits and duration**
-   - **Attempt limits**
-   - **Threshold scores for badges**
+
+- **Points for correct answers**
+- **Points for wrong answers** (deduction settings)
+- **Time limits and duration**
+- **Attempt limits**
+- **Threshold scores for badges**
 
 ### Badge Thresholds
 

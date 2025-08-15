@@ -1,6 +1,6 @@
 {
   "id": "learning/what-is-khub",
-  "title": "What is KHub?",
+  "title": "About KHub",
   "description": "",
   "source": "@site/docs/learning/what-is-khub.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 145,
   "frontMatter": {
-    "title": "What is KHub?",
+    "title": "About KHub",
     "description": "",
     "slug": "what-is-khub",
     "sidebar_position": 145,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to view the SmartPath Analytics.",
+    "title": "View the SmartPath Analytics.",
     "permalink": "/learning/how-to-view-the-smartpath-analytics"
   },
   "next": {
-    "title": "How can I create folders and items in KHub?",
+    "title": "Create folders and items in KHub",
     "permalink": "/learning/how-can-i-create-folders-and-items-in-khub"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-create-badges",
-  "title": "How to create Badges",
+  "title": "Create Badges",
   "description": "",
   "source": "@site/docs/competitions/how-to-create-badges.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 285,
   "frontMatter": {
-    "title": "How to create Badges",
+    "title": "Create Badges",
     "description": "",
     "slug": "how-to-create-badges",
     "sidebar_position": 285,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add Different  Activities to a Challenge?",
+    "title": "Add Different Activities to a Challenge?",
     "permalink": "/competitions/how-to-add-different-activities-to-a-challenge"
   },
   "next": {
-    "title": "How to Award Points on Badge Assignment",
+    "title": "Award Points on Badge Assignment",
     "permalink": "/competitions/how-to-award-points-on-badge-assignment"
   }
 }

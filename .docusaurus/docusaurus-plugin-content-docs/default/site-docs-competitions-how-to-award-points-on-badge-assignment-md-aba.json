@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-award-points-on-badge-assignment",
-  "title": "How to Award Points on Badge Assignment",
+  "title": "Award Points on Badge Assignment",
   "description": "",
   "source": "@site/docs/competitions/how-to-award-points-on-badge-assignment.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 288,
   "frontMatter": {
-    "title": "How to Award Points on Badge Assignment",
+    "title": "Award Points on Badge Assignment",
     "description": "",
     "slug": "how-to-award-points-on-badge-assignment",
     "sidebar_position": 288,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Badges",
+    "title": "Create Badges",
     "permalink": "/competitions/how-to-create-badges"
   },
   "next": {
-    "title": "How to add smartfeed within a Competition",
+    "title": "Add smartfeed within a Competition",
     "permalink": "/competitions/how-to-add-smartfeed-within-a-competition"
   }
 }

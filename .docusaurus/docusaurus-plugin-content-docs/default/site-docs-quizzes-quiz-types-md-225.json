@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to upload questions in bulk using 'Import Questions'.",
+    "title": "Upload questions in bulk using 'Import Questions'.",
     "permalink": "/quizzes/how-to-upload-questions-in-bulk-using-import-questions"
   },
   "next": {
-    "title": "How to create an automatic quiz?",
+    "title": "Create an automatic quiz?",
     "permalink": "/quizzes/how-to-create-an-automatic-quiz"
   }
 }

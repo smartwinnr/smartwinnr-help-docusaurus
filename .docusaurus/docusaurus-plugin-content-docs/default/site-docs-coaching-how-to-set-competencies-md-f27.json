@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-set-competencies",
-  "title": "How to set competencies.",
+  "title": "Set competencies.",
   "description": "",
   "source": "@site/docs/coaching/how-to-set-competencies.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 91,
   "frontMatter": {
-    "title": "How to set competencies.",
+    "title": "Set competencies.",
     "description": "",
     "slug": "how-to-set-competencies",
     "sidebar_position": 91,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is 'My Team Coaching'?",
+    "title": "About 'My Team Coaching'",
     "permalink": "/coaching/what-is-my-team-coaching"
   },
   "next": {

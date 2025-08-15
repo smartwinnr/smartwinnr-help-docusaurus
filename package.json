@@ -50,6 +50,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "glob": "^11.0.3",
     "husky": "^9.1.7",
     "markdownlint-cli2": "^0.18.1"
   }

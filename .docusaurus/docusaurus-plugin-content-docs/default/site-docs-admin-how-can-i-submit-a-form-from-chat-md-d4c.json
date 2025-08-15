@@ -1,6 +1,6 @@
 {
   "id": "admin/how-can-i-submit-a-form-from-chat",
-  "title": "How can I submit a Form from Chat",
+  "title": "How can I submit Form from Chat",
   "description": "",
   "source": "@site/docs/admin/how-can-i-submit-a-form-from-chat.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 230,
   "frontMatter": {
-    "title": "How can I submit a Form from Chat",
+    "title": "How can I submit Form from Chat",
     "description": "",
     "slug": "how-can-i-submit-a-form-from-chat",
     "sidebar_position": 230,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I submit a Form from Left Menu",
+    "title": "How can I submit Form from Left Menu",
     "permalink": "/admin/how-can-i-submit-a-form-from-left-menu"
   },
   "next": {
-    "title": "How to add new form submission",
+    "title": "Add new form submission",
     "permalink": "/admin/how-to-add-new-form-submission"
   }
 }

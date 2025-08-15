@@ -49,17 +49,17 @@
     },
     "config": "config---search-5-e-9-7f5"
   },
-  "/-cd9": {
+  "/-784": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-21a": {
+  "/-def": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-7a7": {
+  "/-43c": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/admin-landing-c20": {
@@ -486,10 +486,6 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-how-can-i-enable-push-notification-for-smartwinnr-appa-60-52f"
   },
-  "/getting-started/how-can-i-login-to-smartwinnr-app-538": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getting-started-how-can-i-login-to-smartwinnr-appf-51-dc6"
-  },
   "/getting-started/how-do-i-unlock-an-account-c62": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-how-do-i-unlock-an-accountfb-0-cbf"
@@ -509,6 +505,10 @@
   "/getting-started/how-to-update-the-smartwinnr-app-web-view-414": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getting-started-how-to-update-the-smartwinnr-app-web-view-660-d9b"
+  },
+  "/getting-started/login-to-smartwinnr-app-462": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getting-started-login-to-smartwinnr-appf-51-eb2"
   },
   "/getting-started/manager-features-fbe": {
     "__comp": "__comp---theme-doc-item-178-a40",

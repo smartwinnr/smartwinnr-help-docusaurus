@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-smartfeed-within-a-competition",
-  "title": "How to add smartfeed within a Competition",
+  "title": "Add smartfeed within a Competition",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-smartfeed-within-a-competition.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 289,
   "frontMatter": {
-    "title": "How to add smartfeed within a Competition",
+    "title": "Add smartfeed within a Competition",
     "description": "",
     "slug": "how-to-add-smartfeed-within-a-competition",
     "sidebar_position": 289,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Award Points on Badge Assignment",
+    "title": "Award Points on Badge Assignment",
     "permalink": "/competitions/how-to-award-points-on-badge-assignment"
   },
   "next": {

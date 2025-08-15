@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-manage-quiz-configurations",
-  "title": "How to manage Quiz configurations?",
+  "title": "Manage Quiz configurations?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-manage-quiz-configurations.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 112,
   "frontMatter": {
-    "title": "How to manage Quiz configurations?",
+    "title": "Manage Quiz configurations?",
     "description": "",
     "slug": "how-to-manage-quiz-configurations",
     "sidebar_position": 112,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Duplicate a quiz in a Competition?",
+    "title": "Duplicate a quiz in a Competition?",
     "permalink": "/quizzes/how-to-duplicate-a-quiz-in-a-competition"
   },
   "next": {

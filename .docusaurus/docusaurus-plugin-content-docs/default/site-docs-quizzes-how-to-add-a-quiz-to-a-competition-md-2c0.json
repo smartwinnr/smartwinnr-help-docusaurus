@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-add-a-quiz-to-a-competition",
-  "title": "How to add a Quiz to a competition?",
+  "title": "Add a Quiz to a competition?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-add-a-quiz-to-a-competition.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 102,
   "frontMatter": {
-    "title": "How to add a Quiz to a competition?",
+    "title": "Add a Quiz to a competition?",
     "description": "",
     "slug": "how-to-add-a-quiz-to-a-competition",
     "sidebar_position": 102,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is a Competition?",
+    "title": "About a Competition",
     "permalink": "/quizzes/what-is-a-competition"
   },
   "next": {
-    "title": "How to create a competition?",
+    "title": "Create a competition?",
     "permalink": "/quizzes/how-to-create-a-competition"
   }
 }

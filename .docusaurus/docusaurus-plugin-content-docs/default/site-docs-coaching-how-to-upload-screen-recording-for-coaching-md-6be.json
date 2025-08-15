@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-upload-screen-recording-for-coaching",
-  "title": "How to upload Screen Recording for Coaching",
+  "title": "Upload Screen Recording for Coaching",
   "description": "",
   "source": "@site/docs/coaching/how-to-upload-screen-recording-for-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 269,
   "frontMatter": {
-    "title": "How to upload Screen Recording for Coaching",
+    "title": "Upload Screen Recording for Coaching",
     "description": "",
     "slug": "how-to-upload-screen-recording-for-coaching",
     "sidebar_position": 269,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to upload Video Recording for Coaching",
+    "title": "Upload Video Recording for Coaching",
     "permalink": "/coaching/how-to-upload-video-recording-for-coaching"
   },
   "next": {
-    "title": "How to review a field coaching as a manager/2nd level manager",
+    "title": "Review a field coaching as a manager/2nd level manager",
     "permalink": "/coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
   }
 }

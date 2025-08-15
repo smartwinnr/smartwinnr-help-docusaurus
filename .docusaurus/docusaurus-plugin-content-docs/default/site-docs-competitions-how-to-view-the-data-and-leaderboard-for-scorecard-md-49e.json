@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-view-the-data-and-leaderboard-for-scorecard",
-  "title": "How to view the data and leaderboard for Scorecard",
+  "title": "View the data and leaderboard for Scorecard",
   "description": "",
   "source": "@site/docs/competitions/how-to-view-the-data-and-leaderboard-for-scorecard.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 231,
   "frontMatter": {
-    "title": "How to view the data and leaderboard for Scorecard",
+    "title": "View the data and leaderboard for Scorecard",
     "description": "",
     "slug": "how-to-view-the-data-and-leaderboard-for-scorecard",
     "sidebar_position": 231,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add a Form to Competition?",
+    "title": "Add a Form to Competition?",
     "permalink": "/competitions/how-to-add-a-form-to-competition"
   },
   "next": {
-    "title": "How to add observers to the Competition Leaderboard?",
+    "title": "Add observers to the Competition Leaderboard?",
     "permalink": "/competitions/how-to-add-observers-to-the-competition-leaderboard"
   }
 }

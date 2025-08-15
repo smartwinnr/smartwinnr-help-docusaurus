@@ -1,6 +1,6 @@
 {
   "id": "reports/what-are-field-mappings",
-  "title": "What are Field Mappings?",
+  "title": "About Field Mappings",
   "description": "",
   "source": "@site/docs/reports/what-are-field-mappings.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 172,
   "frontMatter": {
-    "title": "What are Field Mappings?",
+    "title": "About Field Mappings",
     "description": "",
     "slug": "what-are-field-mappings",
     "sidebar_position": 172,
@@ -30,7 +30,7 @@
     "permalink": "/reports/user-login-reports"
   },
   "next": {
-    "title": "How to create a Field Mapping?",
+    "title": "Create a Field Mapping?",
     "permalink": "/reports/how-to-create-a-field-mapping"
   }
 }

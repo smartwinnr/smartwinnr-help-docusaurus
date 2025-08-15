@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-track-my-organizational-resource-usage",
-  "title": "How to track my organizational resource usage?",
+  "title": "Track my organizational resource usage?",
   "description": "",
   "source": "@site/docs/admin/how-to-track-my-organizational-resource-usage.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 116,
   "frontMatter": {
-    "title": "How to track my organizational resource usage?",
+    "title": "Track my organizational resource usage?",
     "description": "",
     "slug": "how-to-track-my-organizational-resource-usage",
     "sidebar_position": 116,

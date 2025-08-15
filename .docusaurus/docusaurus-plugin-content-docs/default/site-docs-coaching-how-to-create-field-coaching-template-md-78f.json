@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-create-field-coaching-template",
-  "title": "How to create Field Coaching Template",
+  "title": "Create Field Coaching Template",
   "description": "",
   "source": "@site/docs/coaching/how-to-create-field-coaching-template.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 236,
   "frontMatter": {
-    "title": "How to create Field Coaching Template",
+    "title": "Create Field Coaching Template",
     "description": "",
     "slug": "how-to-create-field-coaching-template",
     "sidebar_position": 236,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Field Coaching",
+    "title": "Create Field Coaching",
     "permalink": "/coaching/how-to-create-field-coaching"
   },
   "next": {
-    "title": "How to add Competencies for Field Coaching",
+    "title": "Add Competencies for Field Coaching",
     "permalink": "/coaching/how-to-add-competencies-for-field-coaching"
   }
 }

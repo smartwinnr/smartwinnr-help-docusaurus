@@ -1,6 +1,6 @@
 {
   "id": "admin/how-can-i-submit-a-form-from-left-menu",
-  "title": "How can I submit a Form from Left Menu",
+  "title": "How can I submit Form from Left Menu",
   "description": "",
   "source": "@site/docs/admin/how-can-i-submit-a-form-from-left-menu.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 225,
   "frontMatter": {
-    "title": "How can I submit a Form from Left Menu",
+    "title": "How can I submit Form from Left Menu",
     "description": "",
     "slug": "how-can-i-submit-a-form-from-left-menu",
     "sidebar_position": 225,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Approve/Reject a Form Submission",
+    "title": "Approve/Reject a Form Submission",
     "permalink": "/admin/how-to-approve-reject-a-form-submission"
   },
   "next": {
-    "title": "How can I submit a Form from Chat",
+    "title": "How can I submit Form from Chat",
     "permalink": "/admin/how-can-i-submit-a-form-from-chat"
   }
 }

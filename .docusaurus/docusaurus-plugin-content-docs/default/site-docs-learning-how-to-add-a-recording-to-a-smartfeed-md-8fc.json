@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-add-a-recording-to-a-smartfeed",
-  "title": "How to add a Recording to a SmartFeed?",
+  "title": "Add a Recording to a SmartFeed?",
   "description": "",
   "source": "@site/docs/learning/how-to-add-a-recording-to-a-smartfeed.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 239,
   "frontMatter": {
-    "title": "How to add a Recording to a SmartFeed?",
+    "title": "Add a Recording to a SmartFeed?",
     "description": "",
     "slug": "how-to-add-a-recording-to-a-smartfeed",
     "sidebar_position": 239,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to use KHub in the SmartWinnr app?",
+    "title": "Use KHub in the SmartWinnr app?",
     "permalink": "/learning/how-to-use-khub-in-the-smartwinnr-app"
   },
   "next": {
-    "title": "How to add Learning Sessions In SmartPath Module?",
+    "title": "Add Learning Sessions In SmartPath Module?",
     "permalink": "/learning/how-to-add-learning-sessions-in-smartpath-module"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-create-a-field-mapping",
-  "title": "How to create a Field Mapping?",
+  "title": "Create a Field Mapping?",
   "description": "",
   "source": "@site/docs/reports/how-to-create-a-field-mapping.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 173,
   "frontMatter": {
-    "title": "How to create a Field Mapping?",
+    "title": "Create a Field Mapping?",
     "description": "",
     "slug": "how-to-create-a-field-mapping",
     "sidebar_position": 173,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What are Field Mappings?",
+    "title": "About Field Mappings",
     "permalink": "/reports/what-are-field-mappings"
   },
   "next": {
-    "title": "What are Scorecards?",
+    "title": "About Scorecards",
     "permalink": "/reports/what-are-scorecards"
   }
 }

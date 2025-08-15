@@ -1,6 +1,6 @@
 {
   "id": "surveys/how-to-duplicate-a-survey-and-survey-template",
-  "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+  "title": "Duplicate a 'Survey' and 'Survey Template'.",
   "description": "",
   "source": "@site/docs/surveys/how-to-duplicate-a-survey-and-survey-template.md",
   "sourceDirName": "surveys",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 110,
   "frontMatter": {
-    "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+    "title": "Duplicate a 'Survey' and 'Survey Template'.",
     "description": "",
     "slug": "how-to-duplicate-a-survey-and-survey-template",
     "sidebar_position": 110,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add a Video Coaching to the competition?",
+    "title": "Add a Video Coaching to the competition?",
     "permalink": "/surveys/how-to-add-a-video-coaching-to-the-competition"
   },
   "next": {

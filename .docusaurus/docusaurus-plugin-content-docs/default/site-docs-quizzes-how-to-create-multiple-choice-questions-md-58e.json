@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-multiple-choice-questions",
-  "title": "How to create 'Multiple-Choice Questions'.",
+  "title": "Create 'Multiple-Choice Questions'.",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-multiple-choice-questions.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 40,
   "frontMatter": {
-    "title": "How to create 'Multiple-Choice Questions'.",
+    "title": "Create 'Multiple-Choice Questions'.",
     "description": "",
     "slug": "how-to-create-multiple-choice-questions",
     "sidebar_position": 40,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/understanding-knowledge-categories"
   },
   "next": {
-    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "title": "Create 'Fill-In-The-Blank' Questions.",
     "permalink": "/quizzes/how-to-create-fill-in-the-blank-questions"
   }
 }

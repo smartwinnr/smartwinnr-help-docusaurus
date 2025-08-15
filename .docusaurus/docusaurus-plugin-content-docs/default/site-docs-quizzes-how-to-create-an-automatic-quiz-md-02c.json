@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-an-automatic-quiz",
-  "title": "How to create an automatic quiz?",
+  "title": "Create an automatic quiz?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-an-automatic-quiz.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 49,
   "frontMatter": {
-    "title": "How to create an automatic quiz?",
+    "title": "Create an automatic quiz?",
     "description": "",
     "slug": "how-to-create-an-automatic-quiz",
     "sidebar_position": 49,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/quiz-types"
   },
   "next": {
-    "title": "How to create a manual quiz?",
+    "title": "Create a manual quiz?",
     "permalink": "/quizzes/how-to-create-a-manual-quiz"
   }
 }

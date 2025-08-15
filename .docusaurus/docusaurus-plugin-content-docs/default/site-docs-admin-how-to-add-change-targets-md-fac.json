@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-add-change-targets",
-  "title": "How to add/change targets?",
+  "title": "Add/change targets?",
   "description": "",
   "source": "@site/docs/admin/how-to-add-change-targets.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 177,
   "frontMatter": {
-    "title": "How to add/change targets?",
+    "title": "Add/change targets?",
     "description": "",
     "slug": "how-to-add-change-targets",
     "sidebar_position": 177,
@@ -30,7 +30,7 @@
     "permalink": "/admin/bulk-custom-notifications"
   },
   "next": {
-    "title": "How to create a new Project?",
+    "title": "Create a new Project?",
     "permalink": "/admin/how-to-create-a-new-project"
   }
 }

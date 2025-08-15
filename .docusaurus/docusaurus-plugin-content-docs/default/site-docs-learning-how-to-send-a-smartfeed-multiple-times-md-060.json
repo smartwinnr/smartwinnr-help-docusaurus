@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-send-a-smartfeed-multiple-times",
-  "title": "How to send a SmartFeed multiple times?",
+  "title": "Send a SmartFeed multiple times?",
   "description": "",
   "source": "@site/docs/learning/how-to-send-a-smartfeed-multiple-times.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 30,
   "frontMatter": {
-    "title": "How to send a SmartFeed multiple times?",
+    "title": "Send a SmartFeed multiple times?",
     "description": "",
     "slug": "how-to-send-a-smartfeed-multiple-times",
     "sidebar_position": 30,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to edit a SmartFeed?",
+    "title": "Edit a SmartFeed?",
     "permalink": "/learning/how-to-edit-a-smartfeed"
   },
   "next": {
-    "title": "How to send the SmartFeed to Teams?",
+    "title": "Send the SmartFeed to Teams?",
     "permalink": "/learning/how-to-send-the-smartfeed-to-teams"
   }
 }

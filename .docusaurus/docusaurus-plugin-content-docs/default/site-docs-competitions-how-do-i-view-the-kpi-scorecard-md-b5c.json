@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-do-i-view-the-kpi-scorecard",
-  "title": "How do I view the KPI scorecard?",
+  "title": "View the KPI scorecard",
   "description": "",
   "source": "@site/docs/competitions/how-do-i-view-the-kpi-scorecard.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 191,
   "frontMatter": {
-    "title": "How do I view the KPI scorecard?",
+    "title": "View the KPI scorecard",
     "description": "",
     "slug": "how-do-i-view-the-kpi-scorecard",
     "sidebar_position": 191,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I view a competition Leaderboard?",
+    "title": "View a competition Leaderboard",
     "permalink": "/competitions/how-can-i-view-a-competition-leaderboard"
   },
   "next": {
-    "title": "What is an Achievement?",
+    "title": "About an Achievement",
     "permalink": "/competitions/what-is-an-achievement"
   }
 }

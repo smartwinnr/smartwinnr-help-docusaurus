@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-create-a-new-project",
-  "title": "How to create a new Project?",
+  "title": "Create a new Project?",
   "description": "",
   "source": "@site/docs/admin/how-to-create-a-new-project.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 185,
   "frontMatter": {
-    "title": "How to create a new Project?",
+    "title": "Create a new Project?",
     "description": "",
     "slug": "how-to-create-a-new-project",
     "sidebar_position": 185,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add/change targets?",
+    "title": "Add/change targets?",
     "permalink": "/admin/how-to-add-change-targets"
   },
   "next": {
-    "title": "How to edit a project?",
+    "title": "Edit a project?",
     "permalink": "/admin/how-to-edit-a-project"
   }
 }

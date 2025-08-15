@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
-  "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+  "title": "Take the SmartPath Assigned to me in SmartWinnr?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 265,
   "frontMatter": {
-    "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
     "description": "",
     "slug": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
     "sidebar_position": 265,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/how-editors-evaluate-long-answer-questions"
   },
   "next": {
-    "title": "How to create Re-order Questions ?",
+    "title": "Create Re-order Questions",
     "permalink": "/quizzes/how-to-create-re-order-questions"
   }
 }

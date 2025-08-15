@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-a-scorecard-to-a-competition",
-  "title": "How to add a Scorecard to a Competition?",
+  "title": "Add a Scorecard to a Competition?",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-a-scorecard-to-a-competition.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 105,
   "frontMatter": {
-    "title": "How to add a Scorecard to a Competition?",
+    "title": "Add a Scorecard to a Competition?",
     "description": "",
     "slug": "how-to-add-a-scorecard-to-a-competition",
     "sidebar_position": 105,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I Gamify a SmartPath?",
+    "title": "Gamify a SmartPath",
     "permalink": "/competitions/how-can-i-gamify-a-smartpath"
   },
   "next": {
-    "title": "How to add a challenge to the competition?",
+    "title": "Add a challenge to the competition?",
     "permalink": "/competitions/how-to-add-a-challenge-to-the-competition"
   }
 }

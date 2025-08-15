@@ -1,6 +1,6 @@
 {
   "id": "quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team",
-  "title": "Finding  Status and Scores for Quizzes assigned to your Team",
+  "title": "Finding Status and Scores for Quizzes assigned to your Team",
   "description": "",
   "source": "@site/docs/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 99,
   "frontMatter": {
-    "title": "Finding  Status and Scores for Quizzes assigned to your Team",
+    "title": "Finding Status and Scores for Quizzes assigned to your Team",
     "description": "",
     "slug": "finding-status-and-scores-for-quizzes-assigned-to-your-team",
     "sidebar_position": 99,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/quiz-analytics-through-charts"
   },
   "next": {
-    "title": "What is a Competition?",
+    "title": "About a Competition",
     "permalink": "/quizzes/what-is-a-competition"
   }
 }

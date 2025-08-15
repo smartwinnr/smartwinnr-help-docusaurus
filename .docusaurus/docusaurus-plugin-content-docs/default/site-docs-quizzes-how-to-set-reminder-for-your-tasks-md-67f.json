@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-set-reminder-for-your-tasks",
-  "title": "How to Set Reminder for your Tasks",
+  "title": "Set Reminder for your Tasks",
   "description": "",
   "source": "@site/docs/quizzes/how-to-set-reminder-for-your-tasks.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 219,
   "frontMatter": {
-    "title": "How to Set Reminder for your Tasks",
+    "title": "Set Reminder for your Tasks",
     "description": "",
     "slug": "how-to-set-reminder-for-your-tasks",
     "sidebar_position": 219,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to edit a question?",
+    "title": "Edit a question?",
     "permalink": "/quizzes/how-to-edit-a-question"
   },
   "next": {
-    "title": "How to Update question response",
+    "title": "Update question response",
     "permalink": "/quizzes/how-to-update-question-response"
   }
 }

@@ -24,11 +24,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Quiz Administration",
-    "permalink": "/quizzes/quiz-administration"
+    "title": "Quiz Management",
+    "permalink": "/quizzes/"
   },
   "next": {
-    "title": "How can I download the SmartWinnr app?",
+    "title": "Download the SmartWinnr app",
     "permalink": "/quizzes/how-can-i-download-the-smartwinnr-app"
   }
 }

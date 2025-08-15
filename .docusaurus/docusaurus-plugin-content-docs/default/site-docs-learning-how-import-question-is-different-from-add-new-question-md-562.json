@@ -1,6 +1,6 @@
 {
   "id": "learning/how-import-question-is-different-from-add-new-question",
-  "title": "How 'Import question' is  different from 'Add New Question'?",
+  "title": "How 'Import question' is different from 'Add New Question'?",
   "description": "",
   "source": "@site/docs/learning/how-import-question-is-different-from-add-new-question.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 45,
   "frontMatter": {
-    "title": "How 'Import question' is  different from 'Add New Question'?",
+    "title": "How 'Import question' is different from 'Add New Question'?",
     "description": "",
     "slug": "how-import-question-is-different-from-add-new-question",
     "sidebar_position": 45,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to view SmartFeed Analytics?",
+    "title": "View SmartFeed Analytics?",
     "permalink": "/learning/how-to-view-smartfeed-analytics"
   },
   "next": {
-    "title": "How to add a 'Video' to a question.",
+    "title": "Add a 'Video' to a question.",
     "permalink": "/learning/how-to-add-a-video-to-a-question"
   }
 }

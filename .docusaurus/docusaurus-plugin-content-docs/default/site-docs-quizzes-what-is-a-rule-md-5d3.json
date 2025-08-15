@@ -1,6 +1,6 @@
 {
   "id": "quizzes/what-is-a-rule",
-  "title": "What is a Rule?",
+  "title": "About a Rule",
   "description": "",
   "source": "@site/docs/quizzes/what-is-a-rule.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 141,
   "frontMatter": {
-    "title": "What is a Rule?",
+    "title": "About a Rule",
     "description": "",
     "slug": "what-is-a-rule",
     "sidebar_position": 141,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is Audit Log?",
+    "title": "About Audit Log",
     "permalink": "/quizzes/what-is-audit-log"
   },
   "next": {
-    "title": "How do I give access permission to other editors?",
+    "title": "Give access permission to other editors",
     "permalink": "/quizzes/how-do-i-give-access-permission-to-other-editors"
   }
 }

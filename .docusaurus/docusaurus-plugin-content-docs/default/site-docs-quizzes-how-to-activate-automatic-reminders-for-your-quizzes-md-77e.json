@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-activate-automatic-reminders-for-your-quizzes",
-  "title": "How to activate automatic reminders for your quizzes",
+  "title": "Activate automatic reminders for your quizzes",
   "description": "",
   "source": "@site/docs/quizzes/how-to-activate-automatic-reminders-for-your-quizzes.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 52,
   "frontMatter": {
-    "title": "How to activate automatic reminders for your quizzes",
+    "title": "Activate automatic reminders for your quizzes",
     "description": "",
     "slug": "how-to-activate-automatic-reminders-for-your-quizzes",
     "sidebar_position": 52,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I duplicate a quiz?",
+    "title": "Duplicate a quiz",
     "permalink": "/quizzes/how-can-i-duplicate-a-quiz"
   },
   "next": {
-    "title": "What is SmartWinnr Quiz Analytics?",
+    "title": "About SmartWinnr Quiz Analytics",
     "permalink": "/quizzes/what-is-smartwinnr-quiz-analytics"
   }
 }

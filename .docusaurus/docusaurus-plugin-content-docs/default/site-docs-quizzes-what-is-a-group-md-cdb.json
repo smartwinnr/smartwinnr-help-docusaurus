@@ -1,6 +1,6 @@
 {
   "id": "quizzes/what-is-a-group",
-  "title": "What is a Group?",
+  "title": "About a Group",
   "description": "",
   "source": "@site/docs/quizzes/what-is-a-group.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 128,
   "frontMatter": {
-    "title": "What is a Group?",
+    "title": "About a Group",
     "description": "",
     "slug": "what-is-a-group",
     "sidebar_position": 128,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to activate or deactivate a user?",
+    "title": "Activate or deactivate a user?",
     "permalink": "/quizzes/how-to-activate-or-deactivate-a-user"
   },
   "next": {
-    "title": "How to send quizzes, surveys and content using group?",
+    "title": "Send quizzes, surveys and content using group?",
     "permalink": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group"
   }
 }

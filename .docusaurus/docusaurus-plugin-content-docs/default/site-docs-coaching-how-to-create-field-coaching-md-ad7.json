@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-create-field-coaching",
-  "title": "How to create Field Coaching",
+  "title": "Create Field Coaching",
   "description": "",
   "source": "@site/docs/coaching/how-to-create-field-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 235,
   "frontMatter": {
-    "title": "How to create Field Coaching",
+    "title": "Create Field Coaching",
     "description": "",
     "slug": "how-to-create-field-coaching",
     "sidebar_position": 235,
@@ -30,7 +30,7 @@
     "permalink": "/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
   },
   "next": {
-    "title": "How to create Field Coaching Template",
+    "title": "Create Field Coaching Template",
     "permalink": "/coaching/how-to-create-field-coaching-template"
   }
 }

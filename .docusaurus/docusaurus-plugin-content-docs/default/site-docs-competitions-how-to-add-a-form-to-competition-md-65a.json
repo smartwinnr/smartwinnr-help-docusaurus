@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-a-form-to-competition",
-  "title": "How to add a Form to Competition?",
+  "title": "Add a Form to Competition?",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-a-form-to-competition.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 227,
   "frontMatter": {
-    "title": "How to add a Form to Competition?",
+    "title": "Add a Form to Competition?",
     "description": "",
     "slug": "how-to-add-a-form-to-competition",
     "sidebar_position": 227,
@@ -30,7 +30,7 @@
     "permalink": "/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app"
   },
   "next": {
-    "title": "How to view the data and leaderboard for Scorecard",
+    "title": "View the data and leaderboard for Scorecard",
     "permalink": "/competitions/how-to-view-the-data-and-leaderboard-for-scorecard"
   }
 }

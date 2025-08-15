@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-access-the-scorm-course-from-the-smartwinnr-app",
-  "title": "How to access the SCORM course from the SmartWinnr app ?",
+  "title": "Access the SCORM course from the SmartWinnr app",
   "description": "",
   "source": "@site/docs/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 272,
   "frontMatter": {
-    "title": "How to access the SCORM course from the SmartWinnr app ?",
+    "title": "Access the SCORM course from the SmartWinnr app",
     "description": "",
     "slug": "how-to-access-the-scorm-course-from-the-smartwinnr-app",
     "sidebar_position": 272,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "title": "Mark the attendance for Users in Learning Sessions?",
     "permalink": "/learning/how-to-mark-the-attendance-for-users-in-learning-sessions"
   },
   "next": {
-    "title": "How to download/Share  a smartfeed in smartpath",
+    "title": "Download/Share a smartfeed in smartpath",
     "permalink": "/learning/how-to-download-share-a-smartfeed-in-smartpath"
   }
 }

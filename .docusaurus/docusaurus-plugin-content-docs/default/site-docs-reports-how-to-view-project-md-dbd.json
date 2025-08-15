@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-view-project",
-  "title": "How to view Project?",
+  "title": "View Project?",
   "description": "",
   "source": "@site/docs/reports/how-to-view-project.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 186,
   "frontMatter": {
-    "title": "How to view Project?",
+    "title": "View Project?",
     "description": "",
     "slug": "how-to-view-project",
     "sidebar_position": 186,
@@ -30,7 +30,7 @@
     "permalink": "/reports/detailed-explanation-of-reports"
   },
   "next": {
-    "title": "How managers Approve  Form",
+    "title": "How managers Approve Form",
     "permalink": "/reports/how-managers-approve-form"
   }
 }

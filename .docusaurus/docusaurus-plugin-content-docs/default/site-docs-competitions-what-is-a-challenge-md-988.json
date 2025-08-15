@@ -1,6 +1,6 @@
 {
   "id": "competitions/what-is-a-challenge",
-  "title": "What is a Challenge?",
+  "title": "About a Challenge",
   "description": "",
   "source": "@site/docs/competitions/what-is-a-challenge.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 178,
   "frontMatter": {
-    "title": "What is a Challenge?",
+    "title": "About a Challenge",
     "description": "",
     "slug": "what-is-a-challenge",
     "sidebar_position": 178,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to upload KPI data?",
+    "title": "Upload KPI data?",
     "permalink": "/competitions/how-to-upload-kpi-data"
   },
   "next": {
-    "title": "How to create an Individual Challenge?",
+    "title": "Create an Individual Challenge?",
     "permalink": "/competitions/how-to-create-an-individual-challenge"
   }
 }

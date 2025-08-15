@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-add-a-new-division",
-  "title": "How to Add a new Division?",
+  "title": "Add a new Division?",
   "description": "",
   "source": "@site/docs/admin/how-to-add-a-new-division.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 132,
   "frontMatter": {
-    "title": "How to Add a new Division?",
+    "title": "Add a new Division?",
     "description": "",
     "slug": "how-to-add-a-new-division",
     "sidebar_position": 132,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a group?",
+    "title": "Create a group?",
     "permalink": "/admin/how-to-create-a-group"
   },
   "next": {
-    "title": "How to view existing contacts?",
+    "title": "View existing contacts?",
     "permalink": "/admin/how-to-view-existing-contacts"
   }
 }

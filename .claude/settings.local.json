@@ -26,7 +26,9 @@
       "Bash(pkill:*)",
       "Bash(true)",
       "Bash(npx husky init:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

@@ -24,11 +24,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is SmartWinnr?",
+    "title": "About SmartWinnr",
     "permalink": "/getting-started/what-is-smartwinnr"
   },
   "next": {
-    "title": "Administrator Onboarding Guide",
-    "permalink": "/getting-started/admin-onboarding"
+    "title": "Login to SmartWinnr App",
+    "permalink": "/getting-started/login-to-smartwinnr-app"
   }
 }

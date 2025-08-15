@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-import-scorm-course-into-smartwinnr",
-  "title": "How to Import SCORM course into SmartWinnr?",
+  "title": "Import SCORM course into SmartWinnr?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-import-scorm-course-into-smartwinnr.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 271,
   "frontMatter": {
-    "title": "How to Import SCORM course into SmartWinnr?",
+    "title": "Import SCORM course into SmartWinnr?",
     "description": "",
     "slug": "how-to-import-scorm-course-into-smartwinnr",
     "sidebar_position": 271,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Re-order Questions ?",
+    "title": "Create Re-order Questions",
     "permalink": "/quizzes/how-to-create-re-order-questions"
   },
   "next": {
-    "title": "How to ‘Open’ and ‘Close’ a Quiz",
+    "title": "‘Open’ and ‘Close’ a Quiz",
     "permalink": "/quizzes/how-to-open-and-close-a-quiz"
   }
 }

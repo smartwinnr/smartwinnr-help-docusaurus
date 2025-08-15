@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-a-missing-words-question",
-  "title": "How to create a missing words question?",
+  "title": "Create a missing words question?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-a-missing-words-question.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 282,
   "frontMatter": {
-    "title": "How to create a missing words question?",
+    "title": "Create a missing words question?",
     "description": "",
     "slug": "how-to-create-a-missing-words-question",
     "sidebar_position": 282,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a 'Drag and Drop into Text question '.",
+    "title": "Create a 'Drag and Drop into Text question '.",
     "permalink": "/quizzes/how-to-create-a-drag-and-drop-into-text-question"
   },
   "next": {
-    "title": "How to create a Drag and Drop into Image Question?",
+    "title": "Create a Drag and Drop into Image Question?",
     "permalink": "/quizzes/how-to-create-a-drag-and-drop-into-image-question"
   }
 }

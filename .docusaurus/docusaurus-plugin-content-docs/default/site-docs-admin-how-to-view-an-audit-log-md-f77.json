@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-view-an-audit-log",
-  "title": "How to view an Audit Log?",
+  "title": "View an Audit Log?",
   "description": "",
   "source": "@site/docs/admin/how-to-view-an-audit-log.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 138,
   "frontMatter": {
-    "title": "How to view an Audit Log?",
+    "title": "View an Audit Log?",
     "description": "",
     "slug": "how-to-view-an-audit-log",
     "sidebar_position": 138,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Add new contacts?",
+    "title": "Add new contacts?",
     "permalink": "/admin/how-to-add-new-contacts"
   },
   "next": {
-    "title": "How to Add new rule?",
+    "title": "Add new rule?",
     "permalink": "/admin/how-to-add-new-rule"
   }
 }

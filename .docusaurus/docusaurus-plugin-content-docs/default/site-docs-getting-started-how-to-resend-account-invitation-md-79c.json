@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-to-resend-account-invitation",
-  "title": "How to resend account invitation?",
+  "title": "Resend account invitation?",
   "description": "",
   "source": "@site/docs/getting-started/how-to-resend-account-invitation.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 123,
   "frontMatter": {
-    "title": "How to resend account invitation?",
+    "title": "Resend account invitation?",
     "description": "",
     "slug": "how-to-resend-account-invitation",
     "sidebar_position": 123,
@@ -30,7 +30,7 @@
     "permalink": "/getting-started/switching-to-manager-view"
   },
   "next": {
-    "title": "How do I unlock an account?",
+    "title": "Unlock an account",
     "permalink": "/getting-started/how-do-i-unlock-an-account"
   }
 }

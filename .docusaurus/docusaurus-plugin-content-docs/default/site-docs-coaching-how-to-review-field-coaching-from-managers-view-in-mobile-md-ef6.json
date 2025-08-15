@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-review-field-coaching-from-managers-view-in-mobile",
-  "title": "How to review Field Coaching from Managers View in Mobile",
+  "title": "Review Field Coaching from Managers View in Mobile",
   "description": "",
   "source": "@site/docs/coaching/how-to-review-field-coaching-from-managers-view-in-mobile.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 244,
   "frontMatter": {
-    "title": "How to review Field Coaching from Managers View in Mobile",
+    "title": "Review Field Coaching from Managers View in Mobile",
     "description": "",
     "slug": "how-to-review-field-coaching-from-managers-view-in-mobile",
     "sidebar_position": 244,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to enable the Streaming Links for Video Coaching",
+    "title": "Enable the Streaming Links for Video Coaching",
     "permalink": "/coaching/how-to-enable-the-streaming-links-for-video-coaching"
   },
   "next": {
-    "title": "How to upload Audio Recording for Coaching",
+    "title": "Upload Audio Recording for Coaching",
     "permalink": "/coaching/how-to-upload-audio-recording-for-coaching"
   }
 }

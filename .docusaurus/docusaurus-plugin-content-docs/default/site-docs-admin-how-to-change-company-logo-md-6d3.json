@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-change-company-logo",
-  "title": "How to change company logo?",
+  "title": "Change company logo?",
   "description": "",
   "source": "@site/docs/admin/how-to-change-company-logo.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 114,
   "frontMatter": {
-    "title": "How to change company logo?",
+    "title": "Change company logo?",
     "description": "",
     "slug": "how-to-change-company-logo",
     "sidebar_position": 114,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I contact SmartWinnr Team?",
+    "title": "Contact SmartWinnr Team",
     "permalink": "/admin/how-can-i-contact-smartwinnr-team"
   },
   "next": {

@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-can-i-view-a-competition-leaderboard",
-  "title": "How can I view a competition Leaderboard?",
+  "title": "View a competition Leaderboard",
   "description": "",
   "source": "@site/docs/competitions/how-can-i-view-a-competition-leaderboard.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 190,
   "frontMatter": {
-    "title": "How can I view a competition Leaderboard?",
+    "title": "View a competition Leaderboard",
     "description": "",
     "slug": "how-can-i-view-a-competition-leaderboard",
     "sidebar_position": 190,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What are KPI Reports?",
+    "title": "About KPI Reports",
     "permalink": "/competitions/what-are-kpi-reports"
   },
   "next": {
-    "title": "How do I view the KPI scorecard?",
+    "title": "View the KPI scorecard",
     "permalink": "/competitions/how-do-i-view-the-kpi-scorecard"
   }
 }

@@ -90,5 +90,4 @@ If you need your account invitation resent, contact your system administrator or
 
 If you have a system-generated password for your account, it is recommended to change it after your first login. See the **Profile & Settings** section for instructions on changing your password.
 
-
 > **Tip**: Keep your login credentials secure and change default passwords immediately after first login.

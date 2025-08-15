@@ -1,6 +1,6 @@
 {
   "id": "competitions/what-is-an-achievement",
-  "title": "What is an Achievement?",
+  "title": "About an Achievement",
   "description": "",
   "source": "@site/docs/competitions/what-is-an-achievement.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 193,
   "frontMatter": {
-    "title": "What is an Achievement?",
+    "title": "About an Achievement",
     "description": "",
     "slug": "what-is-an-achievement",
     "sidebar_position": 193,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How do I view the KPI scorecard?",
+    "title": "View the KPI scorecard",
     "permalink": "/competitions/how-do-i-view-the-kpi-scorecard"
   },
   "next": {
-    "title": "How to create Certifcates",
+    "title": "Create Certifcates",
     "permalink": "/competitions/how-to-create-certifcates"
   }
 }

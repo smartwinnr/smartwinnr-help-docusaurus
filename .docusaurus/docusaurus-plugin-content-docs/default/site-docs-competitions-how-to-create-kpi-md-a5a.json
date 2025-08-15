@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-create-kpi",
-  "title": "How to create KPI?",
+  "title": "Create KPI?",
   "description": "",
   "source": "@site/docs/competitions/how-to-create-kpi.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 171,
   "frontMatter": {
-    "title": "How to create KPI?",
+    "title": "Create KPI?",
     "description": "",
     "slug": "how-to-create-kpi",
     "sidebar_position": 171,
@@ -30,7 +30,7 @@
     "permalink": "/competitions/define-kpis"
   },
   "next": {
-    "title": "How to upload KPI data?",
+    "title": "Upload KPI data?",
     "permalink": "/competitions/how-to-upload-kpi-data"
   }
 }

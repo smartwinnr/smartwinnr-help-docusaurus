@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-create-a-form",
-  "title": "How to Create a form?",
+  "title": "Create a form?",
   "description": "",
   "source": "@site/docs/reports/how-to-create-a-form.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 93,
   "frontMatter": {
-    "title": "How to Create a form?",
+    "title": "Create a form?",
     "description": "",
     "slug": "how-to-create-a-form",
     "sidebar_position": 93,

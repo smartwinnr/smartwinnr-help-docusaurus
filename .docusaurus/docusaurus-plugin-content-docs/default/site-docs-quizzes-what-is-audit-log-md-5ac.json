@@ -1,6 +1,6 @@
 {
   "id": "quizzes/what-is-audit-log",
-  "title": "What is Audit Log?",
+  "title": "About Audit Log",
   "description": "",
   "source": "@site/docs/quizzes/what-is-audit-log.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 137,
   "frontMatter": {
-    "title": "What is Audit Log?",
+    "title": "About Audit Log",
     "description": "",
     "slug": "what-is-audit-log",
     "sidebar_position": 137,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to send quizzes, surveys and content using group?",
+    "title": "Send quizzes, surveys and content using group?",
     "permalink": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group"
   },
   "next": {
-    "title": "What is a Rule?",
+    "title": "About a Rule",
     "permalink": "/quizzes/what-is-a-rule"
   }
 }

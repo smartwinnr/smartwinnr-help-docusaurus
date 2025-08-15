@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-create-a-smartpath",
-  "title": "How to create a SmartPath.",
+  "title": "Create a SmartPath.",
   "description": "",
   "source": "@site/docs/learning/how-to-create-a-smartpath.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 78,
   "frontMatter": {
-    "title": "How to create a SmartPath.",
+    "title": "Create a SmartPath.",
     "description": "",
     "slug": "how-to-create-a-smartpath",
     "sidebar_position": 78,
@@ -30,7 +30,7 @@
     "permalink": "/learning/what-are-smartpaths"
   },
   "next": {
-    "title": "How to edit a SmartPath.",
+    "title": "Edit a SmartPath.",
     "permalink": "/learning/how-to-edit-a-smartpath"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-create-a-manager-challenge",
-  "title": "How to create a Manager Challenge?",
+  "title": "Create a Manager Challenge?",
   "description": "",
   "source": "@site/docs/competitions/how-to-create-a-manager-challenge.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 181,
   "frontMatter": {
-    "title": "How to create a Manager Challenge?",
+    "title": "Create a Manager Challenge?",
     "description": "",
     "slug": "how-to-create-a-manager-challenge",
     "sidebar_position": 181,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a Group Challenge?",
+    "title": "Create a Group Challenge?",
     "permalink": "/competitions/how-to-create-a-group-challenge"
   },
   "next": {
-    "title": "What are KPI Reports?",
+    "title": "About KPI Reports",
     "permalink": "/competitions/what-are-kpi-reports"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-add-new-form-submission",
-  "title": "How to add new form submission",
+  "title": "Add new form submission",
   "description": "",
   "source": "@site/docs/admin/how-to-add-new-form-submission.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 247,
   "frontMatter": {
-    "title": "How to add new form submission",
+    "title": "Add new form submission",
     "description": "",
     "slug": "how-to-add-new-form-submission",
     "sidebar_position": 247,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I submit a Form from Chat",
+    "title": "How can I submit Form from Chat",
     "permalink": "/admin/how-can-i-submit-a-form-from-chat"
   },
   "next": {
-    "title": "How to Edit a Form on submitted by a user?",
+    "title": "Edit a Form on submitted by a user?",
     "permalink": "/admin/how-to-edit-a-form-on-submitted-by-a-user"
   }
 }

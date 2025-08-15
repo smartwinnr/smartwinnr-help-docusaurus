@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-edit-a-smartpath",
-  "title": "How to edit a SmartPath.",
+  "title": "Edit a SmartPath.",
   "description": "",
   "source": "@site/docs/learning/how-to-edit-a-smartpath.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 79,
   "frontMatter": {
-    "title": "How to edit a SmartPath.",
+    "title": "Edit a SmartPath.",
     "description": "",
     "slug": "how-to-edit-a-smartpath",
     "sidebar_position": 79,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a SmartPath.",
+    "title": "Create a SmartPath.",
     "permalink": "/learning/how-to-create-a-smartpath"
   },
   "next": {
-    "title": "How to view the SmartPath Analytics.",
+    "title": "View the SmartPath Analytics.",
     "permalink": "/learning/how-to-view-the-smartpath-analytics"
   }
 }

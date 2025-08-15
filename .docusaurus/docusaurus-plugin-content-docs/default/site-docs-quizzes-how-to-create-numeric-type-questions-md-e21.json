@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-numeric-type-questions",
-  "title": "How to create 'Numeric Type Questions'",
+  "title": "Create 'Numeric Type Questions'",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-numeric-type-questions.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 284,
   "frontMatter": {
-    "title": "How to create 'Numeric Type Questions'",
+    "title": "Create 'Numeric Type Questions'",
     "description": "",
     "slug": "how-to-create-numeric-type-questions",
     "sidebar_position": 284,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a Drag and Drop into Image Question?",
+    "title": "Create a Drag and Drop into Image Question?",
     "permalink": "/quizzes/how-to-create-a-drag-and-drop-into-image-question"
   },
   "next": {
-    "title": "Learning & Training",
-    "permalink": "/learning/"
+    "title": "quiz-administration",
+    "permalink": "/quizzes/quiz-administration"
   }
 }

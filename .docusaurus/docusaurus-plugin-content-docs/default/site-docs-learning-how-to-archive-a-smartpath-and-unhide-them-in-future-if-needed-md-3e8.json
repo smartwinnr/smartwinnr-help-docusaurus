@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
-  "title": "How to archive a SmartPath and unhide them in future if needed.",
+  "title": "Archive a SmartPath and unhide them in future if needed.",
   "description": "",
   "source": "@site/docs/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 278,
   "frontMatter": {
-    "title": "How to archive a SmartPath and unhide them in future if needed.",
+    "title": "Archive a SmartPath and unhide them in future if needed.",
     "description": "",
     "slug": "how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
     "sidebar_position": 278,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can I edit a KHub folder name ?",
+    "title": "Edit a KHub folder name",
     "permalink": "/learning/how-can-i-edit-a-khub-folder-name"
   },
   "next": {

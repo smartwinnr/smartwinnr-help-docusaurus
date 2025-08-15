@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-add-reference-to-an-external-link-to-your-content",
-  "title": "How to add reference to an external link to your content?",
+  "title": "Add reference to an external link to your content?",
   "description": "",
   "source": "@site/docs/learning/how-to-add-reference-to-an-external-link-to-your-content.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 70,
   "frontMatter": {
-    "title": "How to add reference to an external link to your content?",
+    "title": "Add reference to an external link to your content?",
     "description": "",
     "slug": "how-to-add-reference-to-an-external-link-to-your-content",
     "sidebar_position": 70,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add a image to your content?",
+    "title": "Add a image to your content?",
     "permalink": "/learning/how-to-add-a-image-to-your-content"
   },
   "next": {
-    "title": "How to add an audio file to your content?",
+    "title": "Add an audio file to your content?",
     "permalink": "/learning/how-to-add-an-audio-file-to-your-content"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-can-i-download-the-smartwinnr-app",
-  "title": "How can I download the SmartWinnr app?",
+  "title": "Download the SmartWinnr app",
   "description": "",
   "source": "@site/docs/quizzes/how-can-i-download-the-smartwinnr-app.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 9,
   "frontMatter": {
-    "title": "How can I download the SmartWinnr app?",
+    "title": "Download the SmartWinnr app",
     "description": "",
     "slug": "how-can-i-download-the-smartwinnr-app",
     "sidebar_position": 9,

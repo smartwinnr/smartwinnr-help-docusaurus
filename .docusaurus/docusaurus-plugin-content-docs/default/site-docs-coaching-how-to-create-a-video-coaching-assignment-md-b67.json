@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-create-a-video-coaching-assignment",
-  "title": "How to create a Video Coaching assignment.",
+  "title": "Create a Video Coaching assignment.",
   "description": "",
   "source": "@site/docs/coaching/how-to-create-a-video-coaching-assignment.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 85,
   "frontMatter": {
-    "title": "How to create a Video Coaching assignment.",
+    "title": "Create a Video Coaching assignment.",
     "description": "",
     "slug": "how-to-create-a-video-coaching-assignment",
     "sidebar_position": 85,
@@ -30,7 +30,7 @@
     "permalink": "/coaching/"
   },
   "next": {
-    "title": "How do I upload a coaching video?",
+    "title": "Upload a coaching video",
     "permalink": "/coaching/how-do-i-upload-a-coaching-video"
   }
 }

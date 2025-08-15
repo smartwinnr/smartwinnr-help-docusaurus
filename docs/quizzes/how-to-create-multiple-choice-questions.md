@@ -77,4 +77,4 @@ You can change the language of the question by clicking on the "Change Language"
 
 [![](/img/quizzes/helpscout-image-7788d30f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd11e4380488e39007cbdec/file-dz3YYDlS0L.png)
 
-Choose the language to which you want to change and then click the ** **Save**** button.
+Choose the language to which you want to change and then click the ****Save**** button.

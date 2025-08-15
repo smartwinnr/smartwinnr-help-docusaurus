@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-different-activities-to-a-challenge",
-  "title": "How to add Different  Activities to a Challenge?",
+  "title": "Add Different Activities to a Challenge?",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-different-activities-to-a-challenge.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 240,
   "frontMatter": {
-    "title": "How to add Different  Activities to a Challenge?",
+    "title": "Add Different Activities to a Challenge?",
     "description": "",
     "slug": "how-to-add-different-activities-to-a-challenge",
     "sidebar_position": 240,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add the Scorecard to Leaderboard",
+    "title": "Add the Scorecard to Leaderboard",
     "permalink": "/competitions/how-to-add-the-scorecard-to-leaderboard"
   },
   "next": {
-    "title": "How to create Badges",
+    "title": "Create Badges",
     "permalink": "/competitions/how-to-create-badges"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-enable-a-chat-group",
-  "title": "How to Enable a Chat Group?",
+  "title": "Enable a Chat Group?",
   "description": "",
   "source": "@site/docs/admin/how-to-enable-a-chat-group.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 154,
   "frontMatter": {
-    "title": "How to Enable a Chat Group?",
+    "title": "Enable a Chat Group?",
     "description": "",
     "slug": "how-to-enable-a-chat-group",
     "sidebar_position": 154,
@@ -30,7 +30,7 @@
     "permalink": "/admin/when-are-chat-groups-needed"
   },
   "next": {
-    "title": "How to add or remove users to a chat group?",
+    "title": "Add or remove users to a chat group?",
     "permalink": "/admin/how-to-add-or-remove-users-to-a-chat-group"
   }
 }

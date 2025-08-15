@@ -1,6 +1,6 @@
 {
   "id": "competitions/what-are-kpi-reports",
-  "title": "What are KPI Reports?",
+  "title": "About KPI Reports",
   "description": "",
   "source": "@site/docs/competitions/what-are-kpi-reports.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 182,
   "frontMatter": {
-    "title": "What are KPI Reports?",
+    "title": "About KPI Reports",
     "description": "",
     "slug": "what-are-kpi-reports",
     "sidebar_position": 182,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a Manager Challenge?",
+    "title": "Create a Manager Challenge?",
     "permalink": "/competitions/how-to-create-a-manager-challenge"
   },
   "next": {
-    "title": "How can I view a competition Leaderboard?",
+    "title": "View a competition Leaderboard",
     "permalink": "/competitions/how-can-i-view-a-competition-leaderboard"
   }
 }

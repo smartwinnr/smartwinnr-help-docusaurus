@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-review-a-video-coaching-assignment",
-  "title": "How to review a video coaching assignment.",
+  "title": "Review a video coaching assignment.",
   "description": "",
   "source": "@site/docs/coaching/how-to-review-a-video-coaching-assignment.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 87,
   "frontMatter": {
-    "title": "How to review a video coaching assignment.",
+    "title": "Review a video coaching assignment.",
     "description": "",
     "slug": "how-to-review-a-video-coaching-assignment",
     "sidebar_position": 87,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How do I upload a coaching video?",
+    "title": "Upload a coaching video",
     "permalink": "/coaching/how-do-i-upload-a-coaching-video"
   },
   "next": {
-    "title": "How to share a Coaching Video.",
+    "title": "Share a Coaching Video.",
     "permalink": "/coaching/how-to-share-a-coaching-video"
   }
 }

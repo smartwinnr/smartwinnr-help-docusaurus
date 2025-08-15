@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-create-a-group",
-  "title": "How to create a group?",
+  "title": "Create a group?",
   "description": "",
   "source": "@site/docs/admin/how-to-create-a-group.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 129,
   "frontMatter": {
-    "title": "How to create a group?",
+    "title": "Create a group?",
     "description": "",
     "slug": "how-to-create-a-group",
     "sidebar_position": 129,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How can an Admin change anyone's password?",
-    "permalink": "/admin/how-can-an-admin-change-anyone-s-password"
+    "title": "Change the password for a user account",
+    "permalink": "/admin/how-can-i-change-the-password-for-a-user-account"
   },
   "next": {
-    "title": "How to Add a new Division?",
+    "title": "Add a new Division?",
     "permalink": "/admin/how-to-add-a-new-division"
   }
 }

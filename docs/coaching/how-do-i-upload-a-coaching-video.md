@@ -17,7 +17,7 @@ Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assi
 
 ![](https://lh3.googleusercontent.com/SGzRUfcmuvgQP71ZmaDRblrQ33WkY3DqpdIZKHAHhXh9a5D76LzLx43TILws-SnRY6r9J-m4-0LulFPMUtPPS0G9k7LQdpOc12G17fxTGJoa5rC4wXrypRRY3vC3EfjNbxVDLSHE)
 
-### Step 2: On the coaching details page, click on the  ' **Record Video**' button to record or select your video from the gallery.
+### Step 2: On the coaching details page, click on the  ' **Record Video**' button to record or select your video from the gallery
 
 ![](https://lh3.googleusercontent.com/3l3A94irbkNymRtw7brHE2ALHw3stQ793Xk89L21AAORrM195GUnwjvQrrRxAYzq1SOxpt-E6SIcGN67yFhJ65_6siIfcsLUS6Qi1qsQyYC020CJKwKwaMIbbx7oqCoID73zaUDW)
 
@@ -30,7 +30,7 @@ When you click on the ' **Record Video**' button, it gives you two options -
 
 When you record the video from the camera, it will get stored in your phone's gallery even if you don't upload it. This way, you can make multiple attempts to record a video, and all your recordings displays available in your gallery. You can then upload your best recording from the gallery.
 
-### Step 3: You can preview your video on the same page and then click on the ' **Upload Video**' button to submit the video.
+### Step 3: You can preview your video on the same page and then click on the ' **Upload Video**' button to submit the video
 
 ![](https://lh3.googleusercontent.com/8J4FbAvKKMcddQfhV5e6VqWk6_0zuFFFgpPW42rqwtPv05KFc6oxLFU7tmQK1lziHQNFVbJjkTZJJXaHBcJFnSrWhFJNN-To58b2c3OCXndG4ctVJdWq05IfHDIsg8CmToCBwnIG)
 

@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-mark-the-attendance-for-users-in-learning-sessions",
-  "title": "How to Mark the attendance for Users  in Learning Sessions?",
+  "title": "Mark the attendance for Users in Learning Sessions?",
   "description": "",
   "source": "@site/docs/learning/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 264,
   "frontMatter": {
-    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "title": "Mark the attendance for Users in Learning Sessions?",
     "description": "",
     "slug": "how-to-mark-the-attendance-for-users-in-learning-sessions",
     "sidebar_position": 264,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
     "permalink": "/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
   },
   "next": {
-    "title": "How to access the SCORM course from the SmartWinnr app ?",
+    "title": "Access the SCORM course from the SmartWinnr app",
     "permalink": "/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-can-i-change-my-profile-image",
-  "title": "How can I change my profile image?",
+  "title": "Change my profile image",
   "description": "",
   "source": "@site/docs/getting-started/how-can-i-change-my-profile-image.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 15,
   "frontMatter": {
-    "title": "How can I change my profile image?",
+    "title": "Change my profile image",
     "description": "",
     "slug": "how-can-i-change-my-profile-image",
     "sidebar_position": 15,
@@ -30,7 +30,7 @@
     "permalink": "/getting-started/my-account-is-locked-what-should-i-do"
   },
   "next": {
-    "title": "How can I change my password for SmartWinnr?",
+    "title": "Change my password for SmartWinnr",
     "permalink": "/getting-started/how-can-i-change-my-password-for-smartwinnr"
   }
 }

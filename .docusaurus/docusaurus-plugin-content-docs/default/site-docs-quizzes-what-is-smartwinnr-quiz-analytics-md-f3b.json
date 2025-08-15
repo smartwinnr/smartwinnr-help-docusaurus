@@ -1,6 +1,6 @@
 {
   "id": "quizzes/what-is-smartwinnr-quiz-analytics",
-  "title": "What is SmartWinnr Quiz Analytics?",
+  "title": "About SmartWinnr Quiz Analytics",
   "description": "",
   "source": "@site/docs/quizzes/what-is-smartwinnr-quiz-analytics.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 53,
   "frontMatter": {
-    "title": "What is SmartWinnr Quiz Analytics?",
+    "title": "About SmartWinnr Quiz Analytics",
     "description": "",
     "slug": "what-is-smartwinnr-quiz-analytics",
     "sidebar_position": 53,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to activate automatic reminders for your quizzes",
+    "title": "Activate automatic reminders for your quizzes",
     "permalink": "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes"
   },
   "next": {

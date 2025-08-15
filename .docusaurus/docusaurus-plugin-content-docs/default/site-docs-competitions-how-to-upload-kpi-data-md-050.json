@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-upload-kpi-data",
-  "title": "How to upload KPI data?",
+  "title": "Upload KPI data?",
   "description": "",
   "source": "@site/docs/competitions/how-to-upload-kpi-data.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 174,
   "frontMatter": {
-    "title": "How to upload KPI data?",
+    "title": "Upload KPI data?",
     "description": "",
     "slug": "how-to-upload-kpi-data",
     "sidebar_position": 174,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create KPI?",
+    "title": "Create KPI?",
     "permalink": "/competitions/how-to-create-kpi"
   },
   "next": {
-    "title": "What is a Challenge?",
+    "title": "About a Challenge",
     "permalink": "/competitions/what-is-a-challenge"
   }
 }

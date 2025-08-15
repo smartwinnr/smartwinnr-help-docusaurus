@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-add-approvers-to-a-form",
-  "title": "How to add Approvers to a Form",
+  "title": "Add Approvers to a Form",
   "description": "",
   "source": "@site/docs/reports/how-to-add-approvers-to-a-form.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 251,
   "frontMatter": {
-    "title": "How to add Approvers to a Form",
+    "title": "Add Approvers to a Form",
     "description": "",
     "slug": "how-to-add-approvers-to-a-form",
     "sidebar_position": 251,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Sales TV",
+    "title": "Create Sales TV",
     "permalink": "/reports/how-to-create-sales-tv"
   },
   "next": {

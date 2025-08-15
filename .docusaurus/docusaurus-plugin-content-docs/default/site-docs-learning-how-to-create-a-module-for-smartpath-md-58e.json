@@ -1,6 +1,6 @@
 {
   "id": "learning/how-to-create-a-module-for-smartpath",
-  "title": "How to create a module for SmartPath.",
+  "title": "Create a module for SmartPath.",
   "description": "",
   "source": "@site/docs/learning/how-to-create-a-module-for-smartpath.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 76,
   "frontMatter": {
-    "title": "How to create a module for SmartPath.",
+    "title": "Create a module for SmartPath.",
     "description": "",
     "slug": "how-to-create-a-module-for-smartpath",
     "sidebar_position": 76,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add an 'Audio file' to a question.",
+    "title": "Add an 'Audio file' to a question.",
     "permalink": "/learning/how-to-add-an-audio-file-to-a-question"
   },
   "next": {

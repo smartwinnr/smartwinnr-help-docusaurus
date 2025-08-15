@@ -1,6 +1,6 @@
 {
   "id": "coaching/how-to-add-competencies-for-field-coaching",
-  "title": "How to add Competencies for Field Coaching",
+  "title": "Add Competencies for Field Coaching",
   "description": "",
   "source": "@site/docs/coaching/how-to-add-competencies-for-field-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 237,
   "frontMatter": {
-    "title": "How to add Competencies for Field Coaching",
+    "title": "Add Competencies for Field Coaching",
     "description": "",
     "slug": "how-to-add-competencies-for-field-coaching",
     "sidebar_position": 237,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Field Coaching Template",
+    "title": "Create Field Coaching Template",
     "permalink": "/coaching/how-to-create-field-coaching-template"
   },
   "next": {
-    "title": "How to enable the Streaming Links for Video Coaching",
+    "title": "Enable the Streaming Links for Video Coaching",
     "permalink": "/coaching/how-to-enable-the-streaming-links-for-video-coaching"
   }
 }

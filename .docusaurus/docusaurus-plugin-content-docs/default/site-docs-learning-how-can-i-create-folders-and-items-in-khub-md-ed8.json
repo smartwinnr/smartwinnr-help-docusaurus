@@ -1,6 +1,6 @@
 {
   "id": "learning/how-can-i-create-folders-and-items-in-khub",
-  "title": "How can I create folders and items in KHub?",
+  "title": "Create folders and items in KHub",
   "description": "",
   "source": "@site/docs/learning/how-can-i-create-folders-and-items-in-khub.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 146,
   "frontMatter": {
-    "title": "How can I create folders and items in KHub?",
+    "title": "Create folders and items in KHub",
     "description": "",
     "slug": "how-can-i-create-folders-and-items-in-khub",
     "sidebar_position": 146,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "What is KHub?",
+    "title": "About KHub",
     "permalink": "/learning/what-is-khub"
   },
   "next": {
-    "title": "How can I edit a KHub item?",
+    "title": "Edit a KHub item",
     "permalink": "/learning/how-can-i-edit-a-khub-item"
   }
 }

@@ -41,5 +41,4 @@ After the appropriate setting of filters, you can download the analytics report 
 
 ![](/img/reports/helpscout-image-e8c5fbb9.png)
 
-
 > **Tip**: Keep your login credentials secure and change default passwords immediately after first login.

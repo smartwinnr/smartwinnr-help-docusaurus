@@ -11,9 +11,7 @@
   },
   "customRules": [],
   "globs": [
-    "docs/**/*.md",
-    "templates/**/*.md",
-    "*.md"
+    "docs/**/*.md"
   ],
   "ignores": [
     "node_modules/**",

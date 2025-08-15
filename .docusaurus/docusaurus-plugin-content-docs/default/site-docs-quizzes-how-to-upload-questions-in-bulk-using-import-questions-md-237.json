@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-upload-questions-in-bulk-using-import-questions",
-  "title": "How to upload questions in bulk using 'Import Questions'.",
+  "title": "Upload questions in bulk using 'Import Questions'.",
   "description": "",
   "source": "@site/docs/quizzes/how-to-upload-questions-in-bulk-using-import-questions.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 46,
   "frontMatter": {
-    "title": "How to upload questions in bulk using 'Import Questions'.",
+    "title": "Upload questions in bulk using 'Import Questions'.",
     "description": "",
     "slug": "how-to-upload-questions-in-bulk-using-import-questions",
     "sidebar_position": 46,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a 'Matching Question'.",
+    "title": "Create a 'Matching Question'.",
     "permalink": "/quizzes/how-to-create-a-matching-question"
   },
   "next": {

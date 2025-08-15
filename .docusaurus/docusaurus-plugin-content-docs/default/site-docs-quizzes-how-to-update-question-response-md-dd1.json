@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-update-question-response",
-  "title": "How to Update question response",
+  "title": "Update question response",
   "description": "",
   "source": "@site/docs/quizzes/how-to-update-question-response.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 232,
   "frontMatter": {
-    "title": "How to Update question response",
+    "title": "Update question response",
     "description": "",
     "slug": "how-to-update-question-response",
     "sidebar_position": 232,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Set Reminder for your Tasks",
+    "title": "Set Reminder for your Tasks",
     "permalink": "/quizzes/how-to-set-reminder-for-your-tasks"
   },
   "next": {
-    "title": "How to edit the form submission from manager's view",
+    "title": "Edit the form submission from manager's view",
     "permalink": "/quizzes/how-to-edit-the-form-submission-from-manager-s-view"
   }
 }

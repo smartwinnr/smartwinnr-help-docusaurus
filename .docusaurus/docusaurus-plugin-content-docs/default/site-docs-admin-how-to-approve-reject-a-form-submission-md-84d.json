@@ -1,6 +1,6 @@
 {
   "id": "admin/how-to-approve-reject-a-form-submission",
-  "title": "How to Approve/Reject a Form Submission",
+  "title": "Approve/Reject a Form Submission",
   "description": "",
   "source": "@site/docs/admin/how-to-approve-reject-a-form-submission.md",
   "sourceDirName": "admin",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 223,
   "frontMatter": {
-    "title": "How to Approve/Reject a Form Submission",
+    "title": "Approve/Reject a Form Submission",
     "description": "",
     "slug": "how-to-approve-reject-a-form-submission",
     "sidebar_position": 223,
@@ -30,7 +30,7 @@
     "permalink": "/admin/what-is-qresolve"
   },
   "next": {
-    "title": "How can I submit a Form from Left Menu",
+    "title": "How can I submit Form from Left Menu",
     "permalink": "/admin/how-can-i-submit-a-form-from-left-menu"
   }
 }

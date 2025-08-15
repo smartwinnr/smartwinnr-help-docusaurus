@@ -1,6 +1,6 @@
 {
   "id": "learning/how-can-i-edit-a-khub-folder-name",
-  "title": "How can I edit a KHub folder name ?",
+  "title": "Edit a KHub folder name",
   "description": "",
   "source": "@site/docs/learning/how-can-i-edit-a-khub-folder-name.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 275,
   "frontMatter": {
-    "title": "How can I edit a KHub folder name ?",
+    "title": "Edit a KHub folder name",
     "description": "",
     "slug": "how-can-i-edit-a-khub-folder-name",
     "sidebar_position": 275,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to download/Share  a smartfeed in smartpath",
+    "title": "Download/Share a smartfeed in smartpath",
     "permalink": "/learning/how-to-download-share-a-smartfeed-in-smartpath"
   },
   "next": {
-    "title": "How to archive a SmartPath and unhide them in future if needed.",
+    "title": "Archive a SmartPath and unhide them in future if needed.",
     "permalink": "/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
   }
 }

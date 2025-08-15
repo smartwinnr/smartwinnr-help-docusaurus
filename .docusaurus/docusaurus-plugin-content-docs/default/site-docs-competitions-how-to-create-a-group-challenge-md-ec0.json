@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-create-a-group-challenge",
-  "title": "How to create a Group Challenge?",
+  "title": "Create a Group Challenge?",
   "description": "",
   "source": "@site/docs/competitions/how-to-create-a-group-challenge.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 180,
   "frontMatter": {
-    "title": "How to create a Group Challenge?",
+    "title": "Create a Group Challenge?",
     "description": "",
     "slug": "how-to-create-a-group-challenge",
     "sidebar_position": 180,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create an Individual Challenge?",
+    "title": "Create an Individual Challenge?",
     "permalink": "/competitions/how-to-create-an-individual-challenge"
   },
   "next": {
-    "title": "How to create a Manager Challenge?",
+    "title": "Create a Manager Challenge?",
     "permalink": "/competitions/how-to-create-a-manager-challenge"
   }
 }

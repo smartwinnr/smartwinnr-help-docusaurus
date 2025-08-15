@@ -1,6 +1,6 @@
 {
   "id": "competitions/how-to-add-a-challenge-to-the-competition",
-  "title": "How to add a challenge to the competition?",
+  "title": "Add a challenge to the competition?",
   "description": "",
   "source": "@site/docs/competitions/how-to-add-a-challenge-to-the-competition.md",
   "sourceDirName": "competitions",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 107,
   "frontMatter": {
-    "title": "How to add a challenge to the competition?",
+    "title": "Add a challenge to the competition?",
     "description": "",
     "slug": "how-to-add-a-challenge-to-the-competition",
     "sidebar_position": 107,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add a Scorecard to a Competition?",
+    "title": "Add a Scorecard to a Competition?",
     "permalink": "/competitions/how-to-add-a-scorecard-to-a-competition"
   },
   "next": {
-    "title": "Leaderboards of a competition",
+    "title": "Leaderboards of Competition",
     "permalink": "/competitions/leaderboards-of-a-competition"
   }
 }

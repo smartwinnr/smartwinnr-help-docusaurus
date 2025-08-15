@@ -1,6 +1,6 @@
 {
   "id": "reports/how-to-create-sales-tv",
-  "title": "How to create Sales TV",
+  "title": "Create Sales TV",
   "description": "",
   "source": "@site/docs/reports/how-to-create-sales-tv.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 249,
   "frontMatter": {
-    "title": "How to create Sales TV",
+    "title": "Create Sales TV",
     "description": "",
     "slug": "how-to-create-sales-tv",
     "sidebar_position": 249,
@@ -30,7 +30,7 @@
     "permalink": "/reports/form-analytics"
   },
   "next": {
-    "title": "How to add Approvers to a Form",
+    "title": "Add Approvers to a Form",
     "permalink": "/reports/how-to-add-approvers-to-a-form"
   }
 }

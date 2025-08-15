@@ -9,7 +9,7 @@ last_update:
 helpscout_id: 6001bb40c64fe14d0e1fb5a3
 helpscout_url: https://help.smartwinnr.com/article/219-how-to-set-reminder-for-quiz-survey
 ---
-This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task. To schedule a reminder, click the ** **Add**** button at the top right corner of the Schedule Reminder section. It will open the following popup.
+This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task. To schedule a reminder, click the ****Add**** button at the top right corner of the Schedule Reminder section. It will open the following popup.
 
 ![](/img/quizzes/helpscout-image-d2b65938.png)
 
@@ -36,6 +36,6 @@ This feature lets you set a reminder and schedule it to be delivered to the user
 
 ![](/img/quizzes/helpscout-image-ccc2e114.png)
 
-Once you are done filling all these fields for the reminder, click the **  **Save**** button. This will add the reminder successfully to the quiz.  
+Once you are done filling all these fields for the reminder, click the ****Save**** button. This will add the reminder successfully to the quiz.  
   
 Once you fill all the details on this page, click on the  "Save and Add Questions" to save the quiz.

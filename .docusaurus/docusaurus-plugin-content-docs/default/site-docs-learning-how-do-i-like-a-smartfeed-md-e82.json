@@ -1,6 +1,6 @@
 {
   "id": "learning/how-do-i-like-a-smartfeed",
-  "title": "How do I like a SmartFeed?",
+  "title": "Like a SmartFeed",
   "description": "",
   "source": "@site/docs/learning/how-do-i-like-a-smartfeed.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 33,
   "frontMatter": {
-    "title": "How do I like a SmartFeed?",
+    "title": "Like a SmartFeed",
     "description": "",
     "slug": "how-do-i-like-a-smartfeed",
     "sidebar_position": 33,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to view all the SmartFeeds?",
+    "title": "View all the SmartFeeds?",
     "permalink": "/learning/how-to-view-all-the-smartfeeds"
   },
   "next": {
-    "title": "How to delete SmartFeeds?",
+    "title": "Delete SmartFeeds?",
     "permalink": "/learning/how-to-delete-smartfeeds"
   }
 }

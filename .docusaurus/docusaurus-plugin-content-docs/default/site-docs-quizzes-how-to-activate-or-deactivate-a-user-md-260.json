@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-activate-or-deactivate-a-user",
-  "title": "How to activate or deactivate a user?",
+  "title": "Activate or deactivate a user?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-activate-or-deactivate-a-user.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 121,
   "frontMatter": {
-    "title": "How to activate or deactivate a user?",
+    "title": "Activate or deactivate a user?",
     "description": "",
     "slug": "how-to-activate-or-deactivate-a-user",
     "sidebar_position": 121,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/delete-users"
   },
   "next": {
-    "title": "What is a Group?",
+    "title": "About a Group",
     "permalink": "/quizzes/what-is-a-group"
   }
 }

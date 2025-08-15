@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-open-and-close-a-quiz",
-  "title": "How to ‘Open’ and ‘Close’ a Quiz",
+  "title": "‘Open’ and ‘Close’ a Quiz",
   "description": "",
   "source": "@site/docs/quizzes/how-to-open-and-close-a-quiz.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 276,
   "frontMatter": {
-    "title": "How to ‘Open’ and ‘Close’ a Quiz",
+    "title": "‘Open’ and ‘Close’ a Quiz",
     "description": "",
     "slug": "how-to-open-and-close-a-quiz",
     "sidebar_position": 276,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Import SCORM course into SmartWinnr?",
+    "title": "Import SCORM course into SmartWinnr?",
     "permalink": "/quizzes/how-to-import-scorm-course-into-smartwinnr"
   },
   "next": {

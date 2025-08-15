@@ -1,6 +1,6 @@
 {
   "id": "coaching/what-is-my-team-coaching",
-  "title": "What is 'My Team Coaching'?",
+  "title": "About 'My Team Coaching'",
   "description": "",
   "source": "@site/docs/coaching/what-is-my-team-coaching.md",
   "sourceDirName": "coaching",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 89,
   "frontMatter": {
-    "title": "What is 'My Team Coaching'?",
+    "title": "About 'My Team Coaching'",
     "description": "",
     "slug": "what-is-my-team-coaching",
     "sidebar_position": 89,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to share a Coaching Video.",
+    "title": "Share a Coaching Video.",
     "permalink": "/coaching/how-to-share-a-coaching-video"
   },
   "next": {
-    "title": "How to set competencies.",
+    "title": "Set competencies.",
     "permalink": "/coaching/how-to-set-competencies"
   }
 }

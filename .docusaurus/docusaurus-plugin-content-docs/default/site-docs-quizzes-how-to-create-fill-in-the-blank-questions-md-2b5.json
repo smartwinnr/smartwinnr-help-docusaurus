@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-create-fill-in-the-blank-questions",
-  "title": "How to create 'Fill-In-The-Blank' Questions.",
+  "title": "Create 'Fill-In-The-Blank' Questions.",
   "description": "",
   "source": "@site/docs/quizzes/how-to-create-fill-in-the-blank-questions.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 41,
   "frontMatter": {
-    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "title": "Create 'Fill-In-The-Blank' Questions.",
     "description": "",
     "slug": "how-to-create-fill-in-the-blank-questions",
     "sidebar_position": 41,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create 'Multiple-Choice Questions'.",
+    "title": "Create 'Multiple-Choice Questions'.",
     "permalink": "/quizzes/how-to-create-multiple-choice-questions"
   },
   "next": {
-    "title": "How to create a 'Hotspot Question'.",
+    "title": "Create a 'Hotspot Question'.",
     "permalink": "/quizzes/how-to-create-a-hotspot-question"
   }
 }

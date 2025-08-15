@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create a module for SmartPath.",
+    "title": "Create a module for SmartPath.",
     "permalink": "/learning/how-to-create-a-module-for-smartpath"
   },
   "next": {
-    "title": "How to create a SmartPath.",
+    "title": "Create a SmartPath.",
     "permalink": "/learning/how-to-create-a-smartpath"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "getting-started/what-is-smartwinnr",
-  "title": "What is SmartWinnr?",
+  "title": "About SmartWinnr",
   "description": "",
   "source": "@site/docs/getting-started/what-is-smartwinnr.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 4,
   "frontMatter": {
-    "title": "What is SmartWinnr?",
+    "title": "About SmartWinnr",
     "description": "",
     "slug": "what-is-smartwinnr",
     "sidebar_position": 4,

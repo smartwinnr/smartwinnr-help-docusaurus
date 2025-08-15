@@ -92,7 +92,7 @@ If you are creating an individual leaderboard (if selected Type as By Partici
 
 You can filter and choose these participants based on Business Unit, Country, Group, Name, Email and Meta Tags.
 
-Once you have entered the required information and selected the desired participants, click the ** **Save**** button. This will successfully create the leaderboard and add it to the competition.
+Once you have entered the required information and selected the desired participants, click the ****Save**** button. This will successfully create the leaderboard and add it to the competition.
 
 ### Step-4: Add Tasks to the Competition
 

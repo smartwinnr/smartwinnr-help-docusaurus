@@ -19,8 +19,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create 'Numeric Type Questions'",
-    "permalink": "/quizzes/how-to-create-numeric-type-questions"
+    "title": "quiz-administration",
+    "permalink": "/quizzes/quiz-administration"
   },
   "next": {
     "title": "SmartFeed Management",

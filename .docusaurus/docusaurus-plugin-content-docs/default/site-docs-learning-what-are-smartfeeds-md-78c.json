@@ -1,6 +1,6 @@
 {
   "id": "learning/what-are-smartfeeds",
-  "title": "What are SmartFeeds?",
+  "title": "About SmartFeeds",
   "description": "",
   "source": "@site/docs/learning/what-are-smartfeeds.md",
   "sourceDirName": "learning",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 26,
   "frontMatter": {
-    "title": "What are SmartFeeds?",
+    "title": "About SmartFeeds",
     "description": "",
     "slug": "what-are-smartfeeds",
     "sidebar_position": 26,
@@ -30,7 +30,7 @@
     "permalink": "/learning/knowledge-hub-khub"
   },
   "next": {
-    "title": "How to create a SmartFeed?",
+    "title": "Create a SmartFeed?",
     "permalink": "/learning/how-to-create-a-smartfeed"
   }
 }

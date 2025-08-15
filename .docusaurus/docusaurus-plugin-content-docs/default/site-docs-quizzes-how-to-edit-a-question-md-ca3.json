@@ -1,6 +1,6 @@
 {
   "id": "quizzes/how-to-edit-a-question",
-  "title": "How to edit a question?",
+  "title": "Edit a question?",
   "description": "",
   "source": "@site/docs/quizzes/how-to-edit-a-question.md",
   "sourceDirName": "quizzes",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 202,
   "frontMatter": {
-    "title": "How to edit a question?",
+    "title": "Edit a question?",
     "description": "",
     "slug": "how-to-edit-a-question",
     "sidebar_position": 202,
@@ -30,7 +30,7 @@
     "permalink": "/quizzes/question-structure"
   },
   "next": {
-    "title": "How to Set Reminder for your Tasks",
+    "title": "Set Reminder for your Tasks",
     "permalink": "/quizzes/how-to-set-reminder-for-your-tasks"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "reports/how-managers-approve-form",
-  "title": "How managers Approve  Form",
+  "title": "How managers Approve Form",
   "description": "",
   "source": "@site/docs/reports/how-managers-approve-form.md",
   "sourceDirName": "reports",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 224,
   "frontMatter": {
-    "title": "How managers Approve  Form",
+    "title": "How managers Approve Form",
     "description": "",
     "slug": "how-managers-approve-form",
     "sidebar_position": 224,
@@ -26,7 +26,7 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to view Project?",
+    "title": "View Project?",
     "permalink": "/reports/how-to-view-project"
   },
   "next": {

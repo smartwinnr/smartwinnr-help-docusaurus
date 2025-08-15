@@ -1,6 +1,6 @@
 {
   "id": "getting-started/how-do-i-unlock-an-account",
-  "title": "How do I unlock an account?",
+  "title": "Unlock an account",
   "description": "",
   "source": "@site/docs/getting-started/how-do-i-unlock-an-account.md",
   "sourceDirName": "getting-started",
@@ -13,7 +13,7 @@
   "version": "current",
   "sidebarPosition": 126,
   "frontMatter": {
-    "title": "How do I unlock an account?",
+    "title": "Unlock an account",
     "description": "",
     "slug": "how-do-i-unlock-an-account",
     "sidebar_position": 126,
@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to resend account invitation?",
+    "title": "Resend account invitation?",
     "permalink": "/getting-started/how-to-resend-account-invitation"
   },
   "next": {
-    "title": "How to update the SmartWinnr App from App View",
+    "title": "Update the SmartWinnr App from App View",
     "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-app-view"
   }
 }
