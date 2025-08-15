@@ -1,0 +1,30 @@
+{
+  "id": "quiz-assessments/question-management/index",
+  "title": "Question Management",
+  "description": "Comprehensive guide for creating, editing, and managing quiz questions in SmartWinnr",
+  "source": "@site/docs/quiz-assessments/question-management/index.md",
+  "sourceDirName": "quiz-assessments/question-management",
+  "slug": "/quiz-assessments/question-management/question-management",
+  "permalink": "/quiz-assessments/question-management/question-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/question-management/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Question Management",
+    "description": "Comprehensive guide for creating, editing, and managing quiz questions in SmartWinnr",
+    "slug": "question-management",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz & Assessments",
+    "permalink": "/quiz-assessments/quiz-assessments"
+  },
+  "next": {
+    "title": "Create 'Multiple-Choice Questions'.",
+    "permalink": "/quiz-assessments/question-management/how-to-create-multiple-choice-questions"
+  }
+}

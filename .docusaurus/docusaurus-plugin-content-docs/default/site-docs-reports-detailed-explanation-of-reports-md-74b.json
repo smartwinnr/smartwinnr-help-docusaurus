@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb188b0b11ce44f63931e7",
     "helpscout_url": "https://help.smartwinnr.com/article/183-detailed-explanation-of-reports"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a Scorecard?",
-    "permalink": "/reports/how-to-create-a-scorecard"
-  },
-  "next": {
-    "title": "View Project?",
-    "permalink": "/reports/how-to-view-project"
   }
 }

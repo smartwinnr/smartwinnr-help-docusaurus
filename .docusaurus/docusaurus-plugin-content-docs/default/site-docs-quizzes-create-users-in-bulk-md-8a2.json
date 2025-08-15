@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda4abb27288b7f895d61dd",
     "helpscout_url": "https://help.smartwinnr.com/article/118-create-users-in-bulk"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Manage Quiz configurations?",
-    "permalink": "/quizzes/how-to-manage-quiz-configurations"
-  },
-  "next": {
-    "title": "Delete users",
-    "permalink": "/quizzes/delete-users"
   }
 }

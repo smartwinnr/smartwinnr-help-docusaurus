@@ -23,14 +23,5 @@
     },
     "helpscout_id": "6001bb40c64fe14d0e1fb5a3",
     "helpscout_url": "https://help.smartwinnr.com/article/219-how-to-set-reminder-for-quiz-survey"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Edit a question?",
-    "permalink": "/quizzes/how-to-edit-a-question"
-  },
-  "next": {
-    "title": "Update question response",
-    "permalink": "/quizzes/how-to-update-question-response"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+  "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
+  "sourceDirName": "quiz-assessments/assessment-administration",
+  "slug": "/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+  "permalink": "/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 90,
+  "frontMatter": {
+    "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
+    "description": "",
+    "slug": "how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr",
+    "sidebar_position": 90,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd7592d0b11ce44f6391e82",
+    "helpscout_url": "https://help.smartwinnr.com/article/90-how-to-give-permission-to-other-to-access-a-particular-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Activate automatic reminders for your quizzes",
+    "permalink": "/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes"
+  },
+  "next": {
+    "title": "Manage Quiz configurations?",
+    "permalink": "/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations"
+  }
+}

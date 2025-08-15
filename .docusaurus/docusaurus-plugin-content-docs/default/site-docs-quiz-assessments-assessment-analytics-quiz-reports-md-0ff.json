@@ -1,0 +1,27 @@
+{
+  "id": "quiz-assessments/assessment-analytics/quiz-reports",
+  "title": "Quiz Reports",
+  "description": "Analyze quiz performance and learner progress with comprehensive reporting and analytics.",
+  "source": "@site/docs/quiz-assessments/assessment-analytics/quiz-reports.md",
+  "sourceDirName": "quiz-assessments/assessment-analytics",
+  "slug": "/quiz-assessments/assessment-analytics/quiz-reports",
+  "permalink": "/quiz-assessments/assessment-analytics/quiz-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-analytics/quiz-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Analytics & Reports",
+    "permalink": "/quiz-assessments/assessment-analytics/quiz-analytics-reports"
+  },
+  "next": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/quiz-assessments/assessment-analytics/detailed-quiz-analytics"
+  }
+}

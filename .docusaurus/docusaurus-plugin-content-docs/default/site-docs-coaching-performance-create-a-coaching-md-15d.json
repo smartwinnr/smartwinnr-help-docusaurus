@@ -1,0 +1,36 @@
+{
+  "id": "coaching-performance/create-a-coaching",
+  "title": "Create Coaching",
+  "description": "",
+  "source": "@site/docs/coaching-performance/create-a-coaching.md",
+  "sourceDirName": "coaching-performance",
+  "slug": "/coaching-performance/create-a-coaching",
+  "permalink": "/coaching-performance/create-a-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching-performance/create-a-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 294,
+  "frontMatter": {
+    "title": "Create Coaching",
+    "description": "",
+    "slug": "create-a-coaching",
+    "sidebar_position": 294,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6778cfe33656557cafadaee0",
+    "helpscout_url": "https://help.smartwinnr.com/article/294-create-a-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reset a coaching video",
+    "permalink": "/coaching-performance/how-to-reset-a-coaching-video"
+  },
+  "next": {
+    "title": "Administration",
+    "permalink": "/administration/administration"
+  }
+}

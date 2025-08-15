@@ -1,0 +1,34 @@
+{
+  "id": "learning-smartpaths/smartpath-management",
+  "title": "SmartPath Management",
+  "description": "Complete guide for creating and managing structured learning paths",
+  "source": "@site/docs/learning-smartpaths/smartpath-management.md",
+  "sourceDirName": "learning-smartpaths",
+  "slug": "/learning-smartpaths/smartpath-management",
+  "permalink": "/learning-smartpaths/smartpath-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning-smartpaths/smartpath-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "SmartPath Management",
+    "description": "Complete guide for creating and managing structured learning paths",
+    "slug": "smartpath-management",
+    "sidebar_position": 2,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Download/Share a smartfeed in smartpath",
+    "permalink": "/microlearning-smartfeeds/user-experience/how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "next": {
+    "title": "What are SmartPaths.",
+    "permalink": "/learning-smartpaths/what-are-smartpaths"
+  }
+}

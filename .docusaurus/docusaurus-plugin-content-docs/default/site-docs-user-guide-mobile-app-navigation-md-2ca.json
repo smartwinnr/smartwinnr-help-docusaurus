@@ -17,14 +17,5 @@
     "description": "Master the SmartWinnr mobile app interface and navigation",
     "slug": "mobile-app-navigation",
     "sidebar_position": 2
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "User Experience",
-    "permalink": "/user-guide/user-guide"
-  },
-  "next": {
-    "title": "Taking Assessments",
-    "permalink": "/user-guide/taking-assessments"
   }
 }

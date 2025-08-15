@@ -21,14 +21,5 @@
       "date": "2025-08-10T00:00:00.000Z",
       "author": "Documentation Reorganization"
     }
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Management",
-    "permalink": "/quizzes/"
-  },
-  "next": {
-    "title": "Download the SmartWinnr app",
-    "permalink": "/quizzes/how-can-i-download-the-smartwinnr-app"
   }
 }

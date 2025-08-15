@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/question-management/how-to-create-long-answer-questions",
+  "title": "Create 'Long Answer' Questions?",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/question-management/how-to-create-long-answer-questions.md",
+  "sourceDirName": "quiz-assessments/question-management",
+  "slug": "/quiz-assessments/question-management/how-to-create-long-answer-questions",
+  "permalink": "/quiz-assessments/question-management/how-to-create-long-answer-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/question-management/how-to-create-long-answer-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 258,
+  "frontMatter": {
+    "title": "Create 'Long Answer' Questions?",
+    "description": "",
+    "slug": "how-to-create-long-answer-questions",
+    "sidebar_position": 258,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60e1fc479e87cb3d01249e3c",
+    "helpscout_url": "https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Update question response",
+    "permalink": "/quiz-assessments/question-management/how-to-update-question-response"
+  },
+  "next": {
+    "title": "Answer Long Answer type Questions in SmartWinnr?",
+    "permalink": "/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr"
+  }
+}

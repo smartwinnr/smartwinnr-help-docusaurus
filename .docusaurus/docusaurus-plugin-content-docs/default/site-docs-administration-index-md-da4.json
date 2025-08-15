@@ -1,0 +1,30 @@
+{
+  "id": "administration/index",
+  "title": "Administration",
+  "description": "Comprehensive system administration tools for managing users, organizations, and platform configuration",
+  "source": "@site/docs/administration/index.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/administration",
+  "permalink": "/administration/administration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Administration",
+    "description": "Comprehensive system administration tools for managing users, organizations, and platform configuration",
+    "slug": "administration",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Coaching",
+    "permalink": "/coaching-performance/create-a-coaching"
+  },
+  "next": {
+    "title": "About my Username and Password",
+    "permalink": "/administration/what-is-my-username-and-password"
+  }
+}

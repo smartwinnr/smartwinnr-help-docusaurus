@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60c206d796768369c70bc6b4",
     "helpscout_url": "https://help.smartwinnr.com/article/255-learner-report-by-learner"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Learner Overall Report",
-    "permalink": "/quizzes/learner-overall-report"
-  },
-  "next": {
-    "title": "Create 'Long Answer' Questions?",
-    "permalink": "/quizzes/how-to-create-long-answer-questions"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60b9e109fd393f6bf704a9f2",
     "helpscout_url": "https://help.smartwinnr.com/article/249-how-to-create-sales-tv"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Form Analytics",
-    "permalink": "/reports/form-analytics"
-  },
-  "next": {
-    "title": "Add Approvers to a Form",
-    "permalink": "/reports/how-to-add-approvers-to-a-form"
   }
 }

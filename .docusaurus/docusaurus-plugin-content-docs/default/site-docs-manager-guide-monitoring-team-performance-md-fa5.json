@@ -17,14 +17,5 @@
     "description": "Best practices for tracking, analyzing, and improving team performance in SmartWinnr",
     "slug": "monitoring-team-performance",
     "sidebar_position": 3
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Team Analytics Dashboard",
-    "permalink": "/manager-guide/team-analytics-dashboard"
-  },
-  "next": {
-    "title": "Assigning Content to Team",
-    "permalink": "/manager-guide/assigning-content-to-team"
   }
 }

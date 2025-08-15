@@ -16,14 +16,5 @@
     "title": "Reports",
     "description": "Analytics, reporting, and data visualization.",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Delete a Survey",
-    "permalink": "/surveys/how-to-delete-a-survey"
-  },
-  "next": {
-    "title": "Create a form?",
-    "permalink": "/reports/how-to-create-a-form"
   }
 }

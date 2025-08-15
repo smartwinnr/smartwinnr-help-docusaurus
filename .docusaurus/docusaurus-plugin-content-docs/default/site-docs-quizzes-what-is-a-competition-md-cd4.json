@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9ac9fa5d295659b36957e",
     "helpscout_url": "https://help.smartwinnr.com/article/101-what-is-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Finding Status and Scores for Quizzes assigned to your Team",
-    "permalink": "/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team"
-  },
-  "next": {
-    "title": "Add a Quiz to a competition?",
-    "permalink": "/quizzes/how-to-add-a-quiz-to-a-competition"
   }
 }

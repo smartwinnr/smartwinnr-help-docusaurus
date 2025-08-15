@@ -1,0 +1,36 @@
+{
+  "id": "microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content",
+  "title": "Add an audio file to your content?",
+  "description": "",
+  "source": "@site/docs/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content.md",
+  "sourceDirName": "microlearning-smartfeeds/creating-smartfeeds",
+  "slug": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content",
+  "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 71,
+  "frontMatter": {
+    "title": "Add an audio file to your content?",
+    "description": "",
+    "slug": "how-to-add-an-audio-file-to-your-content",
+    "sidebar_position": 71,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4eb633d1d2a5b1c5ea1d3",
+    "helpscout_url": "https://help.smartwinnr.com/article/71-how-to-add-an-audio-file-to-your-content"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add reference to an external link to your content?",
+    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-reference-to-an-external-link-to-your-content"
+  },
+  "next": {
+    "title": "Attach PDF file to your content?",
+    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-attach-pdf-file-to-your-content"
+  }
+}

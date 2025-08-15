@@ -1,0 +1,36 @@
+{
+  "id": "learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module",
+  "title": "Add Learning Sessions In SmartPath Module?",
+  "description": "",
+  "source": "@site/docs/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module.md",
+  "sourceDirName": "learning-smartpaths/learning-sessions",
+  "slug": "/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module",
+  "permalink": "/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 242,
+  "frontMatter": {
+    "title": "Add Learning Sessions In SmartPath Module?",
+    "description": "",
+    "slug": "how-to-add-learning-sessions-in-smartpath-module",
+    "sidebar_position": 242,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a645beeb3af44cc120aa6d",
+    "helpscout_url": "https://help.smartwinnr.com/article/242-how-to-add-learning-sessions-in-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View the SmartPath Analytics.",
+    "permalink": "/learning-smartpaths/learning-analytics/how-to-view-the-smartpath-analytics"
+  },
+  "next": {
+    "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "permalink": "/learning-smartpaths/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+  }
+}

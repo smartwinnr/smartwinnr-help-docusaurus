@@ -1,0 +1,36 @@
+{
+  "id": "forms-data-collection/form-management/how-to-add-new-form-submission",
+  "title": "Add new form submission",
+  "description": "",
+  "source": "@site/docs/forms-data-collection/form-management/how-to-add-new-form-submission.md",
+  "sourceDirName": "forms-data-collection/form-management",
+  "slug": "/forms-data-collection/form-management/how-to-add-new-form-submission",
+  "permalink": "/forms-data-collection/form-management/how-to-add-new-form-submission",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/forms-data-collection/form-management/how-to-add-new-form-submission.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 247,
+  "frontMatter": {
+    "title": "Add new form submission",
+    "description": "",
+    "slug": "how-to-add-new-form-submission",
+    "sidebar_position": 247,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60b77f6d9c887a0dfc555ad2",
+    "helpscout_url": "https://help.smartwinnr.com/article/247-how-to-add-new-form-submission"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I submit Form from Chat",
+    "permalink": "/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat"
+  },
+  "next": {
+    "title": "Edit a Form on submitted by a user?",
+    "permalink": "/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user"
+  }
+}

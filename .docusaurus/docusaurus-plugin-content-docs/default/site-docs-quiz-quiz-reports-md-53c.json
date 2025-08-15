@@ -11,8 +11,17 @@
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz/quiz-reports.md",
   "tags": [],
   "version": "current",
-  "sidebarPosition": 4,
+  "sidebarPosition": 5,
   "frontMatter": {
-    "sidebar_position": 4
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Managing Questions",
+    "permalink": "/quiz/managing-questions"
+  },
+  "next": {
+    "title": "Quiz Settings",
+    "permalink": "/quiz/quiz-settings"
   }
 }

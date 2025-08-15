@@ -1,0 +1,36 @@
+{
+  "id": "administration/how-to-post-a-query-from-the-smartwinnr-app",
+  "title": "Post a Query from the SmartWinnr app?",
+  "description": "",
+  "source": "@site/docs/administration/how-to-post-a-query-from-the-smartwinnr-app.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/how-to-post-a-query-from-the-smartwinnr-app",
+  "permalink": "/administration/how-to-post-a-query-from-the-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/how-to-post-a-query-from-the-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 160,
+  "frontMatter": {
+    "title": "Post a Query from the SmartWinnr app?",
+    "description": "",
+    "slug": "how-to-post-a-query-from-the-smartwinnr-app",
+    "sidebar_position": 160,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0522b624c71b7985a5d7",
+    "helpscout_url": "https://help.smartwinnr.com/article/160-how-to-post-a-query-from-the-smartwinnr-app"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Use QResolve in the SmartWinnr app?",
+    "permalink": "/administration/how-to-use-qresolve-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "Answer a Query",
+    "permalink": "/administration/how-can-i-answer-a-query"
+  }
+}

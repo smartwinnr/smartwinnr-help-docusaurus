@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd496523d1d2a5b1c5ea15c",
     "helpscout_url": "https://help.smartwinnr.com/article/55-detailed-quiz-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About SmartWinnr Quiz Analytics",
-    "permalink": "/quizzes/what-is-smartwinnr-quiz-analytics"
-  },
-  "next": {
-    "title": "Question Response Analytics",
-    "permalink": "/quizzes/question-response-analytics"
   }
 }

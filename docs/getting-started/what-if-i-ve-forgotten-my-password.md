@@ -27,4 +27,4 @@ You will receive an SMS from SmartWInnr with the new password for your account.�
 
 **What if I did not receive the reset password link or SMS?**
 
-If you could not find the reset password email or SMS, you can either write to your system administrator or write to support@smartwinnr.com for resetting your password.
+If you could not find the reset password email or SMS, you can either write to your system administrator or write to [support@smartwinnr.com](mailto:support@smartwinnr.com) for resetting your password.

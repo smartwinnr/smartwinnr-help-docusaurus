@@ -1,13 +1,7 @@
 ---
-title: "Quiz 
-> **Note**: This feature requires Administrator permissions.
-
-Administration"
+title: "Quiz Administration"
 description: "Complete guide for managing quiz settings, permissions, and operations"
-slug: quiz-
-> **Note**: This feature requires Administrator permissions.
-
-administration
+slug: quiz-administration
 sidebar_position: 2
 last_update:
   date: 2025-08-10

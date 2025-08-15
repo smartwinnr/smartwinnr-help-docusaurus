@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Add a image to your content?",
-    "permalink": "/learning/how-to-add-a-image-to-your-content"
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/learning/knowledge-hub-khub"
   },
   "next": {
-    "title": "Add an audio file to your content?",
-    "permalink": "/learning/how-to-add-an-audio-file-to-your-content"
+    "title": "Attach PDF file to your content?",
+    "permalink": "/learning/how-to-attach-pdf-file-to-your-content"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "id": "quiz-assessments/creating-assessments/creating-quizzes",
+  "title": "Creating Quizzes",
+  "description": "Complete guide for creating manual and automatic quizzes with different question types",
+  "source": "@site/docs/quiz-assessments/creating-assessments/creating-quizzes.md",
+  "sourceDirName": "quiz-assessments/creating-assessments",
+  "slug": "/quiz-assessments/creating-assessments/creating-quizzes",
+  "permalink": "/quiz-assessments/creating-assessments/creating-quizzes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/creating-assessments/creating-quizzes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Creating Quizzes",
+    "description": "Complete guide for creating manual and automatic quizzes with different question types",
+    "slug": "creating-quizzes",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Learner Report - By Learner (Individual Report Analytics)",
+    "permalink": "/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics"
+  },
+  "next": {
+    "title": "Creating a Quiz",
+    "permalink": "/quiz-assessments/creating-assessments/creating-quiz"
+  }
+}

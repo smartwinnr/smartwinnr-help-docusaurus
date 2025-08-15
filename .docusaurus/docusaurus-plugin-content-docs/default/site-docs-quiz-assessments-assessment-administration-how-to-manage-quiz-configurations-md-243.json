@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/assessment-administration/how-to-manage-quiz-configurations",
+  "title": "Manage Quiz configurations?",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations.md",
+  "sourceDirName": "quiz-assessments/assessment-administration",
+  "slug": "/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations",
+  "permalink": "/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 112,
+  "frontMatter": {
+    "title": "Manage Quiz configurations?",
+    "description": "",
+    "slug": "how-to-manage-quiz-configurations",
+    "sidebar_position": 112,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda45eaa5d295659b36989e",
+    "helpscout_url": "https://help.smartwinnr.com/article/112-how-to-manage-quiz-configurations"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
+    "permalink": "/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr"
+  },
+  "next": {
+    "title": "Send quizzes, surveys and content using group?",
+    "permalink": "/quiz-assessments/assessment-administration/how-to-send-quizzes-surveys-and-content-using-group"
+  }
+}

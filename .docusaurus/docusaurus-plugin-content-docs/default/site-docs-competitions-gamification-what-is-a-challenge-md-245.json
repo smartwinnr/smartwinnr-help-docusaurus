@@ -1,0 +1,36 @@
+{
+  "id": "competitions-gamification/what-is-a-challenge",
+  "title": "About a Challenge",
+  "description": "",
+  "source": "@site/docs/competitions-gamification/what-is-a-challenge.md",
+  "sourceDirName": "competitions-gamification",
+  "slug": "/competitions-gamification/what-is-a-challenge",
+  "permalink": "/competitions-gamification/what-is-a-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions-gamification/what-is-a-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 178,
+  "frontMatter": {
+    "title": "About a Challenge",
+    "description": "",
+    "slug": "what-is-a-challenge",
+    "sidebar_position": 178,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb1597a5d295659b369c89",
+    "helpscout_url": "https://help.smartwinnr.com/article/178-what-is-a-challenge"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upload KPI data?",
+    "permalink": "/competitions-gamification/how-to-upload-kpi-data"
+  },
+  "next": {
+    "title": "Create an Individual Challenge?",
+    "permalink": "/competitions-gamification/how-to-create-an-individual-challenge"
+  }
+}

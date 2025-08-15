@@ -1,7 +1,7 @@
 {
   "id": "getting-started/admin-onboarding",
-  "title": "admin-onboarding",
-  "description": "---",
+  "title": "Administrator Onboarding Guide",
+  "description": "Complete onboarding guide for SmartWinnr system administrators",
   "source": "@site/docs/getting-started/admin-onboarding.md",
   "sourceDirName": "getting-started",
   "slug": "/getting-started/admin-onboarding",
@@ -11,14 +11,20 @@
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/getting-started/admin-onboarding.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {},
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Administrator Onboarding Guide",
+    "description": "Complete onboarding guide for SmartWinnr system administrators",
+    "slug": "admin-onboarding",
+    "sidebar_position": 5
+  },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Update the SmartWinnr App from Web View",
-    "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view"
+    "title": "About SmartWinnr",
+    "permalink": "/getting-started/about-smartwinnr"
   },
   "next": {
-    "title": "User Experience",
-    "permalink": "/user-guide/user-guide"
+    "title": "Login to SmartWinnr App",
+    "permalink": "/getting-started/login-to-smartwinnr-app"
   }
 }

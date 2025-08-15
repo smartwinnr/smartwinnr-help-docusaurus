@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdadcca7129911ba1b21dc1",
     "helpscout_url": "https://help.smartwinnr.com/article/137-what-is-audit-log"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Send quizzes, surveys and content using group?",
-    "permalink": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group"
-  },
-  "next": {
-    "title": "About a Rule",
-    "permalink": "/quizzes/what-is-a-rule"
   }
 }

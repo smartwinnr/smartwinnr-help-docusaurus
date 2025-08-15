@@ -1,0 +1,27 @@
+{
+  "id": "quiz-assessments/assessment-administration/managing-questions",
+  "title": "Managing Questions",
+  "description": "Learn how to organize, maintain, and optimize your question bank for effective quiz delivery.",
+  "source": "@site/docs/quiz-assessments/assessment-administration/managing-questions.md",
+  "sourceDirName": "quiz-assessments/assessment-administration",
+  "slug": "/quiz-assessments/assessment-administration/managing-questions",
+  "permalink": "/quiz-assessments/assessment-administration/managing-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-administration/managing-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create 'Numeric Type Questions'",
+    "permalink": "/quiz-assessments/question-management/how-to-create-numeric-type-questions"
+  },
+  "next": {
+    "title": "Quiz Settings",
+    "permalink": "/quiz-assessments/assessment-administration/quiz-settings"
+  }
+}

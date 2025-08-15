@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaddc6b624c71b7985a570",
     "helpscout_url": "https://help.smartwinnr.com/article/141-what-is-a-rule"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About Audit Log",
-    "permalink": "/quizzes/what-is-audit-log"
-  },
-  "next": {
-    "title": "Give access permission to other editors",
-    "permalink": "/quizzes/how-do-i-give-access-permission-to-other-editors"
   }
 }

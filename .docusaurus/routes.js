@@ -44,265 +44,234 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '784'),
+    component: ComponentCreator('/', '8bb'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'def'),
+        component: ComponentCreator('/', '018'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '43c'),
+            component: ComponentCreator('/', '201'),
             routes: [
               {
                 path: '/admin-landing',
-                component: ComponentCreator('/admin-landing', 'c20'),
+                component: ComponentCreator('/admin-landing', '561'),
+                exact: true
+              },
+              {
+                path: '/administration/administration',
+                component: ComponentCreator('/administration/administration', 'a50'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/',
-                component: ComponentCreator('/admin/', '42a'),
+                path: '/administration/advanced-options-for-projects',
+                component: ComponentCreator('/administration/advanced-options-for-projects', '832'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/advanced-options-for-projects',
-                component: ComponentCreator('/admin/advanced-options-for-projects', 'dbe'),
+                path: '/administration/bulk-custom-notifications',
+                component: ComponentCreator('/administration/bulk-custom-notifications', '96d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/bulk-custom-notifications',
-                component: ComponentCreator('/admin/bulk-custom-notifications', '234'),
+                path: '/administration/changing-updating-configuration-for-an-organization',
+                component: ComponentCreator('/administration/changing-updating-configuration-for-an-organization', '825'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/changing-updating-configuration-for-an-organization',
-                component: ComponentCreator('/admin/changing-updating-configuration-for-an-organization', 'b35'),
+                path: '/administration/create-users-individually',
+                component: ComponentCreator('/administration/create-users-individually', 'f22'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/create-users-individually',
-                component: ComponentCreator('/admin/create-users-individually', '932'),
+                path: '/administration/custom-notifications',
+                component: ComponentCreator('/administration/custom-notifications', '41c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/custom-notifications',
-                component: ComponentCreator('/admin/custom-notifications', 'a80'),
+                path: '/administration/how-can-an-admin-change-anyone-s-password',
+                component: ComponentCreator('/administration/how-can-an-admin-change-anyone-s-password', '2c8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-an-admin-change-anyone-s-password',
-                component: ComponentCreator('/admin/how-can-an-admin-change-anyone-s-password', 'cc0'),
+                path: '/administration/how-can-i-answer-a-query',
+                component: ComponentCreator('/administration/how-can-i-answer-a-query', '51e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-i-answer-a-query',
-                component: ComponentCreator('/admin/how-can-i-answer-a-query', '499'),
+                path: '/administration/how-can-i-change-the-password-for-a-user-account',
+                component: ComponentCreator('/administration/how-can-i-change-the-password-for-a-user-account', '230'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-i-change-the-password-for-a-user-account',
-                component: ComponentCreator('/admin/how-can-i-change-the-password-for-a-user-account', '092'),
+                path: '/administration/how-can-i-contact-smartwinnr-team',
+                component: ComponentCreator('/administration/how-can-i-contact-smartwinnr-team', '229'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-i-contact-smartwinnr-team',
-                component: ComponentCreator('/admin/how-can-i-contact-smartwinnr-team', 'bea'),
+                path: '/administration/how-to-add-a-new-division',
+                component: ComponentCreator('/administration/how-to-add-a-new-division', '5fa'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-i-submit-a-form-from-chat',
-                component: ComponentCreator('/admin/how-can-i-submit-a-form-from-chat', 'c35'),
+                path: '/administration/how-to-add-change-targets',
+                component: ComponentCreator('/administration/how-to-add-change-targets', '712'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-can-i-submit-a-form-from-left-menu',
-                component: ComponentCreator('/admin/how-can-i-submit-a-form-from-left-menu', 'e45'),
+                path: '/administration/how-to-add-new-contacts',
+                component: ComponentCreator('/administration/how-to-add-new-contacts', '078'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-a-new-division',
-                component: ComponentCreator('/admin/how-to-add-a-new-division', '074'),
+                path: '/administration/how-to-add-new-rule',
+                component: ComponentCreator('/administration/how-to-add-new-rule', '6c3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-change-targets',
-                component: ComponentCreator('/admin/how-to-add-change-targets', '525'),
+                path: '/administration/how-to-add-or-remove-users-to-a-chat-group',
+                component: ComponentCreator('/administration/how-to-add-or-remove-users-to-a-chat-group', '241'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-new-contacts',
-                component: ComponentCreator('/admin/how-to-add-new-contacts', '2c2'),
+                path: '/administration/how-to-change-company-logo',
+                component: ComponentCreator('/administration/how-to-change-company-logo', '5d3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-new-form-submission',
-                component: ComponentCreator('/admin/how-to-add-new-form-submission', 'dea'),
+                path: '/administration/how-to-create-a-group',
+                component: ComponentCreator('/administration/how-to-create-a-group', '4f9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-new-rule',
-                component: ComponentCreator('/admin/how-to-add-new-rule', 'ebf'),
+                path: '/administration/how-to-create-a-new-project',
+                component: ComponentCreator('/administration/how-to-create-a-new-project', '32a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-add-or-remove-users-to-a-chat-group',
-                component: ComponentCreator('/admin/how-to-add-or-remove-users-to-a-chat-group', '5c6'),
+                path: '/administration/how-to-download-a-chat',
+                component: ComponentCreator('/administration/how-to-download-a-chat', '646'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-approve-reject-a-form-submission',
-                component: ComponentCreator('/admin/how-to-approve-reject-a-form-submission', 'a31'),
+                path: '/administration/how-to-edit-a-project',
+                component: ComponentCreator('/administration/how-to-edit-a-project', 'd73'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-change-company-logo',
-                component: ComponentCreator('/admin/how-to-change-company-logo', 'bbf'),
+                path: '/administration/how-to-enable-a-chat-group',
+                component: ComponentCreator('/administration/how-to-enable-a-chat-group', '5c6'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-create-a-group',
-                component: ComponentCreator('/admin/how-to-create-a-group', 'b74'),
+                path: '/administration/how-to-post-a-query-from-the-smartwinnr-app',
+                component: ComponentCreator('/administration/how-to-post-a-query-from-the-smartwinnr-app', 'bde'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-create-a-new-project',
-                component: ComponentCreator('/admin/how-to-create-a-new-project', 'fb6'),
+                path: '/administration/how-to-track-my-organizational-resource-usage',
+                component: ComponentCreator('/administration/how-to-track-my-organizational-resource-usage', '3fd'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-download-a-chat',
-                component: ComponentCreator('/admin/how-to-download-a-chat', 'e4b'),
+                path: '/administration/how-to-use-qresolve-in-the-smartwinnr-app',
+                component: ComponentCreator('/administration/how-to-use-qresolve-in-the-smartwinnr-app', '25b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-edit-a-form-on-submitted-by-a-user',
-                component: ComponentCreator('/admin/how-to-edit-a-form-on-submitted-by-a-user', '2be'),
+                path: '/administration/how-to-view-an-audit-log',
+                component: ComponentCreator('/administration/how-to-view-an-audit-log', 'aa4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-edit-a-project',
-                component: ComponentCreator('/admin/how-to-edit-a-project', '689'),
+                path: '/administration/how-to-view-existing-contacts',
+                component: ComponentCreator('/administration/how-to-view-existing-contacts', '382'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-enable-a-chat-group',
-                component: ComponentCreator('/admin/how-to-enable-a-chat-group', '89a'),
+                path: '/administration/how-to-view-notifications',
+                component: ComponentCreator('/administration/how-to-view-notifications', '480'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-post-a-query-from-the-smartwinnr-app',
-                component: ComponentCreator('/admin/how-to-post-a-query-from-the-smartwinnr-app', 'f44'),
+                path: '/administration/how-users-can-see-the-evaluation-and-scores-for-long-answer-question',
+                component: ComponentCreator('/administration/how-users-can-see-the-evaluation-and-scores-for-long-answer-question', 'fa0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-submit-a-form-on-behalf-of-a-user',
-                component: ComponentCreator('/admin/how-to-submit-a-form-on-behalf-of-a-user', 'a52'),
+                path: '/administration/manage-password-policy',
+                component: ComponentCreator('/administration/manage-password-policy', 'd47'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-track-my-organizational-resource-usage',
-                component: ComponentCreator('/admin/how-to-track-my-organizational-resource-usage', 'f89'),
+                path: '/administration/search-users',
+                component: ComponentCreator('/administration/search-users', '4f5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-use-qresolve-in-the-smartwinnr-app',
-                component: ComponentCreator('/admin/how-to-use-qresolve-in-the-smartwinnr-app', '692'),
+                path: '/administration/what-are-chat-groups',
+                component: ComponentCreator('/administration/what-are-chat-groups', 'b5c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-view-an-audit-log',
-                component: ComponentCreator('/admin/how-to-view-an-audit-log', '99f'),
+                path: '/administration/what-is-my-username-and-password',
+                component: ComponentCreator('/administration/what-is-my-username-and-password', '83b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-view-existing-contacts',
-                component: ComponentCreator('/admin/how-to-view-existing-contacts', '768'),
+                path: '/administration/what-is-qresolve',
+                component: ComponentCreator('/administration/what-is-qresolve', '68b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-to-view-notifications',
-                component: ComponentCreator('/admin/how-to-view-notifications', '1fe'),
+                path: '/administration/what-is-the-purpose-of-notifications',
+                component: ComponentCreator('/administration/what-is-the-purpose-of-notifications', '92d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/how-users-can-see-the-evaluation-and-scores-for-long-answer-question',
-                component: ComponentCreator('/admin/how-users-can-see-the-evaluation-and-scores-for-long-answer-question', 'abb'),
+                path: '/administration/when-are-chat-groups-needed',
+                component: ComponentCreator('/administration/when-are-chat-groups-needed', '597'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/admin/manage-password-policy',
-                component: ComponentCreator('/admin/manage-password-policy', '5bb'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/search-users',
-                component: ComponentCreator('/admin/search-users', 'e45'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/what-are-chat-groups',
-                component: ComponentCreator('/admin/what-are-chat-groups', '205'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/what-is-my-username-and-password',
-                component: ComponentCreator('/admin/what-is-my-username-and-password', '8dc'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/what-is-qresolve',
-                component: ComponentCreator('/admin/what-is-qresolve', '537'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/what-is-the-purpose-of-notifications',
-                component: ComponentCreator('/admin/what-is-the-purpose-of-notifications', '4d8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/admin/when-are-chat-groups-needed',
-                component: ComponentCreator('/admin/when-are-chat-groups-needed', '1cc'),
+                path: '/analytics-reporting/analytics-reporting',
+                component: ComponentCreator('/analytics-reporting/analytics-reporting', '22d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -317,296 +286,320 @@ export default [
                 exact: true
               },
               {
-                path: '/coaching/',
-                component: ComponentCreator('/coaching/', '964'),
+                path: '/coaching-performance/',
+                component: ComponentCreator('/coaching-performance/', '442'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/create-a-coaching',
-                component: ComponentCreator('/coaching/create-a-coaching', '9f3'),
+                path: '/coaching-performance/create-a-coaching',
+                component: ComponentCreator('/coaching-performance/create-a-coaching', 'c8e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-do-i-upload-a-coaching-video',
-                component: ComponentCreator('/coaching/how-do-i-upload-a-coaching-video', 'e36'),
+                path: '/coaching-performance/how-do-i-upload-a-coaching-video',
+                component: ComponentCreator('/coaching-performance/how-do-i-upload-a-coaching-video', '14c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team',
-                component: ComponentCreator('/coaching/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team', 'fe5'),
+                path: '/coaching-performance/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team',
+                component: ComponentCreator('/coaching-performance/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team', 'b21'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-add-competencies-for-field-coaching',
-                component: ComponentCreator('/coaching/how-to-add-competencies-for-field-coaching', '08f'),
+                path: '/coaching-performance/how-to-add-competencies-for-field-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-add-competencies-for-field-coaching', 'f72'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-create-a-video-coaching-assignment',
-                component: ComponentCreator('/coaching/how-to-create-a-video-coaching-assignment', 'f68'),
+                path: '/coaching-performance/how-to-create-a-video-coaching-assignment',
+                component: ComponentCreator('/coaching-performance/how-to-create-a-video-coaching-assignment', '0c7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-create-field-coaching',
-                component: ComponentCreator('/coaching/how-to-create-field-coaching', '72e'),
+                path: '/coaching-performance/how-to-create-field-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-create-field-coaching', 'e6b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-create-field-coaching-template',
-                component: ComponentCreator('/coaching/how-to-create-field-coaching-template', 'c64'),
+                path: '/coaching-performance/how-to-create-field-coaching-template',
+                component: ComponentCreator('/coaching-performance/how-to-create-field-coaching-template', 'af4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-enable-the-streaming-links-for-video-coaching',
-                component: ComponentCreator('/coaching/how-to-enable-the-streaming-links-for-video-coaching', '258'),
+                path: '/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching', 'd89'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-reset-a-coaching-video',
-                component: ComponentCreator('/coaching/how-to-reset-a-coaching-video', '4bb'),
+                path: '/coaching-performance/how-to-reset-a-coaching-video',
+                component: ComponentCreator('/coaching-performance/how-to-reset-a-coaching-video', 'bec'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager',
-                component: ComponentCreator('/coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager', 'b1e'),
+                path: '/coaching-performance/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager',
+                component: ComponentCreator('/coaching-performance/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager', 'bad'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-review-a-video-coaching-assignment',
-                component: ComponentCreator('/coaching/how-to-review-a-video-coaching-assignment', 'cfa'),
+                path: '/coaching-performance/how-to-review-a-video-coaching-assignment',
+                component: ComponentCreator('/coaching-performance/how-to-review-a-video-coaching-assignment', '674'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-review-field-coaching-from-managers-view-in-mobile',
-                component: ComponentCreator('/coaching/how-to-review-field-coaching-from-managers-view-in-mobile', '170'),
+                path: '/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile',
+                component: ComponentCreator('/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile', '92a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-set-competencies',
-                component: ComponentCreator('/coaching/how-to-set-competencies', 'bfb'),
+                path: '/coaching-performance/how-to-set-competencies',
+                component: ComponentCreator('/coaching-performance/how-to-set-competencies', '773'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-share-a-coaching-video',
-                component: ComponentCreator('/coaching/how-to-share-a-coaching-video', '245'),
+                path: '/coaching-performance/how-to-share-a-coaching-video',
+                component: ComponentCreator('/coaching-performance/how-to-share-a-coaching-video', 'c4f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-upload-audio-recording-for-coaching',
-                component: ComponentCreator('/coaching/how-to-upload-audio-recording-for-coaching', '64c'),
+                path: '/coaching-performance/how-to-upload-audio-recording-for-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-upload-audio-recording-for-coaching', '776'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-upload-screen-recording-for-coaching',
-                component: ComponentCreator('/coaching/how-to-upload-screen-recording-for-coaching', '549'),
+                path: '/coaching-performance/how-to-upload-screen-recording-for-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-upload-screen-recording-for-coaching', 'b34'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/how-to-upload-video-recording-for-coaching',
-                component: ComponentCreator('/coaching/how-to-upload-video-recording-for-coaching', '0ee'),
+                path: '/coaching-performance/how-to-upload-video-recording-for-coaching',
+                component: ComponentCreator('/coaching-performance/how-to-upload-video-recording-for-coaching', '29a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/coaching/what-is-my-team-coaching',
-                component: ComponentCreator('/coaching/what-is-my-team-coaching', '903'),
+                path: '/coaching-performance/what-is-my-team-coaching',
+                component: ComponentCreator('/coaching-performance/what-is-my-team-coaching', '068'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/',
-                component: ComponentCreator('/competitions/', 'cce'),
+                path: '/competitions-gamification/competition-design/how-to-create-a-competition',
+                component: ComponentCreator('/competitions-gamification/competition-design/how-to-create-a-competition', 'aac'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/define-kpis',
-                component: ComponentCreator('/competitions/define-kpis', 'd35'),
+                path: '/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition',
+                component: ComponentCreator('/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition', 'c85'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-can-i-gamify-a-smartpath',
-                component: ComponentCreator('/competitions/how-can-i-gamify-a-smartpath', 'fe8'),
+                path: '/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition',
+                component: ComponentCreator('/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition', '147'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-can-i-view-a-competition-leaderboard',
-                component: ComponentCreator('/competitions/how-can-i-view-a-competition-leaderboard', '1ce'),
+                path: '/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition',
+                component: ComponentCreator('/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition', 'ab3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-do-i-view-the-kpi-scorecard',
-                component: ComponentCreator('/competitions/how-do-i-view-the-kpi-scorecard', 'b7f'),
+                path: '/competitions-gamification/competitions-gamification',
+                component: ComponentCreator('/competitions-gamification/competitions-gamification', '4a2'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app',
-                component: ComponentCreator('/competitions/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app', '851'),
+                path: '/competitions-gamification/define-kpis',
+                component: ComponentCreator('/competitions-gamification/define-kpis', '55c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app',
-                component: ComponentCreator('/competitions/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app', 'b57'),
+                path: '/competitions-gamification/how-can-i-gamify-a-smartpath',
+                component: ComponentCreator('/competitions-gamification/how-can-i-gamify-a-smartpath', '1f1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-a-challenge-to-the-competition',
-                component: ComponentCreator('/competitions/how-to-add-a-challenge-to-the-competition', '0ec'),
+                path: '/competitions-gamification/how-can-i-view-a-competition-leaderboard',
+                component: ComponentCreator('/competitions-gamification/how-can-i-view-a-competition-leaderboard', '6da'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-a-form-to-competition',
-                component: ComponentCreator('/competitions/how-to-add-a-form-to-competition', '176'),
+                path: '/competitions-gamification/how-do-i-view-the-kpi-scorecard',
+                component: ComponentCreator('/competitions-gamification/how-do-i-view-the-kpi-scorecard', '15e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-a-scorecard-to-a-competition',
-                component: ComponentCreator('/competitions/how-to-add-a-scorecard-to-a-competition', 'c5c'),
+                path: '/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app',
+                component: ComponentCreator('/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app', 'd19'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-different-activities-to-a-challenge',
-                component: ComponentCreator('/competitions/how-to-add-different-activities-to-a-challenge', '846'),
+                path: '/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app',
+                component: ComponentCreator('/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app', 'e53'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-observers-to-the-competition-leaderboard',
-                component: ComponentCreator('/competitions/how-to-add-observers-to-the-competition-leaderboard', '1ed'),
+                path: '/competitions-gamification/how-to-add-a-challenge-to-the-competition',
+                component: ComponentCreator('/competitions-gamification/how-to-add-a-challenge-to-the-competition', 'ed3'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-smartfeed-within-a-competition',
-                component: ComponentCreator('/competitions/how-to-add-smartfeed-within-a-competition', '67c'),
+                path: '/competitions-gamification/how-to-add-a-form-to-competition',
+                component: ComponentCreator('/competitions-gamification/how-to-add-a-form-to-competition', '962'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-add-the-scorecard-to-leaderboard',
-                component: ComponentCreator('/competitions/how-to-add-the-scorecard-to-leaderboard', '030'),
+                path: '/competitions-gamification/how-to-add-a-scorecard-to-a-competition',
+                component: ComponentCreator('/competitions-gamification/how-to-add-a-scorecard-to-a-competition', '9ba'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-award-points-on-badge-assignment',
-                component: ComponentCreator('/competitions/how-to-award-points-on-badge-assignment', 'efa'),
+                path: '/competitions-gamification/how-to-add-different-activities-to-a-challenge',
+                component: ComponentCreator('/competitions-gamification/how-to-add-different-activities-to-a-challenge', 'a04'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-a-group-challenge',
-                component: ComponentCreator('/competitions/how-to-create-a-group-challenge', '43a'),
+                path: '/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard',
+                component: ComponentCreator('/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard', 'd3c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-a-manager-challenge',
-                component: ComponentCreator('/competitions/how-to-create-a-manager-challenge', '4da'),
+                path: '/competitions-gamification/how-to-add-smartfeed-within-a-competition',
+                component: ComponentCreator('/competitions-gamification/how-to-add-smartfeed-within-a-competition', 'd4a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-an-individual-challenge',
-                component: ComponentCreator('/competitions/how-to-create-an-individual-challenge', '4e3'),
+                path: '/competitions-gamification/how-to-add-the-scorecard-to-leaderboard',
+                component: ComponentCreator('/competitions-gamification/how-to-add-the-scorecard-to-leaderboard', '816'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-badges',
-                component: ComponentCreator('/competitions/how-to-create-badges', '517'),
+                path: '/competitions-gamification/how-to-award-points-on-badge-assignment',
+                component: ComponentCreator('/competitions-gamification/how-to-award-points-on-badge-assignment', 'c2b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-certifcates',
-                component: ComponentCreator('/competitions/how-to-create-certifcates', '154'),
+                path: '/competitions-gamification/how-to-create-a-group-challenge',
+                component: ComponentCreator('/competitions-gamification/how-to-create-a-group-challenge', 'ee5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-create-kpi',
-                component: ComponentCreator('/competitions/how-to-create-kpi', '609'),
+                path: '/competitions-gamification/how-to-create-a-manager-challenge',
+                component: ComponentCreator('/competitions-gamification/how-to-create-a-manager-challenge', '637'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-upload-kpi-data',
-                component: ComponentCreator('/competitions/how-to-upload-kpi-data', 'ce4'),
+                path: '/competitions-gamification/how-to-create-an-individual-challenge',
+                component: ComponentCreator('/competitions-gamification/how-to-create-an-individual-challenge', 'b27'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/how-to-view-the-data-and-leaderboard-for-scorecard',
-                component: ComponentCreator('/competitions/how-to-view-the-data-and-leaderboard-for-scorecard', 'ecf'),
+                path: '/competitions-gamification/how-to-create-badges',
+                component: ComponentCreator('/competitions-gamification/how-to-create-badges', 'aa7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/leaderboards-of-a-competition',
-                component: ComponentCreator('/competitions/leaderboards-of-a-competition', '080'),
+                path: '/competitions-gamification/how-to-create-certifcates',
+                component: ComponentCreator('/competitions-gamification/how-to-create-certifcates', 'cf7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/question-bank',
-                component: ComponentCreator('/competitions/question-bank', 'ee1'),
+                path: '/competitions-gamification/how-to-create-kpi',
+                component: ComponentCreator('/competitions-gamification/how-to-create-kpi', '66a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/understand-game-concepts',
-                component: ComponentCreator('/competitions/understand-game-concepts', '037'),
+                path: '/competitions-gamification/how-to-upload-kpi-data',
+                component: ComponentCreator('/competitions-gamification/how-to-upload-kpi-data', '7b7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/what-are-kpi-reports',
-                component: ComponentCreator('/competitions/what-are-kpi-reports', 'f72'),
+                path: '/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard',
+                component: ComponentCreator('/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard', 'bc0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/what-is-a-challenge',
-                component: ComponentCreator('/competitions/what-is-a-challenge', 'fe1'),
+                path: '/competitions-gamification/leaderboards-of-a-competition',
+                component: ComponentCreator('/competitions-gamification/leaderboards-of-a-competition', 'a6c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/what-is-an-achievement',
-                component: ComponentCreator('/competitions/what-is-an-achievement', 'a8d'),
+                path: '/competitions-gamification/question-bank',
+                component: ComponentCreator('/competitions-gamification/question-bank', '78f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/competitions/what-is-kpi-gamification',
-                component: ComponentCreator('/competitions/what-is-kpi-gamification', 'c0a'),
+                path: '/competitions-gamification/understand-game-concepts',
+                component: ComponentCreator('/competitions-gamification/understand-game-concepts', '3f1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/competitions-gamification/what-are-kpi-reports',
+                component: ComponentCreator('/competitions-gamification/what-are-kpi-reports', 'de1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/competitions-gamification/what-is-a-challenge',
+                component: ComponentCreator('/competitions-gamification/what-is-a-challenge', 'c8f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/competitions-gamification/what-is-an-achievement',
+                component: ComponentCreator('/competitions-gamification/what-is-an-achievement', '9ad'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/competitions-gamification/what-is-kpi-gamification',
+                component: ComponentCreator('/competitions-gamification/what-is-kpi-gamification', '548'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -617,7 +610,90 @@ export default [
               },
               {
                 path: '/editor-landing',
-                component: ComponentCreator('/editor-landing', '161'),
+                component: ComponentCreator('/editor-landing', '94b'),
+                exact: true
+              },
+              {
+                path: '/forms-data-collection/data-management/how-to-create-a-field-mapping',
+                component: ComponentCreator('/forms-data-collection/data-management/how-to-create-a-field-mapping', '261'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/data-management/what-are-field-mappings',
+                component: ComponentCreator('/forms-data-collection/data-management/what-are-field-mappings', 'a46'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-creation/form-analytics',
+                component: ComponentCreator('/forms-data-collection/form-creation/form-analytics', 'e8a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-creation/how-managers-approve-form',
+                component: ComponentCreator('/forms-data-collection/form-creation/how-managers-approve-form', 'ff7'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-creation/how-to-add-approvers-to-a-form',
+                component: ComponentCreator('/forms-data-collection/form-creation/how-to-add-approvers-to-a-form', '2fc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-creation/how-to-create-a-form',
+                component: ComponentCreator('/forms-data-collection/form-creation/how-to-create-a-form', '765'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat',
+                component: ComponentCreator('/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat', '46f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-can-i-submit-a-form-from-left-menu',
+                component: ComponentCreator('/forms-data-collection/form-management/how-can-i-submit-a-form-from-left-menu', 'eaa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-to-add-new-form-submission',
+                component: ComponentCreator('/forms-data-collection/form-management/how-to-add-new-form-submission', 'b07'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-to-approve-reject-a-form-submission',
+                component: ComponentCreator('/forms-data-collection/form-management/how-to-approve-reject-a-form-submission', '49e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user',
+                component: ComponentCreator('/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user', '765'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/form-management/how-to-submit-a-form-on-behalf-of-a-user',
+                component: ComponentCreator('/forms-data-collection/form-management/how-to-submit-a-form-on-behalf-of-a-user', '8e7'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/scorecards/how-to-create-a-scorecard',
+                component: ComponentCreator('/forms-data-collection/scorecards/how-to-create-a-scorecard', '2f9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/forms-data-collection/scorecards/what-are-scorecards',
+                component: ComponentCreator('/forms-data-collection/scorecards/what-are-scorecards', '273'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -778,298 +854,172 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/help-support/help-support',
+                component: ComponentCreator('/help-support/help-support', '4aa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/help-support/troubleshoot-for-common-error-code',
+                component: ComponentCreator('/help-support/troubleshoot-for-common-error-code', 'cd4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/content-creation/how-can-i-create-folders-and-items-in-khub',
+                component: ComponentCreator('/knowledge-hub/content-creation/how-can-i-create-folders-and-items-in-khub', '275'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/content-creation/how-can-i-edit-a-khub-item',
+                component: ComponentCreator('/knowledge-hub/content-creation/how-can-i-edit-a-khub-item', '244'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/content-organization/how-can-i-edit-a-khub-folder-name',
+                component: ComponentCreator('/knowledge-hub/content-organization/how-can-i-edit-a-khub-folder-name', 'c20'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics',
+                component: ComponentCreator('/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics', '8ed'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/knowledge-hub-khub',
+                component: ComponentCreator('/knowledge-hub/knowledge-hub-khub', '2d3'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/user-experience/how-to-use-khub-in-the-smartwinnr-app',
+                component: ComponentCreator('/knowledge-hub/user-experience/how-to-use-khub-in-the-smartwinnr-app', '88f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/user-experience/understanding-recent-trending-and-latest-khub-items',
+                component: ComponentCreator('/knowledge-hub/user-experience/understanding-recent-trending-and-latest-khub-items', '5d8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/knowledge-hub/what-is-khub',
+                component: ComponentCreator('/knowledge-hub/what-is-khub', '3fc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/learning-analytics/how-to-view-the-smartpath-analytics',
+                component: ComponentCreator('/learning-smartpaths/learning-analytics/how-to-view-the-smartpath-analytics', 'ab8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module',
+                component: ComponentCreator('/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module', 'dd8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions',
+                component: ComponentCreator('/learning-smartpaths/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions', '5c6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance',
+                component: ComponentCreator('/learning-smartpaths/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance', '56c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/scorm-external/how-to-access-the-scorm-course-from-the-smartwinnr-app',
+                component: ComponentCreator('/learning-smartpaths/scorm-external/how-to-access-the-scorm-course-from-the-smartwinnr-app', '386'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/scorm-external/how-to-import-scorm-course-into-smartwinnr',
+                component: ComponentCreator('/learning-smartpaths/scorm-external/how-to-import-scorm-course-into-smartwinnr', '85e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-creation/how-to-create-a-module-for-smartpath',
+                component: ComponentCreator('/learning-smartpaths/smartpath-creation/how-to-create-a-module-for-smartpath', 'a9e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-creation/how-to-create-a-smartpath',
+                component: ComponentCreator('/learning-smartpaths/smartpath-creation/how-to-create-a-smartpath', '623'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-creation/how-to-create-smartpath-with-learning-sessions',
+                component: ComponentCreator('/learning-smartpaths/smartpath-creation/how-to-create-smartpath-with-learning-sessions', '84d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-creation/how-to-edit-a-smartpath',
+                component: ComponentCreator('/learning-smartpaths/smartpath-creation/how-to-edit-a-smartpath', '5f5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-management',
+                component: ComponentCreator('/learning-smartpaths/smartpath-management', '1c9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed',
+                component: ComponentCreator('/learning-smartpaths/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed', 'a47'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/learning-smartpaths/what-are-smartpaths',
+                component: ComponentCreator('/learning-smartpaths/what-are-smartpaths', '800'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/learning/',
-                component: ComponentCreator('/learning/', '641'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-can-i-create-folders-and-items-in-khub',
-                component: ComponentCreator('/learning/how-can-i-create-folders-and-items-in-khub', '94c'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-can-i-edit-a-khub-folder-name',
-                component: ComponentCreator('/learning/how-can-i-edit-a-khub-folder-name', '8bf'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-can-i-edit-a-khub-item',
-                component: ComponentCreator('/learning/how-can-i-edit-a-khub-item', '51e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-can-i-view-khub-analytics',
-                component: ComponentCreator('/learning/how-can-i-view-khub-analytics', '799'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-do-i-like-a-smartfeed',
-                component: ComponentCreator('/learning/how-do-i-like-a-smartfeed', 'a43'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-import-question-is-different-from-add-new-question',
-                component: ComponentCreator('/learning/how-import-question-is-different-from-add-new-question', '721'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app',
-                component: ComponentCreator('/learning/how-to-access-the-scorm-course-from-the-smartwinnr-app', '100'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-a-image-to-your-content',
-                component: ComponentCreator('/learning/how-to-add-a-image-to-your-content', '687'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed',
-                component: ComponentCreator('/learning/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed', 'f93'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-a-recording-to-a-smartfeed',
-                component: ComponentCreator('/learning/how-to-add-a-recording-to-a-smartfeed', '688'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-a-video-to-a-question',
-                component: ComponentCreator('/learning/how-to-add-a-video-to-a-question', '6a5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-a-video-to-your-content',
-                component: ComponentCreator('/learning/how-to-add-a-video-to-your-content', '6c3'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-an-audio-file-to-a-question',
-                component: ComponentCreator('/learning/how-to-add-an-audio-file-to-a-question', 'e6e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-an-audio-file-to-your-content',
-                component: ComponentCreator('/learning/how-to-add-an-audio-file-to-your-content', 'ece'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-an-image-to-the-question',
-                component: ComponentCreator('/learning/how-to-add-an-image-to-the-question', '1a7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-learning-sessions-in-smartpath-module',
-                component: ComponentCreator('/learning/how-to-add-learning-sessions-in-smartpath-module', '239'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-add-reference-to-an-external-link-to-your-content',
-                component: ComponentCreator('/learning/how-to-add-reference-to-an-external-link-to-your-content', '28b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed',
-                component: ComponentCreator('/learning/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed', 'e03'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-attach-pdf-file-to-your-content',
-                component: ComponentCreator('/learning/how-to-attach-pdf-file-to-your-content', '024'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-create-a-module-for-smartpath',
-                component: ComponentCreator('/learning/how-to-create-a-module-for-smartpath', '63a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-create-a-smartfeed',
-                component: ComponentCreator('/learning/how-to-create-a-smartfeed', '9da'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-create-a-smartpath',
-                component: ComponentCreator('/learning/how-to-create-a-smartpath', '006'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-create-smartpath-with-learning-sessions',
-                component: ComponentCreator('/learning/how-to-create-smartpath-with-learning-sessions', 'af3'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-delete-smartfeeds',
-                component: ComponentCreator('/learning/how-to-delete-smartfeeds', 'fe2'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-download-share-a-smartfeed-in-smartpath',
-                component: ComponentCreator('/learning/how-to-download-share-a-smartfeed-in-smartpath', 'fad'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-edit-a-smartfeed',
-                component: ComponentCreator('/learning/how-to-edit-a-smartfeed', '8b5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-edit-a-smartpath',
-                component: ComponentCreator('/learning/how-to-edit-a-smartpath', 'cb7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-embed-a-link-into-the-question',
-                component: ComponentCreator('/learning/how-to-embed-a-link-into-the-question', 'b4a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-mark-the-attendance-for-users-in-learning-sessions',
-                component: ComponentCreator('/learning/how-to-mark-the-attendance-for-users-in-learning-sessions', '0f9'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-send-a-smartfeed-multiple-times',
-                component: ComponentCreator('/learning/how-to-send-a-smartfeed-multiple-times', '569'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance',
-                component: ComponentCreator('/learning/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance', '897'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-send-the-smartfeed-to-teams',
-                component: ComponentCreator('/learning/how-to-send-the-smartfeed-to-teams', '478'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-use-khub-in-the-smartwinnr-app',
-                component: ComponentCreator('/learning/how-to-use-khub-in-the-smartwinnr-app', '227'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-view-all-the-smartfeeds',
-                component: ComponentCreator('/learning/how-to-view-all-the-smartfeeds', '187'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-view-smartfeed-analytics',
-                component: ComponentCreator('/learning/how-to-view-smartfeed-analytics', 'e0a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/how-to-view-the-smartpath-analytics',
-                component: ComponentCreator('/learning/how-to-view-the-smartpath-analytics', 'b89'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/knowledge-hub-khub',
-                component: ComponentCreator('/learning/knowledge-hub-khub', 'fa2'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/smartfeed-management',
-                component: ComponentCreator('/learning/smartfeed-management', 'e36'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/smartpath-management',
-                component: ComponentCreator('/learning/smartpath-management', '0b6'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/understanding-recent-trending-and-latest-khub-items',
-                component: ComponentCreator('/learning/understanding-recent-trending-and-latest-khub-items', '736'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/what-are-smartfeeds',
-                component: ComponentCreator('/learning/what-are-smartfeeds', '608'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/what-are-smartpaths',
-                component: ComponentCreator('/learning/what-are-smartpaths', 'df8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/learning/what-is-khub',
-                component: ComponentCreator('/learning/what-is-khub', '13d'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/learning/', 'fb7'),
+                exact: true
               },
               {
                 path: '/manager-guide/assigning-content-to-team',
-                component: ComponentCreator('/manager-guide/assigning-content-to-team', 'c11'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/manager-guide/assigning-content-to-team', '159'),
+                exact: true
               },
               {
                 path: '/manager-guide/coaching-team-members',
-                component: ComponentCreator('/manager-guide/coaching-team-members', '3e2'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/manager-guide/coaching-team-members', '0e7'),
+                exact: true
               },
               {
                 path: '/manager-guide/manager-guide',
-                component: ComponentCreator('/manager-guide/manager-guide', '20f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/manager-guide/manager-guide', '984'),
+                exact: true
               },
               {
                 path: '/manager-guide/monitoring-team-performance',
-                component: ComponentCreator('/manager-guide/monitoring-team-performance', 'ae4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/manager-guide/monitoring-team-performance', '271'),
+                exact: true
               },
               {
                 path: '/manager-guide/team-analytics-dashboard',
-                component: ComponentCreator('/manager-guide/team-analytics-dashboard', '144'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/manager-guide/team-analytics-dashboard', '428'),
+                exact: true
               },
               {
                 path: '/menu-tree-structure',
@@ -1077,13 +1027,433 @@ export default [
                 exact: true
               },
               {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-image-to-your-content',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-image-to-your-content', '311'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed', 'd75'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-recording-to-a-smartfeed',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-recording-to-a-smartfeed', 'bc2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-video-to-your-content',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-video-to-your-content', '354'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content', 'c5b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-add-reference-to-an-external-link-to-your-content',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-add-reference-to-an-external-link-to-your-content', '8a9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-attach-pdf-file-to-your-content',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-attach-pdf-file-to-your-content', '6a8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-create-a-smartfeed',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-create-a-smartfeed', '76a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed',
+                component: ComponentCreator('/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed', '8e9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/microlearning-smartfeeds',
+                component: ComponentCreator('/microlearning-smartfeeds/microlearning-smartfeeds', '2d0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/smartfeed-analytics/how-to-view-smartfeed-analytics',
+                component: ComponentCreator('/microlearning-smartfeeds/smartfeed-analytics/how-to-view-smartfeed-analytics', 'c02'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/smartfeed-management',
+                component: ComponentCreator('/microlearning-smartfeeds/smartfeed-management', 'e6c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds',
+                component: ComponentCreator('/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds', 'f92'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/smartfeed-management/how-to-send-a-smartfeed-multiple-times',
+                component: ComponentCreator('/microlearning-smartfeeds/smartfeed-management/how-to-send-a-smartfeed-multiple-times', '573'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams',
+                component: ComponentCreator('/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams', '012'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/user-experience/how-do-i-like-a-smartfeed',
+                component: ComponentCreator('/microlearning-smartfeeds/user-experience/how-do-i-like-a-smartfeed', '047'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/user-experience/how-to-download-share-a-smartfeed-in-smartpath',
+                component: ComponentCreator('/microlearning-smartfeeds/user-experience/how-to-download-share-a-smartfeed-in-smartpath', '132'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/user-experience/how-to-view-all-the-smartfeeds',
+                component: ComponentCreator('/microlearning-smartfeeds/user-experience/how-to-view-all-the-smartfeeds', '2b1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/microlearning-smartfeeds/what-are-smartfeeds',
+                component: ComponentCreator('/microlearning-smartfeeds/what-are-smartfeeds', '44c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/microlearning/',
                 component: ComponentCreator('/microlearning/', 'fff'),
                 exact: true
               },
               {
-                path: '/mobile/',
-                component: ComponentCreator('/mobile/', '83c'),
+                path: '/mobile-platform-tools/mobile-platform-tools',
+                component: ComponentCreator('/mobile-platform-tools/mobile-platform-tools', '357'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors', 'b9a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes', 'de5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr', '752'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations', '0ec'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz', 'd68'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/how-to-send-quizzes-surveys-and-content-using-group',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/how-to-send-quizzes-surveys-and-content-using-group', 'dd0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/managing-questions',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/managing-questions', '169'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-administration/quiz-settings',
+                component: ComponentCreator('/quiz-assessments/assessment-administration/quiz-settings', '60e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/detailed-quiz-analytics',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/detailed-quiz-analytics', 'd5c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team', '9ca'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/how-to-find-the-progress-of-your-team-in-quizzes',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/how-to-find-the-progress-of-your-team-in-quizzes', 'c57'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/learner-overall-report',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/learner-overall-report', '0da'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics', '3a5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/quiz-analytics-reports',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/quiz-analytics-reports', 'cd0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/quiz-analytics-through-charts',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/quiz-analytics-through-charts', '77f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/quiz-comparison-report',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/quiz-comparison-report', '3b0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/quiz-reports',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/quiz-reports', 'aaa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/quiz-wise-analytics',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/quiz-wise-analytics', '055'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/team-analytics',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/team-analytics', '223'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/assessment-analytics/team-progress-report',
+                component: ComponentCreator('/quiz-assessments/assessment-analytics/team-progress-report', 'e7f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/creating-assessments/creating-quiz',
+                component: ComponentCreator('/quiz-assessments/creating-assessments/creating-quiz', 'b7b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/creating-assessments/creating-quizzes',
+                component: ComponentCreator('/quiz-assessments/creating-assessments/creating-quizzes', 'f93'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz',
+                component: ComponentCreator('/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz', '6e4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/creating-assessments/how-to-create-a-manual-quiz',
+                component: ComponentCreator('/quiz-assessments/creating-assessments/how-to-create-a-manual-quiz', '26b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/creating-assessments/how-to-create-an-automatic-quiz',
+                component: ComponentCreator('/quiz-assessments/creating-assessments/how-to-create-an-automatic-quiz', '115'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions', 'f60'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-import-question-is-different-from-add-new-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-import-question-is-different-from-add-new-question', 'b66'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-add-a-video-to-a-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-add-a-video-to-a-question', 'b3b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-add-an-audio-file-to-a-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-add-an-audio-file-to-a-question', '24a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-add-an-image-to-the-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-add-an-image-to-the-question', '8e4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr', 'ab0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-image-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-image-question', '5eb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-text-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-text-question', 'f5a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-a-hotspot-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-a-hotspot-question', '46f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-a-matching-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-a-matching-question', '6c1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-a-missing-words-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-a-missing-words-question', '793'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-fill-in-the-blank-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-fill-in-the-blank-questions', '8f8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-long-answer-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-long-answer-questions', '4db'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-multiple-choice-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-multiple-choice-questions', '9e0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-numeric-type-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-numeric-type-questions', '87d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-create-re-order-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-create-re-order-questions', 'dd9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-edit-a-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-edit-a-question', '990'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-embed-a-link-into-the-question',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-embed-a-link-into-the-question', '74a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-update-question-response',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-update-question-response', 'b92'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/how-to-upload-questions-in-bulk-using-import-questions',
+                component: ComponentCreator('/quiz-assessments/question-management/how-to-upload-questions-in-bulk-using-import-questions', 'ae6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/question-management',
+                component: ComponentCreator('/quiz-assessments/question-management/question-management', 'd38'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/question-response-analytics',
+                component: ComponentCreator('/quiz-assessments/question-management/question-response-analytics', 'a56'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/question-structure',
+                component: ComponentCreator('/quiz-assessments/question-management/question-structure', '3e8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/question-management/short-answer-with-multiple-options',
+                component: ComponentCreator('/quiz-assessments/question-management/short-answer-with-multiple-options', '28b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/quiz-assessments',
+                component: ComponentCreator('/quiz-assessments/quiz-assessments', '4a2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr',
+                component: ComponentCreator('/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr', '735'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1093,570 +1463,195 @@ export default [
                 exact: true
               },
               {
-                path: '/quiz/creating-quiz',
-                component: ComponentCreator('/quiz/creating-quiz', 'cd0'),
-                exact: true
-              },
-              {
-                path: '/quiz/managing-questions',
-                component: ComponentCreator('/quiz/managing-questions', '1fe'),
-                exact: true
-              },
-              {
-                path: '/quiz/quiz-reports',
-                component: ComponentCreator('/quiz/quiz-reports', 'c4f'),
-                exact: true
-              },
-              {
-                path: '/quiz/quiz-settings',
-                component: ComponentCreator('/quiz/quiz-settings', '92f'),
-                exact: true
-              },
-              {
                 path: '/quizzes/',
-                component: ComponentCreator('/quizzes/', '969'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/', '50f'),
+                exact: true
               },
               {
                 path: '/quizzes/create-users-in-bulk',
-                component: ComponentCreator('/quizzes/create-users-in-bulk', '1b2'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/creating-quizzes',
-                component: ComponentCreator('/quizzes/creating-quizzes', '5ba'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/create-users-in-bulk', '8e4'),
+                exact: true
               },
               {
                 path: '/quizzes/delete-users',
-                component: ComponentCreator('/quizzes/delete-users', '8de'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/detailed-quiz-analytics',
-                component: ComponentCreator('/quizzes/detailed-quiz-analytics', '841'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team',
-                component: ComponentCreator('/quizzes/finding-status-and-scores-for-quizzes-assigned-to-your-team', '33a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/delete-users', 'e27'),
+                exact: true
               },
               {
                 path: '/quizzes/how-can-i-download-the-smartwinnr-app',
-                component: ComponentCreator('/quizzes/how-can-i-download-the-smartwinnr-app', 'f35'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-can-i-duplicate-a-quiz',
-                component: ComponentCreator('/quizzes/how-can-i-duplicate-a-quiz', '17a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-do-i-give-access-permission-to-other-editors',
-                component: ComponentCreator('/quizzes/how-do-i-give-access-permission-to-other-editors', 'e69'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-editors-evaluate-long-answer-questions',
-                component: ComponentCreator('/quizzes/how-editors-evaluate-long-answer-questions', '4db'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-activate-automatic-reminders-for-your-quizzes',
-                component: ComponentCreator('/quizzes/how-to-activate-automatic-reminders-for-your-quizzes', '93f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/how-can-i-download-the-smartwinnr-app', '4dd'),
+                exact: true
               },
               {
                 path: '/quizzes/how-to-activate-or-deactivate-a-user',
-                component: ComponentCreator('/quizzes/how-to-activate-or-deactivate-a-user', '420'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-add-a-quiz-to-a-competition',
-                component: ComponentCreator('/quizzes/how-to-add-a-quiz-to-a-competition', 'b9f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-add-a-survey-to-a-competition',
-                component: ComponentCreator('/quizzes/how-to-add-a-survey-to-a-competition', '5bc'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr',
-                component: ComponentCreator('/quizzes/how-to-answer-long-answer-type-questions-in-smartwinnr', '099'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-competition',
-                component: ComponentCreator('/quizzes/how-to-create-a-competition', '1df'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-drag-and-drop-into-image-question',
-                component: ComponentCreator('/quizzes/how-to-create-a-drag-and-drop-into-image-question', '955'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-drag-and-drop-into-text-question',
-                component: ComponentCreator('/quizzes/how-to-create-a-drag-and-drop-into-text-question', 'a0e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-hotspot-question',
-                component: ComponentCreator('/quizzes/how-to-create-a-hotspot-question', 'db4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-manual-quiz',
-                component: ComponentCreator('/quizzes/how-to-create-a-manual-quiz', '5ef'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-matching-question',
-                component: ComponentCreator('/quizzes/how-to-create-a-matching-question', '9bc'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-a-missing-words-question',
-                component: ComponentCreator('/quizzes/how-to-create-a-missing-words-question', '260'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-an-automatic-quiz',
-                component: ComponentCreator('/quizzes/how-to-create-an-automatic-quiz', 'd20'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-fill-in-the-blank-questions',
-                component: ComponentCreator('/quizzes/how-to-create-fill-in-the-blank-questions', '0f8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-long-answer-questions',
-                component: ComponentCreator('/quizzes/how-to-create-long-answer-questions', 'c54'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-multiple-choice-questions',
-                component: ComponentCreator('/quizzes/how-to-create-multiple-choice-questions', '1e5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-numeric-type-questions',
-                component: ComponentCreator('/quizzes/how-to-create-numeric-type-questions', 'd4c'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-create-re-order-questions',
-                component: ComponentCreator('/quizzes/how-to-create-re-order-questions', '432'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-duplicate-a-quiz-in-a-competition',
-                component: ComponentCreator('/quizzes/how-to-duplicate-a-quiz-in-a-competition', 'cbf'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-edit-a-question',
-                component: ComponentCreator('/quizzes/how-to-edit-a-question', 'cf1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/how-to-activate-or-deactivate-a-user', 'ed5'),
+                exact: true
               },
               {
                 path: '/quizzes/how-to-edit-the-form-submission-from-manager-s-view',
-                component: ComponentCreator('/quizzes/how-to-edit-the-form-submission-from-manager-s-view', 'ef5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-find-the-progress-of-your-team-in-quizzes',
-                component: ComponentCreator('/quizzes/how-to-find-the-progress-of-your-team-in-quizzes', 'd1e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr',
-                component: ComponentCreator('/quizzes/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr', '3cd'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-import-scorm-course-into-smartwinnr',
-                component: ComponentCreator('/quizzes/how-to-import-scorm-course-into-smartwinnr', '6e4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-manage-quiz-configurations',
-                component: ComponentCreator('/quizzes/how-to-manage-quiz-configurations', '5b1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-open-and-close-a-quiz',
-                component: ComponentCreator('/quizzes/how-to-open-and-close-a-quiz', '24a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-send-quizzes-surveys-and-content-using-group',
-                component: ComponentCreator('/quizzes/how-to-send-quizzes-surveys-and-content-using-group', 'a68'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/how-to-edit-the-form-submission-from-manager-s-view', 'a2d'),
+                exact: true
               },
               {
                 path: '/quizzes/how-to-set-reminder-for-your-tasks',
-                component: ComponentCreator('/quizzes/how-to-set-reminder-for-your-tasks', '92a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr',
-                component: ComponentCreator('/quizzes/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr', '647'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-update-question-response',
-                component: ComponentCreator('/quizzes/how-to-update-question-response', 'e63'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/how-to-upload-questions-in-bulk-using-import-questions',
-                component: ComponentCreator('/quizzes/how-to-upload-questions-in-bulk-using-import-questions', 'd0e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/learner-overall-report',
-                component: ComponentCreator('/quizzes/learner-overall-report', '3af'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/learner-report-by-learner-individual-report-analytics',
-                component: ComponentCreator('/quizzes/learner-report-by-learner-individual-report-analytics', 'af1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/question-response-analytics',
-                component: ComponentCreator('/quizzes/question-response-analytics', 'f18'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/question-structure',
-                component: ComponentCreator('/quizzes/question-structure', '202'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/how-to-set-reminder-for-your-tasks', '39b'),
+                exact: true
               },
               {
                 path: '/quizzes/quiz-administration',
-                component: ComponentCreator('/quizzes/quiz-administration', '05f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/quiz-analytics-reports',
-                component: ComponentCreator('/quizzes/quiz-analytics-reports', '7f1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/quiz-analytics-through-charts',
-                component: ComponentCreator('/quizzes/quiz-analytics-through-charts', '0cf'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/quiz-comparison-report',
-                component: ComponentCreator('/quizzes/quiz-comparison-report', '0c0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/quiz-administration', '0e3'),
+                exact: true
               },
               {
                 path: '/quizzes/quiz-types',
-                component: ComponentCreator('/quizzes/quiz-types', '616'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/quiz-wise-analytics',
-                component: ComponentCreator('/quizzes/quiz-wise-analytics', '275'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/short-answer-with-multiple-options',
-                component: ComponentCreator('/quizzes/short-answer-with-multiple-options', 'cbd'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/team-analytics',
-                component: ComponentCreator('/quizzes/team-analytics', '0d3'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/quizzes/team-progress-report',
-                component: ComponentCreator('/quizzes/team-progress-report', '4f7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/quiz-types', 'bba'),
+                exact: true
               },
               {
                 path: '/quizzes/understanding-knowledge-categories',
-                component: ComponentCreator('/quizzes/understanding-knowledge-categories', '9e4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/understanding-knowledge-categories', 'f86'),
+                exact: true
               },
               {
                 path: '/quizzes/what-is-a-competition',
-                component: ComponentCreator('/quizzes/what-is-a-competition', 'f91'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/what-is-a-competition', '0ac'),
+                exact: true
               },
               {
                 path: '/quizzes/what-is-a-group',
-                component: ComponentCreator('/quizzes/what-is-a-group', 'a08'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/what-is-a-group', '721'),
+                exact: true
               },
               {
                 path: '/quizzes/what-is-a-rule',
-                component: ComponentCreator('/quizzes/what-is-a-rule', '218'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/what-is-a-rule', '263'),
+                exact: true
               },
               {
                 path: '/quizzes/what-is-audit-log',
-                component: ComponentCreator('/quizzes/what-is-audit-log', '2f4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/what-is-audit-log', '4c3'),
+                exact: true
               },
               {
                 path: '/quizzes/what-is-smartwinnr-quiz-analytics',
-                component: ComponentCreator('/quizzes/what-is-smartwinnr-quiz-analytics', '443'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/quizzes/what-is-smartwinnr-quiz-analytics', 'bff'),
+                exact: true
               },
               {
                 path: '/reports/',
-                component: ComponentCreator('/reports/', 'ab1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/reports/', '9d7'),
+                exact: true
               },
               {
                 path: '/reports/detailed-explanation-of-reports',
-                component: ComponentCreator('/reports/detailed-explanation-of-reports', 'fc3'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/form-analytics',
-                component: ComponentCreator('/reports/form-analytics', 'bbb'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/how-managers-approve-form',
-                component: ComponentCreator('/reports/how-managers-approve-form', 'deb'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/how-to-add-approvers-to-a-form',
-                component: ComponentCreator('/reports/how-to-add-approvers-to-a-form', 'e04'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/how-to-create-a-field-mapping',
-                component: ComponentCreator('/reports/how-to-create-a-field-mapping', 'cd9'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/how-to-create-a-form',
-                component: ComponentCreator('/reports/how-to-create-a-form', '880'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/how-to-create-a-scorecard',
-                component: ComponentCreator('/reports/how-to-create-a-scorecard', '261'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/reports/detailed-explanation-of-reports', 'e29'),
+                exact: true
               },
               {
                 path: '/reports/how-to-create-sales-tv',
-                component: ComponentCreator('/reports/how-to-create-sales-tv', 'dd0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/reports/how-to-create-sales-tv', '392'),
+                exact: true
               },
               {
                 path: '/reports/how-to-view-project',
-                component: ComponentCreator('/reports/how-to-view-project', 'd45'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/reports/how-to-view-project', '5a6'),
+                exact: true
               },
               {
                 path: '/reports/user-login-reports',
-                component: ComponentCreator('/reports/user-login-reports', 'b37'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/what-are-field-mappings',
-                component: ComponentCreator('/reports/what-are-field-mappings', '0f5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/reports/what-are-scorecards',
-                component: ComponentCreator('/reports/what-are-scorecards', '566'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/reports/user-login-reports', '371'),
+                exact: true
               },
               {
                 path: '/reports/widgets',
-                component: ComponentCreator('/reports/widgets', '42d'),
+                component: ComponentCreator('/reports/widgets', 'ee2'),
+                exact: true
+              },
+              {
+                path: '/surveys-feedback/survey-analytics/survey-analytics',
+                component: ComponentCreator('/surveys-feedback/survey-analytics/survey-analytics', 'ef1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/',
-                component: ComponentCreator('/surveys/', '7f1'),
+                path: '/surveys-feedback/survey-analytics/survey-template-analytics',
+                component: ComponentCreator('/surveys-feedback/survey-analytics/survey-template-analytics', '130'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-add-a-video-coaching-to-the-competition',
-                component: ComponentCreator('/surveys/how-to-add-a-video-coaching-to-the-competition', '38c'),
+                path: '/surveys-feedback/survey-creation/',
+                component: ComponentCreator('/surveys-feedback/survey-creation/', '574'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-assign-a-survey',
-                component: ComponentCreator('/surveys/how-to-assign-a-survey', 'fa8'),
+                path: '/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition',
+                component: ComponentCreator('/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition', '67c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-create-a-survey',
-                component: ComponentCreator('/surveys/how-to-create-a-survey', '987'),
+                path: '/surveys-feedback/survey-creation/how-to-create-a-survey',
+                component: ComponentCreator('/surveys-feedback/survey-creation/how-to-create-a-survey', 'b5f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-create-a-survey-template',
-                component: ComponentCreator('/surveys/how-to-create-a-survey-template', 'b7f'),
+                path: '/surveys-feedback/survey-creation/how-to-create-a-survey-template',
+                component: ComponentCreator('/surveys-feedback/survey-creation/how-to-create-a-survey-template', '1a6'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-delete-a-survey',
-                component: ComponentCreator('/surveys/how-to-delete-a-survey', '0dd'),
+                path: '/surveys-feedback/survey-creation/how-to-delete-a-survey',
+                component: ComponentCreator('/surveys-feedback/survey-creation/how-to-delete-a-survey', '117'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/how-to-duplicate-a-survey-and-survey-template',
-                component: ComponentCreator('/surveys/how-to-duplicate-a-survey-and-survey-template', '55a'),
+                path: '/surveys-feedback/survey-creation/how-to-duplicate-a-survey-and-survey-template',
+                component: ComponentCreator('/surveys-feedback/survey-creation/how-to-duplicate-a-survey-and-survey-template', 'ee5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/survey-analytics',
-                component: ComponentCreator('/surveys/survey-analytics', '863'),
+                path: '/surveys-feedback/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template',
+                component: ComponentCreator('/surveys-feedback/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template', 'c2a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/survey-template-analytics',
-                component: ComponentCreator('/surveys/survey-template-analytics', '09c'),
+                path: '/surveys-feedback/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template',
+                component: ComponentCreator('/surveys-feedback/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template', 'c98'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/surveys/what-are-the-different-question-types-in-a-survey-survey-template',
-                component: ComponentCreator('/surveys/what-are-the-different-question-types-in-a-survey-survey-template', 'fbe'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/surveys/what-is-the-difference-between-a-survey-and-a-survey-template',
-                component: ComponentCreator('/surveys/what-is-the-difference-between-a-survey-and-a-survey-template', '74f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/troubleshooting/',
-                component: ComponentCreator('/troubleshooting/', '693'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/troubleshooting/troubleshoot-for-common-error-code',
-                component: ComponentCreator('/troubleshooting/troubleshoot-for-common-error-code', '6cc'),
+                path: '/surveys-feedback/survey-management/how-to-assign-a-survey',
+                component: ComponentCreator('/surveys-feedback/survey-management/how-to-assign-a-survey', '4d1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/user-guide/accessing-learning-content',
-                component: ComponentCreator('/user-guide/accessing-learning-content', 'f43'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/user-guide/accessing-learning-content', 'ca3'),
+                exact: true
               },
               {
                 path: '/user-guide/mobile-app-navigation',
-                component: ComponentCreator('/user-guide/mobile-app-navigation', '74e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/user-guide/mobile-app-navigation', '2ae'),
+                exact: true
               },
               {
                 path: '/user-guide/taking-assessments',
-                component: ComponentCreator('/user-guide/taking-assessments', '033'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/user-guide/taking-assessments', '370'),
+                exact: true
               },
               {
                 path: '/user-guide/user-guide',
-                component: ComponentCreator('/user-guide/user-guide', '482'),
-                exact: true,
-                sidebar: "tutorialSidebar"
+                component: ComponentCreator('/user-guide/user-guide', 'c18'),
+                exact: true
               },
               {
                 path: '/',

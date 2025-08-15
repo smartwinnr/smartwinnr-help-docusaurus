@@ -17,14 +17,5 @@
     "description": "Central hub for SmartWinnr editors and trainers - content creation, quiz design, and performance analytics",
     "slug": "editor-landing",
     "sidebar_position": 3
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Coaching Team Members",
-    "permalink": "/manager-guide/coaching-team-members"
-  },
-  "next": {
-    "title": "👑 Administrator Hub",
-    "permalink": "/admin-landing"
   }
 }

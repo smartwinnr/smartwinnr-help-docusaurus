@@ -1,0 +1,36 @@
+{
+  "id": "coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile",
+  "title": "Review Field Coaching from Managers View in Mobile",
+  "description": "",
+  "source": "@site/docs/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile.md",
+  "sourceDirName": "coaching-performance",
+  "slug": "/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile",
+  "permalink": "/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 244,
+  "frontMatter": {
+    "title": "Review Field Coaching from Managers View in Mobile",
+    "description": "",
+    "slug": "how-to-review-field-coaching-from-managers-view-in-mobile",
+    "sidebar_position": 244,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a8e21fdca0fd46b93580f6",
+    "helpscout_url": "https://help.smartwinnr.com/article/244-how-to-review-field-coaching-from-managers-view"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Enable the Streaming Links for Video Coaching",
+    "permalink": "/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching"
+  },
+  "next": {
+    "title": "Upload Audio Recording for Coaching",
+    "permalink": "/coaching-performance/how-to-upload-audio-recording-for-coaching"
+  }
+}

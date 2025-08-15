@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes",
+  "title": "Activate automatic reminders for your quizzes",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes.md",
+  "sourceDirName": "quiz-assessments/assessment-administration",
+  "slug": "/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes",
+  "permalink": "/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 52,
+  "frontMatter": {
+    "title": "Activate automatic reminders for your quizzes",
+    "description": "",
+    "slug": "how-to-activate-automatic-reminders-for-your-quizzes",
+    "sidebar_position": 52,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd49470c868cb6df3a8102a",
+    "helpscout_url": "https://help.smartwinnr.com/article/52-how-to-activate-automatic-reminders-for-your-quizzes"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Settings",
+    "permalink": "/quiz-assessments/assessment-administration/quiz-settings"
+  },
+  "next": {
+    "title": "Give other editors access to a particular activity/task you created in SmartWinnr",
+    "permalink": "/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr"
+  }
+}

@@ -16,14 +16,5 @@
     "title": "Learning & Training",
     "description": "Comprehensive learning management through SmartFeeds, SmartPaths, and Knowledge Hub",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "quiz-administration",
-    "permalink": "/quizzes/quiz-administration"
-  },
-  "next": {
-    "title": "SmartFeed Management",
-    "permalink": "/learning/smartfeed-management"
   }
 }

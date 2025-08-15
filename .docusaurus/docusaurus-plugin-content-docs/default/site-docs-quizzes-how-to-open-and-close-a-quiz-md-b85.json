@@ -23,14 +23,5 @@
     },
     "helpscout_id": "631c9fb5c713d51da3edd565",
     "helpscout_url": "https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Import SCORM course into SmartWinnr?",
-    "permalink": "/quizzes/how-to-import-scorm-course-into-smartwinnr"
-  },
-  "next": {
-    "title": "Short Answer With Multiple Options",
-    "permalink": "/quizzes/short-answer-with-multiple-options"
   }
 }

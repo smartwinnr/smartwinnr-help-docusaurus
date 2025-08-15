@@ -1,0 +1,36 @@
+{
+  "id": "microlearning-smartfeeds/what-are-smartfeeds",
+  "title": "About SmartFeeds",
+  "description": "",
+  "source": "@site/docs/microlearning-smartfeeds/what-are-smartfeeds.md",
+  "sourceDirName": "microlearning-smartfeeds",
+  "slug": "/microlearning-smartfeeds/what-are-smartfeeds",
+  "permalink": "/microlearning-smartfeeds/what-are-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning-smartfeeds/what-are-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 26,
+  "frontMatter": {
+    "title": "About SmartFeeds",
+    "description": "",
+    "slug": "what-are-smartfeeds",
+    "sidebar_position": 26,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fcf7718da652271f08d3f5e",
+    "helpscout_url": "https://help.smartwinnr.com/article/26-what-are-smartfeeds"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "MicroLearning & SmartFeeds",
+    "permalink": "/microlearning-smartfeeds/microlearning-smartfeeds"
+  },
+  "next": {
+    "title": "Create a SmartFeed?",
+    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-create-a-smartfeed"
+  }
+}

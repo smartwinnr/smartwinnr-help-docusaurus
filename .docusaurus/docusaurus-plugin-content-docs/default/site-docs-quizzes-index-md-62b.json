@@ -16,14 +16,5 @@
     "title": "Quiz Management",
     "description": "Comprehensive guide for creating, managing, and analyzing quizzes",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Creating Quizzes",
-    "permalink": "/quizzes/creating-quizzes"
-  },
-  "next": {
-    "title": "Quiz Analytics & Reports",
-    "permalink": "/quizzes/quiz-analytics-reports"
   }
 }

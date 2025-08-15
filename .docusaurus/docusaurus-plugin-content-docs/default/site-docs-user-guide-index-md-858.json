@@ -17,14 +17,5 @@
     "description": "Complete guide for SmartWinnr users - mobile app usage, assessments, learning, and progress tracking",
     "slug": "user-guide",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "admin-onboarding",
-    "permalink": "/getting-started/admin-onboarding"
-  },
-  "next": {
-    "title": "Mobile App Navigation",
-    "permalink": "/user-guide/mobile-app-navigation"
   }
 }

@@ -1,0 +1,34 @@
+{
+  "id": "knowledge-hub/knowledge-hub-khub",
+  "title": "Knowledge Hub (KHub)",
+  "description": "Complete guide for managing your organizational knowledge repository",
+  "source": "@site/docs/knowledge-hub/knowledge-hub-khub.md",
+  "sourceDirName": "knowledge-hub",
+  "slug": "/knowledge-hub/knowledge-hub-khub",
+  "permalink": "/knowledge-hub/knowledge-hub-khub",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/knowledge-hub/knowledge-hub-khub.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Knowledge Hub (KHub)",
+    "description": "Complete guide for managing your organizational knowledge repository",
+    "slug": "knowledge-hub-khub",
+    "sidebar_position": 3,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Scorecard?",
+    "permalink": "/forms-data-collection/scorecards/how-to-create-a-scorecard"
+  },
+  "next": {
+    "title": "About KHub",
+    "permalink": "/knowledge-hub/what-is-khub"
+  }
+}

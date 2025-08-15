@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60deaa9261c60c534bd6b92e",
     "helpscout_url": "https://help.smartwinnr.com/article/257-widgets"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add Approvers to a Form",
-    "permalink": "/reports/how-to-add-approvers-to-a-form"
-  },
-  "next": {
-    "title": "Admin",
-    "permalink": "/admin/"
   }
 }

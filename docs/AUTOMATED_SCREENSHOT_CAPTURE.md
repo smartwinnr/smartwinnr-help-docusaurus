@@ -15,8 +15,8 @@ This document outlines the comprehensive plan for implementing an automated scre
 
 ### Target Environments
 
-- **Manager/User Portal**: https://web.smartwinnr.com/ (iPad viewport: 1024x768px)
-- **Admin Portal**: https://app.smartwinnr.com/ (Desktop viewport: 1440x900px)
+- **Manager/User Portal**: [https://web.smartwinnr.com/](https://web.smartwinnr.com/) (iPad viewport: 1024x768px)
+- **Admin Portal**: [https://app.smartwinnr.com/](https://app.smartwinnr.com/) (Desktop viewport: 1440x900px)
 - **Test Accounts**: 3 dedicated accounts (User, Manager, Admin)
 - **Authentication**: Username/password with standard session handling
 

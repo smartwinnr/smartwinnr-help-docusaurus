@@ -1,0 +1,36 @@
+{
+  "id": "coaching-performance/how-to-create-field-coaching-template",
+  "title": "Create Field Coaching Template",
+  "description": "",
+  "source": "@site/docs/coaching-performance/how-to-create-field-coaching-template.md",
+  "sourceDirName": "coaching-performance",
+  "slug": "/coaching-performance/how-to-create-field-coaching-template",
+  "permalink": "/coaching-performance/how-to-create-field-coaching-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching-performance/how-to-create-field-coaching-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 236,
+  "frontMatter": {
+    "title": "Create Field Coaching Template",
+    "description": "",
+    "slug": "how-to-create-field-coaching-template",
+    "sidebar_position": 236,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a50e4827c86942e80697e9",
+    "helpscout_url": "https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Field Coaching",
+    "permalink": "/coaching-performance/how-to-create-field-coaching"
+  },
+  "next": {
+    "title": "Add Competencies for Field Coaching",
+    "permalink": "/coaching-performance/how-to-add-competencies-for-field-coaching"
+  }
+}

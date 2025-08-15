@@ -1,0 +1,36 @@
+{
+  "id": "administration/create-users-individually",
+  "title": "Create users individually",
+  "description": "",
+  "source": "@site/docs/administration/create-users-individually.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/create-users-individually",
+  "permalink": "/administration/create-users-individually",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/create-users-individually.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 119,
+  "frontMatter": {
+    "title": "Create users individually",
+    "description": "",
+    "slug": "create-users-individually",
+    "sidebar_position": 119,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda4f4a0b11ce44f6392e62",
+    "helpscout_url": "https://help.smartwinnr.com/article/119-create-users-individually"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Track my organizational resource usage?",
+    "permalink": "/administration/how-to-track-my-organizational-resource-usage"
+  },
+  "next": {
+    "title": "Search users",
+    "permalink": "/administration/search-users"
+  }
+}

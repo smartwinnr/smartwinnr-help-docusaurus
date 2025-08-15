@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fce026bde1bfa158fb55e2d",
     "helpscout_url": "https://help.smartwinnr.com/article/9-how-can-i-download-the-smartwinnr-app"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Analytics & Reports",
-    "permalink": "/quizzes/quiz-analytics-reports"
-  },
-  "next": {
-    "title": "Understanding knowledge categories",
-    "permalink": "/quizzes/understanding-knowledge-categories"
   }
 }

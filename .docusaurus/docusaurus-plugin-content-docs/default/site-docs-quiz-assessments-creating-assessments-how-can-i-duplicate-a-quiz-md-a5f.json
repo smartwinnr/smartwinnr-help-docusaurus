@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz",
+  "title": "Duplicate a quiz",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz.md",
+  "sourceDirName": "quiz-assessments/creating-assessments",
+  "slug": "/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz",
+  "permalink": "/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 51,
+  "frontMatter": {
+    "title": "Duplicate a quiz",
+    "description": "",
+    "slug": "how-can-i-duplicate-a-quiz",
+    "sidebar_position": 51,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4939923119734ee37edac",
+    "helpscout_url": "https://help.smartwinnr.com/article/51-how-can-i-duplicate-a-quiz"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a manual quiz?",
+    "permalink": "/quiz-assessments/creating-assessments/how-to-create-a-manual-quiz"
+  },
+  "next": {
+    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
+    "permalink": "/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  }
+}

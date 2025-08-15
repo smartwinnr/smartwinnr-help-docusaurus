@@ -1,0 +1,36 @@
+{
+  "id": "surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition",
+  "title": "Add a Video Coaching to the competition?",
+  "description": "",
+  "source": "@site/docs/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition.md",
+  "sourceDirName": "surveys-feedback/survey-creation",
+  "slug": "/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition",
+  "permalink": "/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 106,
+  "frontMatter": {
+    "title": "Add a Video Coaching to the competition?",
+    "description": "",
+    "slug": "how-to-add-a-video-coaching-to-the-competition",
+    "sidebar_position": 106,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda04347129911ba1b218a5",
+    "helpscout_url": "https://help.smartwinnr.com/article/106-how-to-add-a-video-coaching-to-the-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About the difference between a Survey and a Survey Template",
+    "permalink": "/surveys-feedback/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template"
+  },
+  "next": {
+    "title": "Duplicate a 'Survey' and 'Survey Template'.",
+    "permalink": "/surveys-feedback/survey-creation/how-to-duplicate-a-survey-and-survey-template"
+  }
+}

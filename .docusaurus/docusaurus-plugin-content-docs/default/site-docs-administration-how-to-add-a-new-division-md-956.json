@@ -1,0 +1,36 @@
+{
+  "id": "administration/how-to-add-a-new-division",
+  "title": "Add a new Division?",
+  "description": "",
+  "source": "@site/docs/administration/how-to-add-a-new-division.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/how-to-add-a-new-division",
+  "permalink": "/administration/how-to-add-a-new-division",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/how-to-add-a-new-division.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 132,
+  "frontMatter": {
+    "title": "Add a new Division?",
+    "description": "",
+    "slug": "how-to-add-a-new-division",
+    "sidebar_position": 132,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdad976b624c71b7985a56b",
+    "helpscout_url": "https://help.smartwinnr.com/article/132-how-to-add-a-new-division"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a group?",
+    "permalink": "/administration/how-to-create-a-group"
+  },
+  "next": {
+    "title": "View existing contacts?",
+    "permalink": "/administration/how-to-view-existing-contacts"
+  }
+}

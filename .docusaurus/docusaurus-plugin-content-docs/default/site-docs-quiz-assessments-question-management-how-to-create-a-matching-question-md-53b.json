@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/question-management/how-to-create-a-matching-question",
+  "title": "Create a 'Matching Question'.",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/question-management/how-to-create-a-matching-question.md",
+  "sourceDirName": "quiz-assessments/question-management",
+  "slug": "/quiz-assessments/question-management/how-to-create-a-matching-question",
+  "permalink": "/quiz-assessments/question-management/how-to-create-a-matching-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/question-management/how-to-create-a-matching-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 43,
+  "frontMatter": {
+    "title": "Create a 'Matching Question'.",
+    "description": "",
+    "slug": "how-to-create-a-matching-question",
+    "sidebar_position": 43,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd46a20c868cb6df3a80ff5",
+    "helpscout_url": "https://help.smartwinnr.com/article/43-how-to-create-a-matching-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a 'Hotspot Question'.",
+    "permalink": "/quiz-assessments/question-management/how-to-create-a-hotspot-question"
+  },
+  "next": {
+    "title": "How 'Import question' is different from 'Add New Question'?",
+    "permalink": "/quiz-assessments/question-management/how-import-question-is-different-from-add-new-question"
+  }
+}

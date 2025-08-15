@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb9acd27288b7f895d6884",
     "helpscout_url": "https://help.smartwinnr.com/article/197-team-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Give access permission to other editors",
-    "permalink": "/quizzes/how-do-i-give-access-permission-to-other-editors"
-  },
-  "next": {
-    "title": "Quiz Wise Analytics",
-    "permalink": "/quizzes/quiz-wise-analytics"
   }
 }

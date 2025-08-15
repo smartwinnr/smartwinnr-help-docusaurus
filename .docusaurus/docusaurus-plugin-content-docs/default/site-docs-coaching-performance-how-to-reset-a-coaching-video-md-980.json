@@ -1,0 +1,36 @@
+{
+  "id": "coaching-performance/how-to-reset-a-coaching-video",
+  "title": "Reset a coaching video",
+  "description": "",
+  "source": "@site/docs/coaching-performance/how-to-reset-a-coaching-video.md",
+  "sourceDirName": "coaching-performance",
+  "slug": "/coaching-performance/how-to-reset-a-coaching-video",
+  "permalink": "/coaching-performance/how-to-reset-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching-performance/how-to-reset-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 286,
+  "frontMatter": {
+    "title": "Reset a coaching video",
+    "description": "",
+    "slug": "how-to-reset-a-coaching-video",
+    "sidebar_position": 286,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6464dc077d89467e9da79320",
+    "helpscout_url": "https://help.smartwinnr.com/article/286-how-to-reset-a-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Review a field coaching as a manager/2nd level manager",
+    "permalink": "/coaching-performance/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+  },
+  "next": {
+    "title": "Create Coaching",
+    "permalink": "/coaching-performance/create-a-coaching"
+  }
+}

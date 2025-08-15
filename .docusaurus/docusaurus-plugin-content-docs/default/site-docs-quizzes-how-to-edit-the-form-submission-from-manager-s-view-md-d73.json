@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60b762f59c887a0dfc555a3b",
     "helpscout_url": "https://help.smartwinnr.com/article/246-how-to-edit-the-form-submission-from-managers-view"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Update question response",
-    "permalink": "/quizzes/how-to-update-question-response"
-  },
-  "next": {
-    "title": "Learner Overall Report",
-    "permalink": "/quizzes/learner-overall-report"
   }
 }

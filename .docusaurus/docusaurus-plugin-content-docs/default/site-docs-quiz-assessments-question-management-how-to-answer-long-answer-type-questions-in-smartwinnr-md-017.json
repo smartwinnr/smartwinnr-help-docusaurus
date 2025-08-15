@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr",
+  "title": "Answer Long Answer type Questions in SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr.md",
+  "sourceDirName": "quiz-assessments/question-management",
+  "slug": "/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr",
+  "permalink": "/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 260,
+  "frontMatter": {
+    "title": "Answer Long Answer type Questions in SmartWinnr?",
+    "description": "",
+    "slug": "how-to-answer-long-answer-type-questions-in-smartwinnr",
+    "sidebar_position": 260,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60f9c0126ffe270af2a917d6",
+    "helpscout_url": "https://help.smartwinnr.com/article/260-how-users-can-answer-the-long-answer-questions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create 'Long Answer' Questions?",
+    "permalink": "/quiz-assessments/question-management/how-to-create-long-answer-questions"
+  },
+  "next": {
+    "title": "How Editors evaluate Long Answer Questions?",
+    "permalink": "/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions"
+  }
+}

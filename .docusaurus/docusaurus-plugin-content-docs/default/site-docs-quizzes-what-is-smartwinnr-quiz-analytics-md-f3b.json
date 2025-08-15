@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4955723119734ee37edb5",
     "helpscout_url": "https://help.smartwinnr.com/article/53-what-is-smartwinnr-quiz-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Activate automatic reminders for your quizzes",
-    "permalink": "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes"
-  },
-  "next": {
-    "title": "Detailed Quiz Analytics",
-    "permalink": "/quizzes/detailed-quiz-analytics"
   }
 }

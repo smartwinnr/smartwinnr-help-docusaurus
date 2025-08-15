@@ -1,0 +1,27 @@
+{
+  "id": "quiz-assessments/creating-assessments/creating-quiz",
+  "title": "Creating a Quiz",
+  "description": "This guide walks you through creating engaging quizzes in SmartWinnr.",
+  "source": "@site/docs/quiz-assessments/creating-assessments/creating-quiz.md",
+  "sourceDirName": "quiz-assessments/creating-assessments",
+  "slug": "/quiz-assessments/creating-assessments/creating-quiz",
+  "permalink": "/quiz-assessments/creating-assessments/creating-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/creating-assessments/creating-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating Quizzes",
+    "permalink": "/quiz-assessments/creating-assessments/creating-quizzes"
+  },
+  "next": {
+    "title": "Create an automatic quiz?",
+    "permalink": "/quiz-assessments/creating-assessments/how-to-create-an-automatic-quiz"
+  }
+}

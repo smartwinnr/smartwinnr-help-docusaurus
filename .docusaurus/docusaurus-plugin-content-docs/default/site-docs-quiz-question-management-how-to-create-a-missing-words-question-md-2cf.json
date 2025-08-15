@@ -1,0 +1,36 @@
+{
+  "id": "quiz/question-management/how-to-create-a-missing-words-question",
+  "title": "Create a missing words question?",
+  "description": "",
+  "source": "@site/docs/quiz/question-management/how-to-create-a-missing-words-question.md",
+  "sourceDirName": "quiz/question-management",
+  "slug": "/quiz/question-management/how-to-create-a-missing-words-question",
+  "permalink": "/quiz/question-management/how-to-create-a-missing-words-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz/question-management/how-to-create-a-missing-words-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 282,
+  "frontMatter": {
+    "title": "Create a missing words question?",
+    "description": "",
+    "slug": "how-to-create-a-missing-words-question",
+    "sidebar_position": 282,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "641a2df7d6394b6fc7ed9fb2",
+    "helpscout_url": "https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a 'Drag and Drop into Text question '.",
+    "permalink": "/quiz/question-management/how-to-create-a-drag-and-drop-into-text-question"
+  },
+  "next": {
+    "title": "Create a Drag and Drop into Image Question?",
+    "permalink": "/quiz/question-management/how-to-create-a-drag-and-drop-into-image-question"
+  }
+}

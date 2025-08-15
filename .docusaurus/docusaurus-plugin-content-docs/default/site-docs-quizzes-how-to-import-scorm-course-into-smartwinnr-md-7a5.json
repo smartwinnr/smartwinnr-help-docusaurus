@@ -23,14 +23,5 @@
     },
     "helpscout_id": "62b3e9dd0729834c424f8fad",
     "helpscout_url": "https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create Re-order Questions",
-    "permalink": "/quizzes/how-to-create-re-order-questions"
-  },
-  "next": {
-    "title": "‘Open’ and ‘Close’ a Quiz",
-    "permalink": "/quizzes/how-to-open-and-close-a-quiz"
   }
 }

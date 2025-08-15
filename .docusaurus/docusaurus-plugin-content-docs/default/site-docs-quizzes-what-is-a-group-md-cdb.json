@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda55167129911ba1b21b2c",
     "helpscout_url": "https://help.smartwinnr.com/article/128-what-is-a-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Activate or deactivate a user?",
-    "permalink": "/quizzes/how-to-activate-or-deactivate-a-user"
-  },
-  "next": {
-    "title": "Send quizzes, surveys and content using group?",
-    "permalink": "/quizzes/how-to-send-quizzes-surveys-and-content-using-group"
   }
 }

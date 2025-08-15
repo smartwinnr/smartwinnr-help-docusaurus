@@ -64,6 +64,7 @@ Track performance with detailed analytics:
 ## Next Steps
 
 - [Creating Quiz](/quiz/creating-quiz) - Step-by-step quiz creation
+- [Question Management](/quiz/question-management) - Creating and managing quiz questions
 - [Managing Questions](/quiz/managing-questions) - Question bank management
 - [Quiz Reports](/quiz/quiz-reports) - Understanding analytics
 - [Quiz Settings](/quiz/quiz-settings) - Configuration options

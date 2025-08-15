@@ -1,0 +1,36 @@
+{
+  "id": "knowledge-hub/khub-analytics/how-can-i-view-khub-analytics",
+  "title": "View KHub Analytics",
+  "description": "",
+  "source": "@site/docs/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics.md",
+  "sourceDirName": "knowledge-hub/khub-analytics",
+  "slug": "/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics",
+  "permalink": "/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 149,
+  "frontMatter": {
+    "title": "View KHub Analytics",
+    "description": "",
+    "slug": "how-can-i-view-khub-analytics",
+    "sidebar_position": 149,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaebcca5d295659b369c02",
+    "helpscout_url": "https://help.smartwinnr.com/article/149-how-can-i-view-khub-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Edit a KHub folder name",
+    "permalink": "/knowledge-hub/content-organization/how-can-i-edit-a-khub-folder-name"
+  },
+  "next": {
+    "title": "Understanding recent, trending and latest KHub items",
+    "permalink": "/knowledge-hub/user-experience/understanding-recent-trending-and-latest-khub-items"
+  }
+}

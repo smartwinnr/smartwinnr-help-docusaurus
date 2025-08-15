@@ -1,0 +1,36 @@
+{
+  "id": "administration/how-to-change-company-logo",
+  "title": "Change company logo?",
+  "description": "",
+  "source": "@site/docs/administration/how-to-change-company-logo.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/how-to-change-company-logo",
+  "permalink": "/administration/how-to-change-company-logo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/how-to-change-company-logo.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 114,
+  "frontMatter": {
+    "title": "Change company logo?",
+    "description": "",
+    "slug": "how-to-change-company-logo",
+    "sidebar_position": 114,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda48bca5d295659b3698b1",
+    "helpscout_url": "https://help.smartwinnr.com/article/114-how-to-change-company-logo"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contact SmartWinnr Team",
+    "permalink": "/administration/how-can-i-contact-smartwinnr-team"
+  },
+  "next": {
+    "title": "Manage password policy",
+    "permalink": "/administration/manage-password-policy"
+  }
+}

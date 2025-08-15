@@ -24,11 +24,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "SmartPath Management",
-    "permalink": "/learning/smartpath-management"
+    "title": "Learning & Training",
+    "permalink": "/learning/"
   },
   "next": {
-    "title": "About SmartFeeds",
-    "permalink": "/learning/what-are-smartfeeds"
+    "title": "About KHub",
+    "permalink": "/learning/what-is-khub"
   }
 }

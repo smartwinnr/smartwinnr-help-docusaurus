@@ -1,0 +1,36 @@
+{
+  "id": "administration/what-is-qresolve",
+  "title": "What is QResolve?...",
+  "description": "",
+  "source": "@site/docs/administration/what-is-qresolve.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/what-is-qresolve",
+  "permalink": "/administration/what-is-qresolve",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/what-is-qresolve.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 209,
+  "frontMatter": {
+    "title": "What is QResolve?...",
+    "description": "",
+    "slug": "what-is-qresolve",
+    "sidebar_position": 209,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60003222c64fe14d0e1fac76",
+    "helpscout_url": "https://help.smartwinnr.com/article/209-what-is-qresolve"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Advanced options for projects",
+    "permalink": "/administration/advanced-options-for-projects"
+  },
+  "next": {
+    "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
+    "permalink": "/administration/how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds",
+  "title": "Delete SmartFeeds?",
+  "description": "",
+  "source": "@site/docs/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds.md",
+  "sourceDirName": "microlearning-smartfeeds/smartfeed-management",
+  "slug": "/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds",
+  "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 34,
+  "frontMatter": {
+    "title": "Delete SmartFeeds?",
+    "description": "",
+    "slug": "how-to-delete-smartfeeds",
+    "sidebar_position": 34,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd112c50ca0c372c6f09352",
+    "helpscout_url": "https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Send the SmartFeed to Teams?",
+    "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams"
+  },
+  "next": {
+    "title": "View all the SmartFeeds?",
+    "permalink": "/microlearning-smartfeeds/user-experience/how-to-view-all-the-smartfeeds"
+  }
+}

@@ -1,16 +1,7 @@
 ---
-title: "
-> **Note**: This feature requires Administrator permissions.
-
-Administrator Onboarding Guide"
-description: "Complete onboarding guide for SmartWinnr system 
-> **Note**: This feature requires Administrator permissions.
-
-administrators"
-slug: 
-> **Note**: This feature requires Administrator permissions.
-
-admin-onboarding
+title: "Administrator Onboarding Guide"
+description: "Complete onboarding guide for SmartWinnr system administrators"
+slug: admin-onboarding
 sidebar_position: 5
 ---
 
@@ -402,14 +393,7 @@ Administrative Features 🚀
 
 Administrator Support Resources**
 
-- **🔧 Technical Support**: Priority support line at [
-
-> **Note**: This feature requires Administrator permissions.
-
-admin-support@smartwinnr.com](mailto:
-> **Note**: This feature requires Administrator permissions.
-
-admin-support@smartwinnr.com)
+- **🔧 Technical Support**: Priority support line at [admin-support@smartwinnr.com](mailto:admin-support@smartwinnr.com)
 
 - **📚 Documentation**: Complete
 

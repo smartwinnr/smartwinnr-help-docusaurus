@@ -1,0 +1,36 @@
+{
+  "id": "administration/what-is-the-purpose-of-notifications",
+  "title": "About the purpose of notifications",
+  "description": "",
+  "source": "@site/docs/administration/what-is-the-purpose-of-notifications.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/what-is-the-purpose-of-notifications",
+  "permalink": "/administration/what-is-the-purpose-of-notifications",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/what-is-the-purpose-of-notifications.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 163,
+  "frontMatter": {
+    "title": "About the purpose of notifications",
+    "description": "",
+    "slug": "what-is-the-purpose-of-notifications",
+    "sidebar_position": 163,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0817b624c71b7985a5e5",
+    "helpscout_url": "https://help.smartwinnr.com/article/163-what-is-the-purpose-of-notifications"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Answer a Query",
+    "permalink": "/administration/how-can-i-answer-a-query"
+  },
+  "next": {
+    "title": "View notifications?",
+    "permalink": "/administration/how-to-view-notifications"
+  }
+}

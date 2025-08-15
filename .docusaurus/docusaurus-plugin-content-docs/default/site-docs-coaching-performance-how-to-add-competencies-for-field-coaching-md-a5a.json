@@ -1,0 +1,36 @@
+{
+  "id": "coaching-performance/how-to-add-competencies-for-field-coaching",
+  "title": "Add Competencies for Field Coaching",
+  "description": "",
+  "source": "@site/docs/coaching-performance/how-to-add-competencies-for-field-coaching.md",
+  "sourceDirName": "coaching-performance",
+  "slug": "/coaching-performance/how-to-add-competencies-for-field-coaching",
+  "permalink": "/coaching-performance/how-to-add-competencies-for-field-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/coaching-performance/how-to-add-competencies-for-field-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 237,
+  "frontMatter": {
+    "title": "Add Competencies for Field Coaching",
+    "description": "",
+    "slug": "how-to-add-competencies-for-field-coaching",
+    "sidebar_position": 237,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a50e711df47a61c5ad2f4d",
+    "helpscout_url": "https://help.smartwinnr.com/article/237-how-to-add-competencies-for-field-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Field Coaching Template",
+    "permalink": "/coaching-performance/how-to-create-field-coaching-template"
+  },
+  "next": {
+    "title": "Enable the Streaming Links for Video Coaching",
+    "permalink": "/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching"
+  }
+}

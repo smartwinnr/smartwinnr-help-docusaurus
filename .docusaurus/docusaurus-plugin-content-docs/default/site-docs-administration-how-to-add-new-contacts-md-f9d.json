@@ -1,0 +1,36 @@
+{
+  "id": "administration/how-to-add-new-contacts",
+  "title": "Add new contacts?",
+  "description": "",
+  "source": "@site/docs/administration/how-to-add-new-contacts.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/how-to-add-new-contacts",
+  "permalink": "/administration/how-to-add-new-contacts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/how-to-add-new-contacts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 135,
+  "frontMatter": {
+    "title": "Add new contacts?",
+    "description": "",
+    "slug": "how-to-add-new-contacts",
+    "sidebar_position": 135,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdadc3e7129911ba1b21dbe",
+    "helpscout_url": "https://help.smartwinnr.com/article/135-how-to-add-new-contacts"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View existing contacts?",
+    "permalink": "/administration/how-to-view-existing-contacts"
+  },
+  "next": {
+    "title": "View an Audit Log?",
+    "permalink": "/administration/how-to-view-an-audit-log"
+  }
+}

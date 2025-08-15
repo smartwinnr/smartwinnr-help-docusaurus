@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdba102a5d295659b369f9f",
     "helpscout_url": "https://help.smartwinnr.com/article/198-quiz-wise-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Team Analytics",
-    "permalink": "/quizzes/team-analytics"
-  },
-  "next": {
-    "title": "Team Progress Report",
-    "permalink": "/quizzes/team-progress-report"
   }
 }

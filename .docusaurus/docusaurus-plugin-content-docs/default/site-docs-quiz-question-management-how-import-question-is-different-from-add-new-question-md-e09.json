@@ -1,0 +1,36 @@
+{
+  "id": "quiz/question-management/how-import-question-is-different-from-add-new-question",
+  "title": "How 'Import question' is different from 'Add New Question'?",
+  "description": "",
+  "source": "@site/docs/quiz/question-management/how-import-question-is-different-from-add-new-question.md",
+  "sourceDirName": "quiz/question-management",
+  "slug": "/quiz/question-management/how-import-question-is-different-from-add-new-question",
+  "permalink": "/quiz/question-management/how-import-question-is-different-from-add-new-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz/question-management/how-import-question-is-different-from-add-new-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 45,
+  "frontMatter": {
+    "title": "How 'Import question' is different from 'Add New Question'?",
+    "description": "",
+    "slug": "how-import-question-is-different-from-add-new-question",
+    "sidebar_position": 45,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4845e36980410c9123839",
+    "helpscout_url": "https://help.smartwinnr.com/article/45-how-is-it-different-from-add-new-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a 'Matching Question'.",
+    "permalink": "/quiz/question-management/how-to-create-a-matching-question"
+  },
+  "next": {
+    "title": "Upload questions in bulk using 'Import Questions'.",
+    "permalink": "/quiz/question-management/how-to-upload-questions-in-bulk-using-import-questions"
+  }
+}

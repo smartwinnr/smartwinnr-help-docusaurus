@@ -17,14 +17,5 @@
     "description": "Central command center for SmartWinnr administrators - system management, analytics, and organizational control",
     "slug": "admin-landing",
     "sidebar_position": 4
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "✏️ Editor & Trainer Hub",
-    "permalink": "/editor-landing"
-  },
-  "next": {
-    "title": "Creating Quizzes",
-    "permalink": "/quizzes/creating-quizzes"
   }
 }

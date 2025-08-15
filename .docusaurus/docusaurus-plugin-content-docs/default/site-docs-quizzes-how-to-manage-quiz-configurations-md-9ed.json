@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda45eaa5d295659b36989e",
     "helpscout_url": "https://help.smartwinnr.com/article/112-how-to-manage-quiz-configurations"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Duplicate a quiz in a Competition?",
-    "permalink": "/quizzes/how-to-duplicate-a-quiz-in-a-competition"
-  },
-  "next": {
-    "title": "Create users in bulk",
-    "permalink": "/quizzes/create-users-in-bulk"
   }
 }

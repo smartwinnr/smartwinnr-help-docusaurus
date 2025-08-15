@@ -1,0 +1,36 @@
+{
+  "id": "quiz-assessments/assessment-analytics/detailed-quiz-analytics",
+  "title": "Detailed Quiz Analytics",
+  "description": "",
+  "source": "@site/docs/quiz-assessments/assessment-analytics/detailed-quiz-analytics.md",
+  "sourceDirName": "quiz-assessments/assessment-analytics",
+  "slug": "/quiz-assessments/assessment-analytics/detailed-quiz-analytics",
+  "permalink": "/quiz-assessments/assessment-analytics/detailed-quiz-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/quiz-assessments/assessment-analytics/detailed-quiz-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 55,
+  "frontMatter": {
+    "title": "Detailed Quiz Analytics",
+    "description": "",
+    "slug": "detailed-quiz-analytics",
+    "sidebar_position": 55,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd496523d1d2a5b1c5ea15c",
+    "helpscout_url": "https://help.smartwinnr.com/article/55-detailed-quiz-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Reports",
+    "permalink": "/quiz-assessments/assessment-analytics/quiz-reports"
+  },
+  "next": {
+    "title": "How To Find The Progress Of Your Team In Quizzes",
+    "permalink": "/quiz-assessments/assessment-analytics/how-to-find-the-progress-of-your-team-in-quizzes"
+  }
+}

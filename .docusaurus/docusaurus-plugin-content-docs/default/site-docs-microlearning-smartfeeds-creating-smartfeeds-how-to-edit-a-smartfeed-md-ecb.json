@@ -1,0 +1,36 @@
+{
+  "id": "microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed",
+  "title": "Edit a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed.md",
+  "sourceDirName": "microlearning-smartfeeds/creating-smartfeeds",
+  "slug": "/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed",
+  "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 29,
+  "frontMatter": {
+    "title": "Edit a SmartFeed?",
+    "description": "",
+    "slug": "how-to-edit-a-smartfeed",
+    "sidebar_position": 29,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd10c66b6c6251cd1c34b95",
+    "helpscout_url": "https://help.smartwinnr.com/article/29-how-to-edit-a-smartfeed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a PowerPoint Presentation (PPT) to SmartFeed?",
+    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
+  },
+  "next": {
+    "title": "Add a video to your content?",
+    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-video-to-your-content"
+  }
+}

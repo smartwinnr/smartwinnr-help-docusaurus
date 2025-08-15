@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4939923119734ee37edac",
     "helpscout_url": "https://help.smartwinnr.com/article/51-how-can-i-duplicate-a-quiz"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a manual quiz?",
-    "permalink": "/quizzes/how-to-create-a-manual-quiz"
-  },
-  "next": {
-    "title": "Activate automatic reminders for your quizzes",
-    "permalink": "/quizzes/how-to-activate-automatic-reminders-for-your-quizzes"
   }
 }

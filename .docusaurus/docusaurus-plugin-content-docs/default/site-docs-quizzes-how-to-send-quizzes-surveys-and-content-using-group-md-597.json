@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda5620b624c71b7985a2d0",
     "helpscout_url": "https://help.smartwinnr.com/article/130-how-to-send-quizzes-surveys-and-content-using-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About a Group",
-    "permalink": "/quizzes/what-is-a-group"
-  },
-  "next": {
-    "title": "About Audit Log",
-    "permalink": "/quizzes/what-is-audit-log"
   }
 }

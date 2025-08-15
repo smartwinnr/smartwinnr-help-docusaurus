@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Delete SmartFeeds?",
-    "permalink": "/learning/how-to-delete-smartfeeds"
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/learning/knowledge-hub-khub"
   },
   "next": {
-    "title": "How 'Import question' is different from 'Add New Question'?",
-    "permalink": "/learning/how-import-question-is-different-from-add-new-question"
+    "title": "Add reference to an external link to your content?",
+    "permalink": "/learning/how-to-add-reference-to-an-external-link-to-your-content"
   }
 }

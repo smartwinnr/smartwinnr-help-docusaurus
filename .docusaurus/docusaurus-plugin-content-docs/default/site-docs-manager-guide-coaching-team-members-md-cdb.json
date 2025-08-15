@@ -17,14 +17,5 @@
     "description": "Comprehensive guide for managers on coaching team members using SmartWinnr data and tools",
     "slug": "coaching-team-members",
     "sidebar_position": 5
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Assigning Content to Team",
-    "permalink": "/manager-guide/assigning-content-to-team"
-  },
-  "next": {
-    "title": "✏️ Editor & Trainer Hub",
-    "permalink": "/editor-landing"
   }
 }

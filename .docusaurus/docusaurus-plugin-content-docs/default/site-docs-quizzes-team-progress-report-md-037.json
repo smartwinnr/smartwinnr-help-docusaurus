@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdbab410b11ce44f6393516",
     "helpscout_url": "https://help.smartwinnr.com/article/199-download-reports"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Wise Analytics",
-    "permalink": "/quizzes/quiz-wise-analytics"
-  },
-  "next": {
-    "title": "Quiz Comparison Report",
-    "permalink": "/quizzes/quiz-comparison-report"
   }
 }

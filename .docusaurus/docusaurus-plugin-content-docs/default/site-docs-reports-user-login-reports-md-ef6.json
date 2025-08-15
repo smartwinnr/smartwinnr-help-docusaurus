@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdae19bb624c71b7985a579",
     "helpscout_url": "https://help.smartwinnr.com/article/143-user-login-reports"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a form?",
-    "permalink": "/reports/how-to-create-a-form"
-  },
-  "next": {
-    "title": "About Field Mappings",
-    "permalink": "/reports/what-are-field-mappings"
   }
 }

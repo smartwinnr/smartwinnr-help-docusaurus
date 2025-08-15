@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Create a SmartFeed?",
-    "permalink": "/learning/how-to-create-a-smartfeed"
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/learning/knowledge-hub-khub"
   },
   "next": {
-    "title": "Edit a SmartFeed?",
-    "permalink": "/learning/how-to-edit-a-smartfeed"
+    "title": "Send a SmartFeed multiple times?",
+    "permalink": "/learning/how-to-send-a-smartfeed-multiple-times"
   }
 }

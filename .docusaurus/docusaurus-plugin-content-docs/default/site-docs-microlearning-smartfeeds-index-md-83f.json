@@ -1,0 +1,30 @@
+{
+  "id": "microlearning-smartfeeds/index",
+  "title": "MicroLearning & SmartFeeds",
+  "description": "Create and deliver bite-sized, engaging learning content through SmartFeeds",
+  "source": "@site/docs/microlearning-smartfeeds/index.md",
+  "sourceDirName": "microlearning-smartfeeds",
+  "slug": "/microlearning-smartfeeds/microlearning-smartfeeds",
+  "permalink": "/microlearning-smartfeeds/microlearning-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/microlearning-smartfeeds/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "MicroLearning & SmartFeeds",
+    "description": "Create and deliver bite-sized, engaging learning content through SmartFeeds",
+    "slug": "microlearning-smartfeeds",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "SmartFeed Management",
+    "permalink": "/microlearning-smartfeeds/smartfeed-management"
+  },
+  "next": {
+    "title": "About SmartFeeds",
+    "permalink": "/microlearning-smartfeeds/what-are-smartfeeds"
+  }
+}

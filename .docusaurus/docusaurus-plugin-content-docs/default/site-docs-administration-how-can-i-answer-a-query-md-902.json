@@ -1,0 +1,36 @@
+{
+  "id": "administration/how-can-i-answer-a-query",
+  "title": "Answer a Query",
+  "description": "",
+  "source": "@site/docs/administration/how-can-i-answer-a-query.md",
+  "sourceDirName": "administration",
+  "slug": "/administration/how-can-i-answer-a-query",
+  "permalink": "/administration/how-can-i-answer-a-query",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/how-can-i-answer-a-query.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 161,
+  "frontMatter": {
+    "title": "Answer a Query",
+    "description": "",
+    "slug": "how-can-i-answer-a-query",
+    "sidebar_position": 161,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb05910b11ce44f63931a2",
+    "helpscout_url": "https://help.smartwinnr.com/article/161-how-can-i-answer-a-query"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Post a Query from the SmartWinnr app?",
+    "permalink": "/administration/how-to-post-a-query-from-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "About the purpose of notifications",
+    "permalink": "/administration/what-is-the-purpose-of-notifications"
+  }
+}

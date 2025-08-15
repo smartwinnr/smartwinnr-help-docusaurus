@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda4f87b624c71b7985a29a",
     "helpscout_url": "https://help.smartwinnr.com/article/120-delete-users"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create users in bulk",
-    "permalink": "/quizzes/create-users-in-bulk"
-  },
-  "next": {
-    "title": "Activate or deactivate a user?",
-    "permalink": "/quizzes/how-to-activate-or-deactivate-a-user"
   }
 }

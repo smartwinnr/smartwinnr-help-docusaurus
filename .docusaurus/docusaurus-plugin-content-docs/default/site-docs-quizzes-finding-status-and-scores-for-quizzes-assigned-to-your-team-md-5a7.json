@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9ab587129911ba1b21733",
     "helpscout_url": "https://help.smartwinnr.com/article/99-finding-quiz-status"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Analytics through Charts",
-    "permalink": "/quizzes/quiz-analytics-through-charts"
-  },
-  "next": {
-    "title": "About a Competition",
-    "permalink": "/quizzes/what-is-a-competition"
   }
 }

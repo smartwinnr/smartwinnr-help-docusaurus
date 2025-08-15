@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd48f1123119734ee37eda6",
     "helpscout_url": "https://help.smartwinnr.com/article/49-how-to-create-an-automatic-quiz"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz types",
-    "permalink": "/quizzes/quiz-types"
-  },
-  "next": {
-    "title": "Create a manual quiz?",
-    "permalink": "/quizzes/how-to-create-a-manual-quiz"
   }
 }

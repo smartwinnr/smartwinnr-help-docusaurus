@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4521236980410c9123802",
     "helpscout_url": "https://help.smartwinnr.com/article/38-understanding-knowledge-categories"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Download the SmartWinnr app",
-    "permalink": "/quizzes/how-can-i-download-the-smartwinnr-app"
-  },
-  "next": {
-    "title": "Create 'Multiple-Choice Questions'.",
-    "permalink": "/quizzes/how-to-create-multiple-choice-questions"
   }
 }

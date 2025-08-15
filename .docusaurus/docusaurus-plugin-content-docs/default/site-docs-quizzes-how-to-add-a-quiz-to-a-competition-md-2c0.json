@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9adaa7129911ba1b2173b",
     "helpscout_url": "https://help.smartwinnr.com/article/102-how-to-add-a-quiz-to-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About a Competition",
-    "permalink": "/quizzes/what-is-a-competition"
-  },
-  "next": {
-    "title": "Create a competition?",
-    "permalink": "/quizzes/how-to-create-a-competition"
   }
 }

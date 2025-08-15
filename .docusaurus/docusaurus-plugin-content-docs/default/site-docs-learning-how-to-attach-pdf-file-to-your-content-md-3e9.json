@@ -26,11 +26,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Add an audio file to your content?",
-    "permalink": "/learning/how-to-add-an-audio-file-to-your-content"
+    "title": "Add reference to an external link to your content?",
+    "permalink": "/learning/how-to-add-reference-to-an-external-link-to-your-content"
   },
   "next": {
-    "title": "Add an 'Audio file' to a question.",
-    "permalink": "/learning/how-to-add-an-audio-file-to-a-question"
+    "title": "About KHub",
+    "permalink": "/learning/what-is-khub"
   }
 }

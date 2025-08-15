@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd49470c868cb6df3a8102a",
     "helpscout_url": "https://help.smartwinnr.com/article/52-how-to-activate-automatic-reminders-for-your-quizzes"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Duplicate a quiz",
-    "permalink": "/quizzes/how-can-i-duplicate-a-quiz"
-  },
-  "next": {
-    "title": "About SmartWinnr Quiz Analytics",
-    "permalink": "/quizzes/what-is-smartwinnr-quiz-analytics"
   }
 }

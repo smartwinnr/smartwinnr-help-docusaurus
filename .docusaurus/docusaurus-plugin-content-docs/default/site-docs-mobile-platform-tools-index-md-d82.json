@@ -1,0 +1,30 @@
+{
+  "id": "mobile-platform-tools/index",
+  "title": "Mobile & Platform Tools",
+  "description": "Mobile app features, platform tools, and cross-device functionality",
+  "source": "@site/docs/mobile-platform-tools/index.md",
+  "sourceDirName": "mobile-platform-tools",
+  "slug": "/mobile-platform-tools/mobile-platform-tools",
+  "permalink": "/mobile-platform-tools/mobile-platform-tools",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/mobile-platform-tools/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "title": "Mobile & Platform Tools",
+    "description": "Mobile app features, platform tools, and cross-device functionality",
+    "slug": "mobile-platform-tools",
+    "sidebar_position": 12
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Changing/Updating configuration for an Organization",
+    "permalink": "/administration/changing-updating-configuration-for-an-organization"
+  },
+  "next": {
+    "title": "Help & Support",
+    "permalink": "/help-support/help-support"
+  }
+}

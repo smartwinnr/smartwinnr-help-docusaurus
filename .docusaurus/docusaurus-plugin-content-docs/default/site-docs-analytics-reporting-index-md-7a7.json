@@ -1,0 +1,30 @@
+{
+  "id": "analytics-reporting/index",
+  "title": "Analytics & Reporting",
+  "description": "Comprehensive analytics and reporting tools to measure performance, track progress, and gain insights",
+  "source": "@site/docs/analytics-reporting/index.md",
+  "sourceDirName": "analytics-reporting",
+  "slug": "/analytics-reporting/analytics-reporting",
+  "permalink": "/analytics-reporting/analytics-reporting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/analytics-reporting/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Analytics & Reporting",
+    "description": "Comprehensive analytics and reporting tools to measure performance, track progress, and gain insights",
+    "slug": "analytics-reporting",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Assign a Survey.",
+    "permalink": "/surveys-feedback/survey-management/how-to-assign-a-survey"
+  },
+  "next": {
+    "title": "Competitions & Gamification",
+    "permalink": "/competitions-gamification/competitions-gamification"
+  }
+}

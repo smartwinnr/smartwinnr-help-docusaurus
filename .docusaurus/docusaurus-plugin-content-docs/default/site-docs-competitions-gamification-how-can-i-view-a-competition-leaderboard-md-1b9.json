@@ -1,0 +1,36 @@
+{
+  "id": "competitions-gamification/how-can-i-view-a-competition-leaderboard",
+  "title": "View a competition Leaderboard",
+  "description": "",
+  "source": "@site/docs/competitions-gamification/how-can-i-view-a-competition-leaderboard.md",
+  "sourceDirName": "competitions-gamification",
+  "slug": "/competitions-gamification/how-can-i-view-a-competition-leaderboard",
+  "permalink": "/competitions-gamification/how-can-i-view-a-competition-leaderboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/competitions-gamification/how-can-i-view-a-competition-leaderboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 190,
+  "frontMatter": {
+    "title": "View a competition Leaderboard",
+    "description": "",
+    "slug": "how-can-i-view-a-competition-leaderboard",
+    "sidebar_position": 190,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb40777129911ba1b21f1a",
+    "helpscout_url": "https://help.smartwinnr.com/article/190-how-can-i-view-a-competition-leaderboard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About KPI Reports",
+    "permalink": "/competitions-gamification/what-are-kpi-reports"
+  },
+  "next": {
+    "title": "View the KPI scorecard",
+    "permalink": "/competitions-gamification/how-do-i-view-the-kpi-scorecard"
+  }
+}

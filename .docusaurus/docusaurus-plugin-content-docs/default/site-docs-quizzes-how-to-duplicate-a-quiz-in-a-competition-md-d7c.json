@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda263d27288b7f895d60b7",
     "helpscout_url": "https://help.smartwinnr.com/article/108-how-to-duplicate-a-quiz-in-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a Survey to a Competition?",
-    "permalink": "/quizzes/how-to-add-a-survey-to-a-competition"
-  },
-  "next": {
-    "title": "Manage Quiz configurations?",
-    "permalink": "/quizzes/how-to-manage-quiz-configurations"
   }
 }
