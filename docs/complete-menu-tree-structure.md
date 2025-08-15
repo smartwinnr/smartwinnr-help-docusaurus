@@ -2,7 +2,7 @@
 
 Here is the exhaustive listing of all files in each section of the documentation:
 
-##  Getting Started (Expanded by default) - 25 Files
+## Getting Started (Expanded by default) - 25 Files
 
 ```
  Getting Started
@@ -35,9 +35,9 @@ Here is the exhaustive listing of all files in each section of the documentation
   What If I've Forgotten My PIN (what-if-i-ve-forgotten-my-pin.md)
 ```
 
-##  Role-Based Guides (Expanded by default) - 11 Files Total
+## Role-Based Guides (Expanded by default) - 11 Files Total
 
-###  User Experience (Collapsed) - 4 Files
+### User Experience (Collapsed) - 4 Files
 
 ```
  User Experience
@@ -47,7 +47,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   Accessing Learning Content (accessing-learning-content.md)
 ```
 
-###  Manager Tools (Collapsed) - 5 Files
+### Manager Tools (Collapsed) - 5 Files
 
 ```
  Manager Tools
@@ -65,7 +65,7 @@ Here is the exhaustive listing of all files in each section of the documentation
    Administrator Hub (admin-landing.md)
 ```
 
-##  Quiz Management (Collapsed) - 60+ Files Total
+## Quiz Management (Collapsed) - 60+ Files Total
 
 ### /quiz/ Directory - 5 Files (New Consolidated)
 
@@ -144,7 +144,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   What is SmartWinnr Quiz Analytics (what-is-smartwinnr-quiz-analytics.md)
 ```
 
-##  Learning & Training (Collapsed) - 47 Files
+## Learning & Training (Collapsed) - 47 Files
 
 ### /learning/ Directory - 46 Files
 
@@ -203,7 +203,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   Microlearning Overview (index.md)
 ```
 
-##  Coaching & Performance (Collapsed) - 18 Files
+## Coaching & Performance (Collapsed) - 18 Files
 
 ```
  Coaching & Performance
@@ -228,7 +228,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   How to Upload Video Recording for Coaching (how-to-upload-video-recording-for-coaching.md)
 ```
 
-##  Competitions & Gamification (Collapsed) - 27 Files
+## Competitions & Gamification (Collapsed) - 27 Files
 
 ```
  Competitions & Gamification
@@ -264,7 +264,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   Question Bank (question-bank.md)
 ```
 
-##  Surveys & Feedback (Collapsed) - 10 Files
+## Surveys & Feedback (Collapsed) - 10 Files
 
 ```
  Surveys & Feedback
@@ -281,7 +281,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   What is the Difference Between a Survey and a Survey Template (what-is-the-difference-between-a-survey-and-a-survey-template.md)
 ```
 
-##  Reports & Analytics (Collapsed) - 14 Files
+## Reports & Analytics (Collapsed) - 14 Files
 
 ```
  Reports & Analytics
@@ -301,7 +301,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   Widgets (widgets.md)
 ```
 
-##  Administration (Collapsed) - 45 Files
+## Administration (Collapsed) - 45 Files
 
 ```
  Administration
@@ -348,14 +348,14 @@ Here is the exhaustive listing of all files in each section of the documentation
   When are Chat Groups Needed (when-are-chat-groups-needed.md)
 ```
 
-##  Mobile Experience (Collapsed) - 1 File
+## Mobile Experience (Collapsed) - 1 File
 
 ```
  Mobile Experience
   Mobile Overview (index.md)
 ```
 
-##  Troubleshooting (Collapsed) - 2 Files
+## Troubleshooting (Collapsed) - 2 Files
 
 ```
  Troubleshooting
@@ -363,7 +363,7 @@ Here is the exhaustive listing of all files in each section of the documentation
   Troubleshoot for Common Error Code (troubleshoot-for-common-error-code.md)
 ```
 
-##  Root Level Pages - 2 Files
+## Root Level Pages - 2 Files
 
 ```
    Editor & Trainer Hub (editor-landing.md)

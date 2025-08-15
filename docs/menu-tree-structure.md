@@ -2,7 +2,7 @@
 
 Based on the current `sidebars.ts` configuration and actual file structure, here is the complete left menu organization:
 
-##  Getting Started (Expanded by default)
+## Getting Started (Expanded by default)
 
 ```
  Getting Started
@@ -22,7 +22,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
  ... (16 additional getting-started files)
 ```
 
-##  Role-Based Guides (Expanded by default)
+## Role-Based Guides (Expanded by default)
 
 ```
  Role-Based Guides
@@ -41,7 +41,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
    Administrator Hub (admin-landing.md)
 ```
 
-##  Quiz Management (Collapsed)
+## Quiz Management (Collapsed)
 
 ```
  Quiz Management
@@ -53,7 +53,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
  ... (additional quiz files in /quizzes/ directory - 50+ files)
 ```
 
-##  Learning & Training (Collapsed)
+## Learning & Training (Collapsed)
 
 ```
  Learning & Training
@@ -69,7 +69,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
  ... (45+ additional learning files)
 ```
 
-##  Coaching & Performance (Collapsed)
+## Coaching & Performance (Collapsed)
 
 ```
  Coaching & Performance
@@ -84,7 +84,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
  ... (15+ additional coaching files)
 ```
 
-##  Competitions & Gamification (Collapsed)
+## Competitions & Gamification (Collapsed)
 
 ```
  Competitions & Gamification
@@ -105,7 +105,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
  ... (25+ additional competition files)
 ```
 
-##  Surveys & Feedback (Collapsed)
+## Surveys & Feedback (Collapsed)
 
 ```
  Surveys & Feedback
@@ -121,7 +121,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
   What is the Difference Between Survey and Survey Template (what-is-the-difference-between-a-survey-and-a-survey-template.md)
 ```
 
-##  Reports & Analytics (Collapsed)
+## Reports & Analytics (Collapsed)
 
 ```
  Reports & Analytics
@@ -141,7 +141,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
   How to Create a Field Mapping (how-to-create-a-field-mapping.md)
 ```
 
-##  Administration (Collapsed)
+## Administration (Collapsed)
 
 ```
  Administration
@@ -188,14 +188,14 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
   How Users Can See Evaluation and Scores for Long Answer Questions (how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md)
 ```
 
-##  Mobile Experience (Collapsed)
+## Mobile Experience (Collapsed)
 
 ```
  Mobile Experience
   Mobile Overview (index.md)
 ```
 
-##  Troubleshooting (Collapsed)
+## Troubleshooting (Collapsed)
 
 ```
  Troubleshooting
@@ -203,7 +203,7 @@ Based on the current `sidebars.ts` configuration and actual file structure, here
   Troubleshoot for Common Error Code (troubleshoot-for-common-error-code.md)
 ```
 
-##  Root Level Pages
+## Root Level Pages
 
 ```
    Editor & Trainer Hub (editor-landing.md) [Root level standalone page]
