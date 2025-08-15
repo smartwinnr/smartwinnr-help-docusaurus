@@ -12,33 +12,33 @@ Welcome to SmartWinnr! This comprehensive guide will help you get started with o
 SmartWinnr is the world's number 1 mobile-first Sales Productivity platform that drives sales learning, coaching, and contests through a single comprehensive platform.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>🎯 Quiz-based Learning</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">🎯</span>Quiz-based Learning</h3>
     <p>Engage your team with interactive quizzes that reinforce knowledge and track learning progress across your organization.</p>
   </div>
   
-  <div className="feature-card">
-    <h3>📚 Microlearning</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📚</span>Microlearning</h3>
     <p>Deliver bite-sized learning modules through SmartFeeds that fit seamlessly into your team's daily workflow.</p>
   </div>
   
-  <div className="feature-card">
-    <h3>🏆 Sales Competitions</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">🏆</span>Sales Competitions</h3>
     <p>Drive performance through friendly competition with real-time leaderboards and achievement tracking.</p>
   </div>
   
-  <div className="feature-card">
-    <h3>📊 KPI Gamification</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📊</span>KPI Gamification</h3>
     <p>Gamify your key performance indicators to motivate teams and achieve business objectives.</p>
   </div>
   
-  <div className="feature-card">
-    <h3>🛤️ SmartPath</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">🛤️</span>SmartPath</h3>
     <p>Create structured learning journeys that guide learners through progressive skill development.</p>
   </div>
   
-  <div className="feature-card">
-    <h3>📈 Real-time Analytics</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📈</span>Real-time Analytics</h3>
     <p>Track progress and performance with comprehensive analytics and detailed reporting capabilities.</p>
   </div>
 </div>
@@ -86,28 +86,28 @@ The platform is organized into these main sections:
 SmartWinnr serves different roles with specific features and workflows. Select your role to get started with a tailored experience:
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>👤 User / Learner</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">👤</span>User / Learner</h3>
     <p>I'm here to learn, take quizzes, and participate in competitions. I want to access learning content and track my progress.</p>
-    <p><a href="./user-onboarding">Start as User →</a></p>
+    <p><a href="./user-onboarding" className="fly-link">Start as User →</a></p>
   </div>
   
-  <div className="feature-card">
-    <h3>👔 Manager / Team Lead</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">👔</span>Manager / Team Lead</h3>
     <p>I manage a team and need to monitor performance, assign content, and coach team members using analytics.</p>
-    <p><a href="./manager-onboarding">Start as Manager →</a></p>
+    <p><a href="./manager-onboarding" className="fly-link">Start as Manager →</a></p>
   </div>
   
-  <div className="feature-card">
-    <h3>✏️ Editor / Trainer</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">✏️</span>Editor / Trainer</h3>
     <p>I create and manage learning content, design quizzes, and set up competitions for learners.</p>
-    <p><a href="./editor-onboarding">Start as Editor →</a></p>
+    <p><a href="./editor-onboarding" className="fly-link">Start as Editor →</a></p>
   </div>
 
-  <div className="feature-card">
-    <h3>👑 Administrator</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">👑</span>Administrator</h3>
     <p>I manage the entire SmartWinnr system, user accounts, configurations, and organizational settings.</p>
-    <p><a href="./admin-onboarding">Start as Administrator →</a></p>
+    <p><a href="./admin-onboarding" className="fly-link">Start as Administrator →</a></p>
   </div>
 </div>
 
@@ -116,28 +116,28 @@ SmartWinnr serves different roles with specific features and workflows. Select y
 Or jump directly to specific features you need:
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>📝 Quiz Management</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📝</span>Quiz Management</h3>
     <p>Learn how to create, manage, and analyze quiz performance for your team's knowledge development.</p>
-    <p><a href="/quiz">Explore Quiz Features →</a></p>
+    <p><a href="/quiz-assessments" className="fly-link">Explore Quiz Features →</a></p>
   </div>
   
-  <div className="feature-card">
-    <h3>🏅 Competition Setup</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">🏅</span>Competition Setup</h3>
     <p>Set up sales competitions, configure leaderboards, and manage rewards to drive team performance.</p>
-    <p><a href="/competitions">Setup Competitions →</a></p>
+    <p><a href="/competitions-gamification" className="fly-link">Setup Competitions →</a></p>
   </div>
   
-  <div className="feature-card">
-    <h3>📱 Microlearning</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📱</span>Microlearning</h3>
     <p>Deploy SmartFeeds content and create continuous learning experiences for your organization.</p>
-    <p><a href="/microlearning">Deploy SmartFeeds →</a></p>
+    <p><a href="/microlearning-smartfeeds" className="fly-link">Deploy SmartFeeds →</a></p>
   </div>
 
-  <div className="feature-card">
-    <h3>📊 Analytics & Reports</h3>
+  <div className="fly-card">
+    <h3><span className="fly-icon">📊</span>Analytics & Reports</h3>
     <p>Track performance, generate insights, and make data-driven decisions with comprehensive analytics.</p>
-    <p><a href="/reports">View Analytics →</a></p>
+    <p><a href="/analytics-reporting" className="fly-link">View Analytics →</a></p>
   </div>
 </div>
 # Test change

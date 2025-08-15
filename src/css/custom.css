@@ -6,6 +6,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@300..800&display=swap');
 
 :root {
+  /* tune these 3 */
+  --tint: 108, 76, 255;          /* your purple in RGB */
+  --tint-top: 0.08;              /* 0.04–0.10 looks good */
+  --tint-bottom: 0.04;
+  
+  /* Refined gradient background colors (RGB values for alpha control) */
+  --tint-a: 255, 230, 240;   /* warm pastel (rgb) */
+  --tint-b: 233, 240, 255;   /* cool pastel (rgb) */
+  --page-bg: #ffffff;
+
+  /* Fly.io-inspired card system */
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(108, 76, 255, 0.18); /* soft purple */
+  --card-shadow: 0 1px 1px rgba(17,12,46,.06), 0 8px 24px rgba(17,12,46,.06);
+  --card-radius: 16px;
+  --link: #6c4cff;              /* primary link color */
+  --link-bg: rgba(108,76,255,.10);
+  --link-bg-hover: rgba(108,76,255,.16);
+  --link-underline: rgba(108,76,255,.35);
+  --text: #334155;
+
   /* Fly.io inspired typography with distinctive fonts */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -94,8 +115,8 @@
 
 /* === NAVBAR STYLING === */
 .navbar {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: saturate(110%) blur(12px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid rgba(139, 92, 246, 0.15);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -335,49 +356,29 @@
   margin-top: 1rem;
 }
 
-/* === CHATGPT-STYLE BLURRY BLOBS BACKGROUND === */
+/* === REFINED GRADIENT BACKGROUND === */
 
-/* Pastel gradient blobs background (light mode) */
-html[data-theme='light'] body::before {
+html, body { 
+  background: var(--page-bg); 
+}
+
+/* Subtle, short overlay that fades quickly */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;              /* sit behind everything */
+  height: 70vh;                 /* shorter = less "wash" */
   pointer-events: none;
+  z-index: 0;
+
+  /* Remove the white layer; use very low-alpha pastels instead */
   background:
-    radial-gradient(40% 40% at 20% 25%, rgba(255, 183, 197, 0.55), transparent 60%),
-    radial-gradient(45% 45% at 80% 30%, rgba(255, 214, 165, 0.55), transparent 60%),
-    radial-gradient(40% 40% at 30% 80%, rgba(186, 230, 253, 0.55), transparent 60%),
-    radial-gradient(35% 35% at 75% 75%, rgba(196, 181, 253, 0.45), transparent 60%),
-    linear-gradient(180deg, #fffafc 0%, #eef6ff 100%);
-  filter: blur(12px) saturate(115%);
-  transform: translateZ(0); /* avoid paint jitter */
-  background-attachment: fixed;
-  animation: bg-drift 30s ease-in-out infinite alternate;
-}
+    radial-gradient(900px 520px at 10% -10%, rgba(var(--tint-a),0.25) 0%, rgba(var(--tint-a),0) 55%),
+    radial-gradient(800px 460px at 90% -10%, rgba(var(--tint-b),0.22) 0%, rgba(var(--tint-b),0) 60%);
 
-/* Enhanced dark mode with beautiful blurry blobs */
-html[data-theme='dark'] body::before {
-  background:
-    radial-gradient(45% 45% at 15% 20%, rgba(236, 72, 153, 0.4), transparent 65%),
-    radial-gradient(50% 50% at 85% 25%, rgba(251, 191, 36, 0.35), transparent 65%),
-    radial-gradient(45% 45% at 25% 85%, rgba(59, 130, 246, 0.4), transparent 65%),
-    radial-gradient(40% 40% at 80% 80%, rgba(147, 51, 234, 0.35), transparent 65%),
-    radial-gradient(35% 35% at 50% 50%, rgba(16, 185, 129, 0.25), transparent 70%),
-    linear-gradient(135deg, #0f0f23 0%, #1a1a2e 30%, #16213e 100%);
-  filter: blur(15px) saturate(130%);
-  animation: bg-drift-dark 35s ease-in-out infinite alternate;
-}
-
-@keyframes bg-drift {
-  0%   { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.05) translate(-1%, 1%); }
-}
-
-@keyframes bg-drift-dark {
-  0%   { transform: scale(1) translate(0, 0) rotate(0deg); }
-  50%  { transform: scale(1.03) translate(1%, -0.5%) rotate(0.5deg); }
-  100% { transform: scale(1.06) translate(-1.5%, 1%) rotate(-0.3deg); }
+  /* Hard stop to ensure it disappears into white smoothly */
+  -webkit-mask-image: linear-gradient(#000 0%, #000 65%, transparent 100%);
+          mask-image: linear-gradient(#000 0%, #000 65%, transparent 100%);
 }
 
 /* === ENHANCED TYPOGRAPHY === */
@@ -481,6 +482,11 @@ pre code {
   body { 
     -webkit-font-smoothing: auto; 
   }
+}
+
+/* Make sure page wrappers don't add their own backgrounds */
+#root, #__docusaurus, main, .container, .main-wrapper {
+  background: transparent;
 }
 
 /* === MAIN CONTENT STYLING === */
@@ -588,7 +594,74 @@ code {
   color: var(--ifm-color-content);
 }
 
-/* === CARD COMPONENTS === */
+/* === FLY.IO INSPIRED CARD SYSTEM === */
+
+.fly-card {
+  position: relative;
+  padding: 20px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(var(--tint), .18);
+  background:
+    linear-gradient(180deg,
+      rgba(var(--tint), var(--tint-top)) 0%,
+      rgba(var(--tint), var(--tint-bottom)) 60%,
+      rgba(255,255,255,.6) 100%)          /* subtle fade to white */
+    ,
+    #ffffff;                               /* white base */
+  background-clip: padding-box;
+  box-shadow:
+    0 1px 1px rgba(17,12,46,.06),
+    0 8px 24px rgba(17,12,46,.06);
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+}
+.fly-card::after{                          /* inner highlight */
+  content:"";
+  position:absolute; inset:0; border-radius:inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+  pointer-events:none;
+}
+.fly-card:hover{ transform: translateY(-2px);
+  border-color: rgba(108,76,255,.28);
+  box-shadow: 0 2px 8px rgba(17,12,46,.08), 0 16px 44px rgba(108,76,255,.12);
+}
+.fly-title{ letter-spacing: -0.005em; }
+
+/* Feature card extends fly-card */
+.feature-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65)) padding-box;
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,.6);
+  backdrop-filter: blur(6px) saturate(110%);
+  color: var(--text);
+  padding: 20px 22px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+/* Lift + glow on hover/focus */
+.feature-card:hover, .feature-card:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(108,76,255,.28);
+  box-shadow: 0 2px 8px rgba(17,12,46,.08), 0 16px 44px rgba(108,76,255,.12);
+}
+
+/* Title */
+.fly-card h3, .feature-card h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Body copy */
+.fly-card p, .feature-card p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Cards grid for layout */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -596,34 +669,16 @@ code {
   margin: 2rem 0;
 }
 
-.feature-card {
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-card-border-radius);
-  padding: 1.5rem;
-  transition: all 0.2s ease;
-  cursor: pointer;
+.fly-icon{
+  width:28px;height:28px;border-radius:9999px;display:inline-grid;place-items:center;
+  background: rgba(108,76,255,.12); color:#6c4cff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6); margin-right:.5rem;
 }
-
-.feature-card:hover {
-  border-color: var(--ifm-color-primary-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+.fly-link{
+  color:#6c4cff; text-decoration:none; border-bottom:1px solid rgba(108,76,255,.35);
+  background: rgba(108,76,255,.10); border-radius:.35rem; padding:0 .18em; box-decoration-break:clone;
 }
-
-.feature-card h3 {
-  color: var(--ifm-color-primary);
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.feature-card p {
-  color: var(--ifm-color-content-secondary);
-  margin-bottom: 0;
-  font-size: 0.875rem;
-}
+.fly-link:hover{ background: rgba(108,76,255,.16); border-color: rgba(108,76,255,.5); }
 
 /* === ALERTS/ADMONITIONS === */
 .alert {
@@ -673,6 +728,28 @@ code {
 }
 
 /* === DARK THEME OVERRIDES === */
+
+/* Dark mode gradient background variant */
+[data-theme='dark'] {
+  --page-bg: #0b0d12;
+  --tint-a: #1b2a35;   /* dark warm */
+  --tint-b: #2a1b35;   /* dark cool */
+  
+  /* Dark mode card system */
+  --card-bg: rgba(16,18,24,.6);
+  --card-border: rgba(108,76,255,.25);
+  --text: #cbd5e1;
+  --link-bg: rgba(108,76,255,.18);
+  --link-bg-hover: rgba(108,76,255,.26);
+}
+
+[data-theme='dark'] body::before {
+  background:
+    radial-gradient(1000px 600px at 10% -10%, var(--tint-a) 0%, transparent 60%),
+    radial-gradient(900px 520px at 90% 0%,  var(--tint-b) 0%, transparent 65%),
+    linear-gradient(to bottom, rgba(11,13,18,0.6), rgba(11,13,18,0) 60%);
+}
+
 [data-theme='dark'] .navbar {
   background: rgba(10, 10, 20, 0.8);
   backdrop-filter: saturate(120%) blur(12px);
@@ -693,9 +770,37 @@ code {
   color: var(--ifm-color-content);
 }
 
+/* Dark mode card styling */
+[data-theme='dark'] .fly-card,
 [data-theme='dark'] .feature-card {
-  background-color: var(--ifm-background-surface-color);
-  border-color: var(--ifm-color-emphasis-200);
+  background: linear-gradient(180deg, rgba(24,26,34,.85), rgba(16,18,24,.65)) padding-box;
+  box-shadow: 0 1px 1px rgba(0,0,0,.35), 0 16px 40px rgba(0,0,0,.35);
+  color: var(--text);
+}
+
+[data-theme='dark'] .fly-card h3,
+[data-theme='dark'] .feature-card h3 {
+  color: var(--text);
+}
+
+[data-theme='dark'] .fly-card p,
+[data-theme='dark'] .feature-card p {
+  color: var(--text);
+}
+
+/* === DARK MODE FLY-CARD STYLES === */
+@media (prefers-color-scheme: dark){
+  :root{ --tint-top: 0.16; --tint-bottom: 0.10; }
+  .fly-card{
+    background:
+      linear-gradient(180deg,
+        rgba(var(--tint), var(--tint-top)) 0%,
+        rgba(var(--tint), var(--tint-bottom)) 60%,
+        rgba(16,18,24,.6) 100%),
+      #0b0d12;
+    border-color: rgba(var(--tint), .25);
+    box-shadow: 0 1px 1px rgba(0,0,0,.35), 0 16px 40px rgba(0,0,0,.35);
+  }
 }
 
 /* === RESPONSIVE DESIGN === */
