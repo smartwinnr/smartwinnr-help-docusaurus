@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-# Temporarily disabled markdown linting to allow pushing
-# npm run lint:docs:fix
+# Run markdown linting on staged files (continue on errors)
+npm run lint:docs:fix || echo "Markdown linting found issues but continuing..."
 
-# Add any automatically fixed files back to staging  
-# git add docs/**/*.md templates/**/*.md *.md
+# Add any automatically fixed files back to staging
+git add docs/**/*.md
 
-echo "Pre-commit linting temporarily disabled"
+echo "Pre-commit linting completed (non-blocking)"
