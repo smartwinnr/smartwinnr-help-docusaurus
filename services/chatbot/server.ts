@@ -296,22 +296,6 @@ app.get('/api/chat/:conversationId/summary', async (req, res) => {
   }
 });
 
-// Refresh secrets endpoint (production only)
-app.post('/api/admin/refresh-secrets', async (req, res) => {
-  try {
-    const config = configService.getConfig();
-    
-    if (config.nodeEnv !== 'production') {
-      return res.status(403).json({ error: 'This endpoint is only available in production' });
-    }
-    
-    await configService.refreshSecrets();
-    res.json({ message: 'Secrets refreshed successfully' });
-  } catch (error) {
-    console.error('❌ Error refreshing secrets:', error);
-    res.status(500).json({ error: 'Failed to refresh secrets' });
-  }
-});
 
 // Error handling middleware
 app.use((error: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
@@ -331,9 +315,8 @@ app.use('*', (req, res) => {
 
 // Start server
 async function startServer() {
-  await initializeServices();
-  
-  const config = configService.getConfig();
+  // Start the HTTP server first so health endpoint is available
+  const config = await configService.initialize();
   
   app.listen(config.apiPort, () => {
     console.log(`🚀 Chatbot API server running on http://localhost:${config.apiPort}`);
@@ -344,6 +327,11 @@ async function startServer() {
     if (config.nodeEnv === 'development') {
       console.log(`⚙️  Config endpoint: http://localhost:${config.apiPort}/api/config`);
     }
+    
+    // Initialize services in background after server is running
+    initializeServices().catch(error => {
+      console.error('❌ Failed to initialize services (server still running):', error);
+    });
   });
 }
 

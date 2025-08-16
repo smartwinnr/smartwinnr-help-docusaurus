@@ -33,7 +33,16 @@
       "Bash(npx markdownlint-cli2:*)",
       "Bash(git checkout:*)",
       "Bash(git push:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(chroma:*)",
+      "Bash(./scripts/deploy-railway.sh:*)",
+      "Bash(/Users/aninditabanik/node_projects/help_smartwinnr/scripts/deploy-railway.sh:*)",
+      "Bash(railway --version)",
+      "Bash(railway status:*)",
+      "Bash(railway service:*)",
+      "Bash(railway:*)",
+      "WebFetch(domain:railway.com)",
+      "Bash(magick:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

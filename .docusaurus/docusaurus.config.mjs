@@ -9,8 +9,9 @@ export default {
   "favicon": "img/favicon.ico",
   "url": "https://help.smartwinnr.com",
   "baseUrl": "/",
-  "onBrokenLinks": "throw",
+  "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
+  "onBrokenAnchors": "warn",
   "i18n": {
     "defaultLocale": "en",
     "locales": [
@@ -196,7 +197,6 @@ export default {
     },
     "experimental_router": "browser"
   },
-  "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
     "static"

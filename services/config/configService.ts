@@ -1,4 +1,3 @@
-import { SecretsManagerClient, GetSecretValueCommand } from '@aws-sdk/client-secrets-manager';
 import dotenv from 'dotenv';
 
 // Load environment variables
@@ -15,20 +14,13 @@ export interface AppConfig {
   chatModel: string;
   nodeEnv: string;
   logLevel: string;
-  awsRegion?: string;
-  secretName?: string;
 }
 
 class ConfigService {
   private config: AppConfig | null = null;
-  private secretsClient: SecretsManagerClient | null = null;
 
   constructor() {
-    // Initialize AWS Secrets Manager client for production
-    if (this.isProduction()) {
-      const region = process.env.AWS_REGION || 'us-east-1';
-      this.secretsClient = new SecretsManagerClient({ region });
-    }
+    // No AWS setup needed - using Railway environment variables
   }
 
   private isProduction(): boolean {
@@ -47,15 +39,8 @@ class ConfigService {
     console.log(`🔧 Initializing configuration for ${process.env.NODE_ENV} environment...`);
 
     try {
-      let openaiApiKey: string;
-
-      if (this.isProduction()) {
-        // Production: Get from AWS Secrets Manager
-        openaiApiKey = await this.getSecretFromAWS();
-      } else {
-        // Local/Development: Get from environment variable
-        openaiApiKey = this.getSecretFromEnv();
-      }
+      // Get OpenAI API key from environment variable (Railway or local .env)
+      const openaiApiKey = this.getSecretFromEnv();
 
       this.config = {
         openaiApiKey,
@@ -67,9 +52,7 @@ class ConfigService {
         embeddingModel: process.env.EMBEDDING_MODEL || 'text-embedding-3-small',
         chatModel: process.env.CHAT_MODEL || 'gpt-4o-mini',
         nodeEnv: process.env.NODE_ENV || 'development',
-        logLevel: process.env.LOG_LEVEL || 'info',
-        awsRegion: process.env.AWS_REGION,
-        secretName: process.env.AWS_SECRET_NAME
+        logLevel: process.env.LOG_LEVEL || 'info'
       };
 
       console.log('✅ Configuration initialized successfully');
@@ -91,9 +74,8 @@ class ConfigService {
     
     if (!openaiApiKey) {
       throw new Error(
-        'OPENAI_API_KEY environment variable is required for local development. ' +
-        'Please add your OpenAI API key to the .env file:\n' +
-        'OPENAI_API_KEY=your_api_key_here'
+        'OPENAI_API_KEY environment variable is required. ' +
+        'Please set it in Railway variables or .env file for local development.'
       );
     }
 
@@ -105,70 +87,6 @@ class ConfigService {
     return openaiApiKey;
   }
 
-  private async getSecretFromAWS(): Promise<string> {
-    if (!this.secretsClient) {
-      throw new Error('AWS Secrets Manager client not initialized');
-    }
-
-    const secretName = process.env.AWS_SECRET_NAME || 'smartwinnr/openai-api-key';
-    const secretKey = process.env.AWS_SECRET_KEY || 'OPENAI_API_KEY';
-
-    console.log(`🔐 Retrieving secret from AWS Secrets Manager: ${secretName}`);
-
-    try {
-      const command = new GetSecretValueCommand({
-        SecretId: secretName,
-      });
-
-      const response = await this.secretsClient.send(command);
-      
-      if (!response.SecretString) {
-        throw new Error('Secret value is empty or not found');
-      }
-
-      // Parse JSON secret if it contains multiple keys
-      let secretValue: string;
-      try {
-        const secrets = JSON.parse(response.SecretString);
-        secretValue = secrets[secretKey];
-        
-        if (!secretValue) {
-          throw new Error(`Key '${secretKey}' not found in secret`);
-        }
-      } catch (parseError) {
-        // If not JSON, treat as plain text secret
-        secretValue = response.SecretString;
-      }
-
-      if (!secretValue.startsWith('sk-')) {
-        throw new Error('Retrieved secret does not appear to be a valid OpenAI API key');
-      }
-
-      console.log('✅ OpenAI API key loaded from AWS Secrets Manager');
-      return secretValue;
-
-    } catch (error: any) {
-      console.error('❌ Failed to retrieve secret from AWS Secrets Manager:', error);
-      
-      // Provide helpful error messages
-      if (error.name === 'ResourceNotFoundException') {
-        throw new Error(
-          `AWS Secret not found: ${secretName}. ` +
-          'Please create the secret in AWS Secrets Manager with your OpenAI API key.'
-        );
-      }
-      
-      if (error.name === 'AccessDenied' || error.name === 'UnauthorizedOperation') {
-        throw new Error(
-          'Access denied to AWS Secrets Manager. Please ensure the IAM role/user has the required permissions:\n' +
-          '- secretsmanager:GetSecretValue\n' +
-          '- secretsmanager:DescribeSecret'
-        );
-      }
-
-      throw error;
-    }
-  }
 
   getConfig(): AppConfig {
     if (!this.config) {
@@ -224,16 +142,6 @@ class ConfigService {
     console.log('✅ Configuration validation passed');
   }
 
-  // Method to refresh secrets (useful for production rotation)
-  async refreshSecrets(): Promise<void> {
-    if (this.isProduction()) {
-      console.log('🔄 Refreshing secrets from AWS Secrets Manager...');
-      this.config = null;
-      await this.initialize();
-    } else {
-      console.log('ℹ️ Secret refresh only available in production environment');
-    }
-  }
 
   // Method to mask sensitive values for logging
   getConfigForLogging(): Partial<AppConfig> {

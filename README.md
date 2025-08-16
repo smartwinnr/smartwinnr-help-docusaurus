@@ -128,6 +128,50 @@ node scripts/migrate-images.js
 
 See [PORT_CONFIG.md](./PORT_CONFIG.md) for detailed port configuration and troubleshooting.
 
+## WYSIWYG Content Management System
+
+### **Access the CMS**
+Navigate to the admin interface for user-friendly content editing:
+```
+http://localhost:3000/admin/          # Development
+https://help.smartwinnr.com/admin/    # Production
+```
+
+### **CMS Features**
+- **📝 WYSIWYG Editor**: Rich text editing with live preview
+- **🖼️ Image Management**: Drag & drop image uploads
+- **📁 Organized Collections**: Edit docs by category
+- **🔄 Git Integration**: Changes saved as Git commits
+- **👥 User Permissions**: Access controlled via GitLab
+- **📱 Mobile Friendly**: Edit on any device
+- **🔍 Search & Filter**: Find content quickly
+- **📋 Editorial Workflow**: Draft → Review → Publish
+
+### **Setup Instructions**
+1. **GitLab OAuth Setup**: 
+   - Go to GitLab → User Settings → Applications
+   - Create new application with redirect URI: `https://help.smartwinnr.com/admin/`
+   - Copy Application ID to `static/admin/config.yml`
+
+2. **Access Control**: 
+   - Only GitLab users with repository access can edit
+   - Maintains same security as current Git workflow
+
+### **Content Collections Available**
+- 📚 Getting Started (27 files)
+- 📝 Quiz & Assessments (51 files) 
+- 🎯 MicroLearning & SmartFeeds (19 files)
+- 🛤️ Learning & SmartPaths (13 files)
+- 📋 Forms & Data Collection (14 files)
+- 🧠 Knowledge Hub (8 files)
+- 📊 Surveys & Feedback (11 files)
+- 📈 Analytics & Reporting (1 file)
+- 🏆 Competitions & Gamification (34 files)
+- 🎯 Coaching & Performance (19 files)
+- ⚙️ Administration (35 files)
+- 📱 Mobile & Platform Tools (1 file)
+- 🆘 Help & Support (2 files)
+
 ## Additional Commands
 
 - **Enhanced development:** `npm run dev:full` (with colored output)
@@ -150,6 +194,39 @@ curl -X POST http://localhost:3002/api/chat \
   -d '{"message":"What is SmartWinnr?"}'
 ```
 
+## 🚀 Production Deployment
+
+### **Railway Deployment (Backend Services)**
+Deploy the chatbot API and ChromaDB to Railway for production:
+
+```bash
+# Install Railway CLI
+npm install -g @railway/cli
+
+# Deploy to Railway
+railway login
+railway link
+railway up
+```
+
+**Complete deployment guide**: [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md)
+
+### **Vercel Deployment (Frontend)**
+Deploy the documentation site to Vercel:
+
+```bash
+# Build and deploy
+npm run build
+npx vercel --prod
+```
+
+### **Production Architecture:**
+- **Frontend**: Vercel (static site hosting)
+- **Backend API**: Railway (chatbot service)
+- **Database**: Railway (ChromaDB with persistent storage)
+- **Secrets**: AWS Secrets Manager (OpenAI API keys)
+- **Cost**: ~$35-55/month total
+
 ## Project Structure
 
 ```
@@ -161,6 +238,9 @@ curl -X POST http://localhost:3002/api/chat \
 ├── src/                            # Docusaurus theme and components
 ├── services/chatbot/               # AI chatbot backend service
 ├── static/                         # Static assets
+│   ├── admin/                      # CMS configuration
+│   │   ├── config.yml             # Decap CMS settings
+│   │   └── index.html             # CMS admin interface
 │   └── img/                        # Local image storage
 │       ├── getting-started/        # Category-organized images
 │       ├── quizzes/               

@@ -115,7 +115,7 @@ SmartWinnr supports various quiz formats:
 - **Matching**: Connect related items
 - **Re-order**: Sequence items correctly
 
-**Ready to create?**  [Creating Quizzes Guide](../quiz/creating-quiz.md)
+**Ready to create?**  [Creating Quizzes Guide](../quiz-assessments/creating-assessments/creating-quizzes.md)
 
 ## Step 3: Develop Learning Content
 
@@ -225,7 +225,7 @@ Effective competitions leverage:
 5. **Plan Recognition**: Determine rewards and celebration methods
 6. **Communicate Rules**: Ensure participants understand objectives and scoring
 
-**Competition mastery?**  [Competition Creation Guide](../competitions/index.md)
+**Competition mastery?**  [Competition Creation Guide](../competitions-gamification/index.md)
 
 ## Step 5: Analyze Content Performance
 
@@ -382,7 +382,7 @@ Track the success of your content through:
 
 - **Complete Quiz Guide**: [Quiz Management Documentation](../quiz/index.md)
 - **Learning Content**: [SmartFeeds and SmartPaths](../learning/index.md)
-- **Competition Creation**: [Competition Setup Guide](../competitions/index.md)
+- **Competition Creation**: [Competition Setup Guide](../competitions-gamification/index.md)
 - **Content Analytics**: [Reporting and Analytics](../reports/index.md)
 
 ### **Creator Community**

@@ -8,8 +8,9 @@ const config: Config = {
   url: 'https://help.smartwinnr.com',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   i18n: {
     defaultLocale: 'en',

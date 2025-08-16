@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartWinnr Documentation CMS</title>
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+      min-height: 100vh;
+    }
+    
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
+      text-align: center;
+    }
+    
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+    
+    .loading-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    
+    .loading-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+    
+    .loading-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #e2e8f0;
+      border-top: 3px solid #8b5cf6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .setup-instructions {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .setup-instructions h3 {
+      color: #1e293b;
+      margin-top: 0;
+    }
+    
+    .setup-instructions code {
+      background: #f1f5f9;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+    }
+    
+    .setup-instructions ol {
+      color: #475569;
+      line-height: 1.6;
+    }
+    
+    .feature-list {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-list h3 {
+      color: #1e293b;
+      margin-top: 0;
+    }
+    
+    .feature-list ul {
+      color: #475569;
+      line-height: 1.6;
+    }
+    
+    .feature-list li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-screen">
+    <img src="/img/logo_blue.svg" alt="SmartWinnr Logo" class="logo" />
+    <h1 class="loading-title">SmartWinnr Documentation CMS</h1>
+    <p class="loading-subtitle">Loading content management system...</p>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="setup-instructions" id="setup-instructions" style="display: none;">
+    <h3>🔧 Setup Required</h3>
+    <p>To use the CMS, you need to configure GitLab OAuth:</p>
+    <ol>
+      <li>Go to <strong>GitLab → User Settings → Applications</strong></li>
+      <li>Create a new application with:
+        <ul>
+          <li><strong>Name:</strong> SmartWinnr Help CMS</li>
+          <li><strong>Redirect URI:</strong> <code>https://help.smartwinnr.com/admin/</code></li>
+          <li><strong>Scopes:</strong> <code>api</code></li>
+        </ul>
+      </li>
+      <li>Copy the Application ID and update <code>static/admin/config.yml</code></li>
+      <li>Replace <code>your_gitlab_app_id</code> with your actual Application ID</li>
+      <li>Refresh this page</li>
+    </ol>
+  </div>
+
+  <div class="feature-list">
+    <h3>✨ CMS Features</h3>
+    <ul>
+      <li><strong>📝 WYSIWYG Editor:</strong> Rich text editing with live preview</li>
+      <li><strong>🖼️ Image Management:</strong> Drag & drop image uploads</li>
+      <li><strong>📁 Organized Collections:</strong> Edit docs by category</li>
+      <li><strong>🔄 Git Integration:</strong> Changes saved as Git commits</li>
+      <li><strong>👥 User Permissions:</strong> Access controlled via GitLab</li>
+      <li><strong>📱 Mobile Friendly:</strong> Edit on any device</li>
+      <li><strong>🔍 Search & Filter:</strong> Find content quickly</li>
+      <li><strong>📋 Editorial Workflow:</strong> Draft → Review → Publish</li>
+    </ul>
+  </div>
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+  
+  <script>
+    // Hide loading screen once CMS loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if CMS loaded successfully
+      setTimeout(function() {
+        var cmsElement = document.querySelector('[data-slate-editor]') || 
+                        document.querySelector('.Pane1') ||
+                        document.querySelector('#nc-root');
+        
+        if (cmsElement) {
+          document.querySelector('.loading-screen').style.display = 'none';
+        } else {
+          // Show setup instructions if CMS didn't load
+          document.querySelector('.loading-screen').style.display = 'none';
+          document.querySelector('#setup-instructions').style.display = 'block';
+        }
+      }, 3000);
+    });
+
+    // Custom preview styles
+    CMS.registerPreviewStyle('/styles.css');
+    
+    // Custom preview template for documentation
+    CMS.registerPreviewTemplate('getting-started', function(props) {
+      return React.createElement('div', {
+        className: 'markdown'
+      }, React.createElement('h1', {}, props.entry.getIn(['data', 'title'])),
+         React.createElement('div', {
+           dangerouslySetInnerHTML: { __html: props.widgetFor('body') }
+         }));
+    });
+  </script>
+</body>
+</html>

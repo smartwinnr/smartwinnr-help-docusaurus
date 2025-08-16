@@ -1,0 +1,23 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "npm run start:production"
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+# Environment configuration
+[environments.production]
+RAILWAY_SERVICE = "smartwinnr-help"
+
+[environments.production.variables]
+NODE_ENV = "production"
+LOG_LEVEL = "info"
+API_PORT = "3002"
+CHROMA_HOST = "chromadb"
+CHROMA_PORT = "8000"
+COLLECTION_NAME = "smartwinnr_docs"
+EMBEDDING_MODEL = "text-embedding-3-small"
+CHAT_MODEL = "gpt-4o-mini"

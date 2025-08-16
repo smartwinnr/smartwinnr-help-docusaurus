@@ -1326,6 +1326,10 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "troubleshooting/index",
+              "path": "/troubleshooting/troubleshooting"
+            },
+            {
               "id": "user-guide/accessing-learning-content",
               "path": "/user-guide/accessing-learning-content"
             },

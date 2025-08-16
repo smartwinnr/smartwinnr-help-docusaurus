@@ -49,17 +49,17 @@
     },
     "config": "config---search-5-e-9-7f5"
   },
-  "/-8bb": {
+  "/-415": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-018": {
+  "/-759": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-201": {
+  "/-d5c": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/admin-landing-561": {
@@ -1137,6 +1137,10 @@
   "/surveys-feedback/survey-management/how-to-assign-a-survey-4d1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---surveys-feedback-survey-management-how-to-assign-a-surveyba-5-e36"
+  },
+  "/troubleshooting/troubleshooting-808": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---troubleshooting-troubleshootingd-65-5be"
   },
   "/user-guide/accessing-learning-content-ca3": {
     "__comp": "__comp---theme-doc-item-178-a40",

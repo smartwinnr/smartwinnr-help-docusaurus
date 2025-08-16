@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '8bb'),
+    component: ComponentCreator('/', '415'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '018'),
+        component: ComponentCreator('/', '759'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '201'),
+            component: ComponentCreator('/', 'd5c'),
             routes: [
               {
                 path: '/admin-landing',
@@ -1632,6 +1632,11 @@ export default [
                 component: ComponentCreator('/surveys-feedback/survey-management/how-to-assign-a-survey', '4d1'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/troubleshooting/troubleshooting',
+                component: ComponentCreator('/troubleshooting/troubleshooting', '808'),
+                exact: true
               },
               {
                 path: '/user-guide/accessing-learning-content',

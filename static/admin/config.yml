@@ -1,0 +1,228 @@
+backend:
+  name: gitlab
+  repo: smartwinnr/help-docs
+  branch: main
+  auth_type: pkce
+  app_id: your_gitlab_app_id
+  auth_endpoint: https://gitlab.com/oauth/authorize
+  token_endpoint: https://gitlab.com/oauth/token
+  api_root: https://gitlab.com/api/v4
+
+# Media configuration
+media_folder: static/img
+public_folder: /img
+media_library:
+  name: uploadcare
+  config:
+    publicKey: your_uploadcare_key
+
+# Site configuration
+site_url: https://help.smartwinnr.com
+display_url: https://help.smartwinnr.com
+logo_url: /img/logo_blue.svg
+
+# Editorial workflow
+publish_mode: editorial_workflow
+editor:
+  preview: true
+
+# Collections configuration
+collections:
+  # Getting Started Section
+  - name: getting-started
+    label: "📚 Getting Started"
+    folder: docs/getting-started
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "getting-started/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Quiz & Assessments
+  - name: quiz-assessments
+    label: "📝 Quiz & Assessments"
+    folder: docs/quiz-assessments
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "quiz-assessments/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Question Management (nested collection)
+  - name: question-management
+    label: "❓ Question Management"
+    folder: docs/quiz-assessments/question-management
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "quiz-assessments/question-management/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # MicroLearning & SmartFeeds
+  - name: microlearning-smartfeeds
+    label: "🎯 MicroLearning & SmartFeeds"
+    folder: docs/microlearning-smartfeeds
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "microlearning-smartfeeds/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Learning & SmartPaths
+  - name: learning-smartpaths
+    label: "🛤️ Learning & SmartPaths"
+    folder: docs/learning-smartpaths
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "learning-smartpaths/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Forms & Data Collection
+  - name: forms-data-collection
+    label: "📋 Forms & Data Collection"
+    folder: docs/forms-data-collection
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "forms-data-collection/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Knowledge Hub
+  - name: knowledge-hub
+    label: "🧠 Knowledge Hub"
+    folder: docs/knowledge-hub
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "knowledge-hub/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Surveys & Feedback
+  - name: surveys-feedback
+    label: "📊 Surveys & Feedback"
+    folder: docs/surveys-feedback
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "surveys-feedback/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Analytics & Reporting
+  - name: analytics-reporting
+    label: "📈 Analytics & Reporting"
+    folder: docs/analytics-reporting
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "analytics-reporting/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Competitions & Gamification
+  - name: competitions-gamification
+    label: "🏆 Competitions & Gamification"
+    folder: docs/competitions-gamification
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "competitions-gamification/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Coaching & Performance
+  - name: coaching-performance
+    label: "🎯 Coaching & Performance"
+    folder: docs/coaching-performance
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "coaching-performance/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Administration
+  - name: administration
+    label: "⚙️ Administration"
+    folder: docs/administration
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "administration/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Mobile & Platform Tools
+  - name: mobile-platform-tools
+    label: "📱 Mobile & Platform Tools"
+    folder: docs/mobile-platform-tools
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "mobile-platform-tools/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Help & Support
+  - name: help-support
+    label: "🆘 Help & Support"
+    folder: docs/help-support
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    preview_path: "help-support/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
