@@ -1,0 +1,21 @@
+{
+  "id": "project-management/index",
+  "title": "Project Management",
+  "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
+  "source": "@site/docs/project-management/index.md",
+  "sourceDirName": "project-management",
+  "slug": "/project-management/project-management",
+  "permalink": "/project-management/project-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/project-management/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Project Management",
+    "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
+    "slug": "project-management",
+    "sidebar_position": 8
+  }
+}

@@ -1,21 +1,21 @@
 ---
-title: "Edit a project?"
-description: ""
+title: "How to Edit a Project"
+description: "Learn how to edit project settings, add team members, and manage project configurations in SmartWinnr"
 slug: how-to-edit-a-project
-sidebar_position: 187
+sidebar_position: 1
 last_update:
   date: 2025-08-10
   author: HelpScout Migration
 helpscout_id: 5fdb30c60b11ce44f639323f
 helpscout_url: https://help.smartwinnr.com/article/187-how-to-edit-a-project
 ---
-Go to EDITOR>>ÂPROJECT MANAGEMENT >>ProjectÂ Management>> Click on the project Name you want to edit.
+Go to EDITOR>>ï¿½PROJECT MANAGEMENT >>Projectï¿½ Management>> Click on the project Name you want to edit.
 
 ![](/img/admin/helpscout-image-a3ab2afe.png)Click on " **Edit**" to edit the Current project.
 
 For more information on Hamburger Menu [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects).
 
-![](/img/admin/helpscout-image-647e59c8.png)Â"Project Name", "Project Description" can be changed.
+![](/img/admin/helpscout-image-647e59c8.png)ï¿½"Project Name", "Project Description" can be changed.
 
 Team members can also be added, a new team can also be created by clicking on the "Create Teams".
 
@@ -31,7 +31,7 @@ The editor can also remove sections from the project by clicking on the "Remove"
 
 ![](/img/admin/helpscout-image-ba34a35a.png)
 
-ÂEditingÂ Notifications Setting
+ï¿½Editingï¿½ Notifications Setting
 
 ![](/img/admin/helpscout-image-3d2782d1.png)The editor can change the type of notification setting by clicking on the " **Notification Type**", notification triggers can be changed by clicking on the notification triggers.
 

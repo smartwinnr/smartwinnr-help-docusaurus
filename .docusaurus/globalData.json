@@ -105,11 +105,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "administration/how-to-edit-a-project",
-              "path": "/administration/how-to-edit-a-project",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "administration/how-to-enable-a-chat-group",
               "path": "/administration/how-to-enable-a-chat-group",
               "sidebar": "tutorialSidebar"
@@ -926,6 +921,14 @@
               "id": "mobile-platform-tools/index",
               "path": "/mobile-platform-tools/mobile-platform-tools",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "project-management/how-to-edit-a-project",
+              "path": "/project-management/how-to-edit-a-project"
+            },
+            {
+              "id": "project-management/index",
+              "path": "/project-management/project-management"
             },
             {
               "id": "quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors",

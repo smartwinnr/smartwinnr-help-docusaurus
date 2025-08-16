@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '415'),
+    component: ComponentCreator('/', '995'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '759'),
+        component: ComponentCreator('/', 'b24'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', 'd5c'),
+            component: ComponentCreator('/', '067'),
             routes: [
               {
                 path: '/admin-landing',
@@ -170,12 +170,6 @@ export default [
               {
                 path: '/administration/how-to-download-a-chat',
                 component: ComponentCreator('/administration/how-to-download-a-chat', '646'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/administration/how-to-edit-a-project',
-                component: ComponentCreator('/administration/how-to-edit-a-project', 'd73'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1150,6 +1144,16 @@ export default [
                 component: ComponentCreator('/mobile-platform-tools/mobile-platform-tools', '357'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/project-management/how-to-edit-a-project',
+                component: ComponentCreator('/project-management/how-to-edit-a-project', 'f62'),
+                exact: true
+              },
+              {
+                path: '/project-management/project-management',
+                component: ComponentCreator('/project-management/project-management', '98c'),
+                exact: true
               },
               {
                 path: '/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors',

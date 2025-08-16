@@ -26,8 +26,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Edit a project?",
-    "permalink": "/administration/how-to-edit-a-project"
+    "title": "Create a new Project?",
+    "permalink": "/administration/how-to-create-a-new-project"
   },
   "next": {
     "title": "What is QResolve?...",
