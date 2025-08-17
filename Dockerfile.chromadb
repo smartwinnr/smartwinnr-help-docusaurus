@@ -21,8 +21,7 @@ ENV CHROMA_PORT=8000
 ENV PERSIST_DIRECTORY=/chroma/data
 ENV ANONYMIZED_TELEMETRY=False
 
-# Volume for persistent data
-VOLUME ["/chroma/data"]
+# Volume removed - using Railway volumes instead
 
 # Install curl for healthcheck
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
