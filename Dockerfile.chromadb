@@ -57,26 +57,5 @@ if __name__ == "__main__":\n\
     uvicorn.run(app, host="0.0.0.0", port=8000)\n\
 ' > /health_proxy.py
 
-# Create startup script
-RUN echo '#!/bin/bash\n\
-set -e\n\
-echo "Starting ChromaDB on port 8001..."\n\
-chroma run --host 0.0.0.0 --port 8001 --path /chroma/data &\n\
-CHROMA_PID=$!\n\
-\n\
-echo "Waiting for ChromaDB to initialize..."\n\
-sleep 20\n\
-\n\
-echo "Starting health proxy on port 8000..."\n\
-python3 /health_proxy.py &\n\
-PROXY_PID=$!\n\
-\n\
-echo "Services started. ChromaDB on 8001, Health proxy on 8000"\n\
-wait $CHROMA_PID\n\
-' > /start.sh && chmod +x /start.sh
-
-# Install required Python packages
-RUN pip install fastapi httpx
-
-# Start with proxy
-CMD ["/start.sh"]
+# Start ChromaDB directly
+CMD ["chroma", "run", "--host", "0.0.0.0", "--port", "8000", "--path", "/chroma/data"]
