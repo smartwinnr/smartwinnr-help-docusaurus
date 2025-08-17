@@ -4,9 +4,8 @@ FROM chromadb/chroma:latest
 # Set working directory
 WORKDIR /chroma
 
-# Create data directory with proper permissions
-RUN mkdir -p /chroma/data && \
-    chown -R chroma:chroma /chroma/data
+# Create data directory
+RUN mkdir -p /chroma/data
 
 # Expose ChromaDB port
 EXPOSE 8000
