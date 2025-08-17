@@ -1,59 +1,15 @@
-# Dockerfile for ChromaDB Vector Database
-FROM chromadb/chroma:latest
+# Use the official image (or your own) and RUN chroma explicitly
+FROM ghcr.io/chroma-core/chroma:latest
 
-# Set working directory
-WORKDIR /chroma
-
-# Create data directory
-RUN mkdir -p /chroma/data
-
-# Expose ChromaDB port
-EXPOSE 8000
-
-# Health check for ChromaDB
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=5 \
-  CMD curl -f http://localhost:8000/api/v1/heartbeat || exit 1
-
-# Set environment variables
-ENV CHROMA_HOST=0.0.0.0
-ENV CHROMA_PORT=8000
+# Persist to a mounted path
 ENV PERSIST_DIRECTORY=/chroma/data
 ENV ANONYMIZED_TELEMETRY=False
 
-# Volume removed - using Railway volumes instead
+# **Critical**: bind to ALL interfaces and explicit port
+ENV CHROMA_SERVER_HOST=0.0.0.0
+ENV CHROMA_SERVER_HTTP_PORT=8000
 
-# Install curl for healthcheck
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+EXPOSE 8000
 
-# Create a simple health endpoint for Railway
-RUN echo 'from fastapi import FastAPI\n\
-from fastapi.responses import RedirectResponse\n\
-import uvicorn\n\
-import httpx\n\
-import asyncio\n\
-\n\
-app = FastAPI()\n\
-\n\
-@app.get("/health")\n\
-async def health_check():\n\
-    try:\n\
-        async with httpx.AsyncClient() as client:\n\
-            response = await client.get("http://localhost:8001/api/v1/heartbeat", timeout=5.0)\n\
-            if response.status_code == 200:\n\
-                return {"status": "healthy", "service": "chromadb"}\n\
-    except:\n\
-        pass\n\
-    return {"status": "unhealthy", "service": "chromadb"}\n\
-\n\
-@app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE"])\n\
-async def proxy_to_chromadb(path: str):\n\
-    async with httpx.AsyncClient() as client:\n\
-        response = await client.get(f"http://localhost:8001/{path}")\n\
-        return response.json()\n\
-\n\
-if __name__ == "__main__":\n\
-    uvicorn.run(app, host="0.0.0.0", port=8000)\n\
-' > /health_proxy.py
-
-# Start ChromaDB directly
+# If your base image's entrypoint ignores envs, this CMD makes it explicit
 CMD ["chroma", "run", "--host", "0.0.0.0", "--port", "8000", "--path", "/chroma/data"]
