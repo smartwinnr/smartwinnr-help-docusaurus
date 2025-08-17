@@ -61,7 +61,7 @@ if __name__ == "__main__":\n\
 RUN echo '#!/bin/bash\n\
 set -e\n\
 echo "Starting ChromaDB on port 8001..."\n\
-uvicorn chromadb.app:app --host 0.0.0.0 --port 8001 &\n\
+chroma run --host 0.0.0.0 --port 8001 --path /chroma/data &\n\
 CHROMA_PID=$!\n\
 \n\
 echo "Waiting for ChromaDB to initialize..."\n\
