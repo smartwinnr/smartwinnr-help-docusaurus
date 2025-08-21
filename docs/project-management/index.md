@@ -2,7 +2,7 @@
 title: "Project Management"
 description: "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings"
 slug: project-management
-sidebar_position: 8
+sidebar_position: 0
 ---
 
 # Project Management
@@ -42,9 +42,11 @@ SmartWinnr projects help you organize learning content, competitions, and team a
 Browse the guides below to learn about specific project management capabilities:
 
 ### Project Configuration
+
 - [How to Edit a Project](./how-to-edit-a-project.md) - Modify project settings and team assignments
 
 ### Coming Soon
+
 - How to Create a New Project
 - Managing Project Teams
 - Project Analytics and Reporting

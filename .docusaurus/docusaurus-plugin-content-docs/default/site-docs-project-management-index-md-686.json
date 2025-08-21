@@ -11,11 +11,20 @@
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/project-management/index.md",
   "tags": [],
   "version": "current",
-  "sidebarPosition": 8,
+  "sidebarPosition": 0,
   "frontMatter": {
     "title": "Project Management",
     "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
     "slug": "project-management",
-    "sidebar_position": 8
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Use KHub in the SmartWinnr app?",
+    "permalink": "/knowledge-hub/user-experience/how-to-use-khub-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "How to Edit a Project",
+    "permalink": "/project-management/how-to-edit-a-project"
   }
 }

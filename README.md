@@ -197,17 +197,44 @@ curl -X POST http://localhost:3002/api/chat \
 ## 🚀 Production Deployment
 
 ### **Railway Deployment (Backend Services)**
-Deploy the chatbot API and ChromaDB to Railway for production:
+Deploy using the existing 3-service architecture on Railway:
 
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
+#### **Existing Services:**
 
-# Deploy to Railway
-railway login
-railway link
-railway up
-```
+1. **chromadb** - ChromaDB vector database (Docker image: `chromadb/chroma:latest`)
+2. **chatbot-api** - Node.js chatbot API server 
+3. **zealous-tranquility** - Main documentation/frontend service
+
+#### **Deployment Steps:**
+
+1. **Deploy ChromaDB service:**
+   ```bash
+   # Create ChromaDB service with Docker image
+   railway add --image chromadb/chroma:latest --service chromadb
+   # Service runs automatically once created - no code deployment needed
+   ```
+
+2. **Deploy Chatbot API:**
+   ```bash
+   railway service chatbot-api
+   railway up
+   ```
+
+3. **Deploy Main Documentation Service:**
+   ```bash
+   railway service zealous-tranquility
+   railway up
+   ```
+
+#### **Environment Variables:**
+- **chatbot-api**: `OPENAI_API_KEY`, `CHROMA_HOST=chromadb`, `CHROMA_PORT=8000`
+- **chromadb**: Default ChromaDB configuration (port 8000)
+- **zealous-tranquility**: Documentation site configuration
+
+#### **Service Communication:**
+- ChromaDB runs independently as vector database
+- Chatbot API connects to ChromaDB via Railway internal networking
+- Documentation site connects to Chatbot API for AI functionality
 
 **Complete deployment guide**: [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md)
 

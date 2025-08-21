@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '995'),
+    component: ComponentCreator('/', '7d8'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'b24'),
+        component: ComponentCreator('/', '78b'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '067'),
+            component: ComponentCreator('/', 'b10'),
             routes: [
               {
                 path: '/admin-landing',
@@ -1147,13 +1147,15 @@ export default [
               },
               {
                 path: '/project-management/how-to-edit-a-project',
-                component: ComponentCreator('/project-management/how-to-edit-a-project', 'f62'),
-                exact: true
+                component: ComponentCreator('/project-management/how-to-edit-a-project', 'ac9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
               },
               {
                 path: '/project-management/project-management',
-                component: ComponentCreator('/project-management/project-management', '98c'),
-                exact: true
+                component: ComponentCreator('/project-management/project-management', 'e68'),
+                exact: true,
+                sidebar: "tutorialSidebar"
               },
               {
                 path: '/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors',

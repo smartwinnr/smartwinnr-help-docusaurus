@@ -29,17 +29,41 @@ export class VectorService {
   private embeddingModel: string;
 
   constructor(openaiApiKey: string, chromaHost?: string, chromaPort?: number, embeddingModel?: string) {
+    const CHROMA_HOST = chromaHost || process.env.CHROMA_HOST || 'localhost';
+    const CHROMA_PORT = chromaPort || Number(process.env.CHROMA_PORT || 8000);
+    const CHROMA_SSL = (process.env.CHROMA_SSL || 'false').toLowerCase() === 'true';
+
+    console.log(`[Chroma] Connecting with host=${CHROMA_HOST} port=${CHROMA_PORT} ssl=${CHROMA_SSL}`);
+
     this.client = new ChromaClient({
-      host: chromaHost || 'localhost',
-      port: chromaPort || 8000,
+      host: CHROMA_HOST,
+      port: CHROMA_PORT,
+      ssl: CHROMA_SSL,
     });
 
     this.openai = new OpenAI({ apiKey: openaiApiKey });
     this.embeddingModel = embeddingModel || 'text-embedding-3-small';
   }
 
+  private async waitForChroma(tries = 30, ms = 1000): Promise<void> {
+    for (let i = 0; i < tries; i++) {
+      try {
+        await this.client.listCollections();
+        console.log('[Chroma] reachable');
+        return;
+      } catch (error) {
+        console.log(`[Chroma] attempt ${i + 1}/${tries} failed, retrying in ${ms}ms...`);
+        await new Promise(r => setTimeout(r, ms));
+      }
+    }
+    throw new Error('Chroma not reachable after waiting.');
+  }
+
   async initialize(): Promise<void> {
     try {
+      // Wait for ChromaDB to be available
+      await this.waitForChroma();
+      
       const collectionName = process.env.COLLECTION_NAME || 'smartwinnr_docs';
       
       // Try to get existing collection or create new one

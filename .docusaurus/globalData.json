@@ -924,11 +924,13 @@
             },
             {
               "id": "project-management/how-to-edit-a-project",
-              "path": "/project-management/how-to-edit-a-project"
+              "path": "/project-management/how-to-edit-a-project",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "project-management/index",
-              "path": "/project-management/project-management"
+              "path": "/project-management/project-management",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors",

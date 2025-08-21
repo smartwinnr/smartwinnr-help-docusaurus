@@ -1,0 +1,19 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile.chromadb"
+
+[deploy]
+healthcheckPath = "/api/v1/heartbeat"
+healthcheckTimeout = 60
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+# Environment configuration for ChromaDB service
+[environments.production]
+RAILWAY_SERVICE = "chromadb"
+
+[environments.production.variables]
+CHROMA_HOST = "0.0.0.0"
+CHROMA_PORT = "8000"
+PERSIST_DIRECTORY = "/chroma/data"
+ANONYMIZED_TELEMETRY = "False"

@@ -42,7 +42,9 @@
       "Bash(railway service:*)",
       "Bash(railway:*)",
       "WebFetch(domain:railway.com)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "WebFetch(domain:docs.trychroma.com)",
+      "WebSearch"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
