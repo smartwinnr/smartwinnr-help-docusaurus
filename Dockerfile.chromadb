@@ -1,15 +1,11 @@
-# Use the official image (or your own) and RUN chroma explicitly
-FROM ghcr.io/chroma-core/chroma:latest
+# Use the official ChromaDB image
+FROM chromadb/chroma:latest
 
-# Persist to a mounted path
-ENV PERSIST_DIRECTORY=/chroma/data
-ENV ANONYMIZED_TELEMETRY=False
-
-# **Critical**: bind to ALL interfaces and explicit port
-ENV CHROMA_SERVER_HOST=0.0.0.0
-ENV CHROMA_SERVER_HTTP_PORT=8000
+# Set environment variables for ChromaDB
+ENV IS_PERSISTENT=TRUE
+ENV ANONYMIZED_TELEMETRY=FALSE
 
 EXPOSE 8000
 
-# Start ChromaDB server using the correct command
-CMD ["chroma", "run", "--path", "/chroma/data", "--host", "0.0.0.0", "--port", "8000"]
+# The official ChromaDB container handles the startup automatically
+# No CMD needed - the base image provides the correct entrypoint
