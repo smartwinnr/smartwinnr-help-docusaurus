@@ -1,0 +1,19 @@
+# ./railway.docs.toml (for Docusaurus docs service)
+[build]
+builder = "dockerfile"
+dockerfilePath = "docker/docs/Dockerfile.docs"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 60
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[environments.production]
+RAILWAY_SERVICE = "docs"
+
+# Optional: if you want to inject private host via envsubst in nginx,
+# add variables and an entrypoint that envsubst's default.conf
+# [environments.production.variables]
+# CHATBOT_INTERNAL_HOST = "${{chatbot-api.RAILWAY_PRIVATE_DOMAIN}}"
+# CHATBOT_INTERNAL_PORT = "3002"

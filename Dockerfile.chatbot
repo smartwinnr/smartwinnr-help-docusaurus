@@ -1,35 +1,33 @@
-# Dockerfile for SmartWinnr Chatbot API Service
-FROM node:18-alpine
-
-# Set working directory
+# Use Debian slim (glibc). Avoids Alpine musl edge-cases for esbuild.
+FROM node:18-bullseye-slim
 WORKDIR /app
 
-# Copy package files
+# Healthcheck needs curl
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+# Copy lockfiles first for layer cache
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Prevent husky/prepare during install
+ENV HUSKY=0
 
-# Copy source code
+# 1) Install prod deps without scripts
+RUN npm ci --omit=dev --ignore-scripts
+
+# 2) Ensure the correct esbuild binary is fetched for this platform
+RUN npm rebuild esbuild && npm cache clean --force
+
+# App source
 COPY . .
 
-# Skip TypeScript compilation for production (runtime doesn't need it)
-# RUN npm run typecheck
-
-# Create non-root user for security
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S chatbot -u 1001
-
-# Change ownership of the app directory
-RUN chown -R chatbot:nodejs /app
+# Non-root user
+RUN useradd -m -u 1001 chatbot && chown -R chatbot:chatbot /app
 USER chatbot
 
-# Expose port
 EXPOSE 3002
 
-# Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=45s --retries=5 \
-  CMD curl -f http://localhost:3002/health || exit 1
+  CMD curl -fsS http://localhost:3002/health || exit 1
 
-# Start the chatbot service
 CMD ["npm", "run", "chatbot:start"]

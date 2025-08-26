@@ -1,0 +1,36 @@
+# ./railway.chatbot.toml (for Chatbot API service)
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile.chatbot"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[environments.production]
+RAILWAY_SERVICE = "chatbot-api"
+
+[environments.production.variables]
+NODE_ENV = "production"
+API_PORT = "3002"
+
+# Chroma over private networking (use another service's variable)
+# Railway lets you reference vars from another service like this:
+# ${{SERVICE_NAME.VAR}}  → docs: Referencing Another Service's Variable
+# We'll use chromadb's built-in RAILWAY_PRIVATE_DOMAIN.
+# Example resolves to something like 'chromadb.railway.internal'
+CHROMA_HOST = "${{chromadb.RAILWAY_PRIVATE_DOMAIN}}"
+CHROMA_PORT = "8000"
+
+# CORS should be your docs site domain (after docs deploy)
+CORS_ORIGIN = "https://<your-docs-domain>"
+
+# Required by your app
+COLLECTION_NAME = "smartwinnr_docs"
+EMBEDDING_MODEL = "text-embedding-3-small"
+CHAT_MODEL = "gpt-4o-mini"
+
+# Secrets:
+# Set OPENAI_API_KEY in the Railway UI (don't commit it)

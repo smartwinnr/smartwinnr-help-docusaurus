@@ -1,11 +1,8 @@
-# Use the official ChromaDB image
-FROM chromadb/chroma:latest
-
-# Set environment variables for ChromaDB
-ENV IS_PERSISTENT=TRUE
-ENV ANONYMIZED_TELEMETRY=FALSE
-
-EXPOSE 8000
-
-# The official ChromaDB container handles the startup automatically
-# No CMD needed - the base image provides the correct entrypoint
+# If you're on the official image:
+FROM chromadb/chroma:0.6.3
+ENV CHROMA_SERVER_CORS_ALLOW_ORIGINS=[] \
+    CHROMA_SERVER_HOST="::" \
+    CHROMA_SERVER_HTTP_PORT=8000 \
+    IS_PERSISTENT=TRUE \
+    PERSIST_DIRECTORY=/data \
+    ANONYMIZED_TELEMETRY=FALSE
