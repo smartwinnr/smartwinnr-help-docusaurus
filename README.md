@@ -26,20 +26,74 @@ A Docusaurus-based documentation site with integrated AI chatbot functionality f
 
 ## Running the Project
 
-### Development Mode (Recommended)
-Run both the documentation site and chatbot server together:
+### Prerequisites for Local Development
+
+Before running the project locally, ensure you have all required services installed:
+
+#### 1. ChromaDB Installation
+
+**Check if ChromaDB is already installed:**
 ```bash
-npm run dev
+which chroma
 ```
 
-For enhanced development experience with colored output:
+**If not installed, install ChromaDB:**
 ```bash
+# Option A: Using pip
+pip install chromadb
+
+# Option B: Using conda
+conda install -c conda-forge chromadb
+
+# Option C: Using Docker (alternative)
+docker pull chromadb/chroma:0.6.3
+```
+
+#### 2. Node.js Dependencies
+```bash
+npm install
+```
+
+#### 3. Environment Configuration
+```bash
+cp .env.example .env
+# Edit .env file with your OpenAI API key and other settings
+```
+
+### Complete Local Development Setup (All 3 Services)
+
+For the full development experience with AI chatbot functionality, run all three services:
+
+#### Step 1: Start ChromaDB Server
+```bash
+# Start ChromaDB on port 8000 with local data storage
+chroma run --host 0.0.0.0 --port 8000 --path ./chroma_data
+```
+
+Keep this terminal open. ChromaDB will display:
+```
+Connect to Chroma at: http://localhost:8000
+Listening on 0.0.0.0:8000
+```
+
+#### Step 2: Start Docusaurus + Chatbot (New Terminal)
+```bash
+# Start both documentation site and chatbot API with colored output
 npm run dev:full
 ```
 
 This will start:
 - **Documentation site**: `http://localhost:3000`
 - **Chatbot API server**: `http://localhost:3002`
+- **ChromaDB connection**: Chatbot will connect to ChromaDB automatically
+
+#### Verify All Services Are Running
+
+| Service | URL | Status Check |
+|---------|-----|--------------|
+| **Docusaurus** | http://localhost:3000 | Visit in browser |
+| **Chatbot API** | http://localhost:3002/health | Should return `{"status":"healthy"}` |
+| **ChromaDB** | http://localhost:8000 | Vector database running |
 
 ### Individual Components
 
@@ -53,6 +107,30 @@ npm start            # Also runs on port 3000
 **Chatbot server only:**
 ```bash
 npm run chatbot:dev  # Runs on port 3002
+# Note: Requires ChromaDB to be running on port 8000
+```
+
+**ChromaDB only:**
+```bash
+chroma run --host 0.0.0.0 --port 8000 --path ./chroma_data
+```
+
+### Alternative ChromaDB Setup (Docker)
+
+If you prefer using Docker for ChromaDB:
+```bash
+# Run ChromaDB with Docker
+docker run -d --name chromadb-local -p 8000:8000 \
+  -v chromadb_data:/chroma/data \
+  -e IS_PERSISTENT=TRUE \
+  -e PERSIST_DIRECTORY=/chroma/data \
+  chromadb/chroma:0.6.3
+
+# Stop ChromaDB container
+docker stop chromadb-local
+
+# Remove ChromaDB container
+docker rm chromadb-local
 ```
 
 ### Production
@@ -127,6 +205,52 @@ node scripts/migrate-images.js
 | **ChromaDB** | 8000 | http://localhost:8000 | Vector database |
 
 See [PORT_CONFIG.md](./PORT_CONFIG.md) for detailed port configuration and troubleshooting.
+
+### Local Development Troubleshooting
+
+#### Port Conflicts
+If you encounter port conflicts:
+
+```bash
+# Check what's using a specific port
+lsof -ti:3000  # Replace 3000 with your port
+lsof -ti:3002
+lsof -ti:8000
+
+# Kill process using a port
+kill $(lsof -ti:3000)
+```
+
+#### ChromaDB Connection Issues
+- **Error: "Connection refused"**: Ensure ChromaDB is running on port 8000
+- **Error: "Collection not found"**: The chatbot will create the collection automatically on first run
+- **Slow startup**: First run may take longer as ChromaDB initializes
+
+#### Common Environment Issues
+```bash
+# Clear npm cache if needed
+npm cache clean --force
+
+# Reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+
+# Clear Docusaurus cache
+npm run clear
+```
+
+#### Health Check Commands
+```bash
+# Test all services are running
+curl http://localhost:3000                  # Docusaurus (returns HTML)
+curl http://localhost:3002/health           # Chatbot API health
+curl http://localhost:8000/api/v1/version   # ChromaDB (may show deprecation message)
+
+# Test chatbot functionality
+curl -X POST http://localhost:3002/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message":"What is SmartWinnr?"}'
+```
 
 ## WYSIWYG Content Management System
 

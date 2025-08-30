@@ -48,7 +48,8 @@
       "WebFetch(domain:help.railway.com)",
       "WebFetch(domain:station.railway.com)",
       "WebFetch(domain:station.railway.com)",
-      "WebFetch(domain:docs.railway.com)"
+      "WebFetch(domain:docs.railway.com)",
+      "Bash(docker run:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
