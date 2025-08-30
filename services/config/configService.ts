@@ -20,7 +20,7 @@ class ConfigService {
   private config: AppConfig | null = null;
 
   constructor() {
-    // No AWS setup needed - using Railway environment variables
+    // Configuration from environment variables
   }
 
   private isProduction(): boolean {
@@ -39,7 +39,7 @@ class ConfigService {
     console.log(`🔧 Initializing configuration for ${process.env.NODE_ENV} environment...`);
 
     try {
-      // Get OpenAI API key from environment variable (Railway or local .env)
+      // Get OpenAI API key from environment variable
       const openaiApiKey = this.getSecretFromEnv();
 
       this.config = {
@@ -75,7 +75,7 @@ class ConfigService {
     if (!openaiApiKey) {
       throw new Error(
         'OPENAI_API_KEY environment variable is required. ' +
-        'Please set it in Railway variables or .env file for local development.'
+        'Please set it in your environment variables or .env file for local development.'
       );
     }
 

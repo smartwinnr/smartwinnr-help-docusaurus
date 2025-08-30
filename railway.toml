@@ -1,9 +1,0 @@
-[build]
-builder = "dockerfile"
-dockerfilePath = "Dockerfile.chromadb"
-
-[deploy]
-healthcheckPath = "/api/v1/version"  # more reliable than /api/v1/heartbeat
-healthcheckTimeout = 120             # stable timeout
-restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 3
