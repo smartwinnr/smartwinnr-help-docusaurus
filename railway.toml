@@ -3,9 +3,7 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile.chromadb"
 
 [deploy]
-# IMPORTANT: remove any startCommand you added earlier
-# rely on the image's default entrypoint
-healthcheckPath = "/api/v1/heartbeat"
-healthcheckTimeout = 60
+healthcheckPath = "/api/v1/version"  # more reliable than /api/v1/heartbeat
+healthcheckTimeout = 120             # stable timeout
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
