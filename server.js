@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const { spawn } = require('child_process');
+const axios = require('axios');
+const { ChromaClient } = require('chromadb');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +28,29 @@ app.use('/api/*', cors({
 // In-memory conversation storage (replace with database in production)
 const conversations = new Map();
 
+// Initialize ChromaDB client
+const CHROMA_HOST = process.env.CHROMA_HOST || 'localhost';
+const CHROMA_PORT = Number(process.env.CHROMA_PORT || 8000);
+const CHROMA_SSL = (process.env.CHROMA_SSL || 'false').toLowerCase() === 'true';
+
+const chromaClient = new ChromaClient({
+  host: CHROMA_HOST,
+  port: CHROMA_PORT,
+  ssl: CHROMA_SSL,
+});
+
+const COLLECTION_NAME = process.env.COLLECTION_NAME || 'smartwinnr_docs';
+const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || 'text-embedding-3-small';
+
+// Get OpenAI API key
+const getOpenAIKey = () => {
+  const apiKey = process.env.OPENAI_API_KEY || process.env.REACT_APP_OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error('OpenAI API key not found in environment variables');
+  }
+  return apiKey;
+};
+
 console.log('🚀 Starting SmartWinnr Help Center with integrated ChatBot API...');
 
 // API Routes
@@ -37,6 +63,128 @@ app.get('/api/health', (req, res) => {
     version: '1.0.0'
   });
 });
+
+// OpenAI embedding endpoint (used by indexer)
+app.post('/api/vector/embed', async (req, res) => {
+  try {
+    const { text, model = EMBEDDING_MODEL } = req.body;
+    
+    if (!text) {
+      return res.status(400).json({ error: 'Text is required for embedding' });
+    }
+
+    const openaiApiKey = getOpenAIKey();
+    const response = await axios.post(
+      'https://api.openai.com/v1/embeddings',
+      {
+        input: text,
+        model: model
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${openaiApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        timeout: 30000
+      }
+    );
+
+    const embedding = response.data.data[0].embedding;
+    res.json({ embedding });
+  } catch (error) {
+    console.error('❌ Error generating embedding:', error.response?.data || error.message);
+    res.status(500).json({ 
+      error: 'Failed to generate embedding',
+      message: error.response?.data?.error?.message || error.message
+    });
+  }
+});
+
+// AI search function
+async function searchDocuments(query, limit = 5) {
+  try {
+    // Generate embedding for the query
+    const embeddingResponse = await axios.post(`http://localhost:${PORT}/api/vector/embed`, {
+      text: query,
+      model: EMBEDDING_MODEL
+    });
+    
+    const queryEmbedding = embeddingResponse.data.embedding;
+    
+    // Get the collection
+    const collection = await chromaClient.getCollection({ name: COLLECTION_NAME });
+    
+    // Search for similar documents
+    const results = await collection.query({
+      queryEmbeddings: [queryEmbedding],
+      nResults: limit,
+      include: ['documents', 'metadatas', 'distances']
+    });
+    
+    // Format results
+    const documents = [];
+    if (results.documents && results.documents[0]) {
+      for (let i = 0; i < results.documents[0].length; i++) {
+        documents.push({
+          content: results.documents[0][i],
+          metadata: results.metadatas[0][i],
+          distance: results.distances[0][i]
+        });
+      }
+    }
+    
+    return documents;
+  } catch (error) {
+    console.error('❌ Error searching documents:', error.message);
+    return [];
+  }
+}
+
+// Generate AI response using OpenAI
+async function generateAIResponse(query, context) {
+  try {
+    const openaiApiKey = getOpenAIKey();
+    
+    const systemPrompt = `You are a helpful SmartWinnr Help Assistant. You help users with questions about SmartWinnr features, setup, and usage.
+
+Use the following context from the SmartWinnr documentation to answer the user's question. If the context doesn't contain relevant information, say so and provide general guidance.
+
+Context:
+${context}
+
+Guidelines:
+- Be helpful, concise, and accurate
+- Reference specific sections or features when relevant
+- If you can't find specific information in the context, acknowledge this
+- Provide actionable advice when possible
+- Use a friendly, professional tone`;
+
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: query }
+        ],
+        temperature: 0.7,
+        max_tokens: 500
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${openaiApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        timeout: 30000
+      }
+    );
+
+    return response.data.choices[0].message.content;
+  } catch (error) {
+    console.error('❌ Error generating AI response:', error.response?.data || error.message);
+    throw error;
+  }
+}
 
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
@@ -60,25 +208,61 @@ app.post('/api/chat', async (req, res) => {
     };
     history.push(userMessage);
 
-    // For now, provide a helpful response about SmartWinnr
-    const response = {
-      message: `Thank you for your question about "${message}". I'm the SmartWinnr Help Assistant. This is a basic echo response - full AI integration will be added shortly. Your question has been logged.`,
-      citations: [
-        {
-          title: 'SmartWinnr Help Documentation',
-          url: '/',
-          snippet: 'Comprehensive help documentation for SmartWinnr users',
-          source: 'help.smartwinnr.com'
+    // Search for relevant documents
+    console.log('🔍 Searching for relevant documents...');
+    const searchResults = await searchDocuments(message);
+    
+    // Build context from search results
+    let context = '';
+    const citations = [];
+    
+    if (searchResults.length > 0) {
+      context = searchResults.map((result, index) => {
+        // Add to citations if it's a good match (distance < 0.8)
+        if (result.distance < 0.8 && result.metadata) {
+          citations.push({
+            title: result.metadata.title || 'SmartWinnr Documentation',
+            url: result.metadata.url || '/',
+            snippet: result.content.substring(0, 150) + '...',
+            source: result.metadata.source || 'help.smartwinnr.com'
+          });
         }
-      ],
+        
+        return `Document ${index + 1}:
+Title: ${result.metadata?.title || 'Untitled'}
+Content: ${result.content.substring(0, 500)}...
+---`;
+      }).join('\n\n');
+    } else {
+      context = 'No specific documentation found for this query.';
+    }
+
+    // Generate AI response
+    console.log('🤖 Generating AI response...');
+    let aiMessage;
+    try {
+      aiMessage = await generateAIResponse(message, context);
+    } catch (aiError) {
+      console.error('❌ AI generation failed, using fallback:', aiError.message);
+      aiMessage = `I'm sorry, I'm having trouble accessing my AI capabilities right now. However, I can help you find information in our SmartWinnr documentation. Try browsing our sections on getting started, quiz management, or competitions.`;
+    }
+
+    const response = {
+      message: aiMessage,
+      citations: citations.slice(0, 3), // Limit to top 3 citations
       relatedLinks: [
         {
           title: 'Getting Started Guide',
           url: '/administration',
           description: 'Learn the basics of SmartWinnr administration'
+        },
+        {
+          title: 'Quiz Management',
+          url: '/quiz',
+          description: 'Create and manage quizzes'
         }
       ],
-      confidence: 0.8
+      confidence: citations.length > 0 ? 0.8 : 0.4
     };
 
     // Add AI response to history
