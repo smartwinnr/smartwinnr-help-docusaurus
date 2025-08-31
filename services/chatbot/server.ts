@@ -138,6 +138,29 @@ app.get('/api/vector/info', async (req, res) => {
   }
 });
 
+// Internal embedding endpoint (for other services only)
+app.post('/api/vector/embed', async (req, res) => {
+  try {
+    const { text, model } = req.body;
+    
+    if (!text) {
+      return res.status(400).json({ error: 'Text is required' });
+    }
+    
+    // Use vector service to create embedding
+    const embedding = await vectorService.createEmbedding(text);
+    
+    res.json({ 
+      embedding,
+      model: model || 'text-embedding-3-small',
+      dimensions: embedding.length 
+    });
+  } catch (error) {
+    console.error('❌ Error generating embedding:', error);
+    res.status(500).json({ error: 'Failed to generate embedding' });
+  }
+});
+
 // Index documentation
 app.post('/api/vector/index', async (req, res) => {
   try {

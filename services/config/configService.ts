@@ -46,7 +46,7 @@ class ConfigService {
         openaiApiKey,
         chromaHost: process.env.CHROMA_HOST || 'localhost',
         chromaPort: parseInt(process.env.CHROMA_PORT || '8000'),
-        apiPort: parseInt(process.env.API_PORT || '3002'),
+        apiPort: parseInt(process.env.PORT || process.env.API_PORT || '3002'),
         corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:3001',
         collectionName: process.env.COLLECTION_NAME || 'smartwinnr_docs',
         embeddingModel: process.env.EMBEDDING_MODEL || 'text-embedding-3-small',

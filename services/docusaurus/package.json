@@ -7,14 +7,17 @@
     "start": "docusaurus start --host 0.0.0.0 --port 3000",
     "build": "docusaurus build",
     "serve": "docusaurus serve --host 0.0.0.0 --port 3000",
+    "serve-and-index": "npm run serve & sleep 10 && npm run index-internal",
     "clear": "docusaurus clear",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "index-internal": "node scripts/internal-indexer.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "chromadb": "^3.0.11"
   }
 }

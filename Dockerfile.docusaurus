@@ -14,6 +14,7 @@ COPY docs/ ./docs/
 COPY src/ ./src/
 COPY static/ ./static/
 COPY plugins/ ./plugins/
+COPY scripts/ ./scripts/
 
 # Install tsx globally for TypeScript support
 RUN npm install -g tsx
@@ -24,5 +25,5 @@ RUN npm run build
 # Expose port (Railway will set PORT env variable)
 EXPOSE 3000
 
-# Start the documentation server using Railway's PORT
-CMD ["sh", "-c", "npm run serve -- --port ${PORT:-3000}"]
+# Start the documentation server and run indexing after all services are ready
+CMD ["sh", "-c", "npm run serve -- --port ${PORT:-3000} & sleep 45 && npm run index-internal; wait"]
