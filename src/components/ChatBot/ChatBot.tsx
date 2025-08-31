@@ -30,9 +30,10 @@ interface RelatedLink {
   description: string;
 }
 
-const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  ? 'http://localhost:3002' 
-  : 'https://chatbot-api-production-32f8.up.railway.app';
+// Use same-origin API - no more CORS issues!
+const API_BASE_URL = typeof window !== 'undefined' 
+  ? window.location.origin  // Same origin as the Docusaurus site
+  : '';
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

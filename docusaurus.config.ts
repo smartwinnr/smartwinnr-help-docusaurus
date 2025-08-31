@@ -36,6 +36,7 @@ const config: Config = {
 
   plugins: [
     './plugins/chatbot-plugin.js',
+    './plugins/api-routes-plugin.js',
   ],
 
   themeConfig: {

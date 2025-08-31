@@ -54,7 +54,8 @@
       "WebFetch(domain:station.railway.com)",
       "Bash(railway logs:*)",
       "Bash(railway run:*)",
-      "WebFetch(domain:www.npmjs.com)"
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(git tag:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

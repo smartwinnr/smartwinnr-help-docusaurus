@@ -37,7 +37,8 @@ export default {
     ]
   ],
   "plugins": [
-    "./plugins/chatbot-plugin.js"
+    "./plugins/chatbot-plugin.js",
+    "./plugins/api-routes-plugin.js"
   ],
   "themeConfig": {
     "image": "img/smartwinnr-social-card.jpg",
