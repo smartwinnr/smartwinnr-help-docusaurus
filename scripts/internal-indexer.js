@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { ChromaClient } = require('chromadb');
 
 /**
@@ -82,7 +83,14 @@ class InternalIndexer {
   }
 
   /**
-   * Process markdown files and extract content
+   * Generate content hash for change detection
+   */
+  generateContentHash(content) {
+    return crypto.createHash('sha256').update(content, 'utf8').digest('hex');
+  }
+
+  /**
+   * Process markdown files and extract content with change detection
    */
   processMarkdownFile(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -96,14 +104,21 @@ class InternalIndexer {
     const relativePath = path.relative(path.join(process.cwd(), 'docs'), filePath);
     const url = `/${relativePath.replace(/\.md$/, '').replace(/\\/g, '/')}`;
     
+    // Remove frontmatter for processing but include in hash
+    const cleanContent = content.replace(/^---[\s\S]*?---\n/, '');
+    const contentHash = this.generateContentHash(cleanContent);
+    
     return {
-      id: `doc_${Buffer.from(filePath).toString('base64')}`,
-      content: content.replace(/^---[\s\S]*?---\n/, ''), // Remove frontmatter
+      id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for consistent IDs
+      content: cleanContent,
+      hash: contentHash,
+      filePath: relativePath, // Store relative path for tracking
       metadata: {
         title,
-        source: filePath,
+        source: relativePath,
         url,
         lastModified: stats.mtime.toISOString(),
+        contentHash,
         type: 'documentation'
       }
     };
@@ -135,11 +150,160 @@ class InternalIndexer {
   }
 
   /**
-   * Index all documents to ChromaDB
+   * Get existing documents from ChromaDB with their hashes
+   */
+  async getExistingDocuments(collection) {
+    try {
+      const results = await collection.get({
+        include: ['metadatas']
+      });
+      
+      const existingDocs = new Map();
+      if (results.metadatas) {
+        for (let i = 0; i < results.metadatas.length; i++) {
+          const metadata = results.metadatas[i];
+          if (metadata.source && metadata.contentHash) {
+            existingDocs.set(metadata.source, {
+              contentHash: metadata.contentHash,
+              title: metadata.title,
+              url: metadata.url
+            });
+          }
+        }
+      }
+      
+      console.log(`📊 Found ${existingDocs.size} existing documents in collection`);
+      return existingDocs;
+    } catch (error) {
+      console.log('ℹ️  No existing documents found (collection might be empty)');
+      return new Map();
+    }
+  }
+
+  /**
+   * Analyze changes between current files and existing documents
+   */
+  analyzeChanges(currentDocs, existingDocs) {
+    const changes = {
+      new: [],
+      changed: [],
+      unchanged: [],
+      deleted: []
+    };
+
+    // Check current documents against existing ones
+    for (const doc of currentDocs) {
+      const existing = existingDocs.get(doc.filePath);
+      
+      if (!existing) {
+        changes.new.push(doc);
+      } else if (existing.contentHash !== doc.hash) {
+        changes.changed.push(doc);
+      } else {
+        changes.unchanged.push(doc);
+      }
+    }
+
+    // Find deleted documents (exist in ChromaDB but not in current files)
+    const currentFilePaths = new Set(currentDocs.map(doc => doc.filePath));
+    for (const [filePath, docInfo] of existingDocs.entries()) {
+      if (!currentFilePaths.has(filePath)) {
+        changes.deleted.push({
+          filePath,
+          ...docInfo
+        });
+      }
+    }
+
+    return changes;
+  }
+
+  /**
+   * Remove deleted documents from ChromaDB
+   */
+  async removeDeletedDocuments(collection, deletedDocs) {
+    if (deletedDocs.length === 0) return;
+    
+    console.log(`🗑️  Removing ${deletedDocs.length} deleted documents...`);
+    
+    for (const doc of deletedDocs) {
+      try {
+        const docId = `doc_${Buffer.from(doc.filePath).toString('base64')}`;
+        await collection.delete({ ids: [docId] });
+        console.log(`  ✅ Removed: ${doc.filePath}`);
+      } catch (error) {
+        console.error(`  ❌ Failed to remove ${doc.filePath}:`, error.message);
+      }
+    }
+  }
+
+  /**
+   * Process and upsert new/changed documents
+   */
+  async processChangedDocuments(collection, documents) {
+    if (documents.length === 0) return 0;
+    
+    console.log(`📝 Processing ${documents.length} new/changed documents...`);
+    
+    const batchSize = 10;
+    let processed = 0;
+    
+    for (let i = 0; i < documents.length; i += batchSize) {
+      const batch = documents.slice(i, i + batchSize);
+      const batchDocuments = [];
+      const batchEmbeddings = [];
+      const batchMetadatas = [];
+      const batchIds = [];
+      
+      console.log(`📄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(documents.length/batchSize)}`);
+      
+      for (const doc of batch) {
+        try {
+          // Generate embedding via internal API
+          const embedding = await this.generateEmbedding(doc.content);
+          
+          batchDocuments.push(doc.content);
+          batchEmbeddings.push(embedding);
+          batchMetadatas.push(doc.metadata);
+          batchIds.push(doc.id);
+          
+          processed++;
+          console.log(`  ✅ ${doc.filePath}`);
+        } catch (error) {
+          console.error(`  ❌ Failed to process ${doc.filePath}:`, error.message);
+        }
+      }
+      
+      // Upsert batch to collection (this will add new or update existing)
+      if (batchDocuments.length > 0) {
+        try {
+          await collection.upsert({
+            documents: batchDocuments,
+            embeddings: batchEmbeddings,
+            metadatas: batchMetadatas,
+            ids: batchIds
+          });
+        } catch (error) {
+          console.error(`❌ Failed to upsert batch:`, error.message);
+        }
+      }
+    }
+    
+    return processed;
+  }
+
+  /**
+   * Index documents to ChromaDB using incremental updates
    */
   async indexDocuments() {
     try {
-      console.log('🚀 Starting internal document indexing...');
+      console.log('🚀 Starting incremental document indexing...');
+      
+      // Check for force full reindex flag
+      const forceFullReindex = process.env.FORCE_FULL_REINDEX === 'true';
+      if (forceFullReindex) {
+        console.log('🔄 Force full reindex requested');
+      }
       
       // Wait for ChromaDB to be ready
       await this.waitForChroma();
@@ -168,59 +332,72 @@ class InternalIndexer {
         return;
       }
       
-      // Clear existing documents
-      const existingCount = await collection.count();
-      if (existingCount > 0) {
-        console.log(`🗑️  Clearing ${existingCount} existing documents...`);
-        // Note: ChromaDB doesn't have a clear method, so we'll delete and recreate
-        await this.chromaClient.deleteCollection({ name: this.collectionName });
-        collection = await this.chromaClient.createCollection({ name: this.collectionName });
-      }
-      
-      // Process documents in batches
-      const batchSize = 10;
-      let indexed = 0;
-      
-      for (let i = 0; i < docFiles.length; i += batchSize) {
-        const batch = docFiles.slice(i, i + batchSize);
-        const documents = [];
-        const embeddings = [];
-        const metadatas = [];
-        const ids = [];
-        
-        console.log(`📄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(docFiles.length/batchSize)}`);
-        
-        for (const filePath of batch) {
-          try {
-            const doc = this.processMarkdownFile(filePath);
-            
-            // Generate embedding via internal API
-            const embedding = await this.generateEmbedding(doc.content);
-            
-            documents.push(doc.content);
-            embeddings.push(embedding);
-            metadatas.push(doc.metadata);
-            ids.push(doc.id);
-            
-            indexed++;
-            console.log(`  ✅ ${path.basename(filePath)}`);
-          } catch (error) {
-            console.error(`  ❌ Failed to process ${filePath}:`, error.message);
-          }
-        }
-        
-        // Add batch to collection
-        if (documents.length > 0) {
-          await collection.add({
-            documents,
-            embeddings,
-            metadatas,
-            ids
-          });
+      // Process all current documents and generate hashes
+      console.log('🔍 Processing current documents...');
+      const currentDocs = [];
+      for (const filePath of docFiles) {
+        try {
+          const doc = this.processMarkdownFile(filePath);
+          currentDocs.push(doc);
+        } catch (error) {
+          console.error(`❌ Failed to process ${filePath}:`, error.message);
         }
       }
       
-      console.log(`🎉 Indexing completed! Indexed ${indexed}/${docFiles.length} documents`);
+      // Handle force full reindex
+      if (forceFullReindex) {
+        console.log('🗑️  Performing full reindex - clearing existing collection...');
+        const existingCount = await collection.count();
+        if (existingCount > 0) {
+          await this.chromaClient.deleteCollection({ name: this.collectionName });
+          collection = await this.chromaClient.createCollection({ name: this.collectionName });
+        }
+        
+        const processed = await this.processChangedDocuments(collection, currentDocs);
+        console.log(`🎉 Full reindex completed! Processed ${processed}/${currentDocs.length} documents`);
+        
+        const finalCount = await collection.count();
+        console.log(`📊 Collection now contains ${finalCount} documents`);
+        return;
+      }
+      
+      // Get existing documents from ChromaDB
+      const existingDocs = await this.getExistingDocuments(collection);
+      
+      // Analyze changes
+      const changes = this.analyzeChanges(currentDocs, existingDocs);
+      
+      // Log change summary
+      console.log('📊 Change Analysis:');
+      console.log(`  📄 New documents: ${changes.new.length}`);
+      console.log(`  📝 Changed documents: ${changes.changed.length}`);
+      console.log(`  ✅ Unchanged documents: ${changes.unchanged.length}`);
+      console.log(`  🗑️  Deleted documents: ${changes.deleted.length}`);
+      
+      // Check if any changes exist
+      const totalChanges = changes.new.length + changes.changed.length + changes.deleted.length;
+      if (totalChanges === 0) {
+        console.log('✨ No changes detected - indexing complete!');
+        return;
+      }
+      
+      // Apply incremental changes
+      let totalProcessed = 0;
+      
+      // 1. Remove deleted documents
+      if (changes.deleted.length > 0) {
+        await this.removeDeletedDocuments(collection, changes.deleted);
+      }
+      
+      // 2. Process new and changed documents
+      const documentsToProcess = [...changes.new, ...changes.changed];
+      if (documentsToProcess.length > 0) {
+        totalProcessed = await this.processChangedDocuments(collection, documentsToProcess);
+      }
+      
+      console.log(`🎉 Incremental indexing completed!`);
+      console.log(`  📊 Total processed: ${totalProcessed}/${documentsToProcess.length} documents`);
+      console.log(`  ⚡ Efficiency: Skipped ${changes.unchanged.length} unchanged documents`);
       
       // Verify collection
       const finalCount = await collection.count();
