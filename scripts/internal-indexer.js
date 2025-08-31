@@ -45,9 +45,9 @@ class InternalIndexer {
    */
   async generateEmbedding(text, retries = 3) {
     // Use Railway internal networking (HTTP only for internal communication)
-    const CHATBOT_URL = process.env.RAILWAY_PRIVATE_DOMAIN || 'chatbot-api.railway.internal';
-    const CHATBOT_PORT = process.env.PORT || '8080'; // Railway uses PORT for service port
-    const apiUrl = `http://${CHATBOT_URL}:${CHATBOT_PORT}/api/vector/embed`;
+    const CHATBOT_HOST = process.env.CHATBOT_API_HOST || 'chatbot-api.railway.internal';
+    const CHATBOT_PORT = process.env.CHATBOT_API_PORT || '8080';
+    const apiUrl = `http://${CHATBOT_HOST}:${CHATBOT_PORT}/api/vector/embed`;
     
     for (let attempt = 1; attempt <= retries; attempt++) {
       try {
