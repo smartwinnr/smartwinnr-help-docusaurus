@@ -47,7 +47,7 @@ class InternalIndexer {
     // Use same-host API - no more cross-service communication!
     // Since internal-indexer runs within the same Docusaurus container
     const API_HOST = process.env.API_HOST || 'localhost';
-    const API_PORT = process.env.PORT || '3000'; // Docusaurus port
+    const API_PORT = process.env.PORT || process.env.DOCUSAURUS_PORT || '8080'; // Railway uses 8080
     const apiUrl = `http://${API_HOST}:${API_PORT}/api/vector/embed`;
     
     for (let attempt = 1; attempt <= retries; attempt++) {

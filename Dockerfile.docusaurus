@@ -24,4 +24,5 @@ RUN npm run build
 EXPOSE 3000
 
 # Start the unified server (includes both static site + API)
-CMD ["node", "server.js"]
+# Make sure to use npm run serve which calls node server.js
+CMD ["npm", "run", "serve"]
