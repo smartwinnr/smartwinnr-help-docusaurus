@@ -30,9 +30,9 @@ interface RelatedLink {
   description: string;
 }
 
-const API_BASE_URL = process.env.NODE_ENV === 'development' 
+const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
   ? 'http://localhost:3002' 
-  : '/api';
+  : 'https://chatbot-api-production-32f8.up.railway.app';
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +102,7 @@ const ChatBot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      console.log('🔄 Sending message to:', `${API_BASE_URL}/api/chat`);
+      console.log('🔄 Sending message to API');
       console.log('🔄 Request body:', {
         message: inputValue,
         conversationId: conversationId,

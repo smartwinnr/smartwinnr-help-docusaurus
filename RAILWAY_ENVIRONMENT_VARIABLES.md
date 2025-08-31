@@ -86,6 +86,11 @@ NODE_ENV=production
 REACT_APP_API_URL=https://chatbot-api-production-32f8.up.railway.app
 ```
 
+### Critical Configuration Files
+- **Package**: `services/docusaurus/package.json` (isolated Docusaurus dependencies)
+- **Dockerfile**: Uses Railway's `PORT` environment variable
+- **Host Binding**: `--host 0.0.0.0` for external access
+
 ### Service URLs
 - **Public**: `https://docusaurus-production.up.railway.app`
 - **Internal**: `http://docusaurus.railway.internal`
@@ -115,6 +120,17 @@ Without this setting, other services cannot connect to ChromaDB via `chroma.rail
 1. Verify `CHROMA_HOST_ADDR=::` is set on ChromaDB service
 2. Ensure chatbot-api uses `CHROMA_HOST=chroma.railway.internal`
 3. Check internal networking uses `CHROMA_SSL=false`
+
+### Docusaurus 502 Errors
+1. Ensure Dockerfile uses Railway's `PORT` environment variable
+2. Verify service binds to `0.0.0.0` (not localhost)
+3. Check `services/docusaurus/package.json` has isolated dependencies
+
+### Dependency Conflicts (npm install)
+1. Use isolated package.json files for each service:
+   - `services/chatbot/package.json` (chatbot-only dependencies)
+   - `services/docusaurus/package.json` (docusaurus-only dependencies)
+2. Avoid using root `package.json` in Dockerfiles
 
 ### CORS Issues  
 1. Verify `CORS_ORIGIN` matches exact Docusaurus domain

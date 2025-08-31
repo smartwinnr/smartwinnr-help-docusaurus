@@ -51,7 +51,9 @@
       "WebFetch(domain:railway.com)",
       "Bash(railway ssh:*)",
       "WebFetch(domain:help.railway.com)",
-      "WebFetch(domain:station.railway.com)"
+      "WebFetch(domain:station.railway.com)",
+      "Bash(railway logs:*)",
+      "Bash(railway run:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

@@ -87,7 +87,12 @@ NODE_ENV=production
 REACT_APP_API_URL=https://chatbot-api-production-32f8.up.railway.app
 ```
 
-**Port:** 3000
+**⚠️ Critical Configuration Notes:**
+- Uses isolated `services/docusaurus/package.json` to avoid dependency conflicts
+- Dockerfile configured to use Railway's dynamic `PORT` environment variable
+- Binds to `0.0.0.0` for external access (not localhost)
+
+**Port:** Railway assigns dynamic port (defaults to 3000 for local)
 
 ## Post-Deployment Configuration
 

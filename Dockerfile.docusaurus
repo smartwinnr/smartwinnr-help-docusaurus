@@ -2,18 +2,27 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-RUN npm ci --only=production
+# Copy docusaurus-specific package files
+COPY services/docusaurus/package*.json ./
+RUN npm install --omit=dev
 
-# Copy source code
-COPY . .
+# Copy necessary files for Docusaurus build
+COPY docusaurus.config.ts ./
+COPY sidebars.ts ./
+COPY tsconfig.json ./
+COPY docs/ ./docs/
+COPY src/ ./src/
+COPY static/ ./static/
+COPY plugins/ ./plugins/
+
+# Install tsx globally for TypeScript support
+RUN npm install -g tsx
 
 # Build the documentation
 RUN npm run build
 
-# Expose port
+# Expose port (Railway will set PORT env variable)
 EXPOSE 3000
 
-# Start the documentation server
-CMD ["npm", "run", "serve"]
+# Start the documentation server using Railway's PORT
+CMD ["sh", "-c", "npm run serve -- --port ${PORT:-3000}"]

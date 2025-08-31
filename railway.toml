@@ -3,7 +3,7 @@
 
 [build]
 builder = "dockerfile"
-dockerfilePath = "Dockerfile.docusaurus"
+dockerfilePath = "Dockerfile.chatbot"
 
 [deploy]
 startCommand = ""
