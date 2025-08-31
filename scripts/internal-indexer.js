@@ -45,6 +45,7 @@ class InternalIndexer {
    */
   async generateEmbedding(text, retries = 3) {
     // Use Railway internal networking (HTTP only for internal communication)
+    // Fixed: Use correct environment variables for chatbot-api service
     const CHATBOT_HOST = process.env.CHATBOT_API_HOST || 'chatbot-api.railway.internal';
     const CHATBOT_PORT = process.env.CHATBOT_API_PORT || '8080';
     const apiUrl = `http://${CHATBOT_HOST}:${CHATBOT_PORT}/api/vector/embed`;
