@@ -85,12 +85,29 @@ CHAT_MODEL=gpt-4o-mini
 ```bash
 NODE_ENV=production
 REACT_APP_API_URL=https://chatbot-api-production-32f8.up.railway.app
+
+# For automatic document indexing
+CHROMA_HOST=chroma.railway.internal
+CHROMA_PORT=8000
+CHROMA_SSL=false
+COLLECTION_NAME=smartwinnr_docs
+EMBEDDING_MODEL=text-embedding-3-small
+OPENAI_API_KEY=your-openai-api-key
+RAILWAY_SERVICE_CHATBOT_API_URL=chatbot-api-production-32f8.up.railway.app
 ```
 
-**⚠️ Critical Configuration Notes:**
+**✅ Key Features:**
+- **Automatic Document Indexing**: Runs after deployment to index all documentation
+- **Internal Service Communication**: Uses Railway's secure internal network
+- **AI-Powered Search**: ChromaDB stores document embeddings for intelligent chatbot responses
+- **Zero Manual Intervention**: Indexing happens automatically on each deployment
+
+**🔧 Technical Implementation:**
 - Uses isolated `services/docusaurus/package.json` to avoid dependency conflicts
-- Dockerfile configured to use Railway's dynamic `PORT` environment variable
-- Binds to `0.0.0.0` for external access (not localhost)
+- Dockerfile runs indexing automatically: `npm run serve & sleep 45 && npm run index-internal; wait`
+- 45-second startup delay ensures all services are ready before indexing
+- Processes 276+ documentation files in batches of 10 for optimal performance
+- Binds to `0.0.0.0` for external access with Railway's dynamic `PORT`
 
 **Port:** Railway assigns dynamic port (defaults to 3000 for local)
 
@@ -110,14 +127,33 @@ After the chatbot-api service is deployed:
 2. Update the `REACT_APP_API_URL` environment variable with the actual chatbot-api domain
 3. Redeploy the docusaurus service
 
-### 3. Initialize Vector Database
-After all services are running, you need to populate the ChromaDB with your documentation:
+### 3. Automatic Document Indexing
+The system now automatically indexes documentation after each deployment:
 
-1. Use Railway CLI to connect to your chatbot-api service
-2. Run the indexing command:
-   ```bash
-   railway run --service chatbot-api npm run index-docs
-   ```
+**✅ Automatic Process:**
+- Indexing runs automatically after Docusaurus service deployment
+- No manual intervention required
+- Processes all `.md` and `.mdx` files from the `/docs` directory
+- Updates ChromaDB with fresh embeddings on each deployment
+
+**🔄 Indexing Workflow:**
+1. Docusaurus builds and starts serving content
+2. After 45-second delay, automatic indexing begins
+3. Script calls chatbot-api service to generate embeddings
+4. Embeddings stored in ChromaDB with metadata (title, URL, source)
+5. Collection is cleared and recreated to ensure fresh data
+
+**📊 Process Details:**
+- **Files Processed**: 276+ documentation files
+- **Batch Size**: 10 documents per batch for optimal performance
+- **Embedding Model**: `text-embedding-3-small` (OpenAI)
+- **Storage**: ChromaDB collection `smartwinnr_docs`
+
+**Manual Re-indexing (if needed):**
+```bash
+# Force re-indexing if required
+railway run --service docusaurus npm run index-internal
+```
 
 ## Service Dependencies
 

@@ -84,11 +84,28 @@ NODE_ENV=production
 
 # API Connection
 REACT_APP_API_URL=https://chatbot-api-production-32f8.up.railway.app
+
+# Automatic Document Indexing Configuration
+CHROMA_HOST=chroma.railway.internal
+CHROMA_PORT=8000
+CHROMA_SSL=false
+COLLECTION_NAME=smartwinnr_docs
+EMBEDDING_MODEL=text-embedding-3-small
+OPENAI_API_KEY=sk-proj-[your-openai-api-key]
+RAILWAY_SERVICE_CHATBOT_API_URL=chatbot-api-production-32f8.up.railway.app
 ```
+
+### Automatic Document Indexing Features
+- **Auto-runs after deployment**: Indexes 276+ documentation files automatically
+- **Batch processing**: Processes documents in batches of 10 for optimal performance
+- **Internal service communication**: Uses Railway's secure internal network
+- **Fresh data guarantee**: Clears and recreates collection on each deployment
+- **Zero manual intervention**: Fully automated indexing pipeline
 
 ### Critical Configuration Files
 - **Package**: `services/docusaurus/package.json` (isolated Docusaurus dependencies)
-- **Dockerfile**: Uses Railway's `PORT` environment variable
+- **Dockerfile**: Runs automatic indexing: `npm run serve & sleep 45 && npm run index-internal; wait`
+- **Indexing Script**: `scripts/internal-indexer.js` (processes all documentation)
 - **Host Binding**: `--host 0.0.0.0` for external access
 
 ### Service URLs
