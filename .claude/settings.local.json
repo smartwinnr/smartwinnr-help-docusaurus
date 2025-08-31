@@ -53,7 +53,8 @@
       "WebFetch(domain:help.railway.com)",
       "WebFetch(domain:station.railway.com)",
       "Bash(railway logs:*)",
-      "Bash(railway run:*)"
+      "Bash(railway run:*)",
+      "WebFetch(domain:www.npmjs.com)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
