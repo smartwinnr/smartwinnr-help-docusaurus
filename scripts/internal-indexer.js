@@ -109,13 +109,13 @@ class InternalIndexer {
     const contentHash = this.generateContentHash(cleanContent);
     
     return {
-      id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for consistent IDs
+      id: `doc_${Buffer.from(filePath).toString('base64')}`, // Use full file path for backward compatibility with existing IDs
       content: cleanContent,
       hash: contentHash,
       filePath: relativePath, // Store relative path for tracking
       metadata: {
         title,
-        source: relativePath,
+        source: relativePath, // Keep relative path in metadata for consistency
         url,
         lastModified: stats.mtime.toISOString(),
         contentHash,
@@ -228,7 +228,9 @@ class InternalIndexer {
     
     for (const doc of deletedDocs) {
       try {
-        const docId = `doc_${Buffer.from(doc.filePath).toString('base64')}`;
+        // Convert relative path back to full path for ID consistency
+        const fullPath = path.join(process.cwd(), 'docs', doc.filePath);
+        const docId = `doc_${Buffer.from(fullPath).toString('base64')}`;
         await collection.delete({ ids: [docId] });
         console.log(`  ✅ Removed: ${doc.filePath}`);
       } catch (error) {
