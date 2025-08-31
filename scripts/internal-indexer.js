@@ -315,7 +315,10 @@ class InternalIndexer {
         collection = await this.chromaClient.getCollection({ name: this.collectionName });
         console.log('✅ Connected to existing collection');
       } catch (error) {
-        collection = await this.chromaClient.createCollection({ name: this.collectionName });
+        collection = await this.chromaClient.createCollection({ 
+          name: this.collectionName,
+          embeddingFunction: null // We handle embeddings manually with OpenAI
+        });
         console.log('✅ Created new collection');
       }
       
@@ -351,7 +354,10 @@ class InternalIndexer {
         const existingCount = await collection.count();
         if (existingCount > 0) {
           await this.chromaClient.deleteCollection({ name: this.collectionName });
-          collection = await this.chromaClient.createCollection({ name: this.collectionName });
+          collection = await this.chromaClient.createCollection({ 
+            name: this.collectionName,
+            embeddingFunction: null // We handle embeddings manually with OpenAI
+          });
         }
         
         const processed = await this.processChangedDocuments(collection, currentDocs);
