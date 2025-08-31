@@ -12,7 +12,7 @@ A Docusaurus-based documentation site with integrated AI chatbot functionality f
 
 ### Railway (Current Production Environment)
 
-The project is deployed on Railway with the following services:
+The project is successfully deployed on Railway with the following services:
 
 - **Documentation Site**: https://docusaurus-production.up.railway.app
 - **Chatbot API**: https://chatbot-api-production-32f8.up.railway.app
@@ -23,11 +23,20 @@ The project is deployed on Railway with the following services:
 - ⚙️ `RAILWAY_ENVIRONMENT_VARIABLES.md` - Environment variables reference
 - 🐳 `Dockerfile.chatbot` - Chatbot API container configuration
 - 🐳 `Dockerfile.docusaurus` - Documentation site container configuration
+- 🔄 `scripts/internal-indexer.js` - Automatic document indexing system
 
-**⚠️ Important Notes:**
-- ChromaDB service is set up manually using Railway's official template
-- Internal networking requires `CHROMA_HOST_ADDR=::` (IPv6 binding)
-- Services communicate via Railway's internal network for security
+**✅ Key Features:**
+- **Automatic Document Indexing**: Documentation is automatically indexed when deployed
+- **Internal Service Communication**: Services communicate via Railway's secure internal network
+- **AI-Powered Search**: ChromaDB stores document embeddings for intelligent chatbot responses
+- **Zero Public API Exposure**: Only the documentation website is publicly accessible
+
+**🔧 Technical Implementation:**
+- ChromaDB service uses Railway's official template with IPv6 binding (`CHROMA_HOST_ADDR=::`)
+- Internal networking uses `chatbot-api.railway.internal` for service-to-service communication
+- Automatic indexing runs after Docusaurus deployment with 45-second startup delay
+- OpenAI embeddings generated via internal chatbot-api service calls
+- Retry logic with exponential backoff ensures reliable service communication
 
 ## Setup
 
@@ -317,10 +326,50 @@ https://help.smartwinnr.com/admin/    # Production
 - 📱 Mobile & Platform Tools (1 file)
 - 🆘 Help & Support (2 files)
 
+## Automatic Document Indexing System
+
+### How It Works
+The system automatically indexes all documentation for the AI chatbot when deployed to Railway:
+
+1. **Deployment Trigger**: After Docusaurus builds and starts serving
+2. **Document Processing**: Scans all `.md` and `.mdx` files in the `docs/` directory
+3. **Embedding Generation**: Creates OpenAI embeddings via the internal chatbot-api service
+4. **Vector Storage**: Stores embeddings in ChromaDB for intelligent search and responses
+5. **Batch Processing**: Processes documents in batches of 10 for optimal performance
+
+### Key Components
+
+**Internal Indexer Script**: `scripts/internal-indexer.js`
+- Automatically runs on Railway deployment
+- Uses secure internal service communication
+- Includes retry logic and error handling
+- Processes 276+ documentation files
+
+**Railway Environment Variables**:
+```
+CHROMA_HOST=chroma.railway.internal
+CHROMA_PORT=8000
+OPENAI_API_KEY=your-openai-key
+COLLECTION_NAME=smartwinnr_docs
+```
+
+**Automatic Processing Features**:
+- Document metadata extraction (title, URL, last modified)
+- Content chunking for optimal embedding size
+- Batch processing with progress tracking
+- Duplicate detection and cleanup
+
+### Manual Re-indexing (if needed)
+```bash
+# In Railway console or locally with proper environment variables
+npm run index-internal
+```
+
 ## Additional Commands
 
 - **Enhanced development:** `npm run dev:full` (with colored output)
-- **Index documentation for chatbot:** `npm run index-docs`
+- **Index documentation for chatbot:** `npm run index-docs` (local development)
+- **Internal indexing:** `npm run index-internal` (Railway production)
 - **Type checking:** `npm run typecheck`
 - **Clear Docusaurus cache:** `npm run clear`
 - **Migrate images:** `node scripts/migrate-images.js`
