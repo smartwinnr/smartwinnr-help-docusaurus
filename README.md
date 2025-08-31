@@ -8,6 +8,27 @@ A Docusaurus-based documentation site with integrated AI chatbot functionality f
 - npm or yarn package manager
 - OpenAI API key for chatbot functionality
 
+## Production Deployment
+
+### Railway (Current Production Environment)
+
+The project is deployed on Railway with the following services:
+
+- **Documentation Site**: https://docusaurus-production.up.railway.app
+- **Chatbot API**: https://chatbot-api-production-32f8.up.railway.app
+- **ChromaDB**: https://chroma-production-ebac.up.railway.app (Internal vector database)
+
+**Deployment Files:**
+- 📖 `RAILWAY_DEPLOYMENT.md` - Complete Railway deployment guide
+- ⚙️ `RAILWAY_ENVIRONMENT_VARIABLES.md` - Environment variables reference
+- 🐳 `Dockerfile.chatbot` - Chatbot API container configuration
+- 🐳 `Dockerfile.docusaurus` - Documentation site container configuration
+
+**⚠️ Important Notes:**
+- ChromaDB service is set up manually using Railway's official template
+- Internal networking requires `CHROMA_HOST_ADDR=::` (IPv6 binding)
+- Services communicate via Railway's internal network for security
+
 ## Setup
 
 1. **Install dependencies:**

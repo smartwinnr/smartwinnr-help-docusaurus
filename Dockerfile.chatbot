@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy chatbot-specific package files
+COPY services/chatbot/package*.json ./
+RUN npm install --omit=dev
+
+# Copy chatbot service code
+COPY services/ ./services/
+COPY .env* ./
+
+# Install tsx globally for running TypeScript
+RUN npm install -g tsx
+
+# Expose port
+EXPOSE 3002
+
+# Start the chatbot API
+CMD ["tsx", "services/chatbot/server.ts"]
