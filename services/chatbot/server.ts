@@ -341,10 +341,11 @@ async function startServer() {
   // Start the HTTP server first so health endpoint is available
   const config = await configService.initialize();
   
-  app.listen(config.apiPort, '0.0.0.0', () => {
-    console.log(`🚀 Chatbot API server running on http://0.0.0.0:${config.apiPort}`);
-    console.log(`📊 Health check: http://0.0.0.0:${config.apiPort}/health`);
-    console.log(`💬 Chat endpoint: http://0.0.0.0:${config.apiPort}/api/chat`);
+  app.listen(config.apiPort, '::', () => {
+    console.log(`🚀 Chatbot API server running on IPv6 dual stack [::]:${config.apiPort}`);
+    console.log(`📊 Health check: http://localhost:${config.apiPort}/health`);
+    console.log(`💬 Chat endpoint: http://localhost:${config.apiPort}/api/chat`);
+    console.log(`🔗 Railway internal: http://chatbot-api.railway.internal:${config.apiPort}`);
     console.log(`🔍 Vector search: http://0.0.0.0:${config.apiPort}/api/vector/search`);
     
     if (config.nodeEnv === 'development') {
