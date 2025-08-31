@@ -43,9 +43,9 @@ class InternalIndexer {
    * Generate embedding via internal chatbot-api service
    */
   async generateEmbedding(text, retries = 3) {
-    const CHATBOT_URL = process.env.RAILWAY_SERVICE_CHATBOT_API_URL || 'chatbot-api.railway.internal';
-    const CHATBOT_PORT = process.env.CHATBOT_API_PORT || '8080';
-    const apiUrl = `http://${CHATBOT_URL}:${CHATBOT_PORT}/api/vector/embed`;
+    // For Railway internal networking, use the private domain without port
+    const CHATBOT_URL = 'chatbot-api.railway.internal';
+    const apiUrl = `http://${CHATBOT_URL}/api/vector/embed`;
     
     for (let attempt = 1; attempt <= retries; attempt++) {
       try {
