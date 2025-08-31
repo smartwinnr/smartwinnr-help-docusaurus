@@ -6,6 +6,6 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile.docusaurus"
 
 [deploy]
-startCommand = ""
+startCommand = "node server.js"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
