@@ -144,15 +144,15 @@ export class VectorService {
     limit: number = 5,
     filters?: Record<string, any>
   ): Promise<SearchResult[]> {
-    if (!this.collection) {
-      throw new Error('Vector service not initialized');
-    }
-
     try {
+      // Refresh collection reference to avoid stale UUID references
+      const collectionName = process.env.COLLECTION_NAME || 'smartwinnr_docs';
+      const collection = await this.client.getCollection({ name: collectionName });
+      
       // Create embedding for the query
       const queryEmbedding = await this.createEmbedding(query);
 
-      const results = await this.collection.query({
+      const results = await collection.query({
         queryEmbeddings: [queryEmbedding],
         nResults: limit,
         where: filters
@@ -298,14 +298,14 @@ export class VectorService {
   }
 
   async getCollectionInfo(): Promise<any> {
-    if (!this.collection) {
-      throw new Error('Vector service not initialized');
-    }
-
     try {
-      const count = await this.collection.count();
+      // Refresh collection reference to avoid stale UUID references
+      const collectionName = process.env.COLLECTION_NAME || 'smartwinnr_docs';
+      const collection = await this.client.getCollection({ name: collectionName });
+      
+      const count = await collection.count();
       return {
-        name: process.env.COLLECTION_NAME || 'smartwinnr_docs',
+        name: collectionName,
         documentCount: count,
         embeddingModel: this.embeddingModel
       };
