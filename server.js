@@ -100,6 +100,44 @@ app.post('/api/vector/embed', async (req, res) => {
   }
 });
 
+// Vector search endpoint (returns list of matching documents)
+app.post('/api/vector/search', async (req, res) => {
+  try {
+    const { query, limit = 8 } = req.body;
+    
+    if (!query) {
+      return res.status(400).json({ error: 'Query is required for search' });
+    }
+
+    console.log(`🔍 Document search query: "${query}"`);
+    
+    // Search documents using the same function as chat
+    const searchResults = await searchDocuments(query, limit);
+    
+    // Transform results to match the expected format for the search component
+    const results = searchResults.map((doc) => ({
+      id: doc.metadata?.source || `doc_${Math.random()}`,
+      content: doc.content || '',
+      metadata: {
+        source: doc.metadata?.source || '',
+        title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.md$/, '').replace(/^.*\//, '') : 'Unknown')
+      },
+      distance: doc.distance || 0
+    }));
+
+    console.log(`📄 Found ${results.length} matching documents`);
+    
+    res.json({ 
+      results,
+      query,
+      total: results.length
+    });
+  } catch (error) {
+    console.error('❌ Error in vector search:', error);
+    res.status(500).json({ error: 'Search failed' });
+  }
+});
+
 // AI search function
 async function searchDocuments(query, limit = 5) {
   try {
@@ -322,6 +360,8 @@ app.delete('/api/chat/:conversationId', (req, res) => {
     res.status(500).json({ error: 'Failed to clear conversation' });
   }
 });
+
+// Remove public indexing endpoint for security
 
 // Error handling middleware
 app.use((error, req, res, next) => {

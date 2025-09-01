@@ -31,7 +31,12 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
   const searchRef = useRef<HTMLDivElement>(null);
 
   const searchAPI = async (searchQuery: string): Promise<SearchResult[]> => {
-    const response = await fetch('http://localhost:3002/api/vector/search', {
+    // Use same-origin API call (no CORS issues)
+    const API_BASE_URL = typeof window !== 'undefined' 
+      ? window.location.origin  // Same origin as the current site
+      : '';
+      
+    const response = await fetch(`${API_BASE_URL}/api/vector/search`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
