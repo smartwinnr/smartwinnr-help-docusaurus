@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission",
+  "title": "Approve/Reject a Form Submission",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission.md",
+  "sourceDirName": "administration/system-management/user-management/forms-module/form-management",
+  "slug": "/administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission",
+  "permalink": "/administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 223,
+  "frontMatter": {
+    "title": "Approve/Reject a Form Submission",
+    "description": "",
+    "slug": "how-to-approve-reject-a-form-submission",
+    "sidebar_position": 223,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "600850fdcfe30d219ccd99f3",
+    "helpscout_url": "https://help.smartwinnr.com/article/223-how-to-approve-kpi-submission-forms"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add Approvers to a Form",
+    "permalink": "/administration/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form"
+  },
+  "next": {
+    "title": "How can I submit Form from Left Menu",
+    "permalink": "/administration/system-management/user-management/forms-module/form-management/how-can-i-submit-a-form-from-left-menu"
+  }
+}

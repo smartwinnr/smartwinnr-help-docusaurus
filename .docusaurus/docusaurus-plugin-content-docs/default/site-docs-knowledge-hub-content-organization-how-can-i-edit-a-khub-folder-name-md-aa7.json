@@ -23,14 +23,5 @@
     },
     "helpscout_id": "6317a3ed4cde766bbe1426fe",
     "helpscout_url": "https://help.smartwinnr.com/article/275-how-to-edit-folder-name-in-khub"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Edit a KHub item",
-    "permalink": "/knowledge-hub/content-creation/how-can-i-edit-a-khub-item"
-  },
-  "next": {
-    "title": "View KHub Analytics",
-    "permalink": "/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics"
   }
 }

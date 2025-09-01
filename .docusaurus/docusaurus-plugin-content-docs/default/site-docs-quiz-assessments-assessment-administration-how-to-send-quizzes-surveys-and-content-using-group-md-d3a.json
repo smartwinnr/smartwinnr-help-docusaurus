@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda5620b624c71b7985a2d0",
     "helpscout_url": "https://help.smartwinnr.com/article/130-how-to-send-quizzes-surveys-and-content-using-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Manage Quiz configurations?",
-    "permalink": "/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations"
-  },
-  "next": {
-    "title": "Give access permission to other editors",
-    "permalink": "/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors"
   }
 }

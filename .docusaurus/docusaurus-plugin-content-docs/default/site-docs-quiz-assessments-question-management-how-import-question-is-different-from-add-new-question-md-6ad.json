@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4845e36980410c9123839",
     "helpscout_url": "https://help.smartwinnr.com/article/45-how-is-it-different-from-add-new-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a 'Matching Question'.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-matching-question"
-  },
-  "next": {
-    "title": "Upload questions in bulk using 'Import Questions'.",
-    "permalink": "/quiz-assessments/question-management/how-to-upload-questions-in-bulk-using-import-questions"
   }
 }

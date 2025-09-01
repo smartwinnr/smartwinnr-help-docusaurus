@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/when-are-chat-groups-needed",
+  "title": "When are chat groups needed?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/when-are-chat-groups-needed.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/when-are-chat-groups-needed",
+  "permalink": "/administration/system-management/user-management/when-are-chat-groups-needed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/when-are-chat-groups-needed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 153,
+  "frontMatter": {
+    "title": "When are chat groups needed?",
+    "description": "",
+    "slug": "when-are-chat-groups-needed",
+    "sidebar_position": 153,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaf5db7129911ba1b21dfa",
+    "helpscout_url": "https://help.smartwinnr.com/article/153-when-are-chat-groups-needed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About Chat Groups",
+    "permalink": "/administration/system-management/user-management/what-are-chat-groups"
+  },
+  "next": {
+    "title": "Enable a Chat Group?",
+    "permalink": "/administration/system-management/user-management/how-to-enable-a-chat-group"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports",
+  "title": "Quiz Reports",
+  "description": "Analyze quiz performance and learner progress with comprehensive reporting and analytics.",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Analytics & Reports",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-reports"
+  },
+  "next": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics",
+  "title": "Detailed Quiz Analytics",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 55,
+  "frontMatter": {
+    "title": "Detailed Quiz Analytics",
+    "description": "",
+    "slug": "detailed-quiz-analytics",
+    "sidebar_position": 55,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd496523d1d2a5b1c5ea15c",
+    "helpscout_url": "https://help.smartwinnr.com/article/55-detailed-quiz-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Reports",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports"
+  },
+  "next": {
+    "title": "How To Find The Progress Of Your Team In Quizzes",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes"
+  }
+}

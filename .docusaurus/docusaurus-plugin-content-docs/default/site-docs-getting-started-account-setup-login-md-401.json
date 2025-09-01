@@ -23,6 +23,10 @@
     }
   },
   "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "SmartWinnr Platform Overview",
+    "permalink": "/overview/"
+  },
   "next": {
     "title": "Getting Started with SmartWinnr",
     "permalink": "/"

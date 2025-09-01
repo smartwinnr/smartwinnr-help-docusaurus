@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+  "title": "Review a field coaching as a manager/2nd level manager",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+  "sourceDirName": "administration/system-management/user-management/field-coaching-module/performance-evaluation",
+  "slug": "/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+  "permalink": "/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 277,
+  "frontMatter": {
+    "title": "Review a field coaching as a manager/2nd level manager",
+    "description": "",
+    "slug": "how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+    "sidebar_position": 277,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "631fbb2490c29a3d732c6e6e",
+    "helpscout_url": "https://help.smartwinnr.com/article/277-how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Review Field Coaching from Managers View in Mobile",
+    "permalink": "/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-field-coaching-from-managers-view-in-mobile"
+  },
+  "next": {
+    "title": "About Field Mappings",
+    "permalink": "/administration/system-management/user-management/forms-module/data-management/what-are-field-mappings"
+  }
+}

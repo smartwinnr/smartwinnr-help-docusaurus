@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics",
+  "title": "View the SmartPath Analytics.",
+  "description": "",
+  "source": "@site/docs/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics.md",
+  "sourceDirName": "administration/smartpath-module/smartpath-analytics",
+  "slug": "/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics",
+  "permalink": "/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 80,
+  "frontMatter": {
+    "title": "View the SmartPath Analytics.",
+    "description": "",
+    "slug": "how-to-view-the-smartpath-analytics",
+    "sidebar_position": 80,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd713dc23119734ee37f0cb",
+    "helpscout_url": "https://help.smartwinnr.com/article/80-how-to-view-the-smartpath-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Mark the attendance for Users in Learning Sessions?",
+    "permalink": "/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions"
+  },
+  "next": {
+    "title": "Create a module for SmartPath.",
+    "permalink": "/administration/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath"
+  }
+}

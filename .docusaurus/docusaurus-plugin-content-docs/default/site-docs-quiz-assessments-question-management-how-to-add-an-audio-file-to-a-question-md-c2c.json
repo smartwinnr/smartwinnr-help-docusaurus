@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd623d336980410c9123a23",
     "helpscout_url": "https://help.smartwinnr.com/article/73-how-to-add-an-audio-file-to-a-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Embed a link into the question",
-    "permalink": "/quiz-assessments/question-management/how-to-embed-a-link-into-the-question"
-  },
-  "next": {
-    "title": "Question Structure",
-    "permalink": "/quiz-assessments/question-management/question-structure"
   }
 }

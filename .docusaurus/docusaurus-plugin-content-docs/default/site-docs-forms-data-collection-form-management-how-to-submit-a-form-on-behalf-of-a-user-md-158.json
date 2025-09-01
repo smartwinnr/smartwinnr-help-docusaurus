@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60bb69c690777e23fb8ada49",
     "helpscout_url": "https://help.smartwinnr.com/article/252-how-to-submit-a-form-on-behalf-of-a-user"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Edit a Form on submitted by a user?",
-    "permalink": "/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user"
-  },
-  "next": {
-    "title": "About Scorecards",
-    "permalink": "/forms-data-collection/scorecards/what-are-scorecards"
   }
 }

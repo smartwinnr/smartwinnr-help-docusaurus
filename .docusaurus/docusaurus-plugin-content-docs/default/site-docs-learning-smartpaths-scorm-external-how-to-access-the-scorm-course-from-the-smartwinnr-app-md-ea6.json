@@ -23,14 +23,5 @@
     },
     "helpscout_id": "62b450c10b51ec1ae83f9bf8",
     "helpscout_url": "https://help.smartwinnr.com/article/272-how-to-access-the-scorm-course-from-the-smartwinnr-app"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Import SCORM course into SmartWinnr?",
-    "permalink": "/learning-smartpaths/scorm-external/how-to-import-scorm-course-into-smartwinnr"
-  },
-  "next": {
-    "title": "Create a module for SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-a-module-for-smartpath"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0cd97129911ba1b21e50",
     "helpscout_url": "https://help.smartwinnr.com/article/173-how-to-create-a-field-mapping"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About Field Mappings",
-    "permalink": "/forms-data-collection/data-management/what-are-field-mappings"
-  },
-  "next": {
-    "title": "Create a form?",
-    "permalink": "/forms-data-collection/form-creation/how-to-create-a-form"
   }
 }

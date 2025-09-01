@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb14bf27288b7f895d6570",
     "helpscout_url": "https://help.smartwinnr.com/article/177-how-to-add-change-targets"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Bulk Custom Notifications",
-    "permalink": "/administration/bulk-custom-notifications"
-  },
-  "next": {
-    "title": "Create a new Project?",
-    "permalink": "/administration/how-to-create-a-new-project"
   }
 }

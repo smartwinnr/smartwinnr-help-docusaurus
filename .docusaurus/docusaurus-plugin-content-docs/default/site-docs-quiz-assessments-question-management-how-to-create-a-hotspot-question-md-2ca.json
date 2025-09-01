@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4640136980410c912381c",
     "helpscout_url": "https://help.smartwinnr.com/article/42-how-to-create-a-hotspot-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create 'Fill-In-The-Blank' Questions.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-fill-in-the-blank-questions"
-  },
-  "next": {
-    "title": "Create a 'Matching Question'.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-matching-question"
   }
 }

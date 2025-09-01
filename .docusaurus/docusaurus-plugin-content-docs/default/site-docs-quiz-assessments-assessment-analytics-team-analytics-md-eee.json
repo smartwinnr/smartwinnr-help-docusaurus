@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb9acd27288b7f895d6884",
     "helpscout_url": "https://help.smartwinnr.com/article/197-team-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Finding Status and Scores for Quizzes assigned to your Team",
-    "permalink": "/quiz-assessments/assessment-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team"
-  },
-  "next": {
-    "title": "Quiz Wise Analytics",
-    "permalink": "/quiz-assessments/assessment-analytics/quiz-wise-analytics"
   }
 }

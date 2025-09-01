@@ -1,0 +1,34 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes",
+  "title": "Creating Quizzes",
+  "description": "Complete guide for creating manual and automatic quizzes with different question types",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/quiz-creation",
+  "slug": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes",
+  "permalink": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Creating Quizzes",
+    "description": "Complete guide for creating manual and automatic quizzes with different question types",
+    "slug": "creating-quizzes",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About SmartWinnr Quiz Analytics",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics"
+  },
+  "next": {
+    "title": "Creating a Quiz",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz"
+  }
+}

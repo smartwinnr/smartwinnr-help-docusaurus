@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition",
+  "title": "Leaderboards of Competition",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition",
+  "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 109,
+  "frontMatter": {
+    "title": "Leaderboards of Competition",
+    "description": "",
+    "slug": "leaderboards-of-a-competition",
+    "sidebar_position": 109,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda26d77129911ba1b219c1",
+    "helpscout_url": "https://help.smartwinnr.com/article/109-leaderboards-of-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a challenge to the competition?",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition"
+  },
+  "next": {
+    "title": "About KPI Gamification",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-is-kpi-gamification"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9ba357129911ba1b21757",
     "helpscout_url": "https://help.smartwinnr.com/article/103-how-to-create-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add smartfeed within a Competition",
-    "permalink": "/competitions-gamification/how-to-add-smartfeed-within-a-competition"
-  },
-  "next": {
-    "title": "Add a Quiz to a competition?",
-    "permalink": "/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition"
   }
 }

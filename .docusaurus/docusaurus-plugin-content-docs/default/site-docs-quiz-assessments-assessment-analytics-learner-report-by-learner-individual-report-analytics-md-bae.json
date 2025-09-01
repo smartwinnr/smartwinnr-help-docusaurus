@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60c206d796768369c70bc6b4",
     "helpscout_url": "https://help.smartwinnr.com/article/255-learner-report-by-learner"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Learner Overall Report",
-    "permalink": "/quiz-assessments/assessment-analytics/learner-overall-report"
-  },
-  "next": {
-    "title": "Creating Quizzes",
-    "permalink": "/quiz-assessments/creating-assessments/creating-quizzes"
   }
 }

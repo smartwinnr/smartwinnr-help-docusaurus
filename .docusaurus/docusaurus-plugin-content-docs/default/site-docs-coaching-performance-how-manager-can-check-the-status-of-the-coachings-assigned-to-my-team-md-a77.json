@@ -23,14 +23,5 @@
     },
     "helpscout_id": "603748758502d1120e90b0ed",
     "helpscout_url": "https://help.smartwinnr.com/article/229-how-manager-can-view-and-check-the-status-of-the-coachings-assigned-to-my-team"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Set competencies.",
-    "permalink": "/coaching-performance/how-to-set-competencies"
-  },
-  "next": {
-    "title": "Create Field Coaching",
-    "permalink": "/coaching-performance/how-to-create-field-coaching"
   }
 }

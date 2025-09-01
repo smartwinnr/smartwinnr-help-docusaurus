@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts",
+  "title": "Quiz Analytics through Charts",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts",
+  "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 98,
+  "frontMatter": {
+    "title": "Quiz Analytics through Charts",
+    "description": "",
+    "slug": "quiz-analytics-through-charts",
+    "sidebar_position": 98,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd997c6a5d295659b369555",
+    "helpscout_url": "https://help.smartwinnr.com/article/98-analytics-through-charts"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How To Find The Progress Of Your Team In Quizzes",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes"
+  },
+  "next": {
+    "title": "Finding Status and Scores for Quizzes assigned to your Team",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team"
+  }
+}

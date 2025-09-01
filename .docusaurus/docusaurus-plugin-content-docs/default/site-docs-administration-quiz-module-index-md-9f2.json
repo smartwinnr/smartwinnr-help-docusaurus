@@ -1,0 +1,27 @@
+{
+  "id": "administration/quiz-module/index",
+  "title": "Quiz Overview",
+  "description": "SmartWinnr's Quiz module helps you create engaging assessments to test knowledge, reinforce learning, and drive engagement across your organization.",
+  "source": "@site/docs/administration/quiz-module/index.md",
+  "sourceDirName": "administration/quiz-module",
+  "slug": "/administration/quiz-module/",
+  "permalink": "/administration/quiz-module/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reset a coaching video",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video"
+  },
+  "next": {
+    "title": "Question Management",
+    "permalink": "/administration/quiz-module/question-management/question-management"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd713904eb32171b80377f7",
     "helpscout_url": "https://help.smartwinnr.com/article/79-how-to-edit-a-smartpath"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-a-smartpath"
-  },
-  "next": {
-    "title": "Create SmartPath with Learning Sessions?",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-smartpath-with-learning-sessions"
   }
 }

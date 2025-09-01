@@ -23,14 +23,5 @@
     },
     "helpscout_id": "6106ee53b55c2b04bf6da2c0",
     "helpscout_url": "https://help.smartwinnr.com/article/264-how-to-mark-the-attendance-for-users-in-learning-sessions"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
-    "permalink": "/learning-smartpaths/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
-  },
-  "next": {
-    "title": "Import SCORM course into SmartWinnr?",
-    "permalink": "/learning-smartpaths/scorm-external/how-to-import-scorm-course-into-smartwinnr"
   }
 }

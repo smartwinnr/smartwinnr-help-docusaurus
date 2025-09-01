@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report",
+  "title": "Quiz Comparison Report",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 200,
+  "frontMatter": {
+    "title": "Quiz Comparison Report",
+    "description": "",
+    "slug": "quiz-comparison-report",
+    "sidebar_position": 200,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5ffc22a3551e0c2853f3af84",
+    "helpscout_url": "https://help.smartwinnr.com/article/200-quiz-comparison-report"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Team Progress Report",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-progress-report"
+  },
+  "next": {
+    "title": "Learner Overall Report",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-overall-report"
+  }
+}

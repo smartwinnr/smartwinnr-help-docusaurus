@@ -1,0 +1,36 @@
+{
+  "id": "administration/quiz-module/question-management/how-to-create-re-order-questions",
+  "title": "Create Re-order Questions",
+  "description": "",
+  "source": "@site/docs/administration/quiz-module/question-management/how-to-create-re-order-questions.md",
+  "sourceDirName": "administration/quiz-module/question-management",
+  "slug": "/administration/quiz-module/question-management/how-to-create-re-order-questions",
+  "permalink": "/administration/quiz-module/question-management/how-to-create-re-order-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/question-management/how-to-create-re-order-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 270,
+  "frontMatter": {
+    "title": "Create Re-order Questions",
+    "description": "",
+    "slug": "how-to-create-re-order-questions",
+    "sidebar_position": 270,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "62ad5954cb3c130081c15b53",
+    "helpscout_url": "https://help.smartwinnr.com/article/270-drag-and-drop-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Editors evaluate Long Answer Questions?",
+    "permalink": "/administration/quiz-module/question-management/how-editors-evaluate-long-answer-questions"
+  },
+  "next": {
+    "title": "Short Answer With Multiple Options",
+    "permalink": "/administration/quiz-module/question-management/short-answer-with-multiple-options"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question",
+  "title": "Add a 'Video' to a question.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 64,
+  "frontMatter": {
+    "title": "Add a 'Video' to a question.",
+    "description": "",
+    "slug": "how-to-add-a-video-to-a-question",
+    "sidebar_position": 64,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4bb1b4eb32171b80374ff",
+    "helpscout_url": "https://help.smartwinnr.com/article/64-how-to-add-a-video-to-a-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question Response Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-response-analytics"
+  },
+  "next": {
+    "title": "Add an 'Image' to the question.",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-an-image-to-the-question"
+  }
+}

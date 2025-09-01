@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/how-to-add-new-rule",
+  "title": "Add new rule?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/how-to-add-new-rule.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/how-to-add-new-rule",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/how-to-add-new-rule",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/how-to-add-new-rule.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 140,
+  "frontMatter": {
+    "title": "Add new rule?",
+    "description": "",
+    "slug": "how-to-add-new-rule",
+    "sidebar_position": 140,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdadd747129911ba1b21dc5",
+    "helpscout_url": "https://help.smartwinnr.com/article/140-how-to-add-new-rule"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View an Audit Log?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/how-to-view-an-audit-log"
+  },
+  "next": {
+    "title": "Enable a Chat Group?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/how-to-enable-a-chat-group"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb05910b11ce44f63931a2",
     "helpscout_url": "https://help.smartwinnr.com/article/161-how-can-i-answer-a-query"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Post a Query from the SmartWinnr app?",
-    "permalink": "/administration/how-to-post-a-query-from-the-smartwinnr-app"
-  },
-  "next": {
-    "title": "About the purpose of notifications",
-    "permalink": "/administration/what-is-the-purpose-of-notifications"
   }
 }

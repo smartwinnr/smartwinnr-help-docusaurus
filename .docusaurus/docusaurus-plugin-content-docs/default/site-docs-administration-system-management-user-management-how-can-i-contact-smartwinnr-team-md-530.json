@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/how-can-i-contact-smartwinnr-team",
+  "title": "Contact SmartWinnr Team",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/how-can-i-contact-smartwinnr-team.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/how-can-i-contact-smartwinnr-team",
+  "permalink": "/administration/system-management/user-management/how-can-i-contact-smartwinnr-team",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/how-can-i-contact-smartwinnr-team.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 22,
+  "frontMatter": {
+    "title": "Contact SmartWinnr Team",
+    "description": "",
+    "slug": "how-can-i-contact-smartwinnr-team",
+    "sidebar_position": 22,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fce43c3eb7cc612aa3557ae",
+    "helpscout_url": "https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About my Username and Password",
+    "permalink": "/administration/system-management/user-management/what-is-my-username-and-password"
+  },
+  "next": {
+    "title": "Change company logo?",
+    "permalink": "/administration/system-management/user-management/how-to-change-company-logo"
+  }
+}

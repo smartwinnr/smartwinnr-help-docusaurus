@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/how-to-create-badges",
+  "title": "Create Badges",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/how-to-create-badges.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/how-to-create-badges",
+  "permalink": "/administration/cross-module-features/competitions-gamification/how-to-create-badges",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/how-to-create-badges.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 285,
+  "frontMatter": {
+    "title": "Create Badges",
+    "description": "",
+    "slug": "how-to-create-badges",
+    "sidebar_position": 285,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "64649da87d89467e9da791da",
+    "helpscout_url": "https://help.smartwinnr.com/article/285-how-to-create-badges"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add Different Activities to a Challenge?",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge"
+  },
+  "next": {
+    "title": "Award Points on Badge Assignment",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-award-points-on-badge-assignment"
+  }
+}

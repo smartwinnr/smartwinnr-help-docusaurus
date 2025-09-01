@@ -1,0 +1,36 @@
+{
+  "id": "administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz",
+  "title": "Open and Close a Quiz",
+  "description": "",
+  "source": "@site/docs/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz.md",
+  "sourceDirName": "administration/quiz-module/quiz-administration",
+  "slug": "/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz",
+  "permalink": "/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 276,
+  "frontMatter": {
+    "title": "Open and Close a Quiz",
+    "description": "",
+    "slug": "how-to-open-and-close-a-quiz",
+    "sidebar_position": 276,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "631c9fb5c713d51da3edd565",
+    "helpscout_url": "https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Give access permission to other editors",
+    "permalink": "/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors"
+  },
+  "next": {
+    "title": "Quiz Analytics & Reports",
+    "permalink": "/administration/quiz-module/quiz-analytics/quiz-analytics-reports"
+  }
+}

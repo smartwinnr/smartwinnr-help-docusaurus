@@ -1,0 +1,36 @@
+{
+  "id": "administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name",
+  "title": "Edit a KHub folder name",
+  "description": "",
+  "source": "@site/docs/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name.md",
+  "sourceDirName": "administration/knowledge-hub-module/content-management",
+  "slug": "/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name",
+  "permalink": "/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 275,
+  "frontMatter": {
+    "title": "Edit a KHub folder name",
+    "description": "",
+    "slug": "how-can-i-edit-a-khub-folder-name",
+    "sidebar_position": 275,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6317a3ed4cde766bbe1426fe",
+    "helpscout_url": "https://help.smartwinnr.com/article/275-how-to-edit-folder-name-in-khub"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Edit a KHub item",
+    "permalink": "/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item"
+  },
+  "next": {
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/administration/knowledge-hub-module/khub-administration/knowledge-hub-khub"
+  }
+}

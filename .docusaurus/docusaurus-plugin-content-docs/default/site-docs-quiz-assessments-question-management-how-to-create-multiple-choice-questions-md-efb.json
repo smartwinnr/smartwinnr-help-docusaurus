@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd45c1523119734ee37ed79",
     "helpscout_url": "https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Question Management",
-    "permalink": "/quiz-assessments/question-management/question-management"
-  },
-  "next": {
-    "title": "Create 'Fill-In-The-Blank' Questions.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-fill-in-the-blank-questions"
   }
 }

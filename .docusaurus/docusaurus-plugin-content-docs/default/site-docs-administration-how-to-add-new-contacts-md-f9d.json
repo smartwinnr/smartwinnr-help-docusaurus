@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdadc3e7129911ba1b21dbe",
     "helpscout_url": "https://help.smartwinnr.com/article/135-how-to-add-new-contacts"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "View existing contacts?",
-    "permalink": "/administration/how-to-view-existing-contacts"
-  },
-  "next": {
-    "title": "View an Audit Log?",
-    "permalink": "/administration/how-to-view-an-audit-log"
   }
 }

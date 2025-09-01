@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0e92a5d295659b369c6c",
     "helpscout_url": "https://help.smartwinnr.com/article/175-what-are-scorecards"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Submit a Form on behalf of a User",
-    "permalink": "/forms-data-collection/form-management/how-to-submit-a-form-on-behalf-of-a-user"
-  },
-  "next": {
-    "title": "Create a Scorecard?",
-    "permalink": "/forms-data-collection/scorecards/how-to-create-a-scorecard"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types",
+  "title": "Quiz types",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 48,
+  "frontMatter": {
+    "title": "Quiz types",
+    "description": "",
+    "slug": "quiz-types",
+    "sidebar_position": 48,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd48eb723119734ee37eda5",
+    "helpscout_url": "https://help.smartwinnr.com/article/48-quiz-types"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding knowledge categories",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories"
+  },
+  "next": {
+    "title": "About SmartWinnr Quiz Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics"
+  }
+}

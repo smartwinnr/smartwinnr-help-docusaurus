@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video",
+  "title": "Share a Coaching Video.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video.md",
+  "sourceDirName": "administration/system-management/user-management/video-coaching-module/video-review-workflow",
+  "slug": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video",
+  "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 88,
+  "frontMatter": {
+    "title": "Share a Coaching Video.",
+    "description": "",
+    "slug": "how-to-share-a-coaching-video",
+    "sidebar_position": 88,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd72ca536980410c9123bbe",
+    "helpscout_url": "https://help.smartwinnr.com/article/88-how-can-i-share-a-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Review a video coaching assignment.",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment"
+  },
+  "next": {
+    "title": "Upload Audio Recording for Coaching",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-audio-recording-for-coaching"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports",
+  "title": "About KPI Reports",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 182,
+  "frontMatter": {
+    "title": "About KPI Reports",
+    "description": "",
+    "slug": "what-are-kpi-reports",
+    "sidebar_position": 182,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb1843a5d295659b369c92",
+    "helpscout_url": "https://help.smartwinnr.com/article/182-what-are-kpi-reports"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Manager Challenge?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-a-manager-challenge"
+  },
+  "next": {
+    "title": "View a competition Leaderboard",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-view-a-competition-leaderboard"
+  }
+}

@@ -14,14 +14,5 @@
   "sidebarPosition": 4,
   "frontMatter": {
     "sidebar_position": 4
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create 'Numeric Type Questions'",
-    "permalink": "/quiz-assessments/question-management/how-to-create-numeric-type-questions"
-  },
-  "next": {
-    "title": "Quiz Settings",
-    "permalink": "/quiz-assessments/assessment-administration/quiz-settings"
   }
 }

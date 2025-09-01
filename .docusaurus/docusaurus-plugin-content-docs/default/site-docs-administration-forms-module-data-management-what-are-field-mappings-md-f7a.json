@@ -1,0 +1,36 @@
+{
+  "id": "administration/forms-module/data-management/what-are-field-mappings",
+  "title": "About Field Mappings",
+  "description": "",
+  "source": "@site/docs/administration/forms-module/data-management/what-are-field-mappings.md",
+  "sourceDirName": "administration/forms-module/data-management",
+  "slug": "/administration/forms-module/data-management/what-are-field-mappings",
+  "permalink": "/administration/forms-module/data-management/what-are-field-mappings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/forms-module/data-management/what-are-field-mappings.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 172,
+  "frontMatter": {
+    "title": "About Field Mappings",
+    "description": "",
+    "slug": "what-are-field-mappings",
+    "sidebar_position": 172,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0cafa5d295659b369c60",
+    "helpscout_url": "https://help.smartwinnr.com/article/172-what-are-field-mappings"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Use KHub in the SmartWinnr app?",
+    "permalink": "/administration/knowledge-hub-module/user-experience/how-to-use-khub-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "Create a Field Mapping?",
+    "permalink": "/administration/forms-module/data-management/how-to-create-a-field-mapping"
+  }
+}

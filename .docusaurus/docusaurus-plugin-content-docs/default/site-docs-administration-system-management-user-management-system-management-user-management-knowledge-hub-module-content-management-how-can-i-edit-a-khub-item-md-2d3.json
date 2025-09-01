@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item",
+  "title": "Edit a KHub item",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 147,
+  "frontMatter": {
+    "title": "Edit a KHub item",
+    "description": "",
+    "slug": "how-can-i-edit-a-khub-item",
+    "sidebar_position": 147,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae9650b11ce44f639315d",
+    "helpscout_url": "https://help.smartwinnr.com/article/147-how-can-i-edit-a-khub-item"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create folders and items in KHub",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub"
+  },
+  "next": {
+    "title": "Edit a KHub folder name",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name"
+  }
+}

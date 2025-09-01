@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaf5db7129911ba1b21dfa",
     "helpscout_url": "https://help.smartwinnr.com/article/153-when-are-chat-groups-needed"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About Chat Groups",
-    "permalink": "/administration/what-are-chat-groups"
-  },
-  "next": {
-    "title": "Enable a Chat Group?",
-    "permalink": "/administration/how-to-enable-a-chat-group"
   }
 }

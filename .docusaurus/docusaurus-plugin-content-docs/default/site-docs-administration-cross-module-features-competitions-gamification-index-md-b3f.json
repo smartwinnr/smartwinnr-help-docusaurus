@@ -1,0 +1,30 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/index",
+  "title": "Competitions & Gamification",
+  "description": "Drive engagement and motivation through competitions, challenges, and gamification features",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/index.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/competitions-gamification",
+  "permalink": "/administration/cross-module-features/competitions-gamification/competitions-gamification",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Competitions & Gamification",
+    "description": "Drive engagement and motivation through competitions, challenges, and gamification features",
+    "slug": "competitions-gamification",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Widgets",
+    "permalink": "/administration/cross-module-features/advanced-analytics/widgets"
+  },
+  "next": {
+    "title": "Question bank",
+    "permalink": "/administration/cross-module-features/competitions-gamification/question-bank"
+  }
+}

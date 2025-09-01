@@ -1,0 +1,36 @@
+{
+  "id": "administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes",
+  "title": "How To Find The Progress Of Your Team In Quizzes",
+  "description": "",
+  "source": "@site/docs/administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes.md",
+  "sourceDirName": "administration/quiz-module/quiz-analytics",
+  "slug": "/administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes",
+  "permalink": "/administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 97,
+  "frontMatter": {
+    "title": "How To Find The Progress Of Your Team In Quizzes",
+    "description": "",
+    "slug": "how-to-find-the-progress-of-your-team-in-quizzes",
+    "sidebar_position": 97,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd99582a5d295659b36954f",
+    "helpscout_url": "https://help.smartwinnr.com/article/97-how-to-find-the-progress-of-your-team-in-quizzes"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/administration/quiz-module/quiz-analytics/detailed-quiz-analytics"
+  },
+  "next": {
+    "title": "Quiz Analytics through Charts",
+    "permalink": "/administration/quiz-module/quiz-analytics/quiz-analytics-through-charts"
+  }
+}

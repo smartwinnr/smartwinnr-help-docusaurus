@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaf5650b11ce44f6393174",
     "helpscout_url": "https://help.smartwinnr.com/article/152-what-are-chat-groups"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add new rule?",
-    "permalink": "/administration/how-to-add-new-rule"
-  },
-  "next": {
-    "title": "When are chat groups needed?",
-    "permalink": "/administration/when-are-chat-groups-needed"
   }
 }

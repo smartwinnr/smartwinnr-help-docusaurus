@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/create-users-in-bulk",
+  "title": "Create users in bulk",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/create-users-in-bulk.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/create-users-in-bulk",
+  "permalink": "/administration/system-management/user-management/create-users-in-bulk",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/create-users-in-bulk.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 118,
+  "frontMatter": {
+    "title": "Create users in bulk",
+    "description": "",
+    "slug": "create-users-in-bulk",
+    "sidebar_position": 118,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda4abb27288b7f895d61dd",
+    "helpscout_url": "https://help.smartwinnr.com/article/118-create-users-in-bulk"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Track my organizational resource usage?",
+    "permalink": "/administration/system-management/user-management/how-to-track-my-organizational-resource-usage"
+  },
+  "next": {
+    "title": "Create users individually",
+    "permalink": "/administration/system-management/user-management/create-users-individually"
+  }
+}

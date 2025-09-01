@@ -23,14 +23,5 @@
     },
     "helpscout_id": "631c9fb5c713d51da3edd565",
     "helpscout_url": "https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Give access permission to other editors",
-    "permalink": "/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors"
-  },
-  "next": {
-    "title": "Quiz Analytics & Reports",
-    "permalink": "/quiz-assessments/assessment-analytics/quiz-analytics-reports"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question",
+  "title": "Create a 'Hotspot Question'.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question",
+  "permalink": "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 42,
+  "frontMatter": {
+    "title": "Create a 'Hotspot Question'.",
+    "description": "",
+    "slug": "how-to-create-a-hotspot-question",
+    "sidebar_position": 42,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4640136980410c912381c",
+    "helpscout_url": "https://help.smartwinnr.com/article/42-how-to-create-a-hotspot-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create 'Fill-In-The-Blank' Questions.",
+    "permalink": "/administration/system-management/user-management/quiz-module/question-management/how-to-create-fill-in-the-blank-questions"
+  },
+  "next": {
+    "title": "Create a 'Matching Question'.",
+    "permalink": "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-matching-question"
+  }
+}

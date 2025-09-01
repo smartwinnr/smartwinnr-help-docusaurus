@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions",
+  "title": "Upload questions in bulk using 'Import Questions'.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 46,
+  "frontMatter": {
+    "title": "Upload questions in bulk using 'Import Questions'.",
+    "description": "",
+    "slug": "how-to-upload-questions-in-bulk-using-import-questions",
+    "sidebar_position": 46,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd48497c868cb6df3a81016",
+    "helpscout_url": "https://help.smartwinnr.com/article/46-how-to-use-import-questions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How 'Import question' is different from 'Add New Question'?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-import-question-is-different-from-add-new-question"
+  },
+  "next": {
+    "title": "Question Response Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-response-analytics"
+  }
+}

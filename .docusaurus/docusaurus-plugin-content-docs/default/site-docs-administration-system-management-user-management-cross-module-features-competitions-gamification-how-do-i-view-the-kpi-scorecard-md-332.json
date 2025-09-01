@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard",
+  "title": "View the KPI scorecard",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard",
+  "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 191,
+  "frontMatter": {
+    "title": "View the KPI scorecard",
+    "description": "",
+    "slug": "how-do-i-view-the-kpi-scorecard",
+    "sidebar_position": 191,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb421527288b7f895d662f",
+    "helpscout_url": "https://help.smartwinnr.com/article/191-how-do-i-view-the-kpi-scorecard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View a competition Leaderboard",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-view-a-competition-leaderboard"
+  },
+  "next": {
+    "title": "About an Achievement",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement"
+  }
+}

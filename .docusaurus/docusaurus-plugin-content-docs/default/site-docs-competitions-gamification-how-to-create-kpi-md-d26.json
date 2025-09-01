@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0c4f0b11ce44f63931c0",
     "helpscout_url": "https://help.smartwinnr.com/article/171-how-to-create-kpi"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Define KPIs",
-    "permalink": "/competitions-gamification/define-kpis"
-  },
-  "next": {
-    "title": "Upload KPI data?",
-    "permalink": "/competitions-gamification/how-to-upload-kpi-data"
   }
 }

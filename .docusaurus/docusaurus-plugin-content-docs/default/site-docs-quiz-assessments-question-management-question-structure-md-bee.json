@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5ffc6928bb5c6f7434e0f991",
     "helpscout_url": "https://help.smartwinnr.com/article/201-question-structure"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add an 'Audio file' to a question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-an-audio-file-to-a-question"
-  },
-  "next": {
-    "title": "Edit a question?",
-    "permalink": "/quiz-assessments/question-management/how-to-edit-a-question"
   }
 }

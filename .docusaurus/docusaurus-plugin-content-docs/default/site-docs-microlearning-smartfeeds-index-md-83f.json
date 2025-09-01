@@ -17,14 +17,5 @@
     "description": "Create and deliver bite-sized, engaging learning content through SmartFeeds",
     "slug": "microlearning-smartfeeds",
     "sidebar_position": 2
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "SmartFeed Management",
-    "permalink": "/microlearning-smartfeeds/smartfeed-management"
-  },
-  "next": {
-    "title": "About SmartFeeds",
-    "permalink": "/microlearning-smartfeeds/what-are-smartfeeds"
   }
 }

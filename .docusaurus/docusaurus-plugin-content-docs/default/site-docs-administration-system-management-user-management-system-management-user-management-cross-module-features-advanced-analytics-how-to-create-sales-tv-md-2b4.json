@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv",
+  "title": "Create Sales TV",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 249,
+  "frontMatter": {
+    "title": "Create Sales TV",
+    "description": "",
+    "slug": "how-to-create-sales-tv",
+    "sidebar_position": 249,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60b9e109fd393f6bf704a9f2",
+    "helpscout_url": "https://help.smartwinnr.com/article/249-how-to-create-sales-tv"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View Project?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-view-project"
+  },
+  "next": {
+    "title": "Widgets",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/widgets"
+  }
+}

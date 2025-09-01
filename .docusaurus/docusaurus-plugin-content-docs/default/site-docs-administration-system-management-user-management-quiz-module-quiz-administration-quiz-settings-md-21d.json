@@ -1,0 +1,27 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings",
+  "title": "Quiz Settings",
+  "description": "Configure quiz behavior, security, and accessibility options for optimal learning experiences.",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/quiz-administration",
+  "slug": "/administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings",
+  "permalink": "/administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Managing Questions",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-administration/managing-questions"
+  },
+  "next": {
+    "title": "Activate automatic reminders for your quizzes",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-activate-automatic-reminders-for-your-quizzes"
+  }
+}

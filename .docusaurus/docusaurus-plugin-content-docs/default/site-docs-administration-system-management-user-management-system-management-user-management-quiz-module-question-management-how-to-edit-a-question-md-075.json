@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question",
+  "title": "Edit a question?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 202,
+  "frontMatter": {
+    "title": "Edit a question?",
+    "description": "",
+    "slug": "how-to-edit-a-question",
+    "sidebar_position": 202,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5ffc7b6c66df373cab7081aa",
+    "helpscout_url": "https://help.smartwinnr.com/article/202-how-to-edit-a-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question Structure",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-structure"
+  },
+  "next": {
+    "title": "Update question response",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-update-question-response"
+  }
+}

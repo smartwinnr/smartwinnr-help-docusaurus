@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdadcf77129911ba1b21dc2",
     "helpscout_url": "https://help.smartwinnr.com/article/138-how-to-view-an-audit-log"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add new contacts?",
-    "permalink": "/administration/how-to-add-new-contacts"
-  },
-  "next": {
-    "title": "Add new rule?",
-    "permalink": "/administration/how-to-add-new-rule"
   }
 }

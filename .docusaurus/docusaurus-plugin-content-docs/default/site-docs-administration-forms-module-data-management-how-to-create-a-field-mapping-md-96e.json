@@ -1,0 +1,36 @@
+{
+  "id": "administration/forms-module/data-management/how-to-create-a-field-mapping",
+  "title": "Create a Field Mapping?",
+  "description": "",
+  "source": "@site/docs/administration/forms-module/data-management/how-to-create-a-field-mapping.md",
+  "sourceDirName": "administration/forms-module/data-management",
+  "slug": "/administration/forms-module/data-management/how-to-create-a-field-mapping",
+  "permalink": "/administration/forms-module/data-management/how-to-create-a-field-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/forms-module/data-management/how-to-create-a-field-mapping.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 173,
+  "frontMatter": {
+    "title": "Create a Field Mapping?",
+    "description": "",
+    "slug": "how-to-create-a-field-mapping",
+    "sidebar_position": 173,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0cd97129911ba1b21e50",
+    "helpscout_url": "https://help.smartwinnr.com/article/173-how-to-create-a-field-mapping"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About Field Mappings",
+    "permalink": "/administration/forms-module/data-management/what-are-field-mappings"
+  },
+  "next": {
+    "title": "Create a form?",
+    "permalink": "/administration/forms-module/form-creation/how-to-create-a-form"
+  }
+}

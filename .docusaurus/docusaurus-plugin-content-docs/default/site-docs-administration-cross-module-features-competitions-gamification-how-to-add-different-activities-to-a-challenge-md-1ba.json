@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge",
+  "title": "Add Different Activities to a Challenge?",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge",
+  "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 240,
+  "frontMatter": {
+    "title": "Add Different Activities to a Challenge?",
+    "description": "",
+    "slug": "how-to-add-different-activities-to-a-challenge",
+    "sidebar_position": 240,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a61bb227c86942e8069e4d",
+    "helpscout_url": "https://help.smartwinnr.com/article/240-how-to-add-activities-inside-a-challenge"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add the Scorecard to Leaderboard",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard"
+  },
+  "next": {
+    "title": "Create Badges",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-create-badges"
+  }
+}

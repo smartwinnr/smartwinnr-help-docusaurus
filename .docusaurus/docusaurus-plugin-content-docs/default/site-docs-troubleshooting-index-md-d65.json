@@ -17,5 +17,10 @@
     "description": "Common issues and solutions for SmartWinnr users",
     "slug": "troubleshooting",
     "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Troubleshoot for common error code",
+    "permalink": "/help-support/troubleshoot-for-common-error-code"
   }
 }

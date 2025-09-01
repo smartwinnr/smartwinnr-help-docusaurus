@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb1843a5d295659b369c92",
     "helpscout_url": "https://help.smartwinnr.com/article/182-what-are-kpi-reports"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a Manager Challenge?",
-    "permalink": "/competitions-gamification/how-to-create-a-manager-challenge"
-  },
-  "next": {
-    "title": "View a competition Leaderboard",
-    "permalink": "/competitions-gamification/how-can-i-view-a-competition-leaderboard"
   }
 }

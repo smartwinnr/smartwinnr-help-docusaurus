@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics",
+  "title": "View KHub Analytics",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics.md",
+  "sourceDirName": "administration/system-management/user-management/knowledge-hub-module/khub-analytics",
+  "slug": "/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics",
+  "permalink": "/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 149,
+  "frontMatter": {
+    "title": "View KHub Analytics",
+    "description": "",
+    "slug": "how-can-i-view-khub-analytics",
+    "sidebar_position": 149,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaebcca5d295659b369c02",
+    "helpscout_url": "https://help.smartwinnr.com/article/149-how-can-i-view-khub-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About KHub",
+    "permalink": "/administration/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub"
+  },
+  "next": {
+    "title": "Understanding recent, trending and latest KHub items",
+    "permalink": "/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items"
+  }
+}

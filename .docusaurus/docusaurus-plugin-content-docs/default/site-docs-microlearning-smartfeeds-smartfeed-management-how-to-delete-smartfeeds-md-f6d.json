@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd112c50ca0c372c6f09352",
     "helpscout_url": "https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Send the SmartFeed to Teams?",
-    "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams"
-  },
-  "next": {
-    "title": "View all the SmartFeeds?",
-    "permalink": "/microlearning-smartfeeds/user-experience/how-to-view-all-the-smartfeeds"
   }
 }

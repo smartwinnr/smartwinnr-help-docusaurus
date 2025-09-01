@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams",
+  "title": "Send the SmartFeed to Teams?",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams.md",
+  "sourceDirName": "administration/smartfeed-module/distribution-management",
+  "slug": "/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams",
+  "permalink": "/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 31,
+  "frontMatter": {
+    "title": "Send the SmartFeed to Teams?",
+    "description": "",
+    "slug": "how-to-send-the-smartfeed-to-teams",
+    "sidebar_position": 31,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd10f0ba72c62318a4c08b7",
+    "helpscout_url": "https://help.smartwinnr.com/article/31-how-to-send-the-smartfeed-to-teams"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Send a SmartFeed multiple times?",
+    "permalink": "/administration/smartfeed-module/distribution-management/how-to-send-a-smartfeed-multiple-times"
+  },
+  "next": {
+    "title": "Delete SmartFeeds?",
+    "permalink": "/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr",
+  "title": "Import SCORM course into SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr.md",
+  "sourceDirName": "administration/smartpath-module/learning-content-management",
+  "slug": "/administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr",
+  "permalink": "/administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 271,
+  "frontMatter": {
+    "title": "Import SCORM course into SmartWinnr?",
+    "description": "",
+    "slug": "how-to-import-scorm-course-into-smartwinnr",
+    "sidebar_position": 271,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "62b3e9dd0729834c424f8fad",
+    "helpscout_url": "https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
+    "permalink": "/administration/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  },
+  "next": {
+    "title": "Access the SCORM course from the SmartWinnr app",
+    "permalink": "/administration/smartpath-module/learning-content-management/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+  }
+}

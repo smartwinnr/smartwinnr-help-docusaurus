@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank",
+  "title": "Question bank",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank",
+  "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 39,
+  "frontMatter": {
+    "title": "Question bank",
+    "description": "",
+    "slug": "question-bank",
+    "sidebar_position": 39,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4545236980410c9123806",
+    "helpscout_url": "https://help.smartwinnr.com/article/39-question-bank"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Competitions & Gamification",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/competitions-gamification"
+  },
+  "next": {
+    "title": "Gamify a SmartPath",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-gamify-a-smartpath"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition",
+  "title": "Add a Form to Competition?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition",
+  "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 227,
+  "frontMatter": {
+    "title": "Add a Form to Competition?",
+    "description": "",
+    "slug": "how-to-add-a-form-to-competition",
+    "sidebar_position": 227,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "600a9329b9a8501b295d308e",
+    "helpscout_url": "https://help.smartwinnr.com/article/227-how-to-add-a-form-to-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "View the data and leaderboard for Scorecard",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard"
+  }
+}

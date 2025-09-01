@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report",
+  "title": "Team Progress Report",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report",
+  "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 199,
+  "frontMatter": {
+    "title": "Team Progress Report",
+    "description": "",
+    "slug": "team-progress-report",
+    "sidebar_position": 199,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdbab410b11ce44f6393516",
+    "helpscout_url": "https://help.smartwinnr.com/article/199-download-reports"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Wise Analytics",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-wise-analytics"
+  },
+  "next": {
+    "title": "Quiz Comparison Report",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report"
+  }
+}

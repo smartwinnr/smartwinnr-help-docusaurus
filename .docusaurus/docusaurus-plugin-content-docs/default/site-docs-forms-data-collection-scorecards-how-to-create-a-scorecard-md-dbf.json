@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb13f67129911ba1b21e6b",
     "helpscout_url": "https://help.smartwinnr.com/article/176-how-to-create-a-scorecard"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About Scorecards",
-    "permalink": "/forms-data-collection/scorecards/what-are-scorecards"
-  },
-  "next": {
-    "title": "Knowledge Hub (KHub)",
-    "permalink": "/knowledge-hub/knowledge-hub-khub"
   }
 }

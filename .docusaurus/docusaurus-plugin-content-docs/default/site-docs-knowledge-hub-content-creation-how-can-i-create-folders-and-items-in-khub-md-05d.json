@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdae8ca27288b7f895d64e3",
     "helpscout_url": "https://help.smartwinnr.com/article/146-how-can-i-create-folders-and-items-in-khub"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About KHub",
-    "permalink": "/knowledge-hub/what-is-khub"
-  },
-  "next": {
-    "title": "Edit a KHub item",
-    "permalink": "/knowledge-hub/content-creation/how-can-i-edit-a-khub-item"
   }
 }

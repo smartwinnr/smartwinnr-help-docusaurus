@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda26d77129911ba1b219c1",
     "helpscout_url": "https://help.smartwinnr.com/article/109-leaderboards-of-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a challenge to the competition?",
-    "permalink": "/competitions-gamification/how-to-add-a-challenge-to-the-competition"
-  },
-  "next": {
-    "title": "About KPI Gamification",
-    "permalink": "/competitions-gamification/what-is-kpi-gamification"
   }
 }

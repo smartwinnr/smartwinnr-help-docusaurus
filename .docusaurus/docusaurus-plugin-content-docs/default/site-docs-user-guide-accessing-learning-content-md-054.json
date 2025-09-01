@@ -17,5 +17,14 @@
     "description": "Complete guide for users on how to access and consume learning content in SmartWinnr",
     "slug": "accessing-learning-content",
     "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Taking Assessments",
+    "permalink": "/user-guide/taking-assessments"
+  },
+  "next": {
+    "title": "Manager Tools",
+    "permalink": "/manager-guide/manager-guide"
   }
 }

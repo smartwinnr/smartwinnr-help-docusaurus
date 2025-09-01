@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60086bd71c64ad47e4b711c2",
     "helpscout_url": "https://help.smartwinnr.com/article/225-how-can-i-submit-a-form"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Approve/Reject a Form Submission",
-    "permalink": "/forms-data-collection/form-management/how-to-approve-reject-a-form-submission"
-  },
-  "next": {
-    "title": "How can I submit Form from Chat",
-    "permalink": "/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat"
   }
 }

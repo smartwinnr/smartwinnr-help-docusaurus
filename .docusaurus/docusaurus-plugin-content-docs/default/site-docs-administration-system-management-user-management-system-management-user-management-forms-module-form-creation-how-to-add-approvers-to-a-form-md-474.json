@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form",
+  "title": "Add Approvers to a Form",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/forms-module/form-creation",
+  "slug": "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 251,
+  "frontMatter": {
+    "title": "Add Approvers to a Form",
+    "description": "",
+    "slug": "how-to-add-approvers-to-a-form",
+    "sidebar_position": 251,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60bb5a63f6392f0aaff521ab",
+    "helpscout_url": "https://help.smartwinnr.com/article/251-how-to-add-approvers-to-a-form"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Form Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/form-analytics"
+  },
+  "next": {
+    "title": "Approve/Reject a Form Submission",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission"
+  }
+}

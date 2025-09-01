@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4be483d1d2a5b1c5ea19b",
     "helpscout_url": "https://help.smartwinnr.com/article/66-how-to-embed-a-link-into-the-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add an 'Image' to the question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-an-image-to-the-question"
-  },
-  "next": {
-    "title": "Add an 'Audio file' to a question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-an-audio-file-to-a-question"
   }
 }

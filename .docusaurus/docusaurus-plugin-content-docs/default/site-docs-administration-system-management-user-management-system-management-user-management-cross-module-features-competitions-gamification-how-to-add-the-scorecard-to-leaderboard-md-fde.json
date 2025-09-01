@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard",
+  "title": "Add the Scorecard to Leaderboard",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 238,
+  "frontMatter": {
+    "title": "Add the Scorecard to Leaderboard",
+    "description": "",
+    "slug": "how-to-add-the-scorecard-to-leaderboard",
+    "sidebar_position": 238,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a5315013fd125a39b45357",
+    "helpscout_url": "https://help.smartwinnr.com/article/238-how-to-add-the-scorecard-leaderboard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add observers to the Competition Leaderboard?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard"
+  },
+  "next": {
+    "title": "Add Different Activities to a Challenge?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge"
+  }
+}

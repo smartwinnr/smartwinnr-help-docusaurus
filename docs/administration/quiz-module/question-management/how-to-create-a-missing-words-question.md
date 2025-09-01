@@ -1,0 +1,48 @@
+---
+title: "Create a missing words question?"
+description: ""
+slug: how-to-create-a-missing-words-question
+sidebar_position: 282
+last_update:
+  date: 2025-08-10
+  author: HelpScout Migration
+helpscout_id: 641a2df7d6394b6fc7ed9fb2
+helpscout_url: https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question
+---
+##### AÂMissing Words QuestionÂallows the participants to choose one answer to a particular question from a list of optionsÂprovided
+
+##### Below are the steps to create a missing words question
+
+1. Go toÂEDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.
+
+2. Click on theÂ'Add New Question'Âbutton at theÂ_top right corner_.
+
+    ![](/img/quizzes/helpscout-image-c202566f.png)
+
+3. On theÂ'Create new Question'Âselect theÂ'Question Type'Âas Missing Words.
+
+    ![](/img/quizzes/helpscout-image-37945a19.png)
+
+4. Enter your question in theÂQuestionÂfield.
+
+    ![](/img/quizzes/helpscout-image-03ffd186.png)
+
+_Here you can define the number of missing words._
+
+_Enter the question text and in place of the missing word just place the Placeholder by using theÂbutton shown below:_
+
+![](/img/quizzes/helpscout-image-cac90018.png)
+
+5. As we haveÂgiven only 1 missing word, we will define 1 group for that and provide a list of answers and choose the correct answer.
+
+    ![](/img/quizzes/helpscout-image-fad6e8e2.png)
+
+    Question Feedback
+
+    UseÂCorrect FeedbackÂandÂ**'Incorrect Feedback'**Âif you want to add additional information to a question. Â(Optional)
+
+    _The feedback is visible only after the participant has completed answering the questions in a quiz. You can add text, videos, or images to feedback._
+
+    ![](/img/quizzes/helpscout-image-6c601e87.png)
+
+    In SmartWinnr,Â_every question requires at least one category_. Categories are pre-defined by your administrator. You can select one or more categories that best defines a question.

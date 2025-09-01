@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60f9c51c6ffe270af2a91817",
     "helpscout_url": "https://help.smartwinnr.com/article/261-how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "What is QResolve?...",
-    "permalink": "/administration/what-is-qresolve"
-  },
-  "next": {
-    "title": "Changing/Updating configuration for an Organization",
-    "permalink": "/administration/changing-updating-configuration-for-an-organization"
   }
 }

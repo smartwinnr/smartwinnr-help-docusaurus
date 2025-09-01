@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fce43c3eb7cc612aa3557ae",
     "helpscout_url": "https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About my Username and Password",
-    "permalink": "/administration/what-is-my-username-and-password"
-  },
-  "next": {
-    "title": "Change company logo?",
-    "permalink": "/administration/how-to-change-company-logo"
   }
 }

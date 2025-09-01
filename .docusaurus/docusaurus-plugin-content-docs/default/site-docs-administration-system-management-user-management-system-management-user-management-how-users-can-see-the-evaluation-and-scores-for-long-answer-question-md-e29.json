@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+  "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 261,
+  "frontMatter": {
+    "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
+    "description": "",
+    "slug": "how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+    "sidebar_position": 261,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60f9c51c6ffe270af2a91817",
+    "helpscout_url": "https://help.smartwinnr.com/article/261-how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Advanced options for projects",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/advanced-options-for-projects"
+  },
+  "next": {
+    "title": "Changing/Updating configuration for an Organization",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/changing-updating-configuration-for-an-organization"
+  }
+}

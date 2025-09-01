@@ -23,14 +23,5 @@
     },
     "helpscout_id": "603cf4db661b720174a71d5e",
     "helpscout_url": "https://help.smartwinnr.com/article/231-how-to-view-the-data-and-leaderboard-for-scorecard"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a Form to Competition?",
-    "permalink": "/competitions-gamification/how-to-add-a-form-to-competition"
-  },
-  "next": {
-    "title": "Add observers to the Competition Leaderboard?",
-    "permalink": "/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard"
   }
 }

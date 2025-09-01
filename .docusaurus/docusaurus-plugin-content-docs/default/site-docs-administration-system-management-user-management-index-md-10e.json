@@ -1,0 +1,30 @@
+{
+  "id": "administration/system-management/user-management/index",
+  "title": "Administration",
+  "description": "Comprehensive system administration tools for managing users, organizations, and platform configuration",
+  "source": "@site/docs/administration/system-management/user-management/index.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/administration",
+  "permalink": "/administration/system-management/user-management/administration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Administration",
+    "description": "Comprehensive system administration tools for managing users, organizations, and platform configuration",
+    "slug": "administration",
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Latest Announcements",
+    "permalink": "/announcements/"
+  },
+  "next": {
+    "title": "Quiz Overview",
+    "permalink": "/administration/system-management/user-management/quiz-module/"
+  }
+}

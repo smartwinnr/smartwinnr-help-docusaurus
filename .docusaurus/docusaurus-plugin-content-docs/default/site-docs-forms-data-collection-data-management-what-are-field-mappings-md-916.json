@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0cafa5d295659b369c60",
     "helpscout_url": "https://help.smartwinnr.com/article/172-what-are-field-mappings"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Archive a SmartPath and unhide them in future if needed.",
-    "permalink": "/learning-smartpaths/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
-  },
-  "next": {
-    "title": "Create a Field Mapping?",
-    "permalink": "/forms-data-collection/data-management/how-to-create-a-field-mapping"
   }
 }

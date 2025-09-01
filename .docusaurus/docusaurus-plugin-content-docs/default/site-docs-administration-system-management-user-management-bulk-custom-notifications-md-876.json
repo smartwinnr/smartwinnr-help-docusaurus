@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/bulk-custom-notifications",
+  "title": "Bulk Custom Notifications",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/bulk-custom-notifications.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/bulk-custom-notifications",
+  "permalink": "/administration/system-management/user-management/bulk-custom-notifications",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/bulk-custom-notifications.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 166,
+  "frontMatter": {
+    "title": "Bulk Custom Notifications",
+    "description": "",
+    "slug": "bulk-custom-notifications",
+    "sidebar_position": 166,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb08a97129911ba1b21e3d",
+    "helpscout_url": "https://help.smartwinnr.com/article/166-bulk-custom-notifications"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Custom Notifications",
+    "permalink": "/administration/system-management/user-management/custom-notifications"
+  },
+  "next": {
+    "title": "Add/change targets?",
+    "permalink": "/administration/system-management/user-management/how-to-add-change-targets"
+  }
+}

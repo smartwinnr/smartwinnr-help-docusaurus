@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics",
+  "title": "Team Analytics",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 197,
+  "frontMatter": {
+    "title": "Team Analytics",
+    "description": "",
+    "slug": "team-analytics",
+    "sidebar_position": 197,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb9acd27288b7f895d6884",
+    "helpscout_url": "https://help.smartwinnr.com/article/197-team-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Finding Status and Scores for Quizzes assigned to your Team",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team"
+  },
+  "next": {
+    "title": "Quiz Wise Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-wise-analytics"
+  }
+}

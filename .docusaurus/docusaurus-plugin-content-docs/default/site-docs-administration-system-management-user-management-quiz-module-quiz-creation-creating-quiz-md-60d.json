@@ -1,0 +1,27 @@
+{
+  "id": "administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz",
+  "title": "Creating a Quiz",
+  "description": "This guide walks you through creating engaging quizzes in SmartWinnr.",
+  "source": "@site/docs/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz.md",
+  "sourceDirName": "administration/system-management/user-management/quiz-module/quiz-creation",
+  "slug": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz",
+  "permalink": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating Quizzes",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes"
+  },
+  "next": {
+    "title": "Create an automatic quiz?",
+    "permalink": "/administration/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz"
+  }
+}

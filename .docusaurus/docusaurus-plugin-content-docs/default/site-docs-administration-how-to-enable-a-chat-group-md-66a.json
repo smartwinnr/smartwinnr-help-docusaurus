@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaf6350b11ce44f6393177",
     "helpscout_url": "https://help.smartwinnr.com/article/154-how-to-enable-a-chat-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "When are chat groups needed?",
-    "permalink": "/administration/when-are-chat-groups-needed"
-  },
-  "next": {
-    "title": "Add or remove users to a chat group?",
-    "permalink": "/administration/how-to-add-or-remove-users-to-a-chat-group"
   }
 }

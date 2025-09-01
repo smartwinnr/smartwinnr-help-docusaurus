@@ -1,0 +1,27 @@
+{
+  "id": "administration/smartfeed-module/microlearning-strategy/index",
+  "title": "Microlearning with SmartFeeds",
+  "description": "Deliver just-in-time learning through bite-sized, engaging content that fits into your team's daily workflow.",
+  "source": "@site/docs/administration/smartfeed-module/microlearning-strategy/index.md",
+  "sourceDirName": "administration/smartfeed-module/microlearning-strategy",
+  "slug": "/administration/smartfeed-module/microlearning-strategy/",
+  "permalink": "/administration/smartfeed-module/microlearning-strategy/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/microlearning-strategy/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create SmartPath with Learning Sessions?",
+    "permalink": "/administration/smartpath-module/smartpath-creation/how-to-create-smartpath-with-learning-sessions"
+  },
+  "next": {
+    "title": "About SmartFeeds",
+    "permalink": "/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds"
+  }
+}

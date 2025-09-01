@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4623dc868cb6df3a80fe9",
     "helpscout_url": "https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-blank-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create 'Multiple-Choice Questions'.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-multiple-choice-questions"
-  },
-  "next": {
-    "title": "Create a 'Hotspot Question'.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-hotspot-question"
   }
 }

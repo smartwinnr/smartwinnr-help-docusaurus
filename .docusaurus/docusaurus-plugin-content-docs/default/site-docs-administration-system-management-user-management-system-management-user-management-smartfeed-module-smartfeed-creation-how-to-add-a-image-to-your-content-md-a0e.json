@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content",
+  "title": "Add a image to your content?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation",
+  "slug": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 69,
+  "frontMatter": {
+    "title": "Add a image to your content?",
+    "description": "",
+    "slug": "how-to-add-a-image-to-your-content",
+    "sidebar_position": 69,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4ea8523119734ee37ee1f",
+    "helpscout_url": "https://help.smartwinnr.com/article/69-how-to-add-a-image-to-your-content"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a video to your content?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-video-to-your-content"
+  },
+  "next": {
+    "title": "Add reference to an external link to your content?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-reference-to-an-external-link-to-your-content"
+  }
+}

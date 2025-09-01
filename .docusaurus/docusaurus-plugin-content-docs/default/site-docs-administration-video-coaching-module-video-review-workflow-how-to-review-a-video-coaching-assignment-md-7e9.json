@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment",
+  "title": "Review a video coaching assignment.",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment.md",
+  "sourceDirName": "administration/video-coaching-module/video-review-workflow",
+  "slug": "/administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment",
+  "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 87,
+  "frontMatter": {
+    "title": "Review a video coaching assignment.",
+    "description": "",
+    "slug": "how-to-review-a-video-coaching-assignment",
+    "sidebar_position": 87,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd72b2fc868cb6df3a813e5",
+    "helpscout_url": "https://help.smartwinnr.com/article/87-how-do-i-review-a-video-coaching-assignment"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upload a coaching video",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video"
+  },
+  "next": {
+    "title": "Share a Coaching Video.",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video"
+  }
+}

@@ -17,14 +17,5 @@
     "description": "Mobile app features, platform tools, and cross-device functionality",
     "slug": "mobile-platform-tools",
     "sidebar_position": 12
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Changing/Updating configuration for an Organization",
-    "permalink": "/administration/changing-updating-configuration-for-an-organization"
-  },
-  "next": {
-    "title": "Help & Support",
-    "permalink": "/help-support/help-support"
   }
 }

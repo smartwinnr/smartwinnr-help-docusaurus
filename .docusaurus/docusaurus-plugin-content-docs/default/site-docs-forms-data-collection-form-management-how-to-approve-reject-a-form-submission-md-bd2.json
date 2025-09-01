@@ -23,14 +23,5 @@
     },
     "helpscout_id": "600850fdcfe30d219ccd99f3",
     "helpscout_url": "https://help.smartwinnr.com/article/223-how-to-approve-kpi-submission-forms"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add Approvers to a Form",
-    "permalink": "/forms-data-collection/form-creation/how-to-add-approvers-to-a-form"
-  },
-  "next": {
-    "title": "How can I submit Form from Left Menu",
-    "permalink": "/forms-data-collection/form-management/how-can-i-submit-a-form-from-left-menu"
   }
 }

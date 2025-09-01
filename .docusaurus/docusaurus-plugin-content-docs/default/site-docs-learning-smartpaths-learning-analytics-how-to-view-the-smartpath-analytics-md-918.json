@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd713dc23119734ee37f0cb",
     "helpscout_url": "https://help.smartwinnr.com/article/80-how-to-view-the-smartpath-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "What are SmartPaths.",
-    "permalink": "/learning-smartpaths/what-are-smartpaths"
-  },
-  "next": {
-    "title": "Add Learning Sessions In SmartPath Module?",
-    "permalink": "/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module"
   }
 }

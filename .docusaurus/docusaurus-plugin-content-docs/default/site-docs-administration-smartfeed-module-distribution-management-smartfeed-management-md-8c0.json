@@ -1,0 +1,34 @@
+{
+  "id": "administration/smartfeed-module/distribution-management/smartfeed-management",
+  "title": "SmartFeed Management",
+  "description": "Complete guide for creating, managing, and distributing SmartFeeds",
+  "source": "@site/docs/administration/smartfeed-module/distribution-management/smartfeed-management.md",
+  "sourceDirName": "administration/smartfeed-module/distribution-management",
+  "slug": "/administration/smartfeed-module/distribution-management/smartfeed-management",
+  "permalink": "/administration/smartfeed-module/distribution-management/smartfeed-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/distribution-management/smartfeed-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "SmartFeed Management",
+    "description": "Complete guide for creating, managing, and distributing SmartFeeds",
+    "slug": "smartfeed-management",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About SmartFeeds",
+    "permalink": "/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds"
+  },
+  "next": {
+    "title": "Send a SmartFeed multiple times?",
+    "permalink": "/administration/smartfeed-module/distribution-management/how-to-send-a-smartfeed-multiple-times"
+  }
+}

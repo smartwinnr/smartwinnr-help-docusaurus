@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4ebed3d1d2a5b1c5ea1d5",
     "helpscout_url": "https://help.smartwinnr.com/article/72-how-to-attach-pdf-file-to-your-content"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add an audio file to your content?",
-    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content"
-  },
-  "next": {
-    "title": "Add a Recording to a SmartFeed?",
-    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-recording-to-a-smartfeed"
   }
 }

@@ -28,5 +28,9 @@
   "previous": {
     "title": "Help & Support",
     "permalink": "/help-support/help-support"
+  },
+  "next": {
+    "title": "Troubleshooting Guide",
+    "permalink": "/troubleshooting/troubleshooting"
   }
 }

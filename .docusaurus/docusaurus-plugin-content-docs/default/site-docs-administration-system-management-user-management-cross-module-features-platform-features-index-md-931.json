@@ -1,0 +1,30 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/platform-features/index",
+  "title": "Project Management",
+  "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/platform-features/index.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/platform-features",
+  "slug": "/administration/system-management/user-management/cross-module-features/platform-features/project-management",
+  "permalink": "/administration/system-management/user-management/cross-module-features/platform-features/project-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/platform-features/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Project Management",
+    "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
+    "slug": "project-management",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Changing/Updating configuration for an Organization",
+    "permalink": "/administration/system-management/user-management/changing-updating-configuration-for-an-organization"
+  },
+  "next": {
+    "title": "How to Edit a Project",
+    "permalink": "/administration/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project"
+  }
+}

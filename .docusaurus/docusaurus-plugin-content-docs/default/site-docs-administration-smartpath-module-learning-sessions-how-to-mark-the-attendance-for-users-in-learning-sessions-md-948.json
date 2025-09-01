@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "title": "Mark the attendance for Users in Learning Sessions?",
+  "description": "",
+  "source": "@site/docs/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "sourceDirName": "administration/smartpath-module/learning-sessions",
+  "slug": "/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "permalink": "/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 264,
+  "frontMatter": {
+    "title": "Mark the attendance for Users in Learning Sessions?",
+    "description": "",
+    "slug": "how-to-mark-the-attendance-for-users-in-learning-sessions",
+    "sidebar_position": 264,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6106ee53b55c2b04bf6da2c0",
+    "helpscout_url": "https://help.smartwinnr.com/article/264-how-to-mark-the-attendance-for-users-in-learning-sessions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "permalink": "/administration/smartpath-module/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+  },
+  "next": {
+    "title": "View the SmartPath Analytics.",
+    "permalink": "/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics"
+  }
+}

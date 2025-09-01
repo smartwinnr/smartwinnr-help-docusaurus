@@ -21,14 +21,5 @@
       "date": "2025-08-10T00:00:00.000Z",
       "author": "Documentation Reorganization"
     }
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
-    "permalink": "/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
-  },
-  "next": {
-    "title": "MicroLearning & SmartFeeds",
-    "permalink": "/microlearning-smartfeeds/microlearning-smartfeeds"
   }
 }

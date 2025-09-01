@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60a370cfeb3af44cc12099d5",
     "helpscout_url": "https://help.smartwinnr.com/article/234-how-to-add-observers-to-the-competition-leaderboard"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "View the data and leaderboard for Scorecard",
-    "permalink": "/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard"
-  },
-  "next": {
-    "title": "Add the Scorecard to Leaderboard",
-    "permalink": "/competitions-gamification/how-to-add-the-scorecard-to-leaderboard"
   }
 }

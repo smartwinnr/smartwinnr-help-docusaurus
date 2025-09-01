@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/advanced-options-for-projects",
+  "title": "Advanced options for projects",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/advanced-options-for-projects.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/advanced-options-for-projects",
+  "permalink": "/administration/system-management/user-management/advanced-options-for-projects",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/advanced-options-for-projects.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 188,
+  "frontMatter": {
+    "title": "Advanced options for projects",
+    "description": "",
+    "slug": "advanced-options-for-projects",
+    "sidebar_position": 188,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb31fb0b11ce44f6393244",
+    "helpscout_url": "https://help.smartwinnr.com/article/188-advanced-options-for-projects"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a new Project?",
+    "permalink": "/administration/system-management/user-management/how-to-create-a-new-project"
+  },
+  "next": {
+    "title": "What is QResolve?...",
+    "permalink": "/administration/system-management/user-management/what-is-qresolve"
+  }
+}

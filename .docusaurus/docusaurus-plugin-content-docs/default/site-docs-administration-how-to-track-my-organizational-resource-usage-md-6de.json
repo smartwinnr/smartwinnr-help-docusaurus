@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda496f0b11ce44f6392e44",
     "helpscout_url": "https://help.smartwinnr.com/article/116-how-to-track-my-organizational-resource-usage"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Manage password policy",
-    "permalink": "/administration/manage-password-policy"
-  },
-  "next": {
-    "title": "Create users individually",
-    "permalink": "/administration/create-users-individually"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub",
+  "title": "Create folders and items in KHub",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub.md",
+  "sourceDirName": "administration/system-management/user-management/knowledge-hub-module/content-management",
+  "slug": "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub",
+  "permalink": "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 146,
+  "frontMatter": {
+    "title": "Create folders and items in KHub",
+    "description": "",
+    "slug": "how-can-i-create-folders-and-items-in-khub",
+    "sidebar_position": 146,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae8ca27288b7f895d64e3",
+    "helpscout_url": "https://help.smartwinnr.com/article/146-how-can-i-create-folders-and-items-in-khub"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Scorecard?",
+    "permalink": "/administration/system-management/user-management/forms-module/scorecards/how-to-create-a-scorecard"
+  },
+  "next": {
+    "title": "Edit a KHub item",
+    "permalink": "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60099176c64fe14d0e1fd224",
     "helpscout_url": "https://help.smartwinnr.com/article/226-form-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How managers Approve Form",
-    "permalink": "/forms-data-collection/form-creation/how-managers-approve-form"
-  },
-  "next": {
-    "title": "Add Approvers to a Form",
-    "permalink": "/forms-data-collection/form-creation/how-to-add-approvers-to-a-form"
   }
 }

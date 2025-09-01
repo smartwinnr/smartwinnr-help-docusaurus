@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds",
+  "title": "Delete SmartFeeds?",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds.md",
+  "sourceDirName": "administration/smartfeed-module/distribution-management",
+  "slug": "/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds",
+  "permalink": "/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 34,
+  "frontMatter": {
+    "title": "Delete SmartFeeds?",
+    "description": "",
+    "slug": "how-to-delete-smartfeeds",
+    "sidebar_position": 34,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd112c50ca0c372c6f09352",
+    "helpscout_url": "https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Send the SmartFeed to Teams?",
+    "permalink": "/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams"
+  },
+  "next": {
+    "title": "View SmartFeed Analytics?",
+    "permalink": "/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics"
+  }
+}

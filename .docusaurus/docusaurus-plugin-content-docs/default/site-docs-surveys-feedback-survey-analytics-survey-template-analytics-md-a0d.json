@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5ffd689766df373cab70860b",
     "helpscout_url": "https://help.smartwinnr.com/article/204-survey-template-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Survey Analytics",
-    "permalink": "/surveys-feedback/survey-analytics/survey-analytics"
-  },
-  "next": {
-    "title": "Assign a Survey.",
-    "permalink": "/surveys-feedback/survey-management/how-to-assign-a-survey"
   }
 }

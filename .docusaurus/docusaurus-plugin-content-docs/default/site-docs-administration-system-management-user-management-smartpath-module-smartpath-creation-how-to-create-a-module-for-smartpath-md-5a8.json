@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath",
+  "title": "Create a module for SmartPath.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath.md",
+  "sourceDirName": "administration/system-management/user-management/smartpath-module/smartpath-creation",
+  "slug": "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath",
+  "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 76,
+  "frontMatter": {
+    "title": "Create a module for SmartPath.",
+    "description": "",
+    "slug": "how-to-create-a-module-for-smartpath",
+    "sidebar_position": 76,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd6f70a23119734ee37f088",
+    "helpscout_url": "https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View the SmartPath Analytics.",
+    "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics"
+  },
+  "next": {
+    "title": "Create a SmartPath.",
+    "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-smartpath"
+  }
+}

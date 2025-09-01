@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings",
+  "title": "About Field Mappings",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/forms-module/data-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 172,
+  "frontMatter": {
+    "title": "About Field Mappings",
+    "description": "",
+    "slug": "what-are-field-mappings",
+    "sidebar_position": 172,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0cafa5d295659b369c60",
+    "helpscout_url": "https://help.smartwinnr.com/article/172-what-are-field-mappings"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Review a field coaching as a manager/2nd level manager",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+  },
+  "next": {
+    "title": "Create a Field Mapping?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/forms-module/data-management/how-to-create-a-field-mapping"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching",
+  "title": "About 'My Team Coaching'",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching.md",
+  "sourceDirName": "administration/system-management/user-management/field-coaching-module/manager-tools",
+  "slug": "/administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching",
+  "permalink": "/administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 89,
+  "frontMatter": {
+    "title": "About 'My Team Coaching'",
+    "description": "",
+    "slug": "what-is-my-team-coaching",
+    "sidebar_position": 89,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd758ea7129911ba1b20b11",
+    "helpscout_url": "https://help.smartwinnr.com/article/89-what-is-my-team-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Field Coaching Template",
+    "permalink": "/administration/system-management/user-management/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template"
+  },
+  "next": {
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "permalink": "/administration/system-management/user-management/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "title": "Take the SmartPath Assigned to me in SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking",
+  "slug": "/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 265,
+  "frontMatter": {
+    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
+    "description": "",
+    "slug": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+    "sidebar_position": 265,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "610775ae64a230081ba1b1b8",
+    "helpscout_url": "https://help.smartwinnr.com/article/265-how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Archive a SmartPath and unhide them in future if needed.",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+  },
+  "next": {
+    "title": "Import SCORM course into SmartWinnr?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr"
+  }
+}

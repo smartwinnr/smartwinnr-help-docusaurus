@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/coaching-assignment-creation/create-a-coaching",
+  "title": "Create Coaching",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching.md",
+  "sourceDirName": "administration/video-coaching-module/coaching-assignment-creation",
+  "slug": "/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching",
+  "permalink": "/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 294,
+  "frontMatter": {
+    "title": "Create Coaching",
+    "description": "",
+    "slug": "create-a-coaching",
+    "sidebar_position": 294,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6778cfe33656557cafadaee0",
+    "helpscout_url": "https://help.smartwinnr.com/article/294-create-a-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Video Coaching assignment.",
+    "permalink": "/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment"
+  },
+  "next": {
+    "title": "Enable the Streaming Links for Video Coaching",
+    "permalink": "/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching"
+  }
+}

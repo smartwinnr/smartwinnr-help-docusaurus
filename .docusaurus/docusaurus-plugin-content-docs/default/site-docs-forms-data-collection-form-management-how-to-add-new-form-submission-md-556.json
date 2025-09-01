@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60b77f6d9c887a0dfc555ad2",
     "helpscout_url": "https://help.smartwinnr.com/article/247-how-to-add-new-form-submission"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How can I submit Form from Chat",
-    "permalink": "/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat"
-  },
-  "next": {
-    "title": "Edit a Form on submitted by a user?",
-    "permalink": "/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user"
   }
 }

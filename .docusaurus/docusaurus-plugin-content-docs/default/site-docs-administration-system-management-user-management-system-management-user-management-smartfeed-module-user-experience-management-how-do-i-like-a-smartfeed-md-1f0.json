@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed",
+  "title": "Like a SmartFeed",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 33,
+  "frontMatter": {
+    "title": "Like a SmartFeed",
+    "description": "",
+    "slug": "how-do-i-like-a-smartfeed",
+    "sidebar_position": 33,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd1110180488e39007cbd8f",
+    "helpscout_url": "https://help.smartwinnr.com/article/33-how-do-i-like-a-smartfeed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View all the SmartFeeds?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds"
+  },
+  "next": {
+    "title": "Download/Share a smartfeed in smartpath",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath"
+  }
+}

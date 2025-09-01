@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb50c1b624c71b7985a730",
     "helpscout_url": "https://help.smartwinnr.com/article/194-how-to-create-an-achievements"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About an Achievement",
-    "permalink": "/competitions-gamification/what-is-an-achievement"
-  },
-  "next": {
-    "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
-    "permalink": "/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
   }
 }

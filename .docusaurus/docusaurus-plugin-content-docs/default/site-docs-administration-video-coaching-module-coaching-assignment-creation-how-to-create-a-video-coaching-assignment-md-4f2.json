@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment",
+  "title": "Create a Video Coaching assignment.",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment.md",
+  "sourceDirName": "administration/video-coaching-module/coaching-assignment-creation",
+  "slug": "/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment",
+  "permalink": "/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 85,
+  "frontMatter": {
+    "title": "Create a Video Coaching assignment.",
+    "description": "",
+    "slug": "how-to-create-a-video-coaching-assignment",
+    "sidebar_position": 85,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd72036c868cb6df3a813bf",
+    "helpscout_url": "https://help.smartwinnr.com/article/85-how-can-i-create-a-video-coaching-assignment"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Download/Share a smartfeed in smartpath",
+    "permalink": "/administration/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "next": {
+    "title": "Create Coaching",
+    "permalink": "/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching"
+  }
+}

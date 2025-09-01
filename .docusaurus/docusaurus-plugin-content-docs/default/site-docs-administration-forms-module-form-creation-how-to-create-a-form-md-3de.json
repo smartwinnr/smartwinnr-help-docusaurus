@@ -1,0 +1,36 @@
+{
+  "id": "administration/forms-module/form-creation/how-to-create-a-form",
+  "title": "Create a form?",
+  "description": "",
+  "source": "@site/docs/administration/forms-module/form-creation/how-to-create-a-form.md",
+  "sourceDirName": "administration/forms-module/form-creation",
+  "slug": "/administration/forms-module/form-creation/how-to-create-a-form",
+  "permalink": "/administration/forms-module/form-creation/how-to-create-a-form",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/forms-module/form-creation/how-to-create-a-form.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 93,
+  "frontMatter": {
+    "title": "Create a form?",
+    "description": "",
+    "slug": "how-to-create-a-form",
+    "sidebar_position": 93,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd8c043b624c71b798599c8",
+    "helpscout_url": "https://help.smartwinnr.com/article/93-how-to-create-a-form"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Field Mapping?",
+    "permalink": "/administration/forms-module/data-management/how-to-create-a-field-mapping"
+  },
+  "next": {
+    "title": "How managers Approve Form",
+    "permalink": "/administration/forms-module/form-creation/how-managers-approve-form"
+  }
+}

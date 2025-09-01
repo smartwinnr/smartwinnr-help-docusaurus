@@ -16,14 +16,5 @@
     "title": "Coaching",
     "description": "Video coaching, field coaching, and performance management.",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Duplicate a quiz in a Competition?",
-    "permalink": "/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition"
-  },
-  "next": {
-    "title": "Create a Video Coaching assignment.",
-    "permalink": "/coaching-performance/how-to-create-a-video-coaching-assignment"
   }
 }

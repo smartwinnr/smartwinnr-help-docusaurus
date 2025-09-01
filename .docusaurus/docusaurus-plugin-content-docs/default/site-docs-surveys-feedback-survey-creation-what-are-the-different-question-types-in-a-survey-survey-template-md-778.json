@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4a51b23119734ee37edce",
     "helpscout_url": "https://help.smartwinnr.com/article/62-what-are-the-different-question-types-in-a-survey-template"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a 'Survey Template'.",
-    "permalink": "/surveys-feedback/survey-creation/how-to-create-a-survey-template"
-  },
-  "next": {
-    "title": "About the difference between a Survey and a Survey Template",
-    "permalink": "/surveys-feedback/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template"
   }
 }

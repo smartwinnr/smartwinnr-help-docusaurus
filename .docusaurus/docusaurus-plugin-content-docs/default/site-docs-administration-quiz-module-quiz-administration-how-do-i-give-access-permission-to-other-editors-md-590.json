@@ -1,0 +1,36 @@
+{
+  "id": "administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors",
+  "title": "Give access permission to other editors",
+  "description": "",
+  "source": "@site/docs/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors.md",
+  "sourceDirName": "administration/quiz-module/quiz-administration",
+  "slug": "/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors",
+  "permalink": "/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 196,
+  "frontMatter": {
+    "title": "Give access permission to other editors",
+    "description": "",
+    "slug": "how-do-i-give-access-permission-to-other-editors",
+    "sidebar_position": 196,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb74880b11ce44f63933a3",
+    "helpscout_url": "https://help.smartwinnr.com/article/196-how-do-i-give-access-permission-to-other-editors"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Send quizzes, surveys and content using group?",
+    "permalink": "/administration/quiz-module/quiz-administration/how-to-send-quizzes-surveys-and-content-using-group"
+  },
+  "next": {
+    "title": "Open and Close a Quiz",
+    "permalink": "/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz"
+  }
+}

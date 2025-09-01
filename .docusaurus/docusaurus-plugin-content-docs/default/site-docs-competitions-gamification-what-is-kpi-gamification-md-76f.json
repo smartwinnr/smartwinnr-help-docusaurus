@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0bb6a5d295659b369c5d",
     "helpscout_url": "https://help.smartwinnr.com/article/168-what-is-kpi-gamification"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Leaderboards of Competition",
-    "permalink": "/competitions-gamification/leaderboards-of-a-competition"
-  },
-  "next": {
-    "title": "Understand Game Concepts",
-    "permalink": "/competitions-gamification/understand-game-concepts"
   }
 }

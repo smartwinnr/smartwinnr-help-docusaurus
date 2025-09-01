@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4998236980410c9123856",
     "helpscout_url": "https://help.smartwinnr.com/article/56-question-response-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Upload questions in bulk using 'Import Questions'.",
-    "permalink": "/quiz-assessments/question-management/how-to-upload-questions-in-bulk-using-import-questions"
-  },
-  "next": {
-    "title": "Add a 'Video' to a question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-a-video-to-a-question"
   }
 }

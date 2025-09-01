@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4939923119734ee37edac",
     "helpscout_url": "https://help.smartwinnr.com/article/51-how-can-i-duplicate-a-quiz"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a manual quiz?",
-    "permalink": "/quiz-assessments/creating-assessments/how-to-create-a-manual-quiz"
-  },
-  "next": {
-    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
-    "permalink": "/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
   }
 }

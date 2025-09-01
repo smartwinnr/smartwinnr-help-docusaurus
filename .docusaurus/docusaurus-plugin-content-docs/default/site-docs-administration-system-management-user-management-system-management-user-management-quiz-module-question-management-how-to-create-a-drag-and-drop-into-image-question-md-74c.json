@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question",
+  "title": "Create a Drag and Drop into Image Question?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 283,
+  "frontMatter": {
+    "title": "Create a Drag and Drop into Image Question?",
+    "description": "",
+    "slug": "how-to-create-a-drag-and-drop-into-image-question",
+    "sidebar_position": 283,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "641a2e5bdf67f62fb768a4ca",
+    "helpscout_url": "https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-drop-into-image-question"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a missing words question?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-missing-words-question"
+  },
+  "next": {
+    "title": "Create 'Numeric Type Questions'",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-numeric-type-questions"
+  }
+}

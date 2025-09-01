@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb1597a5d295659b369c89",
     "helpscout_url": "https://help.smartwinnr.com/article/178-what-is-a-challenge"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Upload KPI data?",
-    "permalink": "/competitions-gamification/how-to-upload-kpi-data"
-  },
-  "next": {
-    "title": "Create an Individual Challenge?",
-    "permalink": "/competitions-gamification/how-to-create-an-individual-challenge"
   }
 }

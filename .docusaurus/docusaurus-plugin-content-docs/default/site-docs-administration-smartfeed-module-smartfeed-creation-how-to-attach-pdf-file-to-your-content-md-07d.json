@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content",
+  "title": "Attach PDF file to your content?",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content.md",
+  "sourceDirName": "administration/smartfeed-module/smartfeed-creation",
+  "slug": "/administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content",
+  "permalink": "/administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 72,
+  "frontMatter": {
+    "title": "Attach PDF file to your content?",
+    "description": "",
+    "slug": "how-to-attach-pdf-file-to-your-content",
+    "sidebar_position": 72,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4ebed3d1d2a5b1c5ea1d5",
+    "helpscout_url": "https://help.smartwinnr.com/article/72-how-to-attach-pdf-file-to-your-content"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add an audio file to your content?",
+    "permalink": "/administration/smartfeed-module/smartfeed-creation/how-to-add-an-audio-file-to-your-content"
+  },
+  "next": {
+    "title": "Add a Recording to a SmartFeed?",
+    "permalink": "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed"
+  }
+}

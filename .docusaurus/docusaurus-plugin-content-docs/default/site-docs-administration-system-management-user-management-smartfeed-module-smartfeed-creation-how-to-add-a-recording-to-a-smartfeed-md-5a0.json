@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed",
+  "title": "Add a Recording to a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed.md",
+  "sourceDirName": "administration/system-management/user-management/smartfeed-module/smartfeed-creation",
+  "slug": "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed",
+  "permalink": "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 239,
+  "frontMatter": {
+    "title": "Add a Recording to a SmartFeed?",
+    "description": "",
+    "slug": "how-to-add-a-recording-to-a-smartfeed",
+    "sidebar_position": 239,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a60efceb3af44cc120a91b",
+    "helpscout_url": "https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Attach PDF file to your content?",
+    "permalink": "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content"
+  },
+  "next": {
+    "title": "View all the SmartFeeds?",
+    "permalink": "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds"
+  }
+}

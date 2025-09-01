@@ -23,14 +23,5 @@
     },
     "helpscout_id": "603c7d19b3ebfb109b586e66",
     "helpscout_url": "https://help.smartwinnr.com/article/230-how-can-i-submit-a-form-from-chat"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How can I submit Form from Left Menu",
-    "permalink": "/forms-data-collection/form-management/how-can-i-submit-a-form-from-left-menu"
-  },
-  "next": {
-    "title": "Add new form submission",
-    "permalink": "/forms-data-collection/form-management/how-to-add-new-form-submission"
   }
 }

@@ -21,14 +21,5 @@
       "date": "2025-08-10T00:00:00.000Z",
       "author": "Documentation Reorganization"
     }
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Open and Close a Quiz",
-    "permalink": "/quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz"
-  },
-  "next": {
-    "title": "Quiz Reports",
-    "permalink": "/quiz-assessments/assessment-analytics/quiz-reports"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb1646a5d295659b369c8d",
     "helpscout_url": "https://help.smartwinnr.com/article/180-how-to-create-a-group-challenge"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create an Individual Challenge?",
-    "permalink": "/competitions-gamification/how-to-create-an-individual-challenge"
-  },
-  "next": {
-    "title": "Create a Manager Challenge?",
-    "permalink": "/competitions-gamification/how-to-create-a-manager-challenge"
   }
 }

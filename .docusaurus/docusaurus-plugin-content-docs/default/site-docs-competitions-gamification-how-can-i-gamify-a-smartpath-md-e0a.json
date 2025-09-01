@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd714514eb32171b80377f9",
     "helpscout_url": "https://help.smartwinnr.com/article/81-how-can-i-gamify-a-smartpath"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Question bank",
-    "permalink": "/competitions-gamification/question-bank"
-  },
-  "next": {
-    "title": "Add a Scorecard to a Competition?",
-    "permalink": "/competitions-gamification/how-to-add-a-scorecard-to-a-competition"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching",
+  "title": "Enable the Streaming Links for Video Coaching",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching.md",
+  "sourceDirName": "administration/video-coaching-module/streaming-configuration",
+  "slug": "/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching",
+  "permalink": "/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 241,
+  "frontMatter": {
+    "title": "Enable the Streaming Links for Video Coaching",
+    "description": "",
+    "slug": "how-to-enable-the-streaming-links-for-video-coaching",
+    "sidebar_position": 241,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a63037eb3af44cc120a9d0",
+    "helpscout_url": "https://help.smartwinnr.com/article/241-how-to-enable-the-streaming-links-for-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Coaching",
+    "permalink": "/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching"
+  },
+  "next": {
+    "title": "Upload a coaching video",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video"
+  }
+}

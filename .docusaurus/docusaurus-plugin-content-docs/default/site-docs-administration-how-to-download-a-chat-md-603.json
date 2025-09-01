@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaf7eeb624c71b7985a5ad",
     "helpscout_url": "https://help.smartwinnr.com/article/156-how-to-download-a-chat"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add or remove users to a chat group?",
-    "permalink": "/administration/how-to-add-or-remove-users-to-a-chat-group"
-  },
-  "next": {
-    "title": "Use QResolve in the SmartWinnr app?",
-    "permalink": "/administration/how-to-use-qresolve-in-the-smartwinnr-app"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard",
+  "title": "Add observers to the Competition Leaderboard?",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard",
+  "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 234,
+  "frontMatter": {
+    "title": "Add observers to the Competition Leaderboard?",
+    "description": "",
+    "slug": "how-to-add-observers-to-the-competition-leaderboard",
+    "sidebar_position": 234,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a370cfeb3af44cc12099d5",
+    "helpscout_url": "https://help.smartwinnr.com/article/234-how-to-add-observers-to-the-competition-leaderboard"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View the data and leaderboard for Scorecard",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard"
+  },
+  "next": {
+    "title": "Add the Scorecard to Leaderboard",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard"
+  }
+}

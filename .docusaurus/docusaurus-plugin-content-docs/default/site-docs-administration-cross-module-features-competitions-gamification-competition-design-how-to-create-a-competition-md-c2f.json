@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition",
+  "title": "Create a competition?",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification/competition-design",
+  "slug": "/administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition",
+  "permalink": "/administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 103,
+  "frontMatter": {
+    "title": "Create a competition?",
+    "description": "",
+    "slug": "how-to-create-a-competition",
+    "sidebar_position": 103,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd9ba357129911ba1b21757",
+    "helpscout_url": "https://help.smartwinnr.com/article/103-how-to-create-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add smartfeed within a Competition",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-to-add-smartfeed-within-a-competition"
+  },
+  "next": {
+    "title": "Add a Quiz to a competition?",
+    "permalink": "/administration/cross-module-features/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition"
+  }
+}

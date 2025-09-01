@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb509ab624c71b7985a72e",
     "helpscout_url": "https://help.smartwinnr.com/article/193-what-is-an-achievement"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "View the KPI scorecard",
-    "permalink": "/competitions-gamification/how-do-i-view-the-kpi-scorecard"
-  },
-  "next": {
-    "title": "Create Certifcates",
-    "permalink": "/competitions-gamification/how-to-create-certifcates"
   }
 }

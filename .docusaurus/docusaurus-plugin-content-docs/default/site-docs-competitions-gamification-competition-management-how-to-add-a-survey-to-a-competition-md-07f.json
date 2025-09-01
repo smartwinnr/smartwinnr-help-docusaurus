@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9d20127288b7f895d5e73",
     "helpscout_url": "https://help.smartwinnr.com/article/104-how-to-add-a-survey-to-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a Quiz to a competition?",
-    "permalink": "/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition"
-  },
-  "next": {
-    "title": "Duplicate a quiz in a Competition?",
-    "permalink": "/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition"
   }
 }

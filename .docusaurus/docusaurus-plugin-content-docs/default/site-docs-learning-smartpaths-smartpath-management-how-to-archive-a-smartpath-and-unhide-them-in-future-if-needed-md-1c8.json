@@ -23,14 +23,5 @@
     },
     "helpscout_id": "6324e1941ec1962d58a8036e",
     "helpscout_url": "https://help.smartwinnr.com/article/278-how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create SmartPath with Learning Sessions?",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-smartpath-with-learning-sessions"
-  },
-  "next": {
-    "title": "About Field Mappings",
-    "permalink": "/forms-data-collection/data-management/what-are-field-mappings"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition",
+  "title": "Add a challenge to the competition?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 107,
+  "frontMatter": {
+    "title": "Add a challenge to the competition?",
+    "description": "",
+    "slug": "how-to-add-a-challenge-to-the-competition",
+    "sidebar_position": 107,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda24cfa5d295659b3697bf",
+    "helpscout_url": "https://help.smartwinnr.com/article/107-how-to-add-a-challenge-to-the-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a Scorecard to a Competition?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-scorecard-to-a-competition"
+  },
+  "next": {
+    "title": "Leaderboards of Competition",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition"
+  }
+}

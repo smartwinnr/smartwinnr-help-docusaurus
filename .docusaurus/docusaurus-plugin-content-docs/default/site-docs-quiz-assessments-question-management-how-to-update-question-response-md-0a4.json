@@ -23,14 +23,5 @@
     },
     "helpscout_id": "607e8df03149d33a19c6e5e3",
     "helpscout_url": "https://help.smartwinnr.com/article/232-how-to-update-question-response"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Edit a question?",
-    "permalink": "/quiz-assessments/question-management/how-to-edit-a-question"
-  },
-  "next": {
-    "title": "Create 'Long Answer' Questions?",
-    "permalink": "/quiz-assessments/question-management/how-to-create-long-answer-questions"
   }
 }

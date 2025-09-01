@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb168a0b11ce44f63931e3",
     "helpscout_url": "https://help.smartwinnr.com/article/181-how-to-create-a-manager-challenge"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a Group Challenge?",
-    "permalink": "/competitions-gamification/how-to-create-a-group-challenge"
-  },
-  "next": {
-    "title": "About KPI Reports",
-    "permalink": "/competitions-gamification/what-are-kpi-reports"
   }
 }

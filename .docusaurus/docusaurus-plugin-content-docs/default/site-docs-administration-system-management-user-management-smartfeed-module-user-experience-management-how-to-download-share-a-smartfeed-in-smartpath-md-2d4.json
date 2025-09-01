@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath",
+  "title": "Download/Share a smartfeed in smartpath",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath.md",
+  "sourceDirName": "administration/system-management/user-management/smartfeed-module/user-experience-management",
+  "slug": "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath",
+  "permalink": "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 273,
+  "frontMatter": {
+    "title": "Download/Share a smartfeed in smartpath",
+    "description": "",
+    "slug": "how-to-download-share-a-smartfeed-in-smartpath",
+    "sidebar_position": 273,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6309b2f090c29a3d732c2441",
+    "helpscout_url": "https://help.smartwinnr.com/article/273-how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Like a SmartFeed",
+    "permalink": "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed"
+  },
+  "next": {
+    "title": "SmartPath Management",
+    "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-management/smartpath-management"
+  }
+}

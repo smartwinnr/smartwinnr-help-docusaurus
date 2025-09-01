@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdadc160b11ce44f639313f",
     "helpscout_url": "https://help.smartwinnr.com/article/134-how-to-view-existing-contacts"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a new Division?",
-    "permalink": "/administration/how-to-add-a-new-division"
-  },
-  "next": {
-    "title": "Add new contacts?",
-    "permalink": "/administration/how-to-add-new-contacts"
   }
 }

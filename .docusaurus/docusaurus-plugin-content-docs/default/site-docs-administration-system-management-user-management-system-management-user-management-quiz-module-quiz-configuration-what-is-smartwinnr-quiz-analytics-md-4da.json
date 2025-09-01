@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics",
+  "title": "About SmartWinnr Quiz Analytics",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 53,
+  "frontMatter": {
+    "title": "About SmartWinnr Quiz Analytics",
+    "description": "",
+    "slug": "what-is-smartwinnr-quiz-analytics",
+    "sidebar_position": 53,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4955723119734ee37edb5",
+    "helpscout_url": "https://help.smartwinnr.com/article/53-what-is-smartwinnr-quiz-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz types",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types"
+  },
+  "next": {
+    "title": "Creating Quizzes",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/creating-quizzes"
+  }
+}

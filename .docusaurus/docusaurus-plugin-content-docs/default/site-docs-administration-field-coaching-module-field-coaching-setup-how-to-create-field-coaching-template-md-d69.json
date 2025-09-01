@@ -1,0 +1,36 @@
+{
+  "id": "administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template",
+  "title": "Create Field Coaching Template",
+  "description": "",
+  "source": "@site/docs/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template.md",
+  "sourceDirName": "administration/field-coaching-module/field-coaching-setup",
+  "slug": "/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template",
+  "permalink": "/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 236,
+  "frontMatter": {
+    "title": "Create Field Coaching Template",
+    "description": "",
+    "slug": "how-to-create-field-coaching-template",
+    "sidebar_position": 236,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60a50e4827c86942e80697e9",
+    "helpscout_url": "https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create Field Coaching",
+    "permalink": "/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching"
+  },
+  "next": {
+    "title": "About 'My Team Coaching'",
+    "permalink": "/administration/field-coaching-module/manager-tools/what-is-my-team-coaching"
+  }
+}

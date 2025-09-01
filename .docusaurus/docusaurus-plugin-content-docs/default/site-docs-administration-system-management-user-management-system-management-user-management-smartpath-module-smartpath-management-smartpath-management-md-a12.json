@@ -1,0 +1,34 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management",
+  "title": "SmartPath Management",
+  "description": "Complete guide for creating and managing structured learning paths",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "SmartPath Management",
+    "description": "Complete guide for creating and managing structured learning paths",
+    "slug": "smartpath-management",
+    "sidebar_position": 2,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "Documentation Reorganization"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Download/Share a smartfeed in smartpath",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath"
+  },
+  "next": {
+    "title": "What are SmartPaths.",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths"
+  }
+}

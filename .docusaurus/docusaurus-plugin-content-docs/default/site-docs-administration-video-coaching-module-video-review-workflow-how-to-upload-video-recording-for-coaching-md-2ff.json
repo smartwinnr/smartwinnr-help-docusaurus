@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching",
+  "title": "Upload Video Recording for Coaching",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching.md",
+  "sourceDirName": "administration/video-coaching-module/video-review-workflow",
+  "slug": "/administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching",
+  "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 268,
+  "frontMatter": {
+    "title": "Upload Video Recording for Coaching",
+    "description": "",
+    "slug": "how-to-upload-video-recording-for-coaching",
+    "sidebar_position": 268,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "62a3071392cb8c175b46bb56",
+    "helpscout_url": "https://help.smartwinnr.com/article/268-how-to-record-video-into-video-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upload Audio Recording for Coaching",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-upload-audio-recording-for-coaching"
+  },
+  "next": {
+    "title": "Upload Screen Recording for Coaching",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching"
+  }
+}

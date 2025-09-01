@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaec3c7129911ba1b21de9",
     "helpscout_url": "https://help.smartwinnr.com/article/150-how-to-use-khub-in-the-smartwinnr-app"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Understanding recent, trending and latest KHub items",
-    "permalink": "/knowledge-hub/user-experience/understanding-recent-trending-and-latest-khub-items"
-  },
-  "next": {
-    "title": "Project Management",
-    "permalink": "/project-management/project-management"
   }
 }

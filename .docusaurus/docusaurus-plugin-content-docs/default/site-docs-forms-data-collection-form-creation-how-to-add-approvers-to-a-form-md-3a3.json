@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60bb5a63f6392f0aaff521ab",
     "helpscout_url": "https://help.smartwinnr.com/article/251-how-to-add-approvers-to-a-form"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Form Analytics",
-    "permalink": "/forms-data-collection/form-creation/form-analytics"
-  },
-  "next": {
-    "title": "Approve/Reject a Form Submission",
-    "permalink": "/forms-data-collection/form-management/how-to-approve-reject-a-form-submission"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdaf691a5d295659b369c17",
     "helpscout_url": "https://help.smartwinnr.com/article/155-how-to-add-or-remove-users-to-a-chat-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Enable a Chat Group?",
-    "permalink": "/administration/how-to-enable-a-chat-group"
-  },
-  "next": {
-    "title": "Download a chat?",
-    "permalink": "/administration/how-to-download-a-chat"
   }
 }

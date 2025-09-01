@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video",
+  "title": "Upload a coaching video",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video.md",
+  "sourceDirName": "administration/system-management/user-management/video-coaching-module/video-review-workflow",
+  "slug": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video",
+  "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 86,
+  "frontMatter": {
+    "title": "Upload a coaching video",
+    "description": "",
+    "slug": "how-do-i-upload-a-coaching-video",
+    "sidebar_position": 86,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd728293d1d2a5b1c5ea4c8",
+    "helpscout_url": "https://help.smartwinnr.com/article/86-how-do-i-upload-a-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Enable the Streaming Links for Video Coaching",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching"
+  },
+  "next": {
+    "title": "Review a video coaching assignment.",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/advanced-analytics/index",
+  "title": "Analytics & Reporting",
+  "description": "Comprehensive analytics and reporting tools to measure performance, track progress, and gain insights",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/advanced-analytics/index.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/advanced-analytics",
+  "slug": "/administration/system-management/user-management/cross-module-features/advanced-analytics/analytics-reporting",
+  "permalink": "/administration/system-management/user-management/cross-module-features/advanced-analytics/analytics-reporting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/advanced-analytics/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Analytics & Reporting",
+    "description": "Comprehensive analytics and reporting tools to measure performance, track progress, and gain insights",
+    "slug": "analytics-reporting",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Edit a Project",
+    "permalink": "/administration/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project"
+  },
+  "next": {
+    "title": "User Login reports",
+    "permalink": "/administration/system-management/user-management/cross-module-features/advanced-analytics/user-login-reports"
+  }
+}

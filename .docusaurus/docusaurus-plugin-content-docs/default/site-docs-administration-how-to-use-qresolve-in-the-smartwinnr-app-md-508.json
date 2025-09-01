@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb04a37129911ba1b21e2a",
     "helpscout_url": "https://help.smartwinnr.com/article/159-how-to-use-qresolve-in-the-smartwinnr-app"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Download a chat?",
-    "permalink": "/administration/how-to-download-a-chat"
-  },
-  "next": {
-    "title": "Post a Query from the SmartWinnr app?",
-    "permalink": "/administration/how-to-post-a-query-from-the-smartwinnr-app"
   }
 }

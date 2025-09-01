@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb31fb0b11ce44f6393244",
     "helpscout_url": "https://help.smartwinnr.com/article/188-advanced-options-for-projects"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a new Project?",
-    "permalink": "/administration/how-to-create-a-new-project"
-  },
-  "next": {
-    "title": "What is QResolve?...",
-    "permalink": "/administration/what-is-qresolve"
   }
 }

@@ -14,14 +14,5 @@
   "sidebarPosition": 2,
   "frontMatter": {
     "sidebar_position": 2
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Creating Quizzes",
-    "permalink": "/quiz-assessments/creating-assessments/creating-quizzes"
-  },
-  "next": {
-    "title": "Create an automatic quiz?",
-    "permalink": "/quiz-assessments/creating-assessments/how-to-create-an-automatic-quiz"
   }
 }

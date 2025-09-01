@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60003222c64fe14d0e1fac76",
     "helpscout_url": "https://help.smartwinnr.com/article/209-what-is-qresolve"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Advanced options for projects",
-    "permalink": "/administration/advanced-options-for-projects"
-  },
-  "next": {
-    "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
-    "permalink": "/administration/how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4545236980410c9123806",
     "helpscout_url": "https://help.smartwinnr.com/article/39-question-bank"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Competitions & Gamification",
-    "permalink": "/competitions-gamification/competitions-gamification"
-  },
-  "next": {
-    "title": "Gamify a SmartPath",
-    "permalink": "/competitions-gamification/how-can-i-gamify-a-smartpath"
   }
 }

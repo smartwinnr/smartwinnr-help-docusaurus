@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60f9c0126ffe270af2a917d6",
     "helpscout_url": "https://help.smartwinnr.com/article/260-how-users-can-answer-the-long-answer-questions"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create 'Long Answer' Questions?",
-    "permalink": "/quiz-assessments/question-management/how-to-create-long-answer-questions"
-  },
-  "next": {
-    "title": "How Editors evaluate Long Answer Questions?",
-    "permalink": "/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions"
   }
 }

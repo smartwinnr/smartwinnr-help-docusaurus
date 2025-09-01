@@ -23,14 +23,5 @@
     },
     "helpscout_id": "66448bf460cfc03ad3491583",
     "helpscout_url": "https://help.smartwinnr.com/article/288-how-to-award-points-on-badge-assignment"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create Badges",
-    "permalink": "/competitions-gamification/how-to-create-badges"
-  },
-  "next": {
-    "title": "Add smartfeed within a Competition",
-    "permalink": "/competitions-gamification/how-to-add-smartfeed-within-a-competition"
   }
 }

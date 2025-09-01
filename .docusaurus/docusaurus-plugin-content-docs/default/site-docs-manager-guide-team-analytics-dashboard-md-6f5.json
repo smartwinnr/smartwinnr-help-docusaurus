@@ -17,5 +17,14 @@
     "description": "Complete guide to using SmartWinnr's team analytics dashboard for performance monitoring and insights",
     "slug": "team-analytics-dashboard",
     "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manager Tools",
+    "permalink": "/manager-guide/manager-guide"
+  },
+  "next": {
+    "title": "Monitoring Team Performance",
+    "permalink": "/manager-guide/monitoring-team-performance"
   }
 }

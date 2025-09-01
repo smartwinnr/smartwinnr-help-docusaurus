@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics",
+  "title": "Learner Report - By Learner (Individual Report Analytics)",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 255,
+  "frontMatter": {
+    "title": "Learner Report - By Learner (Individual Report Analytics)",
+    "description": "",
+    "slug": "learner-report-by-learner-individual-report-analytics",
+    "sidebar_position": 255,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "60c206d796768369c70bc6b4",
+    "helpscout_url": "https://help.smartwinnr.com/article/255-learner-report-by-learner"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Learner Overall Report",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-overall-report"
+  },
+  "next": {
+    "title": "Quiz Administration",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-administration"
+  }
+}

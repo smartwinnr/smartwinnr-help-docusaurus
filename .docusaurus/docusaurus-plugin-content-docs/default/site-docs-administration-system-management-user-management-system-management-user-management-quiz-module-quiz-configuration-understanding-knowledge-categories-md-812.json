@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories",
+  "title": "Understanding knowledge categories",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 38,
+  "frontMatter": {
+    "title": "Understanding knowledge categories",
+    "description": "",
+    "slug": "understanding-knowledge-categories",
+    "sidebar_position": 38,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4521236980410c9123802",
+    "helpscout_url": "https://help.smartwinnr.com/article/38-understanding-knowledge-categories"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Administration",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-administration"
+  },
+  "next": {
+    "title": "Quiz types",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types"
+  }
+}

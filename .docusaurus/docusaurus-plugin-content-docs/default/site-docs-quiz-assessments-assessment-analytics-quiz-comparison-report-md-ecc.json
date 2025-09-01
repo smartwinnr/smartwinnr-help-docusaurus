@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5ffc22a3551e0c2853f3af84",
     "helpscout_url": "https://help.smartwinnr.com/article/200-quiz-comparison-report"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Team Progress Report",
-    "permalink": "/quiz-assessments/assessment-analytics/team-progress-report"
-  },
-  "next": {
-    "title": "Learner Overall Report",
-    "permalink": "/quiz-assessments/assessment-analytics/learner-overall-report"
   }
 }

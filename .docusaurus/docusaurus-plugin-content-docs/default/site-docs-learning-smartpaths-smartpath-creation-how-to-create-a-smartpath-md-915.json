@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd711e636980410c9123b73",
     "helpscout_url": "https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a module for SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-a-module-for-smartpath"
-  },
-  "next": {
-    "title": "Edit a SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-edit-a-smartpath"
   }
 }

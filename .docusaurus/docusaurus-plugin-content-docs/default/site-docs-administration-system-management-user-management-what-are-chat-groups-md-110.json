@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/what-are-chat-groups",
+  "title": "About Chat Groups",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/what-are-chat-groups.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/what-are-chat-groups",
+  "permalink": "/administration/system-management/user-management/what-are-chat-groups",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/what-are-chat-groups.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 152,
+  "frontMatter": {
+    "title": "About Chat Groups",
+    "description": "",
+    "slug": "what-are-chat-groups",
+    "sidebar_position": 152,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaf5650b11ce44f6393174",
+    "helpscout_url": "https://help.smartwinnr.com/article/152-what-are-chat-groups"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add new rule?",
+    "permalink": "/administration/system-management/user-management/how-to-add-new-rule"
+  },
+  "next": {
+    "title": "When are chat groups needed?",
+    "permalink": "/administration/system-management/user-management/when-are-chat-groups-needed"
+  }
+}

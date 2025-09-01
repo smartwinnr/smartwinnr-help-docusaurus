@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb083d27288b7f895d6541",
     "helpscout_url": "https://help.smartwinnr.com/article/164-how-to-view-notifications"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About the purpose of notifications",
-    "permalink": "/administration/what-is-the-purpose-of-notifications"
-  },
-  "next": {
-    "title": "Custom Notifications",
-    "permalink": "/administration/custom-notifications"
   }
 }

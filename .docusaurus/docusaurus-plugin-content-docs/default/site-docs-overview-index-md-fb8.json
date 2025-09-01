@@ -1,0 +1,25 @@
+{
+  "id": "overview/index",
+  "title": "SmartWinnr Platform Overview",
+  "description": "Get a comprehensive overview of the SmartWinnr platform and its modules",
+  "source": "@site/docs/overview/index.md",
+  "sourceDirName": "overview",
+  "slug": "/overview/",
+  "permalink": "/overview/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/overview/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "SmartWinnr Platform Overview",
+    "description": "Get a comprehensive overview of the SmartWinnr platform and its modules",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Account Setup & Login",
+    "permalink": "/getting-started/account-setup-login"
+  }
+}

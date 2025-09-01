@@ -23,14 +23,5 @@
     },
     "helpscout_id": "6411592461f16344e3a359c8",
     "helpscout_url": "https://help.smartwinnr.com/article/281-how-to-create-a-drag-and-drop-into-text-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Short Answer With Multiple Options",
-    "permalink": "/quiz-assessments/question-management/short-answer-with-multiple-options"
-  },
-  "next": {
-    "title": "Create a missing words question?",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-missing-words-question"
   }
 }

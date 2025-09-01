@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition",
+  "title": "Add a Survey to a Competition?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition.md",
+  "sourceDirName": "administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management",
+  "slug": "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition",
+  "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 104,
+  "frontMatter": {
+    "title": "Add a Survey to a Competition?",
+    "description": "",
+    "slug": "how-to-add-a-survey-to-a-competition",
+    "sidebar_position": 104,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd9d20127288b7f895d5e73",
+    "helpscout_url": "https://help.smartwinnr.com/article/104-how-to-add-a-survey-to-a-competition"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a Quiz to a competition?",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition"
+  },
+  "next": {
+    "title": "Duplicate a quiz in a Competition?",
+    "permalink": "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition"
+  }
+}

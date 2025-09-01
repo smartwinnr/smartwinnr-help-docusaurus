@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz",
+  "title": "Create an automatic quiz?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 49,
+  "frontMatter": {
+    "title": "Create an automatic quiz?",
+    "description": "",
+    "slug": "how-to-create-an-automatic-quiz",
+    "sidebar_position": 49,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd48f1123119734ee37eda6",
+    "helpscout_url": "https://help.smartwinnr.com/article/49-how-to-create-an-automatic-quiz"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating a Quiz",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/creating-quiz"
+  },
+  "next": {
+    "title": "Create a manual quiz?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-a-manual-quiz"
+  }
+}

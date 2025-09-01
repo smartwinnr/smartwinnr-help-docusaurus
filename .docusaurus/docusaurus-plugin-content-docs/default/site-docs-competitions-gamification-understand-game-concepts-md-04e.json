@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0be80b11ce44f63931bb",
     "helpscout_url": "https://help.smartwinnr.com/article/169-understand-game-concepts"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About KPI Gamification",
-    "permalink": "/competitions-gamification/what-is-kpi-gamification"
-  },
-  "next": {
-    "title": "Define KPIs",
-    "permalink": "/competitions-gamification/define-kpis"
   }
 }

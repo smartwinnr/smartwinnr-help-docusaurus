@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda5572a5d295659b369917",
     "helpscout_url": "https://help.smartwinnr.com/article/129-how-to-create-a-group"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How can an Admin change anyone's password?",
-    "permalink": "/administration/how-can-an-admin-change-anyone-s-password"
-  },
-  "next": {
-    "title": "Add a new Division?",
-    "permalink": "/administration/how-to-add-a-new-division"
   }
 }

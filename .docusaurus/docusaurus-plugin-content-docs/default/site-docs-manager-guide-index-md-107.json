@@ -17,5 +17,14 @@
     "description": "Complete guide for SmartWinnr managers - team analytics, performance monitoring, and coaching tools",
     "slug": "manager-guide",
     "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Accessing Learning Content",
+    "permalink": "/user-guide/accessing-learning-content"
+  },
+  "next": {
+    "title": "Team Analytics Dashboard",
+    "permalink": "/manager-guide/team-analytics-dashboard"
   }
 }

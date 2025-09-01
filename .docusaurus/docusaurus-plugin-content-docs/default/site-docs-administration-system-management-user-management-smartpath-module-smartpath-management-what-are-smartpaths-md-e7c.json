@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths",
+  "title": "What are SmartPaths.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths.md",
+  "sourceDirName": "administration/system-management/user-management/smartpath-module/smartpath-management",
+  "slug": "/administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths",
+  "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 77,
+  "frontMatter": {
+    "title": "What are SmartPaths.",
+    "description": "",
+    "slug": "what-are-smartpaths",
+    "sidebar_position": 77,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd7119336980410c9123b70",
+    "helpscout_url": "https://help.smartwinnr.com/article/77-what-are-smartpaths"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "SmartPath Management",
+    "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-management/smartpath-management"
+  },
+  "next": {
+    "title": "Archive a SmartPath and unhide them in future if needed.",
+    "permalink": "/administration/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd8c043b624c71b798599c8",
     "helpscout_url": "https://help.smartwinnr.com/article/93-how-to-create-a-form"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a Field Mapping?",
-    "permalink": "/forms-data-collection/data-management/how-to-create-a-field-mapping"
-  },
-  "next": {
-    "title": "How managers Approve Form",
-    "permalink": "/forms-data-collection/form-creation/how-managers-approve-form"
   }
 }

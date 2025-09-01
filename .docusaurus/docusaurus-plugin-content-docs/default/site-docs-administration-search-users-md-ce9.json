@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda509f27288b7f895d61ff",
     "helpscout_url": "https://help.smartwinnr.com/article/122-search-users"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create users individually",
-    "permalink": "/administration/create-users-individually"
-  },
-  "next": {
-    "title": "Change the password for a user account",
-    "permalink": "/administration/how-can-i-change-the-password-for-a-user-account"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4bccec868cb6df3a8106b",
     "helpscout_url": "https://help.smartwinnr.com/article/65-how-to-add-an-image-to-the-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a 'Video' to a question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-a-video-to-a-question"
-  },
-  "next": {
-    "title": "Embed a link into the question",
-    "permalink": "/quiz-assessments/question-management/how-to-embed-a-link-into-the-question"
   }
 }

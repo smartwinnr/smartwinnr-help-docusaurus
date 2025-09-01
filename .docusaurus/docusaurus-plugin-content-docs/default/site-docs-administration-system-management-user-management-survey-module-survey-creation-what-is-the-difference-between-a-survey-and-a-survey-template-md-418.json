@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template",
+  "title": "About the difference between a Survey and a Survey Template",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template.md",
+  "sourceDirName": "administration/system-management/user-management/survey-module/survey-creation",
+  "slug": "/administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template",
+  "permalink": "/administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 63,
+  "frontMatter": {
+    "title": "About the difference between a Survey and a Survey Template",
+    "description": "",
+    "slug": "what-is-the-difference-between-a-survey-and-a-survey-template",
+    "sidebar_position": 63,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd4a80723119734ee37edd6",
+    "helpscout_url": "https://help.smartwinnr.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About the different question types in a Survey /Survey Template",
+    "permalink": "/administration/system-management/user-management/survey-module/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template"
+  },
+  "next": {
+    "title": "Add a Video Coaching to the competition?",
+    "permalink": "/administration/system-management/user-management/survey-module/survey-creation/how-to-add-a-video-coaching-to-the-competition"
+  }
+}

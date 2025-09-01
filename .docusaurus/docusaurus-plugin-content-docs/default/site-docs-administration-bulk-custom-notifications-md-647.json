@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb08a97129911ba1b21e3d",
     "helpscout_url": "https://help.smartwinnr.com/article/166-bulk-custom-notifications"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Custom Notifications",
-    "permalink": "/administration/custom-notifications"
-  },
-  "next": {
-    "title": "Add/change targets?",
-    "permalink": "/administration/how-to-add-change-targets"
   }
 }

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0817b624c71b7985a5e5",
     "helpscout_url": "https://help.smartwinnr.com/article/163-what-is-the-purpose-of-notifications"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Answer a Query",
-    "permalink": "/administration/how-can-i-answer-a-query"
-  },
-  "next": {
-    "title": "View notifications?",
-    "permalink": "/administration/how-to-view-notifications"
   }
 }

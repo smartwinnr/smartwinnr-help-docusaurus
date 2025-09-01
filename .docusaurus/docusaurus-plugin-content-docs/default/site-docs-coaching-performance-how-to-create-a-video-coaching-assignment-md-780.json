@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd72036c868cb6df3a813bf",
     "helpscout_url": "https://help.smartwinnr.com/article/85-how-can-i-create-a-video-coaching-assignment"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Coaching",
-    "permalink": "/coaching-performance/"
-  },
-  "next": {
-    "title": "Upload a coaching video",
-    "permalink": "/coaching-performance/how-do-i-upload-a-coaching-video"
   }
 }

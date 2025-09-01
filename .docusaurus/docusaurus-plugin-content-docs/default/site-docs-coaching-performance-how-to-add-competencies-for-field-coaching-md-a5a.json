@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60a50e711df47a61c5ad2f4d",
     "helpscout_url": "https://help.smartwinnr.com/article/237-how-to-add-competencies-for-field-coaching"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create Field Coaching Template",
-    "permalink": "/coaching-performance/how-to-create-field-coaching-template"
-  },
-  "next": {
-    "title": "Enable the Streaming Links for Video Coaching",
-    "permalink": "/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching"
   }
 }

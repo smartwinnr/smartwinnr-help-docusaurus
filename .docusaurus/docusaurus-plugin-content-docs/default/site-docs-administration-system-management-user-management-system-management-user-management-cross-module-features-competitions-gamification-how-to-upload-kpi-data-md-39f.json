@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data",
+  "title": "Upload KPI data?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 174,
+  "frontMatter": {
+    "title": "Upload KPI data?",
+    "description": "",
+    "slug": "how-to-upload-kpi-data",
+    "sidebar_position": 174,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0e290b11ce44f63931c7",
+    "helpscout_url": "https://help.smartwinnr.com/article/174-how-to-upload-kpi-data"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create KPI?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-kpi"
+  },
+  "next": {
+    "title": "About a Challenge",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-a-challenge"
+  }
+}

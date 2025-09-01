@@ -23,14 +23,5 @@
     },
     "helpscout_id": "62ad5954cb3c130081c15b53",
     "helpscout_url": "https://help.smartwinnr.com/article/270-drag-and-drop-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How Editors evaluate Long Answer Questions?",
-    "permalink": "/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions"
-  },
-  "next": {
-    "title": "Short Answer With Multiple Options",
-    "permalink": "/quiz-assessments/question-management/short-answer-with-multiple-options"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+  "title": "Archive a SmartPath and unhide them in future if needed.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 278,
+  "frontMatter": {
+    "title": "Archive a SmartPath and unhide them in future if needed.",
+    "description": "",
+    "slug": "how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+    "sidebar_position": 278,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6324e1941ec1962d58a8036e",
+    "helpscout_url": "https://help.smartwinnr.com/article/278-how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What are SmartPaths.",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths"
+  },
+  "next": {
+    "title": "Take the SmartPath Assigned to me in SmartWinnr?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  }
+}

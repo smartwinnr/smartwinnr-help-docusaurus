@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd46a20c868cb6df3a80ff5",
     "helpscout_url": "https://help.smartwinnr.com/article/43-how-to-create-a-matching-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a 'Hotspot Question'.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-hotspot-question"
-  },
-  "next": {
-    "title": "How 'Import question' is different from 'Add New Question'?",
-    "permalink": "/quiz-assessments/question-management/how-import-question-is-different-from-add-new-question"
   }
 }

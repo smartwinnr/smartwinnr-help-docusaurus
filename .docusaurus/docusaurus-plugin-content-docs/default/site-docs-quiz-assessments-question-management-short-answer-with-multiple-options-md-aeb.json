@@ -23,14 +23,5 @@
     },
     "helpscout_id": "64115177a0408f7cb1038c2d",
     "helpscout_url": "https://help.smartwinnr.com/article/280-short-answer-with-multiple-options"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create Re-order Questions",
-    "permalink": "/quiz-assessments/question-management/how-to-create-re-order-questions"
-  },
-  "next": {
-    "title": "Create a 'Drag and Drop into Text question '.",
-    "permalink": "/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-text-question"
   }
 }

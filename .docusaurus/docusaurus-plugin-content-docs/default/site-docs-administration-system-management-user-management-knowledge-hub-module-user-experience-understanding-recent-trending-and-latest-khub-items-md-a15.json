@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items",
+  "title": "Understanding recent, trending and latest KHub items",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items.md",
+  "sourceDirName": "administration/system-management/user-management/knowledge-hub-module/user-experience",
+  "slug": "/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items",
+  "permalink": "/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 148,
+  "frontMatter": {
+    "title": "Understanding recent, trending and latest KHub items",
+    "description": "",
+    "slug": "understanding-recent-trending-and-latest-khub-items",
+    "sidebar_position": 148,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae9d67129911ba1b21de5",
+    "helpscout_url": "https://help.smartwinnr.com/article/148-understanding-recent-trending-and-latest-khub-items"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View KHub Analytics",
+    "permalink": "/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics"
+  },
+  "next": {
+    "title": "Use KHub in the SmartWinnr app?",
+    "permalink": "/administration/system-management/user-management/knowledge-hub-module/user-experience/how-to-use-khub-in-the-smartwinnr-app"
+  }
+}

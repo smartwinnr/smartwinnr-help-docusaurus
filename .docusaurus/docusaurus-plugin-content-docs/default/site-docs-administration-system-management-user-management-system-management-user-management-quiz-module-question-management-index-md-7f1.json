@@ -1,0 +1,30 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management/index",
+  "title": "Question Management",
+  "description": "Comprehensive guide for creating, editing, and managing quiz questions in SmartWinnr",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/index.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/quiz-module/question-management",
+  "slug": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-management",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Question Management",
+    "description": "Comprehensive guide for creating, editing, and managing quiz questions in SmartWinnr",
+    "slug": "question-management",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Overview",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/"
+  },
+  "next": {
+    "title": "Create 'Multiple-Choice Questions'.",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-multiple-choice-questions"
+  }
+}

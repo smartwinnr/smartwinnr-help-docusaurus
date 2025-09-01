@@ -21,14 +21,5 @@
       "date": "2025-08-10T00:00:00.000Z",
       "author": "Documentation Reorganization"
     }
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Learner Report - By Learner (Individual Report Analytics)",
-    "permalink": "/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics"
-  },
-  "next": {
-    "title": "Creating a Quiz",
-    "permalink": "/quiz-assessments/creating-assessments/creating-quiz"
   }
 }

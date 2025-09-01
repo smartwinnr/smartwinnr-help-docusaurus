@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd6f70a23119734ee37f088",
     "helpscout_url": "https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Access the SCORM course from the SmartWinnr app",
-    "permalink": "/learning-smartpaths/scorm-external/how-to-access-the-scorm-course-from-the-smartwinnr-app"
-  },
-  "next": {
-    "title": "Create a SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-create-a-smartpath"
   }
 }

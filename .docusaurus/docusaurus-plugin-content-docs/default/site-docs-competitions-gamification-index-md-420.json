@@ -17,14 +17,5 @@
     "description": "Drive engagement and motivation through competitions, challenges, and gamification features",
     "slug": "competitions-gamification",
     "sidebar_position": 9
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Analytics & Reporting",
-    "permalink": "/analytics-reporting/analytics-reporting"
-  },
-  "next": {
-    "title": "Question bank",
-    "permalink": "/competitions-gamification/question-bank"
   }
 }

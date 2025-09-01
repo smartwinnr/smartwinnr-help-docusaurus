@@ -23,14 +23,5 @@
     },
     "helpscout_id": "64ec366fab3ec13db0b391bd",
     "helpscout_url": "https://help.smartwinnr.com/article/287-how-to-delete-a-survey"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Duplicate a 'Survey' and 'Survey Template'.",
-    "permalink": "/surveys-feedback/survey-creation/how-to-duplicate-a-survey-and-survey-template"
-  },
-  "next": {
-    "title": "Survey Analytics",
-    "permalink": "/surveys-feedback/survey-analytics/survey-analytics"
   }
 }

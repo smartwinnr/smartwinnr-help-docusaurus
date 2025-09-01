@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd11017db2fa3720c7d7aae",
     "helpscout_url": "https://help.smartwinnr.com/article/32-how-to-view-all-the-smartfeeds"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Delete SmartFeeds?",
-    "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds"
-  },
-  "next": {
-    "title": "Like a SmartFeed",
-    "permalink": "/microlearning-smartfeeds/user-experience/how-do-i-like-a-smartfeed"
   }
 }

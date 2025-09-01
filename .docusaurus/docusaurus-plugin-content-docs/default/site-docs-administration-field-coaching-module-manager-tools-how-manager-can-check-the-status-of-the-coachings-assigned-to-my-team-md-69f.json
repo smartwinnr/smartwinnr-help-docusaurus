@@ -1,0 +1,36 @@
+{
+  "id": "administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+  "title": "How Manager can check the status of the Coachings assigned to My Team",
+  "description": "",
+  "source": "@site/docs/administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+  "sourceDirName": "administration/field-coaching-module/manager-tools",
+  "slug": "/administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+  "permalink": "/administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 229,
+  "frontMatter": {
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "description": "",
+    "slug": "how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+    "sidebar_position": 229,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "603748758502d1120e90b0ed",
+    "helpscout_url": "https://help.smartwinnr.com/article/229-how-manager-can-view-and-check-the-status-of-the-coachings-assigned-to-my-team"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About 'My Team Coaching'",
+    "permalink": "/administration/field-coaching-module/manager-tools/what-is-my-team-coaching"
+  },
+  "next": {
+    "title": "Review Field Coaching from Managers View in Mobile",
+    "permalink": "/administration/field-coaching-module/performance-evaluation/how-to-review-field-coaching-from-managers-view-in-mobile"
+  }
+}

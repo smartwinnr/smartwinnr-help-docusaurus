@@ -1,0 +1,36 @@
+{
+  "id": "administration/survey-module/response-management/how-to-assign-a-survey",
+  "title": "Assign a Survey.",
+  "description": "",
+  "source": "@site/docs/administration/survey-module/response-management/how-to-assign-a-survey.md",
+  "sourceDirName": "administration/survey-module/response-management",
+  "slug": "/administration/survey-module/response-management/how-to-assign-a-survey",
+  "permalink": "/administration/survey-module/response-management/how-to-assign-a-survey",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/survey-module/response-management/how-to-assign-a-survey.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 60,
+  "frontMatter": {
+    "title": "Assign a Survey.",
+    "description": "",
+    "slug": "how-to-assign-a-survey",
+    "sidebar_position": 60,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd49e6623119734ee37edbd",
+    "helpscout_url": "https://help.smartwinnr.com/article/60-assign-a-survey"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Survey Template Analytics",
+    "permalink": "/administration/survey-module/survey-analytics/survey-template-analytics"
+  },
+  "next": {
+    "title": "Create folders and items in KHub",
+    "permalink": "/administration/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub"
+  }
+}

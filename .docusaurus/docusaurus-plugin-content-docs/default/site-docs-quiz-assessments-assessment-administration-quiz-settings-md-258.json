@@ -14,14 +14,5 @@
   "sidebarPosition": 6,
   "frontMatter": {
     "sidebar_position": 6
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Managing Questions",
-    "permalink": "/quiz-assessments/assessment-administration/managing-questions"
-  },
-  "next": {
-    "title": "Activate automatic reminders for your quizzes",
-    "permalink": "/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes"
   }
 }

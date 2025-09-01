@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds",
+  "title": "View all the SmartFeeds?",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds.md",
+  "sourceDirName": "administration/smartfeed-module/user-experience-management",
+  "slug": "/administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds",
+  "permalink": "/administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 32,
+  "frontMatter": {
+    "title": "View all the SmartFeeds?",
+    "description": "",
+    "slug": "how-to-view-all-the-smartfeeds",
+    "sidebar_position": 32,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd11017db2fa3720c7d7aae",
+    "helpscout_url": "https://help.smartwinnr.com/article/32-how-to-view-all-the-smartfeeds"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a Recording to a SmartFeed?",
+    "permalink": "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed"
+  },
+  "next": {
+    "title": "Like a SmartFeed",
+    "permalink": "/administration/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies",
+  "title": "Set competencies.",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks",
+  "slug": "/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 91,
+  "frontMatter": {
+    "title": "Set competencies.",
+    "description": "",
+    "slug": "how-to-set-competencies",
+    "sidebar_position": 91,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd75963a5d295659b36893f",
+    "helpscout_url": "https://help.smartwinnr.com/article/91-how-to-set-competencies"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Duplicate a quiz in a Competition?",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition"
+  },
+  "next": {
+    "title": "Add Competencies for Field Coaching",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-add-competencies-for-field-coaching"
+  }
+}

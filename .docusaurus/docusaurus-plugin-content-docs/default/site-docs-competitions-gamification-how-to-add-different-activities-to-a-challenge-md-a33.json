@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60a61bb227c86942e8069e4d",
     "helpscout_url": "https://help.smartwinnr.com/article/240-how-to-add-activities-inside-a-challenge"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add the Scorecard to Leaderboard",
-    "permalink": "/competitions-gamification/how-to-add-the-scorecard-to-leaderboard"
-  },
-  "next": {
-    "title": "Create Badges",
-    "permalink": "/competitions-gamification/how-to-create-badges"
   }
 }

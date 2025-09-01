@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb30c60b11ce44f639323f",
     "helpscout_url": "https://help.smartwinnr.com/article/187-how-to-edit-a-project"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Project Management",
-    "permalink": "/project-management/project-management"
-  },
-  "next": {
-    "title": "Surveys",
-    "permalink": "/surveys-feedback/survey-creation/"
   }
 }

@@ -17,14 +17,5 @@
     "description": "Complete guide for managing projects in SmartWinnr - creating, editing, and configuring project settings",
     "slug": "project-management",
     "sidebar_position": 0
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Use KHub in the SmartWinnr app?",
-    "permalink": "/knowledge-hub/user-experience/how-to-use-khub-in-the-smartwinnr-app"
-  },
-  "next": {
-    "title": "How to Edit a Project",
-    "permalink": "/project-management/how-to-edit-a-project"
   }
 }

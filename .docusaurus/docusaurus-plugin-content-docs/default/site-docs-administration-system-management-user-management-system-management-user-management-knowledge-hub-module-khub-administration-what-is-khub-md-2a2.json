@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub",
+  "title": "About KHub",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration",
+  "slug": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 145,
+  "frontMatter": {
+    "title": "About KHub",
+    "description": "",
+    "slug": "what-is-khub",
+    "sidebar_position": 145,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdae88db624c71b7985a587",
+    "helpscout_url": "https://help.smartwinnr.com/article/145-what-is-khub"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Knowledge Hub (KHub)",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/knowledge-hub-khub"
+  },
+  "next": {
+    "title": "View KHub Analytics",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics"
+  }
+}

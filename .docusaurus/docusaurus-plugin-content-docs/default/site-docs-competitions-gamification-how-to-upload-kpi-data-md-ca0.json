@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb0e290b11ce44f63931c7",
     "helpscout_url": "https://help.smartwinnr.com/article/174-how-to-upload-kpi-data"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create KPI?",
-    "permalink": "/competitions-gamification/how-to-create-kpi"
-  },
-  "next": {
-    "title": "About a Challenge",
-    "permalink": "/competitions-gamification/what-is-a-challenge"
   }
 }

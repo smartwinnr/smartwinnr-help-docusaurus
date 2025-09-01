@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/how-to-download-a-chat",
+  "title": "Download a chat?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/how-to-download-a-chat.md",
+  "sourceDirName": "administration/system-management/user-management",
+  "slug": "/administration/system-management/user-management/how-to-download-a-chat",
+  "permalink": "/administration/system-management/user-management/how-to-download-a-chat",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/how-to-download-a-chat.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 156,
+  "frontMatter": {
+    "title": "Download a chat?",
+    "description": "",
+    "slug": "how-to-download-a-chat",
+    "sidebar_position": 156,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdaf7eeb624c71b7985a5ad",
+    "helpscout_url": "https://help.smartwinnr.com/article/156-how-to-download-a-chat"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add or remove users to a chat group?",
+    "permalink": "/administration/system-management/user-management/how-to-add-or-remove-users-to-a-chat-group"
+  },
+  "next": {
+    "title": "Use QResolve in the SmartWinnr app?",
+    "permalink": "/administration/system-management/user-management/how-to-use-qresolve-in-the-smartwinnr-app"
+  }
+}

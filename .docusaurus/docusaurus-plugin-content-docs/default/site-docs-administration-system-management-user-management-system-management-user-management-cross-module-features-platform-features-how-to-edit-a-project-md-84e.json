@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project",
+  "title": "How to Edit a Project",
+  "description": "Learn how to edit project settings, add team members, and manage project configurations in SmartWinnr",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "How to Edit a Project",
+    "description": "Learn how to edit project settings, add team members, and manage project configurations in SmartWinnr",
+    "slug": "how-to-edit-a-project",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb30c60b11ce44f639323f",
+    "helpscout_url": "https://help.smartwinnr.com/article/187-how-to-edit-a-project"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Project Management",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/project-management"
+  },
+  "next": {
+    "title": "Analytics & Reporting",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/analytics-reporting"
+  }
+}

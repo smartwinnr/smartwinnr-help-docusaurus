@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics",
+  "title": "View SmartFeed Analytics?",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics.md",
+  "sourceDirName": "administration/smartfeed-module/smartfeed-analytics",
+  "slug": "/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics",
+  "permalink": "/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 35,
+  "frontMatter": {
+    "title": "View SmartFeed Analytics?",
+    "description": "",
+    "slug": "how-to-view-smartfeed-analytics",
+    "sidebar_position": 35,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fd113efb6c6251cd1c34bc5",
+    "helpscout_url": "https://help.smartwinnr.com/article/35-how-to-view-smartfeed-analytics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Delete SmartFeeds?",
+    "permalink": "/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds"
+  },
+  "next": {
+    "title": "Create a SmartFeed?",
+    "permalink": "/administration/smartfeed-module/smartfeed-creation/how-to-create-a-smartfeed"
+  }
+}

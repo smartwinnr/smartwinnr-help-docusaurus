@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching",
+  "title": "Upload Screen Recording for Coaching",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching.md",
+  "sourceDirName": "administration/system-management/user-management/video-coaching-module/video-review-workflow",
+  "slug": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching",
+  "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 269,
+  "frontMatter": {
+    "title": "Upload Screen Recording for Coaching",
+    "description": "",
+    "slug": "how-to-upload-screen-recording-for-coaching",
+    "sidebar_position": 269,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "62aa1c6df6341f7edc2a55ee",
+    "helpscout_url": "https://help.smartwinnr.com/article/269-how-to-record-screen-into-video-coaching"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upload Video Recording for Coaching",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching"
+  },
+  "next": {
+    "title": "Reset a coaching video",
+    "permalink": "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video"
+  }
+}

@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdae9650b11ce44f639315d",
     "helpscout_url": "https://help.smartwinnr.com/article/147-how-can-i-edit-a-khub-item"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create folders and items in KHub",
-    "permalink": "/knowledge-hub/content-creation/how-can-i-create-folders-and-items-in-khub"
-  },
-  "next": {
-    "title": "Edit a KHub folder name",
-    "permalink": "/knowledge-hub/content-organization/how-can-i-edit-a-khub-folder-name"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement",
+  "title": "About an Achievement",
+  "description": "",
+  "source": "@site/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement.md",
+  "sourceDirName": "administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification",
+  "slug": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement",
+  "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 193,
+  "frontMatter": {
+    "title": "About an Achievement",
+    "description": "",
+    "slug": "what-is-an-achievement",
+    "sidebar_position": 193,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb509ab624c71b7985a72e",
+    "helpscout_url": "https://help.smartwinnr.com/article/193-what-is-an-achievement"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "View the KPI scorecard",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard"
+  },
+  "next": {
+    "title": "Create Certifcates",
+    "permalink": "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-certifcates"
+  }
+}

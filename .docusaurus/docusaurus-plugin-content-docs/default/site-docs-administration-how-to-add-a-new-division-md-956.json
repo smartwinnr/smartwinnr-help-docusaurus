@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdad976b624c71b7985a56b",
     "helpscout_url": "https://help.smartwinnr.com/article/132-how-to-add-a-new-division"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a group?",
-    "permalink": "/administration/how-to-create-a-group"
-  },
-  "next": {
-    "title": "View existing contacts?",
-    "permalink": "/administration/how-to-view-existing-contacts"
   }
 }

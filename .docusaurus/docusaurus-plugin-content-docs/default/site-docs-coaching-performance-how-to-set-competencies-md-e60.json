@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd75963a5d295659b36893f",
     "helpscout_url": "https://help.smartwinnr.com/article/91-how-to-set-competencies"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "About 'My Team Coaching'",
-    "permalink": "/coaching-performance/what-is-my-team-coaching"
-  },
-  "next": {
-    "title": "How Manager can check the status of the Coachings assigned to My Team",
-    "permalink": "/coaching-performance/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
   }
 }

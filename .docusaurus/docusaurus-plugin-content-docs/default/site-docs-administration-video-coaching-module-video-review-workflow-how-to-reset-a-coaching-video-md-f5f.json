@@ -1,0 +1,36 @@
+{
+  "id": "administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video",
+  "title": "Reset a coaching video",
+  "description": "",
+  "source": "@site/docs/administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video.md",
+  "sourceDirName": "administration/video-coaching-module/video-review-workflow",
+  "slug": "/administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video",
+  "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 286,
+  "frontMatter": {
+    "title": "Reset a coaching video",
+    "description": "",
+    "slug": "how-to-reset-a-coaching-video",
+    "sidebar_position": 286,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "6464dc077d89467e9da79320",
+    "helpscout_url": "https://help.smartwinnr.com/article/286-how-to-reset-a-coaching-video"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upload Screen Recording for Coaching",
+    "permalink": "/administration/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching"
+  },
+  "next": {
+    "title": "Set competencies.",
+    "permalink": "/administration/field-coaching-module/competency-frameworks/how-to-set-competencies"
+  }
+}

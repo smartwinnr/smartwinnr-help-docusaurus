@@ -23,14 +23,5 @@
     },
     "helpscout_id": "600868c4cfe30d219ccd9aa9",
     "helpscout_url": "https://help.smartwinnr.com/article/224-how-managers-approve-kpi-submission-form"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create a form?",
-    "permalink": "/forms-data-collection/form-creation/how-to-create-a-form"
-  },
-  "next": {
-    "title": "Form Analytics",
-    "permalink": "/forms-data-collection/form-creation/form-analytics"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/understand-game-concepts",
+  "title": "Understand Game Concepts",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/understand-game-concepts.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/understand-game-concepts",
+  "permalink": "/administration/cross-module-features/competitions-gamification/understand-game-concepts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/understand-game-concepts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 169,
+  "frontMatter": {
+    "title": "Understand Game Concepts",
+    "description": "",
+    "slug": "understand-game-concepts",
+    "sidebar_position": 169,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb0be80b11ce44f63931bb",
+    "helpscout_url": "https://help.smartwinnr.com/article/169-understand-game-concepts"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About KPI Gamification",
+    "permalink": "/administration/cross-module-features/competitions-gamification/what-is-kpi-gamification"
+  },
+  "next": {
+    "title": "Define KPIs",
+    "permalink": "/administration/cross-module-features/competitions-gamification/define-kpis"
+  }
+}

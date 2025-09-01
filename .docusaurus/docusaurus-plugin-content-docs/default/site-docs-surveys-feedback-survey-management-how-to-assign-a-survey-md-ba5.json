@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd49e6623119734ee37edbd",
     "helpscout_url": "https://help.smartwinnr.com/article/60-assign-a-survey"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Survey Template Analytics",
-    "permalink": "/surveys-feedback/survey-analytics/survey-template-analytics"
-  },
-  "next": {
-    "title": "Analytics & Reporting",
-    "permalink": "/analytics-reporting/analytics-reporting"
   }
 }

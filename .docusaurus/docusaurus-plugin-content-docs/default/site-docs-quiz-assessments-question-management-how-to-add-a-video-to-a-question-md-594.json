@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd4bb1b4eb32171b80374ff",
     "helpscout_url": "https://help.smartwinnr.com/article/64-how-to-add-a-video-to-a-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Question Response Analytics",
-    "permalink": "/quiz-assessments/question-management/question-response-analytics"
-  },
-  "next": {
-    "title": "Add an 'Image' to the question.",
-    "permalink": "/quiz-assessments/question-management/how-to-add-an-image-to-the-question"
   }
 }

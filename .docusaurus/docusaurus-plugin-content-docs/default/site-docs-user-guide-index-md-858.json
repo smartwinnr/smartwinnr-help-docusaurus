@@ -17,5 +17,14 @@
     "description": "Complete guide for SmartWinnr users - mobile app usage, assessments, learning, and progress tracking",
     "slug": "user-guide",
     "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Duplicate a quiz in a Competition?",
+    "permalink": "/administration/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition"
+  },
+  "next": {
+    "title": "Mobile App Navigation",
+    "permalink": "/user-guide/mobile-app-navigation"
   }
 }

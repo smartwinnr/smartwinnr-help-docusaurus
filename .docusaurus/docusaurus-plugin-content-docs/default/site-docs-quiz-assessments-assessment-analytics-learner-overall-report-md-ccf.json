@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60c1f6cea6d12c2cd643e794",
     "helpscout_url": "https://help.smartwinnr.com/article/254-learner-overall-report"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Comparison Report",
-    "permalink": "/quiz-assessments/assessment-analytics/quiz-comparison-report"
-  },
-  "next": {
-    "title": "Learner Report - By Learner (Individual Report Analytics)",
-    "permalink": "/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics"
   }
 }

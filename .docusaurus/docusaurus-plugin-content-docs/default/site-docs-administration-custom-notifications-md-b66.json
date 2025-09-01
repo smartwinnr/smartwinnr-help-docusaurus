@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fdb086ea5d295659b369c51",
     "helpscout_url": "https://help.smartwinnr.com/article/165-custom-notifications"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "View notifications?",
-    "permalink": "/administration/how-to-view-notifications"
-  },
-  "next": {
-    "title": "Bulk Custom Notifications",
-    "permalink": "/administration/bulk-custom-notifications"
   }
 }

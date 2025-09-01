@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5ffc7b6c66df373cab7081aa",
     "helpscout_url": "https://help.smartwinnr.com/article/202-how-to-edit-a-question"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Question Structure",
-    "permalink": "/quiz-assessments/question-management/question-structure"
-  },
-  "next": {
-    "title": "Update question response",
-    "permalink": "/quiz-assessments/question-management/how-to-update-question-response"
   }
 }

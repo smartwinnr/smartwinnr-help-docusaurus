@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd10d1a0ca0c372c6f09327",
     "helpscout_url": "https://help.smartwinnr.com/article/30-how-to-send-a-smartfeed-multiple-times"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "View SmartFeed Analytics?",
-    "permalink": "/microlearning-smartfeeds/smartfeed-analytics/how-to-view-smartfeed-analytics"
-  },
-  "next": {
-    "title": "Send the SmartFeed to Teams?",
-    "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams"
   }
 }

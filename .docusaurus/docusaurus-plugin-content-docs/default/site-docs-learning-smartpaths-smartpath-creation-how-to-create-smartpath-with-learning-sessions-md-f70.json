@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60b8befc4dda6972e0931f8a",
     "helpscout_url": "https://help.smartwinnr.com/article/248-how-to-create-a-learning-session-for-smartpaths"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Edit a SmartPath.",
-    "permalink": "/learning-smartpaths/smartpath-creation/how-to-edit-a-smartpath"
-  },
-  "next": {
-    "title": "Archive a SmartPath and unhide them in future if needed.",
-    "permalink": "/learning-smartpaths/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
   }
 }

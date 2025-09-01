@@ -1,0 +1,36 @@
+{
+  "id": "administration/cross-module-features/competitions-gamification/how-to-create-certifcates",
+  "title": "Create Certifcates",
+  "description": "",
+  "source": "@site/docs/administration/cross-module-features/competitions-gamification/how-to-create-certifcates.md",
+  "sourceDirName": "administration/cross-module-features/competitions-gamification",
+  "slug": "/administration/cross-module-features/competitions-gamification/how-to-create-certifcates",
+  "permalink": "/administration/cross-module-features/competitions-gamification/how-to-create-certifcates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/cross-module-features/competitions-gamification/how-to-create-certifcates.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 194,
+  "frontMatter": {
+    "title": "Create Certifcates",
+    "description": "",
+    "slug": "how-to-create-certifcates",
+    "sidebar_position": 194,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fdb50c1b624c71b7985a730",
+    "helpscout_url": "https://help.smartwinnr.com/article/194-how-to-create-an-achievements"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About an Achievement",
+    "permalink": "/administration/cross-module-features/competitions-gamification/what-is-an-achievement"
+  },
+  "next": {
+    "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+    "permalink": "/administration/cross-module-features/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+  }
+}

@@ -17,5 +17,14 @@
     "description": "Complete guide for users on how to take quizzes, assessments, and evaluations in SmartWinnr",
     "slug": "taking-assessments",
     "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Mobile App Navigation",
+    "permalink": "/user-guide/mobile-app-navigation"
+  },
+  "next": {
+    "title": "Accessing Learning Content",
+    "permalink": "/user-guide/accessing-learning-content"
   }
 }

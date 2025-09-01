@@ -16,14 +16,5 @@
     "title": "Surveys",
     "description": "Create and manage surveys and feedback collection.",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "How to Edit a Project",
-    "permalink": "/project-management/how-to-edit-a-project"
-  },
-  "next": {
-    "title": "Create a 'Survey'.",
-    "permalink": "/surveys-feedback/survey-creation/how-to-create-a-survey"
   }
 }

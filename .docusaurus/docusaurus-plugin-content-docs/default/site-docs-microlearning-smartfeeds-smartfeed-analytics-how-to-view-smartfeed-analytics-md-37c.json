@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd113efb6c6251cd1c34bc5",
     "helpscout_url": "https://help.smartwinnr.com/article/35-how-to-view-smartfeed-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add a Recording to a SmartFeed?",
-    "permalink": "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-recording-to-a-smartfeed"
-  },
-  "next": {
-    "title": "Send a SmartFeed multiple times?",
-    "permalink": "/microlearning-smartfeeds/smartfeed-management/how-to-send-a-smartfeed-multiple-times"
   }
 }

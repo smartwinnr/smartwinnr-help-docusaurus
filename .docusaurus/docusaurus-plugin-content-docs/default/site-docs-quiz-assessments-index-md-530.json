@@ -17,14 +17,5 @@
     "description": "Comprehensive guide for creating, managing, and analyzing quizzes and assessments in SmartWinnr",
     "slug": "quiz-assessments",
     "sidebar_position": 1
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Update the SmartWinnr App from Web View",
-    "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view"
-  },
-  "next": {
-    "title": "Question Management",
-    "permalink": "/quiz-assessments/question-management/question-management"
   }
 }

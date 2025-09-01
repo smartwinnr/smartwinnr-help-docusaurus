@@ -14,14 +14,5 @@
   "sidebarPosition": 5,
   "frontMatter": {
     "sidebar_position": 5
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Quiz Analytics & Reports",
-    "permalink": "/quiz-assessments/assessment-analytics/quiz-analytics-reports"
-  },
-  "next": {
-    "title": "Detailed Quiz Analytics",
-    "permalink": "/quiz-assessments/assessment-analytics/detailed-quiz-analytics"
   }
 }

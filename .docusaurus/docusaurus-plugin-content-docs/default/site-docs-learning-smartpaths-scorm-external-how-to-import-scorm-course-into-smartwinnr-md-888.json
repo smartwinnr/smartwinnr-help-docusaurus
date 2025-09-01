@@ -23,14 +23,5 @@
     },
     "helpscout_id": "62b3e9dd0729834c424f8fad",
     "helpscout_url": "https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Mark the attendance for Users in Learning Sessions?",
-    "permalink": "/learning-smartpaths/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions"
-  },
-  "next": {
-    "title": "Access the SCORM course from the SmartWinnr app",
-    "permalink": "/learning-smartpaths/scorm-external/how-to-access-the-scorm-course-from-the-smartwinnr-app"
   }
 }

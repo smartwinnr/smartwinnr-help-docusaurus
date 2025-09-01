@@ -1,0 +1,36 @@
+{
+  "id": "administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template",
+  "title": "Duplicate a 'Survey' and 'Survey Template'.",
+  "description": "",
+  "source": "@site/docs/administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template.md",
+  "sourceDirName": "administration/survey-module/survey-creation",
+  "slug": "/administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template",
+  "permalink": "/administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 110,
+  "frontMatter": {
+    "title": "Duplicate a 'Survey' and 'Survey Template'.",
+    "description": "",
+    "slug": "how-to-duplicate-a-survey-and-survey-template",
+    "sidebar_position": 110,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fda2c167129911ba1b219fb",
+    "helpscout_url": "https://help.smartwinnr.com/article/110-how-to-duplicate-a-survey-and-survey-template"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Add a Video Coaching to the competition?",
+    "permalink": "/administration/survey-module/survey-creation/how-to-add-a-video-coaching-to-the-competition"
+  },
+  "next": {
+    "title": "Delete a Survey",
+    "permalink": "/administration/survey-module/survey-creation/how-to-delete-a-survey"
+  }
+}

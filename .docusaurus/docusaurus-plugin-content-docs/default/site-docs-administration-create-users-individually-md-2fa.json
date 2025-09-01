@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda4f4a0b11ce44f6392e62",
     "helpscout_url": "https://help.smartwinnr.com/article/119-create-users-individually"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Track my organizational resource usage?",
-    "permalink": "/administration/how-to-track-my-organizational-resource-usage"
-  },
-  "next": {
-    "title": "Search users",
-    "permalink": "/administration/search-users"
   }
 }

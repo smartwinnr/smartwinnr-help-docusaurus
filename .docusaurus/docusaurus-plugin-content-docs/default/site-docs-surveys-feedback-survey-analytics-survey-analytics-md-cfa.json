@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fda2e397129911ba1b21a07",
     "helpscout_url": "https://help.smartwinnr.com/article/111-survey-analytics"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Delete a Survey",
-    "permalink": "/surveys-feedback/survey-creation/how-to-delete-a-survey"
-  },
-  "next": {
-    "title": "Survey Template Analytics",
-    "permalink": "/surveys-feedback/survey-analytics/survey-template-analytics"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "id": "announcements/index",
+  "title": "Latest Announcements",
+  "description": "Stay updated with the latest SmartWinnr platform updates and announcements",
+  "source": "@site/docs/announcements/index.md",
+  "sourceDirName": "announcements",
+  "slug": "/announcements/",
+  "permalink": "/announcements/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/announcements/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Latest Announcements",
+    "description": "Stay updated with the latest SmartWinnr platform updates and announcements",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Update the SmartWinnr App from Web View",
+    "permalink": "/getting-started/how-to-update-the-smartwinnr-app-from-web-view"
+  },
+  "next": {
+    "title": "Administration",
+    "permalink": "/administration/system-management/user-management/administration"
+  }
+}

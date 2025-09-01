@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd7119336980410c9123b70",
     "helpscout_url": "https://help.smartwinnr.com/article/77-what-are-smartpaths"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "SmartPath Management",
-    "permalink": "/learning-smartpaths/smartpath-management"
-  },
-  "next": {
-    "title": "View the SmartPath Analytics.",
-    "permalink": "/learning-smartpaths/learning-analytics/how-to-view-the-smartpath-analytics"
   }
 }

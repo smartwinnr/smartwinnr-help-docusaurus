@@ -23,14 +23,5 @@
     },
     "helpscout_id": "5fd9ff840b11ce44f6392c14",
     "helpscout_url": "https://help.smartwinnr.com/article/105-how-to-add-a-scorecard-to-a-competition"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Gamify a SmartPath",
-    "permalink": "/competitions-gamification/how-can-i-gamify-a-smartpath"
-  },
-  "next": {
-    "title": "Add a challenge to the competition?",
-    "permalink": "/competitions-gamification/how-to-add-a-challenge-to-the-competition"
   }
 }

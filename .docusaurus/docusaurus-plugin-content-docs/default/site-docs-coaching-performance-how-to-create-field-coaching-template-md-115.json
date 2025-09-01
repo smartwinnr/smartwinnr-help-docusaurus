@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60a50e4827c86942e80697e9",
     "helpscout_url": "https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Create Field Coaching",
-    "permalink": "/coaching-performance/how-to-create-field-coaching"
-  },
-  "next": {
-    "title": "Add Competencies for Field Coaching",
-    "permalink": "/coaching-performance/how-to-add-competencies-for-field-coaching"
   }
 }

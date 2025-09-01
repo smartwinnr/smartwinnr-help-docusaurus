@@ -23,14 +23,5 @@
     },
     "helpscout_id": "60bb39acfca38f033a7da5dc",
     "helpscout_url": "https://help.smartwinnr.com/article/250-how-to-edit-and-submit-form-on-behalf-of-the-user"
-  },
-  "sidebar": "tutorialSidebar",
-  "previous": {
-    "title": "Add new form submission",
-    "permalink": "/forms-data-collection/form-management/how-to-add-new-form-submission"
-  },
-  "next": {
-    "title": "Submit a Form on behalf of a User",
-    "permalink": "/forms-data-collection/form-management/how-to-submit-a-form-on-behalf-of-a-user"
   }
 }

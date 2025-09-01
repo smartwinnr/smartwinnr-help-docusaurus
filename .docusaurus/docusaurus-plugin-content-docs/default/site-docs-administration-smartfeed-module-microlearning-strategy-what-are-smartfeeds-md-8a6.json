@@ -1,0 +1,36 @@
+{
+  "id": "administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds",
+  "title": "About SmartFeeds",
+  "description": "",
+  "source": "@site/docs/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds.md",
+  "sourceDirName": "administration/smartfeed-module/microlearning-strategy",
+  "slug": "/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds",
+  "permalink": "/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 26,
+  "frontMatter": {
+    "title": "About SmartFeeds",
+    "description": "",
+    "slug": "what-are-smartfeeds",
+    "sidebar_position": 26,
+    "last_update": {
+      "date": "2025-08-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "helpscout_id": "5fcf7718da652271f08d3f5e",
+    "helpscout_url": "https://help.smartwinnr.com/article/26-what-are-smartfeeds"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Microlearning with SmartFeeds",
+    "permalink": "/administration/smartfeed-module/microlearning-strategy/"
+  },
+  "next": {
+    "title": "SmartFeed Management",
+    "permalink": "/administration/smartfeed-module/distribution-management/smartfeed-management"
+  }
+}
