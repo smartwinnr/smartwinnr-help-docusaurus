@@ -4,7 +4,10 @@ WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-RUN npm install --omit=dev
+
+# Clean npm cache and install dependencies
+RUN npm cache clean --force && \
+    npm install --omit=dev --legacy-peer-deps
 
 # Copy necessary files for Docusaurus build and server
 COPY docusaurus.config.ts ./
