@@ -55,7 +55,11 @@
       "Bash(railway logs:*)",
       "Bash(railway run:*)",
       "WebFetch(domain:www.npmjs.com)",
-      "Bash(git tag:*)"
+      "Bash(git tag:*)",
+      "Bash(source .env)",
+      "Bash(railway:*)",
+      "WebFetch(domain:docs.railway.com)",
+      "WebFetch(domain:docusaurus-production.up.railway.app)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

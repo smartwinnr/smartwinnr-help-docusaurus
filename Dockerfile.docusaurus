@@ -2,12 +2,17 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Force cache invalidation - Update 2025-01-22
+RUN echo "Force rebuild: $(date)" > /tmp/build-timestamp
+
 # Copy package files
 COPY package*.json ./
 
-# Clean npm cache and install dependencies
+# Clean npm cache and install all dependencies (needed for build)
+# React is required for docusaurus build process
 RUN npm cache clean --force && \
-    npm install --omit=dev --legacy-peer-deps
+    npm install --legacy-peer-deps --ignore-scripts && \
+    npm list react || echo "React installation check"
 
 # Copy necessary files for Docusaurus build and server
 COPY docusaurus.config.ts ./
@@ -23,9 +28,12 @@ COPY server.js ./
 # Build the documentation
 RUN npm run build
 
+# Remove dev dependencies to reduce image size
+RUN npm prune --omit=dev
+
 # Expose port (Railway will set PORT env variable)
 EXPOSE 3000
 
 # Start the unified server (includes both static site + API)
-# Make sure to use npm run serve which calls node server.js
-CMD ["npm", "run", "serve"]
+# This MUST run server.js not docusaurus serve
+CMD ["node", "server.js"]

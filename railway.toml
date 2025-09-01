@@ -1,11 +1,15 @@
-# Railway configuration for chatbot-api and docusaurus services only
+# Railway configuration for unified docusaurus service
+# Serves both static docs and ChatBot API endpoints
 # ChromaDB is set up manually in Railway
 
 [build]
 builder = "dockerfile"
 dockerfilePath = "Dockerfile.docusaurus"
+# Ensure Dockerfile builder is used
 
 [deploy]
-startCommand = "node server.js"
+startCommand = "npm run start:railway"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
+# Force rebuild - updated timestamp
+# Updated: 2025-01-22
