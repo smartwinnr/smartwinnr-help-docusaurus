@@ -59,7 +59,8 @@
       "Bash(source .env)",
       "Bash(railway:*)",
       "WebFetch(domain:docs.railway.com)",
-      "WebFetch(domain:docusaurus-production.up.railway.app)"
+      "WebFetch(domain:docusaurus-production.up.railway.app)",
+      "Bash(CHROMA_HOST=chroma.railway.internal CHROMA_PORT=8000 CHROMA_SSL=false COLLECTION_NAME=smartwinnr_docs API_HOST=localhost PORT=8080 node scripts/internal-indexer.js)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

@@ -1,6 +1,7 @@
 ---
 title: "Administrator Hub"
 description: "Central command center for SmartWinnr administrators - system management, analytics, and organizational control"
+# Updated to test incremental indexing
 slug: admin-landing
 sidebar_position: 4
 ---
