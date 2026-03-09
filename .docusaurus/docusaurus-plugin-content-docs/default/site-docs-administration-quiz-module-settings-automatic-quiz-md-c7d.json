@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/settings/automatic-quiz",
+  "title": "Automatic Quiz Settings",
+  "description": "Configure automatic quiz delivery schedules, self-activation, and auto-mode options.",
+  "source": "@site/docs/administration/quiz-module/settings/automatic-quiz.md",
+  "sourceDirName": "administration/quiz-module/settings",
+  "slug": "/administration/quiz-module/settings/automatic-quiz",
+  "permalink": "/administration/quiz-module/settings/automatic-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/settings/automatic-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Automatic Quiz Settings",
+    "description": "Configure automatic quiz delivery schedules, self-activation, and auto-mode options.",
+    "sidebar_position": 7,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Advanced & Integration Settings",
+    "permalink": "/administration/quiz-module/settings/advanced-integrations"
+  },
+  "next": {
+    "title": "Visual & Media Settings",
+    "permalink": "/administration/quiz-module/settings/visual-and-media"
+  }
+}

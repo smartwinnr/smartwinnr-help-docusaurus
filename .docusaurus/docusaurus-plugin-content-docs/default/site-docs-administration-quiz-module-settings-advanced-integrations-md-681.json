@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/settings/advanced-integrations",
+  "title": "Advanced & Integration Settings",
+  "description": "Configure xAPI integration, leaderboards, proctoring, and other advanced quiz settings.",
+  "source": "@site/docs/administration/quiz-module/settings/advanced-integrations.md",
+  "sourceDirName": "administration/quiz-module/settings",
+  "slug": "/administration/quiz-module/settings/advanced-integrations",
+  "permalink": "/administration/quiz-module/settings/advanced-integrations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/settings/advanced-integrations.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "Advanced & Integration Settings",
+    "description": "Configure xAPI integration, leaderboards, proctoring, and other advanced quiz settings.",
+    "sidebar_position": 6,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Notification & Communication Settings",
+    "permalink": "/administration/quiz-module/settings/notifications"
+  },
+  "next": {
+    "title": "Automatic Quiz Settings",
+    "permalink": "/administration/quiz-module/settings/automatic-quiz"
+  }
+}

@@ -41,6 +41,7 @@ const chromaClient = new ChromaClient({
 
 const COLLECTION_NAME = process.env.COLLECTION_NAME || 'smartwinnr_docs';
 const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || 'text-embedding-3-small';
+const CHAT_MODEL = process.env.CHAT_MODEL || 'gpt-3.5-turbo';
 
 // Get OpenAI API key
 const getOpenAIKey = () => {
@@ -200,7 +201,7 @@ Guidelines:
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-3.5-turbo',
+        model: CHAT_MODEL,
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: query }

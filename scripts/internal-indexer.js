@@ -97,19 +97,38 @@ class InternalIndexer {
   processMarkdownFile(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     const stats = fs.statSync(filePath);
-    
-    // Extract title from first heading or filename
-    const titleMatch = content.match(/^#\s+(.+)$/m);
-    const title = titleMatch ? titleMatch[1] : path.basename(filePath, '.md');
-    
+
+    // Parse frontmatter
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    let fmTitle = null;
+    let fmDescription = null;
+    if (frontmatterMatch) {
+      const fmBlock = frontmatterMatch[1];
+      const titleMatch = fmBlock.match(/^title:\s*"?([^"\n]+)"?\s*$/m);
+      if (titleMatch) fmTitle = titleMatch[1].trim();
+      const descMatch = fmBlock.match(/^description:\s*"?([^"\n]*)"?\s*$/m);
+      if (descMatch) fmDescription = descMatch[1].trim();
+    }
+
+    // Extract title: prefer frontmatter title, then first heading, then filename
+    const headingMatch = content.match(/^#\s+(.+)$/m);
+    const title = fmTitle || (headingMatch ? headingMatch[1] : path.basename(filePath, '.md'));
+
     // Create relative URL path
     const relativePath = path.relative(path.join(process.cwd(), 'docs'), filePath);
     const url = `/${relativePath.replace(/\.md$/, '').replace(/\\/g, '/')}`;
-    
-    // Remove frontmatter for processing but include in hash
-    const cleanContent = content.replace(/^---[\s\S]*?---\n/, '');
+
+    // Remove frontmatter for processing
+    const cleanContent = content.replace(/^---[\s\S]*?---\n/, '').trim();
+
+    // Skip files with no meaningful body content
+    if (!cleanContent) {
+      console.log(`  ⏭️  Skipping (no body content): ${relativePath}`);
+      return null;
+    }
+
     const contentHash = this.generateContentHash(cleanContent);
-    
+
     return {
       id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for cross-machine consistency
       content: cleanContent,
@@ -344,7 +363,7 @@ class InternalIndexer {
       for (const filePath of docFiles) {
         try {
           const doc = this.processMarkdownFile(filePath);
-          currentDocs.push(doc);
+          if (doc) currentDocs.push(doc);
         } catch (error) {
           console.error(`❌ Failed to process ${filePath}:`, error.message);
         }

@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/duplicate-quiz",
+  "title": "How to Duplicate a Quiz",
+  "description": "Step-by-step guide to duplicating a quiz in the Quiz module.",
+  "source": "@site/docs/administration/quiz-module/features/duplicate-quiz.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/duplicate-quiz",
+  "permalink": "/administration/quiz-module/features/duplicate-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/duplicate-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "How to Duplicate a Quiz",
+    "description": "Step-by-step guide to duplicating a quiz in the Quiz module.",
+    "sidebar_position": 2,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Features",
+    "permalink": "/administration/quiz-module/features/"
+  },
+  "next": {
+    "title": "How to Send a Quiz Notification",
+    "permalink": "/administration/quiz-module/features/send-notification"
+  }
+}

@@ -98,7 +98,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2025 SmartWinnr. All rights reserved."
+      "copyright": "Copyright © 2026 SmartWinnr. All rights reserved."
     },
     "prism": {
       "theme": {

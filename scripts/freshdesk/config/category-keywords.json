@@ -1,0 +1,62 @@
+{
+  "getting-started": {
+    "keywords": ["login", "sign in", "sign up", "password", "reset password", "access", "first time", "onboarding", "new user", "account", "register", "forgot password", "credentials", "SSO", "single sign-on"],
+    "docPath": "docs/getting-started"
+  },
+  "administration": {
+    "keywords": ["admin", "settings", "configuration", "config", "setup", "manage users", "permissions", "roles", "organization", "org settings", "user management", "deactivate", "activate user", "bulk upload", "import users", "groups", "teams"],
+    "docPath": "docs/administration"
+  },
+  "quiz-assessments": {
+    "keywords": ["quiz", "assessment", "test", "question", "answer", "score", "passing score", "attempt", "retake", "grading", "multiple choice", "fill in the blank"],
+    "docPath": "docs/quiz-assessments"
+  },
+  "learning-smartpaths": {
+    "keywords": ["smartpath", "learning path", "training", "course", "module", "lesson", "assignment", "assign content", "training material", "certification"],
+    "docPath": "docs/learning-smartpaths"
+  },
+  "coaching-performance": {
+    "keywords": ["coaching", "coach", "performance", "feedback", "observation", "checklist", "scoring", "field coaching", "call coaching", "one-on-one"],
+    "docPath": "docs/coaching-performance"
+  },
+  "competitions-gamification": {
+    "keywords": ["competition", "leaderboard", "gamification", "badge", "points", "contest", "challenge", "reward", "incentive", "ranking"],
+    "docPath": "docs/competitions-gamification"
+  },
+  "reports": {
+    "keywords": ["report", "analytics", "dashboard", "data", "export", "download report", "metrics", "statistics", "performance report", "completion report"],
+    "docPath": "docs/reports"
+  },
+  "surveys-feedback": {
+    "keywords": ["survey", "poll", "feedback", "NPS", "response", "survey analytics", "survey template", "questionnaire"],
+    "docPath": "docs/surveys-feedback"
+  },
+  "microlearning": {
+    "keywords": ["microlearning", "smartfeed", "feed", "bite-sized", "daily feed", "knowledge card", "micro content"],
+    "docPath": "docs/microlearning"
+  },
+  "forms-data-collection": {
+    "keywords": ["form", "data collection", "field data", "submission", "field form", "checklist form"],
+    "docPath": "docs/forms-data-collection"
+  },
+  "knowledge-hub": {
+    "keywords": ["knowledge hub", "repository", "document", "resource", "knowledge base", "file upload", "library"],
+    "docPath": "docs/knowledge-hub"
+  },
+  "mobile-platform-tools": {
+    "keywords": ["mobile", "app", "mobile app", "iOS", "android", "phone", "tablet", "push notification", "offline"],
+    "docPath": "docs/mobile-platform-tools"
+  },
+  "troubleshooting": {
+    "keywords": ["error", "issue", "problem", "not working", "troubleshoot", "fix", "help", "stuck", "broken", "bug", "crash"],
+    "docPath": "docs/troubleshooting"
+  },
+  "user-guide": {
+    "keywords": ["how to", "guide", "tutorial", "walkthrough", "use", "navigate", "interface", "UI", "profile", "settings"],
+    "docPath": "docs/user-guide"
+  },
+  "analytics-reporting": {
+    "keywords": ["analytics", "insight", "trend", "chart", "graph", "KPI", "completion rate", "engagement"],
+    "docPath": "docs/analytics-reporting"
+  }
+}

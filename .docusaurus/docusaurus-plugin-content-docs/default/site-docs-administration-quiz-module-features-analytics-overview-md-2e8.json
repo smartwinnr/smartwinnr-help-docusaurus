@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/analytics-overview",
+  "title": "How to View Quiz Analytics",
+  "description": "Step-by-step guide to viewing analytics for a quiz from the quiz view page.",
+  "source": "@site/docs/administration/quiz-module/features/analytics-overview.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/analytics-overview",
+  "permalink": "/administration/quiz-module/features/analytics-overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/analytics-overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "How to View Quiz Analytics",
+    "description": "Step-by-step guide to viewing analytics for a quiz from the quiz view page.",
+    "sidebar_position": 5,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Manage Quiz Access Permissions",
+    "permalink": "/administration/quiz-module/features/access-permission"
+  },
+  "next": {
+    "title": "How to Upload Participation Data",
+    "permalink": "/administration/quiz-module/features/upload-participation-data"
+  }
+}

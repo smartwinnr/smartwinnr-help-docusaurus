@@ -9,15 +9,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '07b'),
+    component: ComponentCreator('/', '1f1'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'f7a'),
+        component: ComponentCreator('/', 'daa'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '4f1'),
+            component: ComponentCreator('/', 'bd7'),
             routes: [
               {
                 path: '/admin-landing',
@@ -603,6 +603,66 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/administration/quiz-module/features/',
+                component: ComponentCreator('/administration/quiz-module/features/', 'a0f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/access-permission',
+                component: ComponentCreator('/administration/quiz-module/features/access-permission', '061'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/activate-deactivate-quiz',
+                component: ComponentCreator('/administration/quiz-module/features/activate-deactivate-quiz', '25c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/analytics-overview',
+                component: ComponentCreator('/administration/quiz-module/features/analytics-overview', '4b6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/duplicate-quiz',
+                component: ComponentCreator('/administration/quiz-module/features/duplicate-quiz', 'a5c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/export-questions',
+                component: ComponentCreator('/administration/quiz-module/features/export-questions', 'd13'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/quick-actions',
+                component: ComponentCreator('/administration/quiz-module/features/quick-actions', '23f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/quiz-tv',
+                component: ComponentCreator('/administration/quiz-module/features/quiz-tv', '633'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/send-notification',
+                component: ComponentCreator('/administration/quiz-module/features/send-notification', '0f6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/features/upload-participation-data',
+                component: ComponentCreator('/administration/quiz-module/features/upload-participation-data', 'bbb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/administration/quiz-module/question-management/how-editors-evaluate-long-answer-questions',
                 component: ComponentCreator('/administration/quiz-module/question-management/how-editors-evaluate-long-answer-questions', '518'),
                 exact: true,
@@ -917,6 +977,54 @@ export default [
               {
                 path: '/administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz',
                 component: ComponentCreator('/administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz', '24d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/',
+                component: ComponentCreator('/administration/quiz-module/settings/', '14b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/advanced-integrations',
+                component: ComponentCreator('/administration/quiz-module/settings/advanced-integrations', '312'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/automatic-quiz',
+                component: ComponentCreator('/administration/quiz-module/settings/automatic-quiz', 'b19'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/notifications',
+                component: ComponentCreator('/administration/quiz-module/settings/notifications', 'd64'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/question-delivery',
+                component: ComponentCreator('/administration/quiz-module/settings/question-delivery', '8f3'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/scoring-and-display',
+                component: ComponentCreator('/administration/quiz-module/settings/scoring-and-display', 'f80'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/timer-and-attempts',
+                component: ComponentCreator('/administration/quiz-module/settings/timer-and-attempts', '21d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/administration/quiz-module/settings/visual-and-media',
+                component: ComponentCreator('/administration/quiz-module/settings/visual-and-media', 'fba'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

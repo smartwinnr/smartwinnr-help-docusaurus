@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/quick-actions",
+  "title": "Quiz Quick Actions",
+  "description": "Guide to quick actions available from the quiz view menu: delete, archive, download logs, and more.",
+  "source": "@site/docs/administration/quiz-module/features/quick-actions.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/quick-actions",
+  "permalink": "/administration/quiz-module/features/quick-actions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/quick-actions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "Quiz Quick Actions",
+    "description": "Guide to quick actions available from the quiz view menu: delete, archive, download logs, and more.",
+    "sidebar_position": 10,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Activate or Deactivate a Quiz",
+    "permalink": "/administration/quiz-module/features/activate-deactivate-quiz"
+  },
+  "next": {
+    "title": "Quiz Settings",
+    "permalink": "/administration/quiz-module/settings/"
+  }
+}

@@ -487,6 +487,56 @@
               "path": "/administration/manage-password-policy"
             },
             {
+              "id": "administration/quiz-module/features/access-permission",
+              "path": "/administration/quiz-module/features/access-permission",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/activate-deactivate-quiz",
+              "path": "/administration/quiz-module/features/activate-deactivate-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/analytics-overview",
+              "path": "/administration/quiz-module/features/analytics-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/duplicate-quiz",
+              "path": "/administration/quiz-module/features/duplicate-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/export-questions",
+              "path": "/administration/quiz-module/features/export-questions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/index",
+              "path": "/administration/quiz-module/features/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/quick-actions",
+              "path": "/administration/quiz-module/features/quick-actions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/quiz-tv",
+              "path": "/administration/quiz-module/features/quiz-tv",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/send-notification",
+              "path": "/administration/quiz-module/features/send-notification",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/features/upload-participation-data",
+              "path": "/administration/quiz-module/features/upload-participation-data",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "administration/quiz-module/index",
               "path": "/administration/quiz-module/",
               "sidebar": "tutorialSidebar"
@@ -754,6 +804,46 @@
             {
               "id": "administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz",
               "path": "/administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/advanced-integrations",
+              "path": "/administration/quiz-module/settings/advanced-integrations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/automatic-quiz",
+              "path": "/administration/quiz-module/settings/automatic-quiz",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/index",
+              "path": "/administration/quiz-module/settings/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/notifications",
+              "path": "/administration/quiz-module/settings/notifications",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/question-delivery",
+              "path": "/administration/quiz-module/settings/question-delivery",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/scoring-and-display",
+              "path": "/administration/quiz-module/settings/scoring-and-display",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/timer-and-attempts",
+              "path": "/administration/quiz-module/settings/timer-and-attempts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "administration/quiz-module/settings/visual-and-media",
+              "path": "/administration/quiz-module/settings/visual-and-media",
               "sidebar": "tutorialSidebar"
             },
             {

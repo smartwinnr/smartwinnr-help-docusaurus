@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/export-questions",
+  "title": "How to Export Questions From a Quiz",
+  "description": "Step-by-step guide to exporting questions from a quiz.",
+  "source": "@site/docs/administration/quiz-module/features/export-questions.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/export-questions",
+  "permalink": "/administration/quiz-module/features/export-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/export-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "How to Export Questions From a Quiz",
+    "description": "Step-by-step guide to exporting questions from a quiz.",
+    "sidebar_position": 7,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Upload Participation Data",
+    "permalink": "/administration/quiz-module/features/upload-participation-data"
+  },
+  "next": {
+    "title": "How to Use Quiz TV Display Mode",
+    "permalink": "/administration/quiz-module/features/quiz-tv"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/access-permission",
+  "title": "How to Manage Quiz Access Permissions",
+  "description": "Step-by-step guide to managing access permissions for a quiz.",
+  "source": "@site/docs/administration/quiz-module/features/access-permission.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/access-permission",
+  "permalink": "/administration/quiz-module/features/access-permission",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/access-permission.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "How to Manage Quiz Access Permissions",
+    "description": "Step-by-step guide to managing access permissions for a quiz.",
+    "sidebar_position": 4,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Send a Quiz Notification",
+    "permalink": "/administration/quiz-module/features/send-notification"
+  },
+  "next": {
+    "title": "How to View Quiz Analytics",
+    "permalink": "/administration/quiz-module/features/analytics-overview"
+  }
+}

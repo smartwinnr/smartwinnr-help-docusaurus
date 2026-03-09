@@ -1,0 +1,26 @@
+{
+  "buttons": [
+    "Save", "Submit", "Cancel", "Delete", "Edit", "Add", "Create", "Next", "Back", "Done",
+    "Publish", "Unpublish", "Activate", "Deactivate", "Enable", "Disable", "Export", "Import",
+    "Download", "Upload", "Send", "Apply", "Reset", "Clear", "Search", "Filter", "Refresh",
+    "Assign", "Unassign", "Start", "Stop", "Pause", "Resume", "Close", "Open", "View",
+    "Preview", "Copy", "Duplicate", "Archive", "Restore", "OK", "Confirm", "Yes", "No",
+    "Update", "Remove", "Select All", "Deselect All", "Bulk Upload", "Add New"
+  ],
+  "navigation": [
+    "Dashboard", "Home", "Settings", "Profile", "Admin", "Reports", "Analytics",
+    "Competitions", "Quizzes", "Learning", "Coaching", "Surveys", "Forms",
+    "Knowledge Hub", "SmartFeeds", "SmartPaths", "Users", "Teams", "Groups",
+    "Notifications", "Menu", "Sidebar", "Toolbar", "Header", "Footer"
+  ],
+  "fields": [
+    "Name", "Email", "Password", "Title", "Description", "Category", "Type",
+    "Status", "Priority", "Due Date", "Start Date", "End Date", "Tags",
+    "Score", "Points", "Passing Score", "Duration", "Attempts", "Time Limit"
+  ],
+  "features": [
+    "SmartWinnr", "SmartPath", "SmartFeed", "SmartQuiz", "SmartCoaching",
+    "Auto Grading", "Leaderboard", "Badge", "Competition", "Challenge",
+    "Microlearning", "Knowledge Card", "Observation Checklist"
+  ]
+}

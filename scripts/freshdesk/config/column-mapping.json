@@ -1,0 +1,14 @@
+{
+  "ticketId": "Ticket ID",
+  "subject": "Subject",
+  "description": "Description",
+  "status": "Status",
+  "type": "Type",
+  "agent": "Agent",
+  "group": "Group",
+  "createdTime": "Created time",
+  "closedTime": "Closed time",
+  "agentInteractions": "Agent interactions",
+  "tags": "Tags",
+  "email": "Email"
+}

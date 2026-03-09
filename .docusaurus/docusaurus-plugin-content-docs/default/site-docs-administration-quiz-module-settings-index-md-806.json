@@ -1,0 +1,29 @@
+{
+  "id": "administration/quiz-module/settings/index",
+  "title": "Quiz Settings",
+  "description": "Configure quiz behavior, scoring, notifications, and integrations using the settings available in the Quiz module.",
+  "source": "@site/docs/administration/quiz-module/settings/index.md",
+  "sourceDirName": "administration/quiz-module/settings",
+  "slug": "/administration/quiz-module/settings/",
+  "permalink": "/administration/quiz-module/settings/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/settings/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Quiz Settings",
+    "description": "Configure quiz behavior, scoring, notifications, and integrations using the settings available in the Quiz module.",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz Quick Actions",
+    "permalink": "/administration/quiz-module/features/quick-actions"
+  },
+  "next": {
+    "title": "Timer & Attempt Settings",
+    "permalink": "/administration/quiz-module/settings/timer-and-attempts"
+  }
+}

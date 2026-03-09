@@ -1,0 +1,33 @@
+{
+  "id": "administration/quiz-module/features/send-notification",
+  "title": "How to Send a Quiz Notification",
+  "description": "Step-by-step guide to sending notifications to users about a quiz.",
+  "source": "@site/docs/administration/quiz-module/features/send-notification.md",
+  "sourceDirName": "administration/quiz-module/features",
+  "slug": "/administration/quiz-module/features/send-notification",
+  "permalink": "/administration/quiz-module/features/send-notification",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/quiz-module/features/send-notification.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "How to Send a Quiz Notification",
+    "description": "Step-by-step guide to sending notifications to users about a quiz.",
+    "sidebar_position": 3,
+    "last_update": {
+      "date": "2026-03-09T00:00:00.000Z",
+      "author": "SmartWinnr"
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Duplicate a Quiz",
+    "permalink": "/administration/quiz-module/features/duplicate-quiz"
+  },
+  "next": {
+    "title": "How to Manage Quiz Access Permissions",
+    "permalink": "/administration/quiz-module/features/access-permission"
+  }
+}

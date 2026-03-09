@@ -169,3 +169,7 @@ aws-exports.js
 # Docker
 .dockerignore
 Dockerfile.local
+
+# Freshdesk pipeline data and output
+data/
+scripts/freshdesk/output/

@@ -1,7 +1,7 @@
 export default [
-  require("/Users/aninditabanik/node_projects/help_smartwinnr/node_modules/infima/dist/css/default/default.css"),
-  require("/Users/aninditabanik/node_projects/help_smartwinnr/node_modules/@docusaurus/theme-classic/lib/prism-include-languages"),
-  require("/Users/aninditabanik/node_projects/help_smartwinnr/node_modules/@docusaurus/theme-classic/lib/nprogress"),
-  require("/Users/aninditabanik/node_projects/help_smartwinnr/src/css/custom.css"),
-  require("/Users/aninditabanik/node_projects/help_smartwinnr/plugins/chatbot-client.js"),
+  require("/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/node_modules/infima/dist/css/default/default.css"),
+  require("/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/node_modules/@docusaurus/theme-classic/lib/prism-include-languages"),
+  require("/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/node_modules/@docusaurus/theme-classic/lib/nprogress"),
+  require("/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/src/css/custom.css"),
+  require("/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/plugins/chatbot-client.js"),
 ];

@@ -6,17 +6,17 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-07b": {
+  "/-1f1": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-f7a": {
+  "/-daa": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-4f1": {
+  "/-bd7": {
     "__comp": "a94703ab"
   },
   "/admin-landing-561": {
@@ -427,6 +427,46 @@
     "__comp": "17896441",
     "content": "9f257f8a"
   },
+  "/administration/quiz-module/features/-a0f": {
+    "__comp": "17896441",
+    "content": "0dbcfd6b"
+  },
+  "/administration/quiz-module/features/access-permission-061": {
+    "__comp": "17896441",
+    "content": "5251968a"
+  },
+  "/administration/quiz-module/features/activate-deactivate-quiz-25c": {
+    "__comp": "17896441",
+    "content": "632de251"
+  },
+  "/administration/quiz-module/features/analytics-overview-4b6": {
+    "__comp": "17896441",
+    "content": "2e81ec6c"
+  },
+  "/administration/quiz-module/features/duplicate-quiz-a5c": {
+    "__comp": "17896441",
+    "content": "447a6222"
+  },
+  "/administration/quiz-module/features/export-questions-d13": {
+    "__comp": "17896441",
+    "content": "42fadcdc"
+  },
+  "/administration/quiz-module/features/quick-actions-23f": {
+    "__comp": "17896441",
+    "content": "24cc490d"
+  },
+  "/administration/quiz-module/features/quiz-tv-633": {
+    "__comp": "17896441",
+    "content": "50200a59"
+  },
+  "/administration/quiz-module/features/send-notification-0f6": {
+    "__comp": "17896441",
+    "content": "1c09f29f"
+  },
+  "/administration/quiz-module/features/upload-participation-data-bbb": {
+    "__comp": "17896441",
+    "content": "c1ffd154"
+  },
   "/administration/quiz-module/question-management/how-editors-evaluate-long-answer-questions-518": {
     "__comp": "17896441",
     "content": "f5f4d6d6"
@@ -638,6 +678,38 @@
   "/administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz-24d": {
     "__comp": "17896441",
     "content": "66a26da7"
+  },
+  "/administration/quiz-module/settings/-14b": {
+    "__comp": "17896441",
+    "content": "8067f396"
+  },
+  "/administration/quiz-module/settings/advanced-integrations-312": {
+    "__comp": "17896441",
+    "content": "681fc6f4"
+  },
+  "/administration/quiz-module/settings/automatic-quiz-b19": {
+    "__comp": "17896441",
+    "content": "c7d90322"
+  },
+  "/administration/quiz-module/settings/notifications-d64": {
+    "__comp": "17896441",
+    "content": "38efd62e"
+  },
+  "/administration/quiz-module/settings/question-delivery-8f3": {
+    "__comp": "17896441",
+    "content": "73fc0a47"
+  },
+  "/administration/quiz-module/settings/scoring-and-display-f80": {
+    "__comp": "17896441",
+    "content": "70bf8323"
+  },
+  "/administration/quiz-module/settings/timer-and-attempts-21d": {
+    "__comp": "17896441",
+    "content": "163b1010"
+  },
+  "/administration/quiz-module/settings/visual-and-media-fba": {
+    "__comp": "17896441",
+    "content": "877b338b"
   },
   "/administration/search-users-af0": {
     "__comp": "17896441",
