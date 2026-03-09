@@ -143,6 +143,7 @@ ehthumbs.db
 Thumbs.db
 
 # ChromaDB data
+chroma/
 chroma_data/
 chroma.db
 *.db
