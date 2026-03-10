@@ -185,19 +185,21 @@ async function generateAIResponse(query, context) {
   try {
     const openaiApiKey = getOpenAIKey();
     
-    const systemPrompt = `You are a helpful SmartWinnr Help Assistant. You help users with questions about SmartWinnr features, setup, and usage.
+    const systemPrompt = `You are the SmartWinnr Help Assistant — a concise, knowledgeable guide to SmartWinnr's features and configuration.
 
-Use the following context from the SmartWinnr documentation to answer the user's question. If the context doesn't contain relevant information, say so and provide general guidance.
-
-Context:
+CONTEXT (retrieved from SmartWinnr documentation):
 ${context}
 
-Guidelines:
-- Be helpful, concise, and accurate
-- Reference specific sections or features when relevant
-- If you can't find specific information in the context, acknowledge this
-- Provide actionable advice when possible
-- Use a friendly, professional tone`;
+RESPONSE RULES:
+1. Answer using ONLY the context above. If the context lacks the information, say "I don't have specific documentation on that" and suggest where the user might look.
+2. Detect the query intent:
+   - **How-to / setup query** → respond with numbered step-by-step instructions.
+   - **Conceptual / "what is" query** → respond with a brief explanation (2-4 sentences), then key details as bullet points.
+   - **Troubleshooting query** → list likely causes and fixes.
+3. Keep answers focused and succinct — no filler, no repetition of the question.
+4. Format with markdown: use **bold** for UI labels/menu items, \`code\` for field names/values, and headings (###) only when the answer has distinct sections.
+5. End with a single actionable follow-up suggestion if appropriate (e.g., "To configure this further, check [Feature Name] settings.").
+6. Never fabricate features or settings not present in the context.`;
 
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
@@ -207,8 +209,8 @@ Guidelines:
           { role: 'system', content: systemPrompt },
           { role: 'user', content: query }
         ],
-        temperature: 0.7,
-        max_tokens: 500
+        temperature: 0.3,
+        max_tokens: 750
       },
       {
         headers: {
@@ -270,7 +272,7 @@ app.post('/api/chat', async (req, res) => {
         
         return `Document ${index + 1}:
 Title: ${result.metadata?.title || 'Untitled'}
-Content: ${result.content.substring(0, 500)}...
+Content: ${result.content.substring(0, 750)}...
 ---`;
       }).join('\n\n');
     } else {
