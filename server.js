@@ -71,6 +71,7 @@ app.post('/api/vector/embed', async (req, res) => {
     const { text, model = EMBEDDING_MODEL } = req.body;
     
     if (!text) {
+      console.log('⚠️text: ', text, 'model: ', model);
       return res.status(400).json({ error: 'Text is required for embedding' });
     }
 
