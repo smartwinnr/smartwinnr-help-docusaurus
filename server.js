@@ -402,6 +402,8 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('🎉 No more CORS issues - ChatBot API is now integrated!');
 
+  console.log(`[DEBUG] RUN_INDEXER = "${process.env.RUN_INDEXER}" (type: ${typeof process.env.RUN_INDEXER})`);
+
   if (process.env.RUN_INDEXER === 'true') {
     const forceReindex = process.env.FORCE_FULL_REINDEX === 'true';
     console.log(`🗂️  Spawning internal indexer...${forceReindex ? ' (FORCE_FULL_REINDEX)' : ''}`);
