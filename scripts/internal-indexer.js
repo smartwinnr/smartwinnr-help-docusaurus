@@ -71,6 +71,7 @@ class InternalIndexer {
         return result.embedding;
         
       } catch (error) {
+        console.log('error: ', error);
         console.error(`❌ Embedding attempt ${attempt}/${retries} failed:`, error.message);
         
         if (attempt < retries) {
