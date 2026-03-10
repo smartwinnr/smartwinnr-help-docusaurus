@@ -12,7 +12,7 @@
     "clear": "docusaurus clear",
     "serve": "node server.js",
     "serve:docs": "docusaurus serve --port 3000",
-    "start:railway": "node scripts/internal-indexer.js && node server.js",
+    "start:railway": "node server.js",
     "serve-and-index": "npm run serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",

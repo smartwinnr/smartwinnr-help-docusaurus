@@ -401,6 +401,22 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`📚 Documentation: http://localhost:${PORT}/`);
   console.log('');
   console.log('🎉 No more CORS issues - ChatBot API is now integrated!');
+
+  if (process.env.RUN_INDEXER === 'true') {
+    const forceReindex = process.env.FORCE_FULL_REINDEX === 'true';
+    console.log(`🗂️  Spawning internal indexer...${forceReindex ? ' (FORCE_FULL_REINDEX)' : ''}`);
+    const indexer = spawn('node', ['scripts/internal-indexer.js'], {
+      stdio: 'inherit',
+      env: { ...process.env }
+    });
+    indexer.on('exit', (code) => {
+      if (code === 0) {
+        console.log('✅ Internal indexer completed successfully');
+      } else {
+        console.error(`❌ Internal indexer exited with code ${code}`);
+      }
+    });
+  }
 });
 
 // Graceful shutdown
