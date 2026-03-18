@@ -9,6 +9,8 @@ const { spawn } = require('child_process');
 const axios = require('axios');
 const { ChromaClient } = require('chromadb');
 
+const { initAuth, closeAllConnections } = require('./auth');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -24,6 +26,19 @@ app.use('/api/*', cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   optionsSuccessStatus: 200
 }));
+
+// Health check endpoint (public — before auth middleware)
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    service: 'docusaurus-integrated-api',
+    version: '1.0.0'
+  });
+});
+
+// Auth routes (public) + auth middleware (protects everything below)
+initAuth(app);
 
 // In-memory conversation storage (replace with database in production)
 const conversations = new Map();
@@ -55,15 +70,6 @@ const getOpenAIKey = () => {
 console.log('🚀 Starting SmartWinnr Help Center with integrated ChatBot API...');
 
 // API Routes
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'healthy',
-    timestamp: new Date().toISOString(),
-    service: 'docusaurus-integrated-api',
-    version: '1.0.0'
-  });
-});
 
 // OpenAI embedding endpoint (used by indexer)
 app.post('/api/vector/embed', async (req, res) => {
@@ -424,12 +430,14 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 // Graceful shutdown
-process.on('SIGTERM', () => {
+process.on('SIGTERM', async () => {
   console.log('🛑 SIGTERM received, shutting down gracefully');
+  await closeAllConnections();
   process.exit(0);
 });
 
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
   console.log('🛑 SIGINT received, shutting down gracefully');
+  await closeAllConnections();
   process.exit(0);
 });

@@ -42,10 +42,14 @@ module.exports = function (context, options) {
     // This is where we add Express middleware to Docusaurus dev server
     configureServer(app) {
       console.log('🔧 Configuring API routes plugin...');
-      
+
+      // Auth setup for dev server
+      const { initAuth } = require('../auth');
+      initAuth(app);
+
       // Import services dynamically
       let VectorService, ChatService, configService;
-      
+
       try {
         // Dynamic import for ES modules
         const vectorServicePath = path.join(__dirname, '../services/docusaurus/src/api/vectorService.ts');
@@ -57,7 +61,7 @@ module.exports = function (context, options) {
         
         // In-memory conversation storage
         const conversations = new Map();
-        
+
         // CORS middleware for API routes
         app.use('/api/*', cors({
           origin: true, // Allow all origins for development
