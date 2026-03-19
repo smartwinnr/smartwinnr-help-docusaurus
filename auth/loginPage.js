@@ -2,9 +2,9 @@
 
 /**
  * Returns a self-contained HTML login page (inline CSS, no external deps).
- * This page must be serveable without auth since the Docusaurus build is behind auth.
+ * The Lambda URL is injected server-side so the browser fetches directly to Lambda.
  */
-function renderLoginPage(errorMessage) {
+function renderLoginPage(lambdaUrl, errorMessage) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,6 +116,7 @@ function renderLoginPage(errorMessage) {
   </div>
 
   <script>
+    var LAMBDA_URL = '${lambdaUrl}';
     var form = document.getElementById('loginForm');
     var msg = document.getElementById('msg');
     var btn = document.getElementById('submitBtn');
@@ -130,7 +131,7 @@ function renderLoginPage(errorMessage) {
       msg.className = 'message';
       msg.style.display = 'none';
 
-      fetch('/auth/magic-link', {
+      fetch(LAMBDA_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email })

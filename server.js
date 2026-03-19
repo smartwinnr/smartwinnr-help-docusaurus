@@ -9,7 +9,7 @@ const { spawn } = require('child_process');
 const axios = require('axios');
 const { ChromaClient } = require('chromadb');
 
-const { initAuth, closeAllConnections } = require('./auth');
+const { initAuth } = require('./auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -430,14 +430,12 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 // Graceful shutdown
-process.on('SIGTERM', async () => {
-  console.log('🛑 SIGTERM received, shutting down gracefully');
-  await closeAllConnections();
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, shutting down');
   process.exit(0);
 });
 
-process.on('SIGINT', async () => {
-  console.log('🛑 SIGINT received, shutting down gracefully');
-  await closeAllConnections();
+process.on('SIGINT', () => {
+  console.log('SIGINT received, shutting down');
   process.exit(0);
 });
