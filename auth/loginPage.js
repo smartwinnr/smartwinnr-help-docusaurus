@@ -34,7 +34,7 @@ function renderLoginPage(lambdaUrl, errorMessage) {
       text-align: center;
       font-size: 22px;
       font-weight: 700;
-      color: #4A154B;
+      color: #0000C9;
       margin-bottom: 8px;
     }
     .subtitle {
@@ -60,12 +60,12 @@ function renderLoginPage(lambdaUrl, errorMessage) {
       transition: border-color 0.2s;
     }
     input[type="email"]:focus {
-      border-color: #4A154B;
+      border-color: #0000C9;
     }
     button {
       width: 100%;
       padding: 12px;
-      background: #4A154B;
+      background: #0000C9;
       color: #fff;
       border: none;
       border-radius: 6px;
@@ -75,7 +75,7 @@ function renderLoginPage(lambdaUrl, errorMessage) {
       margin-top: 16px;
       transition: background 0.2s;
     }
-    button:hover { background: #3a1040; }
+    button:hover { background: #0000A8; }
     button:disabled { background: #999; cursor: not-allowed; }
     .message {
       margin-top: 16px;
