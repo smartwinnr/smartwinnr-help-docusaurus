@@ -16,7 +16,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 
-const DB_PATH = process.env.CHAT_LOG_DB_PATH || path.join(process.cwd(), 'data', 'chat-logs.db');
+const DB_PATH = process.env.CHAT_LOG_DB_PATH || '/app/data/chat-logs.db';
 
 // Parse CLI args
 const args = process.argv.slice(2);

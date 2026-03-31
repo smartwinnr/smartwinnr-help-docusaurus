@@ -9,7 +9,7 @@ const { v4: uuidv4 } = require('uuid');
 // ---------------------------------------------------------------------------
 
 const ENABLED = (process.env.CHAT_LOGGING_ENABLED || 'true').toLowerCase() !== 'false';
-const DB_PATH = process.env.CHAT_LOG_DB_PATH || path.join(process.cwd(), 'data', 'chat-logs.db');
+const DB_PATH = process.env.CHAT_LOG_DB_PATH || '/app/data/chat-logs.db';
 const RETENTION_DAYS = parseInt(process.env.CHAT_LOG_RETENTION_DAYS || '90', 10);
 const CIRCUIT_RESET_MS = parseInt(process.env.CHAT_LOGGER_CIRCUIT_RESET_MS || '60000', 10);
 const MAX_FAILURES = 5;
