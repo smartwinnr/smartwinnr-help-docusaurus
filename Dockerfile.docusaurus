@@ -5,6 +5,9 @@ WORKDIR /app
 # Force cache invalidation - Update 2025-01-22
 RUN echo "Force rebuild: $(date)" > /tmp/build-timestamp
 
+# Install native build deps for better-sqlite3
+RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
+
 # Copy package files
 COPY package*.json ./
 
@@ -12,6 +15,7 @@ COPY package*.json ./
 # React is required for docusaurus build process
 RUN npm cache clean --force && \
     npm install --legacy-peer-deps --ignore-scripts && \
+    npm rebuild better-sqlite3 && \
     npm list react || echo "React installation check"
 
 # Copy necessary files for Docusaurus build and server
@@ -24,7 +28,11 @@ COPY static/ ./static/
 COPY plugins/ ./plugins/
 COPY scripts/ ./scripts/
 COPY auth/ ./auth/
+COPY db/ ./db/
 COPY server.js ./
+
+# Create persistent data directory for chat logs
+RUN mkdir -p /app/data
 
 # Build the documentation
 RUN npm run build

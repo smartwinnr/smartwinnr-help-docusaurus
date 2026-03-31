@@ -8,6 +8,8 @@ interface ChatMessage {
   timestamp: Date;
   citations?: Citation[];
   isLoading?: boolean;
+  exchangeId?: string;
+  rating?: number | null;
 }
 
 interface Citation {
@@ -119,7 +121,8 @@ const ChatBot: React.FC = () => {
           message: inputValue,
           conversationId: conversationId,
           userContext: {
-            role: 'user' // Default role since auth isn't implemented yet
+            role: 'user',
+            pageUrl: window.location.pathname,
           }
         }),
       });
@@ -141,7 +144,9 @@ const ChatBot: React.FC = () => {
         role: 'assistant',
         content: data.response.message,
         timestamp: new Date(data.message.timestamp),
-        citations: data.response.citations
+        citations: data.response.citations,
+        exchangeId: data.message.id,
+        rating: null,
       };
 
       setMessages(prev => {
@@ -172,6 +177,25 @@ const ChatBot: React.FC = () => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
+    }
+  };
+
+  const rateMessage = async (messageId: string, exchangeId: string, rating: number) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/chat/${exchangeId}/rate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rating }),
+      });
+      if (response.ok) {
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === messageId ? { ...msg, rating } : msg
+          )
+        );
+      }
+    } catch (error) {
+      console.error('Error rating message:', error);
     }
   };
 
@@ -315,6 +339,30 @@ const ChatBot: React.FC = () => {
                         }}
                       />
                       {renderCitations(message.citations)}
+                      {message.role === 'assistant' && message.exchangeId && message.id !== 'welcome' && message.id !== 'welcome-new' && (
+                        <div className={styles.ratingButtons}>
+                          <button
+                            className={`${styles.ratingBtn} ${message.rating === 1 ? styles.ratingActive : ''}`}
+                            onClick={() => rateMessage(message.id, message.exchangeId!, 1)}
+                            title="Helpful"
+                            disabled={message.rating !== null && message.rating !== undefined}
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill={message.rating === 1 ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
+                              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                            </svg>
+                          </button>
+                          <button
+                            className={`${styles.ratingBtn} ${message.rating === -1 ? styles.ratingActive : ''}`}
+                            onClick={() => rateMessage(message.id, message.exchangeId!, -1)}
+                            title="Not helpful"
+                            disabled={message.rating !== null && message.rating !== undefined}
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill={message.rating === -1 ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
+                              <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17" />
+                            </svg>
+                          </button>
+                        </div>
+                      )}
                     </>
                   )}
                 </div>
@@ -355,6 +403,7 @@ const ChatBot: React.FC = () => {
             </div>
             <div className={styles.inputFooter}>
               <span className={styles.statusIndicator}>●</span> {isLoading ? 'Thinking...' : 'Ready'}
+              <span className={styles.privacyNote}>Conversations may be logged to improve our help center.</span>
             </div>
           </div>
         </div>

@@ -10,6 +10,10 @@ const axios = require('axios');
 const { ChromaClient } = require('chromadb');
 
 const { initAuth } = require('./auth');
+const { requireRole } = require('./auth/requireRole');
+const chatLogger = require('./db/chat-logger');
+
+const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -186,6 +190,16 @@ async function searchDocuments(query, limit = 5) {
   }
 }
 
+// Calculate continuous relevance score for logging (0.1–1.0)
+function calculateRelevanceScore(searchResults, citations) {
+  if (searchResults.length === 0) return 0.1;
+  const bestDistance = Math.min(...searchResults.map(r => r.distance));
+  const distanceScore = Math.max(0, 1 - bestDistance);
+  const citationBonus = Math.min(citations.length / 3, 1) * 0.2;
+  const score = (distanceScore * 0.8) + citationBonus;
+  return Math.round(score * 100) / 100;
+}
+
 // Generate AI response using OpenAI
 async function generateAIResponse(query, context) {
   try {
@@ -227,7 +241,10 @@ RESPONSE RULES:
       }
     );
 
-    return response.data.choices[0].message.content;
+    return {
+      message: response.data.choices[0].message.content,
+      usage: response.data.usage || null,
+    };
   } catch (error) {
     console.error('❌ Error generating AI response:', error.response?.data || error.message);
     throw error;
@@ -236,6 +253,7 @@ RESPONSE RULES:
 
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
+  const startTime = Date.now();
   try {
     const { message, conversationId, userContext = {} } = req.body;
 
@@ -259,11 +277,11 @@ app.post('/api/chat', async (req, res) => {
     // Search for relevant documents
     console.log('🔍 Searching for relevant documents...');
     const searchResults = await searchDocuments(message);
-    
+
     // Build context from search results
     let context = '';
     const citations = [];
-    
+
     if (searchResults.length > 0) {
       context = searchResults.map((result, index) => {
         // Add to citations if it's a good match (distance < 0.8)
@@ -275,7 +293,7 @@ app.post('/api/chat', async (req, res) => {
             source: result.metadata.source || 'help.smartwinnr.com'
           });
         }
-        
+
         return `Document ${index + 1}:
 Title: ${result.metadata?.title || 'Untitled'}
 Content: ${result.content.substring(0, 750)}...
@@ -288,12 +306,21 @@ Content: ${result.content.substring(0, 750)}...
     // Generate AI response
     console.log('🤖 Generating AI response...');
     let aiMessage;
+    let aiUsage = null;
+    let isFallback = false;
     try {
-      aiMessage = await generateAIResponse(message, context);
+      const aiResult = await generateAIResponse(message, context);
+      aiMessage = aiResult.message;
+      aiUsage = aiResult.usage;
     } catch (aiError) {
       console.error('❌ AI generation failed, using fallback:', aiError.message);
+      isFallback = true;
       aiMessage = `I'm sorry, I'm having trouble accessing my AI capabilities right now. However, I can help you find information in our SmartWinnr documentation. Try browsing our sections on getting started, quiz management, or competitions.`;
     }
+
+    const topDocDistance = searchResults.length > 0
+      ? Math.min(...searchResults.map(r => r.distance))
+      : null;
 
     const response = {
       message: aiMessage,
@@ -310,7 +337,8 @@ Content: ${result.content.substring(0, 750)}...
           description: 'Create and manage quizzes'
         }
       ],
-      confidence: citations.length > 0 ? 0.8 : 0.4
+      confidence: citations.length > 0 ? 0.8 : 0.4,
+      relevanceScore: calculateRelevanceScore(searchResults, citations)
     };
 
     // Add AI response to history
@@ -326,6 +354,31 @@ Content: ${result.content.substring(0, 750)}...
     // Store updated conversation
     conversations.set(convId, history);
 
+    // Async log to SQLite (never blocks the response)
+    const responseTimeMs = Date.now() - startTime;
+    const exchangeId = assistantMessage.id; // reuse as exchange ID
+    process.nextTick(() => {
+      chatLogger.logExchange({
+        exchangeId,
+        conversationId: convId,
+        userQuery: message,
+        aiResponse: aiMessage,
+        confidence: response.confidence,
+        relevanceScore: response.relevanceScore,
+        citations: response.citations,
+        numDocsRetrieved: searchResults.length,
+        topDocDistance,
+        pageUrl: userContext.pageUrl || null,
+        responseTimeMs,
+        isFallback,
+        promptTokens: aiUsage?.prompt_tokens || null,
+        completionTokens: aiUsage?.completion_tokens || null,
+        userEmail: req.user?.email || null,
+        userAgent: req.headers['user-agent'] || null,
+        consentVersion: PRIVACY_NOTICE_VERSION,
+      });
+    });
+
     res.json({
       conversationId: convId,
       response: response,
@@ -334,7 +387,7 @@ Content: ${result.content.substring(0, 750)}...
 
   } catch (error) {
     console.error('❌ Error in chat endpoint:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Failed to process chat message',
       message: 'I apologize, but I encountered an error. Please try again.'
     });
@@ -371,7 +424,127 @@ app.delete('/api/chat/:conversationId', (req, res) => {
   }
 });
 
-// Remove public indexing endpoint for security
+// Rate a chat exchange (no auth required — any chat user can rate)
+app.post('/api/chat/:exchangeId/rate', (req, res) => {
+  try {
+    const { exchangeId } = req.params;
+    const { rating } = req.body;
+    if (rating !== 1 && rating !== -1) {
+      return res.status(400).json({ error: 'Rating must be 1 or -1' });
+    }
+    const updated = chatLogger.rateExchange(exchangeId, rating);
+    if (!updated) {
+      return res.status(404).json({ error: 'Exchange not found' });
+    }
+    res.json({ success: true });
+  } catch (error) {
+    console.error('❌ Error rating exchange:', error);
+    res.status(500).json({ error: 'Failed to rate exchange' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Admin chat-log endpoints (require superadmin role)
+// ---------------------------------------------------------------------------
+
+app.use('/api/admin/chat-logs', requireRole('superadmin'));
+
+// Paginated recent exchanges
+app.get('/api/admin/chat-logs', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_logs');
+    const limit = Math.min(parseInt(req.query.limit || '50', 10), 200);
+    const offset = parseInt(req.query.offset || '0', 10);
+    const exchanges = chatLogger.getRecentExchanges(limit, offset);
+    res.json({ exchanges, limit, offset });
+  } catch (error) {
+    console.error('❌ Error fetching chat logs:', error);
+    res.status(500).json({ error: 'Failed to fetch chat logs' });
+  }
+});
+
+// Low-confidence exchanges
+app.get('/api/admin/chat-logs/low-confidence', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_low_confidence');
+    const threshold = parseFloat(req.query.threshold || '0.5');
+    const limit = Math.min(parseInt(req.query.limit || '50', 10), 200);
+    const exchanges = chatLogger.getLowConfidenceExchanges(threshold, limit);
+    res.json({ exchanges, threshold, limit });
+  } catch (error) {
+    console.error('❌ Error fetching low-confidence logs:', error);
+    res.status(500).json({ error: 'Failed to fetch low-confidence logs' });
+  }
+});
+
+// Summary stats
+app.get('/api/admin/chat-logs/stats', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_stats');
+    const days = parseInt(req.query.days || '30', 10);
+    const stats = chatLogger.getStats(days);
+    const queryTypes = chatLogger.getQueryTypeStats(days);
+    res.json({ stats, queryTypes, days });
+  } catch (error) {
+    console.error('❌ Error fetching stats:', error);
+    res.status(500).json({ error: 'Failed to fetch stats' });
+  }
+});
+
+// Health & metrics
+app.get('/api/admin/chat-logs/health', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_health');
+    const health = chatLogger.getHealth();
+    res.json(health);
+  } catch (error) {
+    console.error('❌ Error fetching health:', error);
+    res.status(500).json({ error: 'Failed to fetch health' });
+  }
+});
+
+// Export (JSON)
+app.get('/api/admin/chat-logs/export', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'export');
+    const { from, to, anonymize } = req.query;
+    if (!from || !to) {
+      return res.status(400).json({ error: 'from and to query params required (ISO dates)' });
+    }
+    const data = chatLogger.exportToJSON(from, to, anonymize === 'true');
+    res.json({ data, count: data.length, from, to, anonymized: anonymize === 'true' });
+  } catch (error) {
+    console.error('❌ Error exporting chat logs:', error);
+    res.status(500).json({ error: 'Failed to export chat logs' });
+  }
+});
+
+// GDPR: Delete conversation
+app.delete('/api/admin/chat-logs/:conversationId', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'delete_conversation');
+    const deleted = chatLogger.deleteConversation(req.params.conversationId);
+    if (!deleted) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
+    res.json({ success: true, conversationId: req.params.conversationId });
+  } catch (error) {
+    console.error('❌ Error deleting conversation:', error);
+    res.status(500).json({ error: 'Failed to delete conversation' });
+  }
+});
+
+// GDPR: Delete by email
+app.delete('/api/admin/chat-logs/by-email/:email', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'delete_by_email');
+    const count = chatLogger.deleteByEmail(req.params.email);
+    res.json({ success: true, deletedConversations: count, email: req.params.email });
+  } catch (error) {
+    console.error('❌ Error deleting by email:', error);
+    res.status(500).json({ error: 'Failed to delete by email' });
+  }
+});
 
 // Error handling middleware
 app.use((error, req, res, next) => {
