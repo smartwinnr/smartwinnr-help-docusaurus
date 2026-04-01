@@ -48,7 +48,11 @@ router.get('/callback', (req, res) => {
     });
 
     res.cookie(COOKIE_NAME, sessionToken, COOKIE_OPTIONS);
-    return res.redirect(redirect || '/');
+
+    // Only allow path-based redirects (must start with /). Reject fragments,
+    // empty strings, or absolute URLs to prevent redirect loops and open redirects.
+    var safePath = (redirect && redirect.startsWith('/')) ? redirect : '/';
+    return res.redirect(safePath);
   } catch (err) {
     console.error('Auth: invalid callback token:', err.message);
     return res.redirect('/auth/login');
