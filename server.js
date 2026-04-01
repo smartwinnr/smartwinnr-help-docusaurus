@@ -132,7 +132,8 @@ app.post('/api/vector/search', async (req, res) => {
       content: doc.content || '',
       metadata: {
         source: doc.metadata?.source || '',
-        title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.md$/, '').replace(/^.*\//, '') : 'Unknown')
+        title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.md$/, '').replace(/^.*\//, '') : 'Unknown'),
+        url: doc.metadata?.url || ''
       },
       distance: doc.distance || 0
     }));
