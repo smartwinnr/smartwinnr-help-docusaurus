@@ -157,6 +157,10 @@ async function searchDocuments(query, limit = 5) {
     const embeddingResponse = await axios.post(`http://localhost:${PORT}/api/vector/embed`, {
       text: query,
       model: EMBEDDING_MODEL
+    }, {
+      headers: {
+        'X-Internal-API-Key': process.env.INTERNAL_API_KEY,
+      }
     });
     
     const queryEmbedding = embeddingResponse.data.embedding;
