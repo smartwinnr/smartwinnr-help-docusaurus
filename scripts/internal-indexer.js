@@ -26,6 +26,10 @@ class InternalIndexer {
     this.collectionName = process.env.COLLECTION_NAME || 'smartwinnr_docs';
     this.embeddingModel = process.env.EMBEDDING_MODEL || 'text-embedding-3-small';
     
+    if (!process.env.INTERNAL_API_KEY) {
+      throw new Error('INTERNAL_API_KEY environment variable is required for the indexer');
+    }
+
     console.log('🔒 Internal Indexer initialized for Railway internal network only');
   }
 
@@ -58,6 +62,7 @@ class InternalIndexer {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'X-Internal-API-Key': process.env.INTERNAL_API_KEY,
           },
           body: JSON.stringify({ text, model: this.embeddingModel }),
           timeout: 30000 // 30 second timeout
