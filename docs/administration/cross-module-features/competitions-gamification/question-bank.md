@@ -4,8 +4,8 @@ description: ""
 slug: question-bank
 sidebar_position: 39
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4545236980410c9123806
 helpscout_url: https://help.smartwinnr.com/article/39-question-bank
 ---
@@ -33,4 +33,4 @@ Click on the **Advanced Search** link to open the **Advanced Search** box.
 
 [![](/img/competitions/helpscout-image-d527690e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd455af4eb32171b8037480/file-8Sn9HVYcSo.png)
 
-To clear the search, _delete the text_ in the _Search_ box  _Click_ on the _Search_ button again.
+To clear the search, _delete the text_ in the _Search_ box _Click_ on the _Search_ button again.

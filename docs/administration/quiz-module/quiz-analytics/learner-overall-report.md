@@ -4,8 +4,8 @@ description: ""
 slug: learner-overall-report
 sidebar_position: 254
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60c1f6cea6d12c2cd643e794
 helpscout_url: https://help.smartwinnr.com/article/254-learner-overall-report
 ---
@@ -21,7 +21,7 @@ Select the Business Unit that you want to check the report. You can also select 
 
 Here you can see the analytics for the Quizzes where you get the total count, questions, average score, and statistics about the quizzes.
 
-Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, andÂstatistics about the SmartPaths.
+Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, and statistics about the SmartPaths.
 
 ![](/img/quizzes/helpscout-image-50ddd60e.jpg)
 

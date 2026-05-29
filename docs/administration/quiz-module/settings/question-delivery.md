@@ -3,8 +3,8 @@ title: "Question Delivery Settings"
 description: "Configure how questions are delivered to users in the Quiz module."
 sidebar_position: 3
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

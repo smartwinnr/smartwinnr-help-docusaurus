@@ -4,8 +4,8 @@ description: ""
 slug: how-to-review-field-coaching-from-managers-view-in-mobile
 sidebar_position: 244
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60a8e21fdca0fd46b93580f6
 helpscout_url: https://help.smartwinnr.com/article/244-how-to-review-field-coaching-from-managers-view
 ---
@@ -13,13 +13,13 @@ How to open Field Coaching in Manager view:
 
 * Log in to the web using your username and password.
 * Open Left Menu >>Click on Profile at the top left corner.
-* Change the toggle button to theÂ Manager side. This will activate the Manager View
+* Change the toggle button to the Manager side. This will activate the Manager View
 
 ![](/img/coaching/helpscout-image-d0b2d0cd.png)
 
 * Open Left Menu>>Field Coaching.
 * You can see the available coaching here.
-* Click on theÂcoaching, then you will be able to see a list of your team here
+* Click on the coaching, then you will be able to see a list of your team here
 * Click on the salesperson you want to coach.
 
 ![](/img/coaching/helpscout-image-248f0ff0.png)
@@ -53,14 +53,14 @@ Click on View Coaching. There are 2 steps in the coaching session.
 
 Step 1 is the Pre-Call Coaching.
 
-Fill out your responses in the area provided.Â After entering the details, click on the save button at bottom of the screen. This will ensure that your Step 1 responses have been saved.
+Fill out your responses in the area provided. After entering the details, click on the save button at bottom of the screen. This will ensure that your Step 1 responses have been saved.
 
 ![](/img/coaching/helpscout-image-0c29062e.png)
 
 * Coaching Discussion Planning: enter your coaching planning here.
 * Coaching Summary: You can enter a coaching summary after a discussion with your sales rep.
 
-Once you complete these steps click on the Save button to save theÂ Coaching.
+Once you complete these steps click on the Save button to save the Coaching.
 
 * In step 2(Post Call Coaching), the manager will be able to change the rating of the sales rep based on the performance in the coaching.
 * Click on the Change Rating option in the top right corner then change the rating of the competencies accordingly.

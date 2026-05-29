@@ -4,8 +4,8 @@ description: ""
 slug: what-is-an-achievement
 sidebar_position: 193
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb509ab624c71b7985a72e
 helpscout_url: https://help.smartwinnr.com/article/193-what-is-an-achievement
 ---

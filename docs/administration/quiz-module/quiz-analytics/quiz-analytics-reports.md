@@ -4,8 +4,8 @@ description: "Comprehensive guide to understanding quiz performance through anal
 slug: quiz-analytics-reports
 sidebar_position: 3
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Quiz Analytics & Reports
@@ -55,7 +55,7 @@ Access team-wide performance data through **EDITOR > Questions and Quizzes > Rep
 Heat map visualization showing:
 
 - Performance by knowledge category
-- Geographic distribution of category strengths/weaknesses  
+- Geographic distribution of category strengths/weaknesses
 - Comparative analysis across different subjects
 
 ### 3. Individual Learner Reports
@@ -113,7 +113,7 @@ You can customize views by:
 Use the **Filter** button to slice and dice information by:
 
 - **Country**: Geographic location
-- **Category**: Knowledge areas or subjects  
+- **Category**: Knowledge areas or subjects
 - **User Tags**: Custom participant attributes
 - **Email**: Specific individuals or domains
 - **Date Range**: Custom time periods

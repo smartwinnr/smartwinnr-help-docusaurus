@@ -4,8 +4,8 @@ description: ""
 slug: what-is-the-difference-between-a-survey-and-a-survey-template
 sidebar_position: 63
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4a80723119734ee37edd6
 helpscout_url: https://help.smartwinnr.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template
 ---

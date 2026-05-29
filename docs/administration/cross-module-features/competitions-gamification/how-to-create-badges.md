@@ -4,8 +4,8 @@ description: ""
 slug: how-to-create-badges
 sidebar_position: 285
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 64649da87d89467e9da791da
 helpscout_url: https://help.smartwinnr.com/article/285-how-to-create-badges
 ---

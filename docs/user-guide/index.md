@@ -79,27 +79,27 @@ Explore available learning materials and start your first SmartPath.
 
 ### **Daily Learning Routine**
 
-1. **Check Dashboard**  View new assignments and notifications
-2. **Complete Quizzes**  Take assigned assessments
-3. **Review Results**  Check scores and read explanations
-4. **Access Learning Content**  Read SmartFeeds or continue SmartPaths
-5. **Track Progress**  Monitor your improvement and achievements
+1. **Check Dashboard** View new assignments and notifications
+2. **Complete Quizzes** Take assigned assessments
+3. **Review Results** Check scores and read explanations
+4. **Access Learning Content** Read SmartFeeds or continue SmartPaths
+5. **Track Progress** Monitor your improvement and achievements
 
 ### **Competition Participation**
 
-1. **Join Competitions**  Participate in available challenges
-2. **Complete Activities**  Take quizzes, consume content, submit assignments
-3. **Earn Points**  Accumulate points for activities
-4. **Check Leaderboards**  See your ranking and team performance
-5. **Claim Rewards**  Earn badges, certificates, and recognition
+1. **Join Competitions** Participate in available challenges
+2. **Complete Activities** Take quizzes, consume content, submit assignments
+3. **Earn Points** Accumulate points for activities
+4. **Check Leaderboards** See your ranking and team performance
+5. **Claim Rewards** Earn badges, certificates, and recognition
 
 ### **Performance Monitoring**
 
-1. **Review Personal Analytics**  Check your performance metrics
-2. **Identify Strengths**  See areas where you excel
-3. **Address Gaps**  Focus on areas needing improvement
-4. **Set Goals**  Work toward specific learning objectives
-5. **Celebrate Achievements**  Acknowledge your progress and successes
+1. **Review Personal Analytics** Check your performance metrics
+2. **Identify Strengths** See areas where you excel
+3. **Address Gaps** Focus on areas needing improvement
+4. **Set Goals** Work toward specific learning objectives
+5. **Celebrate Achievements** Acknowledge your progress and successes
 
 ## Getting Help
 

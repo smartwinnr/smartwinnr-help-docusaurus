@@ -4,8 +4,8 @@ description: ""
 slug: user-login-reports
 sidebar_position: 143
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdae19bb624c71b7985a579
 helpscout_url: https://help.smartwinnr.com/article/143-user-login-reports
 ---

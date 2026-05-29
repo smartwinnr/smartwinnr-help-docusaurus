@@ -4,12 +4,12 @@ description: ""
 slug: what-are-smartfeeds
 sidebar_position: 26
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fcf7718da652271f08d3f5e
 helpscout_url: https://help.smartwinnr.com/article/26-what-are-smartfeeds
 ---
-SmartFeeds enable you to send short snippets of information to your teams. It helps toÂ**regularly reinforce important information**, without going through lengthy training sessions.
+SmartFeeds enable you to send short snippets of information to your teams. It helps to **regularly reinforce important information**, without going through lengthy training sessions.
 
 ## What to send as SmartFeeds?
 

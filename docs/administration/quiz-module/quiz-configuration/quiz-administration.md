@@ -4,8 +4,8 @@ description: "Complete guide for managing quiz settings, permissions, and operat
 slug: quiz-administration
 sidebar_position: 2
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Quiz
@@ -38,7 +38,7 @@ Admin > Quiz Settings**
 Set minimum average scores required to achieve different types of badges:
 
 - **Bronze Badge**: Set minimum percentage (e.g., 60%)
-- **Silver Badge**: Set minimum percentage (e.g., 75%)  
+- **Silver Badge**: Set minimum percentage (e.g., 75%)
 - **Gold Badge**: Set minimum percentage (e.g., 90%)
 
 ### Quiz Notification Settings
@@ -89,9 +89,9 @@ To grant other editors access to your quizzes:
 2. Click on **"Permissions"** or **"Share Access"**
 3. Add editor email addresses or usernames
 4. Set permission levels:
-   - **View Only**: Can see quiz and results
-   - **Edit**: Can modify quiz content and settings
-   - **Full Control**: Can edit, publish, and manage permissions
+ - **View Only**: Can see quiz and results
+ - **Edit**: Can modify quiz content and settings
+ - **Full Control**: Can edit, publish, and manage permissions
 
 ### Managing Quiz Participants
 
@@ -100,10 +100,10 @@ To grant other editors access to your quizzes:
 1. Navigate to **Quiz Assignment**
 2. Select **"Send using Groups"**
 3. Choose target groups:
-   - Department groups
-   - Location-based groups
-   - Role-based groups
-   - Custom groups
+ - Department groups
+ - Location-based groups
+ - Role-based groups
+ - Custom groups
 4. Set assignment parameters and send
 
 #### Individual User Management
@@ -122,9 +122,9 @@ To create a copy of an existing quiz:
 2. Find the quiz you want to duplicate
 3. Click on the **"Duplicate"** or **"Copy"** icon
 4. Modify the duplicate as needed:
-   - Change title and description
-   - Update questions if necessary
-   - Adjust settings and timing
+ - Change title and description
+ - Update questions if necessary
+ - Adjust settings and timing
 5. Publish the new quiz
 
 ### Creating Quiz Templates
@@ -145,9 +145,9 @@ Configure reminders to improve participation:
 1. Go to **Quiz Settings > Notifications**
 2. Enable **"Automatic Reminders"**
 3. Set reminder schedule:
-   - **First reminder**: X days after assignment
-   - **Follow-up reminders**: Every X days until completion
-   - **Final reminder**: X hours before deadline
+ - **First reminder**: X days after assignment
+ - **Follow-up reminders**: Every X days until completion
+ - **Final reminder**: X hours before deadline
 4. Customize reminder message content
 
 ### Manual Reminder System

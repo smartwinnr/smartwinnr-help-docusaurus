@@ -4,8 +4,8 @@ description: ""
 slug: how-to-access-the-scorm-course-from-the-smartwinnr-app
 sidebar_position: 272
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 62b450c10b51ec1ae83f9bf8
 helpscout_url: https://help.smartwinnr.com/article/272-how-to-access-the-scorm-course-from-the-smartwinnr-app
 ---

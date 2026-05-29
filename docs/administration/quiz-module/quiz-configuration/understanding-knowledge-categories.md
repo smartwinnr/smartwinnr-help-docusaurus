@@ -4,8 +4,8 @@ description: ""
 slug: understanding-knowledge-categories
 sidebar_position: 38
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4521236980410c9123802
 helpscout_url: https://help.smartwinnr.com/article/38-understanding-knowledge-categories
 ---
@@ -27,7 +27,7 @@ Every Question, SmartFeed, and Coaching will be linked to one category or the ot
 
 All measurements and tracking will be based on these categories.
 
-This is an exampleÂscreenshot of how you can measure different aspects of Selling Skills within SmartWinnr:
+This is an example screenshot of how you can measure different aspects of Selling Skills within SmartWinnr:
 
 [![](/img/quizzes/helpscout-image-822a5d88.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd45288c868cb6df3a80fe0/file-Il2yXpQflx.png)
 

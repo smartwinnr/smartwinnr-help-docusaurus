@@ -4,8 +4,8 @@ description: ""
 slug: what-is-qresolve
 sidebar_position: 209
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60003222c64fe14d0e1fac76
 helpscout_url: https://help.smartwinnr.com/article/209-what-is-qresolve
 ---

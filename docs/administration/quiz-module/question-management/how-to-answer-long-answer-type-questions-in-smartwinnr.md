@@ -4,12 +4,12 @@ description: ""
 slug: how-to-answer-long-answer-type-questions-in-smartwinnr
 sidebar_position: 260
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60f9c0126ffe270af2a917d6
 helpscout_url: https://help.smartwinnr.com/article/260-how-users-can-answer-the-long-answer-questions
 ---
-## SmartWinnr has a descriptive-type question where you will have to write down the answer to the question in one line or paragraph  
+## SmartWinnr has a descriptive-type question where you will have to write down the answer to the question in one line or paragraph
 
 You can follow the below steps to answer such Long - answer type Questions in SmartWinnr.
 
@@ -17,7 +17,7 @@ You can follow the below steps to answer such Long - answer type Questions in Sm
 
 ![](/img/quizzes/helpscout-image-117d8ee0.png)
 
-* Click on the button  **START QUIZ** to start answering the questions in the quiz.
+* Click on the button **START QUIZ** to start answering the questions in the quiz.
 
 ![](/img/quizzes/helpscout-image-ee44b8f4.png)
 
@@ -37,15 +37,15 @@ You can also use the list option to mention the point numbers as an ordered list
 
 ![](https://lh6.googleusercontent.com/-68Tjm_sTZ30XPOdnyKSuCW2i3qAjFiBnaUsnHuW6vn7dAQnuiwaYn4xYmQk02eR0_KZhpNxMl5wqYtD-qHyws1rSdHCIYs4sunLwsYk4e5KTCS0xK2VZR0Cds2Sw09jEUwhD1oq)
 
-* After submitting the quiz, youÂwill be redirected to the quiz leaderboard page. In case **if all the questions in your quiz were long answer questions, the quiz leaderboard will show zero scores until the evaluator evaluates your answers.**
+* After submitting the quiz, you will be redirected to the quiz leaderboard page. In case **if all the questions in your quiz were long answer questions, the quiz leaderboard will show zero scores until the evaluator evaluates your answers.**
 
 ![](/img/quizzes/helpscout-image-8ba1ab95.png)
 
 * Once the **evaluation is done**, the **score will be visible** on the leaderboard.
 
-## Â How to view the Quiz score and Feedback?
+## How to view the Quiz score and Feedback?
 
-* Once your evaluator evaluates and gives points for each question, your scores and ranking will be available toÂyou on the quiz leaderboard.
+* Once your evaluator evaluates and gives points for each question, your scores and ranking will be available to you on the quiz leaderboard.
 * To check the leaderboard, select the quiz from the **Completed section tab** and select the quiz.
 
 ![](/img/quizzes/helpscout-image-54a3632f.png)

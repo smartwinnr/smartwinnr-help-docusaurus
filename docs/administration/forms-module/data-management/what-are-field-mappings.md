@@ -4,8 +4,8 @@ description: ""
 slug: what-are-field-mappings
 sidebar_position: 172
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb0cafa5d295659b369c60
 helpscout_url: https://help.smartwinnr.com/article/172-what-are-field-mappings
 ---

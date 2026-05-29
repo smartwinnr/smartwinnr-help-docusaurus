@@ -4,14 +4,14 @@ description: ""
 slug: how-do-i-view-the-kpi-scorecard
 sidebar_position: 191
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb421527288b7f895d662f
 helpscout_url: https://help.smartwinnr.com/article/191-how-do-i-view-the-kpi-scorecard
 ---
 A Scorecard is a collection of KPIs that's being tracked. Scorecards can be either Daily, Weekly, Monthly, Quarterly or Yearly. Watch how the scorecard changes when you complete your activities. Follow these steps to view a KPI Scorecard:
 
-Open the SmartWinnr app > Tap on theÂPerformanceÂtab.
+Open the SmartWinnr app > Tap on the Performance tab.
 
 You will see a scorecard with a bar graph that shows your performance in a particular KPI. You can choose to view the monthly scorecard or weekly scorecard by choosing the respective tabs.
 
@@ -49,6 +49,6 @@ This is the average of all the participant's scores against a KPI.
 
 ![](https://lh4.googleusercontent.com/VNZQ1-O2e50LK_Mui26Ckd6EmIPJH5alnzifxknRI1kOaYGm2ISPJwHisAZactL2xZWyMA85E5BUoyl4-TX2t5QMErgrgAcOcvSo7c97ERlVJqVq9WFHWFGp3gpSOBrSHX9Ad2RJ)
 
-If you click on the View Details button, you will get to see more details about your KPI targets and your scores against those targets.  
+If you click on the View Details button, you will get to see more details about your KPI targets and your scores against those targets.
 
 ![](https://lh6.googleusercontent.com/rj6JDuDUu_DX4nkIZyBAGmeQpTNWYnMoIEkPL_lcjG0BPBZF0F9uEp8RgHhpE3_puILscW4IWVssT8VnH8p3CxlAe_abQvS0XEPtr8rwQCgT8k7-6RSPcC6WB8g1N69B6PsDs788)

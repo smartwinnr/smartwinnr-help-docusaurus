@@ -3,8 +3,8 @@ title: "How to Activate or Deactivate a Quiz"
 description: "Step-by-step guide to activating and deactivating event quizzes."
 sidebar_position: 9
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

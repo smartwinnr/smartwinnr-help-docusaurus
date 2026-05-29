@@ -4,14 +4,14 @@ description: ""
 slug: how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance
 sidebar_position: 253
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60bf40d2a6d12c2cd643da33
 helpscout_url: https://help.smartwinnr.com/article/253-how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance
 ---
 An Editor who has access to the SmartPaths can send the Absent Reminder to the users.
 
-Go toÂEDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartPaths > View All SmartPaths
+Go to EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths
 
 ![](/img/learning/helpscout-image-35b07ab2.jpg)
 

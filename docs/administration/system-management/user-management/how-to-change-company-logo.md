@@ -4,8 +4,8 @@ description: ""
 slug: how-to-change-company-logo
 sidebar_position: 114
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda48bca5d295659b3698b1
 helpscout_url: https://help.smartwinnr.com/article/114-how-to-change-company-logo
 ---
@@ -19,6 +19,6 @@ The following information can be updated:
 
 * Organization Name: This name will be shown to all users logged in belonging to your organization.
 * Primary Administrative Account Email: This email will receive all administrative emails from SmartWinnr.
-* Company ÂLogo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
+* Company Logo: This logo will be shown in the SmartWinnr portal for all users belonging to your organization.
 * Company App Logo: This logo will be shown in the SmartWinnr iOS and Android apps for all users belonging to your organization.
-* Company App Header Logo: This logoÂwill be shown in the heade section of SmartWinnr iOS and Android apps.
+* Company App Header Logo: This logo will be shown in the heade section of SmartWinnr iOS and Android apps.

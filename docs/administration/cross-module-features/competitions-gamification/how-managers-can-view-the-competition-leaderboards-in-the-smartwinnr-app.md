@@ -4,8 +4,8 @@ description: ""
 slug: how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
 sidebar_position: 206
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fffe8aa2e764327f87be765
 helpscout_url: https://help.smartwinnr.com/article/206-how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
 ---

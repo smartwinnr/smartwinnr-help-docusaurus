@@ -4,8 +4,8 @@ description: ""
 slug: what-if-i-ve-forgotten-my-pin
 sidebar_position: 13
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fce210dde1bfa158fb55ed9
 helpscout_url: https://help.smartwinnr.com/article/13-what-if-ive-forgotten-my-pin
 ---

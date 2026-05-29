@@ -4,8 +4,8 @@ description: ""
 slug: how-do-i-like-a-smartfeed
 sidebar_position: 33
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd1110180488e39007cbd8f
 helpscout_url: https://help.smartwinnr.com/article/33-how-do-i-like-a-smartfeed
 ---
@@ -15,7 +15,7 @@ Follow the below steps in the SmartWinnr app/web view to 'Like' a SmartFeed:
 
 Go to the **L****eft Menu bar > SmartFeeds.**
 
-Alternative approach:Â**Go to Learning > SmartFeeds.**
+Alternative approach: **Go to Learning > SmartFeeds.**
 
 It opens the following screen where you will see a list of SmartFeeds that are assigned to you.
 

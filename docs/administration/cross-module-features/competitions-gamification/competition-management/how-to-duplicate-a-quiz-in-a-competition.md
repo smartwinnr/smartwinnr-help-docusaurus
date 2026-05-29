@@ -4,8 +4,8 @@ description: ""
 slug: how-to-duplicate-a-quiz-in-a-competition
 sidebar_position: 108
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda263d27288b7f895d60b7
 helpscout_url: https://help.smartwinnr.com/article/108-how-to-duplicate-a-quiz-in-a-competition
 ---
@@ -13,7 +13,7 @@ When you duplicate a quiz for a competition, automatically the questions added t
 
 Please follow the below steps to duplicate a quiz as a part of the competition:
 
-EDITOR >ÂGAMIFICATION AND ENGAGEMENT >ÂCompetition > View Tasks > Add New Tasks > SelectÂType = quiz
+EDITOR > GAMIFICATION AND ENGAGEMENT > Competition > View Tasks > Add New Tasks > Select Type = quiz
 
 Then, click on the 'Duplicate Quiz' option at the bottom.
 

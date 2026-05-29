@@ -3,8 +3,8 @@ title: "How to Upload Participation Data"
 description: "Step-by-step guide to uploading participation data for a quiz."
 sidebar_position: 6
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

@@ -4,8 +4,8 @@ description: ""
 slug: quiz-types
 sidebar_position: 48
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd48eb723119734ee37eda5
 helpscout_url: https://help.smartwinnr.com/article/48-quiz-types
 ---

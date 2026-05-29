@@ -4,8 +4,8 @@ description: "Guide for switching between user and manager views"
 slug: manager-features
 sidebar_position: 4
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Manager Features

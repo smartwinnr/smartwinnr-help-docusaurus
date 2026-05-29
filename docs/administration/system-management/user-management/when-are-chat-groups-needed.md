@@ -4,8 +4,8 @@ description: ""
 slug: when-are-chat-groups-needed
 sidebar_position: 153
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdaf5db7129911ba1b21dfa
 helpscout_url: https://help.smartwinnr.com/article/153-when-are-chat-groups-needed
 ---

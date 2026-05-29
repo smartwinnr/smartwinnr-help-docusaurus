@@ -3,8 +3,8 @@ title: "Visual & Media Settings"
 description: "Configure cover images, thumbnails, and Quiz TV backgrounds in the Quiz module."
 sidebar_position: 8
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

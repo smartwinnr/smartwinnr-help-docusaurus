@@ -4,8 +4,8 @@ description: ""
 slug: how-to-approve-reject-a-form-submission
 sidebar_position: 223
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 600850fdcfe30d219ccd99f3
 helpscout_url: https://help.smartwinnr.com/article/223-how-to-approve-kpi-submission-forms
 ---
@@ -29,11 +29,11 @@ Click on the View Button against the pending submission to view the submission d
 
 4\. You can now go through the submission details and then approve or reject the submission accordingly.
 
-Select the appropriate status(Approve/Reject) under the 'Status' section.ÂClick on the Change status option to change the status of the submission.
+Select the appropriate status(Approve/Reject) under the 'Status' section. Click on the Change status option to change the status of the submission.
 
 ![](/img/admin/helpscout-image-6e1eba2d.png)
 
-5\. This will show you a pop-up asking for a confirmation to change the status.ÂClick on the 'Yes' button to save the status.
+5\. This will show you a pop-up asking for a confirmation to change the status. Click on the 'Yes' button to save the status.
 
 ![](/img/admin/helpscout-image-0e0f5be2.png)
 

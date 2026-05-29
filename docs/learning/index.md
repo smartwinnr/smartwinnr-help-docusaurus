@@ -17,7 +17,7 @@ Our learning platform supports three main content delivery methods:
 Short, focused content snippets that reinforce important information without lengthy training sessions. Perfect for:
 
 - Product updates and announcements
-- Quick knowledge reinforcement  
+- Quick knowledge reinforcement
 - Just-in-time learning support
 - Regular information sharing
 
@@ -44,7 +44,7 @@ Searchable content library providing instant access to organizational knowledge.
 ### For Content Creators
 
 1. **[SmartFeed Management](./smartfeed-management)** - Create and distribute bite-sized learning content
-2. **[SmartPath Management](./smartpath-management)** - Build structured learning journeys with modules and assessments  
+2. **[SmartPath Management](./smartpath-management)** - Build structured learning journeys with modules and assessments
 3. **[Knowledge Hub (KHub)](./knowledge-hub-khub)** - Organize and maintain your knowledge repository
 
 ### For Learners

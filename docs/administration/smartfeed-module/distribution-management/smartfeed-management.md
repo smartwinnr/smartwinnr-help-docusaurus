@@ -4,8 +4,8 @@ description: "Complete guide for creating, managing, and distributing SmartFeeds
 slug: smartfeed-management
 sidebar_position: 1
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # SmartFeed Management
@@ -33,7 +33,7 @@ You can send various content types as SmartFeeds:
 - **Videos**: Product demonstrations, training videos
 - **PDFs**: Product specifications, clinical trial data, manuals
 - **PowerPoint Presentations**: Product knowledge, features/advantages/benefits
-- **External Links**: References to websites or online resources  
+- **External Links**: References to websites or online resources
 - **Images**: Posters, infographics, charts
 - **Audio Files**: Recorded messages, podcast episodes
 - **Text Content**: Written announcements or information
@@ -57,7 +57,7 @@ You can send various content types as SmartFeeds:
 4. Position images within your content flow
 5. Optimize image size for mobile viewing
 
-#### Adding Videos to SmartFeeds  
+#### Adding Videos to SmartFeeds
 
 1. Select the **Video** option in content creation
 2. Upload video files or provide video URLs
@@ -140,10 +140,10 @@ Access your complete SmartFeed library:
 
 1. Go to **EDITOR > SmartFeeds > View All SmartFeeds**
 2. Use filters to find specific content:
-   - By date range
-   - By content type
-   - By target audience
-   - By author
+ - By date range
+ - By content type
+ - By target audience
+ - By author
 3. Sort by relevance, date, or engagement
 4. Export lists for reporting if needed
 
@@ -154,10 +154,10 @@ Access your complete SmartFeed library:
 1. Select your created SmartFeed
 2. Choose **"Send to Teams"**
 3. Select target groups:
-   - Department groups
-   - Location-based groups
-   - Role-based groups
-   - Custom groups
+ - Department groups
+ - Location-based groups
+ - Role-based groups
+ - Custom groups
 4. Schedule delivery time
 5. Set notification preferences
 6. Send or schedule for later
@@ -178,11 +178,11 @@ Track SmartFeed performance:
 
 1. Go to **SmartFeeds > Analytics**
 2. View key metrics:
-   - **Views**: How many people opened the SmartFeed
-   - **Engagement Time**: How long users spent viewing content
-   - **Likes**: User appreciation indicators
-   - **Shares**: How often content was shared
-   - **Comments**: User feedback and discussions
+ - **Views**: How many people opened the SmartFeed
+ - **Engagement Time**: How long users spent viewing content
+ - **Likes**: User appreciation indicators
+ - **Shares**: How often content was shared
+ - **Comments**: User feedback and discussions
 
 ### Engagement Features
 

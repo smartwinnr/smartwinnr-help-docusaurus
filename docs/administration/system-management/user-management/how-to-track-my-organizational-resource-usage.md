@@ -4,8 +4,8 @@ description: ""
 slug: how-to-track-my-organizational-resource-usage
 sidebar_position: 116
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda496f0b11ce44f6392e44
 helpscout_url: https://help.smartwinnr.com/article/116-how-to-track-my-organizational-resource-usage
 ---

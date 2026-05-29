@@ -4,8 +4,8 @@ description: ""
 slug: what-is-a-group
 sidebar_position: 128
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda55167129911ba1b21b2c
 helpscout_url: https://help.smartwinnr.com/article/128-what-is-a-group
 ---

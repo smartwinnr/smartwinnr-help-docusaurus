@@ -4,8 +4,8 @@ description: ""
 slug: how-can-i-check-the-app-version-web-view-version
 sidebar_position: 19
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fce355804cebe5254a29954
 helpscout_url: https://help.smartwinnr.com/article/19-how-can-i-check-the-app-version-web-view-version
 ---
@@ -15,7 +15,7 @@ Open the SmartWinnr app and click on the **hamburger** icon at the top left corn
 
 ![](/img/getting-started/helpscout-image-b82ccd98.png)
 
-Here, click on the **profile picture** at the top. It will take you to the following screen.ÂClick onÂSettingsÂicon at the top right corner which is highlighted in red.
+Here, click on the **profile picture** at the top. It will take you to the following screen. Click on Settings icon at the top right corner which is highlighted in red.
 
 Go to the option **App version**. It will take you to the following screen where you can find the version of the SmartWinnr app installed in your system.
 
@@ -23,7 +23,7 @@ Go to the option **App version**. It will take you to the following screen where
 
 ### Below are the steps to check the version of your SmartWinnr Web View
 
-Login the SmartWinnr web view andÂclick on the **profile picture** at the top. It will take you to the following screen.ÂClick onÂSettingsÂicon at the top right corner which is highlighted in red.
+Login the SmartWinnr web view and click on the **profile picture** at the top. It will take you to the following screen. Click on Settings icon at the top right corner which is highlighted in red.
 
 ![](/img/getting-started/helpscout-image-1b202d63.png)
 

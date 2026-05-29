@@ -70,7 +70,7 @@ Effective performance monitoring is crucial for team success. This guide provide
 - **Recognize Success**: Acknowledge recent achievements and completions
 - **Plan Follow-ups**: Schedule necessary coaching conversations
 
-### � **Mid-Day Progress Check (10-15 minutes)**
+### **Mid-Day Progress Check (10-15 minutes)**
 
 **Real-Time Monitoring**
 

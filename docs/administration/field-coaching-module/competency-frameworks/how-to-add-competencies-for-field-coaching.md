@@ -4,12 +4,12 @@ description: ""
 slug: how-to-add-competencies-for-field-coaching
 sidebar_position: 237
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60a50e711df47a61c5ad2f4d
 helpscout_url: https://help.smartwinnr.com/article/237-how-to-add-competencies-for-field-coaching
 ---
-ÂA user who is having admin access can add the competencies for field coaching.
+ A user who is having admin access can add the competencies for field coaching.
 
 Below are the steps to create competencies.
 

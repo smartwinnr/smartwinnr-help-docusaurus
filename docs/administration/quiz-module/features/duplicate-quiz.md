@@ -3,8 +3,8 @@ title: "How to Duplicate a Quiz"
 description: "Step-by-step guide to duplicating a quiz in the Quiz module."
 sidebar_position: 2
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

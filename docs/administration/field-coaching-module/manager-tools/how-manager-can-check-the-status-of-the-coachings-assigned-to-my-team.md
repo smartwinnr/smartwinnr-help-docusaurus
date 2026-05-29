@@ -4,8 +4,8 @@ description: ""
 slug: how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team
 sidebar_position: 229
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 603748758502d1120e90b0ed
 helpscout_url: https://help.smartwinnr.com/article/229-how-manager-can-view-and-check-the-status-of-the-coachings-assigned-to-my-team
 ---
@@ -27,7 +27,7 @@ Select the desired coaching assignment for which you would like to check the res
 
 ![](/img/coaching/helpscout-image-933357df.png)
 
-You can filter the completion status as Completed and not Completed which will help you to find the list of users who have submitted the response videosÂand not submitted theÂresponse videos for the select coaching assignment.
+You can filter the completion status as Completed and not Completed which will help you to find the list of users who have submitted the response videos and not submitted the response videos for the select coaching assignment.
 
 ![](/img/coaching/helpscout-image-68d58e90.png)
 

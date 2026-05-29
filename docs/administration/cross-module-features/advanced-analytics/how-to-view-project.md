@@ -4,12 +4,12 @@ description: ""
 slug: how-to-view-project
 sidebar_position: 186
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb2f387129911ba1b21ece
 helpscout_url: https://help.smartwinnr.com/article/186-how-to-view-project
 ---
-Go to Editor >>ÂPROJECT MANAGEMENT >>ÂProjectÂ Management
+Go to Editor >> PROJECT MANAGEMENT >> Project Management
 
 ![](/img/reports/helpscout-image-fe1bd387.png) Name : Name of the Project.
 
@@ -17,7 +17,7 @@ Teams : Teams in the Project.
 
 Sections : Number of sections.
 
-Tasks : Number of tasks.  
+Tasks : Number of tasks.
 
 ### My Projects
 
@@ -49,9 +49,9 @@ Clicking on the "+" will prevail in the different options.
 
 * Project Name & Project Description
 
-This contains the current project name and the project description.  
+This contains the current project name and the project description.
 
-* ÂTeams
+* Teams
 
 This contains the teams to which the project has been assigned.
 
@@ -61,13 +61,13 @@ By Clicking on this button Editor can view the team members by the groups or can
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1062)
 
-Editor can also view theÂ "Project Owner Name", "Task Status" , "Project Status" here.
+Editor can also view the "Project Owner Name", "Task Status" , "Project Status" here.
 
 ### 4.Notification Setting
 
-Clicking on the "+"Â will prevail theÂ different options.
+Clicking on the "+" will prevail the different options.
 
-Â Â ![](https://support.smartwinnr.com/api/v1/attachments/1063)
+ ![](https://support.smartwinnr.com/api/v1/attachments/1063)
 
 ###
 
@@ -81,7 +81,7 @@ The Editor can change the sequence of sections by clicking on the "Change Sequen
 
 Editor can also add new Section by clicking on the "Add Section".
 
-* ÂList View
+* List View
 
 ### ![](https://support.smartwinnr.com/api/v1/attachments/1065)
 
@@ -89,7 +89,7 @@ This view gives a List view of sections that were created by the Editor.
 
 In this view, the Editor can also edit the section by clicking on the edit button just next to the section name.
 
-### Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/1066)
+### ![](https://support.smartwinnr.com/api/v1/attachments/1066)
 
 Editor can edit the section name and click on save.
 
@@ -101,7 +101,7 @@ The editor can also edit the task assigned by clicking on the edit button as wel
 
 ###
 
-* ÂBoard View
+* Board View
 
 ### ![](https://support.smartwinnr.com/api/v1/attachments/1067)
 
@@ -109,7 +109,7 @@ This view gives a modular view of each task assigned in a particular section. Th
 
 Tasks assigned under each section can be edited by clicking on the "Edit Task" button.
 
-* ÂTimeline View
+* Timeline View
 
 This view gives a better understanding of the task assigned in a particular section. This view gives a Gantt chart timeline view of the task assigned, so Editor gets a better understanding of the tasks that will take lesser time. Based on the time needed for a task to be completed, the Editor could decide the priority of tasks.
 

@@ -4,8 +4,8 @@ description: ""
 slug: how-can-i-change-the-password-for-a-user-account
 sidebar_position: 124
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda513db624c71b7985a2a8
 helpscout_url: https://help.smartwinnr.com/article/124-change-user-password
 ---

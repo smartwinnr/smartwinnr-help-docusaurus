@@ -4,8 +4,8 @@ description: ""
 slug: what-is-a-challenge
 sidebar_position: 178
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb1597a5d295659b369c89
 helpscout_url: https://help.smartwinnr.com/article/178-what-is-a-challenge
 ---

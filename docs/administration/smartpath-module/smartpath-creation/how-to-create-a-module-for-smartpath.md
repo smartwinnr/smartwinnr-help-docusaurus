@@ -4,22 +4,22 @@ description: ""
 slug: how-to-create-a-module-for-smartpath
 sidebar_position: 76
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd6f70a23119734ee37f088
 helpscout_url: https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath
 ---
 **Follow the below steps to create a module for SmartPath:**
 
-Go to **EDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartPaths > View All Modules****.**
+Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All Modules****.**
 
 [![](/img/learning/helpscout-image-cbd825e9.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6014fee4ac2f834ec5383755/file-DpsSDBVsNg.png)
 
-On this page, click on the **'Create Module'**Âbutton at the _top right corner_ of the screen.
+On this page, click on the **'Create Module'** button at the _top right corner_ of the screen.
 
 1
 
-#### ÂÂ Create a Module
+#### Create a Module
 
 [![](/img/learning/helpscout-image-2c7450bb.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6014ff6f6867724dfc6edbc5/file-uh1GYsSthZ.png)
 
@@ -29,19 +29,19 @@ On this page, click on the **'Create Module'**Âbutton at the _top right corner_ 
 
 **Description:** Give a short description of the module.
 
-You can also change theÂ _Cover Image_ÂandÂ_Color_Âof the module card by using the icons below:ÂÂ
+You can also change the _Cover Image_ and _Color_ of the module card by using the icons below:
 
 [![](/img/learning/helpscout-image-9ed8200f.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015004b1f25b9041beb997d/file-JHjOQfvCWt.png)
 
 Once you are done filling up these details, _click_ on the **'Save Module'** _button_.
 
-Now, you will be taken to the next step in creating a module.ÂÂ
+Now, you will be taken to the next step in creating a module.
 
 2
 
-#### ÂÂAdd Segments
+#### Add Segments
 
-The next step is to add segments like _Quizzes, SmartFeeds, Coachings,_Âand _Surveys_ to the module.
+The next step is to add segments like _Quizzes, SmartFeeds, Coachings,_ and _Surveys_ to the module.
 
 [![](/img/learning/helpscout-image-6228e983.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601501a32042ff6d1b2a8dfd/file-5IdhDtXBzK.png)
 
@@ -51,7 +51,7 @@ To proceed further, _click_ on the **'Add Segment'** _button_ at the _top right 
 
 **1\.** **Creating a Segment:**
 
-To create a segment, _choose_ the appropriate option inÂ**'Select Segment Type'**, _enter_ the **'Name'** for the segment and click on the **'Create'** button.
+To create a segment, _choose_ the appropriate option in **'Select Segment Type'**, _enter_ the **'Name'** for the segment and click on the **'Create'** button.
 
 [![](/img/learning/helpscout-image-36225d9c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60153205ac2f834ec5383776/file-Hy8HNmZA4u.png)
 
@@ -83,11 +83,11 @@ It will get displayed in a module as shown in the screenshot below:
 
 [![](/img/learning/helpscout-image-16ce30a1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601553931f25b9041beb99d1/file-3LkZR31WsW.png)
 
-You can add multiple segments to a module.ÂYou canÂ_click_Âon theÂ**'Reorder Segments'**Âbutton at the top right corner to re-order the segments in modules.
+You can add multiple segments to a module. You can _click_ on the **'Reorder Segments'** button at the top right corner to re-order the segments in modules.
 
 **[](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601533951f25b9041beb99a8/file-0ELs6SQEjv.png)[![](/img/learning/helpscout-image-927e130e.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601534b4a4cefb30ae5c5913/file-9Rw5FWwxi1.png)**
 
-**_You can drag and drop the segments in order to re-order them._ÂOnce you are done re-ordering, _click_ on the **'Done'** button.**
+**_You can drag and drop the segments in order to re-order them._ Once you are done re-ordering, _click_ on the **'Done'** button.**
 
 **[![](/img/learning/helpscout-image-66020252.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601535f71f25b9041beb99aa/file-sa6wrxnuIe.png)**
 
@@ -97,26 +97,26 @@ You can add multiple segments to a module.ÂYou canÂ_click_Âon theÂ**'Reorder Seg
 
 **_For example, you could choose to give access to the next segment in the module depending on:_**
 
-***   _If the previous segment is completed or not_
+*** _If the previous segment is completed or not_
 
 * _On a particular date_
 * _And, if the participant has scored a certain threshold score in the previous segment_**
 
 **_Please note that the rules can be applied only from the second segment of a segment_**
 
-**To apply rules, _click_ on the **'Manage Rules'**Âbutton that is beside each segment. It opens the following pop-up:**
+**To apply rules, _click_ on the **'Manage Rules'** button that is beside each segment. It opens the following pop-up:**
 
 **[![](/img/learning/helpscout-image-135d95f0.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60153e24ac2f834ec538378c/file-StawLcg2XI.png)**
 
-****1.ÂDay Wise:**ÂIf you select the**'****Type'**ÂasÂ_Day Wise_, then you have to select a day and time at which the segment can be accessed. Once you enter these details, _click_ on the**'****Add Rule**' button to add the segment successfully.**
+****1. Day Wise:** If you select the**'****Type'** as _Day Wise_, then you have to select a day and time at which the segment can be accessed. Once you enter these details, _click_ on the**'****Add Rule**' button to add the segment successfully.**
 
 **[![](/img/learning/helpscout-image-ace1e2e8.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601542a71f25b9041beb99b9/file-kHSoB0CJlr.png)**
 
-****2\. On Completion:**ÂIf you select **'On Completion'**, _you have to select a segment_. _Only upon completion of this segment, the participants will be able to access the next segment._ _Click_ on **'Add Rule'** once done.**
+****2\. On Completion:** If you select **'On Completion'**, _you have to select a segment_. _Only upon completion of this segment, the participants will be able to access the next segment._ _Click_ on **'Add Rule'** once done.**
 
 **[![](/img/learning/helpscout-image-35f2cd6c.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015391cac2f834ec5383783/file-PmOern9Ttb.png)**
 
-****3\. By Score:**ÂIf you select this option, you have to choose a segment inÂ_Segments_Âand set criteria.ÂYou can _set aÂScore_Âand _aÂComparator_Â\-Â_**'Less Than'**, **'Greater Than'**, **'Equal To'**._**
+****3\. By Score:** If you select this option, you have to choose a segment in _Segments_ and set criteria. You can _set a Score_ and _a Comparator_ \- _**'Less Than'**, **'Greater Than'**, **'Equal To'**._**
 
 **_Only upon achieving the threshold score that is set for this segment, the participant will be able to access the next segment._**
 

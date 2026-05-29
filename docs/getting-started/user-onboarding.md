@@ -14,7 +14,7 @@ Welcome to SmartWinnr! As a user, you'll be using SmartWinnr to learn, take asse
 ### **What You'll Be Doing**
 
 - **Learning on Mobile**: Access content anytime, anywhere through the mobile app
-- **Taking Quizzes**: Complete assessments to test and reinforce your knowledge  
+- **Taking Quizzes**: Complete assessments to test and reinforce your knowledge
 - **Consuming Content**: Read SmartFeeds and follow SmartPaths for structured learning
 - **Participating in Competitions**: Join challenges and compete with peers
 - **Tracking Progress**: Monitor your learning journey and achievements
@@ -45,7 +45,7 @@ Your administrator should have provided you with:
 - Organization code (if required)
 :::
 
-**Need help with login?**  [Account Setup & Login Guide](./account-setup-login.md)
+**Need help with login?** [Account Setup & Login Guide](./account-setup-login.md)
 
 ## Step 2: Complete Your Profile
 
@@ -60,11 +60,11 @@ Your administrator should have provided you with:
 ### **Customize Your Experience**
 
 - **Theme**: Choose between light and dark modes
-- **Mobile Settings**: Configure offline download preferences  
+- **Mobile Settings**: Configure offline download preferences
 - **Notification Schedule**: Set quiet hours and reminder preferences
 - **Accessibility**: Adjust font sizes and contrast if needed
 
-**Need help with settings?**  [Profile & Settings Guide](./profile-settings.md)
+**Need help with settings?** [Profile & Settings Guide](./profile-settings.md)
 
 ## Step 3: Explore Your Dashboard
 
@@ -93,7 +93,7 @@ Your dashboard shows:
 - Achievement celebrations and badges earned
 - Team announcements and updates
 
-**Ready to navigate?**  [Mobile App Navigation Guide](../user-guide/mobile-app-navigation.md)
+**Ready to navigate?** [Mobile App Navigation Guide](../user-guide/mobile-app-navigation.md)
 
 ## Step 4: Take Your First Assessment
 
@@ -119,7 +119,7 @@ Your dashboard shows:
 - **Progress Tracking**: View how this fits your learning journey
 - **Celebrate**: Acknowledge your completion!
 
-**Need quiz help?**  [Taking Assessments Guide](../user-guide/taking-assessments.md)
+**Need quiz help?** [Taking Assessments Guide](../user-guide/taking-assessments.md)
 
 ## Step 5: Engage with Learning Content
 
@@ -147,13 +147,13 @@ SmartPaths are structured learning journeys:
 
 Your searchable resource library:
 
-1. **Search Content**: Find specific information quickly  
+1. **Search Content**: Find specific information quickly
 2. **Browse Categories**: Explore organized content folders
 3. **Download**: Save content for offline access
 4. **Bookmark**: Mark frequently used resources
 5. **View Analytics**: See what content is popular
 
-**Ready to learn?**  [Accessing Learning Content Guide](../user-guide/accessing-learning-content.md)
+**Ready to learn?** [Accessing Learning Content Guide](../user-guide/accessing-learning-content.md)
 
 ## Step 6: Join Your First Competition
 
@@ -192,7 +192,7 @@ Track your learning journey with:
 **Performance Metrics**
 
 - Quiz scores and improvement trends
-- Content consumption and engagement rates  
+- Content consumption and engagement rates
 - Learning streak and consistency
 - Time spent learning each week
 - Goal progress and achievement rates
@@ -216,7 +216,7 @@ Track your learning journey with:
 ### **Using Analytics for Growth**
 
 - **Set Learning Goals**: Use data to establish targets
-- **Identify Patterns**: Understand when and how you learn best  
+- **Identify Patterns**: Understand when and how you learn best
 - **Build on Strengths**: Leverage areas where you excel
 - **Address Gaps**: Focus on improvement areas
 - **Celebrate Progress**: Acknowledge your achievements
@@ -230,7 +230,7 @@ Track your learning journey with:
 - Explore dashboard and navigation
 - Take your first quiz
 
-### **Day 3-4: Learning Engagement**  
+### **Day 3-4: Learning Engagement**
 
 - Browse and engage with SmartFeeds
 - Start your first SmartPath
@@ -266,7 +266,7 @@ Track your learning journey with:
 
 - **Check Analytics Regularly**: Monitor your learning trends
 - **Set Realistic Goals**: Establish achievable targets
-- **Build on Success**: Use strengths to tackle challenging areas  
+- **Build on Success**: Use strengths to tackle challenging areas
 - **Seek Help**: Ask managers or peers when you need support
 - **Celebrate Achievements**: Acknowledge your progress and milestones
 
@@ -292,7 +292,7 @@ You're all set to begin your SmartWinnr experience! Remember that learning is a 
 
 - **Learn Continuously**: Make learning a daily habit
 - **Stay Focused**: Align your learning with your career goals
-- **Connect with Others**: Learn from and with your colleagues  
+- **Connect with Others**: Learn from and with your colleagues
 - **Track Progress**: Use analytics to guide your development
 - **Celebrate Success**: Acknowledge every achievement along the way
 

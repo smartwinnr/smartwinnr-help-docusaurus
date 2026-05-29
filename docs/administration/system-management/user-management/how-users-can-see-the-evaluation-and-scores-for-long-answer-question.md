@@ -4,12 +4,12 @@ description: ""
 slug: how-users-can-see-the-evaluation-and-scores-for-long-answer-question
 sidebar_position: 261
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60f9c51c6ffe270af2a91817
 helpscout_url: https://help.smartwinnr.com/article/261-how-users-can-see-the-evaluation-and-scores-for-long-answer-question
 ---
-* Once the evaluation is completed, the evaluator will give points for each question based on your responses. ThenÂthe score will be available toÂyou on the leaderboard. Based on the score, a particular rank will be awarded to you.
+* Once the evaluation is completed, the evaluator will give points for each question based on your responses. Then the score will be available to you on the leaderboard. Based on the score, a particular rank will be awarded to you.
 
 ![](/img/admin/helpscout-image-aedb4f3c.png)
 

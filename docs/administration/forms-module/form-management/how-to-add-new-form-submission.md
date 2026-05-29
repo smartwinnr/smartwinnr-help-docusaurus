@@ -4,8 +4,8 @@ description: ""
 slug: how-to-add-new-form-submission
 sidebar_position: 247
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60b77f6d9c887a0dfc555ad2
 helpscout_url: https://help.smartwinnr.com/article/247-how-to-add-new-form-submission
 ---
@@ -21,7 +21,7 @@ Fill up the form title and description and set up the duration of the form. You 
 
 ![](/img/admin/helpscout-image-3efbe2c6.jpg)
 
-**Is Edit Allowed**\-ÂBy enabling this will allow the manager to make changes after approving any form submission.
+**Is Edit Allowed**\- By enabling this will allow the manager to make changes after approving any form submission.
 
 **Needs Approval**\- Enabling this will allow the manager to approve the submission before getting evaluated.
 

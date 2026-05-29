@@ -4,8 +4,8 @@ description: ""
 slug: how-to-embed-a-link-into-the-question
 sidebar_position: 66
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4be483d1d2a5b1c5ea19b
 helpscout_url: https://help.smartwinnr.com/article/66-how-to-embed-a-link-into-the-question
 ---

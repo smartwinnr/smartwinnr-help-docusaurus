@@ -4,14 +4,14 @@ description: ""
 slug: how-to-add-the-scorecard-to-leaderboard
 sidebar_position: 238
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60a5315013fd125a39b45357
 helpscout_url: https://help.smartwinnr.com/article/238-how-to-add-the-scorecard-leaderboard
 ---
 Here are the steps to add a scorecard leaderboard to a competition:
 
-1\. Go to the left side menu, select the competitions underÂGAMIFICATION AND ENGAGEMENT
+1\. Go to the left side menu, select the competitions under GAMIFICATION AND ENGAGEMENT
 
 2\. Select the competition in which you want to add the scorecard leaderboard.
 

@@ -75,7 +75,7 @@ Navigate to view and manage your assessments:
 - **Browse Categories**: Explore organized content folders
 - **Intelligent Search**: Find documents, videos, and resources quickly
 - **Download**: Save content for offline access
-- **� Recent & Trending**: Discover popular and newly added content
+- **Recent & Trending**: Discover popular and newly added content
 
 ### **Competitions Section**
 
@@ -138,7 +138,7 @@ Navigate to view and manage your assessments:
 
 **Managing Notifications**
 
-1. Go to **Settings**  **Notifications**
+1. Go to **Settings** > **Notifications**
 2. Toggle notification types on/off
 3. Set quiet hours if desired
 4. Choose notification sounds and vibration preferences

@@ -4,8 +4,8 @@ description: ""
 slug: what-are-chat-groups
 sidebar_position: 152
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdaf5650b11ce44f6393174
 helpscout_url: https://help.smartwinnr.com/article/152-what-are-chat-groups
 ---

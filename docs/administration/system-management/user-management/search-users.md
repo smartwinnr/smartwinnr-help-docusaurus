@@ -4,8 +4,8 @@ description: ""
 slug: search-users
 sidebar_position: 122
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda509f27288b7f895d61ff
 helpscout_url: https://help.smartwinnr.com/article/122-search-users
 ---

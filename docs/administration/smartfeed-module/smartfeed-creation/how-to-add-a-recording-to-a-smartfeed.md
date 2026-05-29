@@ -4,8 +4,8 @@ description: ""
 slug: how-to-add-a-recording-to-a-smartfeed
 sidebar_position: 239
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60a60efceb3af44cc120a91b
 helpscout_url: https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed
 ---
@@ -13,7 +13,7 @@ Only the user with the EDITOR role can add the SmartFeed into Smartwinnr.
 
 Login to SmartWinnr Backend Portal.
 
-Go toÂEDITOR >ÂLEARNING AND KNOWLEDGE >ÂSmartFeeds > View All SmartFeeds.
+Go to EDITOR > LEARNING AND KNOWLEDGE > SmartFeeds > View All SmartFeeds.
 
 It will open the following page:
 

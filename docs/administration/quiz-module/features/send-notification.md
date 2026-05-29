@@ -3,8 +3,8 @@ title: "How to Send a Quiz Notification"
 description: "Step-by-step guide to sending notifications to users about a quiz."
 sidebar_position: 3
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

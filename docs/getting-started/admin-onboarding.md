@@ -67,7 +67,7 @@ Your SmartWinnr implementation specialist should have helped with initial setup,
 **Essential Configurations**
 
 - Company profile and branding
-- User roles and permissions structure  
+- User roles and permissions structure
 - Email server and notification settings
 - Security policies and password requirements
 - Data retention and privacy settings
@@ -114,7 +114,7 @@ Administrators**
 
 - Full system access and configuration
 - User and role management
-- System analytics and reporting  
+- System analytics and reporting
 - Security and compliance management
 
 ### **Setting Up Your First Users**
@@ -133,7 +133,7 @@ Administrators**
 - **Role Clarity**: Ensure users understand their roles and available features
 - **Communication**: Keep users informed about system changes and updates
 
-**Need user management help?**  [User Management Guide](../
+**Need user management help?** [User Management Guide](../
 > **Note**: This feature requires Administrator permissions.
 
 admin/index.md)
@@ -230,7 +230,7 @@ administrative functions
 - **User Activity**: Recent user actions and engagement levels
 - **Trend Indicators**: Performance changes and emerging patterns
 
-**Need analytics help?**  [Analytics and Reporting Guide](../reports/index.md)
+**Need analytics help?** [Analytics and Reporting Guide](../reports/index.md)
 
 ## Step 5: Security and Compliance
 
@@ -454,7 +454,7 @@ administer SmartWinnr for your organization! Remember that great
 administration focuses on:
 
 - **User Success**: Everything you do should ultimately support user learning and achievement
-- **Data-Driven Optimization**: Use analytics to continuously improve the platform experience  
+- **Data-Driven Optimization**: Use analytics to continuously improve the platform experience
 - **Security First**: Always prioritize data protection and system security
 - **Continuous Improvement**: Regularly review and enhance your configuration
 - **Stakeholder Support**: Serve as the bridge between technical capabilities and business needs

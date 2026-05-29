@@ -4,14 +4,14 @@ description: ""
 slug: how-to-delete-a-survey
 sidebar_position: 287
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 64ec366fab3ec13db0b391bd
 helpscout_url: https://help.smartwinnr.com/article/287-how-to-delete-a-survey
 ---
 Follow the below steps to delete a survey through SmartWinnr.
 
-Go to **Editor >ÂLEARNING AND KNOWLEDGE >Surveys**. Click on the you want to delete.
+Go to **Editor > LEARNING AND KNOWLEDGE >Surveys**. Click on the you want to delete.
 
 ![](/img/surveys/helpscout-image-d5a03077.png)
 

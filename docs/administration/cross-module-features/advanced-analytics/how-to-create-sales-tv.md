@@ -4,8 +4,8 @@ description: ""
 slug: how-to-create-sales-tv
 sidebar_position: 249
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60b9e109fd393f6bf704a9f2
 helpscout_url: https://help.smartwinnr.com/article/249-how-to-create-sales-tv
 ---
@@ -23,7 +23,7 @@ Enter the title and description and select the required Business unit and Status
 
 ![](/img/reports/helpscout-image-a6a61790.jpg)
 
-You can select theÂ**Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
+You can select the **Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
 
 Leaderboards show you the data of a quiz or a competition to motivate users to perform greatly.
 

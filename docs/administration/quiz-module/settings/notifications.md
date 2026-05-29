@@ -3,8 +3,8 @@ title: "Notification & Communication Settings"
 description: "Configure notification and email settings for quizzes in the Quiz module."
 sidebar_position: 5
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

@@ -3,8 +3,8 @@ title: "Quiz Quick Actions"
 description: "Guide to quick actions available from the quiz view menu: delete, archive, download logs, and more."
 sidebar_position: 10
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

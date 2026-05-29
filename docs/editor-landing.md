@@ -16,23 +16,23 @@ Welcome to your content creation command center! As an editor or trainer, you're
 Design engaging assessments that test knowledge and drive learning outcomes.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Quiz Builder</h3>
-    <p>Create interactive quizzes with 10+ question types, immediate feedback, and detailed analytics.</p>
-    <p><a href="/quiz/creating-quiz">Create Your First Quiz </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Question Bank</h3>
-    <p>Build reusable question libraries, import from templates, and collaborate with other creators.</p>
-    <p><a href="/quiz/managing-questions">Manage Questions </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Assessment Analytics</h3>
-    <p>Analyze question performance, identify difficult concepts, and optimize for better learning.</p>
-    <p><a href="/quiz/quiz-reports">View Quiz Reports </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Quiz Builder</h3>
+ <p>Create interactive quizzes with 10+ question types, immediate feedback, and detailed analytics.</p>
+ <p><a href="/quiz/creating-quiz">Create Your First Quiz </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Question Bank</h3>
+ <p>Build reusable question libraries, import from templates, and collaborate with other creators.</p>
+ <p><a href="/quiz/managing-questions">Manage Questions </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Assessment Analytics</h3>
+ <p>Analyze question performance, identify difficult concepts, and optimize for better learning.</p>
+ <p><a href="/quiz/quiz-reports">View Quiz Reports </a></p>
+ </div>
 </div>
 
 ### **Learning Content Development**
@@ -40,23 +40,23 @@ Design engaging assessments that test knowledge and drive learning outcomes.
 Create engaging learning materials that stick and drive real-world application.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>SmartFeeds</h3>
-    <p>Design bite-sized learning content for mobile consumption and social engagement.</p>
-    <p><a href="/learning/how-to-create-a-smartfeed">Create SmartFeeds </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>SmartPaths</h3>
-    <p>Build structured learning journeys with progressive skill development and checkpoints.</p>
-    <p><a href="/learning/how-to-create-a-smartpath">Design Learning Paths </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Knowledge Hub</h3>
-    <p>Organize resources, create searchable libraries, and manage content lifecycles.</p>
-    <p><a href="/learning/how-can-i-create-folders-and-items-in-khub">Build Knowledge Hub </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>SmartFeeds</h3>
+ <p>Design bite-sized learning content for mobile consumption and social engagement.</p>
+ <p><a href="/learning/how-to-create-a-smartfeed">Create SmartFeeds </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>SmartPaths</h3>
+ <p>Build structured learning journeys with progressive skill development and checkpoints.</p>
+ <p><a href="/learning/how-to-create-a-smartpath">Design Learning Paths </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Knowledge Hub</h3>
+ <p>Organize resources, create searchable libraries, and manage content lifecycles.</p>
+ <p><a href="/learning/how-can-i-create-folders-and-items-in-khub">Build Knowledge Hub </a></p>
+ </div>
 </div>
 
 ### **Competition & Gamification**
@@ -64,23 +64,23 @@ Create engaging learning materials that stick and drive real-world application.
 Drive engagement through challenges, competitions, and achievement systems.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Competition Design</h3>
-    <p>Create individual and team challenges that motivate learning and performance.</p>
-    <p><a href="/competitions/how-to-create-an-individual-challenge">Setup Competitions </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Badges & Rewards</h3>
-    <p>Design achievement systems that recognize progress and celebrate success.</p>
-    <p><a href="/competitions/how-to-create-badges">Create Badges </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>KPI Gamification</h3>
-    <p>Transform performance metrics into engaging challenges and leaderboards.</p>
-    <p><a href="/competitions/what-is-kpi-gamification">Gamify KPIs </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Competition Design</h3>
+ <p>Create individual and team challenges that motivate learning and performance.</p>
+ <p><a href="/competitions/how-to-create-an-individual-challenge">Setup Competitions </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Badges & Rewards</h3>
+ <p>Design achievement systems that recognize progress and celebrate success.</p>
+ <p><a href="/competitions/how-to-create-badges">Create Badges </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>KPI Gamification</h3>
+ <p>Transform performance metrics into engaging challenges and leaderboards.</p>
+ <p><a href="/competitions/what-is-kpi-gamification">Gamify KPIs </a></p>
+ </div>
 </div>
 
 ## Quick Start Guide
@@ -93,18 +93,18 @@ Drive engagement through challenges, competitions, and achievement systems.
 4. **Review Analytics**: Check how learners engage with your content
 5. **Iterate & Improve**: Use data to refine your approach
 
-**Get Started**  [Editor Onboarding Guide](./getting-started/editor-onboarding)
+**Get Started** [Editor Onboarding Guide](./getting-started/editor-onboarding)
 
 ### **Content Creation Workflow**
 
 ```mermaid
 graph LR
-    A[Plan Content] --> B[Create Draft]
-    B --> C[Review & Test]
-    C --> D[Publish]
-    D --> E[Monitor Analytics]
-    E --> F[Optimize]
-    F --> A
+ A[Plan Content] --> B[Create Draft]
+ B --> C[Review & Test]
+ C --> D[Publish]
+ D --> E[Monitor Analytics]
+ E --> F[Optimize]
+ F --> A
 ```
 
 ## Content Performance Dashboard
@@ -120,23 +120,23 @@ graph LR
 ### **Analytics Deep Dive**
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Content Analytics</h3>
-    <p>Track individual content piece performance and learner engagement patterns.</p>
-    <p><a href="/learning/how-to-view-smartfeed-analytics">View Content Analytics </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Quiz Performance</h3>
-    <p>Analyze question-level data, identify knowledge gaps, and optimize difficulty.</p>
-    <p><a href="/quiz/detailed-quiz-analytics">Deep Dive Quiz Analytics </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Competition Metrics</h3>
-    <p>Monitor participation rates, engagement levels, and achievement distribution.</p>
-    <p><a href="/competitions/leaderboards-of-a-competition">Competition Analytics </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Content Analytics</h3>
+ <p>Track individual content piece performance and learner engagement patterns.</p>
+ <p><a href="/learning/how-to-view-smartfeed-analytics">View Content Analytics </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Quiz Performance</h3>
+ <p>Analyze question-level data, identify knowledge gaps, and optimize difficulty.</p>
+ <p><a href="/quiz/detailed-quiz-analytics">Deep Dive Quiz Analytics </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Competition Metrics</h3>
+ <p>Monitor participation rates, engagement levels, and achievement distribution.</p>
+ <p><a href="/competitions/leaderboards-of-a-competition">Competition Analytics </a></p>
+ </div>
 </div>
 
 ## Advanced Creator Features
@@ -193,23 +193,23 @@ graph LR
 ### **Professional Development**
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Creation Guides</h3>
-    <p>Comprehensive tutorials for all content types and advanced features.</p>
-    <p><a href="/quiz/index">Quiz Creation </a> | <a href="/learning/index">Learning Content </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Best Practices</h3>
-    <p>Learn from successful implementations and industry-leading approaches.</p>
-    <p><a href="/competitions/understand-game-concepts">Gamification </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Community</h3>
-    <p>Connect with other creators, share strategies, and collaborate on innovation.</p>
-    <p><a href="mailto:support@smartwinnr.com">Join Creator Network </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Creation Guides</h3>
+ <p>Comprehensive tutorials for all content types and advanced features.</p>
+ <p><a href="/quiz/index">Quiz Creation </a> | <a href="/learning/index">Learning Content </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Best Practices</h3>
+ <p>Learn from successful implementations and industry-leading approaches.</p>
+ <p><a href="/competitions/understand-game-concepts">Gamification </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Community</h3>
+ <p>Connect with other creators, share strategies, and collaborate on innovation.</p>
+ <p><a href="mailto:support@smartwinnr.com">Join Creator Network </a></p>
+ </div>
 </div>
 
 ### **Technical Support**
@@ -271,7 +271,7 @@ graph LR
 Your content shapes how thousands of learners grow and succeed. Every quiz question, SmartFeed post, and learning path you create has the power to:
 
 - **Build Knowledge**: Transfer critical information effectively
-- **Develop Skills**: Create competencies that drive performance  
+- **Develop Skills**: Create competencies that drive performance
 - **Change Behavior**: Influence actions and decision-making
 - **Inspire Growth**: Motivate continuous learning and development
 - **Drive Results**: Connect learning to business outcomes
@@ -279,7 +279,7 @@ Your content shapes how thousands of learners grow and succeed. Every quiz quest
 **Start creating today** and make a lasting impact on your organization's learning journey!
 
 <div className="feature-card" style={{textAlign: 'center', marginTop: '2rem'}}>
-  <h3>Begin Your Content Creation Journey</h3>
-  <p>Ready to design learning experiences that matter?</p>
-  <p><a href="/getting-started/editor-onboarding" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>Get Started Now </a></p>
+ <h3>Begin Your Content Creation Journey</h3>
+ <p>Ready to design learning experiences that matter?</p>
+ <p><a href="/getting-started/editor-onboarding" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>Get Started Now </a></p>
 </div>

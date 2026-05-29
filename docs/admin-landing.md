@@ -17,23 +17,23 @@ Welcome to your SmartWinnr command center! As an administrator, you're the strat
 Control who has access to what, ensuring security while enabling productivity.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>User Management</h3>
-    <p>Create, configure, and manage user accounts with role-based permissions and bulk operations.</p>
-    <p><a href="/admin/create-users-individually">Manage Users </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Organization Setup</h3>
-    <p>Configure company structure, departments, teams, and reporting hierarchies.</p>
-    <p><a href="/admin/how-to-add-a-new-division">Setup Organization </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Security & Permissions</h3>
-    <p>Manage access controls, password policies, and security configurations.</p>
-    <p><a href="/admin/manage-password-policy">Security Settings </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>User Management</h3>
+ <p>Create, configure, and manage user accounts with role-based permissions and bulk operations.</p>
+ <p><a href="/admin/create-users-individually">Manage Users </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Organization Setup</h3>
+ <p>Configure company structure, departments, teams, and reporting hierarchies.</p>
+ <p><a href="/admin/how-to-add-a-new-division">Setup Organization </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Security & Permissions</h3>
+ <p>Manage access controls, password policies, and security configurations.</p>
+ <p><a href="/admin/manage-password-policy">Security Settings </a></p>
+ </div>
 </div>
 
 ### **System Configuration**
@@ -41,23 +41,23 @@ Control who has access to what, ensuring security while enabling productivity.
 Fine-tune platform settings for optimal performance and user experience.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Branding & Customization</h3>
-    <p>Configure company branding, themes, and visual customizations across the platform.</p>
-    <p><a href="/admin/how-to-change-company-logo">Brand Configuration </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Notifications & Communications</h3>
-    <p>Set up automated notifications, email templates, and communication workflows.</p>
-    <p><a href="/admin/custom-notifications">Manage Notifications </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Integration Management</h3>
-    <p>Configure connections with HR systems, LMS platforms, and third-party tools.</p>
-    <p><a href="/admin/advanced-options-for-projects">Setup Integrations </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Branding & Customization</h3>
+ <p>Configure company branding, themes, and visual customizations across the platform.</p>
+ <p><a href="/admin/how-to-change-company-logo">Brand Configuration </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Notifications & Communications</h3>
+ <p>Set up automated notifications, email templates, and communication workflows.</p>
+ <p><a href="/admin/custom-notifications">Manage Notifications </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Integration Management</h3>
+ <p>Configure connections with HR systems, LMS platforms, and third-party tools.</p>
+ <p><a href="/admin/advanced-options-for-projects">Setup Integrations </a></p>
+ </div>
 </div>
 
 ### **Analytics & Insights**
@@ -65,23 +65,23 @@ Fine-tune platform settings for optimal performance and user experience.
 Monitor system performance and gain insights into organizational learning patterns.
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>System Analytics</h3>
-    <p>Track platform usage, performance metrics, and organizational learning trends.</p>
-    <p><a href="/reports/detailed-explanation-of-reports">View System Reports </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>User Activity</h3>
-    <p>Monitor user engagement, login patterns, and platform adoption across teams.</p>
-    <p><a href="/reports/user-login-reports">Track User Activity </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Performance Monitoring</h3>
-    <p>Track resource usage, system health, and optimize platform performance.</p>
-    <p><a href="/admin/how-to-track-my-organizational-resource-usage">Monitor Resources </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>System Analytics</h3>
+ <p>Track platform usage, performance metrics, and organizational learning trends.</p>
+ <p><a href="/reports/detailed-explanation-of-reports">View System Reports </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>User Activity</h3>
+ <p>Monitor user engagement, login patterns, and platform adoption across teams.</p>
+ <p><a href="/reports/user-login-reports">Track User Activity </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Performance Monitoring</h3>
+ <p>Track resource usage, system health, and optimize platform performance.</p>
+ <p><a href="/admin/how-to-track-my-organizational-resource-usage">Monitor Resources </a></p>
+ </div>
 </div>
 
 ## Quick Start Guide
@@ -94,18 +94,18 @@ Monitor system performance and gain insights into organizational learning patter
 4. **Analytics Review**: Set up dashboards and reporting schedules
 5. **System Optimization**: Fine-tune settings for your organization
 
-**Get Started**  [Administrator Onboarding Guide](./getting-started/admin-onboarding)
+**Get Started** [Administrator Onboarding Guide](./getting-started/admin-onboarding)
 
 ### **Administrative Workflow**
 
 ```mermaid
 graph TD
-    A[System Health Check] --> B[User Management]
-    B --> C[Performance Review]
-    C --> D[Configuration Updates]
-    D --> E[Security Audit]
-    E --> F[Stakeholder Reports]
-    F --> A
+ A[System Health Check] --> B[User Management]
+ B --> C[Performance Review]
+ C --> D[Configuration Updates]
+ D --> E[Security Audit]
+ E --> F[Stakeholder Reports]
+ F --> A
 ```
 
 ## System Health Dashboard
@@ -121,23 +121,23 @@ graph TD
 ### **Administrative Analytics**
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Executive Dashboard</h3>
-    <p>High-level metrics and KPIs for leadership reporting and strategic planning.</p>
-    <p><a href="/reports/widgets">Executive Reports </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>User Insights</h3>
-    <p>Detailed user behavior analytics, adoption patterns, and engagement trends.</p>
-    <p><a href="/admin/search-users">User Analytics </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Audit Trail</h3>
-    <p>Complete activity logs, security events, and compliance tracking.</p>
-    <p><a href="/admin/how-to-view-an-audit-log">View Audit Logs </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Executive Dashboard</h3>
+ <p>High-level metrics and KPIs for leadership reporting and strategic planning.</p>
+ <p><a href="/reports/widgets">Executive Reports </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>User Insights</h3>
+ <p>Detailed user behavior analytics, adoption patterns, and engagement trends.</p>
+ <p><a href="/admin/search-users">User Analytics </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Audit Trail</h3>
+ <p>Complete activity logs, security events, and compliance tracking.</p>
+ <p><a href="/admin/how-to-view-an-audit-log">View Audit Logs </a></p>
+ </div>
 </div>
 
 ## Advanced Administrative Features
@@ -197,23 +197,23 @@ graph TD
 ### **Administrator Training**
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Documentation Hub</h3>
-    <p>Complete guides for all administrative functions and system configurations.</p>
-    <p><a href="/admin/index">Admin Documentation </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Technical Guides</h3>
-    <p>In-depth technical documentation for integrations and advanced configurations.</p>
-    <p><a href="/troubleshooting/index">Technical Support </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Admin Community</h3>
-    <p>Connect with other SmartWinnr administrators and share best practices.</p>
-    <p><a href="mailto:admin-support@smartwinnr.com">Admin Network </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Documentation Hub</h3>
+ <p>Complete guides for all administrative functions and system configurations.</p>
+ <p><a href="/admin/index">Admin Documentation </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Technical Guides</h3>
+ <p>In-depth technical documentation for integrations and advanced configurations.</p>
+ <p><a href="/troubleshooting/index">Technical Support </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Admin Community</h3>
+ <p>Connect with other SmartWinnr administrators and share best practices.</p>
+ <p><a href="mailto:admin-support@smartwinnr.com">Admin Network </a></p>
+ </div>
 </div>
 
 ### **Support & Escalation**
@@ -249,23 +249,23 @@ graph TD
 ### **Regulatory Compliance**
 
 <div className="cards-grid">
-  <div className="feature-card">
-    <h3>Data Privacy</h3>
-    <p>GDPR, CCPA, and other privacy regulation compliance tools and reporting.</p>
-    <p><a href="/admin/changing-updating-configuration-for-an-organization">Privacy Settings </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Audit & Reporting</h3>
-    <p>Comprehensive audit trails and compliance reporting for regulatory requirements.</p>
-    <p><a href="/admin/how-to-view-an-audit-log">Compliance Reports </a></p>
-  </div>
-  
-  <div className="feature-card">
-    <h3>Security Standards</h3>
-    <p>Industry security standards implementation and monitoring.</p>
-    <p><a href="/admin/manage-password-policy">Security Compliance </a></p>
-  </div>
+ <div className="feature-card">
+ <h3>Data Privacy</h3>
+ <p>GDPR, CCPA, and other privacy regulation compliance tools and reporting.</p>
+ <p><a href="/admin/changing-updating-configuration-for-an-organization">Privacy Settings </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Audit & Reporting</h3>
+ <p>Comprehensive audit trails and compliance reporting for regulatory requirements.</p>
+ <p><a href="/admin/how-to-view-an-audit-log">Compliance Reports </a></p>
+ </div>
+
+ <div className="feature-card">
+ <h3>Security Standards</h3>
+ <p>Industry security standards implementation and monitoring.</p>
+ <p><a href="/admin/manage-password-policy">Security Compliance </a></p>
+ </div>
 </div>
 
 ### **Data Governance**
@@ -319,14 +319,14 @@ As a SmartWinnr administrator, you're not just managing a systemyou're enabling 
 Your administrative excellence creates the foundation for organizational success through learning!
 
 <div className="feature-card" style={{textAlign: 'center', marginTop: '2rem'}}>
-  <h3>Master SmartWinnr Administration</h3>
-  <p>Ready to optimize your organization's learning platform?</p>
-  <p><a href="/getting-started/admin-onboarding" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>Start Your Admin Journey </a></p>
+ <h3>Master SmartWinnr Administration</h3>
+ <p>Ready to optimize your organization's learning platform?</p>
+ <p><a href="/getting-started/admin-onboarding" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>Start Your Admin Journey </a></p>
 </div>
 
 ### **Administrator Emergency Contacts**
 
 - **Critical Issues**: [urgent-support@smartwinnr.com](mailto:urgent-support@smartwinnr.com)
-- **Security Incidents**: [security@smartwinnr.com](mailto:security@smartwinnr.com)  
+- **Security Incidents**: [security@smartwinnr.com](mailto:security@smartwinnr.com)
 - **Technical Support**: [admin-support@smartwinnr.com](mailto:admin-support@smartwinnr.com)
 - **Implementation**: [implementation@smartwinnr.com](mailto:implementation@smartwinnr.com)

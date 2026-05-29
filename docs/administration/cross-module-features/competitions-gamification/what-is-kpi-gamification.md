@@ -4,8 +4,8 @@ description: ""
 slug: what-is-kpi-gamification
 sidebar_position: 168
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb0bb6a5d295659b369c5d
 helpscout_url: https://help.smartwinnr.com/article/168-what-is-kpi-gamification
 ---

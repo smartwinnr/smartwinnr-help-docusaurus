@@ -3,8 +3,8 @@ title: "How to Export Questions From a Quiz"
 description: "Step-by-step guide to exporting questions from a quiz."
 sidebar_position: 7
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

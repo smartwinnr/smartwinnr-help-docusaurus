@@ -4,8 +4,8 @@ description: "Step-by-step guide to securely access your SmartWinnr mobile app a
 slug: login-to-smartwinnr-app
 sidebar_position: 10
 last_update:
-  date: 2025-08-14
-  author: Claude Code Assistant
+ date: 2025-08-14
+ author: Claude Code Assistant
 ---
 
 Access your SmartWinnr app quickly and securely by following these simple steps.

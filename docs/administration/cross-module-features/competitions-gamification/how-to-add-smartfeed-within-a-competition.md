@@ -4,8 +4,8 @@ description: ""
 slug: how-to-add-smartfeed-within-a-competition
 sidebar_position: 289
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 665cc161463661770bfb12d6
 helpscout_url: https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest
 ---
@@ -18,7 +18,7 @@ Steps:
 * To Create the SmartFeed as a task, selectthe option SmartFeedin the "Select Task" dropdown.
 * Give the name to the SmartFeed.
 * Check the checkbox Choose Participants Manually to manually select the participants of theSmartFeed. This should be used so that you can remove some users from the list.
-* Here, we can give points on comment, on like and on Completion as your wish for the SmartFeed.ÂThe corresponding points will be awarded to the users and will get added to the leaderboard when the users like, comment or watch the SmartFeed fully.
+* Here, we can give points on comment, on like and on Completion as your wish for the SmartFeed. The corresponding points will be awarded to the users and will get added to the leaderboard when the users like, comment or watch the SmartFeed fully.
 * And then click on the create button to get the SmartFeed created.
 
 ![](/img/competitions/helpscout-image-0bf49f9b.png)

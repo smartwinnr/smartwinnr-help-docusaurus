@@ -4,8 +4,8 @@ description: "Complete guide for managing your organizational knowledge reposito
 slug: knowledge-hub-khub
 sidebar_position: 3
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Knowledge Hub (KHub)
@@ -20,7 +20,7 @@ KHub can store and organize various types of content:
 
 - **Product Videos**: Demonstrations, training materials
 - **Installation Manuals**: Step-by-step guides
-- **Service Manuals**: Technical documentation  
+- **Service Manuals**: Technical documentation
 - **Sales Decks**: Presentation materials
 - **Training Videos**: Educational content
 - **Documents**: PDFs, Word documents, spreadsheets
@@ -68,10 +68,10 @@ KHub provides selective offline access to documents:
 1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > KHub**
 2. Click **"Create Folder"**
 3. Define folder properties:
-   - Folder name and description
-   - Access permissions
-   - Parent folder (if creating subfolders)
-   - Tags and categories
+ - Folder name and description
+ - Access permissions
+ - Parent folder (if creating subfolders)
+ - Tags and categories
 4. Set folder organization rules
 
 #### Adding Items to Folders
@@ -79,15 +79,15 @@ KHub provides selective offline access to documents:
 1. Open the target folder
 2. Click **"Add New Item"**
 3. Choose content type:
-   - Upload files (documents, videos, images)
-   - Create text-based content
-   - Add external links
-   - Import from other sources
+ - Upload files (documents, videos, images)
+ - Create text-based content
+ - Add external links
+ - Import from other sources
 4. Fill in item details:
-   - Title and description
-   - Tags and keywords
-   - Access permissions
-   - Update frequency
+ - Title and description
+ - Tags and keywords
+ - Access permissions
+ - Update frequency
 
 ### Editing KHub Content
 
@@ -96,10 +96,10 @@ KHub provides selective offline access to documents:
 1. Navigate to the folder you want to modify
 2. Click the **"Edit"** icon next to the folder name
 3. Update folder information:
-   - Change name or description
-   - Modify access permissions
-   - Adjust organization structure
-   - Update tags and categories
+ - Change name or description
+ - Modify access permissions
+ - Adjust organization structure
+ - Update tags and categories
 4. Save changes and notify users if needed
 
 #### Editing KHub Items
@@ -107,11 +107,11 @@ KHub provides selective offline access to documents:
 1. Locate the item to be edited
 2. Click on the **"Edit"** option
 3. Modify item properties:
-   - Update content files
-   - Change titles and descriptions  
-   - Adjust tags and keywords
-   - Modify access permissions
-   - Update version information
+ - Update content files
+ - Change titles and descriptions
+ - Adjust tags and keywords
+ - Modify access permissions
+ - Update version information
 4. Track changes and maintain version history
 
 ## Using KHub in the SmartWinnr App
@@ -144,11 +144,11 @@ Monitor content usage and effectiveness:
 
 1. Go to **KHub > Analytics**
 2. Access comprehensive metrics:
-   - **Content Views**: How often items are accessed
-   - **Popular Content**: Most-viewed documents and resources
-   - **User Engagement**: Time spent with different content types
-   - **Search Analytics**: What users are looking for
-   - **Download Statistics**: Offline content usage
+ - **Content Views**: How often items are accessed
+ - **Popular Content**: Most-viewed documents and resources
+ - **User Engagement**: Time spent with different content types
+ - **Search Analytics**: What users are looking for
+ - **Download Statistics**: Offline content usage
 
 ### Understanding Content Trends
 
@@ -165,7 +165,7 @@ KHub categorizes content to help users discover relevant materials:
 Track KHub success through:
 
 - **Content Utilization Rates**: Percentage of content being accessed
-- **Search Success Rate**: Whether users find what they're looking for  
+- **Search Success Rate**: Whether users find what they're looking for
 - **User Engagement Time**: How long people spend with content
 - **Content Feedback**: Ratings and comments from users
 - **Knowledge Gap Identification**: Areas where content is lacking
@@ -277,7 +277,7 @@ Protect sensitive information:
 - **Network Issues**: Verify stable internet connection
 - **Permission issues**: Confirm upload permissions for your role
 
-### Search Issues  
+### Search Issues
 
 - **Indexing Delays**: New content may take time to become searchable
 - **Search Terms**: Try different keywords or phrases

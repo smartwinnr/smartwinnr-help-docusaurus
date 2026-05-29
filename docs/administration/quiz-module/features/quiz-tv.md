@@ -3,8 +3,8 @@ title: "How to Use Quiz TV Display Mode"
 description: "Step-by-step guide to using the Quiz TV feature to display quiz results on a shared screen."
 sidebar_position: 8
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

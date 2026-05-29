@@ -71,7 +71,7 @@ Your manager dashboard provides:
 - Performance improvements and achievements
 - System updates and platform notifications
 
-**Need setup help?**  [Team Analytics Dashboard Guide](../manager-guide/team-analytics-dashboard.md)
+**Need setup help?** [Team Analytics Dashboard Guide](../manager-guide/team-analytics-dashboard.md)
 
 ## Step 2: Set Up Team Monitoring
 
@@ -108,7 +108,7 @@ Establish regular check-in schedules:
 - **Weekly Review (30 min)**: Analyze weekly trends and plan interventions
 - **Monthly Deep Dive (1-2 hours)**: Comprehensive performance analysis and strategic planning
 
-**Ready to monitor?**  [Monitoring Team Performance Guide](../manager-guide/monitoring-team-performance.md)
+**Ready to monitor?** [Monitoring Team Performance Guide](../manager-guide/monitoring-team-performance.md)
 
 ## Step 3: Assign Your First Content
 
@@ -146,7 +146,7 @@ You can assign various content types to your team:
 - **Clear Communication**: Explain why specific content was assigned
 - **Support Availability**: Let team know help is available
 
-**Ready to assign?**  [Assigning Content to Team Guide](../manager-guide/assigning-content-to-team.md)
+**Ready to assign?** [Assigning Content to Team Guide](../manager-guide/assigning-content-to-team.md)
 
 ## Step 4: Conduct Your First Coaching Session
 
@@ -196,7 +196,7 @@ Follow this framework for effective coaching:
 - **Collaborative Approach**: Work with team member to find solutions
 - **Track Progress**: Monitor improvement over time
 
-**Need coaching guidance?**  [Coaching Team Members Guide](../manager-guide/coaching-team-members.md)
+**Need coaching guidance?** [Coaching Team Members Guide](../manager-guide/coaching-team-members.md)
 
 ## Step 5: Create Your First Competition
 

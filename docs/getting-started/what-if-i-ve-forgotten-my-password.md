@@ -4,8 +4,8 @@ description: ""
 slug: what-if-i-ve-forgotten-my-password
 sidebar_position: 12
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fce1bf84664bd7a123eb447
 helpscout_url: https://help.smartwinnr.com/article/12-what-if-ive-forgotten-my-password
 ---
@@ -23,8 +23,8 @@ You will receive an email with a link to reset your password. Once you have rese
 
 **When the username is your mobile number:**
 
-You will receive an SMS from SmartWInnr with the new password for your account.ÂOnce you receive the new password, open the SmartWinnr apps login page, enter your mobile number as the username and the new password.
+You will receive an SMS from SmartWInnr with the new password for your account. Once you receive the new password, open the SmartWinnr apps login page, enter your mobile number as the username and the new password.
 
 **What if I did not receive the reset password link or SMS?**
 
-If you could not find the reset password email or SMS, you can either write to your system administrator or write toÂ[support@smartwinnr.com](mailto:support@smartwinnr.com)Âfor resetting your password.
+If you could not find the reset password email or SMS, you can either write to your system administrator or write to [support@smartwinnr.com](mailto:support@smartwinnr.com) for resetting your password.

@@ -4,8 +4,8 @@ description: ""
 slug: how-to-upload-audio-recording-for-coaching
 sidebar_position: 266
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 62a2fa1957320007925236d9
 helpscout_url: https://help.smartwinnr.com/article/266-how-to-record-audio-into-video-coaching
 ---

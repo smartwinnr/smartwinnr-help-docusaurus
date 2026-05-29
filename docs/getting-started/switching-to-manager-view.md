@@ -4,8 +4,8 @@ description: ""
 slug: switching-to-manager-view
 sidebar_position: 96
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd98ecb27288b7f895d5ddc
 helpscout_url: https://help.smartwinnr.com/article/96-quiz-report-for-managers
 ---
@@ -13,7 +13,7 @@ How To Enable Manager View In SmartWinnr
 
 If you have both manager and user roles, you will be able to access both in the SmartWinnr app and web view.
 
-ÂHere is how you do that:
+ Here is how you do that:
 
 1.Open the SmartWinnr app and click on the profile image at the top left corner. It will take you to the following screen:
 

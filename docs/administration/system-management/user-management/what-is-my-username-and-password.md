@@ -4,8 +4,8 @@ description: ""
 slug: what-is-my-username-and-password
 sidebar_position: 11
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fce0dce4664bd7a123eb3e2
 helpscout_url: https://help.smartwinnr.com/article/11-what-is-my-username-and-password
 ---

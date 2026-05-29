@@ -4,8 +4,8 @@ description: ""
 slug: how-to-send-quizzes-surveys-and-content-using-group
 sidebar_position: 130
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fda5620b624c71b7985a2d0
 helpscout_url: https://help.smartwinnr.com/article/130-how-to-send-quizzes-surveys-and-content-using-group
 ---

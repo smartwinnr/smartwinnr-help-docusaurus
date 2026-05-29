@@ -4,8 +4,8 @@ description: ""
 slug: define-kpis
 sidebar_position: 170
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb0c19a5d295659b369c5f
 helpscout_url: https://help.smartwinnr.com/article/170-define-kpis
 ---

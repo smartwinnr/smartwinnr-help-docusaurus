@@ -3,8 +3,8 @@ title: "Automatic Quiz Settings"
 description: "Configure automatic quiz delivery schedules, self-activation, and auto-mode options."
 sidebar_position: 7
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview
@@ -85,9 +85,9 @@ Automatic quiz settings control how quizzes are scheduled and delivered without 
 1. Open the quiz in **Edit** mode.
 2. Scroll to the **AutoMode Settings** section.
 3. Configure the following options:
-   - **Questions per delivery** — Number of questions sent in each automatic quiz.
-   - **Question pool rotation** — How the system cycles through available questions.
-   - **Delivery frequency** — How often quizzes are sent (daily, weekly, etc.).
+ - **Questions per delivery** — Number of questions sent in each automatic quiz.
+ - **Question pool rotation** — How the system cycles through available questions.
+ - **Delivery frequency** — How often quizzes are sent (daily, weekly, etc.).
 4. Click **Save**.
 
 ## Frequently Asked Questions

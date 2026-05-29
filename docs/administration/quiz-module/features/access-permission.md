@@ -3,8 +3,8 @@ title: "How to Manage Quiz Access Permissions"
 description: "Step-by-step guide to managing access permissions for a quiz."
 sidebar_position: 4
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

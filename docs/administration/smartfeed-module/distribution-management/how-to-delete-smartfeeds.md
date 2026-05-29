@@ -4,8 +4,8 @@ description: ""
 slug: how-to-delete-smartfeeds
 sidebar_position: 34
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd112c50ca0c372c6f09352
 helpscout_url: https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds
 ---
@@ -15,7 +15,7 @@ If you simply want to ensure that the SmartFeed is no longer available to the re
 
 Follow the below steps to delete a SmartFeed:
 
-Go to **EDITOR >**Â**LEARNING AND KNOWLEDGE >**Â**SmartFeeds**. Click on a SmartFeed that you want to delete. At the top right corner, click on the **hamburger** icon and choose "**Delete**".
+Go to **EDITOR >** **LEARNING AND KNOWLEDGE >** **SmartFeeds**. Click on a SmartFeed that you want to delete. At the top right corner, click on the **hamburger** icon and choose "**Delete**".
 
 ![](/img/learning/helpscout-image-cfd0f085.png)
 

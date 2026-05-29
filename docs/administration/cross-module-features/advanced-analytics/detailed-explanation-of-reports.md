@@ -4,8 +4,8 @@ description: ""
 slug: detailed-explanation-of-reports
 sidebar_position: 183
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb188b0b11ce44f63931e7
 helpscout_url: https://help.smartwinnr.com/article/183-detailed-explanation-of-reports
 ---
@@ -35,7 +35,7 @@ Similarly, you can generate a report of average number of calls per month.
 
 This shows a bar graph of the user's performance in the selected KPI for a specified time range. For example, this chart shows the average weekly revenue for the last 90 days.
 
-![](/img/reports/helpscout-image-e99e751e.png)  
+![](/img/reports/helpscout-image-e99e751e.png)
 
 ## Actual Data
 

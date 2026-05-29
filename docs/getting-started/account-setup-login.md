@@ -4,8 +4,8 @@ description: "Complete guide for logging in, password recovery, and account trou
 slug: account-setup-login
 sidebar_position: 1
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Account Setup & Login
@@ -79,7 +79,7 @@ If you see a message "user does not exist," it means your SmartWinnr account has
 
 If you don't know your username, write to [support@smartwinnr.com](mailto:support@smartwinnr.com) with:
 
-- Your organization name  
+- Your organization name
 - Your official email id
 
 ### Resending Account Invitations

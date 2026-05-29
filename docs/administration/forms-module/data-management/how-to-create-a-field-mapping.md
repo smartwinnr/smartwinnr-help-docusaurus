@@ -4,8 +4,8 @@ description: ""
 slug: how-to-create-a-field-mapping
 sidebar_position: 173
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb0cd97129911ba1b21e50
 helpscout_url: https://help.smartwinnr.com/article/173-how-to-create-a-field-mapping
 ---
@@ -17,12 +17,12 @@ The first section is a generic section and defines the overall rule of reading t
 
 ![](https://support.smartwinnr.com/api/v1/attachments/898)
 
-Mapping Name:ÂEnter the name of the mapping
+Mapping Name: Enter the name of the mapping
 
-Upload Type:ÂSelect the relevant upload type.
+Upload Type: Select the relevant upload type.
 
-* Individual Record:ÂIf the data source (CSV, or data report) has rows by individual deal or call, then select this option. e.g., an agent can make 10 calls in 1 day and each call is a separate row in the data source. So for each of the calls, there is a row in the data source.
-* Daily Record:ÂIf the data source has rows aggregated by date, then select this option. e.g., an agent makes 10 calls in 1 day and 1 row is present in the data source for all the 10 calls for that specific date
+* Individual Record: If the data source (CSV, or data report) has rows by individual deal or call, then select this option. e.g., an agent can make 10 calls in 1 day and each call is a separate row in the data source. So for each of the calls, there is a row in the data source.
+* Daily Record: If the data source has rows aggregated by date, then select this option. e.g., an agent makes 10 calls in 1 day and 1 row is present in the data source for all the 10 calls for that specific date
 
 Sample of Individual Record:
 
@@ -36,9 +36,9 @@ _When you select 'Individual Record' there are going to be three mandatory field
 
 * * *
 
-User Unique SmartWinnr Field:ÂDenotes the field within SmartWinnr that uniquely defines a user. It can be email or any other field that has been decided to be a unique field. If you have admin access, go to Admin > Manage Users > Click on one user > Check the Email field or User Identifier field. The same field will need to be present in your data source.
+User Unique SmartWinnr Field: Denotes the field within SmartWinnr that uniquely defines a user. It can be email or any other field that has been decided to be a unique field. If you have admin access, go to Admin > Manage Users > Click on one user > Check the Email field or User Identifier field. The same field will need to be present in your data source.
 
-Default Date Format:ÂSelect the date format to the one that will be present in your data source. In case the date in your data source is in the DD/MM/YYYY, then make sure that you specify the same date format in this field as well. For example, if the data source has a date 02/04/2019 and the date format is DD/MM/YY then an issue will be thrown during the upload.
+Default Date Format: Select the date format to the one that will be present in your data source. In case the date in your data source is in the DD/MM/YYYY, then make sure that you specify the same date format in this field as well. For example, if the data source has a date 02/04/2019 and the date format is DD/MM/YY then an issue will be thrown during the upload.
 
 * * *
 
@@ -49,14 +49,14 @@ This section defines the mapping between individual columns in your data source 
 Each section has the following entries:
 
 * Field Type: Select the correct field type
-* Display Name:ÂEnter a display name for this field. This name will be used when you view the uploaded data within SmartWinnr
+* Display Name: Enter a display name for this field. This name will be used when you view the uploaded data within SmartWinnr
 * CSV Column Heading: Column header name in the CSV
 * Description: Describe this field
 * 'Add Filter' button: Use this button to add a filter for this field.
 
 * * *
 
-_The CSV Column Heading field needs toÂexactlyÂmatch the relevant column header in the CSV file._
+_The CSV Column Heading field needs to exactly match the relevant column header in the CSV file._
 
 * * *
 
@@ -82,7 +82,7 @@ Our reference CSV shows the 'User' column to be the one that uniquely identifies
 
 Date to Credit
 
-This is the 2nd mandatory field. Enter the column name in the data source that identifies the date against which thisÂ_KPI was completed_.
+This is the 2nd mandatory field. Enter the column name in the data source that identifies the date against which this _KPI was completed_.
 
 In this example, the column is 'Date'
 
@@ -136,23 +136,23 @@ There are 2 types of filters present within SmartWinnr.
 
 This filter acts as an overall filter in importing data into SmartWinnr. For example, if your data source has generated data from 01 Dec 2018 till current date. But you are interested to import only FY 2019's data, then you will define a filter like this:
 
-Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/760)
+ ![](https://support.smartwinnr.com/api/v1/attachments/760)
 
 How to Add Filter at an Overall Data Level
 
 Click on the 'Add Filter' button that you see on the page:
 
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ![](https://support.smartwinnr.com/api/v1/attachments/761)
+ ![](https://support.smartwinnr.com/api/v1/attachments/761)
 
-Add Filter:ÂThis adds filters to the fields based on which you can aggregate or slice the data in the fields. When you click on the 'Add Filter' field, a pop-up will open.
+Add Filter: This adds filters to the fields based on which you can aggregate or slice the data in the fields. When you click on the 'Add Filter' field, a pop-up will open.
 
-Filter Operation:ÂThis lets you choose two operations- OR and AND based on which the filtering will be done.
+Filter Operation: This lets you choose two operations- OR and AND based on which the filtering will be done.
 
-Filter Key:ÂThis lets you choose the field on which filtering will be done.
+Filter Key: This lets you choose the field on which filtering will be done.
 
-Filter Comparator:ÂYou can choose the comparators here like Equal, Not Equal, Less Than, Greater Than
+Filter Comparator: You can choose the comparators here like Equal, Not Equal, Less Than, Greater Than
 
-Filter value:ÂThis is the value based on which filtering will be done.
+Filter value: This is the value based on which filtering will be done.
 
 Once you have entered all the filters, click on the 'Save' button to save the changes.
 
@@ -162,7 +162,7 @@ Such filters are extremely helpful when you have to define restrictions at the l
 
 Create a field for the KPI 'New signups for Product A'. It will still map to the column 'New Signups' but will now have a restriction. Click on this button:
 
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â![](https://support.smartwinnr.com/api/v1/attachments/762)
+ ![](https://support.smartwinnr.com/api/v1/attachments/762)
 
 It will add a section just below the earlier details. Build the logic to ignore all other signups, except for Product A. Note the changes in the screenshot below:
 
@@ -194,6 +194,6 @@ _Thumb rule: Add all the important columns in your data source to the Field Mapp
 
 * * *
 
-ÂOnce you enter all the required fields in the 'Create KPI Integration Field Mapping' page, click on the 'Create' button to create mapping successfully.
+ Once you enter all the required fields in the 'Create KPI Integration Field Mapping' page, click on the 'Create' button to create mapping successfully.
 
 ![](/img/reports/helpscout-image-62b8fec3.png)

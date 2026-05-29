@@ -4,8 +4,8 @@ description: ""
 slug: how-to-add-new-contacts
 sidebar_position: 135
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdadc3e7129911ba1b21dbe
 helpscout_url: https://help.smartwinnr.com/article/135-how-to-add-new-contacts
 ---

@@ -4,8 +4,8 @@ description: "Guide for updating the SmartWinnr app, checking versions, and syst
 slug: app-management
 sidebar_position: 3
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # App Management
@@ -15,7 +15,7 @@ last_update:
 To check the version of your SmartWinnr app:
 
 1. Open the SmartWinnr app and click on the **hamburger icon** at the top left corner
-2. Click on your **profile picture** at the top of the menu  
+2. Click on your **profile picture** at the top of the menu
 3. Click on the **gear icon** at the top right corner
 4. Go to **App version** to see the version installed on your system
 
@@ -38,7 +38,7 @@ The best way to update your SmartWinnr app is through your device's app store:
 
 1. Open the App Store
 2. Search for "SmartWinnr"
-3. If an update is available, you'll see an "Update" button  
+3. If an update is available, you'll see an "Update" button
 4. Tap "Update" to install the latest version
 
 ### From Within the App

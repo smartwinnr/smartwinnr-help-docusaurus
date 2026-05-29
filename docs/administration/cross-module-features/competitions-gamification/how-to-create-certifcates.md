@@ -4,8 +4,8 @@ description: ""
 slug: how-to-create-certifcates
 sidebar_position: 194
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb50c1b624c71b7985a730
 helpscout_url: https://help.smartwinnr.com/article/194-how-to-create-an-achievements
 ---
@@ -37,7 +37,7 @@ The editor also needs to upload an appropriate image corresponding to the achiev
 
 After all the fields are successfully filled Click on "Create Achievement", the new achievement will be added.
 
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/1099)
+ ![](https://support.smartwinnr.com/api/v1/attachments/1099)
 
 You can update the image for a certificate by clicking on the picture and add a box where you can enter the Sales Rep's name.
 

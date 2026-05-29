@@ -139,7 +139,7 @@ Click any team member card to access:
 - **All Team**: Complete team overview
 - **High Performers**: Top-performing team members
 - **Need Support**: Team members requiring attention
-- **� New Members**: Recently onboarded team members
+- **New Members**: Recently onboarded team members
 - **Custom Selection**: Choose specific individuals
 
 **Content Type Filters**

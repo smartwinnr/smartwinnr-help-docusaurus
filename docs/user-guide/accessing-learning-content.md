@@ -25,7 +25,7 @@ SmartFeeds deliver short, focused content in a social media-style feed.
 
 **How to Access:**
 
-1. Navigate to **Learning**  **SmartFeeds**
+1. Navigate to **Learning** > **SmartFeeds**
 2. Scroll through your personalized feed
 3. Tap on items to view full content
 4. Use **Like**, **Comment**, and **Share** features to engage
@@ -44,7 +44,7 @@ SmartPaths guide you through comprehensive learning experiences with sequential 
 
 **How to Access:**
 
-1. Navigate to **Learning**  **SmartPaths**
+1. Navigate to **Learning** > **SmartPaths**
 2. View assigned or available learning paths
 3. Click **"Start Path"** to begin
 4. Complete modules in the required sequence
@@ -64,7 +64,7 @@ KHub serves as your searchable repository of organizational knowledge and resour
 
 **How to Access:**
 
-1. Navigate to **Learning**  **Knowledge Hub**
+1. Navigate to **Learning** > **Knowledge Hub**
 2. Browse folders by category
 3. Use the search function to find specific content
 4. Download content for offline access

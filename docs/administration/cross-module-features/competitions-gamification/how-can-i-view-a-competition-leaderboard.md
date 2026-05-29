@@ -4,8 +4,8 @@ description: ""
 slug: how-can-i-view-a-competition-leaderboard
 sidebar_position: 190
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb40777129911ba1b21f1a
 helpscout_url: https://help.smartwinnr.com/article/190-how-can-i-view-a-competition-leaderboard
 ---

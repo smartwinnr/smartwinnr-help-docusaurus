@@ -36,11 +36,11 @@ This guide walks you through creating engaging quizzes in SmartWinnr.
 
 1. Click **Create New Question**
 2. Choose question type:
-   - Multiple Choice (Single Answer)
-   - Multiple Choice (Multiple Answers)
-   - True/False
-   - Fill in the Blanks
-   - Drag and Drop
+ - Multiple Choice (Single Answer)
+ - Multiple Choice (Multiple Answers)
+ - True/False
+ - Fill in the Blanks
+ - Drag and Drop
 
 ### Question Components
 

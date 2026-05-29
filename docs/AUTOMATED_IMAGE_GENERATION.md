@@ -18,20 +18,20 @@ This document outlines the comprehensive plan for implementing an automated scre
 
 ```
 
-                   Automated Image Generation                
+ Automated Image Generation
 
-                                                             
-        
-     Content            Generation        Deployment   
-     Analyzer            Engine            Manager     
-        
-                                                          
-                                                          
-        
-     Context           AI Image Gen        Version     
-    Extraction          (DALL-E 3)        Control      
-        
-                                                             
+
+
+ Content Generation Deployment
+ Analyzer Engine Manager
+
+
+
+
+ Context AI Image Gen Version
+ Extraction (DALL-E 3) Control
+
+
 
 ```
 
@@ -43,7 +43,7 @@ This document outlines the comprehensive plan for implementing an automated scre
 - **Input**: Markdown files, image-mapping.json, surrounding text
 - **Output**: Structured image requirements with context
 
-#### 2. Generation Engine  
+#### 2. Generation Engine
 
 - **Purpose**: Creates AI-generated images using OpenAI DALL-E 3
 - **Input**: Context requirements, style guidelines, branding constraints
@@ -64,11 +64,11 @@ This document outlines the comprehensive plan for implementing an automated scre
 ```javascript
 // New script: scripts/analyze-image-context.js
 class ImageContextAnalyzer {
-  extractContext(imagePath, markdownContent) {
-    // Extract surrounding text, headers, and purpose
-    // Identify UI elements, workflows, and user actions
-    // Generate descriptive context for AI generation
-  }
+ extractContext(imagePath, markdownContent) {
+ // Extract surrounding text, headers, and purpose
+ // Identify UI elements, workflows, and user actions
+ // Generate descriptive context for AI generation
+ }
 }
 ```
 
@@ -76,21 +76,21 @@ class ImageContextAnalyzer {
 
 ```json
 {
-  "images": [{
-    "localPath": "/img/admin/user-management.png",
-    "context": {
-      "surrounding_text": "To manage users, navigate to the Admin panel...",
-      "document_section": "User Management Workflow", 
-      "ui_elements": ["navigation menu", "user list", "action buttons"],
-      "workflow_step": "Step 2: Select user from list",
-      "intended_action": "Show user selection interface"
-    },
-    "generation_requirements": {
-      "style": "clean_ui_mockup",
-      "elements": ["navigation", "data_table", "buttons"],
-      "branding": "smartwinnr_theme"
-    }
-  }]
+ "images": [{
+ "localPath": "/img/admin/user-management.png",
+ "context": {
+ "surrounding_text": "To manage users, navigate to the Admin panel...",
+ "document_section": "User Management Workflow",
+ "ui_elements": ["navigation menu", "user list", "action buttons"],
+ "workflow_step": "Step 2: Select user from list",
+ "intended_action": "Show user selection interface"
+ },
+ "generation_requirements": {
+ "style": "clean_ui_mockup",
+ "elements": ["navigation", "data_table", "buttons"],
+ "branding": "smartwinnr_theme"
+ }
+ }]
 }
 ```
 
@@ -108,18 +108,18 @@ class ImageContextAnalyzer {
 ```javascript
 // New script: scripts/generate-images.js
 class ImageGenerator {
-  async generateImage(context, requirements) {
-    // Construct DALL-E 3 prompt from context
-    // Apply style and branding constraints
-    // Generate multiple variations
-    // Select best match based on requirements
-  }
-  
-  async batchGenerate(imageList) {
-    // Process images in batches
-    // Handle rate limiting
-    // Maintain generation queue
-  }
+ async generateImage(context, requirements) {
+ // Construct DALL-E 3 prompt from context
+ // Apply style and branding constraints
+ // Generate multiple variations
+ // Select best match based on requirements
+ }
+
+ async batchGenerate(imageList) {
+ // Process images in batches
+ // Handle rate limiting
+ // Maintain generation queue
+ }
 }
 ```
 
@@ -145,18 +145,18 @@ class ImageGenerator {
 # .github/workflows/image-generation.yml
 name: Automated Image Generation
 on:
-  push:
-    branches: [main]
-    paths: ['docs/**']
+ push:
+ branches: [main]
+ paths: ['docs/**']
 
 jobs:
-  generate_images:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Analyze Changed Docs
-      - name: Generate Required Images  
-      - name: Create Review PR
-      - name: Deploy to Staging
+ generate_images:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Analyze Changed Docs
+ - name: Generate Required Images
+ - name: Create Review PR
+ - name: Deploy to Staging
 ```
 
 #### 3.2 Deployment Triggers
@@ -243,7 +243,7 @@ jobs:
 - **Timeline**: 1 week
 - **Success criteria**: 90% approval rate, under 2 sec load time
 
-### Phase 2 Expansion (100 images)  
+### Phase 2 Expansion (100 images)
 
 - **Target**: Quiz Management section
 - **Timeline**: 2 weeks
@@ -260,7 +260,7 @@ jobs:
 ### Development Costs
 
 - **Engineering time**: 120 hours @ $100/hr = $12,000
-- **AI API costs**: 681 images Ã $0.04 = $27.24 (initial)
+- **AI API costs**: 681 images Ã— $0.04 = $27.24 (initial)
 - **Infrastructure**: $50/month (storage, compute)
 - **Testing & QA**: $2,000
 
@@ -273,8 +273,8 @@ jobs:
 
 ### ROI Calculation
 
-- **Manual screenshot time**: 10 minutes/image Ã 681 images = 113 hours
-- **Time savings value**: 113 hours Ã $50/hr = $5,650
+- **Manual screenshot time**: 10 minutes/image Ã— 681 images = 113 hours
+- **Time savings value**: 113 hours Ã— $50/hr = $5,650
 - **Annual regeneration savings**: ~$3,000
 - **Total annual value**: $8,650
 - **Payback period**: 18 months
@@ -288,7 +288,7 @@ jobs:
 - **Performance impact**: Implement caching and optimization
 - **Cost overruns**: Usage monitoring and caps
 
-### Operational Risks  
+### Operational Risks
 
 - **Approval bottlenecks**: Automated quality scoring
 - **Brand consistency**: Strict style guide enforcement
@@ -314,7 +314,7 @@ jobs:
 ## Next Steps
 
 1. **Week 1**: Implement context analyzer and enhanced mapping
-2. **Week 2**: Develop generation engine and style guidelines  
+2. **Week 2**: Develop generation engine and style guidelines
 3. **Week 3**: Create quality control and review system
 4. **Week 4**: Build CI/CD integration and automation
 5. **Week 5**: Pilot testing with Getting Started section

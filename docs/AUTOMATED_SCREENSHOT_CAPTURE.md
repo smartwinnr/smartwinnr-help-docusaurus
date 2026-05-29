@@ -26,20 +26,20 @@ This document outlines the comprehensive plan for implementing an automated scre
 
 ```
 
-                Automated Screenshot Capture                 
+ Automated Screenshot Capture
 
-                                                             
-        
-     Navigation         Capture           Processing   
-     Controller          Engine            Manager     
-        
-                                                          
-                                                          
-        
-     Puppeteer         Screenshot          Image       
-     Browser            Capture          Optimization  
-        
-                                                             
+
+
+ Navigation Capture Processing
+ Controller Engine Manager
+
+
+
+
+ Puppeteer Screenshot Image
+ Browser Capture Optimization
+
+
 
 ```
 
@@ -81,64 +81,64 @@ npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth
 ```javascript
 // New script: scripts/capture-screenshots.js
 class ScreenshotCapture {
-  constructor() {
-    this.browser = null;
-    this.pages = new Map(); // Store authenticated pages
-    this.config = {
-      admin: {
-        url: 'https://app.smartwinnr.com/',
-        viewport: { width: 1440, height: 900 },
-        credentials: { /* admin credentials */ }
-      },
-      manager: {
-        url: 'https://web.smartwinnr.com/', 
-        viewport: { width: 1024, height: 768 },
-        credentials: { /* manager credentials */ }
-      },
-      user: {
-        url: 'https://web.smartwinnr.com/',
-        viewport: { width: 1024, height: 768 },
-        credentials: { /* user credentials */ }
-      }
-    };
-  }
+ constructor() {
+ this.browser = null;
+ this.pages = new Map(); // Store authenticated pages
+ this.config = {
+ admin: {
+ url: 'https://app.smartwinnr.com/',
+ viewport: { width: 1440, height: 900 },
+ credentials: { /* admin credentials */ }
+ },
+ manager: {
+ url: 'https://web.smartwinnr.com/',
+ viewport: { width: 1024, height: 768 },
+ credentials: { /* manager credentials */ }
+ },
+ user: {
+ url: 'https://web.smartwinnr.com/',
+ viewport: { width: 1024, height: 768 },
+ credentials: { /* user credentials */ }
+ }
+ };
+ }
 
-  async init() {
-    this.browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-  }
+ async init() {
+ this.browser = await puppeteer.launch({
+ headless: true,
+ args: ['--no-sandbox', '--disable-setuid-sandbox']
+ });
+ }
 
-  async authenticateUser(role) {
-    const page = await this.browser.newPage();
-    const config = this.config[role];
-    
-    await page.setViewport(config.viewport);
-    await page.goto(config.url);
-    
-    // Handle login flow
-    await this.performLogin(page, config.credentials);
-    
-    this.pages.set(role, page);
-    return page;
-  }
+ async authenticateUser(role) {
+ const page = await this.browser.newPage();
+ const config = this.config[role];
 
-  async captureScreenshot(role, selector, filename) {
-    const page = this.pages.get(role);
-    
-    // Wait for element to be visible
-    await page.waitForSelector(selector);
-    
-    // Capture screenshot
-    const screenshot = await page.screenshot({
-      path: `static/img/screenshots/${role}/${filename}`,
-      type: 'png',
-      fullPage: false
-    });
-    
-    return screenshot;
-  }
+ await page.setViewport(config.viewport);
+ await page.goto(config.url);
+
+ // Handle login flow
+ await this.performLogin(page, config.credentials);
+
+ this.pages.set(role, page);
+ return page;
+ }
+
+ async captureScreenshot(role, selector, filename) {
+ const page = this.pages.get(role);
+
+ // Wait for element to be visible
+ await page.waitForSelector(selector);
+
+ // Capture screenshot
+ const screenshot = await page.screenshot({
+ path: `static/img/screenshots/${role}/${filename}`,
+ type: 'png',
+ fullPage: false
+ });
+
+ return screenshot;
+ }
 }
 ```
 
@@ -147,34 +147,34 @@ class ScreenshotCapture {
 ```javascript
 // config/screenshot-config.js
 module.exports = {
-  environments: {
-    test: {
-      admin: 'https://app.smartwinnr.com/',
-      manager: 'https://web.smartwinnr.com/',
-      user: 'https://web.smartwinnr.com/'
-    }
-  },
-  
-  credentials: {
-    admin: {
-      username: process.env.ADMIN_USERNAME,
-      password: process.env.ADMIN_PASSWORD
-    },
-    manager: {
-      username: process.env.MANAGER_USERNAME, 
-      password: process.env.MANAGER_PASSWORD
-    },
-    user: {
-      username: process.env.USER_USERNAME,
-      password: process.env.USER_PASSWORD
-    }
-  },
+ environments: {
+ test: {
+ admin: 'https://app.smartwinnr.com/',
+ manager: 'https://web.smartwinnr.com/',
+ user: 'https://web.smartwinnr.com/'
+ }
+ },
 
-  viewports: {
-    admin: { width: 1440, height: 900 },
-    manager: { width: 1024, height: 768 },
-    user: { width: 1024, height: 768 }
-  }
+ credentials: {
+ admin: {
+ username: process.env.ADMIN_USERNAME,
+ password: process.env.ADMIN_PASSWORD
+ },
+ manager: {
+ username: process.env.MANAGER_USERNAME,
+ password: process.env.MANAGER_PASSWORD
+ },
+ user: {
+ username: process.env.USER_USERNAME,
+ password: process.env.USER_PASSWORD
+ }
+ },
+
+ viewports: {
+ admin: { width: 1440, height: 900 },
+ manager: { width: 1024, height: 768 },
+ user: { width: 1024, height: 768 }
+ }
 };
 ```
 
@@ -184,22 +184,22 @@ module.exports = {
 
 ```json
 {
-  "screenshots": [
-    {
-      "id": "admin_user_management_001",
-      "portal": "admin",
-      "role": "admin", 
-      "url": "/users",
-      "selector": ".user-management-container",
-      "description": "User management main view",
-      "filename": "admin_user-management_main-view_20250110.png",
-      "localPath": "/img/screenshots/admin/admin_user-management_main-view_20250110.png",
-      "used_in": ["docs/admin/how-to-manage-users.md"],
-      "capture_date": "2025-01-10T10:00:00Z",
-      "viewport": "desktop",
-      "dependencies": ["authenticated_session", "test_data_loaded"]
-    }
-  ]
+ "screenshots": [
+ {
+ "id": "admin_user_management_001",
+ "portal": "admin",
+ "role": "admin",
+ "url": "/users",
+ "selector": ".user-management-container",
+ "description": "User management main view",
+ "filename": "admin_user-management_main-view_20250110.png",
+ "localPath": "/img/screenshots/admin/admin_user-management_main-view_20250110.png",
+ "used_in": ["docs/admin/how-to-manage-users.md"],
+ "capture_date": "2025-01-10T10:00:00Z",
+ "viewport": "desktop",
+ "dependencies": ["authenticated_session", "test_data_loaded"]
+ }
+ ]
 }
 ```
 
@@ -208,18 +208,18 @@ module.exports = {
 ```javascript
 // scripts/update-screenshot-mapping.js
 class ScreenshotMapper {
-  async updateMapping(screenshotData) {
-    // Read existing image-mapping.json
-    // Find corresponding entries by document usage
-    // Update with new screenshot paths
-    // Maintain backward compatibility
-  }
+ async updateMapping(screenshotData) {
+ // Read existing image-mapping.json
+ // Find corresponding entries by document usage
+ // Update with new screenshot paths
+ // Maintain backward compatibility
+ }
 
-  async replaceInMarkdown(oldImagePath, newImagePath) {
-    // Find all markdown files using old image
-    // Replace with new screenshot path
-    // Update alt text if needed
-  }
+ async replaceInMarkdown(oldImagePath, newImagePath) {
+ // Find all markdown files using old image
+ // Replace with new screenshot path
+ // Update alt text if needed
+ }
 }
 ```
 
@@ -227,18 +227,18 @@ class ScreenshotMapper {
 
 ```javascript
 class QualityController {
-  async validateScreenshot(imagePath) {
-    // Check image dimensions
-    // Verify file size (reasonable limits)
-    // Detect if page loaded completely
-    // Validate no error states visible
-  }
+ async validateScreenshot(imagePath) {
+ // Check image dimensions
+ // Verify file size (reasonable limits)
+ // Detect if page loaded completely
+ // Validate no error states visible
+ }
 
-  async compareWithPrevious(newImage, previousImage) {
-    // Basic image comparison to detect major changes
-    // Flag for manual review if significant differences
-    // Store comparison metadata
-  }
+ async compareWithPrevious(newImage, previousImage) {
+ // Basic image comparison to detect major changes
+ // Flag for manual review if significant differences
+ // Store comparison metadata
+ }
 }
 ```
 
@@ -249,35 +249,35 @@ class QualityController {
 ```javascript
 // scripts/batch-capture.js
 class BatchCapture {
-  async processBatch(screenshotList) {
-    const results = [];
-    
-    for (const screenshot of screenshotList) {
-      try {
-        await this.navigateToPage(screenshot.url);
-        await this.waitForPageLoad(screenshot.selector);
-        
-        const result = await this.captureScreenshot({
-          selector: screenshot.selector,
-          filename: screenshot.filename,
-          role: screenshot.role
-        });
-        
-        results.push({ ...screenshot, status: 'success', result });
-        
-      } catch (error) {
-        results.push({ ...screenshot, status: 'failed', error: error.message });
-      }
-    }
-    
-    return results;
-  }
+ async processBatch(screenshotList) {
+ const results = [];
 
-  async captureByDocumentSection(section) {
-    // Capture all screenshots needed for a specific documentation section
-    // Process in optimal order to minimize navigation
-    // Handle dependencies between screenshots
-  }
+ for (const screenshot of screenshotList) {
+ try {
+ await this.navigateToPage(screenshot.url);
+ await this.waitForPageLoad(screenshot.selector);
+
+ const result = await this.captureScreenshot({
+ selector: screenshot.selector,
+ filename: screenshot.filename,
+ role: screenshot.role
+ });
+
+ results.push({ ...screenshot, status: 'success', result });
+
+ } catch (error) {
+ results.push({ ...screenshot, status: 'failed', error: error.message });
+ }
+ }
+
+ return results;
+ }
+
+ async captureByDocumentSection(section) {
+ // Capture all screenshots needed for a specific documentation section
+ // Process in optimal order to minimize navigation
+ // Handle dependencies between screenshots
+ }
 }
 ```
 
@@ -286,20 +286,20 @@ class BatchCapture {
 ```javascript
 // scripts/detect-ui-changes.js
 class ChangeDetector {
-  async detectChanges(repoPath, branch = 'main') {
-    // Monitor frontend repository for changes
-    // Parse git diff for UI-related modifications
-    // Identify which screenshots need updating
-    // Generate capture job list
-  }
+ async detectChanges(repoPath, branch = 'main') {
+ // Monitor frontend repository for changes
+ // Parse git diff for UI-related modifications
+ // Identify which screenshots need updating
+ // Generate capture job list
+ }
 
-  async analyzeGitDiff(gitDiff) {
-    const changedComponents = [];
-    // Parse changed files
-    // Map to affected documentation sections  
-    // Return list of screenshots to update
-    return changedComponents;
-  }
+ async analyzeGitDiff(gitDiff) {
+ const changedComponents = [];
+ // Parse changed files
+ // Map to affected documentation sections
+ // Return list of screenshots to update
+ return changedComponents;
+ }
 }
 ```
 
@@ -309,38 +309,38 @@ class ChangeDetector {
 # .github/workflows/screenshot-update.yml
 name: Update Screenshots
 on:
-  repository_dispatch:
-    types: [frontend_deployed]
+ repository_dispatch:
+ types: [frontend_deployed]
 
 jobs:
-  capture_screenshots:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Detect required screenshots
-        run: node scripts/detect-changes.js
-        
-      - name: Capture screenshots
-        run: node scripts/batch-capture.js
-        env:
-          ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-          MANAGER_USERNAME: ${{ secrets.MANAGER_USERNAME }}
-          MANAGER_PASSWORD: ${{ secrets.MANAGER_PASSWORD }}
-          USER_USERNAME: ${{ secrets.USER_USERNAME }}
-          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
-          
-      - name: Create PR with updated screenshots
-        run: node scripts/create-screenshot-pr.js
+ capture_screenshots:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v3
+
+ - name: Setup Node.js
+ uses: actions/setup-node@v3
+ with:
+ node-version: '18'
+
+ - name: Install dependencies
+ run: npm install
+
+ - name: Detect required screenshots
+ run: node scripts/detect-changes.js
+
+ - name: Capture screenshots
+ run: node scripts/batch-capture.js
+ env:
+ ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+ ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+ MANAGER_USERNAME: ${{ secrets.MANAGER_USERNAME }}
+ MANAGER_PASSWORD: ${{ secrets.MANAGER_PASSWORD }}
+ USER_USERNAME: ${{ secrets.USER_USERNAME }}
+ USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+
+ - name: Create PR with updated screenshots
+ run: node scripts/create-screenshot-pr.js
 ```
 
 ## Technical Specifications
@@ -350,7 +350,7 @@ jobs:
 #### **Resolution & Format**
 
 - **Admin Portal (Desktop)**: 1440x900px
-- **Manager/User Portal (iPad)**: 1024x768px  
+- **Manager/User Portal (iPad)**: 1024x768px
 - **Format**: PNG (lossless compression)
 - **Quality**: Full quality, optimized for web
 
@@ -369,19 +369,19 @@ Examples:
 
 ```
 /static/img/screenshots/
- admin/                    # Admin portal screenshots
-    user-management/
-    system-config/
-    reports/
- manager/                  # Manager view screenshots  
-    quiz-creation/
-    team-management/
-    analytics/
- user/                     # User view screenshots
-    dashboard/
-    quizzes/
-    learning/
- screenshot-mapping.json   # Screenshot metadata
+ admin/ # Admin portal screenshots
+ user-management/
+ system-config/
+ reports/
+ manager/ # Manager view screenshots
+ quiz-creation/
+ team-management/
+ analytics/
+ user/ # User view screenshots
+ dashboard/
+ quizzes/
+ learning/
+ screenshot-mapping.json # Screenshot metadata
 ```
 
 ### Puppeteer Configuration
@@ -390,15 +390,15 @@ Examples:
 
 ```javascript
 const browserConfig = {
-  headless: true,
-  args: [
-    '--no-sandbox',
-    '--disable-setuid-sandbox',
-    '--disable-dev-shm-usage',
-    '--disable-extensions',
-    '--disable-gpu'
-  ],
-  defaultViewport: null
+ headless: true,
+ args: [
+ '--no-sandbox',
+ '--disable-setuid-sandbox',
+ '--disable-dev-shm-usage',
+ '--disable-extensions',
+ '--disable-gpu'
+ ],
+ defaultViewport: null
 };
 ```
 
@@ -406,9 +406,9 @@ const browserConfig = {
 
 ```javascript
 const pageConfig = {
-  waitUntil: 'networkidle2',
-  timeout: 30000,
-  ignoreHTTPSErrors: true
+ waitUntil: 'networkidle2',
+ timeout: 30000,
+ ignoreHTTPSErrors: true
 };
 ```
 
@@ -416,11 +416,11 @@ const pageConfig = {
 
 ```javascript
 const screenshotConfig = {
-  type: 'png',
-  quality: 100,
-  fullPage: false,
-  omitBackground: false,
-  encoding: 'binary'
+ type: 'png',
+ quality: 100,
+ fullPage: false,
+ omitBackground: false,
+ encoding: 'binary'
 };
 ```
 
@@ -446,29 +446,29 @@ const screenshotConfig = {
 
 ```javascript
 class ErrorHandler {
-  async handleAuthenticationFailure(page, credentials) {
-    // Retry login with fresh session
-    // Clear cookies and cache
-    // Log authentication errors
-  }
+ async handleAuthenticationFailure(page, credentials) {
+ // Retry login with fresh session
+ // Clear cookies and cache
+ // Log authentication errors
+ }
 
-  async handlePageLoadFailure(page, url) {
-    // Retry navigation
-    // Check network connectivity
-    // Validate URL accessibility
-  }
+ async handlePageLoadFailure(page, url) {
+ // Retry navigation
+ // Check network connectivity
+ // Validate URL accessibility
+ }
 
-  async handleElementNotFound(page, selector) {
-    // Wait for dynamic content
-    // Try alternative selectors
-    // Capture page state for debugging
-  }
+ async handleElementNotFound(page, selector) {
+ // Wait for dynamic content
+ // Try alternative selectors
+ // Capture page state for debugging
+ }
 
-  async handleScreenshotFailure(page, options) {
-    // Retry with different options
-    // Reduce viewport if memory issues
-    // Save page HTML for debugging
-  }
+ async handleScreenshotFailure(page, options) {
+ // Retry with different options
+ // Reduce viewport if memory issues
+ // Save page HTML for debugging
+ }
 }
 ```
 
@@ -495,10 +495,10 @@ class ErrorHandler {
 const sharp = require('sharp');
 
 async function optimizeScreenshot(inputPath, outputPath) {
-  await sharp(inputPath)
-    .png({ quality: 90, compressionLevel: 9 })
-    .resize({ fit: 'inside', withoutEnlargement: true })
-    .toFile(outputPath);
+ await sharp(inputPath)
+ .png({ quality: 90, compressionLevel: 9 })
+ .resize({ fit: 'inside', withoutEnlargement: true })
+ .toFile(outputPath);
 }
 ```
 
@@ -507,7 +507,7 @@ async function optimizeScreenshot(inputPath, outputPath) {
 ### Capture Metrics
 
 - **Success Rate**: Percentage of successful captures
-- **Processing Time**: Average time per screenshot  
+- **Processing Time**: Average time per screenshot
 - **Error Classification**: Types and frequency of failures
 - **Resource Usage**: Memory and CPU consumption
 
@@ -525,20 +525,20 @@ async function optimizeScreenshot(inputPath, outputPath) {
 ```javascript
 // test/screenshot-capture.test.js
 describe('Screenshot Capture', () => {
-  test('should authenticate admin user', async () => {
-    const capture = new ScreenshotCapture();
-    await capture.init();
-    const page = await capture.authenticateUser('admin');
-    expect(page.url()).toContain('app.smartwinnr.com');
-  });
+ test('should authenticate admin user', async () => {
+ const capture = new ScreenshotCapture();
+ await capture.init();
+ const page = await capture.authenticateUser('admin');
+ expect(page.url()).toContain('app.smartwinnr.com');
+ });
 
-  test('should capture valid screenshot', async () => {
-    // Test screenshot capture functionality
-  });
+ test('should capture valid screenshot', async () => {
+ // Test screenshot capture functionality
+ });
 
-  test('should handle authentication failure', async () => {
-    // Test error handling scenarios
-  });
+ test('should handle authentication failure', async () => {
+ // Test error handling scenarios
+ });
 });
 ```
 
@@ -558,7 +558,7 @@ describe('Screenshot Capture', () => {
 - **Success Criteria**: Successfully capture and save one screenshot
 - **Validation**: Manual comparison with existing screenshot
 
-### Phase 2: Section Pilot (Week 2-3)  
+### Phase 2: Section Pilot (Week 2-3)
 
 - **Target**: Complete "Getting Started" section (estimated 10-15 screenshots)
 - **Scope**: Multiple screenshots across different views
@@ -585,16 +585,16 @@ describe('Screenshot Capture', () => {
 ### Operational Costs (Monthly)
 
 - **Server/Hosting**: $30/month (if cloud-hosted)
-- **Test Account Maintenance**: $10/month  
+- **Test Account Maintenance**: $10/month
 - **Storage**: $5/month (screenshots)
 - **Monitoring**: $15/month
 - **Total Monthly**: $60/month
 
 ### ROI Calculation
 
-- **Manual Screenshot Time**: 15 minutes/screenshot Ã 681 = 170 hours
-- **Manual Time Value**: 170 hours Ã $50/hr = $8,500
-- **Maintenance Savings**: 2 hours/week Ã 52 weeks Ã $50/hr = $5,200/year
+- **Manual Screenshot Time**: 15 minutes/screenshot Ã— 681 = 170 hours
+- **Manual Time Value**: 170 hours Ã— $50/hr = $8,500
+- **Maintenance Savings**: 2 hours/week Ã— 52 weeks Ã— $50/hr = $5,200/year
 - **Total Annual Value**: $8,500 + $5,200 = $13,700
 - **Payback Period**: 9 months
 
@@ -623,7 +623,7 @@ describe('Screenshot Capture', () => {
 - **Processing Time**: under 30 seconds per screenshot average
 - **Error Rate**: under 5% capture failures
 
-### Efficiency Metrics  
+### Efficiency Metrics
 
 - **Automation Level**: >90% screenshots captured without manual intervention
 - **Time Savings**: 80% reduction in screenshot update time
@@ -642,7 +642,7 @@ describe('Screenshot Capture', () => {
 ### Short Term (Week 2-4)
 
 1. **Batch Processing**: Implement multi-screenshot capture system
-2. **Mapping Integration**: Connect with existing image-mapping.json system  
+2. **Mapping Integration**: Connect with existing image-mapping.json system
 3. **Quality Control**: Add validation and optimization
 4. **Documentation Update**: Replace first batch of screenshots
 

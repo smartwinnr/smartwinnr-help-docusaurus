@@ -29,7 +29,7 @@ SmartWinnr offers the following modules, each designed for specific use cases:
 - **SmartPath Module**: Design structured learning journeys with multiple content types
 - **SmartFeed Module**: Deliver microlearning content in engaging, bite-sized formats
 
-### Performance & Development Modules  
+### Performance & Development Modules
 
 - **Video Coaching Module**: Enable remote coaching through video submissions and reviews
 - **Field Coaching Module**: Facilitate in-person coaching and competency assessments

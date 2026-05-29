@@ -4,8 +4,8 @@ description: "Complete guide for creating and managing structured learning paths
 slug: smartpath-management
 sidebar_position: 2
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # SmartPath Management
@@ -29,7 +29,7 @@ SmartPath creation follows a **bottom-up approach**:
 
 **Example Scenario**: Improving sales effectiveness
 
-- **SmartPath**: "Sales Effectiveness Excellence"  
+- **SmartPath**: "Sales Effectiveness Excellence"
 - **Module 1**: "Effective Opening" (contains 1 SmartFeed, 1 Quiz, 1 Survey)
 - **Module 2**: "Objection Handling" (contains 2 SmartFeeds, 2 Quizzes, 2 Coachings)
 
@@ -42,10 +42,10 @@ Before creating a SmartPath, you need to first create the modules that will be i
 1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths**
 2. Click **"Create Module"**
 3. Define module details:
-   - Module name and description
-   - Learning objectives
-   - Target audience
-   - Estimated completion time
+ - Module name and description
+ - Learning objectives
+ - Target audience
+ - Estimated completion time
 4. Save the module structure
 
 ### Step 2: Add Learning Sessions to SmartPath Modules
@@ -55,10 +55,10 @@ Learning sessions are the building blocks of modules:
 1. Open your created module
 2. Click **"Add Learning Session"**
 3. Choose session type:
-   - **SmartFeed sessions**: Content delivery
-   - **Quiz sessions**: Knowledge assessment
-   - **Survey sessions**: Feedback collection
-   - **Coaching sessions**: Skill development
+ - **SmartFeed sessions**: Content delivery
+ - **Quiz sessions**: Knowledge assessment
+ - **Survey sessions**: Feedback collection
+ - **Coaching sessions**: Skill development
 4. Configure session parameters
 5. Set completion criteria
 
@@ -68,10 +68,10 @@ Once modules are ready:
 
 1. Click **"Create SmartPath"**
 2. Add SmartPath information:
-   - Title and description
-   - Learning objectives
-   - Target completion time
-   - Prerequisites (if any)
+ - Title and description
+ - Learning objectives
+ - Target completion time
+ - Prerequisites (if any)
 3. Add modules to the SmartPath in the desired sequence
 4. Set progression rules (linear, adaptive, or free-form)
 5. Configure completion requirements
@@ -95,10 +95,10 @@ To modify existing SmartPaths:
 1. Go to **SmartPaths > Manage SmartPaths**
 2. Select the SmartPath to edit
 3. Modify components:
-   - Update module content
-   - Adjust sequence or prerequisites
-   - Change completion criteria
-   - Update target audiences
+ - Update module content
+ - Adjust sequence or prerequisites
+ - Change completion criteria
+ - Update target audiences
 4. Save changes and republish
 
 ### Archiving SmartPaths
@@ -109,9 +109,9 @@ To archive SmartPaths without deleting them:
 2. Select the SmartPath to archive
 3. Click **"Archive SmartPath"**
 4. Choose archival options:
-   - Remove from active learner lists
-   - Preserve learner progress data
-   - Set future unhide date if needed
+ - Remove from active learner lists
+ - Preserve learner progress data
+ - Set future unhide date if needed
 5. Confirm archival
 
 ### Unhiding Archived SmartPaths
@@ -122,9 +122,9 @@ To restore archived SmartPaths:
 2. Find the SmartPath to restore
 3. Click **"Unhide"** or **"Restore"**
 4. Configure restoration settings:
-   - Update content if needed
-   - Reassign to learner groups
-   - Set new completion deadlines
+ - Update content if needed
+ - Reassign to learner groups
+ - Set new completion deadlines
 5. Republish to learners
 
 ## Learning Session Management
@@ -134,7 +134,7 @@ To restore archived SmartPaths:
 For SmartPaths that include live learning components:
 
 1. **Schedule Sessions**: Set dates, times, and duration
-2. **Add Presenters**: Assign trainers or subject matter experts  
+2. **Add Presenters**: Assign trainers or subject matter experts
 3. **Prepare Materials**: Upload presentations, handouts, resources
 4. **Configure Technology**: Set up virtual meeting tools if remote
 5. **Send Invitations**: Notify participants with session details
@@ -157,9 +157,9 @@ To improve attendance and engagement:
 2. Identify participants who missed sessions
 3. Click **"Send Absent Reminder"**
 4. Customize reminder message:
-   - Highlight importance of session content
-   - Provide makeup options
-   - Include session recordings if available
+ - Highlight importance of session content
+ - Provide makeup options
+ - Include session recordings if available
 5. Schedule follow-up reminders if needed
 
 ## SmartPath Analytics
@@ -170,11 +170,11 @@ Monitor learning effectiveness and progress:
 
 1. Go to **SmartPaths > Analytics**
 2. View comprehensive metrics:
-   - **Completion Rates**: Percentage of learners finishing paths
-   - **Progress Tracking**: Individual and group advancement
-   - **Time to Complete**: Average duration for path completion
-   - **Module Performance**: Which modules are most/least effective
-   - **Engagement Levels**: User interaction with content
+ - **Completion Rates**: Percentage of learners finishing paths
+ - **Progress Tracking**: Individual and group advancement
+ - **Time to Complete**: Average duration for path completion
+ - **Module Performance**: Which modules are most/least effective
+ - **Engagement Levels**: User interaction with content
 
 ### Key Performance Indicators
 
@@ -182,7 +182,7 @@ Track essential SmartPath success metrics:
 
 - **Enrollment Numbers**: How many learners are assigned
 - **Start Rate**: Percentage who begin the SmartPath
-- **Completion Rate**: Percentage who finish successfully  
+- **Completion Rate**: Percentage who finish successfully
 - **Average Score**: Performance across assessments
 - **Time Investment**: Hours spent learning
 - **Satisfaction Ratings**: Learner feedback scores
@@ -232,7 +232,7 @@ Enhance engagement by adding gamification:
 
 - **Progress Bars**: Visual completion indicators
 - **Milestone Celebrations**: Recognize major achievements
-- **Peer Comparison**: Friendly competition elements  
+- **Peer Comparison**: Friendly competition elements
 - **Reward Systems**: Tangible benefits for completion
 - **Social Sharing**: Allow learners to share achievements
 
@@ -267,7 +267,7 @@ Enhance engagement by adding gamification:
 SmartPaths and their components are designed for maximum reusability:
 
 - **Modules**: Use across multiple SmartPaths
-- **Learning Sessions**: Repurpose for different audiences  
+- **Learning Sessions**: Repurpose for different audiences
 - **Assessments**: Reuse quizzes and evaluations
 - **Content**: Share SmartFeeds and resources
 - **Templates**: Create standardized path structures

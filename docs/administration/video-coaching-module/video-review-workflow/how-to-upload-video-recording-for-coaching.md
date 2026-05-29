@@ -4,8 +4,8 @@ description: ""
 slug: how-to-upload-video-recording-for-coaching
 sidebar_position: 268
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 62a3071392cb8c175b46bb56
 helpscout_url: https://help.smartwinnr.com/article/268-how-to-record-video-into-video-coaching
 ---

@@ -4,8 +4,8 @@ description: ""
 slug: how-to-view-existing-contacts
 sidebar_position: 134
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdadc160b11ce44f639313f
 helpscout_url: https://help.smartwinnr.com/article/134-how-to-view-existing-contacts
 ---

@@ -4,8 +4,8 @@ description: ""
 slug: what-is-a-rule
 sidebar_position: 141
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdaddc6b624c71b7985a570
 helpscout_url: https://help.smartwinnr.com/article/141-what-is-a-rule
 ---

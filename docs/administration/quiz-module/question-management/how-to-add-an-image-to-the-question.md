@@ -4,8 +4,8 @@ description: ""
 slug: how-to-add-an-image-to-the-question
 sidebar_position: 65
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4bccec868cb6df3a8106b
 helpscout_url: https://help.smartwinnr.com/article/65-how-to-add-an-image-to-the-question
 ---

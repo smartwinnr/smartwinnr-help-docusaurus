@@ -4,14 +4,14 @@ description: ""
 slug: how-to-submit-a-form-on-behalf-of-a-user
 sidebar_position: 252
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60bb69c690777e23fb8ada49
 helpscout_url: https://help.smartwinnr.com/article/252-how-to-submit-a-form-on-behalf-of-a-user
 ---
 An Editor who has access to the form can edit the submission made by a user
 
-Goto Left Menu >>ÂEditorÂ>> Forms >> View All Forms.
+Goto Left Menu >> Editor >> Forms >> View All Forms.
 
 ![](/img/admin/helpscout-image-db79f1e3.jpg)
 

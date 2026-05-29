@@ -4,8 +4,8 @@ description: ""
 slug: learner-report-by-learner-individual-report-analytics
 sidebar_position: 255
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 60c206d796768369c70bc6b4
 helpscout_url: https://help.smartwinnr.com/article/255-learner-report-by-learner
 ---

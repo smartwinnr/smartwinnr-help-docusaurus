@@ -3,8 +3,8 @@ title: "Advanced & Integration Settings"
 description: "Configure xAPI integration, leaderboards, proctoring, and other advanced quiz settings."
 sidebar_position: 6
 last_update:
-  date: 2026-03-09
-  author: "SmartWinnr"
+ date: 2026-03-09
+ author: "SmartWinnr"
 ---
 
 ## Overview

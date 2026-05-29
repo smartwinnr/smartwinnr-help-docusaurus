@@ -4,12 +4,12 @@ description: ""
 slug: how-to-add-new-rule
 sidebar_position: 140
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdadd747129911ba1b21dc5
 helpscout_url: https://help.smartwinnr.com/article/140-how-to-add-new-rule
 ---
-ÂGo to Admin>> Rules>>Add Rule.
+ Go to Admin>> Rules>>Add Rule.
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1100)
 
@@ -29,7 +29,7 @@ Event: It is the set of actions based on which notifications would be triggered.
 
 Different types of events are shown below.
 
-Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â ÂÂ ![](https://support.smartwinnr.com/api/v1/attachments/1092)
+ ![](https://support.smartwinnr.com/api/v1/attachments/1092)
 
 Based on the Selected Object type, "Event" dropdown elements will be loaded from which the Admin has to select the required event.
 
@@ -46,7 +46,7 @@ Admin needs to select the status type:
 
 Selected Object:
 
-Clicking on "Selected Object " will openÂ the followingÂ page
+Clicking on "Selected Object " will open the following page
 
 ![](https://support.smartwinnr.com/api/v1/attachments/1093)
 

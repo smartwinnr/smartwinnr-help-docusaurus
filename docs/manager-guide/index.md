@@ -84,27 +84,27 @@ Begin coaching conversations based on performance data.
 
 ### **Daily Management Routine**
 
-1. **Check Team Dashboard**  Review overnight activity and new submissions
-2. **Monitor Deadlines**  Identify upcoming due dates and at-risk assignments
-3. **Review Performance**  Check latest quiz results and learning progress
-4. **Address Issues**  Follow up with team members who need support
-5. **Plan Next Actions**  Schedule coaching sessions or assign new content
+1. **Check Team Dashboard** Review overnight activity and new submissions
+2. **Monitor Deadlines** Identify upcoming due dates and at-risk assignments
+3. **Review Performance** Check latest quiz results and learning progress
+4. **Address Issues** Follow up with team members who need support
+5. **Plan Next Actions** Schedule coaching sessions or assign new content
 
 ### **Weekly Team Review**
 
-1. **Generate Reports**  Pull weekly performance analytics
-2. **Identify Trends**  Look for patterns in team performance
-3. **Plan Interventions**  Create action plans for struggling team members
-4. **Recognize Success**  Acknowledge high performers and achievements
-5. **Strategic Planning**  Adjust learning plans based on performance data
+1. **Generate Reports** Pull weekly performance analytics
+2. **Identify Trends** Look for patterns in team performance
+3. **Plan Interventions** Create action plans for struggling team members
+4. **Recognize Success** Acknowledge high performers and achievements
+5. **Strategic Planning** Adjust learning plans based on performance data
 
 ### **Monthly Strategic Planning**
 
-1. **Comprehensive Analysis**  Deep dive into monthly performance data
-2. **Skill Gap Assessment**  Identify team-wide training needs
-3. **Goal Setting**  Establish targets for next month
-4. **Resource Planning**  Allocate learning resources effectively
-5. **Performance Reviews**  Conduct formal performance discussions
+1. **Comprehensive Analysis** Deep dive into monthly performance data
+2. **Skill Gap Assessment** Identify team-wide training needs
+3. **Goal Setting** Establish targets for next month
+4. **Resource Planning** Allocate learning resources effectively
+5. **Performance Reviews** Conduct formal performance discussions
 
 ## Key Manager Features
 

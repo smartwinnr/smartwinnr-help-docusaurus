@@ -4,8 +4,8 @@ description: ""
 slug: how-do-i-give-access-permission-to-other-editors
 sidebar_position: 196
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb74880b11ce44f63933a3
 helpscout_url: https://help.smartwinnr.com/article/196-how-do-i-give-access-permission-to-other-editors
 ---
@@ -29,7 +29,7 @@ It will take you to the following page:
 
 ![](/img/quizzes/helpscout-image-5511c500.png)
 
-Here, select theÂAccess PermissionÂtab. It shows you the following page where you can add access permissions:
+Here, select the Access Permission tab. It shows you the following page where you can add access permissions:
 
 ![](/img/quizzes/helpscout-image-3b49a48d.png)
 

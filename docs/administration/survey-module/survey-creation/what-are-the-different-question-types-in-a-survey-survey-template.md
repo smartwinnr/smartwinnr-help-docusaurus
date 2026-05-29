@@ -4,8 +4,8 @@ description: ""
 slug: what-are-the-different-question-types-in-a-survey-survey-template
 sidebar_position: 62
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fd4a51b23119734ee37edce
 helpscout_url: https://help.smartwinnr.com/article/62-what-are-the-different-question-types-in-a-survey-template
 ---

@@ -4,8 +4,8 @@ description: ""
 slug: how-to-create-kpi
 sidebar_position: 171
 last_update:
-  date: 2025-08-10
-  author: HelpScout Migration
+ date: 2025-08-10
+ author: HelpScout Migration
 helpscout_id: 5fdb0c4f0b11ce44f63931c0
 helpscout_url: https://help.smartwinnr.com/article/171-how-to-create-kpi
 ---
@@ -39,8 +39,8 @@ Select a category to map the KPI's with specific skill areas of reps. This is an
 
 Here are some examples of how KPI Definitions can be created:
 
-![](https://support.smartwinnr.com/api/v1/attachments/869)  
-![](https://support.smartwinnr.com/api/v1/attachments/870)  
+![](https://support.smartwinnr.com/api/v1/attachments/869)
+![](https://support.smartwinnr.com/api/v1/attachments/870)
 ![](https://support.smartwinnr.com/api/v1/attachments/871)
 
 ### Edit KPI Definitions

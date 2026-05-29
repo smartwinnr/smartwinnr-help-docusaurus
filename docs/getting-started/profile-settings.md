@@ -4,8 +4,8 @@ description: "Complete guide for managing your profile, password, language, and 
 slug: profile-settings
 sidebar_position: 2
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # Profile & Settings
@@ -49,11 +49,11 @@ You will be asked to add a profile picture the first time you log in to SmartWin
 
 ### After You're Already Logged In
 
-1. Navigate to your profile page (hamburger menu  profile picture)
+1. Navigate to your profile page (hamburger menu profile picture)
 2. Click on the **camera icon** on your profile picture
 3. Choose either:
-   - **Open Camera** to take a new picture
-   - **Open Gallery** to select an existing picture
+ - **Open Camera** to take a new picture
+ - **Open Gallery** to select an existing picture
 
 ![Profile Picture Change](https://lh4.googleusercontent.com/zvtTITC7qFS29DeFfkJFOhPwQRE1bpKFjydQ45tuAlaI8CJTnHLBd1kLzbDovk_xbn-twTX8dGP9MhXZahSvE6Ia_KXo7f53KAxxQhYcZic_L7Cy60iOnWW7f4vGXw0qRXkk1bsS)
 

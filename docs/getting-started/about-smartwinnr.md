@@ -4,8 +4,8 @@ description: "Introduction to SmartWinnr platform and its key features"
 slug: about-smartwinnr
 sidebar_position: 5
 last_update:
-  date: 2025-08-10
-  author: Documentation Reorganization
+ date: 2025-08-10
+ author: Documentation Reorganization
 ---
 
 # About SmartWinnr
