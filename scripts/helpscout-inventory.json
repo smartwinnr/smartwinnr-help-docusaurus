@@ -1,0 +1,223 @@
+{
+  "fetchedAt": "2026-05-30",
+  "apiBase": "https://docsapi.helpscout.net/v1",
+  "collections": [
+    {
+      "id": "5fcc5d85de1bfa158fb55b98",
+      "name": "Editors",
+      "slug": "editors",
+      "description": "For Marketers, Learning Managers, Game Admins",
+      "articleCount": 181,
+      "categories": [
+        {
+          "id": "697b27a7e2f586b8fadaba11",
+          "name": "AI Coaching",
+          "slug": "ai-coaching"
+        },
+        {
+          "id": "5fcf76b4471dc000c9affdd2",
+          "name": "SmartFeeds",
+          "slug": "smartfeeds"
+        },
+        {
+          "id": "5fcf7646388c5a0089e64978",
+          "name": "Manage Questions",
+          "slug": "questions-and-quizzes"
+        },
+        {
+          "id": "5fd44c833d1d2a5b1c5ea0f9",
+          "name": "Manage Quiz",
+          "slug": "quiz"
+        },
+        {
+          "id": "5fd49b7c3d1d2a5b1c5ea166",
+          "name": "Surveys",
+          "slug": "surveys"
+        },
+        {
+          "id": "5fd6f6fb36980410c9123b3e",
+          "name": "SmartPath",
+          "slug": "smartpath"
+        },
+        {
+          "id": "5fdae8757129911ba1b21de0",
+          "name": "KHub",
+          "slug": "khub"
+        },
+        {
+          "id": "5fd72017c868cb6df3a813be",
+          "name": "Coaching",
+          "slug": "coaching"
+        },
+        {
+          "id": "6778cfa092cf3a0bf0d585fd",
+          "name": "Field Coaching",
+          "slug": "field-coaching"
+        },
+        {
+          "id": "5fd8c0197129911ba1b21234",
+          "name": "Forms",
+          "slug": "forms"
+        },
+        {
+          "id": "5fd9ac5627288b7f895d5e08",
+          "name": "Competitions",
+          "slug": "competitions"
+        },
+        {
+          "id": "5fdb0b97a5d295659b369c5c",
+          "name": "KPI Gamification",
+          "slug": "kpi-gamification"
+        },
+        {
+          "id": "5fdb4ce0a5d295659b369d91",
+          "name": "Achievements",
+          "slug": "achievements"
+        },
+        {
+          "id": "5fdae18927288b7f895d64d3",
+          "name": "Reports",
+          "slug": "reports"
+        },
+        {
+          "id": "5fdaf55227288b7f895d650b",
+          "name": "Chats",
+          "slug": "chats"
+        },
+        {
+          "id": "5fda5502b624c71b7985a2ca",
+          "name": "Group",
+          "slug": "group"
+        },
+        {
+          "id": "5fdb07e87129911ba1b21e3a",
+          "name": "Notifications",
+          "slug": "notifications"
+        },
+        {
+          "id": "5fdb74717129911ba1b2202c",
+          "name": "Access Permissions",
+          "slug": "access-permissions"
+        },
+        {
+          "id": "5fd4e5943d1d2a5b1c5ea1c8",
+          "name": "Common Actions",
+          "slug": "common-actions"
+        },
+        {
+          "id": "5fdb2e1627288b7f895d65c4",
+          "name": "Project Management",
+          "slug": "project-management"
+        },
+        {
+          "id": "5fcc5d85de1bfa158fb55b99",
+          "name": "Uncategorized",
+          "slug": "uncategorized"
+        }
+      ]
+    },
+    {
+      "id": "5fcdfed6d580ce55a38b4d1e",
+      "name": "Managers and Team Members",
+      "slug": "managers-and-team-members",
+      "description": "SmartWinnr mobile app guide",
+      "articleCount": 54,
+      "categories": [
+        {
+          "id": "6970fbc900f8607fae245db9",
+          "name": "AI Coaching",
+          "slug": "ai-coaching"
+        },
+        {
+          "id": "5fdb40670b11ce44f6393294",
+          "name": "User View in SmartWinnr",
+          "slug": "users"
+        },
+        {
+          "id": "5fce0238de1bfa158fb55e2b",
+          "name": "Getting Started",
+          "slug": "getting-started"
+        },
+        {
+          "id": "5fd98ea8b624c71b79859ee5",
+          "name": "Manager View In SmartWinnr",
+          "slug": "manager-view-in-smartwinnr"
+        },
+        {
+          "id": "5fce313bd580ce55a38b4e15",
+          "name": "QResolve",
+          "slug": "submit-forms"
+        },
+        {
+          "id": "5fcdfed6d580ce55a38b4d1f",
+          "name": "Uncategorized",
+          "slug": "uncategorized"
+        }
+      ]
+    },
+    {
+      "id": "60017766b9a8501b295d0ce6",
+      "name": "Admins",
+      "slug": "admins",
+      "description": null,
+      "articleCount": 25,
+      "categories": [
+        {
+          "id": "60017e19c64fe14d0e1fb416",
+          "name": "Your Team",
+          "slug": "your-team"
+        },
+        {
+          "id": "60017b141c64ad47e4b6f9bc",
+          "name": "Quiz Settings",
+          "slug": "quiz-settings"
+        },
+        {
+          "id": "60017917cfe30d219ccd8220",
+          "name": "Audit Log",
+          "slug": "audit-log"
+        },
+        {
+          "id": "60017a3f2e764327f87bf07d",
+          "name": "Manage Contacts",
+          "slug": "manage-contacts"
+        },
+        {
+          "id": "60017cd41c64ad47e4b6f9c3",
+          "name": "Rules",
+          "slug": "rules"
+        },
+        {
+          "id": "6001c9f2cfe30d219ccd840f",
+          "name": "Organizational Settings",
+          "slug": "organizational-settings"
+        },
+        {
+          "id": "601546636867724dfc6edbff",
+          "name": "Video Coaching",
+          "slug": "video-coaching"
+        },
+        {
+          "id": "6001c9bb1c64ad47e4b6fba7",
+          "name": "Learning Reports",
+          "slug": "learning-reports"
+        },
+        {
+          "id": "60017b782e764327f87bf085",
+          "name": "Manage Divisions",
+          "slug": "manage-divisions"
+        },
+        {
+          "id": "60a8932213fd125a39b465a8",
+          "name": "Field Coaching",
+          "slug": "field-coaching"
+        },
+        {
+          "id": "60017766b9a8501b295d0ce7",
+          "name": "Uncategorized",
+          "slug": "uncategorized"
+        }
+      ]
+    }
+  ]
+}

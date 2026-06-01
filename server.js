@@ -44,6 +44,21 @@ app.get('/api/health', (req, res) => {
 // Auth routes (public) + auth middleware (protects everything below)
 initAuth(app);
 
+// Current user — sole endpoint the React client calls on mount to hydrate
+// UserContext for role/privilege-based sidebar gating.
+app.get('/api/me', (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ error: 'Authentication required' });
+  }
+  res.json({
+    email: req.user.email,
+    roles: req.user.roles || [],
+    region: req.user.region || null,
+    orgId: req.user.orgId || null,
+    privileges: req.user.privileges || [],
+  });
+});
+
 // In-memory conversation storage (replace with database in production)
 const conversations = new Map();
 
@@ -562,16 +577,36 @@ app.use((error, req, res, next) => {
 
 // Serve static files from Docusaurus build
 const buildPath = path.join(__dirname, 'build');
+const fs = require('fs');
 app.use(express.static(buildPath));
 
-// Handle client-side routing - serve index.html for non-API routes
+// Handle client-side routing for non-API routes. Docusaurus pre-builds an
+// index.html under every doc dir (e.g. build/overview/index.html), so the
+// fallback chain is: <path>/index.html → build/index.html → 404.html → 503.
+// This prevents a missing/partial build from crashing the auth flow.
 app.get('*', (req, res, next) => {
-  // Skip API routes
   if (req.path.startsWith('/api/')) {
     return next();
   }
-  
-  res.sendFile(path.join(buildPath, 'index.html'));
+
+  const candidates = [
+    path.join(buildPath, req.path, 'index.html'),
+    path.join(buildPath, 'index.html'),
+  ];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      return res.sendFile(candidate);
+    }
+  }
+
+  const notFound = path.join(buildPath, '404.html');
+  if (fs.existsSync(notFound)) {
+    return res.status(404).sendFile(notFound);
+  }
+
+  return res.status(503).json({
+    error: 'Build missing or incomplete. Run `npm run build` and restart the server.',
+  });
 });
 
 // 404 handler for API routes only

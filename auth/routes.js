@@ -32,11 +32,14 @@ router.get('/callback', (req, res) => {
   try {
     const payload = verifySessionToken(token);
 
-    // Defense in depth: re-check that roles include editor or admin
+    // Defense in depth: re-check that the user has a recognized SmartWinnr role.
+    // Help center is accessible to all SmartWinnr personas; the sidebar gates
+    // sections per role. Anyone without one of these roles is rejected.
+    const ALLOWED_ROLES = ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
     const roles = payload.roles || [];
-    const hasAccess = roles.some((r) => r === 'editor' || r === 'admin');
+    const hasAccess = roles.some((r) => ALLOWED_ROLES.includes(r));
     if (!hasAccess) {
-      console.warn('Auth: JWT valid but user lacks editor/admin role');
+      console.warn('Auth: JWT valid but user has no recognized SmartWinnr role');
       return res.redirect('/auth/login');
     }
 
@@ -45,6 +48,8 @@ router.get('/callback', (req, res) => {
       email: payload.email,
       roles: payload.roles,
       region: payload.region,
+      orgId: payload.orgId,
+      privileges: payload.privileges,
     });
 
     res.cookie(COOKIE_NAME, sessionToken, COOKIE_OPTIONS);
@@ -83,6 +88,9 @@ router.get('/status', (req, res) => {
       authenticated: true,
       email: payload.email,
       roles: payload.roles,
+      region: payload.region,
+      orgId: payload.orgId || null,
+      privileges: payload.privileges || [],
     });
   } catch (err) {
     return res.json({ authenticated: false });

@@ -109,7 +109,7 @@ function renderLoginPage(lambdaUrl, errorMessage) {
     <div id="msg" class="message"></div>
 
     <div class="info">
-      Only editors and admins can access the Help Center.<br>
+      Open to all SmartWinnr users. What you see inside is tailored to your role and your organization's enabled modules.<br>
       A sign-in link will be sent to your email.
     </div>
     ${errorMessage ? `<div class="message error">${errorMessage}</div>` : ''}

@@ -47,6 +47,8 @@ function requireAuth(req, res, next) {
         email: payload.email,
         roles: payload.roles,
         region: payload.region,
+        orgId: payload.orgId || null,
+        privileges: payload.privileges || [],
       };
       return next();
     } catch (err) {

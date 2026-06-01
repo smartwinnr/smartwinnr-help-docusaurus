@@ -1,1816 +1,1830 @@
 {
-  "summary": {
-    "successful": 226,
-    "failed": 0
+  "generatedAt": "2026-05-30",
+  "counts": {
+    "created": 260
   },
+  "unmappedCount": 0,
+  "unmapped": [],
   "results": [
     {
       "id": "5fd45c1523119734ee37ed79",
       "title": "How to create 'Multiple-Choice Questions'.",
-      "folder": "quiz",
-      "filename": "how-to-create-multiple-choice-questions.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-multiple-choice-questions.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "641a2df7d6394b6fc7ed9fb2",
       "title": "How to create a missing words question?",
-      "folder": "quiz",
-      "filename": "how-to-create-a-missing-words-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "641a2e5bdf67f62fb768a4ca",
-      "title": "How to create a Drag and Drop into Image Question?",
-      "folder": "quiz",
-      "filename": "how-to-create-a-drag-and-drop-into-image-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "64115177a0408f7cb1038c2d",
-      "title": "Short Answer With Multiple Options",
-      "folder": "quiz",
-      "filename": "short-answer-with-multiple-options.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6411592461f16344e3a359c8",
-      "title": "How to create a 'Drag and Drop into Text question '.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-drag-and-drop-into-text-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd10365db2fa3720c7d7a2f",
-      "title": "How to create a SmartFeed?",
-      "folder": "getting-started",
-      "filename": "how-to-create-a-smartfeed.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6451ac447fbafd6b38243f84",
-      "title": "How to create 'Numeric Type Questions'",
-      "folder": "quiz",
-      "filename": "how-to-create-numeric-type-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd46a20c868cb6df3a80ff5",
-      "title": "How to create a 'Matching Question'.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-matching-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd72036c868cb6df3a813bf",
-      "title": "How to create a Video Coaching assignment.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-video-coaching-assignment.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4623dc868cb6df3a80fe9",
-      "title": "How to create 'Fill-In-The-Blank' Questions.",
-      "folder": "quiz",
-      "filename": "how-to-create-fill-in-the-blank-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd48eb723119734ee37eda5",
-      "title": "Quiz types",
-      "folder": "quiz",
-      "filename": "quiz-types.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fcf7718da652271f08d3f5e",
-      "title": "What are SmartFeeds?",
-      "folder": "forms",
-      "filename": "what-are-smartfeeds.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-missing-words-question.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fda26d77129911ba1b219c1",
       "title": "Leaderboards of a competition",
-      "folder": "competitions",
-      "filename": "leaderboards-of-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd1082c80488e39007cbd4c",
-      "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
-      "folder": "forms",
-      "filename": "how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd6f70a23119734ee37f088",
-      "title": "How to create a module for SmartPath.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-module-for-smartpath.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4640136980410c912381c",
-      "title": "How to create a 'Hotspot Question'.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-hotspot-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd711e636980410c9123b73",
-      "title": "How to create a SmartPath.",
-      "folder": "smartpath",
-      "filename": "how-to-create-a-smartpath.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd48f1123119734ee37eda6",
-      "title": "How to create an automatic quiz?",
-      "folder": "quiz",
-      "filename": "how-to-create-an-automatic-quiz.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4521236980410c9123802",
-      "title": "Understanding knowledge categories",
-      "folder": "quiz",
-      "filename": "understanding-knowledge-categories.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd490113d1d2a5b1c5ea153",
-      "title": "How to create a manual quiz?",
-      "folder": "quiz",
-      "filename": "how-to-create-a-manual-quiz.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4e5ddc868cb6df3a8109f",
-      "title": "How to add a video to your content?",
-      "folder": "forms",
-      "filename": "how-to-add-a-video-to-your-content.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd49bd14eb32171b80374c6",
-      "title": "How to create a 'Survey'.",
-      "folder": "quiz",
-      "filename": "how-to-create-a-survey.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4545236980410c9123806",
-      "title": "Question bank",
-      "folder": "competitions",
-      "filename": "question-bank.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6106badbb37d837a3d0df896",
-      "title": "How to Mark the attendance for Users  in Learning Sessions?",
-      "folder": "users",
-      "filename": "how-to-mark-the-attendance-for-users-in-learning-sessions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60b8befc4dda6972e0931f8a",
-      "title": "How to Create SmartPath with Learning Sessions?",
-      "folder": "quiz",
-      "filename": "how-to-create-smartpath-with-learning-sessions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdae8ca27288b7f895d64e3",
-      "title": "How can I create folders and items in KHub?",
-      "folder": "forms",
-      "filename": "how-can-i-create-folders-and-items-in-khub.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5ffc6928bb5c6f7434e0f991",
-      "title": "Question Structure",
-      "folder": "quiz",
-      "filename": "question-structure.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60a4febd13fd125a39b4516e",
-      "title": "How to create Field Coaching",
-      "folder": "competitions",
-      "filename": "how-to-create-field-coaching.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda5572a5d295659b369917",
-      "title": "How to create a group?",
-      "folder": "getting-started",
-      "filename": "how-to-create-a-group.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60e1fc479e87cb3d01249e3c",
-      "title": "How to create 'Long Answer' Questions?",
-      "folder": "quiz",
-      "filename": "how-to-create-long-answer-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdae88db624c71b7985a587",
-      "title": "What is KHub?",
-      "folder": "getting-started",
-      "filename": "what-is-khub.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60deaa9261c60c534bd6b92e",
-      "title": "Widgets",
-      "folder": "reports",
-      "filename": "widgets.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd9ac9fa5d295659b36957e",
-      "title": "What is a Competition?",
-      "folder": "quiz",
-      "filename": "what-is-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd8c043b624c71b798599c8",
-      "title": "How to Create a form?",
-      "folder": "reports",
-      "filename": "how-to-create-a-form.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd496523d1d2a5b1c5ea15c",
-      "title": "Detailed Quiz Analytics",
-      "folder": "quiz",
-      "filename": "detailed-quiz-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "62b3e9dd0729834c424f8fad",
-      "title": "How to Import SCORM course into SmartWinnr?",
-      "folder": "quiz",
-      "filename": "how-to-import-scorm-course-into-smartwinnr.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60f9c61c766e8844fc34922e",
-      "title": "How Editors evaluate Long Answer Questions?",
-      "folder": "quiz",
-      "filename": "how-editors-evaluate-long-answer-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb1597a5d295659b369c89",
-      "title": "What is a Challenge?",
-      "folder": "getting-started",
-      "filename": "what-is-a-challenge.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd113efb6c6251cd1c34bc5",
-      "title": "How to view SmartFeed Analytics?",
-      "folder": "reports",
-      "filename": "how-to-view-smartfeed-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd72ca536980410c9123bbe",
-      "title": "How to share a Coaching Video.",
-      "folder": "competitions",
-      "filename": "how-to-share-a-coaching-video.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd713dc23119734ee37f0cb",
-      "title": "How to view the SmartPath Analytics.",
-      "folder": "quiz",
-      "filename": "how-to-view-the-smartpath-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd72b2fc868cb6df3a813e5",
-      "title": "How to review a video coaching assignment.",
-      "folder": "coaching",
-      "filename": "how-to-review-a-video-coaching-assignment.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd49470c868cb6df3a8102a",
-      "title": "How to activate automatic reminders for your quizzes",
-      "folder": "quiz",
-      "filename": "how-to-activate-automatic-reminders-for-your-quizzes.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb13f67129911ba1b21e6b",
-      "title": "How to create a Scorecard?",
-      "folder": "reports",
-      "filename": "how-to-create-a-scorecard.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd10c66b6c6251cd1c34b95",
-      "title": "How to edit a SmartFeed?",
-      "folder": "getting-started",
-      "filename": "how-to-edit-a-smartfeed.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd9adaa7129911ba1b2173b",
-      "title": "How to add a Quiz to a competition?",
-      "folder": "quiz",
-      "filename": "how-to-add-a-quiz-to-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60a645beeb3af44cc120aa6d",
-      "title": "How to add Learning Sessions In SmartPath Module?",
-      "folder": "quiz",
-      "filename": "how-to-add-learning-sessions-in-smartpath-module.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd49e6623119734ee37edbd",
-      "title": "How to assign a Survey.",
-      "folder": "quiz",
-      "filename": "how-to-assign-a-survey.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4a80723119734ee37edd6",
-      "title": "What is the difference between a Survey and a Survey Template?",
-      "folder": "surveys",
-      "filename": "what-is-the-difference-between-a-survey-and-a-survey-template.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd10f0ba72c62318a4c08b7",
-      "title": "How to send the SmartFeed to Teams?",
-      "folder": "getting-started",
-      "filename": "how-to-send-the-smartfeed-to-teams.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd714514eb32171b80377f9",
-      "title": "How can I Gamify a SmartPath?",
-      "folder": "competitions",
-      "filename": "how-can-i-gamify-a-smartpath.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4a51b23119734ee37edce",
-      "title": "What are the different question types in a Survey /Survey Template?",
-      "folder": "surveys",
-      "filename": "what-are-the-different-question-types-in-a-survey-survey-template.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd7119336980410c9123b70",
-      "title": "What are SmartPaths.",
-      "folder": "quiz",
-      "filename": "what-are-smartpaths.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb0e92a5d295659b369c6c",
-      "title": "What are Scorecards?",
-      "folder": "forms",
-      "filename": "what-are-scorecards.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4a44e36980410c9123862",
-      "title": "How to create a 'Survey Template'.",
-      "folder": "surveys",
-      "filename": "how-to-create-a-survey-template.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb086ea5d295659b369c51",
-      "title": "Custom Notifications",
-      "folder": "forms",
-      "filename": "custom-notifications.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb0817b624c71b7985a5e5",
-      "title": "What is the purpose of notifications?",
-      "folder": "forms",
-      "filename": "what-is-the-purpose-of-notifications.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda55167129911ba1b21b2c",
-      "title": "What is a Group?",
-      "folder": "quiz",
-      "filename": "what-is-a-group.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd48497c868cb6df3a81016",
-      "title": "How to upload questions in bulk using 'Import Questions'.",
-      "folder": "quiz",
-      "filename": "how-to-upload-questions-in-bulk-using-import-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5ffc7b6c66df373cab7081aa",
-      "title": "How to edit a question?",
-      "folder": "quiz",
-      "filename": "how-to-edit-a-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4bb1b4eb32171b80374ff",
-      "title": "How to add a 'Video' to a question.",
-      "folder": "getting-started",
-      "filename": "how-to-add-a-video-to-a-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda5620b624c71b7985a2d0",
-      "title": "How to send quizzes, surveys and content using group?",
-      "folder": "quiz",
-      "filename": "how-to-send-quizzes-surveys-and-content-using-group.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb0c4f0b11ce44f63931c0",
-      "title": "How to create KPI?",
-      "folder": "kpi-gamification",
-      "filename": "how-to-create-kpi.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdbab410b11ce44f6393516",
-      "title": "Team Progress Report",
-      "folder": "quiz",
-      "filename": "team-progress-report.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4955723119734ee37edb5",
-      "title": "What is SmartWinnr Quiz Analytics?",
-      "folder": "quiz",
-      "filename": "what-is-smartwinnr-quiz-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4939923119734ee37edac",
-      "title": "How can I duplicate a quiz?",
-      "folder": "quiz",
-      "filename": "how-can-i-duplicate-a-quiz.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "62ad5954cb3c130081c15b53",
-      "title": "How to create Re-order Questions ?",
-      "folder": "quiz",
-      "filename": "how-to-create-re-order-questions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdae9650b11ce44f639315d",
-      "title": "How can I edit a KHub item?",
-      "folder": "getting-started",
-      "filename": "how-can-i-edit-a-khub-item.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "600a9329b9a8501b295d308e",
-      "title": "How to add a Form to Competition?",
-      "folder": "competitions",
-      "filename": "how-to-add-a-form-to-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb0c19a5d295659b369c5f",
-      "title": "Define KPIs",
-      "folder": "kpi-gamification",
-      "filename": "define-kpis.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4845e36980410c9123839",
-      "title": "How 'Import question' is  different from 'Add New Question'?",
-      "folder": "getting-started",
-      "filename": "how-import-question-is-different-from-add-new-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4ebed3d1d2a5b1c5ea1d5",
-      "title": "How to attach PDF file to your content?",
-      "folder": "getting-started",
-      "filename": "how-to-attach-pdf-file-to-your-content.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb9acd27288b7f895d6884",
-      "title": "Team Analytics",
-      "folder": "quiz",
-      "filename": "team-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "600850fdcfe30d219ccd99f3",
-      "title": "How to Approve/Reject a Form Submission",
-      "folder": "forms",
-      "filename": "how-to-approve-reject-a-form-submission.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4be483d1d2a5b1c5ea19b",
-      "title": "How to embed a link into the question",
-      "folder": "getting-started",
-      "filename": "how-to-embed-a-link-into-the-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60a5315013fd125a39b45357",
-      "title": "How to add the Scorecard to Leaderboard",
-      "folder": "competitions",
-      "filename": "how-to-add-the-scorecard-to-leaderboard.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda2e397129911ba1b21a07",
-      "title": "Survey Analytics",
-      "folder": "surveys",
-      "filename": "survey-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60c1f6cea6d12c2cd643e794",
-      "title": "Learner Overall Report",
-      "folder": "quiz",
-      "filename": "learner-overall-report.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda2c167129911ba1b219fb",
-      "title": "How to duplicate a 'Survey' and 'Survey Template'.",
-      "folder": "surveys",
-      "filename": "how-to-duplicate-a-survey-and-survey-template.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4ea8523119734ee37ee1f",
-      "title": "How to add a image to your content?",
-      "folder": "getting-started",
-      "filename": "how-to-add-a-image-to-your-content.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd9ff840b11ce44f6392c14",
-      "title": "How to add a Scorecard to a Competition?",
-      "folder": "competitions",
-      "filename": "how-to-add-a-scorecard-to-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60bf40d2a6d12c2cd643da33",
-      "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
-      "folder": "getting-started",
-      "filename": "how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6464dc077d89467e9da79320",
-      "title": "How to reset a coaching video",
-      "folder": "coaching",
-      "filename": "how-to-reset-a-coaching-video.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda24cfa5d295659b3697bf",
-      "title": "How to add a challenge to the competition?",
-      "folder": "competitions",
-      "filename": "how-to-add-a-challenge-to-the-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd9d20127288b7f895d5e73",
-      "title": "How to add a Survey to a Competition?",
-      "folder": "quiz",
-      "filename": "how-to-add-a-survey-to-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd11017db2fa3720c7d7aae",
-      "title": "How to view all the SmartFeeds?",
-      "folder": "getting-started",
-      "filename": "how-to-view-all-the-smartfeeds.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd7592d0b11ce44f6391e82",
-      "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
-      "folder": "quiz",
-      "filename": "how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb14bf27288b7f895d6570",
-      "title": "How to add/change targets?",
-      "folder": "forms",
-      "filename": "how-to-add-change-targets.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60a60efceb3af44cc120a91b",
-      "title": "How to add a Recording to a SmartFeed?",
-      "folder": "forms",
-      "filename": "how-to-add-a-recording-to-a-smartfeed.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/leaderboards-of-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd4eaf9c868cb6df3a810a3",
       "title": "How to add reference to an external link to your content?",
-      "folder": "quiz",
-      "filename": "how-to-add-reference-to-an-external-link-to-your-content.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-add-reference-to-an-external-link-to-your-content.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "641a2e5bdf67f62fb768a4ca",
+      "title": "How to create a Drag and Drop into Image Question?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-drag-and-drop-into-image-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd10365db2fa3720c7d7a2f",
+      "title": "How to create a SmartFeed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-create-a-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "64115177a0408f7cb1038c2d",
+      "title": "How to create Short Answer With Multiple Options",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-short-answer-with-multiple-options.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd72036c868cb6df3a813bf",
+      "title": "How to create a Video Coaching assignment.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-create-a-video-coaching-assignment.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6411592461f16344e3a359c8",
+      "title": "How to create a 'Drag and Drop into Text question '?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-drag-and-drop-into-text-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4623dc868cb6df3a80fe9",
+      "title": "How to create 'Fill-In-The-Blank' Questions.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-fill-in-the-blank-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd48eb723119734ee37eda5",
+      "title": "Quiz types",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/quiz-types.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd46a20c868cb6df3a80ff5",
+      "title": "How to create a 'Matching Question'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-matching-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6451ac447fbafd6b38243f84",
+      "title": "How to create 'Numeric Type Questions'",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-numeric-type-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fcf7718da652271f08d3f5e",
+      "title": "What are SmartFeeds?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/what-are-smartfeeds.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd48f1123119734ee37eda6",
+      "title": "How to create an automatic quiz?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-an-automatic-quiz.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd490113d1d2a5b1c5ea153",
+      "title": "How to create a manual quiz?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-manual-quiz.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd49bd14eb32171b80374c6",
+      "title": "How to create a 'Survey'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/how-to-create-a-survey.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd6f70a23119734ee37f088",
+      "title": "How to create a module for SmartPath.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-create-a-module-for-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd1082c80488e39007cbd4c",
+      "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd711e636980410c9123b73",
+      "title": "How to create a SmartPath?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-create-a-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4640136980410c912381c",
+      "title": "How to create a 'Hotspot Question'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-a-hotspot-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd48497c868cb6df3a81016",
+      "title": "How to upload questions in bulk using 'Import Questions'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-upload-questions-in-bulk-using-import-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4545236980410c9123806",
+      "title": "Question bank",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/question-bank.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4521236980410c9123802",
+      "title": "Understanding knowledge categories",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/understanding-knowledge-categories.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4e5ddc868cb6df3a8109f",
+      "title": "How to add a video to your content?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-add-a-video-to-your-content.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5ffc6928bb5c6f7434e0f991",
+      "title": "Question Structure",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/question-structure.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdae88db624c71b7985a587",
+      "title": "What is KHub?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/knowledge-hub-module/what-is-khub.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6106badbb37d837a3d0df896",
+      "title": "How to Mark the attendance for Users  in Learning Sessions?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60a4febd13fd125a39b4516e",
+      "title": "How to create Field Coaching",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-create-field-coaching.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60e1fc479e87cb3d01249e3c",
+      "title": "How to create 'Long Answer' Questions?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-long-answer-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdae8ca27288b7f895d64e3",
+      "title": "How can I create folders and items in KHub?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/knowledge-hub-module/how-can-i-create-folders-and-items-in-khub.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd7119336980410c9123b70",
+      "title": "What are SmartPaths.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/what-are-smartpaths.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda5572a5d295659b369917",
+      "title": "How to create a group?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-create-a-group.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "62b3e9dd0729834c424f8fad",
+      "title": "How to Import SCORM course into SmartWinnr?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-import-scorm-course-into-smartwinnr.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4955723119734ee37edb5",
+      "title": "What is SmartWinnr Quiz Analytics?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/what-is-smartwinnr-quiz-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60b8befc4dda6972e0931f8a",
+      "title": "How to Create SmartPath with Learning Sessions?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-create-smartpath-with-learning-sessions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd496523d1d2a5b1c5ea15c",
+      "title": "Detailed Quiz Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/detailed-quiz-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb13f67129911ba1b21e6b",
+      "title": "How to create a Scorecard?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-a-scorecard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60f9c61c766e8844fc34922e",
+      "title": "How Editors evaluate Long Answer Questions?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-editors-evaluate-long-answer-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd8c043b624c71b798599c8",
+      "title": "How to Create a form?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/how-to-create-a-form.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd9ac9fa5d295659b36957e",
+      "title": "What is a Competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-is-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4a44e36980410c9123862",
+      "title": "How to create a 'Survey Template'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/how-to-create-a-survey-template.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4a80723119734ee37edd6",
+      "title": "What is the difference between a Survey and a Survey Template?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/what-is-the-difference-between-a-survey-and-a-survey-template.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd9adaa7129911ba1b2173b",
+      "title": "How to add a Quiz to a competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-quiz-to-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd72ca536980410c9123bbe",
+      "title": "How to share a Coaching Video.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-share-a-coaching-video.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd113efb6c6251cd1c34bc5",
+      "title": "How to view SmartFeed Analytics?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-view-smartfeed-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60a645beeb3af44cc120aa6d",
+      "title": "How to add Learning Sessions In SmartPath Module?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-add-learning-sessions-in-smartpath-module.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb1597a5d295659b369c89",
+      "title": "What is a Challenge?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-is-a-challenge.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd10c66b6c6251cd1c34b95",
+      "title": "How to Edit a SmartFeed",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-edit-a-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd49470c868cb6df3a8102a",
+      "title": "How to activate automatic reminders for your quizzes",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-activate-automatic-reminders-for-your-quizzes.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4bb1b4eb32171b80374ff",
+      "title": "How to add a 'Video' to a question.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-add-a-video-to-a-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd72b2fc868cb6df3a813e5",
+      "title": "How to review a video coaching assignment.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-review-a-video-coaching-assignment.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd713dc23119734ee37f0cb",
+      "title": "How to view the SmartPath Analytics.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-view-the-smartpath-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb0e92a5d295659b369c6c",
+      "title": "What are Scorecards?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-are-scorecards.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd714514eb32171b80377f9",
+      "title": "How can I Gamify a SmartPath?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-can-i-gamify-a-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb0817b624c71b7985a5e5",
+      "title": "What is the purpose of notifications?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/what-is-the-purpose-of-notifications.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda5620b624c71b7985a2d0",
+      "title": "How to send quizzes, surveys and content using group?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda55167129911ba1b21b2c",
+      "title": "What is a Group?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/what-is-a-group.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd49e6623119734ee37edbd",
+      "title": "How to Assign a Survey in SmartWinnr",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/how-to-assign-a-survey-in-smartwinnr.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60deaa9261c60c534bd6b92e",
+      "title": "Widgets",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/widgets.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb0c19a5d295659b369c5f",
+      "title": "Define KPIs",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/define-kpis.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda24cfa5d295659b3697bf",
+      "title": "How to add a challenge to the competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-challenge-to-the-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4a51b23119734ee37edce",
+      "title": "What are the different question types in a Survey /Survey Template?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/what-are-the-different-question-types-in-a-survey-survey-template.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5ffc7b6c66df373cab7081aa",
+      "title": "How to edit a question?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-edit-a-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd10f0ba72c62318a4c08b7",
+      "title": "How to send the SmartFeed to Teams?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-send-the-smartfeed-to-teams.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb0e290b11ce44f63931c7",
       "title": "How to upload KPI data?",
-      "folder": "kpi-gamification",
-      "filename": "how-to-upload-kpi-data.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-upload-kpi-data.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "60a370cfeb3af44cc12099d5",
-      "title": "How to add observers to the Competition Leaderboard?",
-      "folder": "competitions",
-      "filename": "how-to-add-observers-to-the-competition-leaderboard.md",
-      "images": 0,
-      "status": "success"
+      "id": "60a5315013fd125a39b45357",
+      "title": "How to add the Scorecard to Leaderboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-the-scorecard-to-leaderboard.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fda263d27288b7f895d60b7",
-      "title": "How to Duplicate a quiz in a Competition?",
-      "folder": "quiz",
-      "filename": "how-to-duplicate-a-quiz-in-a-competition.md",
-      "images": 0,
-      "status": "success"
+      "id": "600850fdcfe30d219ccd99f3",
+      "title": "How to Approve/Reject a Form Submission",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/how-to-approve-reject-a-form-submission.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4939923119734ee37edac",
+      "title": "How can I duplicate a quiz?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-can-i-duplicate-a-quiz.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "600a9329b9a8501b295d308e",
+      "title": "How to add a Form to Competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-form-to-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4ebed3d1d2a5b1c5ea1d5",
+      "title": "How to attach PDF file to your content?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-attach-pdf-file-to-your-content.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb0c4f0b11ce44f63931c0",
+      "title": "How to create KPI?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-kpi.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fda04347129911ba1b218a5",
       "title": "How to add a Video Coaching to the competition?",
-      "folder": "surveys",
-      "filename": "how-to-add-a-video-coaching-to-the-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb31fb0b11ce44f6393244",
-      "title": "Advanced options for projects",
-      "folder": "getting-started",
-      "filename": "advanced-options-for-projects.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd48e84c868cb6df3a8101f",
-      "title": "Troubleshoot for common error code",
-      "folder": "getting-started",
-      "filename": "troubleshoot-for-common-error-code.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4998236980410c9123856",
-      "title": "Question Response Analytics",
-      "folder": "quiz",
-      "filename": "question-response-analytics.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-video-coaching-to-the-competition.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd4bccec868cb6df3a8106b",
       "title": "How to add an 'Image' to the question.",
-      "folder": "getting-started",
-      "filename": "how-to-add-an-image-to-the-question.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-add-an-image-to-the-question.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb0be80b11ce44f63931bb",
-      "title": "Understand Game Concepts",
-      "folder": "competitions",
-      "filename": "understand-game-concepts.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fd9ff840b11ce44f6392c14",
+      "title": "How to add a Scorecard to a Competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-scorecard-to-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "60bb39acfca38f033a7da5dc",
-      "title": "How to Edit a Form on submitted by a user?",
-      "folder": "users",
-      "filename": "how-to-edit-a-form-on-submitted-by-a-user.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fdb086ea5d295659b369c51",
+      "title": "Custom Notifications",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/custom-notifications.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb0cd97129911ba1b21e50",
-      "title": "How to create a Field Mapping?",
-      "folder": "reports",
-      "filename": "how-to-create-a-field-mapping.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fd9d20127288b7f895d5e73",
+      "title": "How to add a Survey to a Competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-a-survey-to-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb2e27b624c71b7985a678",
-      "title": "How to create a new Project?",
-      "folder": "getting-started",
-      "filename": "how-to-create-a-new-project.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fdb14bf27288b7f895d6570",
+      "title": "How to add/change targets?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-change-targets.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb1843a5d295659b369c92",
-      "title": "What are KPI Reports?",
-      "folder": "kpi-gamification",
-      "filename": "what-are-kpi-reports.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fdb9acd27288b7f895d6884",
+      "title": "Team Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/team-analytics.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb15d60b11ce44f63931e1",
-      "title": "How to create an Individual Challenge?",
-      "folder": "forms",
-      "filename": "how-to-create-an-individual-challenge.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb08a97129911ba1b21e3d",
-      "title": "Bulk Custom Notifications",
-      "folder": "getting-started",
-      "filename": "bulk-custom-notifications.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd4eb633d1d2a5b1c5ea1d3",
-      "title": "How to add an audio file to your content?",
-      "folder": "forms",
-      "filename": "how-to-add-an-audio-file-to-your-content.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fda2e397129911ba1b21a07",
+      "title": "Survey Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/survey-analytics.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd623d336980410c9123a23",
       "title": "How to add an 'Audio file' to a question.",
-      "folder": "getting-started",
-      "filename": "how-to-add-an-audio-file-to-a-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdaebcca5d295659b369c02",
-      "title": "How can I view KHub Analytics?",
-      "folder": "forms",
-      "filename": "how-can-i-view-khub-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5ffd689766df373cab70860b",
-      "title": "Survey Template Analytics",
-      "folder": "surveys",
-      "filename": "survey-template-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "64649da87d89467e9da791da",
-      "title": "How to create Badges",
-      "folder": "getting-started",
-      "filename": "how-to-create-badges.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdaf5650b11ce44f6393174",
-      "title": "What are Chat Groups?",
-      "folder": "getting-started",
-      "filename": "what-are-chat-groups.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60c206d796768369c70bc6b4",
-      "title": "Learner Report - By Learner (Individual Report Analytics)",
-      "folder": "quiz",
-      "filename": "learner-report-by-learner-individual-report-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60099176c64fe14d0e1fd224",
-      "title": "Form Analytics",
-      "folder": "reports",
-      "filename": "form-analytics.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdaf691a5d295659b369c17",
-      "title": "How to add or remove users to a chat group?",
-      "folder": "users",
-      "filename": "how-to-add-or-remove-users-to-a-chat-group.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb168a0b11ce44f63931e3",
-      "title": "How to create a Manager Challenge?",
-      "folder": "competitions",
-      "filename": "how-to-create-a-manager-challenge.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "665cc161463661770bfb12d6",
-      "title": "How to add smartfeed within a Competition",
-      "folder": "competitions",
-      "filename": "how-to-add-smartfeed-within-a-competition.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb188b0b11ce44f63931e7",
-      "title": "Detailed explanation of reports",
-      "folder": "reports",
-      "filename": "detailed-explanation-of-reports.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd10d1a0ca0c372c6f09327",
-      "title": "How to send a SmartFeed multiple times?",
-      "folder": "getting-started",
-      "filename": "how-to-send-a-smartfeed-multiple-times.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60bb69c690777e23fb8ada49",
-      "title": "How to Submit a Form on behalf of a User",
-      "folder": "users",
-      "filename": "how-to-submit-a-form-on-behalf-of-a-user.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-add-an-audio-file-to-a-question.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd9ba357129911ba1b21757",
       "title": "How to create a competition?",
-      "folder": "quiz",
-      "filename": "how-to-create-a-competition.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4be483d1d2a5b1c5ea19b",
+      "title": "How to embed a link into the question",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-embed-a-link-into-the-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd7592d0b11ce44f6391e82",
+      "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/access-permissions/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdbab410b11ce44f6393516",
+      "title": "Team Progress Report",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/team-progress-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdae9650b11ce44f639315d",
+      "title": "How can I edit a KHub item?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/knowledge-hub-module/how-can-i-edit-a-khub-item.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6464dc077d89467e9da79320",
+      "title": "How to reset a coaching video",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-reset-a-coaching-video.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60a370cfeb3af44cc12099d5",
+      "title": "How to add observers to the Competition Leaderboard?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-observers-to-the-competition-leaderboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4ea8523119734ee37ee1f",
+      "title": "How to add a image to your content?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-add-a-image-to-your-content.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb0be80b11ce44f63931bb",
+      "title": "Understand Game Concepts",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/understand-game-concepts.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb31fb0b11ce44f6393244",
+      "title": "Advanced options for projects",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/project-management/advanced-options-for-projects.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4998236980410c9123856",
+      "title": "Question Response Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/question-response-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb08a97129911ba1b21e3d",
+      "title": "Bulk Custom Notifications",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/bulk-custom-notifications.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd11017db2fa3720c7d7aae",
+      "title": "How to view all the SmartFeeds?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-view-all-the-smartfeeds.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda2c167129911ba1b219fb",
+      "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/how-to-duplicate-a-survey-and-survey-template.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4845e36980410c9123839",
+      "title": "How 'Import question' is  different from 'Add New Question'?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-import-question-is-different-from-add-new-question.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb188b0b11ce44f63931e7",
+      "title": "Detailed explanation of reports",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/detailed-explanation-of-reports.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60c1f6cea6d12c2cd643e794",
+      "title": "Learner Overall Report",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/learner-overall-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60bf40d2a6d12c2cd643da33",
+      "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd4eb633d1d2a5b1c5ea1d3",
+      "title": "How to add an audio file to your content?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-add-an-audio-file-to-your-content.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fda263d27288b7f895d60b7",
+      "title": "How to Duplicate a quiz in a Competition?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-duplicate-a-quiz-in-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60bb39acfca38f033a7da5dc",
+      "title": "How to Edit a Form on submitted by a user?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/how-to-edit-a-form-on-submitted-by-a-user.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "64649da87d89467e9da791da",
+      "title": "How to create Badges",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-badges.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb2e27b624c71b7985a678",
+      "title": "How to create a new Project?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/project-management/how-to-create-a-new-project.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60a60efceb3af44cc120a91b",
+      "title": "How to add a Recording to a SmartFeed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-add-a-recording-to-a-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaebcca5d295659b369c02",
+      "title": "How can I view KHub Analytics?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/knowledge-hub-module/how-can-i-view-khub-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd48e84c868cb6df3a8101f",
+      "title": "Troubleshoot for common error code",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/troubleshoot-for-common-error-code.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb1646a5d295659b369c8d",
       "title": "How to create a Group Challenge?",
-      "folder": "forms",
-      "filename": "how-to-create-a-group-challenge.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-a-group-challenge.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdaf6350b11ce44f6393177",
-      "title": "How to Enable a Chat Group?",
-      "folder": "getting-started",
-      "filename": "how-to-enable-a-chat-group.md",
-      "images": 0,
-      "status": "success"
+      "id": "5ffd689766df373cab70860b",
+      "title": "Survey Template Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/survey-template-analytics.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdaf7eeb624c71b7985a5ad",
-      "title": "How to download a chat?",
-      "folder": "getting-started",
-      "filename": "how-to-download-a-chat.md",
-      "images": 0,
-      "status": "success"
+      "id": "60c206d796768369c70bc6b4",
+      "title": "Learner Report - By Learner (Individual Report Analytics)",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/learner-report-by-learner-individual-report-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb1843a5d295659b369c92",
+      "title": "What are KPI Reports?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-are-kpi-reports.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaf5650b11ce44f6393174",
+      "title": "What are Chat Groups?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/what-are-chat-groups.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "60a63037eb3af44cc120a9d0",
       "title": "How to enable the Streaming Links for Video Coaching",
-      "folder": "coaching",
-      "filename": "how-to-enable-the-streaming-links-for-video-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-enable-the-streaming-links-for-video-coaching.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "60a61bb227c86942e8069e4d",
-      "title": "How to add Different  Activities to a Challenge?",
-      "folder": "quiz",
-      "filename": "how-to-add-different-activities-to-a-challenge.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fdb15d60b11ce44f63931e1",
+      "title": "How to create an Individual Challenge?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-an-individual-challenge.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60099176c64fe14d0e1fd224",
+      "title": "Form Analytics",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/form-analytics.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "64ec366fab3ec13db0b391bd",
       "title": "How to delete a Survey",
-      "folder": "surveys",
-      "filename": "how-to-delete-a-survey.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/survey-module/how-to-delete-a-survey.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "5fdb30c60b11ce44f639323f",
-      "title": "How to edit a project?",
-      "folder": "forms",
-      "filename": "how-to-edit-a-project.md",
-      "images": 0,
-      "status": "success"
+      "id": "665cc161463661770bfb12d6",
+      "title": "How to add smartfeed within a Competition",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-smartfeed-within-a-competition.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60a61bb227c86942e8069e4d",
+      "title": "How to add Different  Activities to a Challenge?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-add-different-activities-to-a-challenge.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaf691a5d295659b369c17",
+      "title": "How to add or remove users to a chat group?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/how-to-add-or-remove-users-to-a-chat-group.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaf6350b11ce44f6393177",
+      "title": "How to Enable a Chat Group?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/how-to-enable-a-chat-group.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaf7eeb624c71b7985a5ad",
+      "title": "How to download a chat?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/how-to-download-a-chat.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fd10d1a0ca0c372c6f09327",
+      "title": "How to send a SmartFeed multiple times?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-send-a-smartfeed-multiple-times.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb168a0b11ce44f63931e3",
+      "title": "How to create a Manager Challenge?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-a-manager-challenge.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60bb69c690777e23fb8ada49",
+      "title": "How to Submit a Form on behalf of a User",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/how-to-submit-a-form-on-behalf-of-a-user.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb2f387129911ba1b21ece",
       "title": "How to view Project?",
-      "folder": "reports",
-      "filename": "how-to-view-project.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdaf5db7129911ba1b21dfa",
-      "title": "When are chat groups needed?",
-      "folder": "getting-started",
-      "filename": "when-are-chat-groups-needed.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60bb5a63f6392f0aaff521ab",
-      "title": "How to add Approvers to a Form",
-      "folder": "reports",
-      "filename": "how-to-add-approvers-to-a-form.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/project-management/how-to-view-project.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdba102a5d295659b369f9f",
       "title": "Quiz Wise Analytics",
-      "folder": "quiz",
-      "filename": "quiz-wise-analytics.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/quiz-wise-analytics.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb30c60b11ce44f639323f",
+      "title": "How to edit a project?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/project-management/how-to-edit-a-project.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd713904eb32171b80377f7",
       "title": "How to edit a SmartPath.",
-      "folder": "smartpath",
-      "filename": "how-to-edit-a-smartpath.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-edit-a-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fd112c50ca0c372c6f09352",
-      "title": "How to delete SmartFeeds?",
-      "folder": "getting-started",
-      "filename": "how-to-delete-smartfeeds.md",
-      "images": 0,
-      "status": "success"
+      "title": "How to delete a SmartFeed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-delete-a-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdaf5db7129911ba1b21dfa",
+      "title": "When are chat groups needed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/notifications/when-are-chat-groups-needed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "60bb5a63f6392f0aaff521ab",
+      "title": "How to add Approvers to a Form",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/forms-module/how-to-add-approvers-to-a-form.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb50c1b624c71b7985a730",
       "title": "How to create Certifcates",
-      "folder": "getting-started",
-      "filename": "how-to-create-certifcates.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb74880b11ce44f63933a3",
-      "title": "How do I give access permission to other editors?",
-      "folder": "quiz",
-      "filename": "how-do-i-give-access-permission-to-other-editors.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-create-certifcates.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5ffc22a3551e0c2853f3af84",
       "title": "Quiz Comparison Report",
-      "folder": "quiz",
-      "filename": "quiz-comparison-report.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/quiz-comparison-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fdb74880b11ce44f63933a3",
+      "title": "How do I give access permission to other editors?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/access-permissions/how-do-i-give-access-permission-to-other-editors.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "6001bb40c64fe14d0e1fb5a3",
       "title": "How to Set Reminder for your Tasks",
-      "folder": "quiz",
-      "filename": "how-to-set-reminder-for-your-tasks.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-set-reminder-for-your-tasks.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "66448bf460cfc03ad3491583",
       "title": "How to Award Points on Badge Assignment",
-      "folder": "competitions",
-      "filename": "how-to-award-points-on-badge-assignment.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fcc6288de1bfa158fb55b9b",
-      "title": "What is SmartWinnr?",
-      "folder": "coaching",
-      "filename": "what-is-smartwinnr.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-award-points-on-badge-assignment.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "607e8df03149d33a19c6e5e3",
       "title": "How to Update question response",
-      "folder": "quiz",
-      "filename": "how-to-update-question-response.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-update-question-response.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb0cafa5d295659b369c60",
       "title": "What are Field Mappings?",
-      "folder": "getting-started",
-      "filename": "what-are-field-mappings.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-are-field-mappings.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb509ab624c71b7985a72e",
       "title": "What is an Achievement?",
-      "folder": "getting-started",
-      "filename": "what-is-an-achievement.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-is-an-achievement.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "5fcc6288de1bfa158fb55b9b",
+      "title": "What is SmartWinnr?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/what-is-smartwinnr.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "697086628446705a3c6f686c",
+      "title": "What is AI Coaching?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/what-is-ai-coaching.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971e0ad425fd115e68cbc3e",
+      "title": "Understanding the Competency & Skills Insights Tab on the AI Coaching Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "68c928f875baeb18e18df8a1",
+      "title": "How to update the thumbnail of a SmartFeed",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartfeed-module/how-to-update-the-thumbnail-of-a-smartfeed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f21ef35cc6035d0b9bd9",
+      "title": "Understanding the Performance Tab on the Quiz Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/understanding-the-performance-tab-on-the-quiz-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971e1b1015ae02ac002197d",
+      "title": "Understanding the Participation Insights Tab on the AI Coaching Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696fa0ff73ca242018625d4a",
+      "title": "How do I track improvement?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-track-improvement.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970d9e71252a7004208b84e",
+      "title": "How do I download Overall Coaching Report?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-download-overall-coaching-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f1c008cad8770d36663c",
+      "title": "Understanding the Overview Tab on the Quiz Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/understanding-the-overview-tab-on-the-quiz-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696c7d311e938328836da344",
+      "title": "How to Add/Remove segments in Module added to SmartPath?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-add-remove-segments-in-module-added-to-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971e01ef35cc6035d0b9b8c",
+      "title": "Understanding the Overview Analysis Tab on the AI Coaching Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "697115b9f35cc6035d0b99b3",
+      "title": "How can I track improvement?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-can-i-track-improvement.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6943caf79c8f912774281514",
+      "title": "How to Create Field mapping",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/field-coaching-module/how-to-create-field-mapping.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f2ff425fd115e68cbc8b",
+      "title": "Understanding the Learner Management Tab on the Quiz Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/understanding-the-learner-management-tab-on-the-quiz-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f2a9015ae02ac00219c8",
+      "title": "Understanding the Participation Tab on the Quiz Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/understanding-the-participation-tab-on-the-quiz-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696f830d06dfb2774c816085",
+      "title": "How many learners have submitted their responses?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-many-learners-have-submitted-their-responses.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "69705f458446705a3c6f6831",
+      "title": "How to create Re-order Questions ?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-re-order-questions.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970d8920c0e4405a576851c",
+      "title": "How many type of coaching reports are available on Smartwinnr?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-many-type-of-coaching-reports-are-available-on-smartwinnr.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970dfd91252a7004208b87d",
+      "title": "How do I download Attempt-wise Coaching Report?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-download-attempt-wise-coaching-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971afe36a1b8a42df6accb9",
+      "title": "User Login Reports",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/user-login-reports.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970ebe71252a7004208b8b8",
+      "title": "How do I download Coaching-wise Report?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-download-coaching-wise-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970dad10c0e4405a5768525",
+      "title": "How can I download Attempt-wise User Objective Report?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-can-i-download-attempt-wise-user-objective-report.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970aecda77dc93e2023576b",
+      "title": "How do I view submissions as they happen?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-view-submissions-as-they-happen.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970a2b7bb534a540aeb8dbf",
+      "title": "How do I track improvements for multiple role-plays at the same time?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/ai-coaching/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "66d0cb66d816d165867bf4de",
       "title": "How to update the SmartWinnr App from App View",
-      "folder": "getting-started",
-      "filename": "how-to-update-the-smartwinnr-app-from-app-view.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-update-the-smartwinnr-app-from-app-view.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "631c9fb5c713d51da3edd565",
+      "title": "How to create an Event Quiz",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-create-an-event-quiz.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696faec0dadc293bb313334c",
+      "title": "How to create Assignment in SmartPath?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-create-assignment-in-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "697108ae08cad8770d366373",
+      "title": "How can I track improvement?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-can-i-track-improvement.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f00808cad8770d366631",
+      "title": "Understanding the Overview Tab on the SmartPath Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/understanding-the-overview-tab-on-the-smartpath-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6324e1941ec1962d58a8036e",
+      "title": "How to archive a SmartPath and unhide them in future if needed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6970853970321255a2cc1eef",
+      "title": "How to download SmartPath Reports?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-download-smartpath-reports.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696f3433e924466a410b9501",
+      "title": "How to create an action item in the SmartPath",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-create-an-action-item-in-the-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6971f071425fd115e68cbc7d",
+      "title": "Understanding the Module Wise Analysis Tab on the SmartPath Dashboard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696fc2e4dadc293bb31333c6",
+      "title": "How to evaluate the Assignment submitted in SmartPath?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/smartpath-module/how-to-evaluate-the-assignment-submitted-in-smartpath.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "60b9e109fd393f6bf704a9f2",
       "title": "How to create Sales TV",
-      "folder": "quiz",
-      "filename": "how-to-create-sales-tv.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-create-sales-tv.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "696cf34e0ef05b444cde8d3c",
+      "title": "How to Update Users",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-update-users.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fdb0bb6a5d295659b369c5d",
       "title": "What is KPI Gamification?",
-      "folder": "competitions",
-      "filename": "what-is-kpi-gamification.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/what-is-kpi-gamification.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
-      "id": "603cf4db661b720174a71d5e",
-      "title": "How to view the data and leaderboard for Scorecard",
-      "folder": "getting-started",
-      "filename": "how-to-view-the-data-and-leaderboard-for-scorecard.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6317a3ed4cde766bbe1426fe",
-      "title": "How can I edit a KHub folder name ?",
-      "folder": "getting-started",
-      "filename": "how-can-i-edit-a-khub-folder-name.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "631fbb2490c29a3d732c6e6e",
-      "title": "How to review a field coaching as a manager/2nd level manager",
-      "folder": "coaching",
-      "filename": "how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6309b2f090c29a3d732c2441",
-      "title": "How to download/Share  a smartfeed in smartpath",
-      "folder": "smartpath",
-      "filename": "how-to-download-share-a-smartfeed-in-smartpath.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "631c9fb5c713d51da3edd565",
-      "title": "How to ‘Open’ and ‘Close’ a Quiz",
-      "folder": "quiz",
-      "filename": "how-to-open-and-close-a-quiz.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6324e1941ec1962d58a8036e",
-      "title": "How to archive a SmartPath and unhide them in future if needed.",
-      "folder": "smartpath",
-      "filename": "how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed.md",
-      "images": 0,
-      "status": "success"
+      "id": "697066e7dadc293bb31335e8",
+      "title": "How to Download  Detailed SmartFeed Report",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/cross-module-features/how-to-download-detailed-smartfeed-report.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "6778cfe33656557cafadaee0",
       "title": "Create a Coaching",
-      "folder": "coaching",
-      "filename": "create-a-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/field-coaching-module/create-a-coaching.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "6317a3ed4cde766bbe1426fe",
+      "title": "How can I edit a KHub folder name ?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/knowledge-hub-module/how-can-i-edit-a-khub-folder-name.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "603cf4db661b720174a71d5e",
+      "title": "How to view the data and leaderboard for Scorecard",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/kpi-gamification/how-to-view-the-data-and-leaderboard-for-scorecard.md",
+      "status": "created",
+      "collection": "Editors"
+    },
+    {
+      "id": "631fbb2490c29a3d732c6e6e",
+      "title": "How to review a field coaching as a manager/2nd level manager",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+      "status": "created",
+      "collection": "Editors"
     },
     {
       "id": "5fce0dce4664bd7a123eb3e2",
       "title": "What is my Username and Password?",
-      "folder": "users",
-      "filename": "what-is-my-username-and-password.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/what-is-my-username-and-password.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce03e7d580ce55a38b4d36",
       "title": "How can I login to SmartWinnr App?",
-      "folder": "getting-started",
-      "filename": "how-can-i-login-to-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-login-to-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce1bf84664bd7a123eb447",
       "title": "What if I've forgotten my password?",
-      "folder": "getting-started",
-      "filename": "what-if-i-ve-forgotten-my-password.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdaec3c7129911ba1b21de9",
-      "title": "How to use KHub in the SmartWinnr app?",
-      "folder": "forms",
-      "filename": "how-to-use-khub-in-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/what-if-i-ve-forgotten-my-password.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce219904cebe5254a298fa",
       "title": "My Account is locked - what should I do?",
-      "folder": "getting-started",
-      "filename": "my-account-is-locked-what-should-i-do.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/my-account-is-locked-what-should-i-do.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fdaec3c7129911ba1b21de9",
+      "title": "How to use KHub in the SmartWinnr app?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-use-khub-in-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce026bde1bfa158fb55e2d",
       "title": "How can I download the SmartWinnr app?",
-      "folder": "quiz",
-      "filename": "how-can-i-download-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-download-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce43c3eb7cc612aa3557ae",
       "title": "How can I contact SmartWinnr Team?",
-      "folder": "forms",
-      "filename": "how-can-i-contact-smartwinnr-team.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fce210dde1bfa158fb55ed9",
-      "title": "What if I've forgotten my PIN?",
-      "folder": "getting-started",
-      "filename": "what-if-i-ve-forgotten-my-pin.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-contact-smartwinnr-team.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce244aeb7cc612aa355702",
       "title": "How can I change my password for SmartWinnr?",
-      "folder": "getting-started",
-      "filename": "how-can-i-change-my-password-for-smartwinnr.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-change-my-password-for-smartwinnr.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fce210dde1bfa158fb55ed9",
+      "title": "What if I've forgotten my PIN?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/what-if-i-ve-forgotten-my-pin.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce3d864664bd7a123eb4ea",
       "title": "How to update the SmartWinnr App/Web View?",
-      "folder": "getting-started",
-      "filename": "how-to-update-the-smartwinnr-app-web-view.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-to-update-the-smartwinnr-app-web-view.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce355804cebe5254a29954",
       "title": "How can I check the App version/Web view version?",
-      "folder": "getting-started",
-      "filename": "how-can-i-check-the-app-version-web-view-version.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-check-the-app-version-web-view-version.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce4541eb7cc612aa3557b4",
       "title": "Browser and Device Support",
-      "folder": "getting-started",
-      "filename": "browser-and-device-support.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/browser-and-device-support.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce2291eb7cc612aa3556fa",
       "title": "How can I change my profile image?",
-      "folder": "getting-started",
-      "filename": "how-can-i-change-my-profile-image.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-change-my-profile-image.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fd98ecb27288b7f895d5ddc",
       "title": "Switching to Manager View",
-      "folder": "getting-started",
-      "filename": "switching-to-manager-view.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/switching-to-manager-view.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce33cad580ce55a38b4e2c",
       "title": "How can I change my language in SmartWinnr App?",
-      "folder": "getting-started",
-      "filename": "how-can-i-change-my-language-in-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-change-my-language-in-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "60003222c64fe14d0e1fac76",
       "title": "What is QResolve?...",
-      "folder": "forms",
-      "filename": "what-is-qresolve.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/what-is-qresolve.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fd728293d1d2a5b1c5ea4c8",
       "title": "How do I upload a coaching video?",
-      "folder": "coaching",
-      "filename": "how-do-i-upload-a-coaching-video.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-do-i-upload-a-coaching-video.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fdb40777129911ba1b21f1a",
       "title": "How can I view a competition Leaderboard?",
-      "folder": "competitions",
-      "filename": "how-can-i-view-a-competition-leaderboard.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd99582a5d295659b36954f",
-      "title": "How To Find The Progress Of Your Team In Quizzes",
-      "folder": "quiz",
-      "filename": "how-to-find-the-progress-of-your-team-in-quizzes.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-can-i-view-a-competition-leaderboard.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fd1110180488e39007cbd8f",
-      "title": "How do I like a SmartFeed?",
-      "folder": "getting-started",
-      "filename": "how-do-i-like-a-smartfeed.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb04a37129911ba1b21e2a",
-      "title": "How to use QResolve in the SmartWinnr app?",
-      "folder": "getting-started",
-      "filename": "how-to-use-qresolve-in-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdb05910b11ce44f63931a2",
-      "title": "How can I answer a Query ?",
-      "folder": "getting-started",
-      "filename": "how-can-i-answer-a-query.md",
-      "images": 0,
-      "status": "success"
+      "title": "How Do I Like and Comment on a SmartFeed?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-do-i-like-and-comment-on-a-smartfeed.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "62a3071392cb8c175b46bb56",
       "title": "How to upload Video Recording for Coaching",
-      "folder": "coaching",
-      "filename": "how-to-upload-video-recording-for-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-upload-video-recording-for-coaching.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
-      "id": "60001addcfe30d219ccd7a03",
-      "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
-      "folder": "kpi-gamification",
-      "filename": "how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fd99582a5d295659b36954f",
+      "title": "How To Find The Progress Of Your Team In Quizzes",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/how-to-find-the-progress-of-your-team-in-quizzes.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
-      "id": "5fdb0522b624c71b7985a5d7",
-      "title": "How to post a Query from the SmartWinnr app?",
-      "folder": "getting-started",
-      "filename": "how-to-post-a-query-from-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd997c6a5d295659b369555",
-      "title": "Quiz Analytics through Charts",
-      "folder": "quiz",
-      "filename": "quiz-analytics-through-charts.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fdb04a37129911ba1b21e2a",
+      "title": "How to use QResolve in the SmartWinnr app?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-use-qresolve-in-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fdb421527288b7f895d662f",
       "title": "How do I view the KPI scorecard?",
-      "folder": "kpi-gamification",
-      "filename": "how-do-i-view-the-kpi-scorecard.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-do-i-view-the-kpi-scorecard.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
-      "id": "603c7d19b3ebfb109b586e66",
-      "title": "How can I submit a Form from Chat",
-      "folder": "forms",
-      "filename": "how-can-i-submit-a-form-from-chat.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "600868c4cfe30d219ccd9aa9",
-      "title": "How managers Approve  Form",
-      "folder": "reports",
-      "filename": "how-managers-approve-form.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fd9ab587129911ba1b21733",
-      "title": "Finding  Status and Scores for Quizzes assigned to your Team",
-      "folder": "quiz",
-      "filename": "finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60086bd71c64ad47e4b711c2",
-      "title": "How can I submit a Form from Left Menu",
-      "folder": "forms",
-      "filename": "how-can-i-submit-a-form-from-left-menu.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "6106ee53b55c2b04bf6da2c0",
-      "title": "How to Mark the attendance for Users  in Learning Sessions?",
-      "folder": "users",
-      "filename": "how-to-mark-the-attendance-for-users-in-learning-sessions.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "62b450c10b51ec1ae83f9bf8",
-      "title": "How to access the SCORM course from the SmartWinnr app ?",
-      "folder": "getting-started",
-      "filename": "how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "60f9c51c6ffe270af2a91817",
-      "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
-      "folder": "users",
-      "filename": "how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "62aa1c6df6341f7edc2a55ee",
-      "title": "How to upload Screen Recording for Coaching",
-      "folder": "coaching",
-      "filename": "how-to-upload-screen-recording-for-coaching.md",
-      "images": 0,
-      "status": "success"
+      "id": "60001addcfe30d219ccd7a03",
+      "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fce42e9eb7cc612aa3557ab",
       "title": "How can I enable push notification for SmartWinnr App?",
-      "folder": "getting-started",
-      "filename": "how-can-i-enable-push-notification-for-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
-      "id": "5fdae9d67129911ba1b21de5",
-      "title": "Understanding recent, trending and latest KHub items",
-      "folder": "getting-started",
-      "filename": "understanding-recent-trending-and-latest-khub-items.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fd997c6a5d295659b369555",
+      "title": "Quiz Analytics through Charts",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/quiz-analytics-through-charts.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
-      "id": "60f9c0126ffe270af2a917d6",
-      "title": "How to Answer Long  Answer type Questions in SmartWinnr?",
-      "folder": "quiz",
-      "filename": "how-to-answer-long-answer-type-questions-in-smartwinnr.md",
-      "images": 0,
-      "status": "success"
+      "id": "62b450c10b51ec1ae83f9bf8",
+      "title": "How to access the SCORM course from the SmartWinnr app ?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fdb05910b11ce44f63931a2",
+      "title": "How can I answer a Query ?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-can-i-answer-a-query.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "6106ee53b55c2b04bf6da2c0",
+      "title": "How to Mark the attendance for Users  in Learning Sessions?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "600868c4cfe30d219ccd9aa9",
+      "title": "How managers Approve  Form",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/how-managers-approve-form.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fdb0522b624c71b7985a5d7",
+      "title": "How to post a Query from the SmartWinnr app?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-post-a-query-from-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "60086bd71c64ad47e4b711c2",
+      "title": "How can I submit a Form from Left Menu",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-can-i-submit-a-form-from-left-menu.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "603c7d19b3ebfb109b586e66",
+      "title": "How can I submit a Form from Chat",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-can-i-submit-a-form-from-chat.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "62a2fa1957320007925236d9",
       "title": "How to upload Audio Recording for Coaching",
-      "folder": "coaching",
-      "filename": "how-to-upload-audio-recording-for-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-upload-audio-recording-for-coaching.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "60f9c51c6ffe270af2a91817",
+      "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fd9ab587129911ba1b21733",
+      "title": "Finding  Status and Scores for Quizzes assigned to your Team",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "60f9c0126ffe270af2a917d6",
+      "title": "How to Answer Long  Answer type Questions in SmartWinnr?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-answer-long-answer-type-questions-in-smartwinnr.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "62aa1c6df6341f7edc2a55ee",
+      "title": "How to upload Screen Recording for Coaching",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-upload-screen-recording-for-coaching.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fdae9d67129911ba1b21de5",
+      "title": "Understanding recent, trending and latest KHub items",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/understanding-recent-trending-and-latest-khub-items.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fdb083d27288b7f895d6541",
       "title": "How to view notifications?",
-      "folder": "getting-started",
-      "filename": "how-to-view-notifications.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-view-notifications.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "610775ae64a230081ba1b1b8",
       "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
-      "folder": "quiz",
-      "filename": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fffe8aa2e764327f87be765",
-      "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
-      "folder": "competitions",
-      "filename": "how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "603748758502d1120e90b0ed",
       "title": "How Manager can check the status of the Coachings assigned to My Team",
-      "folder": "coaching",
-      "filename": "how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "5fffe8aa2e764327f87be765",
+      "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fd758ea7129911ba1b20b11",
       "title": "What is 'My Team Coaching'?",
-      "folder": "coaching",
-      "filename": "what-is-my-team-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/manager-guide/what-is-my-team-coaching.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "66d0ceaea62a7505fcf37c07",
       "title": "How to update the SmartWinnr App from Web View",
-      "folder": "getting-started",
-      "filename": "how-to-update-the-smartwinnr-app-from-web-view.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-update-the-smartwinnr-app-from-web-view.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "6970fbe61252a7004208b915",
+      "title": "How to Review AI Coaching Submissions as a Manager?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/ai-coaching/how-to-review-ai-coaching-submissions-as-a-manager.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "69720db5015ae02ac0021a31",
+      "title": "How can a User View Feedback After Submitting an AI Coaching?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/ai-coaching/how-can-a-user-view-feedback-after-submitting-an-ai-coaching.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "696deb197a57025861cd2f36",
+      "title": "How Learners Can Mark Attendance for SmartPath - Learning session on Their Own?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "6971d78c6a1b8a42df6acd03",
+      "title": "How can a User submit an AI Coaching attempt?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/ai-coaching/how-can-a-user-submit-an-ai-coaching-attempt.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
+    },
+    {
+      "id": "69721470ddd77241ca3daa61",
+      "title": "Understanding the feedback screen",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/ai-coaching/understanding-the-feedback-screen.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "60a8fdf51df47a61c5ad43c7",
       "title": "How to review Field Coaching from Managers View in Mobile",
-      "folder": "coaching",
-      "filename": "how-to-review-field-coaching-from-managers-view-in-mobile.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-review-field-coaching-from-managers-view-in-mobile.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "60b762f59c887a0dfc555a3b",
       "title": "How to edit the form submission from manager's view",
-      "folder": "quiz",
-      "filename": "how-to-edit-the-form-submission-from-manager-s-view.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-edit-the-form-submission-from-manager-s-view.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "60a8e21fdca0fd46b93580f6",
       "title": "How to review Field Coaching from Managers View in Mobile",
-      "folder": "coaching",
-      "filename": "how-to-review-field-coaching-from-managers-view-in-mobile.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-review-field-coaching-from-managers-view-in-mobile.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "60b77f6d9c887a0dfc555ad2",
       "title": "How to add new form submission",
-      "folder": "forms",
-      "filename": "how-to-add-new-form-submission.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/user-guide/how-to-add-new-form-submission.md",
+      "status": "created",
+      "collection": "Managers and Team Members"
     },
     {
       "id": "5fda4ff50b11ce44f6392e68",
       "title": "How to activate or deactivate a user?",
-      "folder": "quiz",
-      "filename": "how-to-activate-or-deactivate-a-user.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-activate-or-deactivate-a-user.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdae19bb624c71b7985a579",
       "title": "User Login reports",
-      "folder": "reports",
-      "filename": "user-login-reports.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/reports/user-login-reports.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda52ada5d295659b36990a",
       "title": "How do I unlock an account?",
-      "folder": "getting-started",
-      "filename": "how-do-i-unlock-an-account.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-do-i-unlock-an-account.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda4abb27288b7f895d61dd",
       "title": "Create users in bulk",
-      "folder": "quiz",
-      "filename": "create-users-in-bulk.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/create-users-in-bulk.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda513db624c71b7985a2a8",
       "title": "How can I change the password for a user account?",
-      "folder": "users",
-      "filename": "how-can-i-change-the-password-for-a-user-account.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda45eaa5d295659b36989e",
-      "title": "How to manage Quiz configurations?",
-      "folder": "quiz",
-      "filename": "how-to-manage-quiz-configurations.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-can-i-change-the-password-for-a-user-account.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "60a50e4827c86942e80697e9",
       "title": "How to create Field Coaching Template",
-      "folder": "coaching",
-      "filename": "how-to-create-field-coaching-template.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/field-coaching-module/how-to-create-field-coaching-template.md",
+      "status": "created",
+      "collection": "Admins"
+    },
+    {
+      "id": "5fda45eaa5d295659b36989e",
+      "title": "How to manage Quiz configurations?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/quiz-module/how-to-manage-quiz-configurations.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda51a0b624c71b7985a2ab",
       "title": "How can an Admin change anyone's password?",
-      "folder": "users",
-      "filename": "how-can-an-admin-change-anyone-s-password.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda4f4a0b11ce44f6392e62",
-      "title": "Create users individually",
-      "folder": "users",
-      "filename": "create-users-individually.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-can-an-admin-change-anyone-s-password.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda4f87b624c71b7985a29a",
       "title": "Delete users",
-      "folder": "quiz",
-      "filename": "delete-users.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/delete-users.md",
+      "status": "created",
+      "collection": "Admins"
+    },
+    {
+      "id": "5fda4f4a0b11ce44f6392e62",
+      "title": "Create users individually",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/create-users-individually.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fd75963a5d295659b36893f",
       "title": "How to set competencies.",
-      "folder": "coaching",
-      "filename": "how-to-set-competencies.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/video-coaching-module/how-to-set-competencies.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdadc3e7129911ba1b21dbe",
       "title": "How to Add new contacts?",
-      "folder": "forms",
-      "filename": "how-to-add-new-contacts.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-add-new-contacts.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda50d7b624c71b7985a2a4",
       "title": "How to resend account invitation?",
-      "folder": "getting-started",
-      "filename": "how-to-resend-account-invitation.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda509f27288b7f895d61ff",
-      "title": "Search users",
-      "folder": "users",
-      "filename": "search-users.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-resend-account-invitation.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdadd747129911ba1b21dc5",
       "title": "How to Add new rule?",
-      "folder": "forms",
-      "filename": "how-to-add-new-rule.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-add-new-rule.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
-      "id": "5fda49060b11ce44f6392e3f",
-      "title": "Manage password policy",
-      "folder": "getting-started",
-      "filename": "manage-password-policy.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fda496f0b11ce44f6392e44",
-      "title": "How to track my organizational resource usage?",
-      "folder": "getting-started",
-      "filename": "how-to-track-my-organizational-resource-usage.md",
-      "images": 0,
-      "status": "success"
+      "id": "5fda509f27288b7f895d61ff",
+      "title": "Search users",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/search-users.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdadcca7129911ba1b21dc1",
       "title": "What is Audit Log?",
-      "folder": "quiz",
-      "filename": "what-is-audit-log.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/what-is-audit-log.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdadcf77129911ba1b21dc2",
       "title": "How to view an Audit Log?",
-      "folder": "forms",
-      "filename": "how-to-view-an-audit-log.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-view-an-audit-log.md",
+      "status": "created",
+      "collection": "Admins"
+    },
+    {
+      "id": "5fda49060b11ce44f6392e3f",
+      "title": "Manage password policy",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/manage-password-policy.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "60a50e711df47a61c5ad2f4d",
       "title": "How to add Competencies for Field Coaching",
-      "folder": "coaching",
-      "filename": "how-to-add-competencies-for-field-coaching.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/field-coaching-module/how-to-add-competencies-for-field-coaching.md",
+      "status": "created",
+      "collection": "Admins"
+    },
+    {
+      "id": "5fda496f0b11ce44f6392e44",
+      "title": "How to track my organizational resource usage?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-track-my-organizational-resource-usage.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fda48bca5d295659b3698b1",
       "title": "How to change company logo?",
-      "folder": "forms",
-      "filename": "how-to-change-company-logo.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-change-company-logo.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdaddc6b624c71b7985a570",
       "title": "What is a Rule?",
-      "folder": "quiz",
-      "filename": "what-is-a-rule.md",
-      "images": 0,
-      "status": "success"
-    },
-    {
-      "id": "5fdadc160b11ce44f639313f",
-      "title": "How to view existing contacts?",
-      "folder": "getting-started",
-      "filename": "how-to-view-existing-contacts.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/what-is-a-rule.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "5fdad976b624c71b7985a56b",
       "title": "How to Add a new Division?",
-      "folder": "getting-started",
-      "filename": "how-to-add-a-new-division.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-add-a-new-division.md",
+      "status": "created",
+      "collection": "Admins"
+    },
+    {
+      "id": "5fdadc160b11ce44f639313f",
+      "title": "How to view existing contacts?",
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/how-to-view-existing-contacts.md",
+      "status": "created",
+      "collection": "Admins"
     },
     {
       "id": "6332221b9c3e7c7d6a1aca3e",
       "title": "Changing/Updating configuration for an Organization",
-      "folder": "getting-started",
-      "filename": "changing-updating-configuration-for-an-organization.md",
-      "images": 0,
-      "status": "success"
+      "path": "/Users/saicharanreddy/Development/smartwinnr-help-docusaurus/docs/administration/system-management/changing-updating-configuration-for-an-organization.md",
+      "status": "created",
+      "collection": "Admins"
     }
   ]
 }

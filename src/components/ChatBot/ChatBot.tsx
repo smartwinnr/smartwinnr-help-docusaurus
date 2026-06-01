@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './ChatBot.module.css';
 
+type ViewerRole = 'user' | 'manager' | 'editor' | 'admin' | 'orgadmin' | 'lamadmin' | 'superadmin';
+
+function pickPrimaryRole(roles: string[]): ViewerRole {
+  const order: ViewerRole[] = ['superadmin', 'orgadmin', 'admin', 'lamadmin', 'editor', 'manager', 'user'];
+  for (const r of order) if (roles.includes(r)) return r;
+  return 'user';
+}
+
 interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
@@ -45,7 +53,20 @@ const ChatBot: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [viewerRole, setViewerRole] = useState<ViewerRole>('user');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`${API_BASE_URL}/api/me`, {credentials: 'same-origin', headers: {Accept: 'application/json'}})
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (cancelled || !data || !Array.isArray(data.roles)) return;
+        setViewerRole(pickPrimaryRole(data.roles));
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     // Initialize with welcome message
@@ -109,7 +130,7 @@ const ChatBot: React.FC = () => {
       console.log('🔄 Request body:', {
         message: inputValue,
         conversationId: conversationId,
-        userContext: { role: 'user' }
+        userContext: { role: viewerRole }
       });
 
       const response = await fetch(`${API_BASE_URL}/api/chat`, {
@@ -121,7 +142,7 @@ const ChatBot: React.FC = () => {
           message: inputValue,
           conversationId: conversationId,
           userContext: {
-            role: 'user',
+            role: viewerRole,
             pageUrl: window.location.pathname,
           }
         }),

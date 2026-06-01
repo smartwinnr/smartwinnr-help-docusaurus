@@ -13,10 +13,12 @@ const COOKIE_OPTIONS = {
   path: '/',
 };
 
-function signSessionToken({ email, roles, region }) {
-  return jwt.sign({ email, roles, region }, config.jwtSecret, {
-    expiresIn: '7d',
-  });
+function signSessionToken({ email, roles, region, orgId, privileges }) {
+  return jwt.sign(
+    { email, roles, region, orgId, privileges },
+    config.jwtSecret,
+    { expiresIn: '7d' }
+  );
 }
 
 function verifySessionToken(token) {

@@ -174,3 +174,6 @@ Dockerfile.local
 # Freshdesk pipeline data and output
 data/
 scripts/freshdesk/output/
+
+# Generated reports (article inventory, etc.)
+reports/

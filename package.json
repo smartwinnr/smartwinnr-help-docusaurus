@@ -24,6 +24,10 @@
     "dev:full": "concurrently --names \"DOCS,CHAT\" --prefix-colors \"blue,green\" \"npm run start:docs\" \"npm run chatbot:dev\"",
     "index-docs": "tsx services/chatbot/indexDocs.ts",
     "index-internal": "node scripts/internal-indexer.js",
+    "inventory": "node scripts/generate-article-inventory.js",
+    "backup:docs": "node scripts/backup-docs.js",
+    "helpscout:inventory": "node scripts/list-helpscout-structure.js",
+    "helpscout:migrate": "node scripts/migrate-helpscout.js",
     "lint:docs": "markdownlint-cli2",
     "lint:docs:fix": "markdownlint-cli2 --fix",
     "prepare": "husky"
