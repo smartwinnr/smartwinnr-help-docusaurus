@@ -175,5 +175,6 @@ Dockerfile.local
 data/
 scripts/freshdesk/output/
 
-# Generated reports (article inventory, etc.)
-reports/
+# Generated reports (article inventory, etc.) — root only; do NOT shadow
+# docs/administration/reports which is real content.
+/reports/
