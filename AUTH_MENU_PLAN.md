@@ -103,6 +103,7 @@ Personas in scope for v1: **User**, **Editor**, **Admin**. Manager / orgadmin / 
 - [x] **B4.** Annotated `sidebars.ts` with `customProps: {roles, privilege}` on every top-level + module category per the menu layout table. Defined `ALL_ROLES` / `STAFF_ROLES` / `ADMIN_ONLY_ROLES` constants for readability.
 - [x] **B5.** Loading UX — `UserContext` defaults to `UNAUTH_USER` (`roles:['user']`, no privileges) until `/api/me` resolves, so the smallest menu shows first and only ever expands. On HTTP 401, redirects to `/auth/login?redirect=<current path>`.
 - [x] **B6.** Updated `ChatBot.tsx` to fetch `/api/me` on mount and pick a primary role (`pickPrimaryRole`) to send as `userContext.role`. ChatBot mounts in its own React root via `chatbot-client.js`, outside the Docusaurus tree, so it can't reach `UserContext` — it does its own one-shot fetch.
+- **B-note.** Org-privilege gating is currently **disabled** via `PRIVILEGE_GATING_ENABLED = false` in `src/access-policy.ts`. Role gating remains active. All `customProps.privilege` / `customProps.anyPrivilege` annotations on `sidebars.ts` + `_category_.json` files are preserved; re-enable by flipping the flag to `true` (no data migration required).
 
 ### Phase C — Help Scout re-sync with correct categorization
 

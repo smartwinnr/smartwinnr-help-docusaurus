@@ -58,14 +58,29 @@ export const UNAUTH_USER: CurrentUser = {
  */
 const PRIVILEGE_BYPASS_ROLES: SmartWinnrRole[] = ['superadmin'];
 
+/**
+ * Org-privilege gating is currently disabled — every signed-in user sees every
+ * category their role allows, regardless of their org's `privileges` array.
+ * Role gating is unaffected (admin-only sections still hide from regular users).
+ *
+ * `customProps.privilege` / `customProps.anyPrivilege` annotations remain on
+ * sidebar items and `_category_.json` files, so re-enabling is a single-line
+ * flip back to `true` — no data migration needed.
+ */
+const PRIVILEGE_GATING_ENABLED = false;
+
 export function isAllowed(gate: AccessGate | undefined, user: CurrentUser | null): boolean {
   if (!gate) return true;
   const u = user ?? UNAUTH_USER;
 
+  // Role gating — always on.
   if (gate.roles && gate.roles.length > 0) {
     const hasRole = gate.roles.some((r) => u.roles.includes(r));
     if (!hasRole) return false;
   }
+
+  // Privilege gating — skipped when disabled.
+  if (!PRIVILEGE_GATING_ENABLED) return true;
 
   const bypassesPrivilege = u.roles.some((r) => PRIVILEGE_BYPASS_ROLES.includes(r));
   if (bypassesPrivilege) return true;
