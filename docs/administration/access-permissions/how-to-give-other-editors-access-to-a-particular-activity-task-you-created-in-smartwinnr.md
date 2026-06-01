@@ -32,7 +32,7 @@ It will open the following screen where you can select the users to whom you wan
 
 ![](/img/helpscout/editors/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-3.png)
 
-](<https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff30ac3551e0c2853f38d9b/file-2EwKzl25Yx.png>)
+]()
 
 Once you have selected the users, click on the '**Save**' button to save the changes.
 

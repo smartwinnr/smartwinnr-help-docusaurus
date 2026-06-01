@@ -27,7 +27,7 @@ There are different ways in which the attendance can be marked for a learning se
 
 This option will be available only if the Instructor has an editor role in SmartWinnr
 
-Following are the steps to mark attendance from the SmartWinnr Editor portal (<https://app.smartwinnr.com/>):
+Following are the steps to mark attendance from the SmartWinnr Editor portal (https://app.smartwinnr.com/):
 
 1. Goto **Left Menu > Editor > SmartPaths > View All SmartPaths.**
 2. From the list of SmartPaths, locate the one where you want to mark the attendance.
