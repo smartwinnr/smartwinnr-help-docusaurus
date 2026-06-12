@@ -29,9 +29,14 @@ COPY plugins/ ./plugins/
 COPY scripts/ ./scripts/
 COPY auth/ ./auth/
 COPY db/ ./db/
+COPY shared/ ./shared/
+COPY prompts/ ./prompts/
+COPY data/ ./data/
 COPY server.js ./
 
-# Create persistent data directory for chat logs
+# Persistent data directory: the COPY above puts build-time JSON in /app/data;
+# runtime SQLite (feedback.db, chat-logs.db) also lands here. mkdir is a no-op
+# now that COPY created the dir, kept for explicitness.
 RUN mkdir -p /app/data
 
 # Build the documentation
