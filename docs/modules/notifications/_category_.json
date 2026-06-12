@@ -1,0 +1,17 @@
+{
+  "label": "Notifications & Chat",
+  "position": 110,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

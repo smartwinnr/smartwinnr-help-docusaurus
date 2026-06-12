@@ -12,11 +12,12 @@ const { ChromaClient } = require('chromadb');
 const { initAuth } = require('./auth');
 const { requireRole } = require('./auth/requireRole');
 const chatLogger = require('./db/chat-logger');
+const { isAllowed } = require('./shared/access-policy.cjs');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3001;
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -52,9 +53,11 @@ app.get('/api/me', (req, res) => {
   }
   res.json({
     email: req.user.email,
+    displayName: req.user.displayName || null,
     roles: req.user.roles || [],
     region: req.user.region || null,
     orgId: req.user.orgId || null,
+    orgName: req.user.orgName || null,
     privileges: req.user.privileges || [],
   });
 });
@@ -578,6 +581,68 @@ app.use((error, req, res, next) => {
 // Serve static files from Docusaurus build
 const buildPath = path.join(__dirname, 'build');
 const fs = require('fs');
+
+// URL-guard middleware: enforce role/privilege gates server-side so a hand-typed
+// URL can't bypass the swizzled sidebar. The gate table is emitted by
+// plugins/access-gate-emit.js at build time → build/doc-gates.json.
+// Falls open if the file is missing (dev with no build, or a build that ran
+// before the plugin was added) so we don't break local dev.
+let docGates = null;
+try {
+  const gatesPath = path.join(buildPath, 'doc-gates.json');
+  if (fs.existsSync(gatesPath)) {
+    docGates = JSON.parse(fs.readFileSync(gatesPath, 'utf8'));
+    console.log(
+      `🔐 doc-gates.json loaded: ${docGates.prefixes.length} prefix gates, ` +
+        `${Object.keys(docGates.exact).length} article gates`
+    );
+  } else {
+    console.log('🔓 doc-gates.json absent — URL guard inactive (build first to enable)');
+  }
+} catch (e) {
+  console.error('⚠️  Failed to load doc-gates.json — URL guard inactive:', e.message);
+}
+
+/**
+ * Collect EVERY gate that applies to a URL — the exact frontmatter gate plus
+ * every ancestor-category prefix gate — and AND-combine them. This matches
+ * directory-permission semantics (Unix-style): a deeply-nested article is
+ * only accessible when each ancestor allows the viewer.
+ *
+ * Without this, an article whose frontmatter sets `customProps.roles: [user]`
+ * would be reachable even if its parent module requires the `quiz` privilege.
+ * The longest-prefix-only lookup let exactly that bug ship.
+ */
+function lookupGates(reqPath) {
+  if (!docGates) return [];
+  const normalized = reqPath.replace(/\/+$/, '') || '/';
+  const gates = [];
+  if (docGates.exact[normalized]) gates.push(docGates.exact[normalized]);
+  for (const {prefix, gate} of docGates.prefixes) {
+    if (normalized === prefix || normalized.startsWith(prefix + '/')) {
+      gates.push(gate);
+    }
+  }
+  return gates;
+}
+
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) return next();
+  const gates = lookupGates(req.path);
+  if (gates.length === 0) return next();
+  // AND semantics: every gate along the path must allow the viewer.
+  const blocked = gates.some((gate) => !isAllowed(gate, req.user));
+  if (!blocked) return next();
+  // 403 with a friendly fallback page if one exists.
+  const forbidden = path.join(buildPath, '403.html');
+  if (fs.existsSync(forbidden)) {
+    return res.status(403).sendFile(forbidden);
+  }
+  return res
+    .status(403)
+    .send('Forbidden — this section is not available for your role or organization.');
+});
+
 app.use(express.static(buildPath));
 
 // Handle client-side routing for non-API routes. Docusaurus pre-builds an
@@ -625,8 +690,8 @@ app.listen(PORT, '0.0.0.0', () => {
 
   console.log(`[DEBUG] RUN_INDEXER = "${process.env.RUN_INDEXER}" (type: ${typeof process.env.RUN_INDEXER})`);
 
-  if (process.env.RUN_INDEXER === 'true') {
-    const forceReindex = process.env.FORCE_FULL_REINDEX === 'true';
+  // if (process.env.RUN_INDEXER === 'true') {
+    const forceReindex = true;
     console.log(`🗂️  Spawning internal indexer...${forceReindex ? ' (FORCE_FULL_REINDEX)' : ''}`);
     const indexer = spawn('node', ['scripts/internal-indexer.js'], {
       stdio: 'inherit',
@@ -639,7 +704,7 @@ app.listen(PORT, '0.0.0.0', () => {
         console.error(`❌ Internal indexer exited with code ${code}`);
       }
     });
-  }
+  // }
 });
 
 // Graceful shutdown

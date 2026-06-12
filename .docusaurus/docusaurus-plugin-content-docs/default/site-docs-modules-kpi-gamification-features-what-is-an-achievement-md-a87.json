@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/features/5fdb509ab624c71b7985a72e",
+  "title": "What is an Achievement?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/features/what-is-an-achievement.md",
+  "sourceDirName": "modules/kpi-gamification/features",
+  "slug": "/modules/kpi-gamification/features/what-is-an-achievement",
+  "permalink": "/modules/kpi-gamification/features/what-is-an-achievement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/what-is-an-achievement.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 193,
+  "frontMatter": {
+    "id": "5fdb509ab624c71b7985a72e",
+    "title": "What is an Achievement?",
+    "description": "",
+    "slug": "what-is-an-achievement",
+    "sidebar_position": 193,
+    "last_update": {
+      "date": "2020-12-17T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb509ab624c71b7985a72e",
+      "helpscout_url": "https://help.smartwinnr.com/article/193-what-is-an-achievement"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "achievements"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Detailed explanation of reports",
+    "permalink": "/modules/kpi-gamification/features/detailed-explanation-of-reports"
+  },
+  "next": {
+    "title": "How to view the data and leaderboard for Scorecard",
+    "permalink": "/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard"
+  }
+}

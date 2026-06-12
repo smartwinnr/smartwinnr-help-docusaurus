@@ -15,20 +15,34 @@ interface VectorSearchProps {
   placeholder?: string;
   onClose?: () => void;
   isModal?: boolean;
+  /** Pre-fill the input and run the search once on mount. Used by the search
+   *  page when arriving from the landing-page hero form (`/search?q=...`). */
+  initialQuery?: string;
 }
 
-const VectorSearch: React.FC<VectorSearchProps> = ({ 
-  placeholder = "Search documentation...", 
+const VectorSearch: React.FC<VectorSearchProps> = ({
+  placeholder = "Search documentation...",
   onClose,
-  isModal = false 
+  isModal = false,
+  initialQuery = '',
 }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
+  const hasRunInitial = useRef(false);
+
+  // Run the search once on mount if an initial query was passed in.
+  useEffect(() => {
+    if (initialQuery && !hasRunInitial.current) {
+      hasRunInitial.current = true;
+      handleSearch(initialQuery);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialQuery]);
 
   const searchAPI = async (searchQuery: string): Promise<SearchResult[]> => {
     // Use same-origin API call (no CORS issues)

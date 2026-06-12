@@ -1,0 +1,43 @@
+{
+  "id": "modules/quiz/module-quiz",
+  "title": "Quiz",
+  "description": "Knowledge checks, auto-quiz pools, and topic-wise mastery tracking.",
+  "source": "@site/docs/modules/quiz/index.mdx",
+  "sourceDirName": "modules/quiz",
+  "slug": "/modules/quiz/",
+  "permalink": "/modules/quiz/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-quiz",
+    "title": "Quiz",
+    "description": "Knowledge checks, auto-quiz pools, and topic-wise mastery tracking.",
+    "slug": "/modules/quiz/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Modules",
+    "permalink": "/modules"
+  },
+  "next": {
+    "title": "How to upload questions in bulk using 'Import Questions'.",
+    "permalink": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/forms/reports-and-analytics/60099176c64fe14d0e1fd224",
+  "title": "Form Analytics",
+  "description": "",
+  "source": "@site/docs/modules/forms/reports-and-analytics/form-analytics.md",
+  "sourceDirName": "modules/forms/reports-and-analytics",
+  "slug": "/modules/forms/reports-and-analytics/form-analytics",
+  "permalink": "/modules/forms/reports-and-analytics/form-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/reports-and-analytics/form-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 226,
+  "frontMatter": {
+    "id": "60099176c64fe14d0e1fd224",
+    "title": "Form Analytics",
+    "description": "",
+    "slug": "form-analytics",
+    "sidebar_position": 226,
+    "last_update": {
+      "date": "2021-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60099176c64fe14d0e1fd224",
+      "helpscout_url": "https://help.smartwinnr.com/article/226-form-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Submit a Form on behalf of a User",
+    "permalink": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user"
+  },
+  "next": {
+    "title": "KPI & Gamification",
+    "permalink": "/modules/kpi-gamification/"
+  }
+}

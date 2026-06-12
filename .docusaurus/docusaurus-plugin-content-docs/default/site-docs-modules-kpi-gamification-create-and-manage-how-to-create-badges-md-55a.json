@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/64649da87d89467e9da791da",
+  "title": "How to create Badges",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-badges.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-badges",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-badges",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-badges.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 285,
+  "frontMatter": {
+    "id": "64649da87d89467e9da791da",
+    "title": "How to create Badges",
+    "description": "",
+    "slug": "how-to-create-badges",
+    "sidebar_position": 285,
+    "last_update": {
+      "date": "2023-05-30T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "64649da87d89467e9da791da",
+      "helpscout_url": "https://help.smartwinnr.com/article/285-how-to-create-badges"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "achievements"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add Different  Activities to a Challenge?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-different-activities-to-a-challenge"
+  },
+  "next": {
+    "title": "How to add smartfeed within a Competition",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition"
+  }
+}

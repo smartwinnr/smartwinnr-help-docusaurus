@@ -1,0 +1,10 @@
+{
+  "label": "Manager Workflows",
+  "position": 20,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": ["manager", "editor", "admin", "orgadmin", "lamadmin", "superadmin"],
+    "privilege": "managerView"
+  }
+}

@@ -67,7 +67,6 @@ const CANONICAL_DIRS = new Set([
   'administration/kpi-gamification',
   'administration/reports',
   'administration/notifications',
-  'administration/project-management',
   'administration/cross-module-features',
 ]);
 
@@ -109,7 +108,6 @@ const CATEGORY_MAPPING = {
       '5fdb07e87129911ba1b21e3a': { dir: 'administration/notifications',         privilege: 'customNotifications' },
       '5fdb74717129911ba1b2202c': { dir: 'administration/access-permissions',    roles: ['admin'] },
       '5fd4e5943d1d2a5b1c5ea1c8': { dir: 'administration/cross-module-features' },
-      '5fdb2e1627288b7f895d65c4': { dir: 'administration/project-management',    privilege: 'projectManagement' },
       '5fcc5d85de1bfa158fb55b99': { dir: 'administration/cross-module-features' },
     },
   },

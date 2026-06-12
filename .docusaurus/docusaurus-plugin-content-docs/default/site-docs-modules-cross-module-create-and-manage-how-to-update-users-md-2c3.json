@@ -1,0 +1,46 @@
+{
+  "id": "modules/cross-module/create-and-manage/696cf34e0ef05b444cde8d3c",
+  "title": "How to Update Users",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/create-and-manage/how-to-update-users.md",
+  "sourceDirName": "modules/cross-module/create-and-manage",
+  "slug": "/modules/cross-module/create-and-manage/how-to-update-users",
+  "permalink": "/modules/cross-module/create-and-manage/how-to-update-users",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-update-users.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 298,
+  "frontMatter": {
+    "id": "696cf34e0ef05b444cde8d3c",
+    "title": "How to Update Users",
+    "description": "",
+    "slug": "how-to-update-users",
+    "sidebar_position": 298,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "696cf34e0ef05b444cde8d3c",
+      "helpscout_url": "https://help.smartwinnr.com/article/298-how-to-update-users"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to update the SmartWinnr App from App View",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view"
+  },
+  "next": {
+    "title": "How to use QResolve in the SmartWinnr app?",
+    "permalink": "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app"
+  }
+}

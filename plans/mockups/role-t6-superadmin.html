@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>T6 · Superadmin · SmartWinnr Help</title>
+<link rel="stylesheet" href="_styles.css" />
+<link rel="stylesheet" href="_role-shell.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help</div>
+  <div class="topbar-search"><input type="text" placeholder="Search docs, FAQs, and articles…" /></div>
+  <div class="topbar-right">
+    <span class="role-pill">Signed in as: Superadmin</span>
+    <span>sasha.super@smartwinnr.com</span>
+  </div>
+</header>
+
+<div class="role-badge-bar">
+  <span class="tier-pill t6">T6</span>
+  <strong>Role: superadmin</strong>
+  <span>· Tier 6 of 6  (highest)</span>
+  <span>· Bypasses privilege gating — sees every module regardless of org config</span>
+</div>
+
+<div class="role-nav-pager">
+  <a href="role-t1-user.html">T1 · User</a>
+  <a href="role-t2-manager.html">T2 · Manager</a>
+  <a href="role-t3-editor.html">T3 · Editor</a>
+  <a href="role-t4-admin.html">T4 · Admin</a>
+  <a href="role-t5-orgadmin.html">T5 · OrgAdmin</a>
+  <a href="role-t6-superadmin.html" class="current">T6 · Superadmin</a>
+  <span class="sep">|</span>
+  <a href="index.html">← All mockups</a>
+</div>
+
+<nav class="nav-strip">
+  <a href="#">Get Started</a>
+  <a href="#">Guides</a>
+  <a href="#">Modules</a>
+  <a href="#">Reports &amp; Analytics</a>
+  <a href="#">Integrations</a>
+  <a href="#" class="active">Administration</a>
+  <a href="#">Reference</a>
+  <a href="#">Release Notes</a>
+  <a href="#" style="color:#ef4444; font-weight:600;">Superadmin</a>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Everything T5 sees</div>
+      <div class="sb-group"><span class="chev">▸</span> Get Started · Guides · Modules</div>
+      <div class="sb-group"><span class="chev">▸</span> Reports &amp; Analytics</div>
+      <div class="sb-group"><span class="chev">▸</span> Integrations</div>
+      <div class="sb-group"><span class="chev">▸</span> Administration (incl. org-wide)</div>
+      <div class="sb-group"><span class="chev">▸</span> Reference · Release Notes</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat" style="color: #ef4444;">Superadmin-only</div>
+      <div class="sb-group open"><span class="chev">▸</span> Platform operations</div>
+      <div class="sb-children">
+        <div class="sb-item active">Internal escalation runbook</div>
+        <div class="sb-item">Org provisioning &amp; offboarding</div>
+        <div class="sb-item">Feature-flag toggles</div>
+        <div class="sb-item">Privilege catalog maintenance</div>
+        <div class="sb-item">Cross-org content tools</div>
+      </div>
+      <div class="sb-group"><span class="chev">▸</span> Chat &amp; vector ops</div>
+      <div class="sb-children">
+        <div class="sb-item">View chat logs across orgs <span class="badge adm">SA</span></div>
+        <div class="sb-item">Re-index docs (ChromaDB)</div>
+        <div class="sb-item">Anonymized export</div>
+      </div>
+      <div class="sb-group"><span class="chev">▸</span> Debug &amp; diagnostics</div>
+      <div class="sb-group"><span class="chev">▸</span> Privilege gate inspector</div>
+      <div class="sb-group"><span class="chev">▸</span> Help-site re-sync runbook</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Privilege bypass demonstrator</div>
+      <div class="sb-item">Quiz <span class="badge priv">quiz</span> ✓ shown</div>
+      <div class="sb-item">CRM components <span class="badge priv">crmComponents</span> ✓ shown</div>
+      <div class="sb-item">HR module <span class="badge priv">HR_Module</span> ✓ shown</div>
+      <div class="sb-item">SCIM <span class="badge priv">scimIntegration</span> ✓ shown</div>
+      <div class="sb-item" style="color:var(--sw-text-muted);">All 67 privileges always visible</div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+    <div class="breadcrumb"><a href="#">Help</a> › <a href="#">Superadmin</a> › Platform operations › Internal escalation runbook</div>
+    <h1>Superadmin — unrestricted view</h1>
+    <p class="lead">
+      <strong>Superadmin</strong> sees everything every other tier sees, plus a dedicated
+      <em>Superadmin</em> section in the top nav for platform operations, chat-log inspection,
+      vector ops, debug, and the privilege-gate inspector. Privilege gating is bypassed.
+    </p>
+
+    <div class="role-banner">
+      <strong>What this role sees</strong>
+      <code>PRIVILEGE_BYPASS_ROLES = ['superadmin']</code> in <code>src/access-policy.ts:59</code>.
+      That means even when <code>PRIVILEGE_GATING_ENABLED = true</code>, modules whose privilege
+      the org has not enabled still render for superadmin. The matching server-side guard in
+      <code>server.js</code> uses the shared <code>isAllowedServer()</code> from
+      <code>shared/access-policy.cjs</code>, so URL access matches sidebar visibility 1:1.
+    </div>
+
+    <h2>Superadmin-only surface</h2>
+    <div class="cards">
+      <div class="card"><span class="ico">🛡</span><h3>Platform operations</h3><p>Org provisioning, feature flags, privilege catalog.</p></div>
+      <div class="card"><span class="ico">💬</span><h3>Chat-log inspection</h3><p>Cross-org chat audit (existing <code>/api/admin/chat-logs/*</code>).</p></div>
+      <div class="card"><span class="ico">🔍</span><h3>Privilege gate inspector</h3><p>Simulate any role and preview their menu.</p></div>
+      <div class="card"><span class="ico">🧪</span><h3>Debug &amp; diagnostics</h3><p>Cache stats, ChromaDB health, embedding cost.</p></div>
+      <div class="card"><span class="ico">🔄</span><h3>Re-index docs</h3><p>Trigger <code>npm run index-internal</code> remotely.</p></div>
+      <div class="card"><span class="ico">📜</span><h3>Re-sync runbook</h3><p>The full <code>CLAUDE.md</code> re-sync flow with one-click steps.</p></div>
+    </div>
+
+    <h2>Access policy at a glance</h2>
+    <div class="hidden-note" style="background: #fef2f2; border-color: #fecaca; color: #991b1b;">
+      <strong>Caveat:</strong> Superadmin is unrestricted by design. Anything destructive
+      (re-index, cross-org export, feature-flag flips) should still be guarded with an extra
+      confirmation step in the LMS UI — the help-site simply documents the runbook.
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="tier-pill t6">T6</span> bypass for privilege gating</span>
+      <span class="legend-item"><span class="badge priv">any</span> always visible to superadmin</span>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

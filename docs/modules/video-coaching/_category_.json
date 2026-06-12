@@ -1,0 +1,17 @@
+{
+  "label": "Video Coaching",
+  "position": 40,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce4541eb7cc612aa3557b4",
+  "title": "Browser and Device Support",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/browser-and-device-support.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/browser-and-device-support",
+  "permalink": "/get-started/onboarding/browser-and-device-support",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/browser-and-device-support.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 23,
+  "frontMatter": {
+    "id": "5fce4541eb7cc612aa3557b4",
+    "title": "Browser and Device Support",
+    "description": "",
+    "slug": "browser-and-device-support",
+    "sidebar_position": 23,
+    "last_update": {
+      "date": "2020-12-07T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce4541eb7cc612aa3557b4",
+      "helpscout_url": "https://help.smartwinnr.com/article/23-browser-and-device-support"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I contact SmartWinnr Team?",
+    "permalink": "/get-started/onboarding/how-can-i-contact-smartwinnr-team"
+  },
+  "next": {
+    "title": "How to update the SmartWinnr App from Web View",
+    "permalink": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/create-and-manage/5fd1082c80488e39007cbd4c",
+  "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/create-and-manage",
+  "slug": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+  "permalink": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 28,
+  "frontMatter": {
+    "id": "5fd1082c80488e39007cbd4c",
+    "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+    "description": "",
+    "slug": "how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+    "sidebar_position": 28,
+    "last_update": {
+      "date": "2026-01-17T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd1082c80488e39007cbd4c",
+      "helpscout_url": "https://help.smartwinnr.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed"
+  },
+  "next": {
+    "title": "How to Edit a SmartFeed",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed"
+  }
+}

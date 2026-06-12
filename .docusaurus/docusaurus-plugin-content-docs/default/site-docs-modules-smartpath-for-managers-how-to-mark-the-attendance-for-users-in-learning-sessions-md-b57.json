@@ -1,0 +1,48 @@
+{
+  "id": "modules/smartpath/for-managers/6106ee53b55c2b04bf6da2c0",
+  "title": "How to Mark the attendance for Users  in Learning Sessions?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "sourceDirName": "modules/smartpath/for-managers",
+  "slug": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "permalink": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 264,
+  "frontMatter": {
+    "id": "6106ee53b55c2b04bf6da2c0",
+    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "description": "",
+    "slug": "how-to-mark-the-attendance-for-users-in-learning-sessions",
+    "sidebar_position": 264,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6106ee53b55c2b04bf6da2c0",
+      "helpscout_url": "https://help.smartwinnr.com/article/264-how-to-mark-the-attendance-for-users-in-learning-sessions"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create Assignment in SmartPath?",
+    "permalink": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+  },
+  "next": {
+    "title": "What are SmartPaths.",
+    "permalink": "/modules/smartpath/features/what-are-smartpaths"
+  }
+}

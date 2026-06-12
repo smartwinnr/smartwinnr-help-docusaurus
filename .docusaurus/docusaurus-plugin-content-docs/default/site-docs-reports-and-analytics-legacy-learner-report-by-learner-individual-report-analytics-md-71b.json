@@ -1,0 +1,47 @@
+{
+  "id": "reports-and-analytics/legacy/60c206d796768369c70bc6b4",
+  "title": "Learner Report - By Learner (Individual Report Analytics)",
+  "description": "",
+  "source": "@site/docs/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics.md",
+  "sourceDirName": "reports-and-analytics/legacy",
+  "slug": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics",
+  "permalink": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 255,
+  "frontMatter": {
+    "id": "60c206d796768369c70bc6b4",
+    "title": "Learner Report - By Learner (Individual Report Analytics)",
+    "description": "",
+    "slug": "learner-report-by-learner-individual-report-analytics",
+    "sidebar_position": 255,
+    "last_update": {
+      "date": "2021-06-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60c206d796768369c70bc6b4",
+      "helpscout_url": "https://help.smartwinnr.com/article/255-learner-report-by-learner"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "learnerReport"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Learner Overall Report",
+    "permalink": "/reports-and-analytics/legacy/learner-overall-report"
+  },
+  "next": {
+    "title": "Integrations",
+    "permalink": "/integrations"
+  }
+}

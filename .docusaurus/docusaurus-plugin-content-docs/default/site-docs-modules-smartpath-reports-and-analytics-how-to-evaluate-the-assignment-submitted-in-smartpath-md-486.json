@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/reports-and-analytics/696fc2e4dadc293bb31333c6",
+  "title": "How to evaluate the Assignment submitted in SmartPath?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath.md",
+  "sourceDirName": "modules/smartpath/reports-and-analytics",
+  "slug": "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath",
+  "permalink": "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 305,
+  "frontMatter": {
+    "id": "696fc2e4dadc293bb31333c6",
+    "title": "How to evaluate the Assignment submitted in SmartPath?",
+    "description": "",
+    "slug": "how-to-evaluate-the-assignment-submitted-in-smartpath",
+    "sidebar_position": 305,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "696fc2e4dadc293bb31333c6",
+      "helpscout_url": "https://help.smartwinnr.com/article/305-how-to-evaluate-the-assignment-submitted-in-smartpath"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view the SmartPath Analytics.",
+    "permalink": "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics"
+  },
+  "next": {
+    "title": "How can I track improvement?",
+    "permalink": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement"
+  }
+}

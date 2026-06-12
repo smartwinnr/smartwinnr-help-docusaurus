@@ -212,5 +212,56 @@ module.exports = [
         }
       });
     }
+  },
+  {
+    // MD-SW-001 — articles under docs/modules/<module>/ must live in the
+    // module root (overview.md / quickstart.md) or in one of the 8 canonical
+    // sub-folders. See plans/help-menu-redesign.md §5.
+    "names": ["MD-SW-001", "module-sub-section-placement"],
+    "description": "Article must live in a canonical module sub-folder",
+    "tags": ["smartwinnr", "ia"],
+    "function": function moduleSubSectionPlacement(params, onError) {
+      const ALLOWED_ROOT_FILES = new Set(['overview.md', 'quickstart.md', 'index.md']);
+      const ALLOWED_SUBDIRS = new Set([
+        'for-learners',
+        'for-managers',
+        'create-and-manage',
+        'assign-and-schedule',
+        'features',
+        'reports-and-analytics',
+        'settings-and-permissions',
+        'best-practices',
+        'faqs-and-troubleshooting',
+      ]);
+
+      const filePath = (params.name || '').replace(/\\/g, '/');
+      // Only enforce inside docs/modules/<module>/
+      const m = /\/docs\/modules\/[^/]+\/(.*)$/.exec(filePath);
+      if (!m) return;
+      const tail = m[1]; // e.g. "create-and-manage/foo.md" or "overview.md"
+      const parts = tail.split('/');
+
+      if (parts.length === 1) {
+        if (!ALLOWED_ROOT_FILES.has(parts[0])) {
+          onError({
+            lineNumber: 1,
+            detail:
+              `Article "${parts[0]}" at module root is not allowed. ` +
+              `Either rename to overview.md/quickstart.md or move into one of: ` +
+              `${[...ALLOWED_SUBDIRS].join(', ')}.`,
+          });
+        }
+        return;
+      }
+
+      if (!ALLOWED_SUBDIRS.has(parts[0])) {
+        onError({
+          lineNumber: 1,
+          detail:
+            `Sub-folder "${parts[0]}" is not a canonical module sub-section. ` +
+            `Allowed: ${[...ALLOWED_SUBDIRS].join(', ')}.`,
+        });
+      }
+    }
   }
 ];

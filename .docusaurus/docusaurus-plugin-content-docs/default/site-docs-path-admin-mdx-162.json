@@ -1,0 +1,31 @@
+{
+  "id": "path/path-admin",
+  "title": "I administer the org",
+  "description": "Users, roles, divisions, audit log, approval flow, org privileges.",
+  "source": "@site/docs/path/admin.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/admin/",
+  "permalink": "/path/admin/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/admin.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-admin",
+    "title": "I administer the org",
+    "description": "Users, roles, divisions, audit log, approval flow, org privileges.",
+    "slug": "/path/admin/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

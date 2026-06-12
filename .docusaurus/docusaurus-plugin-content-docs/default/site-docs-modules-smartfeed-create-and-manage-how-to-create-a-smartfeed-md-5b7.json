@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/create-and-manage/5fd10365db2fa3720c7d7a2f",
+  "title": "How to create a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/create-and-manage",
+  "slug": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed",
+  "permalink": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 27,
+  "frontMatter": {
+    "id": "5fd10365db2fa3720c7d7a2f",
+    "title": "How to create a SmartFeed?",
+    "description": "",
+    "slug": "how-to-create-a-smartfeed",
+    "sidebar_position": 27,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd10365db2fa3720c7d7a2f",
+      "helpscout_url": "https://help.smartwinnr.com/article/27-how-to-create-a-smartfeed"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "SmartFeed",
+    "permalink": "/modules/smartfeed/"
+  },
+  "next": {
+    "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
+  }
+}

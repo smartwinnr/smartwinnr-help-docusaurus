@@ -1,0 +1,31 @@
+{
+  "id": "reports-and-analytics/legacy/placeholder-reports",
+  "title": "Reports & Analytics",
+  "description": "Learning reports, admin reports, and analytics dashboards.",
+  "source": "@site/docs/reports-and-analytics/legacy/index.md",
+  "sourceDirName": "reports-and-analytics/legacy",
+  "slug": "/reports-and-analytics/legacy/",
+  "permalink": "/reports-and-analytics/legacy/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "placeholder-reports",
+    "title": "Reports & Analytics",
+    "description": "Learning reports, admin reports, and analytics dashboards.",
+    "slug": "/reports-and-analytics/legacy/",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Set Reminder for your Tasks",
+    "permalink": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks"
+  },
+  "next": {
+    "title": "User Login reports",
+    "permalink": "/reports-and-analytics/legacy/user-login-reports"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/reports-and-analytics/697108ae08cad8770d366373",
+  "title": "How can I track improvement?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement.md",
+  "sourceDirName": "modules/smartpath/reports-and-analytics",
+  "slug": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement",
+  "permalink": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 319,
+  "frontMatter": {
+    "id": "697108ae08cad8770d366373",
+    "title": "How can I track improvement?",
+    "description": "",
+    "slug": "how-can-i-track-improvement",
+    "sidebar_position": 319,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "697108ae08cad8770d366373",
+      "helpscout_url": "https://help.smartwinnr.com/article/319-how-can-i-track-improvement"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to evaluate the Assignment submitted in SmartPath?",
+    "permalink": "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath"
+  },
+  "next": {
+    "title": "Understanding the Overview Tab on the SmartPath Dashboard",
+    "permalink": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard"
+  }
+}

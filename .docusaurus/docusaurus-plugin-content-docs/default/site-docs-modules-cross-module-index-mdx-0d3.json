@@ -1,0 +1,43 @@
+{
+  "id": "modules/cross-module/module-cross-module",
+  "title": "Cross-Module Features",
+  "description": "Behaviour that spans multiple modules — query, app updates, navigation.",
+  "source": "@site/docs/modules/cross-module/index.mdx",
+  "sourceDirName": "modules/cross-module",
+  "slug": "/modules/cross-module/",
+  "permalink": "/modules/cross-module/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-cross-module",
+    "title": "Cross-Module Features",
+    "description": "Behaviour that spans multiple modules — query, app updates, navigation.",
+    "slug": "/modules/cross-module/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Enable a Chat Group?",
+    "permalink": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group"
+  },
+  "next": {
+    "title": "How to add a video to your content?",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content"
+  }
+}

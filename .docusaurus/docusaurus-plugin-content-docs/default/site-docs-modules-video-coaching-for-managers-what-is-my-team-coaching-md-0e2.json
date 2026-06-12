@@ -1,0 +1,48 @@
+{
+  "id": "modules/video-coaching/for-managers/5fd758ea7129911ba1b20b11",
+  "title": "What is 'My Team Coaching'?",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/for-managers/what-is-my-team-coaching.md",
+  "sourceDirName": "modules/video-coaching/for-managers",
+  "slug": "/modules/video-coaching/for-managers/what-is-my-team-coaching",
+  "permalink": "/modules/video-coaching/for-managers/what-is-my-team-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-managers/what-is-my-team-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 89,
+  "frontMatter": {
+    "id": "5fd758ea7129911ba1b20b11",
+    "title": "What is 'My Team Coaching'?",
+    "description": "",
+    "slug": "what-is-my-team-coaching",
+    "sidebar_position": 89,
+    "last_update": {
+      "date": "2021-02-25T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd758ea7129911ba1b20b11",
+      "helpscout_url": "https://help.smartwinnr.com/article/89-what-is-my-team-coaching"
+    },
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "managerView"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to share a Coaching Video.",
+    "permalink": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video"
+  },
+  "next": {
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "permalink": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+  }
+}

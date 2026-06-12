@@ -1,0 +1,43 @@
+{
+  "id": "modules/field-coaching/module-field-coaching",
+  "title": "Field Coaching",
+  "description": "Structured ride-along coaching with competency-based scoring.",
+  "source": "@site/docs/modules/field-coaching/index.mdx",
+  "sourceDirName": "modules/field-coaching",
+  "slug": "/modules/field-coaching/",
+  "permalink": "/modules/field-coaching/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-field-coaching",
+    "title": "Field Coaching",
+    "description": "Structured ride-along coaching with competency-based scoring.",
+    "slug": "/modules/field-coaching/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How many type of coaching reports are available on Smartwinnr?",
+    "permalink": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr"
+  },
+  "next": {
+    "title": "How to create Field Coaching Template",
+    "permalink": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+  }
+}

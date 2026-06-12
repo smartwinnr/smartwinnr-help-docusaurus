@@ -1,0 +1,48 @@
+{
+  "id": "modules/smartfeed/for-learners/5fd1110180488e39007cbd8f",
+  "title": "How Do I Like and Comment on a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/for-learners",
+  "slug": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed",
+  "permalink": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 33,
+  "frontMatter": {
+    "id": "5fd1110180488e39007cbd8f",
+    "title": "How Do I Like and Comment on a SmartFeed?",
+    "description": "",
+    "slug": "how-do-i-like-and-comment-on-a-smartfeed",
+    "sidebar_position": 33,
+    "last_update": {
+      "date": "2026-01-17T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd1110180488e39007cbd8f",
+      "helpscout_url": "https://help.smartwinnr.com/article/33-how-do-i-like-a-smartfeed"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to update the thumbnail of a SmartFeed",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed"
+  },
+  "next": {
+    "title": "How to send a SmartFeed multiple times?",
+    "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times"
+  }
+}

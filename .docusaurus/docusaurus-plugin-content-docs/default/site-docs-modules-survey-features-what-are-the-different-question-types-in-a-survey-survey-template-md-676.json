@@ -1,0 +1,47 @@
+{
+  "id": "modules/survey/features/5fd4a51b23119734ee37edce",
+  "title": "What are the different question types in a Survey /Survey Template?",
+  "description": "",
+  "source": "@site/docs/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template.md",
+  "sourceDirName": "modules/survey/features",
+  "slug": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template",
+  "permalink": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 62,
+  "frontMatter": {
+    "id": "5fd4a51b23119734ee37edce",
+    "title": "What are the different question types in a Survey /Survey Template?",
+    "description": "",
+    "slug": "what-are-the-different-question-types-in-a-survey-survey-template",
+    "sidebar_position": 62,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4a51b23119734ee37edce",
+      "helpscout_url": "https://help.smartwinnr.com/article/62-what-are-the-different-question-types-in-a-survey-template"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "survey"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Assign a Survey in SmartWinnr",
+    "permalink": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr"
+  },
+  "next": {
+    "title": "Survey Analytics",
+    "permalink": "/modules/survey/reports-and-analytics/survey-analytics"
+  }
+}

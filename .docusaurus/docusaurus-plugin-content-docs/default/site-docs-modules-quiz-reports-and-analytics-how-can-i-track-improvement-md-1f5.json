@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/697115b9f35cc6035d0b99b3",
+  "title": "How can I track improvement?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/how-can-i-track-improvement.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/how-can-i-track-improvement",
+  "permalink": "/modules/quiz/reports-and-analytics/how-can-i-track-improvement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/how-can-i-track-improvement.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 320,
+  "frontMatter": {
+    "id": "697115b9f35cc6035d0b99b3",
+    "title": "How can I track improvement?",
+    "description": "",
+    "slug": "how-can-i-track-improvement",
+    "sidebar_position": 320,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "697115b9f35cc6035d0b99b3",
+      "helpscout_url": "https://help.smartwinnr.com/article/320-how-can-i-track-improvement"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Editors evaluate Long Answer Questions?",
+    "permalink": "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions"
+  },
+  "next": {
+    "title": "Understanding the Overview Tab on the Quiz Dashboard",
+    "permalink": "/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard"
+  }
+}

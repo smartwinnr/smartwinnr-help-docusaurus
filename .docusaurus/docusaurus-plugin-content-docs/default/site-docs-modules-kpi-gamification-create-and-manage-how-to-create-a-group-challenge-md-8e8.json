@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fdb1646a5d295659b369c8d",
+  "title": "How to create a Group Challenge?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 180,
+  "frontMatter": {
+    "id": "5fdb1646a5d295659b369c8d",
+    "title": "How to create a Group Challenge?",
+    "description": "",
+    "slug": "how-to-create-a-group-challenge",
+    "sidebar_position": 180,
+    "last_update": {
+      "date": "2021-01-13T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb1646a5d295659b369c8d",
+      "helpscout_url": "https://help.smartwinnr.com/article/180-how-to-create-a-group-challenge"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create an Individual Challenge?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge"
+  },
+  "next": {
+    "title": "How to create a Manager Challenge?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-manager-challenge"
+  }
+}

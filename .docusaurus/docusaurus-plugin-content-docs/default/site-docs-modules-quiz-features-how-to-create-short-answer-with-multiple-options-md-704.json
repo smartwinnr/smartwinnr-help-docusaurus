@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/64115177a0408f7cb1038c2d",
+  "title": "How to create Short Answer With Multiple Options",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-create-short-answer-with-multiple-options.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options",
+  "permalink": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-short-answer-with-multiple-options.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 280,
+  "frontMatter": {
+    "id": "64115177a0408f7cb1038c2d",
+    "title": "How to create Short Answer With Multiple Options",
+    "description": "",
+    "slug": "how-to-create-short-answer-with-multiple-options",
+    "sidebar_position": 280,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "64115177a0408f7cb1038c2d",
+      "helpscout_url": "https://help.smartwinnr.com/article/280-short-answer-with-multiple-options"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create 'Long Answer' Questions?",
+    "permalink": "/modules/quiz/features/how-to-create-long-answer-questions"
+  },
+  "next": {
+    "title": "How to create a 'Drag and Drop into Text question '?",
+    "permalink": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question"
+  }
+}

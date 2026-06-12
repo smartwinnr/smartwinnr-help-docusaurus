@@ -48,9 +48,11 @@ export function UserProvider({children}: {children: ReactNode}) {
         }
         setUser({
           email: data.email ?? '',
+          displayName: data.displayName ?? null,
           roles: Array.isArray(data.roles) ? data.roles : [],
           region: data.region ?? null,
           orgId: data.orgId ?? null,
+          orgName: data.orgName ?? null,
           privileges: Array.isArray(data.privileges) ? data.privileges : [],
         });
         setLoading(false);

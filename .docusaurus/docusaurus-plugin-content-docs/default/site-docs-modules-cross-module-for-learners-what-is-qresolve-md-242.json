@@ -1,0 +1,49 @@
+{
+  "id": "modules/cross-module/for-learners/60003222c64fe14d0e1fac76",
+  "title": "What is QResolve?...",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/for-learners/what-is-qresolve.md",
+  "sourceDirName": "modules/cross-module/for-learners",
+  "slug": "/modules/cross-module/for-learners/what-is-qresolve",
+  "permalink": "/modules/cross-module/for-learners/what-is-qresolve",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/what-is-qresolve.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 209,
+  "frontMatter": {
+    "id": "60003222c64fe14d0e1fac76",
+    "title": "What is QResolve?...",
+    "description": "",
+    "slug": "what-is-qresolve",
+    "sidebar_position": 209,
+    "last_update": {
+      "date": "2021-01-14T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60003222c64fe14d0e1fac76",
+      "helpscout_url": "https://help.smartwinnr.com/article/209-what-is-qresolve"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I answer a Query ?",
+    "permalink": "/modules/cross-module/for-learners/how-can-i-answer-a-query"
+  },
+  "next": {
+    "title": "How to access the SCORM course from the SmartWinnr app ?",
+    "permalink": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/faqs-and-troubleshooting/5fd48e84c868cb6df3a8101f",
+  "title": "Troubleshoot for common error code",
+  "description": "",
+  "source": "@site/docs/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code.md",
+  "sourceDirName": "modules/quiz/faqs-and-troubleshooting",
+  "slug": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code",
+  "permalink": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 47,
+  "frontMatter": {
+    "id": "5fd48e84c868cb6df3a8101f",
+    "title": "Troubleshoot for common error code",
+    "description": "",
+    "slug": "troubleshoot-for-common-error-code",
+    "sidebar_position": 47,
+    "last_update": {
+      "date": "2021-01-23T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd48e84c868cb6df3a8101f",
+      "helpscout_url": "https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How 'Import question' is  different from 'Add New Question'?",
+    "permalink": "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question"
+  },
+  "next": {
+    "title": "SmartPath",
+    "permalink": "/modules/smartpath/"
+  }
+}

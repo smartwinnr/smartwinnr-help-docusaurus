@@ -1,0 +1,14 @@
+{
+  "label": "Integrations",
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

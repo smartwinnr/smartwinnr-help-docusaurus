@@ -1,0 +1,46 @@
+{
+  "id": "reports-and-analytics/legacy/5fdae19bb624c71b7985a579",
+  "title": "User Login reports",
+  "description": "",
+  "source": "@site/docs/reports-and-analytics/legacy/user-login-reports.md",
+  "sourceDirName": "reports-and-analytics/legacy",
+  "slug": "/reports-and-analytics/legacy/user-login-reports",
+  "permalink": "/reports-and-analytics/legacy/user-login-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/user-login-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 143,
+  "frontMatter": {
+    "id": "5fdae19bb624c71b7985a579",
+    "title": "User Login reports",
+    "description": "",
+    "slug": "user-login-reports",
+    "sidebar_position": 143,
+    "last_update": {
+      "date": "2021-03-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdae19bb624c71b7985a579",
+      "helpscout_url": "https://help.smartwinnr.com/article/143-user-login-reports"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ],
+      "privilege": "learnerReport"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reports & Analytics",
+    "permalink": "/reports-and-analytics/legacy/"
+  },
+  "next": {
+    "title": "Team Analytics",
+    "permalink": "/reports-and-analytics/legacy/team-analytics"
+  }
+}

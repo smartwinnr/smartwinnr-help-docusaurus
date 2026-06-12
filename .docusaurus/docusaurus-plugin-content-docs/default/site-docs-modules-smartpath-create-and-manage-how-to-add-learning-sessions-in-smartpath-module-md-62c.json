@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/create-and-manage/60a645beeb3af44cc120aa6d",
+  "title": "How to add Learning Sessions In SmartPath Module?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module.md",
+  "sourceDirName": "modules/smartpath/create-and-manage",
+  "slug": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module",
+  "permalink": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 242,
+  "frontMatter": {
+    "id": "60a645beeb3af44cc120aa6d",
+    "title": "How to add Learning Sessions In SmartPath Module?",
+    "description": "",
+    "slug": "how-to-add-learning-sessions-in-smartpath-module",
+    "sidebar_position": 242,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60a645beeb3af44cc120aa6d",
+      "helpscout_url": "https://help.smartwinnr.com/article/242-how-to-add-learning-sessions-in-smartpath"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to edit a SmartPath.",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-edit-a-smartpath"
+  },
+  "next": {
+    "title": "How to Create SmartPath with Learning Sessions?",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "modules/notifications/module-notifications",
+  "title": "Notifications & Chat",
+  "description": "Custom, scheduled, and triggered notifications plus in-app chat.",
+  "source": "@site/docs/modules/notifications/index.mdx",
+  "sourceDirName": "modules/notifications",
+  "slug": "/modules/notifications/",
+  "permalink": "/modules/notifications/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-notifications",
+    "title": "Notifications & Chat",
+    "description": "Custom, scheduled, and triggered notifications plus in-app chat.",
+    "slug": "/modules/notifications/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view the data and leaderboard for Scorecard",
+    "permalink": "/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard"
+  },
+  "next": {
+    "title": "How to add or remove users to a chat group?",
+    "permalink": "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group"
+  }
+}

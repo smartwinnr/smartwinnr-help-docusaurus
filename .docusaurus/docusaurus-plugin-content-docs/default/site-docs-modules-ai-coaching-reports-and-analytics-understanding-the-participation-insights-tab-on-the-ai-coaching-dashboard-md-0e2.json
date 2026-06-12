@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/reports-and-analytics/6971e1b1015ae02ac002197d",
+  "title": "Understanding the Participation Insights Tab on the AI Coaching Dashboard",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard.md",
+  "sourceDirName": "modules/ai-coaching/reports-and-analytics",
+  "slug": "/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard",
+  "permalink": "/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 325,
+  "frontMatter": {
+    "id": "6971e1b1015ae02ac002197d",
+    "title": "Understanding the Participation Insights Tab on the AI Coaching Dashboard",
+    "description": "",
+    "slug": "understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard",
+    "sidebar_position": 325,
+    "last_update": {
+      "date": "2026-02-06T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6971e1b1015ae02ac002197d",
+      "helpscout_url": "https://help.smartwinnr.com/article/325-understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding the Competency & Skills Insights Tab on the AI Coaching Dashboard",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard"
+  },
+  "next": {
+    "title": "How many learners have submitted their responses?",
+    "permalink": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses"
+  }
+}

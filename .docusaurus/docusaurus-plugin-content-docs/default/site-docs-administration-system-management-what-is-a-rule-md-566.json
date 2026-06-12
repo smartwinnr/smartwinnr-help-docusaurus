@@ -1,0 +1,45 @@
+{
+  "id": "administration/system-management/5fdaddc6b624c71b7985a570",
+  "title": "What is a Rule?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/what-is-a-rule.md",
+  "sourceDirName": "administration/system-management",
+  "slug": "/administration/system-management/what-is-a-rule",
+  "permalink": "/administration/system-management/what-is-a-rule",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/what-is-a-rule.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 141,
+  "frontMatter": {
+    "id": "5fdaddc6b624c71b7985a570",
+    "title": "What is a Rule?",
+    "description": "",
+    "slug": "what-is-a-rule",
+    "sidebar_position": 141,
+    "last_update": {
+      "date": "2021-01-15T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdaddc6b624c71b7985a570",
+      "helpscout_url": "https://help.smartwinnr.com/article/141-what-is-a-rule"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Add new rule?",
+    "permalink": "/administration/system-management/how-to-add-new-rule"
+  },
+  "next": {
+    "title": "Changing/Updating configuration for an Organization",
+    "permalink": "/administration/system-management/changing-updating-configuration-for-an-organization"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/reports-and-analytics/6971f00808cad8770d366631",
+  "title": "Understanding the Overview Tab on the SmartPath Dashboard",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard.md",
+  "sourceDirName": "modules/smartpath/reports-and-analytics",
+  "slug": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard",
+  "permalink": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 326,
+  "frontMatter": {
+    "id": "6971f00808cad8770d366631",
+    "title": "Understanding the Overview Tab on the SmartPath Dashboard",
+    "description": "",
+    "slug": "understanding-the-overview-tab-on-the-smartpath-dashboard",
+    "sidebar_position": 326,
+    "last_update": {
+      "date": "2026-02-06T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6971f00808cad8770d366631",
+      "helpscout_url": "https://help.smartwinnr.com/article/326-understanding-the-overview-tab-on-the-smartpath-dashboard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I track improvement?",
+    "permalink": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement"
+  },
+  "next": {
+    "title": "Understanding the Module Wise Analysis Tab on the SmartPath Dashboard",
+    "permalink": "/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard"
+  }
+}

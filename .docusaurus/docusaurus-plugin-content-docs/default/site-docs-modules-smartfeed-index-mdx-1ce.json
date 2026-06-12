@@ -1,0 +1,43 @@
+{
+  "id": "modules/smartfeed/module-smartfeed",
+  "title": "SmartFeed",
+  "description": "Bite-sized video and article content delivered to the right audience.",
+  "source": "@site/docs/modules/smartfeed/index.mdx",
+  "sourceDirName": "modules/smartfeed",
+  "slug": "/modules/smartfeed/",
+  "permalink": "/modules/smartfeed/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-smartfeed",
+    "title": "SmartFeed",
+    "description": "Bite-sized video and article content delivered to the right audience.",
+    "slug": "/modules/smartfeed/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "permalink": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+  },
+  "next": {
+    "title": "How to create a SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed"
+  }
+}

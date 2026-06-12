@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce219904cebe5254a298fa",
+  "title": "My Account is locked - what should I do?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/my-account-is-locked-what-should-i-do.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/my-account-is-locked-what-should-i-do",
+  "permalink": "/get-started/onboarding/my-account-is-locked-what-should-i-do",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/my-account-is-locked-what-should-i-do.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "id": "5fce219904cebe5254a298fa",
+    "title": "My Account is locked - what should I do?",
+    "description": "",
+    "slug": "my-account-is-locked-what-should-i-do",
+    "sidebar_position": 14,
+    "last_update": {
+      "date": "2020-12-26T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce219904cebe5254a298fa",
+      "helpscout_url": "https://help.smartwinnr.com/article/14-my-account-is-locked-what-should-i-do"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What if I've forgotten my PIN?",
+    "permalink": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin"
+  },
+  "next": {
+    "title": "How can I change my profile image?",
+    "permalink": "/get-started/onboarding/how-can-i-change-my-profile-image"
+  }
+}

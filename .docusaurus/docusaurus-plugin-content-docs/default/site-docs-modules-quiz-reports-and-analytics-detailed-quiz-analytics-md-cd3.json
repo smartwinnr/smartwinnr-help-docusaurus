@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/5fd496523d1d2a5b1c5ea15c",
+  "title": "Detailed Quiz Analytics",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/detailed-quiz-analytics.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics",
+  "permalink": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/detailed-quiz-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 55,
+  "frontMatter": {
+    "id": "5fd496523d1d2a5b1c5ea15c",
+    "title": "Detailed Quiz Analytics",
+    "description": "",
+    "slug": "detailed-quiz-analytics",
+    "sidebar_position": 55,
+    "last_update": {
+      "date": "2021-03-08T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd496523d1d2a5b1c5ea15c",
+      "helpscout_url": "https://help.smartwinnr.com/article/55-detailed-quiz-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is SmartWinnr Quiz Analytics?",
+    "permalink": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics"
+  },
+  "next": {
+    "title": "Question Response Analytics",
+    "permalink": "/modules/quiz/reports-and-analytics/question-response-analytics"
+  }
+}

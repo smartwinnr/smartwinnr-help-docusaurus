@@ -1,0 +1,48 @@
+{
+  "id": "modules/knowledge-hub/for-learners/5fdae9d67129911ba1b21de5",
+  "title": "Understanding recent, trending and latest KHub items",
+  "description": "",
+  "source": "@site/docs/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items.md",
+  "sourceDirName": "modules/knowledge-hub/for-learners",
+  "slug": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items",
+  "permalink": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 148,
+  "frontMatter": {
+    "id": "5fdae9d67129911ba1b21de5",
+    "title": "Understanding recent, trending and latest KHub items",
+    "description": "",
+    "slug": "understanding-recent-trending-and-latest-khub-items",
+    "sidebar_position": 148,
+    "last_update": {
+      "date": "2021-01-14T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdae9d67129911ba1b21de5",
+      "helpscout_url": "https://help.smartwinnr.com/article/148-understanding-recent-trending-and-latest-khub-items"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I create folders and items in KHub?",
+    "permalink": "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub"
+  },
+  "next": {
+    "title": "How to use KHub in the SmartWinnr app?",
+    "permalink": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app"
+  }
+}

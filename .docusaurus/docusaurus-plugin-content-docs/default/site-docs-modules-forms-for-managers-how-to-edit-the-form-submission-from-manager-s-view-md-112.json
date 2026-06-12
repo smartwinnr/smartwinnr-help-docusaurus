@@ -1,0 +1,48 @@
+{
+  "id": "modules/forms/for-managers/60b762f59c887a0dfc555a3b",
+  "title": "How to edit the form submission from manager's view",
+  "description": "",
+  "source": "@site/docs/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view.md",
+  "sourceDirName": "modules/forms/for-managers",
+  "slug": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view",
+  "permalink": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 246,
+  "frontMatter": {
+    "id": "60b762f59c887a0dfc555a3b",
+    "title": "How to edit the form submission from manager's view",
+    "description": "",
+    "slug": "how-to-edit-the-form-submission-from-manager-s-view",
+    "sidebar_position": 246,
+    "last_update": {
+      "date": "2021-06-05T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60b762f59c887a0dfc555a3b",
+      "helpscout_url": "https://help.smartwinnr.com/article/246-how-to-edit-the-form-submission-from-managers-view"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How managers Approve  Form",
+    "permalink": "/modules/forms/for-managers/how-managers-approve-form"
+  },
+  "next": {
+    "title": "How to Approve/Reject a Form Submission",
+    "permalink": "/modules/forms/features/how-to-approve-reject-a-form-submission"
+  }
+}

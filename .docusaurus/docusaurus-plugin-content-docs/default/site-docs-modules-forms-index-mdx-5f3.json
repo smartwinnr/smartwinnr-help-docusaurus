@@ -1,0 +1,43 @@
+{
+  "id": "modules/forms/module-forms",
+  "title": "Forms",
+  "description": "Custom data-collection forms with manager approval workflows.",
+  "source": "@site/docs/modules/forms/index.mdx",
+  "sourceDirName": "modules/forms",
+  "slug": "/modules/forms/",
+  "permalink": "/modules/forms/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-forms",
+    "title": "Forms",
+    "description": "Custom data-collection forms with manager approval workflows.",
+    "slug": "/modules/forms/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I view KHub Analytics?",
+    "permalink": "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics"
+  },
+  "next": {
+    "title": "How to Create a form?",
+    "permalink": "/modules/forms/create-and-manage/how-to-create-a-form"
+  }
+}

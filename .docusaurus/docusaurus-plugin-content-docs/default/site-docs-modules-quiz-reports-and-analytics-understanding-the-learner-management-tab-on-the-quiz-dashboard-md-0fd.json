@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/6971f2ff425fd115e68cbc8b",
+  "title": "Understanding the Learner Management Tab on the Quiz Dashboard",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard",
+  "permalink": "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 331,
+  "frontMatter": {
+    "id": "6971f2ff425fd115e68cbc8b",
+    "title": "Understanding the Learner Management Tab on the Quiz Dashboard",
+    "description": "",
+    "slug": "understanding-the-learner-management-tab-on-the-quiz-dashboard",
+    "sidebar_position": 331,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6971f2ff425fd115e68cbc8b",
+      "helpscout_url": "https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding the Participation Tab on the Quiz Dashboard",
+    "permalink": "/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard"
+  },
+  "next": {
+    "title": "How to activate automatic reminders for your quizzes",
+    "permalink": "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes"
+  }
+}

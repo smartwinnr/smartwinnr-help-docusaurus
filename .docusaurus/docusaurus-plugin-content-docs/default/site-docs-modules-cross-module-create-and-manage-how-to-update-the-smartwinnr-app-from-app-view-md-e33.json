@@ -1,0 +1,46 @@
+{
+  "id": "modules/cross-module/create-and-manage/66d0cb66d816d165867bf4de",
+  "title": "How to update the SmartWinnr App from App View",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view.md",
+  "sourceDirName": "modules/cross-module/create-and-manage",
+  "slug": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view",
+  "permalink": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 290,
+  "frontMatter": {
+    "id": "66d0cb66d816d165867bf4de",
+    "title": "How to update the SmartWinnr App from App View",
+    "description": "",
+    "slug": "how-to-update-the-smartwinnr-app-from-app-view",
+    "sidebar_position": 290,
+    "last_update": {
+      "date": "2024-08-30T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "66d0cb66d816d165867bf4de",
+      "helpscout_url": "https://help.smartwinnr.com/article/290-httpshelpsmartwinnrcomarticle290-how-can-i-update-the-smartwinnr-app-from-the-app-view"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create Sales TV",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-create-sales-tv"
+  },
+  "next": {
+    "title": "How to Update Users",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-update-users"
+  }
+}

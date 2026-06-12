@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce355804cebe5254a29954",
+  "title": "How can I check the App version/Web view version?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/how-can-i-check-the-app-version-web-view-version.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version",
+  "permalink": "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/how-can-i-check-the-app-version-web-view-version.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 19,
+  "frontMatter": {
+    "id": "5fce355804cebe5254a29954",
+    "title": "How can I check the App version/Web view version?",
+    "description": "",
+    "slug": "how-can-i-check-the-app-version-web-view-version",
+    "sidebar_position": 19,
+    "last_update": {
+      "date": "2025-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce355804cebe5254a29954",
+      "helpscout_url": "https://help.smartwinnr.com/article/19-how-can-i-check-the-app-version-web-view-version"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I change my language in SmartWinnr App?",
+    "permalink": "/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app"
+  },
+  "next": {
+    "title": "How to update the SmartWinnr App/Web View?",
+    "permalink": "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view"
+  }
+}

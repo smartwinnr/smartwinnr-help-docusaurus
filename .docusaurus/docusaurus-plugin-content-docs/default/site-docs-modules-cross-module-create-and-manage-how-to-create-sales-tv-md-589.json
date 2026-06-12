@@ -1,0 +1,46 @@
+{
+  "id": "modules/cross-module/create-and-manage/60b9e109fd393f6bf704a9f2",
+  "title": "How to create Sales TV",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/create-and-manage/how-to-create-sales-tv.md",
+  "sourceDirName": "modules/cross-module/create-and-manage",
+  "slug": "/modules/cross-module/create-and-manage/how-to-create-sales-tv",
+  "permalink": "/modules/cross-module/create-and-manage/how-to-create-sales-tv",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-create-sales-tv.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 249,
+  "frontMatter": {
+    "id": "60b9e109fd393f6bf704a9f2",
+    "title": "How to create Sales TV",
+    "description": "",
+    "slug": "how-to-create-sales-tv",
+    "sidebar_position": 249,
+    "last_update": {
+      "date": "2021-06-04T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60b9e109fd393f6bf704a9f2",
+      "helpscout_url": "https://help.smartwinnr.com/article/249-how-to-create-sales-tv"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to attach PDF file to your content?",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content"
+  },
+  "next": {
+    "title": "How to update the SmartWinnr App from App View",
+    "permalink": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/features/5fdb188b0b11ce44f63931e7",
+  "title": "Detailed explanation of reports",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/features/detailed-explanation-of-reports.md",
+  "sourceDirName": "modules/kpi-gamification/features",
+  "slug": "/modules/kpi-gamification/features/detailed-explanation-of-reports",
+  "permalink": "/modules/kpi-gamification/features/detailed-explanation-of-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/detailed-explanation-of-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 183,
+  "frontMatter": {
+    "id": "5fdb188b0b11ce44f63931e7",
+    "title": "Detailed explanation of reports",
+    "description": "",
+    "slug": "detailed-explanation-of-reports",
+    "sidebar_position": 183,
+    "last_update": {
+      "date": "2021-01-08T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb188b0b11ce44f63931e7",
+      "helpscout_url": "https://help.smartwinnr.com/article/183-detailed-explanation-of-reports"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What are KPI Reports?",
+    "permalink": "/modules/kpi-gamification/features/what-are-kpi-reports"
+  },
+  "next": {
+    "title": "What is an Achievement?",
+    "permalink": "/modules/kpi-gamification/features/what-is-an-achievement"
+  }
+}

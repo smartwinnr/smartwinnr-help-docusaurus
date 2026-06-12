@@ -1,0 +1,43 @@
+{
+  "id": "modules/survey/module-survey",
+  "title": "Survey",
+  "description": "Collect structured feedback with templates, sections, and response analytics.",
+  "source": "@site/docs/modules/survey/index.mdx",
+  "sourceDirName": "modules/survey",
+  "slug": "/modules/survey/",
+  "permalink": "/modules/survey/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-survey",
+    "title": "Survey",
+    "description": "Collect structured feedback with templates, sections, and response analytics.",
+    "slug": "/modules/survey/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Coaching",
+    "permalink": "/modules/field-coaching/features/create-a-coaching"
+  },
+  "next": {
+    "title": "How to create a 'Survey'.",
+    "permalink": "/modules/survey/create-and-manage/how-to-create-a-survey"
+  }
+}

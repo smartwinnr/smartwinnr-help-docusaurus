@@ -1,0 +1,31 @@
+{
+  "id": "path/path-integrations",
+  "title": "I'm integrating SmartWinnr",
+  "description": "Azure AD, SCIM, xAPI, SCORM, REST API, webhook patterns.",
+  "source": "@site/docs/path/integrations.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/integrations/",
+  "permalink": "/path/integrations/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/integrations.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-integrations",
+    "title": "I'm integrating SmartWinnr",
+    "description": "Azure AD, SCIM, xAPI, SCORM, REST API, webhook patterns.",
+    "slug": "/path/integrations/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

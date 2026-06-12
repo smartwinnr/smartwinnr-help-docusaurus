@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/60a370cfeb3af44cc12099d5",
+  "title": "How to add observers to the Competition Leaderboard?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 234,
+  "frontMatter": {
+    "id": "60a370cfeb3af44cc12099d5",
+    "title": "How to add observers to the Competition Leaderboard?",
+    "description": "",
+    "slug": "how-to-add-observers-to-the-competition-leaderboard",
+    "sidebar_position": 234,
+    "last_update": {
+      "date": "2026-01-30T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60a370cfeb3af44cc12099d5",
+      "helpscout_url": "https://help.smartwinnr.com/article/234-how-to-add-observers-to-the-competition-leaderboard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "competitions"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Form to Competition?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition"
+  },
+  "next": {
+    "title": "How to add the Scorecard to Leaderboard",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard"
+  }
+}

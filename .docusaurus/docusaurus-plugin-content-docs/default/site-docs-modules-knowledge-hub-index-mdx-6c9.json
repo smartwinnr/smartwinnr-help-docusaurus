@@ -1,0 +1,43 @@
+{
+  "id": "modules/knowledge-hub/module-knowledge-hub",
+  "title": "Knowledge Hub",
+  "description": "A searchable library of reference content for in-the-moment lookup.",
+  "source": "@site/docs/modules/knowledge-hub/index.mdx",
+  "sourceDirName": "modules/knowledge-hub",
+  "slug": "/modules/knowledge-hub/",
+  "permalink": "/modules/knowledge-hub/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-knowledge-hub",
+    "title": "Knowledge Hub",
+    "description": "A searchable library of reference content for in-the-moment lookup.",
+    "slug": "/modules/knowledge-hub/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is the difference between a Survey and a Survey Template?",
+    "permalink": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template"
+  },
+  "next": {
+    "title": "How can I create folders and items in KHub?",
+    "permalink": "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub"
+  }
+}

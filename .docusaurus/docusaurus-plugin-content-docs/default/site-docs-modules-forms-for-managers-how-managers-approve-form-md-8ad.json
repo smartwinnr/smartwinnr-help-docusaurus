@@ -1,0 +1,48 @@
+{
+  "id": "modules/forms/for-managers/600868c4cfe30d219ccd9aa9",
+  "title": "How managers Approve  Form",
+  "description": "",
+  "source": "@site/docs/modules/forms/for-managers/how-managers-approve-form.md",
+  "sourceDirName": "modules/forms/for-managers",
+  "slug": "/modules/forms/for-managers/how-managers-approve-form",
+  "permalink": "/modules/forms/for-managers/how-managers-approve-form",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/for-managers/how-managers-approve-form.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 224,
+  "frontMatter": {
+    "id": "600868c4cfe30d219ccd9aa9",
+    "title": "How managers Approve  Form",
+    "description": "",
+    "slug": "how-managers-approve-form",
+    "sidebar_position": 224,
+    "last_update": {
+      "date": "2021-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "600868c4cfe30d219ccd9aa9",
+      "helpscout_url": "https://help.smartwinnr.com/article/224-how-managers-approve-kpi-submission-form"
+    },
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "managerView"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add new form submission",
+    "permalink": "/modules/forms/for-learners/how-to-add-new-form-submission"
+  },
+  "next": {
+    "title": "How to edit the form submission from manager's view",
+    "permalink": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view"
+  }
+}

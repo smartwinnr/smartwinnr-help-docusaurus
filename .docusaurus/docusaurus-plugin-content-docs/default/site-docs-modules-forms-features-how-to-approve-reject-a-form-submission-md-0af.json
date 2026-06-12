@@ -1,0 +1,47 @@
+{
+  "id": "modules/forms/features/600850fdcfe30d219ccd99f3",
+  "title": "How to Approve/Reject a Form Submission",
+  "description": "",
+  "source": "@site/docs/modules/forms/features/how-to-approve-reject-a-form-submission.md",
+  "sourceDirName": "modules/forms/features",
+  "slug": "/modules/forms/features/how-to-approve-reject-a-form-submission",
+  "permalink": "/modules/forms/features/how-to-approve-reject-a-form-submission",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/features/how-to-approve-reject-a-form-submission.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 223,
+  "frontMatter": {
+    "id": "600850fdcfe30d219ccd99f3",
+    "title": "How to Approve/Reject a Form Submission",
+    "description": "",
+    "slug": "how-to-approve-reject-a-form-submission",
+    "sidebar_position": 223,
+    "last_update": {
+      "date": "2021-02-27T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "600850fdcfe30d219ccd99f3",
+      "helpscout_url": "https://help.smartwinnr.com/article/223-how-to-approve-kpi-submission-forms"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to edit the form submission from manager's view",
+    "permalink": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view"
+  },
+  "next": {
+    "title": "How to Submit a Form on behalf of a User",
+    "permalink": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user"
+  }
+}

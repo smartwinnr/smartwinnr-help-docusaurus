@@ -23,7 +23,9 @@
     "MD029": false,
     "MD001": false,
     "MD051": false,
-    "MD034": false
+    "MD034": false,
+    "MD-SW-001": false,
+    "module-sub-section-placement": false
   },
   "customRules": ["./custom-markdownlint-rules.js"]
 }

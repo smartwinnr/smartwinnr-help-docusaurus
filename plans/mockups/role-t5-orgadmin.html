@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>T5 · OrgAdmin · SmartWinnr Help</title>
+<link rel="stylesheet" href="_styles.css" />
+<link rel="stylesheet" href="_role-shell.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help</div>
+  <div class="topbar-search"><input type="text" placeholder="Search docs, FAQs, and articles…" /></div>
+  <div class="topbar-right">
+    <span class="role-pill">Signed in as: OrgAdmin</span>
+    <span>olivia.orgadmin@acme.com</span>
+  </div>
+</header>
+
+<div class="role-badge-bar">
+  <span class="tier-pill t5">T5</span>
+  <strong>Role: orgadmin</strong>
+  <span>· Tier 5 of 6  (lamadmin maps here)</span>
+  <span>· Adds org-wide tools: custom notifications, CRM, transformation, incentive plans, HR</span>
+</div>
+
+<div class="role-nav-pager">
+  <a href="role-t1-user.html">T1 · User</a>
+  <a href="role-t2-manager.html">T2 · Manager</a>
+  <a href="role-t3-editor.html">T3 · Editor</a>
+  <a href="role-t4-admin.html">T4 · Admin</a>
+  <a href="role-t5-orgadmin.html" class="current">T5 · OrgAdmin</a>
+  <a href="role-t6-superadmin.html">T6 · Superadmin</a>
+  <span class="sep">|</span>
+  <a href="index.html">← All mockups</a>
+</div>
+
+<nav class="nav-strip">
+  <a href="#">Get Started</a>
+  <a href="#">Guides</a>
+  <a href="#">Modules</a>
+  <a href="#">Reports &amp; Analytics</a>
+  <a href="#">Integrations</a>
+  <a href="#" class="active">Administration</a>
+  <a href="#">Reference</a>
+  <a href="#">Release Notes</a>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Get Started</div>
+      <div class="sb-item">Quickstart for orgadmins</div>
+      <div class="sb-item">Org concepts &amp; privileges</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Modules · Reports · Integrations</div>
+      <div class="sb-group"><span class="chev">▸</span> Modules (full authoring tree)</div>
+      <div class="sb-group"><span class="chev">▸</span> Reports &amp; Analytics (full)</div>
+      <div class="sb-group open"><span class="chev">▸</span> Integrations <span class="badge adm">Admin+</span></div>
+      <div class="sb-children">
+        <div class="sb-item">Azure AD / SSO</div>
+        <div class="sb-item">SCIM provisioning</div>
+        <div class="sb-item">xAPI / LRS</div>
+        <div class="sb-item">SCORM</div>
+        <div class="sb-item active">Org-wide integration registry</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Administration <span class="badge adm">OrgAdmin+</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Users &amp; roles</div>
+      <div class="sb-group"><span class="chev">▸</span> Groups &amp; metatags</div>
+      <div class="sb-group"><span class="chev">▸</span> Divisions &amp; subdivisions</div>
+      <div class="sb-group"><span class="chev">▸</span> Access permissions</div>
+      <div class="sb-group"><span class="chev">▸</span> Audit log</div>
+      <div class="sb-group"><span class="chev">▸</span> Approval flow</div>
+      <div class="sb-group"><span class="chev">▸</span> Banner management</div>
+
+      <div class="sb-cat" style="margin-top: 14px;">Org-wide tools (T5 unlock)</div>
+      <div class="sb-group open"><span class="chev">▸</span> Organization settings &amp; privileges</div>
+      <div class="sb-children">
+        <div class="sb-item">Enable / disable modules per org</div>
+        <div class="sb-item">Privilege matrix</div>
+        <div class="sb-item">Region &amp; locale</div>
+      </div>
+      <div class="sb-group"><span class="chev">▸</span> Custom notifications <span class="badge priv">customNotifications</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Schedule notifications <span class="badge priv">scheduleNotification</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Custom tables <span class="badge priv">customTable</span></div>
+      <div class="sb-group"><span class="chev">▸</span> CRM components <span class="badge priv">crmComponents</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Transformation layer <span class="badge priv">transformationLayer</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Incentive plans <span class="badge priv">incentivePlans</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Project management <span class="badge priv">projectManagement</span></div>
+      <div class="sb-group"><span class="chev">▸</span> HR module <span class="badge priv">HR_Module</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Secondary sales <span class="badge priv">secondarySales</span></div>
+      <div class="sb-group"><span class="chev">▸</span> LAM-admin tooling <span class="badge priv">lamAdmin</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Reference</div>
+      <div class="sb-item">Full roles &amp; privileges catalog</div>
+      <div class="sb-item">REST API</div>
+      <div class="sb-item">Glossary</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Release Notes</div>
+      <div class="sb-item">What's new for orgadmins</div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+    <div class="breadcrumb"><a href="#">Help</a> › <a href="#">Integrations</a> › Org-wide integration registry</div>
+    <h1>Org-wide tooling for OrgAdmins</h1>
+    <p class="lead">
+      <strong>OrgAdmin</strong> unlocks organization-level configuration: which modules are enabled,
+      privilege matrix, custom notifications, CRM components, the transformation layer, incentive
+      planning, and HR-flavored modules. The <code>lamadmin</code> role maps onto this same tier.
+    </p>
+
+    <div class="role-banner">
+      <strong>What this role sees</strong>
+      Everything an admin sees, plus a new <em>Org-wide tools</em> group inside
+      <strong>Administration</strong> covering 10+ privilege-gated areas. Most entries here are
+      <span class="badge priv">privilege</span>-gated — the org has to enable them for the link
+      to appear, even at this tier.
+    </div>
+
+    <h2>OrgAdmin-only surface</h2>
+    <div class="cards">
+      <div class="card"><span class="ico">🏢</span><h3>Manage org privileges</h3><p>Toggle modules &amp; features per organization.</p></div>
+      <div class="card"><span class="ico">🔔</span><h3>Custom notifications</h3><p>Author org-specific templates &amp; schedules.</p></div>
+      <div class="card"><span class="ico">🔄</span><h3>Transformation layer</h3><p>Data shaping for downstream systems.</p></div>
+      <div class="card"><span class="ico">💼</span><h3>Incentive plans</h3><p>Compensation &amp; reward structures.</p></div>
+      <div class="card"><span class="ico">🧩</span><h3>CRM components</h3><p>Salesforce widgets &amp; embeds.</p></div>
+      <div class="card"><span class="ico">👤</span><h3>HR &amp; secondary sales</h3><p>HR-Module and secondary-sales workflows.</p></div>
+    </div>
+
+    <div class="hidden-note">
+      Note: the <code>lamadmin</code> SmartWinnr role maps onto this tier (T5). Both
+      <code>orgadmin</code> and <code>lamadmin</code> satisfy
+      <code>hasMinTier(user, 5)</code> in <code>src/access-policy.ts</code>, so they see the
+      same documentation surface.
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="badge adm">OrgAdmin+</span> tier 5 and above</span>
+      <span class="legend-item"><span class="badge priv">crmComponents</span> require org privilege</span>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

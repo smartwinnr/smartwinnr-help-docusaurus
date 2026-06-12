@@ -1,0 +1,22 @@
+{
+  "label": "Reference",
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Reference",
+    "description": "Glossary, role & privilege reference, help & support, troubleshooting."
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

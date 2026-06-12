@@ -1,0 +1,43 @@
+{
+  "id": "modules/kpi-gamification/module-kpi-gamification",
+  "title": "KPI & Gamification",
+  "description": "Scorecards, competitions, achievements, and engagement leaderboards.",
+  "source": "@site/docs/modules/kpi-gamification/index.mdx",
+  "sourceDirName": "modules/kpi-gamification",
+  "slug": "/modules/kpi-gamification/",
+  "permalink": "/modules/kpi-gamification/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-kpi-gamification",
+    "title": "KPI & Gamification",
+    "description": "Scorecards, competitions, achievements, and engagement leaderboards.",
+    "slug": "/modules/kpi-gamification/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Form Analytics",
+    "permalink": "/modules/forms/reports-and-analytics/form-analytics"
+  },
+  "next": {
+    "title": "How to add a Quiz to a competition?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-a-quiz-to-a-competition"
+  }
+}

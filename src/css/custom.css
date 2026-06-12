@@ -866,3 +866,13 @@ code {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* Hide the landing page (slug:/) and the seven /path/<persona>/ pages from
+ * the docs sidebar. They are still reachable by URL and still get the docs
+ * layout (with the sidebar visible alongside them); they just don't appear
+ * as items inside the sidebar itself. See plans/help-menu-redesign.md §12.10. */
+.menu__list-item:has(> .sw-sidebar-hide),
+.theme-doc-sidebar-item-link.sw-sidebar-hide,
+.theme-doc-sidebar-item-category.sw-sidebar-hide {
+  display: none;
+}

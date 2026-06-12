@@ -1,0 +1,43 @@
+{
+  "id": "modules/smartpath/module-smartpath",
+  "title": "SmartPath",
+  "description": "Curated learning journeys that combine quizzes, content, coaching, and live sessions.",
+  "source": "@site/docs/modules/smartpath/index.mdx",
+  "sourceDirName": "modules/smartpath",
+  "slug": "/modules/smartpath/",
+  "permalink": "/modules/smartpath/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-smartpath",
+    "title": "SmartPath",
+    "description": "Curated learning journeys that combine quizzes, content, coaching, and live sessions.",
+    "slug": "/modules/smartpath/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Troubleshoot for common error code",
+    "permalink": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code"
+  },
+  "next": {
+    "title": "How to create a module for SmartPath.",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath"
+  }
+}

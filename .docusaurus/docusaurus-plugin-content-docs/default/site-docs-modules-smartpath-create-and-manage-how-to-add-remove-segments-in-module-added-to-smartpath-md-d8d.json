@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/create-and-manage/696c7d311e938328836da344",
+  "title": "How to Add/Remove segments in Module added to SmartPath?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath.md",
+  "sourceDirName": "modules/smartpath/create-and-manage",
+  "slug": "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath",
+  "permalink": "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 297,
+  "frontMatter": {
+    "id": "696c7d311e938328836da344",
+    "title": "How to Add/Remove segments in Module added to SmartPath?",
+    "description": "",
+    "slug": "how-to-add-remove-segments-in-module-added-to-smartpath",
+    "sidebar_position": 297,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "696c7d311e938328836da344",
+      "helpscout_url": "https://help.smartwinnr.com/article/297-how-to-update-add-remove-segments-from-module-in-smartpath"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to archive a SmartPath and unhide them in future if needed?",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+  },
+  "next": {
+    "title": "How to create an action item in the SmartPath",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath"
+  }
+}

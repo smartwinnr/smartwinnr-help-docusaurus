@@ -1,0 +1,34 @@
+{
+  "id": "path/path-help",
+  "title": "I need help",
+  "description": "FAQs, troubleshooting, glossary, and contact support.",
+  "source": "@site/docs/path/help.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/help/",
+  "permalink": "/path/help/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/help.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-help",
+    "title": "I need help",
+    "description": "FAQs, troubleshooting, glossary, and contact support.",
+    "slug": "/path/help/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "modules/cross-module/for-learners/5fdb05910b11ce44f63931a2",
+  "title": "How can I answer a Query ?",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/for-learners/how-can-i-answer-a-query.md",
+  "sourceDirName": "modules/cross-module/for-learners",
+  "slug": "/modules/cross-module/for-learners/how-can-i-answer-a-query",
+  "permalink": "/modules/cross-module/for-learners/how-can-i-answer-a-query",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/how-can-i-answer-a-query.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 161,
+  "frontMatter": {
+    "id": "5fdb05910b11ce44f63931a2",
+    "title": "How can I answer a Query ?",
+    "description": "",
+    "slug": "how-can-i-answer-a-query",
+    "sidebar_position": 161,
+    "last_update": {
+      "date": "2021-01-23T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb05910b11ce44f63931a2",
+      "helpscout_url": "https://help.smartwinnr.com/article/161-how-can-i-answer-a-query"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to post a Query from the SmartWinnr app?",
+    "permalink": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "What is QResolve?...",
+    "permalink": "/modules/cross-module/for-learners/what-is-qresolve"
+  }
+}

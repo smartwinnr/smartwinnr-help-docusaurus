@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Option C · Admin lens · SmartWinnr Help</title>
+<link rel="stylesheet" href="_styles.css" />
+<link rel="stylesheet" href="_role-shell.css" />
+<link rel="stylesheet" href="_landing.css" />
+<link rel="stylesheet" href="_doors.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help</div>
+  <div class="topbar-search"><input type="text" placeholder="Search docs, FAQs, and articles…" /></div>
+  <div class="topbar-right">
+    <span class="role-pill">Signed in as: OrgAdmin</span>
+    <span>olivia.orgadmin@acme.com</span>
+  </div>
+</header>
+
+<div class="role-nav-pager">
+  <a href="landing-c-doors.html">← Front door</a>
+  <a href="landing-c-learner.html">Learner</a>
+  <a href="landing-c-manager.html">Manager</a>
+  <a href="landing-c-author.html">Author</a>
+  <a href="landing-c-admin.html" class="current">Admin</a>
+  <a href="landing-c-help.html">Help</a>
+  <span class="sep">|</span>
+  <a href="index.html">All mockups</a>
+</div>
+
+<main class="main" style="max-width: 1120px;">
+
+  <section class="personaShell">
+    <div class="crumb"><a href="landing-c-doors.html">← Home</a> &nbsp;›&nbsp; ⚙️ I administer the org</div>
+    <div class="row">
+      <span class="ico">⚙️</span>
+      <div>
+        <h1>I administer the org</h1>
+        <p class="sub">Provision users, configure SSO, set divisions, review the audit log, and own integrations. Org-wide tooling lives here too.</p>
+      </div>
+    </div>
+    <a class="modeSwitcher" href="landing-c-doors.html">
+      <span class="currentMode">Admin</span>
+      Switch lens →
+    </a>
+  </section>
+
+  <div class="sectionHead">
+    <h2>Where to start</h2>
+    <span class="meta">Curated for the Admin lens · 8 tasks</span>
+  </div>
+  <div class="taskGrid">
+    <a class="taskCard" href="#"><span class="ti">👥</span><strong>Create users individually</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">📥</span><strong>Create users in bulk</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">🔄</span><strong>Activate or deactivate a user</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">🏛</span><strong>Add a new division</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">🔐</span><strong>Give access to other editors</strong><span class="desc">Administration · Access permissions</span></a>
+    <a class="taskCard" href="#"><span class="ti">🏢</span><strong>Update org configuration</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">📧</span><strong>Resend account invitations</strong><span class="desc">Administration · System management</span></a>
+    <a class="taskCard" href="#"><span class="ti">📊</span><strong>Track resource usage</strong><span class="desc">Administration · System management</span></a>
+  </div>
+
+  <div class="sectionHead">
+    <h2>Integrations <span class="badge priv">absorbed</span></h2>
+    <span class="meta">Was a separate persona in Option B; now lives here</span>
+  </div>
+  <div class="taskGrid">
+    <a class="taskCard" href="#"><span class="ti">🔐</span><strong>Azure AD / SSO</strong><span class="desc">azureIntegration</span></a>
+    <a class="taskCard" href="#"><span class="ti">🔄</span><strong>SCIM provisioning</strong><span class="desc">scimIntegration</span></a>
+    <a class="taskCard" href="#"><span class="ti">👤</span><strong>User auto-integration</strong><span class="desc">autoUserIntegration</span></a>
+    <a class="taskCard" href="#"><span class="ti">📚</span><strong>xAPI / LRS</strong><span class="desc">xApi</span></a>
+    <a class="taskCard" href="#"><span class="ti">📦</span><strong>SCORM courses</strong><span class="desc">scormCourse</span></a>
+    <a class="taskCard" href="#"><span class="ti">🧩</span><strong>REST API reference</strong><span class="desc">REST API</span></a>
+  </div>
+
+  <div class="sectionHead">
+    <h2>Org-wide tools (OrgAdmin only)</h2>
+    <span class="meta">Visible to orgadmin / lamadmin / superadmin</span>
+  </div>
+  <div class="taskGrid">
+    <a class="taskCard" href="#"><span class="ti">🏢</span><strong>Org privileges matrix</strong><span class="desc">Enable / disable modules per org</span></a>
+    <a class="taskCard" href="#"><span class="ti">🔔</span><strong>Custom notifications</strong><span class="desc">Author org-specific templates</span></a>
+    <a class="taskCard" href="#"><span class="ti">🔄</span><strong>Transformation layer</strong><span class="desc">Data shaping for downstream</span></a>
+    <a class="taskCard" href="#"><span class="ti">💼</span><strong>Incentive plans</strong><span class="desc">Compensation + rewards</span></a>
+    <a class="taskCard" href="#"><span class="ti">🛡</span><strong>Audit log</strong><span class="desc">Who did what, when</span></a>
+    <a class="taskCard" href="#"><span class="ti">📜</span><strong>Banner management</strong><span class="desc">Pinned org-wide banners</span></a>
+  </div>
+
+  <div class="sectionHead">
+    <h2>What's new (Admin view)</h2>
+    <span class="meta">Filtered to admin/orgadmin release notes</span>
+  </div>
+  <ul class="feed-list">
+    <li>
+      <span>🔌</span>
+      <span>
+        <a href="#"><strong>SCIM provisioning v2 — automatic deprovisioning rules</strong></a>
+        <span class="crumb">Release notes · Admins + OrgAdmins</span>
+      </span>
+      <span class="when">today</span>
+    </li>
+    <li>
+      <span>🛡</span>
+      <span>
+        <a href="#"><strong>Audit log: 90-day export &amp; rotation</strong></a>
+        <span class="crumb">Release notes · Admins</span>
+      </span>
+      <span class="when">1 week ago</span>
+    </li>
+  </ul>
+
+  <div class="modeRail">
+    <span class="label">Switch lens:</span>
+    <a href="landing-c-learner.html">🎓 Learner</a>
+    <a href="landing-c-manager.html">📋 Manager</a>
+    <a href="landing-c-author.html">🛠 Author</a>
+    <a href="landing-c-help.html">🆘 Help</a>
+  </div>
+
+</main>
+
+</body>
+</html>

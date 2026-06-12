@@ -99,6 +99,14 @@ const ChatBot: React.FC = () => {
     }
   }, [isExpanded]);
 
+  // External callers (landing-page CTAs, etc.) can open the chatbot by
+  // dispatching `new CustomEvent('smartwinnr:open-chatbot')` on window.
+  useEffect(() => {
+    const handler = () => setIsOpen(true);
+    window.addEventListener('smartwinnr:open-chatbot', handler);
+    return () => window.removeEventListener('smartwinnr:open-chatbot', handler);
+  }, []);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };

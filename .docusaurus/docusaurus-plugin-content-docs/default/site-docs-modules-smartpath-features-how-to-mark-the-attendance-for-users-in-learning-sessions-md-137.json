@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/features/6106badbb37d837a3d0df896",
+  "title": "How to Mark the attendance for Users  in Learning Sessions?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "sourceDirName": "modules/smartpath/features",
+  "slug": "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "permalink": "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 263,
+  "frontMatter": {
+    "id": "6106badbb37d837a3d0df896",
+    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "description": "",
+    "slug": "how-to-mark-the-attendance-for-users-in-learning-sessions",
+    "sidebar_position": 263,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6106badbb37d837a3d0df896",
+      "helpscout_url": "https://help.smartwinnr.com/article/263-how-to-mark-the-attendance-for-users-who-participated-in-learning-sessions"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I Gamify a SmartPath?",
+    "permalink": "/modules/smartpath/features/how-can-i-gamify-a-smartpath"
+  },
+  "next": {
+    "title": "How to download SmartPath Reports?",
+    "permalink": "/modules/smartpath/features/how-to-download-smartpath-reports"
+  }
+}

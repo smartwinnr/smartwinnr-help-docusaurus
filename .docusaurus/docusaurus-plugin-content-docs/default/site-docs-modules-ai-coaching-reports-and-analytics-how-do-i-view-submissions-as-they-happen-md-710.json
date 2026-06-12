@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/reports-and-analytics/6970aecda77dc93e2023576b",
+  "title": "How do I view submissions as they happen?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen.md",
+  "sourceDirName": "modules/ai-coaching/reports-and-analytics",
+  "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen",
+  "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 311,
+  "frontMatter": {
+    "id": "6970aecda77dc93e2023576b",
+    "title": "How do I view submissions as they happen?",
+    "description": "",
+    "slug": "how-do-i-view-submissions-as-they-happen",
+    "sidebar_position": 311,
+    "last_update": {
+      "date": "2026-01-29T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970aecda77dc93e2023576b",
+      "helpscout_url": "https://help.smartwinnr.com/article/311-how-do-i-see-submissions-as-they-happen"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I track improvements for multiple role-plays at the same time?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time"
+  },
+  "next": {
+    "title": "How do I download Overall Coaching Report?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report"
+  }
+}

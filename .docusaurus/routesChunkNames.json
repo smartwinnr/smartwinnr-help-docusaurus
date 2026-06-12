@@ -6,3597 +6,1157 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-1f1": {
+  "/-2d5": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-daa": {
+  "/-bc6": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-bd7": {
+  "/-113": {
     "__comp": "a94703ab"
   },
-  "/admin-landing-561": {
+  "/administration/access-permissions/access-permissions-a21": {
     "__comp": "17896441",
-    "content": "afe7f4ed"
+    "content": "8dae2b15"
   },
-  "/administration/administration-86b": {
+  "/administration/access-permissions/how-do-i-give-access-permission-to-other-editors-552": {
     "__comp": "17896441",
-    "content": "da4aedbd"
+    "content": "c7ef0558"
   },
-  "/administration/advanced-options-for-projects-69e": {
+  "/administration/access-permissions/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-03a": {
     "__comp": "17896441",
-    "content": "ddc99d34"
+    "content": "15ba1761"
   },
-  "/administration/bulk-custom-notifications-16b": {
+  "/administration/system-management/changing-updating-configuration-for-an-organization-c8c": {
     "__comp": "17896441",
-    "content": "647c005e"
+    "content": "2e9cf9d6"
   },
-  "/administration/changing-updating-configuration-for-an-organization-64a": {
+  "/administration/system-management/create-users-in-bulk-357": {
     "__comp": "17896441",
-    "content": "b22f929c"
+    "content": "fde1bdf8"
   },
-  "/administration/create-users-individually-3d2": {
+  "/administration/system-management/create-users-individually-2af": {
     "__comp": "17896441",
-    "content": "2fae0e11"
+    "content": "f46523e2"
   },
-  "/administration/cross-module-features/advanced-analytics/analytics-reporting-14f": {
+  "/administration/system-management/delete-users-089": {
     "__comp": "17896441",
-    "content": "c6d76e59"
+    "content": "d327b249"
   },
-  "/administration/cross-module-features/advanced-analytics/detailed-explanation-of-reports-0f5": {
+  "/administration/system-management/how-can-an-admin-change-anyone-s-password-2ee": {
     "__comp": "17896441",
-    "content": "a67588b9"
+    "content": "43287c71"
   },
-  "/administration/cross-module-features/advanced-analytics/how-to-create-sales-tv-b3f": {
+  "/administration/system-management/how-can-i-change-the-password-for-a-user-account-635": {
     "__comp": "17896441",
-    "content": "692a0070"
+    "content": "f091c7e9"
   },
-  "/administration/cross-module-features/advanced-analytics/how-to-view-project-b27": {
+  "/administration/system-management/how-do-i-unlock-an-account-f72": {
     "__comp": "17896441",
-    "content": "0167581c"
+    "content": "b0a192ac"
   },
-  "/administration/cross-module-features/advanced-analytics/user-login-reports-ad5": {
+  "/administration/system-management/how-to-activate-or-deactivate-a-user-177": {
     "__comp": "17896441",
-    "content": "105bf4ee"
+    "content": "b9075b09"
   },
-  "/administration/cross-module-features/advanced-analytics/widgets-e6b": {
+  "/administration/system-management/how-to-add-a-new-division-ca7": {
     "__comp": "17896441",
-    "content": "8a9e8849"
+    "content": "c60e59dc"
   },
-  "/administration/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition-ad8": {
+  "/administration/system-management/how-to-add-new-contacts-3b0": {
     "__comp": "17896441",
-    "content": "c2fd0c73"
+    "content": "ce95b117"
   },
-  "/administration/cross-module-features/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition-7aa": {
+  "/administration/system-management/how-to-add-new-rule-2a4": {
     "__comp": "17896441",
-    "content": "9ee9cc58"
+    "content": "b632949f"
   },
-  "/administration/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition-434": {
+  "/administration/system-management/how-to-change-company-logo-43c": {
     "__comp": "17896441",
-    "content": "cee678c7"
+    "content": "e3eed5e9"
   },
-  "/administration/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition-162": {
+  "/administration/system-management/how-to-create-a-group-04c": {
     "__comp": "17896441",
-    "content": "98a6d11d"
+    "content": "1386cf45"
   },
-  "/administration/cross-module-features/competitions-gamification/competitions-gamification-8c4": {
+  "/administration/system-management/how-to-resend-account-invitation-9ee": {
     "__comp": "17896441",
-    "content": "b3f46cb3"
+    "content": "59dd8568"
   },
-  "/administration/cross-module-features/competitions-gamification/define-kpis-50b": {
+  "/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group-1fc": {
     "__comp": "17896441",
-    "content": "1caaf665"
+    "content": "d945ea14"
   },
-  "/administration/cross-module-features/competitions-gamification/how-can-i-gamify-a-smartpath-0be": {
+  "/administration/system-management/how-to-track-my-organizational-resource-usage-e69": {
     "__comp": "17896441",
-    "content": "a9ad2d28"
+    "content": "b7a2aba4"
   },
-  "/administration/cross-module-features/competitions-gamification/how-can-i-view-a-competition-leaderboard-6e8": {
+  "/administration/system-management/how-to-view-an-audit-log-065": {
     "__comp": "17896441",
-    "content": "bf686fc5"
+    "content": "c03d7455"
   },
-  "/administration/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard-c6d": {
+  "/administration/system-management/how-to-view-existing-contacts-992": {
     "__comp": "17896441",
-    "content": "4f50da3c"
+    "content": "844f34b8"
   },
-  "/administration/cross-module-features/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-f82": {
+  "/administration/system-management/manage-password-policy-989": {
     "__comp": "17896441",
-    "content": "012962b2"
+    "content": "c960b286"
   },
-  "/administration/cross-module-features/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-7d9": {
+  "/administration/system-management/search-users-12d": {
     "__comp": "17896441",
-    "content": "1845eee2"
+    "content": "ee545606"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition-c72": {
+  "/administration/system-management/what-is-a-group-7ea": {
     "__comp": "17896441",
-    "content": "9a357b09"
+    "content": "42a1dbce"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition-af0": {
+  "/administration/system-management/what-is-a-rule-9f0": {
     "__comp": "17896441",
-    "content": "01686177"
+    "content": "566bb256"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-a-scorecard-to-a-competition-57e": {
+  "/administration/system-management/what-is-audit-log-f61": {
     "__comp": "17896441",
-    "content": "7e35a1d6"
+    "content": "fa8da07f"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge-daa": {
+  "/get-started/onboarding/browser-and-device-support-f3a": {
     "__comp": "17896441",
-    "content": "1ba622b9"
+    "content": "55f2218e"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard-1fd": {
+  "/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app-367": {
     "__comp": "17896441",
-    "content": "fd93cecc"
+    "content": "653548b5"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-smartfeed-within-a-competition-03a": {
+  "/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr-fc5": {
     "__comp": "17896441",
-    "content": "73a26398"
+    "content": "83212ea9"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard-4d1": {
+  "/get-started/onboarding/how-can-i-change-my-profile-image-444": {
     "__comp": "17896441",
-    "content": "5c4d2c1a"
+    "content": "0e92d112"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-award-points-on-badge-assignment-576": {
+  "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version-397": {
     "__comp": "17896441",
-    "content": "4e3fb16f"
+    "content": "d4bb8b7e"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-a-group-challenge-615": {
+  "/get-started/onboarding/how-can-i-contact-smartwinnr-team-b48": {
     "__comp": "17896441",
-    "content": "03af6ffa"
+    "content": "f010a579"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-a-manager-challenge-157": {
+  "/get-started/onboarding/how-can-i-download-the-smartwinnr-app-ece": {
     "__comp": "17896441",
-    "content": "159987a7"
+    "content": "656df263"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-an-individual-challenge-b89": {
+  "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app-3d8": {
     "__comp": "17896441",
-    "content": "3d9cf4f9"
+    "content": "07d3c85b"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-badges-3bd": {
+  "/get-started/onboarding/how-can-i-login-to-smartwinnr-app-f4b": {
     "__comp": "17896441",
-    "content": "a94d5ff0"
+    "content": "73464b90"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-certifcates-b3e": {
+  "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view-60a": {
     "__comp": "17896441",
-    "content": "347a9925"
+    "content": "3ac218c1"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-create-kpi-9c5": {
+  "/get-started/onboarding/my-account-is-locked-what-should-i-do-192": {
     "__comp": "17896441",
-    "content": "77e8bfb4"
+    "content": "82ea1792"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-upload-kpi-data-da3": {
+  "/get-started/onboarding/what-if-i-ve-forgotten-my-password-621": {
     "__comp": "17896441",
-    "content": "271abad7"
+    "content": "dcfce311"
   },
-  "/administration/cross-module-features/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard-4d1": {
+  "/get-started/onboarding/what-if-i-ve-forgotten-my-pin-efc": {
     "__comp": "17896441",
-    "content": "7d5f3246"
+    "content": "27f24c71"
   },
-  "/administration/cross-module-features/competitions-gamification/leaderboards-of-a-competition-614": {
+  "/get-started/onboarding/what-is-my-username-and-password-b98": {
     "__comp": "17896441",
-    "content": "f98476ba"
+    "content": "3cb15ed1"
   },
-  "/administration/cross-module-features/competitions-gamification/question-bank-a95": {
+  "/get-started/overview/-ee5": {
     "__comp": "17896441",
-    "content": "84ad5c33"
+    "content": "a289535c"
   },
-  "/administration/cross-module-features/competitions-gamification/understand-game-concepts-441": {
+  "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view-1e0": {
     "__comp": "17896441",
-    "content": "c109aebb"
+    "content": "a8819148"
   },
-  "/administration/cross-module-features/competitions-gamification/what-are-kpi-reports-e0f": {
+  "/guides/manager/switching-to-manager-view-fa1": {
     "__comp": "17896441",
-    "content": "8fc358aa"
+    "content": "40a01004"
   },
-  "/administration/cross-module-features/competitions-gamification/what-is-a-challenge-bd1": {
+  "/integrations-c67": {
     "__comp": "17896441",
-    "content": "9f535e51"
+    "content": "b47a527a"
   },
-  "/administration/cross-module-features/competitions-gamification/what-is-an-achievement-569": {
-    "__comp": "17896441",
-    "content": "e7c4dde6"
-  },
-  "/administration/cross-module-features/competitions-gamification/what-is-kpi-gamification-5ea": {
-    "__comp": "17896441",
-    "content": "89acadcf"
-  },
-  "/administration/cross-module-features/platform-features/how-to-edit-a-project-c82": {
-    "__comp": "17896441",
-    "content": "8430b3e9"
-  },
-  "/administration/cross-module-features/platform-features/project-management-b62": {
-    "__comp": "17896441",
-    "content": "6faf3220"
-  },
-  "/administration/custom-notifications-f86": {
-    "__comp": "17896441",
-    "content": "b66e778f"
-  },
-  "/administration/field-coaching-module/competency-frameworks/how-to-add-competencies-for-field-coaching-3e8": {
-    "__comp": "17896441",
-    "content": "95d2777e"
-  },
-  "/administration/field-coaching-module/competency-frameworks/how-to-set-competencies-a3e": {
-    "__comp": "17896441",
-    "content": "610321b2"
-  },
-  "/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-2c8": {
-    "__comp": "17896441",
-    "content": "64d2cadb"
-  },
-  "/administration/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template-a8f": {
-    "__comp": "17896441",
-    "content": "d69e3d64"
-  },
-  "/administration/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-e2e": {
-    "__comp": "17896441",
-    "content": "69f519c5"
-  },
-  "/administration/field-coaching-module/manager-tools/what-is-my-team-coaching-684": {
-    "__comp": "17896441",
-    "content": "df183e4e"
-  },
-  "/administration/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-0b9": {
-    "__comp": "17896441",
-    "content": "05bf2203"
-  },
-  "/administration/field-coaching-module/performance-evaluation/how-to-review-field-coaching-from-managers-view-in-mobile-568": {
-    "__comp": "17896441",
-    "content": "aed84e17"
-  },
-  "/administration/forms-module/data-management/how-to-create-a-field-mapping-6af": {
-    "__comp": "17896441",
-    "content": "96e625db"
-  },
-  "/administration/forms-module/data-management/what-are-field-mappings-23a": {
-    "__comp": "17896441",
-    "content": "f7a3dafc"
-  },
-  "/administration/forms-module/form-creation/form-analytics-a3b": {
-    "__comp": "17896441",
-    "content": "66488227"
-  },
-  "/administration/forms-module/form-creation/how-managers-approve-form-f46": {
-    "__comp": "17896441",
-    "content": "00f1b75e"
-  },
-  "/administration/forms-module/form-creation/how-to-add-approvers-to-a-form-3f2": {
-    "__comp": "17896441",
-    "content": "018ae233"
-  },
-  "/administration/forms-module/form-creation/how-to-create-a-form-9b1": {
-    "__comp": "17896441",
-    "content": "3de70498"
-  },
-  "/administration/forms-module/form-management/how-can-i-submit-a-form-from-chat-8c5": {
-    "__comp": "17896441",
-    "content": "9dc15b0c"
-  },
-  "/administration/forms-module/form-management/how-can-i-submit-a-form-from-left-menu-c56": {
-    "__comp": "17896441",
-    "content": "11c7d491"
-  },
-  "/administration/forms-module/form-management/how-to-add-new-form-submission-da0": {
-    "__comp": "17896441",
-    "content": "084c19ce"
-  },
-  "/administration/forms-module/form-management/how-to-approve-reject-a-form-submission-6a8": {
-    "__comp": "17896441",
-    "content": "79839338"
-  },
-  "/administration/forms-module/form-management/how-to-edit-a-form-on-submitted-by-a-user-432": {
-    "__comp": "17896441",
-    "content": "956c44ec"
-  },
-  "/administration/forms-module/form-management/how-to-submit-a-form-on-behalf-of-a-user-c03": {
-    "__comp": "17896441",
-    "content": "dbbb0db1"
-  },
-  "/administration/forms-module/scorecards/how-to-create-a-scorecard-f9b": {
-    "__comp": "17896441",
-    "content": "f2a662ab"
-  },
-  "/administration/forms-module/scorecards/what-are-scorecards-247": {
-    "__comp": "17896441",
-    "content": "36d537d9"
-  },
-  "/administration/how-can-an-admin-change-anyone-s-password-e7e": {
-    "__comp": "17896441",
-    "content": "fda7e804"
-  },
-  "/administration/how-can-i-answer-a-query-21e": {
-    "__comp": "17896441",
-    "content": "90252f27"
-  },
-  "/administration/how-can-i-change-the-password-for-a-user-account-b2a": {
-    "__comp": "17896441",
-    "content": "16e98a7e"
-  },
-  "/administration/how-can-i-contact-smartwinnr-team-090": {
-    "__comp": "17896441",
-    "content": "6f166939"
-  },
-  "/administration/how-to-add-a-new-division-a15": {
-    "__comp": "17896441",
-    "content": "9560cbb4"
-  },
-  "/administration/how-to-add-change-targets-84e": {
-    "__comp": "17896441",
-    "content": "f1b280cf"
-  },
-  "/administration/how-to-add-new-contacts-eeb": {
-    "__comp": "17896441",
-    "content": "f9dc94f1"
-  },
-  "/administration/how-to-add-new-rule-233": {
-    "__comp": "17896441",
-    "content": "2f1d6731"
-  },
-  "/administration/how-to-add-or-remove-users-to-a-chat-group-f60": {
-    "__comp": "17896441",
-    "content": "4bb9ce47"
-  },
-  "/administration/how-to-change-company-logo-48a": {
-    "__comp": "17896441",
-    "content": "fb63a1e2"
-  },
-  "/administration/how-to-create-a-group-722": {
-    "__comp": "17896441",
-    "content": "2893cb61"
-  },
-  "/administration/how-to-create-a-new-project-192": {
-    "__comp": "17896441",
-    "content": "7b3d9dec"
-  },
-  "/administration/how-to-download-a-chat-3ce": {
-    "__comp": "17896441",
-    "content": "60301b12"
-  },
-  "/administration/how-to-enable-a-chat-group-1b1": {
-    "__comp": "17896441",
-    "content": "66ab7e8f"
-  },
-  "/administration/how-to-post-a-query-from-the-smartwinnr-app-9d9": {
-    "__comp": "17896441",
-    "content": "0d6b0e6b"
-  },
-  "/administration/how-to-track-my-organizational-resource-usage-213": {
-    "__comp": "17896441",
-    "content": "6de89c99"
-  },
-  "/administration/how-to-use-qresolve-in-the-smartwinnr-app-c0e": {
-    "__comp": "17896441",
-    "content": "508c844b"
-  },
-  "/administration/how-to-view-an-audit-log-81c": {
-    "__comp": "17896441",
-    "content": "46501af3"
-  },
-  "/administration/how-to-view-existing-contacts-c9f": {
-    "__comp": "17896441",
-    "content": "ba473d48"
-  },
-  "/administration/how-to-view-notifications-ff7": {
-    "__comp": "17896441",
-    "content": "65d0cb92"
-  },
-  "/administration/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-7e5": {
-    "__comp": "17896441",
-    "content": "f959bd35"
-  },
-  "/administration/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub-4d2": {
-    "__comp": "17896441",
-    "content": "401674eb"
-  },
-  "/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name-f6f": {
-    "__comp": "17896441",
-    "content": "f9ee962d"
-  },
-  "/administration/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item-dec": {
-    "__comp": "17896441",
-    "content": "52e90cb3"
-  },
-  "/administration/knowledge-hub-module/khub-administration/knowledge-hub-khub-f6a": {
-    "__comp": "17896441",
-    "content": "7b46058e"
-  },
-  "/administration/knowledge-hub-module/khub-administration/what-is-khub-976": {
-    "__comp": "17896441",
-    "content": "a893d158"
-  },
-  "/administration/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics-795": {
-    "__comp": "17896441",
-    "content": "13272ccb"
-  },
-  "/administration/knowledge-hub-module/user-experience/how-to-use-khub-in-the-smartwinnr-app-a7b": {
-    "__comp": "17896441",
-    "content": "2faf864d"
-  },
-  "/administration/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items-937": {
-    "__comp": "17896441",
-    "content": "a2d7a73f"
-  },
-  "/administration/manage-password-policy-1d1": {
-    "__comp": "17896441",
-    "content": "93411c9f"
-  },
-  "/administration/quiz-module/-d06": {
-    "__comp": "17896441",
-    "content": "9f257f8a"
-  },
-  "/administration/quiz-module/features/-a0f": {
-    "__comp": "17896441",
-    "content": "0dbcfd6b"
-  },
-  "/administration/quiz-module/features/access-permission-061": {
-    "__comp": "17896441",
-    "content": "5251968a"
-  },
-  "/administration/quiz-module/features/activate-deactivate-quiz-25c": {
-    "__comp": "17896441",
-    "content": "632de251"
-  },
-  "/administration/quiz-module/features/analytics-overview-4b6": {
-    "__comp": "17896441",
-    "content": "2e81ec6c"
-  },
-  "/administration/quiz-module/features/duplicate-quiz-a5c": {
-    "__comp": "17896441",
-    "content": "447a6222"
-  },
-  "/administration/quiz-module/features/export-questions-d13": {
-    "__comp": "17896441",
-    "content": "42fadcdc"
-  },
-  "/administration/quiz-module/features/quick-actions-23f": {
-    "__comp": "17896441",
-    "content": "24cc490d"
-  },
-  "/administration/quiz-module/features/quiz-tv-633": {
-    "__comp": "17896441",
-    "content": "50200a59"
-  },
-  "/administration/quiz-module/features/send-notification-0f6": {
-    "__comp": "17896441",
-    "content": "1c09f29f"
-  },
-  "/administration/quiz-module/features/upload-participation-data-bbb": {
-    "__comp": "17896441",
-    "content": "c1ffd154"
-  },
-  "/administration/quiz-module/question-management/how-editors-evaluate-long-answer-questions-518": {
-    "__comp": "17896441",
-    "content": "f5f4d6d6"
-  },
-  "/administration/quiz-module/question-management/how-import-question-is-different-from-add-new-question-768": {
-    "__comp": "17896441",
-    "content": "30741d5b"
-  },
-  "/administration/quiz-module/question-management/how-to-add-a-video-to-a-question-87c": {
-    "__comp": "17896441",
-    "content": "a9d9d172"
-  },
-  "/administration/quiz-module/question-management/how-to-add-an-audio-file-to-a-question-957": {
-    "__comp": "17896441",
-    "content": "4fd2c0af"
-  },
-  "/administration/quiz-module/question-management/how-to-add-an-image-to-the-question-cd0": {
-    "__comp": "17896441",
-    "content": "a3ee9797"
-  },
-  "/administration/quiz-module/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr-e96": {
-    "__comp": "17896441",
-    "content": "962a4cdf"
-  },
-  "/administration/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question-322": {
-    "__comp": "17896441",
-    "content": "ad9bb203"
-  },
-  "/administration/quiz-module/question-management/how-to-create-a-drag-and-drop-into-text-question-14d": {
-    "__comp": "17896441",
-    "content": "13546a7d"
-  },
-  "/administration/quiz-module/question-management/how-to-create-a-hotspot-question-33f": {
-    "__comp": "17896441",
-    "content": "d1f281d3"
-  },
-  "/administration/quiz-module/question-management/how-to-create-a-matching-question-cc9": {
-    "__comp": "17896441",
-    "content": "ca629bea"
-  },
-  "/administration/quiz-module/question-management/how-to-create-a-missing-words-question-9f5": {
-    "__comp": "17896441",
-    "content": "011539a4"
-  },
-  "/administration/quiz-module/question-management/how-to-create-fill-in-the-blank-questions-61a": {
-    "__comp": "17896441",
-    "content": "b81b102b"
-  },
-  "/administration/quiz-module/question-management/how-to-create-long-answer-questions-814": {
-    "__comp": "17896441",
-    "content": "4fe77a98"
-  },
-  "/administration/quiz-module/question-management/how-to-create-multiple-choice-questions-284": {
-    "__comp": "17896441",
-    "content": "4548dd57"
-  },
-  "/administration/quiz-module/question-management/how-to-create-numeric-type-questions-dfa": {
-    "__comp": "17896441",
-    "content": "1f9066ba"
-  },
-  "/administration/quiz-module/question-management/how-to-create-re-order-questions-f94": {
-    "__comp": "17896441",
-    "content": "413cdf44"
-  },
-  "/administration/quiz-module/question-management/how-to-edit-a-question-7f3": {
-    "__comp": "17896441",
-    "content": "461251a4"
-  },
-  "/administration/quiz-module/question-management/how-to-embed-a-link-into-the-question-ec0": {
-    "__comp": "17896441",
-    "content": "265ba7de"
-  },
-  "/administration/quiz-module/question-management/how-to-update-question-response-3e6": {
-    "__comp": "17896441",
-    "content": "703ca75e"
-  },
-  "/administration/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions-a1c": {
-    "__comp": "17896441",
-    "content": "0e33248b"
-  },
-  "/administration/quiz-module/question-management/question-management-58f": {
-    "__comp": "17896441",
-    "content": "db5622bd"
-  },
-  "/administration/quiz-module/question-management/question-response-analytics-d9f": {
-    "__comp": "17896441",
-    "content": "3e721553"
-  },
-  "/administration/quiz-module/question-management/question-structure-c16": {
-    "__comp": "17896441",
-    "content": "3448e662"
-  },
-  "/administration/quiz-module/question-management/short-answer-with-multiple-options-4c9": {
-    "__comp": "17896441",
-    "content": "90121532"
-  },
-  "/administration/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors-e75": {
-    "__comp": "17896441",
-    "content": "590dee4c"
-  },
-  "/administration/quiz-module/quiz-administration/how-to-activate-automatic-reminders-for-your-quizzes-d35": {
-    "__comp": "17896441",
-    "content": "280314e6"
-  },
-  "/administration/quiz-module/quiz-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-d37": {
-    "__comp": "17896441",
-    "content": "bcc2bf63"
-  },
-  "/administration/quiz-module/quiz-administration/how-to-manage-quiz-configurations-329": {
-    "__comp": "17896441",
-    "content": "9fb208ed"
-  },
-  "/administration/quiz-module/quiz-administration/how-to-open-and-close-a-quiz-371": {
-    "__comp": "17896441",
-    "content": "0eb9aba3"
-  },
-  "/administration/quiz-module/quiz-administration/how-to-send-quizzes-surveys-and-content-using-group-d89": {
-    "__comp": "17896441",
-    "content": "1019a248"
-  },
-  "/administration/quiz-module/quiz-administration/managing-questions-251": {
-    "__comp": "17896441",
-    "content": "91ab42f8"
-  },
-  "/administration/quiz-module/quiz-administration/quiz-settings-1d4": {
-    "__comp": "17896441",
-    "content": "7c6e577f"
-  },
-  "/administration/quiz-module/quiz-analytics/detailed-quiz-analytics-995": {
-    "__comp": "17896441",
-    "content": "0c44d176"
-  },
-  "/administration/quiz-module/quiz-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team-081": {
-    "__comp": "17896441",
-    "content": "c745c25d"
-  },
-  "/administration/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes-486": {
-    "__comp": "17896441",
-    "content": "0f829369"
-  },
-  "/administration/quiz-module/quiz-analytics/learner-overall-report-c91": {
-    "__comp": "17896441",
-    "content": "0ae846e3"
-  },
-  "/administration/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics-dc3": {
-    "__comp": "17896441",
-    "content": "70caffdb"
-  },
-  "/administration/quiz-module/quiz-analytics/quiz-analytics-reports-401": {
-    "__comp": "17896441",
-    "content": "64b274c7"
-  },
-  "/administration/quiz-module/quiz-analytics/quiz-analytics-through-charts-e75": {
-    "__comp": "17896441",
-    "content": "cf2a6577"
-  },
-  "/administration/quiz-module/quiz-analytics/quiz-comparison-report-a96": {
-    "__comp": "17896441",
-    "content": "0519b7bd"
-  },
-  "/administration/quiz-module/quiz-analytics/quiz-reports-1cb": {
-    "__comp": "17896441",
-    "content": "730eddd6"
-  },
-  "/administration/quiz-module/quiz-analytics/quiz-wise-analytics-9b9": {
-    "__comp": "17896441",
-    "content": "23ded60f"
-  },
-  "/administration/quiz-module/quiz-analytics/team-analytics-2b2": {
-    "__comp": "17896441",
-    "content": "e969a812"
-  },
-  "/administration/quiz-module/quiz-analytics/team-progress-report-10e": {
-    "__comp": "17896441",
-    "content": "ab76484a"
-  },
-  "/administration/quiz-module/quiz-configuration/quiz-administration-b1e": {
-    "__comp": "17896441",
-    "content": "623d7ec2"
-  },
-  "/administration/quiz-module/quiz-configuration/quiz-types-a19": {
-    "__comp": "17896441",
-    "content": "a99c9924"
-  },
-  "/administration/quiz-module/quiz-configuration/understanding-knowledge-categories-d81": {
-    "__comp": "17896441",
-    "content": "639e6ecb"
-  },
-  "/administration/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics-49a": {
-    "__comp": "17896441",
-    "content": "80086901"
-  },
-  "/administration/quiz-module/quiz-creation/creating-quiz-191": {
-    "__comp": "17896441",
-    "content": "6d3f396b"
-  },
-  "/administration/quiz-module/quiz-creation/creating-quizzes-abe": {
-    "__comp": "17896441",
-    "content": "6ba65a6b"
-  },
-  "/administration/quiz-module/quiz-creation/how-can-i-duplicate-a-quiz-f5b": {
-    "__comp": "17896441",
-    "content": "57cd0640"
-  },
-  "/administration/quiz-module/quiz-creation/how-to-create-a-manual-quiz-b86": {
-    "__comp": "17896441",
-    "content": "827b982a"
-  },
-  "/administration/quiz-module/quiz-creation/how-to-create-an-automatic-quiz-24d": {
-    "__comp": "17896441",
-    "content": "66a26da7"
-  },
-  "/administration/quiz-module/settings/-14b": {
-    "__comp": "17896441",
-    "content": "8067f396"
-  },
-  "/administration/quiz-module/settings/advanced-integrations-312": {
-    "__comp": "17896441",
-    "content": "681fc6f4"
-  },
-  "/administration/quiz-module/settings/automatic-quiz-b19": {
-    "__comp": "17896441",
-    "content": "c7d90322"
-  },
-  "/administration/quiz-module/settings/notifications-d64": {
-    "__comp": "17896441",
-    "content": "38efd62e"
-  },
-  "/administration/quiz-module/settings/question-delivery-8f3": {
-    "__comp": "17896441",
-    "content": "73fc0a47"
-  },
-  "/administration/quiz-module/settings/scoring-and-display-f80": {
-    "__comp": "17896441",
-    "content": "70bf8323"
-  },
-  "/administration/quiz-module/settings/timer-and-attempts-21d": {
-    "__comp": "17896441",
-    "content": "163b1010"
-  },
-  "/administration/quiz-module/settings/visual-and-media-fba": {
-    "__comp": "17896441",
-    "content": "877b338b"
-  },
-  "/administration/search-users-af0": {
-    "__comp": "17896441",
-    "content": "ce9fa613"
-  },
-  "/administration/smartfeed-module/distribution-management/how-to-delete-smartfeeds-d48": {
-    "__comp": "17896441",
-    "content": "a096a178"
-  },
-  "/administration/smartfeed-module/distribution-management/how-to-send-a-smartfeed-multiple-times-aa5": {
-    "__comp": "17896441",
-    "content": "d4f9caa7"
-  },
-  "/administration/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams-f68": {
-    "__comp": "17896441",
-    "content": "6120abf8"
-  },
-  "/administration/smartfeed-module/distribution-management/smartfeed-management-3ae": {
-    "__comp": "17896441",
-    "content": "8c095a06"
-  },
-  "/administration/smartfeed-module/microlearning-strategy/-426": {
-    "__comp": "17896441",
-    "content": "94c506c2"
-  },
-  "/administration/smartfeed-module/microlearning-strategy/what-are-smartfeeds-c6e": {
-    "__comp": "17896441",
-    "content": "8a638ec1"
-  },
-  "/administration/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics-5f6": {
-    "__comp": "17896441",
-    "content": "963b290f"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content-be6": {
-    "__comp": "17896441",
-    "content": "5f7c81b2"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-c37": {
-    "__comp": "17896441",
-    "content": "0d76c8a0"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed-e7e": {
-    "__comp": "17896441",
-    "content": "6e4dd859"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-a-video-to-your-content-c45": {
-    "__comp": "17896441",
-    "content": "f1aaf180"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-an-audio-file-to-your-content-952": {
-    "__comp": "17896441",
-    "content": "26444051"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-add-reference-to-an-external-link-to-your-content-145": {
-    "__comp": "17896441",
-    "content": "c8fdb52d"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content-ab5": {
-    "__comp": "17896441",
-    "content": "07dc07a0"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-create-a-smartfeed-89a": {
-    "__comp": "17896441",
-    "content": "72ca8b6e"
-  },
-  "/administration/smartfeed-module/smartfeed-creation/how-to-edit-a-smartfeed-1a6": {
-    "__comp": "17896441",
-    "content": "c6df2e71"
-  },
-  "/administration/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed-817": {
-    "__comp": "17896441",
-    "content": "43d2bda2"
-  },
-  "/administration/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath-cfa": {
-    "__comp": "17896441",
-    "content": "9399c371"
-  },
-  "/administration/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds-c64": {
-    "__comp": "17896441",
-    "content": "7fede065"
-  },
-  "/administration/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-add": {
-    "__comp": "17896441",
-    "content": "6c479cad"
-  },
-  "/administration/smartpath-module/learning-content-management/how-to-access-the-scorm-course-from-the-smartwinnr-app-edb": {
-    "__comp": "17896441",
-    "content": "8a8cdbe8"
-  },
-  "/administration/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr-6a2": {
-    "__comp": "17896441",
-    "content": "28ff3c62"
-  },
-  "/administration/smartpath-module/learning-sessions/how-to-add-learning-sessions-in-smartpath-module-e29": {
-    "__comp": "17896441",
-    "content": "bab6df34"
-  },
-  "/administration/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions-79f": {
-    "__comp": "17896441",
-    "content": "9487966d"
-  },
-  "/administration/smartpath-module/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-5c4": {
-    "__comp": "17896441",
-    "content": "33d292d9"
-  },
-  "/administration/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics-b2e": {
-    "__comp": "17896441",
-    "content": "1a5533fc"
-  },
-  "/administration/smartpath-module/smartpath-creation/how-can-i-gamify-a-smartpath-217": {
-    "__comp": "17896441",
-    "content": "97ef0aa5"
-  },
-  "/administration/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath-53c": {
-    "__comp": "17896441",
-    "content": "504b6a17"
-  },
-  "/administration/smartpath-module/smartpath-creation/how-to-create-a-smartpath-b1a": {
-    "__comp": "17896441",
-    "content": "5abe349e"
-  },
-  "/administration/smartpath-module/smartpath-creation/how-to-create-smartpath-with-learning-sessions-182": {
-    "__comp": "17896441",
-    "content": "75dbc19f"
-  },
-  "/administration/smartpath-module/smartpath-creation/how-to-edit-a-smartpath-143": {
-    "__comp": "17896441",
-    "content": "c19f26f6"
-  },
-  "/administration/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-23d": {
-    "__comp": "17896441",
-    "content": "43b5e717"
-  },
-  "/administration/smartpath-module/smartpath-management/smartpath-management-372": {
-    "__comp": "17896441",
-    "content": "044cef4a"
-  },
-  "/administration/smartpath-module/smartpath-management/what-are-smartpaths-548": {
-    "__comp": "17896441",
-    "content": "041700a9"
-  },
-  "/administration/survey-module/response-management/how-to-assign-a-survey-b15": {
-    "__comp": "17896441",
-    "content": "1ffe65ce"
-  },
-  "/administration/survey-module/survey-analytics/survey-analytics-8fb": {
-    "__comp": "17896441",
-    "content": "08e4c5da"
-  },
-  "/administration/survey-module/survey-analytics/survey-template-analytics-f80": {
-    "__comp": "17896441",
-    "content": "b0f199f6"
-  },
-  "/administration/survey-module/survey-creation/-407": {
-    "__comp": "17896441",
-    "content": "5f70b531"
-  },
-  "/administration/survey-module/survey-creation/how-to-add-a-video-coaching-to-the-competition-42e": {
-    "__comp": "17896441",
-    "content": "9fd472ae"
-  },
-  "/administration/survey-module/survey-creation/how-to-create-a-survey-d2a": {
-    "__comp": "17896441",
-    "content": "7981c1e5"
-  },
-  "/administration/survey-module/survey-creation/how-to-create-a-survey-template-9fb": {
-    "__comp": "17896441",
-    "content": "3bfd7ec8"
-  },
-  "/administration/survey-module/survey-creation/how-to-delete-a-survey-c9b": {
-    "__comp": "17896441",
-    "content": "4c4df10a"
-  },
-  "/administration/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template-832": {
-    "__comp": "17896441",
-    "content": "6a0d674d"
-  },
-  "/administration/survey-module/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template-31e": {
-    "__comp": "17896441",
-    "content": "04fcb676"
-  },
-  "/administration/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template-f74": {
-    "__comp": "17896441",
-    "content": "f8f86453"
-  },
-  "/administration/system-management/user-management/administration-f2c": {
-    "__comp": "17896441",
-    "content": "10e82018"
-  },
-  "/administration/system-management/user-management/advanced-options-for-projects-987": {
-    "__comp": "17896441",
-    "content": "250a6e1f"
-  },
-  "/administration/system-management/user-management/bulk-custom-notifications-462": {
-    "__comp": "17896441",
-    "content": "8761d5ae"
-  },
-  "/administration/system-management/user-management/changing-updating-configuration-for-an-organization-d03": {
-    "__comp": "17896441",
-    "content": "80354949"
-  },
-  "/administration/system-management/user-management/create-users-in-bulk-bc7": {
-    "__comp": "17896441",
-    "content": "6bd896eb"
-  },
-  "/administration/system-management/user-management/create-users-individually-296": {
-    "__comp": "17896441",
-    "content": "e0d9985e"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/analytics-reporting-7b4": {
-    "__comp": "17896441",
-    "content": "603ddb34"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/detailed-explanation-of-reports-58e": {
-    "__comp": "17896441",
-    "content": "76959f82"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv-6f2": {
-    "__comp": "17896441",
-    "content": "db2e42ec"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/how-to-view-project-b34": {
-    "__comp": "17896441",
-    "content": "5f48ca05"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/user-login-reports-40c": {
-    "__comp": "17896441",
-    "content": "50f9c7f3"
-  },
-  "/administration/system-management/user-management/cross-module-features/advanced-analytics/widgets-4d3": {
-    "__comp": "17896441",
-    "content": "3af170cc"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition-120": {
-    "__comp": "17896441",
-    "content": "f99127bd"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition-851": {
-    "__comp": "17896441",
-    "content": "e5efc9f5"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition-f3f": {
-    "__comp": "17896441",
-    "content": "11b0a57d"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition-d3b": {
-    "__comp": "17896441",
-    "content": "2763ad08"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/competitions-gamification-5e9": {
-    "__comp": "17896441",
-    "content": "83e9ac8c"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/define-kpis-767": {
-    "__comp": "17896441",
-    "content": "a72bfa03"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-gamify-a-smartpath-d46": {
-    "__comp": "17896441",
-    "content": "653bb7f2"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-view-a-competition-leaderboard-66a": {
-    "__comp": "17896441",
-    "content": "06f427fc"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard-789": {
-    "__comp": "17896441",
-    "content": "332878b4"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-b37": {
-    "__comp": "17896441",
-    "content": "0ab82922"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-438": {
-    "__comp": "17896441",
-    "content": "9d3be1bf"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition-123": {
-    "__comp": "17896441",
-    "content": "1ed88a15"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition-86f": {
-    "__comp": "17896441",
-    "content": "b5a8ceb0"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-scorecard-to-a-competition-567": {
-    "__comp": "17896441",
-    "content": "72bab0fc"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge-25b": {
-    "__comp": "17896441",
-    "content": "3cae023a"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard-4c6": {
-    "__comp": "17896441",
-    "content": "f5e21d33"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-smartfeed-within-a-competition-8a5": {
-    "__comp": "17896441",
-    "content": "8024be72"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard-47d": {
-    "__comp": "17896441",
-    "content": "01f15fed"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-award-points-on-badge-assignment-eb9": {
-    "__comp": "17896441",
-    "content": "3d99146b"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-a-group-challenge-ae4": {
-    "__comp": "17896441",
-    "content": "5c7dd27a"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-a-manager-challenge-735": {
-    "__comp": "17896441",
-    "content": "253147a7"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-an-individual-challenge-a89": {
-    "__comp": "17896441",
-    "content": "8109c2d0"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-badges-4b6": {
-    "__comp": "17896441",
-    "content": "837c7e8b"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-certifcates-782": {
-    "__comp": "17896441",
-    "content": "218fe8bf"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-kpi-4a5": {
-    "__comp": "17896441",
-    "content": "b3582734"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data-691": {
-    "__comp": "17896441",
-    "content": "280d182f"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard-e45": {
-    "__comp": "17896441",
-    "content": "2719c2cd"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition-e91": {
-    "__comp": "17896441",
-    "content": "25ab95fe"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/question-bank-b61": {
-    "__comp": "17896441",
-    "content": "304fdcf8"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/understand-game-concepts-42a": {
-    "__comp": "17896441",
-    "content": "502eff60"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports-f5f": {
-    "__comp": "17896441",
-    "content": "af00be7c"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-is-a-challenge-ef4": {
-    "__comp": "17896441",
-    "content": "9f0cbe59"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement-f9f": {
-    "__comp": "17896441",
-    "content": "5721c293"
-  },
-  "/administration/system-management/user-management/cross-module-features/competitions-gamification/what-is-kpi-gamification-7fe": {
-    "__comp": "17896441",
-    "content": "aa818838"
-  },
-  "/administration/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project-f98": {
-    "__comp": "17896441",
-    "content": "f277883a"
-  },
-  "/administration/system-management/user-management/cross-module-features/platform-features/project-management-b69": {
-    "__comp": "17896441",
-    "content": "931fc7c7"
-  },
-  "/administration/system-management/user-management/custom-notifications-702": {
-    "__comp": "17896441",
-    "content": "18679a54"
-  },
-  "/administration/system-management/user-management/delete-users-bfb": {
-    "__comp": "17896441",
-    "content": "f0edf80f"
-  },
-  "/administration/system-management/user-management/field-coaching-module/competency-frameworks/how-to-add-competencies-for-field-coaching-5b5": {
-    "__comp": "17896441",
-    "content": "4c71b7eb"
-  },
-  "/administration/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies-bd7": {
-    "__comp": "17896441",
-    "content": "b1001c57"
-  },
-  "/administration/system-management/user-management/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-72d": {
-    "__comp": "17896441",
-    "content": "d0572a0c"
-  },
-  "/administration/system-management/user-management/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template-db1": {
-    "__comp": "17896441",
-    "content": "abbfa117"
-  },
-  "/administration/system-management/user-management/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-5f7": {
-    "__comp": "17896441",
-    "content": "15f6de2f"
-  },
-  "/administration/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching-dc3": {
-    "__comp": "17896441",
-    "content": "abacbc92"
-  },
-  "/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-64c": {
-    "__comp": "17896441",
-    "content": "70bcf8c6"
-  },
-  "/administration/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-field-coaching-from-managers-view-in-mobile-783": {
-    "__comp": "17896441",
-    "content": "85297a5c"
-  },
-  "/administration/system-management/user-management/forms-module/data-management/how-to-create-a-field-mapping-82c": {
-    "__comp": "17896441",
-    "content": "8d14adaa"
-  },
-  "/administration/system-management/user-management/forms-module/data-management/what-are-field-mappings-043": {
-    "__comp": "17896441",
-    "content": "e206298f"
-  },
-  "/administration/system-management/user-management/forms-module/form-creation/form-analytics-461": {
-    "__comp": "17896441",
-    "content": "022ccc00"
-  },
-  "/administration/system-management/user-management/forms-module/form-creation/how-managers-approve-form-471": {
-    "__comp": "17896441",
-    "content": "688d1e9c"
-  },
-  "/administration/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form-c2a": {
-    "__comp": "17896441",
-    "content": "d88205d2"
-  },
-  "/administration/system-management/user-management/forms-module/form-creation/how-to-create-a-form-8ba": {
-    "__comp": "17896441",
-    "content": "852121c1"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-can-i-submit-a-form-from-chat-664": {
-    "__comp": "17896441",
-    "content": "b9325998"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-can-i-submit-a-form-from-left-menu-3b4": {
-    "__comp": "17896441",
-    "content": "44778801"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-to-add-new-form-submission-831": {
-    "__comp": "17896441",
-    "content": "2fc2719c"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission-e36": {
-    "__comp": "17896441",
-    "content": "cf67feb0"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-to-edit-a-form-on-submitted-by-a-user-2d0": {
-    "__comp": "17896441",
-    "content": "8eb1e954"
-  },
-  "/administration/system-management/user-management/forms-module/form-management/how-to-submit-a-form-on-behalf-of-a-user-171": {
-    "__comp": "17896441",
-    "content": "65e7f7d5"
-  },
-  "/administration/system-management/user-management/forms-module/scorecards/how-to-create-a-scorecard-5f9": {
-    "__comp": "17896441",
-    "content": "a8875c0a"
-  },
-  "/administration/system-management/user-management/forms-module/scorecards/what-are-scorecards-f23": {
-    "__comp": "17896441",
-    "content": "13cfb94e"
-  },
-  "/administration/system-management/user-management/how-can-an-admin-change-anyone-s-password-e66": {
-    "__comp": "17896441",
-    "content": "5c5b238f"
-  },
-  "/administration/system-management/user-management/how-can-i-answer-a-query-8fc": {
-    "__comp": "17896441",
-    "content": "08182261"
-  },
-  "/administration/system-management/user-management/how-can-i-change-the-password-for-a-user-account-e37": {
-    "__comp": "17896441",
-    "content": "eb8e8b53"
-  },
-  "/administration/system-management/user-management/how-can-i-contact-smartwinnr-team-2ac": {
-    "__comp": "17896441",
-    "content": "53056cd2"
-  },
-  "/administration/system-management/user-management/how-to-activate-or-deactivate-a-user-5d1": {
-    "__comp": "17896441",
-    "content": "1576d781"
-  },
-  "/administration/system-management/user-management/how-to-add-a-new-division-de9": {
-    "__comp": "17896441",
-    "content": "f7cb5f2d"
-  },
-  "/administration/system-management/user-management/how-to-add-change-targets-da2": {
-    "__comp": "17896441",
-    "content": "2405ab38"
-  },
-  "/administration/system-management/user-management/how-to-add-new-contacts-219": {
-    "__comp": "17896441",
-    "content": "49effb4e"
-  },
-  "/administration/system-management/user-management/how-to-add-new-rule-dbb": {
-    "__comp": "17896441",
-    "content": "6ee8a4ba"
-  },
-  "/administration/system-management/user-management/how-to-add-or-remove-users-to-a-chat-group-b65": {
-    "__comp": "17896441",
-    "content": "79c911e4"
-  },
-  "/administration/system-management/user-management/how-to-change-company-logo-250": {
-    "__comp": "17896441",
-    "content": "2c925e35"
-  },
-  "/administration/system-management/user-management/how-to-create-a-group-015": {
-    "__comp": "17896441",
-    "content": "a28d3a17"
-  },
-  "/administration/system-management/user-management/how-to-create-a-new-project-d93": {
-    "__comp": "17896441",
-    "content": "60aefc59"
-  },
-  "/administration/system-management/user-management/how-to-download-a-chat-fd0": {
-    "__comp": "17896441",
-    "content": "3814f182"
-  },
-  "/administration/system-management/user-management/how-to-enable-a-chat-group-a6f": {
-    "__comp": "17896441",
-    "content": "6458ca7c"
-  },
-  "/administration/system-management/user-management/how-to-post-a-query-from-the-smartwinnr-app-fa8": {
-    "__comp": "17896441",
-    "content": "bf67d4f5"
-  },
-  "/administration/system-management/user-management/how-to-track-my-organizational-resource-usage-5c9": {
-    "__comp": "17896441",
-    "content": "c45c5fb2"
-  },
-  "/administration/system-management/user-management/how-to-use-qresolve-in-the-smartwinnr-app-8f8": {
-    "__comp": "17896441",
-    "content": "602d00a0"
-  },
-  "/administration/system-management/user-management/how-to-view-an-audit-log-8bf": {
-    "__comp": "17896441",
-    "content": "ae88089f"
-  },
-  "/administration/system-management/user-management/how-to-view-existing-contacts-a45": {
-    "__comp": "17896441",
-    "content": "be72086d"
-  },
-  "/administration/system-management/user-management/how-to-view-notifications-bb5": {
-    "__comp": "17896441",
-    "content": "40357961"
-  },
-  "/administration/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-f0e": {
-    "__comp": "17896441",
-    "content": "79c5d126"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub-584": {
-    "__comp": "17896441",
-    "content": "470dc718"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name-dc4": {
-    "__comp": "17896441",
-    "content": "b08f3db3"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item-45c": {
-    "__comp": "17896441",
-    "content": "4ce72260"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/khub-administration/knowledge-hub-khub-12b": {
-    "__comp": "17896441",
-    "content": "c67549e5"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub-0e3": {
-    "__comp": "17896441",
-    "content": "900bcf22"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics-e0c": {
-    "__comp": "17896441",
-    "content": "53629d2e"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/user-experience/how-to-use-khub-in-the-smartwinnr-app-3e1": {
-    "__comp": "17896441",
-    "content": "6e6e02b9"
-  },
-  "/administration/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items-8cf": {
-    "__comp": "17896441",
-    "content": "a15de4b6"
-  },
-  "/administration/system-management/user-management/manage-password-policy-d12": {
-    "__comp": "17896441",
-    "content": "5bbcad95"
-  },
-  "/administration/system-management/user-management/quiz-module/-6b6": {
-    "__comp": "17896441",
-    "content": "c1142d0f"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-editors-evaluate-long-answer-questions-7e4": {
-    "__comp": "17896441",
-    "content": "a7b0bfb4"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-import-question-is-different-from-add-new-question-d4e": {
-    "__comp": "17896441",
-    "content": "8a5d0722"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question-707": {
-    "__comp": "17896441",
-    "content": "b6c56739"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-add-an-audio-file-to-a-question-778": {
-    "__comp": "17896441",
-    "content": "e39676dc"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-add-an-image-to-the-question-65e": {
-    "__comp": "17896441",
-    "content": "73e65a36"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr-2a4": {
-    "__comp": "17896441",
-    "content": "e28dbe04"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question-98a": {
-    "__comp": "17896441",
-    "content": "006cfe02"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-text-question-c0a": {
-    "__comp": "17896441",
-    "content": "d62662d7"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question-04a": {
-    "__comp": "17896441",
-    "content": "f7380230"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-matching-question-8b7": {
-    "__comp": "17896441",
-    "content": "f548367e"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-a-missing-words-question-593": {
-    "__comp": "17896441",
-    "content": "1db2ba6c"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-fill-in-the-blank-questions-b69": {
-    "__comp": "17896441",
-    "content": "7ee92ea5"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-long-answer-questions-19c": {
-    "__comp": "17896441",
-    "content": "23163cc3"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-multiple-choice-questions-8f7": {
-    "__comp": "17896441",
-    "content": "264e4db6"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-numeric-type-questions-09a": {
-    "__comp": "17896441",
-    "content": "49ab1478"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-create-re-order-questions-84e": {
-    "__comp": "17896441",
-    "content": "d209ab59"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-edit-a-question-814": {
-    "__comp": "17896441",
-    "content": "657c88e7"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-embed-a-link-into-the-question-204": {
-    "__comp": "17896441",
-    "content": "70b7116c"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-update-question-response-c3d": {
-    "__comp": "17896441",
-    "content": "6dcf5ce5"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions-a81": {
-    "__comp": "17896441",
-    "content": "c30ef3c7"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/question-management-2f8": {
-    "__comp": "17896441",
-    "content": "9ab4b5f7"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/question-response-analytics-bc8": {
-    "__comp": "17896441",
-    "content": "36928969"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/question-structure-1e0": {
-    "__comp": "17896441",
-    "content": "1bff10ef"
-  },
-  "/administration/system-management/user-management/quiz-module/question-management/short-answer-with-multiple-options-c69": {
-    "__comp": "17896441",
-    "content": "d0faa7e2"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors-df6": {
-    "__comp": "17896441",
-    "content": "2e05aa2c"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-activate-automatic-reminders-for-your-quizzes-1dd": {
-    "__comp": "17896441",
-    "content": "200cd874"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-1f8": {
-    "__comp": "17896441",
-    "content": "e32d1aec"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-manage-quiz-configurations-d83": {
-    "__comp": "17896441",
-    "content": "afd57072"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-open-and-close-a-quiz-60a": {
-    "__comp": "17896441",
-    "content": "62834da1"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/how-to-send-quizzes-surveys-and-content-using-group-927": {
-    "__comp": "17896441",
-    "content": "4a537dec"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/managing-questions-13b": {
-    "__comp": "17896441",
-    "content": "253fc817"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-administration/quiz-settings-9d2": {
-    "__comp": "17896441",
-    "content": "21d2b6fd"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics-4f2": {
-    "__comp": "17896441",
-    "content": "c642d1f5"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team-ace": {
-    "__comp": "17896441",
-    "content": "e4a90ed3"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes-b0c": {
-    "__comp": "17896441",
-    "content": "67bc29c4"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/learner-overall-report-ef2": {
-    "__comp": "17896441",
-    "content": "2dd3ae32"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics-b6d": {
-    "__comp": "17896441",
-    "content": "4f3e6892"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-reports-160": {
-    "__comp": "17896441",
-    "content": "54a02c08"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts-7af": {
-    "__comp": "17896441",
-    "content": "74fcba62"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report-054": {
-    "__comp": "17896441",
-    "content": "7d7a798e"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-reports-a4a": {
-    "__comp": "17896441",
-    "content": "aebaf4a4"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/quiz-wise-analytics-182": {
-    "__comp": "17896441",
-    "content": "8cfd8441"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/team-analytics-e27": {
-    "__comp": "17896441",
-    "content": "9de176f9"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-analytics/team-progress-report-ab6": {
-    "__comp": "17896441",
-    "content": "2e79db23"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-configuration/quiz-administration-cf9": {
-    "__comp": "17896441",
-    "content": "f859b180"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-configuration/quiz-types-611": {
-    "__comp": "17896441",
-    "content": "f8fdc2c6"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories-0e7": {
-    "__comp": "17896441",
-    "content": "6dae183b"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics-996": {
-    "__comp": "17896441",
-    "content": "9910b557"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quiz-65f": {
-    "__comp": "17896441",
-    "content": "60dff4ed"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-creation/creating-quizzes-694": {
-    "__comp": "17896441",
-    "content": "d7f9b6aa"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-creation/how-can-i-duplicate-a-quiz-4ce": {
-    "__comp": "17896441",
-    "content": "ab65113a"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-creation/how-to-create-a-manual-quiz-cf8": {
-    "__comp": "17896441",
-    "content": "625b3d0e"
-  },
-  "/administration/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz-f59": {
-    "__comp": "17896441",
-    "content": "994f84b7"
-  },
-  "/administration/system-management/user-management/search-users-b19": {
-    "__comp": "17896441",
-    "content": "9872af82"
-  },
-  "/administration/system-management/user-management/smartfeed-module/distribution-management/how-to-delete-smartfeeds-ff0": {
-    "__comp": "17896441",
-    "content": "e316d4d6"
-  },
-  "/administration/system-management/user-management/smartfeed-module/distribution-management/how-to-send-a-smartfeed-multiple-times-35d": {
-    "__comp": "17896441",
-    "content": "ecfb7622"
-  },
-  "/administration/system-management/user-management/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams-e38": {
-    "__comp": "17896441",
-    "content": "1d99286a"
-  },
-  "/administration/system-management/user-management/smartfeed-module/distribution-management/smartfeed-management-fb0": {
-    "__comp": "17896441",
-    "content": "42a38e8b"
-  },
-  "/administration/system-management/user-management/smartfeed-module/microlearning-strategy/-e38": {
-    "__comp": "17896441",
-    "content": "fb22801a"
-  },
-  "/administration/system-management/user-management/smartfeed-module/microlearning-strategy/what-are-smartfeeds-dd5": {
-    "__comp": "17896441",
-    "content": "713c99a3"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics-9df": {
-    "__comp": "17896441",
-    "content": "a116940a"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content-b1f": {
-    "__comp": "17896441",
-    "content": "622cea36"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-371": {
-    "__comp": "17896441",
-    "content": "3f6290ae"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed-b91": {
-    "__comp": "17896441",
-    "content": "5a0fc5ca"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-video-to-your-content-301": {
-    "__comp": "17896441",
-    "content": "a4e57287"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-an-audio-file-to-your-content-f79": {
-    "__comp": "17896441",
-    "content": "9b90a00f"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-reference-to-an-external-link-to-your-content-c7d": {
-    "__comp": "17896441",
-    "content": "8aa5a256"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content-52e": {
-    "__comp": "17896441",
-    "content": "55f448c0"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-create-a-smartfeed-264": {
-    "__comp": "17896441",
-    "content": "775588dc"
-  },
-  "/administration/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-edit-a-smartfeed-6ff": {
-    "__comp": "17896441",
-    "content": "de26cea1"
-  },
-  "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed-d37": {
-    "__comp": "17896441",
-    "content": "b4af3fc1"
-  },
-  "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath-e9b": {
-    "__comp": "17896441",
-    "content": "2d4bae97"
-  },
-  "/administration/system-management/user-management/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds-ca7": {
-    "__comp": "17896441",
-    "content": "f77d753d"
-  },
-  "/administration/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-86a": {
-    "__comp": "17896441",
-    "content": "76dfcc81"
-  },
-  "/administration/system-management/user-management/smartpath-module/learning-content-management/how-to-access-the-scorm-course-from-the-smartwinnr-app-8b9": {
-    "__comp": "17896441",
-    "content": "bca62ed2"
-  },
-  "/administration/system-management/user-management/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr-92b": {
-    "__comp": "17896441",
-    "content": "09e37c54"
-  },
-  "/administration/system-management/user-management/smartpath-module/learning-sessions/how-to-add-learning-sessions-in-smartpath-module-b8f": {
-    "__comp": "17896441",
-    "content": "26dd0c0a"
-  },
-  "/administration/system-management/user-management/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions-067": {
-    "__comp": "17896441",
-    "content": "50556ac6"
-  },
-  "/administration/system-management/user-management/smartpath-module/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-ac7": {
-    "__comp": "17896441",
-    "content": "72f19a5f"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics-324": {
-    "__comp": "17896441",
-    "content": "74c62aa6"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-can-i-gamify-a-smartpath-f77": {
-    "__comp": "17896441",
-    "content": "35216c28"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath-ffb": {
-    "__comp": "17896441",
-    "content": "5a8c5fa8"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-smartpath-a74": {
-    "__comp": "17896441",
-    "content": "0e611b53"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-smartpath-with-learning-sessions-9ca": {
-    "__comp": "17896441",
-    "content": "b836c089"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-creation/how-to-edit-a-smartpath-784": {
-    "__comp": "17896441",
-    "content": "0d6a2641"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-f44": {
-    "__comp": "17896441",
-    "content": "d12d9616"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-management/smartpath-management-458": {
-    "__comp": "17896441",
-    "content": "ec9d4720"
-  },
-  "/administration/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths-8c8": {
-    "__comp": "17896441",
-    "content": "e7c23311"
-  },
-  "/administration/system-management/user-management/survey-module/response-management/how-to-assign-a-survey-ad5": {
-    "__comp": "17896441",
-    "content": "87a03b18"
-  },
-  "/administration/system-management/user-management/survey-module/survey-analytics/survey-analytics-c86": {
-    "__comp": "17896441",
-    "content": "8a98bc23"
-  },
-  "/administration/system-management/user-management/survey-module/survey-analytics/survey-template-analytics-093": {
-    "__comp": "17896441",
-    "content": "c49436b6"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/-acb": {
-    "__comp": "17896441",
-    "content": "6e1ba4bf"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/how-to-add-a-video-coaching-to-the-competition-9a2": {
-    "__comp": "17896441",
-    "content": "11d6a45a"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/how-to-create-a-survey-ba5": {
-    "__comp": "17896441",
-    "content": "b2d94093"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/how-to-create-a-survey-template-4a3": {
-    "__comp": "17896441",
-    "content": "9a658e99"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/how-to-delete-a-survey-383": {
-    "__comp": "17896441",
-    "content": "def73b64"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template-2e9": {
-    "__comp": "17896441",
-    "content": "c0842ea7"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template-830": {
-    "__comp": "17896441",
-    "content": "09f75edb"
-  },
-  "/administration/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template-e08": {
-    "__comp": "17896441",
-    "content": "418a4a77"
-  },
-  "/administration/system-management/user-management/system-management/user-management/administration-67c": {
-    "__comp": "17896441",
-    "content": "391f0abc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/advanced-options-for-projects-d11": {
-    "__comp": "17896441",
-    "content": "c587ac4f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/bulk-custom-notifications-1a8": {
-    "__comp": "17896441",
-    "content": "a99181be"
-  },
-  "/administration/system-management/user-management/system-management/user-management/changing-updating-configuration-for-an-organization-5f8": {
-    "__comp": "17896441",
-    "content": "c134d609"
-  },
-  "/administration/system-management/user-management/system-management/user-management/create-users-individually-43a": {
-    "__comp": "17896441",
-    "content": "3118c64d"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/analytics-reporting-e35": {
-    "__comp": "17896441",
-    "content": "b7ec091d"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/detailed-explanation-of-reports-e14": {
-    "__comp": "17896441",
-    "content": "2274169a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-create-sales-tv-fd1": {
-    "__comp": "17896441",
-    "content": "2b4a66ce"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/how-to-view-project-fce": {
-    "__comp": "17896441",
-    "content": "7c14dd9f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/user-login-reports-847": {
-    "__comp": "17896441",
-    "content": "f786d144"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/advanced-analytics/widgets-787": {
-    "__comp": "17896441",
-    "content": "0109cb09"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competition-design/how-to-create-a-competition-583": {
-    "__comp": "17896441",
-    "content": "823aa2e6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition-d5b": {
-    "__comp": "17896441",
-    "content": "3a04eed2"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition-167": {
-    "__comp": "17896441",
-    "content": "2c097da9"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition-93b": {
-    "__comp": "17896441",
-    "content": "c657b699"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/competitions-gamification-b6b": {
-    "__comp": "17896441",
-    "content": "3b6843dd"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/define-kpis-12d": {
-    "__comp": "17896441",
-    "content": "bea8d7d6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-gamify-a-smartpath-df8": {
-    "__comp": "17896441",
-    "content": "5818a734"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-can-i-view-a-competition-leaderboard-180": {
-    "__comp": "17896441",
-    "content": "aacfe243"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-do-i-view-the-kpi-scorecard-7a2": {
-    "__comp": "17896441",
-    "content": "09ca4d30"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-f85": {
-    "__comp": "17896441",
-    "content": "c78add56"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-6c2": {
-    "__comp": "17896441",
-    "content": "8f36bcba"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-challenge-to-the-competition-45d": {
-    "__comp": "17896441",
-    "content": "9c03da97"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-form-to-competition-d27": {
-    "__comp": "17896441",
-    "content": "c35baf52"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-a-scorecard-to-a-competition-cb9": {
-    "__comp": "17896441",
-    "content": "2cf7a8ef"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-different-activities-to-a-challenge-07c": {
-    "__comp": "17896441",
-    "content": "08e08b82"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard-c17": {
-    "__comp": "17896441",
-    "content": "d9b224de"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-smartfeed-within-a-competition-7d5": {
-    "__comp": "17896441",
-    "content": "24db478a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-add-the-scorecard-to-leaderboard-781": {
-    "__comp": "17896441",
-    "content": "fde597d7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-award-points-on-badge-assignment-6e7": {
-    "__comp": "17896441",
-    "content": "60475686"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-a-group-challenge-c78": {
-    "__comp": "17896441",
-    "content": "432c56cb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-a-manager-challenge-bef": {
-    "__comp": "17896441",
-    "content": "4534b5b1"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-an-individual-challenge-eb3": {
-    "__comp": "17896441",
-    "content": "4921fea1"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-badges-f24": {
-    "__comp": "17896441",
-    "content": "a033d1bd"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-certifcates-bc3": {
-    "__comp": "17896441",
-    "content": "212c9501"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-create-kpi-c41": {
-    "__comp": "17896441",
-    "content": "c10755a9"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-upload-kpi-data-7a9": {
-    "__comp": "17896441",
-    "content": "39fc7490"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard-b18": {
-    "__comp": "17896441",
-    "content": "58306e3f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/leaderboards-of-a-competition-7d0": {
-    "__comp": "17896441",
-    "content": "253dc5a3"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/question-bank-8bb": {
-    "__comp": "17896441",
-    "content": "b479c890"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/understand-game-concepts-594": {
-    "__comp": "17896441",
-    "content": "8f0e9fb0"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-are-kpi-reports-720": {
-    "__comp": "17896441",
-    "content": "6468b1f7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-a-challenge-e23": {
-    "__comp": "17896441",
-    "content": "2a45f23b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-an-achievement-908": {
-    "__comp": "17896441",
-    "content": "2f698942"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/competitions-gamification/what-is-kpi-gamification-6e3": {
-    "__comp": "17896441",
-    "content": "06ac9689"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/how-to-edit-a-project-9c7": {
-    "__comp": "17896441",
-    "content": "84e03648"
-  },
-  "/administration/system-management/user-management/system-management/user-management/cross-module-features/platform-features/project-management-c19": {
-    "__comp": "17896441",
-    "content": "ef6ee26d"
-  },
-  "/administration/system-management/user-management/system-management/user-management/custom-notifications-c8f": {
-    "__comp": "17896441",
-    "content": "7e1cede1"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-add-competencies-for-field-coaching-44b": {
-    "__comp": "17896441",
-    "content": "1b29df77"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/competency-frameworks/how-to-set-competencies-085": {
-    "__comp": "17896441",
-    "content": "1dca0e0f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-a6d": {
-    "__comp": "17896441",
-    "content": "51f4eba5"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/field-coaching-setup/how-to-create-field-coaching-template-482": {
-    "__comp": "17896441",
-    "content": "39147ecd"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/manager-tools/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-2de": {
-    "__comp": "17896441",
-    "content": "315a1bc7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/manager-tools/what-is-my-team-coaching-6f8": {
-    "__comp": "17896441",
-    "content": "5fbd91fa"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-00e": {
-    "__comp": "17896441",
-    "content": "a53031b6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/field-coaching-module/performance-evaluation/how-to-review-field-coaching-from-managers-view-in-mobile-4f8": {
-    "__comp": "17896441",
-    "content": "c445dfbc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/data-management/how-to-create-a-field-mapping-1ac": {
-    "__comp": "17896441",
-    "content": "6d49ae4b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/data-management/what-are-field-mappings-047": {
-    "__comp": "17896441",
-    "content": "e76b0442"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/form-analytics-7ec": {
-    "__comp": "17896441",
-    "content": "87a00ed6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-managers-approve-form-299": {
-    "__comp": "17896441",
-    "content": "96f381ed"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-add-approvers-to-a-form-bda": {
-    "__comp": "17896441",
-    "content": "47433703"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-creation/how-to-create-a-form-76c": {
-    "__comp": "17896441",
-    "content": "a2f7876b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-can-i-submit-a-form-from-chat-14d": {
-    "__comp": "17896441",
-    "content": "2991f5e0"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-can-i-submit-a-form-from-left-menu-637": {
-    "__comp": "17896441",
-    "content": "0f4e57c7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-to-add-new-form-submission-76f": {
-    "__comp": "17896441",
-    "content": "94ddfa87"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-to-approve-reject-a-form-submission-019": {
-    "__comp": "17896441",
-    "content": "e12a835b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-to-edit-a-form-on-submitted-by-a-user-c33": {
-    "__comp": "17896441",
-    "content": "6c4f78b7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/form-management/how-to-submit-a-form-on-behalf-of-a-user-ad6": {
-    "__comp": "17896441",
-    "content": "e5f4c88c"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/scorecards/how-to-create-a-scorecard-8ec": {
-    "__comp": "17896441",
-    "content": "301662bb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/forms-module/scorecards/what-are-scorecards-aac": {
-    "__comp": "17896441",
-    "content": "f196d914"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-can-an-admin-change-anyone-s-password-074": {
-    "__comp": "17896441",
-    "content": "b5d7c55e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-can-i-answer-a-query-e76": {
-    "__comp": "17896441",
-    "content": "5f2c67bc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-can-i-change-the-password-for-a-user-account-806": {
-    "__comp": "17896441",
-    "content": "34423b1c"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-can-i-contact-smartwinnr-team-c99": {
-    "__comp": "17896441",
-    "content": "acf1de79"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-add-a-new-division-55a": {
-    "__comp": "17896441",
-    "content": "3f80d0fd"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-add-change-targets-d63": {
-    "__comp": "17896441",
-    "content": "b89f137f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-add-new-contacts-e34": {
-    "__comp": "17896441",
-    "content": "cbf945d6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-add-new-rule-f1e": {
-    "__comp": "17896441",
-    "content": "e8760006"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-add-or-remove-users-to-a-chat-group-0e9": {
-    "__comp": "17896441",
-    "content": "9e68651f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-change-company-logo-953": {
-    "__comp": "17896441",
-    "content": "2848e457"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-create-a-group-f6a": {
-    "__comp": "17896441",
-    "content": "78e23798"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-create-a-new-project-134": {
-    "__comp": "17896441",
-    "content": "84c0e8c0"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-download-a-chat-f51": {
-    "__comp": "17896441",
-    "content": "90f70971"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-enable-a-chat-group-5e0": {
-    "__comp": "17896441",
-    "content": "a24225e5"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-post-a-query-from-the-smartwinnr-app-f66": {
-    "__comp": "17896441",
-    "content": "2139e66a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-track-my-organizational-resource-usage-560": {
-    "__comp": "17896441",
-    "content": "5ff5f674"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-use-qresolve-in-the-smartwinnr-app-e87": {
-    "__comp": "17896441",
-    "content": "53595704"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-view-an-audit-log-bd0": {
-    "__comp": "17896441",
-    "content": "cdc04ccb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-view-existing-contacts-85a": {
-    "__comp": "17896441",
-    "content": "cd70ee60"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-to-view-notifications-bf7": {
-    "__comp": "17896441",
-    "content": "98606073"
-  },
-  "/administration/system-management/user-management/system-management/user-management/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-944": {
-    "__comp": "17896441",
-    "content": "e2910770"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-create-folders-and-items-in-khub-843": {
-    "__comp": "17896441",
-    "content": "8cd9802e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-folder-name-092": {
-    "__comp": "17896441",
-    "content": "0158afbf"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/content-management/how-can-i-edit-a-khub-item-5c5": {
-    "__comp": "17896441",
-    "content": "2d3a1a00"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/knowledge-hub-khub-6eb": {
-    "__comp": "17896441",
-    "content": "3d593d18"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-administration/what-is-khub-194": {
-    "__comp": "17896441",
-    "content": "2a2bc52b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/khub-analytics/how-can-i-view-khub-analytics-594": {
-    "__comp": "17896441",
-    "content": "42da38be"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/user-experience/how-to-use-khub-in-the-smartwinnr-app-8b4": {
-    "__comp": "17896441",
-    "content": "029167fe"
-  },
-  "/administration/system-management/user-management/system-management/user-management/knowledge-hub-module/user-experience/understanding-recent-trending-and-latest-khub-items-0f6": {
-    "__comp": "17896441",
-    "content": "9391dcea"
-  },
-  "/administration/system-management/user-management/system-management/user-management/manage-password-policy-8a1": {
-    "__comp": "17896441",
-    "content": "f8c5c7d6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/-c2a": {
-    "__comp": "17896441",
-    "content": "61f07e58"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-editors-evaluate-long-answer-questions-8b1": {
-    "__comp": "17896441",
-    "content": "739c340b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-import-question-is-different-from-add-new-question-32f": {
-    "__comp": "17896441",
-    "content": "11745780"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-a-video-to-a-question-8e5": {
-    "__comp": "17896441",
-    "content": "e6fb47fc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-an-audio-file-to-a-question-e2c": {
-    "__comp": "17896441",
-    "content": "112d4afe"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-add-an-image-to-the-question-b95": {
-    "__comp": "17896441",
-    "content": "6ba88921"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr-ee8": {
-    "__comp": "17896441",
-    "content": "4a420bc0"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-image-question-26f": {
-    "__comp": "17896441",
-    "content": "74c3282a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-drag-and-drop-into-text-question-738": {
-    "__comp": "17896441",
-    "content": "c987b389"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-hotspot-question-014": {
-    "__comp": "17896441",
-    "content": "57223af6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-matching-question-022": {
-    "__comp": "17896441",
-    "content": "44ed6030"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-a-missing-words-question-e1c": {
-    "__comp": "17896441",
-    "content": "b71fd924"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-fill-in-the-blank-questions-5e9": {
-    "__comp": "17896441",
-    "content": "d375f6d2"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-long-answer-questions-482": {
-    "__comp": "17896441",
-    "content": "b2252112"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-multiple-choice-questions-a60": {
-    "__comp": "17896441",
-    "content": "1bdd6efb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-numeric-type-questions-190": {
-    "__comp": "17896441",
-    "content": "378145ce"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-create-re-order-questions-749": {
-    "__comp": "17896441",
-    "content": "57d6ab68"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-edit-a-question-44a": {
-    "__comp": "17896441",
-    "content": "0755a87a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-embed-a-link-into-the-question-979": {
-    "__comp": "17896441",
-    "content": "25637d0b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-update-question-response-74f": {
-    "__comp": "17896441",
-    "content": "6bd92440"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/how-to-upload-questions-in-bulk-using-import-questions-6e6": {
-    "__comp": "17896441",
-    "content": "e26cf786"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-management-606": {
-    "__comp": "17896441",
-    "content": "7f1af0e3"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-response-analytics-f11": {
-    "__comp": "17896441",
-    "content": "492a66cb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/question-structure-315": {
-    "__comp": "17896441",
-    "content": "0cf9a2d7"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/question-management/short-answer-with-multiple-options-1c6": {
-    "__comp": "17896441",
-    "content": "dbe1ae02"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-do-i-give-access-permission-to-other-editors-239": {
-    "__comp": "17896441",
-    "content": "52e4f376"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-to-activate-automatic-reminders-for-your-quizzes-87d": {
-    "__comp": "17896441",
-    "content": "8fd578e4"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-384": {
-    "__comp": "17896441",
-    "content": "621c5046"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-to-manage-quiz-configurations-432": {
-    "__comp": "17896441",
-    "content": "ffdbe3d3"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-to-open-and-close-a-quiz-bd1": {
-    "__comp": "17896441",
-    "content": "b5662bc6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/how-to-send-quizzes-surveys-and-content-using-group-a9d": {
-    "__comp": "17896441",
-    "content": "48251d58"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/managing-questions-ddd": {
-    "__comp": "17896441",
-    "content": "9766dfe4"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-administration/quiz-settings-55c": {
-    "__comp": "17896441",
-    "content": "3a10e5b8"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/detailed-quiz-analytics-acd": {
-    "__comp": "17896441",
-    "content": "1dc3ccef"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team-e4e": {
-    "__comp": "17896441",
-    "content": "2d6bfb53"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/how-to-find-the-progress-of-your-team-in-quizzes-cd2": {
-    "__comp": "17896441",
-    "content": "02e92385"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-overall-report-b4d": {
-    "__comp": "17896441",
-    "content": "e0a47763"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/learner-report-by-learner-individual-report-analytics-e8d": {
-    "__comp": "17896441",
-    "content": "83e1ca74"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-reports-1aa": {
-    "__comp": "17896441",
-    "content": "4f1f4ebc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-analytics-through-charts-c97": {
-    "__comp": "17896441",
-    "content": "e32b79f5"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-comparison-report-ca2": {
-    "__comp": "17896441",
-    "content": "af8d78dc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-reports-48e": {
-    "__comp": "17896441",
-    "content": "3197d119"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/quiz-wise-analytics-5dc": {
-    "__comp": "17896441",
-    "content": "e7706b4e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-analytics-74e": {
-    "__comp": "17896441",
-    "content": "afaabc91"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-analytics/team-progress-report-da2": {
-    "__comp": "17896441",
-    "content": "a06dce5c"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-administration-d73": {
-    "__comp": "17896441",
-    "content": "5b6a84a0"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/quiz-types-0c5": {
-    "__comp": "17896441",
-    "content": "f4d636cf"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/understanding-knowledge-categories-cb9": {
-    "__comp": "17896441",
-    "content": "81211b11"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-configuration/what-is-smartwinnr-quiz-analytics-376": {
-    "__comp": "17896441",
-    "content": "4da9086f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/creating-quiz-ede": {
-    "__comp": "17896441",
-    "content": "1509047d"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/creating-quizzes-a7d": {
-    "__comp": "17896441",
-    "content": "399a6e1c"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-can-i-duplicate-a-quiz-205": {
-    "__comp": "17896441",
-    "content": "9ff88e35"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-a-manual-quiz-296": {
-    "__comp": "17896441",
-    "content": "b3fcdfe6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/quiz-module/quiz-creation/how-to-create-an-automatic-quiz-541": {
-    "__comp": "17896441",
-    "content": "b0d2de1f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/search-users-1b4": {
-    "__comp": "17896441",
-    "content": "2e3a0233"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/distribution-management/how-to-delete-smartfeeds-900": {
-    "__comp": "17896441",
-    "content": "cb23296f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/distribution-management/how-to-send-a-smartfeed-multiple-times-318": {
-    "__comp": "17896441",
-    "content": "04461ec2"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/distribution-management/how-to-send-the-smartfeed-to-teams-ef1": {
-    "__comp": "17896441",
-    "content": "65897e75"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/distribution-management/smartfeed-management-69e": {
-    "__comp": "17896441",
-    "content": "c3fc70fc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/microlearning-strategy/-21c": {
-    "__comp": "17896441",
-    "content": "126ee55a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/microlearning-strategy/what-are-smartfeeds-4a9": {
-    "__comp": "17896441",
-    "content": "f1814e48"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-analytics/how-to-view-smartfeed-analytics-0c3": {
-    "__comp": "17896441",
-    "content": "60ecaa60"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-image-to-your-content-be3": {
-    "__comp": "17896441",
-    "content": "a0ede003"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-fec": {
-    "__comp": "17896441",
-    "content": "0d934d0a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-recording-to-a-smartfeed-d28": {
-    "__comp": "17896441",
-    "content": "70e86002"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-a-video-to-your-content-532": {
-    "__comp": "17896441",
-    "content": "fee66467"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-an-audio-file-to-your-content-b6e": {
-    "__comp": "17896441",
-    "content": "aec594a8"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-add-reference-to-an-external-link-to-your-content-268": {
-    "__comp": "17896441",
-    "content": "eef6ac43"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-attach-pdf-file-to-your-content-8ae": {
-    "__comp": "17896441",
-    "content": "4befdb1e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-create-a-smartfeed-290": {
-    "__comp": "17896441",
-    "content": "fb94bc1c"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/smartfeed-creation/how-to-edit-a-smartfeed-47b": {
-    "__comp": "17896441",
-    "content": "93fa1fba"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-do-i-like-a-smartfeed-0ae": {
-    "__comp": "17896441",
-    "content": "1f010eab"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-to-download-share-a-smartfeed-in-smartpath-c2f": {
-    "__comp": "17896441",
-    "content": "01d9ce09"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartfeed-module/user-experience-management/how-to-view-all-the-smartfeeds-2c2": {
-    "__comp": "17896441",
-    "content": "11cd501f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learner-progress-tracking/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-0ef": {
-    "__comp": "17896441",
-    "content": "9cd30f0f"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-content-management/how-to-access-the-scorm-course-from-the-smartwinnr-app-631": {
-    "__comp": "17896441",
-    "content": "848cb343"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-content-management/how-to-import-scorm-course-into-smartwinnr-4cc": {
-    "__comp": "17896441",
-    "content": "3e64d846"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-sessions/how-to-add-learning-sessions-in-smartpath-module-6bc": {
-    "__comp": "17896441",
-    "content": "d3a91a24"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions-198": {
-    "__comp": "17896441",
-    "content": "8a7c73eb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-2af": {
-    "__comp": "17896441",
-    "content": "c8529571"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-analytics/how-to-view-the-smartpath-analytics-7f4": {
-    "__comp": "17896441",
-    "content": "88c903b6"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-creation/how-can-i-gamify-a-smartpath-610": {
-    "__comp": "17896441",
-    "content": "46adc1ee"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-module-for-smartpath-4da": {
-    "__comp": "17896441",
-    "content": "659ddecb"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-a-smartpath-eb0": {
-    "__comp": "17896441",
-    "content": "3de49e9a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-creation/how-to-create-smartpath-with-learning-sessions-623": {
-    "__comp": "17896441",
-    "content": "93f8c556"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-creation/how-to-edit-a-smartpath-8e2": {
-    "__comp": "17896441",
-    "content": "c0ae0416"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-3c4": {
-    "__comp": "17896441",
-    "content": "79cedbfc"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/smartpath-management-aa9": {
-    "__comp": "17896441",
-    "content": "a1278245"
-  },
-  "/administration/system-management/user-management/system-management/user-management/smartpath-module/smartpath-management/what-are-smartpaths-167": {
-    "__comp": "17896441",
-    "content": "c5e126e1"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/response-management/how-to-assign-a-survey-31e": {
-    "__comp": "17896441",
-    "content": "50db60df"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-analytics/survey-analytics-90d": {
-    "__comp": "17896441",
-    "content": "52bb001b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-analytics/survey-template-analytics-55e": {
-    "__comp": "17896441",
-    "content": "1b32301b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/-184": {
-    "__comp": "17896441",
-    "content": "e50a3882"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/how-to-add-a-video-coaching-to-the-competition-59b": {
-    "__comp": "17896441",
-    "content": "6dbe778e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/how-to-create-a-survey-31b": {
-    "__comp": "17896441",
-    "content": "83d1ef1b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/how-to-create-a-survey-template-4c7": {
-    "__comp": "17896441",
-    "content": "5cea8b0e"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/how-to-delete-a-survey-e2d": {
-    "__comp": "17896441",
-    "content": "47273f9a"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/how-to-duplicate-a-survey-and-survey-template-688": {
-    "__comp": "17896441",
-    "content": "faf74c2b"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template-550": {
-    "__comp": "17896441",
-    "content": "be06a398"
-  },
-  "/administration/system-management/user-management/system-management/user-management/survey-module/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template-02f": {
-    "__comp": "17896441",
-    "content": "c9d983d6"
-  },
-  "/administration/system-management/user-management/video-coaching-module/coaching-assignment-creation/create-a-coaching-c74": {
-    "__comp": "17896441",
-    "content": "fd52fdd5"
-  },
-  "/administration/system-management/user-management/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment-fb3": {
-    "__comp": "17896441",
-    "content": "0ffdf9ce"
-  },
-  "/administration/system-management/user-management/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching-5c5": {
-    "__comp": "17896441",
-    "content": "e83146ff"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video-1ee": {
-    "__comp": "17896441",
-    "content": "b0620c51"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video-26a": {
-    "__comp": "17896441",
-    "content": "c36a5e92"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment-568": {
-    "__comp": "17896441",
-    "content": "b8f1ca1c"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video-4fe": {
-    "__comp": "17896441",
-    "content": "464db776"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-audio-recording-for-coaching-b8d": {
-    "__comp": "17896441",
-    "content": "43f56ef5"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching-1a4": {
-    "__comp": "17896441",
-    "content": "9fd77129"
-  },
-  "/administration/system-management/user-management/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching-062": {
-    "__comp": "17896441",
-    "content": "efe9158e"
-  },
-  "/administration/system-management/user-management/what-are-chat-groups-b49": {
-    "__comp": "17896441",
-    "content": "110f43be"
-  },
-  "/administration/system-management/user-management/what-is-my-username-and-password-623": {
-    "__comp": "17896441",
-    "content": "9b9ec7b5"
-  },
-  "/administration/system-management/user-management/what-is-qresolve-c88": {
-    "__comp": "17896441",
-    "content": "42eb09d9"
-  },
-  "/administration/system-management/user-management/what-is-the-purpose-of-notifications-f71": {
-    "__comp": "17896441",
-    "content": "88068b73"
-  },
-  "/administration/system-management/user-management/when-are-chat-groups-needed-541": {
-    "__comp": "17896441",
-    "content": "4948fef7"
-  },
-  "/administration/video-coaching-module/coaching-assignment-creation/create-a-coaching-5b6": {
-    "__comp": "17896441",
-    "content": "b4c4ed60"
-  },
-  "/administration/video-coaching-module/coaching-assignment-creation/how-to-create-a-video-coaching-assignment-6f0": {
-    "__comp": "17896441",
-    "content": "4f2a1027"
-  },
-  "/administration/video-coaching-module/streaming-configuration/how-to-enable-the-streaming-links-for-video-coaching-f2e": {
-    "__comp": "17896441",
-    "content": "f08ce675"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-do-i-upload-a-coaching-video-224": {
-    "__comp": "17896441",
-    "content": "ab15f1f1"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-reset-a-coaching-video-969": {
-    "__comp": "17896441",
-    "content": "f5fbad29"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-review-a-video-coaching-assignment-aea": {
-    "__comp": "17896441",
-    "content": "7e9a828b"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-share-a-coaching-video-0f8": {
-    "__comp": "17896441",
-    "content": "a4f8d1d9"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-upload-audio-recording-for-coaching-5e3": {
-    "__comp": "17896441",
-    "content": "f7ac136d"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-upload-screen-recording-for-coaching-729": {
-    "__comp": "17896441",
-    "content": "f2ab4440"
-  },
-  "/administration/video-coaching-module/video-review-workflow/how-to-upload-video-recording-for-coaching-1f9": {
-    "__comp": "17896441",
-    "content": "2ff4c03b"
-  },
-  "/administration/what-are-chat-groups-020": {
-    "__comp": "17896441",
-    "content": "43b2fe52"
-  },
-  "/administration/what-is-my-username-and-password-573": {
-    "__comp": "17896441",
-    "content": "e531a6c4"
-  },
-  "/administration/what-is-qresolve-c4a": {
-    "__comp": "17896441",
-    "content": "e7429bed"
-  },
-  "/administration/what-is-the-purpose-of-notifications-bd6": {
-    "__comp": "17896441",
-    "content": "916d9a26"
-  },
-  "/administration/when-are-chat-groups-needed-0dc": {
-    "__comp": "17896441",
-    "content": "a12b71f5"
-  },
-  "/analytics-reporting/analytics-reporting-80b": {
-    "__comp": "17896441",
-    "content": "7a790286"
-  },
-  "/announcements/-4f1": {
-    "__comp": "17896441",
-    "content": "d26bbca9"
-  },
-  "/AUTOMATED_IMAGE_GENERATION-b49": {
-    "__comp": "17896441",
-    "content": "d7187e41"
+  "/modules-dd1": {
+    "__comp": "14eb3368",
+    "__props": "c8552bbf"
   },
-  "/AUTOMATED_SCREENSHOT_CAPTURE-626": {
+  "/modules/ai-coaching/-5a0": {
     "__comp": "17896441",
-    "content": "5eef63fd"
+    "content": "39c6abf0"
   },
-  "/coaching-performance/-cb1": {
+  "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses-5e0": {
     "__comp": "17896441",
-    "content": "0ca46eaa"
+    "content": "ac1b74ba"
   },
-  "/coaching-performance/create-a-coaching-e5c": {
+  "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr-ca9": {
     "__comp": "17896441",
-    "content": "15d71cc5"
+    "content": "523b42c9"
   },
-  "/coaching-performance/how-do-i-upload-a-coaching-video-216": {
+  "/modules/ai-coaching/features/what-is-ai-coaching-180": {
     "__comp": "17896441",
-    "content": "7ce444ae"
+    "content": "a91405bf"
   },
-  "/coaching-performance/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-f67": {
+  "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt-7ae": {
     "__comp": "17896441",
-    "content": "a775a8e5"
+    "content": "62ad83a5"
   },
-  "/coaching-performance/how-to-add-competencies-for-field-coaching-ac7": {
+  "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-888": {
     "__comp": "17896441",
-    "content": "a5aa1714"
+    "content": "c2bf2bbf"
   },
-  "/coaching-performance/how-to-create-a-video-coaching-assignment-bc8": {
+  "/modules/ai-coaching/for-learners/understanding-the-feedback-screen-667": {
     "__comp": "17896441",
-    "content": "78076364"
+    "content": "8d778ea8"
   },
-  "/coaching-performance/how-to-create-field-coaching-e94": {
+  "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager-927": {
     "__comp": "17896441",
-    "content": "2e8e1c3c"
+    "content": "4b6a2977"
   },
-  "/coaching-performance/how-to-create-field-coaching-template-b6f": {
+  "/modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report-07e": {
     "__comp": "17896441",
-    "content": "115c3d8b"
+    "content": "f1b554d9"
   },
-  "/coaching-performance/how-to-enable-the-streaming-links-for-video-coaching-efe": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report-798": {
     "__comp": "17896441",
-    "content": "06dac9cc"
+    "content": "d26612cc"
   },
-  "/coaching-performance/how-to-reset-a-coaching-video-68d": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report-607": {
     "__comp": "17896441",
-    "content": "980f711f"
+    "content": "f698e8c3"
   },
-  "/coaching-performance/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-9ed": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report-d81": {
     "__comp": "17896441",
-    "content": "913078fc"
+    "content": "8476faa0"
   },
-  "/coaching-performance/how-to-review-a-video-coaching-assignment-3cd": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement-03c": {
     "__comp": "17896441",
-    "content": "be591ce0"
+    "content": "51f40473"
   },
-  "/coaching-performance/how-to-review-field-coaching-from-managers-view-in-mobile-097": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time-412": {
     "__comp": "17896441",
-    "content": "350d3d38"
+    "content": "49ef4460"
   },
-  "/coaching-performance/how-to-set-competencies-674": {
+  "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen-4c9": {
     "__comp": "17896441",
-    "content": "e609edab"
+    "content": "710867df"
   },
-  "/coaching-performance/how-to-share-a-coaching-video-4de": {
+  "/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard-f00": {
     "__comp": "17896441",
-    "content": "3848b3b2"
+    "content": "fea3cb20"
   },
-  "/coaching-performance/how-to-upload-audio-recording-for-coaching-0aa": {
+  "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-062": {
     "__comp": "17896441",
-    "content": "781e7a22"
+    "content": "837ad683"
   },
-  "/coaching-performance/how-to-upload-screen-recording-for-coaching-f0d": {
+  "/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard-f3a": {
     "__comp": "17896441",
-    "content": "9384d03e"
+    "content": "0e218a50"
   },
-  "/coaching-performance/how-to-upload-video-recording-for-coaching-78d": {
+  "/modules/cross-module/-6f4": {
     "__comp": "17896441",
-    "content": "c0931d3c"
+    "content": "0d374e2d"
   },
-  "/coaching-performance/what-is-my-team-coaching-1d9": {
+  "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content-8d8": {
     "__comp": "17896441",
-    "content": "1dba21c9"
+    "content": "c64d7f47"
   },
-  "/competitions-gamification/competition-design/how-to-create-a-competition-4d8": {
+  "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content-930": {
     "__comp": "17896441",
-    "content": "a3128d4e"
+    "content": "78228a52"
   },
-  "/competitions-gamification/competition-management/how-to-add-a-quiz-to-a-competition-827": {
+  "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content-ea8": {
     "__comp": "17896441",
-    "content": "7f7e04c3"
+    "content": "897e23e3"
   },
-  "/competitions-gamification/competition-management/how-to-add-a-survey-to-a-competition-bda": {
+  "/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content-fa3": {
     "__comp": "17896441",
-    "content": "07ffefa4"
+    "content": "66ba77b3"
   },
-  "/competitions-gamification/competition-management/how-to-duplicate-a-quiz-in-a-competition-acd": {
+  "/modules/cross-module/create-and-manage/how-to-create-sales-tv-eea": {
     "__comp": "17896441",
-    "content": "a9fb16a4"
+    "content": "5894c472"
   },
-  "/competitions-gamification/competitions-gamification-16c": {
+  "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view-d4d": {
     "__comp": "17896441",
-    "content": "420f3867"
+    "content": "e3339547"
   },
-  "/competitions-gamification/define-kpis-722": {
+  "/modules/cross-module/create-and-manage/how-to-update-users-413": {
     "__comp": "17896441",
-    "content": "b88fbda8"
+    "content": "2c3e81e1"
   },
-  "/competitions-gamification/how-can-i-gamify-a-smartpath-e3a": {
+  "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content-87d": {
     "__comp": "17896441",
-    "content": "e0a51e01"
+    "content": "70908c09"
   },
-  "/competitions-gamification/how-can-i-view-a-competition-leaderboard-92e": {
+  "/modules/cross-module/features/what-is-smartwinnr-eec": {
     "__comp": "17896441",
-    "content": "1b94c9ad"
+    "content": "27a9d81e"
   },
-  "/competitions-gamification/how-do-i-view-the-kpi-scorecard-2fa": {
+  "/modules/cross-module/features/widgets-941": {
     "__comp": "17896441",
-    "content": "eac7d2eb"
+    "content": "4c8b2c5b"
   },
-  "/competitions-gamification/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-b4f": {
+  "/modules/cross-module/for-learners/how-can-i-answer-a-query-51d": {
     "__comp": "17896441",
-    "content": "9669f9f9"
+    "content": "3120c806"
   },
-  "/competitions-gamification/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-ddc": {
+  "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app-563": {
     "__comp": "17896441",
-    "content": "e2b5700f"
+    "content": "a586dce6"
   },
-  "/competitions-gamification/how-to-add-a-challenge-to-the-competition-227": {
+  "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app-90a": {
     "__comp": "17896441",
-    "content": "1e35397a"
+    "content": "4af2adb0"
   },
-  "/competitions-gamification/how-to-add-a-form-to-competition-c99": {
+  "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app-03e": {
     "__comp": "17896441",
-    "content": "35be2b7c"
+    "content": "94c8a4a2"
   },
-  "/competitions-gamification/how-to-add-a-scorecard-to-a-competition-fc4": {
+  "/modules/cross-module/for-learners/what-is-qresolve-d11": {
     "__comp": "17896441",
-    "content": "9f610231"
+    "content": "242e34cb"
   },
-  "/competitions-gamification/how-to-add-different-activities-to-a-challenge-f3a": {
+  "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report-0b2": {
     "__comp": "17896441",
-    "content": "a33c5bfc"
+    "content": "6aba3d20"
   },
-  "/competitions-gamification/how-to-add-observers-to-the-competition-leaderboard-65b": {
+  "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks-856": {
     "__comp": "17896441",
-    "content": "4b9ac76c"
+    "content": "4200530c"
   },
-  "/competitions-gamification/how-to-add-smartfeed-within-a-competition-42d": {
+  "/modules/field-coaching/-36e": {
     "__comp": "17896441",
-    "content": "d5213218"
+    "content": "73e22a83"
   },
-  "/competitions-gamification/how-to-add-the-scorecard-to-leaderboard-4f5": {
+  "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template-79b": {
     "__comp": "17896441",
-    "content": "294022e7"
+    "content": "74a5ef1c"
   },
-  "/competitions-gamification/how-to-award-points-on-badge-assignment-394": {
+  "/modules/field-coaching/create-and-manage/how-to-create-field-mapping-47a": {
     "__comp": "17896441",
-    "content": "99912169"
+    "content": "1dd983de"
   },
-  "/competitions-gamification/how-to-create-a-group-challenge-a69": {
+  "/modules/field-coaching/features/create-a-coaching-9df": {
     "__comp": "17896441",
-    "content": "4e280955"
+    "content": "eb021fdf"
   },
-  "/competitions-gamification/how-to-create-a-manager-challenge-6f7": {
+  "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching-cdc": {
     "__comp": "17896441",
-    "content": "acf6922b"
+    "content": "cbf7edef"
   },
-  "/competitions-gamification/how-to-create-an-individual-challenge-c6a": {
+  "/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile-186": {
     "__comp": "17896441",
-    "content": "a8111b6b"
+    "content": "5a465882"
   },
-  "/competitions-gamification/how-to-create-badges-530": {
+  "/modules/forms/-ba4": {
     "__comp": "17896441",
-    "content": "08940dd9"
+    "content": "5f3a0a9a"
   },
-  "/competitions-gamification/how-to-create-certifcates-38b": {
+  "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form-b25": {
     "__comp": "17896441",
-    "content": "96a468ba"
+    "content": "047c7842"
   },
-  "/competitions-gamification/how-to-create-kpi-247": {
+  "/modules/forms/create-and-manage/how-to-create-a-form-86f": {
     "__comp": "17896441",
-    "content": "d263fdcb"
+    "content": "1e0f4269"
   },
-  "/competitions-gamification/how-to-upload-kpi-data-de3": {
+  "/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user-66a": {
     "__comp": "17896441",
-    "content": "ca0d5777"
+    "content": "b51ff81d"
   },
-  "/competitions-gamification/how-to-view-the-data-and-leaderboard-for-scorecard-d19": {
+  "/modules/forms/features/how-to-approve-reject-a-form-submission-73f": {
     "__comp": "17896441",
-    "content": "57fcdf4a"
+    "content": "0af3e9ec"
   },
-  "/competitions-gamification/leaderboards-of-a-competition-bdf": {
+  "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user-f53": {
     "__comp": "17896441",
-    "content": "d0189f77"
+    "content": "6b6a4119"
   },
-  "/competitions-gamification/question-bank-a17": {
+  "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat-89a": {
     "__comp": "17896441",
-    "content": "cd1be87f"
+    "content": "b562b00b"
   },
-  "/competitions-gamification/understand-game-concepts-f95": {
+  "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu-cba": {
     "__comp": "17896441",
-    "content": "04e980ac"
+    "content": "6f88b119"
   },
-  "/competitions-gamification/what-are-kpi-reports-3ae": {
+  "/modules/forms/for-learners/how-to-add-new-form-submission-4d6": {
     "__comp": "17896441",
-    "content": "d471dbc0"
+    "content": "90597ac5"
   },
-  "/competitions-gamification/what-is-a-challenge-d36": {
+  "/modules/forms/for-managers/how-managers-approve-form-bd9": {
     "__comp": "17896441",
-    "content": "245f4875"
+    "content": "8ad8a185"
   },
-  "/competitions-gamification/what-is-an-achievement-6f9": {
+  "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view-4da": {
     "__comp": "17896441",
-    "content": "1108ea88"
+    "content": "112417a0"
   },
-  "/competitions-gamification/what-is-kpi-gamification-bae": {
+  "/modules/forms/reports-and-analytics/form-analytics-18a": {
     "__comp": "17896441",
-    "content": "76f85989"
+    "content": "386dbbd2"
   },
-  "/complete-menu-tree-structure-c34": {
+  "/modules/knowledge-hub/-1f0": {
     "__comp": "17896441",
-    "content": "b8112f85"
+    "content": "6c93295d"
   },
-  "/editor-landing-94b": {
+  "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub-302": {
     "__comp": "17896441",
-    "content": "f40238ae"
+    "content": "12eb811e"
   },
-  "/forms-data-collection/data-management/how-to-create-a-field-mapping-57f": {
+  "/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name-f88": {
     "__comp": "17896441",
-    "content": "d258f4ac"
+    "content": "056ef71a"
   },
-  "/forms-data-collection/data-management/what-are-field-mappings-24c": {
+  "/modules/knowledge-hub/features/how-can-i-edit-a-khub-item-89d": {
     "__comp": "17896441",
-    "content": "916e148c"
+    "content": "e8c872a0"
   },
-  "/forms-data-collection/form-creation/form-analytics-c3f": {
+  "/modules/knowledge-hub/features/what-is-khub-8d9": {
     "__comp": "17896441",
-    "content": "05d73141"
+    "content": "bf269338"
   },
-  "/forms-data-collection/form-creation/how-managers-approve-form-baa": {
+  "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app-329": {
     "__comp": "17896441",
-    "content": "cca0b65d"
+    "content": "53b1a070"
   },
-  "/forms-data-collection/form-creation/how-to-add-approvers-to-a-form-2e8": {
+  "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items-599": {
     "__comp": "17896441",
-    "content": "3a368041"
+    "content": "996b62c4"
   },
-  "/forms-data-collection/form-creation/how-to-create-a-form-cb2": {
+  "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics-9c5": {
     "__comp": "17896441",
-    "content": "7450631b"
+    "content": "6348dcef"
   },
-  "/forms-data-collection/form-management/how-can-i-submit-a-form-from-chat-b50": {
+  "/modules/kpi-gamification/-2a5": {
     "__comp": "17896441",
-    "content": "f25909a3"
+    "content": "bbeac347"
   },
-  "/forms-data-collection/form-management/how-can-i-submit-a-form-from-left-menu-fed": {
+  "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment-069": {
     "__comp": "17896441",
-    "content": "062e8b1f"
+    "content": "79ce6767"
   },
-  "/forms-data-collection/form-management/how-to-add-new-form-submission-0fa": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition-ee8": {
     "__comp": "17896441",
-    "content": "556e9880"
+    "content": "7b67a092"
   },
-  "/forms-data-collection/form-management/how-to-approve-reject-a-form-submission-f36": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition-ece": {
     "__comp": "17896441",
-    "content": "bd22d45b"
+    "content": "4ebf7f82"
   },
-  "/forms-data-collection/form-management/how-to-edit-a-form-on-submitted-by-a-user-562": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-quiz-to-a-competition-4bb": {
     "__comp": "17896441",
-    "content": "24fefecc"
+    "content": "54cbb726"
   },
-  "/forms-data-collection/form-management/how-to-submit-a-form-on-behalf-of-a-user-07d": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition-b60": {
     "__comp": "17896441",
-    "content": "15857d62"
+    "content": "7e67de77"
   },
-  "/forms-data-collection/scorecards/how-to-create-a-scorecard-1e8": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-survey-to-a-competition-01e": {
     "__comp": "17896441",
-    "content": "dbf55128"
+    "content": "aaf7cadf"
   },
-  "/forms-data-collection/scorecards/what-are-scorecards-e80": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition-78c": {
     "__comp": "17896441",
-    "content": "97fc5a95"
+    "content": "dd892fb4"
   },
-  "/getting-started/about-smartwinnr-5fb": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets-694": {
     "__comp": "17896441",
-    "content": "b74d3da2"
+    "content": "396e00cf"
   },
-  "/getting-started/account-setup-login-b5c": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-different-activities-to-a-challenge-99c": {
     "__comp": "17896441",
-    "content": "4018efb6"
+    "content": "df215ef2"
   },
-  "/getting-started/admin-onboarding-cbd": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard-c6e": {
     "__comp": "17896441",
-    "content": "ce53082c"
+    "content": "98605670"
   },
-  "/getting-started/app-management-f48": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition-9d4": {
     "__comp": "17896441",
-    "content": "8566ff20"
+    "content": "06e798f7"
   },
-  "/getting-started/browser-and-device-support-0fe": {
+  "/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard-a28": {
     "__comp": "17896441",
-    "content": "3fc7d40c"
+    "content": "2def9930"
   },
-  "/getting-started/editor-onboarding-194": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-a-competition-a0f": {
     "__comp": "17896441",
-    "content": "72dbc003"
+    "content": "ab84ddde"
   },
-  "/getting-started/how-can-i-change-my-language-in-smartwinnr-app-bff": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge-c69": {
     "__comp": "17896441",
-    "content": "3580e29f"
+    "content": "8e8c4fa5"
   },
-  "/getting-started/how-can-i-change-my-password-for-smartwinnr-130": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-a-manager-challenge-9e9": {
     "__comp": "17896441",
-    "content": "f72b7ce1"
+    "content": "54b34c79"
   },
-  "/getting-started/how-can-i-change-my-profile-image-df9": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard-9ed": {
     "__comp": "17896441",
-    "content": "49430703"
+    "content": "00078647"
   },
-  "/getting-started/how-can-i-check-the-app-version-web-view-version-33d": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge-487": {
     "__comp": "17896441",
-    "content": "00740183"
+    "content": "9946d663"
   },
-  "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app-9f2": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-badges-831": {
     "__comp": "17896441",
-    "content": "a60961f1"
+    "content": "55a79414"
   },
-  "/getting-started/how-do-i-unlock-an-account-c62": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates-998": {
     "__comp": "17896441",
-    "content": "fb0ee829"
+    "content": "871dcba7"
   },
-  "/getting-started/how-to-resend-account-invitation-a8d": {
+  "/modules/kpi-gamification/create-and-manage/how-to-create-kpi-8ca": {
     "__comp": "17896441",
-    "content": "79ce9a16"
+    "content": "1bb72e90"
   },
-  "/getting-started/how-to-update-the-smartwinnr-app-from-app-view-762": {
+  "/modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition-204": {
     "__comp": "17896441",
-    "content": "f0b549a3"
+    "content": "a90036f1"
   },
-  "/getting-started/how-to-update-the-smartwinnr-app-from-web-view-1b4": {
+  "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data-39c": {
     "__comp": "17896441",
-    "content": "c0ebd91a"
+    "content": "6d06712f"
   },
-  "/getting-started/how-to-update-the-smartwinnr-app-web-view-414": {
+  "/modules/kpi-gamification/features/define-kpis-825": {
     "__comp": "17896441",
-    "content": "66052794"
+    "content": "1027c82c"
   },
-  "/getting-started/login-to-smartwinnr-app-462": {
+  "/modules/kpi-gamification/features/detailed-explanation-of-reports-1bc": {
     "__comp": "17896441",
-    "content": "f5131cc1"
+    "content": "9aca621b"
   },
-  "/getting-started/manager-features-fbe": {
+  "/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard-4dd": {
     "__comp": "17896441",
-    "content": "280d9c85"
+    "content": "54d4c1c9"
   },
-  "/getting-started/manager-onboarding-bfd": {
+  "/modules/kpi-gamification/features/leaderboards-of-a-competition-144": {
     "__comp": "17896441",
-    "content": "ef53bfb7"
+    "content": "8c85fce7"
   },
-  "/getting-started/my-account-is-locked-what-should-i-do-adb": {
+  "/modules/kpi-gamification/features/understand-game-concepts-086": {
     "__comp": "17896441",
-    "content": "04b5a7ec"
+    "content": "890a40d2"
   },
-  "/getting-started/profile-settings-5c2": {
+  "/modules/kpi-gamification/features/what-are-field-mappings-728": {
     "__comp": "17896441",
-    "content": "0be4efe3"
+    "content": "425a7664"
   },
-  "/getting-started/switching-to-manager-view-79a": {
+  "/modules/kpi-gamification/features/what-are-kpi-reports-9c9": {
     "__comp": "17896441",
-    "content": "3f2c1bf5"
+    "content": "1e9a65de"
   },
-  "/getting-started/user-onboarding-714": {
+  "/modules/kpi-gamification/features/what-are-scorecards-3e0": {
     "__comp": "17896441",
-    "content": "0e9cc8cc"
+    "content": "c6f8e48c"
   },
-  "/getting-started/what-if-i-ve-forgotten-my-password-ee3": {
+  "/modules/kpi-gamification/features/what-is-a-challenge-904": {
     "__comp": "17896441",
-    "content": "7d70ac1d"
+    "content": "f3edbb3b"
   },
-  "/getting-started/what-if-i-ve-forgotten-my-pin-191": {
+  "/modules/kpi-gamification/features/what-is-a-competition-456": {
     "__comp": "17896441",
-    "content": "616b1d4a"
+    "content": "9343ad8f"
   },
-  "/getting-started/what-is-smartwinnr-8c1": {
+  "/modules/kpi-gamification/features/what-is-an-achievement-bc7": {
     "__comp": "17896441",
-    "content": "17c54d31"
+    "content": "a87146d4"
   },
-  "/help-support/help-support-4aa": {
+  "/modules/kpi-gamification/features/what-is-kpi-gamification-6a2": {
     "__comp": "17896441",
-    "content": "d2e24a54"
+    "content": "ae394159"
   },
-  "/help-support/troubleshoot-for-common-error-code-cd4": {
+  "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard-ef8": {
     "__comp": "17896441",
-    "content": "a1a508ea"
+    "content": "427cd8f8"
   },
-  "/knowledge-hub/content-creation/how-can-i-create-folders-and-items-in-khub-f0c": {
+  "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard-6ed": {
     "__comp": "17896441",
-    "content": "05d4d29d"
+    "content": "5f7fcddd"
   },
-  "/knowledge-hub/content-creation/how-can-i-edit-a-khub-item-b57": {
+  "/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-65f": {
     "__comp": "17896441",
-    "content": "5ed1a06a"
+    "content": "bee44235"
   },
-  "/knowledge-hub/content-organization/how-can-i-edit-a-khub-folder-name-6f4": {
+  "/modules/kpi-gamification/for-managers/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-76a": {
     "__comp": "17896441",
-    "content": "aa7262eb"
+    "content": "117c4846"
   },
-  "/knowledge-hub/khub-analytics/how-can-i-view-khub-analytics-ca7": {
+  "/modules/notifications/-a89": {
     "__comp": "17896441",
-    "content": "d7cf59df"
+    "content": "8cf4007e"
   },
-  "/knowledge-hub/knowledge-hub-khub-a78": {
+  "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group-e5f": {
     "__comp": "17896441",
-    "content": "1ec33830"
+    "content": "8e02ae5f"
   },
-  "/knowledge-hub/user-experience/how-to-use-khub-in-the-smartwinnr-app-7e9": {
+  "/modules/notifications/features/bulk-custom-notifications-31f": {
     "__comp": "17896441",
-    "content": "7f86b5f3"
+    "content": "aec1c0e8"
   },
-  "/knowledge-hub/user-experience/understanding-recent-trending-and-latest-khub-items-344": {
+  "/modules/notifications/features/custom-notifications-982": {
     "__comp": "17896441",
-    "content": "2ab77800"
+    "content": "b6565616"
   },
-  "/knowledge-hub/what-is-khub-e15": {
+  "/modules/notifications/features/how-to-download-a-chat-f5f": {
     "__comp": "17896441",
-    "content": "862e59db"
+    "content": "d59c3623"
   },
-  "/learning-smartpaths/learning-analytics/how-to-view-the-smartpath-analytics-241": {
+  "/modules/notifications/features/what-are-chat-groups-154": {
     "__comp": "17896441",
-    "content": "918c58ea"
+    "content": "2047fe92"
   },
-  "/learning-smartpaths/learning-sessions/how-to-add-learning-sessions-in-smartpath-module-554": {
+  "/modules/notifications/features/what-is-the-purpose-of-notifications-125": {
     "__comp": "17896441",
-    "content": "80f400b3"
+    "content": "670c30bd"
   },
-  "/learning-smartpaths/learning-sessions/how-to-mark-the-attendance-for-users-in-learning-sessions-2d3": {
+  "/modules/notifications/features/when-are-chat-groups-needed-271": {
     "__comp": "17896441",
-    "content": "748ca71f"
+    "content": "dc71a392"
   },
-  "/learning-smartpaths/learning-sessions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-c10": {
+  "/modules/notifications/for-learners/how-to-view-notifications-82b": {
     "__comp": "17896441",
-    "content": "86545fba"
+    "content": "9fe0dc1e"
   },
-  "/learning-smartpaths/scorm-external/how-to-access-the-scorm-course-from-the-smartwinnr-app-f95": {
+  "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group-d5d": {
     "__comp": "17896441",
-    "content": "ea6dc212"
+    "content": "f6ec8df4"
   },
-  "/learning-smartpaths/scorm-external/how-to-import-scorm-course-into-smartwinnr-548": {
+  "/modules/quiz/-2ae": {
     "__comp": "17896441",
-    "content": "8880f06d"
+    "content": "a222c269"
   },
-  "/learning-smartpaths/smartpath-creation/how-to-create-a-module-for-smartpath-4bc": {
+  "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz-8ff": {
     "__comp": "17896441",
-    "content": "fe87c545"
+    "content": "126f5a7d"
   },
-  "/learning-smartpaths/smartpath-creation/how-to-create-a-smartpath-003": {
+  "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz-8cf": {
     "__comp": "17896441",
-    "content": "915c0f99"
+    "content": "e5b1bbfc"
   },
-  "/learning-smartpaths/smartpath-creation/how-to-create-smartpath-with-learning-sessions-f5c": {
+  "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz-4bb": {
     "__comp": "17896441",
-    "content": "f70cb165"
+    "content": "050e7a9e"
   },
-  "/learning-smartpaths/smartpath-creation/how-to-edit-a-smartpath-1af": {
+  "/modules/quiz/create-and-manage/how-to-create-an-event-quiz-fc6": {
     "__comp": "17896441",
-    "content": "0e774d09"
+    "content": "7727c060"
   },
-  "/learning-smartpaths/smartpath-management-e4e": {
+  "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions-cb3": {
     "__comp": "17896441",
-    "content": "45c2bd29"
+    "content": "111c9b4e"
   },
-  "/learning-smartpaths/smartpath-management/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-f8e": {
+  "/modules/quiz/create-and-manage/how-to-create-re-order-questions-565": {
     "__comp": "17896441",
-    "content": "1c802b72"
+    "content": "29e5b7a3"
   },
-  "/learning-smartpaths/what-are-smartpaths-bce": {
+  "/modules/quiz/create-and-manage/how-to-edit-a-question-f10": {
     "__comp": "17896441",
-    "content": "9d356474"
+    "content": "666a4ae1"
   },
-  "/learning/-fb7": {
+  "/modules/quiz/create-and-manage/how-to-update-question-response-e41": {
     "__comp": "17896441",
-    "content": "10cd605c"
+    "content": "0c424a11"
   },
-  "/manager-guide/assigning-content-to-team-c11": {
+  "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions-4de": {
     "__comp": "17896441",
-    "content": "448204d8"
+    "content": "ed98860e"
   },
-  "/manager-guide/coaching-team-members-3e2": {
+  "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question-62f": {
     "__comp": "17896441",
-    "content": "cdbb1d75"
+    "content": "837ec010"
   },
-  "/manager-guide/manager-guide-20f": {
+  "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code-511": {
     "__comp": "17896441",
-    "content": "107428a9"
+    "content": "682ead27"
   },
-  "/manager-guide/monitoring-team-performance-ae4": {
+  "/modules/quiz/features/how-to-add-a-video-to-a-question-182": {
     "__comp": "17896441",
-    "content": "fa5b2cc7"
+    "content": "012ebc62"
   },
-  "/manager-guide/team-analytics-dashboard-144": {
+  "/modules/quiz/features/how-to-add-an-audio-file-to-a-question-247": {
     "__comp": "17896441",
-    "content": "6f515fe0"
+    "content": "0b31551c"
   },
-  "/menu-tree-structure-533": {
+  "/modules/quiz/features/how-to-add-an-image-to-the-question-b60": {
     "__comp": "17896441",
-    "content": "33cd9fb6"
+    "content": "ebc3a4a4"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-image-to-your-content-201": {
+  "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question-6ee": {
     "__comp": "17896441",
-    "content": "e7fbe2a1"
+    "content": "a9e30187"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-f2b": {
+  "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question-dd4": {
     "__comp": "17896441",
-    "content": "da2c0d3c"
+    "content": "47334a11"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-recording-to-a-smartfeed-101": {
+  "/modules/quiz/features/how-to-create-a-hotspot-question-aca": {
     "__comp": "17896441",
-    "content": "a999feea"
+    "content": "6caff00c"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-a-video-to-your-content-815": {
+  "/modules/quiz/features/how-to-create-a-matching-question-f82": {
     "__comp": "17896441",
-    "content": "f3a4992e"
+    "content": "63ca19ea"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-an-audio-file-to-your-content-402": {
+  "/modules/quiz/features/how-to-create-a-missing-words-question-43a": {
     "__comp": "17896441",
-    "content": "775dc9e2"
+    "content": "15e7346c"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-add-reference-to-an-external-link-to-your-content-f57": {
+  "/modules/quiz/features/how-to-create-fill-in-the-blank-questions-7ae": {
     "__comp": "17896441",
-    "content": "1b79c7af"
+    "content": "56f89b69"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-attach-pdf-file-to-your-content-3da": {
+  "/modules/quiz/features/how-to-create-long-answer-questions-1d1": {
     "__comp": "17896441",
-    "content": "05c862ae"
+    "content": "883a0982"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-create-a-smartfeed-913": {
+  "/modules/quiz/features/how-to-create-multiple-choice-questions-eb5": {
     "__comp": "17896441",
-    "content": "889449c8"
+    "content": "7ec15075"
   },
-  "/microlearning-smartfeeds/creating-smartfeeds/how-to-edit-a-smartfeed-cc4": {
+  "/modules/quiz/features/how-to-create-short-answer-with-multiple-options-1ea": {
     "__comp": "17896441",
-    "content": "ecbda372"
+    "content": "704bead3"
   },
-  "/microlearning-smartfeeds/microlearning-smartfeeds-6aa": {
+  "/modules/quiz/features/how-to-embed-a-link-into-the-question-b05": {
     "__comp": "17896441",
-    "content": "83fb938d"
+    "content": "21637888"
   },
-  "/microlearning-smartfeeds/smartfeed-analytics/how-to-view-smartfeed-analytics-3ae": {
+  "/modules/quiz/features/how-to-manage-quiz-configurations-abd": {
     "__comp": "17896441",
-    "content": "37c09801"
+    "content": "9b3f1fe7"
   },
-  "/microlearning-smartfeeds/smartfeed-management-2e9": {
+  "/modules/quiz/features/question-bank-426": {
     "__comp": "17896441",
-    "content": "d9729843"
+    "content": "265c51dd"
   },
-  "/microlearning-smartfeeds/smartfeed-management/how-to-delete-smartfeeds-aba": {
+  "/modules/quiz/features/question-structure-be9": {
     "__comp": "17896441",
-    "content": "f6dd460b"
+    "content": "96beb1b7"
   },
-  "/microlearning-smartfeeds/smartfeed-management/how-to-send-a-smartfeed-multiple-times-6cb": {
+  "/modules/quiz/features/quiz-types-548": {
     "__comp": "17896441",
-    "content": "a8e9b0ff"
+    "content": "17f9b0da"
   },
-  "/microlearning-smartfeeds/smartfeed-management/how-to-send-the-smartfeed-to-teams-76c": {
+  "/modules/quiz/features/understanding-knowledge-categories-5d2": {
     "__comp": "17896441",
-    "content": "acaa5267"
+    "content": "1b96a09b"
   },
-  "/microlearning-smartfeeds/user-experience/how-do-i-like-a-smartfeed-777": {
+  "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr-4e6": {
     "__comp": "17896441",
-    "content": "8ad7762b"
+    "content": "5655db5e"
   },
-  "/microlearning-smartfeeds/user-experience/how-to-download-share-a-smartfeed-in-smartpath-82c": {
+  "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-f97": {
     "__comp": "17896441",
-    "content": "e6a0ed23"
+    "content": "0e044b35"
   },
-  "/microlearning-smartfeeds/user-experience/how-to-view-all-the-smartfeeds-9fd": {
+  "/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team-b29": {
     "__comp": "17896441",
-    "content": "c29a96ea"
+    "content": "979da04e"
   },
-  "/microlearning-smartfeeds/what-are-smartfeeds-414": {
+  "/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes-ce8": {
     "__comp": "17896441",
-    "content": "cca4eb2f"
+    "content": "f4c977e3"
   },
-  "/microlearning/-fff": {
+  "/modules/quiz/for-managers/quiz-analytics-through-charts-884": {
     "__comp": "17896441",
-    "content": "06bbb6cf"
+    "content": "e1751ad6"
   },
-  "/mobile-platform-tools/mobile-platform-tools-b37": {
+  "/modules/quiz/reports-and-analytics/detailed-quiz-analytics-a2c": {
     "__comp": "17896441",
-    "content": "d82f6188"
+    "content": "cd3f2b3a"
   },
-  "/overview/-09b": {
+  "/modules/quiz/reports-and-analytics/how-can-i-track-improvement-d10": {
     "__comp": "17896441",
-    "content": "fb87d503"
+    "content": "1f52c52a"
   },
-  "/project-management/how-to-edit-a-project-f62": {
+  "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions-eea": {
     "__comp": "17896441",
-    "content": "417e90f8"
+    "content": "ce4a5fd0"
   },
-  "/project-management/project-management-98c": {
+  "/modules/quiz/reports-and-analytics/question-response-analytics-a25": {
     "__comp": "17896441",
-    "content": "68681bf7"
+    "content": "8c638610"
   },
-  "/quiz-assessments/assessment-administration/how-do-i-give-access-permission-to-other-editors-c83": {
+  "/modules/quiz/reports-and-analytics/quiz-comparison-report-dcd": {
     "__comp": "17896441",
-    "content": "aa1a0027"
+    "content": "14028944"
   },
-  "/quiz-assessments/assessment-administration/how-to-activate-automatic-reminders-for-your-quizzes-c6a": {
+  "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard-c1e": {
     "__comp": "17896441",
-    "content": "419da99b"
+    "content": "0fd3794b"
   },
-  "/quiz-assessments/assessment-administration/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr-d9b": {
+  "/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard-8ed": {
     "__comp": "17896441",
-    "content": "a85814a1"
+    "content": "6452722f"
   },
-  "/quiz-assessments/assessment-administration/how-to-manage-quiz-configurations-85e": {
+  "/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard-9fb": {
     "__comp": "17896441",
-    "content": "2436296c"
+    "content": "f8982d4b"
   },
-  "/quiz-assessments/assessment-administration/how-to-open-and-close-a-quiz-3e8": {
+  "/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard-7fd": {
     "__comp": "17896441",
-    "content": "0309d4c8"
+    "content": "a5c08ea9"
   },
-  "/quiz-assessments/assessment-administration/how-to-send-quizzes-surveys-and-content-using-group-344": {
+  "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics-8f3": {
     "__comp": "17896441",
-    "content": "d3ad91cc"
+    "content": "44288250"
   },
-  "/quiz-assessments/assessment-administration/managing-questions-c8c": {
+  "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes-774": {
     "__comp": "17896441",
-    "content": "b79b9622"
+    "content": "28d35184"
   },
-  "/quiz-assessments/assessment-administration/quiz-settings-1cc": {
+  "/modules/smartfeed/-86d": {
     "__comp": "17896441",
-    "content": "258650fc"
+    "content": "1cef5bb8"
   },
-  "/quiz-assessments/assessment-analytics/detailed-quiz-analytics-3c1": {
+  "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times-50a": {
     "__comp": "17896441",
-    "content": "713f875c"
+    "content": "f9f5b62c"
   },
-  "/quiz-assessments/assessment-analytics/finding-status-and-scores-for-quizzes-assigned-to-your-team-7a5": {
+  "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams-f2e": {
     "__comp": "17896441",
-    "content": "fb00707e"
+    "content": "77c4d9d7"
   },
-  "/quiz-assessments/assessment-analytics/how-to-find-the-progress-of-your-team-in-quizzes-7cc": {
+  "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-5f8": {
     "__comp": "17896441",
-    "content": "d5a60bbb"
+    "content": "216fd01a"
   },
-  "/quiz-assessments/assessment-analytics/learner-overall-report-a01": {
+  "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed-c57": {
     "__comp": "17896441",
-    "content": "ccf7cf75"
+    "content": "ee960a13"
   },
-  "/quiz-assessments/assessment-analytics/learner-report-by-learner-individual-report-analytics-ac0": {
+  "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed-b1f": {
     "__comp": "17896441",
-    "content": "bae0794c"
+    "content": "5b740071"
   },
-  "/quiz-assessments/assessment-analytics/quiz-analytics-reports-336": {
+  "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed-6fe": {
     "__comp": "17896441",
-    "content": "d0498ed2"
+    "content": "4b497c31"
   },
-  "/quiz-assessments/assessment-analytics/quiz-analytics-through-charts-951": {
+  "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed-f69": {
     "__comp": "17896441",
-    "content": "00c30795"
+    "content": "c089292c"
   },
-  "/quiz-assessments/assessment-analytics/quiz-comparison-report-857": {
+  "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed-708": {
     "__comp": "17896441",
-    "content": "ecc46aa0"
+    "content": "366e2ddb"
   },
-  "/quiz-assessments/assessment-analytics/quiz-reports-0ff": {
+  "/modules/smartfeed/features/how-to-view-all-the-smartfeeds-0b3": {
     "__comp": "17896441",
-    "content": "0ffecbd7"
+    "content": "01aa7504"
   },
-  "/quiz-assessments/assessment-analytics/quiz-wise-analytics-e70": {
+  "/modules/smartfeed/features/what-are-smartfeeds-fc5": {
     "__comp": "17896441",
-    "content": "6d80ed72"
+    "content": "1e3ac51a"
   },
-  "/quiz-assessments/assessment-analytics/team-analytics-d1e": {
+  "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed-0a7": {
     "__comp": "17896441",
-    "content": "eee65883"
+    "content": "53ef7f4b"
   },
-  "/quiz-assessments/assessment-analytics/team-progress-report-b0e": {
+  "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics-14a": {
     "__comp": "17896441",
-    "content": "a15b34f9"
+    "content": "43da85c4"
   },
-  "/quiz-assessments/creating-assessments/creating-quiz-185": {
+  "/modules/smartpath/-3f8": {
     "__comp": "17896441",
-    "content": "88a4722f"
+    "content": "ef870ed1"
   },
-  "/quiz-assessments/creating-assessments/creating-quizzes-ffc": {
+  "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath-bb5": {
     "__comp": "17896441",
-    "content": "9d7ba379"
+    "content": "6db998e6"
   },
-  "/quiz-assessments/creating-assessments/how-can-i-duplicate-a-quiz-dd4": {
+  "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module-fd8": {
     "__comp": "17896441",
-    "content": "a5ff1d5b"
+    "content": "62cb01fe"
   },
-  "/quiz-assessments/creating-assessments/how-to-create-a-manual-quiz-0a5": {
+  "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath-282": {
     "__comp": "17896441",
-    "content": "a4a9dace"
+    "content": "d8d4c80f"
   },
-  "/quiz-assessments/creating-assessments/how-to-create-an-automatic-quiz-0e6": {
+  "/modules/smartpath/create-and-manage/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed-50a": {
     "__comp": "17896441",
-    "content": "ce91c6da"
+    "content": "0746f5e4"
   },
-  "/quiz-assessments/question-management/how-editors-evaluate-long-answer-questions-280": {
+  "/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath-123": {
     "__comp": "17896441",
-    "content": "be5e8dbb"
+    "content": "22bd9aeb"
   },
-  "/quiz-assessments/question-management/how-import-question-is-different-from-add-new-question-640": {
+  "/modules/smartpath/create-and-manage/how-to-create-a-smartpath-a2e": {
     "__comp": "17896441",
-    "content": "6adf2d76"
+    "content": "afb64dc7"
   },
-  "/quiz-assessments/question-management/how-to-add-a-video-to-a-question-10e": {
+  "/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath-d9b": {
     "__comp": "17896441",
-    "content": "594ebbc1"
+    "content": "26fa99df"
   },
-  "/quiz-assessments/question-management/how-to-add-an-audio-file-to-a-question-a24": {
+  "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions-e9e": {
     "__comp": "17896441",
-    "content": "c2c05408"
+    "content": "77c69a35"
   },
-  "/quiz-assessments/question-management/how-to-add-an-image-to-the-question-b55": {
+  "/modules/smartpath/create-and-manage/how-to-edit-a-smartpath-2b7": {
     "__comp": "17896441",
-    "content": "c8ddd3ab"
+    "content": "bf471d67"
   },
-  "/quiz-assessments/question-management/how-to-answer-long-answer-type-questions-in-smartwinnr-256": {
+  "/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr-c81": {
     "__comp": "17896441",
-    "content": "0175a577"
+    "content": "903376e4"
   },
-  "/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-image-question-dc3": {
+  "/modules/smartpath/features/how-can-i-gamify-a-smartpath-ab5": {
     "__comp": "17896441",
-    "content": "da2c61c0"
+    "content": "4269fe76"
   },
-  "/quiz-assessments/question-management/how-to-create-a-drag-and-drop-into-text-question-0d8": {
+  "/modules/smartpath/features/how-to-download-smartpath-reports-fbe": {
     "__comp": "17896441",
-    "content": "6d37ce85"
+    "content": "0f0ff3c3"
   },
-  "/quiz-assessments/question-management/how-to-create-a-hotspot-question-317": {
+  "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions-b1e": {
     "__comp": "17896441",
-    "content": "2cade0f2"
+    "content": "1371039e"
   },
-  "/quiz-assessments/question-management/how-to-create-a-matching-question-5e3": {
+  "/modules/smartpath/features/what-are-smartpaths-737": {
     "__comp": "17896441",
-    "content": "53b55d8b"
+    "content": "aa0539dd"
   },
-  "/quiz-assessments/question-management/how-to-create-a-missing-words-question-5b6": {
+  "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own-eb0": {
     "__comp": "17896441",
-    "content": "693414ef"
+    "content": "c25f5137"
   },
-  "/quiz-assessments/question-management/how-to-create-fill-in-the-blank-questions-28b": {
+  "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-67a": {
     "__comp": "17896441",
-    "content": "0264dc92"
+    "content": "a8aa809f"
   },
-  "/quiz-assessments/question-management/how-to-create-long-answer-questions-4b8": {
+  "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions-cb6": {
     "__comp": "17896441",
-    "content": "e5d0e2bf"
+    "content": "b57736ec"
   },
-  "/quiz-assessments/question-management/how-to-create-multiple-choice-questions-3fa": {
+  "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-3d7": {
     "__comp": "17896441",
-    "content": "efb2eb9d"
+    "content": "37f353be"
   },
-  "/quiz-assessments/question-management/how-to-create-numeric-type-questions-8b4": {
+  "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath-d06": {
     "__comp": "17896441",
-    "content": "2943a90d"
+    "content": "486bb1e4"
   },
-  "/quiz-assessments/question-management/how-to-create-re-order-questions-acd": {
+  "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics-6f3": {
     "__comp": "17896441",
-    "content": "b60d9da2"
+    "content": "a16bb0ab"
   },
-  "/quiz-assessments/question-management/how-to-edit-a-question-22e": {
+  "/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard-0d0": {
     "__comp": "17896441",
-    "content": "d9c8e354"
+    "content": "674dba3c"
   },
-  "/quiz-assessments/question-management/how-to-embed-a-link-into-the-question-dcb": {
+  "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard-2a9": {
     "__comp": "17896441",
-    "content": "25c724be"
+    "content": "da790cd7"
   },
-  "/quiz-assessments/question-management/how-to-update-question-response-e0d": {
+  "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-dc5": {
     "__comp": "17896441",
-    "content": "0a41d9ac"
+    "content": "5a7f6319"
   },
-  "/quiz-assessments/question-management/how-to-upload-questions-in-bulk-using-import-questions-280": {
+  "/modules/survey/-a3b": {
     "__comp": "17896441",
-    "content": "81428638"
+    "content": "3ba65834"
   },
-  "/quiz-assessments/question-management/question-management-372": {
+  "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr-4b0": {
     "__comp": "17896441",
-    "content": "3e1619ce"
+    "content": "1ca08159"
   },
-  "/quiz-assessments/question-management/question-response-analytics-3d5": {
+  "/modules/survey/create-and-manage/how-to-create-a-survey-a19": {
     "__comp": "17896441",
-    "content": "ee52638e"
+    "content": "dad08209"
   },
-  "/quiz-assessments/question-management/question-structure-92d": {
+  "/modules/survey/create-and-manage/how-to-create-a-survey-template-fbc": {
     "__comp": "17896441",
-    "content": "bee4acd0"
+    "content": "d17e1d07"
   },
-  "/quiz-assessments/question-management/short-answer-with-multiple-options-441": {
+  "/modules/survey/create-and-manage/how-to-delete-a-survey-921": {
     "__comp": "17896441",
-    "content": "aeb433b4"
+    "content": "857a6a5d"
   },
-  "/quiz-assessments/quiz-assessments-0a4": {
+  "/modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template-ba9": {
     "__comp": "17896441",
-    "content": "5309d8db"
+    "content": "214ead64"
   },
-  "/quiz-assessments/taking-assessments/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-665": {
+  "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template-de0": {
     "__comp": "17896441",
-    "content": "0c9933cf"
+    "content": "aca2ba7a"
   },
-  "/quiz/-714": {
+  "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template-856": {
     "__comp": "17896441",
-    "content": "f4f3d236"
+    "content": "676e8050"
   },
-  "/quizzes/-50f": {
+  "/modules/survey/reports-and-analytics/survey-analytics-b19": {
     "__comp": "17896441",
-    "content": "62b7f12f"
+    "content": "63e5f90e"
   },
-  "/quizzes/create-users-in-bulk-8e4": {
+  "/modules/survey/reports-and-analytics/survey-template-analytics-d79": {
     "__comp": "17896441",
-    "content": "8a22e1a8"
+    "content": "3486c987"
   },
-  "/quizzes/delete-users-e27": {
+  "/modules/video-coaching/-f8b": {
     "__comp": "17896441",
-    "content": "fddcd071"
+    "content": "c82b06b6"
   },
-  "/quizzes/how-can-i-download-the-smartwinnr-app-4dd": {
+  "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment-0e5": {
     "__comp": "17896441",
-    "content": "4225ec92"
+    "content": "733d4192"
   },
-  "/quizzes/how-to-activate-or-deactivate-a-user-ed5": {
+  "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment-b36": {
     "__comp": "17896441",
-    "content": "260d2534"
+    "content": "6a42c662"
   },
-  "/quizzes/how-to-edit-the-form-submission-from-manager-s-view-a2d": {
+  "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video-493": {
     "__comp": "17896441",
-    "content": "d739f12e"
+    "content": "f0175c7e"
   },
-  "/quizzes/how-to-set-reminder-for-your-tasks-39b": {
+  "/modules/video-coaching/create-and-manage/how-to-create-field-coaching-d0e": {
     "__comp": "17896441",
-    "content": "67f4e6f3"
+    "content": "baef19b2"
   },
-  "/quizzes/quiz-administration-0e3": {
+  "/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video-601": {
     "__comp": "17896441",
-    "content": "b8ee6d46"
+    "content": "8717cad6"
   },
-  "/quizzes/quiz-types-bba": {
+  "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-43b": {
     "__comp": "17896441",
-    "content": "225f2417"
+    "content": "51d149fc"
   },
-  "/quizzes/understanding-knowledge-categories-f86": {
+  "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video-8fb": {
     "__comp": "17896441",
-    "content": "7f75d7b4"
+    "content": "3bd7c47a"
   },
-  "/quizzes/what-is-a-competition-0ac": {
+  "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching-ab3": {
     "__comp": "17896441",
-    "content": "cd4cfe57"
+    "content": "b2dd652f"
   },
-  "/quizzes/what-is-a-group-721": {
+  "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching-0c0": {
     "__comp": "17896441",
-    "content": "cdb1fe21"
+    "content": "6e06dd7b"
   },
-  "/quizzes/what-is-a-rule-263": {
+  "/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching-d15": {
     "__comp": "17896441",
-    "content": "5d35fd00"
+    "content": "01ee996a"
   },
-  "/quizzes/what-is-audit-log-4c3": {
+  "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-517": {
     "__comp": "17896441",
-    "content": "5ac9a97f"
+    "content": "13ab294e"
   },
-  "/quizzes/what-is-smartwinnr-quiz-analytics-bff": {
+  "/modules/video-coaching/for-managers/what-is-my-team-coaching-df7": {
     "__comp": "17896441",
-    "content": "f3b82bbe"
+    "content": "0e22be25"
   },
-  "/reports/-9d7": {
+  "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching-6d1": {
     "__comp": "17896441",
-    "content": "432b3f5f"
+    "content": "b5c62b68"
   },
-  "/reports/detailed-explanation-of-reports-e29": {
+  "/modules/video-coaching/settings-and-permissions/how-to-set-competencies-c48": {
     "__comp": "17896441",
-    "content": "74b687b8"
+    "content": "48e99561"
   },
-  "/reports/how-to-create-sales-tv-392": {
+  "/path/admin/-653": {
     "__comp": "17896441",
-    "content": "13f492e4"
+    "content": "16290408"
   },
-  "/reports/how-to-view-project-5a6": {
+  "/path/editor/-e97": {
     "__comp": "17896441",
-    "content": "dbdd3d49"
+    "content": "93a3b325"
   },
-  "/reports/user-login-reports-371": {
+  "/path/help/-f76": {
     "__comp": "17896441",
-    "content": "ef644ed8"
+    "content": "2a33bf3b"
   },
-  "/reports/widgets-ee2": {
+  "/path/integrations/-ffe": {
     "__comp": "17896441",
-    "content": "d0f50981"
+    "content": "3a6637de"
   },
-  "/surveys-feedback/survey-analytics/survey-analytics-00c": {
+  "/path/learner/-15d": {
     "__comp": "17896441",
-    "content": "cfa3c0a1"
+    "content": "0270e0ff"
   },
-  "/surveys-feedback/survey-analytics/survey-template-analytics-658": {
+  "/path/manager/-22e": {
     "__comp": "17896441",
-    "content": "a0d820cf"
+    "content": "b70ccf4b"
   },
-  "/surveys-feedback/survey-creation/-eb9": {
+  "/path/reports/-fc6": {
     "__comp": "17896441",
-    "content": "11aca734"
+    "content": "902fbb7d"
   },
-  "/surveys-feedback/survey-creation/how-to-add-a-video-coaching-to-the-competition-adb": {
-    "__comp": "17896441",
-    "content": "b74eafda"
+  "/reference-763": {
+    "__comp": "14eb3368",
+    "__props": "072d2562"
   },
-  "/surveys-feedback/survey-creation/how-to-create-a-survey-35a": {
+  "/reference/help-support/-c60": {
     "__comp": "17896441",
-    "content": "12017335"
+    "content": "b0b21956"
   },
-  "/surveys-feedback/survey-creation/how-to-create-a-survey-template-fd5": {
+  "/reference/help-support/troubleshoot-for-common-error-code-351": {
     "__comp": "17896441",
-    "content": "2d3d465d"
+    "content": "7f2f4fd6"
   },
-  "/surveys-feedback/survey-creation/how-to-delete-a-survey-23d": {
+  "/reference/troubleshooting/-7a2": {
     "__comp": "17896441",
-    "content": "b092086c"
+    "content": "21cc80d5"
   },
-  "/surveys-feedback/survey-creation/how-to-duplicate-a-survey-and-survey-template-e46": {
-    "__comp": "17896441",
-    "content": "5e042559"
+  "/release-notes-813": {
+    "__comp": "14eb3368",
+    "__props": "df9a150e"
   },
-  "/surveys-feedback/survey-creation/what-are-the-different-question-types-in-a-survey-survey-template-1c0": {
+  "/release-notes/announcements/-bc8": {
     "__comp": "17896441",
-    "content": "77871dd7"
+    "content": "3a59a5b3"
   },
-  "/surveys-feedback/survey-creation/what-is-the-difference-between-a-survey-and-a-survey-template-4f3": {
+  "/reports-and-analytics/legacy/-182": {
     "__comp": "17896441",
-    "content": "a927b68f"
+    "content": "ff151935"
   },
-  "/surveys-feedback/survey-management/how-to-assign-a-survey-059": {
+  "/reports-and-analytics/legacy/learner-overall-report-31d": {
     "__comp": "17896441",
-    "content": "ba5bd70d"
+    "content": "7fa33a94"
   },
-  "/troubleshooting/troubleshooting-f3f": {
+  "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics-721": {
     "__comp": "17896441",
-    "content": "d651e2ee"
+    "content": "71b86ff0"
   },
-  "/user-guide/accessing-learning-content-f43": {
+  "/reports-and-analytics/legacy/quiz-wise-analytics-235": {
     "__comp": "17896441",
-    "content": "0543489d"
+    "content": "e9f7a14d"
   },
-  "/user-guide/mobile-app-navigation-74e": {
+  "/reports-and-analytics/legacy/team-analytics-21e": {
     "__comp": "17896441",
-    "content": "2ca981c1"
+    "content": "950800b9"
   },
-  "/user-guide/taking-assessments-033": {
+  "/reports-and-analytics/legacy/team-progress-report-bef": {
     "__comp": "17896441",
-    "content": "13d24ccf"
+    "content": "f5de5b73"
   },
-  "/user-guide/user-guide-482": {
+  "/reports-and-analytics/legacy/user-login-reports-0ac": {
     "__comp": "17896441",
-    "content": "85805df7"
+    "content": "2c43ca76"
   },
-  "/-185": {
+  "/-697": {
     "__comp": "17896441",
-    "content": "54c82979"
+    "content": "4edc808e"
   }
 }

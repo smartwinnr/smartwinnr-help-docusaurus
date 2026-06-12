@@ -1,0 +1,48 @@
+{
+  "id": "modules/knowledge-hub/for-learners/5fdaec3c7129911ba1b21de9",
+  "title": "How to use KHub in the SmartWinnr app?",
+  "description": "",
+  "source": "@site/docs/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app.md",
+  "sourceDirName": "modules/knowledge-hub/for-learners",
+  "slug": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app",
+  "permalink": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 150,
+  "frontMatter": {
+    "id": "5fdaec3c7129911ba1b21de9",
+    "title": "How to use KHub in the SmartWinnr app?",
+    "description": "",
+    "slug": "how-to-use-khub-in-the-smartwinnr-app",
+    "sidebar_position": 150,
+    "last_update": {
+      "date": "2021-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdaec3c7129911ba1b21de9",
+      "helpscout_url": "https://help.smartwinnr.com/article/150-how-to-use-khub-in-the-smartwinnr-app"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding recent, trending and latest KHub items",
+    "permalink": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items"
+  },
+  "next": {
+    "title": "What is KHub?",
+    "permalink": "/modules/knowledge-hub/features/what-is-khub"
+  }
+}

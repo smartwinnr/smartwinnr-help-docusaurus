@@ -1,0 +1,47 @@
+{
+  "id": "modules/survey/create-and-manage/5fd4a44e36980410c9123862",
+  "title": "How to create a 'Survey Template'.",
+  "description": "",
+  "source": "@site/docs/modules/survey/create-and-manage/how-to-create-a-survey-template.md",
+  "sourceDirName": "modules/survey/create-and-manage",
+  "slug": "/modules/survey/create-and-manage/how-to-create-a-survey-template",
+  "permalink": "/modules/survey/create-and-manage/how-to-create-a-survey-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/create-and-manage/how-to-create-a-survey-template.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 61,
+  "frontMatter": {
+    "id": "5fd4a44e36980410c9123862",
+    "title": "How to create a 'Survey Template'.",
+    "description": "",
+    "slug": "how-to-create-a-survey-template",
+    "sidebar_position": 61,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4a44e36980410c9123862",
+      "helpscout_url": "https://help.smartwinnr.com/article/61-how-to-create-a-survey-template"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "survey"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a 'Survey'.",
+    "permalink": "/modules/survey/create-and-manage/how-to-create-a-survey"
+  },
+  "next": {
+    "title": "How to duplicate a 'Survey' and 'Survey Template'.",
+    "permalink": "/modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template"
+  }
+}

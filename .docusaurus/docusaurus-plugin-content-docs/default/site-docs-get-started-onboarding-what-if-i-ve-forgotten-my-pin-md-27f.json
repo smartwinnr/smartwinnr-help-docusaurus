@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce210dde1bfa158fb55ed9",
+  "title": "What if I've forgotten my PIN?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/what-if-i-ve-forgotten-my-pin.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
+  "permalink": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/what-if-i-ve-forgotten-my-pin.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "id": "5fce210dde1bfa158fb55ed9",
+    "title": "What if I've forgotten my PIN?",
+    "description": "",
+    "slug": "what-if-i-ve-forgotten-my-pin",
+    "sidebar_position": 13,
+    "last_update": {
+      "date": "2020-12-08T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce210dde1bfa158fb55ed9",
+      "helpscout_url": "https://help.smartwinnr.com/article/13-what-if-ive-forgotten-my-pin"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What if I've forgotten my password?",
+    "permalink": "/get-started/onboarding/what-if-i-ve-forgotten-my-password"
+  },
+  "next": {
+    "title": "My Account is locked - what should I do?",
+    "permalink": "/get-started/onboarding/my-account-is-locked-what-should-i-do"
+  }
+}

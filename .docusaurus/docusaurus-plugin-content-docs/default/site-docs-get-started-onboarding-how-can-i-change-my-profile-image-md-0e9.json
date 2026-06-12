@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce2291eb7cc612aa3556fa",
+  "title": "How can I change my profile image?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/how-can-i-change-my-profile-image.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/how-can-i-change-my-profile-image",
+  "permalink": "/get-started/onboarding/how-can-i-change-my-profile-image",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/how-can-i-change-my-profile-image.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 15,
+  "frontMatter": {
+    "id": "5fce2291eb7cc612aa3556fa",
+    "title": "How can I change my profile image?",
+    "description": "",
+    "slug": "how-can-i-change-my-profile-image",
+    "sidebar_position": 15,
+    "last_update": {
+      "date": "2020-12-26T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce2291eb7cc612aa3556fa",
+      "helpscout_url": "https://help.smartwinnr.com/article/15-how-can-i-change-my-profile-image"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "My Account is locked - what should I do?",
+    "permalink": "/get-started/onboarding/my-account-is-locked-what-should-i-do"
+  },
+  "next": {
+    "title": "How can I change my password for SmartWinnr?",
+    "permalink": "/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr"
+  }
+}

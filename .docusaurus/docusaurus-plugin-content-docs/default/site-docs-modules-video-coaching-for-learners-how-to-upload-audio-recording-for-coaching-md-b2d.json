@@ -1,0 +1,48 @@
+{
+  "id": "modules/video-coaching/for-learners/62a2fa1957320007925236d9",
+  "title": "How to upload Audio Recording for Coaching",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching.md",
+  "sourceDirName": "modules/video-coaching/for-learners",
+  "slug": "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching",
+  "permalink": "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 266,
+  "frontMatter": {
+    "id": "62a2fa1957320007925236d9",
+    "title": "How to upload Audio Recording for Coaching",
+    "description": "",
+    "slug": "how-to-upload-audio-recording-for-coaching",
+    "sidebar_position": 266,
+    "last_update": {
+      "date": "2022-06-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "62a2fa1957320007925236d9",
+      "helpscout_url": "https://help.smartwinnr.com/article/266-how-to-record-audio-into-video-coaching"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I upload a coaching video?",
+    "permalink": "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video"
+  },
+  "next": {
+    "title": "How to upload Video Recording for Coaching",
+    "permalink": "/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching"
+  }
+}

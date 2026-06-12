@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/create-and-manage/5fd48497c868cb6df3a81016",
+  "title": "How to upload questions in bulk using 'Import Questions'.",
+  "description": "",
+  "source": "@site/docs/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions.md",
+  "sourceDirName": "modules/quiz/create-and-manage",
+  "slug": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions",
+  "permalink": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 46,
+  "frontMatter": {
+    "id": "5fd48497c868cb6df3a81016",
+    "title": "How to upload questions in bulk using 'Import Questions'.",
+    "description": "",
+    "slug": "how-to-upload-questions-in-bulk-using-import-questions",
+    "sidebar_position": 46,
+    "last_update": {
+      "date": "2021-08-01T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd48497c868cb6df3a81016",
+      "helpscout_url": "https://help.smartwinnr.com/article/46-how-to-use-import-questions"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz",
+    "permalink": "/modules/quiz/"
+  },
+  "next": {
+    "title": "How to create an automatic quiz?",
+    "permalink": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+  }
+}

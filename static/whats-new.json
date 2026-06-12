@@ -1,0 +1,27 @@
+{
+  "_comment": "Seed entries for the homepage 'What's new' feed. Each entry has {title, blurb?, href, date (YYYY-MM-DD), audience: [roles]}. The landing renders the 5 most recent entries that match the viewer's roles. Update freely — no rebuild required after a static file change; just re-deploy.",
+  "version": 1,
+  "entries": [
+    {
+      "title": "Help center re-architected",
+      "blurb": "Topic-first navigation with role-based audience sub-folders inside every module.",
+      "href": "/release-notes/announcements/",
+      "date": "2026-06-08",
+      "audience": ["user", "manager", "editor", "admin", "orgadmin", "lamadmin", "superadmin"]
+    },
+    {
+      "title": "Per-module sub-shape: Create & Manage / Reports / FAQs",
+      "blurb": "Every module now follows a uniform 10-leaf shape with for-learners and for-managers sub-folders.",
+      "href": "/release-notes/announcements/",
+      "date": "2026-06-06",
+      "audience": ["editor", "admin", "orgadmin", "lamadmin", "superadmin"]
+    },
+    {
+      "title": "Personalized landing page",
+      "blurb": "The homepage now adapts to your role — persona cards, recommended modules, and what's new are filtered to you.",
+      "href": "/",
+      "date": "2026-06-09",
+      "audience": ["user", "manager", "editor", "admin", "orgadmin", "lamadmin", "superadmin"]
+    }
+  ]
+}

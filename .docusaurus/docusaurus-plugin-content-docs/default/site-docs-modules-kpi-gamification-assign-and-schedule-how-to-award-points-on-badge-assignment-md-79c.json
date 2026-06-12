@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/assign-and-schedule/66448bf460cfc03ad3491583",
+  "title": "How to Award Points on Badge Assignment",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment.md",
+  "sourceDirName": "modules/kpi-gamification/assign-and-schedule",
+  "slug": "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment",
+  "permalink": "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 288,
+  "frontMatter": {
+    "id": "66448bf460cfc03ad3491583",
+    "title": "How to Award Points on Badge Assignment",
+    "description": "",
+    "slug": "how-to-award-points-on-badge-assignment",
+    "sidebar_position": 288,
+    "last_update": {
+      "date": "2024-06-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "66448bf460cfc03ad3491583",
+      "helpscout_url": "https://help.smartwinnr.com/article/288-how-to-award-points-on-badge-assignment"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "competitions"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I view the KPI scorecard?",
+    "permalink": "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard"
+  },
+  "next": {
+    "title": "How managers can view the competition Leaderboards in the SmartWinnr app?",
+    "permalink": "/modules/kpi-gamification/for-managers/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+  }
+}

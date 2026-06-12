@@ -1,0 +1,47 @@
+{
+  "id": "modules/survey/reports-and-analytics/5ffd689766df373cab70860b",
+  "title": "Survey Template Analytics",
+  "description": "",
+  "source": "@site/docs/modules/survey/reports-and-analytics/survey-template-analytics.md",
+  "sourceDirName": "modules/survey/reports-and-analytics",
+  "slug": "/modules/survey/reports-and-analytics/survey-template-analytics",
+  "permalink": "/modules/survey/reports-and-analytics/survey-template-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/reports-and-analytics/survey-template-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 204,
+  "frontMatter": {
+    "id": "5ffd689766df373cab70860b",
+    "title": "Survey Template Analytics",
+    "description": "",
+    "slug": "survey-template-analytics",
+    "sidebar_position": 204,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5ffd689766df373cab70860b",
+      "helpscout_url": "https://help.smartwinnr.com/article/204-survey-template-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "survey"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Survey Analytics",
+    "permalink": "/modules/survey/reports-and-analytics/survey-analytics"
+  },
+  "next": {
+    "title": "What is the difference between a Survey and a Survey Template?",
+    "permalink": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template"
+  }
+}

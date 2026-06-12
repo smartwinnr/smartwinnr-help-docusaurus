@@ -1,0 +1,30 @@
+{
+  "id": "reference/help-support/index",
+  "title": "Help & Support",
+  "description": "Troubleshooting guides, common issues, and support resources",
+  "source": "@site/docs/reference/help-support/index.md",
+  "sourceDirName": "reference/help-support",
+  "slug": "/reference/help-support/",
+  "permalink": "/reference/help-support/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reference/help-support/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "title": "Help & Support",
+    "description": "Troubleshooting guides, common issues, and support resources",
+    "slug": "/reference/help-support/",
+    "sidebar_position": 13
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Troubleshooting Guide",
+    "permalink": "/reference/troubleshooting/"
+  },
+  "next": {
+    "title": "Troubleshoot for common error code",
+    "permalink": "/reference/help-support/troubleshoot-for-common-error-code"
+  }
+}

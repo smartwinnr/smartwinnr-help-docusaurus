@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/create-and-manage/5fd112c50ca0c372c6f09352",
+  "title": "How to delete a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/create-and-manage",
+  "slug": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed",
+  "permalink": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 34,
+  "frontMatter": {
+    "id": "5fd112c50ca0c372c6f09352",
+    "title": "How to delete a SmartFeed?",
+    "description": "",
+    "slug": "how-to-delete-a-smartfeed",
+    "sidebar_position": 34,
+    "last_update": {
+      "date": "2026-01-16T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd112c50ca0c372c6f09352",
+      "helpscout_url": "https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Edit a SmartFeed",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed"
+  },
+  "next": {
+    "title": "How to add a Recording to a SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed"
+  }
+}

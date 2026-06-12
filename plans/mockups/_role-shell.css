@@ -1,0 +1,72 @@
+/* Per-role mockup shell — extends _styles.css with role-specific accents */
+
+.role-badge-bar {
+  background: var(--sw-bg-alt);
+  border-bottom: 1px solid var(--sw-border);
+  padding: 10px 20px;
+  font-size: 12px;
+  color: var(--sw-text-muted);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.role-badge-bar strong { color: var(--sw-text); }
+.role-badge-bar .tier-pill {
+  background: var(--sw-blue);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.role-badge-bar .tier-pill.t1 { background: #0ea5e9; }
+.role-badge-bar .tier-pill.t2 { background: #f59e0b; }
+.role-badge-bar .tier-pill.t3 { background: #8b5cf6; }
+.role-badge-bar .tier-pill.t4 { background: #ec4899; }
+.role-badge-bar .tier-pill.t5 { background: #ef4444; }
+.role-badge-bar .tier-pill.t6 { background: linear-gradient(90deg,#1e3a8a,#7c3aed,#db2777); }
+
+.nav-strip a.locked { color: #d1d5db; cursor: not-allowed; }
+.nav-strip a.locked::after { content: " 🔒"; font-size: 10px; }
+
+.role-banner {
+  background: var(--sw-blue-light);
+  border-left: 4px solid var(--sw-blue);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--sw-blue-dark);
+}
+.role-banner strong { display: block; margin-bottom: 4px; font-size: 14px; }
+
+.hidden-note {
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 16px 0;
+  font-size: 12px;
+  color: var(--sw-text-muted);
+  font-style: italic;
+}
+
+.role-nav-pager {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  padding: 8px 20px;
+  background: var(--sw-bg-alt);
+  border-bottom: 1px solid var(--sw-border);
+  font-size: 12px;
+}
+.role-nav-pager a {
+  text-decoration: none;
+  color: var(--sw-text);
+  background: white;
+  border: 1px solid var(--sw-border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.role-nav-pager a:hover { border-color: var(--sw-blue); color: var(--sw-blue); }
+.role-nav-pager a.current { background: var(--sw-blue); color: white; border-color: var(--sw-blue); }
+.role-nav-pager .sep { color: var(--sw-text-muted); padding: 4px 4px; }

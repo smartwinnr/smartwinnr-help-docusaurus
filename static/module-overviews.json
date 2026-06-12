@@ -1,0 +1,185 @@
+{
+  "_comment": "Per-module metadata used by src/components/Modules/ModuleOverview.tsx. Edit freely — no rebuild required after a static-file change; just redeploy. Each entry has: tagline (1 line), description (2-3 sentences), keyFeatures (3-5 bullets), who (audience description), privilege/anyPrivilege (gate identity — used to detect upsell branch), ctaEmail (the address pre-filled when a user clicks 'Talk to your admin').",
+  "version": 1,
+  "modules": {
+    "quiz": {
+      "label": "Quiz",
+      "tagline": "Knowledge checks, auto-quiz pools, and topic-wise mastery tracking.",
+      "description": "Quiz lets editors build assessments and learners take them. Eight question types — including multi-choice, hotspot, drag-and-drop, fill-in-the-blank, and matching — combine into manual or auto-generated quizzes. Managers track team performance through topic-, country-, and learner-wise analytics.",
+      "keyFeatures": [
+        "8 question types incl. drag-drop and hotspot",
+        "Auto-quiz pools with randomised question selection",
+        "Bulk question import via CSV",
+        "Topic-, country- and learner-wise analytics",
+        "Re-attempt rules and automatic reminders"
+      ],
+      "who": "Authored by Editors. Taken by all Learners. Managers see reportee scores.",
+      "privilege": "quiz",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "smartpath": {
+      "label": "SmartPath",
+      "tagline": "Curated learning journeys that combine quizzes, content, coaching, and live sessions.",
+      "description": "SmartPath lets editors stitch together quizzes, SmartFeed content, video coachings, surveys, and instructor-led learning sessions into a single ordered journey. Learners follow the path at their own pace; managers track completion and segment-wise time-on-task.",
+      "keyFeatures": [
+        "Mix quizzes, content, coachings, surveys, and live sessions",
+        "Per-segment duration tracking",
+        "Assign by user, group, division, or metatag",
+        "Subdivision and metatag-wise analytics",
+        "Learning-session attendance via mobile"
+      ],
+      "who": "Authored by Editors. Followed by Learners. Managers track reportee progress.",
+      "privilege": "smartpaths",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "smartfeed": {
+      "label": "SmartFeed",
+      "tagline": "Bite-sized video and article content delivered to the right audience.",
+      "description": "SmartFeed is your micro-learning content engine. Editors publish short videos, articles, and PPT decks; learners watch, like, and comment on a personalised feed. Use it for product updates, sales tips, and ongoing reinforcement between formal training.",
+      "keyFeatures": [
+        "Video, article, and PPT formats",
+        "Episode-style series with auto-thumbnails",
+        "Likes, comments, and engagement metrics",
+        "Certificate auto-issue on completion",
+        "Shareable resources for sales conversations"
+      ],
+      "who": "Authored by Editors. Consumed by all Learners. Managers see team engagement.",
+      "privilege": "content",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "video-coaching": {
+      "label": "Video Coaching",
+      "tagline": "Submit a recorded pitch, get scored by managers against a rubric.",
+      "description": "Video Coaching lets learners record themselves performing a sales pitch, product demo, or skill check; managers review the recording against a competency rubric and leave structured feedback. Audio-only and screen-recording variants are supported for non-video scenarios.",
+      "keyFeatures": [
+        "Video, audio, and screen-recording submissions",
+        "Manager-defined competency rubrics",
+        "Two-way chat on each submission",
+        "Skill-wise scoring and improvement tracking",
+        "Field coaching for in-person ride-alongs"
+      ],
+      "who": "Submitted by Learners. Reviewed by Managers. Configured by Editors.",
+      "privilege": "coaching",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "ai-coaching": {
+      "label": "AI Coaching",
+      "tagline": "Practice real-world conversations against an AI character that scores you.",
+      "description": "AI Coaching is a roleplay simulator. Editors configure an AI character — its persona, the scenario, and the skill rubric — and learners practice conversations until they feel ready for the real thing. The AI scores each attempt against the rubric and gives structured feedback. One-way and two-way conversation modes are supported.",
+      "keyFeatures": [
+        "AI characters with custom personas and scenarios",
+        "One-way and two-way roleplay modes",
+        "Skill-rubric scoring per attempt",
+        "Submission history and improvement trends",
+        "Manager review of reportee attempts"
+      ],
+      "who": "Practised by Learners. Configured by Editors. Reviewed by Managers.",
+      "privilege": "aiCoaching",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "field-coaching": {
+      "label": "Field Coaching",
+      "tagline": "Structured ride-along coaching with competency-based scoring.",
+      "description": "Field Coaching is for in-person coaching moments — sales ride-alongs, store walks, on-floor observations. Editors set the competencies and the rubric; managers fill them out on mobile during or right after the visit. The mobile-first design works offline and syncs when the manager reconnects.",
+      "keyFeatures": [
+        "Mobile-first form designed for in-the-field use",
+        "Competency-based rubric per coaching template",
+        "Manager and 2nd-level manager review flow",
+        "Offline support with sync on reconnect",
+        "Trend reports by reportee and by competency"
+      ],
+      "who": "Conducted by Managers in the field. Configured by Editors.",
+      "privilege": "fCoaching",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "survey": {
+      "label": "Survey",
+      "tagline": "Collect structured feedback with templates, sections, and response analytics.",
+      "description": "Survey lets editors design feedback instruments — from quick pulse checks to full 360s — with reusable templates, sectioned questionnaires, and a range of question types. Responses are auto-analysed with response-rate, distribution, and trend charts.",
+      "keyFeatures": [
+        "Multi-section questionnaires",
+        "Reusable survey templates",
+        "Anonymous and identified response modes",
+        "Response distribution and trend charts",
+        "Custom notifications to respondents"
+      ],
+      "who": "Designed by Editors. Responded to by all Learners.",
+      "privilege": "survey",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "knowledge-hub": {
+      "label": "Knowledge Hub",
+      "tagline": "A searchable library of reference content for in-the-moment lookup.",
+      "description": "Knowledge Hub (KHub) is the always-on reference shelf — product datasheets, FAQs, objection handlers, competitor briefs. Editors organise content into folders; learners search and read on the SmartWinnr app. KHub items can also be cited from coaching feedback and AI responses.",
+      "keyFeatures": [
+        "Folder-organised content library",
+        "Full-text search from the mobile app",
+        "Recent + trending sections on the home tab",
+        "View, like, and download analytics",
+        "Reusable from coaching feedback and AI Coaching"
+      ],
+      "who": "Curated by Editors. Searched by all Learners.",
+      "privilege": "khub",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "forms": {
+      "label": "Forms",
+      "tagline": "Custom data-collection forms with manager approval workflows.",
+      "description": "Forms let editors build short data-capture experiences — service requests, expense reports, customer-visit logs, anything that needs a structured response. Submissions can require manager approval before they're final.",
+      "keyFeatures": [
+        "Build custom forms with mixed input types",
+        "Submit from the left menu or the chat",
+        "Manager approve / reject workflow",
+        "Edit submissions from the manager view",
+        "Form-level analytics"
+      ],
+      "who": "Submitted by all Learners. Designed by Editors. Approved by Managers.",
+      "privilege": "forms",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "kpi-gamification": {
+      "label": "KPI & Gamification",
+      "tagline": "Scorecards, competitions, achievements, and engagement leaderboards.",
+      "description": "Track real-world performance with KPI scorecards and drive engagement through competitions, badges, and leaderboards. Editors map external data into KPIs; managers see team standings; learners chase their score.",
+      "keyFeatures": [
+        "KPI scorecards with custom field mapping",
+        "Team and individual competitions",
+        "Achievements, badges, and recognition",
+        "Real-time leaderboards",
+        "Division- and metatag-based segmentation"
+      ],
+      "who": "Configured by Editors. Tracked by Managers. Played by all Learners.",
+      "anyPrivilege": ["kpi", "competitions", "achievements"],
+      "ctaEmail": "admin@your-org.com"
+    },
+    "notifications": {
+      "label": "Notifications & Chat",
+      "tagline": "Custom, scheduled, and triggered notifications plus in-app chat.",
+      "description": "Reach your learners with templated and triggered notifications, scheduled drip campaigns, and a 1:1 / group chat for support. Editors and admins design the templates and delivery rules; learners receive them in-app and via push.",
+      "keyFeatures": [
+        "Custom notification templates",
+        "Scheduled drip campaigns",
+        "Triggered notifications from quiz, coaching, KPI events",
+        "1:1 and group chat",
+        "Rate-limit guardrails"
+      ],
+      "who": "Designed by Editors and OrgAdmins. Received by all Learners.",
+      "anyPrivilege": ["customNotifications", "notifications", "chat"],
+      "ctaEmail": "admin@your-org.com"
+    },
+    "cross-module": {
+      "label": "Cross-Module Features",
+      "tagline": "Behaviour that spans multiple modules — query, app updates, navigation.",
+      "description": "Cross-module features are pieces of SmartWinnr that aren't tied to one module. The QResolve query system, mobile app updates, SCORM course access, and other glue behaviours live here. Every role uses at least some of these.",
+      "keyFeatures": [
+        "QResolve — ask the support team a question",
+        "SCORM course access from the app",
+        "Mobile app updates from the web view",
+        "Cross-module advanced analytics",
+        "Shared content across competitions and quizzes"
+      ],
+      "who": "Used by everyone — Learners, Managers, Editors, Admins.",
+      "ctaEmail": "admin@your-org.com"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/survey/create-and-manage/5fd49bd14eb32171b80374c6",
+  "title": "How to create a 'Survey'.",
+  "description": "",
+  "source": "@site/docs/modules/survey/create-and-manage/how-to-create-a-survey.md",
+  "sourceDirName": "modules/survey/create-and-manage",
+  "slug": "/modules/survey/create-and-manage/how-to-create-a-survey",
+  "permalink": "/modules/survey/create-and-manage/how-to-create-a-survey",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/create-and-manage/how-to-create-a-survey.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 58,
+  "frontMatter": {
+    "id": "5fd49bd14eb32171b80374c6",
+    "title": "How to create a 'Survey'.",
+    "description": "",
+    "slug": "how-to-create-a-survey",
+    "sidebar_position": 58,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd49bd14eb32171b80374c6",
+      "helpscout_url": "https://help.smartwinnr.com/article/58-how-can-i-create-a-survey"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "survey"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Survey",
+    "permalink": "/modules/survey/"
+  },
+  "next": {
+    "title": "How to create a 'Survey Template'.",
+    "permalink": "/modules/survey/create-and-manage/how-to-create-a-survey-template"
+  }
+}

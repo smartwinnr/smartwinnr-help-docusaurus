@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fdb0e290b11ce44f63931c7",
+  "title": "How to upload KPI data?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 174,
+  "frontMatter": {
+    "id": "5fdb0e290b11ce44f63931c7",
+    "title": "How to upload KPI data?",
+    "description": "",
+    "slug": "how-to-upload-kpi-data",
+    "sidebar_position": 174,
+    "last_update": {
+      "date": "2025-08-13T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb0e290b11ce44f63931c7",
+      "helpscout_url": "https://help.smartwinnr.com/article/174-how-to-upload-kpi-data"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create KPI?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-kpi"
+  },
+  "next": {
+    "title": "How to create a Scorecard?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard"
+  }
+}

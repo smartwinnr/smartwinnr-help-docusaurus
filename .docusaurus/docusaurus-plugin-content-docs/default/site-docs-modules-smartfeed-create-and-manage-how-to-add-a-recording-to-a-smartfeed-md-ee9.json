@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/create-and-manage/60a60efceb3af44cc120a91b",
+  "title": "How to add a Recording to a SmartFeed?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/create-and-manage",
+  "slug": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed",
+  "permalink": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 239,
+  "frontMatter": {
+    "id": "60a60efceb3af44cc120a91b",
+    "title": "How to add a Recording to a SmartFeed?",
+    "description": "",
+    "slug": "how-to-add-a-recording-to-a-smartfeed",
+    "sidebar_position": 239,
+    "last_update": {
+      "date": "2026-01-17T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60a60efceb3af44cc120a91b",
+      "helpscout_url": "https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to delete a SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed"
+  },
+  "next": {
+    "title": "How to update the thumbnail of a SmartFeed",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed"
+  }
+}

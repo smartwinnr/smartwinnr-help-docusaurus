@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fdb13f67129911ba1b21e6b",
+  "title": "How to create a Scorecard?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 176,
+  "frontMatter": {
+    "id": "5fdb13f67129911ba1b21e6b",
+    "title": "How to create a Scorecard?",
+    "description": "",
+    "slug": "how-to-create-a-scorecard",
+    "sidebar_position": 176,
+    "last_update": {
+      "date": "2021-06-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb13f67129911ba1b21e6b",
+      "helpscout_url": "https://help.smartwinnr.com/article/176-how-to-create-a-scorecard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to upload KPI data?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data"
+  },
+  "next": {
+    "title": "How to add/change targets?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets"
+  }
+}

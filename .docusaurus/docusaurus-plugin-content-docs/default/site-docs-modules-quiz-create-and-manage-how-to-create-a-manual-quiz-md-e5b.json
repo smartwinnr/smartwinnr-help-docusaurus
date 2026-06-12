@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/create-and-manage/5fd490113d1d2a5b1c5ea153",
+  "title": "How to create a manual quiz?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-a-manual-quiz.md",
+  "sourceDirName": "modules/quiz/create-and-manage",
+  "slug": "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz",
+  "permalink": "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-a-manual-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 50,
+  "frontMatter": {
+    "id": "5fd490113d1d2a5b1c5ea153",
+    "title": "How to create a manual quiz?",
+    "description": "",
+    "slug": "how-to-create-a-manual-quiz",
+    "sidebar_position": 50,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd490113d1d2a5b1c5ea153",
+      "helpscout_url": "https://help.smartwinnr.com/article/50-how-to-create-a-manual-quiz"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create an automatic quiz?",
+    "permalink": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+  },
+  "next": {
+    "title": "How can I duplicate a quiz?",
+    "permalink": "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz"
+  }
+}

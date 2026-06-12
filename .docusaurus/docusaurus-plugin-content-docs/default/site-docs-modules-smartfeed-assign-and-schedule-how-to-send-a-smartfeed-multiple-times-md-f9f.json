@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/assign-and-schedule/5fd10d1a0ca0c372c6f09327",
+  "title": "How to send a SmartFeed multiple times?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times.md",
+  "sourceDirName": "modules/smartfeed/assign-and-schedule",
+  "slug": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times",
+  "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "id": "5fd10d1a0ca0c372c6f09327",
+    "title": "How to send a SmartFeed multiple times?",
+    "description": "",
+    "slug": "how-to-send-a-smartfeed-multiple-times",
+    "sidebar_position": 30,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd10d1a0ca0c372c6f09327",
+      "helpscout_url": "https://help.smartwinnr.com/article/30-how-to-send-a-smartfeed-multiple-times"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Do I Like and Comment on a SmartFeed?",
+    "permalink": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed"
+  },
+  "next": {
+    "title": "How to send the SmartFeed to Teams?",
+    "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams"
+  }
+}

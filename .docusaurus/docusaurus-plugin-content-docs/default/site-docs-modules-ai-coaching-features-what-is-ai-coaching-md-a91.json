@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/features/697086628446705a3c6f686c",
+  "title": "What is AI Coaching?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/features/what-is-ai-coaching.md",
+  "sourceDirName": "modules/ai-coaching/features",
+  "slug": "/modules/ai-coaching/features/what-is-ai-coaching",
+  "permalink": "/modules/ai-coaching/features/what-is-ai-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/features/what-is-ai-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 309,
+  "frontMatter": {
+    "id": "697086628446705a3c6f686c",
+    "title": "What is AI Coaching?",
+    "description": "",
+    "slug": "what-is-ai-coaching",
+    "sidebar_position": 309,
+    "last_update": {
+      "date": "2026-01-29T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "697086628446705a3c6f686c",
+      "helpscout_url": "https://help.smartwinnr.com/article/309-what-is-ai-coaching"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Review AI Coaching Submissions as a Manager?",
+    "permalink": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager"
+  },
+  "next": {
+    "title": "How do I track improvement?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement"
+  }
+}

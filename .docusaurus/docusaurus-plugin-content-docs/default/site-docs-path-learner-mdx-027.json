@@ -1,0 +1,34 @@
+{
+  "id": "path/path-learner",
+  "title": "I'm a learner",
+  "description": "Take quizzes, follow SmartPaths, submit coaching, view your KPIs and badges.",
+  "source": "@site/docs/path/learner.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/learner/",
+  "permalink": "/path/learner/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/learner.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-learner",
+    "title": "I'm a learner",
+    "description": "Take quizzes, follow SmartPaths, submit coaching, view your KPIs and badges.",
+    "slug": "/path/learner/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

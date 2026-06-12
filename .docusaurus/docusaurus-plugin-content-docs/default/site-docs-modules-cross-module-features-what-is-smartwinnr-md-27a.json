@@ -1,0 +1,46 @@
+{
+  "id": "modules/cross-module/features/5fcc6288de1bfa158fb55b9b",
+  "title": "What is SmartWinnr?",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/features/what-is-smartwinnr.md",
+  "sourceDirName": "modules/cross-module/features",
+  "slug": "/modules/cross-module/features/what-is-smartwinnr",
+  "permalink": "/modules/cross-module/features/what-is-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/features/what-is-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "5fcc6288de1bfa158fb55b9b",
+    "title": "What is SmartWinnr?",
+    "description": "",
+    "slug": "what-is-smartwinnr",
+    "sidebar_position": 4,
+    "last_update": {
+      "date": "2020-12-06T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fcc6288de1bfa158fb55b9b",
+      "helpscout_url": "https://help.smartwinnr.com/article/4-what-is-smartwinnr"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to access the SCORM course from the SmartWinnr app ?",
+    "permalink": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "How to add an audio file to your content?",
+    "permalink": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content"
+  }
+}

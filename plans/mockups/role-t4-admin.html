@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>T4 · Admin · SmartWinnr Help</title>
+<link rel="stylesheet" href="_styles.css" />
+<link rel="stylesheet" href="_role-shell.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help</div>
+  <div class="topbar-search"><input type="text" placeholder="Search docs, FAQs, and articles…" /></div>
+  <div class="topbar-right">
+    <span class="role-pill">Signed in as: Admin</span>
+    <span>alex.admin@acme.com</span>
+  </div>
+</header>
+
+<div class="role-badge-bar">
+  <span class="tier-pill t4">T4</span>
+  <strong>Role: admin</strong>
+  <span>· Tier 4 of 6</span>
+  <span>· Adds Integrations + Administration</span>
+  <span>· All 8 top-level tabs visible</span>
+</div>
+
+<div class="role-nav-pager">
+  <a href="role-t1-user.html">T1 · User</a>
+  <a href="role-t2-manager.html">T2 · Manager</a>
+  <a href="role-t3-editor.html">T3 · Editor</a>
+  <a href="role-t4-admin.html" class="current">T4 · Admin</a>
+  <a href="role-t5-orgadmin.html">T5 · OrgAdmin</a>
+  <a href="role-t6-superadmin.html">T6 · Superadmin</a>
+  <span class="sep">|</span>
+  <a href="index.html">← All mockups</a>
+</div>
+
+<nav class="nav-strip">
+  <a href="#">Get Started</a>
+  <a href="#">Guides</a>
+  <a href="#">Modules</a>
+  <a href="#">Reports &amp; Analytics</a>
+  <a href="#">Integrations</a>
+  <a href="#" class="active">Administration</a>
+  <a href="#">Reference</a>
+  <a href="#">Release Notes</a>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Get Started</div>
+      <div class="sb-item">Quickstart for admins</div>
+      <div class="sb-item">Admin concepts</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Guides</div>
+      <div class="sb-group"><span class="chev">▸</span> Authoring workflows</div>
+      <div class="sb-group"><span class="chev">▸</span> Onboarding new users</div>
+      <div class="sb-group"><span class="chev">▸</span> Configuring SSO</div>
+      <div class="sb-group"><span class="chev">▸</span> Setting up SCIM provisioning</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Modules</div>
+      <div class="sb-group"><span class="chev">▸</span> Quiz · SmartPath · SmartFeed …</div>
+      <div class="sb-group"><span class="chev">▸</span> Coaching (Video / AI / Field)</div>
+      <div class="sb-group"><span class="chev">▸</span> Survey · Forms · Knowledge Hub</div>
+      <div class="sb-group"><span class="chev">▸</span> KPI · Competitions · Achievements</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Reports &amp; Analytics</div>
+      <div class="sb-item">Learner reports <span class="badge priv">learnerReport</span></div>
+      <div class="sb-item">Admin reports <span class="badge priv">adminReports</span></div>
+      <div class="sb-item">Generated reports <span class="badge priv">generatedReports</span></div>
+      <div class="sb-item">Automated reports <span class="badge priv">automatedReports</span></div>
+      <div class="sb-item">Overall dashboards <span class="badge priv">overAllDashboards</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Integrations <span class="badge adm">Admin+</span></div>
+      <div class="sb-item">Azure AD / SSO <span class="badge priv">azureIntegration</span></div>
+      <div class="sb-item">SCIM provisioning <span class="badge priv">scimIntegration</span></div>
+      <div class="sb-item">User auto-integration <span class="badge priv">autoUserIntegration</span></div>
+      <div class="sb-item">xAPI / LRS <span class="badge priv">xApi</span></div>
+      <div class="sb-item">SCORM <span class="badge priv">scormCourse</span></div>
+      <div class="sb-item">Magic-link auth (help site)</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Administration <span class="badge adm">Admin+</span></div>
+      <div class="sb-group open"><span class="chev">▸</span> Users &amp; roles</div>
+      <div class="sb-children">
+        <div class="sb-item active">Create &amp; manage users</div>
+        <div class="sb-item">Assign roles &amp; subroles</div>
+        <div class="sb-item">Bulk user upload</div>
+        <div class="sb-item">Observer configuration</div>
+      </div>
+      <div class="sb-group"><span class="chev">▸</span> Groups &amp; metatags</div>
+      <div class="sb-group"><span class="chev">▸</span> Divisions &amp; subdivisions</div>
+      <div class="sb-group"><span class="chev">▸</span> Access permissions</div>
+      <div class="sb-group"><span class="chev">▸</span> Audit log <span class="badge priv">auditLog</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Approval flow <span class="badge priv">ApprovalFlow</span></div>
+      <div class="sb-group"><span class="chev">▸</span> Banner management <span class="badge priv">banner</span></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Reference</div>
+      <div class="sb-item">Roles &amp; privileges</div>
+      <div class="sb-item">Field-mapping reference</div>
+      <div class="sb-item">REST API</div>
+      <div class="sb-item">Glossary</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sb-cat">Release Notes</div>
+      <div class="sb-item">What's new for admins</div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+    <div class="breadcrumb"><a href="#">Help</a> › <a href="#">Administration</a> › <a href="#">Users &amp; roles</a> › Create &amp; manage users</div>
+    <h1>Create &amp; manage users</h1>
+    <p class="lead">
+      Admins gain access to the full <strong>Administration</strong> tree (users, groups, divisions,
+      audit, banners, approval flow) and the <strong>Integrations</strong> tab for SSO, SCIM, xAPI,
+      and SCORM configuration.
+    </p>
+
+    <div class="role-banner">
+      <strong>What this role sees</strong>
+      Two extra top-nav tabs unlock here: <strong>Integrations</strong> and
+      <strong>Administration</strong>. Everything T3 (Editor) sees is still available — admins are
+      the first tier that can configure the system itself, not just author content for it.
+    </div>
+
+    <h2>Admin task surface</h2>
+    <div class="cards">
+      <div class="card"><span class="ico">👥</span><h3>Add a user &amp; assign roles</h3><p>Provision an individual user with the right role.</p></div>
+      <div class="card"><span class="ico">📥</span><h3>Bulk-import users</h3><p>CSV onboarding with metatag &amp; division mapping.</p></div>
+      <div class="card"><span class="ico">🔐</span><h3>Configure Azure SSO</h3><p>OAuth, SAML, and the magic-link flow.</p></div>
+      <div class="card"><span class="ico">🔄</span><h3>Set up SCIM provisioning</h3><p>Auto-sync users from your IdP.</p></div>
+      <div class="card"><span class="ico">🗂</span><h3>Manage divisions</h3><p>Hierarchical access &amp; reporting boundaries.</p></div>
+      <div class="card"><span class="ico">🛡</span><h3>Review the audit log</h3><p>Who did what, when.</p></div>
+    </div>
+
+    <div class="hidden-note">
+      All 8 top-level tabs are visible to admins. Org-level features (custom notifications,
+      CRM components, transformation layer, etc.) still require <strong>orgadmin</strong> and
+      will appear as the next tier unlocks.
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="badge adm">Admin+</span> tier 4 and above</span>
+      <span class="legend-item"><span class="badge priv">azureIntegration</span> org must enable</span>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

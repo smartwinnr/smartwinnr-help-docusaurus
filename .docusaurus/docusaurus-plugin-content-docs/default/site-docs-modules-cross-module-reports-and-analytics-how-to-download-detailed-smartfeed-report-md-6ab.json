@@ -1,0 +1,46 @@
+{
+  "id": "modules/cross-module/reports-and-analytics/697066e7dadc293bb31335e8",
+  "title": "How to Download  Detailed SmartFeed Report",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report.md",
+  "sourceDirName": "modules/cross-module/reports-and-analytics",
+  "slug": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report",
+  "permalink": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 307,
+  "frontMatter": {
+    "id": "697066e7dadc293bb31335e8",
+    "title": "How to Download  Detailed SmartFeed Report",
+    "description": "",
+    "slug": "how-to-download-detailed-smartfeed-report",
+    "sidebar_position": 307,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "697066e7dadc293bb31335e8",
+      "helpscout_url": "https://help.smartwinnr.com/article/307-how-to-download-detailed-smartfeed-report"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Widgets",
+    "permalink": "/modules/cross-module/features/widgets"
+  },
+  "next": {
+    "title": "How to Set Reminder for your Tasks",
+    "permalink": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks"
+  }
+}

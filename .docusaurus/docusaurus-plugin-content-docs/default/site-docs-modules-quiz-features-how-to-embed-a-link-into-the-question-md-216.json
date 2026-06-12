@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/5fd4be483d1d2a5b1c5ea19b",
+  "title": "How to embed a link into the question",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-embed-a-link-into-the-question.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-embed-a-link-into-the-question",
+  "permalink": "/modules/quiz/features/how-to-embed-a-link-into-the-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-embed-a-link-into-the-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 66,
+  "frontMatter": {
+    "id": "5fd4be483d1d2a5b1c5ea19b",
+    "title": "How to embed a link into the question",
+    "description": "",
+    "slug": "how-to-embed-a-link-into-the-question",
+    "sidebar_position": 66,
+    "last_update": {
+      "date": "2021-01-25T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4be483d1d2a5b1c5ea19b",
+      "helpscout_url": "https://help.smartwinnr.com/article/66-how-to-embed-a-link-into-the-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add an 'Image' to the question.",
+    "permalink": "/modules/quiz/features/how-to-add-an-image-to-the-question"
+  },
+  "next": {
+    "title": "How to add an 'Audio file' to a question.",
+    "permalink": "/modules/quiz/features/how-to-add-an-audio-file-to-a-question"
+  }
+}

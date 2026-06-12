@@ -1,0 +1,25 @@
+{
+  "id": "release-notes/announcements/index",
+  "title": "Latest Announcements",
+  "description": "Stay updated with the latest SmartWinnr platform updates and announcements",
+  "source": "@site/docs/release-notes/announcements/index.md",
+  "sourceDirName": "release-notes/announcements",
+  "slug": "/release-notes/announcements/",
+  "permalink": "/release-notes/announcements/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/release-notes/announcements/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Latest Announcements",
+    "description": "Stay updated with the latest SmartWinnr platform updates and announcements",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Release Notes",
+    "permalink": "/release-notes"
+  }
+}

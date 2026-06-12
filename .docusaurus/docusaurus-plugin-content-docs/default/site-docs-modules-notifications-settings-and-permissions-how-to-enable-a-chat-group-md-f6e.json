@@ -1,0 +1,47 @@
+{
+  "id": "modules/notifications/settings-and-permissions/5fdaf6350b11ce44f6393177",
+  "title": "How to Enable a Chat Group?",
+  "description": "",
+  "source": "@site/docs/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group.md",
+  "sourceDirName": "modules/notifications/settings-and-permissions",
+  "slug": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group",
+  "permalink": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 154,
+  "frontMatter": {
+    "id": "5fdaf6350b11ce44f6393177",
+    "title": "How to Enable a Chat Group?",
+    "description": "",
+    "slug": "how-to-enable-a-chat-group",
+    "sidebar_position": 154,
+    "last_update": {
+      "date": "2021-06-09T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdaf6350b11ce44f6393177",
+      "helpscout_url": "https://help.smartwinnr.com/article/154-how-to-enable-a-chat-group"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "chat"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Bulk Custom Notifications",
+    "permalink": "/modules/notifications/features/bulk-custom-notifications"
+  },
+  "next": {
+    "title": "Cross-Module Features",
+    "permalink": "/modules/cross-module/"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/settings-and-permissions/60bf40d2a6d12c2cd643da33",
+  "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
+  "sourceDirName": "modules/smartpath/settings-and-permissions",
+  "slug": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+  "permalink": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 253,
+  "frontMatter": {
+    "id": "60bf40d2a6d12c2cd643da33",
+    "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
+    "description": "",
+    "slug": "how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+    "sidebar_position": 253,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60bf40d2a6d12c2cd643da33",
+      "helpscout_url": "https://help.smartwinnr.com/article/253-how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding the Module Wise Analysis Tab on the SmartPath Dashboard",
+    "permalink": "/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard"
+  },
+  "next": {
+    "title": "SmartFeed",
+    "permalink": "/modules/smartfeed/"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/5fd4955723119734ee37edb5",
+  "title": "What is SmartWinnr Quiz Analytics?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics",
+  "permalink": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 53,
+  "frontMatter": {
+    "id": "5fd4955723119734ee37edb5",
+    "title": "What is SmartWinnr Quiz Analytics?",
+    "description": "",
+    "slug": "what-is-smartwinnr-quiz-analytics",
+    "sidebar_position": 53,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4955723119734ee37edb5",
+      "helpscout_url": "https://help.smartwinnr.com/article/53-what-is-smartwinnr-quiz-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Drag and Drop into Image Question?",
+    "permalink": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question"
+  },
+  "next": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics"
+  }
+}

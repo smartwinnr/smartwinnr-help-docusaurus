@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/create-and-manage/69705f458446705a3c6f6831",
+  "title": "How to create Re-order Questions ?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-re-order-questions.md",
+  "sourceDirName": "modules/quiz/create-and-manage",
+  "slug": "/modules/quiz/create-and-manage/how-to-create-re-order-questions",
+  "permalink": "/modules/quiz/create-and-manage/how-to-create-re-order-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-re-order-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 306,
+  "frontMatter": {
+    "id": "69705f458446705a3c6f6831",
+    "title": "How to create Re-order Questions ?",
+    "description": "",
+    "slug": "how-to-create-re-order-questions",
+    "sidebar_position": 306,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "69705f458446705a3c6f6831",
+      "helpscout_url": "https://help.smartwinnr.com/article/306-how-to-create-re-order-questions01"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create 'Numeric Type Questions'",
+    "permalink": "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions"
+  },
+  "next": {
+    "title": "How to Answer Long  Answer type Questions in SmartWinnr?",
+    "permalink": "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr"
+  }
+}

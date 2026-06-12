@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fda24cfa5d295659b3697bf",
+  "title": "How to add a challenge to the competition?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 107,
+  "frontMatter": {
+    "id": "5fda24cfa5d295659b3697bf",
+    "title": "How to add a challenge to the competition?",
+    "description": "",
+    "slug": "how-to-add-a-challenge-to-the-competition",
+    "sidebar_position": 107,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fda24cfa5d295659b3697bf",
+      "helpscout_url": "https://help.smartwinnr.com/article/107-how-to-add-a-challenge-to-the-competition"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "competitions"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Video Coaching to the competition?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition"
+  },
+  "next": {
+    "title": "How to Duplicate a quiz in a Competition?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition"
+  }
+}

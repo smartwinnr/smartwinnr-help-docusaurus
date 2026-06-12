@@ -1,0 +1,46 @@
+{
+  "id": "modules/video-coaching/settings-and-permissions/5fd75963a5d295659b36893f",
+  "title": "How to set competencies.",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/settings-and-permissions/how-to-set-competencies.md",
+  "sourceDirName": "modules/video-coaching/settings-and-permissions",
+  "slug": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies",
+  "permalink": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/settings-and-permissions/how-to-set-competencies.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 91,
+  "frontMatter": {
+    "id": "5fd75963a5d295659b36893f",
+    "title": "How to set competencies.",
+    "description": "",
+    "slug": "how-to-set-competencies",
+    "sidebar_position": 91,
+    "last_update": {
+      "date": "2021-02-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd75963a5d295659b36893f",
+      "helpscout_url": "https://help.smartwinnr.com/article/91-how-to-set-competencies"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ],
+      "privilege": "coaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "permalink": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+  },
+  "next": {
+    "title": "How to enable the Streaming Links for Video Coaching",
+    "permalink": "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching"
+  }
+}

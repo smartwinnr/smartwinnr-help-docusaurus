@@ -1,0 +1,45 @@
+{
+  "id": "administration/system-management/5fda52ada5d295659b36990a",
+  "title": "How do I unlock an account?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/how-do-i-unlock-an-account.md",
+  "sourceDirName": "administration/system-management",
+  "slug": "/administration/system-management/how-do-i-unlock-an-account",
+  "permalink": "/administration/system-management/how-do-i-unlock-an-account",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-do-i-unlock-an-account.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 126,
+  "frontMatter": {
+    "id": "5fda52ada5d295659b36990a",
+    "title": "How do I unlock an account?",
+    "description": "",
+    "slug": "how-do-i-unlock-an-account",
+    "sidebar_position": 126,
+    "last_update": {
+      "date": "2021-01-15T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fda52ada5d295659b36990a",
+      "helpscout_url": "https://help.smartwinnr.com/article/126-how-do-i-unlock-an-account"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can an Admin change anyone's password?",
+    "permalink": "/administration/system-management/how-can-an-admin-change-anyone-s-password"
+  },
+  "next": {
+    "title": "What is a Group?",
+    "permalink": "/administration/system-management/what-is-a-group"
+  }
+}

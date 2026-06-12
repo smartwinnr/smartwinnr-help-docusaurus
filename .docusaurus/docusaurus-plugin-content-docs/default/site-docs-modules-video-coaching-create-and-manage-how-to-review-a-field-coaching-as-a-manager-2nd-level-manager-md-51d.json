@@ -1,0 +1,47 @@
+{
+  "id": "modules/video-coaching/create-and-manage/631fbb2490c29a3d732c6e6e",
+  "title": "How to review a field coaching as a manager/2nd level manager",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+  "sourceDirName": "modules/video-coaching/create-and-manage",
+  "slug": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+  "permalink": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 277,
+  "frontMatter": {
+    "id": "631fbb2490c29a3d732c6e6e",
+    "title": "How to review a field coaching as a manager/2nd level manager",
+    "description": "",
+    "slug": "how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+    "sidebar_position": 277,
+    "last_update": {
+      "date": "2022-09-12T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "631fbb2490c29a3d732c6e6e",
+      "helpscout_url": "https://help.smartwinnr.com/article/277-how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "coaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create Field Coaching",
+    "permalink": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+  },
+  "next": {
+    "title": "How to reset a coaching video",
+    "permalink": "/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video"
+  }
+}

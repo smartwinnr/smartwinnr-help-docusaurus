@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/5ffc22a3551e0c2853f3af84",
+  "title": "Quiz Comparison Report",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/quiz-comparison-report.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/quiz-comparison-report",
+  "permalink": "/modules/quiz/reports-and-analytics/quiz-comparison-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/quiz-comparison-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 200,
+  "frontMatter": {
+    "id": "5ffc22a3551e0c2853f3af84",
+    "title": "Quiz Comparison Report",
+    "description": "",
+    "slug": "quiz-comparison-report",
+    "sidebar_position": 200,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5ffc22a3551e0c2853f3af84",
+      "helpscout_url": "https://help.smartwinnr.com/article/200-quiz-comparison-report"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question Response Analytics",
+    "permalink": "/modules/quiz/reports-and-analytics/question-response-analytics"
+  },
+  "next": {
+    "title": "How Editors evaluate Long Answer Questions?",
+    "permalink": "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions"
+  }
+}

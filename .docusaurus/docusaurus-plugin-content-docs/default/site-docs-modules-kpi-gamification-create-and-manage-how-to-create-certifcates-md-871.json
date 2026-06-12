@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fdb50c1b624c71b7985a730",
+  "title": "How to create Certifcates",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-certifcates.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-certifcates.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 194,
+  "frontMatter": {
+    "id": "5fdb50c1b624c71b7985a730",
+    "title": "How to create Certifcates",
+    "description": "",
+    "slug": "how-to-create-certifcates",
+    "sidebar_position": 194,
+    "last_update": {
+      "date": "2026-04-06T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb50c1b624c71b7985a730",
+      "helpscout_url": "https://help.smartwinnr.com/article/194-how-to-create-an-achievements"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "achievements"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Manager Challenge?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-manager-challenge"
+  },
+  "next": {
+    "title": "How to add a Form to Competition?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition"
+  }
+}

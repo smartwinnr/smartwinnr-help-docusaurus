@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/reports-and-analytics/5fd4998236980410c9123856",
+  "title": "Question Response Analytics",
+  "description": "",
+  "source": "@site/docs/modules/quiz/reports-and-analytics/question-response-analytics.md",
+  "sourceDirName": "modules/quiz/reports-and-analytics",
+  "slug": "/modules/quiz/reports-and-analytics/question-response-analytics",
+  "permalink": "/modules/quiz/reports-and-analytics/question-response-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/question-response-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 56,
+  "frontMatter": {
+    "id": "5fd4998236980410c9123856",
+    "title": "Question Response Analytics",
+    "description": "",
+    "slug": "question-response-analytics",
+    "sidebar_position": 56,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4998236980410c9123856",
+      "helpscout_url": "https://help.smartwinnr.com/article/56-question-response-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Detailed Quiz Analytics",
+    "permalink": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics"
+  },
+  "next": {
+    "title": "Quiz Comparison Report",
+    "permalink": "/modules/quiz/reports-and-analytics/quiz-comparison-report"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "modules/video-coaching/for-managers/603748758502d1120e90b0ed",
+  "title": "How Manager can check the status of the Coachings assigned to My Team",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+  "sourceDirName": "modules/video-coaching/for-managers",
+  "slug": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+  "permalink": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 229,
+  "frontMatter": {
+    "id": "603748758502d1120e90b0ed",
+    "title": "How Manager can check the status of the Coachings assigned to My Team",
+    "description": "",
+    "slug": "how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+    "sidebar_position": 229,
+    "last_update": {
+      "date": "2021-02-25T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "603748758502d1120e90b0ed",
+      "helpscout_url": "https://help.smartwinnr.com/article/229-how-manager-can-view-and-check-the-status-of-the-coachings-assigned-to-my-team"
+    },
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "managerView"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is 'My Team Coaching'?",
+    "permalink": "/modules/video-coaching/for-managers/what-is-my-team-coaching"
+  },
+  "next": {
+    "title": "How to set competencies.",
+    "permalink": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies"
+  }
+}

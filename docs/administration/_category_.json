@@ -1,0 +1,14 @@
+{
+  "label": "Administration",
+  "position": 6,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

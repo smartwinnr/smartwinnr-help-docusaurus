@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/5fdb15d60b11ce44f63931e1",
+  "title": "How to create an Individual Challenge?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 179,
+  "frontMatter": {
+    "id": "5fdb15d60b11ce44f63931e1",
+    "title": "How to create an Individual Challenge?",
+    "description": "",
+    "slug": "how-to-create-an-individual-challenge",
+    "sidebar_position": 179,
+    "last_update": {
+      "date": "2021-01-13T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb15d60b11ce44f63931e1",
+      "helpscout_url": "https://help.smartwinnr.com/article/179-how-to-create-an-individual-challenge"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add/change targets?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets"
+  },
+  "next": {
+    "title": "How to create a Group Challenge?",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge"
+  }
+}

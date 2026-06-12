@@ -1,0 +1,48 @@
+{
+  "id": "modules/forms/for-learners/60086bd71c64ad47e4b711c2",
+  "title": "How can I submit a Form from Left Menu",
+  "description": "",
+  "source": "@site/docs/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu.md",
+  "sourceDirName": "modules/forms/for-learners",
+  "slug": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu",
+  "permalink": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 225,
+  "frontMatter": {
+    "id": "60086bd71c64ad47e4b711c2",
+    "title": "How can I submit a Form from Left Menu",
+    "description": "",
+    "slug": "how-can-i-submit-a-form-from-left-menu",
+    "sidebar_position": 225,
+    "last_update": {
+      "date": "2022-06-16T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60086bd71c64ad47e4b711c2",
+      "helpscout_url": "https://help.smartwinnr.com/article/225-how-can-i-submit-a-form"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add Approvers to a Form",
+    "permalink": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form"
+  },
+  "next": {
+    "title": "How can I submit a Form from Chat",
+    "permalink": "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat"
+  }
+}

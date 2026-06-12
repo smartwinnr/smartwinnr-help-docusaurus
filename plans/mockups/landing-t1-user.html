@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Landing · T1 User · SmartWinnr Help</title>
+<link rel="stylesheet" href="_styles.css" />
+<link rel="stylesheet" href="_role-shell.css" />
+<link rel="stylesheet" href="_landing.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help</div>
+  <div class="topbar-search"><input type="text" placeholder="Search docs, FAQs, and articles…" /></div>
+  <div class="topbar-right">
+    <span class="role-pill">Signed in as: User (learner)</span>
+    <span>jane.learner@acme.com</span>
+  </div>
+</header>
+
+<div class="role-badge-bar">
+  <span class="tier-pill t1">T1</span>
+  <strong>Role: user</strong>
+  <span>· Personalized landing — persona cards filtered by hasMinTier(user, n)</span>
+</div>
+
+<div class="role-nav-pager">
+  <a href="landing-t1-user.html" class="current">T1 · User</a>
+  <a href="landing-t3-editor.html">T3 · Editor</a>
+  <a href="landing-t5-orgadmin.html">T5 · OrgAdmin</a>
+  <span class="sep">|</span>
+  <a href="role-t1-user.html">Sidebar mockups →</a>
+  <a href="index.html">← All mockups</a>
+</div>
+
+<nav class="nav-strip">
+  <a href="#" class="active">Get Started</a>
+  <a href="#">Guides</a>
+  <a href="#">Modules</a>
+  <a href="#" class="locked">Reports &amp; Analytics</a>
+  <a href="#" class="locked">Integrations</a>
+  <a href="#" class="locked">Administration</a>
+  <a href="#">Reference</a>
+  <a href="#">Release Notes</a>
+</nav>
+
+<main class="main" style="max-width: 1120px;">
+
+  <div class="landing-hero">
+    <div class="greeting-meta">
+      <span class="role-pill">learner</span>
+      <span>Acme Sales · India</span>
+    </div>
+    <h1>Hi Jane — what would you like to do today?</h1>
+    <div class="hero-search"><input type="text" placeholder='Ask anything — e.g. "how to take a quiz", "view my KPI"' /></div>
+    <div class="hero-cta-row">
+      <span class="cta primary">💬 Open the help bot</span>
+      <span class="cta">📚 Browse all modules</span>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>Pick a path</h2>
+    <div class="persona-cards">
+      <div class="pcard"><span class="pico">🎓</span><div>
+        <h3>Be a learner</h3>
+        <p>Take quizzes, follow SmartPaths, submit coaching, view KPIs &amp; badges.</p>
+      </div></div>
+      <div class="pcard"><span class="pico">🆘</span><div>
+        <h3>I need help</h3>
+        <p>FAQs, troubleshooting, glossary, and contact support.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>Recommended for you <a class="see-all" href="#">All modules →</a></h2>
+    <div class="module-strip">
+      <div class="mtile"><strong>📝 Quiz</strong><span class="desc">Take assigned quizzes</span><span class="priv-pill">quiz</span></div>
+      <div class="mtile"><strong>🛤 SmartPath</strong><span class="desc">Follow learning journeys</span><span class="priv-pill">smartpaths</span></div>
+      <div class="mtile"><strong>📺 SmartFeed</strong><span class="desc">Watch &amp; engage</span><span class="priv-pill">content</span></div>
+      <div class="mtile"><strong>🎥 Video Coaching</strong><span class="desc">Submit recordings</span><span class="priv-pill">coaching</span></div>
+      <div class="mtile"><strong>🤖 AI Coaching</strong><span class="desc">Practice with AI</span><span class="priv-pill">aiCoaching</span></div>
+      <div class="mtile"><strong>📋 Survey</strong><span class="desc">Respond to surveys</span><span class="priv-pill">survey</span></div>
+      <div class="mtile"><strong>🏆 KPI &amp; Achievements</strong><span class="desc">Score &amp; badges</span><span class="priv-pill">kpi</span></div>
+      <div class="mtile locked"><strong>🔌 Integrations</strong><span class="desc">Admin-only — hidden in nav</span></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>What's new for you <a class="see-all" href="#">All release notes →</a></h2>
+    <ul class="feed-list">
+      <li>
+        <span>🤖</span>
+        <span>
+          <a href="#"><strong>AI Coaching mobile improvements</strong></a>
+          <span class="crumb">Release notes · Customer-facing</span>
+        </span>
+        <span class="when">2 days ago</span>
+      </li>
+      <li>
+        <span>📚</span>
+        <span>
+          <a href="#"><strong>Knowledge Hub: recent + trending revamp</strong></a>
+          <span class="crumb">Release notes · Customer-facing</span>
+        </span>
+        <span class="when">1 week ago</span>
+      </li>
+      <li>
+        <span>🛤</span>
+        <span>
+          <a href="#"><strong>SmartPath learning sessions: mobile attendance</strong></a>
+          <span class="crumb">Release notes · Customer-facing</span>
+        </span>
+        <span class="when">3 weeks ago</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>Pick up where you left off <a class="see-all" href="#">Forget recents</a></h2>
+    <ul class="feed-list">
+      <li>
+        <span>🛤</span>
+        <span>
+          <a href="#"><strong>How to take an assigned SmartPath</strong></a>
+          <span class="crumb">SmartPath · For Learners</span>
+        </span>
+        <span class="when">yesterday</span>
+      </li>
+      <li>
+        <span>🎥</span>
+        <span>
+          <a href="#"><strong>How to upload a coaching video</strong></a>
+          <span class="crumb">Video Coaching · For Learners</span>
+        </span>
+        <span class="when">3 days ago</span>
+      </li>
+      <li>
+        <span>📚</span>
+        <span>
+          <a href="#"><strong>How to use Knowledge Hub in the app</strong></a>
+          <span class="crumb">Knowledge Hub · For Learners</span>
+        </span>
+        <span class="when">last week</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>Need more help?</h2>
+    <div class="help-footer">
+      <div class="hf-card"><strong>📖 Glossary</strong><div class="desc">Words SmartWinnr uses</div></div>
+      <div class="hf-card"><strong>💬 Ask the help bot</strong><div class="desc">Grounded in this help center</div></div>
+      <div class="hf-card"><strong>🛟 Open a support ticket</strong><div class="desc">Reach SmartWinnr support</div></div>
+      <div class="hf-card"><strong>📜 Release notes</strong><div class="desc">Recent product updates</div></div>
+    </div>
+  </div>
+
+  <div class="hidden-note">
+    Behind the scenes, three top-nav tabs (<em>Reports &amp; Analytics</em>, <em>Integrations</em>, <em>Administration</em>)
+    are hidden for this role because <code>hasMinTier(user, 4)</code> returns false. The persona grid above shows only
+    two cards because <code>hasMinTier(user, 2)</code> is also false (manager+ cards are hidden).
+  </div>
+
+</main>
+
+</body>
+</html>

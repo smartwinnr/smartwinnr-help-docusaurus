@@ -1,0 +1,47 @@
+{
+  "id": "modules/forms/features/60bb69c690777e23fb8ada49",
+  "title": "How to Submit a Form on behalf of a User",
+  "description": "",
+  "source": "@site/docs/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user.md",
+  "sourceDirName": "modules/forms/features",
+  "slug": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user",
+  "permalink": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 252,
+  "frontMatter": {
+    "id": "60bb69c690777e23fb8ada49",
+    "title": "How to Submit a Form on behalf of a User",
+    "description": "",
+    "slug": "how-to-submit-a-form-on-behalf-of-a-user",
+    "sidebar_position": 252,
+    "last_update": {
+      "date": "2025-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60bb69c690777e23fb8ada49",
+      "helpscout_url": "https://help.smartwinnr.com/article/252-how-to-submit-a-form-on-behalf-of-a-user"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Approve/Reject a Form Submission",
+    "permalink": "/modules/forms/features/how-to-approve-reject-a-form-submission"
+  },
+  "next": {
+    "title": "Form Analytics",
+    "permalink": "/modules/forms/reports-and-analytics/form-analytics"
+  }
+}

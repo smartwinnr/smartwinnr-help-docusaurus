@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/assign-and-schedule/5fd10f0ba72c62318a4c08b7",
+  "title": "How to send the SmartFeed to Teams?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams.md",
+  "sourceDirName": "modules/smartfeed/assign-and-schedule",
+  "slug": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams",
+  "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 31,
+  "frontMatter": {
+    "id": "5fd10f0ba72c62318a4c08b7",
+    "title": "How to send the SmartFeed to Teams?",
+    "description": "",
+    "slug": "how-to-send-the-smartfeed-to-teams",
+    "sidebar_position": 31,
+    "last_update": {
+      "date": "2026-01-17T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd10f0ba72c62318a4c08b7",
+      "helpscout_url": "https://help.smartwinnr.com/article/31-how-to-send-the-smartfeed-to-teams"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to send a SmartFeed multiple times?",
+    "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times"
+  },
+  "next": {
+    "title": "What are SmartFeeds?",
+    "permalink": "/modules/smartfeed/features/what-are-smartfeeds"
+  }
+}

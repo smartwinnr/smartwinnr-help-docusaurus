@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/5fd45c1523119734ee37ed79",
+  "title": "How to create 'Multiple-Choice Questions'.",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-create-multiple-choice-questions.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-create-multiple-choice-questions",
+  "permalink": "/modules/quiz/features/how-to-create-multiple-choice-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-multiple-choice-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 40,
+  "frontMatter": {
+    "id": "5fd45c1523119734ee37ed79",
+    "title": "How to create 'Multiple-Choice Questions'.",
+    "description": "",
+    "slug": "how-to-create-multiple-choice-questions",
+    "sidebar_position": 40,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd45c1523119734ee37ed79",
+      "helpscout_url": "https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question bank",
+    "permalink": "/modules/quiz/features/question-bank"
+  },
+  "next": {
+    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "permalink": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions"
+  }
+}

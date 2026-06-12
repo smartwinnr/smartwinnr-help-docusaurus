@@ -1,0 +1,22 @@
+{
+  "label": "Modules",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Modules",
+    "description": "Every SmartWinnr module: Quiz, SmartPath, SmartFeed, Coaching, Survey, KPI & Gamification, and more. Pick a module to see its overview, authoring guides, and reports."
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

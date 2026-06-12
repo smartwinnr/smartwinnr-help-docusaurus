@@ -1,0 +1,43 @@
+{
+  "id": "modules/video-coaching/module-video-coaching",
+  "title": "Video Coaching",
+  "description": "Submit a recorded pitch, get scored by managers against a rubric.",
+  "source": "@site/docs/modules/video-coaching/index.mdx",
+  "sourceDirName": "modules/video-coaching",
+  "slug": "/modules/video-coaching/",
+  "permalink": "/modules/video-coaching/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-video-coaching",
+    "title": "Video Coaching",
+    "description": "Submit a recorded pitch, get scored by managers against a rubric.",
+    "slug": "/modules/video-coaching/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view SmartFeed Analytics?",
+    "permalink": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics"
+  },
+  "next": {
+    "title": "How to create Field Coaching",
+    "permalink": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+  }
+}

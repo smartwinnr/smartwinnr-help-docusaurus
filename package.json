@@ -30,6 +30,9 @@
     "helpscout:migrate": "node scripts/migrate-helpscout.js",
     "lint:docs": "markdownlint-cli2",
     "lint:docs:fix": "markdownlint-cli2 --fix",
+    "validate:privileges": "node scripts/validate-privilege-keys.js",
+    "audit:gates": "node scripts/audit-gates.js",
+    "prebuild": "node scripts/validate-privilege-keys.js && node scripts/audit-gates.js",
     "prepare": "husky"
   },
   "keywords": [],
@@ -44,6 +47,7 @@
     "@chroma-core/default-embed": "^0.1.9",
     "@chroma-core/openai": "^0.1.9",
     "@docusaurus/core": "^3.8.1",
+    "@docusaurus/plugin-client-redirects": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",

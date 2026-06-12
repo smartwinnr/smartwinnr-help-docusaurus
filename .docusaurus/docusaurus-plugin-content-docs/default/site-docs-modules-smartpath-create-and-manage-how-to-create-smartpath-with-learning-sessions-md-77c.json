@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/create-and-manage/60b8befc4dda6972e0931f8a",
+  "title": "How to Create SmartPath with Learning Sessions?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions.md",
+  "sourceDirName": "modules/smartpath/create-and-manage",
+  "slug": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions",
+  "permalink": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 248,
+  "frontMatter": {
+    "id": "60b8befc4dda6972e0931f8a",
+    "title": "How to Create SmartPath with Learning Sessions?",
+    "description": "",
+    "slug": "how-to-create-smartpath-with-learning-sessions",
+    "sidebar_position": 248,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60b8befc4dda6972e0931f8a",
+      "helpscout_url": "https://help.smartwinnr.com/article/248-how-to-create-a-learning-session-for-smartpaths"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add Learning Sessions In SmartPath Module?",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module"
+  },
+  "next": {
+    "title": "How to Import SCORM course into SmartWinnr?",
+    "permalink": "/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr"
+  }
+}

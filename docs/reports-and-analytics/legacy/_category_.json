@@ -1,0 +1,10 @@
+{
+  "label": "Reports (Legacy)",
+  "position": 90,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": ["editor", "admin", "orgadmin", "lamadmin", "superadmin"],
+    "anyPrivilege": ["learnerReport", "adminReports", "generatedReports"]
+  }
+}

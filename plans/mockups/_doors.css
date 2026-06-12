@@ -1,0 +1,284 @@
+/* Option C — Persona-led "door" landing. Shared styles for the front-door
+ * picker and the behind-the-door persona hero. Pairs with _styles.css +
+ * _landing.css from the same directory. */
+
+.doorsHero {
+  margin: 24px 0 36px;
+  padding: 28px 0 12px;
+}
+.doorsHero .eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sw-blue);
+  margin-bottom: 6px;
+}
+.doorsHero h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #1f2937;
+}
+.doorsHero .sub {
+  color: #6b7280;
+  font-size: 15px;
+  margin: 0 0 24px;
+}
+
+.doorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1024px) {
+  .doorGrid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .doorGrid { grid-template-columns: 1fr; }
+}
+
+.door {
+  position: relative;
+  background: white;
+  border: 1px solid var(--sw-border);
+  border-radius: 14px;
+  padding: 22px 18px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 188px;
+  box-shadow: 0 1px 2px rgba(17,12,46,.04);
+}
+.door:hover {
+  transform: translateY(-3px);
+  border-color: var(--sw-blue);
+  box-shadow: 0 10px 24px rgba(46,92,184,0.12);
+}
+.door .doorIco {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.door h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--sw-blue-dark);
+}
+.door p {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 0 0 12px;
+  line-height: 1.5;
+  flex: 1;
+}
+.door .enter {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sw-blue);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.door .enter::after {
+  content: '→';
+  transition: transform 0.18s ease;
+}
+.door:hover .enter::after { transform: translateX(2px); }
+
+/* Spotlight = the door we believe the viewer "lives in" (their primary role).
+ * Picked up via the viewer's primary tier; not a hard gate. */
+.door.spotlight {
+  border-color: var(--sw-blue);
+  border-width: 2px;
+  background: linear-gradient(145deg, #ffffff 0%, #f4f0ff 100%);
+}
+.door.spotlight .doorIco {
+  filter: drop-shadow(0 2px 6px rgba(108, 76, 255, 0.18));
+}
+.door.spotlight::before {
+  content: 'Your primary lens';
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: var(--sw-blue);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Doors a role can't enter — show but visibly muted. */
+.door.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #fafafb;
+}
+.door.locked:hover {
+  transform: none;
+  border-color: var(--sw-border);
+  box-shadow: 0 1px 2px rgba(17,12,46,.04);
+}
+.door.locked .enter {
+  color: #94a3b8;
+}
+.door.locked .enter::after { content: '🔒'; }
+
+/* ──────────── Behind-the-door persona hero ──────────── */
+
+.personaShell {
+  background: linear-gradient(135deg, var(--sw-blue-light) 0%, white 90%);
+  border-radius: 14px;
+  padding: 26px 30px 24px;
+  margin: 24px 0 28px;
+  border: 1px solid #e0e7ff;
+}
+.personaShell .crumb {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+.personaShell .crumb a {
+  color: var(--sw-blue);
+  text-decoration: none;
+}
+.personaShell .crumb a:hover { text-decoration: underline; }
+.personaShell .row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.personaShell .ico {
+  font-size: 56px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.personaShell h1 {
+  font-size: 28px;
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.personaShell .sub {
+  font-size: 14.5px;
+  color: #6b7280;
+  margin: 0;
+  max-width: 640px;
+}
+
+.modeSwitcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid var(--sw-border);
+  border-radius: 999px;
+  padding: 4px 10px 4px 4px;
+  font-size: 12px;
+  margin-top: 16px;
+  text-decoration: none;
+  color: var(--sw-blue);
+  font-weight: 500;
+}
+.modeSwitcher:hover {
+  background: var(--sw-blue-light);
+  border-color: var(--sw-blue);
+}
+.modeSwitcher .currentMode {
+  background: var(--sw-blue);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-right: 2px;
+}
+
+/* Curated task cards inside a door */
+.taskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+.taskCard {
+  background: white;
+  border: 1px solid var(--sw-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.taskCard:hover {
+  border-color: var(--sw-blue);
+  transform: translateY(-1px);
+}
+.taskCard .ti { font-size: 18px; }
+.taskCard strong {
+  font-size: 13.5px;
+  color: var(--sw-blue-dark);
+}
+.taskCard .desc {
+  font-size: 12px;
+  color: #6b7280;
+}
+.taskCard.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.taskCard.disabled:hover { transform: none; border-color: var(--sw-border); }
+
+/* Section header inside a door page */
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 28px 0 12px;
+}
+.sectionHead h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.sectionHead .meta {
+  font-size: 11.5px;
+  color: #94a3b8;
+}
+
+/* Mode swap rail — links to the other doors */
+.modeRail {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 0 8px;
+  margin-top: 28px;
+  border-top: 1px solid var(--sw-border);
+}
+.modeRail .label {
+  font-size: 12px;
+  color: #6b7280;
+  align-self: center;
+}
+.modeRail a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.modeRail a:hover {
+  background: var(--sw-blue-light);
+  color: var(--sw-blue-dark);
+}

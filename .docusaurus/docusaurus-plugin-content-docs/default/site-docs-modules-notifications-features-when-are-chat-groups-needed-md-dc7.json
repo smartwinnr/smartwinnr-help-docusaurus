@@ -1,0 +1,47 @@
+{
+  "id": "modules/notifications/features/5fdaf5db7129911ba1b21dfa",
+  "title": "When are chat groups needed?",
+  "description": "",
+  "source": "@site/docs/modules/notifications/features/when-are-chat-groups-needed.md",
+  "sourceDirName": "modules/notifications/features",
+  "slug": "/modules/notifications/features/when-are-chat-groups-needed",
+  "permalink": "/modules/notifications/features/when-are-chat-groups-needed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/when-are-chat-groups-needed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 153,
+  "frontMatter": {
+    "id": "5fdaf5db7129911ba1b21dfa",
+    "title": "When are chat groups needed?",
+    "description": "",
+    "slug": "when-are-chat-groups-needed",
+    "sidebar_position": 153,
+    "last_update": {
+      "date": "2021-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdaf5db7129911ba1b21dfa",
+      "helpscout_url": "https://help.smartwinnr.com/article/153-when-are-chat-groups-needed"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "chat"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What are Chat Groups?",
+    "permalink": "/modules/notifications/features/what-are-chat-groups"
+  },
+  "next": {
+    "title": "How to download a chat?",
+    "permalink": "/modules/notifications/features/how-to-download-a-chat"
+  }
+}

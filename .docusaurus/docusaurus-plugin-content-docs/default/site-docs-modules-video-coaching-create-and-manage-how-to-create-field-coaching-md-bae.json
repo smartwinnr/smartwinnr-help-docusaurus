@@ -1,0 +1,47 @@
+{
+  "id": "modules/video-coaching/create-and-manage/60a4febd13fd125a39b4516e",
+  "title": "How to create Field Coaching",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/create-and-manage/how-to-create-field-coaching.md",
+  "sourceDirName": "modules/video-coaching/create-and-manage",
+  "slug": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching",
+  "permalink": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/create-and-manage/how-to-create-field-coaching.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 235,
+  "frontMatter": {
+    "id": "60a4febd13fd125a39b4516e",
+    "title": "How to create Field Coaching",
+    "description": "",
+    "slug": "how-to-create-field-coaching",
+    "sidebar_position": 235,
+    "last_update": {
+      "date": "2025-11-26T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60a4febd13fd125a39b4516e",
+      "helpscout_url": "https://help.smartwinnr.com/article/235-how-to-create-field-coaching"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "coaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Video Coaching",
+    "permalink": "/modules/video-coaching/"
+  },
+  "next": {
+    "title": "How to review a field coaching as a manager/2nd level manager",
+    "permalink": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+  }
+}

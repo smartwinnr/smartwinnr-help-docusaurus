@@ -1,0 +1,49 @@
+{
+  "id": "modules/cross-module/for-learners/5fdb0522b624c71b7985a5d7",
+  "title": "How to post a Query from the SmartWinnr app?",
+  "description": "",
+  "source": "@site/docs/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app.md",
+  "sourceDirName": "modules/cross-module/for-learners",
+  "slug": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app",
+  "permalink": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 160,
+  "frontMatter": {
+    "id": "5fdb0522b624c71b7985a5d7",
+    "title": "How to post a Query from the SmartWinnr app?",
+    "description": "",
+    "slug": "how-to-post-a-query-from-the-smartwinnr-app",
+    "sidebar_position": 160,
+    "last_update": {
+      "date": "2021-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb0522b624c71b7985a5d7",
+      "helpscout_url": "https://help.smartwinnr.com/article/160-how-to-post-a-query-from-the-smartwinnr-app"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to use QResolve in the SmartWinnr app?",
+    "permalink": "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app"
+  },
+  "next": {
+    "title": "How can I answer a Query ?",
+    "permalink": "/modules/cross-module/for-learners/how-can-i-answer-a-query"
+  }
+}

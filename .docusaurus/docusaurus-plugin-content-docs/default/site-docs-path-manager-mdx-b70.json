@@ -1,0 +1,34 @@
+{
+  "id": "path/path-manager",
+  "title": "I manage a team",
+  "description": "Read team dashboards, review coaching, drive KPIs and competitions.",
+  "source": "@site/docs/path/manager.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/manager/",
+  "permalink": "/path/manager/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/manager.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-manager",
+    "title": "I manage a team",
+    "description": "Read team dashboards, review coaching, drive KPIs and competitions.",
+    "slug": "/path/manager/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ],
+      "privilege": "managerView"
+    }
+  }
+}

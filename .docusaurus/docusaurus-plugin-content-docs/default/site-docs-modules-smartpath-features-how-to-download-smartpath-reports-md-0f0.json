@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/features/6970853970321255a2cc1eef",
+  "title": "How to download SmartPath Reports?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/features/how-to-download-smartpath-reports.md",
+  "sourceDirName": "modules/smartpath/features",
+  "slug": "/modules/smartpath/features/how-to-download-smartpath-reports",
+  "permalink": "/modules/smartpath/features/how-to-download-smartpath-reports",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/how-to-download-smartpath-reports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 308,
+  "frontMatter": {
+    "id": "6970853970321255a2cc1eef",
+    "title": "How to download SmartPath Reports?",
+    "description": "",
+    "slug": "how-to-download-smartpath-reports",
+    "sidebar_position": 308,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970853970321255a2cc1eef",
+      "helpscout_url": "https://help.smartwinnr.com/article/308-how-to-download-smartpath-reports"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "permalink": "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions"
+  },
+  "next": {
+    "title": "How to view the SmartPath Analytics.",
+    "permalink": "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics"
+  }
+}

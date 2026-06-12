@@ -1,0 +1,49 @@
+{
+  "id": "modules/ai-coaching/for-managers/6970fbe61252a7004208b915",
+  "title": "How to Review AI Coaching Submissions as a Manager?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager.md",
+  "sourceDirName": "modules/ai-coaching/for-managers",
+  "slug": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager",
+  "permalink": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 318,
+  "frontMatter": {
+    "id": "6970fbe61252a7004208b915",
+    "title": "How to Review AI Coaching Submissions as a Manager?",
+    "description": "",
+    "slug": "how-to-review-ai-coaching-submissions-as-a-manager",
+    "sidebar_position": 318,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970fbe61252a7004208b915",
+      "helpscout_url": "https://help.smartwinnr.com/article/318-how-to-review-ai-coaching-submissions-as-a-manager"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Understanding the feedback screen",
+    "permalink": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen"
+  },
+  "next": {
+    "title": "What is AI Coaching?",
+    "permalink": "/modules/ai-coaching/features/what-is-ai-coaching"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/create-and-manage/665cc161463661770bfb12d6",
+  "title": "How to add smartfeed within a Competition",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition.md",
+  "sourceDirName": "modules/kpi-gamification/create-and-manage",
+  "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition",
+  "permalink": "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 289,
+  "frontMatter": {
+    "id": "665cc161463661770bfb12d6",
+    "title": "How to add smartfeed within a Competition",
+    "description": "",
+    "slug": "how-to-add-smartfeed-within-a-competition",
+    "sidebar_position": 289,
+    "last_update": {
+      "date": "2024-06-02T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "665cc161463661770bfb12d6",
+      "helpscout_url": "https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "competitions"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create Badges",
+    "permalink": "/modules/kpi-gamification/create-and-manage/how-to-create-badges"
+  },
+  "next": {
+    "title": "How can I view a competition Leaderboard?",
+    "permalink": "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard"
+  }
+}

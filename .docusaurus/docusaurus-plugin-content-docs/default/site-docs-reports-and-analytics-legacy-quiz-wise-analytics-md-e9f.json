@@ -1,0 +1,47 @@
+{
+  "id": "reports-and-analytics/legacy/5fdba102a5d295659b369f9f",
+  "title": "Quiz Wise Analytics",
+  "description": "",
+  "source": "@site/docs/reports-and-analytics/legacy/quiz-wise-analytics.md",
+  "sourceDirName": "reports-and-analytics/legacy",
+  "slug": "/reports-and-analytics/legacy/quiz-wise-analytics",
+  "permalink": "/reports-and-analytics/legacy/quiz-wise-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/quiz-wise-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 198,
+  "frontMatter": {
+    "id": "5fdba102a5d295659b369f9f",
+    "title": "Quiz Wise Analytics",
+    "description": "",
+    "slug": "quiz-wise-analytics",
+    "sidebar_position": 198,
+    "last_update": {
+      "date": "2021-01-14T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdba102a5d295659b369f9f",
+      "helpscout_url": "https://help.smartwinnr.com/article/198-quiz-wise-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "learnerReport"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Team Analytics",
+    "permalink": "/reports-and-analytics/legacy/team-analytics"
+  },
+  "next": {
+    "title": "Team Progress Report",
+    "permalink": "/reports-and-analytics/legacy/team-progress-report"
+  }
+}

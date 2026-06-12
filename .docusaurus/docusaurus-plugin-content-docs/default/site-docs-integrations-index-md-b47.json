@@ -1,0 +1,44 @@
+{
+  "id": "integrations/integrations-index",
+  "title": "Integrations",
+  "description": "Connect SmartWinnr to identity providers, content standards, and external systems.",
+  "source": "@site/docs/integrations/index.md",
+  "sourceDirName": "integrations",
+  "slug": "/integrations",
+  "permalink": "/integrations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/integrations/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "integrations-index",
+    "title": "Integrations",
+    "description": "Connect SmartWinnr to identity providers, content standards, and external systems.",
+    "slug": "/integrations",
+    "sidebar_position": 1,
+    "last_update": {
+      "date": "2026-06-06T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "customProps": {
+      "roles": [
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Learner Report - By Learner (Individual Report Analytics)",
+    "permalink": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics"
+  },
+  "next": {
+    "title": "Access Permissions",
+    "permalink": "/administration/access-permissions/access-permissions"
+  }
+}

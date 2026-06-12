@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/6411592461f16344e3a359c8",
+  "title": "How to create a 'Drag and Drop into Text question '?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question",
+  "permalink": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 281,
+  "frontMatter": {
+    "id": "6411592461f16344e3a359c8",
+    "title": "How to create a 'Drag and Drop into Text question '?",
+    "description": "",
+    "slug": "how-to-create-a-drag-and-drop-into-text-question",
+    "sidebar_position": 281,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6411592461f16344e3a359c8",
+      "helpscout_url": "https://help.smartwinnr.com/article/281-how-to-create-a-drag-and-drop-into-text-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create Short Answer With Multiple Options",
+    "permalink": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options"
+  },
+  "next": {
+    "title": "How to create a missing words question?",
+    "permalink": "/modules/quiz/features/how-to-create-a-missing-words-question"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/reports-and-analytics/5fd113efb6c6251cd1c34bc5",
+  "title": "How to view SmartFeed Analytics?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics.md",
+  "sourceDirName": "modules/smartfeed/reports-and-analytics",
+  "slug": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics",
+  "permalink": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 35,
+  "frontMatter": {
+    "id": "5fd113efb6c6251cd1c34bc5",
+    "title": "How to view SmartFeed Analytics?",
+    "description": "",
+    "slug": "how-to-view-smartfeed-analytics",
+    "sidebar_position": 35,
+    "last_update": {
+      "date": "2026-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd113efb6c6251cd1c34bc5",
+      "helpscout_url": "https://help.smartwinnr.com/article/35-how-to-view-smartfeed-analytics"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to view all the SmartFeeds?",
+    "permalink": "/modules/smartfeed/features/how-to-view-all-the-smartfeeds"
+  },
+  "next": {
+    "title": "Video Coaching",
+    "permalink": "/modules/video-coaching/"
+  }
+}

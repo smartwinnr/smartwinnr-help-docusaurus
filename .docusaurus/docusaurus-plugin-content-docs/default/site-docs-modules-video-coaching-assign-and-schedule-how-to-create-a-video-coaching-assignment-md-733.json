@@ -1,0 +1,47 @@
+{
+  "id": "modules/video-coaching/assign-and-schedule/5fd72036c868cb6df3a813bf",
+  "title": "How to create a Video Coaching assignment.",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment.md",
+  "sourceDirName": "modules/video-coaching/assign-and-schedule",
+  "slug": "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment",
+  "permalink": "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 85,
+  "frontMatter": {
+    "id": "5fd72036c868cb6df3a813bf",
+    "title": "How to create a Video Coaching assignment.",
+    "description": "",
+    "slug": "how-to-create-a-video-coaching-assignment",
+    "sidebar_position": 85,
+    "last_update": {
+      "date": "2025-08-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd72036c868cb6df3a813bf",
+      "helpscout_url": "https://help.smartwinnr.com/article/85-how-can-i-create-a-video-coaching-assignment"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "coaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to upload Screen Recording for Coaching",
+    "permalink": "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching"
+  },
+  "next": {
+    "title": "How to review a video coaching assignment.",
+    "permalink": "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment"
+  }
+}

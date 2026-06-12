@@ -52,7 +52,7 @@ class InternalIndexer {
     // Since internal-indexer runs within the same Docusaurus container
     const API_HOST = process.env.API_HOST || 'localhost';
     const API_PORT = process.env.PORT || process.env.DOCUSAURUS_PORT || '8080'; // Railway uses 8080
-    const apiUrl = `http://${API_HOST}:${API_PORT}/api/vector/embed`;
+    const apiUrl = `http://${API_HOST}:3001/api/vector/embed`;
     
     for (let attempt = 1; attempt <= retries; attempt++) {
       try {

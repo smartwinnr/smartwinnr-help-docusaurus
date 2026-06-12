@@ -1,0 +1,49 @@
+{
+  "id": "modules/ai-coaching/for-learners/6971d78c6a1b8a42df6acd03",
+  "title": "How can a User submit an AI Coaching attempt?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt.md",
+  "sourceDirName": "modules/ai-coaching/for-learners",
+  "slug": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt",
+  "permalink": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 322,
+  "frontMatter": {
+    "id": "6971d78c6a1b8a42df6acd03",
+    "title": "How can a User submit an AI Coaching attempt?",
+    "description": "",
+    "slug": "how-can-a-user-submit-an-ai-coaching-attempt",
+    "sidebar_position": 322,
+    "last_update": {
+      "date": "2026-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6971d78c6a1b8a42df6acd03",
+      "helpscout_url": "https://help.smartwinnr.com/article/322-how-to-attempt-an-ai-coaching-as-a-user"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AI Coaching",
+    "permalink": "/modules/ai-coaching/"
+  },
+  "next": {
+    "title": "How can a User View Feedback After Submitting an AI Coaching?",
+    "permalink": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce43c3eb7cc612aa3557ae",
+  "title": "How can I contact SmartWinnr Team?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/how-can-i-contact-smartwinnr-team.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/how-can-i-contact-smartwinnr-team",
+  "permalink": "/get-started/onboarding/how-can-i-contact-smartwinnr-team",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/how-can-i-contact-smartwinnr-team.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 22,
+  "frontMatter": {
+    "id": "5fce43c3eb7cc612aa3557ae",
+    "title": "How can I contact SmartWinnr Team?",
+    "description": "",
+    "slug": "how-can-i-contact-smartwinnr-team",
+    "sidebar_position": 22,
+    "last_update": {
+      "date": "2020-12-26T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce43c3eb7cc612aa3557ae",
+      "helpscout_url": "https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I enable push notification for SmartWinnr App?",
+    "permalink": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app"
+  },
+  "next": {
+    "title": "Browser and Device Support",
+    "permalink": "/get-started/onboarding/browser-and-device-support"
+  }
+}

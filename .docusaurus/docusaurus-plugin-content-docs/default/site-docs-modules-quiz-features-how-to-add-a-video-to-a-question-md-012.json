@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/5fd4bb1b4eb32171b80374ff",
+  "title": "How to add a 'Video' to a question.",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-add-a-video-to-a-question.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-add-a-video-to-a-question",
+  "permalink": "/modules/quiz/features/how-to-add-a-video-to-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-add-a-video-to-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 64,
+  "frontMatter": {
+    "id": "5fd4bb1b4eb32171b80374ff",
+    "title": "How to add a 'Video' to a question.",
+    "description": "",
+    "slug": "how-to-add-a-video-to-a-question",
+    "sidebar_position": 64,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4bb1b4eb32171b80374ff",
+      "helpscout_url": "https://help.smartwinnr.com/article/64-how-to-add-a-video-to-a-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Quiz types",
+    "permalink": "/modules/quiz/features/quiz-types"
+  },
+  "next": {
+    "title": "How to add an 'Image' to the question.",
+    "permalink": "/modules/quiz/features/how-to-add-an-image-to-the-question"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "modules/ai-coaching/module-ai-coaching",
+  "title": "AI Coaching",
+  "description": "Practice real-world conversations against an AI character that scores you.",
+  "source": "@site/docs/modules/ai-coaching/index.mdx",
+  "sourceDirName": "modules/ai-coaching",
+  "slug": "/modules/ai-coaching/",
+  "permalink": "/modules/ai-coaching/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "module-ai-coaching",
+    "title": "AI Coaching",
+    "description": "Practice real-world conversations against an AI character that scores you.",
+    "slug": "/modules/ai-coaching/",
+    "displayed_sidebar": "tutorialSidebar",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to enable the Streaming Links for Video Coaching",
+    "permalink": "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching"
+  },
+  "next": {
+    "title": "How can a User submit an AI Coaching attempt?",
+    "permalink": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/60e1fc479e87cb3d01249e3c",
+  "title": "How to create 'Long Answer' Questions?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-create-long-answer-questions.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-create-long-answer-questions",
+  "permalink": "/modules/quiz/features/how-to-create-long-answer-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-long-answer-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 258,
+  "frontMatter": {
+    "id": "60e1fc479e87cb3d01249e3c",
+    "title": "How to create 'Long Answer' Questions?",
+    "description": "",
+    "slug": "how-to-create-long-answer-questions",
+    "sidebar_position": 258,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60e1fc479e87cb3d01249e3c",
+      "helpscout_url": "https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Question Structure",
+    "permalink": "/modules/quiz/features/question-structure"
+  },
+  "next": {
+    "title": "How to create Short Answer With Multiple Options",
+    "permalink": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options"
+  }
+}

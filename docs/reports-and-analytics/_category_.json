@@ -1,0 +1,23 @@
+{
+  "label": "Reports & Analytics",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "anyPrivilege": [
+      "learnerReport",
+      "adminReports",
+      "generatedReports",
+      "automatedReports",
+      "overAllDashboards"
+    ]
+  }
+}

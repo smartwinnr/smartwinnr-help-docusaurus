@@ -1,0 +1,31 @@
+{
+  "id": "administration/access-permissions/placeholder-access-permissions",
+  "title": "Access Permissions",
+  "description": "Admin-only guides for permission sets and access control.",
+  "source": "@site/docs/administration/access-permissions/index.md",
+  "sourceDirName": "administration/access-permissions",
+  "slug": "/administration/access-permissions/access-permissions",
+  "permalink": "/administration/access-permissions/access-permissions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/access-permissions/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "placeholder-access-permissions",
+    "title": "Access Permissions",
+    "description": "Admin-only guides for permission sets and access control.",
+    "slug": "access-permissions",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Integrations",
+    "permalink": "/integrations"
+  },
+  "next": {
+    "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+    "permalink": "/administration/access-permissions/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr"
+  }
+}

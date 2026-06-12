@@ -3,8 +3,30 @@
 /**
  * Returns a self-contained HTML login page (inline CSS, no external deps).
  * The Lambda URL is injected server-side so the browser fetches directly to Lambda.
+ *
+ * When `isDev` is true (process.env.NODE_ENV !== 'production'), a small
+ * "DEV: switch to → role × 6" strip renders below the magic-link form so
+ * devs can one-click into any tier without the email round-trip.
  */
-function renderLoginPage(lambdaUrl, errorMessage) {
+function renderLoginPage(lambdaUrl, errorMessage, isDev) {
+  var devStrip = '';
+  if (isDev) {
+    var roles = ['user', 'manager', 'editor', 'admin', 'orgadmin', 'superadmin'];
+    // Two columns of dev shortcuts: bare role (no privileges → exposes upsell
+    // flow) and role with ALL privileges (the "fully licensed org" view).
+    var bare = roles.map(function (r) {
+      return '<a href="/auth/dev-login?role=' + r + '" class="devChip">' + r + '</a>';
+    }).join('');
+    var full = roles.map(function (r) {
+      return '<a href="/auth/dev-login?role=' + r + '&privileges=*" class="devChip">' + r + '</a>';
+    }).join('');
+    devStrip =
+      '<div class="devStrip">' +
+        '<div><strong>DEV</strong> sign in as <em>(no privileges)</em> → ' + bare + '</div>' +
+        '<div style="margin-top:8px;"><strong>DEV</strong> sign in as <em>(all privileges)</em> → ' + full + '</div>' +
+      '</div>';
+  }
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +115,42 @@ function renderLoginPage(lambdaUrl, errorMessage) {
       color: #999;
       text-align: center;
     }
+    .devStrip {
+      max-width: 440px;
+      margin: 16px auto 0;
+      padding: 10px 14px;
+      background: #fffbeb;
+      border: 1px dashed #f59e0b;
+      border-radius: 8px;
+      color: #92400e;
+      font-size: 12px;
+      text-align: center;
+    }
+    .devStrip strong {
+      background: #f59e0b;
+      color: white;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-right: 6px;
+      vertical-align: 1px;
+    }
+    .devChip {
+      display: inline-block;
+      margin: 4px 3px 0;
+      padding: 2px 9px;
+      background: white;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .devChip:hover {
+      background: #fef3c7;
+      border-color: #f59e0b;
+    }
   </style>
 </head>
 <body>
@@ -114,6 +172,7 @@ function renderLoginPage(lambdaUrl, errorMessage) {
     </div>
     ${errorMessage ? `<div class="message error">${errorMessage}</div>` : ''}
   </div>
+  ${devStrip}
 
   <script>
     var LAMBDA_URL = '${lambdaUrl}';

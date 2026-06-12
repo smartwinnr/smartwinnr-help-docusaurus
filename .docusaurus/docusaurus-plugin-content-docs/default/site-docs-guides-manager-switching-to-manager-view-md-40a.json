@@ -1,0 +1,48 @@
+{
+  "id": "guides/manager/5fd98ecb27288b7f895d5ddc",
+  "title": "Switching to Manager View",
+  "description": "",
+  "source": "@site/docs/guides/manager/switching-to-manager-view.md",
+  "sourceDirName": "guides/manager",
+  "slug": "/guides/manager/switching-to-manager-view",
+  "permalink": "/guides/manager/switching-to-manager-view",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/guides/manager/switching-to-manager-view.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 96,
+  "frontMatter": {
+    "id": "5fd98ecb27288b7f895d5ddc",
+    "title": "Switching to Manager View",
+    "description": "",
+    "slug": "switching-to-manager-view",
+    "sidebar_position": 96,
+    "last_update": {
+      "date": "2024-10-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd98ecb27288b7f895d5ddc",
+      "helpscout_url": "https://help.smartwinnr.com/article/96-quiz-report-for-managers"
+    },
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin"
+      ],
+      "privilege": "managerView"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to update the SmartWinnr App from Web View",
+    "permalink": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view"
+  },
+  "next": {
+    "title": "Modules",
+    "permalink": "/modules"
+  }
+}

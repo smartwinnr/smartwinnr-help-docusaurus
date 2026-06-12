@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/features/5fcf7718da652271f08d3f5e",
+  "title": "What are SmartFeeds?",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/features/what-are-smartfeeds.md",
+  "sourceDirName": "modules/smartfeed/features",
+  "slug": "/modules/smartfeed/features/what-are-smartfeeds",
+  "permalink": "/modules/smartfeed/features/what-are-smartfeeds",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/features/what-are-smartfeeds.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 26,
+  "frontMatter": {
+    "id": "5fcf7718da652271f08d3f5e",
+    "title": "What are SmartFeeds?",
+    "description": "",
+    "slug": "what-are-smartfeeds",
+    "sidebar_position": 26,
+    "last_update": {
+      "date": "2026-01-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fcf7718da652271f08d3f5e",
+      "helpscout_url": "https://help.smartwinnr.com/article/26-what-are-smartfeeds"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to send the SmartFeed to Teams?",
+    "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams"
+  },
+  "next": {
+    "title": "How to view all the SmartFeeds?",
+    "permalink": "/modules/smartfeed/features/how-to-view-all-the-smartfeeds"
+  }
+}

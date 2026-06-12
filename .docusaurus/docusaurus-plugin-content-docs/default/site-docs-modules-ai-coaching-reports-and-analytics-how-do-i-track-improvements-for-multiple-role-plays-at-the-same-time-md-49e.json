@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/reports-and-analytics/6970a2b7bb534a540aeb8dbf",
+  "title": "How do I track improvements for multiple role-plays at the same time?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time.md",
+  "sourceDirName": "modules/ai-coaching/reports-and-analytics",
+  "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time",
+  "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 310,
+  "frontMatter": {
+    "id": "6970a2b7bb534a540aeb8dbf",
+    "title": "How do I track improvements for multiple role-plays at the same time?",
+    "description": "",
+    "slug": "how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time",
+    "sidebar_position": 310,
+    "last_update": {
+      "date": "2026-01-29T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970a2b7bb534a540aeb8dbf",
+      "helpscout_url": "https://help.smartwinnr.com/article/310-how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I track improvement?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement"
+  },
+  "next": {
+    "title": "How do I view submissions as they happen?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen"
+  }
+}

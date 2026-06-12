@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/reports-and-analytics/6970ebe71252a7004208b8b8",
+  "title": "How do I download Coaching-wise Report?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report.md",
+  "sourceDirName": "modules/ai-coaching/reports-and-analytics",
+  "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report",
+  "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 316,
+  "frontMatter": {
+    "id": "6970ebe71252a7004208b8b8",
+    "title": "How do I download Coaching-wise Report?",
+    "description": "",
+    "slug": "how-do-i-download-coaching-wise-report",
+    "sidebar_position": 316,
+    "last_update": {
+      "date": "2026-01-29T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970ebe71252a7004208b8b8",
+      "helpscout_url": "https://help.smartwinnr.com/article/316-how-do-i-download-coaching-wise-report"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I download Attempt-wise Coaching Report?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report"
+  },
+  "next": {
+    "title": "Understanding the Overview Analysis Tab on the AI Coaching Dashboard",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard"
+  }
+}

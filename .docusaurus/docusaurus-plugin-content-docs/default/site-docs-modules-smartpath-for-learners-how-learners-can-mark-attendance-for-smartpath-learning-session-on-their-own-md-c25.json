@@ -1,0 +1,48 @@
+{
+  "id": "modules/smartpath/for-learners/696deb197a57025861cd2f36",
+  "title": "How Learners Can Mark Attendance for SmartPath - Learning session on Their Own?",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own.md",
+  "sourceDirName": "modules/smartpath/for-learners",
+  "slug": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+  "permalink": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 299,
+  "frontMatter": {
+    "id": "696deb197a57025861cd2f36",
+    "title": "How Learners Can Mark Attendance for SmartPath - Learning session on Their Own?",
+    "description": "",
+    "slug": "how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+    "sidebar_position": 299,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "696deb197a57025861cd2f36",
+      "helpscout_url": "https://help.smartwinnr.com/article/299-how-learners-can-mark-the-attendance-by-themself"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
+    "permalink": "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+  },
+  "next": {
+    "title": "How to create Assignment in SmartPath?",
+    "permalink": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+  }
+}

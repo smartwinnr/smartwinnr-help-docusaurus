@@ -32,6 +32,14 @@
     },
     "api-routes-plugin": {
       "type": "project"
+    },
+    "access-gate-emit": {
+      "type": "project"
+    },
+    "docusaurus-plugin-client-redirects": {
+      "type": "package",
+      "name": "@docusaurus/plugin-client-redirects",
+      "version": "3.8.1"
     }
   }
 }

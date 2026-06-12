@@ -1,0 +1,47 @@
+{
+  "id": "modules/video-coaching/assign-and-schedule/5fd72ca536980410c9123bbe",
+  "title": "How to share a Coaching Video.",
+  "description": "",
+  "source": "@site/docs/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video.md",
+  "sourceDirName": "modules/video-coaching/assign-and-schedule",
+  "slug": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video",
+  "permalink": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 88,
+  "frontMatter": {
+    "id": "5fd72ca536980410c9123bbe",
+    "title": "How to share a Coaching Video.",
+    "description": "",
+    "slug": "how-to-share-a-coaching-video",
+    "sidebar_position": 88,
+    "last_update": {
+      "date": "2021-01-28T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd72ca536980410c9123bbe",
+      "helpscout_url": "https://help.smartwinnr.com/article/88-how-can-i-share-a-coaching-video"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "coaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to review a video coaching assignment.",
+    "permalink": "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment"
+  },
+  "next": {
+    "title": "What is 'My Team Coaching'?",
+    "permalink": "/modules/video-coaching/for-managers/what-is-my-team-coaching"
+  }
+}

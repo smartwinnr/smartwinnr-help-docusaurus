@@ -1,0 +1,30 @@
+{
+  "id": "reference/troubleshooting/index",
+  "title": "Troubleshooting Guide",
+  "description": "Common issues and solutions for SmartWinnr users",
+  "source": "@site/docs/reference/troubleshooting/index.md",
+  "sourceDirName": "reference/troubleshooting",
+  "slug": "/reference/troubleshooting/",
+  "permalink": "/reference/troubleshooting/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reference/troubleshooting/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Troubleshooting Guide",
+    "description": "Common issues and solutions for SmartWinnr users",
+    "slug": "/reference/troubleshooting/",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reference",
+    "permalink": "/reference"
+  },
+  "next": {
+    "title": "Help & Support",
+    "permalink": "/reference/help-support/"
+  }
+}

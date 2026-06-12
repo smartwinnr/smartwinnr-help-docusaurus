@@ -1,0 +1,33 @@
+{
+  "id": "path/path-reports",
+  "title": "I want a report",
+  "description": "Learner, admin, generated, automated reports and overall dashboards.",
+  "source": "@site/docs/path/reports.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/reports/",
+  "permalink": "/path/reports/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/reports.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-reports",
+    "title": "I want a report",
+    "description": "Learner, admin, generated, automated reports and overall dashboards.",
+    "slug": "/path/reports/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "manager",
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

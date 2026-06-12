@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/create-and-manage/5ffc7b6c66df373cab7081aa",
+  "title": "How to edit a question?",
+  "description": "",
+  "source": "@site/docs/modules/quiz/create-and-manage/how-to-edit-a-question.md",
+  "sourceDirName": "modules/quiz/create-and-manage",
+  "slug": "/modules/quiz/create-and-manage/how-to-edit-a-question",
+  "permalink": "/modules/quiz/create-and-manage/how-to-edit-a-question",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-edit-a-question.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 202,
+  "frontMatter": {
+    "id": "5ffc7b6c66df373cab7081aa",
+    "title": "How to edit a question?",
+    "description": "",
+    "slug": "how-to-edit-a-question",
+    "sidebar_position": 202,
+    "last_update": {
+      "date": "2021-01-12T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5ffc7b6c66df373cab7081aa",
+      "helpscout_url": "https://help.smartwinnr.com/article/202-how-to-edit-a-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How can I duplicate a quiz?",
+    "permalink": "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz"
+  },
+  "next": {
+    "title": "How to Update question response",
+    "permalink": "/modules/quiz/create-and-manage/how-to-update-question-response"
+  }
+}

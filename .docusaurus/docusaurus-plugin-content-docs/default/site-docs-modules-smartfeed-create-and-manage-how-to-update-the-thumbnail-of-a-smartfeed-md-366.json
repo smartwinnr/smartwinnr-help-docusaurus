@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartfeed/create-and-manage/68c928f875baeb18e18df8a1",
+  "title": "How to update the thumbnail of a SmartFeed",
+  "description": "",
+  "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed.md",
+  "sourceDirName": "modules/smartfeed/create-and-manage",
+  "slug": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed",
+  "permalink": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 295,
+  "frontMatter": {
+    "id": "68c928f875baeb18e18df8a1",
+    "title": "How to update the thumbnail of a SmartFeed",
+    "description": "",
+    "slug": "how-to-update-the-thumbnail-of-a-smartfeed",
+    "sidebar_position": 295,
+    "last_update": {
+      "date": "2025-09-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "68c928f875baeb18e18df8a1",
+      "helpscout_url": "https://help.smartwinnr.com/article/295-how-to-update-the-thumbnail-of-a-smartfeed"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "content"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to add a Recording to a SmartFeed?",
+    "permalink": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed"
+  },
+  "next": {
+    "title": "How Do I Like and Comment on a SmartFeed?",
+    "permalink": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed"
+  }
+}

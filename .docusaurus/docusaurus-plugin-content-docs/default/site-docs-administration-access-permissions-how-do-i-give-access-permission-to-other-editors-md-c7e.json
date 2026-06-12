@@ -1,0 +1,45 @@
+{
+  "id": "administration/access-permissions/5fdb74880b11ce44f63933a3",
+  "title": "How do I give access permission to other editors?",
+  "description": "",
+  "source": "@site/docs/administration/access-permissions/how-do-i-give-access-permission-to-other-editors.md",
+  "sourceDirName": "administration/access-permissions",
+  "slug": "/administration/access-permissions/how-do-i-give-access-permission-to-other-editors",
+  "permalink": "/administration/access-permissions/how-do-i-give-access-permission-to-other-editors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/access-permissions/how-do-i-give-access-permission-to-other-editors.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 196,
+  "frontMatter": {
+    "id": "5fdb74880b11ce44f63933a3",
+    "title": "How do I give access permission to other editors?",
+    "description": "",
+    "slug": "how-do-i-give-access-permission-to-other-editors",
+    "sidebar_position": 196,
+    "last_update": {
+      "date": "2021-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb74880b11ce44f63933a3",
+      "helpscout_url": "https://help.smartwinnr.com/article/196-how-do-i-give-access-permission-to-other-editors"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to give other editors access to a particular activity/task you created in SmartWinnr",
+    "permalink": "/administration/access-permissions/how-to-give-other-editors-access-to-a-particular-activity-task-you-created-in-smartwinnr"
+  },
+  "next": {
+    "title": "How to change company logo?",
+    "permalink": "/administration/system-management/how-to-change-company-logo"
+  }
+}

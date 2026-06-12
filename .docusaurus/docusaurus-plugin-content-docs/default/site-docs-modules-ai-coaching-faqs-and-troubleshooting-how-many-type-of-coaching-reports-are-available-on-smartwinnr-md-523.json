@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/faqs-and-troubleshooting/6970d8920c0e4405a576851c",
+  "title": "How many type of coaching reports are available on Smartwinnr?",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr.md",
+  "sourceDirName": "modules/ai-coaching/faqs-and-troubleshooting",
+  "slug": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+  "permalink": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 312,
+  "frontMatter": {
+    "id": "6970d8920c0e4405a576851c",
+    "title": "How many type of coaching reports are available on Smartwinnr?",
+    "description": "",
+    "slug": "how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+    "sidebar_position": 312,
+    "last_update": {
+      "date": "2026-01-29T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6970d8920c0e4405a576851c",
+      "helpscout_url": "https://help.smartwinnr.com/article/312-what-type-of-reports-are-available-on-smartwinnr"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How many learners have submitted their responses?",
+    "permalink": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses"
+  },
+  "next": {
+    "title": "Field Coaching",
+    "permalink": "/modules/field-coaching/"
+  }
+}

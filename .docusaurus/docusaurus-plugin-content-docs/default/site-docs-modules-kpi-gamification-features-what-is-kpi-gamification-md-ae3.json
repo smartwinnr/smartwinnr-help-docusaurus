@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/features/5fdb0bb6a5d295659b369c5d",
+  "title": "What is KPI Gamification?",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/features/what-is-kpi-gamification.md",
+  "sourceDirName": "modules/kpi-gamification/features",
+  "slug": "/modules/kpi-gamification/features/what-is-kpi-gamification",
+  "permalink": "/modules/kpi-gamification/features/what-is-kpi-gamification",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/what-is-kpi-gamification.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 168,
+  "frontMatter": {
+    "id": "5fdb0bb6a5d295659b369c5d",
+    "title": "What is KPI Gamification?",
+    "description": "",
+    "slug": "what-is-kpi-gamification",
+    "sidebar_position": 168,
+    "last_update": {
+      "date": "2021-01-23T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb0bb6a5d295659b369c5d",
+      "helpscout_url": "https://help.smartwinnr.com/article/168-what-is-kpi-gamification"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "kpi"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Leaderboards of a competition",
+    "permalink": "/modules/kpi-gamification/features/leaderboards-of-a-competition"
+  },
+  "next": {
+    "title": "Understand Game Concepts",
+    "permalink": "/modules/kpi-gamification/features/understand-game-concepts"
+  }
+}

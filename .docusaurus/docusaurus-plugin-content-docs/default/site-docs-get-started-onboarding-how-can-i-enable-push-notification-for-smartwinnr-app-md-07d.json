@@ -1,0 +1,48 @@
+{
+  "id": "get-started/onboarding/5fce42e9eb7cc612aa3557ab",
+  "title": "How can I enable push notification for SmartWinnr App?",
+  "description": "",
+  "source": "@site/docs/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app.md",
+  "sourceDirName": "get-started/onboarding",
+  "slug": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app",
+  "permalink": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "id": "5fce42e9eb7cc612aa3557ab",
+    "title": "How can I enable push notification for SmartWinnr App?",
+    "description": "",
+    "slug": "how-can-i-enable-push-notification-for-smartwinnr-app",
+    "sidebar_position": 21,
+    "last_update": {
+      "date": "2020-12-26T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fce42e9eb7cc612aa3557ab",
+      "helpscout_url": "https://help.smartwinnr.com/article/21-how-can-i-enable-push-notification-for-smartwinnr-app"
+    },
+    "customProps": {
+      "roles": [
+        "user",
+        "manager",
+        "editor",
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to update the SmartWinnr App/Web View?",
+    "permalink": "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view"
+  },
+  "next": {
+    "title": "How can I contact SmartWinnr Team?",
+    "permalink": "/get-started/onboarding/how-can-i-contact-smartwinnr-team"
+  }
+}

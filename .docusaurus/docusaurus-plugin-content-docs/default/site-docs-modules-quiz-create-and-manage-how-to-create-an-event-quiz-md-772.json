@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/create-and-manage/631c9fb5c713d51da3edd565",
+  "title": "How to create an Event Quiz",
+  "description": "",
+  "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-an-event-quiz.md",
+  "sourceDirName": "modules/quiz/create-and-manage",
+  "slug": "/modules/quiz/create-and-manage/how-to-create-an-event-quiz",
+  "permalink": "/modules/quiz/create-and-manage/how-to-create-an-event-quiz",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-an-event-quiz.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 276,
+  "frontMatter": {
+    "id": "631c9fb5c713d51da3edd565",
+    "title": "How to create an Event Quiz",
+    "description": "",
+    "slug": "how-to-create-an-event-quiz",
+    "sidebar_position": 276,
+    "last_update": {
+      "date": "2026-01-19T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "631c9fb5c713d51da3edd565",
+      "helpscout_url": "https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Update question response",
+    "permalink": "/modules/quiz/create-and-manage/how-to-update-question-response"
+  },
+  "next": {
+    "title": "How to create 'Numeric Type Questions'",
+    "permalink": "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions"
+  }
+}

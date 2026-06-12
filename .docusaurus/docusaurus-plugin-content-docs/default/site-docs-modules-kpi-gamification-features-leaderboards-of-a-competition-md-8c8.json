@@ -1,0 +1,47 @@
+{
+  "id": "modules/kpi-gamification/features/5fda26d77129911ba1b219c1",
+  "title": "Leaderboards of a competition",
+  "description": "",
+  "source": "@site/docs/modules/kpi-gamification/features/leaderboards-of-a-competition.md",
+  "sourceDirName": "modules/kpi-gamification/features",
+  "slug": "/modules/kpi-gamification/features/leaderboards-of-a-competition",
+  "permalink": "/modules/kpi-gamification/features/leaderboards-of-a-competition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/leaderboards-of-a-competition.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 109,
+  "frontMatter": {
+    "id": "5fda26d77129911ba1b219c1",
+    "title": "Leaderboards of a competition",
+    "description": "",
+    "slug": "leaderboards-of-a-competition",
+    "sidebar_position": 109,
+    "last_update": {
+      "date": "2026-01-30T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fda26d77129911ba1b219c1",
+      "helpscout_url": "https://help.smartwinnr.com/article/109-leaderboards-of-a-competition"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "competitions"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is a Competition?",
+    "permalink": "/modules/kpi-gamification/features/what-is-a-competition"
+  },
+  "next": {
+    "title": "What is KPI Gamification?",
+    "permalink": "/modules/kpi-gamification/features/what-is-kpi-gamification"
+  }
+}

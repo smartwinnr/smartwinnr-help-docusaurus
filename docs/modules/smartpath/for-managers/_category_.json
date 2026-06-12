@@ -1,0 +1,20 @@
+{
+  "label": "For Managers",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "managerView",
+    "allPrivileges": [
+      "smartpaths"
+    ]
+  }
+}

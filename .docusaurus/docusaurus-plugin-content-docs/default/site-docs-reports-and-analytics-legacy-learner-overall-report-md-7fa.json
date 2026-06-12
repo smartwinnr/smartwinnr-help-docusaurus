@@ -1,0 +1,47 @@
+{
+  "id": "reports-and-analytics/legacy/60c1f6cea6d12c2cd643e794",
+  "title": "Learner Overall Report",
+  "description": "",
+  "source": "@site/docs/reports-and-analytics/legacy/learner-overall-report.md",
+  "sourceDirName": "reports-and-analytics/legacy",
+  "slug": "/reports-and-analytics/legacy/learner-overall-report",
+  "permalink": "/reports-and-analytics/legacy/learner-overall-report",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/learner-overall-report.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 254,
+  "frontMatter": {
+    "id": "60c1f6cea6d12c2cd643e794",
+    "title": "Learner Overall Report",
+    "description": "",
+    "slug": "learner-overall-report",
+    "sidebar_position": 254,
+    "last_update": {
+      "date": "2021-06-10T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60c1f6cea6d12c2cd643e794",
+      "helpscout_url": "https://help.smartwinnr.com/article/254-learner-overall-report"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "learnerReport"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Team Progress Report",
+    "permalink": "/reports-and-analytics/legacy/team-progress-report"
+  },
+  "next": {
+    "title": "Learner Report - By Learner (Individual Report Analytics)",
+    "permalink": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics"
+  }
+}

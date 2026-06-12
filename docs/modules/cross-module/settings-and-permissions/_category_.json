@@ -1,0 +1,15 @@
+{
+  "label": "Settings & Permissions",
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}

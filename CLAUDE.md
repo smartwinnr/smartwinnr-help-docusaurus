@@ -29,6 +29,129 @@ npm run typecheck      # tsc (no emit)
 
 No automated test suite exists. Validation is: `lint:docs`, `typecheck`, and `build`.
 
+## Dev role switching — test different roles without re-logging-in
+
+Real sign-in requires a Mailgun magic-link round-trip through the main app —
+too slow for iterating on per-role UI. Three layered shortcuts work in dev
+(`NODE_ENV !== 'production'`) and are **disabled in production builds**.
+
+### 1. The fastest: `/auth/dev-login` — one URL per role
+
+While the server is running locally, hit any of:
+
+```
+http://localhost:3001/auth/dev-login?role=user
+http://localhost:3001/auth/dev-login?role=manager
+http://localhost:3001/auth/dev-login?role=editor
+http://localhost:3001/auth/dev-login?role=admin
+http://localhost:3001/auth/dev-login?role=orgadmin
+http://localhost:3001/auth/dev-login?role=superadmin
+```
+
+The route mints a JWT with the requested role + every privilege (defaults
+to a fully-licensed dev org) and sets the `swhelp_session` cookie, then
+redirects to `/`. Bookmark the six URLs and role-switching becomes
+single-click.
+
+Optional query params (all default sensibly):
+
+| Param | Default | Use case |
+|---|---|---|
+| `role` | `user` | Comma-list for multi-role users: `role=editor,manager` |
+| `privileges` | **none** | The realistic default — a role on its own gets you only the role's reach, no licensed modules. Pass `*` for all (`privileges=*`), or a comma-list for a subset (`privileges=quiz,smartpaths`). Pass empty (`?privileges=`) for the same effect as omitting. |
+| `email` | `dev@example.com` | The greeting uses the first word |
+| `displayName` | derived from email | `Hi <displayName>` in the hero |
+| `orgName` | `Dev Org` | Carried through to `/api/me` |
+| `orgId` | `dev-org` | |
+| `region` | `local` | |
+| `redirect` | `/` | Path-only (starts with `/`); rejected otherwise |
+
+The `/auth/login` page itself auto-renders a yellow **"DEV: sign in as → role × 6"**
+strip when not in production, so you never need to remember the URLs.
+
+### 2. Headless / CI: `scripts/dev-mint-cookie.js`
+
+For Puppeteer, Playwright, or `curl` tests where launching a browser to
+`/auth/dev-login` isn't practical:
+
+```bash
+node scripts/dev-mint-cookie.js --role editor --privileges quiz,smartpaths
+```
+
+The script prints two lines to stdout:
+1. The raw JWT (for tools that set `Authorization`-style headers directly)
+2. A copy-paste-friendly `Set-Cookie: swhelp_session=…` line
+
+Reads `HELP_JWT_SECRET` from `.env` — same secret the running server uses,
+so cookies it mints are accepted by `/api/me`, `auth/middleware.js`, and the
+URL guard in `server.js`.
+
+### 3. In-session preview: `?as=<role>`
+
+Append `?as=user`, `?as=manager`, etc. to any URL to **preview** the page as
+that tier without changing the cookie:
+
+```
+http://localhost:3001/?as=user
+http://localhost:3001/path/editor/?as=manager
+```
+
+- **Dev mode:** any cookied user can use `?as=`.
+- **Production:** only a real `superadmin` may use `?as=`; anyone else is
+  ignored.
+
+Privileges are preserved across the preview, so module / feature licensing
+stays consistent with the real org. Dropping the query string restores the
+real session.
+
+### Common test scenarios
+
+| Goal | URL |
+|---|---|
+| Learner with NO licensed modules (sees upsell on every module) | `/auth/dev-login?role=user` |
+| Learner with Quiz licensed only | `/auth/dev-login?role=user&privileges=quiz` |
+| Fully-licensed learner (all modules visible) | `/auth/dev-login?role=user&privileges=*` |
+| Manager — see **For Managers** sub-sections inside modules | `/auth/dev-login?role=manager&privileges=managerView,quiz` |
+| Manager with full org licensing | `/auth/dev-login?role=manager&privileges=*` |
+| Editor with full authoring tree | `/auth/dev-login?role=editor&privileges=*` |
+| Editor whose org only has Quiz + SmartPath | `/auth/dev-login?role=editor&privileges=quiz,smartpaths` |
+| Multi-role user (editor + manager) — see ALL sub-sections | `/auth/dev-login?role=editor,manager&privileges=*` |
+| Custom name in the greeting | `/auth/dev-login?role=editor&privileges=*&displayName=Charan` |
+| Superadmin previewing user view | sign in normally, then visit `/?as=user` |
+
+> **Trap:** the **For Managers** sub-folder inside each module requires `managerView`
+> privilege in addition to the manager role. If you log in as `?role=manager` with
+> no `&privileges=...`, you'll see User + Editor leaves but NOT For Managers —
+> because `managerView` isn't in your dev privileges. That's the intended gate
+> (mirrors the LMS-side licensing for team-view UI). Add `managerView` to your
+> privileges, or just use `&privileges=*`.
+
+### Production safety
+
+| Layer | Behavior in `NODE_ENV=production` |
+|---|---|
+| `/auth/dev-login` | Route NOT registered. Falls through to the catch-all → redirects to `/auth/login`. **No cookie is issued.** |
+| `scripts/dev-mint-cookie.js` | Local CLI; cannot run in prod (needs `HELP_JWT_SECRET`). |
+| `?as=<role>` | Honored only when the real session is `superadmin`. |
+| DEV strip on `/auth/login` | Hidden (markup not rendered). CSS rules remain but no `.devStrip` element exists. |
+
+Verified end-to-end: in dev the `/auth/dev-login` URL emits a valid
+`Set-Cookie: swhelp_session=…`; in prod the same URL emits no cookie and
+redirects to login.
+
+### Plumbing reference
+
+- `auth/routes.js` — registers `/auth/dev-login` inside an
+  `IS_DEV` guard at module load.
+- `auth/jwt.js` — `signSessionToken({email, displayName, roles, region,
+  orgId, orgName, privileges})` is the shared signer used by `/auth/callback`,
+  `/auth/dev-login`, and the CLI.
+- `auth/middleware.js` — `maybeApplyPreview(req)` applies `?as=` after the
+  cookie has been verified.
+- `scripts/dev-mint-cookie.js` — wraps `signSessionToken`.
+- `data/known-privileges.json` — drives the "all privileges by default"
+  behavior.
+
 ## Architecture (big picture)
 
 - **Single server, single port.** `server.js` (Express) serves the Docusaurus `build/`

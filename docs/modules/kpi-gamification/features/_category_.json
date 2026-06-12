@@ -1,0 +1,20 @@
+{
+  "label": "Features",
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "anyPrivilege": [
+      "kpi",
+      "competitions",
+      "achievements"
+    ]
+  }
+}

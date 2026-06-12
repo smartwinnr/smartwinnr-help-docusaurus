@@ -1,0 +1,45 @@
+{
+  "id": "administration/system-management/5fda50d7b624c71b7985a2a4",
+  "title": "How to resend account invitation?",
+  "description": "",
+  "source": "@site/docs/administration/system-management/how-to-resend-account-invitation.md",
+  "sourceDirName": "administration/system-management",
+  "slug": "/administration/system-management/how-to-resend-account-invitation",
+  "permalink": "/administration/system-management/how-to-resend-account-invitation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-resend-account-invitation.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 123,
+  "frontMatter": {
+    "id": "5fda50d7b624c71b7985a2a4",
+    "title": "How to resend account invitation?",
+    "description": "",
+    "slug": "how-to-resend-account-invitation",
+    "sidebar_position": 123,
+    "last_update": {
+      "date": "2021-01-20T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fda50d7b624c71b7985a2a4",
+      "helpscout_url": "https://help.smartwinnr.com/article/123-how-to-resend-account-invitation"
+    },
+    "customProps": {
+      "roles": [
+        "admin"
+      ]
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Search users",
+    "permalink": "/administration/system-management/search-users"
+  },
+  "next": {
+    "title": "How can I change the password for a user account?",
+    "permalink": "/administration/system-management/how-can-i-change-the-password-for-a-user-account"
+  }
+}

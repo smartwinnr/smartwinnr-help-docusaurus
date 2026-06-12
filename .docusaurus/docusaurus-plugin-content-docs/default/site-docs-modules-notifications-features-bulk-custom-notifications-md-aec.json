@@ -1,0 +1,47 @@
+{
+  "id": "modules/notifications/features/5fdb08a97129911ba1b21e3d",
+  "title": "Bulk Custom Notifications",
+  "description": "",
+  "source": "@site/docs/modules/notifications/features/bulk-custom-notifications.md",
+  "sourceDirName": "modules/notifications/features",
+  "slug": "/modules/notifications/features/bulk-custom-notifications",
+  "permalink": "/modules/notifications/features/bulk-custom-notifications",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/bulk-custom-notifications.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 166,
+  "frontMatter": {
+    "id": "5fdb08a97129911ba1b21e3d",
+    "title": "Bulk Custom Notifications",
+    "description": "",
+    "slug": "bulk-custom-notifications",
+    "sidebar_position": 166,
+    "last_update": {
+      "date": "2021-01-22T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fdb08a97129911ba1b21e3d",
+      "helpscout_url": "https://help.smartwinnr.com/article/166-bulk-custom-notifications"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "customNotifications"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Custom Notifications",
+    "permalink": "/modules/notifications/features/custom-notifications"
+  },
+  "next": {
+    "title": "How to Enable a Chat Group?",
+    "permalink": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group"
+  }
+}

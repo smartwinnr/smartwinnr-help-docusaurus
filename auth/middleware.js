@@ -6,6 +6,39 @@ const { COOKIE_NAME, verifySessionToken } = require('./jwt');
 // File extensions that should be served without auth (for login page resources)
 const PUBLIC_EXTENSIONS = /\.(js|css|ico|png|svg|jpg|jpeg|woff|woff2|map|json)$/i;
 
+const IS_DEV = process.env.NODE_ENV !== 'production';
+const VALID_PREVIEW_ROLES = new Set([
+  'user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin',
+]);
+
+/**
+ * Honor the in-session `?as=<role>` preview when allowed.
+ * - In dev (NODE_ENV !== 'production'): any cookied user can preview.
+ * - In production: only a real `superadmin` may preview as a lower tier.
+ *
+ * The override is purely runtime — the cookie is NOT rewritten. Drop the
+ * query param to restore the real session.
+ */
+function maybeApplyPreview(req) {
+  const as = req.query && req.query.as;
+  if (!as) return;
+  if (!req.user) return;
+  const canPreview = IS_DEV || (req.user.roles || []).includes('superadmin');
+  if (!canPreview) return;
+  const roles = String(as)
+    .split(',')
+    .map((r) => r.trim())
+    .filter((r) => VALID_PREVIEW_ROLES.has(r));
+  if (roles.length === 0) return;
+  req.user = {
+    ...req.user,
+    roles,
+    // Preserve privileges so org-feature availability stays consistent.
+    // Mark the request so downstream code (e.g. a preview banner) can detect it.
+    preview: true,
+  };
+}
+
 /**
  * Timing-safe comparison of two strings.
  * Returns false if either value is missing or lengths differ.
@@ -45,11 +78,14 @@ function requireAuth(req, res, next) {
       const payload = verifySessionToken(token);
       req.user = {
         email: payload.email,
+        displayName: payload.displayName || null,
         roles: payload.roles,
         region: payload.region,
         orgId: payload.orgId || null,
+        orgName: payload.orgName || null,
         privileges: payload.privileges || [],
       };
+      maybeApplyPreview(req);
       return next();
     } catch (err) {
       // Invalid/expired token — fall through to unauthenticated handling

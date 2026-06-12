@@ -1,0 +1,32 @@
+{
+  "id": "path/path-editor",
+  "title": "I'm an Author",
+  "description": "Build quizzes, SmartPaths, SmartFeeds, surveys, and coachings.",
+  "source": "@site/docs/path/editor.mdx",
+  "sourceDirName": "path",
+  "slug": "/path/editor/",
+  "permalink": "/path/editor/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/path/editor.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "path-editor",
+    "title": "I'm an Author",
+    "description": "Build quizzes, SmartPaths, SmartFeeds, surveys, and coachings.",
+    "slug": "/path/editor/",
+    "sidebar_class_name": "sw-sidebar-hide",
+    "hide_title": true,
+    "hide_table_of_contents": true,
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ]
+    }
+  }
+}

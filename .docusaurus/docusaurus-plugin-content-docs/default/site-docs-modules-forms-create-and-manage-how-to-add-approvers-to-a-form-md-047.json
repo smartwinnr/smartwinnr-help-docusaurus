@@ -1,0 +1,47 @@
+{
+  "id": "modules/forms/create-and-manage/60bb5a63f6392f0aaff521ab",
+  "title": "How to add Approvers to a Form",
+  "description": "",
+  "source": "@site/docs/modules/forms/create-and-manage/how-to-add-approvers-to-a-form.md",
+  "sourceDirName": "modules/forms/create-and-manage",
+  "slug": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form",
+  "permalink": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/create-and-manage/how-to-add-approvers-to-a-form.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 251,
+  "frontMatter": {
+    "id": "60bb5a63f6392f0aaff521ab",
+    "title": "How to add Approvers to a Form",
+    "description": "",
+    "slug": "how-to-add-approvers-to-a-form",
+    "sidebar_position": 251,
+    "last_update": {
+      "date": "2021-07-18T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "60bb5a63f6392f0aaff521ab",
+      "helpscout_url": "https://help.smartwinnr.com/article/251-how-to-add-approvers-to-a-form"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "forms"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Edit a Form on submitted by a user?",
+    "permalink": "/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user"
+  },
+  "next": {
+    "title": "How can I submit a Form from Left Menu",
+    "permalink": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu"
+  }
+}

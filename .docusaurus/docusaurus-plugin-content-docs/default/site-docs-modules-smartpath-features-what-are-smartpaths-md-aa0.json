@@ -1,0 +1,47 @@
+{
+  "id": "modules/smartpath/features/5fd7119336980410c9123b70",
+  "title": "What are SmartPaths.",
+  "description": "",
+  "source": "@site/docs/modules/smartpath/features/what-are-smartpaths.md",
+  "sourceDirName": "modules/smartpath/features",
+  "slug": "/modules/smartpath/features/what-are-smartpaths",
+  "permalink": "/modules/smartpath/features/what-are-smartpaths",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/what-are-smartpaths.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 77,
+  "frontMatter": {
+    "id": "5fd7119336980410c9123b70",
+    "title": "What are SmartPaths.",
+    "description": "",
+    "slug": "what-are-smartpaths",
+    "sidebar_position": 77,
+    "last_update": {
+      "date": "2026-01-16T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd7119336980410c9123b70",
+      "helpscout_url": "https://help.smartwinnr.com/article/77-what-are-smartpaths"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "smartpaths"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Mark the attendance for Users  in Learning Sessions?",
+    "permalink": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions"
+  },
+  "next": {
+    "title": "How can I Gamify a SmartPath?",
+    "permalink": "/modules/smartpath/features/how-can-i-gamify-a-smartpath"
+  }
+}

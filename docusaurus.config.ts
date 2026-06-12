@@ -1,4 +1,34 @@
 import {Config} from '@docusaurus/types';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+
+// Load IA-migration redirects emitted by scripts/migrate-ia.js.
+// Strip trailing /index since Docusaurus serves index.md at the directory URL,
+// and de-dupe (since collapsing /index can produce identical entries).
+type RedirectEntry = {from: string; to: string};
+function normPath(p: string): string {
+  // Strip trailing /index and trailing slash to match Docusaurus' canonical
+  // route form (e.g. /modules/ai-coaching, not /modules/ai-coaching/).
+  let n = p.replace(/\/index$/, '');
+  if (n.length > 1) n = n.replace(/\/$/, '');
+  n = n || '/';
+  return n;
+}
+const redirectsFile = path.join(__dirname, 'data', 'redirects.json');
+const rawRedirects: RedirectEntry[] = fs.existsSync(redirectsFile)
+  ? (JSON.parse(fs.readFileSync(redirectsFile, 'utf8')).redirects ?? [])
+  : [];
+const seen = new Set<string>();
+const redirects: RedirectEntry[] = [];
+for (const r of rawRedirects) {
+  const from = normPath(r.from);
+  const to = normPath(r.to);
+  if (from === to) continue;
+  const key = from + '→' + to;
+  if (seen.has(key)) continue;
+  seen.add(key);
+  redirects.push({from, to});
+}
 
 const config: Config = {
   title: 'SmartWinnr Help Center',
@@ -37,6 +67,13 @@ const config: Config = {
   plugins: [
     './plugins/chatbot-plugin.js',
     './plugins/api-routes-plugin.js',
+    './plugins/access-gate-emit.js',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
   ],
 
   themeConfig: {

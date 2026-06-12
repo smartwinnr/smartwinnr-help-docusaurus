@@ -1,0 +1,47 @@
+{
+  "id": "modules/quiz/features/5fd4623dc868cb6df3a80fe9",
+  "title": "How to create 'Fill-In-The-Blank' Questions.",
+  "description": "",
+  "source": "@site/docs/modules/quiz/features/how-to-create-fill-in-the-blank-questions.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions",
+  "permalink": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-fill-in-the-blank-questions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 41,
+  "frontMatter": {
+    "id": "5fd4623dc868cb6df3a80fe9",
+    "title": "How to create 'Fill-In-The-Blank' Questions.",
+    "description": "",
+    "slug": "how-to-create-fill-in-the-blank-questions",
+    "sidebar_position": 41,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd4623dc868cb6df3a80fe9",
+      "helpscout_url": "https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-blank-question"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create 'Multiple-Choice Questions'.",
+    "permalink": "/modules/quiz/features/how-to-create-multiple-choice-questions"
+  },
+  "next": {
+    "title": "How to create a 'Hotspot Question'.",
+    "permalink": "/modules/quiz/features/how-to-create-a-hotspot-question"
+  }
+}

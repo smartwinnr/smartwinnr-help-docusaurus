@@ -1,0 +1,47 @@
+{
+  "id": "modules/ai-coaching/reports-and-analytics/6971e01ef35cc6035d0b9b8c",
+  "title": "Understanding the Overview Analysis Tab on the AI Coaching Dashboard",
+  "description": "",
+  "source": "@site/docs/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard.md",
+  "sourceDirName": "modules/ai-coaching/reports-and-analytics",
+  "slug": "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard",
+  "permalink": "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 323,
+  "frontMatter": {
+    "id": "6971e01ef35cc6035d0b9b8c",
+    "title": "Understanding the Overview Analysis Tab on the AI Coaching Dashboard",
+    "description": "",
+    "slug": "understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard",
+    "sidebar_position": 323,
+    "last_update": {
+      "date": "2026-02-14T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "6971e01ef35cc6035d0b9b8c",
+      "helpscout_url": "https://help.smartwinnr.com/article/323-understanding-the-overview-tab-on-ai-coaching-dashboard"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "aiCoaching"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How do I download Coaching-wise Report?",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report"
+  },
+  "next": {
+    "title": "Understanding the Competency & Skills Insights Tab on the AI Coaching Dashboard",
+    "permalink": "/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard"
+  }
+}

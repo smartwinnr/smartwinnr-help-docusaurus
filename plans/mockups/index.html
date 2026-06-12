@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SmartWinnr Help — IA proposals</title>
+<link rel="stylesheet" href="_styles.css" />
+<style>
+  .wrap { max-width: 1100px; margin: 32px auto; padding: 0 24px; }
+  .option {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px;
+    background: white;
+    border: 1px solid var(--sw-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--sw-shadow);
+  }
+  .option h2 { margin-top: 0; color: var(--sw-blue-dark); }
+  .option .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sw-text-muted); font-weight: 600; }
+  .option .pros, .option .cons { font-size: 13px; }
+  .option .pros li::marker { color: #15803d; }
+  .option .cons li::marker { color: #b91c1c; }
+  .open-btn {
+    display: inline-block;
+    background: var(--sw-blue); color: white;
+    padding: 10px 18px; border-radius: 6px;
+    text-decoration: none; font-weight: 600; font-size: 13px;
+    margin-top: 12px;
+  }
+  .open-btn:hover { background: var(--sw-blue-dark); }
+  .thumb {
+    background: var(--sw-bg-alt);
+    border: 1px solid var(--sw-border);
+    border-radius: 8px;
+    padding: 14px;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--sw-text);
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .summary-table {
+    width: 100%; border-collapse: collapse; margin-top: 16px;
+    font-size: 13px;
+  }
+  .summary-table th, .summary-table td {
+    border: 1px solid var(--sw-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .summary-table th { background: var(--sw-bg-alt); font-weight: 600; }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 11px; font-weight: 600;
+    background: var(--sw-blue-light); color: var(--sw-blue-dark);
+  }
+  .pill.low { background: #dcfce7; color: #166534; }
+  .pill.med { background: #fef9c3; color: #854d0e; }
+  .pill.high { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo-dot"></span> SmartWinnr Help — IA proposals</div>
+  <div class="topbar-right">
+    <span>Compare three navigation designs side-by-side</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h1>Help-Site Menu Redesign</h1>
+  <p class="lead">
+    <strong>Shipped:</strong> Option B (ClickHouse-style topic taxonomy) with 6-tier role
+    gating. <strong>Now evaluating:</strong> Option C — Persona-led "door" landing — see
+    the new block below.
+  </p>
+
+  <div style="background: #f3e8ff; border-left: 4px solid #8b5cf6;
+              padding: 16px 20px; border-radius: 6px; margin-bottom: 22px;">
+    <h2 style="margin: 0 0 10px; font-size: 18px; color: #6d28d9;">
+      ► Option C — Persona-led "door" landing <em style="font-weight:400;font-size:13px;color:#7c3aed;">(decision pending)</em>
+    </h2>
+    <p style="margin: 0 0 12px; font-size: 13px;">
+      Pick-your-lens entry: 5 doors take over the hero ("I'm a learner",
+      "I manage a team", "I'm an Author", "I administer the org", "I need help").
+      Each door routes into a focused, mode-aware page. Non-persistent — pure
+      navigation. Reports + Integrations personas collapse into Manager + Admin
+      doors. Plan §13 in <code>plans/help-menu-redesign.md</code>.
+    </p>
+    <div class="quick-links" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+      <a href="landing-c-doors.html" style="background: #ede9fe; border-color: #c4b5fd;">
+        <strong>Front door</strong> — 5-door picker (the new homepage)
+      </a>
+      <a href="landing-c-learner.html" style="background: #e0f2fe; border-color: #7dd3fc;">
+        <strong>🎓 Learner</strong> — inside the Learner door
+      </a>
+      <a href="landing-c-manager.html" style="background: #fef3c7; border-color: #fcd34d;">
+        <strong>📋 Manager</strong> — Manager door + absorbed Reports
+      </a>
+      <a href="landing-c-author.html" style="background: #ede9fe; border-color: #c4b5fd;">
+        <strong>🛠 Author</strong> — full authoring journey
+      </a>
+      <a href="landing-c-admin.html" style="background: #fee2e2; border-color: #fca5a5;">
+        <strong>⚙️ Admin</strong> — Admin door + absorbed Integrations
+      </a>
+      <a href="landing-c-help.html" style="background: #d1fae5; border-color: #6ee7b7;">
+        <strong>🆘 Help</strong> — fast escape lens
+      </a>
+    </div>
+    <p style="margin: 14px 0 0; font-size: 12px; color: #6b21a8;">
+      <strong>What's the same as Option B:</strong> all gates, the URL guard, sidebars,
+      modules, per-module upsell pages. The doors are purely a navigation hero.
+      <strong>What's different:</strong> the hero IS the persona picker (instead of
+      one section among many), and Reports + Integrations are no longer separate
+      personas. Estimated ship cost: ~2 days.
+    </p>
+  </div>
+
+  <div style="background: #fef7ed; border-left: 4px solid var(--sw-accent);
+              padding: 16px 20px; border-radius: 6px; margin-bottom: 22px;">
+    <h2 style="margin: 0 0 10px; font-size: 18px; color: #9a3412;">
+      ► Role-based landing journey (plan §12)
+    </h2>
+    <p style="margin: 0 0 12px; font-size: 13px;">
+      New stakeholder-approved enhancement: the homepage <code>/</code> becomes a real
+      personalized landing — hero + persona cards + recommended modules + what's new +
+      recently viewed. Three tiers shown here; T2/T4/T6 follow the same pattern with
+      tier-appropriate filtering.
+    </p>
+    <div class="quick-links" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+      <a href="landing-t1-user.html" style="background: #e0f2fe; border-color: #7dd3fc;">
+        <strong>Landing · T1 User</strong> — 2 persona cards
+      </a>
+      <a href="landing-t3-editor.html" style="background: #ede9fe; border-color: #c4b5fd;">
+        <strong>Landing · T3 Editor</strong> — 4 unlocked + 2 hinted
+      </a>
+      <a href="landing-t5-orgadmin.html" style="background: #fee2e2; border-color: #fca5a5;">
+        <strong>Landing · T5 OrgAdmin</strong> — all 7 cards + org tools
+      </a>
+    </div>
+  </div>
+
+  <div style="background: var(--sw-blue-light); border-left: 4px solid var(--sw-blue);
+              padding: 16px 20px; border-radius: 6px; margin-bottom: 28px;">
+    <h2 style="margin: 0 0 12px; font-size: 18px; color: var(--sw-blue-dark);">
+      ► Role-by-role sidebar mockups (the implementation target)
+    </h2>
+    <p style="margin: 0 0 14px; font-size: 13px;">
+      Six clickable mockups, one per tier. Each shows the gated top-nav, sidebar shape, and
+      a representative landing for that role. Use the pager inside any mockup to flip between them.
+    </p>
+    <div class="quick-links" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+      <a href="role-t1-user.html" style="background: #e0f2fe; border-color: #7dd3fc;">
+        <strong>T1 · User</strong> — learner, consumption-only
+      </a>
+      <a href="role-t2-manager.html" style="background: #fef3c7; border-color: #fcd34d;">
+        <strong>T2 · Manager</strong> — team lead, coaching &amp; KPIs
+      </a>
+      <a href="role-t3-editor.html" style="background: #ede9fe; border-color: #c4b5fd;">
+        <strong>T3 · Editor</strong> — full authoring + reports
+      </a>
+      <a href="role-t4-admin.html" style="background: #fce7f3; border-color: #f9a8d4;">
+        <strong>T4 · Admin</strong> — system admin + integrations
+      </a>
+      <a href="role-t5-orgadmin.html" style="background: #fee2e2; border-color: #fca5a5;">
+        <strong>T5 · OrgAdmin</strong> — org-wide tooling (lamadmin maps here)
+      </a>
+      <a href="role-t6-superadmin.html" style="background: linear-gradient(135deg,#dbeafe,#ede9fe,#fce7f3); border-color: #c4b5fd;">
+        <strong>T6 · Superadmin</strong> — unrestricted, bypass
+      </a>
+    </div>
+  </div>
+
+  <h2>Original IA comparison (kept for reference)</h2>
+  <p class="lead" style="font-size: 13px;">
+    The three high-level options we evaluated before settling on Option B. Click through if
+    you want to revisit the decision.
+  </p>
+
+  <div class="option">
+    <div>
+      <span class="label">Option A · Lowest risk</span>
+      <h2>Role-Aware Topic Shelves</h2>
+      <p>
+        Top-level mixes audience (For Learners / For Managers / Authoring &amp; Admin)
+        with cross-cutting topics (Reports, Integrations, System Admin, Reference).
+        Closest evolution of today's structure — every <code>customProps.roles</code>
+        and <code>customProps.privilege</code> gate keeps working unchanged.
+      </p>
+      <strong>Pros</strong>
+      <ul class="pros">
+        <li>Familiar to existing editors and admins.</li>
+        <li>Reuses today's role/privilege gating with no logic changes.</li>
+        <li>Cheapest to ship — sidebar reorg + per-module sub-sectioning.</li>
+      </ul>
+      <strong>Cons</strong>
+      <ul class="cons">
+        <li>Still mixes "who" and "what" in the same level — slightly less crisp.</li>
+        <li>Cross-cutting topics (Reports, KPIs) compete with audience shelves for attention.</li>
+      </ul>
+      <a class="open-btn" href="option-a-role-shelves.html" target="_blank">Open mockup →</a>
+    </div>
+    <div class="thumb">SmartWinnr Help
+├── Overview               [All]
+├── Getting Started        [All]
+├── Announcements          [All]
+│
+├── For Learners           [User]
+│   ├── Take quizzes
+│   ├── Engage with SmartFeed
+│   └── …
+├── For Managers           [Mgr+]
+├── Authoring &amp; Admin      [Editor+]
+│   ├── Quiz Module        priv: quiz
+│   │   ├── Overview
+│   │   ├── Quickstart
+│   │   ├── Create &amp; Manage
+│   │   ├── Assign &amp; Schedule
+│   │   ├── Reports
+│   │   ├── Settings
+│   │   └── FAQs &amp; Troubleshoot
+│   ├── SmartPath Module
+│   ├── SmartFeed Module
+│   └── … (8 modules)
+│
+├── Reports &amp; Analytics    [Editor+]
+├── KPI &amp; Gamification
+├── Notifications &amp; Chat
+├── Integrations           [Admin]
+├── System Administration  [Admin]
+│
+└── Reference / Help / Release notes</div>
+  </div>
+
+  <div class="option">
+    <div>
+      <span class="label">Option B · Most modern</span>
+      <h2>Pure Topic Taxonomy (ClickHouse-style)</h2>
+      <p>
+        Top-level is strictly topic-based: Get Started · Guides · Modules ·
+        Integrations · Administration · Reports · Reference · Release Notes.
+        Roles &amp; privileges still hide what the viewer can't access, but
+        never appear in labels. Closest paradigm to ClickHouse, Stripe, Vercel.
+      </p>
+      <strong>Pros</strong>
+      <ul class="pros">
+        <li>Cleanest IA — single mental model regardless of role.</li>
+        <li>Strong SEO and external-search alignment (every doc has a topic home).</li>
+        <li>Adds a horizontal nav strip, freeing the sidebar for depth.</li>
+      </ul>
+      <strong>Cons</strong>
+      <ul class="cons">
+        <li>Requires a top nav strip + sidebar — small frontend lift.</li>
+        <li>Users used to "Admin Guide" must relearn that admin docs now live under <strong>Modules / Administration / Integrations</strong>.</li>
+        <li>Learners may feel the menu is "too much" until role filtering kicks in.</li>
+      </ul>
+      <a class="open-btn" href="option-b-clickhouse-style.html" target="_blank">Open mockup →</a>
+    </div>
+    <div class="thumb">SmartWinnr Help
+═════ Get Started · Guides · Modules · Integrations · Admin · Reports · Reference · Release Notes ═════
+
+GET STARTED
+├── What is SmartWinnr?
+├── Quickstart for learners / editors / admins
+└── Key concepts &amp; glossary
+
+GUIDES (task-oriented, cross-module)
+├── Authoring workflows
+├── Assigning &amp; scheduling
+├── Running reports
+└── Manager workflows
+
+MODULES (uniform sub-shape inside each)
+├── Quiz · SmartPath · SmartFeed
+├── Video / AI / Field Coaching
+├── Survey · Knowledge Hub · Forms
+└── KPI · Competitions · Achievements …
+
+INTEGRATIONS
+├── Azure AD · SCIM · Salesforce · xAPI · SCORM …
+
+ADMINISTRATION
+├── Users · Privileges · Groups · Divisions · Audit
+
+REPORTS &amp; ANALYTICS
+└── Learner · Admin · Generated · Automated · Dashboards
+
+REFERENCE / RELEASE NOTES</div>
+  </div>
+
+  <div class="option">
+    <div>
+      <span class="label">Option C · Highest polish</span>
+      <h2>Persona-Led Landing + Topic Deep Dive</h2>
+      <p>
+        A custom landing page with three persona doors (Learner / Manager / Admin).
+        Each door opens the same topic-based tree filtered to that audience.
+        The sidebar deep-pages look like Option B — the difference is the front door.
+      </p>
+      <strong>Pros</strong>
+      <ul class="pros">
+        <li>Strongest "this site knows me" feeling on arrival.</li>
+        <li>Lets us highlight role-specific "What's new" and quick links.</li>
+        <li>Inside each persona, IA is still consistent (topic-first).</li>
+      </ul>
+      <strong>Cons</strong>
+      <ul class="cons">
+        <li>Needs a custom landing React component (swizzled <code>/</code> route).</li>
+        <li>Two clicks to start browsing — extra friction for power users.</li>
+        <li>If a user wears multiple hats, they may bounce between doors.</li>
+      </ul>
+      <a class="open-btn" href="option-c-persona-landing.html" target="_blank">Open mockup →</a>
+    </div>
+    <div class="thumb">SmartWinnr Help — Landing
+
+       🎓 Learner    📋 Manager    🛠 Editor / Admin
+       ─────────     ─────────     ─────────────────
+       Take quizzes, Coach team,    Author modules,
+       view paths,   read team      run reports,
+       see scores    dashboards     manage org
+
+→ click a door →
+
+EDITOR / ADMIN HOME
+├── Get Started
+├── Authoring Modules (8, same shape)
+├── KPI &amp; Gamification
+├── Reports &amp; Analytics
+├── Integrations
+├── System Administration
+└── Reference &amp; Release Notes
+
+(Learner door and Manager door follow the
+ same topic structure, filtered to that audience.)</div>
+  </div>
+
+  <h2>At-a-glance comparison</h2>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>A · Role-Aware Shelves</th>
+        <th>B · Pure Topic (ClickHouse)</th>
+        <th>C · Persona Landing + Topic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Implementation cost</td>
+        <td><span class="pill low">Low</span> sidebar reorg + sub-sectioning</td>
+        <td><span class="pill med">Medium</span> top nav strip + sidebar rebuild</td>
+        <td><span class="pill high">High</span> custom landing + sidebar</td>
+      </tr>
+      <tr>
+        <td>Docs migration impact</td>
+        <td>Per-module sub-folders only</td>
+        <td>Full re-tree (Modules / Integrations / Admin)</td>
+        <td>Same as B (front door is the only addition)</td>
+      </tr>
+      <tr>
+        <td>Discoverability for new users</td>
+        <td>Good — role hint up front</td>
+        <td>Excellent — topic-first</td>
+        <td>Excellent — guided entry</td>
+      </tr>
+      <tr>
+        <td>Familiarity for current users</td>
+        <td>Very high</td>
+        <td>Medium — needs relearning</td>
+        <td>Medium — landing is new</td>
+      </tr>
+      <tr>
+        <td>SEO / external search fit</td>
+        <td>OK</td>
+        <td>Best</td>
+        <td>Best (same sidebar as B)</td>
+      </tr>
+      <tr>
+        <td>Multi-role users</td>
+        <td>Smooth — all shelves visible at once</td>
+        <td>Smooth — topic-first, role-agnostic</td>
+        <td>Slight friction — pick a door each time</td>
+      </tr>
+      <tr>
+        <td>Works with today's gates</td>
+        <td>Unchanged</td>
+        <td>Unchanged</td>
+        <td>Unchanged</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 24px; color: var(--sw-text-muted); font-size: 13px;">
+    Open each mockup, then pick one (or a hybrid) and I'll write the implementation plan
+    into <code>plans/help-menu-redesign.md</code>.
+  </p>
+
+</div>
+
+</body>
+</html>

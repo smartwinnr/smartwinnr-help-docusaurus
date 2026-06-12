@@ -1,0 +1,47 @@
+{
+  "id": "modules/survey/assign-and-schedule/5fd49e6623119734ee37edbd",
+  "title": "How to Assign a Survey in SmartWinnr",
+  "description": "",
+  "source": "@site/docs/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr.md",
+  "sourceDirName": "modules/survey/assign-and-schedule",
+  "slug": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr",
+  "permalink": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 60,
+  "frontMatter": {
+    "id": "5fd49e6623119734ee37edbd",
+    "title": "How to Assign a Survey in SmartWinnr",
+    "description": "",
+    "slug": "how-to-assign-a-survey-in-smartwinnr",
+    "sidebar_position": 60,
+    "last_update": {
+      "date": "2026-01-21T00:00:00.000Z",
+      "author": "HelpScout Migration"
+    },
+    "source": {
+      "helpscout_id": "5fd49e6623119734ee37edbd",
+      "helpscout_url": "https://help.smartwinnr.com/article/60-assign-a-survey"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin"
+      ],
+      "privilege": "survey"
+    },
+    "tags": []
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to delete a Survey",
+    "permalink": "/modules/survey/create-and-manage/how-to-delete-a-survey"
+  },
+  "next": {
+    "title": "What are the different question types in a Survey /Survey Template?",
+    "permalink": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template"
+  }
+}
