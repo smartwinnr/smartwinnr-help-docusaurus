@@ -876,9 +876,10 @@ const DEPLOY_DEBOUNCE_MS = parseInt(process.env.AUTHORING_DEPLOY_DEBOUNCE_MS || 
 const DEPLOY_MIN_INTERVAL_MS = parseInt(process.env.AUTHORING_DEPLOY_MIN_INTERVAL_MS || String(60 * 60 * 1000), 10);
 const GIT_PUSH_ENABLED = process.env.AUTHORING_GIT_PUSH === 'true';
 const GIT_PUSH_TOKEN = process.env.GIT_PUSH_TOKEN || '';
-const GITLAB_PROJECT_ID = process.env.GITLAB_PROJECT_ID || '';
+// Repo identity: "<owner>/<repo>" — e.g. "smartwinnr/smartwinnr-help-docusaurus".
+const GITHUB_REPO = process.env.GITHUB_REPO || '';
 const GIT_PUBLISH_BRANCH = process.env.GIT_PUBLISH_BRANCH || 'main';
-const GITLAB_HOST = process.env.GITLAB_HOST || 'https://gitlab.com';
+const GITHUB_API = process.env.GITHUB_API || 'https://api.github.com';
 
 const deployQueue = new Set();
 let lastDeployTs = 0;
@@ -930,86 +931,134 @@ function scheduleDeploy() {
   debounceTimer = setTimeout(() => { fireDeploy().catch((e) => console.error('[deploy] auto-fire failed:', e.message)); }, delay);
 }
 
-/** GitLab Commits API helpers. */
-async function gitlabGetFile(filePath) {
-  const url = `${GITLAB_HOST}/api/v4/projects/${encodeURIComponent(GITLAB_PROJECT_ID)}/repository/files/${encodeURIComponent(filePath)}?ref=${encodeURIComponent(GIT_PUBLISH_BRANCH)}`;
-  try {
-    await axios.get(url, { headers: { 'PRIVATE-TOKEN': GIT_PUSH_TOKEN }, timeout: 15000 });
-    return true;
-  } catch (e) {
-    if (e.response && e.response.status === 404) return false;
-    throw e;
-  }
+/** GitHub Git Data API helpers — composes a single atomic commit out of
+ *  N file changes by building blobs → tree → commit → ref update. The
+ *  fine-grained PAT in GIT_PUSH_TOKEN must have Contents: Read & Write
+ *  scoped to ONLY the configured repo. */
+function ghHeaders() {
+  return {
+    Authorization: `Bearer ${GIT_PUSH_TOKEN}`,
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'smartwinnr-help-authoring',
+  };
 }
-async function gitlabCommit(actions, message) {
-  const url = `${GITLAB_HOST}/api/v4/projects/${encodeURIComponent(GITLAB_PROJECT_ID)}/repository/commits`;
-  return axios.post(url, {
-    branch: GIT_PUBLISH_BRANCH,
-    commit_message: message,
-    actions,
-  }, {
-    headers: { 'PRIVATE-TOKEN': GIT_PUSH_TOKEN, 'Content-Type': 'application/json' },
+async function ghGet(pathSuffix) {
+  return axios.get(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, {
+    headers: ghHeaders(),
+    timeout: 30000,
+  });
+}
+async function ghPost(pathSuffix, body) {
+  return axios.post(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
+    headers: ghHeaders(),
     timeout: 60000,
   });
 }
+async function ghPatch(pathSuffix, body) {
+  return axios.patch(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
+    headers: ghHeaders(),
+    timeout: 30000,
+  });
+}
 
-/** Run a deploy: build actions for every queued file, single GitLab commit,
- *  triggers Railway redeploy on push. Best-effort - on failure the queue is
- *  preserved so the next attempt covers the same files. */
+/** Run a deploy: build a single commit out of every queued file via the
+ *  GitHub Git Data API. Triggers Railway auto-deploy via the ref update.
+ *  Best-effort — on failure the queue is preserved for the next attempt. */
 async function fireDeploy() {
   if (deployInFlight) return { ok: false, reason: 'in-flight' };
   if (deployQueue.size === 0) return { ok: false, reason: 'empty-queue' };
 
   if (!GIT_PUSH_ENABLED) {
-    // Local dev or feature off - clear queue without doing any git work.
-    console.log('[deploy] AUTHORING_GIT_PUSH not set - clearing queue as no-op');
+    // Local dev or feature off — clear queue without any git work.
+    console.log('[deploy] AUTHORING_GIT_PUSH not set — clearing queue as no-op');
     deployQueue.clear();
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
     return { ok: true, mode: 'noop' };
   }
-  if (!GIT_PUSH_TOKEN || !GITLAB_PROJECT_ID) {
-    return { ok: false, reason: 'missing-config', message: 'GIT_PUSH_TOKEN + GITLAB_PROJECT_ID required' };
+  if (!GIT_PUSH_TOKEN || !GITHUB_REPO) {
+    return {
+      ok: false,
+      reason: 'missing-config',
+      message: 'GIT_PUSH_TOKEN + GITHUB_REPO required',
+    };
   }
 
   deployInFlight = true;
   const filePaths = [...deployQueue];
   try {
-    const actions = [];
+    // Read file contents into memory + drop any that have since vanished.
+    const files = [];
     for (const rel of filePaths) {
       const abs = path.join(__dirname, rel);
       if (!fsSync.existsSync(abs)) {
         console.warn(`[deploy] skipping missing file: ${rel}`);
         continue;
       }
-      const content = fsSync.readFileSync(abs, 'utf8');
-      const exists = await gitlabGetFile(rel);
-      actions.push({
-        action: exists ? 'update' : 'create',
-        file_path: rel,
-        content,
-      });
+      files.push({ rel, content: fsSync.readFileSync(abs, 'utf8') });
     }
-    if (actions.length === 0) {
+    if (files.length === 0) {
       deployQueue.clear();
       deployInFlight = false;
-      return { ok: false, reason: 'no-actions' };
+      return { ok: false, reason: 'no-files' };
     }
 
-    const slugs = filePaths.map((p) => path.basename(p, '.md')).slice(0, 3);
-    const message = `publish: ${filePaths.length} article${filePaths.length === 1 ? '' : 's'} (${slugs.join(', ')}${filePaths.length > 3 ? '...' : ''})`;
-    await gitlabCommit(actions, message);
+    // 1. Look up current branch tip + tree
+    const refResp = await ghGet(`/git/refs/heads/${GIT_PUBLISH_BRANCH}`);
+    const baseCommitSha = refResp.data.object.sha;
+    const baseCommitResp = await ghGet(`/git/commits/${baseCommitSha}`);
+    const baseTreeSha = baseCommitResp.data.tree.sha;
 
-    console.log(`[deploy] committed ${actions.length} file(s) to ${GIT_PUBLISH_BRANCH}`);
+    // 2. Upload each file as a blob (utf-8 encoding for plain markdown).
+    const treeEntries = [];
+    for (const f of files) {
+      const blobResp = await ghPost(`/git/blobs`, {
+        content: f.content,
+        encoding: 'utf-8',
+      });
+      treeEntries.push({
+        path: f.rel,
+        mode: '100644',
+        type: 'blob',
+        sha: blobResp.data.sha,
+      });
+    }
+
+    // 3. New tree based on the current main tree + our overrides.
+    const treeResp = await ghPost(`/git/trees`, {
+      base_tree: baseTreeSha,
+      tree: treeEntries,
+    });
+
+    // 4. Create the commit.
+    const slugs = files.map((f) => path.basename(f.rel, '.md')).slice(0, 3);
+    const message = `publish: ${files.length} article${files.length === 1 ? '' : 's'} (${slugs.join(', ')}${files.length > 3 ? '...' : ''})`;
+    const commitResp = await ghPost(`/git/commits`, {
+      message,
+      tree: treeResp.data.sha,
+      parents: [baseCommitSha],
+    });
+
+    // 5. Fast-forward the branch. (Use force=false explicitly so a
+    //    concurrent push since refResp would fail loudly instead of
+    //    overwriting.)
+    await ghPatch(`/git/refs/heads/${GIT_PUBLISH_BRANCH}`, {
+      sha: commitResp.data.sha,
+      force: false,
+    });
+
+    console.log(`[deploy] pushed ${files.length} file(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
     deployQueue.clear();
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
-    return { ok: true, committed: actions.length };
+    return { ok: true, committed: files.length, sha: commitResp.data.sha };
   } catch (e) {
-    console.error('[deploy] commit failed:', e.response?.data || e.message);
-    return { ok: false, reason: 'commit-failed', message: e.response?.data?.message || e.message };
+    const ghMsg = e.response?.data?.message || e.message;
+    console.error('[deploy] GitHub push failed:', ghMsg);
+    return { ok: false, reason: 'push-failed', message: ghMsg };
   } finally {
     deployInFlight = false;
   }
@@ -1073,7 +1122,7 @@ app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, re
     minIntervalMs: DEPLOY_MIN_INTERVAL_MS,
     debounceMs: DEPLOY_DEBOUNCE_MS,
     gitPushEnabled: GIT_PUSH_ENABLED,
-    configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITLAB_PROJECT_ID,
+    configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITHUB_REPO,
   });
 });
 

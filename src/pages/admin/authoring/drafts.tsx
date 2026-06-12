@@ -189,7 +189,7 @@ function DraftsList(): ReactNode {
                 )}
                 {!deployState.configOk && deployState.queue.length > 0 && (
                   <span className={styles.warn}>
-                    {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITLAB_PROJECT_ID not all set).
+                    {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITHUB_REPO not all set).
                   </span>
                 )}
               </div>
