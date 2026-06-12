@@ -100,12 +100,12 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
             title={m.locked
               ? `Your org has not enabled ${m.privilege || 'this module'} — click to learn more.`
               : m.label}>
-            <span style={{fontSize: 20, lineHeight: 1}}>{ICON_BY_SLUG[m.slug] ?? '📦'}</span>
+            <span className="sw-module-ico">{ICON_BY_SLUG[m.slug] ?? '📦'}</span>
             <div>
-              <strong style={{display: 'block', color: m.locked ? '#9ca3af' : '#1f3d80', fontSize: 13.5}}>
+              <strong className={m.locked ? 'sw-module-title sw-module-title-locked' : 'sw-module-title'}>
                 {m.label}
               </strong>
-              <span style={{fontSize: 11.5, color: '#6b7280'}}>
+              <span className="sw-module-desc">
                 {m.locked ? 'Ask your admin to enable' : describeRole(user, m)}
               </span>
             </div>
@@ -135,16 +135,54 @@ const moduleTileLockedStyle: string = 'sw-module-tile-locked';
 if (typeof document !== 'undefined' && !document.getElementById('sw-module-strip-style')) {
   const s = document.createElement('style');
   s.id = 'sw-module-strip-style';
+  // All sizes / colors via tokens — see plan §14.
   s.textContent = `
-    .sw-module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-    .sw-module-tile {
-      background: #f7f9fc; border: 1px solid #e4e8ee; border-radius: 8px;
-      padding: 12px 14px; text-decoration: none; color: inherit;
-      display: flex; gap: 10px; align-items: flex-start; transition: all 0.15s ease;
+    .sw-module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-2);
     }
-    .sw-module-tile:hover { border-color: #2e5cb8; background: white; text-decoration: none; color: inherit; }
-    .sw-module-tile-locked { background: #f9fafb; border-style: dashed; cursor: help; }
-    .sw-module-tile-locked:hover { background: #f9fafb; border-color: #d1d5db; }
+    .sw-module-tile {
+      background: var(--ifm-color-emphasis-100);
+      border: 1px solid var(--ifm-color-emphasis-200);
+      border-radius: 8px;
+      padding: var(--space-3) var(--space-3);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      gap: var(--space-2);
+      align-items: flex-start;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .sw-module-tile:hover {
+      border-color: var(--ifm-color-primary);
+      background: var(--ifm-background-color);
+      text-decoration: none;
+      color: inherit;
+    }
+    .sw-module-tile-locked {
+      background: var(--ifm-color-emphasis-100);
+      border-style: dashed;
+      cursor: help;
+    }
+    .sw-module-tile-locked:hover {
+      background: var(--ifm-color-emphasis-100);
+      border-color: var(--ifm-color-emphasis-300);
+    }
+    .sw-module-ico { font-size: 20px; line-height: 1; }
+    .sw-module-title {
+      display: block;
+      color: var(--ifm-heading-color);
+      font-size: var(--text-body-sm);
+      line-height: var(--lh-body-sm);
+      font-weight: var(--fw-semibold);
+    }
+    .sw-module-title-locked { color: var(--ifm-color-content-secondary); }
+    .sw-module-desc {
+      font-size: var(--text-caption);
+      line-height: var(--lh-caption);
+      color: var(--ifm-color-content-secondary);
+    }
   `;
   document.head.appendChild(s);
 }

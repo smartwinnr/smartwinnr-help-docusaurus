@@ -12,10 +12,11 @@
   background: var(--ifm-color-emphasis-100);
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 6px;
-  color: var(--ifm-color-emphasis-600);
-  font-size: 14px;
+  color: var(--ifm-color-content-secondary);
+  font-size: var(--text-body-sm);
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   min-width: 200px;
 }
 
@@ -33,7 +34,8 @@
   background: var(--ifm-color-emphasis-200);
   padding: 2px 6px;
   border-radius: 3px;
-  font-size: 11px;
+  font-size: var(--text-label);
+  letter-spacing: var(--tr-label);
   font-family: var(--ifm-font-family-monospace);
 }
 
@@ -93,9 +95,11 @@
 
 .search-modal-header h3 {
   margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--ifm-font-color-base);
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--tr-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--ifm-heading-color);
 }
 
 .search-modal-close {
@@ -137,23 +141,26 @@
 }
 
 .search-modal-tips {
-  font-size: 13px;
-  color: var(--ifm-color-emphasis-700);
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  color: var(--ifm-color-content-secondary);
 }
 
 .search-modal-shortcuts {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  color: var(--ifm-color-emphasis-600);
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  color: var(--ifm-color-content-secondary);
 }
 
 .search-modal-shortcuts kbd {
   background: var(--ifm-color-emphasis-200);
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 11px;
+  font-size: var(--text-label);
+  letter-spacing: var(--tr-label);
   font-family: var(--ifm-font-family-monospace);
   border: 1px solid var(--ifm-color-emphasis-300);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);

@@ -47,6 +47,31 @@ const config: Config = {
     locales: ['en'],
   },
 
+  // Preload the two self-hosted variable fonts so first-paint text is rendered
+  // with Inter immediately (no FOUT to a system fallback). See plan §14.2.
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: '/fonts/InterVariable.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: '/fonts/JetBrainsMonoVariable.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+  ],
+
   presets: [
     [
       'classic',

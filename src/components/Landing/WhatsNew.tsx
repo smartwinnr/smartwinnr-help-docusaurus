@@ -82,7 +82,12 @@ export default function WhatsNew({user, limit = 5}: Props): JSX.Element | null {
               </Link>
               {e.blurb && <span className={styles.blurb}>{e.blurb}</span>}
             </div>
-            <span style={{color: '#6b7280', fontSize: 11, whiteSpace: 'nowrap'}}>
+            <span style={{
+              color: 'var(--ifm-color-content-secondary)',
+              fontSize: 'var(--text-caption)',
+              fontVariantNumeric: 'tabular-nums',
+              whiteSpace: 'nowrap',
+            }}>
               {relative(e.date)}
             </span>
           </li>

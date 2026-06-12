@@ -20,6 +20,28 @@ export default {
     "path": "i18n",
     "localeConfigs": {}
   },
+  "headTags": [
+    {
+      "tagName": "link",
+      "attributes": {
+        "rel": "preload",
+        "href": "/fonts/InterVariable.woff2",
+        "as": "font",
+        "type": "font/woff2",
+        "crossorigin": "anonymous"
+      }
+    },
+    {
+      "tagName": "link",
+      "attributes": {
+        "rel": "preload",
+        "href": "/fonts/JetBrainsMonoVariable.woff2",
+        "as": "font",
+        "type": "font/woff2",
+        "crossorigin": "anonymous"
+      }
+    }
+  ],
   "presets": [
     [
       "classic",
@@ -1997,7 +2019,6 @@ export default {
   "customFields": {},
   "themes": [],
   "scripts": [],
-  "headTags": [],
   "stylesheets": [],
   "clientModules": [],
   "titleDelimiter": "|",

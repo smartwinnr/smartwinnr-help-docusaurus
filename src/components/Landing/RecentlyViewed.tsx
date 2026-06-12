@@ -63,7 +63,12 @@ export default function RecentlyViewed(): JSX.Element | null {
               </Link>
               {e.crumb && <span className={styles.blurb}>{e.crumb}</span>}
             </div>
-            <span style={{color: 'var(--ifm-color-emphasis-700)', fontSize: 11, whiteSpace: 'nowrap'}}>
+            <span style={{
+              color: 'var(--ifm-color-content-secondary)',
+              fontSize: 'var(--text-caption)',
+              fontVariantNumeric: 'tabular-nums',
+              whiteSpace: 'nowrap',
+            }}>
               {relative(e.viewedAt)}
             </span>
           </li>
