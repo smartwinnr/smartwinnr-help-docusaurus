@@ -98,7 +98,7 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
             to={m.url}
             className={`${moduleTileStyle} ${m.locked ? moduleTileLockedStyle : ''}`}
             title={m.locked
-              ? `Your org has not enabled ${m.privilege || 'this module'} — click to learn more.`
+              ? `Your org has not enabled ${m.privilege || 'this module'} - click to learn more.`
               : m.label}>
             <span className="sw-module-ico">{ICON_BY_SLUG[m.slug] ?? '📦'}</span>
             <div>
@@ -126,7 +126,7 @@ function describeRole(user: CurrentUser, m: ModuleEntry): string {
   return m.hasLearner ? 'How to use' : 'FAQs';
 }
 
-// Inline styles so this component doesn't need a separate CSS module — keeps the
+// Inline styles so this component doesn't need a separate CSS module - keeps the
 // landing surface contained while we iterate.
 const moduleGridStyle: string = 'sw-module-grid';
 const moduleTileStyle: string = 'sw-module-tile';
@@ -135,7 +135,7 @@ const moduleTileLockedStyle: string = 'sw-module-tile-locked';
 if (typeof document !== 'undefined' && !document.getElementById('sw-module-strip-style')) {
   const s = document.createElement('style');
   s.id = 'sw-module-strip-style';
-  // All sizes / colors via tokens — see plan §14.
+  // All sizes / colors via tokens - see plan §14.
   s.textContent = `
     .sw-module-grid {
       display: grid;

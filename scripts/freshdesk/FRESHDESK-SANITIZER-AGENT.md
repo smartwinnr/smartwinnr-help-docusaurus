@@ -1,4 +1,4 @@
-# Freshdesk Dump Sanitizer — AI Agent Instructions
+# Freshdesk Dump Sanitizer - AI Agent Instructions
 
 ## Purpose
 
@@ -12,9 +12,9 @@ A human reviewer should be able to read each ticket note in under 30 seconds and
 
 ### Prioritize tickets that show
 
-- **High-impact or commonly faced user problems** — issues that many users are likely to encounter
-- **Queries resolvable using existing SmartWinnr capabilities** — questions where a help article or self-serve guide would be sufficient
-- **Patterns indicating knowledge base gaps or training needs** — repeated questions that suggest missing documentation
+- **High-impact or commonly faced user problems** - issues that many users are likely to encounter
+- **Queries resolvable using existing SmartWinnr capabilities** - questions where a help article or self-serve guide would be sufficient
+- **Patterns indicating knowledge base gaps or training needs** - repeated questions that suggest missing documentation
 
 ### Ignore / skip tickets that are
 
@@ -32,7 +32,7 @@ You will receive rows from a Freshdesk CSV export. Each row has these columns:
 |---|---|
 | `Ticket ID` | Unique numeric ticket identifier |
 | `Subject` | Email subject line (often prefixed with Re:, Fw:, RE:) |
-| `Description` | Full raw email thread — may contain multiple replies, quoted text, signatures, disclaimers, image placeholders `[cid:...]`, and forwarded headers |
+| `Description` | Full raw email thread - may contain multiple replies, quoted text, signatures, disclaimers, image placeholders `[cid:...]`, and forwarded headers |
 | `Status` | `Open`, `Closed`, `Pending` |
 | `Type` | Ticket type tag: `User Mgmt`, `Config`, `Setup Change`, `Reports`, `Knowledge Provided`, `Misc`, `Bug`, etc. |
 | `Agent` | SmartWinnr support agent who handled it |
@@ -66,7 +66,7 @@ The user was practicing from home on a good internet connection.
 **Solution**
 > No resolution found in thread.
 
-**Doc Value**: ⭐ HIGH — AI avatar unresponsiveness is a common user-facing issue that a
+**Doc Value**: ⭐ HIGH - AI avatar unresponsiveness is a common user-facing issue that a
 troubleshooting article could proactively address.
 
 **Keywords**: AI coach · avatar · role play · not responding · delay · speech recognition
@@ -77,13 +77,13 @@ troubleshooting article could proactively address.
 
 ### Field-by-field rules
 
-- **Ticket heading** — `#[ID] · [Sanitized Subject]` — clean Title Case title, 5–10 words, no `Re:`/`Fw:`/`{External}` prefixes
-- **Core Question** — A single concise sentence (10–20 words) phrased as the question the user was really asking, in their own intent. This is the actionable self-serve query a help article would answer. Must accurately reflect the user's original intent — do not reframe or editorialize.
-- **Problem** — 2–4 plain-English sentences giving the full context. No email signatures, no quoted chains, no image tags, no jargon.
-- **Solution** — Quote the resolution in a blockquote (`>`). If none found, write `> No resolution found in thread.`
-- **Doc Value** — One of: `⭐ HIGH`, `🔵 MEDIUM`, `⚪ LOW`, `🚫 SKIP` — followed by a dash and one sentence reason
-- **Keywords** — 3–8 terms separated by ` · `
-- **Flags** — Only show the `⚠ Flags:` line if there is at least one flag. See flags list below.
+- **Ticket heading** - `#[ID] · [Sanitized Subject]` - clean Title Case title, 5–10 words, no `Re:`/`Fw:`/`{External}` prefixes
+- **Core Question** - A single concise sentence (10–20 words) phrased as the question the user was really asking, in their own intent. This is the actionable self-serve query a help article would answer. Must accurately reflect the user's original intent - do not reframe or editorialize.
+- **Problem** - 2–4 plain-English sentences giving the full context. No email signatures, no quoted chains, no image tags, no jargon.
+- **Solution** - Quote the resolution in a blockquote (`>`). If none found, write `> No resolution found in thread.`
+- **Doc Value** - One of: `⭐ HIGH`, `🔵 MEDIUM`, `⚪ LOW`, `🚫 SKIP` - followed by a dash and one sentence reason
+- **Keywords** - 3–8 terms separated by ` · `
+- **Flags** - Only show the `⚠ Flags:` line if there is at least one flag. See flags list below.
 
 ---
 
@@ -94,8 +94,8 @@ troubleshooting article could proactively address.
 Remove the following entirely before reading any content:
 
 - Email headers: `From:`, `Sent:`, `To:`, `Cc:`, `Subject:`, `Date:` lines
-- Quoted / forwarded email chains — everything after `---`, `________________________________`, or a `From: ... Sent: ...` block
-- Email signatures — blocks with name, title, phone, address, company logo, social links
+- Quoted / forwarded email chains - everything after `---`, `________________________________`, or a `From: ... Sent: ...` block
+- Email signatures - blocks with name, title, phone, address, company logo, social links
 - Legal disclaimers (GDPR, HIPAA, "This message is intended only for the recipient...")
 - Image placeholders: `[cid:...]`, `[Image]`, `[cid:image001...]`
 - Social media icon placeholders: `[Twitter_28X28]`, `[Facebook_28X28]`, `[LInkedIN_28X28]`
@@ -110,8 +110,8 @@ Remove the following entirely before reading any content:
 - Replace personal email addresses with `[email]`
 - Replace personal phone numbers with `[phone]`
 - Replace full names of end-users/customers with their role (e.g., `"Devika Prasad, FCE Trivandrum"` → `"a field sales rep"`)
-- Preserve company/client names (AbbVie, Gilead, BSC, etc.) — needed for categorization
-- Preserve SmartWinnr agent names — not PII in this context
+- Preserve company/client names (AbbVie, Gilead, BSC, etc.) - needed for categorization
+- Preserve SmartWinnr agent names - not PII in this context
 - Add the `pii-removed` flag whenever any PII was stripped
 
 ### 3. Doc Value
@@ -127,14 +127,14 @@ Remove the following entirely before reading any content:
 
 Pick the single best fit:
 
-- **How-To** — user asked how to do something in the platform
-- **Troubleshooting** — something was not working
-- **Access / Permissions** — login issues, role changes, access grants
-- **Configuration** — admin setup or content configuration request
-- **Data / Reports** — analytics, report access, data exports
-- **Feature Request** — user explicitly asked for a new capability
-- **Bug** — confirmed technical malfunction (not user error)
-- **Noise** — newsletter, marketing, auto-generated, spam, or irrelevant
+- **How-To** - user asked how to do something in the platform
+- **Troubleshooting** - something was not working
+- **Access / Permissions** - login issues, role changes, access grants
+- **Configuration** - admin setup or content configuration request
+- **Data / Reports** - analytics, report access, data exports
+- **Feature Request** - user explicitly asked for a new capability
+- **Bug** - confirmed technical malfunction (not user error)
+- **Noise** - newsletter, marketing, auto-generated, spam, or irrelevant
 
 ### 5. Module
 
@@ -230,19 +230,19 @@ Processed: [N] tickets   |   Skipped: [N]   |   Generated: [date]
 
 ## Quality Rules
 
-- **Core Question must reflect original user intent** — do not reframe or editorialize. Write the question the user was actually asking, not a generalized version.
-- **Be conservative with HIGH** — only use it when the issue is common, resolvable via docs, and represents a genuine knowledge gap
-- **Skip aggressively** — if a ticket is off-topic, unrelated to SmartWinnr functionality, or requires a custom/unsupported solution, mark it `🚫 SKIP` without hesitation
-- **Never invent content** — if the problem or solution is unclear from the text, write only what you know
-- **Keep technical specificity** — include specific feature names, module names, or error messages if mentioned
-- **Do not write article prose** — write concise, actionable notes not finished help articles
-- **One block per ticket** — never merge or split tickets
+- **Core Question must reflect original user intent** - do not reframe or editorialize. Write the question the user was actually asking, not a generalized version.
+- **Be conservative with HIGH** - only use it when the issue is common, resolvable via docs, and represents a genuine knowledge gap
+- **Skip aggressively** - if a ticket is off-topic, unrelated to SmartWinnr functionality, or requires a custom/unsupported solution, mark it `🚫 SKIP` without hesitation
+- **Never invent content** - if the problem or solution is unclear from the text, write only what you know
+- **Keep technical specificity** - include specific feature names, module names, or error messages if mentioned
+- **Do not write article prose** - write concise, actionable notes not finished help articles
+- **One block per ticket** - never merge or split tickets
 
 ---
 
 ## Examples
 
-### Example 1 — Good Ticket with Real Issue
+### Example 1 - Good Ticket with Real Issue
 
 **Input (raw):**
 ```
@@ -276,7 +276,7 @@ The user was practicing from home on a good internet connection.
 **Solution**
 > No resolution found in thread.
 
-**Doc Value**: ⭐ HIGH — Commonly faced issue resolvable via a troubleshooting guide;
+**Doc Value**: ⭐ HIGH - Commonly faced issue resolvable via a troubleshooting guide;
 clear knowledge base gap around AI avatar connectivity and speech recognition behavior.
 
 **Keywords**: AI coach · avatar · role play · not responding · delay · speech recognition
@@ -287,7 +287,7 @@ clear knowledge base gap around AI avatar connectivity and speech recognition be
 
 ---
 
-### Example 2 — Noise Ticket
+### Example 2 - Noise Ticket
 
 **Input (raw):**
 ```
@@ -299,12 +299,12 @@ Description: [Long marketing newsletter from Help Scout about SaaS startup jargo
 **Output:**
 ```
 ---
-### #77990 · ~~Marketing Newsletter — Not a Support Ticket~~
-📋 Client: —   |   Module: —   |   Category: Noise
+### #77990 · ~~Marketing Newsletter - Not a Support Ticket~~
+📋 Client: -   |   Module: -   |   Category: Noise
 📅 Created: 2026-02-26   |   Status: Closed
 
 **Core Question**
-— (not applicable)
+- (not applicable)
 
 **Problem**
 Marketing newsletter from Help Scout incorrectly routed to the support inbox.
@@ -313,7 +313,7 @@ No customer issue present.
 **Solution**
 > No resolution needed.
 
-**Doc Value**: 🚫 SKIP — Unrelated to SmartWinnr functionality. Newsletter email in support inbox.
+**Doc Value**: 🚫 SKIP - Unrelated to SmartWinnr functionality. Newsletter email in support inbox.
 
 **Flags**: ⚠ no-description
 ---
@@ -321,7 +321,7 @@ No customer issue present.
 
 ---
 
-### Example 3 — Ticket with a Clear Solution
+### Example 3 - Ticket with a Clear Solution
 
 **Input (raw):**
 ```
@@ -344,13 +344,13 @@ Regards, Inder
 How do I configure daily reminder notifications for Quiz and Video tasks for my team?
 
 **Problem**
-Admin requested daily reminder notifications to be configured for their team — at 8 AM and 8 PM —
+Admin requested daily reminder notifications to be configured for their team - at 8 AM and 8 PM -
 for both Quiz and Video task completions.
 
 **Solution**
 > Support team configured daily reminder notifications at 8 AM and 8 PM for Quiz and Video tasks.
 
-**Doc Value**: 🔵 MEDIUM — Common admin configuration task resolvable via existing SmartWinnr
+**Doc Value**: 🔵 MEDIUM - Common admin configuration task resolvable via existing SmartWinnr
 notification settings; a how-to article on scheduling reminders would reduce future tickets.
 
 **Keywords**: reminders · notifications · quiz · video task · scheduled · daily

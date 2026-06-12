@@ -228,7 +228,7 @@ function main() {
     }
   }
 
-  console.log(`bucket-articles: ${APPLY ? 'APPLY' : 'DRY RUN'} — ${plan.length} article(s) across ${modules.length} module(s)`);
+  console.log(`bucket-articles: ${APPLY ? 'APPLY' : 'DRY RUN'} - ${plan.length} article(s) across ${modules.length} module(s)`);
   console.log('');
   console.log('Bucket totals:');
   for (const [b, c] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {

@@ -28,7 +28,7 @@ function getArg(name) {
 
 async function main() {
   if (!fs.existsSync(DB_PATH)) {
-    console.log(`[backup] No database found at ${DB_PATH} — nothing to back up.`);
+    console.log(`[backup] No database found at ${DB_PATH} - nothing to back up.`);
     process.exit(0);
   }
 

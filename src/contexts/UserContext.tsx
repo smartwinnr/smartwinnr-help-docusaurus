@@ -30,7 +30,7 @@ export function UserProvider({children}: {children: ReactNode}) {
     fetch('/api/me', {credentials: 'same-origin', headers: {Accept: 'application/json'}})
       .then(async (res) => {
         if (res.status === 401) {
-          // Cookie missing/expired — bounce to login, preserving where we were.
+          // Cookie missing/expired - bounce to login, preserving where we were.
           const redirect = encodeURIComponent(window.location.pathname + window.location.search);
           window.location.href = `/auth/login?redirect=${redirect}`;
           return null;

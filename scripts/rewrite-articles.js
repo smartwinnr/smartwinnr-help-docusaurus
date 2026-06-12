@@ -147,7 +147,7 @@ async function rewriteOne(filepath) {
 
   const siblingList = siblings.length
     ? '\n\nSibling articles (for **What\'s next** cross-links):\n' +
-      siblings.map((s) => `- \`${s.relPath}\` — ${s.title}${s.description ? ': ' + s.description : ''}`).join('\n')
+      siblings.map((s) => `- \`${s.relPath}\` - ${s.title}${s.description ? ': ' + s.description : ''}`).join('\n')
     : '';
 
   const userMsg =

@@ -1,9 +1,9 @@
 /**
- * SmartWinnr Documentation — Apple-quality typography pass (plan §14)
+ * SmartWinnr Documentation - Apple-quality typography pass (plan §14)
  *
  * Type system:
  *   • One family (Inter Variable) handles display + body via weight + tracking.
- *   • Self-hosted .woff2 files in /static/fonts/ — preloaded in docusaurus.config.ts.
+ *   • Self-hosted .woff2 files in /static/fonts/ - preloaded in docusaurus.config.ts.
  *   • Tokens (--text-*, --lh-*, --tr-*, --space-*) defined under :root; every
  *     component CSS module consumes the tokens, never literal px.
  */
@@ -24,7 +24,7 @@
 }
 
 :root {
-  /* ───────── Background tint (legacy — kept for landing gradient) ───────── */
+  /* ───────── Background tint (legacy - kept for landing gradient) ───────── */
   --tint: 108, 76, 255;
   --tint-top: 0.08;
   --tint-bottom: 0.04;
@@ -32,7 +32,7 @@
   --tint-b: 233, 240, 255;
   --page-bg: #ffffff;
 
-  /* ───────── Card system (legacy — kept for landing/module surfaces) ───── */
+  /* ───────── Card system (legacy - kept for landing/module surfaces) ───── */
   --card-bg: rgba(255,255,255,0.65);
   --card-border: rgba(108, 76, 255, 0.18);
   --card-shadow: 0 1px 1px rgba(17,12,46,.06), 0 8px 24px rgba(17,12,46,.06);
@@ -96,9 +96,9 @@
   /* ───────── Neutrals ──────────────────────────────────────────────────── */
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #f8fafc;
-  --ifm-color-content: #1e293b;            /* slate-800 — body */
-  --ifm-color-content-secondary: #475569;  /* slate-600 — meta */
-  --ifm-heading-color: #0f172a;            /* slate-900 — sharper than default */
+  --ifm-color-content: #1e293b;            /* slate-800 - body */
+  --ifm-color-content-secondary: #475569;  /* slate-600 - meta */
+  --ifm-heading-color: #0f172a;            /* slate-900 - sharper than default */
   --ifm-color-emphasis-300: #cbd5e1;
   --ifm-color-emphasis-200: #e2e8f0;
   --ifm-color-emphasis-100: #f1f5f9;
@@ -138,7 +138,7 @@
   --ifm-spacing-vertical: 1.5rem;
 }
 
-/* Global html — features, smoothing, optical sizing. Applies once. */
+/* Global html - features, smoothing, optical sizing. Applies once. */
 html {
   font-family: var(--font-sans);
   font-feature-settings: var(--font-features);
@@ -150,7 +150,7 @@ html {
 
 /* ───────── Type utility classes ──────────────────────────────────────────
  * Components can apply these instead of duplicating size/leading/tracking.
- * Order matters — these come AFTER tokens so they resolve at use site. */
+ * Order matters - these come AFTER tokens so they resolve at use site. */
 .type-display-xl { font-weight: var(--fw-display); font-size: var(--text-display-xl);
                    line-height: var(--lh-display-xl); letter-spacing: var(--tr-display-xl); }
 .type-display-lg { font-weight: var(--fw-display); font-size: var(--text-display-lg);
@@ -189,7 +189,7 @@ html {
   --ifm-background-surface-color: rgba(15, 15, 30, 0.6);
   --ifm-color-content: #f1f5f9;
   --ifm-color-content-secondary: #e2e8f0;
-  --ifm-heading-color: #f8fafc;            /* slate-50 — sharp on dark */
+  --ifm-heading-color: #f8fafc;            /* slate-50 - sharp on dark */
   --ifm-color-emphasis-300: #64748b;
   --ifm-color-emphasis-200: rgba(100, 116, 139, 0.2);
   --ifm-color-emphasis-100: rgba(30, 41, 59, 0.4);
@@ -479,7 +479,7 @@ body::before {
           mask-image: linear-gradient(#000 0%, #000 65%, transparent 100%);
 }
 
-/* ═══════════════ TYPOGRAPHY — token-driven; one source of truth ══════════ */
+/* ═══════════════ TYPOGRAPHY - token-driven; one source of truth ══════════ */
 
 html { font-size: 16px; }
 
@@ -490,7 +490,7 @@ body {
   color: var(--ifm-color-content);
 }
 
-/* Headings — sizes come from --ifm-h*-font-size which point at --text-h* */
+/* Headings - sizes come from --ifm-h*-font-size which point at --text-h* */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   color: var(--ifm-heading-color);
@@ -509,7 +509,7 @@ h6 {
   text-transform: uppercase;
 }
 
-/* ───────── Code — block + inline ─────────────────────────────────────── */
+/* ───────── Code - block + inline ─────────────────────────────────────── */
 code, pre, kbd, samp {
   font-family: var(--font-mono);
   font-feature-settings: "kern", "liga";
@@ -573,8 +573,8 @@ pre code {
   border-right: 1px solid rgba(139, 92, 246, 0.1);
 }
 
-/* ═══════════ Article prose — the reading experience itself ══════════════
- * .markdown wraps every doc page's body — including MDX pages that embed
+/* ═══════════ Article prose - the reading experience itself ══════════════
+ * .markdown wraps every doc page's body - including MDX pages that embed
  * React components (Landing, PathBody, ModuleOverview). Those components
  * bring their own wider `.wrap` widths. So instead of capping the .markdown
  * container, we cap typographic CHILD elements only (p, lists, headings,
@@ -589,7 +589,7 @@ pre code {
 
 /* Override Infima's `.docItemCol_*` 75% max-width on articles. Infima
  * reserves the right 25% of the docs main column for the TOC right-rail,
- * but that pushes article content to the LEFT — so /modules/quiz/
+ * but that pushes article content to the LEFT - so /modules/quiz/
  * (ModuleOverview, full-width col) and /modules/quiz/<sub>/<article>
  * (with docItemCol_*) end up with their 72ch columns at different x
  * positions. Force every doc col to full width so all surfaces center
@@ -600,27 +600,27 @@ pre code {
 
 /* Mirror `.docItemContainer_*`'s small horizontal padding for the
  * generated-index swizzle (plan §18). With this, the generated-index
- * pages live inside `.row > .col > .sw-doc-item-wrap` — identical to
- * the article chain — so the 72ch column centers on the same x. */
+ * pages live inside `.row > .col > .sw-doc-item-wrap` - identical to
+ * the article chain - so the 72ch column centers on the same x. */
 .sw-doc-item-wrap {
   padding: 0 .3rem;
 }
 
-/* Generated-index pages — auto-rendered category landings
+/* Generated-index pages - auto-rendered category landings
  * (`/modules/`, `/modules/<m>/<sub>/`, `/reference/`, `/release-notes/`).
  *
  * Goals (plan §17 + §18):
  *   1. Constrain content to 72ch so reading width matches articles.
  *   2. Match ModuleOverview's hero typography.
  *   3. Center on the SAME x as article + ModuleOverview by mirroring
- *      their `.row > .col > .docItemContainer` parent chain — done in
+ *      their `.row > .col > .docItemContainer` parent chain - done in
  *      the DocCategoryGeneratedIndexPage swizzle.
  *
  * Breadcrumb stays at the docs-wide left edge.
  *
  * The `[class*="generatedIndexPage_"]` attribute selector matches both
  * the stock hashed class (`generatedIndexPage_vN6x`) AND our swizzle's
- * `generatedIndexPage_sw` — same suffix prefix, partial match works. */
+ * `generatedIndexPage_sw` - same suffix prefix, partial match works. */
 [class*="generatedIndexPage_"] {
   max-width: none !important;
 }
@@ -633,7 +633,7 @@ pre code {
   padding-top: var(--space-4);
   margin-bottom: var(--space-5);
 }
-/* Title — override the stock `.title_*` which sets 3rem locally with
+/* Title - override the stock `.title_*` which sets 3rem locally with
  * `--ifm-h1-font-size: 3rem`. Use the same scale as ModuleOverview's
  * hero so the three module surfaces (/modules/, /modules/<m>/,
  * /modules/<m>/<sub>/) share a heading size. */
@@ -679,7 +679,7 @@ a.card.padding--lg p[class*="cardDescription_"] {
   margin: 0;
 }
 
-/* Article reading column — one ancestor owns the width.
+/* Article reading column - one ancestor owns the width.
  * Added by the DocItem/Content swizzle on article pages. Every descendant
  * (title, chip, h2/h3, paragraphs, lists, figures, chrome) inherits this
  * 72ch limit via normal block layout, so they all share a left edge with
@@ -687,13 +687,13 @@ a.card.padding--lg p[class*="cardDescription_"] {
  *
  * Full-width pages (landing /, /path/<persona>/, /modules/<m>/) render
  * WITHOUT this wrapper so their embedded React heroes keep their own
- * widths — see DocItem/Content swizzle.  */
+ * widths - see DocItem/Content swizzle.  */
 .sw-prose-column {
   max-width: 72ch;
   margin-inline: auto;
 }
 
-/* Heading rhythm — generous top margin so sections breathe; tight bottom
+/* Heading rhythm - generous top margin so sections breathe; tight bottom
  * margin so the next paragraph attaches visually. */
 .markdown > h1:first-child { margin-top: 0; }
 .markdown h1 { font-size: var(--text-h1); margin-bottom: var(--space-3); }
@@ -701,7 +701,7 @@ a.card.padding--lg p[class*="cardDescription_"] {
 .markdown h3 { font-size: var(--text-h3); margin-top: var(--space-6); margin-bottom: var(--space-2); }
 .markdown h4 { font-size: var(--text-h4); margin-top: var(--space-5); margin-bottom: var(--space-2); }
 
-/* Body paragraphs — full content color (not muted), with hyphens for
+/* Body paragraphs - full content color (not muted), with hyphens for
  * pretty rag on narrow viewports. */
 .markdown p {
   color: var(--ifm-color-content);
@@ -709,7 +709,7 @@ a.card.padding--lg p[class*="cardDescription_"] {
   hyphens: auto;
 }
 
-/* Lists — hanging-indent feel, tighter rhythm between items. */
+/* Lists - hanging-indent feel, tighter rhythm between items. */
 .markdown ul, .markdown ol {
   color: var(--ifm-color-content);
   padding-left: var(--space-5);
@@ -719,7 +719,7 @@ a.card.padding--lg p[class*="cardDescription_"] {
 .markdown li > p { margin-bottom: var(--space-2); }
 .markdown li::marker { color: var(--ifm-color-emphasis-300); }
 
-/* Prose links — brand color, subtle underline that thickens on hover.
+/* Prose links - brand color, subtle underline that thickens on hover.
  * Scoped to anchors inside real prose elements only; React components
  * embedded in MDX (cards, buttons, tiles) bring their own link styling. */
 .markdown p a,
@@ -746,7 +746,7 @@ a.card.padding--lg p[class*="cardDescription_"] {
   text-decoration-color: var(--ifm-color-primary);
 }
 
-/* Figures + images — center inside the measure, breathing room above/below. */
+/* Figures + images - center inside the measure, breathing room above/below. */
 .markdown figure,
 .markdown p img {
   display: block;
@@ -763,14 +763,14 @@ a.card.padding--lg p[class*="cardDescription_"] {
   margin-top: var(--space-2);
 }
 
-/* Horizontal rule — quiet section divider. */
+/* Horizontal rule - quiet section divider. */
 .markdown hr {
   border: none;
   border-top: 1px solid var(--ifm-color-emphasis-200);
   margin: var(--space-7) auto;
 }
 
-/* Blockquote — a thoughtful pull-quote, not a callout. */
+/* Blockquote - a thoughtful pull-quote, not a callout. */
 .markdown blockquote {
   border-left: 3px solid var(--ifm-color-primary-light);
   margin: var(--space-5) auto;
@@ -1122,7 +1122,7 @@ code {
 }
 .menu__list-item { font-variant-numeric: tabular-nums; }
 
-/* Navbar polish — title weight matches the brand and reads as a logotype. */
+/* Navbar polish - title weight matches the brand and reads as a logotype. */
 .navbar__title {
   font-weight: var(--fw-semibold);
   letter-spacing: -0.005em;
@@ -1132,7 +1132,7 @@ code {
   font-weight: var(--fw-medium);
 }
 
-/* Footer polish — small but legible link rows; copyright at caption size. */
+/* Footer polish - small but legible link rows; copyright at caption size. */
 .footer__title {
   font-size: var(--text-label);
   letter-spacing: var(--tr-label);
@@ -1149,7 +1149,7 @@ code {
   color: var(--ifm-color-content-secondary);
 }
 
-/* Admonitions (note / tip / warning / etc.) — token-aligned. */
+/* Admonitions (note / tip / warning / etc.) - token-aligned. */
 .alert__heading,
 .theme-admonition-heading,
 .admonition-heading h5 {
@@ -1165,13 +1165,13 @@ code {
   line-height: var(--lh-body-sm);
 }
 
-/* Selection — brand-tinted highlight (subtle, not loud). */
+/* Selection - brand-tinted highlight (subtle, not loud). */
 ::selection {
   background: var(--ifm-color-primary-lightest);
   color: var(--ifm-color-primary-darker);
 }
 
-/* Table of Contents (right rail) — quiet caption-grade text; active link
+/* Table of Contents (right rail) - quiet caption-grade text; active link
  * uses brand color + semibold to anchor the eye. */
 .table-of-contents__link {
   font-size: var(--text-caption);

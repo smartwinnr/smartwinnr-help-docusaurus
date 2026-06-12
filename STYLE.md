@@ -1,4 +1,4 @@
-# SmartWinnr Help — Style Guide
+# SmartWinnr Help - Style Guide
 
 One page. Scan it before writing or rewriting an article. Linters enforce
 most of these; the rest are conventions the reviewer will catch.
@@ -9,20 +9,20 @@ most of these; the rest are conventions the reviewer will catch.
 
 - **Direct, friendly, ≤20 words per sentence.** `short-sentences` lint
   flags long ones.
-- **You = the reader.** "You'll click **Save**…" — not "the user
+- **You = the reader.** "You'll click **Save**…" - not "the user
   clicks…".
 - **No marketing copy.** No "delight", "seamless", "magical",
   "best-in-class".
 - **No throat-clearing.** Skip "Welcome", "This article will explain",
   "In this guide". Get to the point in sentence one.
-- **Active voice.** "Click **Save**" — not "The Save button should be
+- **Active voice.** "Click **Save**" - not "The Save button should be
   clicked".
 - **Positive framing.** Tell readers what to do, not what to avoid.
   `positive-framing` lint enforces.
 - **American English.** "color", not "colour"; "behavior", not
   "behaviour". `american-english` lint enforces.
 - **No decorative emojis** in prose. (Persona doors / module cards are
-  a different surface — they're product UI, not copy.)
+  a different surface - they're product UI, not copy.)
 
 ## Article shape
 
@@ -40,7 +40,7 @@ customProps: { roles: [...], privilege: <key> }
 tags: [1-to-5-from-controlled-vocab]
 ---
 
-> **At a glance** — optional 1–2 sentence TL;DR for multi-step how-tos.
+> **At a glance** - optional 1–2 sentence TL;DR for multi-step how-tos.
 
 A two-sentence lede answering "what is this for, and when do I use it?"
 
@@ -98,13 +98,13 @@ Skip `:::info` (too vague) and `:::danger` (overdramatic for our domain).
 - **Size**: 1280 px wide, PNG, captured at 100 % browser zoom.
 - **Annotate** in brand purple (`#8b5cf6`) when calling out UI elements.
 - **Alt text required**, semantic, ≤140 chars.
-  "Question editor with the **Pass mark** field highlighted" — not
+  "Question editor with the **Pass mark** field highlighted" - not
   "screenshot-1" or "image".
 - **Storage**: `static/img/helpscout/<collection-slug>/<article-slug>-<n>.<ext>`.
   Referenced as `/img/helpscout/<collection-slug>/<article-slug>-<n>.<ext>`.
-- **One image per step**. More than that — the step is doing too much.
+- **One image per step**. More than that - the step is doing too much.
 
-## Tags — controlled vocabulary
+## Tags - controlled vocabulary
 
 Pick 1–5 from this list. Extend deliberately (PR review).
 

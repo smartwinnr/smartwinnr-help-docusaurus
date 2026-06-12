@@ -15,7 +15,7 @@ import type {Props} from '@theme/DocCategoryGeneratedIndexPage';
  * in the same `.row > .col > .sw-doc-item-wrap` chain Docusaurus uses for
  * articles (plan §18). Without this layer, articles render inside
  * `.container > .row > .col > .docItemContainer_*` while generated-index
- * pages render straight into `.container > .generatedIndexPage_*` — same
+ * pages render straight into `.container > .generatedIndexPage_*` - same
  * `.container`, different inner padding, so the 72ch column centers at
  * slightly different x positions.
  *
@@ -68,7 +68,7 @@ export default function DocCategoryGeneratedIndexPage(props: Props): ReactNode {
       {/* Mirror the article-page chain so the 72ch column sits on the
         * same x position. Articles use plain `.col` too (the TOC
         * right-rail constraint is overridden site-wide in custom.css
-        * — see plan §18, the `.col[class*="docItemCol_"]` rule). */}
+        * - see plan §18, the `.col[class*="docItemCol_"]` rule). */}
       <div className="row">
         <div className="col">
           <div className="sw-doc-item-wrap">

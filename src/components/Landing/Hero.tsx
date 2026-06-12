@@ -31,8 +31,8 @@ function greeting(user: CurrentUser, loading: boolean): string {
   // Prefer the display name from the User collection; fall back to the
   // first word of the email local-part for legacy tokens that don't carry it.
   const first = displayFirstName(user);
-  if (!first) return 'Welcome — what would you like to do today?';
-  return `Hi ${first} — what would you like to do today?`;
+  if (!first) return 'Welcome - what would you like to do today?';
+  return `Hi ${first} - what would you like to do today?`;
 }
 
 function displayFirstName(user: CurrentUser): string {

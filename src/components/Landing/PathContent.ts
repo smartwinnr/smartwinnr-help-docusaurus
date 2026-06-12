@@ -58,7 +58,7 @@ export function canEnterPersona(
   if (!PRIVILEGE_GATING_ENABLED) return true;
   const u = user;
   if (!u) return false;
-  // Superadmin bypass — mirrors PRIVILEGE_BYPASS_ROLES in access-policy.
+  // Superadmin bypass - mirrors PRIVILEGE_BYPASS_ROLES in access-policy.
   if (u.roles.includes('superadmin' as SmartWinnrRole)) return true;
   return (u.privileges || []).includes(persona.privilege);
 }
@@ -74,7 +74,7 @@ export type EntryPoint = {
 };
 
 /**
- * An optional grouped form of entries for a persona — used when the door has
+ * An optional grouped form of entries for a persona - used when the door has
  * absorbed sub-personas (e.g. Manager absorbed Reports, Admin absorbed
  * Integrations). When a persona has no GROUPS entry, `PathBody` falls back to
  * the flat `ENTRIES[slug]` array and renders it as a single "Where to start"
@@ -217,7 +217,7 @@ export const ENTRIES: Record<PersonaSlug, EntryPoint[]> = {
  * When a persona has no GROUPS entry, the page renders a single "Where to
  * start" section using the flat ENTRIES[slug] array.
  *
- * Entry shape is identical to ENTRIES — per-entry privilege gates still
+ * Entry shape is identical to ENTRIES - per-entry privilege gates still
  * fire via `PathBody.tsx`'s `lockedByPrivilege` branch.
  */
 export const GROUPS: Partial<Record<PersonaSlug, EntryGroup[]>> = {

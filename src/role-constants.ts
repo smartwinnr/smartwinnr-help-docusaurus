@@ -1,6 +1,6 @@
 /**
  * Single source of truth for the role arrays used to gate documentation surface.
- * Imported by sidebars.ts, the swizzled Navbar, src/pages/index.tsx, etc. — keep
+ * Imported by sidebars.ts, the swizzled Navbar, src/pages/index.tsx, etc. - keep
  * this in one place so a role-tier change cannot drift between menu definition
  * and runtime gate evaluation.
  *

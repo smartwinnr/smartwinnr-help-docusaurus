@@ -6,7 +6,7 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import styles from './styles.module.css';
 
 /**
- * In-app authoring skill — `/admin/authoring`.
+ * In-app authoring skill - `/admin/authoring`.
  *
  * 4-step wizard (plan §19). The editor fills two short forms and a
  * brain-dump; the model handles structure. Superadmin only.
@@ -181,14 +181,14 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       <div className={styles.field}>
         <label>Module</label>
         <select value={i.module} onChange={(e) => dispatch({type: 'set', patch: {module: e.target.value}})}>
-          <option value="">— pick a module —</option>
+          <option value="">- pick a module -</option>
           {MODULES.map((m) => <option key={m} value={m}>{m}</option>)}
         </select>
       </div>
       <div className={styles.field}>
         <label>Sub-folder</label>
         <select value={i.subFolder} onChange={(e) => setSub(e.target.value)}>
-          <option value="">— pick a sub-folder —</option>
+          <option value="">- pick a sub-folder -</option>
           {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
         </select>
         {sub && <span className={styles.hint}>Default audience: {sub.audience.join(', ')}</span>}
@@ -277,7 +277,7 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           <span className={styles.hint}>({i.tags.length}/5)</span>
         </label>
 
-        {/* Selected tags — show with × to remove. */}
+        {/* Selected tags - show with × to remove. */}
         {i.tags.length > 0 && (
           <div className={styles.tagRow}>
             {i.tags.map((t) => (
@@ -356,7 +356,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     setUploading(true);
     for (const file of Array.from(files)) {
       if (file.size > 5 * 1024 * 1024) {
-        dispatch({type: 'error', message: `Image too large (${(file.size / 1024 / 1024).toFixed(1)} MB) — 5 MB max.`});
+        dispatch({type: 'error', message: `Image too large (${(file.size / 1024 / 1024).toFixed(1)} MB) - 5 MB max.`});
         continue;
       }
       const dataUrl = await new Promise<string>((resolve, reject) => {
@@ -399,11 +399,11 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         <textarea
           value={i.roughExplanation}
           rows={12}
-          placeholder={`Just describe the feature in your own words. Bullets, fragments, copy-pasted notes — anything.\n\nExample:\n• Editors go to Quiz > All Quizzes, hit "New Manual Quiz"\n• Form needs Title, Topic, Pass mark\n• Pass mark must be at least 1\n• Once saved, the quiz lands in Draft until you click Publish\n• Long-answer questions need a reviewer assigned`}
+          placeholder={`Just describe the feature in your own words. Bullets, fragments, copy-pasted notes - anything.\n\nExample:\n• Editors go to Quiz > All Quizzes, hit "New Manual Quiz"\n• Form needs Title, Topic, Pass mark\n• Pass mark must be at least 1\n• Once saved, the quiz lands in Draft until you click Publish\n• Long-answer questions need a reviewer assigned`}
           onChange={(e) => dispatch({type: 'set', patch: {roughExplanation: e.target.value}})}
         />
         <span className={styles.hint}>
-          {i.roughExplanation.length} chars — the model needs at least 200 to do a good job.
+          {i.roughExplanation.length} chars - the model needs at least 200 to do a good job.
         </span>
       </div>
       <div className={styles.field}>
@@ -461,7 +461,7 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({error: res.statusText}));
-        // 429 — per-superadmin LLM rate limit. Show the server's friendly
+        // 429 - per-superadmin LLM rate limit. Show the server's friendly
         // message verbatim (it already includes "try again in ~M min").
         if (res.status === 429) {
           const minutes = err.retryAfterMs
@@ -529,13 +529,13 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
             <div className={styles.auditPanel}>
               <h3>Audit · score {state.audit.score}</h3>
               {state.audit.findings.length === 0 ? (
-                <p className={styles.hint}>No findings — looks good.</p>
+                <p className={styles.hint}>No findings - looks good.</p>
               ) : (
                 <ul>
                   {state.audit.findings.map((f, idx) => (
                     <li key={f.key + '-' + idx} className={f.blocking ? styles.findBlock : styles.findWarn}>
                       <strong>{f.label}</strong>
-                      {f.detail && <span className={styles.findDetail}> — {f.detail}</span>}
+                      {f.detail && <span className={styles.findDetail}> - {f.detail}</span>}
                       {f.blocking && <span className={styles.findBadge}> blocks save</span>}
                     </li>
                   ))}
@@ -574,7 +574,7 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           )}
           {state.saved && (
             <p className={styles.savedNote}>
-              Saved to <code>{state.saved}</code>. The draft is hidden in production builds —
+              Saved to <code>{state.saved}</code>. The draft is hidden in production builds -
               flip <code>draft: true</code> to <code>false</code> via the publish action when ready.
             </p>
           )}
@@ -596,7 +596,7 @@ function useMarkdownHtml(md: string): string {
         const MarkdownIt = (mod as {default?: typeof import('markdown-it')}).default || mod;
         const ctor = (MarkdownIt as unknown as new (opts?: object) => {render(s: string): string});
         const renderer = new ctor({html: false, linkify: true, typographer: true});
-        // Strip frontmatter for preview rendering — it isn't HTML
+        // Strip frontmatter for preview rendering - it isn't HTML
         const body = md.replace(/^---[\s\S]*?\n---\s*\n?/, '');
         setHtml(renderer.render(body));
       } catch { setHtml('<pre>' + md.replace(/</g, '&lt;') + '</pre>'); }
@@ -692,7 +692,7 @@ function Wizard(): ReactNode {
 
 export default function AuthoringPage(): ReactNode {
   return (
-    <Layout title="Authoring — Admin" description="Generate help articles with the in-app authoring skill.">
+    <Layout title="Authoring - Admin" description="Generate help articles with the in-app authoring skill.">
       <BrowserOnly fallback={<div className={styles.wrap}><p>Loading…</p></div>}>
         {() => <Wizard />}
       </BrowserOnly>

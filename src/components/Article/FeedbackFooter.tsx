@@ -10,7 +10,7 @@ import styles from './styles.module.css';
  *   idle ─No──> awaiting-comment
  *   awaiting-comment ─Send/Skip─> commented (terminal)
  *
- * Vote tracking is per-page-load only — refreshing the page restores the
+ * Vote tracking is per-page-load only - refreshing the page restores the
  * default prompt. Server-side stores the record; the client doesn't try to
  * dedupe across reloads (a determined user could clear localStorage anyway).
  */
@@ -42,7 +42,7 @@ export default function FeedbackFooter(): JSX.Element | null {
         credentials: 'same-origin',
         body: JSON.stringify({slug, vote, comment: commentText || null}),
       });
-    } catch {/* fail soft — the user still saw the thanks message */}
+    } catch {/* fail soft - the user still saw the thanks message */}
     setBusy(false);
   }
 
@@ -57,7 +57,7 @@ export default function FeedbackFooter(): JSX.Element | null {
   if (state === 'commented') {
     return (
       <aside className={styles.feedback} aria-label="Article feedback">
-        <p className={styles.feedbackThanks}>Thanks — we read every one of these.</p>
+        <p className={styles.feedbackThanks}>Thanks - we read every one of these.</p>
       </aside>
     );
   }
@@ -70,7 +70,7 @@ export default function FeedbackFooter(): JSX.Element | null {
           className={styles.feedbackInput}
           rows={3}
           maxLength={2000}
-          placeholder="Optional — what would have helped you?"
+          placeholder="Optional - what would have helped you?"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           disabled={busy}

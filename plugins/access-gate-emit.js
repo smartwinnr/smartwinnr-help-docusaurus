@@ -1,5 +1,5 @@
 /**
- * Docusaurus plugin: emits build/doc-gates.json — a longest-prefix lookup table
+ * Docusaurus plugin: emits build/doc-gates.json - a longest-prefix lookup table
  * mapping doc URL prefixes to their AccessGate (roles + privileges).
  *
  * Consumed by server.js URL-guard middleware (shared/access-policy.cjs) so that
@@ -9,7 +9,7 @@
  * Strategy:
  *   1. Read all _category_.json files under docs/ and collect their customProps.
  *      The relative dir from docs/ becomes the URL prefix (URLs use the docs
- *      routeBasePath, currently '/' — adjust here if it changes).
+ *      routeBasePath, currently '/' - adjust here if it changes).
  *   2. Read article frontmatter (`customProps:` block) and emit a per-doc entry
  *      keyed by the resolved slug.
  *   3. Write build/doc-gates.json shaped as:
@@ -48,7 +48,7 @@ function readFmCustomProps(filePath) {
   const idMatch = /^id\s*:\s*["']?([^"'\n]+?)["']?\s*$/m.exec(fm);
   if (idMatch) out.id = idMatch[1].trim();
 
-  // customProps block — supports the common shape produced by migrate-helpscout.js.
+  // customProps block - supports the common shape produced by migrate-helpscout.js.
   const cpStart = fm.indexOf('\ncustomProps:');
   if (cpStart !== -1) {
     const cp = fm.slice(cpStart);
@@ -141,7 +141,7 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
           `(${out.prefixes.length} prefix gates, ${Object.keys(out.exact).length} article gates)`,
       );
 
-      // Also emit landing-modules.json — drives the "Recommended modules" tile
+      // Also emit landing-modules.json - drives the "Recommended modules" tile
       // grid on src/pages/index.tsx. One row per docs/modules/<m>/ with that
       // module's privilege and which audience sub-folders are present. The
       // landing component filters this by the viewer's role + privileges.
@@ -195,12 +195,12 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
           `(${modulesOut.modules.length} modules)`,
       );
 
-      // Also emit article-graph.json — consumed by RelatedStrip on every
+      // Also emit article-graph.json - consumed by RelatedStrip on every
       // article. One entry per article with {label, blurb, folder, position,
       // tags} so the strip can pick 3 nearest siblings without re-parsing
       // markdown at runtime.
       //
-      // Use gray-matter for proper YAML parsing — many articles use folded
+      // Use gray-matter for proper YAML parsing - many articles use folded
       // block syntax for `description: >-` and a hand-rolled regex would
       // capture the literal ">-" instead of the folded value.
       const matter = require('gray-matter');
@@ -233,7 +233,7 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
               ? fmData.tags.map((t) => String(t).trim()).filter(Boolean)
               : [];
 
-            // Resolve the URL — same logic as the gates emit above.
+            // Resolve the URL - same logic as the gates emit above.
             const rel = path.relative(docsRoot, path.dirname(full)).split(path.sep).join('/');
             const base = entry.name.replace(/\.(md|mdx)$/, '');
             const rawSlug = slug || idVal || base;

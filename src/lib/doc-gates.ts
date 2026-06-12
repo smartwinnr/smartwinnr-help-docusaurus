@@ -1,5 +1,5 @@
 /**
- * Client-side gate lookup — fetches `/doc-gates.json` (emitted by
+ * Client-side gate lookup - fetches `/doc-gates.json` (emitted by
  * plugins/access-gate-emit.js at build time) and exposes a function that
  * decides, for any docs URL, whether the current user can access it.
  *
@@ -17,7 +17,7 @@ export type DocGates = {
 };
 
 /** All gates that apply to `url`: the exact match (if present) plus every
- *  ancestor-prefix match. Directory-permission semantics — user must satisfy
+ *  ancestor-prefix match. Directory-permission semantics - user must satisfy
  *  every gate in the chain. */
 function lookupGates(gates: DocGates, url: string): AccessGate[] {
   if (!gates) return [];
@@ -38,7 +38,7 @@ export function isUrlAllowed(
   user: CurrentUser | null,
   url: string,
 ): boolean {
-  if (!gates) return true; // gates not loaded yet — fail open during hydration
+  if (!gates) return true; // gates not loaded yet - fail open during hydration
   const chain = lookupGates(gates, url);
   for (const g of chain) {
     if (!isAllowed(g, user)) return false;

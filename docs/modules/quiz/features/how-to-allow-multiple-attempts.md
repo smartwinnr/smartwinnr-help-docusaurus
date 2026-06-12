@@ -14,7 +14,7 @@ tags: [quiz, settings, reports, analytics]
 draft: false
 ---
 
-> **At a glance** — Enable multiple attempts for quizzes to allow users to retry until they pass.
+> **At a glance** - Enable multiple attempts for quizzes to allow users to retry until they pass.
 
 When **Allow Multiple Attempts** is enabled, users can take a quiz multiple times. If they do not achieve the required pass percentage after exhausting all attempts, the status will show as **Attempted** instead of **Completed**. This helps accurately reflect their progress.
 

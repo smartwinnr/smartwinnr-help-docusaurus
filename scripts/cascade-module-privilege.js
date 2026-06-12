@@ -8,10 +8,10 @@
  * Why: the server-side URL guard uses longest-prefix match. Without this
  * cascade, an article like /modules/video-coaching/for-learners/<slug>
  * matches the `for-learners` sub-folder gate (no privilege) before it can
- * see the parent module's privilege gate — and so a user with the wrong
+ * see the parent module's privilege gate - and so a user with the wrong
  * privilege passes through.
  *
- * Idempotent — running twice leaves the tree unchanged. Removes
+ * Idempotent - running twice leaves the tree unchanged. Removes
  * privilege/anyPrivilege if the parent has none (to keep cross-module
  * clean).
  */

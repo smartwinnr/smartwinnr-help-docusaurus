@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Article audit — walks docs/** and grades every article against the
+ * Article audit - walks docs/** and grades every article against the
  * canonical Apple-grade template (STYLE.md + plan §15.1).
  *
  * Output: `reports/article-audit-<YYYY-MM-DD>.md` (path passed as arg, or
- * derived from today's date). Read-only on the corpus — no markdown edits.
+ * derived from today's date). Read-only on the corpus - no markdown edits.
  *
  * Usage:
  *   node scripts/audit-articles.js                       # default report path
@@ -30,7 +30,7 @@ const DEFECTS = {
   ledeBoilerplate:    {weight:  3, label: 'Lede starts with throat-clearing'},
   missingPrivilege:   {weight:  3, label: 'Missing `customProps.privilege` while parent folder has one'},
   absoluteHelpLink:   {weight:  1, label: 'Absolute help.smartwinnr.com link (should be relative)'}, // per link
-  longSentence:       {weight:  1, label: 'Sentence > 20 words'}, // per sentence — capped
+  longSentence:       {weight:  1, label: 'Sentence > 20 words'}, // per sentence - capped
 };
 
 const BOILERPLATE_OPENERS = [
@@ -84,7 +84,7 @@ function gradeArticle(filepath) {
     const def = DEFECTS[key];
     if (!def) return;
     score += def.weight;
-    findings.push(detail ? `${def.label} — ${detail}` : def.label);
+    findings.push(detail ? `${def.label} - ${detail}` : def.label);
   }
 
   // Frontmatter checks
@@ -138,7 +138,7 @@ function gradeArticle(filepath) {
     flag('inlineStep', `${stepInline} occurrence(s)`);
   }
 
-  // Lede boilerplate — first non-empty, non-blockquote, non-heading paragraph
+  // Lede boilerplate - first non-empty, non-blockquote, non-heading paragraph
   const ledeMatch = body.match(/^(?!#|>|!\[)(.+)$/m);
   if (ledeMatch && BOILERPLATE_OPENERS.some((re) => re.test(ledeMatch[1]))) {
     flag('ledeBoilerplate', `"${ledeMatch[1].slice(0, 60)}..."`);
@@ -203,7 +203,7 @@ function buildReport(results, outPath) {
 
   const lines = [];
   const date = new Date().toISOString().slice(0, 10);
-  lines.push(`# Article audit — ${date}`);
+  lines.push(`# Article audit - ${date}`);
   lines.push('');
   lines.push(`${totalArticles} articles scanned · ${clean} clean · ${withFindings} with findings · Average score ${avgScore}`);
   lines.push('');
@@ -252,8 +252,8 @@ function buildReport(results, outPath) {
   const totals = {};
   for (const r of results) {
     for (const f of r.findings) {
-      // Strip the trailing " — detail" or " × N" so the key is the defect label.
-      const key = f.replace(/\s+—\s+.+$/, '').replace(/\s+×\s+\d+.*$/, '');
+      // Strip the trailing " - detail" or " × N" so the key is the defect label.
+      const key = f.replace(/\s+-\s+.+$/, '').replace(/\s+×\s+\d+.*$/, '');
       totals[key] = (totals[key] || 0) + 1;
     }
   }
@@ -271,8 +271,8 @@ function buildReport(results, outPath) {
   lines.push('|--:|---|---|');
   for (const r of results) {
     const findingsSummary = r.findings.length
-      ? r.findings.map((f) => f.split(' — ')[0]).slice(0, 4).join('; ') + (r.findings.length > 4 ? '; …' : '')
-      : '—';
+      ? r.findings.map((f) => f.split(' - ')[0]).slice(0, 4).join('; ') + (r.findings.length > 4 ? '; …' : '')
+      : '-';
     lines.push(`| ${r.score} | \`${r.file}\` | ${findingsSummary} |`);
   }
 

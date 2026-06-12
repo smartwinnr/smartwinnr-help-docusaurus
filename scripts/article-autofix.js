@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Article auto-fix — the cheap, mechanical fixes only. Run after `npm run
+ * Article auto-fix - the cheap, mechanical fixes only. Run after `npm run
  * audit:articles` to see what the script will touch.
  *
  * What it fixes:
@@ -116,7 +116,7 @@ function condenseTo160(text) {
   const m = truncated.matchAll(/[.!?]\s/g);
   for (const x of m) lastBoundary = x.index;
   if (lastBoundary > 80) return truncated.slice(0, lastBoundary + 1).trim();
-  // No nice boundary — cut at word and add ellipsis.
+  // No nice boundary - cut at word and add ellipsis.
   const lastSpace = truncated.lastIndexOf(' ');
   return truncated.slice(0, lastSpace > 0 ? lastSpace : 160).trim() + '…';
 }
@@ -285,7 +285,7 @@ function main() {
     console.error(`Scope path not found: ${SCOPE}`);
     process.exit(1);
   }
-  console.log(`Scanning ${path.relative(ROOT, SCOPE) || 'docs'}${APPLY ? ' (applying)' : ' (dry run — pass --apply to write)'}\n`);
+  console.log(`Scanning ${path.relative(ROOT, SCOPE) || 'docs'}${APPLY ? ' (applying)' : ' (dry run - pass --apply to write)'}\n`);
 
   buildSlugMap();
 

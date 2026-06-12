@@ -57,7 +57,7 @@ Usage: node scripts/dev-mint-cookie.js [flags]
   --role <r>              required; one of: ${[...VALID_ROLES].join(', ')}
                           (comma-separated for multi-role users)
   --privileges <list>     comma-separated privilege keys. Omit (or empty)
-                          for NO privileges — the realistic default that
+                          for NO privileges - the realistic default that
                           exposes privilege-gating leaks. Pass '*' as
                           shorthand for ALL known privileges.
   --email <email>         default: dev@example.com

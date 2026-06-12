@@ -134,7 +134,7 @@ function main() {
 
   if (unknown.length === 0) {
     console.log(
-      `validate-privilege-keys: OK — checked ${all.length} privilege reference(s) across ` +
+      `validate-privilege-keys: OK - checked ${all.length} privilege reference(s) across ` +
         `sidebars.ts, ${categoryRefs.length} _category_.json files, and ${articleRefs.length} articles.`,
     );
     process.exit(0);

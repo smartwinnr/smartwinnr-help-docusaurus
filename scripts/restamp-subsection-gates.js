@@ -8,7 +8,7 @@
  *   faqs-and-troubleshooting → ALL_ROLES   (cross-audience Q&A)
  *   everything else         → EDITOR_PLUS_ROLES   (authoring)
  *
- * Idempotent — overwrites customProps to match the table above.
+ * Idempotent - overwrites customProps to match the table above.
  */
 
 'use strict';
@@ -73,6 +73,6 @@ console.log('');
 console.log(`Stamped ${touched} file(s); ${unchanged} already correct.`);
 if (unknown.length) {
   console.log('');
-  console.log('Skipped (unknown sub-section name — extend GATE_BY_SUBSECTION):');
+  console.log('Skipped (unknown sub-section name - extend GATE_BY_SUBSECTION):');
   for (const u of unknown) console.log('  ' + u);
 }

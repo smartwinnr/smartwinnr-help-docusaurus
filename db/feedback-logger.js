@@ -33,7 +33,7 @@ function isCircuitOpen() {
   if (circuitOpenedAt && Date.now() - circuitOpenedAt > CIRCUIT_RESET_MS) {
     consecutiveFailures = 0;
     circuitOpenedAt = null;
-    console.log('[feedback-logger] Circuit breaker reset — retrying writes');
+    console.log('[feedback-logger] Circuit breaker reset - retrying writes');
     return false;
   }
   return true;

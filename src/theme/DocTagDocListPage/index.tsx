@@ -18,7 +18,7 @@ import {loadDocGates, isUrlAllowed, type DocGates} from '@site/src/lib/doc-gates
 /**
  * Swizzled tag-page renderer. Identical to the stock implementation, but
  * filters `tag.items` against the same `doc-gates.json` the server uses for
- * URL guarding — so a learner clicking the `admin` tag chip doesn't see
+ * URL guarding - so a learner clicking the `admin` tag chip doesn't see
  * editor-only articles in the list.
  *
  * The original `tag.items` is still exposed to the page metadata (no SEO
@@ -82,7 +82,7 @@ function FilteredContent({tag}: Props): JSX.Element {
   const isSuperadmin = (user.roles || []).includes('superadmin');
   const title = usePageTitle({tag} as Props, isSuperadmin);
 
-  // While auth or gates are loading, render an empty list — server-side fall-
+  // While auth or gates are loading, render an empty list - server-side fall-
   // open + this client-side gate ensures we never leak content past hydration.
   const items = (tag.items as DocItem[]).filter((doc) =>
     !loading && gates ? isUrlAllowed(gates, user, doc.permalink) : false,

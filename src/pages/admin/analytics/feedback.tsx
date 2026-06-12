@@ -49,10 +49,10 @@ const WINDOW_OPTIONS = [
 
 function Sparkline({values}: {values: number[]}): JSX.Element {
   // Render the helpfulPct trend across a fixed window. For now, render a
-  // single bar — the summary endpoint doesn't yet emit a time series. The
+  // single bar - the summary endpoint doesn't yet emit a time series. The
   // UI is ready for it when we add it.
   if (!values.length) {
-    return <span aria-hidden="true">—</span>;
+    return <span aria-hidden="true">-</span>;
   }
   const max = Math.max(...values, 100);
   const w = 60;
@@ -210,7 +210,7 @@ function Dashboard(): JSX.Element {
             </div>
           </div>
 
-          <h2>Lowest-rated (≥3 votes) — rewrite candidates</h2>
+          <h2>Lowest-rated (≥3 votes) - rewrite candidates</h2>
           {lowestRated.length === 0 ? (
             <p className={styles.empty}>No articles cross the 3-vote threshold yet.</p>
           ) : (
@@ -270,7 +270,7 @@ function Dashboard(): JSX.Element {
 
       {selected && comments && (
         <section className={styles.drawer}>
-          <h2>Comments — {selected}</h2>
+          <h2>Comments - {selected}</h2>
           {comments.length === 0 ? (
             <p className={styles.empty}>No free-text comments yet.</p>
           ) : (
@@ -294,7 +294,7 @@ function Dashboard(): JSX.Element {
 
 export default function FeedbackDashboard(): JSX.Element {
   return (
-    <Layout title="Article feedback — Admin" description="Article-level feedback rollups">
+    <Layout title="Article feedback - Admin" description="Article-level feedback rollups">
       <BrowserOnly fallback={<div className={styles.wrap}><p>Loading…</p></div>}>
         {() => <Dashboard />}
       </BrowserOnly>

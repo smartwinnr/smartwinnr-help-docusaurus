@@ -68,7 +68,7 @@ function gatesEqual(actual, expected) {
   } else if (aAny !== eAny) {
     return false;
   }
-  // allPrivileges: same rule — agree if either side has it
+  // allPrivileges: same rule - agree if either side has it
   const aAll = Array.isArray(actual.allPrivileges) ? actual.allPrivileges : null;
   const eAll = Array.isArray(expected.allPrivileges) ? expected.allPrivileges : null;
   if (aAll && eAll) {
@@ -141,15 +141,15 @@ function checkModuleRoot(moduleDir, moduleName) {
   const indexFile = path.join(moduleDir, 'index.md');
   const indexMdx = path.join(moduleDir, 'index.mdx');
   if (!fs.existsSync(indexFile) && !fs.existsSync(indexMdx)) {
-    failures.push(`docs/modules/${moduleName}/index.md(x): missing — needed for the per-module overview + upsell`);
+    failures.push(`docs/modules/${moduleName}/index.md(x): missing - needed for the per-module overview + upsell`);
   }
 }
 
 function checkSubfolder(moduleDir, moduleName, subName, parentPrivilege, parentAnyPrivilege) {
   const catFile = path.join(moduleDir, subName, '_category_.json');
   if (!fs.existsSync(catFile)) {
-    // No _category_.json — sub-folder exists but has no gate. That's a gap.
-    failures.push(`docs/modules/${moduleName}/${subName}/_category_.json: missing — sub-folder is ungated`);
+    // No _category_.json - sub-folder exists but has no gate. That's a gap.
+    failures.push(`docs/modules/${moduleName}/${subName}/_category_.json: missing - sub-folder is ungated`);
     return;
   }
   const cat = JSON.parse(fs.readFileSync(catFile, 'utf8'));
@@ -170,7 +170,7 @@ function checkSubfolder(moduleDir, moduleName, subName, parentPrivilege, parentA
 
 function audit() {
   if (!fs.existsSync(MODULES_DIR)) {
-    console.error('docs/modules/ not found — wrong working directory?');
+    console.error('docs/modules/ not found - wrong working directory?');
     process.exit(2);
   }
 
@@ -182,7 +182,7 @@ function audit() {
 
   // Each module's privilege identity lives in static/module-overviews.json
   // (the canonical registry). The module's _category_.json must NOT carry
-  // privilege — it stays open so the module index page is universally
+  // privilege - it stays open so the module index page is universally
   // reachable for the upsell flow.
   const overviewsPath = path.resolve(__dirname, '..', 'static', 'module-overviews.json');
   const overviews = fs.existsSync(overviewsPath)

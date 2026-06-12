@@ -20,8 +20,10 @@ function loadConfig() {
   }
 
   return Object.freeze({
-    jwtSecret: env.HELP_JWT_SECRET || 'dev-help-jwt-secret',
-    siteUrl: env.HELP_SITE_URL || 'http://localhost:3001',
+    // jwtSecret: env.HELP_JWT_SECRET || 'dev-help-jwt-secret',
+    // siteUrl: env.HELP_SITE_URL || 'http://localhost:3001',
+    jwtSecret: env.HELP_JWT_SECRET || 'dev-help-jwt-secret', // 
+    siteUrl: env.HELP_SITE_URL || 'http://localhost:3001', // Dev
     lambdaMagicLinkUrl: env.LAMBDA_MAGIC_LINK_URL || '',
     isProd,
   });

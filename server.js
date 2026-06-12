@@ -20,7 +20,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -35,7 +36,7 @@ app.use('/api/*', cors({
   optionsSuccessStatus: 200
 }));
 
-// Health check endpoint (public — before auth middleware)
+// Health check endpoint (public - before auth middleware)
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
@@ -48,7 +49,7 @@ app.get('/api/health', (req, res) => {
 // Auth routes (public) + auth middleware (protects everything below)
 initAuth(app);
 
-// Current user — sole endpoint the React client calls on mount to hydrate
+// Current user - sole endpoint the React client calls on mount to hydrate
 // UserContext for role/privilege-based sidebar gating.
 app.get('/api/me', (req, res) => {
   if (!req.user) {
@@ -231,7 +232,7 @@ async function generateAIResponse(query, context) {
   try {
     const openaiApiKey = getOpenAIKey();
     
-    const systemPrompt = `You are the SmartWinnr Help Assistant — a concise, knowledgeable guide to SmartWinnr's features and configuration.
+    const systemPrompt = `You are the SmartWinnr Help Assistant - a concise, knowledgeable guide to SmartWinnr's features and configuration.
 
 CONTEXT (retrieved from SmartWinnr documentation):
 ${context}
@@ -242,7 +243,7 @@ RESPONSE RULES:
    - **How-to / setup query** → respond with numbered step-by-step instructions.
    - **Conceptual / "what is" query** → respond with a brief explanation (2-4 sentences), then key details as bullet points.
    - **Troubleshooting query** → list likely causes and fixes.
-3. Keep answers focused and succinct — no filler, no repetition of the question.
+3. Keep answers focused and succinct - no filler, no repetition of the question.
 4. Format with markdown: use **bold** for UI labels/menu items, \`code\` for field names/values, and headings (###) only when the answer has distinct sections.
 5. End with a single actionable follow-up suggestion if appropriate (e.g., "To configure this further, check [Feature Name] settings.").
 6. Never fabricate features or settings not present in the context.`;
@@ -450,7 +451,7 @@ app.delete('/api/chat/:conversationId', (req, res) => {
   }
 });
 
-// Rate a chat exchange (no auth required — any chat user can rate)
+// Rate a chat exchange (no auth required - any chat user can rate)
 app.post('/api/chat/:exchangeId/rate', (req, res) => {
   try {
     const { exchangeId } = req.params;
@@ -576,7 +577,7 @@ app.delete('/api/admin/chat-logs/by-email/:email', (req, res) => {
 // Article feedback ("Was this helpful?")
 // ---------------------------------------------------------------------------
 
-// Public — any signed-in viewer can vote.
+// Public - any signed-in viewer can vote.
 app.post('/api/feedback', (req, res) => {
   try {
     const { slug, vote, comment } = req.body || {};
@@ -598,7 +599,7 @@ app.post('/api/feedback', (req, res) => {
   }
 });
 
-// Admin-only — superadmin sees the dashboard.
+// Admin-only - superadmin sees the dashboard.
 app.get('/api/admin/feedback-summary', requireRole('superadmin'), (req, res) => {
   const days = parseInt(req.query.days || '30', 10);
   const result = feedbackLogger.summary(days);
@@ -616,23 +617,23 @@ app.get('/api/admin/feedback', requireRole('superadmin'), (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// Authoring skill (/admin/authoring) — superadmin only
+// Authoring skill (/admin/authoring) - superadmin only
 // ---------------------------------------------------------------------------
 //
 // Four endpoints power the in-app authoring wizard. The editor fills two
 // short forms + a brain-dump; the model handles structure. See plan §19.
 //
-//   POST /api/admin/authoring/generate    — LLM call, returns markdown+audit
-//   POST /api/admin/authoring/save        — write the markdown as a draft
-//   POST /api/admin/authoring/publish     — flip frontmatter draft flag
-//   POST /api/admin/authoring/upload      — base64-encoded screenshot upload
-//   GET  /api/admin/authoring/drafts      — list draft: true articles
-//   GET  /api/admin/authoring/draft       — fetch one draft for editing
-//   DELETE /api/admin/authoring/draft     — remove a draft
+//   POST /api/admin/authoring/generate    - LLM call, returns markdown+audit
+//   POST /api/admin/authoring/save        - write the markdown as a draft
+//   POST /api/admin/authoring/publish     - flip frontmatter draft flag
+//   POST /api/admin/authoring/upload      - base64-encoded screenshot upload
+//   GET  /api/admin/authoring/drafts      - list draft: true articles
+//   GET  /api/admin/authoring/draft       - fetch one draft for editing
+//   DELETE /api/admin/authoring/draft     - remove a draft
 //
 // All paths are sandboxed inside `docs/modules/<m>/<sub>/`. The model is
 // reached via the same `getOpenAIKey()` + axios pattern the chat handler
-// uses — no new dependency.
+// uses - no new dependency.
 
 const DOCS_ROOT = path.join(__dirname, 'docs');
 const MODULES_ROOT = path.join(DOCS_ROOT, 'modules');
@@ -706,8 +707,8 @@ function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
 }
 
 // Per-user LLM rate limit. In-memory ring buffer keyed on email; resets on
-// server restart (acceptable — the worst case is a fresh budget). 10/hour
-// by default — override via AUTHORING_RATE_LIMIT. See plan §20.1.
+// server restart (acceptable - the worst case is a fresh budget). 10/hour
+// by default - override via AUTHORING_RATE_LIMIT. See plan §20.1.
 const RATE_LIMIT = parseInt(process.env.AUTHORING_RATE_LIMIT || '10', 10);
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const generateHits = new Map();
@@ -724,7 +725,7 @@ function checkRate(email) {
 }
 
 app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req, res) => {
-  // Gate before the LLM call — stuck retry loops can burn tokens fast.
+  // Gate before the LLM call - stuck retry loops can burn tokens fast.
   const rate = checkRate(req.user && req.user.email);
   if (!rate.ok) {
     return res.status(429).json({
@@ -827,13 +828,13 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     const blockers = (audit.findings || []).filter((f) => f.blocking);
     if (blockers.length > 0) {
       return res.status(400).json({
-        error: 'Audit blocking — article cannot be saved as-is',
+        error: 'Audit blocking - article cannot be saved as-is',
         audit,
       });
     }
 
     const target = resolveDraftPath(moduleSlug, subFolder, slug);
-    // Force draft:true in frontmatter — defensive override even if the model
+    // Force draft:true in frontmatter - defensive override even if the model
     // emitted draft:false somehow.
     const text = markdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
     const finalText = /^draft:/m.test(text)
@@ -859,7 +860,7 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
     const audit = gradeMarkdown(raw);
     const blockers = (audit.findings || []).filter((f) => f.blocking);
     if (blockers.length > 0) {
-      return res.status(400).json({ error: 'Audit blocking — fix before publishing', audit });
+      return res.status(400).json({ error: 'Audit blocking - fix before publishing', audit });
     }
     const next = raw.replace(/^draft:\s*true\s*$/m, 'draft: false');
     if (next === raw) {
@@ -948,7 +949,7 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
     const text = fsSync.readFileSync(target, 'utf8');
     if (!/^draft:\s*true\b/m.test(text)) {
-      return res.status(400).json({ error: 'Refusing to delete — frontmatter is not marked draft:true' });
+      return res.status(400).json({ error: 'Refusing to delete - frontmatter is not marked draft:true' });
     }
     fsSync.unlinkSync(target);
     res.json({ ok: true });
@@ -985,15 +986,15 @@ try {
         `${Object.keys(docGates.exact).length} article gates`
     );
   } else {
-    console.log('🔓 doc-gates.json absent — URL guard inactive (build first to enable)');
+    console.log('🔓 doc-gates.json absent - URL guard inactive (build first to enable)');
   }
 } catch (e) {
-  console.error('⚠️  Failed to load doc-gates.json — URL guard inactive:', e.message);
+  console.error('⚠️  Failed to load doc-gates.json - URL guard inactive:', e.message);
 }
 
 /**
- * Collect EVERY gate that applies to a URL — the exact frontmatter gate plus
- * every ancestor-category prefix gate — and AND-combine them. This matches
+ * Collect EVERY gate that applies to a URL - the exact frontmatter gate plus
+ * every ancestor-category prefix gate - and AND-combine them. This matches
  * directory-permission semantics (Unix-style): a deeply-nested article is
  * only accessible when each ancestor allows the viewer.
  *
@@ -1028,7 +1029,7 @@ app.use((req, res, next) => {
   }
   return res
     .status(403)
-    .send('Forbidden — this section is not available for your role or organization.');
+    .send('Forbidden - this section is not available for your role or organization.');
 });
 
 app.use(express.static(buildPath));

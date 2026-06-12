@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
- * Landing & path-page styles — token-driven (plan §14).
+ * Landing & path-page styles - token-driven (plan §14).
  * Every font-size / line-height / letter-spacing / weight is a token.
  * Spacing follows the 8pt --space-* scale.
  * ═══════════════════════════════════════════════════════════════════════════ */
@@ -268,7 +268,7 @@
 .entries .entryLocked a:hover { color: var(--ifm-color-primary-darker); }
 
 /* ══════════════════════════════════════════════════════════════════════════
- * Option C — persona-led "door" landing
+ * Option C - persona-led "door" landing
  * ══════════════════════════════════════════════════════════════════════════ */
 
 .doorsHero {

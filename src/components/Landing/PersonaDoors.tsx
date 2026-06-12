@@ -6,10 +6,10 @@ import {PERSONAS, canEnterPersona, type Persona} from './PathContent';
 import styles from './styles.module.css';
 
 /**
- * Option C — the persona-led "door" landing hero. Replaces the older
+ * Option C - the persona-led "door" landing hero. Replaces the older
  * <Hero /> + <PersonaGrid /> combo on the homepage.
  *
- * Five doors render (Learner / Manager / Author / Admin / Help) — sourced
+ * Five doors render (Learner / Manager / Author / Admin / Help) - sourced
  * from PERSONAS, filtered by `hiddenFromDoors`. Doors a viewer's role
  * can't enter render as locked. The door matching the viewer's primary
  * tier is spotlighted with a "Your primary lens" badge.
@@ -23,13 +23,13 @@ type Props = {
 function greeting(user: CurrentUser, loading: boolean): string {
   if (loading) return 'Welcome to SmartWinnr Help';
   const display = (user.displayName || '').trim().split(/\s+/)[0];
-  if (display) return `Hi ${display} — pick the lens you want to use today`;
+  if (display) return `Hi ${display} - pick the lens you want to use today`;
   const local = (user.email || '').split('@')[0];
   const first = local
     .replace(/[._-].*$/, '')
     .replace(/^\w/, (c) => c.toUpperCase());
-  if (first) return `Hi ${first} — pick the lens you want to use today`;
-  return 'Welcome — pick the lens you want to use today';
+  if (first) return `Hi ${first} - pick the lens you want to use today`;
+  return 'Welcome - pick the lens you want to use today';
 }
 
 function primaryTier(user: CurrentUser): number {
@@ -63,7 +63,7 @@ export default function PersonaDoors({user, loading}: Props): JSX.Element {
       <h1>{greeting(user, loading)}</h1>
       <p className={styles.doorsSub}>
         Each door surfaces the docs that matter for that lens. Doors are pure
-        navigation — pick freely, switch any time.
+        navigation - pick freely, switch any time.
       </p>
 
       <div className={styles.doorGrid}>

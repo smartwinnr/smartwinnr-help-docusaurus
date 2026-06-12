@@ -3,7 +3,7 @@
  * For every docs/modules/<m>/<sub>/ directory that contains at least one
  * article, write a _category_.json with the canonical label + sidebar position.
  *
- * Idempotent — running twice does nothing new.
+ * Idempotent - running twice does nothing new.
  */
 
 'use strict';

@@ -13,7 +13,7 @@ import styles from './styles.module.css';
  * Presenter for the personalized homepage. Embedded inside docs/index.mdx
  * so MDX provides the docs layout chrome around it.
  *
- * Option C — Persona-led "door" landing. The PersonaDoors hero replaces the
+ * Option C - Persona-led "door" landing. The PersonaDoors hero replaces the
  * older Hero + PersonaGrid combo: a 5-door grid (Learner / Manager / Author
  * / Admin / Help) takes over the visual entry, then the rest of the
  * landing (recommended modules, what's new, recently viewed, help footer)

@@ -48,7 +48,7 @@ function main() {
 
   const presentTargets = TARGETS.filter((t) => fs.existsSync(path.join(REPO_ROOT, t)));
   if (presentTargets.length === 0) {
-    console.error('[backup-docs] None of the expected targets exist — nothing to back up.');
+    console.error('[backup-docs] None of the expected targets exist - nothing to back up.');
     process.exit(1);
   }
   const missing = TARGETS.filter((t) => !presentTargets.includes(t));

@@ -12,13 +12,13 @@ import styles from './styles.module.css';
  * Selection (filtered by role + privilege):
  *   1. Read /article-graph.json (emitted by plugins/access-gate-emit.js).
  *   2. Drop every article the viewer can't open (same gate map +
- *      AND-of-all-prefixes logic the server URL guard uses — see
+ *      AND-of-all-prefixes logic the server URL guard uses - see
  *      src/lib/doc-gates.ts).
  *   3. From what survives: same-folder siblings first, then parent
  *      folder. Sort by sidebar_position distance from the current
  *      article and take the 3 nearest.
  *
- * Until both /api/me and /doc-gates.json resolve, render nothing — we
+ * Until both /api/me and /doc-gates.json resolve, render nothing - we
  * never leak inaccessible URLs into the SSR HTML or the first paint.
  */
 

@@ -10,7 +10,7 @@ import styles from './styles.module.css';
 /**
  * Universal per-module landing. Mounted from `docs/modules/<m>/index.md`.
  *
- *  - Renders the module's name, tagline, description, and audience — ALWAYS.
+ *  - Renders the module's name, tagline, description, and audience - ALWAYS.
  *  - If the viewer's org has the privilege, shows "Get started" cards linking
  *    into sub-sections appropriate to the viewer's role (audience leaves +
  *    authoring leaves for editor+).
@@ -66,7 +66,7 @@ const CARD_TITLES: Record<string, string> = {
 const CARD_BLURBS: Record<string, string> = {
   'for-learners': 'How to use this module day-to-day.',
   'for-managers': 'Review reportees and read team analytics.',
-  'create-and-manage': 'Authoring CRUD — create, edit, duplicate, archive.',
+  'create-and-manage': 'Authoring CRUD - create, edit, duplicate, archive.',
   'assign-and-schedule': 'Distribute to users, groups, and metatags.',
   'features': 'Feature-by-feature reference.',
   'reports-and-analytics': 'Admin-level reports and dashboards.',
@@ -78,7 +78,7 @@ const CARD_BLURBS: Record<string, string> = {
 /* What sub-sections to surface as cards based on viewer's tier + privileges.
  * Ordered left-to-right, top-to-bottom. `for-managers` requires both manager
  * tier AND the `managerView` privilege (mirrors the dual gate baked into the
- * sub-folder's _category_.json — see plan §13.8). */
+ * sub-folder's _category_.json - see plan §13.8). */
 function cardsForViewer(tier: number, hasManagerView: boolean): string[] {
   const managerCard = hasManagerView ? ['for-managers'] : [];
   if (tier >= 3) {

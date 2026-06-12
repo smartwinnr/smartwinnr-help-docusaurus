@@ -14,8 +14,8 @@
  *     blocking: boolean } // refuses save/publish when true
  *
  * Used by:
- *   • scripts/audit-articles.js — walks docs/** and aggregates findings
- *   • server.js — POST /api/admin/authoring/{save,publish} refuses to
+ *   • scripts/audit-articles.js - walks docs/** and aggregates findings
+ *   • server.js - POST /api/admin/authoring/{save,publish} refuses to
  *     write when any blocking finding fires
  */
 

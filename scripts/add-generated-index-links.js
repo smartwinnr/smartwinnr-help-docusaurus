@@ -2,7 +2,7 @@
 /**
  * Walk every sub-folder _category_.json under docs/modules/<m>/<sub>/ and add
  * `link: {type: 'generated-index'}` if missing. Without it, navigating to
- * `/modules/<m>/<sub>/` 404s — which is what the ModuleOverview "Get started"
+ * `/modules/<m>/<sub>/` 404s - which is what the ModuleOverview "Get started"
  * cards do today (see plan §12.13).
  *
  * Idempotent. Run from repo root: `node scripts/add-generated-index-links.js`.

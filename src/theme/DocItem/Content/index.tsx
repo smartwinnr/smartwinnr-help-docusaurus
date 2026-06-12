@@ -17,7 +17,7 @@ import RelatedStrip from '@site/src/components/Article/RelatedStrip';
  *   • For article pages, all prose lives inside a single
  *     `<div class="sw-prose-column">` (max-width: 72ch, centered). One
  *     ancestor owns the reading column so the title, chip, h2s, paragraphs,
- *     lists, etc. naturally share a left edge — no per-tag constraints,
+ *     lists, etc. naturally share a left edge - no per-tag constraints,
  *     no specificity fights with Infima's `.anchor` heading classes.
  *   • For pages that embed full-width React components (landing /,
  *     /path/<persona>/, /modules/<m>/), skip both the wrapper and the
@@ -39,7 +39,7 @@ function isFullWidthPage(url: string | undefined): boolean {
   if (!url) return false;
   if (url === '/') return true;
   if (url.startsWith('/path/')) return true;
-  // Module overview pages: exactly /modules/<m> or /modules/<m>/ — but NOT
+  // Module overview pages: exactly /modules/<m> or /modules/<m>/ - but NOT
   // sub-folders like /modules/<m>/<sub> (those are real articles).
   if (/^\/modules\/[^/]+\/?$/.test(url)) return true;
   return false;
@@ -73,7 +73,7 @@ export default function DocItemContent(props: Props): ReactNode {
   const [columnRef, minutes] = useReadingMinutesRef([url]);
 
   if (fullWidth) {
-    // Landing, persona doors, and module overview indexes — render flat
+    // Landing, persona doors, and module overview indexes - render flat
     // without the prose-column wrapper or chrome.
     return (
       <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
@@ -87,7 +87,7 @@ export default function DocItemContent(props: Props): ReactNode {
     );
   }
 
-  // Article pages — single ancestor owns the reading column.
+  // Article pages - single ancestor owns the reading column.
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       <div ref={columnRef} className="sw-prose-column">

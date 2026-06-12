@@ -42,7 +42,7 @@ const REPO_ROOT = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(REPO_ROOT, 'docs');
 const IMAGES_ROOT = path.join(REPO_ROOT, 'static', 'img', 'helpscout');
 
-// Canonical directory layout — kept in sync with sidebars.ts.
+// Canonical directory layout - kept in sync with sidebars.ts.
 // The migrator refuses to emit into any dir not listed here.
 const CANONICAL_DIRS = new Set([
   'overview',
@@ -294,7 +294,7 @@ class HelpScoutMigrator {
    * Resolve the (collectionId, categoryId, mapping) for a Help Scout article.
    * An article carries `categories: [<categoryId>, ...]`; we pick the FIRST
    * categoryId in that array that has a mapping under the given collection.
-   * Returns null if none match — caller decides how to handle.
+   * Returns null if none match - caller decides how to handle.
    */
   resolveCategoryForArticle(article, collectionId) {
     const colMap = CATEGORY_MAPPING[collectionId];
@@ -440,7 +440,7 @@ class HelpScoutMigrator {
           this.imageCache.set(src, webPath);
           $el.attr('src', webPath);
         } catch (err) {
-          console.warn(`[migrate] Image download failed: ${src} — ${err.message}`);
+          console.warn(`[migrate] Image download failed: ${src} - ${err.message}`);
           // Leave the original src; markdown will still render (broken externally).
         }
       })
@@ -467,8 +467,8 @@ class HelpScoutMigrator {
     // MDX rejects [alt](<https://...>) and bare CommonMark autolinks like
     // <https://foo> or <email@x>. In each case `<https...` / `<email...` reads
     // as a JSX tag opening, then `/` or `@` inside breaks the parse. CommonMark
-    // wrappers are only needed when the URL has spaces or parens — Help Scout
-    // URLs and emails don't — so we can flatten them.
+    // wrappers are only needed when the URL has spaces or parens - Help Scout
+    // URLs and emails don't - so we can flatten them.
     markdown = markdown
       .replace(/\]\(<(https?:\/\/[^>\s]+)>\)/g, ']($1)')
       .replace(/<(https?:\/\/[^>\s]+)>/g, '$1')
@@ -578,7 +578,7 @@ class HelpScoutMigrator {
           const article = await this.fetchArticleDetails(summary.id);
           const mapping = this.resolveCategoryForArticle(article, collection.id);
           if (!mapping) {
-            console.warn(`  [${processed}] UNMAPPED ${article.id}: '${article.name}' — categories=[${(article.categories || []).join(', ')}]`);
+            console.warn(`  [${processed}] UNMAPPED ${article.id}: '${article.name}' - categories=[${(article.categories || []).join(', ')}]`);
             this.unmappedArticles.push({
               id: String(article.id),
               title: article.name,
@@ -614,9 +614,9 @@ class HelpScoutMigrator {
     console.log('\n[migrate] Done.');
     Object.entries(counts).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
     if (this.unmappedArticles.length > 0) {
-      console.warn(`\n[migrate] ${this.unmappedArticles.length} article(s) skipped — no category in CATEGORY_MAPPING matched:`);
+      console.warn(`\n[migrate] ${this.unmappedArticles.length} article(s) skipped - no category in CATEGORY_MAPPING matched:`);
       this.unmappedArticles.forEach((u) =>
-        console.warn(`  - ${u.collection} / ${u.id} '${u.title}' — categories=[${u.categories.join(', ')}]`)
+        console.warn(`  - ${u.collection} / ${u.id} '${u.title}' - categories=[${u.categories.join(', ')}]`)
       );
     }
 

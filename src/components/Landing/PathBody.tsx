@@ -22,14 +22,14 @@ import styles from './styles.module.css';
  *      - From GROUPS[slug] if present (manager + admin have absorbed
  *        sub-personas split into named groups)
  *      - Falls back to ENTRIES[slug] as a single "Where to start" section
- *   3. A mode rail at the bottom — quick swap into the other doors
+ *   3. A mode rail at the bottom - quick swap into the other doors
  *
  * Card markup matches plans/mockups/landing-c-<persona>.html exactly:
  *   <a class="taskCard"><span class="ti">📝</span><strong>...</strong><span class="desc">...</span></a>
  *
  * Gate behaviour is unchanged: locked entries (privilege missing) route to
  * `/modules/<slug>/` upsell instead of the deep article, and the desc line
- * flips to "🔒 needs <priv> — see module page". The URL guard + sidebar
+ * flips to "🔒 needs <priv> - see module page". The URL guard + sidebar
  * swizzles still enforce role + privilege independently.
  */
 
@@ -78,7 +78,7 @@ function TaskCard({
   const effectiveHref = upsell ?? e.href;
   const icon = e.icon || persona.icon;
   const desc = lockedByPrivilege
-    ? `🔒 needs ${e.privilege} — see module page`
+    ? `🔒 needs ${e.privilege} - see module page`
     : e.blurb;
 
   const className = [
@@ -155,7 +155,7 @@ function Inner({slug}: Props): JSX.Element {
   const user = useCurrentUser();
   if (!persona) return <ForbiddenView title="Unknown persona" />;
   if (!canEnterPersona(user, persona)) {
-    return <ForbiddenView title={`${persona.label} — not available for your role`} />;
+    return <ForbiddenView title={`${persona.label} - not available for your role`} />;
   }
   const privileges = user.privileges || [];
   const groups: EntryGroup[] =

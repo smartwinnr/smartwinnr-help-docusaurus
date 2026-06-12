@@ -11,7 +11,7 @@ export type RecentEntry = {
   title: string;
   /** Module-level breadcrumb shown under the title (e.g. "Quiz · Create & Manage"). */
   crumb?: string;
-  /** Milliseconds since epoch — only used for ordering and the relative label. */
+  /** Milliseconds since epoch - only used for ordering and the relative label. */
   viewedAt: number;
 };
 
@@ -61,7 +61,7 @@ export function pushRecent(entry: Omit<RecentEntry, 'viewedAt'>): void {
     store.setItem(KEY, JSON.stringify(updated));
     window.dispatchEvent(new CustomEvent(RECENTS_CHANGED_EVENT));
   } catch {
-    /* quota or serialization — silently drop */
+    /* quota or serialization - silently drop */
   }
 }
 

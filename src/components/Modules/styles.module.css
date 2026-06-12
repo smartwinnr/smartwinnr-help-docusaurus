@@ -5,7 +5,7 @@
 .wrap {
   /* Match the article + generated-index 72ch reading column so /modules/,
    * /modules/<m>/, and /modules/<m>/<sub>/ all share the same width.
-   * The Get Started card grid auto-fits at minmax(240px, 1fr) — drops
+   * The Get Started card grid auto-fits at minmax(240px, 1fr) - drops
    * gracefully to 2 columns at this width. */
   max-width: 72ch;
   margin: 0 auto;

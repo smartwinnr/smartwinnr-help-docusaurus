@@ -28,7 +28,7 @@ function isCircuitOpen() {
   if (circuitOpenedAt && Date.now() - circuitOpenedAt > CIRCUIT_RESET_MS) {
     consecutiveFailures = 0;
     circuitOpenedAt = null;
-    console.log('[chat-logger] Circuit breaker reset — retrying writes');
+    console.log('[chat-logger] Circuit breaker reset - retrying writes');
     return false;
   }
   return true;
@@ -172,7 +172,7 @@ function runMigrations(db) {
   const current = currentRow?.v || 0;
 
   if (current === 0 && MIGRATIONS.length > 0) {
-    // First run — mark version 1 as applied (tables were just created)
+    // First run - mark version 1 as applied (tables were just created)
     db.prepare('INSERT INTO schema_version (version) VALUES (?)').run(1);
   }
 
@@ -210,7 +210,7 @@ function logExchange(data) {
   if (isCircuitOpen()) {
     const now = Date.now();
     if (now - lastCircuitWarning > 60000) {
-      console.warn('[chat-logger] Circuit open — logging disabled temporarily');
+      console.warn('[chat-logger] Circuit open - logging disabled temporarily');
       lastCircuitWarning = now;
     }
     return;

@@ -8,7 +8,7 @@
  * stay under `docs/guides/`.
  *
  * Mappings are EXPLICIT (not heuristic) because:
- *  - Only 40 articles total — a lookup table is reviewable.
+ *  - Only 40 articles total - a lookup table is reviewable.
  *  - "How to edit form submission from manager's view" reads ambiguously to a
  *    keyword classifier but unambiguously to a human eye.
  *
@@ -29,7 +29,7 @@ const REDIRECTS_FILE = path.join(ROOT, 'data', 'redirects.json');
 const APPLY = process.argv.includes('--apply');
 
 // ---------------------------------------------------------------------------
-// Mapping table — relative-to-docs source path → relative-to-docs target path.
+// Mapping table - relative-to-docs source path → relative-to-docs target path.
 // Targets ending in '/' get the source basename appended. A target of null
 // means delete the file (e.g. duplicated index.md). Any source absent here
 // gets warned about and left in place.
@@ -54,7 +54,7 @@ const MAP = {
   'guides/learner/how-to-post-a-query-from-the-smartwinnr-app.md':                        'modules/cross-module/for-learners/',
   'guides/learner/how-to-review-field-coaching-from-managers-view-in-mobile.md':          'modules/field-coaching/for-managers/',
   'guides/learner/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md':             'modules/smartpath/for-learners/',
-  'guides/learner/how-to-update-the-smartwinnr-app-from-web-view.md':                     'guides/learner/',  // stays — generic app-update guide
+  'guides/learner/how-to-update-the-smartwinnr-app-from-web-view.md':                     'guides/learner/',  // stays - generic app-update guide
   'guides/learner/how-to-upload-audio-recording-for-coaching.md':                         'modules/video-coaching/for-learners/',
   'guides/learner/how-to-upload-screen-recording-for-coaching.md':                        'modules/video-coaching/for-learners/',
   'guides/learner/how-to-upload-video-recording-for-coaching.md':                         'modules/video-coaching/for-learners/',
@@ -72,7 +72,7 @@ const MAP = {
                                                                                           'modules/ai-coaching/for-learners/',
   'guides/learner/ai-coaching/how-to-review-ai-coaching-submissions-as-a-manager.md':     'modules/ai-coaching/for-managers/',
   'guides/learner/ai-coaching/understanding-the-feedback-screen.md':                      'modules/ai-coaching/for-learners/',
-  // ai-coaching/index.md was a section landing — drop it; for-learners/ has its own _category_.json.
+  // ai-coaching/index.md was a section landing - drop it; for-learners/ has its own _category_.json.
   'guides/learner/ai-coaching/index.md':                                                  null,
   'guides/learner/ai-coaching/_category_.json':                                           null,
 
@@ -87,7 +87,7 @@ const MAP = {
                                                                                           'modules/kpi-gamification/for-managers/',
   'guides/manager/how-to-find-the-progress-of-your-team-in-quizzes.md':                   'modules/quiz/for-managers/',
   'guides/manager/quiz-analytics-through-charts.md':                                      'modules/quiz/for-managers/',
-  'guides/manager/switching-to-manager-view.md':                                          'guides/manager/',  // stays — generic
+  'guides/manager/switching-to-manager-view.md':                                          'guides/manager/',  // stays - generic
   'guides/manager/what-is-my-team-coaching.md':                                           'modules/video-coaching/for-managers/',
 };
 
@@ -133,7 +133,7 @@ function main() {
   console.log(`  unmapped:     ${unknown.length}`);
   if (unknown.length) {
     console.log('');
-    console.log('UNMAPPED (will be skipped — extend MAP table):');
+    console.log('UNMAPPED (will be skipped - extend MAP table):');
     for (const u of unknown) console.log('  ' + u);
   }
   console.log('');

@@ -4,7 +4,7 @@
  * Used by:
  * - src/theme/DocSidebarItem/Category & Link (frontend sidebar filtering)
  * - sidebars.ts (declares customProps that reference these role/privilege keys)
- * - server.js URL guard (planned, Phase D2) — keeps frontend and backend in sync
+ * - server.js URL guard (planned, Phase D2) - keeps frontend and backend in sync
  */
 
 export type SmartWinnrRole =
@@ -31,7 +31,7 @@ export type AccessGate = {
   /**
    * If set, viewer's org must have ALL of these privileges enabled (AND).
    * Used by `for-managers/` sub-folders to require BOTH `managerView` (in
-   * `privilege`) AND the parent module's privilege (e.g. `quiz`) — a single
+   * `privilege`) AND the parent module's privilege (e.g. `quiz`) - a single
    * `privilege` field can't AND two values together.
    */
   allPrivileges?: OrgPrivilege[];
@@ -53,7 +53,7 @@ export type CurrentUser = {
 };
 
 /**
- * Pre-hydration default — assume the smallest menu (regular user, no privileges).
+ * Pre-hydration default - assume the smallest menu (regular user, no privileges).
  * Prevents an admin-flash → snap-shrink when /api/me resolves.
  */
 export const UNAUTH_USER: CurrentUser = {
@@ -73,13 +73,13 @@ export const UNAUTH_USER: CurrentUser = {
 const PRIVILEGE_BYPASS_ROLES: SmartWinnrRole[] = ['superadmin'];
 
 /**
- * Org-privilege gating is currently disabled — every signed-in user sees every
+ * Org-privilege gating is currently disabled - every signed-in user sees every
  * category their role allows, regardless of their org's `privileges` array.
  * Role gating is unaffected (admin-only sections still hide from regular users).
  *
  * `customProps.privilege` / `customProps.anyPrivilege` annotations remain on
  * sidebar items and `_category_.json` files, so re-enabling is a single-line
- * flip back to `true` — no data migration needed.
+ * flip back to `true` - no data migration needed.
  */
 export const PRIVILEGE_GATING_ENABLED = true;
 
@@ -90,7 +90,7 @@ export const PRIVILEGE_GATING_ENABLED = true;
  * Use `hasMinTier(user, n)` in shared utilities (top-nav, landing) where a tier
  * threshold is cleaner than enumerating six roles. The fine-grained
  * `customProps.roles` array on sidebar items continues to be the authoritative
- * gate — `hasMinTier` is a convenience derived from the same data.
+ * gate - `hasMinTier` is a convenience derived from the same data.
  */
 export const ROLE_TIER: Record<SmartWinnrRole, number> = {
   user: 1,
@@ -112,13 +112,13 @@ export function isAllowed(gate: AccessGate | undefined, user: CurrentUser | null
   if (!gate) return true;
   const u = user ?? UNAUTH_USER;
 
-  // Role gating — always on.
+  // Role gating - always on.
   if (gate.roles && gate.roles.length > 0) {
     const hasRole = gate.roles.some((r) => u.roles.includes(r));
     if (!hasRole) return false;
   }
 
-  // Privilege gating — skipped when disabled.
+  // Privilege gating - skipped when disabled.
   if (!PRIVILEGE_GATING_ENABLED) return true;
 
   const bypassesPrivilege = u.roles.some((r) => PRIVILEGE_BYPASS_ROLES.includes(r));

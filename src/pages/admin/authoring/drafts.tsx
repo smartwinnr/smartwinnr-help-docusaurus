@@ -6,7 +6,7 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import styles from './styles.module.css';
 
 /**
- * Drafts queue — lists every article with `draft: true` in frontmatter,
+ * Drafts queue - lists every article with `draft: true` in frontmatter,
  * with **Publish** + **Delete** actions. Superadmin only. See plan §19.5.
  *
  * GET    /api/admin/authoring/drafts
@@ -68,7 +68,7 @@ function DraftsList(): ReactNode {
         const blockers: Array<{label: string; detail?: string}> = (data.audit && data.audit.findings || [])
           .filter((f: {blocking: boolean}) => f.blocking);
         const summary = blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ');
-        setError(`${data.error}${summary ? ' — ' + summary : ''}`);
+        setError(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
         await refresh();
       }
@@ -144,7 +144,7 @@ function DraftsList(): ReactNode {
               <tr key={d.path}>
                 <td><strong>{d.title}</strong></td>
                 <td><code className={styles.smallCode}>{d.path}</code></td>
-                <td className={styles.tabular}>{d.lastUpdate ?? '—'}</td>
+                <td className={styles.tabular}>{d.lastUpdate ?? '-'}</td>
                 <td className={styles.rowActions}>
                   <button
                     type="button"
@@ -172,7 +172,7 @@ function DraftsList(): ReactNode {
 
 export default function DraftsPage(): ReactNode {
   return (
-    <Layout title="Drafts — Admin" description="Draft articles waiting to be published.">
+    <Layout title="Drafts - Admin" description="Draft articles waiting to be published.">
       <BrowserOnly fallback={<div className={styles.wrap}><p>Loading…</p></div>}>
         {() => <DraftsList />}
       </BrowserOnly>

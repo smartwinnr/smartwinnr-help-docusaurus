@@ -7,7 +7,7 @@ import styles from './styles.module.css';
  *
  * Reading minutes is passed in by the DocItem/Content swizzle, which counts
  * words in the live `.markdown` subtree after MDX has rendered (the docs
- * plugin doesn't emit readingTime — that's blog-only). Last-updated comes
+ * plugin doesn't emit readingTime - that's blog-only). Last-updated comes
  * from frontmatter; falls back to git-derived metadata.lastUpdatedAt if
  * frontmatter doesn't set it.
  */
@@ -30,10 +30,10 @@ export default function MetaChip({minutes}: Props): JSX.Element | null {
       return v.toISOString().slice(0, 10);
     }
     if (typeof v === 'string') {
-      // Already a "2025-03-10" or "2025-03-10T00:00:00.000Z" — strip the time half.
+      // Already a "2025-03-10" or "2025-03-10T00:00:00.000Z" - strip the time half.
       const iso = /^\d{4}-\d{2}-\d{2}/.exec(v);
       if (iso) return iso[0];
-      // Last resort — let Date parse it.
+      // Last resort - let Date parse it.
       const d = new Date(v);
       if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 10);
     }
