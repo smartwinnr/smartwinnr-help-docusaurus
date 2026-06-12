@@ -935,11 +935,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "modules/quiz/features/how-to-allow-multiple-attempts",
-              "path": "/modules/quiz/features/how-to-allow-multiple-attempts",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "modules/quiz/for-learners/60f9c0126ffe270af2a917d6",
               "path": "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr",
               "sidebar": "tutorialSidebar"

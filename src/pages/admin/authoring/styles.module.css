@@ -349,6 +349,26 @@
   margin-bottom: var(--space-4);
 }
 
+/* Deploy strip (drafts queue header) */
+.deployStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-3);
+  background: var(--ifm-color-primary-lightest);
+  border: 1px solid var(--ifm-color-primary-lighter);
+  border-radius: 10px;
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--ifm-color-content);
+}
+.deployStrip strong {
+  color: var(--ifm-color-primary-darker);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Drafts table */
 .draftTable {
   width: 100%;

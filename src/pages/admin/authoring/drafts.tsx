@@ -21,6 +21,17 @@ type Draft = {
   lastUpdate: string | null;
 };
 
+type DeployState = {
+  queue: Array<{path: string; slug: string; title: string}>;
+  lastDeployTs: number;
+  nextAutoDeployAt: number | null;
+  canDeployNow: boolean;
+  minIntervalMs: number;
+  debounceMs: number;
+  gitPushEnabled: boolean;
+  configOk: boolean;
+};
+
 function parsePath(p: string): {module: string; subFolder: string; slug: string} | null {
   const m = /^docs\/modules\/([^/]+)\/([^/]+)\/([^/]+)\.(md|mdx)$/.exec(p.replace(/\\/g, '/'));
   return m ? {module: m[1], subFolder: m[2], slug: m[3]} : null;
@@ -32,6 +43,9 @@ function DraftsList(): ReactNode {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [deployState, setDeployState] = useState<DeployState | null>(null);
+  const [deploying, setDeploying] = useState(false);
+  const [deployMessage, setDeployMessage] = useState<string | null>(null);
 
   async function refresh() {
     setLoading(true);
@@ -48,9 +62,55 @@ function DraftsList(): ReactNode {
     }
   }
 
+  async function refreshDeployState() {
+    try {
+      const res = await fetch('/api/admin/authoring/deploy/state', {credentials: 'same-origin'});
+      if (!res.ok) return;
+      setDeployState(await res.json());
+    } catch {/* fail soft */}
+  }
+
+  async function deployNow() {
+    setDeploying(true);
+    setDeployMessage(null);
+    try {
+      const res = await fetch('/api/admin/authoring/deploy', {
+        method: 'POST',
+        credentials: 'same-origin',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setDeployMessage(`⚠ ${data.message || data.error || 'Deploy failed'}`);
+      } else {
+        setDeployMessage(
+          data.mode === 'noop'
+            ? 'Queue cleared (AUTHORING_GIT_PUSH is off — no commit made).'
+            : `Deployed ${data.committed} article(s) — Railway will redeploy in ~2-5 min.`,
+        );
+        await refresh();
+      }
+    } catch (err) {
+      setDeployMessage(`⚠ ${(err as Error).message}`);
+    } finally {
+      setDeploying(false);
+      await refreshDeployState();
+    }
+  }
+
   useEffect(() => {
-    if ((user.roles || []).includes('superadmin')) refresh();
+    if (!(user.roles || []).includes('superadmin')) return;
+    refresh();
+    refreshDeployState();
+    // Poll deploy state every 30 s so the "next available in M min" countdown
+    // stays current while the page sits open.
+    const id = window.setInterval(refreshDeployState, 30_000);
+    return () => window.clearInterval(id);
   }, [user]);
+
+  async function publishDraft(d: Draft) {
+    await publish(d);
+    await refreshDeployState();  // pick up the new queue size
+  }
 
   async function publish(d: Draft) {
     const parsed = parsePath(d.path);
@@ -118,6 +178,35 @@ function DraftsList(): ReactNode {
             Articles flagged <code>draft: true</code>. Hidden in production builds.{' '}
             <Link to="/admin/authoring">New article →</Link>
           </p>
+          {deployState && deployState.queue.length > 0 && (
+            <div className={styles.deployStrip}>
+              <div>
+                <strong>{deployState.queue.length}</strong> article(s) published, waiting to deploy.
+                {!deployState.canDeployNow && (
+                  <span className={styles.hint}>
+                    {' '}Next deploy available in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
+                  </span>
+                )}
+                {!deployState.configOk && deployState.queue.length > 0 && (
+                  <span className={styles.warn}>
+                    {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITLAB_PROJECT_ID not all set).
+                  </span>
+                )}
+              </div>
+              <button
+                type="button"
+                className={styles.btnPrimary}
+                disabled={deploying || !deployState.canDeployNow}
+                onClick={deployNow}>
+                {deploying ? 'Deploying…' : 'Deploy now'}
+              </button>
+            </div>
+          )}
+          {deployMessage && (
+            <div className={deployMessage.startsWith('⚠') ? styles.error : styles.savedNote}>
+              {deployMessage}
+            </div>
+          )}
         </div>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>
           Refresh
@@ -150,7 +239,7 @@ function DraftsList(): ReactNode {
                     type="button"
                     className={styles.btnPrimary}
                     disabled={busy === d.path}
-                    onClick={() => publish(d)}>
+                    onClick={() => publishDraft(d)}>
                     Publish
                   </button>
                   <button

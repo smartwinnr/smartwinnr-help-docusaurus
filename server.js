@@ -850,6 +850,173 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// Publish-to-deploy pipeline (plan §20.3 - §20.5)
+// ---------------------------------------------------------------------------
+//
+// Publishing only flips draft:true → false in the file. To make the article
+// actually visible to readers, we commit + push the change so Railway
+// auto-redeploys. To avoid one-deploy-per-publish cost explosions, we:
+//
+//   • Batch publishes into a queue (in-memory Set, persisted to
+//     data/deploy-state.json across restarts).
+//   • Debounce: fire a deploy 30 min after the LAST publish in a burst
+//     (resets on each new publish).
+//   • Cap: never deploy more often than once per 60 min.
+//   • Manual override: "Deploy now" button on /admin/authoring/drafts
+//     triggers immediately, but still respects the 60 min minimum.
+//
+// Git push is done via the GitLab Commits API (POST /repository/commits)
+// rather than the git CLI. The container has no .git directory, and the
+// API takes a multi-action commit in one round-trip - one commit per
+// batch = one Railway redeploy per batch.
+
+const DEPLOY_STATE_PATH = path.join(__dirname, 'data', 'deploy-state.json');
+const DEPLOY_DEBOUNCE_MS = parseInt(process.env.AUTHORING_DEPLOY_DEBOUNCE_MS || String(30 * 60 * 1000), 10);
+const DEPLOY_MIN_INTERVAL_MS = parseInt(process.env.AUTHORING_DEPLOY_MIN_INTERVAL_MS || String(60 * 60 * 1000), 10);
+const GIT_PUSH_ENABLED = process.env.AUTHORING_GIT_PUSH === 'true';
+const GIT_PUSH_TOKEN = process.env.GIT_PUSH_TOKEN || '';
+const GITLAB_PROJECT_ID = process.env.GITLAB_PROJECT_ID || '';
+const GIT_PUBLISH_BRANCH = process.env.GIT_PUBLISH_BRANCH || 'main';
+const GITLAB_HOST = process.env.GITLAB_HOST || 'https://gitlab.com';
+
+const deployQueue = new Set();
+let lastDeployTs = 0;
+let debounceTimer = null;
+let deployInFlight = false;
+
+function loadDeployState() {
+  try {
+    if (fsSync.existsSync(DEPLOY_STATE_PATH)) {
+      const s = JSON.parse(fsSync.readFileSync(DEPLOY_STATE_PATH, 'utf8'));
+      lastDeployTs = Number(s.lastDeployTs) || 0;
+      for (const p of (s.queue || [])) deployQueue.add(p);
+      console.log(`📦 deploy-state: queue=${deployQueue.size}, lastDeployTs=${lastDeployTs ? new Date(lastDeployTs).toISOString() : 'never'}`);
+    }
+  } catch (e) {
+    console.warn('[deploy] failed to load state:', e.message);
+  }
+}
+function persistDeployState() {
+  try {
+    fsSync.mkdirSync(path.dirname(DEPLOY_STATE_PATH), { recursive: true });
+    fsSync.writeFileSync(DEPLOY_STATE_PATH, JSON.stringify({
+      lastDeployTs,
+      queue: [...deployQueue],
+    }, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('[deploy] failed to persist state:', e.message);
+  }
+}
+loadDeployState();
+
+function nextAutoDeployAt() {
+  if (deployQueue.size === 0 || !debounceTimer) return null;
+  // The actual timer references are opaque, so approximate from lastDeployTs + min-interval.
+  return Math.max(
+    Date.now() + 1000,  // never report "now or past"
+    lastDeployTs + DEPLOY_MIN_INTERVAL_MS,
+  );
+}
+function canDeployNow() {
+  return (Date.now() - lastDeployTs) >= DEPLOY_MIN_INTERVAL_MS;
+}
+
+function scheduleDeploy() {
+  if (debounceTimer) clearTimeout(debounceTimer);
+  const minWait = DEPLOY_MIN_INTERVAL_MS - (Date.now() - lastDeployTs);
+  const delay = Math.max(DEPLOY_DEBOUNCE_MS, minWait);
+  console.log(`[deploy] scheduled in ${Math.round(delay / 60000)} min (queue: ${deployQueue.size})`);
+  debounceTimer = setTimeout(() => { fireDeploy().catch((e) => console.error('[deploy] auto-fire failed:', e.message)); }, delay);
+}
+
+/** GitLab Commits API helpers. */
+async function gitlabGetFile(filePath) {
+  const url = `${GITLAB_HOST}/api/v4/projects/${encodeURIComponent(GITLAB_PROJECT_ID)}/repository/files/${encodeURIComponent(filePath)}?ref=${encodeURIComponent(GIT_PUBLISH_BRANCH)}`;
+  try {
+    await axios.get(url, { headers: { 'PRIVATE-TOKEN': GIT_PUSH_TOKEN }, timeout: 15000 });
+    return true;
+  } catch (e) {
+    if (e.response && e.response.status === 404) return false;
+    throw e;
+  }
+}
+async function gitlabCommit(actions, message) {
+  const url = `${GITLAB_HOST}/api/v4/projects/${encodeURIComponent(GITLAB_PROJECT_ID)}/repository/commits`;
+  return axios.post(url, {
+    branch: GIT_PUBLISH_BRANCH,
+    commit_message: message,
+    actions,
+  }, {
+    headers: { 'PRIVATE-TOKEN': GIT_PUSH_TOKEN, 'Content-Type': 'application/json' },
+    timeout: 60000,
+  });
+}
+
+/** Run a deploy: build actions for every queued file, single GitLab commit,
+ *  triggers Railway redeploy on push. Best-effort - on failure the queue is
+ *  preserved so the next attempt covers the same files. */
+async function fireDeploy() {
+  if (deployInFlight) return { ok: false, reason: 'in-flight' };
+  if (deployQueue.size === 0) return { ok: false, reason: 'empty-queue' };
+
+  if (!GIT_PUSH_ENABLED) {
+    // Local dev or feature off - clear queue without doing any git work.
+    console.log('[deploy] AUTHORING_GIT_PUSH not set - clearing queue as no-op');
+    deployQueue.clear();
+    lastDeployTs = Date.now();
+    persistDeployState();
+    if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
+    return { ok: true, mode: 'noop' };
+  }
+  if (!GIT_PUSH_TOKEN || !GITLAB_PROJECT_ID) {
+    return { ok: false, reason: 'missing-config', message: 'GIT_PUSH_TOKEN + GITLAB_PROJECT_ID required' };
+  }
+
+  deployInFlight = true;
+  const filePaths = [...deployQueue];
+  try {
+    const actions = [];
+    for (const rel of filePaths) {
+      const abs = path.join(__dirname, rel);
+      if (!fsSync.existsSync(abs)) {
+        console.warn(`[deploy] skipping missing file: ${rel}`);
+        continue;
+      }
+      const content = fsSync.readFileSync(abs, 'utf8');
+      const exists = await gitlabGetFile(rel);
+      actions.push({
+        action: exists ? 'update' : 'create',
+        file_path: rel,
+        content,
+      });
+    }
+    if (actions.length === 0) {
+      deployQueue.clear();
+      deployInFlight = false;
+      return { ok: false, reason: 'no-actions' };
+    }
+
+    const slugs = filePaths.map((p) => path.basename(p, '.md')).slice(0, 3);
+    const message = `publish: ${filePaths.length} article${filePaths.length === 1 ? '' : 's'} (${slugs.join(', ')}${filePaths.length > 3 ? '...' : ''})`;
+    await gitlabCommit(actions, message);
+
+    console.log(`[deploy] committed ${actions.length} file(s) to ${GIT_PUBLISH_BRANCH}`);
+    deployQueue.clear();
+    lastDeployTs = Date.now();
+    persistDeployState();
+    if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
+    return { ok: true, committed: actions.length };
+  } catch (e) {
+    console.error('[deploy] commit failed:', e.response?.data || e.message);
+    return { ok: false, reason: 'commit-failed', message: e.response?.data?.message || e.message };
+  } finally {
+    deployInFlight = false;
+  }
+}
+
+// ---------------------------------------------------------------------------
+
 app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) => {
   try {
     const { module: moduleSlug, subFolder, slug } = req.body || {};
@@ -867,11 +1034,60 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
       return res.status(400).json({ error: 'No draft: true flag found in frontmatter' });
     }
     fsSync.writeFileSync(target, next, 'utf8');
-    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+
+    // Queue for deploy + reset the debounce timer (so a burst batches).
+    const relPath = path.relative(__dirname, target);
+    deployQueue.add(relPath);
+    persistDeployState();
+    scheduleDeploy();
+
+    res.json({
+      ok: true,
+      path: relPath,
+      audit,
+      queued: true,
+      queueSize: deployQueue.size,
+    });
   } catch (error) {
     console.error('❌ authoring/publish failed:', error.message);
     res.status(500).json({ error: error.message });
   }
+});
+
+app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, res) => {
+  const items = [...deployQueue].map((rel) => {
+    const abs = path.join(__dirname, rel);
+    let title = path.basename(rel, '.md');
+    try {
+      const t = fsSync.readFileSync(abs, 'utf8');
+      const m = /^title:\s*["']?(.+?)["']?\s*$/m.exec(t);
+      if (m) title = m[1];
+    } catch {/* ignore */}
+    return { path: rel, slug: path.basename(rel, '.md'), title };
+  });
+  res.json({
+    queue: items,
+    lastDeployTs,
+    nextAutoDeployAt: nextAutoDeployAt(),
+    canDeployNow: canDeployNow(),
+    minIntervalMs: DEPLOY_MIN_INTERVAL_MS,
+    debounceMs: DEPLOY_DEBOUNCE_MS,
+    gitPushEnabled: GIT_PUSH_ENABLED,
+    configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITLAB_PROJECT_ID,
+  });
+});
+
+app.post('/api/admin/authoring/deploy', requireRole('superadmin'), async (req, res) => {
+  if (!canDeployNow()) {
+    return res.status(429).json({
+      error: 'rate-limited',
+      message: `Last deploy was ${Math.round((Date.now() - lastDeployTs) / 60000)} min ago. Next available in ${Math.round((DEPLOY_MIN_INTERVAL_MS - (Date.now() - lastDeployTs)) / 60000)} min.`,
+      retryAfterMs: DEPLOY_MIN_INTERVAL_MS - (Date.now() - lastDeployTs),
+    });
+  }
+  const result = await fireDeploy();
+  if (!result.ok) return res.status(500).json(result);
+  res.json(result);
 });
 
 app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) => {
