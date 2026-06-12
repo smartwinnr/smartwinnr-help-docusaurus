@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How Learners Can Mark Attendance for SmartPath - Learning session on Their Own?",
-    "permalink": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own"
+    "title": "Assign & Schedule",
+    "permalink": "/modules/smartpath/assign-and-schedule"
   },
   "next": {
-    "title": "How to Mark the attendance for Users  in Learning Sessions?",
-    "permalink": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions"
+    "title": "For Managers",
+    "permalink": "/modules/smartpath/for-managers"
   }
 }

@@ -39,11 +39,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Understanding the feedback screen",
-    "permalink": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen"
+    "title": "For Managers",
+    "permalink": "/modules/ai-coaching/for-managers"
   },
   "next": {
-    "title": "What is AI Coaching?",
-    "permalink": "/modules/ai-coaching/features/what-is-ai-coaching"
+    "title": "Features",
+    "permalink": "/modules/ai-coaching/features"
   }
 }

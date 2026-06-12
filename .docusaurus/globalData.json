@@ -1418,6 +1418,306 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "/modules/quiz/create-and-manage",
+              "path": "/modules/quiz/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/for-learners",
+              "path": "/modules/quiz/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/for-managers",
+              "path": "/modules/quiz/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/features",
+              "path": "/modules/quiz/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/reports-and-analytics",
+              "path": "/modules/quiz/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/settings-and-permissions",
+              "path": "/modules/quiz/settings-and-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/quiz/faqs-and-troubleshooting",
+              "path": "/modules/quiz/faqs-and-troubleshooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/create-and-manage",
+              "path": "/modules/smartpath/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/for-learners",
+              "path": "/modules/smartpath/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/assign-and-schedule",
+              "path": "/modules/smartpath/assign-and-schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/for-managers",
+              "path": "/modules/smartpath/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/features",
+              "path": "/modules/smartpath/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/reports-and-analytics",
+              "path": "/modules/smartpath/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartpath/settings-and-permissions",
+              "path": "/modules/smartpath/settings-and-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartfeed/create-and-manage",
+              "path": "/modules/smartfeed/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartfeed/for-learners",
+              "path": "/modules/smartfeed/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartfeed/assign-and-schedule",
+              "path": "/modules/smartfeed/assign-and-schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartfeed/features",
+              "path": "/modules/smartfeed/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/smartfeed/reports-and-analytics",
+              "path": "/modules/smartfeed/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/video-coaching/create-and-manage",
+              "path": "/modules/video-coaching/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/video-coaching/for-learners",
+              "path": "/modules/video-coaching/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/video-coaching/assign-and-schedule",
+              "path": "/modules/video-coaching/assign-and-schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/video-coaching/for-managers",
+              "path": "/modules/video-coaching/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/video-coaching/settings-and-permissions",
+              "path": "/modules/video-coaching/settings-and-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/ai-coaching/for-learners",
+              "path": "/modules/ai-coaching/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/ai-coaching/for-managers",
+              "path": "/modules/ai-coaching/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/ai-coaching/features",
+              "path": "/modules/ai-coaching/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/ai-coaching/reports-and-analytics",
+              "path": "/modules/ai-coaching/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/ai-coaching/faqs-and-troubleshooting",
+              "path": "/modules/ai-coaching/faqs-and-troubleshooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/field-coaching/create-and-manage",
+              "path": "/modules/field-coaching/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/field-coaching/for-managers",
+              "path": "/modules/field-coaching/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/field-coaching/features",
+              "path": "/modules/field-coaching/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/survey/create-and-manage",
+              "path": "/modules/survey/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/survey/assign-and-schedule",
+              "path": "/modules/survey/assign-and-schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/survey/features",
+              "path": "/modules/survey/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/survey/reports-and-analytics",
+              "path": "/modules/survey/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/survey/faqs-and-troubleshooting",
+              "path": "/modules/survey/faqs-and-troubleshooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/knowledge-hub/create-and-manage",
+              "path": "/modules/knowledge-hub/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/knowledge-hub/for-learners",
+              "path": "/modules/knowledge-hub/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/knowledge-hub/features",
+              "path": "/modules/knowledge-hub/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/knowledge-hub/reports-and-analytics",
+              "path": "/modules/knowledge-hub/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/forms/create-and-manage",
+              "path": "/modules/forms/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/forms/for-learners",
+              "path": "/modules/forms/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/forms/for-managers",
+              "path": "/modules/forms/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/forms/features",
+              "path": "/modules/forms/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/forms/reports-and-analytics",
+              "path": "/modules/forms/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/kpi-gamification/create-and-manage",
+              "path": "/modules/kpi-gamification/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/kpi-gamification/for-learners",
+              "path": "/modules/kpi-gamification/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/kpi-gamification/assign-and-schedule",
+              "path": "/modules/kpi-gamification/assign-and-schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/kpi-gamification/for-managers",
+              "path": "/modules/kpi-gamification/for-managers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/kpi-gamification/features",
+              "path": "/modules/kpi-gamification/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/notifications/create-and-manage",
+              "path": "/modules/notifications/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/notifications/for-learners",
+              "path": "/modules/notifications/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/notifications/features",
+              "path": "/modules/notifications/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/notifications/settings-and-permissions",
+              "path": "/modules/notifications/settings-and-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/cross-module/create-and-manage",
+              "path": "/modules/cross-module/create-and-manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/cross-module/for-learners",
+              "path": "/modules/cross-module/for-learners",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/cross-module/features",
+              "path": "/modules/cross-module/features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/cross-module/reports-and-analytics",
+              "path": "/modules/cross-module/reports-and-analytics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/modules/cross-module/settings-and-permissions",
+              "path": "/modules/cross-module/settings-and-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/reference",
               "path": "/reference",
               "sidebar": "tutorialSidebar"

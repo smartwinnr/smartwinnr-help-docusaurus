@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to delete a Survey",
-    "permalink": "/modules/survey/create-and-manage/how-to-delete-a-survey"
+    "title": "Assign & Schedule",
+    "permalink": "/modules/survey/assign-and-schedule"
   },
   "next": {
-    "title": "What are the different question types in a Survey /Survey Template?",
-    "permalink": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template"
+    "title": "Features",
+    "permalink": "/modules/survey/features"
   }
 }

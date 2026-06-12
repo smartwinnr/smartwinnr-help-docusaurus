@@ -3,6 +3,11 @@
   "position": 7,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Settings & Permissions",
+    "slug": "/modules/notifications/settings-and-permissions"
+  },
   "customProps": {
     "roles": [
       "editor",

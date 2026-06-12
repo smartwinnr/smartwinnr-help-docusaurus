@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Assign a Survey in SmartWinnr",
-    "permalink": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr"
+    "title": "Features",
+    "permalink": "/modules/survey/features"
   },
   "next": {
-    "title": "Survey Analytics",
-    "permalink": "/modules/survey/reports-and-analytics/survey-analytics"
+    "title": "Reports & Analytics",
+    "permalink": "/modules/survey/reports-and-analytics"
   }
 }

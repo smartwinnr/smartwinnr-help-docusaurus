@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Review AI Coaching Submissions as a Manager?",
-    "permalink": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager"
+    "title": "Features",
+    "permalink": "/modules/ai-coaching/features"
   },
   "next": {
-    "title": "How do I track improvement?",
-    "permalink": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement"
+    "title": "Reports & Analytics",
+    "permalink": "/modules/ai-coaching/reports-and-analytics"
   }
 }

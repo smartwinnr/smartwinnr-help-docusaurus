@@ -3,6 +3,11 @@
   "position": 3,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "For Learners",
+    "slug": "/modules/notifications/for-learners"
+  },
   "customProps": {
     "roles": [
       "user",

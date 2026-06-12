@@ -3,6 +3,11 @@
   "position": 5,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Features",
+    "slug": "/modules/quiz/features"
+  },
   "customProps": {
     "roles": [
       "editor",

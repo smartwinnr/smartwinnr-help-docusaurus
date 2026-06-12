@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Notifications & Chat",
-    "permalink": "/modules/notifications/"
+    "title": "Create & Manage",
+    "permalink": "/modules/notifications/create-and-manage"
   },
   "next": {
-    "title": "How to view notifications?",
-    "permalink": "/modules/notifications/for-learners/how-to-view-notifications"
+    "title": "For Learners",
+    "permalink": "/modules/notifications/for-learners"
   }
 }

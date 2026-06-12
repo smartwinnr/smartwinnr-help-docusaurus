@@ -3,6 +3,11 @@
   "position": 4,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "For Managers",
+    "slug": "/modules/forms/for-managers"
+  },
   "customProps": {
     "roles": [
       "manager",

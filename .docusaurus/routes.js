@@ -9,15 +9,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '2d5'),
+    component: ComponentCreator('/', '816'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'bc6'),
+        component: ComponentCreator('/', '196'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '113'),
+            component: ComponentCreator('/', 'f79'),
             routes: [
               {
                 path: '/administration/access-permissions/access-permissions',
@@ -296,6 +296,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/ai-coaching/faqs-and-troubleshooting',
+                component: ComponentCreator('/modules/ai-coaching/faqs-and-troubleshooting', '6d5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses',
                 component: ComponentCreator('/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses', '5e0'),
                 exact: true,
@@ -308,8 +314,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/ai-coaching/features',
+                component: ComponentCreator('/modules/ai-coaching/features', 'd57'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/ai-coaching/features/what-is-ai-coaching',
                 component: ComponentCreator('/modules/ai-coaching/features/what-is-ai-coaching', '180'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/ai-coaching/for-learners',
+                component: ComponentCreator('/modules/ai-coaching/for-learners', 'bfe'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -332,8 +350,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/ai-coaching/for-managers',
+                component: ComponentCreator('/modules/ai-coaching/for-managers', 'b84'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager',
                 component: ComponentCreator('/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager', '927'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/ai-coaching/reports-and-analytics',
+                component: ComponentCreator('/modules/ai-coaching/reports-and-analytics', '920'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -404,6 +434,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/cross-module/create-and-manage',
+                component: ComponentCreator('/modules/cross-module/create-and-manage', '818'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content',
                 component: ComponentCreator('/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content', '8d8'),
                 exact: true,
@@ -446,6 +482,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/cross-module/features',
+                component: ComponentCreator('/modules/cross-module/features', '91d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/cross-module/features/how-to-add-an-audio-file-to-your-content',
                 component: ComponentCreator('/modules/cross-module/features/how-to-add-an-audio-file-to-your-content', '87d'),
                 exact: true,
@@ -460,6 +502,12 @@ export default [
               {
                 path: '/modules/cross-module/features/widgets',
                 component: ComponentCreator('/modules/cross-module/features/widgets', '941'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/cross-module/for-learners',
+                component: ComponentCreator('/modules/cross-module/for-learners', 'f2b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -494,8 +542,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/cross-module/reports-and-analytics',
+                component: ComponentCreator('/modules/cross-module/reports-and-analytics', 'c1d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report',
                 component: ComponentCreator('/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report', '0b2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/cross-module/settings-and-permissions',
+                component: ComponentCreator('/modules/cross-module/settings-and-permissions', 'be7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -512,6 +572,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/field-coaching/create-and-manage',
+                component: ComponentCreator('/modules/field-coaching/create-and-manage', '93f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template',
                 component: ComponentCreator('/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template', '79b'),
                 exact: true,
@@ -520,6 +586,12 @@ export default [
               {
                 path: '/modules/field-coaching/create-and-manage/how-to-create-field-mapping',
                 component: ComponentCreator('/modules/field-coaching/create-and-manage/how-to-create-field-mapping', '47a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/field-coaching/features',
+                component: ComponentCreator('/modules/field-coaching/features', '4f9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -536,6 +608,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/field-coaching/for-managers',
+                component: ComponentCreator('/modules/field-coaching/for-managers', 'fd8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile',
                 component: ComponentCreator('/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile', '186'),
                 exact: true,
@@ -544,6 +622,12 @@ export default [
               {
                 path: '/modules/forms/',
                 component: ComponentCreator('/modules/forms/', 'ba4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/forms/create-and-manage',
+                component: ComponentCreator('/modules/forms/create-and-manage', '226'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -566,6 +650,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/forms/features',
+                component: ComponentCreator('/modules/forms/features', '569'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/forms/features/how-to-approve-reject-a-form-submission',
                 component: ComponentCreator('/modules/forms/features/how-to-approve-reject-a-form-submission', '73f'),
                 exact: true,
@@ -574,6 +664,12 @@ export default [
               {
                 path: '/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user',
                 component: ComponentCreator('/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user', 'f53'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/forms/for-learners',
+                component: ComponentCreator('/modules/forms/for-learners', '35c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -596,6 +692,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/forms/for-managers',
+                component: ComponentCreator('/modules/forms/for-managers', '19f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/forms/for-managers/how-managers-approve-form',
                 component: ComponentCreator('/modules/forms/for-managers/how-managers-approve-form', 'bd9'),
                 exact: true,
@@ -604,6 +706,12 @@ export default [
               {
                 path: '/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view',
                 component: ComponentCreator('/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view', '4da'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/forms/reports-and-analytics',
+                component: ComponentCreator('/modules/forms/reports-and-analytics', '2cc'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -620,8 +728,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/knowledge-hub/create-and-manage',
+                component: ComponentCreator('/modules/knowledge-hub/create-and-manage', 'fdc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub',
                 component: ComponentCreator('/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub', '302'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/knowledge-hub/features',
+                component: ComponentCreator('/modules/knowledge-hub/features', '661'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -644,6 +764,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/knowledge-hub/for-learners',
+                component: ComponentCreator('/modules/knowledge-hub/for-learners', '930'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app',
                 component: ComponentCreator('/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app', '329'),
                 exact: true,
@@ -652,6 +778,12 @@ export default [
               {
                 path: '/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items',
                 component: ComponentCreator('/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items', '599'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/knowledge-hub/reports-and-analytics',
+                component: ComponentCreator('/modules/knowledge-hub/reports-and-analytics', '25a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -668,8 +800,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/kpi-gamification/assign-and-schedule',
+                component: ComponentCreator('/modules/kpi-gamification/assign-and-schedule', '150'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment',
                 component: ComponentCreator('/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment', '069'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/kpi-gamification/create-and-manage',
+                component: ComponentCreator('/modules/kpi-gamification/create-and-manage', '6f9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -800,6 +944,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/kpi-gamification/features',
+                component: ComponentCreator('/modules/kpi-gamification/features', 'f10'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/kpi-gamification/features/define-kpis',
                 component: ComponentCreator('/modules/kpi-gamification/features/define-kpis', '825'),
                 exact: true,
@@ -872,6 +1022,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/kpi-gamification/for-learners',
+                component: ComponentCreator('/modules/kpi-gamification/for-learners', 'd68'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard',
                 component: ComponentCreator('/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard', 'ef8'),
                 exact: true,
@@ -880,6 +1036,12 @@ export default [
               {
                 path: '/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard',
                 component: ComponentCreator('/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard', '6ed'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/kpi-gamification/for-managers',
+                component: ComponentCreator('/modules/kpi-gamification/for-managers', '431'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -902,8 +1064,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/notifications/create-and-manage',
+                component: ComponentCreator('/modules/notifications/create-and-manage', '7d0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group',
                 component: ComponentCreator('/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group', 'e5f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/notifications/features',
+                component: ComponentCreator('/modules/notifications/features', '5be'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -944,8 +1118,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/notifications/for-learners',
+                component: ComponentCreator('/modules/notifications/for-learners', '58c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/notifications/for-learners/how-to-view-notifications',
                 component: ComponentCreator('/modules/notifications/for-learners/how-to-view-notifications', '82b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/notifications/settings-and-permissions',
+                component: ComponentCreator('/modules/notifications/settings-and-permissions', '159'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -958,6 +1144,12 @@ export default [
               {
                 path: '/modules/quiz/',
                 component: ComponentCreator('/modules/quiz/', '2ae'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/create-and-manage',
+                component: ComponentCreator('/modules/quiz/create-and-manage', 'd20'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1016,6 +1208,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/quiz/faqs-and-troubleshooting',
+                component: ComponentCreator('/modules/quiz/faqs-and-troubleshooting', '3d5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question',
                 component: ComponentCreator('/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question', '62f'),
                 exact: true,
@@ -1024,6 +1222,12 @@ export default [
               {
                 path: '/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code',
                 component: ComponentCreator('/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code', '511'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/features',
+                component: ComponentCreator('/modules/quiz/features', '6a9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1136,6 +1340,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/quiz/for-learners',
+                component: ComponentCreator('/modules/quiz/for-learners', '21c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr',
                 component: ComponentCreator('/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr', '4e6'),
                 exact: true,
@@ -1144,6 +1354,12 @@ export default [
               {
                 path: '/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question',
                 component: ComponentCreator('/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question', 'f97'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/for-managers',
+                component: ComponentCreator('/modules/quiz/for-managers', 'd1e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1162,6 +1378,12 @@ export default [
               {
                 path: '/modules/quiz/for-managers/quiz-analytics-through-charts',
                 component: ComponentCreator('/modules/quiz/for-managers/quiz-analytics-through-charts', '884'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/reports-and-analytics',
+                component: ComponentCreator('/modules/quiz/reports-and-analytics', '2ad'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1226,6 +1448,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/quiz/settings-and-permissions',
+                component: ComponentCreator('/modules/quiz/settings-and-permissions', 'a31'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes',
                 component: ComponentCreator('/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes', '774'),
                 exact: true,
@@ -1238,6 +1466,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartfeed/assign-and-schedule',
+                component: ComponentCreator('/modules/smartfeed/assign-and-schedule', 'bc3'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times',
                 component: ComponentCreator('/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times', '50a'),
                 exact: true,
@@ -1246,6 +1480,12 @@ export default [
               {
                 path: '/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams',
                 component: ComponentCreator('/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams', 'f2e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/smartfeed/create-and-manage',
+                component: ComponentCreator('/modules/smartfeed/create-and-manage', '29c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1286,6 +1526,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartfeed/features',
+                component: ComponentCreator('/modules/smartfeed/features', 'bcb'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartfeed/features/how-to-view-all-the-smartfeeds',
                 component: ComponentCreator('/modules/smartfeed/features/how-to-view-all-the-smartfeeds', '0b3'),
                 exact: true,
@@ -1298,8 +1544,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartfeed/for-learners',
+                component: ComponentCreator('/modules/smartfeed/for-learners', 'bea'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed',
                 component: ComponentCreator('/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed', '0a7'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/smartfeed/reports-and-analytics',
+                component: ComponentCreator('/modules/smartfeed/reports-and-analytics', '5f6'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1316,8 +1574,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartpath/assign-and-schedule',
+                component: ComponentCreator('/modules/smartpath/assign-and-schedule', '11e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath',
                 component: ComponentCreator('/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath', 'bb5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/smartpath/create-and-manage',
+                component: ComponentCreator('/modules/smartpath/create-and-manage', '982'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1376,6 +1646,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartpath/features',
+                component: ComponentCreator('/modules/smartpath/features', '274'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartpath/features/how-can-i-gamify-a-smartpath',
                 component: ComponentCreator('/modules/smartpath/features/how-can-i-gamify-a-smartpath', 'ab5'),
                 exact: true,
@@ -1400,6 +1676,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartpath/for-learners',
+                component: ComponentCreator('/modules/smartpath/for-learners', '383'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own',
                 component: ComponentCreator('/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own', 'eb0'),
                 exact: true,
@@ -1412,8 +1694,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartpath/for-managers',
+                component: ComponentCreator('/modules/smartpath/for-managers', '462'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions',
                 component: ComponentCreator('/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions', 'cb6'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/smartpath/reports-and-analytics',
+                component: ComponentCreator('/modules/smartpath/reports-and-analytics', '303'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1448,6 +1742,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/smartpath/settings-and-permissions',
+                component: ComponentCreator('/modules/smartpath/settings-and-permissions', 'b84'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance',
                 component: ComponentCreator('/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance', 'dc5'),
                 exact: true,
@@ -1460,8 +1760,20 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/survey/assign-and-schedule',
+                component: ComponentCreator('/modules/survey/assign-and-schedule', '87d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr',
                 component: ComponentCreator('/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr', '4b0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/survey/create-and-manage',
+                component: ComponentCreator('/modules/survey/create-and-manage', '7b8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1490,14 +1802,32 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/survey/faqs-and-troubleshooting',
+                component: ComponentCreator('/modules/survey/faqs-and-troubleshooting', 'c79'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template',
                 component: ComponentCreator('/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template', 'de0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/survey/features',
+                component: ComponentCreator('/modules/survey/features', 'fce'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template',
                 component: ComponentCreator('/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template', '856'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/survey/reports-and-analytics',
+                component: ComponentCreator('/modules/survey/reports-and-analytics', '16d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1520,6 +1850,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/video-coaching/assign-and-schedule',
+                component: ComponentCreator('/modules/video-coaching/assign-and-schedule', 'a8a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment',
                 component: ComponentCreator('/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment', '0e5'),
                 exact: true,
@@ -1538,6 +1874,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/video-coaching/create-and-manage',
+                component: ComponentCreator('/modules/video-coaching/create-and-manage', '368'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/video-coaching/create-and-manage/how-to-create-field-coaching',
                 component: ComponentCreator('/modules/video-coaching/create-and-manage/how-to-create-field-coaching', 'd0e'),
                 exact: true,
@@ -1552,6 +1894,12 @@ export default [
               {
                 path: '/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager',
                 component: ComponentCreator('/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager', '43b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/video-coaching/for-learners',
+                component: ComponentCreator('/modules/video-coaching/for-learners', '5d5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -1580,6 +1928,12 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/modules/video-coaching/for-managers',
+                component: ComponentCreator('/modules/video-coaching/for-managers', '1dc'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team',
                 component: ComponentCreator('/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team', '517'),
                 exact: true,
@@ -1588,6 +1942,12 @@ export default [
               {
                 path: '/modules/video-coaching/for-managers/what-is-my-team-coaching',
                 component: ComponentCreator('/modules/video-coaching/for-managers/what-is-my-team-coaching', 'df7'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/video-coaching/settings-and-permissions',
+                component: ComponentCreator('/modules/video-coaching/settings-and-permissions', '243'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

@@ -3,7 +3,8 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
-import {hasMinTier} from '@site/src/access-policy';
+import {hasMinTier, PRIVILEGE_GATING_ENABLED} from '@site/src/access-policy';
+import type {CurrentUser} from '@site/src/access-policy';
 import styles from './styles.module.css';
 
 /**
@@ -74,14 +75,17 @@ const CARD_BLURBS: Record<string, string> = {
   'faqs-and-troubleshooting': 'Common questions and error codes.',
 };
 
-/* What sub-sections to surface as cards based on viewer's role tier. Ordered
- * left-to-right, top-to-bottom. */
-function cardsForViewer(tier: number): string[] {
+/* What sub-sections to surface as cards based on viewer's tier + privileges.
+ * Ordered left-to-right, top-to-bottom. `for-managers` requires both manager
+ * tier AND the `managerView` privilege (mirrors the dual gate baked into the
+ * sub-folder's _category_.json — see plan §13.8). */
+function cardsForViewer(tier: number, hasManagerView: boolean): string[] {
+  const managerCard = hasManagerView ? ['for-managers'] : [];
   if (tier >= 3) {
     // editor and above
     return [
       'for-learners',
-      'for-managers',
+      ...managerCard,
       'create-and-manage',
       'assign-and-schedule',
       'features',
@@ -92,10 +96,19 @@ function cardsForViewer(tier: number): string[] {
   }
   if (tier >= 2) {
     // manager
-    return ['for-learners', 'for-managers', 'faqs-and-troubleshooting'];
+    return ['for-learners', ...managerCard, 'faqs-and-troubleshooting'];
   }
   // user
   return ['for-learners', 'faqs-and-troubleshooting'];
+}
+
+/* Does the viewer hold the `managerView` privilege? Superadmin bypasses, and
+ * when privilege gating is off we treat everyone as having it (so the card
+ * stays visible while the global gate is disabled). */
+function hasManagerView(user: CurrentUser): boolean {
+  if (!PRIVILEGE_GATING_ENABLED) return true;
+  if ((user.roles || []).includes('superadmin')) return true;
+  return (user.privileges || []).includes('managerView');
 }
 
 function hasPrivilege(meta: ModuleMeta, privileges: string[]): boolean {
@@ -145,13 +158,21 @@ function UpsellBlock({slug, meta}: {slug: string; meta: ModuleMeta}) {
   );
 }
 
-function GetStartedCards({slug, tier}: {slug: string; tier: number}) {
+function GetStartedCards({
+  slug,
+  tier,
+  managerViewOk,
+}: {
+  slug: string;
+  tier: number;
+  managerViewOk: boolean;
+}) {
   const baseUrl = useBaseUrl(`/modules/${slug}/`);
   return (
     <section className={styles.section}>
       <h2>Get started</h2>
       <div className={styles.cardGrid}>
-        {cardsForViewer(tier).map((sub) => (
+        {cardsForViewer(tier, managerViewOk).map((sub) => (
           <Link key={sub} to={`${baseUrl}${sub}/`} className={styles.card}>
             <span className={styles.ico}>{CARD_ICONS[sub] ?? '📄'}</span>
             <h3>{CARD_TITLES[sub] ?? sub}</h3>
@@ -201,6 +222,7 @@ function Body({slug}: Props): JSX.Element | null {
 
   const tier = primaryTier(user.roles || []);
   const orgHasIt = hasPrivilege(meta, user.privileges || []);
+  const managerViewOk = hasManagerView(user);
 
   return (
     <div className={styles.wrap}>
@@ -211,7 +233,7 @@ function Body({slug}: Props): JSX.Element | null {
       <p className={styles.description}>{meta.description}</p>
       <span className={styles.audience}>{meta.who}</span>
       {orgHasIt ? (
-        <GetStartedCards slug={slug} tier={tier} />
+        <GetStartedCards slug={slug} tier={tier} managerViewOk={managerViewOk} />
       ) : (
         <UpsellBlock slug={slug} meta={meta} />
       )}

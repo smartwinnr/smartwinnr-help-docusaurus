@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Knowledge Hub",
-    "permalink": "/modules/knowledge-hub/"
+    "title": "Create & Manage",
+    "permalink": "/modules/knowledge-hub/create-and-manage"
   },
   "next": {
-    "title": "Understanding recent, trending and latest KHub items",
-    "permalink": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items"
+    "title": "For Learners",
+    "permalink": "/modules/knowledge-hub/for-learners"
   }
 }

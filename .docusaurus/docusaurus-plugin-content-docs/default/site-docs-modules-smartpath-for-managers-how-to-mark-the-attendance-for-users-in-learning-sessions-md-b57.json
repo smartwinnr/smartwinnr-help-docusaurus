@@ -38,11 +38,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to create Assignment in SmartPath?",
-    "permalink": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+    "title": "For Managers",
+    "permalink": "/modules/smartpath/for-managers"
   },
   "next": {
-    "title": "What are SmartPaths.",
-    "permalink": "/modules/smartpath/features/what-are-smartpaths"
+    "title": "Features",
+    "permalink": "/modules/smartpath/features"
   }
 }

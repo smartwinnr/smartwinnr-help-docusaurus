@@ -3,6 +3,11 @@
   "position": 3,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "For Learners",
+    "slug": "/modules/kpi-gamification/for-learners"
+  },
   "customProps": {
     "roles": [
       "user",

@@ -38,11 +38,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to update the thumbnail of a SmartFeed",
-    "permalink": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed"
+    "title": "For Learners",
+    "permalink": "/modules/smartfeed/for-learners"
   },
   "next": {
-    "title": "How to send a SmartFeed multiple times?",
-    "permalink": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times"
+    "title": "Assign & Schedule",
+    "permalink": "/modules/smartfeed/assign-and-schedule"
   }
 }

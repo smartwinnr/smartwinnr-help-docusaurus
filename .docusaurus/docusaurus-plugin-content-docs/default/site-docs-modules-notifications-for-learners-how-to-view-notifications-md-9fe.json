@@ -38,11 +38,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to add or remove users to a chat group?",
-    "permalink": "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group"
+    "title": "For Learners",
+    "permalink": "/modules/notifications/for-learners"
   },
   "next": {
-    "title": "What are Chat Groups?",
-    "permalink": "/modules/notifications/features/what-are-chat-groups"
+    "title": "Features",
+    "permalink": "/modules/notifications/features"
   }
 }

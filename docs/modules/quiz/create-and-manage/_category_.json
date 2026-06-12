@@ -3,6 +3,11 @@
   "position": 3,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Create & Manage",
+    "slug": "/modules/quiz/create-and-manage"
+  },
   "customProps": {
     "roles": [
       "editor",

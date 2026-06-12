@@ -37,11 +37,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Understanding the Learner Management Tab on the Quiz Dashboard",
-    "permalink": "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard"
+    "title": "Settings & Permissions",
+    "permalink": "/modules/quiz/settings-and-permissions"
   },
   "next": {
-    "title": "How 'Import question' is  different from 'Add New Question'?",
-    "permalink": "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question"
+    "title": "FAQs & Troubleshooting",
+    "permalink": "/modules/quiz/faqs-and-troubleshooting"
   }
 }

@@ -37,8 +37,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Quiz",
-    "permalink": "/modules/quiz/"
+    "title": "Create & Manage",
+    "permalink": "/modules/quiz/create-and-manage"
   },
   "next": {
     "title": "How to create an automatic quiz?",

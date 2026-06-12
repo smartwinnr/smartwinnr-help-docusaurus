@@ -36,11 +36,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Widgets",
-    "permalink": "/modules/cross-module/features/widgets"
+    "title": "Reports & Analytics",
+    "permalink": "/modules/cross-module/reports-and-analytics"
   },
   "next": {
-    "title": "How to Set Reminder for your Tasks",
-    "permalink": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks"
+    "title": "Settings & Permissions",
+    "permalink": "/modules/cross-module/settings-and-permissions"
   }
 }

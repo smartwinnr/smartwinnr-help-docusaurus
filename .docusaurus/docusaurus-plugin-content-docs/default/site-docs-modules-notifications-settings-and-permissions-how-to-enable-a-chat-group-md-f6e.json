@@ -37,8 +37,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Bulk Custom Notifications",
-    "permalink": "/modules/notifications/features/bulk-custom-notifications"
+    "title": "Settings & Permissions",
+    "permalink": "/modules/notifications/settings-and-permissions"
   },
   "next": {
     "title": "Cross-Module Features",

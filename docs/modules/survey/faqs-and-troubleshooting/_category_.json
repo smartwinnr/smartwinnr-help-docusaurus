@@ -3,6 +3,11 @@
   "position": 9,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "FAQs & Troubleshooting",
+    "slug": "/modules/survey/faqs-and-troubleshooting"
+  },
   "customProps": {
     "roles": [
       "user",

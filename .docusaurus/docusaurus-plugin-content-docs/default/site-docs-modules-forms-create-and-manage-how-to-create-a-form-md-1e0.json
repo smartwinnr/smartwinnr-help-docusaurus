@@ -37,8 +37,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Forms",
-    "permalink": "/modules/forms/"
+    "title": "Create & Manage",
+    "permalink": "/modules/forms/create-and-manage"
   },
   "next": {
     "title": "How to Edit a Form on submitted by a user?",

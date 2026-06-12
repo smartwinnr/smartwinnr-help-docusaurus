@@ -38,11 +38,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "How to Create Field mapping",
-    "permalink": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping"
+    "title": "For Managers",
+    "permalink": "/modules/field-coaching/for-managers"
   },
   "next": {
-    "title": "How to add Competencies for Field Coaching",
-    "permalink": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching"
+    "title": "Features",
+    "permalink": "/modules/field-coaching/features"
   }
 }

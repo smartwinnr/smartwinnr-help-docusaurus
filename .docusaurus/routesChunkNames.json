@@ -6,17 +6,17 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-2d5": {
+  "/-816": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-bc6": {
+  "/-196": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-113": {
+  "/-f79": {
     "__comp": "a94703ab"
   },
   "/administration/access-permissions/access-permissions-a21": {
@@ -203,6 +203,10 @@
     "__comp": "17896441",
     "content": "39c6abf0"
   },
+  "/modules/ai-coaching/faqs-and-troubleshooting-6d5": {
+    "__comp": "14eb3368",
+    "__props": "6afd60c5"
+  },
   "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses-5e0": {
     "__comp": "17896441",
     "content": "ac1b74ba"
@@ -211,9 +215,17 @@
     "__comp": "17896441",
     "content": "523b42c9"
   },
+  "/modules/ai-coaching/features-d57": {
+    "__comp": "14eb3368",
+    "__props": "81767bab"
+  },
   "/modules/ai-coaching/features/what-is-ai-coaching-180": {
     "__comp": "17896441",
     "content": "a91405bf"
+  },
+  "/modules/ai-coaching/for-learners-bfe": {
+    "__comp": "14eb3368",
+    "__props": "e34f47ac"
   },
   "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt-7ae": {
     "__comp": "17896441",
@@ -227,9 +239,17 @@
     "__comp": "17896441",
     "content": "8d778ea8"
   },
+  "/modules/ai-coaching/for-managers-b84": {
+    "__comp": "14eb3368",
+    "__props": "fb1bb908"
+  },
   "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager-927": {
     "__comp": "17896441",
     "content": "4b6a2977"
+  },
+  "/modules/ai-coaching/reports-and-analytics-920": {
+    "__comp": "14eb3368",
+    "__props": "a6d4cb29"
   },
   "/modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report-07e": {
     "__comp": "17896441",
@@ -275,6 +295,10 @@
     "__comp": "17896441",
     "content": "0d374e2d"
   },
+  "/modules/cross-module/create-and-manage-818": {
+    "__comp": "14eb3368",
+    "__props": "300a9c5e"
+  },
   "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content-8d8": {
     "__comp": "17896441",
     "content": "c64d7f47"
@@ -303,6 +327,10 @@
     "__comp": "17896441",
     "content": "2c3e81e1"
   },
+  "/modules/cross-module/features-91d": {
+    "__comp": "14eb3368",
+    "__props": "643f3199"
+  },
   "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content-87d": {
     "__comp": "17896441",
     "content": "70908c09"
@@ -314,6 +342,10 @@
   "/modules/cross-module/features/widgets-941": {
     "__comp": "17896441",
     "content": "4c8b2c5b"
+  },
+  "/modules/cross-module/for-learners-f2b": {
+    "__comp": "14eb3368",
+    "__props": "50c357b2"
   },
   "/modules/cross-module/for-learners/how-can-i-answer-a-query-51d": {
     "__comp": "17896441",
@@ -335,9 +367,17 @@
     "__comp": "17896441",
     "content": "242e34cb"
   },
+  "/modules/cross-module/reports-and-analytics-c1d": {
+    "__comp": "14eb3368",
+    "__props": "83e0ebef"
+  },
   "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report-0b2": {
     "__comp": "17896441",
     "content": "6aba3d20"
+  },
+  "/modules/cross-module/settings-and-permissions-be7": {
+    "__comp": "14eb3368",
+    "__props": "046f1934"
   },
   "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks-856": {
     "__comp": "17896441",
@@ -347,6 +387,10 @@
     "__comp": "17896441",
     "content": "73e22a83"
   },
+  "/modules/field-coaching/create-and-manage-93f": {
+    "__comp": "14eb3368",
+    "__props": "7f0d7e69"
+  },
   "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template-79b": {
     "__comp": "17896441",
     "content": "74a5ef1c"
@@ -354,6 +398,10 @@
   "/modules/field-coaching/create-and-manage/how-to-create-field-mapping-47a": {
     "__comp": "17896441",
     "content": "1dd983de"
+  },
+  "/modules/field-coaching/features-4f9": {
+    "__comp": "14eb3368",
+    "__props": "c06ed6ae"
   },
   "/modules/field-coaching/features/create-a-coaching-9df": {
     "__comp": "17896441",
@@ -363,6 +411,10 @@
     "__comp": "17896441",
     "content": "cbf7edef"
   },
+  "/modules/field-coaching/for-managers-fd8": {
+    "__comp": "14eb3368",
+    "__props": "5434e34a"
+  },
   "/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile-186": {
     "__comp": "17896441",
     "content": "5a465882"
@@ -370,6 +422,10 @@
   "/modules/forms/-ba4": {
     "__comp": "17896441",
     "content": "5f3a0a9a"
+  },
+  "/modules/forms/create-and-manage-226": {
+    "__comp": "14eb3368",
+    "__props": "c3b9cd99"
   },
   "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form-b25": {
     "__comp": "17896441",
@@ -383,6 +439,10 @@
     "__comp": "17896441",
     "content": "b51ff81d"
   },
+  "/modules/forms/features-569": {
+    "__comp": "14eb3368",
+    "__props": "4a71a4fe"
+  },
   "/modules/forms/features/how-to-approve-reject-a-form-submission-73f": {
     "__comp": "17896441",
     "content": "0af3e9ec"
@@ -390,6 +450,10 @@
   "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user-f53": {
     "__comp": "17896441",
     "content": "6b6a4119"
+  },
+  "/modules/forms/for-learners-35c": {
+    "__comp": "14eb3368",
+    "__props": "df26306a"
   },
   "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat-89a": {
     "__comp": "17896441",
@@ -403,6 +467,10 @@
     "__comp": "17896441",
     "content": "90597ac5"
   },
+  "/modules/forms/for-managers-19f": {
+    "__comp": "14eb3368",
+    "__props": "10ded164"
+  },
   "/modules/forms/for-managers/how-managers-approve-form-bd9": {
     "__comp": "17896441",
     "content": "8ad8a185"
@@ -410,6 +478,10 @@
   "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view-4da": {
     "__comp": "17896441",
     "content": "112417a0"
+  },
+  "/modules/forms/reports-and-analytics-2cc": {
+    "__comp": "14eb3368",
+    "__props": "af2500e8"
   },
   "/modules/forms/reports-and-analytics/form-analytics-18a": {
     "__comp": "17896441",
@@ -419,9 +491,17 @@
     "__comp": "17896441",
     "content": "6c93295d"
   },
+  "/modules/knowledge-hub/create-and-manage-fdc": {
+    "__comp": "14eb3368",
+    "__props": "9f85743d"
+  },
   "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub-302": {
     "__comp": "17896441",
     "content": "12eb811e"
+  },
+  "/modules/knowledge-hub/features-661": {
+    "__comp": "14eb3368",
+    "__props": "1f8299f8"
   },
   "/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name-f88": {
     "__comp": "17896441",
@@ -435,6 +515,10 @@
     "__comp": "17896441",
     "content": "bf269338"
   },
+  "/modules/knowledge-hub/for-learners-930": {
+    "__comp": "14eb3368",
+    "__props": "a2886702"
+  },
   "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app-329": {
     "__comp": "17896441",
     "content": "53b1a070"
@@ -442,6 +526,10 @@
   "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items-599": {
     "__comp": "17896441",
     "content": "996b62c4"
+  },
+  "/modules/knowledge-hub/reports-and-analytics-25a": {
+    "__comp": "14eb3368",
+    "__props": "ef7778dc"
   },
   "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics-9c5": {
     "__comp": "17896441",
@@ -451,9 +539,17 @@
     "__comp": "17896441",
     "content": "bbeac347"
   },
+  "/modules/kpi-gamification/assign-and-schedule-150": {
+    "__comp": "14eb3368",
+    "__props": "ad8155f4"
+  },
   "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment-069": {
     "__comp": "17896441",
     "content": "79ce6767"
+  },
+  "/modules/kpi-gamification/create-and-manage-6f9": {
+    "__comp": "14eb3368",
+    "__props": "0cd91edd"
   },
   "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition-ee8": {
     "__comp": "17896441",
@@ -539,6 +635,10 @@
     "__comp": "17896441",
     "content": "6d06712f"
   },
+  "/modules/kpi-gamification/features-f10": {
+    "__comp": "14eb3368",
+    "__props": "7613abf5"
+  },
   "/modules/kpi-gamification/features/define-kpis-825": {
     "__comp": "17896441",
     "content": "1027c82c"
@@ -587,6 +687,10 @@
     "__comp": "17896441",
     "content": "ae394159"
   },
+  "/modules/kpi-gamification/for-learners-d68": {
+    "__comp": "14eb3368",
+    "__props": "341f789f"
+  },
   "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard-ef8": {
     "__comp": "17896441",
     "content": "427cd8f8"
@@ -594,6 +698,10 @@
   "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard-6ed": {
     "__comp": "17896441",
     "content": "5f7fcddd"
+  },
+  "/modules/kpi-gamification/for-managers-431": {
+    "__comp": "14eb3368",
+    "__props": "8cb88a9f"
   },
   "/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app-65f": {
     "__comp": "17896441",
@@ -607,9 +715,17 @@
     "__comp": "17896441",
     "content": "8cf4007e"
   },
+  "/modules/notifications/create-and-manage-7d0": {
+    "__comp": "14eb3368",
+    "__props": "efba0618"
+  },
   "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group-e5f": {
     "__comp": "17896441",
     "content": "8e02ae5f"
+  },
+  "/modules/notifications/features-5be": {
+    "__comp": "14eb3368",
+    "__props": "4edb8085"
   },
   "/modules/notifications/features/bulk-custom-notifications-31f": {
     "__comp": "17896441",
@@ -635,9 +751,17 @@
     "__comp": "17896441",
     "content": "dc71a392"
   },
+  "/modules/notifications/for-learners-58c": {
+    "__comp": "14eb3368",
+    "__props": "f1c80e3c"
+  },
   "/modules/notifications/for-learners/how-to-view-notifications-82b": {
     "__comp": "17896441",
     "content": "9fe0dc1e"
+  },
+  "/modules/notifications/settings-and-permissions-159": {
+    "__comp": "14eb3368",
+    "__props": "3d176a8e"
   },
   "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group-d5d": {
     "__comp": "17896441",
@@ -646,6 +770,10 @@
   "/modules/quiz/-2ae": {
     "__comp": "17896441",
     "content": "a222c269"
+  },
+  "/modules/quiz/create-and-manage-d20": {
+    "__comp": "14eb3368",
+    "__props": "2fd984df"
   },
   "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz-8ff": {
     "__comp": "17896441",
@@ -683,6 +811,10 @@
     "__comp": "17896441",
     "content": "ed98860e"
   },
+  "/modules/quiz/faqs-and-troubleshooting-3d5": {
+    "__comp": "14eb3368",
+    "__props": "81903a7d"
+  },
   "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question-62f": {
     "__comp": "17896441",
     "content": "837ec010"
@@ -690,6 +822,10 @@
   "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code-511": {
     "__comp": "17896441",
     "content": "682ead27"
+  },
+  "/modules/quiz/features-6a9": {
+    "__comp": "14eb3368",
+    "__props": "8144660a"
   },
   "/modules/quiz/features/how-to-add-a-video-to-a-question-182": {
     "__comp": "17896441",
@@ -763,6 +899,10 @@
     "__comp": "17896441",
     "content": "1b96a09b"
   },
+  "/modules/quiz/for-learners-21c": {
+    "__comp": "14eb3368",
+    "__props": "d907102d"
+  },
   "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr-4e6": {
     "__comp": "17896441",
     "content": "5655db5e"
@@ -770,6 +910,10 @@
   "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-f97": {
     "__comp": "17896441",
     "content": "0e044b35"
+  },
+  "/modules/quiz/for-managers-d1e": {
+    "__comp": "14eb3368",
+    "__props": "c3edd27d"
   },
   "/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team-b29": {
     "__comp": "17896441",
@@ -782,6 +926,10 @@
   "/modules/quiz/for-managers/quiz-analytics-through-charts-884": {
     "__comp": "17896441",
     "content": "e1751ad6"
+  },
+  "/modules/quiz/reports-and-analytics-2ad": {
+    "__comp": "14eb3368",
+    "__props": "38b0eac1"
   },
   "/modules/quiz/reports-and-analytics/detailed-quiz-analytics-a2c": {
     "__comp": "17896441",
@@ -823,6 +971,10 @@
     "__comp": "17896441",
     "content": "44288250"
   },
+  "/modules/quiz/settings-and-permissions-a31": {
+    "__comp": "14eb3368",
+    "__props": "5182930e"
+  },
   "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes-774": {
     "__comp": "17896441",
     "content": "28d35184"
@@ -831,6 +983,10 @@
     "__comp": "17896441",
     "content": "1cef5bb8"
   },
+  "/modules/smartfeed/assign-and-schedule-bc3": {
+    "__comp": "14eb3368",
+    "__props": "1fafd9b7"
+  },
   "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times-50a": {
     "__comp": "17896441",
     "content": "f9f5b62c"
@@ -838,6 +994,10 @@
   "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams-f2e": {
     "__comp": "17896441",
     "content": "77c4d9d7"
+  },
+  "/modules/smartfeed/create-and-manage-29c": {
+    "__comp": "14eb3368",
+    "__props": "707ac202"
   },
   "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-5f8": {
     "__comp": "17896441",
@@ -863,6 +1023,10 @@
     "__comp": "17896441",
     "content": "366e2ddb"
   },
+  "/modules/smartfeed/features-bcb": {
+    "__comp": "14eb3368",
+    "__props": "f375f024"
+  },
   "/modules/smartfeed/features/how-to-view-all-the-smartfeeds-0b3": {
     "__comp": "17896441",
     "content": "01aa7504"
@@ -871,9 +1035,17 @@
     "__comp": "17896441",
     "content": "1e3ac51a"
   },
+  "/modules/smartfeed/for-learners-bea": {
+    "__comp": "14eb3368",
+    "__props": "38317974"
+  },
   "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed-0a7": {
     "__comp": "17896441",
     "content": "53ef7f4b"
+  },
+  "/modules/smartfeed/reports-and-analytics-5f6": {
+    "__comp": "14eb3368",
+    "__props": "3820ccca"
   },
   "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics-14a": {
     "__comp": "17896441",
@@ -883,9 +1055,17 @@
     "__comp": "17896441",
     "content": "ef870ed1"
   },
+  "/modules/smartpath/assign-and-schedule-11e": {
+    "__comp": "14eb3368",
+    "__props": "6a616077"
+  },
   "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath-bb5": {
     "__comp": "17896441",
     "content": "6db998e6"
+  },
+  "/modules/smartpath/create-and-manage-982": {
+    "__comp": "14eb3368",
+    "__props": "5b63cef1"
   },
   "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module-fd8": {
     "__comp": "17896441",
@@ -923,6 +1103,10 @@
     "__comp": "17896441",
     "content": "903376e4"
   },
+  "/modules/smartpath/features-274": {
+    "__comp": "14eb3368",
+    "__props": "dbcc779c"
+  },
   "/modules/smartpath/features/how-can-i-gamify-a-smartpath-ab5": {
     "__comp": "17896441",
     "content": "4269fe76"
@@ -939,6 +1123,10 @@
     "__comp": "17896441",
     "content": "aa0539dd"
   },
+  "/modules/smartpath/for-learners-383": {
+    "__comp": "14eb3368",
+    "__props": "63b6ca98"
+  },
   "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own-eb0": {
     "__comp": "17896441",
     "content": "c25f5137"
@@ -947,9 +1135,17 @@
     "__comp": "17896441",
     "content": "a8aa809f"
   },
+  "/modules/smartpath/for-managers-462": {
+    "__comp": "14eb3368",
+    "__props": "2ac95766"
+  },
   "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions-cb6": {
     "__comp": "17896441",
     "content": "b57736ec"
+  },
+  "/modules/smartpath/reports-and-analytics-303": {
+    "__comp": "14eb3368",
+    "__props": "c1ffa37d"
   },
   "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-3d7": {
     "__comp": "17896441",
@@ -971,6 +1167,10 @@
     "__comp": "17896441",
     "content": "da790cd7"
   },
+  "/modules/smartpath/settings-and-permissions-b84": {
+    "__comp": "14eb3368",
+    "__props": "b229904e"
+  },
   "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-dc5": {
     "__comp": "17896441",
     "content": "5a7f6319"
@@ -979,9 +1179,17 @@
     "__comp": "17896441",
     "content": "3ba65834"
   },
+  "/modules/survey/assign-and-schedule-87d": {
+    "__comp": "14eb3368",
+    "__props": "3fe5813c"
+  },
   "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr-4b0": {
     "__comp": "17896441",
     "content": "1ca08159"
+  },
+  "/modules/survey/create-and-manage-7b8": {
+    "__comp": "14eb3368",
+    "__props": "cb98710c"
   },
   "/modules/survey/create-and-manage/how-to-create-a-survey-a19": {
     "__comp": "17896441",
@@ -999,13 +1207,25 @@
     "__comp": "17896441",
     "content": "214ead64"
   },
+  "/modules/survey/faqs-and-troubleshooting-c79": {
+    "__comp": "14eb3368",
+    "__props": "bfa17fe7"
+  },
   "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template-de0": {
     "__comp": "17896441",
     "content": "aca2ba7a"
   },
+  "/modules/survey/features-fce": {
+    "__comp": "14eb3368",
+    "__props": "4d56dab4"
+  },
   "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template-856": {
     "__comp": "17896441",
     "content": "676e8050"
+  },
+  "/modules/survey/reports-and-analytics-16d": {
+    "__comp": "14eb3368",
+    "__props": "e18a1413"
   },
   "/modules/survey/reports-and-analytics/survey-analytics-b19": {
     "__comp": "17896441",
@@ -1019,6 +1239,10 @@
     "__comp": "17896441",
     "content": "c82b06b6"
   },
+  "/modules/video-coaching/assign-and-schedule-a8a": {
+    "__comp": "14eb3368",
+    "__props": "20a9bcff"
+  },
   "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment-0e5": {
     "__comp": "17896441",
     "content": "733d4192"
@@ -1031,6 +1255,10 @@
     "__comp": "17896441",
     "content": "f0175c7e"
   },
+  "/modules/video-coaching/create-and-manage-368": {
+    "__comp": "14eb3368",
+    "__props": "3883cef7"
+  },
   "/modules/video-coaching/create-and-manage/how-to-create-field-coaching-d0e": {
     "__comp": "17896441",
     "content": "baef19b2"
@@ -1042,6 +1270,10 @@
   "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager-43b": {
     "__comp": "17896441",
     "content": "51d149fc"
+  },
+  "/modules/video-coaching/for-learners-5d5": {
+    "__comp": "14eb3368",
+    "__props": "d16fe30c"
   },
   "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video-8fb": {
     "__comp": "17896441",
@@ -1059,6 +1291,10 @@
     "__comp": "17896441",
     "content": "01ee996a"
   },
+  "/modules/video-coaching/for-managers-1dc": {
+    "__comp": "14eb3368",
+    "__props": "3deec2cb"
+  },
   "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-517": {
     "__comp": "17896441",
     "content": "13ab294e"
@@ -1066,6 +1302,10 @@
   "/modules/video-coaching/for-managers/what-is-my-team-coaching-df7": {
     "__comp": "17896441",
     "content": "0e22be25"
+  },
+  "/modules/video-coaching/settings-and-permissions-243": {
+    "__comp": "14eb3368",
+    "__props": "f9e9662a"
   },
   "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching-6d1": {
     "__comp": "17896441",
