@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/assign-and-schedule/66448bf460cfc03ad3491583",
   "title": "How to Award Points on Badge Assignment",
-  "description": "",
+  "description": "Before you go ahead with the assignment, You'll have to create the required badges.",
   "source": "@site/docs/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment.md",
   "sourceDirName": "modules/kpi-gamification/assign-and-schedule",
   "slug": "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 288,
   "frontMatter": {
     "id": "66448bf460cfc03ad3491583",
     "title": "How to Award Points on Badge Assignment",
-    "description": "",
+    "description": "Before you go ahead with the assignment, You'll have to create the required badges.",
     "slug": "how-to-award-points-on-badge-assignment",
     "sidebar_position": 288,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

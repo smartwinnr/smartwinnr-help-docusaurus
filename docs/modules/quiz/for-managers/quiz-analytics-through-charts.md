@@ -1,19 +1,25 @@
 ---
 id: 5fd997c6a5d295659b369555
-title: "Quiz Analytics through Charts"
-description: ""
+title: Quiz Analytics through Charts
+description: >-
+  SmartWinnr allows you to analytics the knowledge of your team based on their
+  performance in the quizzes assigned to them.
 slug: quiz-analytics-through-charts
 sidebar_position: 98
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd997c6a5d295659b369555
-  helpscout_url: https://help.smartwinnr.com/article/98-analytics-through-charts
+  helpscout_url: 'https://help.smartwinnr.com/article/98-analytics-through-charts'
 customProps:
-  roles: [manager, editor, admin]
+  roles:
+    - manager
+    - editor
+    - admin
   privilege: managerView
-tags: []
+tags:
+  - quiz
 ---
 ### Overall Team Analytics through Charts
 
@@ -23,7 +29,7 @@ To access the quiz analytics page for your team, go to Left Menu >> Quiz >> Clic
 
 This will take you through the team Analytics which is represented with several graphs.
 
-![](https://lh4.googleusercontent.com/nmza_2Ag6Vjj3kRuaGjPDcVg_qdOOB5P0C93_XrNVPRNSie91zIkpsOUSwA_BhRAmxZRxZtl9C_r7zY7ia0FzFDpTvt-L5B6MN7IBagho0WSQiwDH-yd6mqSOE9hYdC--fLwGBWm)
+![This will take you through the team Analytics which is represented with several graphs.](https://lh4.googleusercontent.com/nmza_2Ag6Vjj3kRuaGjPDcVg_qdOOB5P0C93_XrNVPRNSie91zIkpsOUSwA_BhRAmxZRxZtl9C_r7zY7ia0FzFDpTvt-L5B6MN7IBagho0WSQiwDH-yd6mqSOE9hYdC--fLwGBWm)
 
 Following are the brief description of each graph in the Team Analytics:
 
@@ -31,21 +37,21 @@ Following are the brief description of each graph in the Team Analytics:
 
 This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboarding, Compliance etc. This will help you to identify the areas of strength and areas of improvement in your team.
 
-![](https://lh6.googleusercontent.com/I0iuxW7LsucvJZ8XUVOeIGCeu_HCTUTQuRNfU7sN3jx_CzD-0GH2GoMsxjHLs-zSVXeZaT2F-0Te1KyepF0uYW7T_er5ZxvjMOasxIG14eQc26af-yf-oqhlDsCYY9dDn9Q1NkYC)
+![This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboard](https://lh6.googleusercontent.com/I0iuxW7LsucvJZ8XUVOeIGCeu_HCTUTQuRNfU7sN3jx_CzD-0GH2GoMsxjHLs-zSVXeZaT2F-0Te1KyepF0uYW7T_er5ZxvjMOasxIG14eQc26af-yf-oqhlDsCYY9dDn9Q1NkYC)
 
 You can change the category to see other areas by clicking on the Filter button.
 
-![](https://lh3.googleusercontent.com/rM6cypG0oFrfjGazXbG64ETDar5fzEKW9rmBQKbZolt9KZVn3n9iouINfBFxI06wNUIc0hTwetgs1-i_Lmkqa4uuf4cTUw96iayqwoS52exQzATu6Uc6PHMqPmH_iFail6ilt2FQ)
+![You can change the category to see other areas by clicking on the Filter button.](https://lh3.googleusercontent.com/rM6cypG0oFrfjGazXbG64ETDar5fzEKW9rmBQKbZolt9KZVn3n9iouINfBFxI06wNUIc0hTwetgs1-i_Lmkqa4uuf4cTUw96iayqwoS52exQzATu6Uc6PHMqPmH_iFail6ilt2FQ)
 
 2\. Detailed Performance by Quiz Category and Territory
 
 This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.
 
-                                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/551)
+                                                                                 ![This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.](https://support.smartwinnr.com/api/v1/attachments/551)
 
 Click on the Filter option to filter it with the territory, business function, distributors, and more.
 
-                                                                               ![](https://support.smartwinnr.com/api/v1/attachments/552)
+                                                                               ![Click on the Filter option to filter it with the territory, business function, distributors, and more.](https://support.smartwinnr.com/api/v1/attachments/552)
 
 3\. Compare Each Team Member by Quiz Category
 
@@ -53,10 +59,10 @@ You will be able to select team members and compare their performance across dif
 
 Click on the 'Select Members' button to select specific members in your team.
 
-                                                                              ![](https://support.smartwinnr.com/api/v1/attachments/553)
+                                                                              ![Click on the 'Select Members' button to select specific members in your team.](https://support.smartwinnr.com/api/v1/attachments/553)
 
 4\. Compare your Team's Performance vs Organization Average
 
 Check how your team stands with respect to the rest of the organization.
 
-                                                                                ![](https://support.smartwinnr.com/api/v1/attachments/554)
+                                                                                ![Check how your team stands with respect to the rest of the organization.](https://support.smartwinnr.com/api/v1/attachments/554)

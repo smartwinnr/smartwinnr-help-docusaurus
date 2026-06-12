@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/features/60deaa9261c60c534bd6b92e",
   "title": "Widgets",
-  "description": "",
+  "description": "SmartWinnr provides various types of performance analytics on your sales performance in the form of Widgets.",
   "source": "@site/docs/modules/cross-module/features/widgets.md",
   "sourceDirName": "modules/cross-module/features",
   "slug": "/modules/cross-module/features/widgets",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "60deaa9261c60c534bd6b92e",
     "title": "Widgets",
-    "description": "",
+    "description": "SmartWinnr provides various types of performance analytics on your sales performance in the form of Widgets.",
     "slug": "widgets",
     "sidebar_position": 257,
     "last_update": {

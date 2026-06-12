@@ -1,18 +1,23 @@
 ---
 id: 696cf34e0ef05b444cde8d3c
-title: "How to Update Users"
-description: ""
+title: How to Update Users
+description: >-
+  SmartWinnr allows administrators to update user details individually through
+  the backend portal.
 slug: how-to-update-users
 sidebar_position: 298
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696cf34e0ef05b444cde8d3c
-  helpscout_url: https://help.smartwinnr.com/article/298-how-to-update-users
+  helpscout_url: 'https://help.smartwinnr.com/article/298-how-to-update-users'
 customProps:
-  roles: [editor, admin]
-tags: []
+  roles:
+    - editor
+    - admin
+tags:
+  - admin
 ---
 ## How to Update a User Individually in SmartWinnr
 
@@ -29,14 +34,14 @@ SmartWinnr allows administrators to update user details individually through the
 * Go to **ADMIN > Manage Users**.
 * The user list page will open, displaying all users in your organization.
 
-![](/img/helpscout/editors/how-to-update-users-1.png)
+![Step 2: Navigate to Manage Users](/img/helpscout/editors/how-to-update-users-1.png)
 
 ### Step 3: Search for the User
 
 * Use the **search bar** or available **filters** (Name, Email ID, Business Unit, Role, etc.) to locate the user you want to update.
 * Click on the **user name** to open the user profile.
 
-![](/img/helpscout/editors/how-to-update-users-2.png)
+![Step 3: Search for the User](/img/helpscout/editors/how-to-update-users-2.png)
 
 ### Step 4: Edit User Details
 
@@ -94,7 +99,7 @@ SmartWinnr allows administrators to update multiple users at once using a **CSV 
 * Go to **ADMIN > Manage Users > Hamburger Menu>Add Users in Bulk**
 * This page allows you to upload or update users in bulk using a CSV file.
 
-![](/img/helpscout/editors/how-to-update-users-4.png)
+![Step 2: Navigate to Bulk User Upload](/img/helpscout/editors/how-to-update-users-4.png)
 
 ### Step 3: Download the Sample CSV File
 

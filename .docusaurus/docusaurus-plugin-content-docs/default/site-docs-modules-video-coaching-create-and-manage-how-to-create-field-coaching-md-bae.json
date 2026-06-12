@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/create-and-manage/60a4febd13fd125a39b4516e",
   "title": "How to create Field Coaching",
-  "description": "",
+  "description": "Only the user with editor role can create a field coaching",
   "source": "@site/docs/modules/video-coaching/create-and-manage/how-to-create-field-coaching.md",
   "sourceDirName": "modules/video-coaching/create-and-manage",
   "slug": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/create-and-manage/how-to-create-field-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 235,
   "frontMatter": {
     "id": "60a4febd13fd125a39b4516e",
     "title": "How to create Field Coaching",
-    "description": "",
+    "description": "Only the user with editor role can create a field coaching",
     "slug": "how-to-create-field-coaching",
     "sidebar_position": 235,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

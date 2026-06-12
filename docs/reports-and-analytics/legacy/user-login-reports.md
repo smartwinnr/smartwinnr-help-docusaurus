@@ -1,23 +1,27 @@
 ---
 id: 5fdae19bb624c71b7985a579
-title: "User Login reports"
-description: ""
+title: User Login reports
+description: >-
+  Go to Left Menu >> Admin >> Reports>> User Login Reports, this will open the
+  following page
 slug: user-login-reports
 sidebar_position: 143
 last_update:
-  date: 2021-03-18
+  date: 2021-03-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdae19bb624c71b7985a579
-  helpscout_url: https://help.smartwinnr.com/article/143-user-login-reports
+  helpscout_url: 'https://help.smartwinnr.com/article/143-user-login-reports'
 customProps:
-  roles: [admin]
+  roles:
+    - admin
   privilege: learnerReport
-tags: []
+tags:
+  - reports
 ---
 Go to **Left Menu >> Admin >> Reports>> User Login Reports**, this will open the following page
 
-![](https://support.smartwinnr.com/api/v1/attachments/1118)
+![Go to Left Menu >> Admin >> Reports>> User Login Reports, this will open the following page](https://support.smartwinnr.com/api/v1/attachments/1118)
 
 You can search for a specific user to find if he has logged in or not by various criteria's which are as follows:
 
@@ -29,7 +33,7 @@ To learn more about Advanced Search, [Click here.](http://support.smartwinnr.com
 
 Here, you can find three different types of login reports:
 
-![](/img/helpscout/admins/user-login-reports-2.png)
+![Here, you can find three different types of login reports:](/img/helpscout/admins/user-login-reports-2.png)
 
 * Initial login report - This will give you the list of users who have completed their initial login into the SmartWinnr account.
 * All Login Reports - This will give you the report of all users who have logged into their SmartWinnr account for the selected date range. This will also give you two type of reports - the total number of users who have logged into the system of a specific date range and number of times each user have logged in to their account.
@@ -45,4 +49,4 @@ After the appropriate setting of filters, you can download the analytics report 
 1. Image: click on the image icon.
 2. Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format
 
-![](/img/helpscout/admins/user-login-reports-3.png)
+![Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format](/img/helpscout/admins/user-login-reports-3.png)

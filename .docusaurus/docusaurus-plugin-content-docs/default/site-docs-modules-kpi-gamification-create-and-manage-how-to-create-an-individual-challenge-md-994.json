@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fdb15d60b11ce44f63931e1",
   "title": "How to create an Individual Challenge?",
-  "description": "",
+  "description": "Follow the below steps in order to create an individual challenge:",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 179,
   "frontMatter": {
     "id": "5fdb15d60b11ce44f63931e1",
     "title": "How to create an Individual Challenge?",
-    "description": "",
+    "description": "Follow the below steps in order to create an individual challenge:",
     "slug": "how-to-create-an-individual-challenge",
     "sidebar_position": 179,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

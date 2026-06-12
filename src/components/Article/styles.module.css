@@ -1,0 +1,143 @@
+/* Article chrome — read-time chip, feedback footer, related strip.
+ * All token-driven; nothing hard-coded. See plan §15.2. */
+
+/* ───────── MetaChip ─────────────────────────────────────────────────── */
+/* Width inherited from the .sw-prose-column wrapper (plan §16). */
+.metaChip {
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  letter-spacing: var(--tr-caption);
+  color: var(--ifm-color-content-secondary);
+  font-variant-numeric: tabular-nums;
+  margin: calc(-1 * var(--space-2)) 0 var(--space-5);
+}
+
+/* ───────── FeedbackFooter ───────────────────────────────────────────── */
+.feedback {
+  margin: var(--space-7) 0 var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+}
+.feedbackPrompt {
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-semibold);
+  color: var(--ifm-heading-color);
+  margin: 0 0 var(--space-3);
+}
+.feedbackThanks {
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--ifm-color-content-secondary);
+  margin: 0;
+}
+.feedbackRow {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.feedbackBtn,
+.feedbackBtnGhost {
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-body-sm);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.feedbackBtn {
+  background: var(--ifm-color-primary);
+  color: white;
+  border: 1px solid var(--ifm-color-primary);
+}
+.feedbackBtn:hover { background: var(--ifm-color-primary-dark); }
+.feedbackBtnGhost {
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+.feedbackBtnGhost:hover { border-color: var(--ifm-color-primary); }
+.feedbackInput {
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--ifm-color-content);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  resize: vertical;
+  outline: none;
+}
+.feedbackInput:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+}
+
+/* ───────── RelatedStrip ─────────────────────────────────────────────── */
+.related {
+  margin: var(--space-7) 0 var(--space-5);
+}
+.relatedHead {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--tr-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--ifm-heading-color);
+  margin: 0 0 var(--space-3);
+}
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+.relatedCard {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  padding: var(--space-3) var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  transition: border-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.relatedCard:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+  text-decoration: none;
+  color: inherit;
+}
+.relatedCard strong {
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-semibold);
+  color: var(--ifm-heading-color);
+  /* Cap titles at 2 lines so 3- and 4-line wraps don't unbalance the row. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.relatedDesc {
+  font-size: var(--text-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--ifm-color-content-secondary);
+  /* Truncate descriptions to 2 lines with an ellipsis. Full text remains
+   * in the DOM for screen readers and search indexing. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}

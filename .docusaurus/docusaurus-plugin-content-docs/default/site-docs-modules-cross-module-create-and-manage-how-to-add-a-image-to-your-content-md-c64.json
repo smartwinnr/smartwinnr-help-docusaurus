@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/create-and-manage/5fd4ea8523119734ee37ee1f",
   "title": "How to add a image to your content?",
-  "description": "",
+  "description": "Images or pictures can be sent as content in your SmartFeed or attach to your Question in SmartWinnr.",
   "source": "@site/docs/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content.md",
   "sourceDirName": "modules/cross-module/create-and-manage",
   "slug": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 69,
   "frontMatter": {
     "id": "5fd4ea8523119734ee37ee1f",
     "title": "How to add a image to your content?",
-    "description": "",
+    "description": "Images or pictures can be sent as content in your SmartFeed or attach to your Question in SmartWinnr.",
     "slug": "how-to-add-a-image-to-your-content",
     "sidebar_position": 69,
     "last_update": {
@@ -32,7 +38,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

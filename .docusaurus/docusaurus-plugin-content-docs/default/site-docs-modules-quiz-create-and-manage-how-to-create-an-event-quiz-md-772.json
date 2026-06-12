@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/631c9fb5c713d51da3edd565",
   "title": "How to create an Event Quiz",
-  "description": "",
+  "description": "To create an event quiz, follow the below steps.",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-an-event-quiz.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-create-an-event-quiz",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-an-event-quiz.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 276,
   "frontMatter": {
     "id": "631c9fb5c713d51da3edd565",
     "title": "How to create an Event Quiz",
-    "description": "",
+    "description": "To create an event quiz, follow the below steps.",
     "slug": "how-to-create-an-event-quiz",
     "sidebar_position": 276,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

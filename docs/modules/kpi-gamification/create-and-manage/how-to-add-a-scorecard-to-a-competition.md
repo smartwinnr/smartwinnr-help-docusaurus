@@ -1,19 +1,25 @@
 ---
 id: 5fd9ff840b11ce44f6392c14
-title: "How to add a Scorecard to a Competition?"
-description: ""
+title: How to add a Scorecard to a Competition?
+description: 'Here are the steps to add a scorecard to a competition:'
 slug: how-to-add-a-scorecard-to-a-competition
 sidebar_position: 105
 last_update:
-  date: 2026-01-19
+  date: 2026-01-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd9ff840b11ce44f6392c14
-  helpscout_url: https://help.smartwinnr.com/article/105-how-to-add-a-scorecard-to-a-competition
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/105-how-to-add-a-scorecard-to-a-competition
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: competitions
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 Here are the steps to add a scorecard to a competition:
 
@@ -24,6 +30,6 @@ Here are the steps to add a scorecard to a competition:
 
 Below is a screenshot of adding a scorecard to a competition:
 
-![](/img/helpscout/editors/how-to-add-a-scorecard-to-a-competition-1.png)
+![Below is a screenshot of adding a scorecard to a competition:](/img/helpscout/editors/how-to-add-a-scorecard-to-a-competition-1.png)
 
 Then, click on the "Create" button.  The scorecard will be added to the competition successfully.

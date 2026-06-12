@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/for-managers/5fd758ea7129911ba1b20b11",
   "title": "What is 'My Team Coaching'?",
-  "description": "",
+  "description": "'My Team Coaching' enables the manager to view the coaching that has been assigned to all her team members.",
   "source": "@site/docs/modules/video-coaching/for-managers/what-is-my-team-coaching.md",
   "sourceDirName": "modules/video-coaching/for-managers",
   "slug": "/modules/video-coaching/for-managers/what-is-my-team-coaching",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-managers/what-is-my-team-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 89,
   "frontMatter": {
     "id": "5fd758ea7129911ba1b20b11",
     "title": "What is 'My Team Coaching'?",
-    "description": "",
+    "description": "'My Team Coaching' enables the manager to view the coaching that has been assigned to all her team members.",
     "slug": "what-is-my-team-coaching",
     "sidebar_position": 89,
     "last_update": {
@@ -34,7 +40,9 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "video-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,23 +1,28 @@
 ---
 id: 6971f071425fd115e68cbc7d
-title: "Understanding the Module Wise Analysis Tab on the SmartPath Dashboard"
-description: ""
+title: Understanding the Module Wise Analysis Tab on the SmartPath Dashboard
+description: Quiz Module Analysis
 slug: understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard
 sidebar_position: 327
 last_update:
-  date: 2026-02-06
+  date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f071425fd115e68cbc7d
-  helpscout_url: https://help.smartwinnr.com/article/327-understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/327-understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - reports
 ---
 ## Module Wise Analysis Tab
 
-![](/img/helpscout/editors/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard-1.png)
+![Module Wise Analysis Tab](/img/helpscout/editors/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard-1.png)
 
 Quiz Module Analysis
 
@@ -137,7 +142,7 @@ This section focuses on micro-learning content engagement.
 * **In Progress (orange)**: SmartFeed items currently being viewed (e.g., "0")
 * **Assigned (gray)**: SmartFeed items assigned but not accessed (e.g., "38")
 
-**Understanding the numbers:** With 226 active SmartFeeds but only 62 items shown in the completion status (24 completed + 0 in progress + 38 assigned), the remaining 164 SmartFeeds are available in SmartPaths but not yet assigned to specific learners. This is normal—not all content needs to be assigned.
+**Understanding the numbers:** With 226 active SmartFeeds but only 62 items shown in the completion status (24 completed + 0 in progress + 38 assigned), the remaining 164 SmartFeeds are available in SmartPaths but not yet assigned to specific learners. This is normal-not all content needs to be assigned.
 
 * * *
 
@@ -247,7 +252,7 @@ The dashboard updates automatically as learners engage with SmartPaths, so you a
 
 **For component distribution:**
 
-* Ensure a healthy mix of content types—all quizzes or all SmartFeed isn't ideal
+* Ensure a healthy mix of content types-all quizzes or all SmartFeed isn't ideal
 * Use surveys sparingly for targeted feedback
 * Balance assessments (quizzes) with learning content (SmartFeeds, SCORM)
 
@@ -275,7 +280,7 @@ The dashboard updates automatically as learners engage with SmartPaths, so you a
 
 **About SmartPaths:**
 
-* "Course" and "SmartPath" are used interchangeably—they mean the same thing
+* "Course" and "SmartPath" are used interchangeably-they mean the same thing
 * A single SmartPath can contain multiple quizzes, surveys, SmartFeeds, and SCORM courses
 * SmartPaths can be used for onboarding, certification, product training, or ongoing development
 
@@ -283,12 +288,12 @@ The dashboard updates automatically as learners engage with SmartPaths, so you a
 
 * Not all available modules need to be assigned to learners
 * A learner can complete modules without completing the entire SmartPath
-* "0% Completion" doesn't mean failure—it might mean the SmartPath just launched
+* "0% Completion" doesn't mean failure-it might mean the SmartPath just launched
 
 **About component distribution:**
 
 * The numbers in the Learning Component Distribution chart represent total instances across ALL active SmartPaths
-* These are not completion counts—they're availability counts
+* These are not completion counts-they're availability counts
 
 **About time filters:**
 

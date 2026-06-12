@@ -1,18 +1,23 @@
 ---
 id: 5fda4abb27288b7f895d61dd
-title: "Create users in bulk"
-description: ""
+title: Create users in bulk
+description: >-
+  SmartWinnr allows you to upload a CSV file to upload users in bulk. This is
+  useful when you have a large number of users to be added or modified.
 slug: create-users-in-bulk
 sidebar_position: 118
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda4abb27288b7f895d61dd
-  helpscout_url: https://help.smartwinnr.com/article/118-create-users-in-bulk
+  helpscout_url: 'https://help.smartwinnr.com/article/118-create-users-in-bulk'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 SmartWinnr allows you to upload a CSV file to upload users in bulk. This is useful when you have a large number of users to be added or modified. Email id is the key with which SmartWinnr searches existing records in the database. If the system finds existing records, it updates the record from the value in the CSV. If no existing records are found, then the system creates a new user.
 
@@ -20,7 +25,7 @@ SmartWinnr allows you to upload a CSV file to upload users in bulk. This is usef
 
 Go to ADMIN > Manage Users. Click on the “Add Users in Bulk” button from the hamburger menu.
 
-![](/img/helpscout/admins/create-users-in-bulk-1.png)
+![Go to ADMIN > Manage Users. Click on the “Add Users in Bulk” button from the hamburger menu.](/img/helpscout/admins/create-users-in-bulk-1.png)
 
 ## Step 2: Check and Map the File Sample
 
@@ -38,7 +43,7 @@ After initiating the bulk user upload process, verify and prepare the CSV file u
 
 The file needs to be in CSV format. For best result, save the spreadsheet as CSV UTF-8 (Comma delimited) Without UTF-8 encoding, non-English characters in the file might not display correctly.
 
-![](/img/helpscout/admins/create-users-in-bulk-2.png)
+![The file needs to be in CSV format. For best result, save the spreadsheet as CSV UTF-8 (Comma delimited) Without UTF-8 encoding, non-English](/img/helpscout/admins/create-users-in-bulk-2.png)
 
 ### Fill in User Details
 
@@ -54,7 +59,7 @@ The file needs to be in CSV format. For best result, save the spreadsheet as CSV
 
 Once the CSV file is correctly filled and validated, proceed to the next step to upload the file.
 
-![](/img/helpscout/admins/create-users-in-bulk-3.png)
+![Once the CSV file is correctly filled and validated, proceed to the next step to upload the file.](/img/helpscout/admins/create-users-in-bulk-3.png)
 
 ## Step-3. Set Password Options
 

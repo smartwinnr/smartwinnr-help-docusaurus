@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/features/5fdaf7eeb624c71b7985a5ad",
   "title": "How to download a chat?",
-  "description": "",
+  "description": "Follow the below steps in order to download the chat into a CSV file:",
   "source": "@site/docs/modules/notifications/features/how-to-download-a-chat.md",
   "sourceDirName": "modules/notifications/features",
   "slug": "/modules/notifications/features/how-to-download-a-chat",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/how-to-download-a-chat.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 156,
   "frontMatter": {
     "id": "5fdaf7eeb624c71b7985a5ad",
     "title": "How to download a chat?",
-    "description": "",
+    "description": "Follow the below steps in order to download the chat into a CSV file:",
     "slug": "how-to-download-a-chat",
     "sidebar_position": 156,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "chat"
     },
-    "tags": []
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

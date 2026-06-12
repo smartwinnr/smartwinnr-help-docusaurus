@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce03e7d580ce55a38b4d36",
   "title": "How can I login to SmartWinnr App?",
-  "description": "",
+  "description": "Open the installed SmartWinnr app from your IOS or Android device. This is the icon of the app:",
   "source": "@site/docs/get-started/onboarding/how-can-i-login-to-smartwinnr-app.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-login-to-smartwinnr-app",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce03e7d580ce55a38b4d36",
     "title": "How can I login to SmartWinnr App?",
-    "description": "",
+    "description": "Open the installed SmartWinnr app from your IOS or Android device. This is the icon of the app:",
     "slug": "how-can-i-login-to-smartwinnr-app",
     "sidebar_position": 10,
     "last_update": {

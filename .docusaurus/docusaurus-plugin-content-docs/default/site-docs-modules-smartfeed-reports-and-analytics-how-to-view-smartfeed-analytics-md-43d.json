@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/reports-and-analytics/5fd113efb6c6251cd1c34bc5",
   "title": "How to view SmartFeed Analytics?",
-  "description": "",
+  "description": "SmartFeed Analytics provides insights into the number of views for each SmartFeed created by you, as well as for SmartFeeds to which you have access.",
   "source": "@site/docs/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics.md",
   "sourceDirName": "modules/smartfeed/reports-and-analytics",
   "slug": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 35,
   "frontMatter": {
     "id": "5fd113efb6c6251cd1c34bc5",
     "title": "How to view SmartFeed Analytics?",
-    "description": "",
+    "description": "SmartFeed Analytics provides insights into the number of views for each SmartFeed created by you, as well as for SmartFeeds to which you have access.",
     "slug": "how-to-view-smartfeed-analytics",
     "sidebar_position": 35,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

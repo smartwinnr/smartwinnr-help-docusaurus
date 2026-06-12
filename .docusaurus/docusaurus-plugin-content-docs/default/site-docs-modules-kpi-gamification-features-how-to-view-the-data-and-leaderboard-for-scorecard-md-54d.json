@@ -9,7 +9,18 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 231,
   "frontMatter": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

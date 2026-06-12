@@ -1,7 +1,7 @@
 {
   "id": "reports-and-analytics/legacy/5fdbab410b11ce44f6393516",
   "title": "Team Progress Report",
-  "description": "",
+  "description": "You can download the team progress report as a CSV file from SmartWinnr. Follow the below steps to download the Team Progress Reports:",
   "source": "@site/docs/reports-and-analytics/legacy/team-progress-report.md",
   "sourceDirName": "reports-and-analytics/legacy",
   "slug": "/reports-and-analytics/legacy/team-progress-report",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/team-progress-report.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 199,
   "frontMatter": {
     "id": "5fdbab410b11ce44f6393516",
     "title": "Team Progress Report",
-    "description": "",
+    "description": "You can download the team progress report as a CSV file from SmartWinnr. Follow the below steps to download the Team Progress Reports:",
     "slug": "team-progress-report",
     "sidebar_position": 199,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "learnerReport"
     },
-    "tags": []
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

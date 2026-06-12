@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/641a2e5bdf67f62fb768a4ca",
   "title": "How to create a Drag and Drop into Image Question?",
-  "description": "",
+  "description": "A Drag and Drop into Image Question allows the participants to drag and drop the correct answer to the given image.",
   "source": "@site/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 283,
   "frontMatter": {
     "id": "641a2e5bdf67f62fb768a4ca",
     "title": "How to create a Drag and Drop into Image Question?",
-    "description": "",
+    "description": "A Drag and Drop into Image Question allows the participants to drag and drop the correct answer to the given image.",
     "slug": "how-to-create-a-drag-and-drop-into-image-question",
     "sidebar_position": 283,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

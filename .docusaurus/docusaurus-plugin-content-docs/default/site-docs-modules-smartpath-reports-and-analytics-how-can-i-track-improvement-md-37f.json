@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/reports-and-analytics/697108ae08cad8770d366373",
   "title": "How can I track improvement?",
-  "description": "",
+  "description": "The SmartPath Dashboard provides a complete view of learner engagement and progress across your learning journeys.",
   "source": "@site/docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement.md",
   "sourceDirName": "modules/smartpath/reports-and-analytics",
   "slug": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 319,
   "frontMatter": {
     "id": "697108ae08cad8770d366373",
     "title": "How can I track improvement?",
-    "description": "",
+    "description": "The SmartPath Dashboard provides a complete view of learner engagement and progress across your learning journeys.",
     "slug": "how-can-i-track-improvement",
     "sidebar_position": 319,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

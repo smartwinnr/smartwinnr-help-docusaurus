@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/features/5fcc6288de1bfa158fb55b9b",
   "title": "What is SmartWinnr?",
-  "description": "",
+  "description": "SmartWinnr is the world's number 1 mobile-first Sales Productivity platform. It's a single platform through which you can drive",
   "source": "@site/docs/modules/cross-module/features/what-is-smartwinnr.md",
   "sourceDirName": "modules/cross-module/features",
   "slug": "/modules/cross-module/features/what-is-smartwinnr",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fcc6288de1bfa158fb55b9b",
     "title": "What is SmartWinnr?",
-    "description": "",
+    "description": "SmartWinnr is the world's number 1 mobile-first Sales Productivity platform. It's a single platform through which you can drive",
     "slug": "what-is-smartwinnr",
     "sidebar_position": 4,
     "last_update": {

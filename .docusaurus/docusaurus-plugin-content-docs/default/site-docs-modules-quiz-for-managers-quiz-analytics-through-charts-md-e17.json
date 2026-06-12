@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/for-managers/5fd997c6a5d295659b369555",
   "title": "Quiz Analytics through Charts",
-  "description": "",
+  "description": "SmartWinnr allows you to analytics the knowledge of your team based on their performance in the quizzes assigned to them.",
   "source": "@site/docs/modules/quiz/for-managers/quiz-analytics-through-charts.md",
   "sourceDirName": "modules/quiz/for-managers",
   "slug": "/modules/quiz/for-managers/quiz-analytics-through-charts",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/for-managers/quiz-analytics-through-charts.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 98,
   "frontMatter": {
     "id": "5fd997c6a5d295659b369555",
     "title": "Quiz Analytics through Charts",
-    "description": "",
+    "description": "SmartWinnr allows you to analytics the knowledge of your team based on their performance in the quizzes assigned to them.",
     "slug": "quiz-analytics-through-charts",
     "sidebar_position": 98,
     "last_update": {
@@ -34,7 +40,9 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

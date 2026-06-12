@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/5fd711e636980410c9123b73",
   "title": "How to create a SmartPath?",
-  "description": "",
+  "description": "A SmartPath is a structured sequence of learning modules designed to guide learners step by step through a curated learning journey.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-create-a-smartpath.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-create-a-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-create-a-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 78,
   "frontMatter": {
     "id": "5fd711e636980410c9123b73",
     "title": "How to create a SmartPath?",
-    "description": "",
+    "description": "A SmartPath is a structured sequence of learning modules designed to guide learners step by step through a curated learning journey.",
     "slug": "how-to-create-a-smartpath",
     "sidebar_position": 78,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

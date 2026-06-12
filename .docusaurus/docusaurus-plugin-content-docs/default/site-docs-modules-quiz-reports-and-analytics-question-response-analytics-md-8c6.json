@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/5fd4998236980410c9123856",
   "title": "Question Response Analytics",
-  "description": "",
+  "description": "In order to view the Question Response analytics, follow the below steps:",
   "source": "@site/docs/modules/quiz/reports-and-analytics/question-response-analytics.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/question-response-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/question-response-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 56,
   "frontMatter": {
     "id": "5fd4998236980410c9123856",
     "title": "Question Response Analytics",
-    "description": "",
+    "description": "In order to view the Question Response analytics, follow the below steps:",
     "slug": "question-response-analytics",
     "sidebar_position": 56,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

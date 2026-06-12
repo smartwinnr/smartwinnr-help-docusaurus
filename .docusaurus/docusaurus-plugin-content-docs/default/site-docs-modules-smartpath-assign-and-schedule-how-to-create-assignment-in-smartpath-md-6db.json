@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/assign-and-schedule/696faec0dadc293bb313334c",
   "title": "How to create Assignment in SmartPath?",
-  "description": "",
+  "description": "Assignments help evaluate learner understanding by requiring them to complete specific tasks, submit responses, or upload supporting files as part of the…",
   "source": "@site/docs/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath.md",
   "sourceDirName": "modules/smartpath/assign-and-schedule",
   "slug": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 304,
   "frontMatter": {
     "id": "696faec0dadc293bb313334c",
     "title": "How to create Assignment in SmartPath?",
-    "description": "",
+    "description": "Assignments help evaluate learner understanding by requiring them to complete specific tasks, submit responses, or upload supporting files as part of the…",
     "slug": "how-to-create-assignment-in-smartpath",
     "sidebar_position": 304,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

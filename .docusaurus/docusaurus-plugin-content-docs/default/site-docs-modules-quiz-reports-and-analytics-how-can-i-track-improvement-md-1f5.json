@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/697115b9f35cc6035d0b99b3",
   "title": "How can I track improvement?",
-  "description": "",
+  "description": "The Quiz Analytics Dashboard provides a comprehensive view of quiz performance, learner participation, and engagement across your organization.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/how-can-i-track-improvement.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/how-can-i-track-improvement",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/how-can-i-track-improvement.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 320,
   "frontMatter": {
     "id": "697115b9f35cc6035d0b99b3",
     "title": "How can I track improvement?",
-    "description": "",
+    "description": "The Quiz Analytics Dashboard provides a comprehensive view of quiz performance, learner participation, and engagement across your organization.",
     "slug": "how-can-i-track-improvement",
     "sidebar_position": 320,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

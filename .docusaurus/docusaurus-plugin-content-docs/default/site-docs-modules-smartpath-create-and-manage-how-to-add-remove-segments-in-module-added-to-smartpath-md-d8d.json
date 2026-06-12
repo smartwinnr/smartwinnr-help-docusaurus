@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/696c7d311e938328836da344",
   "title": "How to Add/Remove segments in Module added to SmartPath?",
-  "description": "",
+  "description": "You can add or remove any segments from module as per the requirement.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 297,
   "frontMatter": {
     "id": "696c7d311e938328836da344",
     "title": "How to Add/Remove segments in Module added to SmartPath?",
-    "description": "",
+    "description": "You can add or remove any segments from module as per the requirement.",
     "slug": "how-to-add-remove-segments-in-module-added-to-smartpath",
     "sidebar_position": 297,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

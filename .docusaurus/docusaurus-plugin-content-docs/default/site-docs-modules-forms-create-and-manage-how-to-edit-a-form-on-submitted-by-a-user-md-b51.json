@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/create-and-manage/60bb39acfca38f033a7da5dc",
   "title": "How to Edit a Form on submitted by a user?",
-  "description": "",
+  "description": "An Editor who has access to the form can edit the submission made by a user",
   "source": "@site/docs/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user.md",
   "sourceDirName": "modules/forms/create-and-manage",
   "slug": "/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 250,
   "frontMatter": {
     "id": "60bb39acfca38f033a7da5dc",
     "title": "How to Edit a Form on submitted by a user?",
-    "description": "",
+    "description": "An Editor who has access to the form can edit the submission made by a user",
     "slug": "how-to-edit-a-form-on-submitted-by-a-user",
     "sidebar_position": 250,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

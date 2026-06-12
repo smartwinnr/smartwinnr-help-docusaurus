@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd46a20c868cb6df3a80ff5",
   "title": "How to create a 'Matching Question'.",
-  "description": "",
+  "description": "A matching question enables participants to correctly pair items from one list with corresponding items in a second list.",
   "source": "@site/docs/modules/quiz/features/how-to-create-a-matching-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-a-matching-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-matching-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 43,
   "frontMatter": {
     "id": "5fd46a20c868cb6df3a80ff5",
     "title": "How to create a 'Matching Question'.",
-    "description": "",
+    "description": "A matching question enables participants to correctly pair items from one list with corresponding items in a second list.",
     "slug": "how-to-create-a-matching-question",
     "sidebar_position": 43,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

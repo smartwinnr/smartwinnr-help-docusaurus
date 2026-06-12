@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/reports-and-analytics/5fd713dc23119734ee37f0cb",
   "title": "How to view the SmartPath Analytics.",
-  "description": "",
+  "description": "You can view detailed analytics for any SmartPath to understand learner engagement, progress, and performance.",
   "source": "@site/docs/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics.md",
   "sourceDirName": "modules/smartpath/reports-and-analytics",
   "slug": "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 80,
   "frontMatter": {
     "id": "5fd713dc23119734ee37f0cb",
     "title": "How to view the SmartPath Analytics.",
-    "description": "",
+    "description": "You can view detailed analytics for any SmartPath to understand learner engagement, progress, and performance.",
     "slug": "how-to-view-the-smartpath-analytics",
     "sidebar_position": 80,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

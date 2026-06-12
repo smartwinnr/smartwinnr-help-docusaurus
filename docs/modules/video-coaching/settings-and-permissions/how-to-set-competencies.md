@@ -1,19 +1,22 @@
 ---
 id: 5fd75963a5d295659b36893f
-title: "How to set competencies."
-description: ""
+title: How to set competencies.
+description: Only users with Admin role can add/modify competencies.
 slug: how-to-set-competencies
 sidebar_position: 91
 last_update:
-  date: 2021-02-19
+  date: 2021-02-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd75963a5d295659b36893f
-  helpscout_url: https://help.smartwinnr.com/article/91-how-to-set-competencies
+  helpscout_url: 'https://help.smartwinnr.com/article/91-how-to-set-competencies'
 customProps:
-  roles: [admin]
+  roles:
+    - admin
   privilege: coaching
-tags: []
+tags:
+  - video-coaching
+  - settings
 ---
 Only users with Admin role can add/modify competencies.
 
@@ -23,7 +26,7 @@ To add/modify competencies go to ADMIN > Coaching Settings. Click on the " **Add
 
 It will open the following pop up.
 
-[![](/img/helpscout/admins/how-to-set-competencies-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2d93140f24b1b2aaf5fee/file-so7MDCNDN0.png)
+[![It will open the following pop up.](/img/helpscout/admins/how-to-set-competencies-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2d93140f24b1b2aaf5fee/file-so7MDCNDN0.png)
 
 Fill the required details to create the competency here.
 

@@ -1,7 +1,7 @@
 {
   "id": "guides/manager/5fd98ecb27288b7f895d5ddc",
   "title": "Switching to Manager View",
-  "description": "",
+  "description": "How To Enable Manager View In SmartWinnr",
   "source": "@site/docs/guides/manager/switching-to-manager-view.md",
   "sourceDirName": "guides/manager",
   "slug": "/guides/manager/switching-to-manager-view",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fd98ecb27288b7f895d5ddc",
     "title": "Switching to Manager View",
-    "description": "",
+    "description": "How To Enable Manager View In SmartWinnr",
     "slug": "switching-to-manager-view",
     "sidebar_position": 96,
     "last_update": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/for-managers/5fd99582a5d295659b36954f",
   "title": "How To Find The Progress Of Your Team In Quizzes",
-  "description": "",
+  "description": "SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Manager-View.",
   "source": "@site/docs/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes.md",
   "sourceDirName": "modules/quiz/for-managers",
   "slug": "/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 97,
   "frontMatter": {
     "id": "5fd99582a5d295659b36954f",
     "title": "How To Find The Progress Of Your Team In Quizzes",
-    "description": "",
+    "description": "SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Manager-View.",
     "slug": "how-to-find-the-progress-of-your-team-in-quizzes",
     "sidebar_position": 97,
     "last_update": {
@@ -34,7 +40,9 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

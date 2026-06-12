@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/5fd10365db2fa3720c7d7a2f",
   "title": "How to create a SmartFeed?",
-  "description": "",
+  "description": "Follow the steps below to create and publish a SmartFeed in SmartWinnr.",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 27,
   "frontMatter": {
     "id": "5fd10365db2fa3720c7d7a2f",
     "title": "How to create a SmartFeed?",
-    "description": "",
+    "description": "Follow the steps below to create and publish a SmartFeed in SmartWinnr.",
     "slug": "how-to-create-a-smartfeed",
     "sidebar_position": 27,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

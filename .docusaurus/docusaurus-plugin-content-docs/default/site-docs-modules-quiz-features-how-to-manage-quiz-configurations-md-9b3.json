@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fda45eaa5d295659b36989e",
   "title": "How to manage Quiz configurations?",
-  "description": "",
+  "description": "Go to Admin>>Quiz Setting, it will open the following page",
   "source": "@site/docs/modules/quiz/features/how-to-manage-quiz-configurations.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-manage-quiz-configurations",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-manage-quiz-configurations.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 112,
   "frontMatter": {
     "id": "5fda45eaa5d295659b36989e",
     "title": "How to manage Quiz configurations?",
-    "description": "",
+    "description": "Go to Admin>>Quiz Setting, it will open the following page",
     "slug": "how-to-manage-quiz-configurations",
     "sidebar_position": 112,
     "last_update": {
@@ -32,7 +38,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

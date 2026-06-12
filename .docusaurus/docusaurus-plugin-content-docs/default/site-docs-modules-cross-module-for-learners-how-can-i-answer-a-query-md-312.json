@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/for-learners/5fdb05910b11ce44f63931a2",
   "title": "How can I answer a Query ?",
-  "description": "",
+  "description": "Follow the below steps to answer a query posted in QResolve through SmartWinnr app:",
   "source": "@site/docs/modules/cross-module/for-learners/how-can-i-answer-a-query.md",
   "sourceDirName": "modules/cross-module/for-learners",
   "slug": "/modules/cross-module/for-learners/how-can-i-answer-a-query",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/how-can-i-answer-a-query.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 161,
   "frontMatter": {
     "id": "5fdb05910b11ce44f63931a2",
     "title": "How can I answer a Query ?",
-    "description": "",
+    "description": "Follow the below steps to answer a query posted in QResolve through SmartWinnr app:",
     "slug": "how-can-i-answer-a-query",
     "sidebar_position": 161,
     "last_update": {
@@ -35,7 +41,9 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

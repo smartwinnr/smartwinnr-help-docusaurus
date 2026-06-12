@@ -1,35 +1,40 @@
 ---
 id: 5fd714514eb32171b80377f9
-title: "How can I Gamify a SmartPath?"
-description: ""
+title: How can I Gamify a SmartPath?
+description: >-
+  Make your SmartPaths interesting for your learners by creating a competition
+  around them. Follow the below steps to create a SmartPath competition:
 slug: how-can-i-gamify-a-smartpath
 sidebar_position: 81
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd714514eb32171b80377f9
-  helpscout_url: https://help.smartwinnr.com/article/81-how-can-i-gamify-a-smartpath
+  helpscout_url: 'https://help.smartwinnr.com/article/81-how-can-i-gamify-a-smartpath'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
 ---
 Make your SmartPaths interesting for your learners by creating a competition around them. Follow the below steps to create a SmartPath competition:
 
 Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths.** It opens the following page:
 
-[![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016a10d2042ff6d1b2a9043/file-kfMOibsmCo.png)
+[![Go to EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths. It opens the following page:](/img/helpscout/editors/how-can-i-gamify-a-smartpath-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6016a10d2042ff6d1b2a9043/file-kfMOibsmCo.png)
 
 _Click_ on Batches option against the SmartPath for which you want to create competition. It opens the following page where you can see the list of batches to whom the SmartPath is assigned.
 
 Now,  _click_ on the **'****_Create Competition_****'** button that is to the right-hand side of a batch as shown in the image below.
 
-![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-2.png)
+![Now, click on the 'Create Competition' button that is to the right-hand side of a batch as shown in the image below.](/img/helpscout/editors/how-can-i-gamify-a-smartpath-2.png)
 
 It will show you a pop-up with the list of SmartPath competitions that are already created. If you would like to create new competition for the selected batch, click on the _**Create**_ button at bottom right corner.
 
-![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-3.png)
+![It will show you a pop-up with the list of SmartPath competitions that are already created. If you would like to create new competition for ](/img/helpscout/editors/how-can-i-gamify-a-smartpath-3.png)
 
 This will take you to the competition creation page as follows:
 
@@ -37,7 +42,7 @@ This will take you to the competition creation page as follows:
 
 ### Creating Competition
 
-[![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffad50766df373cab707da7/file-FcvNx6jQbY.png)
+[![Creating Competition](/img/helpscout/editors/how-can-i-gamify-a-smartpath-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffad50766df373cab707da7/file-FcvNx6jQbY.png)
 
 SmartPath Name: This name will be taken from the SmartPath that you have created and will be updated here automatically.
 
@@ -61,7 +66,7 @@ This is the step where the participants get assigned to the competition. Here th
 
 _You cannot change/edit the participants while creating a competition. If you need to make any changes to the participant's list then you have to go to the SmartPath and make changes to the batch. Those changes will automatically reflect the participants of the competition as well._
 
-![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-5.png)
+![You cannot change/edit the participants while creating a competition. If you need to make any changes to the participant's list then you hav](/img/helpscout/editors/how-can-i-gamify-a-smartpath-5.png)
 
 3
 
@@ -69,7 +74,7 @@ _You cannot change/edit the participants while creating a competition. If you ne
 
 This is the step where you can add Leaderboards to the competition. You can create Leaderboards by clicking the ' **Add'** button at the top right corner.
 
-![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-6.png)
+![This is the step where you can add Leaderboards to the competition. You can create Leaderboards by clicking the ' Add' button at the top rig](/img/helpscout/editors/how-can-i-gamify-a-smartpath-6.png)
 
 4  Assign Tasks to the Competition
 
@@ -77,6 +82,6 @@ The task of the competition will be the SmartPath that you have created
 
 _You cannot directly make changes to the tasks in the SmartPath competition. SmartWinnr automatically add the tasks to the competiton when it is SmartPath competition._
 
-![](/img/helpscout/editors/how-can-i-gamify-a-smartpath-7.png)
+![You cannot directly make changes to the tasks in the SmartPath competition. SmartWinnr automatically add the tasks to the competiton when it](/img/helpscout/editors/how-can-i-gamify-a-smartpath-7.png)
 
 Now, the competition for your SmartPath is successfully created.

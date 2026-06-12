@@ -1,23 +1,28 @@
 ---
 id: 6971f00808cad8770d366631
-title: "Understanding the Overview Tab on the SmartPath Dashboard"
-description: ""
+title: Understanding the Overview Tab on the SmartPath Dashboard
+description: Smartpath Dashboard - Overview Tab
 slug: understanding-the-overview-tab-on-the-smartpath-dashboard
 sidebar_position: 326
 last_update:
-  date: 2026-02-06
+  date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f00808cad8770d366631
-  helpscout_url: https://help.smartwinnr.com/article/326-understanding-the-overview-tab-on-the-smartpath-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/326-understanding-the-overview-tab-on-the-smartpath-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - reports
 ---
 ## Overview Tab
 
-![](/img/helpscout/editors/understanding-the-overview-tab-on-the-smartpath-dashboard-1.png)
+![Overview Tab](/img/helpscout/editors/understanding-the-overview-tab-on-the-smartpath-dashboard-1.png)
 
 Smartpath Dashboard - Overview Tab
 
@@ -73,7 +78,7 @@ This section displays four core metrics that give you a quick snapshot of SmartP
 
 **Why this matters:** This demonstrates overall engagement and effort invested in learning. Higher numbers indicate strong participation and commitment to completing learning programs.
 
-**How it's calculated:** SmartWinnr tracks the actual time learners spend actively engaged with content—not estimated durations. This gives you real engagement data.
+**How it's calculated:** SmartWinnr tracks the actual time learners spend actively engaged with content-not estimated durations. This gives you real engagement data.
 
 * * *
 

@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/features/5fd4a51b23119734ee37edce",
   "title": "What are the different question types in a Survey /Survey Template?",
-  "description": "",
+  "description": "There are 8 Question Types available in a survey template.",
   "source": "@site/docs/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template.md",
   "sourceDirName": "modules/survey/features",
   "slug": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 62,
   "frontMatter": {
     "id": "5fd4a51b23119734ee37edce",
     "title": "What are the different question types in a Survey /Survey Template?",
-    "description": "",
+    "description": "There are 8 Question Types available in a survey template.",
     "slug": "what-are-the-different-question-types-in-a-survey-survey-template",
     "sidebar_position": 62,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

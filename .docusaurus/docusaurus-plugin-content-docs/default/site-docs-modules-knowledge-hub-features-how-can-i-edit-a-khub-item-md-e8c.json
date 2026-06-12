@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/features/5fdae9650b11ce44f639315d",
   "title": "How can I edit a KHub item?",
-  "description": "",
+  "description": "Once you create a KHub item, you have an option to edit it in case you need to change anything. Below are the steps to edit a KHub item:",
   "source": "@site/docs/modules/knowledge-hub/features/how-can-i-edit-a-khub-item.md",
   "sourceDirName": "modules/knowledge-hub/features",
   "slug": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-item",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/features/how-can-i-edit-a-khub-item.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 147,
   "frontMatter": {
     "id": "5fdae9650b11ce44f639315d",
     "title": "How can I edit a KHub item?",
-    "description": "",
+    "description": "Once you create a KHub item, you have an option to edit it in case you need to change anything. Below are the steps to edit a KHub item:",
     "slug": "how-can-i-edit-a-khub-item",
     "sidebar_position": 147,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "khub"
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

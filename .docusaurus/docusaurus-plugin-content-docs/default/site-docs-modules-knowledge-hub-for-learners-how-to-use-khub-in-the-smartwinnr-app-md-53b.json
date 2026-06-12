@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/for-learners/5fdaec3c7129911ba1b21de9",
   "title": "How to use KHub in the SmartWinnr app?",
-  "description": "",
+  "description": "Here is how users can access KHub in the SmartWinnr app:",
   "source": "@site/docs/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app.md",
   "sourceDirName": "modules/knowledge-hub/for-learners",
   "slug": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 150,
   "frontMatter": {
     "id": "5fdaec3c7129911ba1b21de9",
     "title": "How to use KHub in the SmartWinnr app?",
-    "description": "",
+    "description": "Here is how users can access KHub in the SmartWinnr app:",
     "slug": "how-to-use-khub-in-the-smartwinnr-app",
     "sidebar_position": 150,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

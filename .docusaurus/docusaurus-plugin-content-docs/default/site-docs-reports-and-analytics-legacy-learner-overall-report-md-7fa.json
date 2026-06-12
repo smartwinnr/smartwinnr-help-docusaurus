@@ -1,7 +1,7 @@
 {
   "id": "reports-and-analytics/legacy/60c1f6cea6d12c2cd643e794",
   "title": "Learner Overall Report",
-  "description": "",
+  "description": "An Editor who has access to the Learner Report can see the Report Analytics.",
   "source": "@site/docs/reports-and-analytics/legacy/learner-overall-report.md",
   "sourceDirName": "reports-and-analytics/legacy",
   "slug": "/reports-and-analytics/legacy/learner-overall-report",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/learner-overall-report.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 254,
   "frontMatter": {
     "id": "60c1f6cea6d12c2cd643e794",
     "title": "Learner Overall Report",
-    "description": "",
+    "description": "An Editor who has access to the Learner Report can see the Report Analytics.",
     "slug": "learner-overall-report",
     "sidebar_position": 254,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "learnerReport"
     },
-    "tags": []
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

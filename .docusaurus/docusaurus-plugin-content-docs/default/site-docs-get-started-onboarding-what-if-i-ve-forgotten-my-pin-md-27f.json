@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce210dde1bfa158fb55ed9",
   "title": "What if I've forgotten my PIN?",
-  "description": "",
+  "description": "When you log in to SmartWinnr, if you are asked to enter a PIN, this section is applicable to you.",
   "source": "@site/docs/get-started/onboarding/what-if-i-ve-forgotten-my-pin.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce210dde1bfa158fb55ed9",
     "title": "What if I've forgotten my PIN?",
-    "description": "",
+    "description": "When you log in to SmartWinnr, if you are asked to enter a PIN, this section is applicable to you.",
     "slug": "what-if-i-ve-forgotten-my-pin",
     "sidebar_position": 13,
     "last_update": {

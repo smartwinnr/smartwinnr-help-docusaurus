@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/features/5fdaf5db7129911ba1b21dfa",
   "title": "When are chat groups needed?",
-  "description": "",
+  "description": "Chat groups facilitate communication between the members of a group.",
   "source": "@site/docs/modules/notifications/features/when-are-chat-groups-needed.md",
   "sourceDirName": "modules/notifications/features",
   "slug": "/modules/notifications/features/when-are-chat-groups-needed",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/when-are-chat-groups-needed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 153,
   "frontMatter": {
     "id": "5fdaf5db7129911ba1b21dfa",
     "title": "When are chat groups needed?",
-    "description": "",
+    "description": "Chat groups facilitate communication between the members of a group.",
     "slug": "when-are-chat-groups-needed",
     "sidebar_position": 153,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "chat"
     },
-    "tags": []
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

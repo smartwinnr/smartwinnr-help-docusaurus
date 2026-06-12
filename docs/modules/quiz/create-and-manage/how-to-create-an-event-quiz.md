@@ -1,19 +1,23 @@
 ---
 id: 631c9fb5c713d51da3edd565
-title: "How to create an Event Quiz"
-description: ""
+title: How to create an Event Quiz
+description: 'To create an event quiz, follow the below steps.'
 slug: how-to-create-an-event-quiz
 sidebar_position: 276
 last_update:
-  date: 2026-01-19
+  date: 2026-01-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 631c9fb5c713d51da3edd565
-  helpscout_url: https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz
+  helpscout_url: 'https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - admin
 ---
 To create an event quiz, follow the below steps.
 
@@ -21,7 +25,7 @@ Navigate to **Editor > Learning and Knowledge > Competition**.
 
 Create a quiz in a normal way by selecting the Manual Mode Type "Event" as given below.
 
-![](/img/helpscout/editors/how-to-create-an-event-quiz-1.png)
+![Create a quiz in a normal way by selecting the Manual Mode Type "Event" as given below.](/img/helpscout/editors/how-to-create-an-event-quiz-1.png)
 
 After creating a quiz, you can choose to **open an inactive quiz** or **close an active quiz** by following the steps below:
 
@@ -35,6 +39,6 @@ After creating a quiz, you can choose to **open an inactive quiz** or **close an
 
 Once a quiz is closed, users who have already started the quiz will be allowed to complete it. However, users who have not yet started will no longer be able to access or attempt the quiz.
 
-![](/img/helpscout/editors/how-to-create-an-event-quiz-2.png)
+![Once a quiz is closed, users who have already started the quiz will be allowed to complete it. However, users who have not yet started will ](/img/helpscout/editors/how-to-create-an-event-quiz-2.png)
 
 * Once the quiz is started, the editors can see the leaderboards by clicking on the Quiz TV button.

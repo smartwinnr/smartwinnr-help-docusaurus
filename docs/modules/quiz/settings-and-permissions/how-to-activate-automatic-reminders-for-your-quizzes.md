@@ -1,43 +1,50 @@
 ---
 id: 5fd49470c868cb6df3a8102a
-title: "How to activate automatic reminders for your quizzes"
-description: ""
+title: How to activate automatic reminders for your quizzes
+description: >-
+  Automated reminder feature allows you to create and schedule reminders to be
+  delivered to the quiz takers about their assigned quizzes.
 slug: how-to-activate-automatic-reminders-for-your-quizzes
 sidebar_position: 52
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd49470c868cb6df3a8102a
-  helpscout_url: https://help.smartwinnr.com/article/52-how-to-activate-automatic-reminders-for-your-quizzes
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/52-how-to-activate-automatic-reminders-for-your-quizzes
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - settings
 ---
 Automated reminder feature allows you to create and schedule reminders to be delivered to the quiz takers about their assigned quizzes. Below are the steps to set a reminder to a quiz:
 
 Go to **EDITOR >** **LEARNING AND KNOWLEDGE >** **Questions and Quizzes > View All Quizzes > Add New Quiz.**
 
-![](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-1.png)
+![Go to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes > Add New Quiz.](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-1.png)
 
 Once you fill all the details for creating the quiz, navigate to the last section which is " **Schedule Reminder**".
 
-![](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-2.png)
+![Once you fill all the details for creating the quiz, navigate to the last section which is " Schedule Reminder".](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-2.png)
 
 You can also schedule a reminder to an already created quiz. Follow the below steps to set a reminder to an already created quiz:
 
 EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quizzes to which you want to add the reminder.
 
-![](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-3.png)It opens the following page:
+![EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quiz](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-3.png)It opens the following page:
 
-![](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-4.png)
+![EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes. Click on a particular quiz from the list of all the created quiz](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-4.png)
 
 Now, click on the "Edit" button at the top right corner. Navigate to the last section which is "Schedule Reminder"
 
 Then, click on the "Add" button at the top right corner of the  **Schedule Reminder** section. It will open the following popup.
 
-[![](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4906723119734ee37edaa/file-0VAaM8Ffhn.png)
+[![Then, click on the "Add" button at the top right corner of the Schedule Reminder section. It will open the following popup.](/img/helpscout/editors/how-to-activate-automatic-reminders-for-your-quizzes-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4906723119734ee37edaa/file-0VAaM8Ffhn.png)
 
 **Send Type:** This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
 

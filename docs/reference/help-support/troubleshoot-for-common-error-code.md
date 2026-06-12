@@ -1,13 +1,15 @@
 ---
-title: "Troubleshoot for common error code"
-description: ""
+title: Troubleshoot for common error code
+description: >-
+  Here is a list of possible errors that you might encounter while uploading a
+  CSV file and how you can fix them:
 slug: troubleshoot-for-common-error-code
 sidebar_position: 47
 last_update:
- date: 2025-08-10
- author: HelpScout Migration
+  date: 2025-08-10T00:00:00.000Z
+  author: HelpScout Migration
 helpscout_id: 5fd48e84c868cb6df3a8101f
-helpscout_url: https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code
+helpscout_url: 'https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code'
 ---
 Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:
 

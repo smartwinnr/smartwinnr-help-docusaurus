@@ -1,7 +1,7 @@
 {
   "id": "reports-and-analytics/legacy/5fdb9acd27288b7f895d6884",
   "title": "Team Analytics",
-  "description": "",
+  "description": "The results of the performance of all quizzes are available to all the quizmasters in the ‘Team Analytics’ section.",
   "source": "@site/docs/reports-and-analytics/legacy/team-analytics.md",
   "sourceDirName": "reports-and-analytics/legacy",
   "slug": "/reports-and-analytics/legacy/team-analytics",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/team-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 197,
   "frontMatter": {
     "id": "5fdb9acd27288b7f895d6884",
     "title": "Team Analytics",
-    "description": "",
+    "description": "The results of the performance of all quizzes are available to all the quizmasters in the ‘Team Analytics’ section.",
     "slug": "team-analytics",
     "sidebar_position": 197,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "learnerReport"
     },
-    "tags": []
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

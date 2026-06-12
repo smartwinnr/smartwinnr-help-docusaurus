@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4545236980410c9123806",
   "title": "Question bank",
-  "description": "",
+  "description": "The Question Bank in SmartWinnr serves as the central repository for all questions created within your division.",
   "source": "@site/docs/modules/quiz/features/question-bank.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/question-bank",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/question-bank.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 39,
   "frontMatter": {
     "id": "5fd4545236980410c9123806",
     "title": "Question bank",
-    "description": "",
+    "description": "The Question Bank in SmartWinnr serves as the central repository for all questions created within your division.",
     "slug": "question-bank",
     "sidebar_position": 39,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

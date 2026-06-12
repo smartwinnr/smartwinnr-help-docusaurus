@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/features/6970853970321255a2cc1eef",
   "title": "How to download SmartPath Reports?",
-  "description": "",
+  "description": "SmartPath reports provide deep insights into learner participation, progress, performance, and feedback across a SmartPath.",
   "source": "@site/docs/modules/smartpath/features/how-to-download-smartpath-reports.md",
   "sourceDirName": "modules/smartpath/features",
   "slug": "/modules/smartpath/features/how-to-download-smartpath-reports",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/how-to-download-smartpath-reports.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 308,
   "frontMatter": {
     "id": "6970853970321255a2cc1eef",
     "title": "How to download SmartPath Reports?",
-    "description": "",
+    "description": "SmartPath reports provide deep insights into learner participation, progress, performance, and feedback across a SmartPath.",
     "slug": "how-to-download-smartpath-reports",
     "sidebar_position": 308,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

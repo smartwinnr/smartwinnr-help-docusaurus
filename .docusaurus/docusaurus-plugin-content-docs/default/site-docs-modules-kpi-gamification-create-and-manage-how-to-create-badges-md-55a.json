@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/64649da87d89467e9da791da",
   "title": "How to create Badges",
-  "description": "",
+  "description": "SmartWinnr allows you to create two types of achievements - Badges and Certificates. Follow the below-given steps to create a Badge.",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-badges.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-badges",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-badges.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 285,
   "frontMatter": {
     "id": "64649da87d89467e9da791da",
     "title": "How to create Badges",
-    "description": "",
+    "description": "SmartWinnr allows you to create two types of achievements - Badges and Certificates. Follow the below-given steps to create a Badge.",
     "slug": "how-to-create-badges",
     "sidebar_position": 285,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "achievements"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

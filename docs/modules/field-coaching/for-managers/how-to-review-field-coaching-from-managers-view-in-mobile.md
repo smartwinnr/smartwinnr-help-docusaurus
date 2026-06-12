@@ -1,18 +1,24 @@
 ---
 id: 60a8e21fdca0fd46b93580f6
-title: "How to review Field Coaching from Managers View in Mobile"
-description: ""
+title: How to review Field Coaching from Managers View in Mobile
+description: 'How to open Field Coaching in Manager view:'
 slug: how-to-review-field-coaching-from-managers-view-in-mobile
 sidebar_position: 244
 last_update:
-  date: 2021-06-03
+  date: 2021-06-03T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60a8e21fdca0fd46b93580f6
-  helpscout_url: https://help.smartwinnr.com/article/244-how-to-review-field-coaching-from-managers-view
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/244-how-to-review-field-coaching-from-managers-view
 customProps:
-  roles: [user, manager, editor, admin]
-tags: []
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
+tags:
+  - field-coaching
 ---
 How to open Field Coaching in Manager view:
 
@@ -60,7 +66,7 @@ Step 1 is the Pre-Call Coaching.
 
 Fill out your responses in the area provided.  After entering the details, click on the “save” button at bottom of the screen. This will ensure that your Step 1 responses have been saved.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-7.png)
+![Fill out your responses in the area provided. After entering the details, click on the “save” button at bottom of the screen. This will ensu](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-7.png)
 
 * Coaching Discussion Planning: enter your coaching planning here.
 * Coaching Summary: You can enter a coaching summary after a discussion with your sales rep.

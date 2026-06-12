@@ -1,26 +1,29 @@
 ---
 id: 5fdb08a97129911ba1b21e3d
-title: "Bulk Custom Notifications"
-description: ""
+title: Bulk Custom Notifications
+description: The above action will lead to the following page
 slug: bulk-custom-notifications
 sidebar_position: 166
 last_update:
-  date: 2021-01-22
+  date: 2021-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb08a97129911ba1b21e3d
-  helpscout_url: https://help.smartwinnr.com/article/166-bulk-custom-notifications
+  helpscout_url: 'https://help.smartwinnr.com/article/166-bulk-custom-notifications'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: customNotifications
-tags: []
+tags:
+  - notifications
 ---
 Go to Editor>>Custom Notifications>>Click on Hamburger Menu>>Send Notifications to bulk users
-![](https://support.smartwinnr.com/api/v1/attachments/1088)
+![Go to Editor>>Custom Notifications>>Click on Hamburger Menu>>Send Notifications to bulk users](https://support.smartwinnr.com/api/v1/attachments/1088)
 
 The above action will lead to the following page
 
-![](https://support.smartwinnr.com/api/v1/attachments/1089)
+![The above action will lead to the following page](https://support.smartwinnr.com/api/v1/attachments/1089)
 
 The Editor needs to Type the message that is to be sent as a notification.
 

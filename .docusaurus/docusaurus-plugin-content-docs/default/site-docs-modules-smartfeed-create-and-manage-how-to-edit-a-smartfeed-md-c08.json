@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/5fd10c66b6c6251cd1c34b95",
   "title": "How to Edit a SmartFeed",
-  "description": "",
+  "description": "Once a SmartFeed has been published, it can be edited if any changes are required.",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 29,
   "frontMatter": {
     "id": "5fd10c66b6c6251cd1c34b95",
     "title": "How to Edit a SmartFeed",
-    "description": "",
+    "description": "Once a SmartFeed has been published, it can be edited if any changes are required.",
     "slug": "how-to-edit-a-smartfeed",
     "sidebar_position": 29,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

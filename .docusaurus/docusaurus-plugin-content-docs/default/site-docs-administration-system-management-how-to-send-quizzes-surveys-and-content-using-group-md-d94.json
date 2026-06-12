@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fda5620b624c71b7985a2d0",
   "title": "How to send quizzes, surveys and content using group?",
-  "description": "",
+  "description": "SmartWinnr allows you to send Quizzes, Surveys, and Content to a predefined set of users using Groups, making distribution quick and efficient.",
   "source": "@site/docs/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 130,
   "frontMatter": {
     "id": "5fda5620b624c71b7985a2d0",
     "title": "How to send quizzes, surveys and content using group?",
-    "description": "",
+    "description": "SmartWinnr allows you to send Quizzes, Surveys, and Content to a predefined set of users using Groups, making distribution quick and efficient.",
     "slug": "how-to-send-quizzes-surveys-and-content-using-group",
     "sidebar_position": 130,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "groups"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

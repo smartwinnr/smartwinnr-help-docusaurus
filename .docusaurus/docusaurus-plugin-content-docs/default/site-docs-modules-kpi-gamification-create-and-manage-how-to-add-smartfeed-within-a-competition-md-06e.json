@@ -9,7 +9,23 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 289,
   "frontMatter": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

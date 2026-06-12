@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/60e1fc479e87cb3d01249e3c",
   "title": "How to create 'Long Answer' Questions?",
-  "description": "",
+  "description": "Long answer questions are generally open-ended questions that require participants to construct a response.",
   "source": "@site/docs/modules/quiz/features/how-to-create-long-answer-questions.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-long-answer-questions",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-long-answer-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 258,
   "frontMatter": {
     "id": "60e1fc479e87cb3d01249e3c",
     "title": "How to create 'Long Answer' Questions?",
-    "description": "",
+    "description": "Long answer questions are generally open-ended questions that require participants to construct a response.",
     "slug": "how-to-create-long-answer-questions",
     "sidebar_position": 258,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fda52ada5d295659b36990a",
   "title": "How do I unlock an account?",
-  "description": "",
+  "description": "An account can be locked if a wrong password is entered 5 times.",
   "source": "@site/docs/administration/system-management/how-do-i-unlock-an-account.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-do-i-unlock-an-account",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-do-i-unlock-an-account.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 126,
   "frontMatter": {
     "id": "5fda52ada5d295659b36990a",
     "title": "How do I unlock an account?",
-    "description": "",
+    "description": "An account can be locked if a wrong password is entered 5 times.",
     "slug": "how-do-i-unlock-an-account",
     "sidebar_position": 126,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -12,6 +12,7 @@ const { ChromaClient } = require('chromadb');
 const { initAuth } = require('./auth');
 const { requireRole } = require('./auth/requireRole');
 const chatLogger = require('./db/chat-logger');
+const feedbackLogger = require('./db/feedback-logger');
 const { isAllowed } = require('./shared/access-policy.cjs');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
@@ -567,6 +568,49 @@ app.delete('/api/admin/chat-logs/by-email/:email', (req, res) => {
     console.error('❌ Error deleting by email:', error);
     res.status(500).json({ error: 'Failed to delete by email' });
   }
+});
+
+// ---------------------------------------------------------------------------
+// Article feedback ("Was this helpful?")
+// ---------------------------------------------------------------------------
+
+// Public — any signed-in viewer can vote.
+app.post('/api/feedback', (req, res) => {
+  try {
+    const { slug, vote, comment } = req.body || {};
+    if (!slug || (vote !== 'up' && vote !== 'down')) {
+      return res.status(400).json({ error: 'Required: slug, vote ("up"|"down")' });
+    }
+    const result = feedbackLogger.recordVote({
+      slug: String(slug).slice(0, 256),
+      vote,
+      viewerEmail: req.user && req.user.email,
+      comment: comment ? String(comment).slice(0, 2000) : null,
+      userAgent: req.get('user-agent'),
+    });
+    if (!result.ok) return res.status(500).json({ error: result.reason });
+    res.json({ success: true });
+  } catch (error) {
+    console.error('❌ Error recording feedback:', error);
+    res.status(500).json({ error: 'Failed to record feedback' });
+  }
+});
+
+// Admin-only — superadmin sees the dashboard.
+app.get('/api/admin/feedback-summary', requireRole('superadmin'), (req, res) => {
+  const days = parseInt(req.query.days || '30', 10);
+  const result = feedbackLogger.summary(days);
+  if (!result.ok) return res.status(500).json({ error: result.reason });
+  res.json(result);
+});
+
+app.get('/api/admin/feedback', requireRole('superadmin'), (req, res) => {
+  const slug = req.query.slug;
+  if (!slug) return res.status(400).json({ error: 'slug query param required' });
+  const limit = Math.min(parseInt(req.query.limit || '100', 10), 500);
+  const result = feedbackLogger.forArticle(String(slug), limit);
+  if (!result.ok) return res.status(500).json({ error: result.reason });
+  res.json(result);
 });
 
 // Error handling middleware

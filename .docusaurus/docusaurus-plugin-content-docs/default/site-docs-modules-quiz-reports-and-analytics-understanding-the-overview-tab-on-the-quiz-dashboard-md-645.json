@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/6971f1c008cad8770d36663c",
   "title": "Understanding the Overview Tab on the Quiz Dashboard",
-  "description": "",
+  "description": "This tab provides a high-level snapshot of quiz activity, performance, and engagement.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 328,
   "frontMatter": {
     "id": "6971f1c008cad8770d36663c",
     "title": "Understanding the Overview Tab on the Quiz Dashboard",
-    "description": "",
+    "description": "This tab provides a high-level snapshot of quiz activity, performance, and engagement.",
     "slug": "understanding-the-overview-tab-on-the-quiz-dashboard",
     "sidebar_position": 328,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

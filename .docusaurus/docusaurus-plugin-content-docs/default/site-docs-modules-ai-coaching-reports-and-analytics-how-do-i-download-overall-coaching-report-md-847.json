@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/reports-and-analytics/6970d9e71252a7004208b84e",
   "title": "How do I download Overall Coaching Report?",
-  "description": "",
+  "description": "This report summarizes all coaching activities across all users.",
   "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report.md",
   "sourceDirName": "modules/ai-coaching/reports-and-analytics",
   "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 313,
   "frontMatter": {
     "id": "6970d9e71252a7004208b84e",
     "title": "How do I download Overall Coaching Report?",
-    "description": "",
+    "description": "This report summarizes all coaching activities across all users.",
     "slug": "how-do-i-download-overall-coaching-report",
     "sidebar_position": 313,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

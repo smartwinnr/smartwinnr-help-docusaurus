@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd45c1523119734ee37ed79",
   "title": "How to create 'Multiple-Choice Questions'.",
-  "description": "",
+  "description": "1. Navigate to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. 2. Click on the 'Add New Question' button at the top right corner.",
   "source": "@site/docs/modules/quiz/features/how-to-create-multiple-choice-questions.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-multiple-choice-questions",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-multiple-choice-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 40,
   "frontMatter": {
     "id": "5fd45c1523119734ee37ed79",
     "title": "How to create 'Multiple-Choice Questions'.",
-    "description": "",
+    "description": "1. Navigate to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. 2. Click on the 'Add New Question' button at the top right corner.",
     "slug": "how-to-create-multiple-choice-questions",
     "sidebar_position": 40,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/for-managers/6106ee53b55c2b04bf6da2c0",
   "title": "How to Mark the attendance for Users  in Learning Sessions?",
-  "description": "",
+  "description": "If you are an instructor for the learning session in a SmartPath created in SmartWinnr, you should mark the attendance of the trainees who attended the…",
   "source": "@site/docs/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
   "sourceDirName": "modules/smartpath/for-managers",
   "slug": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 264,
   "frontMatter": {
     "id": "6106ee53b55c2b04bf6da2c0",
     "title": "How to Mark the attendance for Users  in Learning Sessions?",
-    "description": "",
+    "description": "If you are an instructor for the learning session in a SmartPath created in SmartWinnr, you should mark the attendance of the trainees who attended the…",
     "slug": "how-to-mark-the-attendance-for-users-in-learning-sessions",
     "sidebar_position": 264,
     "last_update": {
@@ -34,7 +40,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "smartpath"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

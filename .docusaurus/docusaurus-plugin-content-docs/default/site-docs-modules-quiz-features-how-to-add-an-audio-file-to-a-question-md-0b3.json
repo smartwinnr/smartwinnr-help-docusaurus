@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd623d336980410c9123a23",
   "title": "How to add an 'Audio file' to a question.",
-  "description": "",
+  "description": "You can add an audio file to a question or feedback.",
   "source": "@site/docs/modules/quiz/features/how-to-add-an-audio-file-to-a-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-add-an-audio-file-to-a-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-add-an-audio-file-to-a-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 73,
   "frontMatter": {
     "id": "5fd623d336980410c9123a23",
     "title": "How to add an 'Audio file' to a question.",
-    "description": "",
+    "description": "You can add an audio file to a question or feedback.",
     "slug": "how-to-add-an-audio-file-to-a-question",
     "sidebar_position": 73,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

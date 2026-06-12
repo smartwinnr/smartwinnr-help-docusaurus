@@ -1,19 +1,26 @@
 ---
 id: 5fd4a80723119734ee37edd6
-title: "What is the difference between a Survey and a Survey Template?"
-description: ""
+title: What is the difference between a Survey and a Survey Template?
+description: >-
+  In SmartWinnr, Surveys and Survey Templates serve different purposes based on
+  how often and in what context they are used.
 slug: what-is-the-difference-between-a-survey-and-a-survey-template
 sidebar_position: 63
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd4a80723119734ee37edd6
-  helpscout_url: https://help.smartwinnr.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: survey
-tags: []
+tags:
+  - survey
+  - troubleshooting
 ---
 In SmartWinnr, **Surveys** and **Survey Templates** serve different purposes based on how often and in what context they are used.
 

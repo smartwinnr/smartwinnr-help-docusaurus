@@ -1,25 +1,31 @@
 ---
 id: 665cc161463661770bfb12d6
-title: "How to add smartfeed within a Competition"
-description: ""
+title: How to add smartfeed within a Competition
+description: ''
 slug: how-to-add-smartfeed-within-a-competition
 sidebar_position: 289
 last_update:
-  date: 2024-06-02
+  date: 2024-06-02T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 665cc161463661770bfb12d6
-  helpscout_url: https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: competitions
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 Steps:
 
 * Once you get to the 4th step of creating competition click on the "Add New Task" to create the new task.
 
-![](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-1.png)
+![Steps:](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-1.png)
 
 * To Create the SmartFeed as a task, select the option SmartFeed in the "Select Task" dropdown.
 * Give the name to the SmartFeed.

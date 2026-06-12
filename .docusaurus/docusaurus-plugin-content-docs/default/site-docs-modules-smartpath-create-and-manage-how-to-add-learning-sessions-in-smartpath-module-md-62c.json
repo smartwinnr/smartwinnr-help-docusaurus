@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/60a645beeb3af44cc120aa6d",
   "title": "How to add Learning Sessions In SmartPath Module?",
-  "description": "",
+  "description": "Your SmartPaths can be enhanced with Learning Sessions to provide scheduled instructor-led or facilitated activities as part of the learning journey.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 242,
   "frontMatter": {
     "id": "60a645beeb3af44cc120aa6d",
     "title": "How to add Learning Sessions In SmartPath Module?",
-    "description": "",
+    "description": "Your SmartPaths can be enhanced with Learning Sessions to provide scheduled instructor-led or facilitated activities as part of the learning journey.",
     "slug": "how-to-add-learning-sessions-in-smartpath-module",
     "sidebar_position": 242,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

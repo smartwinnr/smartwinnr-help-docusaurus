@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/create-and-manage/60bb5a63f6392f0aaff521ab",
   "title": "How to add Approvers to a Form",
-  "description": "",
+  "description": "An Editor who has access to the form can add approver to the form.",
   "source": "@site/docs/modules/forms/create-and-manage/how-to-add-approvers-to-a-form.md",
   "sourceDirName": "modules/forms/create-and-manage",
   "slug": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/create-and-manage/how-to-add-approvers-to-a-form.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 251,
   "frontMatter": {
     "id": "60bb5a63f6392f0aaff521ab",
     "title": "How to add Approvers to a Form",
-    "description": "",
+    "description": "An Editor who has access to the form can add approver to the form.",
     "slug": "how-to-add-approvers-to-a-form",
     "sidebar_position": 251,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

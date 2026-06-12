@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-smartpath",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "smartpath"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

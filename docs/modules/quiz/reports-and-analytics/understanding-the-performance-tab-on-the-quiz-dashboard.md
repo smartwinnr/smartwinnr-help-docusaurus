@@ -1,19 +1,26 @@
 ---
 id: 6971f21ef35cc6035d0b9bd9
-title: "Understanding the Performance Tab on the Quiz Dashboard"
-description: ""
+title: Understanding the Performance Tab on the Quiz Dashboard
+description: >-
+  This tab provides detailed analysis of quiz scores, pass/fail rates, and score
+  distribution patterns.
 slug: understanding-the-performance-tab-on-the-quiz-dashboard
 sidebar_position: 329
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f21ef35cc6035d0b9bd9
-  helpscout_url: https://help.smartwinnr.com/article/329-understanding-the-performance-tab-on-the-quiz-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/329-understanding-the-performance-tab-on-the-quiz-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - reports
 ---
 ## Performance Tab
 
@@ -52,7 +59,7 @@ This tab provides detailed analysis of quiz scores, pass/fail rates, and score d
 * **Positive**: Learners are persistent and using quizzes to improve knowledge
 * **Negative**: Quizzes are too difficult and learners must retake multiple times to pass
 
-Context matters—look at this metric alongside average scores and pass rates to understand the full picture.
+Context matters-look at this metric alongside average scores and pass rates to understand the full picture.
 
 * * *
 
@@ -139,7 +146,7 @@ This stacked bar chart shows how quiz scores are distributed across different pe
 
 * Larger green/blue sections indicate strong overall performance
 * Larger red/orange sections suggest widespread knowledge gaps
-* Track changes over time—you want to see the colors shift toward green over months
+* Track changes over time-you want to see the colors shift toward green over months
 
 **Why this matters:** This visualization helps you understand not just average performance, but the distribution of performance across your team. Even if the average is acceptable, you might have a subset of learners struggling significantly (visible in red segments).
 

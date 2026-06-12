@@ -1,17 +1,21 @@
 ---
 id: 5fcc6288de1bfa158fb55b9b
-title: "What is SmartWinnr?"
-description: ""
+title: What is SmartWinnr?
+description: >-
+  SmartWinnr is the world's number 1 mobile-first Sales Productivity platform.
+  It's a single platform through which you can drive
 slug: what-is-smartwinnr
 sidebar_position: 4
 last_update:
-  date: 2020-12-06
+  date: 2020-12-06T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fcc6288de1bfa158fb55b9b
-  helpscout_url: https://help.smartwinnr.com/article/4-what-is-smartwinnr
+  helpscout_url: 'https://help.smartwinnr.com/article/4-what-is-smartwinnr'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
 tags: []
 ---
 SmartWinnr is the world's number 1 mobile-first Sales Productivity platform. It's a single platform through which you can drive

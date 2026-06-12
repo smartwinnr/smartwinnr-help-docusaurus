@@ -1,23 +1,28 @@
 ---
 id: 696c7d311e938328836da344
-title: "How to Add/Remove segments in Module added to SmartPath?"
-description: ""
+title: How to Add/Remove segments in Module added to SmartPath?
+description: You can add or remove any segments from module as per the requirement.
 slug: how-to-add-remove-segments-in-module-added-to-smartpath
 sidebar_position: 297
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696c7d311e938328836da344
-  helpscout_url: https://help.smartwinnr.com/article/297-how-to-update-add-remove-segments-from-module-in-smartpath
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/297-how-to-update-add-remove-segments-from-module-in-smartpath
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 You can add or remove any segments from module as per the requirement.
 
-We have a SmartPath Sync feature, which allows you to sync/reflect the changes made in the module to the SmartPath. The Smartpath Sync feature ensures that changes made to a module—adding/deleting segments—are reflected in the Smartpath where that module is used. This keeps learning paths consistent and up-to-date without manual intervention.
+We have a SmartPath Sync feature, which allows you to sync/reflect the changes made in the module to the SmartPath. The Smartpath Sync feature ensures that changes made to a module-adding/deleting segments-are reflected in the Smartpath where that module is used. This keeps learning paths consistent and up-to-date without manual intervention.
 
 But, if the module is already part of a SmartPath, then not all changes made in the module - segments will reflect in the SmartPath.
 
@@ -63,7 +68,7 @@ b) Select the module that you would like to update
 
 c) Click on 'Edit module' option at top right corner to edit the module.
 
-![](/img/helpscout/editors/how-to-add-remove-segments-in-module-added-to-smartpath-1.png)
+![c) Click on 'Edit module' option at top right corner to edit the module.](/img/helpscout/editors/how-to-add-remove-segments-in-module-added-to-smartpath-1.png)
 
 d) Make the require changes in the module - like adding new segment or deleting the segment.
 
@@ -71,6 +76,6 @@ e) Once the module is updated with required changes, goto the SmartPath, where y
 
 f) Open the SmartPath, and it will show you the following message, confirming for the SmartPath Sync.
 
-![](/img/helpscout/editors/how-to-add-remove-segments-in-module-added-to-smartpath-2.png)
+![f) Open the SmartPath, and it will show you the following message, confirming for the SmartPath Sync.](/img/helpscout/editors/how-to-add-remove-segments-in-module-added-to-smartpath-2.png)
 
 g) Click on 'Yes' to confirm the sync and reflect the changes made in the module.

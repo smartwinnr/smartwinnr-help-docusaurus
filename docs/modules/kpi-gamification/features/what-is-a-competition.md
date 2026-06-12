@@ -1,19 +1,26 @@
 ---
 id: 5fd9ac9fa5d295659b36957e
-title: "What is a Competition?"
-description: ""
+title: What is a Competition?
+description: >-
+  SmartWinnr enables you to create competitions amongst various teams.
+  Competitions are a great way to engage people with their training and
+  establish a healthy…
 slug: what-is-a-competition
 sidebar_position: 101
 last_update:
-  date: 2021-04-01
+  date: 2021-04-01T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd9ac9fa5d295659b36957e
-  helpscout_url: https://help.smartwinnr.com/article/101-what-is-a-competition
+  helpscout_url: 'https://help.smartwinnr.com/article/101-what-is-a-competition'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: competitions
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 SmartWinnr enables you to create competitions amongst various teams. Competitions are a great way to engage people with their training and establish a healthy competition between them. You can create different teams and run a competition among them. These competitions run for several months and you can evaluate each team's performance over a period of time. You can add multiple quizzes to a competition.
 

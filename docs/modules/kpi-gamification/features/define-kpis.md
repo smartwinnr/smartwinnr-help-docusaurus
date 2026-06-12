@@ -1,19 +1,25 @@
 ---
 id: 5fdb0c19a5d295659b369c5f
-title: "Define KPIs"
-description: ""
+title: Define KPIs
+description: >-
+  The 1st step in setting up a KPI gamification is to identify the KPIs that
+  will be used to drive the game.
 slug: define-kpis
 sidebar_position: 170
 last_update:
-  date: 2020-12-17
+  date: 2020-12-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0c19a5d295659b369c5f
-  helpscout_url: https://help.smartwinnr.com/article/170-define-kpis
+  helpscout_url: 'https://help.smartwinnr.com/article/170-define-kpis'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 The 1st step in setting up a KPI gamification is to identify the KPIs that will be used to drive the game. You can select any KPI that used in your organization to measure success, like
 
@@ -25,4 +31,4 @@ The 1st step in setting up a KPI gamification is to identify the KPIs that will 
 
 Here is an infographic that illustrates how KPI Gamification works:
 
-![](https://support.smartwinnr.com/api/v1/attachments/737)
+![Here is an infographic that illustrates how KPI Gamification works:](https://support.smartwinnr.com/api/v1/attachments/737)

@@ -1,17 +1,23 @@
 ---
 id: 5fce43c3eb7cc612aa3557ae
-title: "How can I contact SmartWinnr Team?"
-description: ""
+title: How can I contact SmartWinnr Team?
+description: >-
+  You can write to the SmartWinnr support team for all your queries regarding
+  SmartWinnr.
 slug: how-can-i-contact-smartwinnr-team
 sidebar_position: 22
 last_update:
-  date: 2020-12-26
+  date: 2020-12-26T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fce43c3eb7cc612aa3557ae
-  helpscout_url: https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team
+  helpscout_url: 'https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
 tags: []
 ---
 You can write to the SmartWinnr support team for all your queries regarding SmartWinnr.
@@ -20,15 +26,15 @@ Following are the steps to write to SmartWinnr Support.
 
 Open the SmartWinnr app and click on the **hamburger** icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:
 
-![](/img/helpscout/managers-and-team-members/how-can-i-contact-smartwinnr-team-1.png)
+![Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the s](/img/helpscout/managers-and-team-members/how-can-i-contact-smartwinnr-team-1.png)
 
 Here, click on the **profile picture** at the top. It will take you to the following screen:
 
-![](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
+![Here, click on the profile picture at the top. It will take you to the following screen:](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
 
 Click on **_Settings_** icon at the top right corner which is highlighted in red then go to the option _**Contact Us**._ It will take you to the following screen where you can send your query to the support team.
 
-![](/img/helpscout/managers-and-team-members/how-can-i-contact-smartwinnr-team-3.png)
+![Click on Settings icon at the top right corner which is highlighted in red then go to the option Contact Us. It will take you to the followi](/img/helpscout/managers-and-team-members/how-can-i-contact-smartwinnr-team-3.png)
 
 * _Enter your email id_
 * _Enter the name of your organization_

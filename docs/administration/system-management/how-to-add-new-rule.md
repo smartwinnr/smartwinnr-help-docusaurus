@@ -1,26 +1,29 @@
 ---
 id: 5fdadd747129911ba1b21dc5
-title: "How to Add new rule?"
-description: ""
+title: How to Add new rule?
+description: Go to Admin>> Rules>>Add Rule.
 slug: how-to-add-new-rule
 sidebar_position: 140
 last_update:
-  date: 2021-01-22
+  date: 2021-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdadd747129911ba1b21dc5
-  helpscout_url: https://help.smartwinnr.com/article/140-how-to-add-new-rule
+  helpscout_url: 'https://help.smartwinnr.com/article/140-how-to-add-new-rule'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 Go to Admin>> Rules>>Add Rule.
 
-![](https://support.smartwinnr.com/api/v1/attachments/1100)
+![Go to Admin>> Rules>>Add Rule.](https://support.smartwinnr.com/api/v1/attachments/1100)
 
 It will open the following page.
 
-![](https://support.smartwinnr.com/api/v1/attachments/1091)
+![It will open the following page.](https://support.smartwinnr.com/api/v1/attachments/1091)
 
 ## Rule
 
@@ -34,7 +37,7 @@ Event: It is the set of actions based on which notifications would be triggered.
 
 Different types of events are shown below.
 
-                                                                 ![](https://support.smartwinnr.com/api/v1/attachments/1092)
+                                                                 ![Different types of events are shown below.](https://support.smartwinnr.com/api/v1/attachments/1092)
 
 Based on the Selected Object type, "Event" dropdown elements will be loaded from which the Admin has to select the required event.
 
@@ -53,7 +56,7 @@ Selected Object:
 
 Clicking on "Selected Object " will open  the following  page
 
-![](https://support.smartwinnr.com/api/v1/attachments/1093)
+![Clicking on "Selected Object " will open the following page](https://support.smartwinnr.com/api/v1/attachments/1093)
 
 The editor needs to select the object For which the Rule is to be created.
 
@@ -74,7 +77,7 @@ And fill the fields corresponding to each Object type.
 
 These are the specific set of rules within rules.
 
-![](https://support.smartwinnr.com/api/v1/attachments/1094)Field Keys
+![These are the specific set of rules within rules.](https://support.smartwinnr.com/api/v1/attachments/1094)Field Keys
 
 Field Key: "Approval Status" and Comparator: "Equals" and value: "OK", An email notification can be sent out or a certain number of points can be assigned.
 

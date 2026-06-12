@@ -1,18 +1,23 @@
 ---
 id: 5fda49060b11ce44f6392e3f
-title: "Manage password policy"
-description: ""
+title: Manage password policy
+description: >-
+  You can set the organization password complexity from this page. Once set, all
+  users will have to abide by this password policy.
 slug: manage-password-policy
 sidebar_position: 115
 last_update:
-  date: 2021-01-15
+  date: 2021-01-15T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda49060b11ce44f6392e3f
-  helpscout_url: https://help.smartwinnr.com/article/115-manage-password-policy
+  helpscout_url: 'https://help.smartwinnr.com/article/115-manage-password-policy'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 ## Manage Password Settings
 

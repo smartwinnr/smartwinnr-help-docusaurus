@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/for-managers/603748758502d1120e90b0ed",
   "title": "How Manager can check the status of the Coachings assigned to My Team",
-  "description": "",
+  "description": "Managers can view and check for the status of the coachings assigned to their reportees.",
   "source": "@site/docs/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
   "sourceDirName": "modules/video-coaching/for-managers",
   "slug": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 229,
   "frontMatter": {
     "id": "603748758502d1120e90b0ed",
     "title": "How Manager can check the status of the Coachings assigned to My Team",
-    "description": "",
+    "description": "Managers can view and check for the status of the coachings assigned to their reportees.",
     "slug": "how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
     "sidebar_position": 229,
     "last_update": {
@@ -34,7 +40,9 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "video-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

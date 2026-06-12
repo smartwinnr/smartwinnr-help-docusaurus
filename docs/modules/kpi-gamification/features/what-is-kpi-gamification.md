@@ -1,19 +1,26 @@
 ---
 id: 5fdb0bb6a5d295659b369c5d
-title: "What is KPI Gamification?"
-description: ""
+title: What is KPI Gamification?
+description: >-
+  Organizational success is measured in terms of key performance indicators
+  (KPI). These KPIs are set at an organization level, then tailored for each
+  business…
 slug: what-is-kpi-gamification
 sidebar_position: 168
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0bb6a5d295659b369c5d
-  helpscout_url: https://help.smartwinnr.com/article/168-what-is-kpi-gamification
+  helpscout_url: 'https://help.smartwinnr.com/article/168-what-is-kpi-gamification'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 Organizational success is measured in terms of key performance indicators (KPI). These KPIs are set at an organization level, then tailored for each business unit, business function, and ultimately, an individual employee.
 
@@ -47,4 +54,4 @@ KPI Gamification improves performance and makes it a fun experience, without the
 
 The below infographic illustrates the 4 steps of KPI gamification:
 
-![](https://support.smartwinnr.com/api/v1/attachments/735)
+![The below infographic illustrates the 4 steps of KPI gamification:](https://support.smartwinnr.com/api/v1/attachments/735)

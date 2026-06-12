@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdadc160b11ce44f639313f",
   "title": "How to view existing contacts?",
-  "description": "",
+  "description": "To view the existing contacts, go to Admin>>Manage Contacts",
   "source": "@site/docs/administration/system-management/how-to-view-existing-contacts.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-view-existing-contacts",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-view-existing-contacts.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 134,
   "frontMatter": {
     "id": "5fdadc160b11ce44f639313f",
     "title": "How to view existing contacts?",
-    "description": "",
+    "description": "To view the existing contacts, go to Admin>>Manage Contacts",
     "slug": "how-to-view-existing-contacts",
     "sidebar_position": 134,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "contacts"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

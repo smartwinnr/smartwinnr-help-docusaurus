@@ -1,19 +1,25 @@
 ---
 id: 641a2df7d6394b6fc7ed9fb2
-title: "How to create a missing words question?"
-description: ""
+title: How to create a missing words question?
+description: >-
+  A Missing Words question enables participants to complete a sentence or phrase
+  by selecting the correct word(s) from a predefined list of options.
 slug: how-to-create-a-missing-words-question
 sidebar_position: 282
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 641a2df7d6394b6fc7ed9fb2
-  helpscout_url: https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 A **Missing Words question** enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of options.
 
@@ -27,29 +33,29 @@ A **Missing Words question** enables participants to complete a sentence or phra
 
     Click the **Add Question** button located in the top-right corner of the page.
 
-    ![](/img/helpscout/editors/how-to-create-a-missing-words-question-1.png)
+    ![Click the Add Question button located in the top-right corner of the page.](/img/helpscout/editors/how-to-create-a-missing-words-question-1.png)
 
 3. **Select the Question Type:**
 
     In the question creation interface, choose **Missing Words** from the **_Question Type_** dropdown.
 
-    ![](/img/helpscout/editors/how-to-create-a-missing-words-question-2.png)
+    ![In the question creation interface, choose Missing Words from the Question Type dropdown.](/img/helpscout/editors/how-to-create-a-missing-words-question-2.png)
 
 4. **Enter the Missing Words:**
 
 Enter the the number of missing words in the question.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-3.png)
+![Enter the the number of missing words in the question.](/img/helpscout/editors/how-to-create-a-missing-words-question-3.png)
 
 5.  **Enter the Question:**
 
 Enter your question in the **Question** field.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-4.png)
+![Enter your question in the Question field.](/img/helpscout/editors/how-to-create-a-missing-words-question-4.png)
 
 _Type your question or sentence into the_ _**Question**_ _field. Within the text, insert placeholders where    each missing word should appear by using the designated placeholder button shown below:_
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-5.png)
+![Type your question or sentence into the Question field. Within the text, insert placeholders where each missing word should appear by using ](/img/helpscout/editors/how-to-create-a-missing-words-question-5.png)
 
 6. **Define Missing Word Groups and Answers:**
 
@@ -57,15 +63,15 @@ Enter the option texts for each missing word and assign them to the appropriate 
 
 After entering all option texts for each missing word group, select the checkbox **“Mark this as the correct answer option”** for the appropriate option. This ensures that the system awards the correct score when the user selects the correct answer.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-6.png)
+![After entering all option texts for each missing word group, select the checkbox “Mark this as the correct answer option” for the appropriat](/img/helpscout/editors/how-to-create-a-missing-words-question-6.png)
 
 Below is the example for 2 missing-word question settings.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-7.png)
+![Below is the example for 2 missing-word question settings.](/img/helpscout/editors/how-to-create-a-missing-words-question-7.png)
 
 7. Points
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
+![Points](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
 
 * The total score for the question should be added here.
 
@@ -75,13 +81,13 @@ Select the “Shuffle Last Option” checkbox to randomize the position of the l
 
 Use ‘**Correct Answer Feedback**’ if you want to add additional information to a question.  (Optional)
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
+![Use ‘Correct Answer Feedback’ if you want to add additional information to a question. (Optional)](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
 
 **Reviewer Notes:**
 
 You can add any additional feedback on the question or answer options.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
+![You can add any additional feedback on the question or answer options.](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
 
 _This content in the Correct Answer Feedback and Reviewer Notes is shown to participants_ _**after**_ _they submit their answers and can incorporate text, images, or videos._
 
@@ -89,10 +95,10 @@ _This content in the Correct Answer Feedback and Reviewer Notes is shown to part
 
 Every question must be assigned at least **one category**. Categories are predefined by your administrator. You may select multiple categories if applicable.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-10.png)
+![Every question must be assigned at least one category. Categories are predefined by your administrator. You may select multiple categories i](/img/helpscout/editors/how-to-create-a-missing-words-question-10.png)
 
 Every question must be assigned at least **one category**. Categories are predefined by your administrator. You may select multiple categories if applicable.
 
 **Question view in Quiz:**
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-11.png)
+![Every question must be assigned at least one category. Categories are predefined by your administrator. You may select multiple categories i](/img/helpscout/editors/how-to-create-a-missing-words-question-11.png)

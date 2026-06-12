@@ -9,7 +9,18 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/access-permissions/index.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
@@ -17,7 +28,11 @@
     "title": "Access Permissions",
     "description": "Admin-only guides for permission sets and access control.",
     "slug": "access-permissions",
-    "sidebar_position": 1
+    "sidebar_position": 1,
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

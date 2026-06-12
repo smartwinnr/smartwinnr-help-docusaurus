@@ -1,19 +1,25 @@
 ---
 id: 5fda55167129911ba1b21b2c
-title: "What is a Group?"
-description: ""
+title: What is a Group?
+description: >-
+  In SmartWinnr, a Group is a collection of users that can be created and
+  managed by Trainers/Editors.
 slug: what-is-a-group
 sidebar_position: 128
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda55167129911ba1b21b2c
-  helpscout_url: https://help.smartwinnr.com/article/128-what-is-a-group
+  helpscout_url: 'https://help.smartwinnr.com/article/128-what-is-a-group'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: groups
-tags: []
+tags:
+  - admin
+  - settings
 ---
 ### What is a Group?
 

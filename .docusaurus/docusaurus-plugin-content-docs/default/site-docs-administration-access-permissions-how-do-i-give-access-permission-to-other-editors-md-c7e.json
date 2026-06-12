@@ -1,7 +1,7 @@
 {
   "id": "administration/access-permissions/5fdb74880b11ce44f63933a3",
   "title": "How do I give access permission to other editors?",
-  "description": "",
+  "description": "As an Editor in SmartWinnr, you can give access permission to various tasks that you create to other editors. Tasks include:",
   "source": "@site/docs/administration/access-permissions/how-do-i-give-access-permission-to-other-editors.md",
   "sourceDirName": "administration/access-permissions",
   "slug": "/administration/access-permissions/how-do-i-give-access-permission-to-other-editors",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/access-permissions/how-do-i-give-access-permission-to-other-editors.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 196,
   "frontMatter": {
     "id": "5fdb74880b11ce44f63933a3",
     "title": "How do I give access permission to other editors?",
-    "description": "",
+    "description": "As an Editor in SmartWinnr, you can give access permission to various tasks that you create to other editors. Tasks include:",
     "slug": "how-do-i-give-access-permission-to-other-editors",
     "sidebar_position": 196,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

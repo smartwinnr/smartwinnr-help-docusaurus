@@ -1,19 +1,25 @@
 ---
 id: 5fd49bd14eb32171b80374c6
-title: "How to create a 'Survey'."
-description: ""
+title: How to create a 'Survey'.
+description: >-
+  Surveys in SmartWinnr allow you to collect structured feedback from
+  participants quickly and effectively.
 slug: how-to-create-a-survey
 sidebar_position: 58
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd49bd14eb32171b80374c6
-  helpscout_url: https://help.smartwinnr.com/article/58-how-can-i-create-a-survey
+  helpscout_url: 'https://help.smartwinnr.com/article/58-how-can-i-create-a-survey'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: survey
-tags: []
+tags:
+  - survey
+  - admin
 ---
 ## **Create a Survey**
 
@@ -24,13 +30,13 @@ Follow the steps below to create a survey in SmartWinnr
 * Log in to the **SmartWinnr Admin Portal**.
 * Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Surveys**.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
+[![Follow the steps below to create a survey in SmartWinnr](/img/helpscout/editors/how-to-create-a-survey-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
 
 * On the Surveys page, click the **Add New Survey** button located at the top-right corner of the screen.
 
 This will open the survey creation page, where you can proceed with configuring the survey details and questions.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2ecd1bb5c6f7434e0d56f/file-KPqabCOtLE.png)
+[![This will open the survey creation page, where you can proceed with configuring the survey details and questions.](/img/helpscout/editors/how-to-create-a-survey-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2ecd1bb5c6f7434e0d56f/file-KPqabCOtLE.png)
 
 ### **Here is how to fill each of the fields in the Create Survey page**
 
@@ -42,7 +48,7 @@ Since we are creating a survey here select Type = Survey.
 
 [Refer to this article to know how to create a survey template](https://smartwinnr.helpscoutdocs.com/article/61-how-to-create-a-survey-template)
 
-[![](/img/helpscout/editors/how-to-create-a-survey-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49ca723119734ee37edbc/file-wpQ5PNDEho.png)
+[![Refer to this article to know how to create a survey template](/img/helpscout/editors/how-to-create-a-survey-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49ca723119734ee37edbc/file-wpQ5PNDEho.png)
 
 ### Question Visibility Type
 
@@ -64,7 +70,7 @@ You can choose one of the following visibility options:
 
 Choose the appropriate visibility type based on the structure and flow you want for your surve
 
-[![](/img/helpscout/editors/how-to-create-a-survey-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)
+[![Choose the appropriate visibility type based on the structure and flow you want for your surve](/img/helpscout/editors/how-to-create-a-survey-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)
 
 ### Survey Title, Description, and Duration
 
@@ -84,7 +90,7 @@ After selecting the survey type and question visibility, proceed with the follow
 
 Ensure all details are accurate before moving on to add survey questions.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-5.png)](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
+[![Ensure all details are accurate before moving on to add survey questions.](/img/helpscout/editors/how-to-create-a-survey-5.png)](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
 
 ### Response Settings
 
@@ -118,11 +124,11 @@ If you select **Question Visibility Type = Section Wise**, you will have the opt
 
 * Click the **Add Sections** button under the **Sections** area.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-6.png)](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)
+[![To add sections to a survey](/img/helpscout/editors/how-to-create-a-survey-6.png)](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)
 
 * A pop-up window will appear, allowing you to define and configure the survey sections.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-7.png)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)
+[![[](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)](/img/helpscout/editors/how-to-create-a-survey-7.png)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)
 
 ### Adding Multiple Sections
 
@@ -134,7 +140,7 @@ In the **Add Sections** pop-up, you can create multiple sections as required.
 
 The added sections will now be available for assigning questions within the survey.
 
-[![](/img/helpscout/editors/how-to-create-a-survey-8.png)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)
+[![The added sections will now be available for assigning questions within the survey.](/img/helpscout/editors/how-to-create-a-survey-8.png)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)
 
 ### Adding Questions and Saving the Survey
 

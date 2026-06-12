@@ -1,29 +1,35 @@
 ---
 id: 5fd490113d1d2a5b1c5ea153
-title: "How to create a manual quiz?"
-description: ""
+title: How to create a manual quiz?
+description: >-
+  Navigate to Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All
+  Quizzes -> Add New Quiz.
 slug: how-to-create-a-manual-quiz
 sidebar_position: 50
 last_update:
-  date: 2026-01-21
+  date: 2026-01-21T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd490113d1d2a5b1c5ea153
-  helpscout_url: https://help.smartwinnr.com/article/50-how-to-create-a-manual-quiz
+  helpscout_url: 'https://help.smartwinnr.com/article/50-how-to-create-a-manual-quiz'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - admin
 ---
 Navigate to **Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes -> Add New Quiz.**
 
 On the '**Create New Quiz**' page, select **Quiz Type = Manual**.
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-1.png)
+![On the 'Create New Quiz' page, select Quiz Type = Manual.](/img/helpscout/editors/how-to-create-a-manual-quiz-1.png)
 
 We have 3 types of manual quizzes, which are,
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-2.png)
+![We have 3 types of manual quizzes, which are,](/img/helpscout/editors/how-to-create-a-manual-quiz-2.png)
 
 * **Regular:**
 
@@ -50,7 +56,7 @@ We have 3 types of manual quizzes, which are,
 
 Here you can set the quiz cover image and thumbnail image.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
+![Here you can set the quiz cover image and thumbnail image.](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
 
 **Quiz Settings**
 
@@ -75,13 +81,13 @@ Here you can set the quiz cover image and thumbnail image.
 
     For example, if the number of questions per quiz is set to **10** and the quiz contains **30** questions in total, the system will automatically present **10 randomly selected questions** from the available pool to each participant.
 
-    [![](/img/helpscout/editors/how-to-create-a-manual-quiz-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffc663766df373cab708123/file-IlqCvP2diA.png)
+    [![For example, if the number of questions per quiz is set to 10 and the quiz contains 30 questions in total, the system will automatically pre](/img/helpscout/editors/how-to-create-a-manual-quiz-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffc663766df373cab708123/file-IlqCvP2diA.png)
 
     If you choose the Randomize Question by tag option, this will allow you to customize the number of questions from each tag.
 
 * **Question skip in Quiz:** Check this option if you want to allow quiz takers to skip questions in this quiz.
 
-    ![](/img/helpscout/editors/how-to-create-a-manual-quiz-6.png)
+    ![If you choose the Randomize Question by tag option, this will allow you to customize the number of questions from each tag.](/img/helpscout/editors/how-to-create-a-manual-quiz-6.png)
 
 * **Integrate with LMS (xAPI):** Enable this option to integrate the quiz with an LMS using the **xAPI** standard.
 * **Send by Generic Name:** Select this option to distribute the quiz using a **generic sender name** instead of a specific user or entity.
@@ -119,7 +125,7 @@ Here you can set the quiz cover image and thumbnail image.
 
     Once a participant completes the quiz, the selected badge or certificate will be automatically assigned to them.
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-10.png)
+![Once a participant completes the quiz, the selected badge or certificate will be automatically assigned to them.](/img/helpscout/editors/how-to-create-a-manual-quiz-10.png)
 
 * **Set Reminder:** This feature allows you to configure and schedule reminders to notify quiz participants about the status of the quiz.
 
@@ -136,7 +142,7 @@ Once the quiz has been created, you can proceed to add questions:
 * Use the available **search and filter criteria** to find relevant questions.
 * Select the questions by checking the checkbox to the left of each question you want to include in the quiz.
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-12.png)
+![Once the quiz has been created, you can proceed to add questions:](/img/helpscout/editors/how-to-create-a-manual-quiz-12.png)
 
 After selecting the questions, click **Save**. You can then proceed to assign the quiz to participants.
 
@@ -150,10 +156,10 @@ Once you have completed the quiz creation process and added the required questio
 
 You may also choose to assign the quiz to a **specific group of users** (Ex: North Zone)instead of individual participants.
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-13.png)
+![You may also choose to assign the quiz to a specific group of users (Ex: North Zone)instead of individual participants.](/img/helpscout/editors/how-to-create-a-manual-quiz-13.png)
 
 [https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff0af01f24ccf588e3fffb1/file-0xsIlrpkDV.png](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff0af01f24ccf588e3fffb1/file-0xsIlrpkDV.png)
 
 On assigning the quiz to participants, a success popup message like this will show.
 
-![](/img/helpscout/editors/how-to-create-a-manual-quiz-14.png)
+![On assigning the quiz to participants, a success popup message like this will show.](/img/helpscout/editors/how-to-create-a-manual-quiz-14.png)

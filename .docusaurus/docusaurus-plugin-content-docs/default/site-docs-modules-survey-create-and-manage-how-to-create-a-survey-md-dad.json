@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/create-and-manage/5fd49bd14eb32171b80374c6",
   "title": "How to create a 'Survey'.",
-  "description": "",
+  "description": "Surveys in SmartWinnr allow you to collect structured feedback from participants quickly and effectively.",
   "source": "@site/docs/modules/survey/create-and-manage/how-to-create-a-survey.md",
   "sourceDirName": "modules/survey/create-and-manage",
   "slug": "/modules/survey/create-and-manage/how-to-create-a-survey",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/create-and-manage/how-to-create-a-survey.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 58,
   "frontMatter": {
     "id": "5fd49bd14eb32171b80374c6",
     "title": "How to create a 'Survey'.",
-    "description": "",
+    "description": "Surveys in SmartWinnr allow you to collect structured feedback from participants quickly and effectively.",
     "slug": "how-to-create-a-survey",
     "sidebar_position": 58,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

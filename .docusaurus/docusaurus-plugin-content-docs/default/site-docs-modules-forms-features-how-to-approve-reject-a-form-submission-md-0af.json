@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/features/600850fdcfe30d219ccd99f3",
   "title": "How to Approve/Reject a Form Submission",
-  "description": "",
+  "description": "When your form has an approver added to it, users will get points for their submission only once the approver approves the form.",
   "source": "@site/docs/modules/forms/features/how-to-approve-reject-a-form-submission.md",
   "sourceDirName": "modules/forms/features",
   "slug": "/modules/forms/features/how-to-approve-reject-a-form-submission",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/features/how-to-approve-reject-a-form-submission.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 223,
   "frontMatter": {
     "id": "600850fdcfe30d219ccd99f3",
     "title": "How to Approve/Reject a Form Submission",
-    "description": "",
+    "description": "When your form has an approver added to it, users will get points for their submission only once the approver approves the form.",
     "slug": "how-to-approve-reject-a-form-submission",
     "sidebar_position": 223,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

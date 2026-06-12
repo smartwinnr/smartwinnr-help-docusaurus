@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4640136980410c912381c",
   "title": "How to create a 'Hotspot Question'.",
-  "description": "",
+  "description": "A Hotspot refers to a predefined area within an image, defined by specific pixel coordinates, that represents the correct answer.",
   "source": "@site/docs/modules/quiz/features/how-to-create-a-hotspot-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-a-hotspot-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-hotspot-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 42,
   "frontMatter": {
     "id": "5fd4640136980410c912381c",
     "title": "How to create a 'Hotspot Question'.",
-    "description": "",
+    "description": "A Hotspot refers to a predefined area within an image, defined by specific pixel coordinates, that represents the correct answer.",
     "slug": "how-to-create-a-hotspot-question",
     "sidebar_position": 42,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

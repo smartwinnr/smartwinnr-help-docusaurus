@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/68c928f875baeb18e18df8a1",
   "title": "How to update the thumbnail of a SmartFeed",
-  "description": "",
+  "description": "To update the SmartFeed thumbnail, please follow the steps below:",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 295,
   "frontMatter": {
     "id": "68c928f875baeb18e18df8a1",
     "title": "How to update the thumbnail of a SmartFeed",
-    "description": "",
+    "description": "To update the SmartFeed thumbnail, please follow the steps below:",
     "slug": "how-to-update-the-thumbnail-of-a-smartfeed",
     "sidebar_position": 295,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

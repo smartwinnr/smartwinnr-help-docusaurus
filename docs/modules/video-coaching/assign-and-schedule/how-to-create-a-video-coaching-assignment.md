@@ -1,19 +1,24 @@
 ---
 id: 5fd72036c868cb6df3a813bf
-title: "How to create a Video Coaching assignment."
-description: ""
+title: How to create a Video Coaching assignment.
+description: Only users with Editor and Manager role can create a coaching assignment.
 slug: how-to-create-a-video-coaching-assignment
 sidebar_position: 85
 last_update:
-  date: 2025-08-19
+  date: 2025-08-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd72036c868cb6df3a813bf
-  helpscout_url: https://help.smartwinnr.com/article/85-how-can-i-create-a-video-coaching-assignment
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/85-how-can-i-create-a-video-coaching-assignment
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: coaching
-tags: []
+tags:
+  - video-coaching
+  - admin
 ---
 Only users with Editor and Manager role can create a coaching assignment.
 
@@ -37,13 +42,13 @@ Creating a video coaching assignment involves the below 3 steps:
 
 Go to **Editor > Coaching > Video Coaching > View Coaching.** _Click_ on **'Create Coaching'** button.
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-1.jpg)
+![Go to Editor > Coaching > Video Coaching > View Coaching. Click on 'Create Coaching' button.](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-1.jpg)
 
 Click on "Enable AI Coach" for the AI Evaluation of the coaching.
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-2.jpg)
+![Click on "Enable AI Coach" for the AI Evaluation of the coaching.](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-2.jpg)
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-3.jpg)
+![Click on "Enable AI Coach" for the AI Evaluation of the coaching.](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-3.jpg)
 
 * Ideal Duration: Guides the AI on the best duration.
 * Boost Words: Brand words like company name, brand name.
@@ -73,7 +78,7 @@ Here, select the coaches, you want to assign the coaching to.
 
 _You can also filter users based on your preference like a business unit or a country._
 
-[![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1f3f141fcb56e4047d8d6/file-gH38H8if6L.png)
+[![You can also filter users based on your preference like a business unit or a country.](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-5.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1f3f141fcb56e4047d8d6/file-gH38H8if6L.png)
 
 3
 
@@ -87,24 +92,24 @@ You will only get to see a list of editors and managers in the drop-down menu to
 
 Here you will get to select yourself and also assign other managers as coaches to a video coaching assignment.
 
-[![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-6.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1f43f6451e825e3b8fac7/file-5UjuWQaTTu.png)
+[![Here you will get to select yourself and also assign other managers as coaches to a video coaching assignment.](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-6.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1f43f6451e825e3b8fac7/file-5UjuWQaTTu.png)
 
 Apply coach selection to all the pages: If you check this checkbox, then the same coach that you select here will get applied to all the users across various pages.
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-7.png)
+![Apply coach selection to all the pages: If you check this checkbox, then the same coach that you select here will get applied to all the use](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-7.png)
 
 Randomly Assign Coaches: This feature helps you when you have a huge number of participants assigned to the coaching. If you select this option,  you can randomly assign the selected coaches to the participants. For example, if you have 100 participants and if you have selected 5 coaches then these 5 coaches will get assigned randomly to the 100 participants.
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-8.png)
+![Randomly Assign Coaches: This feature helps you when you have a huge number of participants assigned to the coaching. If you select this opt](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-8.png)
 
 What happens after the Coaching is assigned?
 
 When a video coaching assignment is created and assigned to the participants, all the participants will get an email about the assigned coaching. Below is an example screenshot of the email, the participants will receive:
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-9.png)
+![When a video coaching assignment is created and assigned to the participants, all the participants will get an email about the assigned coac](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-9.png)
 
 You can take the coaching from the SmartWinnr app or click on the " **click here**" link in the email to get started with the coaching in the SmartWinnr portal.
 
 Similarly, once a participant submits his video response, then all the coaches of that coaching will receive an email about it. Below is an example screenshot of the email, the coaches are going to receive:
 
-![](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-10.png)
+![Similarly, once a participant submits his video response, then all the coaches of that coaching will receive an email about it. Below is an ](/img/helpscout/editors/how-to-create-a-video-coaching-assignment-10.png)

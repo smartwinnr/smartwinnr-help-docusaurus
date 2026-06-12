@@ -1,19 +1,24 @@
 ---
 id: 5fd46a20c868cb6df3a80ff5
-title: "How to create a 'Matching Question'."
-description: ""
+title: How to create a 'Matching Question'.
+description: >-
+  A matching question enables participants to correctly pair items from one list
+  with corresponding items in a second list.
 slug: how-to-create-a-matching-question
 sidebar_position: 43
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd46a20c868cb6df3a80ff5
-  helpscout_url: https://help.smartwinnr.com/article/43-how-to-create-a-matching-question
+  helpscout_url: 'https://help.smartwinnr.com/article/43-how-to-create-a-matching-question'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 A matching question enables participants to correctly pair items from one list with corresponding items in a second list. This format is ideal for assessing understanding of relationships such as terms and definitions, products and features, or concepts and descriptions.
 
@@ -22,15 +27,15 @@ A matching question enables participants to correctly pair items from one list w
 1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
 2. Click on the **'Add New Question'** button at the _top right corner_.
 
-    [![](/img/helpscout/editors/how-to-create-multiple-choice-questions-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+    [![Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-multiple-choice-questions-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
 
 3. On the **'Create new Question'** select the **'Question Type'** as **‘Matching’.** Also, select the scoring, whether default or partial. Use **Default Scoring** when the question has only one correct answer. Use **Partial Scoring** when the question has multiple correct answers. In **Partial Scoring**, the total score is distributed equally among all correct answer options.
 
-    ![](/img/helpscout/editors/how-to-create-a-matching-question-1.png)
+    ![On the 'Create new Question' select the 'Question Type' as ‘Matching’. Also, select the scoring, whether default or partial. Use Default Sco](/img/helpscout/editors/how-to-create-a-matching-question-1.png)
 
 4. Enter your question in the **‘Question’** field.
 
-    ![](/img/helpscout/editors/how-to-create-a-matching-question-2.png)
+    ![Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-a-matching-question-2.png)
 
 5. Add the left-hand side with an **Answer Options** as a text, image, video, or audio. By clicking on the **Rich Text** checkbox, you will be able to add video, audio etc as answer options. Then, add the match element on the right-hand side section. **Distractors** allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty.
 
@@ -42,7 +47,7 @@ A matching question enables participants to correctly pair items from one list w
 
 The total score for the question should be added here.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
+![The total score for the question should be added here.](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
 
 **Feedback:**
 
@@ -50,7 +55,7 @@ This section can be used to provide **additional information or clarification** 
 
 **Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
+![This section can be used to provide additional information or clarification related to the topic or concept covered in the question. The fee](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
 
 ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
 
@@ -58,7 +63,7 @@ This section can be used to provide **additional information or clarification** 
 
 Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and analytics. These categories are predefined by your SmartWinnr administrator. You may associate multiple relevant categories where appropriate.
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-3.png)
+![Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and an](/img/helpscout/editors/how-to-create-a-matching-question-3.png)
 
 Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
 
@@ -88,13 +93,13 @@ You can also send an audio file with the question by clicking on the Audio icon.
 
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
+![You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will ope](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
 
 Choose the language you want to change and then click on the **Save** button.
 
 ### Answer Options
 
-Add the left-hand side and matching right-hand side options in the 'Answer Options' section.![](/img/helpscout/editors/how-to-create-a-matching-question-5.png)
+Add the left-hand side and matching right-hand side options in the 'Answer Options' section.![Answer Options](/img/helpscout/editors/how-to-create-a-matching-question-5.png)
 
 **Additional Match Possibilities(Distractors):**
 
@@ -106,4 +111,4 @@ Once the matching question is created and shared with participants, it will appe
 
 A response is considered correct only when the participant selects the correct match for _all_ items. Partial responses are not awarded any marks.
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-6.png)
+![A response is considered correct only when the participant selects the correct match for all items. Partial responses are not awarded any ma](/img/helpscout/editors/how-to-create-a-matching-question-6.png)

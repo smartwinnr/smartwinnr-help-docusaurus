@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/features/5fdaf5650b11ce44f6393174",
   "title": "What are Chat Groups?",
-  "description": "",
+  "description": "You need to first create a group in order to create a 'Chat Group'. Learn how to create a group.",
   "source": "@site/docs/modules/notifications/features/what-are-chat-groups.md",
   "sourceDirName": "modules/notifications/features",
   "slug": "/modules/notifications/features/what-are-chat-groups",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/what-are-chat-groups.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 152,
   "frontMatter": {
     "id": "5fdaf5650b11ce44f6393174",
     "title": "What are Chat Groups?",
-    "description": "",
+    "description": "You need to first create a group in order to create a 'Chat Group'. Learn how to create a group.",
     "slug": "what-are-chat-groups",
     "sidebar_position": 152,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "chat"
     },
-    "tags": []
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

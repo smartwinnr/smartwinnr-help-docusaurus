@@ -1,19 +1,26 @@
 ---
 id: 6971f2ff425fd115e68cbc8b
-title: "Understanding the Learner Management Tab on the Quiz Dashboard"
-description: ""
+title: Understanding the Learner Management Tab on the Quiz Dashboard
+description: >-
+  This tab provides insights into individual learners and categorizes users by
+  performance and risk level.
 slug: understanding-the-learner-management-tab-on-the-quiz-dashboard
 sidebar_position: 331
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f2ff425fd115e68cbc8b
-  helpscout_url: https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - reports
 ---
 ## Learner Management Tab
 

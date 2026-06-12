@@ -1,18 +1,27 @@
 ---
 id: 60f9c0126ffe270af2a917d6
-title: "How to Answer Long  Answer type Questions in SmartWinnr?"
-description: ""
+title: How to Answer Long  Answer type Questions in SmartWinnr?
+description: >-
+  You can follow the below steps to answer such Long - answer type Questions in
+  SmartWinnr.
 slug: how-to-answer-long-answer-type-questions-in-smartwinnr
 sidebar_position: 260
 last_update:
-  date: 2022-06-16
+  date: 2022-06-16T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60f9c0126ffe270af2a917d6
-  helpscout_url: https://help.smartwinnr.com/article/260-how-users-can-answer-the-long-answer-questions
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/260-how-users-can-answer-the-long-answer-questions
 customProps:
-  roles: [user, manager, editor, admin]
-tags: []
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
+tags:
+  - quiz
+  - onboarding
 ---
 ## SmartWinnr has a descriptive-type question where you will have to write down the answer to the question in one line or paragraph
 
@@ -20,7 +29,7 @@ You can follow the below steps to answer such Long - answer type Questions in Sm
 
 * Click on the assigned quiz to start the quiz. That will open the selected quiz.
 
-![](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-1.png)
+![You can follow the below steps to answer such Long - answer type Questions in SmartWinnr.](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-1.png)
 
 * Click on the button “ **START QUIZ**” to start answering the questions in the quiz.
 
@@ -40,7 +49,7 @@ You can also use the list option to mention the point numbers as an ordered list
 
 * Once you complete answering all the questions, click on the “**SUBMIT QUIZ**” button to submit the quiz.
 
-![](https://lh6.googleusercontent.com/-68Tjm_sTZ30XPOdnyKSuCW2i3qAjFiBnaUsnHuW6vn7dAQnuiwaYn4xYmQk02eR0_KZhpNxMl5wqYtD-qHyws1rSdHCIYs4sunLwsYk4e5KTCS0xK2VZR0Cds2Sw09jEUwhD1oq)
+![You can also use the list option to mention the point numbers as an ordered list or you can choose the unordered list (instead of a number, ](https://lh6.googleusercontent.com/-68Tjm_sTZ30XPOdnyKSuCW2i3qAjFiBnaUsnHuW6vn7dAQnuiwaYn4xYmQk02eR0_KZhpNxMl5wqYtD-qHyws1rSdHCIYs4sunLwsYk4e5KTCS0xK2VZR0Cds2Sw09jEUwhD1oq)
 
 * After submitting the quiz, you will be redirected to the quiz leaderboard page. In case **if all the questions in your quiz were long answer questions, the quiz leaderboard will show zero scores until the evaluator evaluates your answers.**
 
@@ -53,7 +62,7 @@ You can also use the list option to mention the point numbers as an ordered list
 * Once your evaluator evaluates and gives points for each question, your scores and ranking will be available to you on the quiz leaderboard.
 * To check the leaderboard, select the quiz from the **Completed section tab** and select the quiz.
 
-![](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-5.png)
+![How to view the Quiz score and Feedback?](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-5.png)
 
 * By selecting the quiz, you can view the score leaderboard.
 

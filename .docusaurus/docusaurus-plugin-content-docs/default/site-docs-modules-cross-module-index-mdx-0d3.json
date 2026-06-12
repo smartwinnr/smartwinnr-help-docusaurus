@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/module-cross-module",
   "title": "Cross-Module Features",
-  "description": "Behaviour that spans multiple modules — query, app updates, navigation.",
+  "description": "Behaviour that spans multiple modules - query, app updates, navigation.",
   "source": "@site/docs/modules/cross-module/index.mdx",
   "sourceDirName": "modules/cross-module",
   "slug": "/modules/cross-module/",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "module-cross-module",
     "title": "Cross-Module Features",
-    "description": "Behaviour that spans multiple modules — query, app updates, navigation.",
+    "description": "Behaviour that spans multiple modules - query, app updates, navigation.",
     "slug": "/modules/cross-module/",
     "displayed_sidebar": "tutorialSidebar",
     "hide_title": true,

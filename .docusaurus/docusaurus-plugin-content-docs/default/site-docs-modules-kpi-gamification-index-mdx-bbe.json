@@ -9,7 +9,18 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-kpi-gamification",
@@ -29,7 +40,11 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

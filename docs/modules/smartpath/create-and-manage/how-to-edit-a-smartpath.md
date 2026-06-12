@@ -1,19 +1,25 @@
 ---
 id: 5fd713904eb32171b80377f7
-title: "How to edit a SmartPath."
-description: ""
+title: How to edit a SmartPath.
+description: >-
+  You can edit an existing SmartPath at any time to update its details or modify
+  its content.
 slug: how-to-edit-a-smartpath
 sidebar_position: 79
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd713904eb32171b80377f7
-  helpscout_url: https://help.smartwinnr.com/article/79-how-to-edit-a-smartpath
+  helpscout_url: 'https://help.smartwinnr.com/article/79-how-to-edit-a-smartpath'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 You can edit an existing SmartPath at any time to update its details or modify its content. The fields that can be edited include the SmartPath’s title, description, language, cover image, modules, and assignment settings.
 
@@ -25,11 +31,11 @@ You can edit an existing SmartPath at any time to update its details or modify i
 2. From the list of SmartPaths, locate the one you want to update.
 3. On the particular SmartPath card, _click_ on the **'Edit'** button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the **'Edit SmartPath'** button at the top right corner of the screen.
 
-![](/img/helpscout/editors/how-to-edit-a-smartpath-1.png)
+![On the particular SmartPath card, click on the 'Edit' button at the bottom right corner. Alternatively, you can click and open a particular ](/img/helpscout/editors/how-to-edit-a-smartpath-1.png)
 
 4. This opens the SmartPath in edit mode.
 
-![](/img/helpscout/editors/how-to-edit-a-smartpath-2.png)
+![This opens the SmartPath in edit mode.](/img/helpscout/editors/how-to-edit-a-smartpath-2.png)
 
 ### **Update SmartPath Basic Details**
 

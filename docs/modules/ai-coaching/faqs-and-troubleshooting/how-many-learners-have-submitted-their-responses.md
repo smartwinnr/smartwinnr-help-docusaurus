@@ -1,19 +1,25 @@
 ---
 id: 696f830d06dfb2774c816085
-title: "How many learners have submitted their responses?"
-description: ""
+title: How many learners have submitted their responses?
+description: >-
+  You can find this information in the Active Learners metric on the AI Coaching
+  Dashboard.
 slug: how-many-learners-have-submitted-their-responses
 sidebar_position: 302
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696f830d06dfb2774c816085
-  helpscout_url: https://help.smartwinnr.com/article/302-what-is-ai-coaching
+  helpscout_url: 'https://help.smartwinnr.com/article/302-what-is-ai-coaching'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - troubleshooting
 ---
 You can find this information in the **Active Learners** metric on the AI Coaching Dashboard.
 
@@ -53,7 +59,7 @@ In addition to the number of active learners, the same dashboard also shows two 
 
 **Example:** If the metric shows "8.10 min" with "+4% vs last quarter," this means the typical roleplay session lasts 8 minutes and 10 seconds.
 
-**Why this matters:** This helps you understand whether learners are taking enough time to thoughtfully engage with the roleplay. Most effective sessions range from 7-12 minutes—enough time for meaningful interaction while remaining efficient compared to traditional 30-minute sessions.
+**Why this matters:** This helps you understand whether learners are taking enough time to thoughtfully engage with the roleplay. Most effective sessions range from 7-12 minutes-enough time for meaningful interaction while remaining efficient compared to traditional 30-minute sessions.
 
 * * *
 

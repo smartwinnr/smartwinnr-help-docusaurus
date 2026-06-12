@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/5fd48497c868cb6df3a81016",
   "title": "How to upload questions in bulk using 'Import Questions'.",
-  "description": "",
+  "description": "Here are the steps to import questions in bulk:",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 46,
   "frontMatter": {
     "id": "5fd48497c868cb6df3a81016",
     "title": "How to upload questions in bulk using 'Import Questions'.",
-    "description": "",
+    "description": "Here are the steps to import questions in bulk:",
     "slug": "how-to-upload-questions-in-bulk-using-import-questions",
     "sidebar_position": 46,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

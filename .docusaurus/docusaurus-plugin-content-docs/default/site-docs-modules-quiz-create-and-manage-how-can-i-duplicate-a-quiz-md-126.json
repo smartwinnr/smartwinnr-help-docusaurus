@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/5fd4939923119734ee37edac",
   "title": "How can I duplicate a quiz?",
-  "description": "",
+  "description": "You can duplicate an existing quiz. The quiz name, description and questions in the quiz will get copied into the new quiz.",
   "source": "@site/docs/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 51,
   "frontMatter": {
     "id": "5fd4939923119734ee37edac",
     "title": "How can I duplicate a quiz?",
-    "description": "",
+    "description": "You can duplicate an existing quiz. The quiz name, description and questions in the quiz will get copied into the new quiz.",
     "slug": "how-can-i-duplicate-a-quiz",
     "sidebar_position": 51,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,19 +1,24 @@
 ---
 id: 6970dfd91252a7004208b87d
-title: "How do I download Attempt-wise Coaching Report?"
-description: ""
+title: How do I download Attempt-wise Coaching Report?
+description: This report shows all attempts for a specific coaching.
 slug: how-do-i-download-attempt-wise-coaching-report
 sidebar_position: 315
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970dfd91252a7004208b87d
-  helpscout_url: https://help.smartwinnr.com/article/315-how-do-i-download-attempt-wise-coaching-report
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/315-how-do-i-download-attempt-wise-coaching-report
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 ### Download Attempt-wise Coaching Report
 
@@ -25,7 +30,7 @@ This report shows all attempts for a specific coaching.
 2. Scroll to the coaching you want to report on
 3. Click **View Analytics Icon**
 
-    ![](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-1.png)
+    ![Click View Analytics Icon](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-1.png)
 
     Click on View Analytics Icon
 
@@ -33,13 +38,13 @@ This report shows all attempts for a specific coaching.
 5. Click the **Hamburger menu** in the top right corner
 6. Select **Attempt-wise Overall Coaching Report**
 
-    ![](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-2.png)
+    ![Select Attempt-wise Overall Coaching Report](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-2.png)
 
     Download the report under Hamburger Menu
 
 7. Go to **Reports → Generated Reports**
 8. Locate your report and click the **download icon** to save it to your computer
 
-    ![](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-3.png)
+    ![Locate your report and click the download icon to save it to your computer](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-3.png)
 
     Download the report under Generated Reports

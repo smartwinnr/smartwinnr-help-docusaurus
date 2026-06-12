@@ -1,19 +1,23 @@
 ---
 id: 5fdb509ab624c71b7985a72e
-title: "What is an Achievement?"
-description: ""
+title: What is an Achievement?
+description: Achievement is a reward that a user gets on completion of a certain task.
 slug: what-is-an-achievement
 sidebar_position: 193
 last_update:
-  date: 2020-12-17
+  date: 2020-12-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb509ab624c71b7985a72e
-  helpscout_url: https://help.smartwinnr.com/article/193-what-is-an-achievement
+  helpscout_url: 'https://help.smartwinnr.com/article/193-what-is-an-achievement'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: achievements
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 Achievement is a reward that a user gets on completion of a certain task.
 

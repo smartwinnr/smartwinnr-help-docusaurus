@@ -1,7 +1,7 @@
 {
   "id": "modules/field-coaching/for-managers/60a8e21fdca0fd46b93580f6",
   "title": "How to review Field Coaching from Managers View in Mobile",
-  "description": "",
+  "description": "How to open Field Coaching in Manager view:",
   "source": "@site/docs/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile.md",
   "sourceDirName": "modules/field-coaching/for-managers",
   "slug": "/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "field-coaching",
+      "permalink": "/tags/field-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 244,
   "frontMatter": {
     "id": "60a8e21fdca0fd46b93580f6",
     "title": "How to review Field Coaching from Managers View in Mobile",
-    "description": "",
+    "description": "How to open Field Coaching in Manager view:",
     "slug": "how-to-review-field-coaching-from-managers-view-in-mobile",
     "sidebar_position": 244,
     "last_update": {
@@ -34,7 +40,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "field-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

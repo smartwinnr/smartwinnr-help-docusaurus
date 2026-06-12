@@ -1,7 +1,7 @@
 {
   "id": "reports-and-analytics/legacy/5fdba102a5d295659b369f9f",
   "title": "Quiz Wise Analytics",
-  "description": "",
+  "description": "SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.",
   "source": "@site/docs/reports-and-analytics/legacy/quiz-wise-analytics.md",
   "sourceDirName": "reports-and-analytics/legacy",
   "slug": "/reports-and-analytics/legacy/quiz-wise-analytics",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/quiz-wise-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 198,
   "frontMatter": {
     "id": "5fdba102a5d295659b369f9f",
     "title": "Quiz Wise Analytics",
-    "description": "",
+    "description": "SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.",
     "slug": "quiz-wise-analytics",
     "sidebar_position": 198,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "learnerReport"
     },
-    "tags": []
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/reports-and-analytics/5fdaebcca5d295659b369c02",
   "title": "How can I view KHub Analytics?",
-  "description": "",
+  "description": "Only the users who have an editor role can view KHub analytics",
   "source": "@site/docs/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics.md",
   "sourceDirName": "modules/knowledge-hub/reports-and-analytics",
   "slug": "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 149,
   "frontMatter": {
     "id": "5fdaebcca5d295659b369c02",
     "title": "How can I view KHub Analytics?",
-    "description": "",
+    "description": "Only the users who have an editor role can view KHub analytics",
     "slug": "how-can-i-view-khub-analytics",
     "sidebar_position": 149,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "khub"
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/for-learners/62b450c10b51ec1ae83f9bf8",
   "title": "How to access the SCORM course from the SmartWinnr app ?",
-  "description": "",
+  "description": "End users/sales reps can access the SCORM course from their SmartWinnr account by following the below-given steps:",
   "source": "@site/docs/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
   "sourceDirName": "modules/cross-module/for-learners",
   "slug": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 272,
   "frontMatter": {
     "id": "62b450c10b51ec1ae83f9bf8",
     "title": "How to access the SCORM course from the SmartWinnr app ?",
-    "description": "",
+    "description": "End users/sales reps can access the SCORM course from their SmartWinnr account by following the below-given steps:",
     "slug": "how-to-access-the-scorm-course-from-the-smartwinnr-app",
     "sidebar_position": 272,
     "last_update": {
@@ -34,7 +40,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

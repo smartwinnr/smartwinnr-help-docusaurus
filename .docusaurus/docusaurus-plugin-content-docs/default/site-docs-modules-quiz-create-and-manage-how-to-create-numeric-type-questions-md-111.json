@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/6451ac447fbafd6b38243f84",
   "title": "How to create 'Numeric Type Questions'",
-  "description": "",
+  "description": "In a Numeric Type question, you specify a numeric value as the correct answer and define an allowable error margin.",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-numeric-type-questions.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-numeric-type-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 284,
   "frontMatter": {
     "id": "6451ac447fbafd6b38243f84",
     "title": "How to create 'Numeric Type Questions'",
-    "description": "",
+    "description": "In a Numeric Type question, you specify a numeric value as the correct answer and define an allowable error margin.",
     "slug": "how-to-create-numeric-type-questions",
     "sidebar_position": 284,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdaddc6b624c71b7985a570",
   "title": "What is a Rule?",
-  "description": "",
+  "description": "Rules are a \"set of activities that will be triggered based on certain conditions\".",
   "source": "@site/docs/administration/system-management/what-is-a-rule.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/what-is-a-rule",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/what-is-a-rule.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 141,
   "frontMatter": {
     "id": "5fdaddc6b624c71b7985a570",
     "title": "What is a Rule?",
-    "description": "",
+    "description": "Rules are a \"set of activities that will be triggered based on certain conditions\".",
     "slug": "what-is-a-rule",
     "sidebar_position": 141,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

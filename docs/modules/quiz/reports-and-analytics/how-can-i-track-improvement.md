@@ -1,19 +1,25 @@
 ---
 id: 697115b9f35cc6035d0b99b3
-title: "How can I track improvement?"
-description: ""
+title: How can I track improvement?
+description: >-
+  The Quiz Analytics Dashboard provides a comprehensive view of quiz
+  performance, learner participation, and engagement across your organization.
 slug: how-can-i-track-improvement
 sidebar_position: 320
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 697115b9f35cc6035d0b99b3
-  helpscout_url: https://help.smartwinnr.com/article/320-how-can-i-track-improvement
+  helpscout_url: 'https://help.smartwinnr.com/article/320-how-can-i-track-improvement'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - reports
 ---
 # Quiz Analytics Dashboard
 
@@ -42,10 +48,10 @@ Use the Quiz Analytics Dashboard to:
 
 The Quiz Analytics Dashboard has four main tabs at the top:
 
-* [**Overview**](https://help.smartwinnr.com/article/328-understanding-the-overview-tab-on-the-quiz-dashboard#Overview-Tab-USrFb): Shows high-level metrics, performance trends, and recent activity
-* [**Performance**](https://help.smartwinnr.com/article/329-understanding-the-performance-tab-on-the-quiz-dashboard#Performance-Tab-nCOco): Displays detailed score distributions, pass/fail rates, and certification metrics
-* [**Participation**](https://help.smartwinnr.com/article/330-understanding-the-participation-tab-on-the-quiz-dashboard#Participation-Tab-MRxse): Tracks engagement patterns, completion status, and usage times
-* [**Learner Management**](https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard#Learner-Management-Tab-5Ab1n): Provides individual learner insights and categorizes users by performance level
+* [**Overview**](./understanding-the-overview-tab-on-the-quiz-dashboard.md#Overview-Tab-USrFb): Shows high-level metrics, performance trends, and recent activity
+* [**Performance**](./understanding-the-performance-tab-on-the-quiz-dashboard.md#Performance-Tab-nCOco): Displays detailed score distributions, pass/fail rates, and certification metrics
+* [**Participation**](./understanding-the-participation-tab-on-the-quiz-dashboard.md#Participation-Tab-MRxse): Tracks engagement patterns, completion status, and usage times
+* [**Learner Management**](./understanding-the-participation-tab-on-the-quiz-dashboard.md#Learner-Management-Tab-5Ab1n): Provides individual learner insights and categorizes users by performance level
 
 Click each tab to view different aspects of your quiz program's effectiveness.
 
@@ -117,25 +123,25 @@ The dashboard updates automatically as learners complete quizzes, so you always 
 
 * If Active Learners is declining, send reminder notifications or make quizzes more visible
 * Use Peak Usage Time insights to schedule quiz releases when learners are most active
-* Compare Logged-in Users vs. Active Users—a large gap suggests quizzes aren't compelling or visible enough
+* Compare Logged-in Users vs. Active Users-a large gap suggests quizzes aren't compelling or visible enough
 
 **For performance:**
 
 * If Avg Score is below your passing threshold, review training materials or quiz difficulty
-* Track Quiz Performance Trend over time—scores should improve after training interventions
+* Track Quiz Performance Trend over time-scores should improve after training interventions
 * Use Score Distribution Analysis to identify if issues are widespread or isolated
 
 **For completion:**
 
 * If Completion Rate is below 80%, investigate if quizzes are too long, too difficult, or not prioritized
-* Monitor Quiz Completion Status—high "Not Started" percentages suggest learners need reminders
-* Check Avg Completion Time—very long times might indicate confusing questions
+* Monitor Quiz Completion Status-high "Not Started" percentages suggest learners need reminders
+* Check Avg Completion Time-very long times might indicate confusing questions
 
 **For learner support:**
 
 * Prioritize support for At-Risk Users before they fall further behind
 * Use User Performance Overview to identify specific individuals needing help
-* Monitor Retry Success Rate—if it's low, learners need better training resources, not just more attempts
+* Monitor Retry Success Rate-if it's low, learners need better training resources, not just more attempts
 
 **For regional insights:**
 

@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/features/5fd714514eb32171b80377f9",
   "title": "How can I Gamify a SmartPath?",
-  "description": "",
+  "description": "Make your SmartPaths interesting for your learners by creating a competition around them. Follow the below steps to create a SmartPath competition:",
   "source": "@site/docs/modules/smartpath/features/how-can-i-gamify-a-smartpath.md",
   "sourceDirName": "modules/smartpath/features",
   "slug": "/modules/smartpath/features/how-can-i-gamify-a-smartpath",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/how-can-i-gamify-a-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 81,
   "frontMatter": {
     "id": "5fd714514eb32171b80377f9",
     "title": "How can I Gamify a SmartPath?",
-    "description": "",
+    "description": "Make your SmartPaths interesting for your learners by creating a competition around them. Follow the below steps to create a SmartPath competition:",
     "slug": "how-can-i-gamify-a-smartpath",
     "sidebar_position": 81,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

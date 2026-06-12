@@ -1,19 +1,24 @@
 ---
 id: 5fdae88db624c71b7985a587
-title: "What is KHub?"
-description: ""
+title: What is KHub?
+description: >-
+  KHub is a knowledge/content repository for your employees to help them excel
+  at their job.
 slug: what-is-khub
 sidebar_position: 145
 last_update:
-  date: 2020-12-17
+  date: 2020-12-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdae88db624c71b7985a587
-  helpscout_url: https://help.smartwinnr.com/article/145-what-is-khub
+  helpscout_url: 'https://help.smartwinnr.com/article/145-what-is-khub'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: khub
-tags: []
+tags:
+  - knowledge-hub
 ---
 KHub is a knowledge/content repository for your employees to help them excel at their job. This feature lets you share the right content with your team at the right time so that they are prepared to handle any situation.
 

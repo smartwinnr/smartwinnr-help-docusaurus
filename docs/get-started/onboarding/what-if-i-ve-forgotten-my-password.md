@@ -1,22 +1,28 @@
 ---
 id: 5fce1bf84664bd7a123eb447
-title: "What if I've forgotten my password?"
-description: ""
+title: What if I've forgotten my password?
+description: >-
+  If you have forgotten your password, you can click on the link called ‘Forgot
+  Password?’ in the login page of the SmartWinnr app.
 slug: what-if-i-ve-forgotten-my-password
 sidebar_position: 12
 last_update:
-  date: 2020-12-26
+  date: 2020-12-26T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fce1bf84664bd7a123eb447
-  helpscout_url: https://help.smartwinnr.com/article/12-what-if-ive-forgotten-my-password
+  helpscout_url: 'https://help.smartwinnr.com/article/12-what-if-ive-forgotten-my-password'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
 tags: []
 ---
 If you have forgotten your password, you can click on the link called ‘**Forgot Password**?’ in the login page of the SmartWinnr app.
 
-![](/img/helpscout/managers-and-team-members/what-if-i-ve-forgotten-my-password-1.png)
+![If you have forgotten your password, you can click on the link called ‘Forgot Password?’ in the login page of the SmartWinnr app.](/img/helpscout/managers-and-team-members/what-if-i-ve-forgotten-my-password-1.png)
 
 Enter your username and click on the button ‘Forgot Password’.
 

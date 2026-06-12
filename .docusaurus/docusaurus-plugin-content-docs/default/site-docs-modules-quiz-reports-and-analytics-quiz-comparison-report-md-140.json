@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/5ffc22a3551e0c2853f3af84",
   "title": "Quiz Comparison Report",
-  "description": "",
+  "description": "The Quiz Comparison Report provides a comparative view of multiple quizzes created in SmartWinnr.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/quiz-comparison-report.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/quiz-comparison-report",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/quiz-comparison-report.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 200,
   "frontMatter": {
     "id": "5ffc22a3551e0c2853f3af84",
     "title": "Quiz Comparison Report",
-    "description": "",
+    "description": "The Quiz Comparison Report provides a comparative view of multiple quizzes created in SmartWinnr.",
     "slug": "quiz-comparison-report",
     "sidebar_position": 200,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

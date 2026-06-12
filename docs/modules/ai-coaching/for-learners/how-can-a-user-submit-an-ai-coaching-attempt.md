@@ -1,19 +1,28 @@
 ---
 id: 6971d78c6a1b8a42df6acd03
-title: "How can a User submit an AI Coaching attempt?"
-description: ""
+title: How can a User submit an AI Coaching attempt?
+description: >-
+  This guide explains how to complete an AI coaching assignment as a sales rep
+  or field rep.
 slug: how-can-a-user-submit-an-ai-coaching-attempt
 sidebar_position: 322
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971d78c6a1b8a42df6acd03
-  helpscout_url: https://help.smartwinnr.com/article/322-how-to-attempt-an-ai-coaching-as-a-user
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/322-how-to-attempt-an-ai-coaching-as-a-user
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - onboarding
 ---
 This guide explains how to complete an AI coaching assignment as a sales rep or field rep. AI coaching helps you practice sales conversations in a realistic, simulated environment. You'll interact with an AI avatar that plays the role of a customer or healthcare professional, receive instant feedback, and improve your skills through multiple practice attempts.
 
@@ -32,7 +41,7 @@ Log in to SmartWinnr using your username and password.
 
 You'll be taken to the Video Coaching home screen.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-1.png)
+![You'll be taken to the Video Coaching home screen.](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-1.png)
 
 Video Coaching Page
 
@@ -88,7 +97,7 @@ When you're ready:
 
 The coaching session will begin.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-3.png)
+![The coaching session will begin.](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-3.png)
 
 AI Coaching - Let's Start
 

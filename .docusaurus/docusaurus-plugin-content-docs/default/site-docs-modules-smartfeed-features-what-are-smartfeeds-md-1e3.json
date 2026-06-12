@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/features/5fcf7718da652271f08d3f5e",
   "title": "What are SmartFeeds?",
-  "description": "",
+  "description": "SmartFeeds enable you to share short, focused snippets of information with your teams.",
   "source": "@site/docs/modules/smartfeed/features/what-are-smartfeeds.md",
   "sourceDirName": "modules/smartfeed/features",
   "slug": "/modules/smartfeed/features/what-are-smartfeeds",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/features/what-are-smartfeeds.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 26,
   "frontMatter": {
     "id": "5fcf7718da652271f08d3f5e",
     "title": "What are SmartFeeds?",
-    "description": "",
+    "description": "SmartFeeds enable you to share short, focused snippets of information with your teams.",
     "slug": "what-are-smartfeeds",
     "sidebar_position": 26,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

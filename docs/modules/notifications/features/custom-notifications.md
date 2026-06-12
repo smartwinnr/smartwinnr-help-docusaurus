@@ -1,19 +1,24 @@
 ---
 id: 5fdb086ea5d295659b369c51
-title: "Custom Notifications"
-description: ""
+title: Custom Notifications
+description: >-
+  Custom notification enable you to send a push notification and an email to the
+  sales rep, notifying specific information.
 slug: custom-notifications
 sidebar_position: 165
 last_update:
-  date: 2021-08-05
+  date: 2021-08-05T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb086ea5d295659b369c51
-  helpscout_url: https://help.smartwinnr.com/article/165-custom-notifications
+  helpscout_url: 'https://help.smartwinnr.com/article/165-custom-notifications'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: customNotifications
-tags: []
+tags:
+  - notifications
 ---
 Custom notification enable you to send a push notification and an email to the sales rep, notifying specific information.
 
@@ -23,7 +28,7 @@ You can follow the below given steps to send a custom notification to sales reps
 
 Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page
 
-![](/img/helpscout/editors/custom-notifications-1.png)
+![Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page](/img/helpscout/editors/custom-notifications-1.png)
 
 This page  will provide the logs of custom notifications that have been sent so far
 
@@ -33,7 +38,7 @@ Editor can also search for notifications by "Date Range", "Business Unit", "Crea
 
 In order to add a new custom notification ,Editor needs to click on the "Add Notification"  button on the top right.
 
-![](/img/helpscout/editors/custom-notifications-2.png)
+![In order to add a new custom notification ,Editor needs to click on the "Add Notification" button on the top right.](/img/helpscout/editors/custom-notifications-2.png)
 
 The Notifying message needs to be typed in the Message box, also the type of notification should be checked wether the notification is going to be a "SMS" or an "Email".
 
@@ -41,7 +46,7 @@ Kindly note that the notifying message should not be more than 140 character.
 
 ## Selection of the Notification Recipient
 
-![](/img/helpscout/editors/custom-notifications-3.png)
+![Selection of the Notification Recipient](/img/helpscout/editors/custom-notifications-3.png)
 
 Editor needs to select the "Business Unit" , "Country", "Group" for searching the notification recipients.
 

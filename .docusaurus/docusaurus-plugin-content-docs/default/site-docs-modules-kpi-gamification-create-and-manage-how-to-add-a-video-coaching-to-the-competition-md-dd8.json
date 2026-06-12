@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fda04347129911ba1b218a5",
   "title": "How to add a Video Coaching to the competition?",
-  "description": "",
+  "description": "1. In the fourth step of creating a competition, select Video Coaching from the “Select Task” dropdown. 2. Enter a name for the video coaching task. 3.",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 106,
   "frontMatter": {
     "id": "5fda04347129911ba1b218a5",
     "title": "How to add a Video Coaching to the competition?",
-    "description": "",
+    "description": "1. In the fourth step of creating a competition, select Video Coaching from the “Select Task” dropdown. 2. Enter a name for the video coaching task. 3.",
     "slug": "how-to-add-a-video-coaching-to-the-competition",
     "sidebar_position": 106,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

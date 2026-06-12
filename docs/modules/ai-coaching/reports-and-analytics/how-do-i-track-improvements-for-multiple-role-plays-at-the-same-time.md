@@ -1,19 +1,26 @@
 ---
 id: 6970a2b7bb534a540aeb8dbf
-title: "How do I track improvements for multiple role-plays at the same time?"
-description: ""
+title: How do I track improvements for multiple role-plays at the same time?
+description: >-
+  You can track improvement across multiple roleplays simultaneously by using
+  the Filters feature on the Coaching Dashboard.
 slug: how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
 sidebar_position: 310
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970a2b7bb534a540aeb8dbf
-  helpscout_url: https://help.smartwinnr.com/article/310-how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/310-how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 You can track improvement across multiple roleplays simultaneously by using the **Filters** feature on the **Coaching Dashboard**. This allows you to view combined performance data for any selection of coachings you choose.
 
@@ -31,7 +38,7 @@ You can track improvement across multiple roleplays simultaneously by using the 
 2. Click the dropdown to expand the list of available coachings
 3. You'll see checkboxes next to each coaching name (e.g., "Price Objection Handling," "Objection Handling Coaching," "Sample sales pitch coaching")
 4. Check the boxes next to all the coachings you want to track
-5. You can select as many coachings as you need—there's no limit
+5. You can select as many coachings as you need-there's no limit
 6. The dropdown will show how many coachings you've selected (e.g., "2 selected")
 
 **Step 3: Apply the filters**

@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/60f9c61c766e8844fc34922e",
   "title": "How Editors evaluate Long Answer Questions?",
-  "description": "",
+  "description": "Evaluation is a systematic process of analyzing the user responses to determine the correctness of the response.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 262,
   "frontMatter": {
     "id": "60f9c61c766e8844fc34922e",
     "title": "How Editors evaluate Long Answer Questions?",
-    "description": "",
+    "description": "Evaluation is a systematic process of analyzing the user responses to determine the correctness of the response.",
     "slug": "how-editors-evaluate-long-answer-questions",
     "sidebar_position": 262,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

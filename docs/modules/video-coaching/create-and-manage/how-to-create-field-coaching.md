@@ -1,19 +1,23 @@
 ---
 id: 60a4febd13fd125a39b4516e
-title: "How to create Field Coaching"
-description: ""
+title: How to create Field Coaching
+description: Only the user with editor role can create a field coaching
 slug: how-to-create-field-coaching
 sidebar_position: 235
 last_update:
-  date: 2025-11-26
+  date: 2025-11-26T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60a4febd13fd125a39b4516e
-  helpscout_url: https://help.smartwinnr.com/article/235-how-to-create-field-coaching
+  helpscout_url: 'https://help.smartwinnr.com/article/235-how-to-create-field-coaching'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: coaching
-tags: []
+tags:
+  - video-coaching
+  - admin
 ---
 Only the user with editor role can create a field coaching
 
@@ -25,7 +29,7 @@ You need to select the template first so that you can create the field coaching.
 
 Fill up the title and description with the details of the coaching and select the time period for which you want to enable the Field Coaching.
 
-![](/img/helpscout/editors/how-to-create-field-coaching-1.jpg)
+![Fill up the title and description with the details of the coaching and select the time period for which you want to enable the Field Coachin](/img/helpscout/editors/how-to-create-field-coaching-1.jpg)
 
 After filling up all the required segments, click on the "Save" icon.
 
@@ -33,7 +37,7 @@ After filling up all the required segments, click on the "Save" icon.
 
 Now fill in the ratings as per your requirements as shown below.
 
-![](/img/helpscout/editors/how-to-create-field-coaching-2.jpg)
+![Now fill in the ratings as per your requirements as shown below.](/img/helpscout/editors/how-to-create-field-coaching-2.jpg)
 
 **Evaluate Baseline:** This allows the manager to assess the competencies on which the user proceeds with coaching.
 
@@ -45,7 +49,7 @@ Click on the "Save" icon after filling up all the required segments.
 
 In this step, select the competencies, which match with the competition.
 
-![](/img/helpscout/editors/how-to-create-field-coaching-3.jpg)
+![In this step, select the competencies, which match with the competition.](/img/helpscout/editors/how-to-create-field-coaching-3.jpg)
 
 Click on the "Save" icon after filling up all the required segments.
 
@@ -53,7 +57,7 @@ Click on the "Save" icon after filling up all the required segments.
 
 In this step, fill in with all the required information and use this image for reference purposes.
 
-![](/img/helpscout/editors/how-to-create-field-coaching-4.jpg)
+![In this step, fill in with all the required information and use this image for reference purposes.](/img/helpscout/editors/how-to-create-field-coaching-4.jpg)
 
 Fill in the name and description and the fields with the required display name and mandatory information.
 
@@ -81,6 +85,6 @@ Fill in the name and description and the fields with the required display name a
 
 ## Step 5: Select the users and their coaches to check their performance
 
-![](/img/helpscout/editors/how-to-create-field-coaching-5.jpg)
+![Step 5: Select the users and their coaches to check their performance](/img/helpscout/editors/how-to-create-field-coaching-5.jpg)
 
 In this final step, we add the users and coaches and by doing this we create a brand new field competition.

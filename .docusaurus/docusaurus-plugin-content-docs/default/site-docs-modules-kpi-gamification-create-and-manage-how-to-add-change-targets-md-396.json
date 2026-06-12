@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fdb14bf27288b7f895d6570",
   "title": "How to add/change targets?",
-  "description": "",
+  "description": "Follow the below steps in order to add/change the targets in a scorecard:",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-change-targets.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-change-targets.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 177,
   "frontMatter": {
     "id": "5fdb14bf27288b7f895d6570",
     "title": "How to add/change targets?",
-    "description": "",
+    "description": "Follow the below steps in order to add/change the targets in a scorecard:",
     "slug": "how-to-add-change-targets",
     "sidebar_position": 177,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

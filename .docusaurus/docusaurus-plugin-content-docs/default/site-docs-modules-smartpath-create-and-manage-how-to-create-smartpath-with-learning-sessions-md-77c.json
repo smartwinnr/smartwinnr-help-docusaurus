@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/60b8befc4dda6972e0931f8a",
   "title": "How to Create SmartPath with Learning Sessions?",
-  "description": "",
+  "description": "In the similar way, we add modules with Quizzes, surveys, SmartFeeds, video coaching, etc to a SmartPath, we can also add modules with learning sessions…",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 248,
   "frontMatter": {
     "id": "60b8befc4dda6972e0931f8a",
     "title": "How to Create SmartPath with Learning Sessions?",
-    "description": "",
+    "description": "In the similar way, we add modules with Quizzes, surveys, SmartFeeds, video coaching, etc to a SmartPath, we can also add modules with learning sessions…",
     "slug": "how-to-create-smartpath-with-learning-sessions",
     "sidebar_position": 248,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

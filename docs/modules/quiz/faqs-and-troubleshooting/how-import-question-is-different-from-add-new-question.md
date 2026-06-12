@@ -1,19 +1,26 @@
 ---
 id: 5fd4845e36980410c9123839
-title: "How 'Import question' is  different from 'Add New Question'?"
-description: ""
+title: How 'Import question' is  different from 'Add New Question'?
+description: >-
+  The following are the main differences between creating questions using the
+  'Add New Question' method and bulk upload method.
 slug: how-import-question-is-different-from-add-new-question
 sidebar_position: 45
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd4845e36980410c9123839
-  helpscout_url: https://help.smartwinnr.com/article/45-how-is-it-different-from-add-new-question
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/45-how-is-it-different-from-add-new-question
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - troubleshooting
 ---
 The following are the main differences between creating questions using the 'Add New Question' method and  **bulk upload** method.
 

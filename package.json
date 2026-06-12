@@ -32,6 +32,9 @@
     "lint:docs:fix": "markdownlint-cli2 --fix",
     "validate:privileges": "node scripts/validate-privilege-keys.js",
     "audit:gates": "node scripts/audit-gates.js",
+    "audit:articles": "node scripts/audit-articles.js",
+    "articles:autofix": "node scripts/article-autofix.js",
+    "articles:rewrite": "node scripts/rewrite-articles.js",
     "prebuild": "node scripts/validate-privilege-keys.js && node scripts/audit-gates.js",
     "prepare": "husky"
   },

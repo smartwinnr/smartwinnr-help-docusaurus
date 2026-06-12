@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fda4f4a0b11ce44f6392e62",
   "title": "Create users individually",
-  "description": "",
+  "description": "SmartWinnr allows administrators to create users individually through the backend portal.",
   "source": "@site/docs/administration/system-management/create-users-individually.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/create-users-individually",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/create-users-individually.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 119,
   "frontMatter": {
     "id": "5fda4f4a0b11ce44f6392e62",
     "title": "Create users individually",
-    "description": "",
+    "description": "SmartWinnr allows administrators to create users individually through the backend portal.",
     "slug": "create-users-individually",
     "sidebar_position": 119,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

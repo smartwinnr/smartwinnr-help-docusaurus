@@ -1,19 +1,23 @@
 ---
 id: 60a50e4827c86942e80697e9
-title: "How to create Field Coaching Template"
-description: ""
+title: How to create Field Coaching Template
+description: Only users with ADMIN roles can create field coaching templates.
 slug: how-to-create-field-coaching-template
 sidebar_position: 236
 last_update:
-  date: 2021-06-01
+  date: 2021-06-01T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60a50e4827c86942e80697e9
-  helpscout_url: https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template
 customProps:
-  roles: [admin]
+  roles:
+    - admin
   privilege: fCoaching
-tags: []
+tags:
+  - field-coaching
+  - admin
 ---
 Only users with ADMIN roles can create field coaching templates.
 
@@ -23,7 +27,7 @@ If you have the privilege to create Field Coaching templates, you will see the l
 
 By clicking on it, you will see the first step of the process shown below.
 
-![](/img/helpscout/admins/how-to-create-field-coaching-template-1.jpg)
+![By clicking on it, you will see the first step of the process shown below.](/img/helpscout/admins/how-to-create-field-coaching-template-1.jpg)
 
 Enter the title and fill up the description with the details of the field coaching template and click on the "save" icon below.
 
@@ -31,7 +35,7 @@ Enter the title and fill up the description with the details of the field coachi
 
 This is the second step as shown in the picture below.
 
-![](/img/helpscout/admins/how-to-create-field-coaching-template-2.jpg)
+![This is the second step as shown in the picture below.](/img/helpscout/admins/how-to-create-field-coaching-template-2.jpg)
 
 **Evaluate Baseline:** This allows the manager to assess the competencies on which the user proceeds with coaching.
 
@@ -43,7 +47,7 @@ Fill up the rating description and add the rating and also mention their descrip
 
 In this step first, you need to select the competencies and add the description for rating individually as shown below.
 
-![](/img/helpscout/admins/how-to-create-field-coaching-template-3.jpg)
+![In this step first, you need to select the competencies and add the description for rating individually as shown below.](/img/helpscout/admins/how-to-create-field-coaching-template-3.jpg)
 
 After filling up the description, click on the "save" icon in the right corner.
 
@@ -51,7 +55,7 @@ After filling up the description, click on the "save" icon in the right corner.
 
 Fill up the section name and description and select all the necessary options by clicking on it as shown below.
 
-![](/img/helpscout/admins/how-to-create-field-coaching-template-4.jpg)
+![Fill up the section name and description and select all the necessary options by clicking on it as shown below.](/img/helpscout/admins/how-to-create-field-coaching-template-4.jpg)
 
 You can select who can see the results, by clicking on the "visible to" option. Also, you can add a field according to the number of steps you have and wanted to be analyzed.
 

@@ -1,18 +1,21 @@
 ---
 id: 5fda52ada5d295659b36990a
-title: "How do I unlock an account?"
-description: ""
+title: How do I unlock an account?
+description: An account can be locked if a wrong password is entered 5 times.
 slug: how-do-i-unlock-an-account
 sidebar_position: 126
 last_update:
-  date: 2021-01-15
+  date: 2021-01-15T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda52ada5d295659b36990a
-  helpscout_url: https://help.smartwinnr.com/article/126-how-do-i-unlock-an-account
+  helpscout_url: 'https://help.smartwinnr.com/article/126-how-do-i-unlock-an-account'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 An account can be locked if a wrong password is entered 5 times.
 
@@ -26,5 +29,5 @@ Step 2:- Search for the user with the Locked account and click on that account.
 
 Step 3:- On the Account details page click on the hamburger menu on the right top and click on the “Unlock Account” option.
 
-![](/img/helpscout/admins/how-do-i-unlock-an-account-1.png)
-![](/img/helpscout/admins/how-do-i-unlock-an-account-2.png)
+![Step 3:- On the Account details page click on the hamburger menu on the right top and click on the “Unlock Account” option.](/img/helpscout/admins/how-do-i-unlock-an-account-1.png)
+![Step 3:- On the Account details page click on the hamburger menu on the right top and click on the “Unlock Account” option.](/img/helpscout/admins/how-do-i-unlock-an-account-2.png)

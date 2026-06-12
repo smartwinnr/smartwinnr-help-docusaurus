@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/create-and-manage/64ec366fab3ec13db0b391bd",
   "title": "How to delete a Survey",
-  "description": "",
+  "description": "Follow the below steps to delete a survey through SmartWinnr.",
   "source": "@site/docs/modules/survey/create-and-manage/how-to-delete-a-survey.md",
   "sourceDirName": "modules/survey/create-and-manage",
   "slug": "/modules/survey/create-and-manage/how-to-delete-a-survey",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/create-and-manage/how-to-delete-a-survey.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 287,
   "frontMatter": {
     "id": "64ec366fab3ec13db0b391bd",
     "title": "How to delete a Survey",
-    "description": "",
+    "description": "Follow the below steps to delete a survey through SmartWinnr.",
     "slug": "how-to-delete-a-survey",
     "sidebar_position": 287,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,24 +1,29 @@
 ---
 id: 5fda509f27288b7f895d61ff
-title: "Search users"
-description: ""
+title: Search users
+description: >-
+  SmartWinnr provides a powerful search functionality to search user by
+  different attributes.
 slug: search-users
 sidebar_position: 122
 last_update:
-  date: 2021-01-15
+  date: 2021-01-15T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda509f27288b7f895d61ff
-  helpscout_url: https://help.smartwinnr.com/article/122-search-users
+  helpscout_url: 'https://help.smartwinnr.com/article/122-search-users'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 SmartWinnr provides a powerful search functionality to search user by different attributes.
 
 To search an user, go to ADMIN > Manage Users.
 
-![](https://support.smartwinnr.com/api/v1/attachments/862)
+![To search an user, go to ADMIN > Manage Users.](https://support.smartwinnr.com/api/v1/attachments/862)
 
 You can search for users by the following attributes;
 

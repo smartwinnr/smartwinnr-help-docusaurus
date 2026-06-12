@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/for-learners/5fdb083d27288b7f895d6541",
   "title": "How to view notifications?",
-  "description": "",
+  "description": "Click on Notifications from the left menu",
   "source": "@site/docs/modules/notifications/for-learners/how-to-view-notifications.md",
   "sourceDirName": "modules/notifications/for-learners",
   "slug": "/modules/notifications/for-learners/how-to-view-notifications",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/for-learners/how-to-view-notifications.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 164,
   "frontMatter": {
     "id": "5fdb083d27288b7f895d6541",
     "title": "How to view notifications?",
-    "description": "",
+    "description": "Click on Notifications from the left menu",
     "slug": "how-to-view-notifications",
     "sidebar_position": 164,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "notifications",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

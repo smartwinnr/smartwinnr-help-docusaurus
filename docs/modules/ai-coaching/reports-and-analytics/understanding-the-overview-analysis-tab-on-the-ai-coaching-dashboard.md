@@ -1,19 +1,24 @@
 ---
 id: 6971e01ef35cc6035d0b9b8c
-title: "Understanding the Overview Analysis Tab on the AI Coaching Dashboard"
-description: ""
+title: Understanding the Overview Analysis Tab on the AI Coaching Dashboard
+description: ''
 slug: understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard
 sidebar_position: 323
 last_update:
-  date: 2026-02-14
+  date: 2026-02-14T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971e01ef35cc6035d0b9b8c
-  helpscout_url: https://help.smartwinnr.com/article/323-understanding-the-overview-tab-on-ai-coaching-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/323-understanding-the-overview-tab-on-ai-coaching-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 # Overview Analysis Tab
 
@@ -124,7 +129,7 @@ This section shows which specific skills are improving most effectively through 
 
 * * *
 
-![](/img/helpscout/editors/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-3.png)
+![The chart will update to show only that skill's performance](/img/helpscout/editors/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-3.png)
 
 Trends, Focus Areas, Skill development and AI Insights
 
@@ -289,7 +294,7 @@ The dashboard updates automatically as learners submit new attempts, so you alwa
 
 **For AI insights:**
 
-* Take predictive insights seriously—they're based on patterns across thousands of attempts
+* Take predictive insights seriously-they're based on patterns across thousands of attempts
 * If AI suggests optimization opportunities, investigate and test recommended changes
 * Share relevant insights with individual learners to help them understand their own patterns
 

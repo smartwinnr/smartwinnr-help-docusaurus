@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/for-managers/6970fbe61252a7004208b915",
   "title": "How to Review AI Coaching Submissions as a Manager?",
-  "description": "",
+  "description": "As a manager, you can review AI coaching submissions from your team members. When a rep completes an AI role-play, you have the option to provide additional…",
   "source": "@site/docs/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager.md",
   "sourceDirName": "modules/ai-coaching/for-managers",
   "slug": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 318,
   "frontMatter": {
     "id": "6970fbe61252a7004208b915",
     "title": "How to Review AI Coaching Submissions as a Manager?",
-    "description": "",
+    "description": "As a manager, you can review AI coaching submissions from your team members. When a rep completes an AI role-play, you have the option to provide additional…",
     "slug": "how-to-review-ai-coaching-submissions-as-a-manager",
     "sidebar_position": 318,
     "last_update": {
@@ -35,7 +41,9 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

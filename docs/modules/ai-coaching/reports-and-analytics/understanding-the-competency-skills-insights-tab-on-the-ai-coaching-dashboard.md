@@ -1,25 +1,32 @@
 ---
 id: 6971e0ad425fd115e68cbc3e
-title: "Understanding the Competency & Skills Insights Tab on the AI Coaching Dashboard"
-description: ""
+title: >-
+  Understanding the Competency & Skills Insights Tab on the AI Coaching
+  Dashboard
+description: Competency growth Over Time
 slug: understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard
 sidebar_position: 324
 last_update:
-  date: 2026-02-06
+  date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971e0ad425fd115e68cbc3e
-  helpscout_url: https://help.smartwinnr.com/article/324-understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/324-understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 # Competency & Skills Insights Tab
 
 ### This tab provides detailed analysis of skill development, performance trends, and regional comparisons
 
-![](/img/helpscout/editors/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard-1.png)
+![This tab provides detailed analysis of skill development, performance trends, and regional comparisons](/img/helpscout/editors/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard-1.png)
 
 Competency growth Over Time
 
@@ -123,7 +130,7 @@ Use these recommendations to design targeted training interventions and create p
 
 * * *
 
-![](/img/helpscout/editors/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard-4.png)
+![Use these recommendations to design targeted training interventions and create progressive learning experiences for your team.](/img/helpscout/editors/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard-4.png)
 
 Competency Assessment heatmap
 

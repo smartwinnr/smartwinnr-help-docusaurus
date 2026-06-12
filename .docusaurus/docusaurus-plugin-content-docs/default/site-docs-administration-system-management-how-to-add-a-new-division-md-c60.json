@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdad976b624c71b7985a56b",
   "title": "How to Add a new Division?",
-  "description": "",
+  "description": "Go to Admin>>Manage Divisions, it will open the following page",
   "source": "@site/docs/administration/system-management/how-to-add-a-new-division.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-add-a-new-division",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-add-a-new-division.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 132,
   "frontMatter": {
     "id": "5fdad976b624c71b7985a56b",
     "title": "How to Add a new Division?",
-    "description": "",
+    "description": "Go to Admin>>Manage Divisions, it will open the following page",
     "slug": "how-to-add-a-new-division",
     "sidebar_position": 132,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

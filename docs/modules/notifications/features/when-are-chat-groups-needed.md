@@ -1,19 +1,22 @@
 ---
 id: 5fdaf5db7129911ba1b21dfa
-title: "When are chat groups needed?"
-description: ""
+title: When are chat groups needed?
+description: Chat groups facilitate communication between the members of a group.
 slug: when-are-chat-groups-needed
 sidebar_position: 153
 last_update:
-  date: 2021-01-22
+  date: 2021-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdaf5db7129911ba1b21dfa
-  helpscout_url: https://help.smartwinnr.com/article/153-when-are-chat-groups-needed
+  helpscout_url: 'https://help.smartwinnr.com/article/153-when-are-chat-groups-needed'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: chat
-tags: []
+tags:
+  - notifications
 ---
 Chat groups facilitate communication between the members of a group.
 

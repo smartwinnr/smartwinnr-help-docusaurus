@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce2291eb7cc612aa3556fa",
   "title": "How can I change my profile image?",
-  "description": "",
+  "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
   "source": "@site/docs/get-started/onboarding/how-can-i-change-my-profile-image.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-change-my-profile-image",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce2291eb7cc612aa3556fa",
     "title": "How can I change my profile image?",
-    "description": "",
+    "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
     "slug": "how-can-i-change-my-profile-image",
     "sidebar_position": 15,
     "last_update": {

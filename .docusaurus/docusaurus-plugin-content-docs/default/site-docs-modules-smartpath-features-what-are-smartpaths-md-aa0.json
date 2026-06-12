@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/features/5fd7119336980410c9123b70",
   "title": "What are SmartPaths.",
-  "description": "",
+  "description": "A SmartPath is a structured learning journey created for each individual in your team.",
   "source": "@site/docs/modules/smartpath/features/what-are-smartpaths.md",
   "sourceDirName": "modules/smartpath/features",
   "slug": "/modules/smartpath/features/what-are-smartpaths",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/features/what-are-smartpaths.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 77,
   "frontMatter": {
     "id": "5fd7119336980410c9123b70",
     "title": "What are SmartPaths.",
-    "description": "",
+    "description": "A SmartPath is a structured learning journey created for each individual in your team.",
     "slug": "what-are-smartpaths",
     "sidebar_position": 77,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

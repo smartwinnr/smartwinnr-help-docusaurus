@@ -1,19 +1,25 @@
 ---
 id: 69705f458446705a3c6f6831
-title: "How to create Re-order Questions ?"
-description: ""
+title: How to create Re-order Questions ?
+description: >-
+  A Re-Order question in SmartWinnr allows participants to drag and arrange
+  answer options into the correct sequence.
 slug: how-to-create-re-order-questions
 sidebar_position: 306
 last_update:
-  date: 2026-01-21
+  date: 2026-01-21T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 69705f458446705a3c6f6831
-  helpscout_url: https://help.smartwinnr.com/article/306-how-to-create-re-order-questions01
+  helpscout_url: 'https://help.smartwinnr.com/article/306-how-to-create-re-order-questions01'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - admin
 ---
 A **Re-Order** question in SmartWinnr allows participants to **drag and arrange answer options** into the correct sequence. Learners reorder the items as required and submit their response for evaluation.
 
@@ -23,27 +29,27 @@ The steps to create a **Re-Order** question are outlined below.
 
 2\. Click on the '**Add New Question**' button at the top right corner.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-1.png)
+![2\. Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-re-order-questions-1.png)
 
 3. On the '**Create new Question**' select the '**Question Type**' as the Re-Order Option. Also, select the scoring, whether default or partial. Use **Default Scoring** when the question has only one correct answer. Use **Partial Scoring** when the question has multiple correct answers. In **Partial Scoring**, the total score is distributed equally among all correct answer options.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-2.png)
+![On the 'Create new Question' select the 'Question Type' as the Re-Order Option. Also, select the scoring, whether default or partial. Use De](/img/helpscout/editors/how-to-create-re-order-questions-2.png)
 
 4\. Enter your question in the ‘**Question**’ field.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-3.png)
+![4\. Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-re-order-questions-3.png)
 
 For the question, you can include various content elements such as **plain text, videos, images, links, or audio files**.
 
 Enter the **answer options** in the **correct sequence** for the _Reorder_ question. It is essential to enter the options in the intended order, as **points will be awarded based on the sequence defined**.
 
-You may also enhance each answer option by adding **rich content**—such as images or videos—using the **Rich Text** editor provided for each option.
+You may also enhance each answer option by adding **rich content**-such as images or videos-using the **Rich Text** editor provided for each option.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-4.png)
+![You may also enhance each answer option by adding rich content-such as images or videos-using the Rich Text editor provided for each option.](/img/helpscout/editors/how-to-create-re-order-questions-4.png)
 
 **A note on copying questions from Microsoft Word**
 
-**When copying content directly from Microsoft Word, hidden formatting characters may be introduced, potentially causing display issues—particularly on mobile devices. To avoid this, paste the text into a plain text editor (e.g., Notepad) first, then copy it into SmartWinnr.please follow these steps:**
+**When copying content directly from Microsoft Word, hidden formatting characters may be introduced, potentially causing display issues-particularly on mobile devices. To avoid this, paste the text into a plain text editor (e.g., Notepad) first, then copy it into SmartWinnr.please follow these steps:**
 
 **Copy the text from the Word Document into Notepad. This removes all hidden markups.**
 
@@ -53,7 +59,7 @@ You may also enhance each answer option by adding **rich content**—such as ima
 
 The total score for the question should be added here.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
+![The total score for the question should be added here.](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
 
 **Feedback:**
 
@@ -61,7 +67,7 @@ This section can be used to provide **additional information or clarification** 
 
 **Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
+![This section can be used to provide additional information or clarification related to the topic or concept covered in the question. The fee](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
 
 ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
 
@@ -69,13 +75,13 @@ This section can be used to provide **additional information or clarification** 
 
 The reviewer/editor can provide the additional points about the question.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-5.png)
+![The reviewer/editor can provide the additional points about the question.](/img/helpscout/editors/how-to-create-re-order-questions-5.png)
 
 **Select** **Categories**
 
 Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and analytics. These categories are predefined by your SmartWinnr administrator. You may associate multiple relevant categories where appropriate.
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-3.png)
+![Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and an](/img/helpscout/editors/how-to-create-a-matching-question-3.png)
 
 Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
 
@@ -105,7 +111,7 @@ You can also send an audio file with the question by clicking on the Audio icon.
 
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
+![You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will ope](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
 
 Choose the language you want to change and then click on the **Save** button.
 
@@ -113,8 +119,8 @@ Choose the language you want to change and then click on the **Save** button.
 
 Users will see the question as shown below, with the answer options displayed in a **shuffled order**. Participants are required to **drag and drop the options into the correct sequence** to answer the question.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-6.png)
+![Users will see the question as shown below, with the answer options displayed in a shuffled order. Participants are required to drag and dro](/img/helpscout/editors/how-to-create-re-order-questions-6.png)
 
 Once they rearrange the order of the options, they can submit that question.
 
-![](/img/helpscout/editors/how-to-create-re-order-questions-7.png)
+![Once they rearrange the order of the options, they can submit that question.](/img/helpscout/editors/how-to-create-re-order-questions-7.png)

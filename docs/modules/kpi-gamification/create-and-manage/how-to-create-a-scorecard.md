@@ -1,19 +1,26 @@
 ---
 id: 5fdb13f67129911ba1b21e6b
-title: "How to create a Scorecard?"
-description: ""
+title: How to create a Scorecard?
+description: >-
+  Scorecards are a way to measure sales reps against set KPIs, along with scores
+  and leaderboards. Read more about Scorecards.
 slug: how-to-create-a-scorecard
 sidebar_position: 176
 last_update:
-  date: 2021-06-10
+  date: 2021-06-10T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb13f67129911ba1b21e6b
-  helpscout_url: https://help.smartwinnr.com/article/176-how-to-create-a-scorecard
+  helpscout_url: 'https://help.smartwinnr.com/article/176-how-to-create-a-scorecard'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. [Read more](https://smartwinnr.helpscoutdocs.com/article/175-what-are-scorecards) about Scorecards.
 
@@ -31,7 +38,7 @@ Visibility: Choose if you want to make this visible to the users or hide it.
 
 Priority: Give a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "1" here, it will get displayed in the 1st position. If you give "2" here, it will get displayed in the second position.
 
-![](https://support.smartwinnr.com/api/v1/attachments/787)
+![Priority: Give a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "](https://support.smartwinnr.com/api/v1/attachments/787)
 
 **Scorecard Name:** Give a name to the scorecard here.
 
@@ -63,7 +70,7 @@ Ceiling: This is the maximum KPI value after which the score will not be given.
 
 * **Level**: This lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-5.jpg)
+![Ceiling: This is the maximum KPI value after which the score will not be given.](/img/helpscout/editors/how-to-create-a-scorecard-5.jpg)
 
 * **Individual Level:** This is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
 
@@ -81,13 +88,13 @@ Ceiling: This is the maximum KPI percentage after which the score will not be g
 
 * **Target Level**: This is similar to the Level type but the difference is that it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-8.jpg)
+![Ceiling: This is the maximum KPI percentage after which the score will not be given.](/img/helpscout/editors/how-to-create-a-scorecard-8.jpg)
 
 ## Step 2: Select the Sales Reps for the Scorecard
 
 Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the next page where users have to be added to this scorecard.
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-9.png)
+![Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the ](/img/helpscout/editors/how-to-create-a-scorecard-9.png)
 
 Here, you can search the users based on Business Unit, Zone, Group, Name, Email, and Meta tags and then add them to the scorecard.
 
@@ -95,7 +102,7 @@ Click on the 'Save' button once you have selected the users.
 
 Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the “Upload Users” button. It opens the following screen where you can upload a CSV file that contains your user details:
 
-![](https://support.smartwinnr.com/api/v1/attachments/793)
+![Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the “Upload Users” button. It ope](https://support.smartwinnr.com/api/v1/attachments/793)
 
 Type of action: Here, select if you want to Add Users to the scorecard or Remove Users from the scorecard.
 
@@ -111,7 +118,7 @@ Choose File: Click on this button and upload your user CSV file
 
 The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-11.png)
+![The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:](/img/helpscout/editors/how-to-create-a-scorecard-11.png)
 
 You can choose to change targets for the entire team by editing in the line of the 'Target'. Refer to [How to add/change targets?](https://smartwinnr.helpscoutdocs.com/article/177-how-to-add-change-targets) to know more about editing the targets
 

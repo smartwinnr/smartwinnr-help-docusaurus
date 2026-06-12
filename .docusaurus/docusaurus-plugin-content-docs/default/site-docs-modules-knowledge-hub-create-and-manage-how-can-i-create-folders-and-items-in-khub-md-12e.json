@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/create-and-manage/5fdae8ca27288b7f895d64e3",
   "title": "How can I create folders and items in KHub?",
-  "description": "",
+  "description": "Only users having the editor role will be able to create folders and items in KHub",
   "source": "@site/docs/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub.md",
   "sourceDirName": "modules/knowledge-hub/create-and-manage",
   "slug": "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 146,
   "frontMatter": {
     "id": "5fdae8ca27288b7f895d64e3",
     "title": "How can I create folders and items in KHub?",
-    "description": "",
+    "description": "Only users having the editor role will be able to create folders and items in KHub",
     "slug": "how-can-i-create-folders-and-items-in-khub",
     "sidebar_position": 146,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "khub"
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

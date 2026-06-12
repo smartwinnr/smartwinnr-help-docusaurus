@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/6411592461f16344e3a359c8",
   "title": "How to create a 'Drag and Drop into Text question '?",
-  "description": "",
+  "description": "A Drag and Drop into Text question requires participants to select and drag text options from an answer bank into specific blanks within the question text.",
   "source": "@site/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 281,
   "frontMatter": {
     "id": "6411592461f16344e3a359c8",
     "title": "How to create a 'Drag and Drop into Text question '?",
-    "description": "",
+    "description": "A Drag and Drop into Text question requires participants to select and drag text options from an answer bank into specific blanks within the question text.",
     "slug": "how-to-create-a-drag-and-drop-into-text-question",
     "sidebar_position": 281,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

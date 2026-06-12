@@ -1,19 +1,26 @@
 ---
 id: 5fdb1597a5d295659b369c89
-title: "What is a Challenge?"
-description: ""
+title: What is a Challenge?
+description: >-
+  Challenge is defined as 'a call to someone to participate in a competitive
+  situation or fight to decide who is superior in terms of ability or
+  strength.'…
 slug: what-is-a-challenge
 sidebar_position: 178
 last_update:
-  date: 2021-01-08
+  date: 2021-01-08T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb1597a5d295659b369c89
-  helpscout_url: https://help.smartwinnr.com/article/178-what-is-a-challenge
+  helpscout_url: 'https://help.smartwinnr.com/article/178-what-is-a-challenge'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 Challenge is defined as '_a call to someone to participate in a competitive situation or fight to decide who is superior in terms of ability or strength._' Challenges are an age old concept in video games. Where one player challenges the other. It brings another level of competitiveness and enthusiasm in the game.
 

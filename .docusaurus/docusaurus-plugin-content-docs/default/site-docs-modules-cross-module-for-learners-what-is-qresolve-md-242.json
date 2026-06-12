@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/for-learners/60003222c64fe14d0e1fac76",
   "title": "What is QResolve?...",
-  "description": "",
+  "description": "QResolve is the central repository of all questions that your teams need to know to do their jobs effectively.",
   "source": "@site/docs/modules/cross-module/for-learners/what-is-qresolve.md",
   "sourceDirName": "modules/cross-module/for-learners",
   "slug": "/modules/cross-module/for-learners/what-is-qresolve",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/for-learners/what-is-qresolve.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 209,
   "frontMatter": {
     "id": "60003222c64fe14d0e1fac76",
     "title": "What is QResolve?...",
-    "description": "",
+    "description": "QResolve is the central repository of all questions that your teams need to know to do their jobs effectively.",
     "slug": "what-is-qresolve",
     "sidebar_position": 209,
     "last_update": {
@@ -35,7 +41,9 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

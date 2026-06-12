@@ -1,19 +1,26 @@
 ---
 id: 60003222c64fe14d0e1fac76
-title: "What is QResolve?..."
-description: ""
+title: What is QResolve?...
+description: >-
+  QResolve is the central repository of all questions that your teams need to
+  know to do their jobs effectively.
 slug: what-is-qresolve
 sidebar_position: 209
 last_update:
-  date: 2021-01-14
+  date: 2021-01-14T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60003222c64fe14d0e1fac76
-  helpscout_url: https://help.smartwinnr.com/article/209-what-is-qresolve
+  helpscout_url: 'https://help.smartwinnr.com/article/209-what-is-qresolve'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: forms
-tags: []
+tags:
+  - onboarding
 ---
 QResolve is the central repository of all questions that your teams need to know to do their jobs effectively. Normally what gets asked in a WhatsApp group or phone conversations. This can be used by
 

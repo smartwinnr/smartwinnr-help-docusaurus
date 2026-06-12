@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-survey",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "survey"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

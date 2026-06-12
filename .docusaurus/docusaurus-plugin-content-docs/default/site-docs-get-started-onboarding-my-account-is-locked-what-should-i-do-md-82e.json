@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce219904cebe5254a298fa",
   "title": "My Account is locked - what should I do?",
-  "description": "",
+  "description": "Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login error that you will get once your account is locked :",
   "source": "@site/docs/get-started/onboarding/my-account-is-locked-what-should-i-do.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/my-account-is-locked-what-should-i-do",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce219904cebe5254a298fa",
     "title": "My Account is locked - what should I do?",
-    "description": "",
+    "description": "Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login error that you will get once your account is locked :",
     "slug": "my-account-is-locked-what-should-i-do",
     "sidebar_position": 14,
     "last_update": {

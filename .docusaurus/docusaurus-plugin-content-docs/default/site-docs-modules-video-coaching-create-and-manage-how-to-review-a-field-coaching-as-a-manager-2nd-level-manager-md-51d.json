@@ -9,7 +9,18 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 277,
   "frontMatter": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

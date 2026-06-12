@@ -1,19 +1,26 @@
 ---
 id: 696f3433e924466a410b9501
-title: "How to create an action item in the SmartPath"
-description: ""
+title: How to create an action item in the SmartPath
+description: >-
+  Action items are tasks or checklists that learners must complete as part of
+  the learning journey.
 slug: how-to-create-an-action-item-in-the-smartpath
 sidebar_position: 300
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696f3433e924466a410b9501
-  helpscout_url: https://help.smartwinnr.com/article/300-how-to-create-an-action-item-in-the-smartpath
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/300-how-to-create-an-action-item-in-the-smartpath
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 Action items are tasks or checklists that learners must complete as part of the learning journey.
 
@@ -25,11 +32,11 @@ Since action items must be created within a SmartPath module, you need to either
 
 1. While creating the Segments, Choose the segment type as **Action Item** from the available options. Then add a **name** to your Action Item list.
 
-![](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-1.png)
+![While creating the Segments, Choose the segment type as Action Item from the available options. Then add a name to your Action Item list.](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-1.png)
 
 2. Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create and configure your **Action Items** for the SmartPath module.
 
-![](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-2.png)
+![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create and configure your Action I](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-2.png)
 
 * **Action Title :** Enter a clear and meaningful title, for your list of action items (for example, _Checklist for Onboarding_).
 * **Description:** You can add a brief description on the action item. (optional)
@@ -41,7 +48,7 @@ Since action items must be created within a SmartPath module, you need to either
 
 * Adding groups to action items is optional. However, if you have a large number of action items for learners to complete, using groups helps organize them more effectively.
 
-![](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-3.png)
+![Creating Groups for Action Item](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-3.png)
 
 * **Group Name:** Create groups/category to logically organize multiple action items (for example, _Pre-Joining Tasks_, Joining Formalities) etc.
 * **Group Description :** Describe the purpose of the group for better clarity.
@@ -52,7 +59,7 @@ You can add multiple groups using the **Add Group** option.
 
 4. ### Creating Action Items
 
-![](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-4.png)
+![Creating Action Items](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-4.png)
 
 * **Groups:** Assign the action item to a specific group/category
 * **Action Item Title:** Enter the task name that learners will see.

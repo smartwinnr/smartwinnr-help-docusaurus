@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fda5572a5d295659b369917",
   "title": "How to create a group?",
-  "description": "",
+  "description": "Follow the steps below to create a group in SmartWinnr:",
   "source": "@site/docs/administration/system-management/how-to-create-a-group.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-create-a-group",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-create-a-group.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 129,
   "frontMatter": {
     "id": "5fda5572a5d295659b369917",
     "title": "How to create a group?",
-    "description": "",
+    "description": "Follow the steps below to create a group in SmartWinnr:",
     "slug": "how-to-create-a-group",
     "sidebar_position": 129,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "groups"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

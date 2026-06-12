@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/for-learners/5fdb421527288b7f895d662f",
   "title": "How do I view the KPI scorecard?",
-  "description": "",
+  "description": "A Scorecard is a collection of KPIs that's being tracked. Scorecards can be either Daily, Weekly, Monthly, Quarterly or Yearly.",
   "source": "@site/docs/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard.md",
   "sourceDirName": "modules/kpi-gamification/for-learners",
   "slug": "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 191,
   "frontMatter": {
     "id": "5fdb421527288b7f895d662f",
     "title": "How do I view the KPI scorecard?",
-    "description": "",
+    "description": "A Scorecard is a collection of KPIs that's being tracked. Scorecards can be either Daily, Weekly, Monthly, Quarterly or Yearly.",
     "slug": "how-do-i-view-the-kpi-scorecard",
     "sidebar_position": 191,
     "last_update": {
@@ -34,7 +50,11 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

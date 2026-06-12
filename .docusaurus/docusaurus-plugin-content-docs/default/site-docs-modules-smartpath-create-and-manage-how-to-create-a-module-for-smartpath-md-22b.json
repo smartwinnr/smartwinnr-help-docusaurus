@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/5fd6f70a23119734ee37f088",
   "title": "How to create a module for SmartPath.",
-  "description": "",
+  "description": "To build a structured learning experience within a SmartPath, you first need to create the modules that will be included in it.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 76,
   "frontMatter": {
     "id": "5fd6f70a23119734ee37f088",
     "title": "How to create a module for SmartPath.",
-    "description": "",
+    "description": "To build a structured learning experience within a SmartPath, you first need to create the modules that will be included in it.",
     "slug": "how-to-create-a-module-for-smartpath",
     "sidebar_position": 76,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

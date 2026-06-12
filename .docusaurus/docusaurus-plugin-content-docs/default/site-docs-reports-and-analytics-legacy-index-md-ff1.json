@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/index.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
@@ -17,7 +23,10 @@
     "title": "Reports & Analytics",
     "description": "Learning reports, admin reports, and analytics dashboards.",
     "slug": "/reports-and-analytics/legacy/",
-    "sidebar_position": 1
+    "sidebar_position": 1,
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

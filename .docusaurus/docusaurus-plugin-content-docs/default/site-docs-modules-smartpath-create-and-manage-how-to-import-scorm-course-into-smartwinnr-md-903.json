@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/62b3e9dd0729834c424f8fad",
   "title": "How to Import SCORM course into SmartWinnr?",
-  "description": "",
+  "description": "SmartWinnr supports the import of SCORM courses, enabling you to incorporate external e-learning content into your learning ecosystem.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 271,
   "frontMatter": {
     "id": "62b3e9dd0729834c424f8fad",
     "title": "How to Import SCORM course into SmartWinnr?",
-    "description": "",
+    "description": "SmartWinnr supports the import of SCORM courses, enabling you to incorporate external e-learning content into your learning ecosystem.",
     "slug": "how-to-import-scorm-course-into-smartwinnr",
     "sidebar_position": 271,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/60a370cfeb3af44cc12099d5",
   "title": "How to add observers to the Competition Leaderboard?",
-  "description": "",
+  "description": "Only the Org Admin access can add the observers to the competition leaderboards.",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 234,
   "frontMatter": {
     "id": "60a370cfeb3af44cc12099d5",
     "title": "How to add observers to the Competition Leaderboard?",
-    "description": "",
+    "description": "Only the Org Admin access can add the observers to the competition leaderboards.",
     "slug": "how-to-add-observers-to-the-competition-leaderboard",
     "sidebar_position": 234,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

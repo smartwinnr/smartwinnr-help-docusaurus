@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce4541eb7cc612aa3557b4",
   "title": "Browser and Device Support",
-  "description": "",
+  "description": "SmartWinnr works best with latest Chrome. Firefox and Edge browsers. IE might not support some of the advanced functionality of SmartWinnr.",
   "source": "@site/docs/get-started/onboarding/browser-and-device-support.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/browser-and-device-support",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce4541eb7cc612aa3557b4",
     "title": "Browser and Device Support",
-    "description": "",
+    "description": "SmartWinnr works best with latest Chrome. Firefox and Edge browsers. IE might not support some of the advanced functionality of SmartWinnr.",
     "slug": "browser-and-device-support",
     "sidebar_position": 23,
     "last_update": {

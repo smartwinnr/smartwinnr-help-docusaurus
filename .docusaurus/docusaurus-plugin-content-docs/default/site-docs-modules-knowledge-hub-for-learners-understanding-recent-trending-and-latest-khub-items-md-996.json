@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/for-learners/5fdae9d67129911ba1b21de5",
   "title": "Understanding recent, trending and latest KHub items",
-  "description": "",
+  "description": "Once a document is uploaded in the KHub by the EDITOR, it is then available for all the team members to search and access it.",
   "source": "@site/docs/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items.md",
   "sourceDirName": "modules/knowledge-hub/for-learners",
   "slug": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 148,
   "frontMatter": {
     "id": "5fdae9d67129911ba1b21de5",
     "title": "Understanding recent, trending and latest KHub items",
-    "description": "",
+    "description": "Once a document is uploaded in the KHub by the EDITOR, it is then available for all the team members to search and access it.",
     "slug": "understanding-recent-trending-and-latest-khub-items",
     "sidebar_position": 148,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/create-and-manage/5fd4a44e36980410c9123862",
   "title": "How to create a 'Survey Template'.",
-  "description": "",
+  "description": "Survey templates allow you to design reusable survey frameworks that can be used to create consistent surveys multiple times.",
   "source": "@site/docs/modules/survey/create-and-manage/how-to-create-a-survey-template.md",
   "sourceDirName": "modules/survey/create-and-manage",
   "slug": "/modules/survey/create-and-manage/how-to-create-a-survey-template",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/create-and-manage/how-to-create-a-survey-template.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 61,
   "frontMatter": {
     "id": "5fd4a44e36980410c9123862",
     "title": "How to create a 'Survey Template'.",
-    "description": "",
+    "description": "Survey templates allow you to design reusable survey frameworks that can be used to create consistent surveys multiple times.",
     "slug": "how-to-create-a-survey-template",
     "sidebar_position": 61,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

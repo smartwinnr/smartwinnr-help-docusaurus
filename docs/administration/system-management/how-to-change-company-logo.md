@@ -1,24 +1,27 @@
 ---
 id: 5fda48bca5d295659b3698b1
-title: "How to change company logo?"
-description: ""
+title: How to change company logo?
+description: Go to ADMIN > Company Settings > Company Profile tab.
 slug: how-to-change-company-logo
 sidebar_position: 114
 last_update:
-  date: 2021-01-21
+  date: 2021-01-21T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda48bca5d295659b3698b1
-  helpscout_url: https://help.smartwinnr.com/article/114-how-to-change-company-logo
+  helpscout_url: 'https://help.smartwinnr.com/article/114-how-to-change-company-logo'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 ## Manage your Company's Profile
 
 Go to ADMIN > Company Settings > Company Profile tab.
 
-![](/img/helpscout/admins/how-to-change-company-logo-1.png)
+![Go to ADMIN > Company Settings > Company Profile tab.](/img/helpscout/admins/how-to-change-company-logo-1.png)
 
 The following information can be updated:
 

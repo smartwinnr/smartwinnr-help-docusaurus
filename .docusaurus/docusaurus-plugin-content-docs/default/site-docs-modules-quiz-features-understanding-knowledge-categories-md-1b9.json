@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4521236980410c9123802",
   "title": "Understanding knowledge categories",
-  "description": "",
+  "description": "Knowledge categories provide a structured way to organise and classify your organisation’s critical information within the SmartWinnr platform.",
   "source": "@site/docs/modules/quiz/features/understanding-knowledge-categories.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/understanding-knowledge-categories",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/understanding-knowledge-categories.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 38,
   "frontMatter": {
     "id": "5fd4521236980410c9123802",
     "title": "Understanding knowledge categories",
-    "description": "",
+    "description": "Knowledge categories provide a structured way to organise and classify your organisation’s critical information within the SmartWinnr platform.",
     "slug": "understanding-knowledge-categories",
     "sidebar_position": 38,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

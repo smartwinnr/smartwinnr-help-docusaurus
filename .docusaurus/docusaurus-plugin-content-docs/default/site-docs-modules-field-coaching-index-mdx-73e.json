@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "field-coaching",
+      "permalink": "/tags/field-coaching"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-field-coaching",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "field-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

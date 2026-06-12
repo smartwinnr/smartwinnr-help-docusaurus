@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/60a5315013fd125a39b45357",
   "title": "How to add the Scorecard to Leaderboard",
-  "description": "",
+  "description": "Here are the steps to add a scorecard leaderboard to a competition:",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 238,
   "frontMatter": {
     "id": "60a5315013fd125a39b45357",
     "title": "How to add the Scorecard to Leaderboard",
-    "description": "",
+    "description": "Here are the steps to add a scorecard leaderboard to a competition:",
     "slug": "how-to-add-the-scorecard-to-leaderboard",
     "sidebar_position": 238,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

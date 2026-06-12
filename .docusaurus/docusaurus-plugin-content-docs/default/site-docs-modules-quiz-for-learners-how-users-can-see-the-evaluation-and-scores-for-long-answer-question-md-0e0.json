@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/for-learners/60f9c51c6ffe270af2a91817",
   "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
-  "description": "",
+  "description": "Once the evaluation is completed, the evaluator will give points for each question based on your responses.",
   "source": "@site/docs/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
   "sourceDirName": "modules/quiz/for-learners",
   "slug": "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 261,
   "frontMatter": {
     "id": "60f9c51c6ffe270af2a91817",
     "title": "How Users can see the Evaluation and Scores for Long Answer Question?",
-    "description": "",
+    "description": "Once the evaluation is completed, the evaluator will give points for each question based on your responses.",
     "slug": "how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
     "sidebar_position": 261,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

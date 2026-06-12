@@ -1,19 +1,26 @@
 ---
 id: 5fd1082c80488e39007cbd4c
-title: "How to add a PowerPoint Presentation (PPT) to SmartFeed?"
-description: ""
+title: How to add a PowerPoint Presentation (PPT) to SmartFeed?
+description: >-
+  SmartWinnr allows you to include PowerPoint presentations in your SmartFeeds,
+  enabling you to share rich, structured content such as product knowledge,…
 slug: how-to-add-a-powerpoint-presentation-ppt-to-smartfeed
 sidebar_position: 28
 last_update:
-  date: 2026-01-17
+  date: 2026-01-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd1082c80488e39007cbd4c
-  helpscout_url: https://help.smartwinnr.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
+  - admin
 ---
 SmartWinnr allows you to include PowerPoint presentations in your SmartFeeds, enabling you to share rich, structured content such as product knowledge, training material, or feature highlights with your users.
 
@@ -29,7 +36,7 @@ SmartWinnr allows you to include PowerPoint presentations in your SmartFeeds, en
 
     Provide a clear title for the SmartFeed. This title will be visible to all recipients and should summarize the presentation content.
 
-![](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-1.png)
+![Provide a clear title for the SmartFeed. This title will be visible to all recipients and should summarize the presentation content.](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-1.png)
 
 #### Step 2: Choose the Content Type
 
@@ -40,7 +47,7 @@ If you don't see the 'Presentation' option in your view, please write to [suppor
 
 * Once selected, the Presentation upload screen will appear.
 
-![](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-2.png)
+![If you don't see the 'Presentation' option in your view, please write to support@smartwinnr.com for the privilege to add presentations to yo](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-2.png)
 
 ##### Upload as a ZIP File (Recommended)
 
@@ -81,7 +88,7 @@ On this page, you can:
 
 Once you have selected the required users, click **Send SmartFeed** to successfully assign the SmartFeed to the selected participants.
 
-![](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-3.png)
+![Once you have selected the required users, click Send SmartFeed to successfully assign the SmartFeed to the selected participants.](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-3.png)
 
 #### Configure SmartFeed Settings
 
@@ -92,10 +99,10 @@ Once you have selected the required users, click **Send SmartFeed** to successfu
 
 Following is how a SmartFeed with the presentation will appear in the SmartWinnr app.
 
-![](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-4.png)
+![Following is how a SmartFeed with the presentation will appear in the SmartWinnr app.](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-4.png)
 
 If we go into this SmartFeed with the presentation, it will look as shown below.
 
-![](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-5.png)
+![If we go into this SmartFeed with the presentation, it will look as shown below.](/img/helpscout/editors/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed-5.png)
 
 You can click on the right arrow and left arrow to move around various slides in the presentation.

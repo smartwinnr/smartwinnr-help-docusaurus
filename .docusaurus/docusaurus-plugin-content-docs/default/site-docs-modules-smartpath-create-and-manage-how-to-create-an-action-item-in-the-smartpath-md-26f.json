@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/696f3433e924466a410b9501",
   "title": "How to create an action item in the SmartPath",
-  "description": "",
+  "description": "Action items are tasks or checklists that learners must complete as part of the learning journey.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 300,
   "frontMatter": {
     "id": "696f3433e924466a410b9501",
     "title": "How to create an action item in the SmartPath",
-    "description": "",
+    "description": "Action items are tasks or checklists that learners must complete as part of the learning journey.",
     "slug": "how-to-create-an-action-item-in-the-smartpath",
     "sidebar_position": 300,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/for-managers/5fd9ab587129911ba1b21733",
   "title": "Finding  Status and Scores for Quizzes assigned to your Team",
-  "description": "",
+  "description": "How to find the quiz status of the team for each quiz",
   "source": "@site/docs/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
   "sourceDirName": "modules/quiz/for-managers",
   "slug": "/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 99,
   "frontMatter": {
     "id": "5fd9ab587129911ba1b21733",
     "title": "Finding  Status and Scores for Quizzes assigned to your Team",
-    "description": "",
+    "description": "How to find the quiz status of the team for each quiz",
     "slug": "finding-status-and-scores-for-quizzes-assigned-to-your-team",
     "sidebar_position": 99,
     "last_update": {
@@ -34,7 +40,9 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

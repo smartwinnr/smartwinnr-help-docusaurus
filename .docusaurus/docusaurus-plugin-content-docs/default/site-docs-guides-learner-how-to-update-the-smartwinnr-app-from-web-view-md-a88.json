@@ -1,7 +1,7 @@
 {
   "id": "guides/learner/66d0ceaea62a7505fcf37c07",
   "title": "How to update the SmartWinnr App from Web View",
-  "description": "",
+  "description": "Login the SmartWinnr web view and click on the profile picture at the top. It will take you to the following screen.",
   "source": "@site/docs/guides/learner/how-to-update-the-smartwinnr-app-from-web-view.md",
   "sourceDirName": "guides/learner",
   "slug": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "66d0ceaea62a7505fcf37c07",
     "title": "How to update the SmartWinnr App from Web View",
-    "description": "",
+    "description": "Login the SmartWinnr web view and click on the profile picture at the top. It will take you to the following screen.",
     "slug": "how-to-update-the-smartwinnr-app-from-web-view",
     "sidebar_position": 291,
     "last_update": {

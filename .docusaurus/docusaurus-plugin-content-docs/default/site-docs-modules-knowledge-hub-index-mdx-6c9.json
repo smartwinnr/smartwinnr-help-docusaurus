@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-knowledge-hub",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "knowledge-hub"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

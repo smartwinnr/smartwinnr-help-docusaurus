@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/5fd490113d1d2a5b1c5ea153",
   "title": "How to create a manual quiz?",
-  "description": "",
+  "description": "Navigate to Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes -> Add New Quiz.",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-a-manual-quiz.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-a-manual-quiz.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 50,
   "frontMatter": {
     "id": "5fd490113d1d2a5b1c5ea153",
     "title": "How to create a manual quiz?",
-    "description": "",
+    "description": "Navigate to Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes -> Add New Quiz.",
     "slug": "how-to-create-a-manual-quiz",
     "sidebar_position": 50,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

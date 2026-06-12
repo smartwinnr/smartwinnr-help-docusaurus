@@ -1,19 +1,25 @@
 ---
 id: 5fd48e84c868cb6df3a8101f
-title: "Troubleshoot for common error code"
-description: ""
+title: Troubleshoot for common error code
+description: >-
+  Here is a list of possible errors that you might encounter while uploading a
+  CSV file and how you can fix them:
 slug: troubleshoot-for-common-error-code
 sidebar_position: 47
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd48e84c868cb6df3a8101f
-  helpscout_url: https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code
+  helpscout_url: 'https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - troubleshooting
 ---
 Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:
 

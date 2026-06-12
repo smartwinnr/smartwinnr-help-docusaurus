@@ -1,7 +1,7 @@
 {
   "id": "reports-and-analytics/legacy/60c206d796768369c70bc6b4",
   "title": "Learner Report - By Learner (Individual Report Analytics)",
-  "description": "",
+  "description": "An Editor who has access to the Learner Report can see the Report Analytics.",
   "source": "@site/docs/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics.md",
   "sourceDirName": "reports-and-analytics/legacy",
   "slug": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 255,
   "frontMatter": {
     "id": "60c206d796768369c70bc6b4",
     "title": "Learner Report - By Learner (Individual Report Analytics)",
-    "description": "",
+    "description": "An Editor who has access to the Learner Report can see the Report Analytics.",
     "slug": "learner-report-by-learner-individual-report-analytics",
     "sidebar_position": 255,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "learnerReport"
     },
-    "tags": []
+    "tags": [
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

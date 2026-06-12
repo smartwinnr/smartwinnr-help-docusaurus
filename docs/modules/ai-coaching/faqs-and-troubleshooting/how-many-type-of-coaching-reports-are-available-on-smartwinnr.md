@@ -1,25 +1,32 @@
 ---
 id: 6970d8920c0e4405a576851c
-title: "How many type of coaching reports are available on Smartwinnr?"
-description: ""
+title: How many type of coaching reports are available on Smartwinnr?
+description: >-
+  Coaching reports provide critical insights into learner performance, skill
+  development, and training effectiveness.
 slug: how-many-type-of-coaching-reports-are-available-on-smartwinnr
 sidebar_position: 312
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970d8920c0e4405a576851c
-  helpscout_url: https://help.smartwinnr.com/article/312-what-type-of-reports-are-available-on-smartwinnr
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/312-what-type-of-reports-are-available-on-smartwinnr
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - troubleshooting
 ---
 ## Introduction
 
 Coaching reports provide critical insights into learner performance, skill development, and training effectiveness. These reports help you track progress, identify knowledge gaps, and make data-driven decisions about coaching interventions.
 
-The platform offers multiple report types—each designed for a specific purpose. Whether you need a high-level overview of all coaching activities or granular, objective-level performance data, there's a report to match your needs.
+The platform offers multiple report types-each designed for a specific purpose. Whether you need a high-level overview of all coaching activities or granular, objective-level performance data, there's a report to match your needs.
 
 **Who can access these reports?**
 
@@ -62,15 +69,15 @@ This report focuses on one specific coaching scenario and shows how users perfor
 
 **When to use it:**
 
-Use this report when you want a snapshot of team performance for a single coaching scenario—ideal for evaluating how well a specific training initiative is working.
+Use this report when you want a snapshot of team performance for a single coaching scenario-ideal for evaluating how well a specific training initiative is working.
 
-[How do I download Coaching-wise Report?](https://help.smartwinnr.com/article/316-how-do-i-download-coaching-wise-report#Download-Scenario-wise-Coaching-wise-Report-we65w)
+[How do I download Coaching-wise Report?](../reports-and-analytics/how-do-i-download-coaching-wise-report.md#Download-Scenario-wise-Coaching-wise-Report-we65w)
 
 * * *
 
 ### C. Attempt-wise Coaching Report
 
-This report captures all attempts made by users for a specific coaching scenario—not just their latest submission.
+This report captures all attempts made by users for a specific coaching scenario-not just their latest submission.
 
 **What it shows:**
 
@@ -82,7 +89,7 @@ This report captures all attempts made by users for a specific coaching scenario
 
 Use this report to track how users are improving with practice. It's especially useful for identifying learners who may need additional support or those who are making steady progress.
 
-[How do I download Attempt-wise Coaching Report?](https://help.smartwinnr.com/article/315-how-do-i-download-attempt-wise-coaching-report#Download-Attempt-wise-Coaching-Report-6MboV)
+[How do I download Attempt-wise Coaching Report?](../reports-and-analytics/how-do-i-download-attempt-wise-coaching-report.md#Download-Attempt-wise-Coaching-Report-6MboV)
 
 * * *
 
@@ -130,4 +137,4 @@ Use this report when you need to:
 
 This report is essential for deep performance analysis and precision coaching.
 
-[How do I download Attempt-wise User Objective Report?](https://help.smartwinnr.com/article/314-how-can-i-download-attempt-wise-user-objective-report#Download-Attempt-wise-User-Objective-Report-pQA_Z)
+[How do I download Attempt-wise User Objective Report?](../reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report.md#Download-Attempt-wise-User-Objective-Report-pQA_Z)

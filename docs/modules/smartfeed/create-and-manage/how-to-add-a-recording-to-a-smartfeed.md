@@ -1,19 +1,27 @@
 ---
 id: 60a60efceb3af44cc120a91b
-title: "How to add a Recording to a SmartFeed?"
-description: ""
+title: How to add a Recording to a SmartFeed?
+description: >-
+  SmartWinnr allows users with the EDITOR role to add recordings to SmartFeeds.
+  This enables you to share audio, video, or screen recordings directly with
+  your…
 slug: how-to-add-a-recording-to-a-smartfeed
 sidebar_position: 239
 last_update:
-  date: 2026-01-17
+  date: 2026-01-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60a60efceb3af44cc120a91b
-  helpscout_url: https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
+  - admin
 ---
 ## How to Add a Recording to a SmartFeed
 
@@ -41,7 +49,7 @@ Step-by-Step Instructions
 * Add a **Title** for the SmartFeed.
 * Choose the type of recording you want to include
 
-![](/img/helpscout/editors/how-to-add-a-recording-to-a-smartfeed-1.jpg)
+![4\. Enter SmartFeed Details](/img/helpscout/editors/how-to-add-a-recording-to-a-smartfeed-1.jpg)
 
 Then select the type of recording you would like to create. SmartWinnr supports the following recording options:
 

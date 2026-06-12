@@ -1,19 +1,26 @@
 ---
 id: 5fd99582a5d295659b36954f
-title: "How To Find The Progress Of Your Team In Quizzes"
-description: ""
+title: How To Find The Progress Of Your Team In Quizzes
+description: >-
+  SmartWinnr allows you to track the quiz progress of your team from SmartWinnr
+  Manager-View.
 slug: how-to-find-the-progress-of-your-team-in-quizzes
 sidebar_position: 97
 last_update:
-  date: 2021-03-13
+  date: 2021-03-13T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd99582a5d295659b36954f
-  helpscout_url: https://help.smartwinnr.com/article/97-how-to-find-the-progress-of-your-team-in-quizzes
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/97-how-to-find-the-progress-of-your-team-in-quizzes
 customProps:
-  roles: [manager, editor, admin]
+  roles:
+    - manager
+    - editor
+    - admin
   privilege: managerView
-tags: []
+tags:
+  - quiz
 ---
 ### Find Quiz Report for your Direct Reportee
 
@@ -21,7 +28,7 @@ SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Ma
 
 Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.
 
-![](https://support.smartwinnr.com/api/v1/attachments/538)
+![Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.](https://support.smartwinnr.com/api/v1/attachments/538)
 
 This page will give you the quiz progress report for your direct reportees along with participation percentage and average score. Here you can also find the number of direct reportees and total reportees reporting to you in SmartWinnr.
 
@@ -31,18 +38,18 @@ This page will give you the quiz progress report for your direct reportees along
 
 You can click on the filter icon on the top right corner to apply the date filter in the quiz report.
 
-![](https://support.smartwinnr.com/api/v1/attachments/539)
+![You can click on the filter icon on the top right corner to apply the date filter in the quiz report.](https://support.smartwinnr.com/api/v1/attachments/539)
 
 You can select the date range and click on "Apply" to successfully apply the date filters.
 
-![](https://support.smartwinnr.com/api/v1/attachments/540)
+![You can select the date range and click on "Apply" to successfully apply the date filters.](https://support.smartwinnr.com/api/v1/attachments/540)
 
 ### Find Quiz Report for second-level Reportee
 
 You will find an arrow against the manager if he has reportees under him. Clicking on this arrow will take you to the reportees of the selected manager.
 
-![](https://support.smartwinnr.com/api/v1/attachments/541)
+![You will find an arrow against the manager if he has reportees under him. Clicking on this arrow will take you to the reportees of the selec](https://support.smartwinnr.com/api/v1/attachments/541)
 
 Here, you can find the quiz report for the users who report to this selected manager.
 
-![](https://support.smartwinnr.com/api/v1/attachments/542)
+![Here, you can find the quiz report for the users who report to this selected manager.](https://support.smartwinnr.com/api/v1/attachments/542)

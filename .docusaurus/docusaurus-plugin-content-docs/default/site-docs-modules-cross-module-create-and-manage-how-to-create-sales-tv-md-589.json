@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/create-and-manage/60b9e109fd393f6bf704a9f2",
   "title": "How to create Sales TV",
-  "description": "",
+  "description": "Only the user with EDITOR and USER roles can create Sales TV.",
   "source": "@site/docs/modules/cross-module/create-and-manage/how-to-create-sales-tv.md",
   "sourceDirName": "modules/cross-module/create-and-manage",
   "slug": "/modules/cross-module/create-and-manage/how-to-create-sales-tv",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-create-sales-tv.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 249,
   "frontMatter": {
     "id": "60b9e109fd393f6bf704a9f2",
     "title": "How to create Sales TV",
-    "description": "",
+    "description": "Only the user with EDITOR and USER roles can create Sales TV.",
     "slug": "how-to-create-sales-tv",
     "sidebar_position": 249,
     "last_update": {
@@ -32,7 +38,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

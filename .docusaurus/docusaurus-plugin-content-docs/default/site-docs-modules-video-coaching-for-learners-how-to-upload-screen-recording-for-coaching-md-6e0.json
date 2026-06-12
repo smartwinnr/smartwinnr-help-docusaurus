@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/for-learners/62aa1c6df6341f7edc2a55ee",
   "title": "How to upload Screen Recording for Coaching",
-  "description": "",
+  "description": "Follow the below steps to upload your screen recording for the coaching assignment.",
   "source": "@site/docs/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching.md",
   "sourceDirName": "modules/video-coaching/for-learners",
   "slug": "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 269,
   "frontMatter": {
     "id": "62aa1c6df6341f7edc2a55ee",
     "title": "How to upload Screen Recording for Coaching",
-    "description": "",
+    "description": "Follow the below steps to upload your screen recording for the coaching assignment.",
     "slug": "how-to-upload-screen-recording-for-coaching",
     "sidebar_position": 269,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

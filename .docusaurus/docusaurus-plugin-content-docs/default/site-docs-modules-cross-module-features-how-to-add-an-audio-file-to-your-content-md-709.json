@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/features/5fd4eb633d1d2a5b1c5ea1d3",
   "title": "How to add an audio file to your content?",
-  "description": "",
+  "description": "You can send an audio file as part of your SmartFeed or you can attach an audio file to your question created in SmartWinnr.",
   "source": "@site/docs/modules/cross-module/features/how-to-add-an-audio-file-to-your-content.md",
   "sourceDirName": "modules/cross-module/features",
   "slug": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fd4eb633d1d2a5b1c5ea1d3",
     "title": "How to add an audio file to your content?",
-    "description": "",
+    "description": "You can send an audio file as part of your SmartFeed or you can attach an audio file to your question created in SmartWinnr.",
     "slug": "how-to-add-an-audio-file-to-your-content",
     "sidebar_position": 71,
     "last_update": {

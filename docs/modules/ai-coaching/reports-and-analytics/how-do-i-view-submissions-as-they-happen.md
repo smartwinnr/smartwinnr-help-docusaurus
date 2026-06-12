@@ -1,19 +1,26 @@
 ---
 id: 6970aecda77dc93e2023576b
-title: "How do I view submissions as they happen?"
-description: ""
+title: How do I view submissions as they happen?
+description: >-
+  This feature allows editors, trainers, and admins to view video coaching
+  submissions from users in real time.
 slug: how-do-i-view-submissions-as-they-happen
 sidebar_position: 311
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970aecda77dc93e2023576b
-  helpscout_url: https://help.smartwinnr.com/article/311-how-do-i-see-submissions-as-they-happen
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/311-how-do-i-see-submissions-as-they-happen
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 This feature allows editors, trainers, and admins to view video coaching submissions from users in real time. You can see who has submitted videos, review their AI-generated scores and feedback, and track which submissions have been reviewed by coaches or managers.
 

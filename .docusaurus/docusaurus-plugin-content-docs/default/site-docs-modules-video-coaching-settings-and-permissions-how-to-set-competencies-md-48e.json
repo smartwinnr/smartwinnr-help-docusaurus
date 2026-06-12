@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/settings-and-permissions/5fd75963a5d295659b36893f",
   "title": "How to set competencies.",
-  "description": "",
+  "description": "Only users with Admin role can add/modify competencies.",
   "source": "@site/docs/modules/video-coaching/settings-and-permissions/how-to-set-competencies.md",
   "sourceDirName": "modules/video-coaching/settings-and-permissions",
   "slug": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/settings-and-permissions/how-to-set-competencies.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 91,
   "frontMatter": {
     "id": "5fd75963a5d295659b36893f",
     "title": "How to set competencies.",
-    "description": "",
+    "description": "Only users with Admin role can add/modify competencies.",
     "slug": "how-to-set-competencies",
     "sidebar_position": 91,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

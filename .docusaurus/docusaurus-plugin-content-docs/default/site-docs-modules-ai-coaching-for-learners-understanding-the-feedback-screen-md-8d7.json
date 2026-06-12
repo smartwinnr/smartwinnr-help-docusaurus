@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/for-learners/69721470ddd77241ca3daa61",
   "title": "Understanding the feedback screen",
-  "description": "",
+  "description": "The Analytics section allows you to watch your recorded AI coaching attempt and review your actual performance.",
   "source": "@site/docs/modules/ai-coaching/for-learners/understanding-the-feedback-screen.md",
   "sourceDirName": "modules/ai-coaching/for-learners",
   "slug": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/for-learners/understanding-the-feedback-screen.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 333,
   "frontMatter": {
     "id": "69721470ddd77241ca3daa61",
     "title": "Understanding the feedback screen",
-    "description": "",
+    "description": "The Analytics section allows you to watch your recorded AI coaching attempt and review your actual performance.",
     "slug": "understanding-the-feedback-screen",
     "sidebar_position": 333,
     "last_update": {
@@ -35,7 +46,10 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

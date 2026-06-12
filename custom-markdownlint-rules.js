@@ -263,5 +263,72 @@ module.exports = [
         });
       }
     }
+  },
+  {
+    // MD-SW-002 — articles must declare a non-empty `description:` in
+    // frontmatter. Used by SEO, preview cards, and chatbot grounding.
+    // See STYLE.md.
+    "names": ["MD-SW-002", "description-required"],
+    "description": "Frontmatter must include a non-empty description",
+    "tags": ["smartwinnr", "frontmatter"],
+    "function": function descriptionRequired(params, onError) {
+      const lines = params.lines || [];
+      if (lines.length === 0 || lines[0].trim() !== '---') return;
+      let endIdx = -1;
+      for (let i = 1; i < lines.length; i++) {
+        if (lines[i].trim() === '---') { endIdx = i; break; }
+      }
+      if (endIdx === -1) return;
+      const fm = lines.slice(1, endIdx);
+      let found = false;
+      for (const line of fm) {
+        const m = /^description\s*:\s*(.*)$/.exec(line);
+        if (m) {
+          const v = m[1].trim().replace(/^["']|["']$/g, '');
+          if (v && v.length > 0) {
+            found = true;
+            break;
+          }
+        }
+      }
+      if (!found) {
+        onError({
+          lineNumber: 1,
+          detail: 'Article frontmatter is missing a non-empty `description:`. See STYLE.md.',
+        });
+      }
+    }
+  },
+  {
+    // MD-SW-003 — every image must have non-empty, non-filename-derived
+    // alt text. See STYLE.md (Screenshots section).
+    "names": ["MD-SW-003", "alt-text-required"],
+    "description": "Image must have semantic alt text",
+    "tags": ["smartwinnr", "accessibility"],
+    "function": function altTextRequired(params, onError) {
+      const lines = params.lines || [];
+      const re = /!\[([^\]]*)\]\(([^)]+)\)/g;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        let m;
+        while ((m = re.exec(line)) !== null) {
+          const alt = (m[1] || '').trim();
+          if (!alt) {
+            onError({
+              lineNumber: i + 1,
+              detail: 'Image is missing alt text. See STYLE.md (Screenshots).',
+            });
+            continue;
+          }
+          // Reject filename-derived alt: matches `slug-1` or `name.png`
+          if (/^[a-z0-9-]+(\.[a-z]+)?$/.test(alt)) {
+            onError({
+              lineNumber: i + 1,
+              detail: `Image alt "${alt}" looks filename-derived. Rewrite it as a one-sentence description.`,
+            });
+          }
+        }
+      }
+    }
   }
 ];

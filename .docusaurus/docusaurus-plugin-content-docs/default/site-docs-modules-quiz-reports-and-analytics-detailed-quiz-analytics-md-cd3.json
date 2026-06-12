@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/5fd496523d1d2a5b1c5ea15c",
   "title": "Detailed Quiz Analytics",
-  "description": "",
+  "description": "SmartWinnr provides detailed real-time quiz analytics which will help you in getting a clear insight into the performance of the participants in the quizzes.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/detailed-quiz-analytics.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/detailed-quiz-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 55,
   "frontMatter": {
     "id": "5fd496523d1d2a5b1c5ea15c",
     "title": "Detailed Quiz Analytics",
-    "description": "",
+    "description": "SmartWinnr provides detailed real-time quiz analytics which will help you in getting a clear insight into the performance of the participants in the quizzes.",
     "slug": "detailed-quiz-analytics",
     "sidebar_position": 55,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

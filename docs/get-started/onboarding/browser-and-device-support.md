@@ -1,17 +1,23 @@
 ---
 id: 5fce4541eb7cc612aa3557b4
-title: "Browser and Device Support"
-description: ""
+title: Browser and Device Support
+description: >-
+  SmartWinnr works best with latest Chrome. Firefox and Edge browsers. IE might
+  not support some of the advanced functionality of SmartWinnr.
 slug: browser-and-device-support
 sidebar_position: 23
 last_update:
-  date: 2020-12-07
+  date: 2020-12-07T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fce4541eb7cc612aa3557b4
-  helpscout_url: https://help.smartwinnr.com/article/23-browser-and-device-support
+  helpscout_url: 'https://help.smartwinnr.com/article/23-browser-and-device-support'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
 tags: []
 ---
 ## Browser

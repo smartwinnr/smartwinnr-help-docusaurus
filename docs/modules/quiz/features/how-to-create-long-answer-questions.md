@@ -1,19 +1,24 @@
 ---
 id: 60e1fc479e87cb3d01249e3c
-title: "How to create 'Long Answer' Questions?"
-description: ""
+title: How to create 'Long Answer' Questions?
+description: >-
+  Long answer questions are generally open-ended questions that require
+  participants to construct a response.
 slug: how-to-create-long-answer-questions
 sidebar_position: 258
 last_update:
-  date: 2026-01-19
+  date: 2026-01-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60e1fc479e87cb3d01249e3c
-  helpscout_url: https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions
+  helpscout_url: 'https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 Long answer questions are generally open-ended questions that require participants to construct a response. Long answer questions require a concise and focused response.
 
@@ -21,7 +26,7 @@ Here is how you can create a 'Long answer' question.
 
 * Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
 
-![](/img/helpscout/editors/how-to-create-long-answer-questions-1.jpg)
+![Here is how you can create a 'Long answer' question.](/img/helpscout/editors/how-to-create-long-answer-questions-1.jpg)
 
 * Click on the '**Add Question**' button at the _**top right corner.**_
 
@@ -43,19 +48,19 @@ Here is how you can create a 'Long answer' question.
 
 Use ‘**Correct Answer Feedback**’ if you want to add additional information to a question.  (Optional)
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
+![Use ‘Correct Answer Feedback’ if you want to add additional information to a question. (Optional)](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
 
 **Reviewer Notes:**
 
 You can add any additional feedback on the question or answer options.
 
-![](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
+![You can add any additional feedback on the question or answer options.](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
 
 **Categories:**
 
 Every question must be assigned at least **one category**. Categories are predefined by your administrator. You may select multiple categories if applicable.
 
-![](/img/helpscout/editors/how-to-create-a-drag-and-drop-into-image-question-7.jpg)
+![Every question must be assigned at least one category. Categories are predefined by your administrator. You may select multiple categories i](/img/helpscout/editors/how-to-create-a-drag-and-drop-into-image-question-7.jpg)
 
 Microsoft Word adds certain hidden characters and markups to every document. If you directly copy text from a Word document, these hidden artifacts can create a problem, especially on mobile devices. To avoid this issue, if you are copying any question from a Word document, please follow these steps:
 
@@ -96,7 +101,7 @@ You can also send an audio file with the question by clicking on the Audio icon.
 
 You can change the language of the question by clicking on the " **Change Language**" button at the top right corner of this section. It will open the following popup:
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-13.png)
+![You can change the language of the question by clicking on the " Change Language" button at the top right corner of this section. It will op](/img/helpscout/editors/how-to-create-multiple-choice-questions-13.png)
 
 Choose the language to which you want to change and then click on the " **Save**" button.
 
@@ -106,8 +111,8 @@ Choose the language to which you want to change and then click on the " **Save**
 
 * This is an example of how the participants see the Long Answer question in the User View.
 
-![](/img/helpscout/editors/how-to-create-long-answer-questions-5.png)
+![How do the participants see the question?](/img/helpscout/editors/how-to-create-long-answer-questions-5.png)
 
 * To know how the editors evaluate the Long Answer questions, please click the link given below.
 
-[How the editors evaluate the Long Answer questions?](https://help.smartwinnr.com/article/262-how-editors-evaluate-long-answer-questions)
+[How the editors evaluate the Long Answer questions?](../reports-and-analytics/how-editors-evaluate-long-answer-questions.md)

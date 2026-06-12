@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/faqs-and-troubleshooting/5fd4a80723119734ee37edd6",
   "title": "What is the difference between a Survey and a Survey Template?",
-  "description": "",
+  "description": "In SmartWinnr, Surveys and Survey Templates serve different purposes based on how often and in what context they are used.",
   "source": "@site/docs/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template.md",
   "sourceDirName": "modules/survey/faqs-and-troubleshooting",
   "slug": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "troubleshooting",
+      "permalink": "/tags/troubleshooting"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 63,
   "frontMatter": {
     "id": "5fd4a80723119734ee37edd6",
     "title": "What is the difference between a Survey and a Survey Template?",
-    "description": "",
+    "description": "In SmartWinnr, Surveys and Survey Templates serve different purposes based on how often and in what context they are used.",
     "slug": "what-is-the-difference-between-a-survey-and-a-survey-template",
     "sidebar_position": 63,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "troubleshooting"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/features/5fdb0817b624c71b7985a5e5",
   "title": "What is the purpose of notifications?",
-  "description": "",
+  "description": "Provide enough information:",
   "source": "@site/docs/modules/notifications/features/what-is-the-purpose-of-notifications.md",
   "sourceDirName": "modules/notifications/features",
   "slug": "/modules/notifications/features/what-is-the-purpose-of-notifications",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/what-is-the-purpose-of-notifications.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 163,
   "frontMatter": {
     "id": "5fdb0817b624c71b7985a5e5",
     "title": "What is the purpose of notifications?",
-    "description": "",
+    "description": "Provide enough information:",
     "slug": "what-is-the-purpose-of-notifications",
     "sidebar_position": 163,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "customNotifications"
     },
-    "tags": []
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

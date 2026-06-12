@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-notifications",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

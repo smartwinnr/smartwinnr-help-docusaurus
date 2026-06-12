@@ -1,7 +1,7 @@
 {
   "id": "reference/help-support/troubleshoot-for-common-error-code",
   "title": "Troubleshoot for common error code",
-  "description": "",
+  "description": "Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:",
   "source": "@site/docs/reference/help-support/troubleshoot-for-common-error-code.md",
   "sourceDirName": "reference/help-support",
   "slug": "/reference/help-support/troubleshoot-for-common-error-code",
@@ -14,7 +14,7 @@
   "sidebarPosition": 47,
   "frontMatter": {
     "title": "Troubleshoot for common error code",
-    "description": "",
+    "description": "Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:",
     "slug": "troubleshoot-for-common-error-code",
     "sidebar_position": 47,
     "last_update": {

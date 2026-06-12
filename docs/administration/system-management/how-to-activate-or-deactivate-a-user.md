@@ -1,18 +1,24 @@
 ---
 id: 5fda4ff50b11ce44f6392e68
-title: "How to activate or deactivate a user?"
-description: ""
+title: How to activate or deactivate a user?
+description: >-
+  If you have selected the “Set password by user” option during bulk user
+  creation, SmartWinnr will send a welcome mail to the user with an activation
+  link.
 slug: how-to-activate-or-deactivate-a-user
 sidebar_position: 121
 last_update:
-  date: 2026-01-19
+  date: 2026-01-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda4ff50b11ce44f6392e68
-  helpscout_url: https://help.smartwinnr.com/article/121-how-to-activate-or-deactivate-a-user
+  helpscout_url: 'https://help.smartwinnr.com/article/121-how-to-activate-or-deactivate-a-user'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 ## Activate user
 
@@ -22,7 +28,7 @@ If you want to force-activate a user, you can do so.
 
 Go to ADMIN > Manage Users. Click on the user you want to activate. Then select the “Activate” option from the hamburger menu. On clicking “Activate”, SmartWinnr will force-activate the user and send her the login credentials to the registered email.
 
-![](/img/helpscout/admins/how-to-activate-or-deactivate-a-user-1.png)
+![Go to ADMIN > Manage Users. Click on the user you want to activate. Then select the “Activate” option from the hamburger menu. On clicking “](/img/helpscout/admins/how-to-activate-or-deactivate-a-user-1.png)
 
 ## Deactivate User
 
@@ -32,4 +38,4 @@ Go to ADMIN > Manage Users. Click on the user you want to deactivate. Then selec
 
 Only users with admin role can deactivate a user.
 
-![](/img/helpscout/admins/how-to-activate-or-deactivate-a-user-2.png)
+![Only users with admin role can deactivate a user.](/img/helpscout/admins/how-to-activate-or-deactivate-a-user-2.png)

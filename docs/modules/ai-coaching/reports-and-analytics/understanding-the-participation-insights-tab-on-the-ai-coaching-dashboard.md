@@ -1,19 +1,26 @@
 ---
 id: 6971e1b1015ae02ac002197d
-title: "Understanding the Participation Insights Tab on the AI Coaching Dashboard"
-description: ""
+title: Understanding the Participation Insights Tab on the AI Coaching Dashboard
+description: >-
+  This tab provides a high-level view of participation, activity trends, and
+  AI-generated insights.
 slug: understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 sidebar_position: 325
 last_update:
-  date: 2026-02-06
+  date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971e1b1015ae02ac002197d
-  helpscout_url: https://help.smartwinnr.com/article/325-understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/325-understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 # Participation Insights Tab
 
@@ -32,7 +39,7 @@ All metrics on the dashboard update based on the selected time period.
 
 * * *
 
-![](/img/helpscout/editors/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard-1.png)
+![All metrics on the dashboard update based on the selected time period.](/img/helpscout/editors/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard-1.png)
 
 Submission Trends Over Time.
 

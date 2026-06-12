@@ -194,6 +194,76 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
         `access-gate-emit: wrote ${landingOut} ` +
           `(${modulesOut.modules.length} modules)`,
       );
+
+      // Also emit article-graph.json — consumed by RelatedStrip on every
+      // article. One entry per article with {label, blurb, folder, position,
+      // tags} so the strip can pick 3 nearest siblings without re-parsing
+      // markdown at runtime.
+      //
+      // Use gray-matter for proper YAML parsing — many articles use folded
+      // block syntax for `description: >-` and a hand-rolled regex would
+      // capture the literal ">-" instead of the folded value.
+      const matter = require('gray-matter');
+      const articles = [];
+      function visitArticles(dir) {
+        for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
+          if (entry.name.startsWith('.')) continue;
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) {
+            visitArticles(full);
+          } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
+            let fmData;
+            try {
+              fmData = matter(fs.readFileSync(full, 'utf8')).data;
+            } catch {
+              continue;
+            }
+            if (!fmData || Object.keys(fmData).length === 0) continue;
+
+            const title = fmData.title ? String(fmData.title).trim() : '';
+            const description = fmData.description
+              ? String(fmData.description).replace(/\s+/g, ' ').trim()
+              : '';
+            const slug = fmData.slug ? String(fmData.slug).trim() : '';
+            const idVal = fmData.id ? String(fmData.id).trim() : '';
+            const position = Number.isFinite(fmData.sidebar_position)
+              ? fmData.sidebar_position
+              : 9999;
+            const tags = Array.isArray(fmData.tags)
+              ? fmData.tags.map((t) => String(t).trim()).filter(Boolean)
+              : [];
+
+            // Resolve the URL — same logic as the gates emit above.
+            const rel = path.relative(docsRoot, path.dirname(full)).split(path.sep).join('/');
+            const base = entry.name.replace(/\.(md|mdx)$/, '');
+            const rawSlug = slug || idVal || base;
+            let url;
+            if (rawSlug.startsWith('/')) {
+              url = rawSlug;
+            } else {
+              url = '/' + (rel ? rel + '/' : '') + rawSlug;
+            }
+            url = url.replace(/\/+/g, '/');
+            if (url.length > 1) url = url.replace(/\/$/, '');
+
+            articles.push({
+              url,
+              title,
+              description,
+              folder: '/' + rel,
+              position,
+              tags,
+            });
+          }
+        }
+      }
+      if (fs.existsSync(docsRoot)) visitArticles(docsRoot);
+      const articleGraphOut = path.join(outDir, 'article-graph.json');
+      fs.writeFileSync(articleGraphOut, JSON.stringify({version: 1, articles}, null, 2));
+      console.log(
+        `access-gate-emit: wrote ${articleGraphOut} ` +
+          `(${articles.length} articles)`,
+      );
     },
   };
 };

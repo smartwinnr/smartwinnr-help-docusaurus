@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/features/697086628446705a3c6f686c",
   "title": "What is AI Coaching?",
-  "description": "",
+  "description": "AI Coaching in SmartWinnr is a feature that allows users to practice conversations with HCPs in a simulated environment and receive automated evaluation.",
   "source": "@site/docs/modules/ai-coaching/features/what-is-ai-coaching.md",
   "sourceDirName": "modules/ai-coaching/features",
   "slug": "/modules/ai-coaching/features/what-is-ai-coaching",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/features/what-is-ai-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 309,
   "frontMatter": {
     "id": "697086628446705a3c6f686c",
     "title": "What is AI Coaching?",
-    "description": "",
+    "description": "AI Coaching in SmartWinnr is a feature that allows users to practice conversations with HCPs in a simulated environment and receive automated evaluation.",
     "slug": "what-is-ai-coaching",
     "sidebar_position": 309,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

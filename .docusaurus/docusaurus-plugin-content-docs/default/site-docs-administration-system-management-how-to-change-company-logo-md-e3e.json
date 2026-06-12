@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fda48bca5d295659b3698b1",
   "title": "How to change company logo?",
-  "description": "",
+  "description": "Go to ADMIN > Company Settings > Company Profile tab.",
   "source": "@site/docs/administration/system-management/how-to-change-company-logo.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-change-company-logo",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-change-company-logo.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 114,
   "frontMatter": {
     "id": "5fda48bca5d295659b3698b1",
     "title": "How to change company logo?",
-    "description": "",
+    "description": "Go to ADMIN > Company Settings > Company Profile tab.",
     "slug": "how-to-change-company-logo",
     "sidebar_position": 114,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

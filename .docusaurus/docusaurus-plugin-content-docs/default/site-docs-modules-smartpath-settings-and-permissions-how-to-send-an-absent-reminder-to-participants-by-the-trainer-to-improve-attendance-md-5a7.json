@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/settings-and-permissions/60bf40d2a6d12c2cd643da33",
   "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
-  "description": "",
+  "description": "An Editor who has access to the SmartPaths can send the Absent Reminder to the learners.",
   "source": "@site/docs/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
   "sourceDirName": "modules/smartpath/settings-and-permissions",
   "slug": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 253,
   "frontMatter": {
     "id": "60bf40d2a6d12c2cd643da33",
     "title": "How to send an Absent Reminder to Participants by the trainer to Improve Attendance",
-    "description": "",
+    "description": "An Editor who has access to the SmartPaths can send the Absent Reminder to the learners.",
     "slug": "how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
     "sidebar_position": 253,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

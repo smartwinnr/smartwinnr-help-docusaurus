@@ -1,7 +1,7 @@
 {
   "id": "modules/knowledge-hub/features/6317a3ed4cde766bbe1426fe",
   "title": "How can I edit a KHub folder name ?",
-  "description": "",
+  "description": "In KHub, you can edit the names of folders. If you have a folder in KHub that you want to change the title of you can simply follow the below steps:",
   "source": "@site/docs/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name.md",
   "sourceDirName": "modules/knowledge-hub/features",
   "slug": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "knowledge-hub",
+      "permalink": "/tags/knowledge-hub"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 275,
   "frontMatter": {
     "id": "6317a3ed4cde766bbe1426fe",
     "title": "How can I edit a KHub folder name ?",
-    "description": "",
+    "description": "In KHub, you can edit the names of folders. If you have a folder in KHub that you want to change the title of you can simply follow the below steps:",
     "slug": "how-can-i-edit-a-khub-folder-name",
     "sidebar_position": 275,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "khub"
     },
-    "tags": []
+    "tags": [
+      "knowledge-hub"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,19 +1,26 @@
 ---
 id: 5fd45c1523119734ee37ed79
-title: "How to create 'Multiple-Choice Questions'."
-description: ""
+title: How to create 'Multiple-Choice Questions'.
+description: >-
+  1. Navigate to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes >
+  Question Bank. 2. Click on the 'Add New Question' button at the top right
+  corner.
 slug: how-to-create-multiple-choice-questions
 sidebar_position: 40
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd45c1523119734ee37ed79
-  helpscout_url: https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 #### SmartWinnr offers versatile learning assessment capabilities, including the ability to create multiple-choice question  that allow participants to select one or more correct answers from a set of options. This question format is widely used to evaluate knowledge accurately and efficiently within quizzes
 
@@ -22,9 +29,9 @@ tags: []
 1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
 2. Click on the **'Add New Question'** button at the _top right corner_.
 
-    [![](/img/helpscout/editors/how-to-create-multiple-choice-questions-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
+    [![Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-multiple-choice-questions-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600bf9b6c64fe14d0e1fddfb/file-MmPYqbhBfU.png)
 
-3. On the **Create New Question** screen, select **Multiple Choice** as the _Question Type_. Next, choose the appropriate **scoring method**—**Default**, **Partial**, or **Graded**.
+3. On the **Create New Question** screen, select **Multiple Choice** as the _Question Type_. Next, choose the appropriate **scoring method**-**Default**, **Partial**, or **Graded**.
     * Use **Default Scoring** when the question has **only one correct answer**.
     * Use **Partial Scoring** or **Graded Scoring** when the question has **multiple correct answers**.
         * In **Partial Scoring**, the total score is **distributed equally** among all correct answer options.
@@ -34,35 +41,35 @@ tags: []
 
 4. Enter Question Title if needed. Enter your question in the **‘Question’** field.
 
-* ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-3.png)
+* ![Enter Question Title if needed. Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-multiple-choice-questions-3.png)
 
     _For the question,_ _you can have various elements like Simple Text, Videos, Images, Links, or Audio files._
 
 5. Enter the answer options for the multiple-choice question and use the **checkbox** to indicate the correct answer (mandatory). You can also enhance the options by adding **rich content**, such as videos, images, or formatted text, using the **Select Rich Text** editor.
 
-* ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-4.png)
+* ![Enter the answer options for the multiple-choice question and use the checkbox to indicate the correct answer (mandatory). You can also enha](/img/helpscout/editors/how-to-create-multiple-choice-questions-4.png)
 
 **Example of Multiple choice question:**
 
 1. Default Scoring
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-5.png)
+![Default Scoring](/img/helpscout/editors/how-to-create-multiple-choice-questions-5.png)
 
 2. Partial Scoring
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-6.png)
+![Partial Scoring](/img/helpscout/editors/how-to-create-multiple-choice-questions-6.png)
 
 3. Graded Scoring
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-7.png)
+![Graded Scoring](/img/helpscout/editors/how-to-create-multiple-choice-questions-7.png)
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-8.png)
+![Graded Scoring](/img/helpscout/editors/how-to-create-multiple-choice-questions-8.png)
 
 6. Points
 
 The total score for the question should be added here.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
+![The total score for the question should be added here.](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
 
 Select the **“Shuffle Last Option”** checkbox to randomize the position of the last answer option in the question.
 
@@ -79,7 +86,7 @@ This section can be used to provide **additional information or clarification** 
 
 **Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
+![This section can be used to provide additional information or clarification related to the topic or concept covered in the question. The fee](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
 
 ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
 
@@ -87,7 +94,7 @@ This section can be used to provide **additional information or clarification** 
 
 Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and analytics. These categories are predefined by your SmartWinnr administrator. You may associate multiple relevant categories where appropriate.
 
-[![](/img/helpscout/editors/how-to-create-multiple-choice-questions-12.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
+[![Every question in SmartWinnr must be assigned at least one knowledge category, which helps classify and organize content for tracking and an](/img/helpscout/editors/how-to-create-multiple-choice-questions-12.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
 
 Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
 
@@ -119,7 +126,7 @@ You can also send an audio file with the question by clicking on the Audio icon.
 
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
 
-[![](/img/helpscout/editors/how-to-create-multiple-choice-questions-13.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd11e4380488e39007cbdec/file-dz3YYDlS0L.png)
+[![You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will ope](/img/helpscout/editors/how-to-create-multiple-choice-questions-13.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd11e4380488e39007cbdec/file-dz3YYDlS0L.png)
 
 Choose the language to which you want to change and then click on the " **Save**" button.
 
@@ -128,8 +135,8 @@ Choose the language to which you want to change and then click on the " **Save**
 * This is an example of how the participants see the Multiple Choice question in the User View.
 * 1\. Question with Multiple answer options.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-14.png)
+![How do the participants see the question?](/img/helpscout/editors/how-to-create-multiple-choice-questions-14.png)
 
 2. Question with single correct answer option.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-15.png)
+![Question with single correct answer option.](/img/helpscout/editors/how-to-create-multiple-choice-questions-15.png)

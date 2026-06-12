@@ -1,19 +1,25 @@
 ---
 id: 5fdb0be80b11ce44f63931bb
-title: "Understand Game Concepts"
-description: ""
+title: Understand Game Concepts
+description: >-
+  Here are various game concepts that you can leverage through SmartWinnr's KPI
+  Gamification
 slug: understand-game-concepts
 sidebar_position: 169
 last_update:
-  date: 2020-12-17
+  date: 2020-12-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0be80b11ce44f63931bb
-  helpscout_url: https://help.smartwinnr.com/article/169-understand-game-concepts
+  helpscout_url: 'https://help.smartwinnr.com/article/169-understand-game-concepts'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 Here are various game concepts that you can leverage through SmartWinnr's KPI Gamification
 
@@ -29,4 +35,4 @@ Leaderboards display the performance of contestants in a competition or challeng
 
 A challenge/contest is a competition between individuals or teams to achieve a specific KPI target. These contests are highly effective in communicating your organizational goals to your employees and motivating them to achieve them.
 
-![](https://support.smartwinnr.com/api/v1/attachments/736)
+![A challenge/contest is a competition between individuals or teams to achieve a specific KPI target. These contests are highly effective in c](https://support.smartwinnr.com/api/v1/attachments/736)

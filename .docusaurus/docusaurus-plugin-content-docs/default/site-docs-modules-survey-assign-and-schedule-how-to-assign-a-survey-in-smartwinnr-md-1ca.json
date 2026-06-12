@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/assign-and-schedule/5fd49e6623119734ee37edbd",
   "title": "How to Assign a Survey in SmartWinnr",
-  "description": "",
+  "description": "After creating a survey with questions, assign it to the intended participants so they can take the survey and submit their responses.",
   "source": "@site/docs/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr.md",
   "sourceDirName": "modules/survey/assign-and-schedule",
   "slug": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 60,
   "frontMatter": {
     "id": "5fd49e6623119734ee37edbd",
     "title": "How to Assign a Survey in SmartWinnr",
-    "description": "",
+    "description": "After creating a survey with questions, assign it to the intended participants so they can take the survey and submit their responses.",
     "slug": "how-to-assign-a-survey-in-smartwinnr",
     "sidebar_position": 60,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

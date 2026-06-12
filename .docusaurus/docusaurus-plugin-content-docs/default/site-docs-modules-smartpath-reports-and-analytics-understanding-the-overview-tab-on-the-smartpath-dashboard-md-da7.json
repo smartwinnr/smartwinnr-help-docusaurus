@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/reports-and-analytics/6971f00808cad8770d366631",
   "title": "Understanding the Overview Tab on the SmartPath Dashboard",
-  "description": "",
+  "description": "Smartpath Dashboard - Overview Tab",
   "source": "@site/docs/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard.md",
   "sourceDirName": "modules/smartpath/reports-and-analytics",
   "slug": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 326,
   "frontMatter": {
     "id": "6971f00808cad8770d366631",
     "title": "Understanding the Overview Tab on the SmartPath Dashboard",
-    "description": "",
+    "description": "Smartpath Dashboard - Overview Tab",
     "slug": "understanding-the-overview-tab-on-the-smartpath-dashboard",
     "sidebar_position": 326,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

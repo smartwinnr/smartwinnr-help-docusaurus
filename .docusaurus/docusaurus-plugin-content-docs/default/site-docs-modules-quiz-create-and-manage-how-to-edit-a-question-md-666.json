@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/5ffc7b6c66df373cab7081aa",
   "title": "How to edit a question?",
-  "description": "",
+  "description": "Follow the below steps in order to edit a question:",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-edit-a-question.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-edit-a-question",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-edit-a-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 202,
   "frontMatter": {
     "id": "5ffc7b6c66df373cab7081aa",
     "title": "How to edit a question?",
-    "description": "",
+    "description": "Follow the below steps in order to edit a question:",
     "slug": "how-to-edit-a-question",
     "sidebar_position": 202,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

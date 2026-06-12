@@ -1,25 +1,29 @@
 ---
 id: 60099176c64fe14d0e1fd224
-title: "Form Analytics"
-description: ""
+title: Form Analytics
+description: Follow the below steps to view Form analytics.
 slug: form-analytics
 sidebar_position: 226
 last_update:
-  date: 2021-01-21
+  date: 2021-01-21T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60099176c64fe14d0e1fd224
-  helpscout_url: https://help.smartwinnr.com/article/226-form-analytics
+  helpscout_url: 'https://help.smartwinnr.com/article/226-form-analytics'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: forms
-tags: []
+tags:
+  - forms
+  - reports
 ---
 Follow the below steps to view Form analytics.
 
 Go to EDITOR > PERFORMANCE > Forms > View All Forms.
 
-![](/img/helpscout/editors/form-analytics-1.png)
+![Go to EDITOR > PERFORMANCE > Forms > View All Forms.](/img/helpscout/editors/form-analytics-1.png)
 
 Form analytics gives all forms that have been submitted by the users and can be accessed by clicking on the analytics button of that form type.
 
@@ -27,14 +31,14 @@ Now under Analytics, click on the analytics icon against the form for which you
 
 You will be taken to the following page, where the analytics of the selected form is displayed.
 
-![](/img/helpscout/editors/form-analytics-2.png)
+![You will be taken to the following page, where the analytics of the selected form is displayed.](/img/helpscout/editors/form-analytics-2.png)
 
 Analytics of the forms can be filtered and viewed based on the following:
 
 * Date range : You can search submissions with particular date range.
 * Status : You can view submissions by filter with different approval status.
 
-![](/img/helpscout/editors/form-analytics-3.png)
+![Analytics of the forms can be filtered and viewed based on the following:](/img/helpscout/editors/form-analytics-3.png)
 
 All : If you select the status as 'All' from the available statuses,It will show you all the submissions for the form.
 

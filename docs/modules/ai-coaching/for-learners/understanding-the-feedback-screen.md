@@ -1,19 +1,27 @@
 ---
 id: 69721470ddd77241ca3daa61
-title: "Understanding the feedback screen"
-description: ""
+title: Understanding the feedback screen
+description: >-
+  The Analytics section allows you to watch your recorded AI coaching attempt
+  and review your actual performance.
 slug: understanding-the-feedback-screen
 sidebar_position: 333
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 69721470ddd77241ca3daa61
-  helpscout_url: https://help.smartwinnr.com/article/333-understanding-the-feedback-screen
+  helpscout_url: 'https://help.smartwinnr.com/article/333-understanding-the-feedback-screen'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - onboarding
 ---
 The Analytics section allows you to watch your recorded AI coaching attempt and review your actual performance. This section helps you observe your delivery, body language, tone, and confidence during the conversation. By watching your recording alongside the AI feedback, you can understand exactly where you excelled and where you need improvement. You can also compare recordings across multiple attempts to track your progress over time.
 
@@ -70,7 +78,7 @@ The **Scores** tab is the default view and shows:
 
 This tab gives you a quick overview of your performance and helps you understand what to focus on for your next attempt.
 
-![](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-2.png)
+![This tab gives you a quick overview of your performance and helps you understand what to focus on for your next attempt.](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-2.png)
 
 Score Overview - Smart AI Coach
 
@@ -101,7 +109,7 @@ Evaluation Criteria - Smart AI Coach
 
 This tab helps you understand exactly where you gained or lost points and how to improve specific parts of your conversation.
 
-![](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-4.png)
+![This tab helps you understand exactly where you gained or lost points and how to improve specific parts of your conversation.](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-4.png)
 
 Evaluation Criteria - Smart AI Coach
 
@@ -115,7 +123,7 @@ The **Analytics** tab provides data-driven insights into your performance tren
 
 The Analytics tab is especially useful if you've made multiple attempts, as it shows your learning progression.
 
-![](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-5.png)
+![The Analytics tab is especially useful if you've made multiple attempts, as it shows your learning progression.](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-5.png)
 
 Analytics - Smart AI Coach
 

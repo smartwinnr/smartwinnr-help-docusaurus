@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/60a60efceb3af44cc120a91b",
   "title": "How to add a Recording to a SmartFeed?",
-  "description": "",
+  "description": "SmartWinnr allows users with the EDITOR role to add recordings to SmartFeeds. This enables you to share audio, video, or screen recordings directly with your…",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 239,
   "frontMatter": {
     "id": "60a60efceb3af44cc120a91b",
     "title": "How to add a Recording to a SmartFeed?",
-    "description": "",
+    "description": "SmartWinnr allows users with the EDITOR role to add recordings to SmartFeeds. This enables you to share audio, video, or screen recordings directly with your…",
     "slug": "how-to-add-a-recording-to-a-smartfeed",
     "sidebar_position": 239,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

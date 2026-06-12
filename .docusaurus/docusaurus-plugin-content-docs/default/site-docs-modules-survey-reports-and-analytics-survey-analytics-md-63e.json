@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/reports-and-analytics/5fda2e397129911ba1b21a07",
   "title": "Survey Analytics",
-  "description": "",
+  "description": "Survey Analytics allows you to monitor and analyze responses collected from your surveys.",
   "source": "@site/docs/modules/survey/reports-and-analytics/survey-analytics.md",
   "sourceDirName": "modules/survey/reports-and-analytics",
   "slug": "/modules/survey/reports-and-analytics/survey-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/reports-and-analytics/survey-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 111,
   "frontMatter": {
     "id": "5fda2e397129911ba1b21a07",
     "title": "Survey Analytics",
-    "description": "",
+    "description": "Survey Analytics allows you to monitor and analyze responses collected from your surveys.",
     "slug": "survey-analytics",
     "sidebar_position": 111,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

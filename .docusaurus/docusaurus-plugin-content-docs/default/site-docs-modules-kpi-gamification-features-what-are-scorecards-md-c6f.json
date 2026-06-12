@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/features/5fdb0e92a5d295659b369c6c",
   "title": "What are Scorecards?",
-  "description": "",
+  "description": "Scorecards are a great way to measure your sales rep's performance against the KPIs that are set.",
   "source": "@site/docs/modules/kpi-gamification/features/what-are-scorecards.md",
   "sourceDirName": "modules/kpi-gamification/features",
   "slug": "/modules/kpi-gamification/features/what-are-scorecards",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/what-are-scorecards.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 175,
   "frontMatter": {
     "id": "5fdb0e92a5d295659b369c6c",
     "title": "What are Scorecards?",
-    "description": "",
+    "description": "Scorecards are a great way to measure your sales rep's performance against the KPIs that are set.",
     "slug": "what-are-scorecards",
     "sidebar_position": 175,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

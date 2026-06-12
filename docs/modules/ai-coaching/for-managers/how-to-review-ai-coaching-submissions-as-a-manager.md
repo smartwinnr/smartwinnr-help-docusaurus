@@ -1,19 +1,28 @@
 ---
 id: 6970fbe61252a7004208b915
-title: "How to Review AI Coaching Submissions as a Manager?"
-description: ""
+title: How to Review AI Coaching Submissions as a Manager?
+description: >-
+  As a manager, you can review AI coaching submissions from your team members.
+  When a rep completes an AI role-play, you have the option to provide
+  additional…
 slug: how-to-review-ai-coaching-submissions-as-a-manager
 sidebar_position: 318
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970fbe61252a7004208b915
-  helpscout_url: https://help.smartwinnr.com/article/318-how-to-review-ai-coaching-submissions-as-a-manager
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/318-how-to-review-ai-coaching-submissions-as-a-manager
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
 ---
 As a manager, you can review AI coaching submissions from your team members. When a rep completes an AI role-play, you have the option to provide additional feedback beyond the automated AI evaluation. This helps you give personalized coaching, identify skill gaps, and support reps who may need extra guidance.
 
@@ -61,7 +70,7 @@ This opens the detailed review screen for that specific rep's submission.
 
 You can only select one performance level per competency.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-ai-coaching-submissions-as-a-manager-2.png)
+![You can only select one performance level per competency.](/img/helpscout/managers-and-team-members/how-to-review-ai-coaching-submissions-as-a-manager-2.png)
 
 Manager checks one against for each line item
 

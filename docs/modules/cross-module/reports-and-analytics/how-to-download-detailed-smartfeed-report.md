@@ -1,18 +1,22 @@
 ---
 id: 697066e7dadc293bb31335e8
-title: "How to Download  Detailed SmartFeed Report"
-description: ""
+title: How to Download  Detailed SmartFeed Report
+description: 'To download the SmartFeed detailed report, follow the steps below:'
 slug: how-to-download-detailed-smartfeed-report
 sidebar_position: 307
 last_update:
-  date: 2026-01-21
+  date: 2026-01-21T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 697066e7dadc293bb31335e8
-  helpscout_url: https://help.smartwinnr.com/article/307-how-to-download-detailed-smartfeed-report
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/307-how-to-download-detailed-smartfeed-report
 customProps:
-  roles: [editor, admin]
-tags: []
+  roles:
+    - editor
+    - admin
+tags:
+  - reports
 ---
 To download the SmartFeed detailed report, follow the steps below:
 
@@ -41,7 +45,7 @@ To download the SmartFeed detailed report, follow the steps below:
 
     The report will be generated based on the selected filter criteria.
 
-![](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-1.png)
+![The report will be generated based on the selected filter criteria.](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-1.png)
 
 ### Downloading SmartFeed Detailed Reports from Other SmartFeeds
 
@@ -58,7 +62,7 @@ From this section:
 
 You can also apply filters such as **date range** and **business unit** to download the report based on your requirements.
 
-![](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-2.png)
+![You can also apply filters such as date range and business unit to download the report based on your requirements.](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-2.png)
 
 ### SmartFeed Detailed Report – Included Information
 
@@ -82,4 +86,4 @@ The **SmartFeed Detailed Report** provides comprehensive information about each 
 
 This report helps administrators and editors track SmartFeed creation, content types, and user engagement effectively.
 
-![](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-3.png)
+![This report helps administrators and editors track SmartFeed creation, content types, and user engagement effectively.](/img/helpscout/editors/how-to-download-detailed-smartfeed-report-3.png)

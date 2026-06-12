@@ -1,19 +1,27 @@
 ---
 id: 69720db5015ae02ac0021a31
-title: "How can a User View Feedback After Submitting an AI Coaching?"
-description: ""
+title: How can a User View Feedback After Submitting an AI Coaching?
+description: >-
+  This guide explains how to access and review feedback after completing an AI
+  coaching assignment.
 slug: how-can-a-user-view-feedback-after-submitting-an-ai-coaching
 sidebar_position: 332
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 69720db5015ae02ac0021a31
-  helpscout_url: https://help.smartwinnr.com/article/332-how-can-a-user-check-the-ai-feedback
+  helpscout_url: 'https://help.smartwinnr.com/article/332-how-can-a-user-check-the-ai-feedback'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - onboarding
 ---
 This guide explains how to access and review feedback after completing an AI coaching assignment. Feedback includes your AI score, strengths, areas for improvement, and detailed performance analysis across each objective. You can view feedback immediately after submission or return to it later at any time.
 
@@ -57,7 +65,7 @@ If you want to review your feedback after leaving the session, you can access it
 
 The detailed feedback page opens, showing all tabs and analysis from your attempt.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-1.png)
+![The detailed feedback page opens, showing all tabs and analysis from your attempt.](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-1.png)
 
 Video Coaching Page
 
@@ -116,7 +124,7 @@ The **Scores** tab is the default view and shows:
 
 This tab gives you a quick overview of your performance and helps you understand what to focus on for your next attempt.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-3.png)
+![This tab gives you a quick overview of your performance and helps you understand what to focus on for your next attempt.](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-3.png)
 
 ### E. Evaluation Criteria Tab
 
@@ -143,7 +151,7 @@ The **Evaluation Criteria** tab provides detailed analysis of how you performed 
 
 This tab helps you understand exactly where you gained or lost points and how to improve specific parts of your conversation.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-5.png)
+![This tab helps you understand exactly where you gained or lost points and how to improve specific parts of your conversation.](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-5.png)
 
 ### F. Analytics Tab
 
@@ -155,7 +163,7 @@ The **Analytics** tab provides data-driven insights into your performance trends
 
 The Analytics tab is especially useful if you've made multiple attempts, as it shows your learning progression.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-6.png)
+![The Analytics tab is especially useful if you've made multiple attempts, as it shows your learning progression.](/img/helpscout/managers-and-team-members/how-can-a-user-view-feedback-after-submitting-an-ai-coaching-6.png)
 
 ## Viewing Manager Feedback
 

@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/for-learners/610775ae64a230081ba1b1b8",
   "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
-  "description": "",
+  "description": "A SmartPath is a structured learning path for you that contains various tasks like SmartFeeds, quizzes, surveys, video coaching, or learning sessions added to…",
   "source": "@site/docs/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
   "sourceDirName": "modules/smartpath/for-learners",
   "slug": "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 265,
   "frontMatter": {
     "id": "610775ae64a230081ba1b1b8",
     "title": "How to take the SmartPath Assigned to me in SmartWinnr?",
-    "description": "",
+    "description": "A SmartPath is a structured learning path for you that contains various tasks like SmartFeeds, quizzes, surveys, video coaching, or learning sessions added to…",
     "slug": "how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
     "sidebar_position": 265,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

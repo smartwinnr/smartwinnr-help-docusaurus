@@ -1,7 +1,7 @@
 {
   "id": "modules/field-coaching/create-and-manage/6943caf79c8f912774281514",
   "title": "How to Create Field mapping",
-  "description": "",
+  "description": "To create a field mapping, go to Admin > KPI Settings > Field Mappings.",
   "source": "@site/docs/modules/field-coaching/create-and-manage/how-to-create-field-mapping.md",
   "sourceDirName": "modules/field-coaching/create-and-manage",
   "slug": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/create-and-manage/how-to-create-field-mapping.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "field-coaching",
+      "permalink": "/tags/field-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 296,
   "frontMatter": {
     "id": "6943caf79c8f912774281514",
     "title": "How to Create Field mapping",
-    "description": "",
+    "description": "To create a field mapping, go to Admin > KPI Settings > Field Mappings.",
     "slug": "how-to-create-field-mapping",
     "sidebar_position": 296,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "fCoaching"
     },
-    "tags": []
+    "tags": [
+      "field-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

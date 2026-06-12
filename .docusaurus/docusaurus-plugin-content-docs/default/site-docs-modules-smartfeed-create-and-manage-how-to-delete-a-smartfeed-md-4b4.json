@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/5fd112c50ca0c372c6f09352",
   "title": "How to delete a SmartFeed?",
-  "description": "",
+  "description": "You can delete a SmartFeed even after it has been sent to your teams. Once deleted, the SmartFeed will be removed from all recipients’ feeds and permanently…",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 34,
   "frontMatter": {
     "id": "5fd112c50ca0c372c6f09352",
     "title": "How to delete a SmartFeed?",
-    "description": "",
+    "description": "You can delete a SmartFeed even after it has been sent to your teams. Once deleted, the SmartFeed will be removed from all recipients’ feeds and permanently…",
     "slug": "how-to-delete-a-smartfeed",
     "sidebar_position": 34,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

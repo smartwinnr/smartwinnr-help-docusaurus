@@ -1,7 +1,7 @@
 {
   "id": "modules/field-coaching/create-and-manage/60a50e4827c86942e80697e9",
   "title": "How to create Field Coaching Template",
-  "description": "",
+  "description": "Only users with ADMIN roles can create field coaching templates.",
   "source": "@site/docs/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template.md",
   "sourceDirName": "modules/field-coaching/create-and-manage",
   "slug": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "field-coaching",
+      "permalink": "/tags/field-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 236,
   "frontMatter": {
     "id": "60a50e4827c86942e80697e9",
     "title": "How to create Field Coaching Template",
-    "description": "",
+    "description": "Only users with ADMIN roles can create field coaching templates.",
     "slug": "how-to-create-field-coaching-template",
     "sidebar_position": 236,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "fCoaching"
     },
-    "tags": []
+    "tags": [
+      "field-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

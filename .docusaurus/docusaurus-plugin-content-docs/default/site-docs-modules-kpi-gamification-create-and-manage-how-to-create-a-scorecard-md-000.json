@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fdb13f67129911ba1b21e6b",
   "title": "How to create a Scorecard?",
-  "description": "",
+  "description": "Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. Read more about Scorecards.",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 176,
   "frontMatter": {
     "id": "5fdb13f67129911ba1b21e6b",
     "title": "How to create a Scorecard?",
-    "description": "",
+    "description": "Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. Read more about Scorecards.",
     "slug": "how-to-create-a-scorecard",
     "sidebar_position": 176,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

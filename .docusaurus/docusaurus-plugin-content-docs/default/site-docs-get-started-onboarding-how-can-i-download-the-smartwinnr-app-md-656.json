@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce026bde1bfa158fb55e2d",
   "title": "How can I download the SmartWinnr app?",
-  "description": "",
+  "description": "You can open SmartWinnr from a PC/laptop, as well as through iOS/Android mobile apps.",
   "source": "@site/docs/get-started/onboarding/how-can-i-download-the-smartwinnr-app.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-download-the-smartwinnr-app",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce026bde1bfa158fb55e2d",
     "title": "How can I download the SmartWinnr app?",
-    "description": "",
+    "description": "You can open SmartWinnr from a PC/laptop, as well as through iOS/Android mobile apps.",
     "slug": "how-can-i-download-the-smartwinnr-app",
     "sidebar_position": 9,
     "last_update": {

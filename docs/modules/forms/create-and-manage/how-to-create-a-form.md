@@ -1,25 +1,31 @@
 ---
 id: 5fd8c043b624c71b798599c8
-title: "How to Create a form?"
-description: ""
+title: How to Create a form?
+description: >-
+  To create a form in SmartWinnr, go to Editor >>PERFORMANCE >> Forms >> View
+  All Forms.
 slug: how-to-create-a-form
 sidebar_position: 93
 last_update:
-  date: 2025-01-04
+  date: 2025-01-04T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd8c043b624c71b798599c8
-  helpscout_url: https://help.smartwinnr.com/article/93-how-to-create-a-form
+  helpscout_url: 'https://help.smartwinnr.com/article/93-how-to-create-a-form'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: forms
-tags: []
+tags:
+  - forms
+  - admin
 ---
 To create a form in SmartWinnr, go to Editor >>PERFORMANCE >> Forms >> View All Forms. It will take you to the following page where you can see the list of forms created by you.
 
 Click on Create Form option at the top-right corner to create a new one. It opens the Create Form page.
 
-![](/img/helpscout/editors/how-to-create-a-form-1.png)
+![Click on Create Form option at the top-right corner to create a new one. It opens the Create Form page.](/img/helpscout/editors/how-to-create-a-form-1.png)
 
 It will take you to the following screen where you will fill in the details for the Form.
 
@@ -27,7 +33,7 @@ It will take you to the following screen where you will fill in the details for 
 
 Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive and not be visible to the users once the end date is passed.
 
-![](/img/helpscout/editors/how-to-create-a-form-2.png)
+![Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive an](/img/helpscout/editors/how-to-create-a-form-2.png)
 
 ## Form Type
 
@@ -40,13 +46,13 @@ SmartWinnr allows you to create two different types of forms. Following are the 
 
 Acknowledgment Form is a declaration form that may be used to authenticate official documents.
 
-![](/img/helpscout/editors/how-to-create-a-form-3.png)
+![Acknowledgment Form is a declaration form that may be used to authenticate official documents.](/img/helpscout/editors/how-to-create-a-form-3.png)
 
 ### **KPI Value Submit Form**
 
 KPI Value Submit Form is a type of Form which is used to submit KPIs at multiple levels to evaluate their success at reaching targets
 
-![](https://support.smartwinnr.com/api/v1/attachments/1033)
+![KPI Value Submit Form is a type of Form which is used to submit KPIs at multiple levels to evaluate their success at reaching targets](https://support.smartwinnr.com/api/v1/attachments/1033)
 
 Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI.
 
@@ -54,7 +60,7 @@ The below fields will be enabled for both Acknowledgement Form type as well as K
 
 Select the appropriate fields of use.
 
-![](/img/helpscout/editors/how-to-create-a-form-5.png)
+![Select the appropriate fields of use.](/img/helpscout/editors/how-to-create-a-form-5.png)
 
 **Needs Approval:** Check this option, if you would like to add an approver to the form submitted by users. You can make any editors or the corresponding manager of each user as the approver.
 
@@ -80,22 +86,22 @@ Select the appropriate fields of use.
 
 The user needs to select the submission type, whether the submission will be of the type none, Frequency, or Count.
 
-                                                                  ![](/img/helpscout/editors/how-to-create-a-form-7.png)
+                                                                  ![The user needs to select the submission type, whether the submission will be of the type none, Frequency, or Count.](/img/helpscout/editors/how-to-create-a-form-7.png)
 
 If you select Frequency as the Submission Type, then you have to select the submission frequency and the number of submissions allowed within the frequency.
 
-![](/img/helpscout/editors/how-to-create-a-form-8.png)
+![If you select Frequency as the Submission Type, then you have to select the submission frequency and the number of submissions allowed withi](/img/helpscout/editors/how-to-create-a-form-8.png)
 If you select 'Count' as the Submission Type, then you need to provide the maximum number of submissions allowed by each user for the Form.
 
-![](/img/helpscout/editors/how-to-create-a-form-9.png)
+![If you select 'Count' as the Submission Type, then you need to provide the maximum number of submissions allowed by each user for the Form.](/img/helpscout/editors/how-to-create-a-form-9.png)
 
 ### Notification Setting
 
-This feature enables you to notify the users and approvers with comments or the status of their form submissions. ![](https://support.smartwinnr.com/api/v1/attachments/1026) Select the type of notification from the drop-down list.
+This feature enables you to notify the users and approvers with comments or the status of their form submissions. ![Notification Setting](https://support.smartwinnr.com/api/v1/attachments/1026) Select the type of notification from the drop-down list.
 
 There are three types of notifications :
 
-                                                                           ![](https://support.smartwinnr.com/api/v1/attachments/1027)
+                                                                           ![There are three types of notifications :](https://support.smartwinnr.com/api/v1/attachments/1027)
 
 **Notification:** If you need to notify the users through a push notification, select the type as 'Notification' then you have to choose a trigger. For example, if you choose 'Approved' as the notification trigger, then the users will be notified every time when the approver approves their forms.
 
@@ -109,7 +115,7 @@ More than one notification type can be added by clicking on the Add More option
 
 Once you have completed the first step in creating a Form, it will take you to the following page where you can add fields to the form.
 
-![](/img/helpscout/editors/how-to-create-a-form-13.png)
+![Once you have completed the first step in creating a Form, it will take you to the following page where you can add fields to the form.](/img/helpscout/editors/how-to-create-a-form-13.png)
 
 Users can specify the components of the form here.
 
@@ -119,13 +125,13 @@ The user can also add the fields by clicking on the 'Add Field' option on the to
 
 Forms support different types of fields like textbox, dropdown, date picker, etc, This contains various field types as shown below.
 
-                                                                   \\          ![](https://support.smartwinnr.com/api/v1/attachments/1016)
+                                                                   \\          ![Forms support different types of fields like textbox, dropdown, date picker, etc, This contains various field types as shown below.](https://support.smartwinnr.com/api/v1/attachments/1016)
 
 **Data Type:**
 
 This contains the various data type for the field selected.
 
-                                                                              ![](https://support.smartwinnr.com/api/v1/attachments/1017)
+                                                                              ![This contains the various data type for the field selected.](https://support.smartwinnr.com/api/v1/attachments/1017)
 
 **Advanced Form Options**
 
@@ -133,25 +139,25 @@ Click on Advanced in the Form components
 
 You get the following:
 
-![](https://support.smartwinnr.com/api/v1/attachments/1042)**Type**
+![You get the following:](https://support.smartwinnr.com/api/v1/attachments/1042)**Type**
 
 This is the type of data, whether it will be Blank, Pre Populated, Lookup Field.
 
 This will have the following  options  :
 
-                                                                   ![](https://support.smartwinnr.com/api/v1/attachments/1043)**Data Source**
+                                                                   ![This will have the following options :](https://support.smartwinnr.com/api/v1/attachments/1043)**Data Source**
 
 This will contain the source of data for the fields.
 
-                                                                        ![](https://support.smartwinnr.com/api/v1/attachments/1044)**Data Field**
+                                                                        ![This will contain the source of data for the fields.](https://support.smartwinnr.com/api/v1/attachments/1044)**Data Field**
 
 This is the type of data field
 
-                                                                         ![](https://support.smartwinnr.com/api/v1/attachments/1045)
+                                                                         ![This is the type of data field](https://support.smartwinnr.com/api/v1/attachments/1045)
 
 In the advance section, you can also find the option to set the visibility and value override option for the selected field.
 
-![](https://support.smartwinnr.com/api/v1/attachments/1046)
+![In the advance section, you can also find the option to set the visibility and value override option for the selected field.](https://support.smartwinnr.com/api/v1/attachments/1046)
 
 Default Value Override: This option allow the users to override the prepopluated values of the field.
 
@@ -167,7 +173,7 @@ Keep Previous Value: This option will prepopulate the value which you selected i
 
 Select the Form  data location
 
-![](https://support.smartwinnr.com/api/v1/attachments/1029)
+![Select the Form data location](https://support.smartwinnr.com/api/v1/attachments/1029)
 
 This field is for the data location of the form.
 
@@ -178,11 +184,11 @@ SmartWinnr provides you two ways to make a form submission:
 
 If the user Selects the Chat option, few more fields related to the chat gets triggered, as shown below
 
-![](https://support.smartwinnr.com/api/v1/attachments/1030)Form Submission Message
+![If the user Selects the Chat option, few more fields related to the chat gets triggered, as shown below](https://support.smartwinnr.com/api/v1/attachments/1030)Form Submission Message
 
 Select the Form Submission Message type.
 
-                                                             ![](https://support.smartwinnr.com/api/v1/attachments/1031)
+                                                             ![Select the Form Submission Message type.](https://support.smartwinnr.com/api/v1/attachments/1031)
 
 You can choose either a Pop-up message or a Sticky header to pass the users on their successful submission.
 
@@ -190,9 +196,9 @@ Pop-up message: Pop-up is simply a notification that communicates certain events
 
 Sticky header: A sticky header is a navigation tool that fixes the menu to the top of the screen as the user scrolls down a page.
 
-![](/img/helpscout/editors/how-to-create-a-form-24.png)
+![Sticky header: A sticky header is a navigation tool that fixes the menu to the top of the screen as the user scrolls down a page.](/img/helpscout/editors/how-to-create-a-form-24.png)
 
-![](/img/helpscout/editors/how-to-create-a-form-25.png)
+![Sticky header: A sticky header is a navigation tool that fixes the menu to the top of the screen as the user scrolls down a page.](/img/helpscout/editors/how-to-create-a-form-25.png)
 
 After Filing the appropriate fields, click on the ' **Save'** button.
 
@@ -200,6 +206,6 @@ After Filing the appropriate fields, click on the ' **Save'** button.
 
 The next step is to assign users to the form.Select the desired participants and add them to the form.
 
-![](/img/helpscout/editors/how-to-create-a-form-26.png)
+![The next step is to assign users to the form.Select the desired participants and add them to the form.](/img/helpscout/editors/how-to-create-a-form-26.png)
 
 You can filter these users based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the users, click on the " **Send to Selected People**" button.

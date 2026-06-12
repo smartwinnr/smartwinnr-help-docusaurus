@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/reports-and-analytics/696fa0ff73ca242018625d4a",
   "title": "How do I track improvement?",
-  "description": "",
+  "description": "The AI Coaching Dashboard gives you a complete view of how your team is performing in AI roleplay practice.",
   "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement.md",
   "sourceDirName": "modules/ai-coaching/reports-and-analytics",
   "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 303,
   "frontMatter": {
     "id": "696fa0ff73ca242018625d4a",
     "title": "How do I track improvement?",
-    "description": "",
+    "description": "The AI Coaching Dashboard gives you a complete view of how your team is performing in AI roleplay practice.",
     "slug": "how-do-i-track-improvement",
     "sidebar_position": 303,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

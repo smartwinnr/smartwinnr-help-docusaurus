@@ -1,19 +1,25 @@
 ---
 id: 5fd711e636980410c9123b73
-title: "How to create a SmartPath?"
-description: ""
+title: How to create a SmartPath?
+description: >-
+  A SmartPath is a structured sequence of learning modules designed to guide
+  learners step by step through a curated learning journey.
 slug: how-to-create-a-smartpath
 sidebar_position: 78
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd711e636980410c9123b73
-  helpscout_url: https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath
+  helpscout_url: 'https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 A **SmartPath** is a structured sequence of learning modules designed to guide learners step by step through a curated learning journey. Before creating a SmartPath, ensure you have already created the individual modules that you want to include.
 
@@ -29,7 +35,7 @@ _Prerequisite: Please refer to the_ [_article on creating modules_](https://smar
 
     * **Business Unit**: Select the relevant unit.
 
-        **Course type**: You can tag your SmartPath based on the type of content it includes—such as Blended, ILT (Instructor-Led Training), E-learning, or Classroom.
+        **Course type**: You can tag your SmartPath based on the type of content it includes-such as Blended, ILT (Instructor-Led Training), E-learning, or Classroom.
 
         **Type:** SmartPaths can be classified as Mandatory or Optional. This classification is informational and does not trigger any system-enforced completion requirements.
 
@@ -49,11 +55,11 @@ _Prerequisite: Please refer to the_ [_article on creating modules_](https://smar
 
 You can change the Cover Image and Color of the SmartPath using the icons below:
 
-[![](/img/helpscout/editors/how-to-create-a-smartpath-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015004b1f25b9041beb997d/file-JHjOQfvCWt.png)
+[![You can change the Cover Image and Color of the SmartPath using the icons below:](/img/helpscout/editors/how-to-create-a-smartpath-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015004b1f25b9041beb997d/file-JHjOQfvCWt.png)
 
 You can also add a  **'Completion Certificate'** that would be awarded to the participants on the completion of the SmartPath, using the option below. Make sure the certificate is created in advance so that you can select the required certificate for the SmartPath completion.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-3.png)
+![You can also add a 'Completion Certificate' that would be awarded to the participants on the completion of the SmartPath, using the option b](/img/helpscout/editors/how-to-create-a-smartpath-3.png)
 
 3. Click **Save SmartPath** to move to the next step.  This will take you to the next step in the creation of SmartPath.
 
@@ -61,18 +67,18 @@ You can also add a  **'Completion Certificate'** that would be awarded to the p
 
 1. On the next screen, you will see a list of available modules. Use the search or business unit filter to find specific modules.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-4.png)
+![On the next screen, you will see a list of available modules. Use the search or business unit filter to find specific modules.](/img/helpscout/editors/how-to-create-a-smartpath-4.png)
 
 2. Select the desired modules and click **Add Selected**.
 3. The modules you choose will be added to the SmartPath.
 
 Then it opens the following page where the list of modules assigned to the SmartPath is shown:
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-5.png)
+![Then it opens the following page where the list of modules assigned to the SmartPath is shown:](/img/helpscout/editors/how-to-create-a-smartpath-5.png)
 
 4. You can change the order of modules by clicking **Re-order Modules** and dragging them into the preferred sequence. Once done, _click_ on the **'Save'** button to save the changes.
 
-    [![](/img/helpscout/editors/how-to-create-a-smartpath-6.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60165f37ac2f834ec5383989/file-wC8ihdMKFE.png)
+    [![You can change the order of modules by clicking Re-order Modules and dragging them into the preferred sequence. Once done, click on the 'Sav](/img/helpscout/editors/how-to-create-a-smartpath-6.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60165f37ac2f834ec5383989/file-wC8ihdMKFE.png)
 
 5. Optionally, you can set **module access rules** based on:
     * Completion of a previous module
@@ -83,7 +89,7 @@ NB: These rules are applied from the **second module onwards** and help control 
 
 To apply rules, _click_ on the **'Manage Rules'** button that is beside each module. It opens the following pop-up:
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-7.png)
+![To apply rules, click on the 'Manage Rules' button that is beside each module. It opens the following pop-up:](/img/helpscout/editors/how-to-create-a-smartpath-7.png)
 
 * **By Day****:** If you select the Type as By Day, then you have to select a day and time at which the module can be accessed. Once you enter these details, _click_ on the **'Add Rule'** button to add the module successfully.
 
@@ -99,11 +105,11 @@ To apply rules, _click_ on the **'Manage Rules'** button that is beside each mo
 
 6. You can assign milestones to individual modules, such as badges or certificates, which learners receive upon completion. To configure a milestone for a module, click **Manage Milestone** next to the relevant module.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-11.png)
+![You can assign milestones to individual modules, such as badges or certificates, which learners receive upon completion. To configure a mile](/img/helpscout/editors/how-to-create-a-smartpath-11.png)
 
 It will open up the following pop-up where you can select the required badge/certificate and click '**Save**'.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-12.png)
+![It will open up the following pop-up where you can select the required badge/certificate and click 'Save'.](/img/helpscout/editors/how-to-create-a-smartpath-12.png)
 
 ## **Step 3: Assign Batches**
 
@@ -111,11 +117,11 @@ The next step is to assign the SmartPath to the required set of learners. In Sma
 
 1. After modules are added to the SmartPath, to create the batch of learners for the SmartPath, click **View Batches** at the top right.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-13.png)
+![After modules are added to the SmartPath, to create the batch of learners for the SmartPath, click View Batches at the top right.](/img/helpscout/editors/how-to-create-a-smartpath-13.png)
 
 2. Select **Create Batch**.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-14.png)
+![Select Create Batch.](/img/helpscout/editors/how-to-create-a-smartpath-14.png)
 
 3. Fill the below details to create the batch:
 
@@ -139,11 +145,11 @@ The next step is to assign the SmartPath to the required set of learners. In Sma
 3. Once the batch details are filled, you can select the users for the batch. You can filter participants by business unit, country, group etc
 4. You can also add reminders for the users notifying them to complete their training and attend the learning session.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-17.png)
+![You can also add reminders for the users notifying them to complete their training and attend the learning session.](/img/helpscout/editors/how-to-create-a-smartpath-17.png)
 
 5. Click **Assign Users** to complete the batch assignment. This finalises the SmartPath for the selected users.
 
-[![](/img/helpscout/editors/how-to-create-a-smartpath-18.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601664d2ac2f834ec538398d/file-clZMmBQkYO.png)
+[![Click Assign Users to complete the batch assignment. This finalises the SmartPath for the selected users.](/img/helpscout/editors/how-to-create-a-smartpath-18.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601664d2ac2f834ec538398d/file-clZMmBQkYO.png)
 
 Whenever you need to use the same SmartPath for another setup of learners, you can go in and create new batches anytime.
 
@@ -156,6 +162,6 @@ You will get to this step only if you have added video coaching as a segment to 
     * Select the coach for each participant. If the same coach applies to all participants, you can select the coach directly under **Select Coach** in the first row. If different coaches are assigned to individual participants, you can manually select a coach for each user.
 2. Click **Assign Coach** to complete the setup.
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-19.png)
+![Click Assign Coach to complete the setup.](/img/helpscout/editors/how-to-create-a-smartpath-19.png)
 
 This assigns the selected coaches to the SmartPath’s coaching segments.

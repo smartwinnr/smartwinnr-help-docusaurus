@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/faqs-and-troubleshooting/5fd48e84c868cb6df3a8101f",
   "title": "Troubleshoot for common error code",
-  "description": "",
+  "description": "Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:",
   "source": "@site/docs/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code.md",
   "sourceDirName": "modules/quiz/faqs-and-troubleshooting",
   "slug": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "troubleshooting",
+      "permalink": "/tags/troubleshooting"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 47,
   "frontMatter": {
     "id": "5fd48e84c868cb6df3a8101f",
     "title": "Troubleshoot for common error code",
-    "description": "",
+    "description": "Here is a list of possible errors that you might encounter while uploading a CSV file and how you can fix them:",
     "slug": "troubleshoot-for-common-error-code",
     "sidebar_position": 47,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "troubleshooting"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

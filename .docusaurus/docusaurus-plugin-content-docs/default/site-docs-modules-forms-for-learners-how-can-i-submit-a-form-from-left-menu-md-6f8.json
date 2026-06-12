@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/for-learners/60086bd71c64ad47e4b711c2",
   "title": "How can I submit a Form from Left Menu",
-  "description": "",
+  "description": "You can Follow the below steps to submit a form in SmartWinnr from Left Menu.",
   "source": "@site/docs/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu.md",
   "sourceDirName": "modules/forms/for-learners",
   "slug": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 225,
   "frontMatter": {
     "id": "60086bd71c64ad47e4b711c2",
     "title": "How can I submit a Form from Left Menu",
-    "description": "",
+    "description": "You can Follow the below steps to submit a form in SmartWinnr from Left Menu.",
     "slug": "how-can-i-submit-a-form-from-left-menu",
     "sidebar_position": 225,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "forms",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

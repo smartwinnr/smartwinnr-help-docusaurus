@@ -9,7 +9,13 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/index.mdx",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    }
+  ],
   "version": "current",
   "frontMatter": {
     "id": "module-forms",
@@ -29,7 +35,10 @@
         "lamadmin",
         "superadmin"
       ]
-    }
+    },
+    "tags": [
+      "forms"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/settings-and-permissions/6001bb40c64fe14d0e1fb5a3",
   "title": "How to Set Reminder for your Tasks",
-  "description": "",
+  "description": "This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task.",
   "source": "@site/docs/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks.md",
   "sourceDirName": "modules/cross-module/settings-and-permissions",
   "slug": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 219,
   "frontMatter": {
     "id": "6001bb40c64fe14d0e1fb5a3",
     "title": "How to Set Reminder for your Tasks",
-    "description": "",
+    "description": "This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task.",
     "slug": "how-to-set-reminder-for-your-tasks",
     "sidebar_position": 219,
     "last_update": {
@@ -32,7 +38,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

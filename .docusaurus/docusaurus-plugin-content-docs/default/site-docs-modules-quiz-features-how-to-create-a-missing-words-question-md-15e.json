@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/641a2df7d6394b6fc7ed9fb2",
   "title": "How to create a missing words question?",
-  "description": "",
+  "description": "A Missing Words question enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of options.",
   "source": "@site/docs/modules/quiz/features/how-to-create-a-missing-words-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-a-missing-words-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-a-missing-words-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 282,
   "frontMatter": {
     "id": "641a2df7d6394b6fc7ed9fb2",
     "title": "How to create a missing words question?",
-    "description": "",
+    "description": "A Missing Words question enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of options.",
     "slug": "how-to-create-a-missing-words-question",
     "sidebar_position": 282,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

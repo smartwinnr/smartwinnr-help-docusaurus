@@ -3,15 +3,23 @@
  * the upsell branch. Token-driven (plan §14). */
 
 .wrap {
-  max-width: 980px;
+  /* Match the article + generated-index 72ch reading column so /modules/,
+   * /modules/<m>/, and /modules/<m>/<sub>/ all share the same width.
+   * The Get Started card grid auto-fits at minmax(240px, 1fr) — drops
+   * gracefully to 2 columns at this width. */
+  max-width: 72ch;
   margin: 0 auto;
   padding: var(--space-4) 0 var(--space-7);
 }
 
 /* ───────── Hero ────────────────────────────────────────────────────── */
 
+/* No top padding here: the surrounding .wrap already provides
+ * var(--space-4) (16px) above the h1, which matches the generated-index
+ * `<header>` padding-top so /modules/quiz/ and /modules/quiz/<sub>/
+ * have the same first-line position. */
 .hero {
-  padding: var(--space-5) 0 var(--space-3);
+  padding: 0 0 var(--space-3);
 }
 .hero h1 {
   font-family: var(--font-sans);
@@ -48,7 +56,9 @@
   border: 1px solid var(--ifm-color-primary-lighter);
   padding: 4px var(--space-3);
   border-radius: 999px;
-  margin-bottom: var(--space-6);
+  /* Match generated-index header.margin-bottom so the hero→content gap
+   * reads the same on /modules/quiz/ as on /modules/quiz/<sub>/. */
+  margin-bottom: var(--space-5);
   font-weight: var(--fw-semibold);
 }
 
@@ -60,7 +70,9 @@
   letter-spacing: var(--tr-h2);
   font-weight: var(--fw-semibold);
   color: var(--ifm-heading-color);
-  margin: var(--space-6) 0 var(--space-3);
+  /* Tighter than the generic --ifm-heading-margin-top so the "Get
+   * started" label sits closer to the hero. */
+  margin: var(--space-5) 0 var(--space-3);
 }
 
 .cardGrid {

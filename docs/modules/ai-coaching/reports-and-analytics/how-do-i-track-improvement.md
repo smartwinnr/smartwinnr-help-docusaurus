@@ -1,19 +1,25 @@
 ---
 id: 696fa0ff73ca242018625d4a
-title: "How do I track improvement?"
-description: ""
+title: How do I track improvement?
+description: >-
+  The AI Coaching Dashboard gives you a complete view of how your team is
+  performing in AI roleplay practice.
 slug: how-do-i-track-improvement
 sidebar_position: 303
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696fa0ff73ca242018625d4a
-  helpscout_url: https://help.smartwinnr.com/article/303-ai-coaching-dashboard
+  helpscout_url: 'https://help.smartwinnr.com/article/303-ai-coaching-dashboard'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 # **SmartWinnr AI Coaching Dashboard**
 
@@ -47,12 +53,12 @@ Shows high-level participation metrics and engagement trends
 
 Displays detailed skill development and performance by region or group
 
-[**Participation Insights**](https://help.smartwinnr.com/article/325-understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard#Participation-Insights-Tab-H95ZC)
+[**Participation Insights**](./understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard.md#Participation-Insights-Tab-H95ZC)
 
 Provides metrics on session duration and engagement patterns
 
 Click each tab to view different aspects of your coaching program's performance.
 
-![](/img/helpscout/editors/how-do-i-track-improvement-1.png)
+![Click each tab to view different aspects of your coaching program's performance.](/img/helpscout/editors/how-do-i-track-improvement-1.png)
 
 Coaching Dashboard Tabs

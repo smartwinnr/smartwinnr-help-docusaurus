@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fd9ff840b11ce44f6392c14",
   "title": "How to add a Scorecard to a Competition?",
-  "description": "",
+  "description": "Here are the steps to add a scorecard to a competition:",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 105,
   "frontMatter": {
     "id": "5fd9ff840b11ce44f6392c14",
     "title": "How to add a Scorecard to a Competition?",
-    "description": "",
+    "description": "Here are the steps to add a scorecard to a competition:",
     "slug": "how-to-add-a-scorecard-to-a-competition",
     "sidebar_position": 105,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

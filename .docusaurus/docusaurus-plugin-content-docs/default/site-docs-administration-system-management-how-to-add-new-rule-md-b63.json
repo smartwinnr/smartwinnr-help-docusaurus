@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdadd747129911ba1b21dc5",
   "title": "How to Add new rule?",
-  "description": "",
+  "description": "Go to Admin>> Rules>>Add Rule.",
   "source": "@site/docs/administration/system-management/how-to-add-new-rule.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-add-new-rule",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-add-new-rule.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 140,
   "frontMatter": {
     "id": "5fdadd747129911ba1b21dc5",
     "title": "How to Add new rule?",
-    "description": "",
+    "description": "Go to Admin>> Rules>>Add Rule.",
     "slug": "how-to-add-new-rule",
     "sidebar_position": 140,
     "last_update": {
@@ -31,7 +42,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

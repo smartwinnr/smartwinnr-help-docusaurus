@@ -1,19 +1,24 @@
 ---
 id: 5ffc6928bb5c6f7434e0f991
-title: "Question Structure"
-description: ""
+title: Question Structure
+description: >-
+  SmartWinnr supports multiple question types; however, all questions follow a
+  standardized structure. The general structure of a question is outlined below:
 slug: question-structure
 sidebar_position: 201
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5ffc6928bb5c6f7434e0f991
-  helpscout_url: https://help.smartwinnr.com/article/201-question-structure
+  helpscout_url: 'https://help.smartwinnr.com/article/201-question-structure'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 SmartWinnr supports multiple question types; however, all questions follow a **standardized structure**. The general structure of a question is outlined below:
 
@@ -60,13 +65,13 @@ Re-order questions where you must drag and drop the answer to a question in the 
 
 A **Missing Words question** enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of options.
 
-[https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question](https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question)
+[./how-to-create-a-missing-words-question.md](./how-to-create-a-missing-words-question.md)
 
 [**7\. Drag and Drop into Text**](https://secure.helpscout.net/docs/5fcc5d85de1bfa158fb55b98/article/641a2df7d6394b6fc7ed9fb2/)
 
 A _Drag and Drop into Text_ question requires participants to select and drag text options from an answer bank into specific blanks within the question text.
 
-[https://help.smartwinnr.com/article/281-how-to-create-a-drag-and-drop-into-text-question](https://help.smartwinnr.com/article/281-how-to-create-a-drag-and-drop-into-text-question)
+[./how-to-create-a-drag-and-drop-into-text-question.md](./how-to-create-a-drag-and-drop-into-text-question.md)
 
 **8\. Short Answer With Multiple Options**
 
@@ -84,19 +89,19 @@ Long answer questions are generally open-ended questions that require particip
 
 A Drag and Drop into Image Question allows the participants to drag and drop the correct answer to the given image.
 
-[https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-drop-into-image-question](https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-drop-into-image-question)
+[./how-to-create-a-drag-and-drop-into-image-question.md](./how-to-create-a-drag-and-drop-into-image-question.md)
 
 **11\. Numeric Type**
 
 In a **Numeric Type** question, you specify a numeric value as the correct answer and define an allowable **error margin**. If a learner’s response falls within this error margin, they will receive points based on the **grade percentage** defined for that option.
 
-[https://help.smartwinnr.com/article/284-how-to-create-numeric-type-questions](https://help.smartwinnr.com/article/284-how-to-create-numeric-type-questions)
+[../create-and-manage/how-to-create-numeric-type-questions.md](../create-and-manage/how-to-create-numeric-type-questions.md)
 
 ## 2\. Question Text
 
 This section contains the main content of the question. Depending on the selected format, it includes the prompt itself, answer choices, correct responses, matching pairs, or image elements. SmartWinnr also supports multilingual question text: if your organization has enabled multiple languages, you can add translations directly.
 
-![](/img/helpscout/editors/question-structure-1.png)
+![This section contains the main content of the question. Depending on the selected format, it includes the prompt itself, answer choices, cor](/img/helpscout/editors/question-structure-1.png)
 
 SmartWinnr supports including video, audio, image, external links, etc. in the question text as part of the question
 
@@ -104,7 +109,7 @@ You can change the language of the question by clicking on the "Change Language"
 
 SmartWinnr supports questions in different languages. If your organization has 'multiple languages' enabled, you will be able to _'Add Translation'_ for the question. If you don't see this button, contact your SmartWinnr administrator or write to us with your query at [support@smartwinnr.com](mailto:support@smartwinnr.com)._
 
-![](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
+![SmartWinnr supports questions in different languages. If your organization has 'multiple languages' enabled, you will be able to 'Add Transl](/img/helpscout/editors/how-to-create-a-matching-question-4.png)
 
 ## 3\. Feedback
 
@@ -112,7 +117,7 @@ This section can be used to provide **additional information or clarification** 
 
 **Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
+![This section can be used to provide additional information or clarification related to the topic or concept covered in the question. The fee](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
 
 ![](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
 

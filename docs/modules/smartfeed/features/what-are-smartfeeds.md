@@ -1,19 +1,24 @@
 ---
 id: 5fcf7718da652271f08d3f5e
-title: "What are SmartFeeds?"
-description: ""
+title: What are SmartFeeds?
+description: >-
+  SmartFeeds enable you to share short, focused snippets of information with
+  your teams.
 slug: what-are-smartfeeds
 sidebar_position: 26
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fcf7718da652271f08d3f5e
-  helpscout_url: https://help.smartwinnr.com/article/26-what-are-smartfeeds
+  helpscout_url: 'https://help.smartwinnr.com/article/26-what-are-smartfeeds'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
 ---
 SmartFeeds enable you to share short, focused snippets of information with your teams. They are designed to help **reinforce critical messages regularly** without requiring lengthy training sessions. SmartFeeds ensure that important information is easily accessible and available for future reference.
 

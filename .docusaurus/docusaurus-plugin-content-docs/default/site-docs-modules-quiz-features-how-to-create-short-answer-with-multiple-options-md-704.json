@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/64115177a0408f7cb1038c2d",
   "title": "How to create Short Answer With Multiple Options",
-  "description": "",
+  "description": "A Short Answer with Multiple Matches Question allows the participants to choose one answer to a particular question from a list of options provided.",
   "source": "@site/docs/modules/quiz/features/how-to-create-short-answer-with-multiple-options.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-short-answer-with-multiple-options.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 280,
   "frontMatter": {
     "id": "64115177a0408f7cb1038c2d",
     "title": "How to create Short Answer With Multiple Options",
-    "description": "",
+    "description": "A Short Answer with Multiple Matches Question allows the participants to choose one answer to a particular question from a list of options provided.",
     "slug": "how-to-create-short-answer-with-multiple-options",
     "sidebar_position": 280,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

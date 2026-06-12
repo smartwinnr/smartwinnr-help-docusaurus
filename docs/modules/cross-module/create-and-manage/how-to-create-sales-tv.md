@@ -1,18 +1,21 @@
 ---
 id: 60b9e109fd393f6bf704a9f2
-title: "How to create Sales TV"
-description: ""
+title: How to create Sales TV
+description: Only the user with EDITOR and USER roles can create Sales TV.
 slug: how-to-create-sales-tv
 sidebar_position: 249
 last_update:
-  date: 2021-06-04
+  date: 2021-06-04T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60b9e109fd393f6bf704a9f2
-  helpscout_url: https://help.smartwinnr.com/article/249-how-to-create-sales-tv
+  helpscout_url: 'https://help.smartwinnr.com/article/249-how-to-create-sales-tv'
 customProps:
-  roles: [editor, admin]
-tags: []
+  roles:
+    - editor
+    - admin
+tags:
+  - admin
 ---
 Only the user with EDITOR and USER roles can create Sales TV.
 
@@ -22,11 +25,11 @@ You can create the slides based on your requirements and below are the steps on 
 
 Go to EDITOR>>Settings>>Sales TV. Click on the create icon on the top right corner.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-1.jpg)
+![Go to EDITOR>>Settings>>Sales TV. Click on the create icon on the top right corner.](/img/helpscout/editors/how-to-create-sales-tv-1.jpg)
 
 Enter the title and description and select the required Business unit and Status.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-2.jpg)
+![Enter the title and description and select the required Business unit and Status.](/img/helpscout/editors/how-to-create-sales-tv-2.jpg)
 
 You can select the **Slide Type** as **Leaderboard, Shoutouts, and Widgets**.
 
@@ -38,11 +41,11 @@ For Group Leaderboard, you can select the **Competition** and the **Leaderboard*
 
 For the **Quiz leaderboard**, you should select the **Ranking Type** and **Ranking Duration**.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-3.jpg)
+![For the Quiz leaderboard, you should select the Ranking Type and Ranking Duration.](/img/helpscout/editors/how-to-create-sales-tv-3.jpg)
 
 The Slide Duration is the timer for each slide to stay on the screen. You can set it any duration you want to.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-4.jpg)
+![The Slide Duration is the timer for each slide to stay on the screen. You can set it any duration you want to.](/img/helpscout/editors/how-to-create-sales-tv-4.jpg)
 
 **You can select how many users you want to show as well and can change the background image as per your requirement.**
 
@@ -50,16 +53,16 @@ The Slide Duration is the timer for each slide to stay on the screen. You can se
 
 When the slide type is selected as Shoutouts, you should select the Shoutout type as **KPI** or **Scorecard**. Here the Ranking Type can be Target Achievement and duration and meta tags as per your requirements.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-6.jpg)
+![When the slide type is selected as Shoutouts, you should select the Shoutout type as KPI or Scorecard. Here the Ranking Type can be Target A](/img/helpscout/editors/how-to-create-sales-tv-6.jpg)
 
 When the slide type is selected as Widgets, you should add the widgets which you have created for the user view dashboard.
 
-![](/img/helpscout/editors/how-to-create-sales-tv-7.jpg)
+![When the slide type is selected as Widgets, you should add the widgets which you have created for the user view dashboard.](/img/helpscout/editors/how-to-create-sales-tv-7.jpg)
 
 You can select any widget that you want to display from here.
 
 Select the Ticker type which you want to put on the footer of the screen. (Tickers are the content that will continuously show in the footer)
 
-![](/img/helpscout/editors/how-to-create-sales-tv-8.jpg)
+![Select the Ticker type which you want to put on the footer of the screen. (Tickers are the content that will continuously show in the footer](/img/helpscout/editors/how-to-create-sales-tv-8.jpg)
 
 You can select a text or image as a ticker. After completing the whole process, click on the Save icon to execute the Sales TV.

@@ -1,19 +1,26 @@
 ---
 id: 6971f1c008cad8770d36663c
-title: "Understanding the Overview Tab on the Quiz Dashboard"
-description: ""
+title: Understanding the Overview Tab on the Quiz Dashboard
+description: >-
+  This tab provides a high-level snapshot of quiz activity, performance, and
+  engagement.
 slug: understanding-the-overview-tab-on-the-quiz-dashboard
 sidebar_position: 328
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f1c008cad8770d36663c
-  helpscout_url: https://help.smartwinnr.com/article/328-understanding-the-overview-tab-on-the-quiz-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/328-understanding-the-overview-tab-on-the-quiz-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - reports
 ---
 ## Overview Tab
 
@@ -68,7 +75,7 @@ This section displays four core metrics that summarize quiz performance.
 * The percentage below (e.g., "-4% vs previous period") shows the change from the prior period
 * This includes retakes and multiple attempts by the same learner
 
-**Why this matters:** This metric shows overall quiz activity volume. Multiple attempts by learners often indicate they're using quizzes to improve their knowledge—a positive sign of engagement.
+**Why this matters:** This metric shows overall quiz activity volume. Multiple attempts by learners often indicate they're using quizzes to improve their knowledge-a positive sign of engagement.
 
 **Things to know:** If a learner takes the same quiz three times, all three attempts count toward this total. This is different from "Active Learners," which counts unique individuals.
 

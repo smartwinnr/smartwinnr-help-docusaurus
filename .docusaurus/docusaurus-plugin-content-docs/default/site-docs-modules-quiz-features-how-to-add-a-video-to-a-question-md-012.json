@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4bb1b4eb32171b80374ff",
   "title": "How to add a 'Video' to a question.",
-  "description": "",
+  "description": "You can add a video to a question or to feedback in a question.",
   "source": "@site/docs/modules/quiz/features/how-to-add-a-video-to-a-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-add-a-video-to-a-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-add-a-video-to-a-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 64,
   "frontMatter": {
     "id": "5fd4bb1b4eb32171b80374ff",
     "title": "How to add a 'Video' to a question.",
-    "description": "",
+    "description": "You can add a video to a question or to feedback in a question.",
     "slug": "how-to-add-a-video-to-a-question",
     "sidebar_position": 64,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/features/5fdb1597a5d295659b369c89",
   "title": "What is a Challenge?",
-  "description": "",
+  "description": "Challenge is defined as 'a call to someone to participate in a competitive situation or fight to decide who is superior in terms of ability or strength.'…",
   "source": "@site/docs/modules/kpi-gamification/features/what-is-a-challenge.md",
   "sourceDirName": "modules/kpi-gamification/features",
   "slug": "/modules/kpi-gamification/features/what-is-a-challenge",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/what-is-a-challenge.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 178,
   "frontMatter": {
     "id": "5fdb1597a5d295659b369c89",
     "title": "What is a Challenge?",
-    "description": "",
+    "description": "Challenge is defined as 'a call to someone to participate in a competitive situation or fight to decide who is superior in terms of ability or strength.'…",
     "slug": "what-is-a-challenge",
     "sidebar_position": 178,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/cross-module/create-and-manage/66d0cb66d816d165867bf4de",
   "title": "How to update the SmartWinnr App from App View",
-  "description": "",
+  "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
   "source": "@site/docs/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view.md",
   "sourceDirName": "modules/cross-module/create-and-manage",
   "slug": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 290,
   "frontMatter": {
     "id": "66d0cb66d816d165867bf4de",
     "title": "How to update the SmartWinnr App from App View",
-    "description": "",
+    "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
     "slug": "how-to-update-the-smartwinnr-app-from-app-view",
     "sidebar_position": 290,
     "last_update": {
@@ -32,7 +38,9 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

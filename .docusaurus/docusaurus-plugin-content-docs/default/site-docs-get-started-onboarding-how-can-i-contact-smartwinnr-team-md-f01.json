@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce43c3eb7cc612aa3557ae",
   "title": "How can I contact SmartWinnr Team?",
-  "description": "",
+  "description": "You can write to the SmartWinnr support team for all your queries regarding SmartWinnr.",
   "source": "@site/docs/get-started/onboarding/how-can-i-contact-smartwinnr-team.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-contact-smartwinnr-team",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce43c3eb7cc612aa3557ae",
     "title": "How can I contact SmartWinnr Team?",
-    "description": "",
+    "description": "You can write to the SmartWinnr support team for all your queries regarding SmartWinnr.",
     "slug": "how-can-i-contact-smartwinnr-team",
     "sidebar_position": 22,
     "last_update": {

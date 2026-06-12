@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce355804cebe5254a29954",
   "title": "How can I check the App version/Web view version?",
-  "description": "",
+  "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
   "source": "@site/docs/get-started/onboarding/how-can-i-check-the-app-version-web-view-version.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce355804cebe5254a29954",
     "title": "How can I check the App version/Web view version?",
-    "description": "",
+    "description": "Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:",
     "slug": "how-can-i-check-the-app-version-web-view-version",
     "sidebar_position": 19,
     "last_update": {

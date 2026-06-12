@@ -1,19 +1,25 @@
 ---
 id: 697086628446705a3c6f686c
-title: "What is AI Coaching?"
-description: ""
+title: What is AI Coaching?
+description: >-
+  AI Coaching in SmartWinnr is a feature that allows users to practice
+  conversations with HCPs in a simulated environment and receive automated
+  evaluation.
 slug: what-is-ai-coaching
 sidebar_position: 309
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 697086628446705a3c6f686c
-  helpscout_url: https://help.smartwinnr.com/article/309-what-is-ai-coaching
+  helpscout_url: 'https://help.smartwinnr.com/article/309-what-is-ai-coaching'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
 ---
 # What is AI Coaching in SmartWinnr
 

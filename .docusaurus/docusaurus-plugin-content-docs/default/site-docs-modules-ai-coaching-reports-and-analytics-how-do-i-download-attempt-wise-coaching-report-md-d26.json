@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/reports-and-analytics/6970dfd91252a7004208b87d",
   "title": "How do I download Attempt-wise Coaching Report?",
-  "description": "",
+  "description": "This report shows all attempts for a specific coaching.",
   "source": "@site/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report.md",
   "sourceDirName": "modules/ai-coaching/reports-and-analytics",
   "slug": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 315,
   "frontMatter": {
     "id": "6970dfd91252a7004208b87d",
     "title": "How do I download Attempt-wise Coaching Report?",
-    "description": "",
+    "description": "This report shows all attempts for a specific coaching.",
     "slug": "how-do-i-download-attempt-wise-coaching-report",
     "sidebar_position": 315,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,46 +1,49 @@
 ---
 id: 60c1f6cea6d12c2cd643e794
-title: "Learner Overall Report"
-description: ""
+title: Learner Overall Report
+description: An Editor who has access to the Learner Report can see the Report Analytics.
 slug: learner-overall-report
 sidebar_position: 254
 last_update:
-  date: 2021-06-10
+  date: 2021-06-10T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 60c1f6cea6d12c2cd643e794
-  helpscout_url: https://help.smartwinnr.com/article/254-learner-overall-report
+  helpscout_url: 'https://help.smartwinnr.com/article/254-learner-overall-report'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: learnerReport
-tags: []
+tags:
+  - reports
 ---
 An Editor who has access to the Learner Report can see the Report Analytics.
 
 GO TO EDITOR>>REPORTS>>LEARNER REPORT>>OVERALL.
 
-![](/img/helpscout/editors/learner-overall-report-1.jpg)
+![GO TO EDITOR>>REPORTS>>LEARNER REPORT>>OVERALL.](/img/helpscout/editors/learner-overall-report-1.jpg)
 
 Select the Business Unit that you want to check the report. You can also select from Country and you can also check for a specific team or group. Also the Date Range can be changed based on your requirement.
 
-![](/img/helpscout/editors/learner-overall-report-2.jpg)
+![Select the Business Unit that you want to check the report. You can also select from Country and you can also check for a specific team or g](/img/helpscout/editors/learner-overall-report-2.jpg)
 
 Here you can see the analytics for the Quizzes where you get the total count, questions, average score, and statistics about the quizzes.
 
 Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, and statistics about the SmartPaths.
 
-![](/img/helpscout/editors/learner-overall-report-3.jpg)
+![Similarly for SmartPaths, we can track total SmartPaths, average score, milestone covered, certificates issued, and statistics about the Sma](/img/helpscout/editors/learner-overall-report-3.jpg)
 
 If you scroll down, you will also get the report for Survey and Survey Templates where you get the stats about completion, in progress, and not started.
 
 For Coachings, you get the total count of coaching, participants count, and completion percentage. Also, you get the data about the participants where you can track, how good their skills are based on certain competencies mentioned below.
 
-![](/img/helpscout/editors/learner-overall-report-4.jpg)
+![For Coachings, you get the total count of coaching, participants count, and completion percentage. Also, you get the data about the particip](/img/helpscout/editors/learner-overall-report-4.jpg)
 
 Here in the Knowledge Gained section, you can see the report based on the category that you select. These categories consist of KPI's which will help you track the participant's progress. You can also check based on different time frames by changing the Frequency.
 
 Under the Resources section, you will get the count of all the videos, images, documents, and SCORM Courses that have been added to SmartWinnr.
 
-![](/img/helpscout/editors/learner-overall-report-5.jpg)
+![Under the Resources section, you will get the count of all the videos, images, documents, and SCORM Courses that have been added to SmartWin](/img/helpscout/editors/learner-overall-report-5.jpg)
 
 In Most Popular SmartPath, you get the analytics of the SmartPath that has been viewed more than the others.

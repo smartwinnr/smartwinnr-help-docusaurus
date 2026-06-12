@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/reports-and-analytics/5fd4955723119734ee37edb5",
   "title": "What is SmartWinnr Quiz Analytics?",
-  "description": "",
+  "description": "SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.",
   "source": "@site/docs/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics.md",
   "sourceDirName": "modules/quiz/reports-and-analytics",
   "slug": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 53,
   "frontMatter": {
     "id": "5fd4955723119734ee37edb5",
     "title": "What is SmartWinnr Quiz Analytics?",
-    "description": "",
+    "description": "SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.",
     "slug": "what-is-smartwinnr-quiz-analytics",
     "sidebar_position": 53,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

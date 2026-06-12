@@ -1,22 +1,27 @@
 ---
 id: 6001bb40c64fe14d0e1fb5a3
-title: "How to Set Reminder for your Tasks"
-description: ""
+title: How to Set Reminder for your Tasks
+description: >-
+  This feature lets you set a reminder and schedule it to be delivered to the
+  users about the status of the Task.
 slug: how-to-set-reminder-for-your-tasks
 sidebar_position: 219
 last_update:
-  date: 2021-01-15
+  date: 2021-01-15T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6001bb40c64fe14d0e1fb5a3
-  helpscout_url: https://help.smartwinnr.com/article/219-how-to-set-reminder-for-quiz-survey
+  helpscout_url: 'https://help.smartwinnr.com/article/219-how-to-set-reminder-for-quiz-survey'
 customProps:
-  roles: [editor, admin]
-tags: []
+  roles:
+    - editor
+    - admin
+tags:
+  - settings
 ---
 This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task. To schedule a reminder, click on the " **Add**" button at the top right corner of the Schedule Reminder section. It will open the following popup.
 
-![](/img/helpscout/editors/how-to-set-reminder-for-your-tasks-1.png)
+![This feature lets you set a reminder and schedule it to be delivered to the users about the status of the Task. To schedule a reminder, clic](/img/helpscout/editors/how-to-set-reminder-for-your-tasks-1.png)
 
 **Send Type:** This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
 

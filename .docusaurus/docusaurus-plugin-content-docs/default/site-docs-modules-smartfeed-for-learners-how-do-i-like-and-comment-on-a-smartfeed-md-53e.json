@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/for-learners/5fd1110180488e39007cbd8f",
   "title": "How Do I Like and Comment on a SmartFeed?",
-  "description": "",
+  "description": "Only participants can 'Like' and ,Comment' on a SmartFeed from the SmartWinnr mobile app or SmartWinnr web view.",
   "source": "@site/docs/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed.md",
   "sourceDirName": "modules/smartfeed/for-learners",
   "slug": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 33,
   "frontMatter": {
     "id": "5fd1110180488e39007cbd8f",
     "title": "How Do I Like and Comment on a SmartFeed?",
-    "description": "",
+    "description": "Only participants can 'Like' and ,Comment' on a SmartFeed from the SmartWinnr mobile app or SmartWinnr web view.",
     "slug": "how-do-i-like-and-comment-on-a-smartfeed",
     "sidebar_position": 33,
     "last_update": {
@@ -34,7 +45,10 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

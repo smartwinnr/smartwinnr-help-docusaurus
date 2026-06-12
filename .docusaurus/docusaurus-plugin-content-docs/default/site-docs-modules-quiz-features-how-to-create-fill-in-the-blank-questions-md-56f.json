@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4623dc868cb6df3a80fe9",
   "title": "How to create 'Fill-In-The-Blank' Questions.",
-  "description": "",
+  "description": "The fill-in-the-blanks question allows participants to write text answers. Please note that the answers given by the participants need to exactly match the…",
   "source": "@site/docs/modules/quiz/features/how-to-create-fill-in-the-blank-questions.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-create-fill-in-the-blank-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 41,
   "frontMatter": {
     "id": "5fd4623dc868cb6df3a80fe9",
     "title": "How to create 'Fill-In-The-Blank' Questions.",
-    "description": "",
+    "description": "The fill-in-the-blanks question allows participants to write text answers. Please note that the answers given by the participants need to exactly match the…",
     "slug": "how-to-create-fill-in-the-blank-questions",
     "sidebar_position": 41,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

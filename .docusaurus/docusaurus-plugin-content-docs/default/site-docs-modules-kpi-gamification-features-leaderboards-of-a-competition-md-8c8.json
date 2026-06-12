@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/features/5fda26d77129911ba1b219c1",
   "title": "Leaderboards of a competition",
-  "description": "",
+  "description": "A competition can include multiple leaderboards, which can be viewed at either the individual or team level.",
   "source": "@site/docs/modules/kpi-gamification/features/leaderboards-of-a-competition.md",
   "sourceDirName": "modules/kpi-gamification/features",
   "slug": "/modules/kpi-gamification/features/leaderboards-of-a-competition",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/leaderboards-of-a-competition.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 109,
   "frontMatter": {
     "id": "5fda26d77129911ba1b219c1",
     "title": "Leaderboards of a competition",
-    "description": "",
+    "description": "A competition can include multiple leaderboards, which can be viewed at either the individual or team level.",
     "slug": "leaderboards-of-a-competition",
     "sidebar_position": 109,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "competitions"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

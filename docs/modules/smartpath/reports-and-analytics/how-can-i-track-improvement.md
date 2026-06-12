@@ -1,23 +1,29 @@
 ---
 id: 697108ae08cad8770d366373
-title: "How can I track improvement?"
-description: ""
+title: How can I track improvement?
+description: >-
+  The SmartPath Dashboard provides a complete view of learner engagement and
+  progress across your learning journeys.
 slug: how-can-i-track-improvement
 sidebar_position: 319
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 697108ae08cad8770d366373
-  helpscout_url: https://help.smartwinnr.com/article/319-how-can-i-track-improvement
+  helpscout_url: 'https://help.smartwinnr.com/article/319-how-can-i-track-improvement'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - reports
 ---
 # SmartPath Dashboard
 
-The SmartPath Dashboard provides a complete view of learner engagement and progress across your learning journeys. SmartPaths are structured learning programs that combine different types of content—quizzes, surveys, SmartFeeds (micro-learning), and SCORM courses—into a cohesive curriculum.
+The SmartPath Dashboard provides a complete view of learner engagement and progress across your learning journeys. SmartPaths are structured learning programs that combine different types of content-quizzes, surveys, SmartFeeds (micro-learning), and SCORM courses-into a cohesive curriculum.
 
 This dashboard is designed for trainers and editors to monitor course activity, track completion rates, identify top performers, and understand how different types of learning content are being used.
 
@@ -42,7 +48,7 @@ Use the SmartPath Dashboard to:
 
 The SmartPath Dashboard has two main tabs at the top:
 
-* [**Overview**](https://help.smartwinnr.com/article/326-understanding-the-overview-tab-on-the-smartpath-dashboard#Overview-Tab-13ZtH): Shows high-level metrics, completion trends, and top performers
-* [**Module Wise Analysis**](https://help.smartwinnr.com/article/327-understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard#Module-Wise-Analysis-Tab-6lEz9): Displays detailed performance for each type of learning component (quizzes, surveys, SmartFeeds, SCORM courses)
+* [**Overview**](./understanding-the-overview-tab-on-the-smartpath-dashboard.md#Overview-Tab-13ZtH): Shows high-level metrics, completion trends, and top performers
+* [**Module Wise Analysis**](./understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard.md#Module-Wise-Analysis-Tab-6lEz9): Displays detailed performance for each type of learning component (quizzes, surveys, SmartFeeds, SCORM courses)
 
 Click each tab to view different aspects of your learning program's performance.

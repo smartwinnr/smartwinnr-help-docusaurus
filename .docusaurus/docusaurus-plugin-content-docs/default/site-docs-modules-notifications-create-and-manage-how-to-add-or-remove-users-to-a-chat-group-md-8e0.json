@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/create-and-manage/5fdaf691a5d295659b369c17",
   "title": "How to add or remove users to a chat group?",
-  "description": "",
+  "description": "Follow the below steps in order to add or delete members from the group:",
   "source": "@site/docs/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group.md",
   "sourceDirName": "modules/notifications/create-and-manage",
   "slug": "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 155,
   "frontMatter": {
     "id": "5fdaf691a5d295659b369c17",
     "title": "How to add or remove users to a chat group?",
-    "description": "",
+    "description": "Follow the below steps in order to add or delete members from the group:",
     "slug": "how-to-add-or-remove-users-to-a-chat-group",
     "sidebar_position": 155,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "chat"
     },
-    "tags": []
+    "tags": [
+      "notifications",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

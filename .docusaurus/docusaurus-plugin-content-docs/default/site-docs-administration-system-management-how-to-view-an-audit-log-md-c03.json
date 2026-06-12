@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdadcf77129911ba1b21dc2",
   "title": "How to view an Audit Log?",
-  "description": "",
+  "description": "Go to Admin>>Audit Logs, it will open the following page.",
   "source": "@site/docs/administration/system-management/how-to-view-an-audit-log.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-view-an-audit-log",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-view-an-audit-log.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 138,
   "frontMatter": {
     "id": "5fdadcf77129911ba1b21dc2",
     "title": "How to view an Audit Log?",
-    "description": "",
+    "description": "Go to Admin>>Audit Logs, it will open the following page.",
     "slug": "how-to-view-an-audit-log",
     "sidebar_position": 138,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "auditLog"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

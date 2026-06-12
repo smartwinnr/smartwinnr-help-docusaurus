@@ -1,7 +1,7 @@
 {
   "id": "modules/survey/reports-and-analytics/5ffd689766df373cab70860b",
   "title": "Survey Template Analytics",
-  "description": "",
+  "description": "Follow the below steps to view analytics in Survey Template.",
   "source": "@site/docs/modules/survey/reports-and-analytics/survey-template-analytics.md",
   "sourceDirName": "modules/survey/reports-and-analytics",
   "slug": "/modules/survey/reports-and-analytics/survey-template-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/survey/reports-and-analytics/survey-template-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "survey",
+      "permalink": "/tags/survey"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 204,
   "frontMatter": {
     "id": "5ffd689766df373cab70860b",
     "title": "Survey Template Analytics",
-    "description": "",
+    "description": "Follow the below steps to view analytics in Survey Template.",
     "slug": "survey-template-analytics",
     "sidebar_position": 204,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "survey"
     },
-    "tags": []
+    "tags": [
+      "survey",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

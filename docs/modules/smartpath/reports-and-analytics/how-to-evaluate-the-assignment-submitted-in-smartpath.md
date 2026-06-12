@@ -1,19 +1,26 @@
 ---
 id: 696fc2e4dadc293bb31333c6
-title: "How to evaluate the Assignment submitted in SmartPath?"
-description: ""
+title: How to evaluate the Assignment submitted in SmartPath?
+description: >-
+  Editor can effectively monitor the assignment submission and supports timely
+  reviews, which ensures accurate tracking of learner progress and performance.
 slug: how-to-evaluate-the-assignment-submitted-in-smartpath
 sidebar_position: 305
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696fc2e4dadc293bb31333c6
-  helpscout_url: https://help.smartwinnr.com/article/305-how-to-evaluate-the-assignment-submitted-in-smartpath
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/305-how-to-evaluate-the-assignment-submitted-in-smartpath
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - reports
 ---
 Editor can effectively monitor the assignment submission and supports timely reviews, which ensures accurate tracking of learner progress and performance.
 
@@ -23,19 +30,19 @@ Kindly follow the below steps to track the submissions and reivew the assignment
 2. From the list of SmartPaths, locate the one where you want to review the assignment submission.
 3. On the particular SmartPath card, _click_ on the **'Batches'** button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the **'View Batches'** button at the top right corner of the screen.
 
-![](/img/helpscout/editors/how-to-view-the-smartpath-analytics-1.png)
+![On the particular SmartPath card, click on the 'Batches' button at the bottom right corner. Alternatively, you can click and open a particul](/img/helpscout/editors/how-to-view-the-smartpath-analytics-1.png)
 
 4. Click on the analytics icon against the batch for which you would like to mark the attendance.
 
-![](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-1.png)
+![Click on the analytics icon against the batch for which you would like to mark the attendance.](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-1.png)
 
 5. It will take you to the analytics page of the selected batch. On the Analytics page, **You will find a section with the name of your assignment.** Click on the Analytics icon as shown below
 
-![](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-2.png)
+![It will take you to the analytics page of the selected batch. On the Analytics page, You will find a section with the name of your assignmen](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-2.png)
 
 6. It will take you to the  **Assignment status page** where you can track completion status and review individual learner submissions. To view and review the assignment submitted by each user, click on the 'view submission'
 
-![](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-3.png)
+![It will take you to the Assignment status page where you can track completion status and review individual learner submissions. To view and ](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-3.png)
 
 7. It will take you the following page that provides a detailed view of a learner’s progress and submission for a specific assignment. It enables editors to evaluate responses, review uploaded files, and provide feedback. Here you will find below details:
 
@@ -51,6 +58,6 @@ Kindly follow the below steps to track the submissions and reivew the assignment
 
 8. Here click on '**Give your feedback'** to provide the feedback and score for the assignment submitted and **save** your feedback.
 
-![](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-5.png)
+![Here click on 'Give your feedback' to provide the feedback and score for the assignment submitted and save your feedback.](/img/helpscout/editors/how-to-evaluate-the-assignment-submitted-in-smartpath-5.png)
 
 This will successfully update the status to completed and add the scores to learner's SmartPath.

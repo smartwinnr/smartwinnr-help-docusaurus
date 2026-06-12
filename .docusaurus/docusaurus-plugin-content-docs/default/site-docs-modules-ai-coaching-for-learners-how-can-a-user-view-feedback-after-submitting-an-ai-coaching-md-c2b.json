@@ -1,7 +1,7 @@
 {
   "id": "modules/ai-coaching/for-learners/69720db5015ae02ac0021a31",
   "title": "How can a User View Feedback After Submitting an AI Coaching?",
-  "description": "",
+  "description": "This guide explains how to access and review feedback after completing an AI coaching assignment.",
   "source": "@site/docs/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching.md",
   "sourceDirName": "modules/ai-coaching/for-learners",
   "slug": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "ai-coaching",
+      "permalink": "/tags/ai-coaching"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 332,
   "frontMatter": {
     "id": "69720db5015ae02ac0021a31",
     "title": "How can a User View Feedback After Submitting an AI Coaching?",
-    "description": "",
+    "description": "This guide explains how to access and review feedback after completing an AI coaching assignment.",
     "slug": "how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
     "sidebar_position": 332,
     "last_update": {
@@ -35,7 +46,10 @@
       ],
       "privilege": "aiCoaching"
     },
-    "tags": []
+    "tags": [
+      "ai-coaching",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

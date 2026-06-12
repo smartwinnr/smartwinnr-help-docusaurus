@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/create-and-manage/5fd8c043b624c71b798599c8",
   "title": "How to Create a form?",
-  "description": "",
+  "description": "To create a form in SmartWinnr, go to Editor >>PERFORMANCE >> Forms >> View All Forms.",
   "source": "@site/docs/modules/forms/create-and-manage/how-to-create-a-form.md",
   "sourceDirName": "modules/forms/create-and-manage",
   "slug": "/modules/forms/create-and-manage/how-to-create-a-form",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/create-and-manage/how-to-create-a-form.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 93,
   "frontMatter": {
     "id": "5fd8c043b624c71b798599c8",
     "title": "How to Create a form?",
-    "description": "",
+    "description": "To create a form in SmartWinnr, go to Editor >>PERFORMANCE >> Forms >> View All Forms.",
     "slug": "how-to-create-a-form",
     "sidebar_position": 93,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

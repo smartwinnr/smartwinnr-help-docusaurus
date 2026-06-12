@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fdb50c1b624c71b7985a730",
   "title": "How to create Certifcates",
-  "description": "",
+  "description": "Go to Left Menu>>Editor>>GAMIFICATION AND ENGAGEMENT>>Badges And Certificates",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-certifcates.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-certifcates.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 194,
   "frontMatter": {
     "id": "5fdb50c1b624c71b7985a730",
     "title": "How to create Certifcates",
-    "description": "",
+    "description": "Go to Left Menu>>Editor>>GAMIFICATION AND ENGAGEMENT>>Badges And Certificates",
     "slug": "how-to-create-certifcates",
     "sidebar_position": 194,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "achievements"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

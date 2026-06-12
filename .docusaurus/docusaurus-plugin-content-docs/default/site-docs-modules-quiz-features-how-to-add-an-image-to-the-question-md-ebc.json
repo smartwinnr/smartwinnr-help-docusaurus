@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd4bccec868cb6df3a8106b",
   "title": "How to add an 'Image' to the question.",
-  "description": "",
+  "description": "You can add an image to a question or feedback.",
   "source": "@site/docs/modules/quiz/features/how-to-add-an-image-to-the-question.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/how-to-add-an-image-to-the-question",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-add-an-image-to-the-question.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 65,
   "frontMatter": {
     "id": "5fd4bccec868cb6df3a8106b",
     "title": "How to add an 'Image' to the question.",
-    "description": "",
+    "description": "You can add an image to a question or feedback.",
     "slug": "how-to-add-an-image-to-the-question",
     "sidebar_position": 65,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

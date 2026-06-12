@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/reports-and-analytics/60099176c64fe14d0e1fd224",
   "title": "Form Analytics",
-  "description": "",
+  "description": "Follow the below steps to view Form analytics.",
   "source": "@site/docs/modules/forms/reports-and-analytics/form-analytics.md",
   "sourceDirName": "modules/forms/reports-and-analytics",
   "slug": "/modules/forms/reports-and-analytics/form-analytics",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/reports-and-analytics/form-analytics.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 226,
   "frontMatter": {
     "id": "60099176c64fe14d0e1fd224",
     "title": "Form Analytics",
-    "description": "",
+    "description": "Follow the below steps to view Form analytics.",
     "slug": "form-analytics",
     "sidebar_position": 226,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms",
+      "reports"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

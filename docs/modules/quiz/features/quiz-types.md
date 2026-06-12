@@ -1,19 +1,24 @@
 ---
 id: 5fd48eb723119734ee37eda5
-title: "Quiz types"
-description: ""
+title: Quiz types
+description: >-
+  Manual quizzes are created and sent by the quiz editor. While the quiz can be
+  scheduled for delivery on a future date, the editor is required to manually…
 slug: quiz-types
 sidebar_position: 48
 last_update:
-  date: 2026-01-19
+  date: 2026-01-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd48eb723119734ee37eda5
-  helpscout_url: https://help.smartwinnr.com/article/48-quiz-types
+  helpscout_url: 'https://help.smartwinnr.com/article/48-quiz-types'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
 ---
 #### **Manual Quiz**
 

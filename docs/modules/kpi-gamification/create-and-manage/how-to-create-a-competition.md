@@ -1,19 +1,24 @@
 ---
 id: 5fd9ba357129911ba1b21757
-title: "How to create a competition?"
-description: ""
+title: How to create a competition?
+description: Only users with editor role can create competitions.
 slug: how-to-create-a-competition
 sidebar_position: 103
 last_update:
-  date: 2021-05-19
+  date: 2021-05-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd9ba357129911ba1b21757
-  helpscout_url: https://help.smartwinnr.com/article/103-how-to-create-a-competition
+  helpscout_url: 'https://help.smartwinnr.com/article/103-how-to-create-a-competition'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: competitions
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 Only users with editor role can create competitions.
 
@@ -27,7 +32,7 @@ Give a catchy name to your competition and add a description. Every competition 
 
 Apart from this you can add a Theme for the competition and upload a PDF related to it (if needed).
 
-![](/img/helpscout/editors/how-to-create-a-competition-1.png)
+![Apart from this you can add a Theme for the competition and upload a PDF related to it (if needed).](/img/helpscout/editors/how-to-create-a-competition-1.png)
 
 Once you are done entering these details, click on the ‘Save’ button.
 
@@ -35,7 +40,7 @@ Once you are done entering these details, click on the ‘Save’ button.
 
 The next step is to add participants to the competition. Select the desired participants and add them to the competition.
 
-[![](/img/helpscout/editors/how-to-create-a-competition-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
+[![The next step is to add participants to the competition. Select the desired participants and add them to the competition.](/img/helpscout/editors/how-to-create-a-competition-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
 [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
@@ -49,9 +54,9 @@ Follow the below steps to create these two types of leaderboards for a competiti
 
 Go to the third step. Then click on the "Add" button. It opens the following pop-up:
 
-![](/img/helpscout/editors/how-to-create-a-competition-3.png)
+![Go to the third step. Then click on the "Add" button. It opens the following pop-up:](/img/helpscout/editors/how-to-create-a-competition-3.png)
 
-Type: Here select the type of leaderboard that you want to create. Selecting By Team creates a team leaderboard (These names are pre-defined in SmartWinnr as groups). And, selecting By Participants creates an individual leaderboard.                                                   ![](/img/helpscout/editors/how-to-create-a-competition-4.png)[
+Type: Here select the type of leaderboard that you want to create. Selecting By Team creates a team leaderboard (These names are pre-defined in SmartWinnr as groups). And, selecting By Participants creates an individual leaderboard.                                                   ![Go to the third step. Then click on the "Add" button. It opens the following pop-up:](/img/helpscout/editors/how-to-create-a-competition-4.png)[
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
 Visible To: In this section, you could select and control the visibility of the leaderboard. You will have three options here -
@@ -68,33 +73,33 @@ This feature only works for team leaderboards.
 
 Average is mostly selected when you have teams with an unequal number of participants and you want to measure each team on a common scale.
 
-                                                  [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/helpscout/editors/how-to-create-a-competition-6.png)
+                                                  [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![Average is mostly selected when you have teams with an unequal number of participants and you want to measure each team on a common scale.](/img/helpscout/editors/how-to-create-a-competition-6.png)
 
 Leaderboard Name: Give a name to this leaderboard here.
 
-![](/img/helpscout/editors/how-to-create-a-competition-7.png)
+![Leaderboard Name: Give a name to this leaderboard here.](/img/helpscout/editors/how-to-create-a-competition-7.png)
 
 Show Time: Check this option if you want the completion status of Tasks in Leaderboard is to be timed.
 
-![](/img/helpscout/editors/how-to-create-a-competition-8.png)
+![Show Time: Check this option if you want the completion status of Tasks in Leaderboard is to be timed.](/img/helpscout/editors/how-to-create-a-competition-8.png)
 Show Ranking: Check this option if you want to show users up to a number of ranking. Here you need to provide the number of ranks up to which you wish to show on the leaderboard.
 
-![](/img/helpscout/editors/how-to-create-a-competition-9.png)
+![Show Ranking: Check this option if you want to show users up to a number of ranking. Here you need to provide the number of ranks up to whic](/img/helpscout/editors/how-to-create-a-competition-9.png)
 
 Scoring Duration:  In this section, select the time duration during which the scores will be added to the leaderboard. If you select Always, then the scores will be added throughout the competition. And, if you select Date, then you have to specify a Start and End date between which the scores will be added.
 
-                    [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![](/img/helpscout/editors/how-to-create-a-competition-10.png)       [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
+                    [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)![Scoring Duration: In this section, select the time duration during which the scores will be added to the leaderboard. If you select Always, ](/img/helpscout/editors/how-to-create-a-competition-10.png)       [](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
 Teams: If you are creating a team leaderboard, then this is the section where you select the team/teams that you want to display on the leaderboard.
 
-![](/img/helpscout/editors/how-to-create-a-competition-11.png)
+![Teams: If you are creating a team leaderboard, then this is the section where you select the team/teams that you want to display on the lead](/img/helpscout/editors/how-to-create-a-competition-11.png)
 
 [
 ](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ffdd66ecfe30d219ccd6ddc/file-ys6VvIpbJ3.png)
 
 If you are creating an individual leaderboard (if selected Type as By Participants) then next, you will get to select the participants that will get displayed on the leaderboard.
 
-![](/img/helpscout/editors/how-to-create-a-competition-12.png)
+![If you are creating an individual leaderboard (if selected Type as By Participants) then next, you will get to select the participants that ](/img/helpscout/editors/how-to-create-a-competition-12.png)
 
 You can filter and choose these participants based on Business Unit, Country, Group, Name, Email and Meta Tags.
 

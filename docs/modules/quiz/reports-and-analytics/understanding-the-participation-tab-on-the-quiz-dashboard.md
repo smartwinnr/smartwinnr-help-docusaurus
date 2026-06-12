@@ -1,19 +1,26 @@
 ---
 id: 6971f2a9015ae02ac00219c8
-title: "Understanding the Participation Tab on the Quiz Dashboard"
-description: ""
+title: Understanding the Participation Tab on the Quiz Dashboard
+description: >-
+  This tab focuses on engagement patterns, completion status, and when learners
+  are most active with quizzes.
 slug: understanding-the-participation-tab-on-the-quiz-dashboard
 sidebar_position: 330
 last_update:
-  date: 2026-01-22
+  date: 2026-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6971f2a9015ae02ac00219c8
-  helpscout_url: https://help.smartwinnr.com/article/330-understanding-the-participation-tab-on-the-quiz-dashboard
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/330-understanding-the-participation-tab-on-the-quiz-dashboard
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - reports
 ---
 ## Participation Tab
 
@@ -155,7 +162,7 @@ This horizontal timeline heatmap shows participation rates across different orga
 * Green color with 100%: All assigned learners in that group participated in quizzes
 * Lower percentages would show in different colors
 
-**Example interpretation:** If "North" zone shows 100% across all months (Oct 2025, Nov 2025, Dec 2025, Jan 2026), this means every assigned learner in the North zone attempted at least one quiz during each of those months—excellent engagement.
+**Example interpretation:** If "North" zone shows 100% across all months (Oct 2025, Nov 2025, Dec 2025, Jan 2026), this means every assigned learner in the North zone attempted at least one quiz during each of those months-excellent engagement.
 
 **Why this matters:** This heatmap helps you:
 

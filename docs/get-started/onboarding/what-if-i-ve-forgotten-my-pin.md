@@ -1,17 +1,23 @@
 ---
 id: 5fce210dde1bfa158fb55ed9
-title: "What if I've forgotten my PIN?"
-description: ""
+title: What if I've forgotten my PIN?
+description: >-
+  When you log in to SmartWinnr, if you are asked to enter a PIN, this section
+  is applicable to you.
 slug: what-if-i-ve-forgotten-my-pin
 sidebar_position: 13
 last_update:
-  date: 2020-12-08
+  date: 2020-12-08T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fce210dde1bfa158fb55ed9
-  helpscout_url: https://help.smartwinnr.com/article/13-what-if-ive-forgotten-my-pin
+  helpscout_url: 'https://help.smartwinnr.com/article/13-what-if-ive-forgotten-my-pin'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
 tags: []
 ---
 When you log in to SmartWinnr, if you are asked to enter a PIN, this section is applicable to you.

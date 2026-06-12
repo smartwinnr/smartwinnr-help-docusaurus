@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/settings-and-permissions/5fd49470c868cb6df3a8102a",
   "title": "How to activate automatic reminders for your quizzes",
-  "description": "",
+  "description": "Automated reminder feature allows you to create and schedule reminders to be delivered to the quiz takers about their assigned quizzes.",
   "source": "@site/docs/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes.md",
   "sourceDirName": "modules/quiz/settings-and-permissions",
   "slug": "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 52,
   "frontMatter": {
     "id": "5fd49470c868cb6df3a8102a",
     "title": "How to activate automatic reminders for your quizzes",
-    "description": "",
+    "description": "Automated reminder feature allows you to create and schedule reminders to be delivered to the quiz takers about their assigned quizzes.",
     "slug": "how-to-activate-automatic-reminders-for-your-quizzes",
     "sidebar_position": 52,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/create-and-manage/5fd1082c80488e39007cbd4c",
   "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
-  "description": "",
+  "description": "SmartWinnr allows you to include PowerPoint presentations in your SmartFeeds, enabling you to share rich, structured content such as product knowledge,…",
   "source": "@site/docs/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
   "sourceDirName": "modules/smartfeed/create-and-manage",
   "slug": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 28,
   "frontMatter": {
     "id": "5fd1082c80488e39007cbd4c",
     "title": "How to add a PowerPoint Presentation (PPT) to SmartFeed?",
-    "description": "",
+    "description": "SmartWinnr allows you to include PowerPoint presentations in your SmartFeeds, enabling you to share rich, structured content such as product knowledge,…",
     "slug": "how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
     "sidebar_position": 28,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,19 +1,26 @@
 ---
 id: 5fdb05910b11ce44f63931a2
-title: "How can I answer a Query ?"
-description: ""
+title: How can I answer a Query ?
+description: >-
+  Follow the below steps to answer a query posted in QResolve through SmartWinnr
+  app:
 slug: how-can-i-answer-a-query
 sidebar_position: 161
 last_update:
-  date: 2021-01-23
+  date: 2021-01-23T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb05910b11ce44f63931a2
-  helpscout_url: https://help.smartwinnr.com/article/161-how-can-i-answer-a-query
+  helpscout_url: 'https://help.smartwinnr.com/article/161-how-can-i-answer-a-query'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
   privilege: forms
-tags: []
+tags:
+  - onboarding
 ---
 ### Answering a question in the SmartWinnr app
 
@@ -21,16 +28,16 @@ Follow the below steps to answer a query posted in QResolve through SmartWinnr a
 
 Open the SmartWinnr app and go to the left menu bar. Then, click on the QResolve:
 
-![](https://lh6.googleusercontent.com/MJII782tvLLY4FVrLVP_WveDmTqOTOiHQNgj3_lsrcHLoUvkdz25BgmO8HZmn1VAbSVhVVOiFxIIBwCoyckzZMzFUqSCYfneEU5u3uODiMlfdqqgcGsJANofxSlJ97ibl4FJQTEE)
+![Open the SmartWinnr app and go to the left menu bar. Then, click on the QResolve:](https://lh6.googleusercontent.com/MJII782tvLLY4FVrLVP_WveDmTqOTOiHQNgj3_lsrcHLoUvkdz25BgmO8HZmn1VAbSVhVVOiFxIIBwCoyckzZMzFUqSCYfneEU5u3uODiMlfdqqgcGsJANofxSlJ97ibl4FJQTEE)
 
   It opens the following page where you can see the list of questions that have been posted:
 
-                                                                            ![](https://support.smartwinnr.com/api/v1/attachments/715)
+                                                                            ![It opens the following page where you can see the list of questions that have been posted:](https://support.smartwinnr.com/api/v1/attachments/715)
 
  Then, click and open a question that you want to answer,then click on the pen icon at the top right corner to give your answer.
 
-![](https://lh6.googleusercontent.com/xEhIRFKOJ4HlJWw4uwwJuveGQNAjwKRzxDFjdG3tobZ8XIXPPwPF0GlL80XzfXocMtOxbYFTFNmOoKARlOo6XSBC4KH1nzVGwQ4OIlLpqNexQQ8qAZJ9gQmi4NeK9LmWhuzFn22p)
+![Then, click and open a question that you want to answer,then click on the pen icon at the top right corner to give your answer.](https://lh6.googleusercontent.com/xEhIRFKOJ4HlJWw4uwwJuveGQNAjwKRzxDFjdG3tobZ8XIXPPwPF0GlL80XzfXocMtOxbYFTFNmOoKARlOo6XSBC4KH1nzVGwQ4OIlLpqNexQQ8qAZJ9gQmi4NeK9LmWhuzFn22p)
 
 Now, enter your answer in the "Your Answer" text box and click on the "**Submit**" button shown below. Your answer will get submitted for that question successfully.
 
-![](https://lh6.googleusercontent.com/8Tzvts31ECteNfVMo2oj_U85x0ri_n8R_DdPtU9M9llZPlEKgvH62xmq9qRd3zgGXFMkACbeAAkSxmF5nBEictFQDGl--ES4hnZ9IndHXdB90Q9GkVW442kK2TXdUiJjlwtlnS3E)
+![Now, enter your answer in the "Your Answer" text box and click on the "Submit" button shown below. Your answer will get submitted for that q](https://lh6.googleusercontent.com/8Tzvts31ECteNfVMo2oj_U85x0ri_n8R_DdPtU9M9llZPlEKgvH62xmq9qRd3zgGXFMkACbeAAkSxmF5nBEictFQDGl--ES4hnZ9IndHXdB90Q9GkVW442kK2TXdUiJjlwtlnS3E)

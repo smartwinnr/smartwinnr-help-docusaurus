@@ -1,4 +1,11 @@
 {
+  "/admin/analytics/feedback-516": {
+    "__comp": "f2947a9f",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
   "/search-be6": {
     "__comp": "aef901ed",
     "__context": {
@@ -6,15 +13,91 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-816": {
+  "/-981": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-196": {
+  "/-e04": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
+  },
+  "/tags-ce1": {
+    "__comp": "3720c009",
+    "__props": "59af61a6"
+  },
+  "/tags/admin-697": {
+    "__comp": "df203c0f",
+    "__props": "e636368c"
+  },
+  "/tags/ai-coaching-da2": {
+    "__comp": "df203c0f",
+    "__props": "2d051d2b"
+  },
+  "/tags/field-coaching-040": {
+    "__comp": "df203c0f",
+    "__props": "fe363d50"
+  },
+  "/tags/forms-299": {
+    "__comp": "df203c0f",
+    "__props": "0c37196e"
+  },
+  "/tags/gamification-a54": {
+    "__comp": "df203c0f",
+    "__props": "d0deab2d"
+  },
+  "/tags/integration-75a": {
+    "__comp": "df203c0f",
+    "__props": "ca0dba45"
+  },
+  "/tags/knowledge-hub-5b6": {
+    "__comp": "df203c0f",
+    "__props": "284c4a4d"
+  },
+  "/tags/kpi-827": {
+    "__comp": "df203c0f",
+    "__props": "d64cd39a"
+  },
+  "/tags/notifications-2fe": {
+    "__comp": "df203c0f",
+    "__props": "f6e6394d"
+  },
+  "/tags/onboarding-b8e": {
+    "__comp": "df203c0f",
+    "__props": "f371591c"
+  },
+  "/tags/quiz-400": {
+    "__comp": "df203c0f",
+    "__props": "2469d97e"
+  },
+  "/tags/reports-cc6": {
+    "__comp": "df203c0f",
+    "__props": "ee5e03d3"
+  },
+  "/tags/settings-32c": {
+    "__comp": "df203c0f",
+    "__props": "d33d961a"
+  },
+  "/tags/smartfeed-83d": {
+    "__comp": "df203c0f",
+    "__props": "7817cd80"
+  },
+  "/tags/smartpath-c98": {
+    "__comp": "df203c0f",
+    "__props": "1b1cbc42"
+  },
+  "/tags/survey-70c": {
+    "__comp": "df203c0f",
+    "__props": "33abe8f8"
+  },
+  "/tags/troubleshooting-220": {
+    "__comp": "df203c0f",
+    "__props": "04aa852f"
+  },
+  "/tags/video-coaching-3af": {
+    "__comp": "df203c0f",
+    "__props": "fe437597"
   },
   "/-f79": {
     "__comp": "a94703ab"

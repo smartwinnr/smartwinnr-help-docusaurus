@@ -1,23 +1,30 @@
 ---
 id: 696faec0dadc293bb313334c
-title: "How to create Assignment in SmartPath?"
-description: ""
+title: How to create Assignment in SmartPath?
+description: >-
+  Assignments help evaluate learner understanding by requiring them to complete
+  specific tasks, submit responses, or upload supporting files as part of the…
 slug: how-to-create-assignment-in-smartpath
 sidebar_position: 304
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 696faec0dadc293bb313334c
-  helpscout_url: https://help.smartwinnr.com/article/304-how-to-create-assignment-in-smartpath
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/304-how-to-create-assignment-in-smartpath
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 Assignments help evaluate learner understanding by requiring them to complete specific tasks, submit responses, or upload supporting files as part of the SmartPath learning journey.
 
-An **Assignment** is a segment that can be created within a SmartPath module, allowing learners to type responses to assignment questions or submit supporting files—such as PDFs or images—as part of their submission.
+An **Assignment** is a segment that can be created within a SmartPath module, allowing learners to type responses to assignment questions or submit supporting files-such as PDFs or images-as part of their submission.
 
 Since Assignment must be created within a SmartPath module, you need to either create a new module or select an existing module where the assignment will be added.
 
@@ -25,11 +32,11 @@ Since Assignment must be created within a SmartPath module, you need to either c
 
 1. While creating the Segments, Choose the segment type as **Assignment** from the available options. Then add a **name** to your Assignment.
 
-![](/img/helpscout/editors/how-to-create-assignment-in-smartpath-1.png)
+![While creating the Segments, Choose the segment type as Assignment from the available options. Then add a name to your Assignment.](/img/helpscout/editors/how-to-create-assignment-in-smartpath-1.png)
 
 2. Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create your **Assignment** for the SmartPath module.
 
-![](/img/helpscout/editors/how-to-create-assignment-in-smartpath-2.png)
+![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create your Assignment for the Sma](/img/helpscout/editors/how-to-create-assignment-in-smartpath-2.png)
 
 3. ### Fill out the assignment details here
 
@@ -43,7 +50,7 @@ Since Assignment must be created within a SmartPath module, you need to either c
 
 Following is how the assignment instructions will be available to the learner in user view
 
-![](/img/helpscout/editors/how-to-create-assignment-in-smartpath-3.png)
+![Following is how the assignment instructions will be available to the learner in user view](/img/helpscout/editors/how-to-create-assignment-in-smartpath-3.png)
 
 4. Click **Save** to create the assignment and add it to the SmartPath module.
 
@@ -51,4 +58,4 @@ Following is how the assignment instructions will be available to the learner in
 
 Once the leaner submit the assignment, editor needs to go in an review the submission for the completion status and score to get updated for the SmartPath.
 
-[Click here to learn how to evaluate the assignment submitted by the learners](https://help.smartwinnr.com/article/305-how-to-evaluate-the-assignment-submitted-in-smartpath)
+[Click here to learn how to evaluate the assignment submitted by the learners](../reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath.md)

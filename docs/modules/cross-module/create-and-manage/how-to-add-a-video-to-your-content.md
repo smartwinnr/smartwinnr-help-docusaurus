@@ -1,26 +1,32 @@
 ---
 id: 5fd4e5ddc868cb6df3a8109f
-title: "How to add a video to your content?"
-description: ""
+title: How to add a video to your content?
+description: >-
+  SmartWinnr allows you to add videos to the content that you share in
+  SmartWinnr. You can send videos of products, product demonstrations, customer
+  feedback,…
 slug: how-to-add-a-video-to-your-content
 sidebar_position: 68
 last_update:
-  date: 2026-01-18
+  date: 2026-01-18T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd4e5ddc868cb6df3a8109f
-  helpscout_url: https://help.smartwinnr.com/article/68-how-to-add-a-video-to-your-content
+  helpscout_url: 'https://help.smartwinnr.com/article/68-how-to-add-a-video-to-your-content'
 customProps:
-  roles: [editor, admin]
-tags: []
+  roles:
+    - editor
+    - admin
+tags:
+  - admin
 ---
 SmartWinnr allows you to add videos to the content that you share in SmartWinnr. You can send videos of products, product demonstrations, customer feedback, customer stories and more. Click on the video icon to attach a video to your SmartFeed or to the question that you create in SmartWinnr. You can add your own videos or videos from YouTube, Box, and Brainshark as the content.
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-1.png)
+![SmartWinnr allows you to add videos to the content that you share in SmartWinnr. You can send videos of products, product demonstrations, cu](/img/helpscout/editors/how-to-add-a-video-to-your-content-1.png)
 
 Once you click on the video icon, the following pop-up comes up.
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-2.png)
+![Once you click on the video icon, the following pop-up comes up.](/img/helpscout/editors/how-to-add-a-video-to-your-content-2.png)
 
 After selecting the required video file from your system, click the **Submit** button to upload and attach the video successfully.
 
@@ -32,14 +38,14 @@ After selecting the required video file from your system, click the **Submit** b
 4. Click on ‘Submit’.
 5. The video will get embedded into the content.
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-3.png)
+![The video will get embedded into the content.](/img/helpscout/editors/how-to-add-a-video-to-your-content-3.png)
 
 ### How to add a Box video to the content?
 
 1. Click on the video icon and the pop-up will come up.
 2. Click on the ‘Box’ tab.
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-4.png)
+![Click on the ‘Box’ tab.](/img/helpscout/editors/how-to-add-a-video-to-your-content-4.png)
 
 Image URL: You can leave it empty. It will take an image by default. This is a thumbnail.
 
@@ -52,7 +58,7 @@ Video Shared Link: Go to box.com and then the video that you want to use. Follo
 1. Click on the video icon and the pop-up will come up.
 2. Click on the ‘Brainshark’ tab.
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-5.png)
+![Click on the ‘Brainshark’ tab.](/img/helpscout/editors/how-to-add-a-video-to-your-content-5.png)
 
 Image URL = You can leave it empty. It will take an image by default. This is a thumbnail.
 
@@ -79,7 +85,7 @@ _Kindly note that the video format should be MP4._
 
 **How a YouTube Video SmartFeed Appears in the User View**
 
-![](/img/helpscout/editors/how-to-add-a-video-to-your-content-6.png)
+![Kindly note that the video format should be MP4.](/img/helpscout/editors/how-to-add-a-video-to-your-content-6.png)
 
 **How a Video SmartFeed Appears in the User View**
 

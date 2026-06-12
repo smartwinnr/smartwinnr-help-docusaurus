@@ -1,27 +1,30 @@
 ---
 id: 5fdadc3e7129911ba1b21dbe
-title: "How to Add new contacts?"
-description: ""
+title: How to Add new contacts?
+description: Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below
 slug: how-to-add-new-contacts
 sidebar_position: 135
 last_update:
-  date: 2021-01-15
+  date: 2021-01-15T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdadc3e7129911ba1b21dbe
-  helpscout_url: https://help.smartwinnr.com/article/135-how-to-add-new-contacts
+  helpscout_url: 'https://help.smartwinnr.com/article/135-how-to-add-new-contacts'
 customProps:
-  roles: [admin]
+  roles:
+    - admin
   privilege: contacts
-tags: []
+tags:
+  - admin
+  - settings
 ---
 Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below
 
-![](https://support.smartwinnr.com/api/v1/attachments/1116)
+![Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below](https://support.smartwinnr.com/api/v1/attachments/1116)
 
 It will open the following page
 
-![](https://support.smartwinnr.com/api/v1/attachments/1117)
+![It will open the following page](https://support.smartwinnr.com/api/v1/attachments/1117)
 
 You will have to select the following
 

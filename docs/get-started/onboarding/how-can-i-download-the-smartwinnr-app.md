@@ -1,17 +1,23 @@
 ---
 id: 5fce026bde1bfa158fb55e2d
-title: "How can I download the SmartWinnr app?"
-description: ""
+title: How can I download the SmartWinnr app?
+description: >-
+  You can open SmartWinnr from a PC/laptop, as well as through iOS/Android
+  mobile apps.
 slug: how-can-i-download-the-smartwinnr-app
 sidebar_position: 9
 last_update:
-  date: 2021-01-16
+  date: 2021-01-16T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fce026bde1bfa158fb55e2d
-  helpscout_url: https://help.smartwinnr.com/article/9-how-can-i-download-the-smartwinnr-app
+  helpscout_url: 'https://help.smartwinnr.com/article/9-how-can-i-download-the-smartwinnr-app'
 customProps:
-  roles: [user, manager, editor, admin]
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
 tags: []
 ---
 You can open SmartWinnr from a PC/laptop, as well as through iOS/Android mobile apps. You can use the same username and password to log in to the web portal, as well as the mobile app.

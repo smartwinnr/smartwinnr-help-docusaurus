@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/for-learners/5fdb40777129911ba1b21f1a",
   "title": "How can I view a competition Leaderboard?",
-  "description": "",
+  "description": "A leaderboard shows the comparative ranking of each participant in your competition. Leaderboards can be of individual participants and teams as well.",
   "source": "@site/docs/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard.md",
   "sourceDirName": "modules/kpi-gamification/for-learners",
   "slug": "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "onboarding",
+      "permalink": "/tags/onboarding"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 190,
   "frontMatter": {
     "id": "5fdb40777129911ba1b21f1a",
     "title": "How can I view a competition Leaderboard?",
-    "description": "",
+    "description": "A leaderboard shows the comparative ranking of each participant in your competition. Leaderboards can be of individual participants and teams as well.",
     "slug": "how-can-i-view-a-competition-leaderboard",
     "sidebar_position": 190,
     "last_update": {
@@ -34,7 +50,11 @@
         "admin"
       ]
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "onboarding"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

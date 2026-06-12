@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce3d864664bd7a123eb4ea",
   "title": "How to update the SmartWinnr App/Web View?",
-  "description": "",
+  "description": "Before you update your SmartWinnr app, please check the version of the app installed in your mobile device.",
   "source": "@site/docs/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce3d864664bd7a123eb4ea",
     "title": "How to update the SmartWinnr App/Web View?",
-    "description": "",
+    "description": "Before you update your SmartWinnr app, please check the version of the app installed in your mobile device.",
     "slug": "how-to-update-the-smartwinnr-app-web-view",
     "sidebar_position": 20,
     "last_update": {

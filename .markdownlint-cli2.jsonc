@@ -25,7 +25,14 @@
     "MD051": false,
     "MD034": false,
     "MD-SW-001": false,
-    "module-sub-section-placement": false
+    "module-sub-section-placement": false,
+    // The two below are loaded but kept disabled until the auto-fix pass
+    // populates descriptions + semantic alt text. Flip to true once the
+    // article corpus is clean (plan §15.5 step E).
+    "MD-SW-002": false,
+    "description-required": false,
+    "MD-SW-003": false,
+    "alt-text-required": false
   },
   "customRules": ["./custom-markdownlint-rules.js"]
 }

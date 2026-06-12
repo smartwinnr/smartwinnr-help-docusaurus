@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce42e9eb7cc612aa3557ab",
   "title": "How can I enable push notification for SmartWinnr App?",
-  "description": "",
+  "description": "When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you,",
   "source": "@site/docs/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce42e9eb7cc612aa3557ab",
     "title": "How can I enable push notification for SmartWinnr App?",
-    "description": "",
+    "description": "When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you,",
     "slug": "how-can-i-enable-push-notification-for-smartwinnr-app",
     "sidebar_position": 21,
     "last_update": {

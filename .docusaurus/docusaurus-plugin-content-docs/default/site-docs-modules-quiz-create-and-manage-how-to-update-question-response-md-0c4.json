@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/607e8df03149d33a19c6e5e3",
   "title": "How to Update question response",
-  "description": "",
+  "description": "SmartWinnr enables editors to update or correct a user’s response in a quiz. When a response is modified, the system automatically recalculates the score and…",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-update-question-response.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-update-question-response",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-update-question-response.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 232,
   "frontMatter": {
     "id": "607e8df03149d33a19c6e5e3",
     "title": "How to Update question response",
-    "description": "",
+    "description": "SmartWinnr enables editors to update or correct a user’s response in a quiz. When a response is modified, the system automatically recalculates the score and…",
     "slug": "how-to-update-question-response",
     "sidebar_position": 232,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

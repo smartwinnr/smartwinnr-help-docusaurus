@@ -1,7 +1,7 @@
 {
   "id": "modules/notifications/features/5fdb086ea5d295659b369c51",
   "title": "Custom Notifications",
-  "description": "",
+  "description": "Custom notification enable you to send a push notification and an email to the sales rep, notifying specific information.",
   "source": "@site/docs/modules/notifications/features/custom-notifications.md",
   "sourceDirName": "modules/notifications/features",
   "slug": "/modules/notifications/features/custom-notifications",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/notifications/features/custom-notifications.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "notifications",
+      "permalink": "/tags/notifications"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 165,
   "frontMatter": {
     "id": "5fdb086ea5d295659b369c51",
     "title": "Custom Notifications",
-    "description": "",
+    "description": "Custom notification enable you to send a push notification and an email to the sales rep, notifying specific information.",
     "slug": "custom-notifications",
     "sidebar_position": 165,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "customNotifications"
     },
-    "tags": []
+    "tags": [
+      "notifications"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

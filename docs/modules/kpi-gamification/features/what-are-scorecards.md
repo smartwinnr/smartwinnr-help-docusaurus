@@ -1,19 +1,25 @@
 ---
 id: 5fdb0e92a5d295659b369c6c
-title: "What are Scorecards?"
-description: ""
+title: What are Scorecards?
+description: >-
+  Scorecards are a great way to measure your sales rep's performance against the
+  KPIs that are set.
 slug: what-are-scorecards
 sidebar_position: 175
 last_update:
-  date: 2021-01-08
+  date: 2021-01-08T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0e92a5d295659b369c6c
-  helpscout_url: https://help.smartwinnr.com/article/175-what-are-scorecards
+  helpscout_url: 'https://help.smartwinnr.com/article/175-what-are-scorecards'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
 ---
 Scorecards are a great way to measure your sales rep's performance against the KPIs that are set. After [Step 1 - Define KPIs](https://smartwinnr.helpscoutdocs.com/article/170-define-kpis) and [Step 2 - Create Field Mappings](https://smartwinnr.helpscoutdocs.com/article/173-how-to-create-a-field-mapping), this is the 3rd step of the KPI Gamification process setup.
 
@@ -29,4 +35,4 @@ Scores determine the points that a participant gets when she achieves certain KP
 
 Go to EDITOR > KPI > Scorecards. Click on any of the scorecards to view a scorecard. If you cannot see any scorecards here, go ahead and create one. Here is how a scorecard can look like.
 
-![](/img/helpscout/editors/what-are-scorecards-1.png)
+![Go to EDITOR > KPI > Scorecards. Click on any of the scorecards to view a scorecard. If you cannot see any scorecards here, go ahead and cre](/img/helpscout/editors/what-are-scorecards-1.png)

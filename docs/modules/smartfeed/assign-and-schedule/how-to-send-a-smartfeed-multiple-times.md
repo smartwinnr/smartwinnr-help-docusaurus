@@ -1,19 +1,26 @@
 ---
 id: 5fd10d1a0ca0c372c6f09327
-title: "How to send a SmartFeed multiple times?"
-description: ""
+title: How to send a SmartFeed multiple times?
+description: >-
+  1. You can resend a SmartFeed to your team as needed. Follow the steps below:
+  1. Navigate to SmartFeeds > View All SmartFeeds. 2.
 slug: how-to-send-a-smartfeed-multiple-times
 sidebar_position: 30
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd10d1a0ca0c372c6f09327
-  helpscout_url: https://help.smartwinnr.com/article/30-how-to-send-a-smartfeed-multiple-times
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/30-how-to-send-a-smartfeed-multiple-times
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
+  - admin
 ---
 ## Send a SmartFeed multiple times
 
@@ -30,7 +37,7 @@ tags: []
         * **Schedule Later**: Allows you to schedule the SmartFeed for a specific date and time.
     4. Click **Send SmartFeed** to complete the process.
 
-![](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-1.png)
+![Click Send SmartFeed to complete the process.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-1.png)
 
 ## Participant Selection in SmartFeeds
 
@@ -44,7 +51,7 @@ You can also **filter recipients by division** to ensure that the SmartFeed reac
 
 This allows precise targeting of your SmartFeeds for maximum relevance and engagement.
 
-![](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-2.png)
+![This allows precise targeting of your SmartFeeds for maximum relevance and engagement.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-2.png)
 
 In addition to selecting users, groups, and metatags, you can further **filter recipients** when sending a SmartFeed:
 
@@ -54,6 +61,6 @@ In addition to selecting users, groups, and metatags, you can further **filter r
 
 These advanced filters allow you to **precisely control** who receives the SmartFeed, ensuring the right information reaches the right audience.
 
-![](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-3.png)
+![These advanced filters allow you to precisely control who receives the SmartFeed, ensuring the right information reaches the right audience.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-3.png)
 
 _You can view it from the Sent History which gets displayed on the 'View SmartFeed' page._

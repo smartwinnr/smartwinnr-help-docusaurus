@@ -1,19 +1,26 @@
 ---
 id: 62b3e9dd0729834c424f8fad
-title: "How to Import SCORM course into SmartWinnr?"
-description: ""
+title: How to Import SCORM course into SmartWinnr?
+description: >-
+  SmartWinnr supports the import of SCORM courses, enabling you to incorporate
+  external e-learning content into your learning ecosystem.
 slug: how-to-import-scorm-course-into-smartwinnr
 sidebar_position: 271
 last_update:
-  date: 2026-01-20
+  date: 2026-01-20T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 62b3e9dd0729834c424f8fad
-  helpscout_url: https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/271-how-to-import-scorm-course-into-smartwinnr
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: smartpaths
-tags: []
+tags:
+  - smartpath
+  - admin
 ---
 SmartWinnr supports the import of SCORM courses, enabling you to incorporate external e-learning content into your learning ecosystem. Following are the SCORM versions that are supported in SmartWinnr:
 
@@ -31,7 +38,7 @@ We are considering the 'articulate 360' for exporting the SCORM course and the s
 
 Choose your course from  **articulate 360** and choose the contents that you would like to include in the SCORM course. Then click on the “**Publish**” option on the top right-hand corner of the page highlighted in red and Choose "**LMS"**.
 
-![](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-1.jpg)
+![Choose your course from articulate 360 and choose the contents that you would like to include in the SCORM course. Then click on the “Publis](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-1.jpg)
 
 Kindly follow the below-given instructions while exporting the SCORM course:
 
@@ -39,7 +46,7 @@ Kindly follow the below-given instructions while exporting the SCORM course:
 
 **Publish Settings:**
 
-![](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-2.png)
+![● While exporting the SCORM Course, please use the following settings so that it gets uploaded properly into SmartPath - Modules:](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-2.png)
 
 &rarr    **LMS -** Choose SCORM version as 1.2 or SCORM 2004
 
@@ -67,11 +74,11 @@ Since the SCORM course needs to be imported inside the SmartPath module, you sh
 
 While creating the Segments, Choose the segment type as SCORM from the available options.
 
-![](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-3.png)
+![While creating the Segments, Choose the segment type as SCORM from the available options.](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-3.png)
 
 Upon creating the segment, you will be redirected to the following page:
 
-![](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-4.png)
+![Upon creating the segment, you will be redirected to the following page:](/img/helpscout/editors/how-to-import-scorm-course-into-smartwinnr-4.png)
 
 Here, you can define the SCORM version, course details, language, and upload the SCORM package to make it available to learners.
 

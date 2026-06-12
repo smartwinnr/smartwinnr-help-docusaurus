@@ -1,7 +1,7 @@
 {
   "id": "modules/forms/features/60bb69c690777e23fb8ada49",
   "title": "How to Submit a Form on behalf of a User",
-  "description": "",
+  "description": "An Editor who has access to the form can edit the submission made by a user",
   "source": "@site/docs/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user.md",
   "sourceDirName": "modules/forms/features",
   "slug": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "forms",
+      "permalink": "/tags/forms"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 252,
   "frontMatter": {
     "id": "60bb69c690777e23fb8ada49",
     "title": "How to Submit a Form on behalf of a User",
-    "description": "",
+    "description": "An Editor who has access to the form can edit the submission made by a user",
     "slug": "how-to-submit-a-form-on-behalf-of-a-user",
     "sidebar_position": 252,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "forms"
     },
-    "tags": []
+    "tags": [
+      "forms"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

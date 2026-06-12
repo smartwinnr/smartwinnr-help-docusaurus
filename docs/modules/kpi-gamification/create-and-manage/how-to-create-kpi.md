@@ -1,19 +1,26 @@
 ---
 id: 5fdb0c4f0b11ce44f63931c0
-title: "How to create KPI?"
-description: ""
+title: How to create KPI?
+description: >-
+  In the previous article, we learned about how KPIs are selected. In this
+  article, we will see how to create a KPI within SmartWinnr.
 slug: how-to-create-kpi
 sidebar_position: 171
 last_update:
-  date: 2025-08-19
+  date: 2025-08-19T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0c4f0b11ce44f63931c0
-  helpscout_url: https://help.smartwinnr.com/article/171-how-to-create-kpi
+  helpscout_url: 'https://help.smartwinnr.com/article/171-how-to-create-kpi'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 In the previous article, we learned about how KPIs are selected. In this article, we will see how to create a KPI within SmartWinnr.
 
@@ -45,9 +52,9 @@ Select a category to map the KPI's with specific skill areas of reps. This is an
 
 Here are some examples of how KPI Definitions can be created:
 
-![](/img/helpscout/editors/how-to-create-kpi-1.png)
+![Here are some examples of how KPI Definitions can be created:](/img/helpscout/editors/how-to-create-kpi-1.png)
 
-![](/img/helpscout/editors/how-to-create-kpi-2.png)
+![Here are some examples of how KPI Definitions can be created:](/img/helpscout/editors/how-to-create-kpi-2.png)
 
 ![](/img/helpscout/editors/how-to-create-kpi-3.png)
 

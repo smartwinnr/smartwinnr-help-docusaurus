@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdadcca7129911ba1b21dc1",
   "title": "What is Audit Log?",
-  "description": "",
+  "description": "The concept of audit logs is simple. When a change is applied to a system, it correlates with a change in the system’s behavior.",
   "source": "@site/docs/administration/system-management/what-is-audit-log.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/what-is-audit-log",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/what-is-audit-log.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 137,
   "frontMatter": {
     "id": "5fdadcca7129911ba1b21dc1",
     "title": "What is Audit Log?",
-    "description": "",
+    "description": "The concept of audit logs is simple. When a change is applied to a system, it correlates with a change in the system’s behavior.",
     "slug": "what-is-audit-log",
     "sidebar_position": 137,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "auditLog"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

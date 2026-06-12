@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/create-and-manage/5fdb0c4f0b11ce44f63931c0",
   "title": "How to create KPI?",
-  "description": "",
+  "description": "In the previous article, we learned about how KPIs are selected. In this article, we will see how to create a KPI within SmartWinnr.",
   "source": "@site/docs/modules/kpi-gamification/create-and-manage/how-to-create-kpi.md",
   "sourceDirName": "modules/kpi-gamification/create-and-manage",
   "slug": "/modules/kpi-gamification/create-and-manage/how-to-create-kpi",
@@ -9,13 +9,29 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/create-and-manage/how-to-create-kpi.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 171,
   "frontMatter": {
     "id": "5fdb0c4f0b11ce44f63931c0",
     "title": "How to create KPI?",
-    "description": "",
+    "description": "In the previous article, we learned about how KPIs are selected. In this article, we will see how to create a KPI within SmartWinnr.",
     "slug": "how-to-create-kpi",
     "sidebar_position": 171,
     "last_update": {
@@ -33,7 +49,11 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

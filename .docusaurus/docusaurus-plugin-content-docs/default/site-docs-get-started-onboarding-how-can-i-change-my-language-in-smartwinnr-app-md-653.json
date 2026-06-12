@@ -1,7 +1,7 @@
 {
   "id": "get-started/onboarding/5fce33cad580ce55a38b4e2c",
   "title": "How can I change my language in SmartWinnr App?",
-  "description": "",
+  "description": "If multiple languages are enabled for your organization in SmartWinnr, you can change your language from English to any other languages available in…",
   "source": "@site/docs/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app.md",
   "sourceDirName": "get-started/onboarding",
   "slug": "/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app",
@@ -15,7 +15,7 @@
   "frontMatter": {
     "id": "5fce33cad580ce55a38b4e2c",
     "title": "How can I change my language in SmartWinnr App?",
-    "description": "",
+    "description": "If multiple languages are enabled for your organization in SmartWinnr, you can change your language from English to any other languages available in…",
     "slug": "how-can-i-change-my-language-in-smartwinnr-app",
     "sidebar_position": 18,
     "last_update": {

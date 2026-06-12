@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/create-and-manage/69705f458446705a3c6f6831",
   "title": "How to create Re-order Questions ?",
-  "description": "",
+  "description": "A Re-Order question in SmartWinnr allows participants to drag and arrange answer options into the correct sequence.",
   "source": "@site/docs/modules/quiz/create-and-manage/how-to-create-re-order-questions.md",
   "sourceDirName": "modules/quiz/create-and-manage",
   "slug": "/modules/quiz/create-and-manage/how-to-create-re-order-questions",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/create-and-manage/how-to-create-re-order-questions.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 306,
   "frontMatter": {
     "id": "69705f458446705a3c6f6831",
     "title": "How to create Re-order Questions ?",
-    "description": "",
+    "description": "A Re-Order question in SmartWinnr allows participants to drag and arrange answer options into the correct sequence.",
     "slug": "how-to-create-re-order-questions",
     "sidebar_position": 306,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

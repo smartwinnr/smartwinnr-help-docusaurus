@@ -1,7 +1,7 @@
 {
   "id": "modules/smartpath/create-and-manage/5fd713904eb32171b80377f7",
   "title": "How to edit a SmartPath.",
-  "description": "",
+  "description": "You can edit an existing SmartPath at any time to update its details or modify its content.",
   "source": "@site/docs/modules/smartpath/create-and-manage/how-to-edit-a-smartpath.md",
   "sourceDirName": "modules/smartpath/create-and-manage",
   "slug": "/modules/smartpath/create-and-manage/how-to-edit-a-smartpath",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartpath/create-and-manage/how-to-edit-a-smartpath.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartpath",
+      "permalink": "/tags/smartpath"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 79,
   "frontMatter": {
     "id": "5fd713904eb32171b80377f7",
     "title": "How to edit a SmartPath.",
-    "description": "",
+    "description": "You can edit an existing SmartPath at any time to update its details or modify its content.",
     "slug": "how-to-edit-a-smartpath",
     "sidebar_position": 79,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "smartpaths"
     },
-    "tags": []
+    "tags": [
+      "smartpath",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

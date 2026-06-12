@@ -1,19 +1,26 @@
 ---
 id: 5fd112c50ca0c372c6f09352
-title: "How to delete a SmartFeed?"
-description: ""
+title: How to delete a SmartFeed?
+description: >-
+  You can delete a SmartFeed even after it has been sent to your teams. Once
+  deleted, the SmartFeed will be removed from all recipients’ feeds and
+  permanently…
 slug: how-to-delete-a-smartfeed
 sidebar_position: 34
 last_update:
-  date: 2026-01-16
+  date: 2026-01-16T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd112c50ca0c372c6f09352
-  helpscout_url: https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds
+  helpscout_url: 'https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
+  - admin
 ---
 You can delete a SmartFeed even after it has been sent to your teams. Once deleted, the SmartFeed will be **removed from all recipients’ feeds** and **permanently deleted from the system**. Please note that deleting a SmartFeed will also remove all associated **tracking details and sent history**, and this action cannot be undone.
 

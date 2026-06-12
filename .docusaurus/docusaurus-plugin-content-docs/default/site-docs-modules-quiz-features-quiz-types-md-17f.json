@@ -1,7 +1,7 @@
 {
   "id": "modules/quiz/features/5fd48eb723119734ee37eda5",
   "title": "Quiz types",
-  "description": "",
+  "description": "Manual quizzes are created and sent by the quiz editor. While the quiz can be scheduled for delivery on a future date, the editor is required to manually…",
   "source": "@site/docs/modules/quiz/features/quiz-types.md",
   "sourceDirName": "modules/quiz/features",
   "slug": "/modules/quiz/features/quiz-types",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/quiz-types.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 48,
   "frontMatter": {
     "id": "5fd48eb723119734ee37eda5",
     "title": "Quiz types",
-    "description": "",
+    "description": "Manual quizzes are created and sent by the quiz editor. While the quiz can be scheduled for delivery on a future date, the editor is required to manually…",
     "slug": "quiz-types",
     "sidebar_position": 48,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "quiz"
     },
-    "tags": []
+    "tags": [
+      "quiz"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,19 +1,24 @@
 ---
 id: 5fd11017db2fa3720c7d7aae
-title: "How to view all the SmartFeeds?"
-description: ""
+title: How to view all the SmartFeeds?
+description: >-
+  SmartWinnr allows editors to view all SmartFeeds that they have created, as
+  well as SmartFeeds created by other editors to which they have access.
 slug: how-to-view-all-the-smartfeeds
 sidebar_position: 32
 last_update:
-  date: 2026-01-17
+  date: 2026-01-17T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd11017db2fa3720c7d7aae
-  helpscout_url: https://help.smartwinnr.com/article/32-how-to-view-all-the-smartfeeds
+  helpscout_url: 'https://help.smartwinnr.com/article/32-how-to-view-all-the-smartfeeds'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: content
-tags: []
+tags:
+  - smartfeed
 ---
 ## How to view All SmartFeeds that I have created in SmartWinnr?
 
@@ -46,4 +51,4 @@ SmartWinnr allows you to view SmartFeeds created by other editors, provided you 
 
 This tab displays all SmartFeeds created by other editors that you have been granted access to. From here, you can view the SmartFeed details and, if permitted, access related analytics and history.
 
-![](/img/helpscout/editors/how-to-view-all-the-smartfeeds-2.png)
+![This tab displays all SmartFeeds created by other editors that you have been granted access to. From here, you can view the SmartFeed detail](/img/helpscout/editors/how-to-view-all-the-smartfeeds-2.png)

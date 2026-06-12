@@ -1,7 +1,7 @@
 {
   "id": "administration/system-management/5fdadc3e7129911ba1b21dbe",
   "title": "How to Add new contacts?",
-  "description": "",
+  "description": "Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below",
   "source": "@site/docs/administration/system-management/how-to-add-new-contacts.md",
   "sourceDirName": "administration/system-management",
   "slug": "/administration/system-management/how-to-add-new-contacts",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/administration/system-management/how-to-add-new-contacts.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 135,
   "frontMatter": {
     "id": "5fdadc3e7129911ba1b21dbe",
     "title": "How to Add new contacts?",
-    "description": "",
+    "description": "Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below",
     "slug": "how-to-add-new-contacts",
     "sidebar_position": 135,
     "last_update": {
@@ -32,7 +43,10 @@
       ],
       "privilege": "contacts"
     },
-    "tags": []
+    "tags": [
+      "admin",
+      "settings"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/assign-and-schedule/5fd72ca536980410c9123bbe",
   "title": "How to share a Coaching Video.",
-  "description": "",
+  "description": "This feature enables you to share coaching videos that are submitted by the reps with anyone.You can share these video as examples with your entire team.This…",
   "source": "@site/docs/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video.md",
   "sourceDirName": "modules/video-coaching/assign-and-schedule",
   "slug": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 88,
   "frontMatter": {
     "id": "5fd72ca536980410c9123bbe",
     "title": "How to share a Coaching Video.",
-    "description": "",
+    "description": "This feature enables you to share coaching videos that are submitted by the reps with anyone.You can share these video as examples with your entire team.This…",
     "slug": "how-to-share-a-coaching-video",
     "sidebar_position": 88,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

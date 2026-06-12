@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/assign-and-schedule/5fd72b2fc868cb6df3a813e5",
   "title": "How to review a video coaching assignment.",
-  "description": "",
+  "description": "Only users with Editor and Manager role can review a coaching video.",
   "source": "@site/docs/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment.md",
   "sourceDirName": "modules/video-coaching/assign-and-schedule",
   "slug": "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 87,
   "frontMatter": {
     "id": "5fd72b2fc868cb6df3a813e5",
     "title": "How to review a video coaching assignment.",
-    "description": "",
+    "description": "Only users with Editor and Manager role can review a coaching video.",
     "slug": "how-to-review-a-video-coaching-assignment",
     "sidebar_position": 87,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

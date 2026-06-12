@@ -1,7 +1,7 @@
 {
   "id": "modules/field-coaching/features/60a50e711df47a61c5ad2f4d",
   "title": "How to add Competencies for Field Coaching",
-  "description": "",
+  "description": "A user who is having admin access can add the competencies for field coaching.",
   "source": "@site/docs/modules/field-coaching/features/how-to-add-competencies-for-field-coaching.md",
   "sourceDirName": "modules/field-coaching/features",
   "slug": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/field-coaching/features/how-to-add-competencies-for-field-coaching.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "field-coaching",
+      "permalink": "/tags/field-coaching"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 237,
   "frontMatter": {
     "id": "60a50e711df47a61c5ad2f4d",
     "title": "How to add Competencies for Field Coaching",
-    "description": "",
+    "description": "A user who is having admin access can add the competencies for field coaching.",
     "slug": "how-to-add-competencies-for-field-coaching",
     "sidebar_position": 237,
     "last_update": {
@@ -32,7 +38,9 @@
       ],
       "privilege": "fCoaching"
     },
-    "tags": []
+    "tags": [
+      "field-coaching"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

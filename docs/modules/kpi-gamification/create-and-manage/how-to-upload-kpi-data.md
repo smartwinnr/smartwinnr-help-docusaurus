@@ -1,19 +1,26 @@
 ---
 id: 5fdb0e290b11ce44f63931c7
-title: "How to upload KPI data?"
-description: ""
+title: How to upload KPI data?
+description: >-
+  After you have completed creating the Field Mapping ( How to create a Field
+  Mapping?) , you can upload data into SmartWinnr against this mapping.
 slug: how-to-upload-kpi-data
 sidebar_position: 174
 last_update:
-  date: 2025-08-13
+  date: 2025-08-13T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0e290b11ce44f63931c7
-  helpscout_url: https://help.smartwinnr.com/article/174-how-to-upload-kpi-data
+  helpscout_url: 'https://help.smartwinnr.com/article/174-how-to-upload-kpi-data'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: kpi
-tags: []
+tags:
+  - kpi
+  - gamification
+  - admin
 ---
 After you have completed creating the Field Mapping ( [How to create a Field Mapping?](https://smartwinnr.helpscoutdocs.com/article/173-how-to-create-a-field-mapping)) , you can upload data into SmartWinnr against this mapping.
 
@@ -21,7 +28,7 @@ Below are the steps to upload your KPI data:
 
 Go to EDITOR > KPI > Upload Data. It opens the following page:
 
-![](https://support.smartwinnr.com/api/v1/attachments/774)
+![Go to EDITOR > KPI > Upload Data. It opens the following page:](https://support.smartwinnr.com/api/v1/attachments/774)
 
 ### KPI Mapping
 
@@ -31,27 +38,27 @@ Once you choose a KPI Mapping you will get to select the KPIs related to it. T
 
 Download your CSV file by clicking on the 'Download Sample CSV' button.
 
-                                                                             ![](https://support.smartwinnr.com/api/v1/attachments/775)
+                                                                             ![Download your CSV file by clicking on the 'Download Sample CSV' button.](https://support.smartwinnr.com/api/v1/attachments/775)
 
 Then click on the 'Choose File' button and select the CSV file that you want to upload. Next, click on the 'Upload' button to upload it.
 
 Upon successful upload of all the fields, it shows the status of each record in the uploaded status.
 
-![](https://support.smartwinnr.com/api/v1/attachments/776)
+![Upon successful upload of all the fields, it shows the status of each record in the uploaded status.](https://support.smartwinnr.com/api/v1/attachments/776)
 
 In case there are any incorrect values, the status will be shown as 'failed'.
 
-![](https://support.smartwinnr.com/api/v1/attachments/777)
+![In case there are any incorrect values, the status will be shown as 'failed'.](https://support.smartwinnr.com/api/v1/attachments/777)
 
 KPI Mapping: This lets you select the mapping that you would like to use.
 
-                           ![](https://support.smartwinnr.com/api/v1/attachments/778)
+                           ![KPI Mapping: This lets you select the mapping that you would like to use.](https://support.smartwinnr.com/api/v1/attachments/778)
 
 ### View KPI Mapping
 
 This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:
 
-            ![](https://support.smartwinnr.com/api/v1/attachments/779)
+            ![This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:](https://support.smartwinnr.com/api/v1/attachments/779)
 
 ### Download Sample CSV
 
@@ -59,16 +66,16 @@ This button shows you the list of KPIs that need to be matched. Below is a scree
 
 Add Mapping: This button takes you to the below page where you can make changes to the existing CSV fields.
 
-![](/img/helpscout/editors/how-to-upload-kpi-data-7.png)
+![Add Mapping: This button takes you to the below page where you can make changes to the existing CSV fields.](/img/helpscout/editors/how-to-upload-kpi-data-7.png)
 
 ### View Uploaded Data
 
 This button gives you an overview of all the data that is uploaded. Below is a screenshot of it:
 
-![](https://support.smartwinnr.com/api/v1/attachments/781)
+![This button gives you an overview of all the data that is uploaded. Below is a screenshot of it:](https://support.smartwinnr.com/api/v1/attachments/781)
 
 ### View Logs
 
 This button shows the logs of the uploaded data. Below is the screenshot of it:
 
-![](https://support.smartwinnr.com/api/v1/attachments/782)
+![This button shows the logs of the uploaded data. Below is the screenshot of it:](https://support.smartwinnr.com/api/v1/attachments/782)

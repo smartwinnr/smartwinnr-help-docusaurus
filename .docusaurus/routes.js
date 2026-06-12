@@ -3,18 +3,118 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/admin/analytics/feedback',
+    component: ComponentCreator('/admin/analytics/feedback', '516'),
+    exact: true
+  },
+  {
     path: '/search',
     component: ComponentCreator('/search', 'be6'),
     exact: true
   },
   {
     path: '/',
-    component: ComponentCreator('/', '816'),
+    component: ComponentCreator('/', '981'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '196'),
+        component: ComponentCreator('/', 'e04'),
         routes: [
+          {
+            path: '/tags',
+            component: ComponentCreator('/tags', 'ce1'),
+            exact: true
+          },
+          {
+            path: '/tags/admin',
+            component: ComponentCreator('/tags/admin', '697'),
+            exact: true
+          },
+          {
+            path: '/tags/ai-coaching',
+            component: ComponentCreator('/tags/ai-coaching', 'da2'),
+            exact: true
+          },
+          {
+            path: '/tags/field-coaching',
+            component: ComponentCreator('/tags/field-coaching', '040'),
+            exact: true
+          },
+          {
+            path: '/tags/forms',
+            component: ComponentCreator('/tags/forms', '299'),
+            exact: true
+          },
+          {
+            path: '/tags/gamification',
+            component: ComponentCreator('/tags/gamification', 'a54'),
+            exact: true
+          },
+          {
+            path: '/tags/integration',
+            component: ComponentCreator('/tags/integration', '75a'),
+            exact: true
+          },
+          {
+            path: '/tags/knowledge-hub',
+            component: ComponentCreator('/tags/knowledge-hub', '5b6'),
+            exact: true
+          },
+          {
+            path: '/tags/kpi',
+            component: ComponentCreator('/tags/kpi', '827'),
+            exact: true
+          },
+          {
+            path: '/tags/notifications',
+            component: ComponentCreator('/tags/notifications', '2fe'),
+            exact: true
+          },
+          {
+            path: '/tags/onboarding',
+            component: ComponentCreator('/tags/onboarding', 'b8e'),
+            exact: true
+          },
+          {
+            path: '/tags/quiz',
+            component: ComponentCreator('/tags/quiz', '400'),
+            exact: true
+          },
+          {
+            path: '/tags/reports',
+            component: ComponentCreator('/tags/reports', 'cc6'),
+            exact: true
+          },
+          {
+            path: '/tags/settings',
+            component: ComponentCreator('/tags/settings', '32c'),
+            exact: true
+          },
+          {
+            path: '/tags/smartfeed',
+            component: ComponentCreator('/tags/smartfeed', '83d'),
+            exact: true
+          },
+          {
+            path: '/tags/smartpath',
+            component: ComponentCreator('/tags/smartpath', 'c98'),
+            exact: true
+          },
+          {
+            path: '/tags/survey',
+            component: ComponentCreator('/tags/survey', '70c'),
+            exact: true
+          },
+          {
+            path: '/tags/troubleshooting',
+            component: ComponentCreator('/tags/troubleshooting', '220'),
+            exact: true
+          },
+          {
+            path: '/tags/video-coaching',
+            component: ComponentCreator('/tags/video-coaching', '3af'),
+            exact: true
+          },
           {
             path: '/',
             component: ComponentCreator('/', 'f79'),

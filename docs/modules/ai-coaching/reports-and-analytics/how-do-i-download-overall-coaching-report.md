@@ -1,19 +1,24 @@
 ---
 id: 6970d9e71252a7004208b84e
-title: "How do I download Overall Coaching Report?"
-description: ""
+title: How do I download Overall Coaching Report?
+description: This report summarizes all coaching activities across all users.
 slug: how-do-i-download-overall-coaching-report
 sidebar_position: 313
 last_update:
-  date: 2026-01-29
+  date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 6970d9e71252a7004208b84e
-  helpscout_url: https://help.smartwinnr.com/article/313-how-to-download-overall-coaching-report
+  helpscout_url: >-
+    https://help.smartwinnr.com/article/313-how-to-download-overall-coaching-report
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: aiCoaching
-tags: []
+tags:
+  - ai-coaching
+  - reports
 ---
 ### Download Overall Coaching Report
 
@@ -28,19 +33,19 @@ This report summarizes all coaching activities across all users.
 5. Click the **Hamburger menu**
 6. Select **Overall Coaching Summary Report**
 
-    ![](/img/helpscout/editors/how-do-i-download-overall-coaching-report-1.png)
+    ![Select Overall Coaching Summary Report](/img/helpscout/editors/how-do-i-download-overall-coaching-report-1.png)
 
     Download Overall Coaching Summary Report
 
 7. Apply desired filters - Metatags, Date range (if required) and Click **Download**
 
-    ![](/img/helpscout/editors/how-do-i-download-overall-coaching-report-2.png)
+    ![Apply desired filters - Metatags, Date range (if required) and Click Download](/img/helpscout/editors/how-do-i-download-overall-coaching-report-2.png)
 
     Apply desired filters & download
 
 8. Go to **Reports → Generated Reports**
 9. Locate your report and click the **download icon** to save it to your computer
 
-    ![](/img/helpscout/editors/how-do-i-download-overall-coaching-report-3.png)
+    ![Locate your report and click the download icon to save it to your computer](/img/helpscout/editors/how-do-i-download-overall-coaching-report-3.png)
 
     Download report under Generated Reports

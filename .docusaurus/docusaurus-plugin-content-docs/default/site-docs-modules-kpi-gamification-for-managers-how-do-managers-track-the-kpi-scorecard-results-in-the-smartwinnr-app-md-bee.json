@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/for-managers/60001addcfe30d219ccd7a03",
   "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
-  "description": "",
+  "description": "Follow the below steps to view the KPI scorecards in the SmartWinner app",
   "source": "@site/docs/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
   "sourceDirName": "modules/kpi-gamification/for-managers",
   "slug": "/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 207,
   "frontMatter": {
     "id": "60001addcfe30d219ccd7a03",
     "title": "How do managers track the KPI Scorecard results in the SmartWinnr app?",
-    "description": "",
+    "description": "Follow the below steps to view the KPI scorecards in the SmartWinner app",
     "slug": "how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
     "sidebar_position": 207,
     "last_update": {
@@ -34,7 +45,10 @@
       ],
       "privilege": "managerView"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "modules/smartfeed/features/5fd11017db2fa3720c7d7aae",
   "title": "How to view all the SmartFeeds?",
-  "description": "",
+  "description": "SmartWinnr allows editors to view all SmartFeeds that they have created, as well as SmartFeeds created by other editors to which they have access.",
   "source": "@site/docs/modules/smartfeed/features/how-to-view-all-the-smartfeeds.md",
   "sourceDirName": "modules/smartfeed/features",
   "slug": "/modules/smartfeed/features/how-to-view-all-the-smartfeeds",
@@ -9,13 +9,19 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/smartfeed/features/how-to-view-all-the-smartfeeds.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "smartfeed",
+      "permalink": "/tags/smartfeed"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 32,
   "frontMatter": {
     "id": "5fd11017db2fa3720c7d7aae",
     "title": "How to view all the SmartFeeds?",
-    "description": "",
+    "description": "SmartWinnr allows editors to view all SmartFeeds that they have created, as well as SmartFeeds created by other editors to which they have access.",
     "slug": "how-to-view-all-the-smartfeeds",
     "sidebar_position": 32,
     "last_update": {
@@ -33,7 +39,9 @@
       ],
       "privilege": "content"
     },
-    "tags": []
+    "tags": [
+      "smartfeed"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

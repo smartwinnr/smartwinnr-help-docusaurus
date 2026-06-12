@@ -1,7 +1,7 @@
 {
   "id": "modules/video-coaching/create-and-manage/6464dc077d89467e9da79320",
   "title": "How to reset a coaching video",
-  "description": "",
+  "description": "Only Editor who has created the coaching can reset a video coaching assignment.",
   "source": "@site/docs/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video.md",
   "sourceDirName": "modules/video-coaching/create-and-manage",
   "slug": "/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "video-coaching",
+      "permalink": "/tags/video-coaching"
+    },
+    {
+      "inline": true,
+      "label": "admin",
+      "permalink": "/tags/admin"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 286,
   "frontMatter": {
     "id": "6464dc077d89467e9da79320",
     "title": "How to reset a coaching video",
-    "description": "",
+    "description": "Only Editor who has created the coaching can reset a video coaching assignment.",
     "slug": "how-to-reset-a-coaching-video",
     "sidebar_position": 286,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "coaching"
     },
-    "tags": []
+    "tags": [
+      "video-coaching",
+      "admin"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

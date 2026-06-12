@@ -1,19 +1,25 @@
 ---
 id: 5fd48f1123119734ee37eda6
-title: "How to create an automatic quiz?"
-description: ""
+title: How to create an automatic quiz?
+description: >-
+  Navigate to Editor > Learning and Knowledge > Questions and Quizzes > View All
+  Quizzes. Click Add New Quiz.
 slug: how-to-create-an-automatic-quiz
 sidebar_position: 49
 last_update:
-  date: 2026-02-02
+  date: 2026-02-02T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fd48f1123119734ee37eda6
-  helpscout_url: https://help.smartwinnr.com/article/49-how-to-create-an-automatic-quiz
+  helpscout_url: 'https://help.smartwinnr.com/article/49-how-to-create-an-automatic-quiz'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: quiz
-tags: []
+tags:
+  - quiz
+  - admin
 ---
 ### Steps to Create an Automatic Quiz
 
@@ -47,7 +53,7 @@ Now you can enter the quiz details:
 
 Here you can set the quiz cover image and thumbnail image.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
+![Here you can set the quiz cover image and thumbnail image.](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
 
 **Quiz Settings:**
 
@@ -76,14 +82,14 @@ By default, the email subject is **“New Quiz Assigned.”**
 
 ### Quiz Review Settings
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-6.png)
+![Quiz Review Settings](/img/helpscout/editors/how-to-create-an-automatic-quiz-6.png)
 
 * **Show quiz review:** This is to enable the quiz review section where the users click on the Review button once they complete the quiz and check their responses and correct answers.
 * **Hide correct answer for incorrect responses:** Enable this to hide the correct answer for the questions where the user has selecte a wrong answer option.
 
 Default Auto Mode Settings
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-7.png)
+![Default Auto Mode Settings](/img/helpscout/editors/how-to-create-an-automatic-quiz-7.png)
 
 In an **automatic quiz**, SmartWinnr automatically delivers targeted questions to each participant based on their past response history. This approach is particularly useful when managing a large question bank and aiming to distribute a limited number of questions per quiz over time, while gradually covering the entire question set.
 
@@ -104,7 +110,7 @@ Once the quiz has been created, you can proceed to add questions:
 * Use the available **search and filter criteria** to find relevant questions.
 * Select the questions by checking the checkbox to the left of each question you want to include in the quiz.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-8.png)
+![Once the quiz has been created, you can proceed to add questions:](/img/helpscout/editors/how-to-create-an-automatic-quiz-8.png)
 
 [https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1c9a9f24ccf588e40008d/file-QKzyQHndbx.png](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1c9a9f24ccf588e40008d/file-QKzyQHndbx.png)
 
@@ -125,4 +131,4 @@ After creating the quiz and adding questions, you can assign the quiz to partici
 
 Upon successful completion of the action, a **success popup message** will be displayed confirming the operation.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-10.png)
+![Upon successful completion of the action, a success popup message will be displayed confirming the operation.](/img/helpscout/editors/how-to-create-an-automatic-quiz-10.png)

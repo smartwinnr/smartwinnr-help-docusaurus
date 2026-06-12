@@ -1,7 +1,7 @@
 {
   "id": "modules/kpi-gamification/features/5fdb1843a5d295659b369c92",
   "title": "What are KPI Reports?",
-  "description": "",
+  "description": "The KPI Reports provide detailed analytics of the participants in the KPI gamification. Below are the steps to view the reports of KPI gamification:",
   "source": "@site/docs/modules/kpi-gamification/features/what-are-kpi-reports.md",
   "sourceDirName": "modules/kpi-gamification/features",
   "slug": "/modules/kpi-gamification/features/what-are-kpi-reports",
@@ -9,13 +9,24 @@
   "draft": false,
   "unlisted": false,
   "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/kpi-gamification/features/what-are-kpi-reports.md",
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "kpi",
+      "permalink": "/tags/kpi"
+    },
+    {
+      "inline": true,
+      "label": "gamification",
+      "permalink": "/tags/gamification"
+    }
+  ],
   "version": "current",
   "sidebarPosition": 182,
   "frontMatter": {
     "id": "5fdb1843a5d295659b369c92",
     "title": "What are KPI Reports?",
-    "description": "",
+    "description": "The KPI Reports provide detailed analytics of the participants in the KPI gamification. Below are the steps to view the reports of KPI gamification:",
     "slug": "what-are-kpi-reports",
     "sidebar_position": 182,
     "last_update": {
@@ -33,7 +44,10 @@
       ],
       "privilege": "kpi"
     },
-    "tags": []
+    "tags": [
+      "kpi",
+      "gamification"
+    ]
   },
   "sidebar": "tutorialSidebar",
   "previous": {

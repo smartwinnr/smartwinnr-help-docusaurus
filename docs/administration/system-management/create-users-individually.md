@@ -1,18 +1,23 @@
 ---
 id: 5fda4f4a0b11ce44f6392e62
-title: "Create users individually"
-description: ""
+title: Create users individually
+description: >-
+  SmartWinnr allows administrators to create users individually through the
+  backend portal.
 slug: create-users-individually
 sidebar_position: 119
 last_update:
-  date: 2026-02-14
+  date: 2026-02-14T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
-  helpscout_url: https://help.smartwinnr.com/article/119-create-users-individually
+  helpscout_url: 'https://help.smartwinnr.com/article/119-create-users-individually'
 customProps:
-  roles: [admin]
-tags: []
+  roles:
+    - admin
+tags:
+  - admin
+  - settings
 ---
 SmartWinnr allows administrators to create users individually through the backend portal. This option is ideal when onboarding a small number of users or when quick updates are required for specific user accounts.
 
@@ -99,7 +104,7 @@ SmartWinnr supports multiple authentication methods to ensure secure and flexibl
 
 After entering all required details and selecting the login method, click **Create User** to create the user account successfully.
 
-![](/img/helpscout/admins/create-users-individually-1.png)
+![After entering all required details and selecting the login method, click Create User to create the user account successfully.](/img/helpscout/admins/create-users-individually-1.png)
 
 After Creating the User
 

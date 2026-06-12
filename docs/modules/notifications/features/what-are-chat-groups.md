@@ -1,19 +1,24 @@
 ---
 id: 5fdaf5650b11ce44f6393174
-title: "What are Chat Groups?"
-description: ""
+title: What are Chat Groups?
+description: >-
+  You need to first create a group in order to create a 'Chat Group'. Learn how
+  to create a group.
 slug: what-are-chat-groups
 sidebar_position: 152
 last_update:
-  date: 2021-01-22
+  date: 2021-01-22T00:00:00.000Z
   author: HelpScout Migration
 source:
   helpscout_id: 5fdaf5650b11ce44f6393174
-  helpscout_url: https://help.smartwinnr.com/article/152-what-are-chat-groups
+  helpscout_url: 'https://help.smartwinnr.com/article/152-what-are-chat-groups'
 customProps:
-  roles: [editor, admin]
+  roles:
+    - editor
+    - admin
   privilege: chat
-tags: []
+tags:
+  - notifications
 ---
 You need to first create a group in order to create a 'Chat Group'. [Learn how to create a group](https://smartwinnr.helpscoutdocs.com/article/129-how-to-create-a-group).
 
