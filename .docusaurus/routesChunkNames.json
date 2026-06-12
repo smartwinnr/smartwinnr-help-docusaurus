@@ -6,6 +6,20 @@
     },
     "config": "5e9f5e1a"
   },
+  "/admin/authoring/-d33": {
+    "__comp": "11567e76",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/admin/authoring/drafts-6ee": {
+    "__comp": "166db309",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
   "/search-be6": {
     "__comp": "aef901ed",
     "__context": {
@@ -13,13 +27,13 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-981": {
+  "/-c52": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-e04": {
+  "/-1c5": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
@@ -34,6 +48,10 @@
   "/tags/ai-coaching-da2": {
     "__comp": "df203c0f",
     "__props": "2d051d2b"
+  },
+  "/tags/analytics-894": {
+    "__comp": "df203c0f",
+    "__props": "77a56c8a"
   },
   "/tags/field-coaching-040": {
     "__comp": "df203c0f",
@@ -99,7 +117,7 @@
     "__comp": "df203c0f",
     "__props": "fe437597"
   },
-  "/-f79": {
+  "/-5a9": {
     "__comp": "a94703ab"
   },
   "/administration/access-permissions/access-permissions-a21": {
@@ -921,6 +939,10 @@
   "/modules/quiz/features/how-to-add-an-image-to-the-question-b60": {
     "__comp": "17896441",
     "content": "ebc3a4a4"
+  },
+  "/modules/quiz/features/how-to-allow-multiple-attempts-903": {
+    "__comp": "17896441",
+    "content": "89293c5f"
   },
   "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question-6ee": {
     "__comp": "17896441",

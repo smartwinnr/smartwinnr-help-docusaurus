@@ -8,17 +8,27 @@ export default [
     exact: true
   },
   {
+    path: '/admin/authoring/',
+    component: ComponentCreator('/admin/authoring/', 'd33'),
+    exact: true
+  },
+  {
+    path: '/admin/authoring/drafts',
+    component: ComponentCreator('/admin/authoring/drafts', '6ee'),
+    exact: true
+  },
+  {
     path: '/search',
     component: ComponentCreator('/search', 'be6'),
     exact: true
   },
   {
     path: '/',
-    component: ComponentCreator('/', '981'),
+    component: ComponentCreator('/', 'c52'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'e04'),
+        component: ComponentCreator('/', '1c5'),
         routes: [
           {
             path: '/tags',
@@ -33,6 +43,11 @@ export default [
           {
             path: '/tags/ai-coaching',
             component: ComponentCreator('/tags/ai-coaching', 'da2'),
+            exact: true
+          },
+          {
+            path: '/tags/analytics',
+            component: ComponentCreator('/tags/analytics', '894'),
             exact: true
           },
           {
@@ -117,7 +132,7 @@ export default [
           },
           {
             path: '/',
-            component: ComponentCreator('/', 'f79'),
+            component: ComponentCreator('/', '5a9'),
             routes: [
               {
                 path: '/administration/access-permissions/access-permissions',
@@ -1346,6 +1361,12 @@ export default [
               {
                 path: '/modules/quiz/features/how-to-add-an-image-to-the-question',
                 component: ComponentCreator('/modules/quiz/features/how-to-add-an-image-to-the-question', 'b60'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/features/how-to-allow-multiple-attempts',
+                component: ComponentCreator('/modules/quiz/features/how-to-allow-multiple-attempts', '903'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

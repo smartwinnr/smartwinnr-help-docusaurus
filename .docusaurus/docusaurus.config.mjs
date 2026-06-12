@@ -1885,16 +1885,16 @@ export default {
           "title": "Documentation",
           "items": [
             {
-              "label": "Getting Started",
-              "to": "/getting-started"
+              "label": "Getting started",
+              "to": "/get-started/overview/"
             },
             {
-              "label": "Quiz",
-              "to": "/quiz"
+              "label": "Modules",
+              "to": "/modules/"
             },
             {
-              "label": "Competitions",
-              "to": "/competitions"
+              "label": "Release notes",
+              "to": "/release-notes/"
             }
           ]
         },

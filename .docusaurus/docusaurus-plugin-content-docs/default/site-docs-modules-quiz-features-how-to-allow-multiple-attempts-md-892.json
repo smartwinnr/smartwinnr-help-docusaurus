@@ -1,0 +1,73 @@
+{
+  "id": "modules/quiz/features/how-to-allow-multiple-attempts",
+  "title": "How to allow multiple attempts",
+  "description": "We have implemented a new logic for quizzes where Allow Multiple Attempts is enabled.",
+  "source": "@site/docs/modules/quiz/features/how-to-allow-multiple-attempts.md",
+  "sourceDirName": "modules/quiz/features",
+  "slug": "/modules/quiz/features/how-to-allow-multiple-attempts",
+  "permalink": "/modules/quiz/features/how-to-allow-multiple-attempts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://gitlab.com/smartwinnr/help-docs/edit/main/docs/modules/quiz/features/how-to-allow-multiple-attempts.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "quiz",
+      "permalink": "/tags/quiz"
+    },
+    {
+      "inline": true,
+      "label": "settings",
+      "permalink": "/tags/settings"
+    },
+    {
+      "inline": true,
+      "label": "reports",
+      "permalink": "/tags/reports"
+    },
+    {
+      "inline": true,
+      "label": "analytics",
+      "permalink": "/tags/analytics"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 999,
+  "frontMatter": {
+    "id": "how-to-allow-multiple-attempts",
+    "title": "How to allow multiple attempts",
+    "description": "We have implemented a new logic for quizzes where Allow Multiple Attempts is enabled.",
+    "slug": "how-to-allow-multiple-attempts",
+    "sidebar_position": 999,
+    "last_update": {
+      "date": "2026-06-12T00:00:00.000Z",
+      "author": "Dev"
+    },
+    "customProps": {
+      "roles": [
+        "editor",
+        "admin",
+        "orgadmin",
+        "lamadmin",
+        "superadmin"
+      ],
+      "privilege": "quiz"
+    },
+    "tags": [
+      "quiz",
+      "settings",
+      "reports",
+      "analytics"
+    ],
+    "draft": false
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to create a Drag and Drop into Image Question?",
+    "permalink": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question"
+  },
+  "next": {
+    "title": "Reports & Analytics",
+    "permalink": "/modules/quiz/reports-and-analytics"
+  }
+}

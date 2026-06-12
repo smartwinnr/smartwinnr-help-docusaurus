@@ -13,7 +13,9 @@ const { initAuth } = require('./auth');
 const { requireRole } = require('./auth/requireRole');
 const chatLogger = require('./db/chat-logger');
 const feedbackLogger = require('./db/feedback-logger');
+const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
+const fsSync = require('fs');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -611,6 +613,348 @@ app.get('/api/admin/feedback', requireRole('superadmin'), (req, res) => {
   const result = feedbackLogger.forArticle(String(slug), limit);
   if (!result.ok) return res.status(500).json({ error: result.reason });
   res.json(result);
+});
+
+// ---------------------------------------------------------------------------
+// Authoring skill (/admin/authoring) — superadmin only
+// ---------------------------------------------------------------------------
+//
+// Four endpoints power the in-app authoring wizard. The editor fills two
+// short forms + a brain-dump; the model handles structure. See plan §19.
+//
+//   POST /api/admin/authoring/generate    — LLM call, returns markdown+audit
+//   POST /api/admin/authoring/save        — write the markdown as a draft
+//   POST /api/admin/authoring/publish     — flip frontmatter draft flag
+//   POST /api/admin/authoring/upload      — base64-encoded screenshot upload
+//   GET  /api/admin/authoring/drafts      — list draft: true articles
+//   GET  /api/admin/authoring/draft       — fetch one draft for editing
+//   DELETE /api/admin/authoring/draft     — remove a draft
+//
+// All paths are sandboxed inside `docs/modules/<m>/<sub>/`. The model is
+// reached via the same `getOpenAIKey()` + axios pattern the chat handler
+// uses — no new dependency.
+
+const DOCS_ROOT = path.join(__dirname, 'docs');
+const MODULES_ROOT = path.join(DOCS_ROOT, 'modules');
+const IMAGE_ROOT = path.join(__dirname, 'static', 'img', 'helpscout', 'authored');
+const CANONICAL_SUBFOLDERS = new Set([
+  'for-learners', 'for-managers', 'create-and-manage', 'assign-and-schedule',
+  'features', 'reports-and-analytics', 'settings-and-permissions',
+  'best-practices', 'faqs-and-troubleshooting',
+]);
+const AUTHORING_MODEL = process.env.AUTHORING_MODEL || 'gpt-4o-mini';
+const AUTHOR_PROMPT_PATH = path.join(__dirname, 'prompts', 'author-article.md');
+
+function readSystemPrompt() {
+  return fsSync.readFileSync(AUTHOR_PROMPT_PATH, 'utf8');
+}
+
+function isValidSlug(s) { return /^[a-z0-9][a-z0-9-]{0,120}$/.test(String(s || '')); }
+
+/** Strip bogus origins the model may prepend to root-relative image URLs.
+ *  Our upload endpoint returns paths like `/img/helpscout/authored/X.png`;
+ *  the model sometimes "helpfully" rewrites these as
+ *  `https://example.com/img/...` or `https://help.smartwinnr.com/img/...`.
+ *  Strip the host so the path Docusaurus actually serves wins. */
+function stripBogusImageOrigins(markdown) {
+  return markdown.replace(
+    /!\[([^\]]*)\]\(https?:\/\/[^/)]+(\/img\/[^\s)]+)\)/g,
+    '![$1]($2)',
+  );
+}
+
+/** Overwrite `last_update.date` + `last_update.author` in an article's
+ *  frontmatter with today's UTC date and the logged-in user's display
+ *  name (or email if no display name). The model can't know either,
+ *  so we stamp them server-side. */
+function stampLastUpdate(markdown, user) {
+  const today = new Date().toISOString().slice(0, 10);
+  const author = (user && (user.displayName || user.email)) || 'Authoring Skill';
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  if (!fmMatch) return markdown;
+  const fm = fmMatch[1];
+  const stamp = `last_update:\n  date: ${today}\n  author: ${author.replace(/[\r\n]/g, ' ')}`;
+
+  let nextFm;
+  if (/^last_update\s*:/m.test(fm)) {
+    // Replace the whole `last_update:` block: the `last_update:` line
+    // plus any subsequent indented child lines (the YAML mapping body).
+    nextFm = fm.replace(
+      /^last_update\s*:[^\n]*(?:\n[ \t]+[^\n]*)*/m,
+      stamp,
+    );
+  } else {
+    nextFm = fm.trimEnd() + '\n' + stamp;
+  }
+  return markdown.replace(fmMatch[0], `---\n${nextFm}\n---`);
+}
+
+/** Build the docs path for a draft, ensuring it sandboxes inside docs/modules/. */
+function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
+  if (!isValidSlug(moduleSlug) || !isValidSlug(articleSlug)) {
+    throw new Error('Invalid slug');
+  }
+  if (!CANONICAL_SUBFOLDERS.has(subFolder)) {
+    throw new Error('Invalid sub-folder');
+  }
+  const target = path.join(MODULES_ROOT, moduleSlug, subFolder, `${articleSlug}.md`);
+  const real = path.resolve(target);
+  if (!real.startsWith(MODULES_ROOT + path.sep)) {
+    throw new Error('Path escapes docs/modules/');
+  }
+  return real;
+}
+
+// Per-user LLM rate limit. In-memory ring buffer keyed on email; resets on
+// server restart (acceptable — the worst case is a fresh budget). 10/hour
+// by default — override via AUTHORING_RATE_LIMIT. See plan §20.1.
+const RATE_LIMIT = parseInt(process.env.AUTHORING_RATE_LIMIT || '10', 10);
+const RATE_WINDOW_MS = 60 * 60 * 1000;
+const generateHits = new Map();
+function checkRate(email) {
+  const key = email || 'anon';
+  const now = Date.now();
+  const arr = (generateHits.get(key) || []).filter((t) => now - t < RATE_WINDOW_MS);
+  if (arr.length >= RATE_LIMIT) {
+    return {ok: false, retryAfterMs: RATE_WINDOW_MS - (now - arr[0]), used: arr.length};
+  }
+  arr.push(now);
+  generateHits.set(key, arr);
+  return {ok: true, remaining: RATE_LIMIT - arr.length};
+}
+
+app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req, res) => {
+  // Gate before the LLM call — stuck retry loops can burn tokens fast.
+  const rate = checkRate(req.user && req.user.email);
+  if (!rate.ok) {
+    return res.status(429).json({
+      error: 'Rate limit',
+      message: `You've used ${rate.used} generates this hour (limit ${RATE_LIMIT}). Try again in ~${Math.ceil(rate.retryAfterMs / 60000)} min.`,
+      retryAfterMs: rate.retryAfterMs,
+      limit: RATE_LIMIT,
+      used: rate.used,
+    });
+  }
+  try {
+    const { inputs = {}, refinement, previousMarkdown } = req.body || {};
+    if (!inputs.title || !inputs.description || !inputs.roughExplanation) {
+      return res.status(400).json({ error: 'Missing inputs: title, description, roughExplanation are required' });
+    }
+    if (!inputs.module || !inputs.subFolder) {
+      return res.status(400).json({ error: 'Missing inputs: module + subFolder required' });
+    }
+    if (!CANONICAL_SUBFOLDERS.has(inputs.subFolder)) {
+      return res.status(400).json({ error: `subFolder must be one of: ${[...CANONICAL_SUBFOLDERS].join(', ')}` });
+    }
+
+    const systemPrompt = readSystemPrompt();
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: 'Generate the article from these inputs:\n\n' + JSON.stringify(inputs, null, 2) },
+    ];
+    if (refinement && previousMarkdown) {
+      messages.push({ role: 'assistant', content: previousMarkdown });
+      messages.push({ role: 'user', content: `Refine the article above. Editor's note:\n\n${refinement}` });
+    }
+
+    const openaiApiKey = getOpenAIKey();
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: AUTHORING_MODEL,
+        messages,
+        temperature: 0.4,
+        max_tokens: 4000,
+      },
+      {
+        headers: { Authorization: `Bearer ${openaiApiKey}`, 'Content-Type': 'application/json' },
+        timeout: 60000,
+      },
+    );
+
+    let markdown = (response.data?.choices?.[0]?.message?.content || '').trim();
+
+    // GPT-4o sometimes wraps the article in a ```markdown code fence even
+    // when the system prompt forbids it. Strip a leading/trailing fence
+    // before validating the frontmatter.
+    const fenceMatch = /^```(?:markdown|md|mdx)?\s*\n([\s\S]*?)\n```\s*$/i.exec(markdown);
+    if (fenceMatch) {
+      markdown = fenceMatch[1].trim();
+    }
+    // Also strip a stray opening fence with no closing one (rare, but seen).
+    markdown = markdown.replace(/^```(?:markdown|md|mdx)?\s*\n/i, '').replace(/\n```\s*$/, '');
+
+    if (!markdown.startsWith('---')) {
+      return res.status(502).json({
+        error: 'Model output is not a markdown article (missing frontmatter)',
+        preview: markdown.slice(0, 400),
+      });
+    }
+
+    // Server-side truth for fields the model can't know: today's date,
+    // the logged-in editor's name. Override whatever the model put in
+    // `last_update` so we don't ship articles with stale or invented
+    // values like "2023-10-11" / "Authoring Skill".
+    markdown = stampLastUpdate(markdown, req.user);
+
+    // Strip any bogus origins the model may have prepended to our
+    // root-relative image paths (e.g. `https://example.com/img/...`).
+    // The upload endpoint returns paths like `/img/helpscout/authored/X`
+    // and that's the form Docusaurus expects in markdown.
+    markdown = stripBogusImageOrigins(markdown);
+
+    const audit = gradeMarkdown(markdown);
+    res.json({
+      markdown,
+      audit,
+      tokens: {
+        prompt: response.data?.usage?.prompt_tokens || 0,
+        completion: response.data?.usage?.completion_tokens || 0,
+      },
+    });
+  } catch (error) {
+    console.error('❌ authoring/generate failed:', error.response?.data || error.message);
+    res.status(500).json({ error: 'Generation failed', message: error.response?.data?.error?.message || error.message });
+  }
+});
+
+app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
+  try {
+    const { markdown, module: moduleSlug, subFolder, slug } = req.body || {};
+    if (!markdown) return res.status(400).json({ error: 'markdown required' });
+
+    const audit = gradeMarkdown(markdown);
+    const blockers = (audit.findings || []).filter((f) => f.blocking);
+    if (blockers.length > 0) {
+      return res.status(400).json({
+        error: 'Audit blocking — article cannot be saved as-is',
+        audit,
+      });
+    }
+
+    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    // Force draft:true in frontmatter — defensive override even if the model
+    // emitted draft:false somehow.
+    const text = markdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
+    const finalText = /^draft:/m.test(text)
+      ? text
+      : text.replace(/^---/, '---').replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
+
+    fsSync.mkdirSync(path.dirname(target), { recursive: true });
+    fsSync.writeFileSync(target, finalText, 'utf8');
+    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+  } catch (error) {
+    console.error('❌ authoring/save failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) => {
+  try {
+    const { module: moduleSlug, subFolder, slug } = req.body || {};
+    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
+
+    const raw = fsSync.readFileSync(target, 'utf8');
+    const audit = gradeMarkdown(raw);
+    const blockers = (audit.findings || []).filter((f) => f.blocking);
+    if (blockers.length > 0) {
+      return res.status(400).json({ error: 'Audit blocking — fix before publishing', audit });
+    }
+    const next = raw.replace(/^draft:\s*true\s*$/m, 'draft: false');
+    if (next === raw) {
+      return res.status(400).json({ error: 'No draft: true flag found in frontmatter' });
+    }
+    fsSync.writeFileSync(target, next, 'utf8');
+    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+  } catch (error) {
+    console.error('❌ authoring/publish failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) => {
+  try {
+    const { dataUrl, slug, suffix } = req.body || {};
+    if (!dataUrl || !slug) return res.status(400).json({ error: 'dataUrl + slug required' });
+    if (!isValidSlug(slug)) return res.status(400).json({ error: 'Invalid slug' });
+
+    const m = /^data:image\/(png|jpe?g|gif|webp);base64,(.+)$/.exec(dataUrl);
+    if (!m) return res.status(400).json({ error: 'dataUrl must be a base64 PNG/JPG/GIF/WEBP' });
+    const ext = m[1].replace('jpeg', 'jpg');
+    const buf = Buffer.from(m[2], 'base64');
+    if (buf.length > 5 * 1024 * 1024) {
+      return res.status(413).json({ error: 'Image too large (5 MB max)' });
+    }
+
+    fsSync.mkdirSync(IMAGE_ROOT, { recursive: true });
+    const stamp = Date.now().toString(36);
+    const tail = isValidSlug(suffix) ? `-${suffix}` : '';
+    const filename = `${slug}${tail}-${stamp}.${ext}`;
+    fsSync.writeFileSync(path.join(IMAGE_ROOT, filename), buf);
+    res.json({ url: `/img/helpscout/authored/${filename}` });
+  } catch (error) {
+    console.error('❌ authoring/upload failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => {
+  try {
+    const drafts = [];
+    function walk(dir) {
+      for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, entry.name);
+        if (entry.isDirectory()) walk(p);
+        else if (entry.isFile() && /\.(md|mdx)$/.test(entry.name)) {
+          const text = fsSync.readFileSync(p, 'utf8');
+          if (!/^draft:\s*true\b/m.test(text)) continue;
+          const titleMatch = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
+          const lastUpdMatch = /^\s*date:\s*(\S+)/m.exec(text);
+          drafts.push({
+            path: path.relative(__dirname, p),
+            slug: path.basename(p).replace(/\.(md|mdx)$/, ''),
+            title: titleMatch ? titleMatch[1] : path.basename(p),
+            lastUpdate: lastUpdMatch ? lastUpdMatch[1] : null,
+          });
+        }
+      }
+    }
+    if (fsSync.existsSync(MODULES_ROOT)) walk(MODULES_ROOT);
+    drafts.sort((a, b) => String(b.lastUpdate).localeCompare(String(a.lastUpdate)));
+    res.json({ drafts });
+  } catch (error) {
+    console.error('❌ authoring/drafts failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
+  try {
+    const { module: moduleSlug, subFolder, slug } = req.query;
+    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
+    const markdown = fsSync.readFileSync(target, 'utf8');
+    res.json({ markdown, path: path.relative(__dirname, target) });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
+  try {
+    const { module: moduleSlug, subFolder, slug } = req.query;
+    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
+    const text = fsSync.readFileSync(target, 'utf8');
+    if (!/^draft:\s*true\b/m.test(text)) {
+      return res.status(400).json({ error: 'Refusing to delete — frontmatter is not marked draft:true' });
+    }
+    fsSync.unlinkSync(target);
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Error handling middleware
