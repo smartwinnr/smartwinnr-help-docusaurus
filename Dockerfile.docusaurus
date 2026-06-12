@@ -45,6 +45,16 @@ RUN npm run build
 # Remove dev dependencies to reduce image size
 RUN npm prune --omit=dev
 
+# Mark this container as a production runtime. Set AFTER the build so:
+#   - `npm install` above installed devDependencies (Docusaurus needs them
+#     to compile; setting NODE_ENV=production before install would skip them)
+#   - server.js / auth/routes.js / auth/loginPage.js now read NODE_ENV
+#     === 'production' and:
+#       • hide the yellow "DEV: sign in as → role × 6" strip on /auth/login
+#       • do NOT register the /auth/dev-login route
+#       • restrict the ?as=<role> preview interceptor to superadmin only
+ENV NODE_ENV=production
+
 # Expose port (Railway will set PORT env variable)
 EXPOSE 3000
 
