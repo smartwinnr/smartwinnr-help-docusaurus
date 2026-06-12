@@ -2,17 +2,24 @@ import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import {useCurrentUser, useUserState} from '@site/src/contexts/UserContext';
+import {loadDocGates, isUrlAllowed, type DocGates} from '@site/src/lib/doc-gates';
 import styles from './styles.module.css';
 
 /**
  * Three sibling-article cards rendered at the bottom of every article.
  *
- * Selection rule (v1, mechanical):
+ * Selection (filtered by role + privilege):
  *   1. Read /article-graph.json (emitted by plugins/access-gate-emit.js).
- *   2. Find the current article's folder.
- *   3. Take the other articles in that folder, sort by sidebar_position,
- *      pick the 3 closest to the current article's position.
- *   4. Fall back to the parent folder if the current folder has <3 siblings.
+ *   2. Drop every article the viewer can't open (same gate map +
+ *      AND-of-all-prefixes logic the server URL guard uses — see
+ *      src/lib/doc-gates.ts).
+ *   3. From what survives: same-folder siblings first, then parent
+ *      folder. Sort by sidebar_position distance from the current
+ *      article and take the 3 nearest.
+ *
+ * Until both /api/me and /doc-gates.json resolve, render nothing — we
+ * never leak inaccessible URLs into the SSR HTML or the first paint.
  */
 
 type ArticleNode = {
@@ -30,40 +37,41 @@ function pickSiblings(graph: Graph, currentUrl: string): ArticleNode[] {
   const me = graph.articles.find((a) => a.url === currentUrl);
   if (!me) return [];
 
-  // Same-folder candidates, sorted by position.
-  let pool = graph.articles
-    .filter((a) => a.folder === me.folder && a.url !== me.url)
-    .sort((a, b) => a.position - b.position);
+  // Same-folder candidates.
+  let pool = graph.articles.filter(
+    (a) => a.folder === me.folder && a.url !== me.url,
+  );
 
   // If we don't have 3, widen to the parent folder.
   if (pool.length < 3) {
     const parent = me.folder.split('/').slice(0, -1).join('/');
     if (parent) {
-      const extras = graph.articles
-        .filter(
-          (a) =>
-            a.folder.startsWith(parent + '/') &&
-            a.folder !== me.folder &&
-            a.url !== me.url,
-        )
-        .sort((a, b) => a.position - b.position);
+      const extras = graph.articles.filter(
+        (a) =>
+          a.folder.startsWith(parent + '/') &&
+          a.folder !== me.folder &&
+          a.url !== me.url,
+      );
       pool = pool.concat(extras);
     }
   }
 
-  // Pick the 3 closest to my position.
+  // Sort by sidebar-position distance.
   pool.sort(
     (a, b) =>
       Math.abs(a.position - me.position) - Math.abs(b.position - me.position),
   );
-  return pool.slice(0, 3);
+  return pool;
 }
 
 export default function RelatedStrip(): JSX.Element | null {
   const {metadata} = useDoc();
   const currentUrl = metadata?.permalink ?? '';
   const graphUrl = useBaseUrl('/article-graph.json');
+  const user = useCurrentUser();
+  const {loading: userLoading} = useUserState();
   const [graph, setGraph] = useState<Graph | null>(null);
+  const [gates, setGates] = useState<DocGates | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -71,11 +79,20 @@ export default function RelatedStrip(): JSX.Element | null {
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => { if (!cancelled && data) setGraph(data); })
       .catch(() => {/* fail soft */});
+    loadDocGates().then((g) => { if (!cancelled) setGates(g); });
     return () => { cancelled = true; };
   }, [graphUrl]);
 
   if (!graph || !currentUrl) return null;
-  const picks = pickSiblings(graph, currentUrl);
+  // Fail closed: if either gates or user is still resolving, show nothing.
+  // Better blank than briefly leaking inaccessible siblings during hydration.
+  if (userLoading || !gates) return null;
+
+  const candidates = pickSiblings(graph, currentUrl);
+  const picks = candidates
+    .filter((p) => isUrlAllowed(gates, user, p.url))
+    .slice(0, 3);
+
   if (picks.length === 0) return null;
 
   return (
