@@ -20,8 +20,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-// const PORT = process.env.PORT || 3001;
-const PORT = 3001; // Dev
+const PORT = process.env.PORT || 3001;
+// const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -1031,6 +1031,16 @@ app.use((req, res, next) => {
     .status(403)
     .send('Forbidden - this section is not available for your role or organization.');
 });
+
+// Serve newly uploaded authoring screenshots immediately from `static/`
+// without waiting for a rebuild. The upload endpoint writes here; on the
+// next `npm run build`, Docusaurus copies the same file into `build/`.
+// Mount BEFORE the main `build/` static so freshly uploaded images win
+// over any stale build artifact with the same name.
+app.use(
+  '/img/helpscout/authored',
+  express.static(IMAGE_ROOT, {fallthrough: true})
+);
 
 app.use(express.static(buildPath));
 

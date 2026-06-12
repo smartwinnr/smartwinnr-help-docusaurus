@@ -23,10 +23,23 @@ import styles from './styles.module.css';
 
 const STORAGE_KEY = 'sw.authoring.wizard.v1';
 
-const MODULES = [
-  'ai-coaching', 'cross-module', 'field-coaching', 'forms', 'knowledge-hub',
-  'kpi-gamification', 'notifications', 'quiz', 'smartfeed', 'smartpath',
-  'survey', 'video-coaching',
+// Modules — `value` is the slug used in `docs/modules/<value>/`, `label`
+// is the display string. We hand-curate the labels rather than auto-
+// title-casing because some names have non-standard capitalization
+// (AI, SmartFeed, SmartPath, KPI).
+const MODULES: Array<{value: string; label: string}> = [
+  {value: 'ai-coaching',      label: 'AI Coaching'},
+  {value: 'cross-module',     label: 'Cross-Module'},
+  {value: 'field-coaching',   label: 'Field Coaching'},
+  {value: 'forms',            label: 'Forms'},
+  {value: 'knowledge-hub',    label: 'Knowledge Hub'},
+  {value: 'kpi-gamification', label: 'KPI & Gamification'},
+  {value: 'notifications',    label: 'Notifications'},
+  {value: 'quiz',             label: 'Quiz'},
+  {value: 'smartfeed',        label: 'SmartFeed'},
+  {value: 'smartpath',        label: 'SmartPath'},
+  {value: 'survey',           label: 'Survey'},
+  {value: 'video-coaching',   label: 'Video Coaching'},
 ];
 
 const SUB_FOLDERS = [
@@ -181,14 +194,14 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       <div className={styles.field}>
         <label>Module</label>
         <select value={i.module} onChange={(e) => dispatch({type: 'set', patch: {module: e.target.value}})}>
-          <option value="">- pick a module -</option>
-          {MODULES.map((m) => <option key={m} value={m}>{m}</option>)}
+          <option value="">Select a module…</option>
+          {MODULES.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
         </select>
       </div>
       <div className={styles.field}>
         <label>Sub-folder</label>
         <select value={i.subFolder} onChange={(e) => setSub(e.target.value)}>
-          <option value="">- pick a sub-folder -</option>
+          <option value="">Select a sub-folder…</option>
           {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
         </select>
         {sub && <span className={styles.hint}>Default audience: {sub.audience.join(', ')}</span>}
