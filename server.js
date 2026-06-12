@@ -18,7 +18,7 @@ const { isAllowed } = require('./shared/access-policy.cjs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
