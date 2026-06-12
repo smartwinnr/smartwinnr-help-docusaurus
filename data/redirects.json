@@ -1,0 +1,1789 @@
+{
+  "version": 1,
+  "redirects": [
+    {
+      "from": "/overview/index",
+      "to": "/get-started/overview/index"
+    },
+    {
+      "from": "/getting-started/browser-and-device-support",
+      "to": "/get-started/onboarding/browser-and-device-support"
+    },
+    {
+      "from": "/getting-started/how-can-i-change-my-language-in-smartwinnr-app",
+      "to": "/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app"
+    },
+    {
+      "from": "/getting-started/how-can-i-change-my-password-for-smartwinnr",
+      "to": "/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr"
+    },
+    {
+      "from": "/getting-started/how-can-i-change-my-profile-image",
+      "to": "/get-started/onboarding/how-can-i-change-my-profile-image"
+    },
+    {
+      "from": "/getting-started/how-can-i-check-the-app-version-web-view-version",
+      "to": "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version"
+    },
+    {
+      "from": "/getting-started/how-can-i-contact-smartwinnr-team",
+      "to": "/get-started/onboarding/how-can-i-contact-smartwinnr-team"
+    },
+    {
+      "from": "/getting-started/how-can-i-download-the-smartwinnr-app",
+      "to": "/get-started/onboarding/how-can-i-download-the-smartwinnr-app"
+    },
+    {
+      "from": "/getting-started/how-can-i-enable-push-notification-for-smartwinnr-app",
+      "to": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app"
+    },
+    {
+      "from": "/getting-started/how-can-i-login-to-smartwinnr-app",
+      "to": "/get-started/onboarding/how-can-i-login-to-smartwinnr-app"
+    },
+    {
+      "from": "/getting-started/how-to-update-the-smartwinnr-app-web-view",
+      "to": "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view"
+    },
+    {
+      "from": "/getting-started/my-account-is-locked-what-should-i-do",
+      "to": "/get-started/onboarding/my-account-is-locked-what-should-i-do"
+    },
+    {
+      "from": "/getting-started/what-if-i-ve-forgotten-my-password",
+      "to": "/get-started/onboarding/what-if-i-ve-forgotten-my-password"
+    },
+    {
+      "from": "/getting-started/what-if-i-ve-forgotten-my-pin",
+      "to": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin"
+    },
+    {
+      "from": "/getting-started/what-is-my-username-and-password",
+      "to": "/get-started/onboarding/what-is-my-username-and-password"
+    },
+    {
+      "from": "/announcements/index",
+      "to": "/release-notes/announcements/index"
+    },
+    {
+      "from": "/user-guide/ai-coaching/how-can-a-user-submit-an-ai-coaching-attempt",
+      "to": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt"
+    },
+    {
+      "from": "/user-guide/ai-coaching/how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
+      "to": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching"
+    },
+    {
+      "from": "/user-guide/ai-coaching/how-to-review-ai-coaching-submissions-as-a-manager",
+      "to": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager"
+    },
+    {
+      "from": "/user-guide/ai-coaching/index",
+      "to": "/modules/ai-coaching/"
+    },
+    {
+      "from": "/user-guide/ai-coaching/understanding-the-feedback-screen",
+      "to": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen"
+    },
+    {
+      "from": "/user-guide/how-can-i-answer-a-query",
+      "to": "/modules/cross-module/for-learners/how-can-i-answer-a-query"
+    },
+    {
+      "from": "/user-guide/how-can-i-submit-a-form-from-chat",
+      "to": "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat"
+    },
+    {
+      "from": "/user-guide/how-can-i-submit-a-form-from-left-menu",
+      "to": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu"
+    },
+    {
+      "from": "/user-guide/how-can-i-view-a-competition-leaderboard",
+      "to": "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard"
+    },
+    {
+      "from": "/user-guide/how-do-i-like-and-comment-on-a-smartfeed",
+      "to": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed"
+    },
+    {
+      "from": "/user-guide/how-do-i-upload-a-coaching-video",
+      "to": "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video"
+    },
+    {
+      "from": "/user-guide/how-do-i-view-the-kpi-scorecard",
+      "to": "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard"
+    },
+    {
+      "from": "/user-guide/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+      "to": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own"
+    },
+    {
+      "from": "/user-guide/how-to-access-the-scorm-course-from-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+    },
+    {
+      "from": "/user-guide/how-to-add-new-form-submission",
+      "to": "/modules/forms/for-learners/how-to-add-new-form-submission"
+    },
+    {
+      "from": "/user-guide/how-to-answer-long-answer-type-questions-in-smartwinnr",
+      "to": "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr"
+    },
+    {
+      "from": "/user-guide/how-to-edit-the-form-submission-from-manager-s-view",
+      "to": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view"
+    },
+    {
+      "from": "/user-guide/how-to-mark-the-attendance-for-users-in-learning-sessions",
+      "to": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions"
+    },
+    {
+      "from": "/user-guide/how-to-post-a-query-from-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app"
+    },
+    {
+      "from": "/user-guide/how-to-review-field-coaching-from-managers-view-in-mobile",
+      "to": "/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile"
+    },
+    {
+      "from": "/user-guide/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+      "to": "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+    },
+    {
+      "from": "/user-guide/how-to-update-the-smartwinnr-app-from-web-view",
+      "to": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view"
+    },
+    {
+      "from": "/user-guide/how-to-upload-audio-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching"
+    },
+    {
+      "from": "/user-guide/how-to-upload-screen-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching"
+    },
+    {
+      "from": "/user-guide/how-to-upload-video-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching"
+    },
+    {
+      "from": "/user-guide/how-to-use-khub-in-the-smartwinnr-app",
+      "to": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/user-guide/how-to-use-qresolve-in-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/user-guide/how-to-view-notifications",
+      "to": "/modules/notifications/for-learners/how-to-view-notifications"
+    },
+    {
+      "from": "/user-guide/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+      "to": "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
+    },
+    {
+      "from": "/user-guide/understanding-recent-trending-and-latest-khub-items",
+      "to": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items"
+    },
+    {
+      "from": "/user-guide/what-is-qresolve",
+      "to": "/modules/cross-module/for-learners/what-is-qresolve"
+    },
+    {
+      "from": "/manager-guide/finding-status-and-scores-for-quizzes-assigned-to-your-team",
+      "to": "/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team"
+    },
+    {
+      "from": "/manager-guide/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+      "to": "/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/manager-guide/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+      "to": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+    },
+    {
+      "from": "/manager-guide/how-managers-approve-form",
+      "to": "/modules/forms/for-managers/how-managers-approve-form"
+    },
+    {
+      "from": "/manager-guide/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app",
+      "to": "/modules/kpi-gamification/for-managers/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/manager-guide/how-to-find-the-progress-of-your-team-in-quizzes",
+      "to": "/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes"
+    },
+    {
+      "from": "/manager-guide/quiz-analytics-through-charts",
+      "to": "/modules/quiz/for-managers/quiz-analytics-through-charts"
+    },
+    {
+      "from": "/manager-guide/switching-to-manager-view",
+      "to": "/guides/manager/switching-to-manager-view"
+    },
+    {
+      "from": "/manager-guide/what-is-my-team-coaching",
+      "to": "/modules/video-coaching/for-managers/what-is-my-team-coaching"
+    },
+    {
+      "from": "/help-support/index",
+      "to": "/reference/help-support/index"
+    },
+    {
+      "from": "/help-support/troubleshoot-for-common-error-code",
+      "to": "/reference/help-support/troubleshoot-for-common-error-code"
+    },
+    {
+      "from": "/troubleshooting/index",
+      "to": "/reference/troubleshooting/index"
+    },
+    {
+      "from": "/administration/quiz-module/detailed-quiz-analytics",
+      "to": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics"
+    },
+    {
+      "from": "/administration/quiz-module/how-can-i-duplicate-a-quiz",
+      "to": "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz"
+    },
+    {
+      "from": "/administration/quiz-module/how-can-i-track-improvement",
+      "to": "/modules/quiz/reports-and-analytics/how-can-i-track-improvement"
+    },
+    {
+      "from": "/administration/quiz-module/how-editors-evaluate-long-answer-questions",
+      "to": "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-import-question-is-different-from-add-new-question",
+      "to": "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-activate-automatic-reminders-for-your-quizzes",
+      "to": "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-add-a-video-to-a-question",
+      "to": "/modules/quiz/features/how-to-add-a-video-to-a-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-add-an-audio-file-to-a-question",
+      "to": "/modules/quiz/features/how-to-add-an-audio-file-to-a-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-add-an-image-to-the-question",
+      "to": "/modules/quiz/features/how-to-add-an-image-to-the-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-drag-and-drop-into-image-question",
+      "to": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-drag-and-drop-into-text-question",
+      "to": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-hotspot-question",
+      "to": "/modules/quiz/features/how-to-create-a-hotspot-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-manual-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-matching-question",
+      "to": "/modules/quiz/features/how-to-create-a-matching-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-a-missing-words-question",
+      "to": "/modules/quiz/features/how-to-create-a-missing-words-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-an-automatic-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-an-event-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-an-event-quiz"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-fill-in-the-blank-questions",
+      "to": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-long-answer-questions",
+      "to": "/modules/quiz/features/how-to-create-long-answer-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-multiple-choice-questions",
+      "to": "/modules/quiz/features/how-to-create-multiple-choice-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-numeric-type-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-re-order-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-re-order-questions"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-create-short-answer-with-multiple-options",
+      "to": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-edit-a-question",
+      "to": "/modules/quiz/create-and-manage/how-to-edit-a-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-embed-a-link-into-the-question",
+      "to": "/modules/quiz/features/how-to-embed-a-link-into-the-question"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-manage-quiz-configurations",
+      "to": "/modules/quiz/features/how-to-manage-quiz-configurations"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-update-question-response",
+      "to": "/modules/quiz/create-and-manage/how-to-update-question-response"
+    },
+    {
+      "from": "/administration/quiz-module/how-to-upload-questions-in-bulk-using-import-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions"
+    },
+    {
+      "from": "/administration/quiz-module/question-bank",
+      "to": "/modules/quiz/features/question-bank"
+    },
+    {
+      "from": "/administration/quiz-module/question-response-analytics",
+      "to": "/modules/quiz/reports-and-analytics/question-response-analytics"
+    },
+    {
+      "from": "/administration/quiz-module/question-structure",
+      "to": "/modules/quiz/features/question-structure"
+    },
+    {
+      "from": "/administration/quiz-module/quiz-comparison-report",
+      "to": "/modules/quiz/reports-and-analytics/quiz-comparison-report"
+    },
+    {
+      "from": "/administration/quiz-module/quiz-types",
+      "to": "/modules/quiz/features/quiz-types"
+    },
+    {
+      "from": "/administration/quiz-module/troubleshoot-for-common-error-code",
+      "to": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code"
+    },
+    {
+      "from": "/administration/quiz-module/understanding-knowledge-categories",
+      "to": "/modules/quiz/features/understanding-knowledge-categories"
+    },
+    {
+      "from": "/administration/quiz-module/understanding-the-learner-management-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/administration/quiz-module/understanding-the-overview-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/administration/quiz-module/understanding-the-participation-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/administration/quiz-module/understanding-the-performance-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/administration/quiz-module/what-is-smartwinnr-quiz-analytics",
+      "to": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics"
+    },
+    {
+      "from": "/administration/smartpath-module/how-can-i-gamify-a-smartpath",
+      "to": "/modules/smartpath/features/how-can-i-gamify-a-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-can-i-track-improvement",
+      "to": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-add-learning-sessions-in-smartpath-module",
+      "to": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-add-remove-segments-in-module-added-to-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+      "to": "/modules/smartpath/create-and-manage/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-create-a-module-for-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-create-a-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-a-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-create-an-action-item-in-the-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-create-assignment-in-smartpath",
+      "to": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-create-smartpath-with-learning-sessions",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-download-smartpath-reports",
+      "to": "/modules/smartpath/features/how-to-download-smartpath-reports"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-edit-a-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-edit-a-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-evaluate-the-assignment-submitted-in-smartpath",
+      "to": "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-import-scorm-course-into-smartwinnr",
+      "to": "/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-mark-the-attendance-for-users-in-learning-sessions",
+      "to": "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+      "to": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+    },
+    {
+      "from": "/administration/smartpath-module/how-to-view-the-smartpath-analytics",
+      "to": "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics"
+    },
+    {
+      "from": "/administration/smartpath-module/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard",
+      "to": "/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard"
+    },
+    {
+      "from": "/administration/smartpath-module/understanding-the-overview-tab-on-the-smartpath-dashboard",
+      "to": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard"
+    },
+    {
+      "from": "/administration/smartpath-module/what-are-smartpaths",
+      "to": "/modules/smartpath/features/what-are-smartpaths"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-add-a-recording-to-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-create-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-delete-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-edit-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-send-a-smartfeed-multiple-times",
+      "to": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-send-the-smartfeed-to-teams",
+      "to": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-update-the-thumbnail-of-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-view-all-the-smartfeeds",
+      "to": "/modules/smartfeed/features/how-to-view-all-the-smartfeeds"
+    },
+    {
+      "from": "/administration/smartfeed-module/how-to-view-smartfeed-analytics",
+      "to": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics"
+    },
+    {
+      "from": "/administration/smartfeed-module/what-are-smartfeeds",
+      "to": "/modules/smartfeed/features/what-are-smartfeeds"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-create-a-video-coaching-assignment",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-create-field-coaching",
+      "to": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-enable-the-streaming-links-for-video-coaching",
+      "to": "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-reset-a-coaching-video",
+      "to": "/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+      "to": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-review-a-video-coaching-assignment",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-set-competencies",
+      "to": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies"
+    },
+    {
+      "from": "/administration/video-coaching-module/how-to-share-a-coaching-video",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video"
+    },
+    {
+      "from": "/administration/field-coaching-module/create-a-coaching",
+      "to": "/modules/field-coaching/features/create-a-coaching"
+    },
+    {
+      "from": "/administration/field-coaching-module/how-to-add-competencies-for-field-coaching",
+      "to": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching"
+    },
+    {
+      "from": "/administration/field-coaching-module/how-to-create-field-coaching-template",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+    },
+    {
+      "from": "/administration/field-coaching-module/how-to-create-field-mapping",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping"
+    },
+    {
+      "from": "/administration/ai-coaching/how-can-i-download-attempt-wise-user-objective-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-download-attempt-wise-coaching-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-download-coaching-wise-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-download-overall-coaching-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-track-improvement",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time"
+    },
+    {
+      "from": "/administration/ai-coaching/how-do-i-view-submissions-as-they-happen",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen"
+    },
+    {
+      "from": "/administration/ai-coaching/how-many-learners-have-submitted-their-responses",
+      "to": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses"
+    },
+    {
+      "from": "/administration/ai-coaching/how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+      "to": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr"
+    },
+    {
+      "from": "/administration/ai-coaching/index",
+      "to": "/modules/ai-coaching/index"
+    },
+    {
+      "from": "/administration/ai-coaching/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/administration/ai-coaching/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/administration/ai-coaching/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/administration/ai-coaching/what-is-ai-coaching",
+      "to": "/modules/ai-coaching/features/what-is-ai-coaching"
+    },
+    {
+      "from": "/administration/survey-module/how-to-assign-a-survey-in-smartwinnr",
+      "to": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr"
+    },
+    {
+      "from": "/administration/survey-module/how-to-create-a-survey-template",
+      "to": "/modules/survey/create-and-manage/how-to-create-a-survey-template"
+    },
+    {
+      "from": "/administration/survey-module/how-to-create-a-survey",
+      "to": "/modules/survey/create-and-manage/how-to-create-a-survey"
+    },
+    {
+      "from": "/administration/survey-module/how-to-delete-a-survey",
+      "to": "/modules/survey/create-and-manage/how-to-delete-a-survey"
+    },
+    {
+      "from": "/administration/survey-module/how-to-duplicate-a-survey-and-survey-template",
+      "to": "/modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template"
+    },
+    {
+      "from": "/administration/survey-module/survey-analytics",
+      "to": "/modules/survey/reports-and-analytics/survey-analytics"
+    },
+    {
+      "from": "/administration/survey-module/survey-template-analytics",
+      "to": "/modules/survey/reports-and-analytics/survey-template-analytics"
+    },
+    {
+      "from": "/administration/survey-module/what-are-the-different-question-types-in-a-survey-survey-template",
+      "to": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template"
+    },
+    {
+      "from": "/administration/survey-module/what-is-the-difference-between-a-survey-and-a-survey-template",
+      "to": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template"
+    },
+    {
+      "from": "/administration/knowledge-hub-module/how-can-i-create-folders-and-items-in-khub",
+      "to": "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub"
+    },
+    {
+      "from": "/administration/knowledge-hub-module/how-can-i-edit-a-khub-folder-name",
+      "to": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name"
+    },
+    {
+      "from": "/administration/knowledge-hub-module/how-can-i-edit-a-khub-item",
+      "to": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-item"
+    },
+    {
+      "from": "/administration/knowledge-hub-module/how-can-i-view-khub-analytics",
+      "to": "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics"
+    },
+    {
+      "from": "/administration/knowledge-hub-module/what-is-khub",
+      "to": "/modules/knowledge-hub/features/what-is-khub"
+    },
+    {
+      "from": "/administration/forms-module/form-analytics",
+      "to": "/modules/forms/reports-and-analytics/form-analytics"
+    },
+    {
+      "from": "/administration/forms-module/how-to-add-approvers-to-a-form",
+      "to": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form"
+    },
+    {
+      "from": "/administration/forms-module/how-to-approve-reject-a-form-submission",
+      "to": "/modules/forms/features/how-to-approve-reject-a-form-submission"
+    },
+    {
+      "from": "/administration/forms-module/how-to-create-a-form",
+      "to": "/modules/forms/create-and-manage/how-to-create-a-form"
+    },
+    {
+      "from": "/administration/forms-module/how-to-edit-a-form-on-submitted-by-a-user",
+      "to": "/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user"
+    },
+    {
+      "from": "/administration/forms-module/how-to-submit-a-form-on-behalf-of-a-user",
+      "to": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user"
+    },
+    {
+      "from": "/administration/kpi-gamification/define-kpis",
+      "to": "/modules/kpi-gamification/features/define-kpis"
+    },
+    {
+      "from": "/administration/kpi-gamification/detailed-explanation-of-reports",
+      "to": "/modules/kpi-gamification/features/detailed-explanation-of-reports"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-challenge-to-the-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-form-to-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-quiz-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-quiz-to-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-scorecard-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-survey-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-survey-to-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-a-video-coaching-to-the-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-change-targets",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-different-activities-to-a-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-different-activities-to-a-challenge"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-observers-to-the-competition-leaderboard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-smartfeed-within-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-add-the-scorecard-to-leaderboard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-award-points-on-badge-assignment",
+      "to": "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-a-group-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-a-manager-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-manager-challenge"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-a-scorecard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-an-individual-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-badges",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-badges"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-certifcates",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-create-kpi",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-kpi"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-duplicate-a-quiz-in-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-upload-kpi-data",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data"
+    },
+    {
+      "from": "/administration/kpi-gamification/how-to-view-the-data-and-leaderboard-for-scorecard",
+      "to": "/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard"
+    },
+    {
+      "from": "/administration/kpi-gamification/index",
+      "to": "/modules/kpi-gamification/index"
+    },
+    {
+      "from": "/administration/kpi-gamification/leaderboards-of-a-competition",
+      "to": "/modules/kpi-gamification/features/leaderboards-of-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/understand-game-concepts",
+      "to": "/modules/kpi-gamification/features/understand-game-concepts"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-are-field-mappings",
+      "to": "/modules/kpi-gamification/features/what-are-field-mappings"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-are-kpi-reports",
+      "to": "/modules/kpi-gamification/features/what-are-kpi-reports"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-are-scorecards",
+      "to": "/modules/kpi-gamification/features/what-are-scorecards"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-is-a-challenge",
+      "to": "/modules/kpi-gamification/features/what-is-a-challenge"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-is-a-competition",
+      "to": "/modules/kpi-gamification/features/what-is-a-competition"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-is-an-achievement",
+      "to": "/modules/kpi-gamification/features/what-is-an-achievement"
+    },
+    {
+      "from": "/administration/kpi-gamification/what-is-kpi-gamification",
+      "to": "/modules/kpi-gamification/features/what-is-kpi-gamification"
+    },
+    {
+      "from": "/administration/notifications/bulk-custom-notifications",
+      "to": "/modules/notifications/features/bulk-custom-notifications"
+    },
+    {
+      "from": "/administration/notifications/custom-notifications",
+      "to": "/modules/notifications/features/custom-notifications"
+    },
+    {
+      "from": "/administration/notifications/how-to-add-or-remove-users-to-a-chat-group",
+      "to": "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group"
+    },
+    {
+      "from": "/administration/notifications/how-to-download-a-chat",
+      "to": "/modules/notifications/features/how-to-download-a-chat"
+    },
+    {
+      "from": "/administration/notifications/how-to-enable-a-chat-group",
+      "to": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group"
+    },
+    {
+      "from": "/administration/notifications/index",
+      "to": "/modules/notifications/index"
+    },
+    {
+      "from": "/administration/notifications/what-are-chat-groups",
+      "to": "/modules/notifications/features/what-are-chat-groups"
+    },
+    {
+      "from": "/administration/notifications/what-is-the-purpose-of-notifications",
+      "to": "/modules/notifications/features/what-is-the-purpose-of-notifications"
+    },
+    {
+      "from": "/administration/notifications/when-are-chat-groups-needed",
+      "to": "/modules/notifications/features/when-are-chat-groups-needed"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-add-a-image-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-add-a-video-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-add-an-audio-file-to-your-content",
+      "to": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-add-reference-to-an-external-link-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-attach-pdf-file-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-create-sales-tv",
+      "to": "/modules/cross-module/create-and-manage/how-to-create-sales-tv"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-download-detailed-smartfeed-report",
+      "to": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-set-reminder-for-your-tasks",
+      "to": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-update-the-smartwinnr-app-from-app-view",
+      "to": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view"
+    },
+    {
+      "from": "/administration/cross-module-features/how-to-update-users",
+      "to": "/modules/cross-module/create-and-manage/how-to-update-users"
+    },
+    {
+      "from": "/administration/cross-module-features/what-is-smartwinnr",
+      "to": "/modules/cross-module/features/what-is-smartwinnr"
+    },
+    {
+      "from": "/administration/cross-module-features/widgets",
+      "to": "/modules/cross-module/features/widgets"
+    },
+    {
+      "from": "/administration/reports/index",
+      "to": "/reports-and-analytics/legacy/index"
+    },
+    {
+      "from": "/administration/reports/learner-overall-report",
+      "to": "/reports-and-analytics/legacy/learner-overall-report"
+    },
+    {
+      "from": "/administration/reports/learner-report-by-learner-individual-report-analytics",
+      "to": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics"
+    },
+    {
+      "from": "/administration/reports/quiz-wise-analytics",
+      "to": "/reports-and-analytics/legacy/quiz-wise-analytics"
+    },
+    {
+      "from": "/administration/reports/team-analytics",
+      "to": "/reports-and-analytics/legacy/team-analytics"
+    },
+    {
+      "from": "/administration/reports/team-progress-report",
+      "to": "/reports-and-analytics/legacy/team-progress-report"
+    },
+    {
+      "from": "/administration/reports/user-login-reports",
+      "to": "/reports-and-analytics/legacy/user-login-reports"
+    },
+    {
+      "from": "/modules/ai-coaching/how-can-i-download-attempt-wise-user-objective-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-download-attempt-wise-coaching-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-attempt-wise-coaching-report"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-download-coaching-wise-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-coaching-wise-report"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-download-overall-coaching-report",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-track-improvement",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvement"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time"
+    },
+    {
+      "from": "/modules/ai-coaching/how-do-i-view-submissions-as-they-happen",
+      "to": "/modules/ai-coaching/reports-and-analytics/how-do-i-view-submissions-as-they-happen"
+    },
+    {
+      "from": "/modules/ai-coaching/how-many-learners-have-submitted-their-responses",
+      "to": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses"
+    },
+    {
+      "from": "/modules/ai-coaching/how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+      "to": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr"
+    },
+    {
+      "from": "/modules/ai-coaching/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/modules/ai-coaching/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/modules/ai-coaching/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard",
+      "to": "/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard"
+    },
+    {
+      "from": "/modules/ai-coaching/what-is-ai-coaching",
+      "to": "/modules/ai-coaching/features/what-is-ai-coaching"
+    },
+    {
+      "from": "/modules/cross-module/how-to-add-a-image-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/how-to-add-a-video-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/how-to-add-an-audio-file-to-your-content",
+      "to": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/how-to-add-reference-to-an-external-link-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/how-to-attach-pdf-file-to-your-content",
+      "to": "/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/how-to-create-sales-tv",
+      "to": "/modules/cross-module/create-and-manage/how-to-create-sales-tv"
+    },
+    {
+      "from": "/modules/cross-module/how-to-download-detailed-smartfeed-report",
+      "to": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report"
+    },
+    {
+      "from": "/modules/cross-module/how-to-set-reminder-for-your-tasks",
+      "to": "/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks"
+    },
+    {
+      "from": "/modules/cross-module/how-to-update-the-smartwinnr-app-from-app-view",
+      "to": "/modules/cross-module/create-and-manage/how-to-update-the-smartwinnr-app-from-app-view"
+    },
+    {
+      "from": "/modules/cross-module/how-to-update-users",
+      "to": "/modules/cross-module/create-and-manage/how-to-update-users"
+    },
+    {
+      "from": "/modules/cross-module/what-is-smartwinnr",
+      "to": "/modules/cross-module/features/what-is-smartwinnr"
+    },
+    {
+      "from": "/modules/cross-module/widgets",
+      "to": "/modules/cross-module/features/widgets"
+    },
+    {
+      "from": "/modules/field-coaching/create-a-coaching",
+      "to": "/modules/field-coaching/features/create-a-coaching"
+    },
+    {
+      "from": "/modules/field-coaching/how-to-add-competencies-for-field-coaching",
+      "to": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching"
+    },
+    {
+      "from": "/modules/field-coaching/how-to-create-field-coaching-template",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+    },
+    {
+      "from": "/modules/field-coaching/how-to-create-field-mapping",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping"
+    },
+    {
+      "from": "/modules/forms/form-analytics",
+      "to": "/modules/forms/reports-and-analytics/form-analytics"
+    },
+    {
+      "from": "/modules/forms/how-to-add-approvers-to-a-form",
+      "to": "/modules/forms/create-and-manage/how-to-add-approvers-to-a-form"
+    },
+    {
+      "from": "/modules/forms/how-to-approve-reject-a-form-submission",
+      "to": "/modules/forms/features/how-to-approve-reject-a-form-submission"
+    },
+    {
+      "from": "/modules/forms/how-to-create-a-form",
+      "to": "/modules/forms/create-and-manage/how-to-create-a-form"
+    },
+    {
+      "from": "/modules/forms/how-to-edit-a-form-on-submitted-by-a-user",
+      "to": "/modules/forms/create-and-manage/how-to-edit-a-form-on-submitted-by-a-user"
+    },
+    {
+      "from": "/modules/forms/how-to-submit-a-form-on-behalf-of-a-user",
+      "to": "/modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user"
+    },
+    {
+      "from": "/modules/knowledge-hub/how-can-i-create-folders-and-items-in-khub",
+      "to": "/modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub"
+    },
+    {
+      "from": "/modules/knowledge-hub/how-can-i-edit-a-khub-folder-name",
+      "to": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-folder-name"
+    },
+    {
+      "from": "/modules/knowledge-hub/how-can-i-edit-a-khub-item",
+      "to": "/modules/knowledge-hub/features/how-can-i-edit-a-khub-item"
+    },
+    {
+      "from": "/modules/knowledge-hub/how-can-i-view-khub-analytics",
+      "to": "/modules/knowledge-hub/reports-and-analytics/how-can-i-view-khub-analytics"
+    },
+    {
+      "from": "/modules/knowledge-hub/what-is-khub",
+      "to": "/modules/knowledge-hub/features/what-is-khub"
+    },
+    {
+      "from": "/modules/kpi-gamification/define-kpis",
+      "to": "/modules/kpi-gamification/features/define-kpis"
+    },
+    {
+      "from": "/modules/kpi-gamification/detailed-explanation-of-reports",
+      "to": "/modules/kpi-gamification/features/detailed-explanation-of-reports"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-challenge-to-the-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-form-to-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-quiz-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-quiz-to-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-scorecard-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-survey-to-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-survey-to-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-a-video-coaching-to-the-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-change-targets",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-change-targets"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-different-activities-to-a-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-different-activities-to-a-challenge"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-observers-to-the-competition-leaderboard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-smartfeed-within-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-smartfeed-within-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-add-the-scorecard-to-leaderboard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-add-the-scorecard-to-leaderboard"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-award-points-on-badge-assignment",
+      "to": "/modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-a-group-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-group-challenge"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-a-manager-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-manager-challenge"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-a-scorecard",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-a-scorecard"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-an-individual-challenge",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-badges",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-badges"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-certifcates",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-certifcates"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-create-kpi",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-kpi"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-duplicate-a-quiz-in-a-competition",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-upload-kpi-data",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data"
+    },
+    {
+      "from": "/modules/kpi-gamification/how-to-view-the-data-and-leaderboard-for-scorecard",
+      "to": "/modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard"
+    },
+    {
+      "from": "/modules/kpi-gamification/leaderboards-of-a-competition",
+      "to": "/modules/kpi-gamification/features/leaderboards-of-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/understand-game-concepts",
+      "to": "/modules/kpi-gamification/features/understand-game-concepts"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-are-field-mappings",
+      "to": "/modules/kpi-gamification/features/what-are-field-mappings"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-are-kpi-reports",
+      "to": "/modules/kpi-gamification/features/what-are-kpi-reports"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-are-scorecards",
+      "to": "/modules/kpi-gamification/features/what-are-scorecards"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-is-a-challenge",
+      "to": "/modules/kpi-gamification/features/what-is-a-challenge"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-is-a-competition",
+      "to": "/modules/kpi-gamification/features/what-is-a-competition"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-is-an-achievement",
+      "to": "/modules/kpi-gamification/features/what-is-an-achievement"
+    },
+    {
+      "from": "/modules/kpi-gamification/what-is-kpi-gamification",
+      "to": "/modules/kpi-gamification/features/what-is-kpi-gamification"
+    },
+    {
+      "from": "/modules/notifications/bulk-custom-notifications",
+      "to": "/modules/notifications/features/bulk-custom-notifications"
+    },
+    {
+      "from": "/modules/notifications/custom-notifications",
+      "to": "/modules/notifications/features/custom-notifications"
+    },
+    {
+      "from": "/modules/notifications/how-to-add-or-remove-users-to-a-chat-group",
+      "to": "/modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group"
+    },
+    {
+      "from": "/modules/notifications/how-to-download-a-chat",
+      "to": "/modules/notifications/features/how-to-download-a-chat"
+    },
+    {
+      "from": "/modules/notifications/how-to-enable-a-chat-group",
+      "to": "/modules/notifications/settings-and-permissions/how-to-enable-a-chat-group"
+    },
+    {
+      "from": "/modules/notifications/what-are-chat-groups",
+      "to": "/modules/notifications/features/what-are-chat-groups"
+    },
+    {
+      "from": "/modules/notifications/what-is-the-purpose-of-notifications",
+      "to": "/modules/notifications/features/what-is-the-purpose-of-notifications"
+    },
+    {
+      "from": "/modules/notifications/when-are-chat-groups-needed",
+      "to": "/modules/notifications/features/when-are-chat-groups-needed"
+    },
+    {
+      "from": "/modules/quiz/detailed-quiz-analytics",
+      "to": "/modules/quiz/reports-and-analytics/detailed-quiz-analytics"
+    },
+    {
+      "from": "/modules/quiz/how-can-i-duplicate-a-quiz",
+      "to": "/modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz"
+    },
+    {
+      "from": "/modules/quiz/how-can-i-track-improvement",
+      "to": "/modules/quiz/reports-and-analytics/how-can-i-track-improvement"
+    },
+    {
+      "from": "/modules/quiz/how-editors-evaluate-long-answer-questions",
+      "to": "/modules/quiz/reports-and-analytics/how-editors-evaluate-long-answer-questions"
+    },
+    {
+      "from": "/modules/quiz/how-import-question-is-different-from-add-new-question",
+      "to": "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-activate-automatic-reminders-for-your-quizzes",
+      "to": "/modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes"
+    },
+    {
+      "from": "/modules/quiz/how-to-add-a-video-to-a-question",
+      "to": "/modules/quiz/features/how-to-add-a-video-to-a-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-add-an-audio-file-to-a-question",
+      "to": "/modules/quiz/features/how-to-add-an-audio-file-to-a-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-add-an-image-to-the-question",
+      "to": "/modules/quiz/features/how-to-add-an-image-to-the-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-drag-and-drop-into-image-question",
+      "to": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-drag-and-drop-into-text-question",
+      "to": "/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-hotspot-question",
+      "to": "/modules/quiz/features/how-to-create-a-hotspot-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-manual-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-a-manual-quiz"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-matching-question",
+      "to": "/modules/quiz/features/how-to-create-a-matching-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-a-missing-words-question",
+      "to": "/modules/quiz/features/how-to-create-a-missing-words-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-an-automatic-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-an-event-quiz",
+      "to": "/modules/quiz/create-and-manage/how-to-create-an-event-quiz"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-fill-in-the-blank-questions",
+      "to": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-long-answer-questions",
+      "to": "/modules/quiz/features/how-to-create-long-answer-questions"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-multiple-choice-questions",
+      "to": "/modules/quiz/features/how-to-create-multiple-choice-questions"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-numeric-type-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-numeric-type-questions"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-re-order-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-re-order-questions"
+    },
+    {
+      "from": "/modules/quiz/how-to-create-short-answer-with-multiple-options",
+      "to": "/modules/quiz/features/how-to-create-short-answer-with-multiple-options"
+    },
+    {
+      "from": "/modules/quiz/how-to-edit-a-question",
+      "to": "/modules/quiz/create-and-manage/how-to-edit-a-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-embed-a-link-into-the-question",
+      "to": "/modules/quiz/features/how-to-embed-a-link-into-the-question"
+    },
+    {
+      "from": "/modules/quiz/how-to-manage-quiz-configurations",
+      "to": "/modules/quiz/features/how-to-manage-quiz-configurations"
+    },
+    {
+      "from": "/modules/quiz/how-to-update-question-response",
+      "to": "/modules/quiz/create-and-manage/how-to-update-question-response"
+    },
+    {
+      "from": "/modules/quiz/how-to-upload-questions-in-bulk-using-import-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions"
+    },
+    {
+      "from": "/modules/quiz/question-bank",
+      "to": "/modules/quiz/features/question-bank"
+    },
+    {
+      "from": "/modules/quiz/question-response-analytics",
+      "to": "/modules/quiz/reports-and-analytics/question-response-analytics"
+    },
+    {
+      "from": "/modules/quiz/question-structure",
+      "to": "/modules/quiz/features/question-structure"
+    },
+    {
+      "from": "/modules/quiz/quiz-comparison-report",
+      "to": "/modules/quiz/reports-and-analytics/quiz-comparison-report"
+    },
+    {
+      "from": "/modules/quiz/quiz-types",
+      "to": "/modules/quiz/features/quiz-types"
+    },
+    {
+      "from": "/modules/quiz/troubleshoot-for-common-error-code",
+      "to": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code"
+    },
+    {
+      "from": "/modules/quiz/understanding-knowledge-categories",
+      "to": "/modules/quiz/features/understanding-knowledge-categories"
+    },
+    {
+      "from": "/modules/quiz/understanding-the-learner-management-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/modules/quiz/understanding-the-overview-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/modules/quiz/understanding-the-participation-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/modules/quiz/understanding-the-performance-tab-on-the-quiz-dashboard",
+      "to": "/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard"
+    },
+    {
+      "from": "/modules/quiz/what-is-smartwinnr-quiz-analytics",
+      "to": "/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-add-a-recording-to-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-create-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-delete-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-delete-a-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-edit-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-edit-a-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-send-a-smartfeed-multiple-times",
+      "to": "/modules/smartfeed/assign-and-schedule/how-to-send-a-smartfeed-multiple-times"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-send-the-smartfeed-to-teams",
+      "to": "/modules/smartfeed/assign-and-schedule/how-to-send-the-smartfeed-to-teams"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-update-the-thumbnail-of-a-smartfeed",
+      "to": "/modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-view-all-the-smartfeeds",
+      "to": "/modules/smartfeed/features/how-to-view-all-the-smartfeeds"
+    },
+    {
+      "from": "/modules/smartfeed/how-to-view-smartfeed-analytics",
+      "to": "/modules/smartfeed/reports-and-analytics/how-to-view-smartfeed-analytics"
+    },
+    {
+      "from": "/modules/smartfeed/what-are-smartfeeds",
+      "to": "/modules/smartfeed/features/what-are-smartfeeds"
+    },
+    {
+      "from": "/modules/smartpath/how-can-i-gamify-a-smartpath",
+      "to": "/modules/smartpath/features/how-can-i-gamify-a-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-can-i-track-improvement",
+      "to": "/modules/smartpath/reports-and-analytics/how-can-i-track-improvement"
+    },
+    {
+      "from": "/modules/smartpath/how-to-add-learning-sessions-in-smartpath-module",
+      "to": "/modules/smartpath/create-and-manage/how-to-add-learning-sessions-in-smartpath-module"
+    },
+    {
+      "from": "/modules/smartpath/how-to-add-remove-segments-in-module-added-to-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-add-remove-segments-in-module-added-to-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed",
+      "to": "/modules/smartpath/create-and-manage/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed"
+    },
+    {
+      "from": "/modules/smartpath/how-to-create-a-module-for-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-create-a-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-a-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-create-an-action-item-in-the-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-create-assignment-in-smartpath",
+      "to": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-create-smartpath-with-learning-sessions",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-smartpath-with-learning-sessions"
+    },
+    {
+      "from": "/modules/smartpath/how-to-download-smartpath-reports",
+      "to": "/modules/smartpath/features/how-to-download-smartpath-reports"
+    },
+    {
+      "from": "/modules/smartpath/how-to-edit-a-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-edit-a-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-evaluate-the-assignment-submitted-in-smartpath",
+      "to": "/modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath"
+    },
+    {
+      "from": "/modules/smartpath/how-to-import-scorm-course-into-smartwinnr",
+      "to": "/modules/smartpath/create-and-manage/how-to-import-scorm-course-into-smartwinnr"
+    },
+    {
+      "from": "/modules/smartpath/how-to-mark-the-attendance-for-users-in-learning-sessions",
+      "to": "/modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions"
+    },
+    {
+      "from": "/modules/smartpath/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance",
+      "to": "/modules/smartpath/settings-and-permissions/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance"
+    },
+    {
+      "from": "/modules/smartpath/how-to-view-the-smartpath-analytics",
+      "to": "/modules/smartpath/reports-and-analytics/how-to-view-the-smartpath-analytics"
+    },
+    {
+      "from": "/modules/smartpath/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard",
+      "to": "/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard"
+    },
+    {
+      "from": "/modules/smartpath/understanding-the-overview-tab-on-the-smartpath-dashboard",
+      "to": "/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard"
+    },
+    {
+      "from": "/modules/smartpath/what-are-smartpaths",
+      "to": "/modules/smartpath/features/what-are-smartpaths"
+    },
+    {
+      "from": "/modules/survey/how-to-assign-a-survey-in-smartwinnr",
+      "to": "/modules/survey/assign-and-schedule/how-to-assign-a-survey-in-smartwinnr"
+    },
+    {
+      "from": "/modules/survey/how-to-create-a-survey-template",
+      "to": "/modules/survey/create-and-manage/how-to-create-a-survey-template"
+    },
+    {
+      "from": "/modules/survey/how-to-create-a-survey",
+      "to": "/modules/survey/create-and-manage/how-to-create-a-survey"
+    },
+    {
+      "from": "/modules/survey/how-to-delete-a-survey",
+      "to": "/modules/survey/create-and-manage/how-to-delete-a-survey"
+    },
+    {
+      "from": "/modules/survey/how-to-duplicate-a-survey-and-survey-template",
+      "to": "/modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template"
+    },
+    {
+      "from": "/modules/survey/survey-analytics",
+      "to": "/modules/survey/reports-and-analytics/survey-analytics"
+    },
+    {
+      "from": "/modules/survey/survey-template-analytics",
+      "to": "/modules/survey/reports-and-analytics/survey-template-analytics"
+    },
+    {
+      "from": "/modules/survey/what-are-the-different-question-types-in-a-survey-survey-template",
+      "to": "/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template"
+    },
+    {
+      "from": "/modules/survey/what-is-the-difference-between-a-survey-and-a-survey-template",
+      "to": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-create-a-video-coaching-assignment",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-create-field-coaching",
+      "to": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-enable-the-streaming-links-for-video-coaching",
+      "to": "/modules/video-coaching/settings-and-permissions/how-to-enable-the-streaming-links-for-video-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-reset-a-coaching-video",
+      "to": "/modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+      "to": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-review-a-video-coaching-assignment",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-review-a-video-coaching-assignment"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-set-competencies",
+      "to": "/modules/video-coaching/settings-and-permissions/how-to-set-competencies"
+    },
+    {
+      "from": "/modules/video-coaching/how-to-share-a-coaching-video",
+      "to": "/modules/video-coaching/assign-and-schedule/how-to-share-a-coaching-video"
+    },
+    {
+      "from": "/guides/learner/ai-coaching/how-can-a-user-submit-an-ai-coaching-attempt",
+      "to": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt"
+    },
+    {
+      "from": "/guides/learner/ai-coaching/how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
+      "to": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching"
+    },
+    {
+      "from": "/guides/learner/ai-coaching/how-to-review-ai-coaching-submissions-as-a-manager",
+      "to": "/modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager"
+    },
+    {
+      "from": "/guides/learner/ai-coaching/understanding-the-feedback-screen",
+      "to": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen"
+    },
+    {
+      "from": "/guides/learner/how-can-i-answer-a-query",
+      "to": "/modules/cross-module/for-learners/how-can-i-answer-a-query"
+    },
+    {
+      "from": "/guides/learner/how-can-i-submit-a-form-from-chat",
+      "to": "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat"
+    },
+    {
+      "from": "/guides/learner/how-can-i-submit-a-form-from-left-menu",
+      "to": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu"
+    },
+    {
+      "from": "/guides/learner/how-can-i-view-a-competition-leaderboard",
+      "to": "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard"
+    },
+    {
+      "from": "/guides/learner/how-do-i-like-and-comment-on-a-smartfeed",
+      "to": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed"
+    },
+    {
+      "from": "/guides/learner/how-do-i-upload-a-coaching-video",
+      "to": "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video"
+    },
+    {
+      "from": "/guides/learner/how-do-i-view-the-kpi-scorecard",
+      "to": "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard"
+    },
+    {
+      "from": "/guides/learner/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+      "to": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own"
+    },
+    {
+      "from": "/guides/learner/how-to-access-the-scorm-course-from-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/learner/how-to-add-new-form-submission",
+      "to": "/modules/forms/for-learners/how-to-add-new-form-submission"
+    },
+    {
+      "from": "/guides/learner/how-to-answer-long-answer-type-questions-in-smartwinnr",
+      "to": "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr"
+    },
+    {
+      "from": "/guides/learner/how-to-edit-the-form-submission-from-manager-s-view",
+      "to": "/modules/forms/for-managers/how-to-edit-the-form-submission-from-manager-s-view"
+    },
+    {
+      "from": "/guides/learner/how-to-mark-the-attendance-for-users-in-learning-sessions",
+      "to": "/modules/smartpath/for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions"
+    },
+    {
+      "from": "/guides/learner/how-to-post-a-query-from-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/learner/how-to-review-field-coaching-from-managers-view-in-mobile",
+      "to": "/modules/field-coaching/for-managers/how-to-review-field-coaching-from-managers-view-in-mobile"
+    },
+    {
+      "from": "/guides/learner/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+      "to": "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr"
+    },
+    {
+      "from": "/guides/learner/how-to-upload-audio-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching"
+    },
+    {
+      "from": "/guides/learner/how-to-upload-screen-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching"
+    },
+    {
+      "from": "/guides/learner/how-to-upload-video-recording-for-coaching",
+      "to": "/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching"
+    },
+    {
+      "from": "/guides/learner/how-to-use-khub-in-the-smartwinnr-app",
+      "to": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/learner/how-to-use-qresolve-in-the-smartwinnr-app",
+      "to": "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/learner/how-to-view-notifications",
+      "to": "/modules/notifications/for-learners/how-to-view-notifications"
+    },
+    {
+      "from": "/guides/learner/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+      "to": "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question"
+    },
+    {
+      "from": "/guides/learner/understanding-recent-trending-and-latest-khub-items",
+      "to": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items"
+    },
+    {
+      "from": "/guides/learner/what-is-qresolve",
+      "to": "/modules/cross-module/for-learners/what-is-qresolve"
+    },
+    {
+      "from": "/guides/manager/finding-status-and-scores-for-quizzes-assigned-to-your-team",
+      "to": "/modules/quiz/for-managers/finding-status-and-scores-for-quizzes-assigned-to-your-team"
+    },
+    {
+      "from": "/guides/manager/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app",
+      "to": "/modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/manager/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team",
+      "to": "/modules/video-coaching/for-managers/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team"
+    },
+    {
+      "from": "/guides/manager/how-managers-approve-form",
+      "to": "/modules/forms/for-managers/how-managers-approve-form"
+    },
+    {
+      "from": "/guides/manager/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app",
+      "to": "/modules/kpi-gamification/for-managers/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app"
+    },
+    {
+      "from": "/guides/manager/how-to-find-the-progress-of-your-team-in-quizzes",
+      "to": "/modules/quiz/for-managers/how-to-find-the-progress-of-your-team-in-quizzes"
+    },
+    {
+      "from": "/guides/manager/quiz-analytics-through-charts",
+      "to": "/modules/quiz/for-managers/quiz-analytics-through-charts"
+    },
+    {
+      "from": "/guides/manager/what-is-my-team-coaching",
+      "to": "/modules/video-coaching/for-managers/what-is-my-team-coaching"
+    }
+  ]
+}

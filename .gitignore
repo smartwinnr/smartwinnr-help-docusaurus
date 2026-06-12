@@ -171,8 +171,13 @@ aws-exports.js
 .dockerignore
 Dockerfile.local
 
-# Freshdesk pipeline data and output
-data/
+# Freshdesk pipeline data + runtime SQLite + research artifacts.
+# Two files in data/ MUST ship to production though — the build needs them:
+#   data/known-privileges.json — read by scripts/validate-privilege-keys.js (prebuild)
+#   data/redirects.json        — read by docusaurus.config.ts (build-time redirects)
+data/*
+!data/known-privileges.json
+!data/redirects.json
 scripts/freshdesk/output/
 
 # Generated reports (article inventory, etc.) — root only; do NOT shadow
