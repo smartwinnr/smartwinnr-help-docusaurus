@@ -1005,13 +1005,39 @@ async function fireDeploy() {
       return { ok: false, reason: 'no-files' };
     }
 
+    // Scan article bodies for image references and pull any locally-existing
+    // files into the commit. Without this, articles publish but their
+    // screenshots stay on the container's ephemeral disk and never reach
+    // git → Docusaurus's build-time "image not found" check fails on the
+    // next Railway redeploy.
+    const IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)]+)\)/g;
+    const imageRels = new Set();
+    for (const f of files) {
+      for (const m of f.content.matchAll(IMAGE_PATTERN)) {
+        // /img/helpscout/authored/X → static/img/helpscout/authored/X
+        const rel = 'static' + m[1];
+        imageRels.add(rel);
+      }
+    }
+    const images = [];
+    for (const rel of imageRels) {
+      const abs = path.join(__dirname, rel);
+      if (!fsSync.existsSync(abs)) {
+        console.warn(`[deploy] referenced image not on disk, skipping: ${rel}`);
+        continue;
+      }
+      images.push({ rel, data: fsSync.readFileSync(abs) });
+    }
+
     // 1. Look up current branch tip + tree
     const refResp = await ghGet(`/git/refs/heads/${GIT_PUBLISH_BRANCH}`);
     const baseCommitSha = refResp.data.object.sha;
     const baseCommitResp = await ghGet(`/git/commits/${baseCommitSha}`);
     const baseTreeSha = baseCommitResp.data.tree.sha;
 
-    // 2. Upload each file as a blob (utf-8 encoding for plain markdown).
+    // 2. Upload each file as a blob.
+    //    - .md / .mdx → utf-8
+    //    - images     → base64 (binary content)
     const treeEntries = [];
     for (const f of files) {
       const blobResp = await ghPost(`/git/blobs`, {
@@ -1020,6 +1046,18 @@ async function fireDeploy() {
       });
       treeEntries.push({
         path: f.rel,
+        mode: '100644',
+        type: 'blob',
+        sha: blobResp.data.sha,
+      });
+    }
+    for (const img of images) {
+      const blobResp = await ghPost(`/git/blobs`, {
+        content: img.data.toString('base64'),
+        encoding: 'base64',
+      });
+      treeEntries.push({
+        path: img.rel,
         mode: '100644',
         type: 'blob',
         sha: blobResp.data.sha,
@@ -1034,7 +1072,8 @@ async function fireDeploy() {
 
     // 4. Create the commit.
     const slugs = files.map((f) => path.basename(f.rel, '.md')).slice(0, 3);
-    const message = `publish: ${files.length} article${files.length === 1 ? '' : 's'} (${slugs.join(', ')}${files.length > 3 ? '...' : ''})`;
+    const imgNote = images.length > 0 ? ` + ${images.length} image${images.length === 1 ? '' : 's'}` : '';
+    const message = `publish: ${files.length} article${files.length === 1 ? '' : 's'}${imgNote} (${slugs.join(', ')}${files.length > 3 ? '...' : ''})`;
     const commitResp = await ghPost(`/git/commits`, {
       message,
       tree: treeResp.data.sha,
@@ -1049,12 +1088,12 @@ async function fireDeploy() {
       force: false,
     });
 
-    console.log(`[deploy] pushed ${files.length} file(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
+    console.log(`[deploy] pushed ${files.length} file(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
     deployQueue.clear();
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
-    return { ok: true, committed: files.length, sha: commitResp.data.sha };
+    return { ok: true, committed: files.length, images: images.length, sha: commitResp.data.sha };
   } catch (e) {
     const ghMsg = e.response?.data?.message || e.message;
     console.error('[deploy] GitHub push failed:', ghMsg);

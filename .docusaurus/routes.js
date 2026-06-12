@@ -24,11 +24,11 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '981'),
+    component: ComponentCreator('/', '3e0'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'e04'),
+        component: ComponentCreator('/', 'ee0'),
         routes: [
           {
             path: '/tags',
@@ -127,7 +127,7 @@ export default [
           },
           {
             path: '/',
-            component: ComponentCreator('/', 'f79'),
+            component: ComponentCreator('/', '5a9'),
             routes: [
               {
                 path: '/administration/access-permissions/access-permissions',
@@ -1356,6 +1356,12 @@ export default [
               {
                 path: '/modules/quiz/features/how-to-add-an-image-to-the-question',
                 component: ComponentCreator('/modules/quiz/features/how-to-add-an-image-to-the-question', 'b60'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/modules/quiz/features/how-to-allow-multiple-attempts',
+                component: ComponentCreator('/modules/quiz/features/how-to-allow-multiple-attempts', '903'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

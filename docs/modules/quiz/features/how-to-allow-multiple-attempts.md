@@ -33,8 +33,6 @@ Go to the quiz settings and toggle on **Allow Multiple Attempts**. This allows l
 ### 2. Check Status Reporting
 After enabling, the status for quizzes will show as **Attempted** if learners do not achieve the required pass percentage. This change ensures accurate reporting in analytics.
 
-![Quiz analytics page](/img/helpscout/authored/how-to-allow-multiple-attempts-mqbbt59b.png)
-
 ## Tips
 - Review quiz analytics regularly to monitor learner progress.
 - Consider setting a clear pass percentage to guide learners.
