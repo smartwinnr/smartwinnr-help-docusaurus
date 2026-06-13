@@ -208,7 +208,7 @@ export const ENTRIES: Record<PersonaSlug, EntryPoint[]> = {
     {label: 'Troubleshoot for a common error code', href: '/reference/help-support/troubleshoot-for-common-error-code'},
     {label: 'Troubleshooting overview',     href: '/reference/troubleshooting/'},
     {label: 'Release notes & announcements', href: '/release-notes/announcements/'},
-    {label: 'Ask the help bot',             href: '#open-chatbot'},
+    {label: 'Ask Wynnie',                   href: '#open-chatbot'},
   ],
 };
 

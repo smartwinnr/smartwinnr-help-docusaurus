@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
+import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import styles from './styles.module.css';
 
 /**
@@ -633,9 +634,20 @@ function canAdvance(s: State): boolean {
 
 function Wizard(): ReactNode {
   const user = useCurrentUser();
+  const notify = useNotify();
   const [state, dispatch] = useReducer(reducer, initial, (init) => loadState() || init);
 
   useEffect(() => { saveState(state); }, [state]);
+
+  useEffect(() => {
+    if (state.saved) notify.success(`Saved as draft: ${state.saved}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.saved]);
+
+  useEffect(() => {
+    if (state.error) notify.error(state.error);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.error]);
 
   if (!(user.roles || []).includes('superadmin')) {
     return (
@@ -660,7 +672,16 @@ function Wizard(): ReactNode {
         <button
           type="button"
           className={styles.btnGhost}
-          onClick={() => { if (confirm('Discard wizard state and start over?')) dispatch({type: 'reset'}); }}>
+          onClick={async () => {
+            const ok = await notify.confirm({
+              title: 'Discard wizard state?',
+              message: 'You will lose the current inputs and any generated draft preview. This cannot be undone.',
+              confirmLabel: 'Start over',
+              cancelLabel: 'Keep editing',
+              danger: true,
+            });
+            if (ok) dispatch({type: 'reset'});
+          }}>
           Start over
         </button>
       </header>
@@ -679,6 +700,8 @@ function Wizard(): ReactNode {
       {state.step === 2 && <Step2 state={state} dispatch={dispatch} />}
       {state.step === 3 && <Step3 state={state} dispatch={dispatch} />}
       {state.step === 4 && <Step4 state={state} dispatch={dispatch} />}
+
+      {notify.host}
 
       {state.step < 4 && (
         <div className={styles.actions}>

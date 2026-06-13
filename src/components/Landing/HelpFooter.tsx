@@ -17,7 +17,7 @@ function openChatbot(): void {
 
 const ITEMS: Item[] = [
   {href: '/reference/',                    title: '📖 Glossary & reference', desc: 'Roles, privileges, terminology'},
-  {onClick: openChatbot,                   title: '💬 Ask the help bot',     desc: 'Grounded in this help center'},
+  {onClick: openChatbot,                   title: '💬 Ask Wynnie',           desc: 'Grounded in this help center'},
   {href: 'mailto:support@smartwinnr.com',  title: '🛟 Open a support ticket', desc: 'Reach SmartWinnr support'},
   {href: '/release-notes/',                title: '📜 Release notes',        desc: 'All product updates'},
 ];

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import WynnieMark from './WynnieMark';
 import styles from './ChatBot.module.css';
 
 type ViewerRole = 'user' | 'manager' | 'editor' | 'admin' | 'orgadmin' | 'lamadmin' | 'superadmin';
@@ -74,7 +75,7 @@ const ChatBot: React.FC = () => {
       const welcomeMessage: ChatMessage = {
         id: 'welcome',
         role: 'assistant',
-        content: 'Hello! I\'m the SmartWinnr Help Assistant. I can help you with questions about SmartWinnr features, setup, and usage. What would you like to know?',
+        content: 'Hi, I\'m Wynnie - your SmartWinnr guide. Ask me anything about features, setup, or workflows.',
         timestamp: new Date()
       };
       setMessages([welcomeMessage]);
@@ -235,7 +236,7 @@ const ChatBot: React.FC = () => {
     const welcomeMessage: ChatMessage = {
       id: 'welcome-new',
       role: 'assistant',
-      content: 'Hello! I\'m the SmartWinnr Help Assistant. I can help you with questions about SmartWinnr features, setup, and usage. What would you like to know?',
+      content: 'Hi, I\'m Wynnie - your SmartWinnr guide. Ask me anything about features, setup, or workflows.',
       timestamp: new Date()
     };
     setMessages([welcomeMessage]);
@@ -274,7 +275,7 @@ const ChatBot: React.FC = () => {
       <button
         className={`${styles.chatButton} ${isOpen ? styles.chatButtonOpen : ''}`}
         onClick={() => setIsOpen(!isOpen)}
-        title="SmartWinnr Help Assistant"
+        title="Ask Wynnie"
       >
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -302,10 +303,10 @@ const ChatBot: React.FC = () => {
           {/* Header */}
           <div className={styles.chatHeader}>
             <div className={styles.chatTitle}>
-              <div className={styles.chatTitleIcon}>🤖</div>
+              <div className={styles.chatTitleIcon}><WynnieMark size={24} /></div>
               <div>
-                <div className={styles.chatTitleText}>SmartWinnr Help</div>
-                <div className={styles.chatSubtitle}>AI Assistant</div>
+                <div className={styles.chatTitleText}>Wynnie</div>
+                <div className={styles.chatSubtitle}>SmartWinnr help assistant</div>
               </div>
             </div>
             <div className={styles.chatControls}>
@@ -413,7 +414,7 @@ const ChatBot: React.FC = () => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask me anything about SmartWinnr..."
+                placeholder="Ask Wynnie anything…"
                 className={styles.inputField}
                 rows={1}
                 disabled={isLoading}

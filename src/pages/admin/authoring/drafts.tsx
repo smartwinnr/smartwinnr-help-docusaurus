@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
+import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import styles from './styles.module.css';
 
 /**
@@ -39,24 +40,22 @@ function parsePath(p: string): {module: string; subFolder: string; slug: string}
 
 function DraftsList(): ReactNode {
   const user = useCurrentUser();
+  const notify = useNotify();
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
   const [deployState, setDeployState] = useState<DeployState | null>(null);
   const [deploying, setDeploying] = useState(false);
-  const [deployMessage, setDeployMessage] = useState<string | null>(null);
 
   async function refresh() {
     setLoading(true);
-    setError(null);
     try {
       const res = await fetch('/api/admin/authoring/drafts', {credentials: 'same-origin'});
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
       const data = await res.json();
       setDrafts(data.drafts || []);
     } catch (err) {
-      setError((err as Error).message);
+      notify.error(`Failed to load drafts: ${(err as Error).message}`);
     } finally {
       setLoading(false);
     }
@@ -72,7 +71,6 @@ function DraftsList(): ReactNode {
 
   async function deployNow() {
     setDeploying(true);
-    setDeployMessage(null);
     try {
       const res = await fetch('/api/admin/authoring/deploy', {
         method: 'POST',
@@ -80,17 +78,16 @@ function DraftsList(): ReactNode {
       });
       const data = await res.json();
       if (!res.ok) {
-        setDeployMessage(`⚠ ${data.message || data.error || 'Deploy failed'}`);
+        notify.error(data.message || data.error || 'Deploy failed');
+      } else if (data.mode === 'noop') {
+        notify.info('Queue cleared (AUTHORING_GIT_PUSH is off - no commit made).');
+        await refresh();
       } else {
-        setDeployMessage(
-          data.mode === 'noop'
-            ? 'Queue cleared (AUTHORING_GIT_PUSH is off — no commit made).'
-            : `Deployed ${data.committed} article(s) — Railway will redeploy in ~2-5 min.`,
-        );
+        notify.success(`Deployed ${data.committed} article(s) - Railway will redeploy in ~2-5 min.`);
         await refresh();
       }
     } catch (err) {
-      setDeployMessage(`⚠ ${(err as Error).message}`);
+      notify.error((err as Error).message);
     } finally {
       setDeploying(false);
       await refreshDeployState();
@@ -114,7 +111,7 @@ function DraftsList(): ReactNode {
 
   async function publish(d: Draft) {
     const parsed = parsePath(d.path);
-    if (!parsed) { setError('Could not parse path'); return; }
+    if (!parsed) { notify.error('Could not parse path'); return; }
     setBusy(d.path);
     try {
       const res = await fetch('/api/admin/authoring/publish', {
@@ -128,8 +125,9 @@ function DraftsList(): ReactNode {
         const blockers: Array<{label: string; detail?: string}> = (data.audit && data.audit.findings || [])
           .filter((f: {blocking: boolean}) => f.blocking);
         const summary = blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ');
-        setError(`${data.error}${summary ? ' - ' + summary : ''}`);
+        notify.error(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
+        notify.success(`Published "${d.title}".`);
         await refresh();
       }
     } finally {
@@ -138,9 +136,17 @@ function DraftsList(): ReactNode {
   }
 
   async function remove(d: Draft) {
-    if (!confirm(`Delete draft "${d.title}"? This removes the file from docs/.`)) return;
+    const ok = await notify.confirm({
+      title: `Delete "${d.title}"?`,
+      message: 'This removes the file from docs/. The action cannot be undone.',
+      confirmLabel: 'Delete draft',
+      cancelLabel: 'Keep it',
+      danger: true,
+    });
+    if (!ok) return;
+
     const parsed = parsePath(d.path);
-    if (!parsed) { setError('Could not parse path'); return; }
+    if (!parsed) { notify.error('Could not parse path'); return; }
     setBusy(d.path);
     try {
       const q = new URLSearchParams(parsed).toString();
@@ -150,8 +156,9 @@ function DraftsList(): ReactNode {
       });
       if (!res.ok) {
         const data = await res.json();
-        setError(data.error || 'Delete failed');
+        notify.error(data.error || 'Delete failed');
       } else {
+        notify.success(`Deleted "${d.title}".`);
         await refresh();
       }
     } finally {
@@ -202,18 +209,12 @@ function DraftsList(): ReactNode {
               </button>
             </div>
           )}
-          {deployMessage && (
-            <div className={deployMessage.startsWith('⚠') ? styles.error : styles.savedNote}>
-              {deployMessage}
-            </div>
-          )}
         </div>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>
           Refresh
         </button>
       </header>
 
-      {error && <div className={styles.error}>⚠ {error}</div>}
       {loading && <p className={styles.hint}>Loading…</p>}
       {!loading && drafts.length === 0 && (
         <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring">authoring wizard</Link>.</p>
@@ -255,6 +256,7 @@ function DraftsList(): ReactNode {
           </tbody>
         </table>
       )}
+      {notify.host}
     </div>
   );
 }

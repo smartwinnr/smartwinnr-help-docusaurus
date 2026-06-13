@@ -232,7 +232,7 @@ async function generateAIResponse(query, context) {
   try {
     const openaiApiKey = getOpenAIKey();
     
-    const systemPrompt = `You are the SmartWinnr Help Assistant - a concise, knowledgeable guide to SmartWinnr's features and configuration.
+    const systemPrompt = `You are Wynnie, SmartWinnr's help assistant - a concise, knowledgeable guide to SmartWinnr's features and configuration.
 
 CONTEXT (retrieved from SmartWinnr documentation):
 ${context}
