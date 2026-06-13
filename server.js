@@ -146,7 +146,7 @@ app.post('/api/vector/search', async (req, res) => {
     console.log(`🔍 Document search query: "${query}"`);
     
     // Search documents using the same function as chat
-    const searchResults = await searchDocuments(query, limit);
+    const searchResults = await searchDocuments(query, limit, req.user);
     
     // Transform results to match the expected format for the search component
     const results = searchResults.map((doc) => ({
@@ -174,7 +174,7 @@ app.post('/api/vector/search', async (req, res) => {
 });
 
 // AI search function
-async function searchDocuments(query, limit = 5) {
+async function searchDocuments(query, limit = 5, user = null) {
   try {
     // Generate embedding for the query
     const embeddingResponse = await axios.post(`http://localhost:${PORT}/api/vector/embed`, {
@@ -185,19 +185,24 @@ async function searchDocuments(query, limit = 5) {
         'X-Internal-API-Key': process.env.INTERNAL_API_KEY,
       }
     });
-    
+
     const queryEmbedding = embeddingResponse.data.embedding;
-    
+
     // Get the collection
     const collection = await chromaClient.getCollection({ name: COLLECTION_NAME });
-    
-    // Search for similar documents
+
+    // Over-fetch when we'll be gate-filtering, so a few blocked results
+    // don't starve the chatbot of context. 2x buffer is enough for typical
+    // orgs; if filtering leaves zero docs, callers see an empty array and
+    // the chat handler emits its standard "no documentation" refusal.
+    const fetchN = user ? Math.max(limit * 2, limit + 4) : limit;
+
     const results = await collection.query({
       queryEmbeddings: [queryEmbedding],
-      nResults: limit,
+      nResults: fetchN,
       include: ['documents', 'metadatas', 'distances']
     });
-    
+
     // Format results
     const documents = [];
     if (results.documents && results.documents[0]) {
@@ -209,8 +214,20 @@ async function searchDocuments(query, limit = 5) {
         });
       }
     }
-    
-    return documents;
+
+    // Gate filter - drops docs the viewer can't open so search + chat
+    // citations stay consistent with what the URL guard would serve.
+    // Doc-shape metadata.url is the canonical path (e.g. /modules/quiz/...).
+    // When user is null (internal indexer calls) the filter is skipped.
+    const filtered = user
+      ? documents.filter((d) => {
+          const url = d && d.metadata && d.metadata.url;
+          if (!url) return true; // no URL means we can't gate; pass through
+          return isUrlAllowedForUser(url, user);
+        })
+      : documents;
+
+    return filtered.slice(0, limit);
   } catch (error) {
     console.error('❌ Error searching documents:', error.message);
     return [];
@@ -303,7 +320,7 @@ app.post('/api/chat', async (req, res) => {
 
     // Search for relevant documents
     console.log('🔍 Searching for relevant documents...');
-    const searchResults = await searchDocuments(message);
+    const searchResults = await searchDocuments(message, 5, req.user);
 
     // Build context from search results
     let context = '';
@@ -1317,6 +1334,24 @@ function lookupGates(reqPath) {
     }
   }
   return gates;
+}
+
+/**
+ * URL-guard semantics reused for non-route surfaces (vector search results,
+ * chatbot RAG context, chatbot citations). Same AND-of-all-matching-gates
+ * logic as the middleware below, so what we feed the LLM and surface as a
+ * link stays consistent with what the site would actually serve.
+ *
+ * Falls open when docGates is absent (mirrors the URL guard) so dev runs
+ * without a build still work.
+ */
+function isUrlAllowedForUser(url, user) {
+  if (!docGates) return true;
+  const gates = lookupGates(url);
+  for (const g of gates) {
+    if (!isAllowed(g, user)) return false;
+  }
+  return true;
 }
 
 app.use((req, res, next) => {

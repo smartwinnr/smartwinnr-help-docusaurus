@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
+import {useCurrentUser, useUserState} from '@site/src/contexts/UserContext';
+import {loadDocGates, isUrlAllowed, type DocGates} from '@site/src/lib/doc-gates';
 import {
   RECENTS_CHANGED_EVENT,
   clearRecents,
@@ -25,7 +27,10 @@ function relative(ms: number): string {
 }
 
 export default function RecentlyViewed(): JSX.Element | null {
+  const user = useCurrentUser();
+  const {loading: userLoading} = useUserState();
   const [entries, setEntries] = useState<RecentEntry[]>([]);
+  const [gates, setGates] = useState<DocGates | null>(null);
 
   useEffect(() => {
     const refresh = () => setEntries(readRecents());
@@ -33,15 +38,26 @@ export default function RecentlyViewed(): JSX.Element | null {
     window.addEventListener(RECENTS_CHANGED_EVENT, refresh);
     // Also re-read when the tab regains focus, in case another tab updated it.
     window.addEventListener('focus', refresh);
+    let cancelled = false;
+    loadDocGates().then((g) => {
+      if (!cancelled) setGates(g);
+    });
     return () => {
+      cancelled = true;
       window.removeEventListener(RECENTS_CHANGED_EVENT, refresh);
       window.removeEventListener('focus', refresh);
     };
   }, []);
 
+  // Fail closed during hydration so a stale localStorage URL the viewer no
+  // longer has access to never flashes on screen.
+  if (userLoading || !gates) return null;
   if (entries.length === 0) return null;
 
-  const visible = entries.slice(0, RENDER_COUNT);
+  const visible = entries
+    .filter((e) => isUrlAllowed(gates, user, e.url))
+    .slice(0, RENDER_COUNT);
+  if (visible.length === 0) return null;
   return (
     <section className={styles.section}>
       <h2>

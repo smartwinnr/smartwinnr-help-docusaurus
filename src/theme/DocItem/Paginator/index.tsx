@@ -31,7 +31,7 @@ import SmartPaginator from '@site/src/theme/SmartPaginator';
  */
 
 export default function DocItemPaginator(): ReactNode {
-  const {metadata} = useDoc();
+  const {metadata, frontMatter} = useDoc();
   const sidebar = useDocsSidebar();
   const previous = metadata?.previous;
   const next = metadata?.next;
@@ -59,15 +59,27 @@ export default function DocItemPaginator(): ReactNode {
 
   const checkAllowed = (url: string) => isUrlAllowed(gates, user, url);
 
-  const resolvedPrev =
-    previous && checkAllowed(previous.permalink)
-      ? previous
-      : nextAllowedUrl(order, currentUrl, 'prev', checkAllowed) ?? undefined;
+  // Honor explicit pagination_prev: false / pagination_next: false in the
+  // article's frontmatter. Stock Docusaurus collapses both "no sibling" and
+  // "explicitly disabled" into a single undefined, so we read the raw
+  // frontmatter ourselves to keep author intent intact - that side renders
+  // the disabled "End of help center" placeholder instead of being rerouted.
+  const prevDisabled = (frontMatter as Record<string, unknown> | undefined)
+    ?.pagination_prev === false;
+  const nextDisabled = (frontMatter as Record<string, unknown> | undefined)
+    ?.pagination_next === false;
 
-  const resolvedNext =
-    next && checkAllowed(next.permalink)
-      ? next
-      : nextAllowedUrl(order, currentUrl, 'next', checkAllowed) ?? undefined;
+  const resolvedPrev = prevDisabled
+    ? undefined
+    : previous && checkAllowed(previous.permalink)
+    ? previous
+    : nextAllowedUrl(order, currentUrl, 'prev', checkAllowed) ?? undefined;
+
+  const resolvedNext = nextDisabled
+    ? undefined
+    : next && checkAllowed(next.permalink)
+    ? next
+    : nextAllowedUrl(order, currentUrl, 'next', checkAllowed) ?? undefined;
 
   return <SmartPaginator previous={resolvedPrev} next={resolvedNext} />;
 }

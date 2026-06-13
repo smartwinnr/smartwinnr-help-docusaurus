@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import type {CurrentUser, SmartWinnrRole} from '@site/src/access-policy';
+import {useUserState} from '@site/src/contexts/UserContext';
+import {loadDocGates, isUrlAllowed, type DocGates} from '@site/src/lib/doc-gates';
 import styles from './styles.module.css';
 
 type Entry = {
@@ -39,6 +41,8 @@ export default function WhatsNew({user, limit = 5}: Props): JSX.Element | null {
   const url = useBaseUrl('/whats-new.json');
   const [feed, setFeed] = useState<Feed | null>(null);
   const [failed, setFailed] = useState(false);
+  const {loading: userLoading} = useUserState();
+  const [gates, setGates] = useState<DocGates | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -50,18 +54,25 @@ export default function WhatsNew({user, limit = 5}: Props): JSX.Element | null {
       .catch(() => {
         if (!cancelled) setFailed(true);
       });
+    loadDocGates().then((g) => {
+      if (!cancelled) setGates(g);
+    });
     return () => {
       cancelled = true;
     };
   }, [url]);
 
   if (failed || !feed) return null;
+  // Fail closed: wait until both /api/me and /doc-gates.json resolve so we
+  // never surface an entry the viewer can't open.
+  if (userLoading || !gates) return null;
 
   const userRoles = new Set(user.roles || []);
   const visible = (feed.entries || [])
     .filter((e) =>
       Array.isArray(e.audience) && e.audience.some((r) => userRoles.has(r as SmartWinnrRole)),
     )
+    .filter((e) => isUrlAllowed(gates, user, e.href))
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .slice(0, limit);
 
