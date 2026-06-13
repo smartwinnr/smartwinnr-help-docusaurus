@@ -1,44 +1,44 @@
 ---
 id: how-to-allow-multiple-attempts
-title: "How to Allow Multiple Attempts"
-description: "Status of quiz will be show as accurately with this changes."
+title: "How to allow multiple attempts"
+description: "We have implemented a new logic for quizzes where Allow Multiple Attempts is enabled."
 slug: how-to-allow-multiple-attempts
 sidebar_position: 999
 last_update:
-  date: 2026-06-12
+  date: 2026-06-13
   author: Sai Charan Reddy Thummala
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
-tags: [quiz]
+tags: [quiz, settings, reports]
 draft: false
 ---
 
-> **At a glance** - Enable multiple attempts for quizzes to improve accuracy in status reporting.
+> **At a glance** - Enable multiple attempts for quizzes to help users achieve passing scores. The status will reflect their progress accurately.
 
-When you enable **Allow Multiple Attempts** for quizzes, learners can retry the quiz until they pass. The quiz status will reflect whether they have met the passing criteria, showing as **Attempted** if they do not pass.
+You can allow multiple attempts for quizzes to give users the chance to improve their scores. When this option is enabled, the status for users who do not pass will show as **Attempted** instead of **Completed**.
 
 ## When to use this
-Use this feature when you want to provide learners with the opportunity to retake quizzes. This is especially useful in scenarios where:
+Use the **Allow Multiple Attempts** feature when you want to:
 
-- Learners need additional chances to master the material.
-- You want to track progress accurately in reports.
-- You aim to encourage continuous learning and improvement.
+- Provide learners with opportunities to retake quizzes until they pass.
+- Track user progress accurately in reports and analytics.
+- Ensure users understand their current status in the quiz.
 
 ## Steps
 
 ### 1. Enable Allow Multiple Attempts
-Go to the quiz settings and toggle on **Allow Multiple Attempts**. This allows learners to retake the quiz as needed.
+Navigate to the quiz settings and turn on the **Allow Multiple Attempts** option. This allows users to retake the quiz as needed.
 
-### 2. Check Status Reporting
-After enabling, the status for quizzes will show as **Attempted** if learners do not achieve the required pass percentage. This change ensures accurate reporting in analytics.
+### 2. Check User Status
+After users attempt the quiz, check their status. If they do not meet the passing criteria, their status will show as **Attempted**.
+
+![Quiz analytics page](/img/helpscout/authored/how-to-allow-multiple-attempts-mqbwg52l.png)
+
+### 3. Review Reports
+Access the **Quiz Analytics Page** to see the updated statuses for all users. This will help you analyze user performance and engagement effectively.
 
 ## Tips
-- Review quiz analytics regularly to monitor learner progress.
-- Consider setting a clear pass percentage to guide learners.
-- Use the **Quiz User-wise Report** to track individual attempts effectively.
-
-## Things to know
-:::warning
-The status will show as **Attempted** until the learner passes the quiz. This change affects how progress is reported in analytics.
-:::
+- Regularly review analytics to monitor user progress and identify areas for improvement.
+- Encourage users to retake quizzes to enhance their understanding of the material.
+- Use the new status category in reports to track attempts and completions separately.
