@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import {useCurrentUser} from '@site/src/contexts/UserContext';
+import {useCurrentUser, useIsUserReady} from '@site/src/contexts/UserContext';
 import {hasMinTier, PRIVILEGE_GATING_ENABLED} from '@site/src/access-policy';
 import type {CurrentUser} from '@site/src/access-policy';
 import styles from './styles.module.css';
@@ -184,10 +184,25 @@ function GetStartedCards({
   );
 }
 
+function ModuleSkeleton(): JSX.Element {
+  return (
+    <div className={styles.wrap}>
+      <div className={styles.skelHero} aria-hidden="true" />
+      <div className={styles.skelLede} aria-hidden="true" />
+      <div className={styles.cardGrid} aria-hidden="true">
+        {[0, 1, 2, 3].map((i) => (
+          <div key={i} className={styles.skelCard} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Body({slug}: Props): JSX.Element | null {
   const url = useBaseUrl('/module-overviews.json');
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [failed, setFailed] = useState(false);
+  const ready = useIsUserReady();
   const user = useCurrentUser();
 
   useEffect(() => {
@@ -206,7 +221,7 @@ function Body({slug}: Props): JSX.Element | null {
   }, [url]);
 
   if (failed) return <p>This module overview is unavailable. Please refresh.</p>;
-  if (!manifest) return null;
+  if (!manifest || !ready) return <ModuleSkeleton />;
 
   const meta = manifest.modules?.[slug];
   if (!meta) {
@@ -243,7 +258,7 @@ function Body({slug}: Props): JSX.Element | null {
 
 export default function ModuleOverview({slug}: Props): JSX.Element {
   return (
-    <BrowserOnly fallback={<Body slug={slug} />}>
+    <BrowserOnly fallback={<ModuleSkeleton />}>
       {() => <Body slug={slug} />}
     </BrowserOnly>
   );

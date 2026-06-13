@@ -249,3 +249,33 @@
   .hero h1 { font-size: var(--text-h1); }
   .upsell { padding: var(--space-5) var(--space-4) var(--space-4); }
 }
+
+/* ───────── Skeleton placeholders (anti-flicker while /api/me resolves) ─── */
+
+@keyframes sw-skel-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+.skelHero {
+  height: 96px;
+  border-radius: 12px;
+  background: var(--ifm-color-emphasis-100);
+  margin-bottom: var(--space-4);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}
+.skelLede {
+  height: 18px;
+  width: min(60ch, 100%);
+  border-radius: 6px;
+  background: var(--ifm-color-emphasis-100);
+  margin-bottom: var(--space-5);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}
+.skelCard {
+  min-height: 130px;
+  border-radius: 10px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}

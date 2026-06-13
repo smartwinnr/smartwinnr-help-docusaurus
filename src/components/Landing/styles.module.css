@@ -595,3 +595,53 @@
   color: var(--ifm-color-primary-darker);
   text-decoration: none;
 }
+
+/* ───────── Skeleton placeholders (anti-flicker while /api/me resolves) ─── */
+
+@keyframes sw-skel-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+.skelHero {
+  height: 88px;
+  border-radius: 14px;
+  background: var(--ifm-color-emphasis-100);
+  margin-bottom: var(--space-5);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}
+
+.skelDoorsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+@media (max-width: 1024px) {
+  .skelDoorsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .skelDoorsGrid { grid-template-columns: 1fr; }
+}
+
+.skelDoor {
+  min-height: 188px;
+  border-radius: 14px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}
+
+.skelTaskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+.skelTaskCard {
+  min-height: 96px;
+  border-radius: 12px;
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  animation: sw-skel-pulse 1.4s ease-in-out infinite;
+}

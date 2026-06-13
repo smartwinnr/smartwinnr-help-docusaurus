@@ -82,3 +82,15 @@ export function useCurrentUser(): CurrentUser {
 export function useUserState(): UserContextValue {
   return useContext(UserContext);
 }
+
+/**
+ * True once /api/me has resolved (success or failure) AND we are no longer
+ * loading - i.e. role/privilege branches are safe to evaluate against the
+ * REAL user instead of the UNAUTH_USER learner-default. Use this to gate
+ * role-conditional renders so SSG and the initial hydration both show a
+ * neutral skeleton, then snap to the personalized view exactly once.
+ */
+export function useIsUserReady(): boolean {
+  const {loading, resolved} = useContext(UserContext);
+  return !loading && resolved;
+}

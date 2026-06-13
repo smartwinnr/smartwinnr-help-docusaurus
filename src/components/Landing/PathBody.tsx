@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import {useCurrentUser} from '@site/src/contexts/UserContext';
-import {PRIVILEGE_GATING_ENABLED, UNAUTH_USER} from '@site/src/access-policy';
+import {useCurrentUser, useIsUserReady} from '@site/src/contexts/UserContext';
+import {PRIVILEGE_GATING_ENABLED} from '@site/src/access-policy';
 import {
   PERSONAS,
   ENTRIES,
@@ -150,10 +150,38 @@ function GroupSection({
   );
 }
 
+function PathSkeleton({persona}: {persona: Persona}): JSX.Element {
+  return (
+    <div className={styles.wrap}>
+      <section className={styles.personaShell}>
+        <div className={styles.personaCrumb}>
+          <Link to="/">← Home</Link>
+          {' '}›{' '}
+          {persona.icon} {persona.label}
+        </div>
+        <div className={styles.personaRow}>
+          <span className={styles.personaIco}>{persona.icon}</span>
+          <div>
+            <h1>{persona.label}</h1>
+            <p className={styles.personaSub}>{persona.blurb}</p>
+          </div>
+        </div>
+      </section>
+      <div className={styles.skelTaskGrid} aria-hidden="true">
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <div key={i} className={styles.skelTaskCard} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Inner({slug}: Props): JSX.Element {
   const persona = PERSONAS.find((p) => p.slug === slug);
+  const ready = useIsUserReady();
   const user = useCurrentUser();
   if (!persona) return <ForbiddenView title="Unknown persona" />;
+  if (!ready) return <PathSkeleton persona={persona} />;
   if (!canEnterPersona(user, persona)) {
     return <ForbiddenView title={`${persona.label} - not available for your role`} />;
   }
@@ -216,10 +244,8 @@ function Inner({slug}: Props): JSX.Element {
 
 function Fallback({slug}: Props): JSX.Element {
   const persona = PERSONAS.find((p) => p.slug === slug);
-  if (!persona || !canEnterPersona(UNAUTH_USER, persona)) {
-    return <ForbiddenView title={persona ? persona.label : 'Path'} />;
-  }
-  return <Inner slug={slug} />;
+  if (!persona) return <ForbiddenView title="Unknown persona" />;
+  return <PathSkeleton persona={persona} />;
 }
 
 export default function PathBody({slug}: Props): JSX.Element {
