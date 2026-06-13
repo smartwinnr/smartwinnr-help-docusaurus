@@ -33,9 +33,12 @@ function renderLoginPage(lambdaUrl, errorMessage, isDev) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In — SmartWinnr Help Center</title>
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
   <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#8b5cf6">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {

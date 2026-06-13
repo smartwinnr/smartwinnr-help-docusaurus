@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const { COOKIE_NAME, verifySessionToken } = require('./jwt');
 
 // File extensions that should be served without auth (for login page resources)
-const PUBLIC_EXTENSIONS = /\.(js|css|ico|png|svg|jpg|jpeg|woff|woff2|map|json)$/i;
+const PUBLIC_EXTENSIONS = /\.(js|css|ico|png|svg|jpg|jpeg|woff|woff2|map|json|webmanifest)$/i;
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 const VALID_PREVIEW_ROLES = new Set([
