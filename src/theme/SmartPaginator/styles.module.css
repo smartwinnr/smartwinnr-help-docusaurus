@@ -1,0 +1,28 @@
+/* Mirror stock Infima .pagination-nav__item--disabled with our own state.
+ * The disabled placeholder keeps the two-column footer grid intact when one
+ * side of Prev/Next would otherwise be empty, so the active side does not
+ * collapse onto half the page. */
+
+.disabledItem {
+  display: block;
+  padding: var(--ifm-pagination-nav-padding, 1rem) var(--ifm-pagination-nav-padding-horizontal, 1.25rem);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-pagination-nav-border-radius, 0.5rem);
+  background: var(--ifm-background-surface-color);
+  opacity: 0.55;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.sublabel {
+  font-size: var(--ifm-h6-font-size, 0.9rem);
+  font-weight: var(--ifm-font-weight-semibold, 600);
+  margin-bottom: 0.25rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.label {
+  font-size: var(--ifm-h5-font-size, 1rem);
+  color: var(--ifm-color-emphasis-600);
+  word-break: break-word;
+}
