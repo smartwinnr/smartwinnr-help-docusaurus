@@ -244,26 +244,46 @@ function calculateRelevanceScore(searchResults, citations) {
   return Math.round(score * 100) / 100;
 }
 
-// Generate AI response using OpenAI
-async function generateAIResponse(query, context) {
+// Wynnie's system prompt lives in prompts/wynnie.md so non-engineers can
+// iterate on voice without touching server code. Cached at module init -
+// changes require a process restart, same as other config.
+const WYNNIE_PROMPT_PATH = require('path').join(__dirname, 'prompts', 'wynnie.md');
+let _wynniePromptTemplate = null;
+function getWynniePromptTemplate() {
+  if (_wynniePromptTemplate) return _wynniePromptTemplate;
+  try {
+    _wynniePromptTemplate = require('fs').readFileSync(WYNNIE_PROMPT_PATH, 'utf8');
+  } catch (e) {
+    console.error('⚠️  Failed to read prompts/wynnie.md - falling back to inline prompt:', e.message);
+    _wynniePromptTemplate =
+      'You are Wynnie, SmartWinnr\'s help assistant.\n\n' +
+      'CONTEXT (retrieved from SmartWinnr documentation):\n{{CONTEXT}}\n\n' +
+      'Answer using ONLY the context. Address the user as "you". If the context\n' +
+      'is silent, say "I don\'t have docs on that yet" and suggest where to look.';
+  }
+  return _wynniePromptTemplate;
+}
+
+// How many prior turns of conversation to forward to OpenAI. 6 turns
+// (typically 3 user + 3 assistant) threads typical follow-ups
+// ("step 2 didn't work") without ballooning prompt-token cost.
+const CHAT_HISTORY_TURNS = 6;
+
+// Generate AI response using OpenAI. `history` is the running array of
+// {role, content} turns for the conversation; we forward only the tail so
+// follow-ups read as a thread instead of isolated answers.
+async function generateAIResponse(query, context, history = []) {
   try {
     const openaiApiKey = getOpenAIKey();
-    
-    const systemPrompt = `You are Wynnie, SmartWinnr's help assistant - a concise, knowledgeable guide to SmartWinnr's features and configuration.
 
-CONTEXT (retrieved from SmartWinnr documentation):
-${context}
+    const systemPrompt = getWynniePromptTemplate().replace('{{CONTEXT}}', context);
 
-RESPONSE RULES:
-1. Answer using ONLY the context above. If the context lacks the information, say "I don't have specific documentation on that" and suggest where the user might look.
-2. Detect the query intent:
-   - **How-to / setup query** → respond with numbered step-by-step instructions.
-   - **Conceptual / "what is" query** → respond with a brief explanation (2-4 sentences), then key details as bullet points.
-   - **Troubleshooting query** → list likely causes and fixes.
-3. Keep answers focused and succinct - no filler, no repetition of the question.
-4. Format with markdown: use **bold** for UI labels/menu items, \`code\` for field names/values, and headings (###) only when the answer has distinct sections.
-5. End with a single actionable follow-up suggestion if appropriate (e.g., "To configure this further, check [Feature Name] settings.").
-6. Never fabricate features or settings not present in the context.`;
+    const priorTurns = Array.isArray(history)
+      ? history
+          .slice(-CHAT_HISTORY_TURNS)
+          .filter((t) => t && (t.role === 'user' || t.role === 'assistant') && typeof t.content === 'string')
+          .map((t) => ({ role: t.role, content: t.content }))
+      : [];
 
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
@@ -271,9 +291,10 @@ RESPONSE RULES:
         model: CHAT_MODEL,
         messages: [
           { role: 'system', content: systemPrompt },
+          ...priorTurns,
           { role: 'user', content: query }
         ],
-        temperature: 0.3,
+        temperature: 0.5,
         max_tokens: 750
       },
       {
@@ -353,7 +374,10 @@ Content: ${result.content.substring(0, 750)}...
     let aiUsage = null;
     let isFallback = false;
     try {
-      const aiResult = await generateAIResponse(message, context);
+      // `history` already includes the just-pushed user message; slice it
+      // off so generateAIResponse appends `query` once, not twice.
+      const priorHistory = history.slice(0, -1);
+      const aiResult = await generateAIResponse(message, context, priorHistory);
       aiMessage = aiResult.message;
       aiUsage = aiResult.usage;
     } catch (aiError) {
@@ -418,7 +442,13 @@ Content: ${result.content.substring(0, 750)}...
         promptTokens: aiUsage?.prompt_tokens || null,
         completionTokens: aiUsage?.completion_tokens || null,
         userEmail: req.user?.email || null,
+        userDisplayName: req.user?.displayName || null,
+        orgId: req.user?.orgId || null,
+        orgName: req.user?.orgName || null,
+        userRoles: Array.isArray(req.user?.roles) ? req.user.roles : null,
+        userPrivileges: Array.isArray(req.user?.privileges) ? req.user.privileges : null,
         userAgent: req.headers['user-agent'] || null,
+        chatModel: CHAT_MODEL,
         consentVersion: PRIVACY_NOTICE_VERSION,
       });
     });

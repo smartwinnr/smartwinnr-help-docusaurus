@@ -80,6 +80,11 @@ function getDb() {
       user_page_url TEXT,
       user_agent TEXT,
       user_email TEXT,
+      user_display_name TEXT,
+      org_id TEXT,
+      org_name TEXT,
+      user_roles TEXT,       -- JSON-stringified array of SmartWinnr roles
+      user_privileges TEXT,  -- JSON-stringified array of org privileges
       consent_version TEXT DEFAULT '1.0',
       requests_in_window INTEGER DEFAULT 0
     );
@@ -104,6 +109,7 @@ function getDb() {
       contains_pii INTEGER DEFAULT 0,
       is_duplicate INTEGER DEFAULT 0,
       query_type TEXT,
+      chat_model TEXT,
       FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE
     );
 
@@ -132,6 +138,7 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_exchanges_query_type ON chat_exchanges(query_type);
     CREATE INDEX IF NOT EXISTS idx_conversations_created_at ON conversations(created_at);
     CREATE INDEX IF NOT EXISTS idx_conversations_user_email ON conversations(user_email);
+    CREATE INDEX IF NOT EXISTS idx_conversations_org_id ON conversations(org_id);
     CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
   `);
 
@@ -161,8 +168,21 @@ function getDb() {
 const MIGRATIONS = [
   // Version 1 = initial schema (handled by CREATE TABLE above)
   { version: 1, sql: "SELECT 1" },
-  // Future migrations go here, e.g.:
-  // { version: 2, sql: "ALTER TABLE chat_exchanges ADD COLUMN some_new_col TEXT" },
+  // Version 2 - identity context: display name + org + roles/privileges on the
+  // conversation, plus the chat model on each exchange. Listed as separate
+  // statements so the runner can catch and skip "duplicate column" errors
+  // when CREATE TABLE above already declared them on a fresh install.
+  {
+    version: 2,
+    statements: [
+      "ALTER TABLE conversations  ADD COLUMN user_display_name TEXT",
+      "ALTER TABLE conversations  ADD COLUMN org_id            TEXT",
+      "ALTER TABLE conversations  ADD COLUMN org_name          TEXT",
+      "ALTER TABLE conversations  ADD COLUMN user_roles        TEXT",
+      "ALTER TABLE conversations  ADD COLUMN user_privileges   TEXT",
+      "ALTER TABLE chat_exchanges ADD COLUMN chat_model        TEXT",
+    ],
+  },
 ];
 
 function runMigrations(db) {
@@ -177,7 +197,21 @@ function runMigrations(db) {
   }
 
   for (const m of MIGRATIONS.filter(m => m.version > Math.max(current, 1))) {
-    db.exec(m.sql);
+    if (Array.isArray(m.statements)) {
+      // Per-statement migration. Idempotent: a "duplicate column name" error
+      // from SQLite means CREATE TABLE already declared this column on a
+      // fresh install - safe to skip and move on.
+      for (const stmt of m.statements) {
+        try {
+          db.exec(stmt);
+        } catch (err) {
+          if (/duplicate column name/i.test(err.message || '')) continue;
+          throw err;
+        }
+      }
+    } else {
+      db.exec(m.sql);
+    }
     db.prepare('INSERT INTO schema_version (version) VALUES (?)').run(m.version);
     console.log(`[chat-logger] Applied migration v${m.version}`);
   }
@@ -224,15 +258,33 @@ function logExchange(data) {
     // Upsert conversation
     const existingConv = db.prepare('SELECT id, requests_in_window FROM conversations WHERE id = ?').get(data.conversationId);
 
+    // Stringify arrays for JSON columns; pass plain strings/null through.
+    const userRolesJson = Array.isArray(data.userRoles)
+      ? JSON.stringify(data.userRoles)
+      : null;
+    const userPrivilegesJson = Array.isArray(data.userPrivileges)
+      ? JSON.stringify(data.userPrivileges)
+      : null;
+
     if (!existingConv) {
       db.prepare(`
-        INSERT INTO conversations (id, created_at, updated_at, message_count, user_page_url, user_agent, user_email, consent_version, requests_in_window)
-        VALUES (?, ?, ?, 1, ?, ?, ?, ?, 1)
+        INSERT INTO conversations (
+          id, created_at, updated_at, message_count,
+          user_page_url, user_agent, user_email,
+          user_display_name, org_id, org_name, user_roles, user_privileges,
+          consent_version, requests_in_window
+        )
+        VALUES (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
       `).run(
         data.conversationId, now, now,
         data.pageUrl || null,
         data.userAgent || null,
         data.userEmail || null,
+        data.userDisplayName || null,
+        data.orgId || null,
+        data.orgName || null,
+        userRolesJson,
+        userPrivilegesJson,
         data.consentVersion || '1.0'
       );
     } else {
@@ -260,8 +312,8 @@ function logExchange(data) {
         id, conversation_id, user_query, ai_response, confidence, relevance_score,
         citations_json, num_docs_retrieved, top_doc_distance, page_url,
         created_at, response_time_ms, is_fallback, prompt_tokens, completion_tokens,
-        user_rating, contains_pii, is_duplicate, query_type
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?)
+        user_rating, contains_pii, is_duplicate, query_type, chat_model
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?)
     `).run(
       exchangeId,
       data.conversationId,
@@ -279,7 +331,8 @@ function logExchange(data) {
       data.promptTokens ?? null,
       data.completionTokens ?? null,
       isDuplicate,
-      classifyQuery(data.userQuery)
+      classifyQuery(data.userQuery),
+      data.chatModel || null
     );
 
     recordSuccess();
@@ -416,6 +469,11 @@ function exportToJSON(startDate, endDate, anonymize = false) {
       ...row,
       user_email: null,
       user_agent: null,
+      user_display_name: null,
+      org_id: null,
+      org_name: null,
+      user_roles: null,
+      user_privileges: null,
       user_query: '[REDACTED]',
       ai_response: '[REDACTED]',
     }));

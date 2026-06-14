@@ -33,6 +33,8 @@ authoritative plan file - this document is a derived status view).
 | **Authoring skill** (`/admin/authoring`) | ✅ done | Plan §19 shipped 2026-06-12: 4-step wizard (Where + who → Hook → Brain dump → Preview + refine + save), superadmin-only, `prompts/author-article.md` system prompt with anti-release-note + anti-hallucination clauses, `db/article-audit.js` `gradeMarkdown()` returns `Finding[]` with blocking flag, `server.js` adds POST `generate`/`save`/`publish`/`upload` + GET `drafts`/`draft` + DELETE `draft` routes (all `requireRole('superadmin')`), drafts queue at `/admin/authoring/drafts` with Publish/Delete. OpenAI Chat Completions (`gpt-4o` default, override via `AUTHORING_MODEL`) via existing axios + `getOpenAIKey()` - no new SDK dep. Server stamps `last_update.date` to today + `last_update.author` to logged-in user. Custom tags allowed in step 2; ≥1 tag required. |
 | **Authoring LLM rate limit** | ✅ done | Plan §20.1 - 10 generates per hour per superadmin via in-memory ring buffer keyed on email. Override via `AUTHORING_RATE_LIMIT` env var. Wizard catches 429 + surfaces "Try again in ~M min" message. |
 | **Authoring publish-to-deploy pipeline** | ⏸ TODO | Plan §20.3–§20.5 - when an editor publishes, the article is invisible until Railway redeploys. Approach: server commits + pushes the changed files to `main` using a GitLab PAT; Railway is already configured to auto-redeploy on push (no deploy-hook URL needed - Railway no longer exposes one in their UI). Need: pending-publish queue + Deploy now button + 30 min debounced auto-fallback (capped at 1 deploy / 60 min). Env vars: `AUTHORING_GIT_PUSH`, `GIT_PUBLISH_BRANCH`, `GIT_PUSH_TOKEN`, `GIT_PUSH_REPO_URL`, `AUTHORING_DEPLOY_DEBOUNCE_MS`, `AUTHORING_DEPLOY_MIN_INTERVAL_MS`. |
+| **Chat-logging identity columns** (Group A) | ✅ done | 2026-06-13 - `conversations` gained `user_display_name`, `org_id`, `org_name`, `user_roles`, `user_privileges` (JSON-stringified); `chat_exchanges` gained `chat_model`. Migration v2 in `db/chat-logger.js` is idempotent (catches "duplicate column" on fresh installs where CREATE TABLE already declared them). New index `idx_conversations_org_id`. `server.js` threads all six fields from `req.user` + `CHAT_MODEL` env. `exportToJSON(anonymize=true)` redacts all new identity fields. |
+| **Chat-logging improvements (B/C/D)** | ⏸ TODO | See [Chat-logging improvements](#chat-logging-improvements-deferred) below. Three groups deferred after shipping Group A: quality signals (refusal-vs-fallback split, citation-click tracking, conversation-end, top-unanswered view), privacy hardening (PII scrubber, per-user opt-out, encryption at rest), operational (Railway volume check, S3 backup, admin chat-analytics page, circuit-breaker alerting). |
 | **Git commits** | ⏸ open | Tree still uncommitted on `feature/help-ia-redesign` |
 
 ---
@@ -240,6 +242,62 @@ authoritative plan file - this document is a derived status view).
 - Result: editor+manager without `managerView` no longer sees the
   Manager door nor the manager persona page; with `managerView` added
   they get back in
+
+---
+
+## Chat-logging improvements (deferred)
+
+Group A (identity context — user display name, org id/name, roles,
+privileges, chat model) shipped 2026-06-13. Three groups remain — capture
+here so we don't relitigate the design when picking them back up.
+
+### Group B — Quality signals
+
+Pick this up next; it's what gives content owners a useful backlog
+during and after Test Week.
+
+| Improvement | Detail |
+|---|---|
+| **Distinguish refusal from API-failure fallback** | Today `is_fallback=1` means *either* the OpenAI call errored *or* Wynnie returned "I don't have docs on that." The second is the gold-mine content-authoring signal; conflating them buries it. Add a sibling `is_refusal INTEGER DEFAULT 0` column; set when `searchResults.length === 0` OR every result has `distance >= 0.8`. |
+| **Citation click tracking** | Front-end emits `POST /api/chat/:exchangeId/citation-click {url}` when a user opens a cited article from the chat panel. New table `chat_citation_clicks(exchange_id, url, clicked_at)` or new column `citation_clicks_json` on `chat_exchanges`. Lets us measure "did the answer actually help" beyond 👍/👎. |
+| **Conversation end signal** | When the chat panel closes OR the conversation goes idle for N minutes, mark `conversations.closed_at`. Lets us compute "answered in N exchanges", abandonment rate, time-to-first-citation-click. |
+| **Top-unanswered queries view** | Aggregate queries where `is_refusal=1` OR `relevance_score < 0.3`, deduped + clustered (start with simple normalised-string match, upgrade to semantic clustering later). Surface to superadmin at `/admin/analytics/chat` (a sibling of the existing `/admin/analytics/feedback`). |
+| **Per-module analytics** | Map each citation's `url` against its module folder (regex on `/modules/<m>/`) and group queries by module. Tells us "Quiz has 40% troubleshooting queries → add an FAQ." |
+
+### Group C — Privacy hardening
+
+Defer until a stakeholder asks. Today the data is internal,
+superadmin-only, 90-day retention.
+
+| Improvement | Detail |
+|---|---|
+| **Implement PII redaction** | `contains_pii INTEGER DEFAULT 0` column has been reserved since v1 but no scanner runs. Either (a) drop the column, or (b) wire a lightweight regex scrubber on `user_query` ingest (emails, phone numbers, common customer-name patterns). Microsoft Presidio is the heavier alternative if regex isn't enough. Set `contains_pii=1` on the row when matches are found; consider redacting the substring in-place. |
+| **Per-user opt-out** | A toggle in the chatbot footer: *"Don't store my questions."* Sets a per-conversation flag; logger respects it and stores only timestamps + token counts. Useful for support engineers / executives whose questions might leak strategy. |
+| **Encryption at rest** | SQLite file is plaintext on disk. For a help center this is fine, but if logs ever grow sensitive we'd move to SQLCipher or migrate to a managed encrypted DB. |
+
+### Group D — Operational
+
+Low-effort, low-risk; pick up whenever the operational pain shows.
+
+| Improvement | Detail |
+|---|---|
+| **Verify Railway volume mount** | `CHAT_LOG_DB_PATH=/app/data/chat-logs.db` - if `/app/data` is NOT on a mounted Railway volume, every redeploy wipes the SQLite file. Verify with `railway run ls -la /app/data` against the live service; if it's ephemeral, attach a 1 GB volume to the path. |
+| **S3 / R2 backup of the SQLite file** | `.env.example` already documents `BACKUP_S3_BUCKET` and `CHAT_LOG_BACKUP_INTERVAL_HOURS`; the upload code does NOT exist. Add a `setInterval` that runs a `wal_checkpoint(TRUNCATE)` then uploads the `.db` to S3/R2 every N hours. Cheap insurance against the volume-mount risk above. |
+| **Admin chat-analytics page** | Currently chat logs are reachable only via raw SQL. Build `/admin/analytics/chat` mirroring the existing `/admin/analytics/feedback`: top questions, low-confidence list, refusal rate, per-model usage, query-type breakdown, daily-volume sparkline. Reuse the chart pattern from the feedback dashboard. |
+| **Circuit-breaker alerting** | Today the breaker opens silently after 5 failed writes. Emit a single ERROR log line on open (already done) PLUS a webhook POST to a configurable URL (`CHAT_LOGGER_ALERT_WEBHOOK`). Slack incoming webhook is the easiest integration. |
+
+### Tracking notes
+
+- Each group is independent — pick any order. Recommended sequence:
+  **B → D → C** (quality signals unlock the most product value, operational
+  is cheap insurance, privacy is defer-until-asked).
+- New columns added in any future group should follow the Group A
+  migration pattern: extend `CREATE TABLE` for fresh installs, add an
+  idempotent v3+ migration entry (per-statement `statements: []` array,
+  caught "duplicate column name" errors continue).
+- The current `MIGRATIONS` array lives at the top of `db/chat-logger.js`;
+  the runner at `runMigrations()` already handles both legacy `sql:` and
+  new `statements:` shapes.
 
 ---
 
