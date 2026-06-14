@@ -33,34 +33,88 @@ type ArticleNode = {
 
 type Graph = {version: number; articles: ArticleNode[]};
 
+// Audience-tier sub-folders inside a module. Learners stay with learners,
+// editors stay with editors. Gate filtering alone is not enough because a
+// multi-role user passes the gate for higher-tier content too - and "what's
+// next" suggestions need to follow the AUDIENCE journey, not just whatever
+// the viewer is technically allowed to open.
+const LEARNER_SUBS = ['for-learners', 'overview', 'quickstart', 'faqs-and-troubleshooting'];
+const MANAGER_SUBS = ['for-managers'];
+const EDITOR_SUBS = [
+  'create-and-manage',
+  'assign-and-schedule',
+  'features',
+  'reports-and-analytics',
+  'settings-and-permissions',
+  'best-practices',
+];
+
+/**
+ * For a /modules/<m>/<sub>/ folder, return the list of folders in the same
+ * audience tier inside the same module. Returns null for folders outside
+ * the modules tree (get-started, reference, guides, release-notes ...) so
+ * the caller can fall back to the original parent-widening logic there.
+ */
+function audiencePeerFolders(currentFolder: string): string[] | null {
+  const parts = currentFolder.split('/').filter(Boolean);
+  if (parts[0] !== 'modules' || parts.length < 3) return null;
+  const sub = parts[2];
+  let group: string[] | null = null;
+  if (LEARNER_SUBS.includes(sub)) group = LEARNER_SUBS;
+  else if (MANAGER_SUBS.includes(sub)) group = MANAGER_SUBS;
+  else if (EDITOR_SUBS.includes(sub)) group = EDITOR_SUBS;
+  if (!group) return null;
+  const moduleFolder = '/modules/' + parts[1];
+  return group.map((s) => `${moduleFolder}/${s}`);
+}
+
 function pickSiblings(graph: Graph, currentUrl: string): ArticleNode[] {
   const me = graph.articles.find((a) => a.url === currentUrl);
   if (!me) return [];
 
-  // Same-folder candidates.
+  // Same-folder candidates first.
   let pool = graph.articles.filter(
     (a) => a.folder === me.folder && a.url !== me.url,
   );
 
-  // If we don't have 3, widen to the parent folder.
+  // If we don't have 3, widen by audience tier (within the same module).
+  // Falls back to the original parent-widening for non-module articles.
   if (pool.length < 3) {
-    const parent = me.folder.split('/').slice(0, -1).join('/');
-    if (parent) {
+    const audPeers = audiencePeerFolders(me.folder);
+    if (audPeers) {
       const extras = graph.articles.filter(
         (a) =>
-          a.folder.startsWith(parent + '/') &&
+          audPeers.includes(a.folder) &&
           a.folder !== me.folder &&
           a.url !== me.url,
       );
       pool = pool.concat(extras);
+    } else {
+      const parent = me.folder.split('/').slice(0, -1).join('/');
+      if (parent) {
+        const extras = graph.articles.filter(
+          (a) =>
+            a.folder.startsWith(parent + '/') &&
+            a.folder !== me.folder &&
+            a.url !== me.url,
+        );
+        pool = pool.concat(extras);
+      }
     }
   }
 
-  // Sort by sidebar-position distance.
-  pool.sort(
-    (a, b) =>
-      Math.abs(a.position - me.position) - Math.abs(b.position - me.position),
-  );
+  // Sort: same folder first (closest by position distance), then peers
+  // (also by position distance). Without the same-folder bias, peer
+  // articles whose position happens to match `me.position` would crowd
+  // out genuine siblings.
+  pool.sort((a, b) => {
+    const aSame = a.folder === me.folder ? 0 : 1;
+    const bSame = b.folder === me.folder ? 0 : 1;
+    if (aSame !== bSame) return aSame - bSame;
+    return (
+      Math.abs(a.position - me.position) - Math.abs(b.position - me.position)
+    );
+  });
   return pool;
 }
 
