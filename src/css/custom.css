@@ -746,7 +746,11 @@ a.card.padding--lg p[class*="cardDescription_"] {
   text-decoration-color: var(--ifm-color-primary);
 }
 
-/* Figures + images - center inside the measure, breathing room above/below. */
+/* Figures + images - center inside the measure, breathing room above/below.
+ * Subtle 1px border + faint elevation so screenshots read as distinct
+ * surfaces from the prose around them. Infima's emphasis-200 token flips
+ * for dark mode automatically; the shadow fades to nearly-invisible on
+ * dark backgrounds so the border carries the visual weight there. */
 .markdown figure,
 .markdown p img {
   display: block;
@@ -754,6 +758,10 @@ a.card.padding--lg p[class*="cardDescription_"] {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow:
+    0 1px 3px rgba(17, 12, 46, 0.04),
+    0 4px 12px rgba(17, 12, 46, 0.04);
 }
 .markdown figcaption {
   font-size: var(--text-caption);
