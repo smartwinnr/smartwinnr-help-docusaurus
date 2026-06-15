@@ -110,6 +110,8 @@ function getDb() {
       is_duplicate INTEGER DEFAULT 0,
       query_type TEXT,
       chat_model TEXT,
+      is_refusal INTEGER DEFAULT 0,
+      citation_clicks_json TEXT,
       FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE
     );
 
@@ -181,6 +183,19 @@ const MIGRATIONS = [
       "ALTER TABLE conversations  ADD COLUMN user_roles        TEXT",
       "ALTER TABLE conversations  ADD COLUMN user_privileges   TEXT",
       "ALTER TABLE chat_exchanges ADD COLUMN chat_model        TEXT",
+    ],
+  },
+  // Version 3 - Group B quality signals (V2 of the chat analytics dashboard).
+  // - is_refusal distinguishes "no docs found" from is_fallback ("OpenAI errored").
+  //   The chat handler sets it at write time when search returns nothing useful.
+  // - citation_clicks_json holds the JSON-stringified list of citation URLs the
+  //   user actually clicked from this exchange. Lets us compute CTR per article
+  //   on the Article Performance table.
+  {
+    version: 3,
+    statements: [
+      "ALTER TABLE chat_exchanges ADD COLUMN is_refusal           INTEGER DEFAULT 0",
+      "ALTER TABLE chat_exchanges ADD COLUMN citation_clicks_json TEXT",
     ],
   },
 ];
@@ -312,8 +327,8 @@ function logExchange(data) {
         id, conversation_id, user_query, ai_response, confidence, relevance_score,
         citations_json, num_docs_retrieved, top_doc_distance, page_url,
         created_at, response_time_ms, is_fallback, prompt_tokens, completion_tokens,
-        user_rating, contains_pii, is_duplicate, query_type, chat_model
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?)
+        user_rating, contains_pii, is_duplicate, query_type, chat_model, is_refusal
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?, ?)
     `).run(
       exchangeId,
       data.conversationId,
@@ -332,7 +347,8 @@ function logExchange(data) {
       data.completionTokens ?? null,
       isDuplicate,
       classifyQuery(data.userQuery),
-      data.chatModel || null
+      data.chatModel || null,
+      data.isRefusal ? 1 : 0
     );
 
     recordSuccess();
@@ -354,6 +370,35 @@ function rateExchange(exchangeId, rating) {
     return result.changes > 0;
   } catch (err) {
     console.error('[chat-logger] rateExchange failed:', err.message);
+    return false;
+  }
+}
+
+/**
+ * Record that the user clicked a citation URL from a given exchange. Stored
+ * as a JSON array on the row (dedup-on-write so one URL counts once even if
+ * the user clicks it twice). Cheap because chat-citation click volume is
+ * low; if it ever grows we'd move to a separate event table.
+ */
+function recordCitationClick(exchangeId, url) {
+  if (!ENABLED) return false;
+  if (!exchangeId || !url) return false;
+  try {
+    const db = getDb();
+    const row = db.prepare('SELECT citation_clicks_json FROM chat_exchanges WHERE id = ?').get(exchangeId);
+    if (!row) return false;
+    let clicks = [];
+    if (row.citation_clicks_json) {
+      try { clicks = JSON.parse(row.citation_clicks_json) || []; }
+      catch { clicks = []; }
+    }
+    if (!Array.isArray(clicks)) clicks = [];
+    if (clicks.includes(url)) return true; // already tracked, no-op
+    clicks.push(url);
+    db.prepare('UPDATE chat_exchanges SET citation_clicks_json = ? WHERE id = ?').run(JSON.stringify(clicks), exchangeId);
+    return true;
+  } catch (err) {
+    console.error('[chat-logger] recordCitationClick failed:', err.message);
     return false;
   }
 }
@@ -396,6 +441,7 @@ function getStats(days = 30) {
       ROUND(AVG(relevance_score), 2) as avg_relevance_score,
       ROUND(AVG(response_time_ms), 0) as avg_response_time_ms,
       SUM(CASE WHEN is_fallback = 1 THEN 1 ELSE 0 END) as fallback_count,
+      SUM(CASE WHEN is_refusal = 1 THEN 1 ELSE 0 END) as refusal_count,
       SUM(COALESCE(prompt_tokens, 0)) as total_prompt_tokens,
       SUM(COALESCE(completion_tokens, 0)) as total_completion_tokens,
       SUM(CASE WHEN user_rating = 1 THEN 1 ELSE 0 END) as thumbs_up,
@@ -474,7 +520,8 @@ function getTopUnansweredQueries({days = 30, limit = 25} = {}) {
     FROM chat_exchanges e
     LEFT JOIN conversations c ON c.id = e.conversation_id
     WHERE e.created_at >= ?
-      AND (e.is_fallback = 1 OR (e.relevance_score IS NOT NULL AND e.relevance_score < 0.3))
+      AND (e.is_refusal = 1 OR e.is_fallback = 1
+           OR (e.relevance_score IS NOT NULL AND e.relevance_score < 0.3))
   `).all(since);
 
   const clusters = new Map();
@@ -549,7 +596,7 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
   const rows = db.prepare(`
-    SELECT citations_json, relevance_score, user_rating
+    SELECT citations_json, citation_clicks_json, relevance_score, user_rating
     FROM chat_exchanges
     WHERE created_at >= ?
       AND citations_json IS NOT NULL
@@ -561,6 +608,16 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
     try { cites = JSON.parse(r.citations_json); }
     catch { continue; }
     if (!Array.isArray(cites)) continue;
+
+    // Parse the click list for this exchange (V2 - citation CTR). Wrapped
+    // in a Set for O(1) lookup against citation URLs below.
+    let clicks = [];
+    if (r.citation_clicks_json) {
+      try { clicks = JSON.parse(r.citation_clicks_json) || []; }
+      catch { clicks = []; }
+    }
+    const clickSet = new Set(Array.isArray(clicks) ? clicks : []);
+
     // De-dupe within a single exchange so one citation counts once per
     // exchange, not once per repeated entry inside the array.
     const seen = new Set();
@@ -574,6 +631,7 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
           url,
           title: c.title || null,
           citationCount: 0,
+          clickCount: 0,
           confSum: 0,
           confCount: 0,
           thumbsUp: 0,
@@ -582,6 +640,7 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
         byUrl.set(url, bucket);
       }
       bucket.citationCount += 1;
+      if (clickSet.has(url)) bucket.clickCount += 1;
       if (!bucket.title && c.title) bucket.title = c.title;
       if (typeof r.relevance_score === 'number') {
         bucket.confSum += r.relevance_score;
@@ -600,6 +659,10 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
       url: b.url,
       title: b.title,
       citationCount: b.citationCount,
+      clickCount: b.clickCount,
+      ctrPct: b.citationCount > 0
+        ? Math.round((b.clickCount / b.citationCount) * 100)
+        : null,
       avgConfidence: b.confCount > 0
         ? Math.round((b.confSum / b.confCount) * 100) / 100
         : null,
@@ -612,6 +675,42 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
   }
   out.sort((a, b) => b.citationCount - a.citationCount);
   return out.slice(0, limit);
+}
+
+/**
+ * Abandonment proxy. A conversation is considered "abandoned" when it has
+ * exactly one exchange AND no thumbs_up rating on that exchange - the
+ * user asked once, didn't follow up, didn't say it helped. Computable
+ * from existing data, no new tracking schema required.
+ *
+ * Returns: {totalConversations, abandoned, abandonedPct}
+ */
+function getAbandonmentStats({days = 30} = {}) {
+  const db = getDb();
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const row = db.prepare(`
+    WITH conv AS (
+      SELECT
+        c.id,
+        COUNT(e.id) AS exchange_count,
+        MAX(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END) AS got_thumbs_up
+      FROM conversations c
+      LEFT JOIN chat_exchanges e ON e.conversation_id = c.id
+      WHERE c.created_at >= ?
+      GROUP BY c.id
+    )
+    SELECT
+      COUNT(*) AS total,
+      SUM(CASE WHEN exchange_count = 1 AND got_thumbs_up = 0 THEN 1 ELSE 0 END) AS abandoned
+    FROM conv
+  `).get(since);
+  const total = row.total || 0;
+  const abandoned = row.abandoned || 0;
+  return {
+    totalConversations: total,
+    abandoned,
+    abandonedPct: total > 0 ? Math.round((abandoned / total) * 100) : null,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -638,6 +737,7 @@ function exportToJSON(startDate, endDate, anonymize = false) {
       org_name: null,
       user_roles: null,
       user_privileges: null,
+      citation_clicks_json: null,
       user_query: '[REDACTED]',
       ai_response: '[REDACTED]',
     }));
@@ -727,6 +827,7 @@ function auditLog(req, action) {
 module.exports = {
   logExchange,
   rateExchange,
+  recordCitationClick,
   getRecentExchanges,
   getLowConfidenceExchanges,
   getStats,
@@ -734,6 +835,7 @@ module.exports = {
   getHealth,
   getTopUnansweredQueries,
   getArticlePerformance,
+  getAbandonmentStats,
   exportToJSON,
   deleteConversation,
   deleteByEmail,

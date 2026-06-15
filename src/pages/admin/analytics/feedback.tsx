@@ -162,8 +162,8 @@ function Dashboard(): JSX.Element {
     <div className={styles.wrap}>
       <h1>Article feedback</h1>
       <p className={styles.subhead}>
-        Vote rollup from <code>/api/feedback</code>. Lowest-rated articles are
-        rewrite candidates; most-engaged tell us what's working.{' '}
+        Reader feedback rollup. Lowest-rated articles are rewrite candidates;
+        most-engaged tell us what's working.{' '}
         <Link to="/admin/analytics/chat/">Chat analytics dashboard →</Link>
       </p>
 

@@ -390,6 +390,18 @@ Content: ${result.content.substring(0, 750)}...
       ? Math.min(...searchResults.map(r => r.distance))
       : null;
 
+    // V2: distinguish a documentation refusal (no useful context found) from
+    // an isFallback (OpenAI itself errored, handled above). is_refusal=1 when
+    // search returned no results OR every result was too distant to be useful.
+    // The chat-handler doesn't know what "useful" means to the model, so we
+    // approximate with the same 0.8 distance threshold used for citation
+    // inclusion - if nothing crossed that bar, the answer is necessarily a
+    // "sorry I don't have docs on that" refusal even if the LLM call succeeded.
+    const isRefusal = !isFallback && (
+      searchResults.length === 0
+      || searchResults.every(r => typeof r.distance !== 'number' || r.distance >= 0.8)
+    );
+
     const response = {
       message: aiMessage,
       citations: citations.slice(0, 3), // Limit to top 3 citations
@@ -429,6 +441,7 @@ Content: ${result.content.substring(0, 750)}...
       chatLogger.logExchange({
         exchangeId,
         conversationId: convId,
+        isRefusal,
         userQuery: message,
         aiResponse: aiMessage,
         confidence: response.confidence,
@@ -517,6 +530,27 @@ app.post('/api/chat/:exchangeId/rate', (req, res) => {
   }
 });
 
+// Record that a user clicked a citation URL from a chat exchange. V2 input
+// to the Article Performance CTR column. Fire-and-forget from the client;
+// no auth beyond the normal session cookie (same trust level as /rate).
+app.post('/api/chat/:exchangeId/citation-click', (req, res) => {
+  try {
+    const { exchangeId } = req.params;
+    const url = req.body && typeof req.body.url === 'string' ? req.body.url : null;
+    if (!url || !url.startsWith('/')) {
+      return res.status(400).json({ error: 'url must be a root-relative path' });
+    }
+    const ok = chatLogger.recordCitationClick(exchangeId, url);
+    if (!ok) {
+      return res.status(404).json({ error: 'Exchange not found or click not recorded' });
+    }
+    res.json({ success: true });
+  } catch (error) {
+    console.error('❌ Error recording citation click:', error);
+    res.status(500).json({ error: 'Failed to record citation click' });
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Admin chat-log endpoints (require superadmin role)
 // ---------------------------------------------------------------------------
@@ -581,6 +615,7 @@ app.get('/api/admin/chat-logs/dashboard', (req, res) => {
       queryTypes: chatLogger.getQueryTypeStats(days),
       topUnanswered: chatLogger.getTopUnansweredQueries({days, limit: 25}),
       articlePerformance: chatLogger.getArticlePerformance({days, minCitations, limit: 50}),
+      abandonment: chatLogger.getAbandonmentStats({days}),
       health: chatLogger.getHealth(),
     });
   } catch (error) {

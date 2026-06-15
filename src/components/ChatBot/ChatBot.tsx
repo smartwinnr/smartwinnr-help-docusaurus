@@ -251,7 +251,34 @@ const ChatBot: React.FC = () => {
       .replace(/\n/g, '<br />');
   };
 
-  const renderCitations = (citations: Citation[] | undefined) => {
+  /**
+   * V2 analytics hook: when a user clicks a citation, fire-and-forget POST
+   * so the server can record it against the exchange. Used by the Article
+   * Performance dashboard to compute CTR (clicks / citations) per article.
+   * Best-effort - we don't block the navigation on the network call.
+   */
+  const recordCitationClick = (exchangeId: string | undefined, url: string) => {
+    if (!exchangeId || !url || !url.startsWith('/')) return;
+    try {
+      // sendBeacon survives navigation; falls back to fetch if unavailable.
+      if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+        navigator.sendBeacon(
+          `/api/chat/${encodeURIComponent(exchangeId)}/citation-click`,
+          new Blob([JSON.stringify({url})], {type: 'application/json'}),
+        );
+        return;
+      }
+      fetch(`/api/chat/${encodeURIComponent(exchangeId)}/citation-click`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify({url}),
+        keepalive: true,
+      }).catch(() => { /* fail silently */ });
+    } catch { /* fail silently */ }
+  };
+
+  const renderCitations = (citations: Citation[] | undefined, exchangeId?: string) => {
     if (!citations || citations.length === 0) return null;
 
     return (
@@ -259,7 +286,11 @@ const ChatBot: React.FC = () => {
         <div className={styles.citationsTitle}>📚 Sources:</div>
         {citations.map((citation, index) => (
           <div key={index} className={styles.citation}>
-            <a href={citation.url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={citation.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => recordCitationClick(exchangeId, citation.url)}>
               {citation.title}
             </a>
             <div className={styles.citationSnippet}>{citation.snippet}</div>
@@ -368,7 +399,7 @@ const ChatBot: React.FC = () => {
                           __html: formatMessage(message.content)
                         }}
                       />
-                      {renderCitations(message.citations)}
+                      {renderCitations(message.citations, message.exchangeId)}
                       {message.role === 'assistant' && message.exchangeId && message.id !== 'welcome' && message.id !== 'welcome-new' && (
                         <div className={styles.ratingButtons}>
                           <button

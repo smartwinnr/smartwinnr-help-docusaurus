@@ -28,6 +28,7 @@ type Stats = {
   avg_relevance_score: number | null;
   avg_response_time_ms: number | null;
   fallback_count: number;
+  refusal_count: number;
   total_prompt_tokens: number;
   total_completion_tokens: number;
   thumbs_up: number;
@@ -50,10 +51,18 @@ type ArticleRow = {
   url: string;
   title: string | null;
   citationCount: number;
+  clickCount: number;
+  ctrPct: number | null;
   avgConfidence: number | null;
   thumbsUp: number;
   thumbsDown: number;
   helpfulPct: number | null;
+};
+
+type Abandonment = {
+  totalConversations: number;
+  abandoned: number;
+  abandonedPct: number | null;
 };
 
 type Health = {
@@ -74,6 +83,7 @@ type Dashboard = {
   queryTypes: QueryTypeRow[];
   topUnanswered: TopUnansweredRow[];
   articlePerformance: ArticleRow[];
+  abandonment: Abandonment;
   health: Health;
 };
 
@@ -93,7 +103,7 @@ const QUERY_TYPE_LABEL: Record<string, string> = {
   'general': 'General',
 };
 
-type SortKey = 'citationCount' | 'helpfulPct' | 'avgConfidence' | 'thumbsDown';
+type SortKey = 'citationCount' | 'helpfulPct' | 'avgConfidence' | 'thumbsDown' | 'ctrPct';
 type SortDir = 'asc' | 'desc';
 
 function fmtDateShort(iso: string | null): string {
@@ -146,6 +156,10 @@ function Dashboard(): JSX.Element {
 
   const refusalRate = useMemo(() => {
     if (!data || !data.stats.total_exchanges) return 0;
+    return Math.round((data.stats.refusal_count / data.stats.total_exchanges) * 100);
+  }, [data]);
+  const fallbackRate = useMemo(() => {
+    if (!data || !data.stats.total_exchanges) return 0;
     return Math.round((data.stats.fallback_count / data.stats.total_exchanges) * 100);
   }, [data]);
 
@@ -197,7 +211,7 @@ function Dashboard(): JSX.Element {
     <div className={styles.wrap}>
       <h1>Chat analytics</h1>
       <p className={styles.subhead}>
-        Aggregates from <code>/api/chat</code> logs. Top Unanswered shows what users
+        Insights from chatbot conversations. Top Unanswered shows what users
         ask that the docs don't cover; Article Performance shows which articles the
         bot cites and whether those answers helped.{' '}
         <Link to="/admin/analytics/feedback/">Article feedback dashboard →</Link>
@@ -226,10 +240,10 @@ function Dashboard(): JSX.Element {
               <span className={styles.tileValue}>{data.stats.total_exchanges ?? 0}</span>
             </div>
             <div className={styles.tile}>
-              <span className={styles.tileLabel}>Refusal rate</span>
+              <span className={styles.tileLabel}>No-docs refusal</span>
               <span className={styles.tileValue}>{refusalRate}%</span>
               <span className={styles.tileLabel} style={{fontSize: '0.7em', opacity: 0.7}}>
-                directional · sharpens after Group B
+                bot had no good citation
               </span>
             </div>
             <div className={styles.tile}>
@@ -307,6 +321,12 @@ function Dashboard(): JSX.Element {
                   <th
                     className={styles.numCol}
                     style={{cursor: 'pointer'}}
+                    onClick={() => toggleSort('ctrPct')}>
+                    CTR{sortIndicator('ctrPct')}
+                  </th>
+                  <th
+                    className={styles.numCol}
+                    style={{cursor: 'pointer'}}
                     onClick={() => toggleSort('avgConfidence')}>
                     Avg confidence{sortIndicator('avgConfidence')}
                   </th>
@@ -334,6 +354,7 @@ function Dashboard(): JSX.Element {
                       </Link>
                     </td>
                     <td className={styles.numCol}>{a.citationCount}</td>
+                    <td className={styles.numCol}>{fmtPct(a.ctrPct)}</td>
                     <td className={styles.numCol}>{fmtNum(a.avgConfidence, 2)}</td>
                     <td className={styles.numCol}>{a.thumbsUp}</td>
                     <td className={styles.numCol}>{a.thumbsDown}</td>
@@ -398,6 +419,11 @@ function Dashboard(): JSX.Element {
           }}>
             <strong>Operational health</strong>
             <ul style={{margin: '8px 0 0', paddingLeft: 18, lineHeight: 1.6}}>
+              <li>
+                Conversation abandonment: <strong>{data.abandonment.abandonedPct ?? 0}%</strong>
+                {' '}({data.abandonment.abandoned} of {data.abandonment.totalConversations} conversations were single-turn with no 👍)
+              </li>
+              <li>API failure rate: <strong>{fallbackRate}%</strong> (OpenAI errored; bot served the fallback message)</li>
               <li>DB size: {data.health.db_size_mb} MB · WAL: {fmtBytesToMb(data.health.wal_size_bytes)}</li>
               <li>Tokens this window: {data.stats.total_prompt_tokens?.toLocaleString() ?? 0} prompt · {data.stats.total_completion_tokens?.toLocaleString() ?? 0} completion</li>
               <li>Total logged: {data.health.total_exchanges} exchanges · {data.health.total_conversations} conversations · oldest: {fmtDateShort(data.health.oldest_record)}</li>
