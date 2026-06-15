@@ -639,12 +639,22 @@ function getHealth() {
  *     lastAskedAt, avgRelevance}]
  * sorted by count desc, then distinct users desc.
  */
+/** Extract the module slug from a chat page URL. Tolerant of full URLs
+ *  ("https://help.smartwinnr.com/modules/quiz/...") and root-relative
+ *  paths ("/modules/quiz/..."). Returns null when the URL isn't in the
+ *  modules tree (e.g. landing, reference, persona pages). */
+function moduleFromPageUrl(url) {
+  if (typeof url !== 'string' || !url) return null;
+  const m = /\/modules\/([^/?#]+)/.exec(url);
+  return m ? m[1] : null;
+}
+
 function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
   const f = buildConvFilter({role, orgId});
   const rows = db.prepare(`
-    SELECT e.user_query, e.relevance_score, e.created_at, c.user_email
+    SELECT e.user_query, e.relevance_score, e.created_at, e.page_url, c.user_email
     FROM chat_exchanges e
     LEFT JOIN conversations c ON c.id = e.conversation_id
     WHERE e.created_at >= ?
@@ -670,6 +680,7 @@ function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
         lastAskedAt: r.created_at,
         relevanceSum: 0,
         relevanceCount: 0,
+        moduleCounts: {},
       };
       clusters.set(normalized, bucket);
     }
@@ -683,10 +694,24 @@ function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
       bucket.relevanceSum += r.relevance_score;
       bucket.relevanceCount += 1;
     }
+    // Tally the module the user was on when they asked. Top hit per cluster
+    // becomes the dominant module surfaced on the dashboard.
+    const mod = moduleFromPageUrl(r.page_url);
+    if (mod) bucket.moduleCounts[mod] = (bucket.moduleCounts[mod] || 0) + 1;
   }
 
   const out = [];
   for (const b of clusters.values()) {
+    // Dominant module = mode of the per-cluster moduleCounts. Returns null
+    // when no exchanges in this cluster were from a /modules/ page.
+    let dominantModule = null;
+    let topModuleCount = 0;
+    for (const [mod, count] of Object.entries(b.moduleCounts)) {
+      if (count > topModuleCount) {
+        topModuleCount = count;
+        dominantModule = mod;
+      }
+    }
     out.push({
       normalizedQuery: b.normalizedQuery,
       exampleQuery: b.exampleQuery,
@@ -696,6 +721,7 @@ function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
       avgRelevance: b.relevanceCount > 0
         ? Math.round((b.relevanceSum / b.relevanceCount) * 100) / 100
         : null,
+      module: dominantModule,
     });
   }
   out.sort((a, b) => b.count - a.count || b.distinctUsers - a.distinctUsers);

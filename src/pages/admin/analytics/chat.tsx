@@ -45,6 +45,7 @@ type TopUnansweredRow = {
   distinctUsers: number;
   lastAskedAt: string;
   avgRelevance: number | null;
+  module: string | null;
 };
 
 type ArticleRow = {
@@ -117,6 +118,28 @@ const QUERY_TYPE_LABEL: Record<string, string> = {
   'greeting': 'Greeting',
   'general': 'General',
 };
+
+// Friendly labels for module slugs surfaced on the dashboard. Slugs that
+// aren't mapped fall through to their raw slug; null/empty stays as "—".
+const MODULE_LABEL: Record<string, string> = {
+  'quiz':                  'Quiz',
+  'smartpath':             'SmartPath',
+  'smartfeed':             'SmartFeed',
+  'video-coaching':        'Video Coaching',
+  'ai-coaching':           'AI Coaching',
+  'field-coaching':        'Field Coaching',
+  'survey':                'Survey',
+  'knowledge-hub':         'Knowledge Hub',
+  'forms':                 'Forms',
+  'kpi-gamification':      'KPI & Gamification',
+  'notifications':         'Notifications',
+  'cross-module-features': 'Cross-module',
+};
+
+function fmtModule(slug: string | null): string {
+  if (!slug) return '—';
+  return MODULE_LABEL[slug] || slug;
+}
 
 type SortKey = 'citationCount' | 'helpfulPct' | 'avgConfidence' | 'thumbsDown' | 'ctrPct';
 type SortDir = 'asc' | 'desc';
@@ -330,6 +353,7 @@ function Dashboard(): JSX.Element {
               <thead>
                 <tr>
                   <th>Sample query</th>
+                  <th>Module</th>
                   <th className={styles.numCol}>Count</th>
                   <th className={styles.numCol}>Distinct users</th>
                   <th>Last asked</th>
@@ -341,6 +365,7 @@ function Dashboard(): JSX.Element {
                 {data.topUnanswered.map((q) => (
                   <tr key={q.normalizedQuery}>
                     <td>{q.exampleQuery}</td>
+                    <td>{fmtModule(q.module)}</td>
                     <td className={styles.numCol}>{q.count}</td>
                     <td className={styles.numCol}>{q.distinctUsers}</td>
                     <td>{fmtDateShort(q.lastAskedAt)}</td>
