@@ -152,7 +152,7 @@ function Dashboard(): JSX.Element {
     return (
       <div className={styles.wrap}>
         <h1>Article feedback</h1>
-        <p>This dashboard is restricted to <strong>superadmin</strong>.</p>
+        <p>You don't have access to this dashboard.</p>
         <p><Link to="/">← Back to the homepage</Link></p>
       </div>
     );
@@ -163,7 +163,8 @@ function Dashboard(): JSX.Element {
       <h1>Article feedback</h1>
       <p className={styles.subhead}>
         Vote rollup from <code>/api/feedback</code>. Lowest-rated articles are
-        rewrite candidates; most-engaged tell us what's working.
+        rewrite candidates; most-engaged tell us what's working.{' '}
+        <Link to="/admin/analytics/chat/">Chat analytics dashboard →</Link>
       </p>
 
       <div className={styles.controls}>

@@ -20,8 +20,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-// const PORT = 3001; // Dev
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -562,6 +562,30 @@ app.get('/api/admin/chat-logs/stats', (req, res) => {
   } catch (error) {
     console.error('❌ Error fetching stats:', error);
     res.status(500).json({ error: 'Failed to fetch stats' });
+  }
+});
+
+// Aggregate dashboard data for /admin/analytics/chat - one round trip
+// returns everything the page needs. Pulls existing helpers (getStats,
+// getQueryTypeStats, getHealth) plus the two new aggregations
+// (top unanswered queries, article performance from citations).
+app.get('/api/admin/chat-logs/dashboard', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_dashboard');
+    const days = Math.min(Math.max(parseInt(req.query.days || '30', 10), 1), 365);
+    const minCitations = Math.max(parseInt(req.query.minCitations || '3', 10), 1);
+    res.json({
+      ok: true,
+      windowDays: days,
+      stats: chatLogger.getStats(days),
+      queryTypes: chatLogger.getQueryTypeStats(days),
+      topUnanswered: chatLogger.getTopUnansweredQueries({days, limit: 25}),
+      articlePerformance: chatLogger.getArticlePerformance({days, minCitations, limit: 50}),
+      health: chatLogger.getHealth(),
+    });
+  } catch (error) {
+    console.error('❌ Error fetching chat dashboard:', error);
+    res.status(500).json({ ok: false, error: 'Failed to fetch dashboard data' });
   }
 });
 

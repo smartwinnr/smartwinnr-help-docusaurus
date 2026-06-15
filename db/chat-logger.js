@@ -450,6 +450,170 @@ function getHealth() {
   };
 }
 
+/**
+ * Top unanswered queries within the window. "Unanswered" = the bot
+ * returned the fallback message (is_fallback=1) OR the top retrieved
+ * doc was too distant to be useful (relevance_score < 0.3).
+ *
+ * Clustering is in-JS: normalize each user_query (lowercase, strip
+ * punctuation, collapse whitespace), group on the normalized form.
+ * Per cluster we keep the longest example query as the representative
+ * (longest is usually the most descriptive). Distinct users are
+ * counted via the conversation_id -> user_email join.
+ *
+ * Returns:
+ *   [{normalizedQuery, exampleQuery, count, distinctUsers,
+ *     lastAskedAt, avgRelevance}]
+ * sorted by count desc, then distinct users desc.
+ */
+function getTopUnansweredQueries({days = 30, limit = 25} = {}) {
+  const db = getDb();
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const rows = db.prepare(`
+    SELECT e.user_query, e.relevance_score, e.created_at, c.user_email
+    FROM chat_exchanges e
+    LEFT JOIN conversations c ON c.id = e.conversation_id
+    WHERE e.created_at >= ?
+      AND (e.is_fallback = 1 OR (e.relevance_score IS NOT NULL AND e.relevance_score < 0.3))
+  `).all(since);
+
+  const clusters = new Map();
+  for (const r of rows) {
+    const normalized = String(r.user_query || '')
+      .toLowerCase()
+      .replace(/[^\p{Letter}\p{Number}\s]/gu, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!normalized) continue;
+    let bucket = clusters.get(normalized);
+    if (!bucket) {
+      bucket = {
+        normalizedQuery: normalized,
+        exampleQuery: r.user_query,
+        count: 0,
+        users: new Set(),
+        lastAskedAt: r.created_at,
+        relevanceSum: 0,
+        relevanceCount: 0,
+      };
+      clusters.set(normalized, bucket);
+    }
+    bucket.count += 1;
+    if (r.user_email) bucket.users.add(r.user_email);
+    if (r.created_at > bucket.lastAskedAt) bucket.lastAskedAt = r.created_at;
+    if (r.user_query && r.user_query.length > bucket.exampleQuery.length) {
+      bucket.exampleQuery = r.user_query;
+    }
+    if (typeof r.relevance_score === 'number') {
+      bucket.relevanceSum += r.relevance_score;
+      bucket.relevanceCount += 1;
+    }
+  }
+
+  const out = [];
+  for (const b of clusters.values()) {
+    out.push({
+      normalizedQuery: b.normalizedQuery,
+      exampleQuery: b.exampleQuery,
+      count: b.count,
+      distinctUsers: b.users.size,
+      lastAskedAt: b.lastAskedAt,
+      avgRelevance: b.relevanceCount > 0
+        ? Math.round((b.relevanceSum / b.relevanceCount) * 100) / 100
+        : null,
+    });
+  }
+  out.sort((a, b) => b.count - a.count || b.distinctUsers - a.distinctUsers);
+  return out.slice(0, limit);
+}
+
+/**
+ * Article performance from the chatbot's perspective. Aggregates the
+ * `citations_json` payload from chat_exchanges by URL, joins with the
+ * exchange's user_rating to estimate satisfaction per article.
+ *
+ * citations_json is JSON-stringified by logExchange; we parse in JS
+ * rather than reach for SQLite JSON1 - simpler to debug and trivially
+ * fast at our volume.
+ *
+ * `minCitations` filters out noise (URLs cited once or twice). Rows
+ * below the threshold are dropped before sorting.
+ *
+ * Returns:
+ *   [{url, title, citationCount, avgConfidence, thumbsUp, thumbsDown,
+ *     helpfulPct}]
+ * sorted by citationCount desc. `helpfulPct` is null when no ratings
+ * exist on the citing exchanges.
+ */
+function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
+  const db = getDb();
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const rows = db.prepare(`
+    SELECT citations_json, relevance_score, user_rating
+    FROM chat_exchanges
+    WHERE created_at >= ?
+      AND citations_json IS NOT NULL
+  `).all(since);
+
+  const byUrl = new Map();
+  for (const r of rows) {
+    let cites;
+    try { cites = JSON.parse(r.citations_json); }
+    catch { continue; }
+    if (!Array.isArray(cites)) continue;
+    // De-dupe within a single exchange so one citation counts once per
+    // exchange, not once per repeated entry inside the array.
+    const seen = new Set();
+    for (const c of cites) {
+      const url = c && c.url;
+      if (!url || seen.has(url)) continue;
+      seen.add(url);
+      let bucket = byUrl.get(url);
+      if (!bucket) {
+        bucket = {
+          url,
+          title: c.title || null,
+          citationCount: 0,
+          confSum: 0,
+          confCount: 0,
+          thumbsUp: 0,
+          thumbsDown: 0,
+        };
+        byUrl.set(url, bucket);
+      }
+      bucket.citationCount += 1;
+      if (!bucket.title && c.title) bucket.title = c.title;
+      if (typeof r.relevance_score === 'number') {
+        bucket.confSum += r.relevance_score;
+        bucket.confCount += 1;
+      }
+      if (r.user_rating === 1) bucket.thumbsUp += 1;
+      else if (r.user_rating === -1) bucket.thumbsDown += 1;
+    }
+  }
+
+  const out = [];
+  for (const b of byUrl.values()) {
+    if (b.citationCount < minCitations) continue;
+    const totalRatings = b.thumbsUp + b.thumbsDown;
+    out.push({
+      url: b.url,
+      title: b.title,
+      citationCount: b.citationCount,
+      avgConfidence: b.confCount > 0
+        ? Math.round((b.confSum / b.confCount) * 100) / 100
+        : null,
+      thumbsUp: b.thumbsUp,
+      thumbsDown: b.thumbsDown,
+      helpfulPct: totalRatings > 0
+        ? Math.round((b.thumbsUp / totalRatings) * 100)
+        : null,
+    });
+  }
+  out.sort((a, b) => b.citationCount - a.citationCount);
+  return out.slice(0, limit);
+}
+
 // ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
@@ -568,6 +732,8 @@ module.exports = {
   getStats,
   getQueryTypeStats,
   getHealth,
+  getTopUnansweredQueries,
+  getArticlePerformance,
   exportToJSON,
   deleteConversation,
   deleteByEmail,
