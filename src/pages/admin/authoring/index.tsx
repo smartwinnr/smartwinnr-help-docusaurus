@@ -702,7 +702,7 @@ function Wizard(): ReactNode {
     return (
       <div className={styles.wrap}>
         <h1>Authoring</h1>
-        <p>This page is restricted to <strong>superadmin</strong>.</p>
+        <p>You don't have access to this page.</p>
         <p><Link to="/">← Back to the homepage</Link></p>
       </div>
     );
