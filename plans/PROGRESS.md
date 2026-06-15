@@ -34,7 +34,13 @@ authoritative plan file - this document is a derived status view).
 | **Authoring LLM rate limit** | ✅ done | Plan §20.1 - 10 generates per hour per superadmin via in-memory ring buffer keyed on email. Override via `AUTHORING_RATE_LIMIT` env var. Wizard catches 429 + surfaces "Try again in ~M min" message. |
 | **Authoring publish-to-deploy pipeline** | ⏸ TODO | Plan §20.3–§20.5 - when an editor publishes, the article is invisible until Railway redeploys. Approach: server commits + pushes the changed files to `main` using a GitLab PAT; Railway is already configured to auto-redeploy on push (no deploy-hook URL needed - Railway no longer exposes one in their UI). Need: pending-publish queue + Deploy now button + 30 min debounced auto-fallback (capped at 1 deploy / 60 min). Env vars: `AUTHORING_GIT_PUSH`, `GIT_PUBLISH_BRANCH`, `GIT_PUSH_TOKEN`, `GIT_PUSH_REPO_URL`, `AUTHORING_DEPLOY_DEBOUNCE_MS`, `AUTHORING_DEPLOY_MIN_INTERVAL_MS`. |
 | **Chat-logging identity columns** (Group A) | ✅ done | 2026-06-13 - `conversations` gained `user_display_name`, `org_id`, `org_name`, `user_roles`, `user_privileges` (JSON-stringified); `chat_exchanges` gained `chat_model`. Migration v2 in `db/chat-logger.js` is idempotent (catches "duplicate column" on fresh installs where CREATE TABLE already declared them). New index `idx_conversations_org_id`. `server.js` threads all six fields from `req.user` + `CHAT_MODEL` env. `exportToJSON(anonymize=true)` redacts all new identity fields. |
-| **Chat-logging improvements (B/C/D)** | ⏸ TODO | See [Chat-logging improvements](#chat-logging-improvements-deferred) below. Three groups deferred after shipping Group A: quality signals (refusal-vs-fallback split, citation-click tracking, conversation-end, top-unanswered view), privacy hardening (PII scrubber, per-user opt-out, encryption at rest), operational (Railway volume check, S3 backup, admin chat-analytics page, circuit-breaker alerting). |
+| **Chat-logging Group B** (quality signals) | ✅ done | 2026-06-15 — schema migration v3 added `is_refusal` (distinct from `is_fallback`) + `citation_clicks_json` to `chat_exchanges`. `server.js` `/api/chat` sets `isRefusal` at write time when search returned nothing or every result was distance ≥ 0.8. New `POST /api/chat/:exchangeId/citation-click` endpoint; `ChatBot.tsx` wires `sendBeacon` on citation link clicks. New helpers `recordCitationClick`, `getArticlePerformance` (now with `clickCount` + `ctrPct`), `getAbandonmentStats` (proxy: single-turn conversations with no thumbs-up). Schema self-heal added on every `getDb()` boot via `ensureSchemaColumns()` so migration drift is recoverable. |
+| **Chat-logging Groups C + D** (privacy + ops) | ⏸ TODO | See [Chat-logging improvements](#chat-logging-improvements-deferred) below. Group C — PII scrubber, per-user opt-out, encryption at rest. Group D — Railway volume verification, S3/R2 backup, circuit-breaker webhook alerting. |
+| **Chat analytics dashboard** (`/admin/analytics/chat/`) | ✅ done | 2026-06-15 — shipped V1+V2+V3 in three commits. V1: KPI tiles, Top Unanswered Queries (clustered), Article Performance (citations × ratings), query-type breakdown, ops footer. V2: refusal split, CTR column on Article Performance, abandonment in ops footer. V3: role + org filter dropdowns at the page header backed by `getAvailableOrgs` + a `buildConvFilter` clause builder that splices into all five aggregation queries. Mirrors `/admin/analytics/feedback/`'s structure and CSS module; cross-links between the two pages. |
+| **Authoring wizard image controls (F1)** | ✅ done | Manual up/down reorder + optional `stepAnchor` text input per image. Prompt at `prompts/author-article.md` rewritten with a 3-tier placement priority order (stepAnchor → caption → array position). F2 (drag-to-section in Step 4 preview via per-image dropdown) deferred. |
+| **Post-launch stakeholder feedback (round 1)** | ✅ done | Image border + shadow on `.markdown` images; RelatedStrip widens by audience tier rather than gate (no more learner pages surfacing manager/editor "What's next"); gate-aware Prev/Next paginator with reroute past blocked docs; doc-gate filter applied to vector search, chat citations, WhatsNew, RecentlyViewed; favicon set refreshed; role-label scrub on admin gate copy; `/api/*` path scrub on dashboard subheads. |
+| **Wynnie chatbot — rename + voice + mark** | ✅ done (partial) | Renamed from "SmartWinnr Help Assistant" → Wynnie with custom W+sparkle SVG mark, system prompt rewritten in `prompts/wynnie.md` for conversational voice + threaded follow-ups (last 6 turns sent to OpenAI). **Open**: stakeholder flagged a slang concern; naming exploration ongoing (Sira / Asha / Quill candidates evaluated). No second rename shipped yet. |
+| **Wynnie mascot** | ⏸ pending decisions | `branding/wynnie/designer-brief.md` + PDF generated; brief locked. Awaiting (a) chatbot name decision and (b) brand approver assignment before designer engagement. |
 | **Git commits** | ⏸ open | Tree still uncommitted on `feature/help-ia-redesign` |
 
 ---
@@ -248,21 +254,22 @@ authoritative plan file - this document is a derived status view).
 ## Chat-logging improvements (deferred)
 
 Group A (identity context — user display name, org id/name, roles,
-privileges, chat model) shipped 2026-06-13. Three groups remain — capture
-here so we don't relitigate the design when picking them back up.
+privileges, chat model) shipped 2026-06-13.
+Group B (quality signals) shipped 2026-06-15 alongside the V2 chat
+analytics dashboard. Groups C + D remain — captured here so we don't
+relitigate the design when picking them back up.
 
-### Group B — Quality signals
+### Group B — Quality signals ✅ done (2026-06-15)
 
-Pick this up next; it's what gives content owners a useful backlog
-during and after Test Week.
+Shipped as part of the V2/V3 chat analytics dashboard.
 
-| Improvement | Detail |
+| Improvement | Status |
 |---|---|
-| **Distinguish refusal from API-failure fallback** | Today `is_fallback=1` means *either* the OpenAI call errored *or* Wynnie returned "I don't have docs on that." The second is the gold-mine content-authoring signal; conflating them buries it. Add a sibling `is_refusal INTEGER DEFAULT 0` column; set when `searchResults.length === 0` OR every result has `distance >= 0.8`. |
-| **Citation click tracking** | Front-end emits `POST /api/chat/:exchangeId/citation-click {url}` when a user opens a cited article from the chat panel. New table `chat_citation_clicks(exchange_id, url, clicked_at)` or new column `citation_clicks_json` on `chat_exchanges`. Lets us measure "did the answer actually help" beyond 👍/👎. |
-| **Conversation end signal** | When the chat panel closes OR the conversation goes idle for N minutes, mark `conversations.closed_at`. Lets us compute "answered in N exchanges", abandonment rate, time-to-first-citation-click. |
-| **Top-unanswered queries view** | Aggregate queries where `is_refusal=1` OR `relevance_score < 0.3`, deduped + clustered (start with simple normalised-string match, upgrade to semantic clustering later). Surface to superadmin at `/admin/analytics/chat` (a sibling of the existing `/admin/analytics/feedback`). |
-| **Per-module analytics** | Map each citation's `url` against its module folder (regex on `/modules/<m>/`) and group queries by module. Tells us "Quiz has 40% troubleshooting queries → add an FAQ." |
+| **Distinguish refusal from API-failure fallback** | ✅ shipped — `is_refusal INTEGER DEFAULT 0` column added in migration v3; `server.js` `/api/chat` sets it at write time when search returned nothing or every result was distance ≥ 0.8. `getStats` exposes `refusal_count` alongside `fallback_count`. Dashboard tile renamed "No-docs refusal" with no caveat. |
+| **Citation click tracking** | ✅ shipped — `citation_clicks_json TEXT` column on `chat_exchanges` (de-duped JSON array of clicked URLs). `POST /api/chat/:exchangeId/citation-click` accepts root-relative URLs only. `ChatBot.tsx` fires `navigator.sendBeacon` (with `fetch keepalive` fallback) on every citation link click. Aggregated per-URL into the Article Performance table's `CTR` column. |
+| **Conversation end signal** | ⚠ partial — explicit `closed_at` tracking was deferred. Instead the abandonment proxy uses single-turn-with-no-thumbs-up, computable from existing data. Sufficient for the V2 dashboard signal; revisit if we want explicit duration / time-to-first-citation-click later. |
+| **Top-unanswered queries view** | ✅ shipped — at `/admin/analytics/chat/`. Clusters by normalized query text in JS, filtered on `is_refusal=1 OR is_fallback=1 OR relevance_score<0.3`. Each row has a "Create article" link that opens the authoring wizard pre-filled with the query as the title. |
+| **Per-module analytics** | ⏸ deferred — the Article Performance table already groups by URL which gives per-article granularity. A per-module rollup (regex `/modules/<m>/` aggregation) is a future polish. |
 
 ### Group C — Privacy hardening
 
@@ -283,18 +290,22 @@ Low-effort, low-risk; pick up whenever the operational pain shows.
 |---|---|
 | **Verify Railway volume mount** | `CHAT_LOG_DB_PATH=/app/data/chat-logs.db` - if `/app/data` is NOT on a mounted Railway volume, every redeploy wipes the SQLite file. Verify with `railway run ls -la /app/data` against the live service; if it's ephemeral, attach a 1 GB volume to the path. |
 | **S3 / R2 backup of the SQLite file** | `.env.example` already documents `BACKUP_S3_BUCKET` and `CHAT_LOG_BACKUP_INTERVAL_HOURS`; the upload code does NOT exist. Add a `setInterval` that runs a `wal_checkpoint(TRUNCATE)` then uploads the `.db` to S3/R2 every N hours. Cheap insurance against the volume-mount risk above. |
-| **Admin chat-analytics page** | Currently chat logs are reachable only via raw SQL. Build `/admin/analytics/chat` mirroring the existing `/admin/analytics/feedback`: top questions, low-confidence list, refusal rate, per-model usage, query-type breakdown, daily-volume sparkline. Reuse the chart pattern from the feedback dashboard. |
+| ~~**Admin chat-analytics page**~~ | ✅ shipped — `/admin/analytics/chat/` lives, V1+V2+V3 done (see status table). |
 | **Circuit-breaker alerting** | Today the breaker opens silently after 5 failed writes. Emit a single ERROR log line on open (already done) PLUS a webhook POST to a configurable URL (`CHAT_LOGGER_ALERT_WEBHOOK`). Slack incoming webhook is the easiest integration. |
 
 ### Tracking notes
 
-- Each group is independent — pick any order. Recommended sequence:
-  **B → D → C** (quality signals unlock the most product value, operational
-  is cheap insurance, privacy is defer-until-asked).
-- New columns added in any future group should follow the Group A
+- Each group is independent — pick any order. With Group B shipped,
+  the remaining recommended sequence is **D → C** (operational is
+  cheap insurance now that the dashboard exists; privacy stays
+  defer-until-asked).
+- New columns added in any future group should follow the established
   migration pattern: extend `CREATE TABLE` for fresh installs, add an
-  idempotent v3+ migration entry (per-statement `statements: []` array,
-  caught "duplicate column name" errors continue).
+  idempotent v4+ migration entry (per-statement `statements: []` array,
+  caught "duplicate column name" errors continue), AND append to the
+  `ENSURED_COLUMNS` list near the top of `db/chat-logger.js` so the
+  self-heal pass keeps production schema in sync if the migration log
+  ever drifts.
 - The current `MIGRATIONS` array lives at the top of `db/chat-logger.js`;
   the runner at `runMigrations()` already handles both legacy `sql:` and
   new `statements:` shapes.
