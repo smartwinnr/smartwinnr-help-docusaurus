@@ -62,7 +62,14 @@ const TAG_VOCAB = [
   'troubleshooting', 'billing', 'onboarding', 'mobile', 'web', 'integration',
 ];
 
-type Image = {url: string; caption: string};
+type Image = {
+  url: string;
+  caption: string;
+  /** Optional explicit placement hint. When present, the LLM uses this as the
+   * primary signal for which step the image goes under, overriding caption-
+   * driven guessing. Empty string treated as absent. */
+  stepAnchor?: string;
+};
 
 type Inputs = {
   module: string;
@@ -401,8 +408,23 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     next[idx] = {...next[idx], caption};
     dispatch({type: 'set', patch: {images: next}});
   }
+  function setStepAnchor(idx: number, stepAnchor: string) {
+    const next = i.images.slice();
+    next[idx] = {...next[idx], stepAnchor};
+    dispatch({type: 'set', patch: {images: next}});
+  }
   function removeImage(idx: number) {
     dispatch({type: 'set', patch: {images: i.images.filter((_, x) => x !== idx)}});
+  }
+  // Swap two adjacent entries. Up/down buttons are disabled at the edges
+  // (the buttons themselves are gated on idx so this never gets called out
+  // of bounds, but the guard keeps the helper safe to call directly).
+  function moveImage(idx: number, dir: -1 | 1) {
+    const target = idx + dir;
+    if (target < 0 || target >= i.images.length) return;
+    const next = i.images.slice();
+    [next[idx], next[target]] = [next[target], next[idx]];
+    dispatch({type: 'set', patch: {images: next}});
   }
 
   return (
@@ -437,15 +459,42 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
             {i.images.map((img, idx) => (
               <li key={img.url}>
                 <img src={img.url} alt="" />
-                <input
-                  type="text"
-                  placeholder="What does this screenshot show?"
-                  value={img.caption}
-                  onChange={(e) => setCaption(idx, e.target.value)}
-                />
-                <button type="button" onClick={() => removeImage(idx)} className={styles.removeBtn}>
-                  Remove
-                </button>
+                <div className={styles.imageFields}>
+                  <input
+                    type="text"
+                    placeholder="What does this screenshot show?"
+                    value={img.caption}
+                    onChange={(e) => setCaption(idx, e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Which step does this go with? (optional)"
+                    value={img.stepAnchor ?? ''}
+                    onChange={(e) => setStepAnchor(idx, e.target.value)}
+                    className={styles.imageAnchor}
+                  />
+                </div>
+                <div className={styles.imageControls}>
+                  <button
+                    type="button"
+                    onClick={() => moveImage(idx, -1)}
+                    disabled={idx === 0}
+                    aria-label="Move image up"
+                    className={styles.moveBtn}>
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => moveImage(idx, 1)}
+                    disabled={idx === i.images.length - 1}
+                    aria-label="Move image down"
+                    className={styles.moveBtn}>
+                    ↓
+                  </button>
+                  <button type="button" onClick={() => removeImage(idx)} className={styles.removeBtn}>
+                    Remove
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

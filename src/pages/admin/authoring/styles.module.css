@@ -188,6 +188,12 @@
   border-radius: 8px;
 }
 .imageList img { width: 80px; height: 60px; object-fit: cover; border-radius: 4px; }
+.imageFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0; /* let inputs shrink inside grid column */
+}
 .imageList input[type="text"] {
   font-family: inherit;
   font-size: var(--text-body-sm);
@@ -195,6 +201,36 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 6px;
   background: var(--ifm-background-color);
+  width: 100%;
+}
+.imageAnchor {
+  font-size: var(--text-caption) !important;
+  color: var(--ifm-color-content-secondary);
+}
+.imageControls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+.moveBtn {
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: 2px var(--space-2);
+  cursor: pointer;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.2;
+}
+.moveBtn:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+.moveBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 .removeBtn {
   font-family: inherit;
