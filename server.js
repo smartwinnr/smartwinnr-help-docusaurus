@@ -702,13 +702,26 @@ function isValidSlug(s) { return /^[a-z0-9][a-z0-9-]{0,120}$/.test(String(s || '
 /** Strip bogus origins the model may prepend to root-relative image URLs.
  *  Our upload endpoint returns paths like `/img/helpscout/authored/X.png`;
  *  the model sometimes "helpfully" rewrites these as
- *  `https://example.com/img/...` or `https://help.smartwinnr.com/img/...`.
- *  Strip the host so the path Docusaurus actually serves wins. */
+ *  `https://example.com/img/...` or `https://help.smartwinnr.com/img/...`
+ *  (sanitized by pass 1), OR mangles them into `https://img/helpscout/...`
+ *  where `img` becomes a phantom hostname (sanitized by pass 2). Both
+ *  shapes get reduced to the root-relative path Docusaurus actually serves.
+ */
 function stripBogusImageOrigins(markdown) {
-  return markdown.replace(
+  // Pass 1: well-formed bogus origin. e.g. https://help.smartwinnr.com/img/X.png
+  let result = markdown.replace(
     /!\[([^\]]*)\]\(https?:\/\/[^/)]+(\/img\/[^\s)]+)\)/g,
     '![$1]($2)',
   );
+  // Pass 2: hostless bogus origin. e.g. https://img/helpscout/authored/X.png
+  // The model prepends `https://` to a path that already starts with `/img/`,
+  // so the leading slash gets eaten and `img` parses as the hostname. Reattach
+  // the leading slash so the URL resolves against the site root.
+  result = result.replace(
+    /!\[([^\]]*)\]\(https?:\/\/(img\/[^\s)]+)\)/g,
+    '![$1](/$2)',
+  );
+  return result;
 }
 
 /** Overwrite `last_update.date` + `last_update.author` in an article's
