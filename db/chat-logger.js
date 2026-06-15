@@ -177,44 +177,89 @@ function getDb() {
 // ---------------------------------------------------------------------------
 
 /**
- * The complete list of columns added via ALTER TABLE since v1. Running these
- * on every boot is safe because SQLite errors with "duplicate column name"
- * when a column already exists - we catch that and continue. The list is
- * authoritative: if it's here, the column WILL exist when getDb() returns,
- * regardless of whether schema_version says the corresponding migration
- * "ran".
+ * Authoritative column list per table, keyed by table name. The
+ * ensureSchemaColumns pass uses PRAGMA table_info(<table>) to see what
+ * actually exists, then only ALTERs in the columns that are missing.
+ * This is more robust than the previous "ALTER blindly and catch
+ * duplicate-column errors" approach - on a partial/failed prior
+ * migration, that approach can leave the DB in a state where some
+ * columns are missing AND the catch silently hides the real error.
  *
- * Add to this list whenever a new column lands in any migration block.
+ * Add to this map whenever a new column lands in any migration block.
+ * Include the SQL type (and DEFAULT clause if any) so the ALTER is
+ * fully specified.
  */
-const ENSURED_COLUMNS = [
-  // v2 (identity context)
-  'ALTER TABLE conversations  ADD COLUMN user_display_name TEXT',
-  'ALTER TABLE conversations  ADD COLUMN org_id            TEXT',
-  'ALTER TABLE conversations  ADD COLUMN org_name          TEXT',
-  'ALTER TABLE conversations  ADD COLUMN user_roles        TEXT',
-  'ALTER TABLE conversations  ADD COLUMN user_privileges   TEXT',
-  'ALTER TABLE chat_exchanges ADD COLUMN chat_model        TEXT',
-  // v3 (Group B quality signals - V2 chat analytics)
-  'ALTER TABLE chat_exchanges ADD COLUMN is_refusal           INTEGER DEFAULT 0',
-  'ALTER TABLE chat_exchanges ADD COLUMN citation_clicks_json TEXT',
-];
+const REQUIRED_COLUMNS = {
+  conversations: [
+    // v2 (identity context)
+    ['user_display_name', 'TEXT'],
+    ['org_id',            'TEXT'],
+    ['org_name',          'TEXT'],
+    ['user_roles',        'TEXT'],
+    ['user_privileges',   'TEXT'],
+  ],
+  chat_exchanges: [
+    // v2 (identity context)
+    ['chat_model',           'TEXT'],
+    // v3 (Group B quality signals)
+    ['is_refusal',           'INTEGER DEFAULT 0'],
+    ['citation_clicks_json', 'TEXT'],
+  ],
+};
+
+function tableColumnSet(db, table) {
+  try {
+    const rows = db.prepare(`PRAGMA table_info(${table})`).all();
+    return new Set(rows.map((r) => r.name));
+  } catch {
+    return null; // table missing or unreadable
+  }
+}
 
 function ensureSchemaColumns(db) {
-  let added = 0;
-  for (const stmt of ENSURED_COLUMNS) {
-    try {
-      db.exec(stmt);
-      added += 1;
-    } catch (err) {
-      if (/duplicate column name/i.test(err.message || '')) continue;
-      // Don't crash the process on a structural error - log and move on so
-      // other queries still work. If a column is genuinely missing, the
-      // first query referencing it will fail loudly and we can investigate.
-      console.error('[chat-logger] ensureSchemaColumns: ' + (err.message || err));
+  let totalAdded = 0;
+  for (const [table, columns] of Object.entries(REQUIRED_COLUMNS)) {
+    const existing = tableColumnSet(db, table);
+    if (!existing) {
+      console.error(`[chat-logger] ensureSchemaColumns: table "${table}" missing or unreadable - cannot add columns`);
+      continue;
+    }
+    if (existing.size === 0) {
+      console.error(`[chat-logger] ensureSchemaColumns: table "${table}" reports zero columns - skipping`);
+      continue;
+    }
+    for (const [name, type] of columns) {
+      if (existing.has(name)) continue;
+      try {
+        db.exec(`ALTER TABLE ${table} ADD COLUMN ${name} ${type}`);
+        console.log(`[chat-logger] ensureSchemaColumns: added ${table}.${name}`);
+        totalAdded += 1;
+      } catch (err) {
+        // Log loud - this is a real failure (not the "duplicate column"
+        // case, since PRAGMA confirmed the column was missing). The
+        // operator needs to see this in Railway / production logs.
+        console.error(`[chat-logger] ensureSchemaColumns: FAILED to add ${table}.${name}: ${err.message || err}`);
+      }
     }
   }
-  if (added > 0) {
-    console.log(`[chat-logger] ensureSchemaColumns added ${added} missing column(s)`);
+  if (totalAdded > 0) {
+    console.log(`[chat-logger] ensureSchemaColumns: added ${totalAdded} missing column(s) total`);
+  }
+
+  // Final diagnostic - log the actual column set per table so the
+  // operator can verify post-deploy in production logs. Catches the
+  // case where a column "should" be there but isn't.
+  for (const table of Object.keys(REQUIRED_COLUMNS)) {
+    const existing = tableColumnSet(db, table);
+    if (existing) {
+      const required = REQUIRED_COLUMNS[table].map(([n]) => n);
+      const missing = required.filter((n) => !existing.has(n));
+      if (missing.length > 0) {
+        console.error(`[chat-logger] ensureSchemaColumns: ${table} STILL MISSING after pass: ${missing.join(', ')}`);
+      } else {
+        console.log(`[chat-logger] ensureSchemaColumns: ${table} has all ${required.length} required columns`);
+      }
+    }
   }
 }
 
