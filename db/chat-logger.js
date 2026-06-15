@@ -144,7 +144,16 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
   `);
 
-  // Run migrations
+  // Self-heal: ensure every column we depend on exists, regardless of what
+  // the schema_version table claims. ALTER TABLE ADD COLUMN is idempotent
+  // via the "duplicate column name" catch, so running this on every boot is
+  // safe and recovers production DBs where the migration log got out of
+  // sync with the actual schema (e.g. partial migration, restored backup,
+  // hand-edited DB).
+  ensureSchemaColumns(_db);
+
+  // Run migrations (kept for the legacy schema_version log + any future
+  // non-ALTER migrations that need ordered application).
   runMigrations(_db);
 
   // Clean old records on startup
@@ -161,6 +170,52 @@ function getDb() {
 
   console.log(`[chat-logger] SQLite initialised at ${DB_PATH}`);
   return _db;
+}
+
+// ---------------------------------------------------------------------------
+// Schema self-heal
+// ---------------------------------------------------------------------------
+
+/**
+ * The complete list of columns added via ALTER TABLE since v1. Running these
+ * on every boot is safe because SQLite errors with "duplicate column name"
+ * when a column already exists - we catch that and continue. The list is
+ * authoritative: if it's here, the column WILL exist when getDb() returns,
+ * regardless of whether schema_version says the corresponding migration
+ * "ran".
+ *
+ * Add to this list whenever a new column lands in any migration block.
+ */
+const ENSURED_COLUMNS = [
+  // v2 (identity context)
+  'ALTER TABLE conversations  ADD COLUMN user_display_name TEXT',
+  'ALTER TABLE conversations  ADD COLUMN org_id            TEXT',
+  'ALTER TABLE conversations  ADD COLUMN org_name          TEXT',
+  'ALTER TABLE conversations  ADD COLUMN user_roles        TEXT',
+  'ALTER TABLE conversations  ADD COLUMN user_privileges   TEXT',
+  'ALTER TABLE chat_exchanges ADD COLUMN chat_model        TEXT',
+  // v3 (Group B quality signals - V2 chat analytics)
+  'ALTER TABLE chat_exchanges ADD COLUMN is_refusal           INTEGER DEFAULT 0',
+  'ALTER TABLE chat_exchanges ADD COLUMN citation_clicks_json TEXT',
+];
+
+function ensureSchemaColumns(db) {
+  let added = 0;
+  for (const stmt of ENSURED_COLUMNS) {
+    try {
+      db.exec(stmt);
+      added += 1;
+    } catch (err) {
+      if (/duplicate column name/i.test(err.message || '')) continue;
+      // Don't crash the process on a structural error - log and move on so
+      // other queries still work. If a column is genuinely missing, the
+      // first query referencing it will fail loudly and we can investigate.
+      console.error('[chat-logger] ensureSchemaColumns: ' + (err.message || err));
+    }
+  }
+  if (added > 0) {
+    console.log(`[chat-logger] ensureSchemaColumns added ${added} missing column(s)`);
+  }
 }
 
 // ---------------------------------------------------------------------------
