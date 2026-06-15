@@ -2,16 +2,16 @@ import React, {useCallback, useRef, useState, type ReactNode} from 'react';
 import styles from '@site/src/pages/admin/authoring/styles.module.css';
 
 /**
- * Lightweight in-app toast + confirm modal — used by the authoring wizard
+ * Lightweight in-app toast + confirm modal - used by the authoring wizard
  * and drafts queue. No third-party dependency.
  *
  * Hook returns:
- *   notify.success(msg)   — green toast, auto-dismiss 4 s
- *   notify.error(msg)     — red toast, auto-dismiss 7 s
- *   notify.info(msg)      — neutral toast, auto-dismiss 5 s
- *   notify.confirm(opts)  — Promise<boolean>. Renders a modal that
+ *   notify.success(msg)   - green toast, auto-dismiss 4 s
+ *   notify.error(msg)     - red toast, auto-dismiss 7 s
+ *   notify.info(msg)      - neutral toast, auto-dismiss 5 s
+ *   notify.confirm(opts)  - Promise<boolean>. Renders a modal that
  *                           returns true on Confirm, false on Cancel.
- *   notify.host           — JSX to drop once at the bottom of the page;
+ *   notify.host           - JSX to drop once at the bottom of the page;
  *                           contains the toast stack + the confirm modal.
  *
  * Lives outside src/pages/ so Docusaurus does NOT auto-route it as a page.

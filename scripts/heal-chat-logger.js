@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Chat-logger schema heal — manual-rescue path when getDb()'s automatic
+ * Chat-logger schema heal - manual-rescue path when getDb()'s automatic
  * ensureSchemaColumns hasn't run or didn't recover the schema.
  *
  * Usage:
@@ -18,7 +18,7 @@
  *   4. Re-prints the final column set so the operator can verify.
  *
  * Keep REQUIRED_COLUMNS in sync with the same constant in db/chat-logger.js
- * — both are the authoritative list of post-v1 columns. When a future
+ * - both are the authoritative list of post-v1 columns. When a future
  * migration adds a column, update both places.
  */
 
@@ -36,7 +36,7 @@ const REQUIRED_COLUMNS = [
   ['conversations',  'user_roles',        'TEXT'],
   ['conversations',  'user_privileges',   'TEXT'],
   ['chat_exchanges', 'chat_model',           'TEXT'],
-  // v3 (Group B quality signals — V2 chat analytics)
+  // v3 (Group B quality signals - V2 chat analytics)
   ['chat_exchanges', 'is_refusal',           'INTEGER DEFAULT 0'],
   ['chat_exchanges', 'citation_clicks_json', 'TEXT'],
 ];
@@ -84,7 +84,7 @@ function main() {
   for (const [table, col, type] of REQUIRED_COLUMNS) {
     const existing = tableColumns(db, table);
     if (!existing) {
-      console.error(`  ! ${table}.${col}: table missing — skipping`);
+      console.error(`  ! ${table}.${col}: table missing - skipping`);
       failed += 1;
       continue;
     }

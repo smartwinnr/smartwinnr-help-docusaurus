@@ -1,4 +1,4 @@
-# SmartWinnr Help — Role-Aware Topic Taxonomy (Option B)
+# SmartWinnr Help - Role-Aware Topic Taxonomy (Option B)
 
 ## Context
 
@@ -7,11 +7,11 @@ today categorizes docs by **role** at the top level (User Guide / Manager Guide 
 Administrative Guide), and inside Admin by **module** (16 sub-categories). 270 articles
 were imported from Help Scout into this shape. Two pain points have emerged:
 
-1. **Discoverability** — Users hunt by topic ("how do I read this report?") but the
+1. **Discoverability** - Users hunt by topic ("how do I read this report?") but the
    menu only exposes that information once they've already picked the right role
    shelf and the right module. Modern docs (ClickHouse, Stripe, Vercel) are
    topic-first; SmartWinnr's role-first IA does not scale as more modules ship.
-2. **Inconsistent depth per module** — Some modules have 40 flat articles
+2. **Inconsistent depth per module** - Some modules have 40 flat articles
    (`quiz-module`), others have 4 (`field-coaching-module`). There is no shared
    sub-section template, so editors don't know where to file new how-tos and readers
    can't predict where to find them.
@@ -21,7 +21,7 @@ were imported from Help Scout into this shape. Two pain points have emerged:
 Admin → OrgAdmin → Superadmin) through the existing `customProps` access-policy plumbing,
 and give every module a uniform sub-shape (Overview · Quickstart · Create & Manage · Assign
 · Reports · Settings · Best Practices · FAQs). Roles and org privileges silently hide what
-the viewer can't access — they never appear as labels. Manager is treated as a first-class
+the viewer can't access - they never appear as labels. Manager is treated as a first-class
 tier in its own right (not a sub-variant of User) because it has dedicated coaching, team-
 dashboard, and reportee-review content that does not appear for plain learners.
 
@@ -33,20 +33,20 @@ The decision was made after side-by-side review of three HTML mockups
 
 ## Decision log
 
-- **2026-06-11 — Hero redesign.** The shipped Hero used a saturated navy
+- **2026-06-11 - Hero redesign.** The shipped Hero used a saturated navy
   gradient that clashed with the site's purple Infima palette and crowded the
   greeting with three low-value items (a duplicate search box, the raw org
   ID, and a region URL). Strip those three; soften the background to a pale
   brand wash; keep greeting + role pill + the two CTAs. Use Infima theme
   tokens so dark mode flips automatically. See §12.11.
 
-- **2026-06-10 — Landing & path pages move from `src/pages/` to `docs/` MDX.**
+- **2026-06-10 - Landing & path pages move from `src/pages/` to `docs/` MDX.**
   Stakeholders flagged three regressions on the LP-1…LP-3 ship:
   (1) the left docs sidebar is missing on `/` and `/path/<persona>/`;
   (2) the path pages render in a narrow content column (looks "mobile");
   (3) curated entry points point at directory URLs instead of articles.
   Root cause for (1) and (2): `src/pages/*.tsx` files use `@theme/Layout`
-  which is the bare site shell — no docs sidebar, narrower main column. The
+  which is the bare site shell - no docs sidebar, narrower main column. The
   fix is to convert the landing and the seven persona path pages into MDX
   docs (`docs/index.mdx` + `docs/path/<persona>.mdx`) that import the existing
   React components but render under the docs layout. Root cause for (3): the
@@ -54,7 +54,7 @@ The decision was made after side-by-side review of three HTML mockups
   directory URLs; replace with specific article URLs sampled from the migrated
   tree (every entry now points at a real built page). See §12.10.
 
-- **2026-06-09 — Role-based landing journey (new §12).** Stakeholders approved the
+- **2026-06-09 - Role-based landing journey (new §12).** Stakeholders approved the
   "Pick a path" persona-card pattern from `plans/mockups/option-b-clickhouse-style.html`.
   Promote it from mockup to a real React landing at `/` that personalizes per role,
   with universal search + chatbot, persona cards, recommended modules, a What's New
@@ -62,7 +62,7 @@ The decision was made after side-by-side review of three HTML mockups
   `docs/get-started/overview/index.md` (currently `slug: /`) moves to
   `/get-started/overview/` and the React landing takes the root.
 
-- **2026-06-08 — Module-first IA, audience inside each module.** Resolved the
+- **2026-06-08 - Module-first IA, audience inside each module.** Resolved the
   Guides-vs-Modules ambiguity: anything about a single module lives under
   `docs/modules/<m>/` with role-aware sub-folders (`for-learners/`, `for-managers/`,
   plus the existing editor+ authoring sub-folders). **Guides** survives only for
@@ -79,22 +79,22 @@ A point-in-time snapshot of what's already shipped on `feature/help-ia-redesign`
 grouped by the phases declared in this plan. Each item below is committed code in
 the working branch (uncommitted; tree is reviewable via `git status`).
 
-### Phase 1 — Foundation ✓ done
+### Phase 1 - Foundation ✓ done
 
-- `src/role-constants.ts` — shared role arrays (`ALL_ROLES`, `MANAGER_PLUS_ROLES`,
+- `src/role-constants.ts` - shared role arrays (`ALL_ROLES`, `MANAGER_PLUS_ROLES`,
   `EDITOR_PLUS_ROLES`/`STAFF_ROLES`, `ADMIN_PLUS_ROLES`, `ORGADMIN_PLUS_ROLES`,
   `SUPERADMIN_ROLES`).
 - `src/access-policy.ts` extended with `ROLE_TIER` map + `hasMinTier(user, n)`
   helper; later (§12.10) also exported `PRIVILEGE_GATING_ENABLED`.
-- `shared/access-policy.cjs` — CommonJS port consumed by `server.js` and
+- `shared/access-policy.cjs` - CommonJS port consumed by `server.js` and
   Docusaurus plugins. Mirrors the TS module by hand.
-- `data/known-privileges.json` — 67-privilege snapshot of the LMS enum at
+- `data/known-privileges.json` - 67-privilege snapshot of the LMS enum at
   `smartwinnr_prd/modules/organizations/.../organizations.server.model.js`.
-- `scripts/validate-privilege-keys.js` — scans `sidebars.ts`, every
+- `scripts/validate-privilege-keys.js` - scans `sidebars.ts`, every
   `_category_.json`, every article frontmatter for `customProps.privilege` /
   `anyPrivilege` values and fails on unknown keys. Wired into `prebuild`.
 
-### Phase 2 — IA scaffolding ✓ done
+### Phase 2 - IA scaffolding ✓ done
 
 - `sidebars.ts` rewritten to the 8 topic-first sections. Imports role constants
   from `src/role-constants.ts`. Modules / Reference / Release Notes each carry
@@ -109,19 +109,19 @@ the working branch (uncommitted; tree is reviewable via `git status`).
   for-learners → ALL_ROLES, for-managers → MANAGER_PLUS_ROLES + managerView,
   authoring → EDITOR_PLUS_ROLES, FAQs → ALL_ROLES.
 
-### Phase 3 — Content migration ✓ done
+### Phase 3 - Content migration ✓ done
 
-- `scripts/migrate-ia.js` — `git mv`'d 21 legacy directories into the new
+- `scripts/migrate-ia.js` - `git mv`'d 21 legacy directories into the new
   topic tree (`docs/administration/quiz-module/` → `docs/modules/quiz/`, etc.).
   Emitted initial 244 redirects.
-- `scripts/bucket-articles.js` — heuristic classifier moved 174 module articles
+- `scripts/bucket-articles.js` - heuristic classifier moved 174 module articles
   into the 8 canonical sub-folders (Create & Manage / Features / Reports &
   Analytics / Settings / FAQs / etc.).
-- `scripts/bucket-guides.js` — explicit-mapping classifier moved 37 of the 43
+- `scripts/bucket-guides.js` - explicit-mapping classifier moved 37 of the 43
   legacy `docs/guides/learner/*` + `docs/guides/manager/*` articles into the
   right `docs/modules/<m>/for-{learners,managers}/`. 2 cross-cutting articles
   stay under `docs/guides/`; 2 redundant index files deleted.
-- `scripts/compact-redirects.js` — collapsed chained redirects so legacy URLs
+- `scripts/compact-redirects.js` - collapsed chained redirects so legacy URLs
   point directly at the final bucketed paths. Final count: 455 entries in
   `data/redirects.json`.
 - `@docusaurus/plugin-client-redirects@3.8.1` installed and wired in
@@ -129,7 +129,7 @@ the working branch (uncommitted; tree is reviewable via `git status`).
 - Index-page slugs rewritten to match the new IA: `docs/modules/ai-coaching/
   index.md` etc. now use absolute slugs like `/modules/ai-coaching/`.
 
-### Phase 4 — Server-side URL guard ✓ done
+### Phase 4 - Server-side URL guard ✓ done
 
 - `plugins/access-gate-emit.js` Docusaurus plugin emits
   `build/doc-gates.json` (86 prefix gates + 267 article gates) AND
@@ -141,9 +141,9 @@ the working branch (uncommitted; tree is reviewable via `git status`).
   returns 403 for unauthorized URL access. Falls open if the gates file is
   missing (dev convenience).
 
-### Phase 5 — Lint + verification ✓ done
+### Phase 5 - Lint + verification ✓ done
 
-- `custom-markdownlint-rules.js` — added `MD-SW-001`
+- `custom-markdownlint-rules.js` - added `MD-SW-001`
   (`module-sub-section-placement`) accepting the 9 canonical sub-folder
   names. Currently disabled in `.markdownlint-cli2.jsonc` until the
   per-article content pass; the rule is ready to flip.
@@ -155,53 +155,53 @@ the working branch (uncommitted; tree is reviewable via `git status`).
 
 ### §12 Role-Based Landing Journey ✓ LP-1 → LP-4 shipped (LP-5 deferred)
 
-- **LP-1 / 1.5** — landing page at `/` + 7 persona path pages under
+- **LP-1 / 1.5** - landing page at `/` + 7 persona path pages under
   `/path/<persona>/`. Originally `src/pages/*.tsx`, later moved to
   `docs/index.mdx` + `docs/path/<persona>.mdx` per §12.10.
-- **LP-2** — `RecommendedModules` tile grid driven by runtime fetch of
+- **LP-2** - `RecommendedModules` tile grid driven by runtime fetch of
   `landing-modules.json`. Locked modules (org-lacks-privilege) render
   dimmed with "ask your admin" hint. `HelpFooter` added with
   glossary / chatbot / support / release-notes cards.
-- **LP-3** — `WhatsNew` feed driven by `static/whats-new.json` registry
+- **LP-3** - `WhatsNew` feed driven by `static/whats-new.json` registry
   (authors edit JSON, no rebuild needed). Role-filtered.
-- **LP-4** — `RecentlyViewed` strip backed by a localStorage ring buffer.
+- **LP-4** - `RecentlyViewed` strip backed by a localStorage ring buffer.
   Pushed via the swizzled `src/theme/DocItem/Layout` on every doc view;
   hidden when the buffer is empty; "Forget recents" button + custom-event
   refresh.
-- **LP-5** — **not started** (polish: privilege-off hints with explanation,
+- **LP-5** - **not started** (polish: privilege-off hints with explanation,
   first-time editor onboarding checklist, `?as=` superadmin preview).
 
 ### §12.10 Stakeholder-review refinement ✓ done
 
-- **Fix A** — `src/pages/index.tsx` + `src/pages/path/*.tsx` removed.
+- **Fix A** - `src/pages/index.tsx` + `src/pages/path/*.tsx` removed.
   Replaced with `docs/index.mdx` + `docs/path/<persona>.mdx` so the docs
   layout (with sidebar) becomes available. `Landing.tsx` + `PathBody.tsx`
   presenter components extracted.
-- **Fix B** — All 46 entry hrefs in `PathContent.ts` rewritten to specific
+- **Fix B** - All 46 entry hrefs in `PathContent.ts` rewritten to specific
   real article URLs (verified by `/tmp/check-entries.js`).
-- **Fix C** — `PRIVILEGE_GATING_ENABLED` exported from `access-policy.ts`;
+- **Fix C** - `PRIVILEGE_GATING_ENABLED` exported from `access-policy.ts`;
   yellow "requires X" pills only render when gating is on.
-- **Fix D** — `hide_title: true` in MDX frontmatter so the docs layout
+- **Fix D** - `hide_title: true` in MDX frontmatter so the docs layout
   doesn't double the hero greeting.
 
 ### Post-§12.10 follow-ups ✓ done (user-driven)
 
-- **Sidebar hidden on landing + path pages** — `displayed_sidebar`
+- **Sidebar hidden on landing + path pages** - `displayed_sidebar`
   stripped from all 8 MDX files; sidebar still renders on real doc pages
   (verified: 0 sidebar markers on `/`, `/path/*`; 1 on `/modules/`,
   `/modules/ai-coaching/`, `/reference/`).
-- **Persona labels switched to first person** — "I'm a learner",
+- **Persona labels switched to first person** - "I'm a learner",
   "I manage a team", "I'm an Author", "I administer the org",
   "I'm integrating SmartWinnr".
-- **Responsive `.wrap`** — `max-width: 1180px`, `width: 100%`, plus a
+- **Responsive `.wrap`** - `max-width: 1180px`, `width: 100%`, plus a
   `@media (max-width: 768px)` breakpoint trimming padding.
-- **Hero search → `/search?q=…`** — `VectorSearch` accepts an
+- **Hero search → `/search?q=…`** - `VectorSearch` accepts an
   `initialQuery` prop and auto-runs on mount; `src/pages/search.tsx`
   reads `?q=` via `useLocation()`.
-- **"Open the help bot" actually opens it** — `ChatBot.tsx` listens for
+- **"Open the help bot" actually opens it** - `ChatBot.tsx` listens for
   the `window` `smartwinnr:open-chatbot` custom event; Hero + HelpFooter
   CTAs dispatch it; PathBody's help entry also wires through.
-- **`/modules/`, `/reference/`, `/release-notes/`** — generated-index
+- **`/modules/`, `/reference/`, `/release-notes/`** - generated-index
   landings added in `sidebars.ts` so CTAs that "see all" actually
   resolve.
 
@@ -217,34 +217,34 @@ the working branch (uncommitted; tree is reviewable via `git status`).
 
 ### Mockups (stakeholder-facing) ✓ done
 
-- `plans/mockups/_landing.css` — landing shell styles
-- `plans/mockups/landing-{t1-user,t3-editor,t5-orgadmin}.html` — three
+- `plans/mockups/_landing.css` - landing shell styles
+- `plans/mockups/landing-{t1-user,t3-editor,t5-orgadmin}.html` - three
   per-tier landings with hero + persona cards + recommended modules +
   what's new + recently viewed
-- `plans/mockups/role-{t1..t6}.html` — six per-tier sidebar mockups
+- `plans/mockups/role-{t1..t6}.html` - six per-tier sidebar mockups
   (earlier session)
-- `plans/mockups/index.html` — updated to surface both landing + sidebar
+- `plans/mockups/index.html` - updated to surface both landing + sidebar
   mockup families
 
 ### Currently still deferred / not started
 
-- **Typography & font-family parity** with Infima — explicitly out of
+- **Typography & font-family parity** with Infima - explicitly out of
   scope per the user; planned as a separate task.
-- **LP-5 polish** — privilege-off explanation hints on RecommendedModules,
+- **LP-5 polish** - privilege-off explanation hints on RecommendedModules,
   first-time editor onboarding checklist, `?as=<tier>` superadmin preview
   query param.
-- **Sub-section content classification pass** — the 174 module articles
+- **Sub-section content classification pass** - the 174 module articles
   were bucketed by filename heuristics. A human content pass would refine
   edge cases (e.g. "how-to-create-a-hotspot-question" currently in
   `features/`, possibly better in `create-and-manage/`). After this,
   flip `MD-SW-001` to enforced.
 - **Flip `PRIVILEGE_GATING_ENABLED = true`** in both `src/access-policy.ts`
-  and `shared/access-policy.cjs` — only after every category carries the
+  and `shared/access-policy.cjs` - only after every category carries the
   correct `customProps.privilege` and every authored article does too.
-- **Persona-led landing page (Option C)** — the 8-section card grid
+- **Persona-led landing page (Option C)** - the 8-section card grid
   already gives most of the discoverability benefit; a full
   persona-door entry remains a polish item.
-- **Git commits** — the entire tree is uncommitted on
+- **Git commits** - the entire tree is uncommitted on
   `feature/help-ia-redesign`. Logical commits to author: foundation,
   IA migration (big rename), sidebars + redirects + server guard,
   landing journey (LP-1..LP-4), Hero redesign + sidebar-hide
@@ -262,7 +262,7 @@ A horizontal top-nav strip plus a contextual sidebar. Eight top-level sections:
 |---|---|---|---|
 | 1 | **Get Started** | All roles | Concept overview, role-specific quickstarts, glossary |
 | 2 | **Guides** | All (filtered) | Task-oriented, cross-module how-tos ("Run a quarterly review", "Onboard new sellers") |
-| 3 | **Modules** | All (per-module gated) | One sub-tree per product module — uniform sub-shape |
+| 3 | **Modules** | All (per-module gated) | One sub-tree per product module - uniform sub-shape |
 | 4 | **Reports & Analytics** | Manager+ | Learner / Admin / Generated / Automated reports, dashboards |
 | 5 | **Integrations** | Admin+ | SSO, SCIM, Azure, Salesforce, xAPI, SCORM, REST API |
 | 6 | **Administration** | Admin+ | Users, roles, groups, divisions, privileges, audit, system mgmt |
@@ -281,7 +281,7 @@ section, the tab is hidden from the top nav.
 ```
 Tier 1: user         → end-learner content (consume quizzes/paths/feed/coaching)
 Tier 2: manager      → tier 1 + team dashboards, coaching reviews, reportee KPIs,
-                        1:1 workflows  — a first-class persona, NOT a sub-variant of user
+                        1:1 workflows  - a first-class persona, NOT a sub-variant of user
 Tier 3: editor       → tier 1 + authoring of every content module + module-level reports
 Tier 4: admin        → tier 3 + system administration, users/roles/groups, audit, SSO
 Tier 5: orgadmin     → tier 4 + org-wide settings, custom notifications, CRM components,
@@ -291,7 +291,7 @@ Tier 6: superadmin   → unrestricted; bypasses privilege checks
 
 The plan refers to these as **T1 … T6**. Each tier is a first-class audience with its
 own gated mockup, sidebar shape, and verification step (§4, §10, §11). Tiers are
-**cumulative on the role list**, not strictly nested in the LMS — e.g. a user with
+**cumulative on the role list**, not strictly nested in the LMS - e.g. a user with
 roles `['editor','manager']` sees the union of T2 + T3 content (already handled by
 the existing `roles.some(...)` check in `isAllowed`).
 
@@ -315,7 +315,7 @@ manager additionally sees `For Managers`. An editor additionally sees `Create & 
 
 ### 4. Per-role sidebar mockups (annotated)
 
-#### T1 — User (learner)
+#### T1 - User (learner)
 
 ```
 Top nav:  Get Started · Guides · Modules · Reference · Release Notes
@@ -325,7 +325,7 @@ GET STARTED
 ├── Quickstart for learners
 └── Key concepts
 
-GUIDES   (cross-module workflows only — may be sparse)
+GUIDES   (cross-module workflows only - may be sparse)
 └── Your first week as a learner
 
 MODULES   (each module collapsed to its learner-facing leaves)
@@ -350,10 +350,10 @@ RELEASE NOTES
 └── What's new for learners
 ```
 
-#### T2 — Manager (first-class team-lead persona)
+#### T2 - Manager (first-class team-lead persona)
 
 Manager is a distinct documentation audience. They consume their own learning
-content (T1) **and** drive their team's — coaching reviews, KPI tracking, reportee
+content (T1) **and** drive their team's - coaching reviews, KPI tracking, reportee
 performance, 1:1 prep, team competitions. The top nav adds **Reports & Analytics**
 (team-scoped) for managers.
 
@@ -394,7 +394,7 @@ RELEASE NOTES
 └── What's new for managers
 ```
 
-#### T3 — Editor (authoring)
+#### T3 - Editor (authoring)
 
 ```
 Top nav adds: Reports & Analytics
@@ -444,7 +444,7 @@ REFERENCE
 └── Field-mapping reference
 ```
 
-#### T4 — Admin (= T3 + system administration)
+#### T4 - Admin (= T3 + system administration)
 
 ```
 Top nav adds: Integrations · Administration
@@ -467,7 +467,7 @@ ADMINISTRATION
 └── Banner management         [priv: banner]
 ```
 
-#### T5 — OrgAdmin (= T4 + org-wide tools)
+#### T5 - OrgAdmin (= T4 + org-wide tools)
 
 ```
 ADMINISTRATION adds:
@@ -487,7 +487,7 @@ INTEGRATIONS adds:
 └── Org-wide integration registry
 ```
 
-#### T6 — Superadmin
+#### T6 - Superadmin
 
 Sees everything T5 sees **plus** every privilege-gated section regardless of the
 viewing org's enabled privileges. `superadmin` is already in `PRIVILEGE_BYPASS_ROLES`
@@ -527,7 +527,7 @@ docs/modules/<module-slug>/
 
 Sub-folders without content are omitted on disk; the autogen sidebar skips empty dirs.
 Some modules (Forms, KPI authoring, Project Management) legitimately have no
-`for-learners/` content — that's fine.
+`for-learners/` content - that's fine.
 
 **Resolving the Guides-vs-Modules tension.** Anything about ONE module lives under
 Modules with an audience gate. **Guides** survives only for genuinely cross-module
@@ -550,7 +550,7 @@ editor"). Today Guides may be sparse; that is acceptable.
    `/guides/learner/<slug>` → `/modules/<m>/for-learners/<slug>` and similar.
 
 The 6-tier access policy, role constants, swizzled sidebar components, server-side URL
-guard, and the access-gate-emit Docusaurus plugin are **unchanged** — they already read
+guard, and the access-gate-emit Docusaurus plugin are **unchanged** - they already read
 `_category_.json` `customProps`, so the new audience sub-folders gate automatically.
 
 Lint rule **MD-SW-001** is extended to accept the two new audience sub-folder names
@@ -561,7 +561,7 @@ Lint rule **MD-SW-001** is extended to accept the two new audience sub-folder na
 #### 6.1 Access-policy extensions (`src/access-policy.ts`)
 
 Extend the existing module **without** breaking the `AccessGate` shape. Reuse
-`isAllowed()` (lines 72–98) — it already handles the AND-of-role + privilege logic.
+`isAllowed()` (lines 72–98) - it already handles the AND-of-role + privilege logic.
 
 Add a tier helper alongside the existing `SmartWinnrRole` type:
 
@@ -614,17 +614,17 @@ Reuse role constants from `sidebars.ts` (`ALL_ROLES`, `MANAGER_PLUS_ROLES`,
 to `sidebars.ts` and re-export from a new `src/role-constants.ts` for shared use
 (so `sidebars.ts` and `TopNav.tsx` cannot drift).
 
-#### 6.3 Sidebar swizzles — reuse what's already there
+#### 6.3 Sidebar swizzles - reuse what's already there
 
 The existing swizzles already do the heavy lifting:
 
-- `src/theme/DocSidebarItem/Category/index.tsx` — gates categories
-- `src/theme/DocSidebarItem/Link/index.tsx` — gates individual articles
-- `src/contexts/UserContext.tsx` — hydrates `currentUser` from `/api/me`
-- `src/theme/Root.tsx` — wraps the app in `UserProvider`
+- `src/theme/DocSidebarItem/Category/index.tsx` - gates categories
+- `src/theme/DocSidebarItem/Link/index.tsx` - gates individual articles
+- `src/contexts/UserContext.tsx` - hydrates `currentUser` from `/api/me`
+- `src/theme/Root.tsx` - wraps the app in `UserProvider`
 
 No changes required to these files. We only need to reshape `sidebars.ts` and the
-`docs/` directory tree. This is the leverage point — all access gates flow through
+`docs/` directory tree. This is the leverage point - all access gates flow through
 the existing `customProps` mechanism.
 
 #### 6.4 Reshaped `sidebars.ts`
@@ -691,7 +691,7 @@ new, recently viewed). Reuses `useCurrentUser()`, `isAllowed()`, `hasMinTier()`.
 
 #### 7.1 `/api/me` already provides what we need
 
-`/api/me` returns `{ email, roles, region, orgId, privileges }` — read by
+`/api/me` returns `{ email, roles, region, orgId, privileges }` - read by
 `src/contexts/UserContext.tsx`. No backend change required for the IA migration.
 The auth/role plumbing in `auth/middleware.js` already enriches `req.user` from the
 JWT (`HELP_JWT_SECRET`).
@@ -770,7 +770,7 @@ Reuse `scripts/migrate-helpscout.js` (the canonical authoring path). Extend it t
    by metadata rather than path.
 
 Run the migration on a feature branch (`feature/help-ia-redesign`); the rollback
-plan is reverting the branch — the snapshot branch convention (`backup/pre-…`) in
+plan is reverting the branch - the snapshot branch convention (`backup/pre-…`) in
 `CLAUDE.md`'s re-sync runbook already covers this.
 
 #### 8.3 Sub-section uniformity
@@ -791,8 +791,8 @@ the rest absent. Lint rule (new, in `custom-markdownlint-rules.js`):
 | `src/role-constants.ts` (new) | Export `ALL_ROLES`, `MANAGER_PLUS_ROLES`, `STAFF_ROLES`, `ADMIN_PLUS_ROLES` |
 | `src/theme/Navbar/TopNav.tsx` (new) | Topic-based top nav with `isAllowed` filter |
 | `src/pages/index.tsx` (new or swizzled) | Section-card landing |
-| `src/theme/DocSidebarItem/Category/index.tsx` | No change — already gates |
-| `src/theme/DocSidebarItem/Link/index.tsx` | No change — already gates |
+| `src/theme/DocSidebarItem/Category/index.tsx` | No change - already gates |
+| `src/theme/DocSidebarItem/Link/index.tsx` | No change - already gates |
 | `src/contexts/UserContext.tsx` | No change |
 | `docs/modules/<m>/_category_.json` (×~13) | New, per module |
 | `docs/<section>/_category_.json` (×8) | New, per top-level section |
@@ -822,7 +822,7 @@ shell, plus an updated comparison index:
 - `plans/mockups/role-t4-admin.html`
 - `plans/mockups/role-t5-orgadmin.html`
 - `plans/mockups/role-t6-superadmin.html`
-- `plans/mockups/index.html` — updated to surface the 6 role views
+- `plans/mockups/index.html` - updated to surface the 6 role views
 
 Each mockup reuses `_styles.css`, swaps the `role-pill` text, renders the gated
 sidebar for that role, and highlights one representative article so the reader can
@@ -832,23 +832,23 @@ see the breadcrumb / top-nav shape.
 
 End-to-end checks, in order:
 
-1. **Lint & build** — `npm run lint:docs && npm run typecheck && npm run build`
+1. **Lint & build** - `npm run lint:docs && npm run typecheck && npm run build`
    passes after the directory move and `sidebars.ts` rewrite.
-2. **Privilege key validation** — `node scripts/validate-privilege-keys.js` exits 0;
+2. **Privilege key validation** - `node scripts/validate-privilege-keys.js` exits 0;
    add it to `prebuild`.
-3. **Per-role sidebar** — start `node server.js`, then visit `/` six times with a
+3. **Per-role sidebar** - start `node server.js`, then visit `/` six times with a
    JWT cookie minted for each tier (use a small `scripts/dev-mint-jwt.js` helper).
    Confirm each tier sees exactly the sections in the matrix above.
-4. **URL guard** — with a T1 (user) JWT, hand-type
+4. **URL guard** - with a T1 (user) JWT, hand-type
    `/modules/quiz/settings-and-permissions/` → expect **403**, not the article.
-5. **Redirects** — pick 10 randomly-sampled old Help Scout URLs (from
+5. **Redirects** - pick 10 randomly-sampled old Help Scout URLs (from
    `scripts/helpscout-inventory.json`) and confirm each 301s to the new path.
-6. **Chatbot grounding** — re-run `npm run index-internal` after the move so
+6. **Chatbot grounding** - re-run `npm run index-internal` after the move so
    ChromaDB embeddings reference the new paths; spot-check 5 chatbot answers for
    correct citation URLs.
 7. **Spot-check 5 articles per top-level section** for correct frontmatter
    (`customProps.subSection`, `customProps.roles`, optional `customProps.privilege`).
-8. **Visual regression** — open the 6 role mockup HTML files and confirm each
+8. **Visual regression** - open the 6 role mockup HTML files and confirm each
    matches the shipped behavior.
 
 ---
@@ -863,7 +863,7 @@ and the org's enabled privileges. The page does five things at once:
 1. **Greets** the viewer by name and active role.
 2. **Funnels** them into one of N pathways (one card per role-relevant persona).
 3. **Surfaces modules** the org has licensed (privilege-aware tile grid).
-4. **Highlights what's new** — release notes filtered to the viewer's audience.
+4. **Highlights what's new** - release notes filtered to the viewer's audience.
 5. **Remembers** recently-viewed articles via localStorage.
 
 The page is the **only React-driven route under `/`**; everything below stays
@@ -873,13 +873,13 @@ markdown/autogen, so the cognitive cost is contained to one file.
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────┐
-│ TOP NAV  (existing — already role-gated)                                      │
+│ TOP NAV  (existing - already role-gated)                                      │
 │ Get Started · Guides · Modules · Reports · Integrations · Admin · Reference   │
 ├───────────────────────────────────────────────────────────────────────────────┤
 │                                                                               │
 │  ╭─────────────────────────────────────────────────────────────────────────╮  │
 │  │  HERO                                                                   │  │
-│  │  "Hi Jane — what would you like to do today?"   [role pill: editor]    │  │
+│  │  "Hi Jane - what would you like to do today?"   [role pill: editor]    │  │
 │  │  ┌────────────────────────────────────────────────────────────────┐    │  │
 │  │  │ 🔍 Ask anything across SmartWinnr docs                          │    │  │
 │  │  └────────────────────────────────────────────────────────────────┘    │  │
@@ -931,36 +931,36 @@ Cards are rendered **in tier-order with the viewer's primary tier first** so an
 editor sees "Author content" before "Be a learner", but still sees the learner
 card lower down (because editors are learners too).
 
-#### 12.3 Enhanced features (additive — incremental shipping)
+#### 12.3 Enhanced features (additive - incremental shipping)
 
 These are layered on top of the base persona-card landing. Each ships
 independently; none blocks the others.
 
 | Feature                              | What it does                                                                                                                                                              | Reuses                                                                                              | Priority |
 |---|---|---|:-:|
-| **Personalized hero**                | Greeting + role pill ("Hi Jane — manager view"); manager who is also editor can flip between active personas via a small dropdown. Persisted in localStorage.            | `useCurrentUser()`                                                                                  | P0       |
+| **Personalized hero**                | Greeting + role pill ("Hi Jane - manager view"); manager who is also editor can flip between active personas via a small dropdown. Persisted in localStorage.            | `useCurrentUser()`                                                                                  | P0       |
 | **Persona cards**                    | The 7-card grid above, filtered by `hasMinTier()`.                                                                                                                        | `src/role-constants.ts`, `isAllowed()`                                                              | P0       |
 | **Recommended modules**              | Tile grid of modules the org has the privilege for AND the viewer's role can see at least one sub-folder of. Sourced from `build/doc-gates.json` at build time.          | `plugins/access-gate-emit.js`, `shared/access-policy.cjs`                                            | P0       |
-| **Universal hero search**            | Bigger search input on the hero — same `VectorSearch` component already on `/search`.                                                                                     | `src/components/VectorSearch/`                                                                      | P0       |
+| **Universal hero search**            | Bigger search input on the hero - same `VectorSearch` component already on `/search`.                                                                                     | `src/components/VectorSearch/`                                                                      | P0       |
 | **Help-bot CTA**                     | One-click "Open the help bot" launches the existing chatbot widget (no nav change). Tracks a click event so we can measure adoption.                                       | `plugins/chatbot-client.js`                                                                          | P1       |
 | **What's New**                       | Reverse-chrono list of `docs/release-notes/announcements/*` filtered by article frontmatter `customProps.roles`. Capped at 5; "see all" links to `/release-notes/`.       | `useDocsData()` from `@docusaurus/plugin-content-docs/client`                                       | P1       |
 | **Recently viewed**                  | LocalStorage ring buffer of last 10 article visits; render the most recent 5. Cleared with a "forget" button.                                                              | Hook into `useEffect` in a swizzled `DocItem` to push on view                                       | P1       |
-| **Persona-led path pages**           | `src/pages/path/<persona>.tsx` — one tiny page per persona card with curated entry points. Each entry point is a link with a one-line intent description.                | Same `useCurrentUser()` + `isAllowed()` for safety check                                            | P1       |
-| **Privilege-driven "off" hints**     | If the org doesn't have, say, `aiCoaching`, the AI Coaching tile renders disabled with "Ask your admin to enable AI Coaching" — turns a hidden item into a help moment.   | `currentUser.privileges` from `/api/me`                                                              | P2       |
+| **Persona-led path pages**           | `src/pages/path/<persona>.tsx` - one tiny page per persona card with curated entry points. Each entry point is a link with a one-line intent description.                | Same `useCurrentUser()` + `isAllowed()` for safety check                                            | P1       |
+| **Privilege-driven "off" hints**     | If the org doesn't have, say, `aiCoaching`, the AI Coaching tile renders disabled with "Ask your admin to enable AI Coaching" - turns a hidden item into a help moment.   | `currentUser.privileges` from `/api/me`                                                              | P2       |
 | **First-time onboarding checklist**  | First-time editors see a dismissible 5-step checklist: create org → invite users → create a quiz → assign → check the report. Stored in localStorage.                     | New component; no backend                                                                            | P2       |
-| **Quick role switcher (preview)**    | Superadmins (and orgadmins in dev) can preview the page as any tier via `?as=user` query param. Banner shows "Previewing as user — click to exit". Audit-logged.          | `auth/middleware.js` allow-list of bypass roles                                                      | P3       |
+| **Quick role switcher (preview)**    | Superadmins (and orgadmins in dev) can preview the page as any tier via `?as=user` query param. Banner shows "Previewing as user - click to exit". Audit-logged.          | `auth/middleware.js` allow-list of bypass roles                                                      | P3       |
 | **Cross-org banner** (status, holidays) | Pinned top-of-page banner driven by `data/banner.json`. Empty file → no banner. Roles + privileges respected.                                                          | New JSON read at build time; same gate type                                                          | P3       |
 
 #### 12.4 Implementation approach
 
-**Step 1 — Free up the `/` slug.**
+**Step 1 - Free up the `/` slug.**
 - `docs/get-started/overview/index.md`: change `slug: /` → `slug: /get-started/overview/`.
-- Add a redirect entry `{from: '/', to: '/'}` is unnecessary — but
+- Add a redirect entry `{from: '/', to: '/'}` is unnecessary - but
   `{from: '/overview', to: '/'}` already exists in `data/redirects.json`.
 - Verify by checking `data/redirects.json` after the slug change: any legacy
   redirect that pointed at `/get-started/overview` now points at the right URL.
 
-**Step 2 — Create `src/pages/index.tsx`.**
+**Step 2 - Create `src/pages/index.tsx`.**
 
 ```tsx
 import React from 'react';
@@ -990,29 +990,29 @@ export default function Landing(): JSX.Element {
 }
 ```
 
-**Step 3 — Build the six landing-section components.** Each lives in
+**Step 3 - Build the six landing-section components.** Each lives in
 `src/components/Landing/<Name>/index.tsx` with co-located CSS modules. They are
 stateless except for `RecentlyViewed` (localStorage) and `Hero` (active-persona
 dropdown). All gating runs through `isAllowed()` / `hasMinTier()` from
 `src/access-policy.ts`.
 
-**Step 4 — Recently-viewed instrumentation.** Swizzle `src/theme/DocItem/Layout`
+**Step 4 - Recently-viewed instrumentation.** Swizzle `src/theme/DocItem/Layout`
 to push `{title, url, viewedAt}` into `localStorage['sw.recently-viewed']` on
 mount. Cap at 10. Skip if user opts out via a small "Forget recents" button on
 the landing.
 
-**Step 5 — Persona path pages.** `src/pages/path/learner.tsx` etc. Each is a
+**Step 5 - Persona path pages.** `src/pages/path/learner.tsx` etc. Each is a
 ~40-line component reading a static array of `{label, href, blurb}` from
 `src/components/Landing/PathContent.ts`. Centralizing content makes it
 trivial to revise without touching components.
 
-**Step 6 — Data: which modules to recommend?** Read `build/doc-gates.json` at
+**Step 6 - Data: which modules to recommend?** Read `build/doc-gates.json` at
 build time and emit a `static/landing-modules.json` mapping
 `{module: {privilege, hasLearner, hasManager, hasEditor, hasAdmin}}`. The
 `RecommendedModules` component filters by the viewer's privileges + role. New
 postBuild step in `plugins/access-gate-emit.js`.
 
-**Step 7 — What's-new feed.** Use the existing
+**Step 7 - What's-new feed.** Use the existing
 `@docusaurus/plugin-content-docs/client` `useDocsData()` to grab all docs under
 `release-notes/` at build time. Filter by frontmatter `customProps.roles`.
 
@@ -1021,10 +1021,10 @@ postBuild step in `plugins/access-gate-emit.js`.
 Create three new HTML mockups under `plans/mockups/`. They reuse `_styles.css`
 and `_role-shell.css`. The pager at the top of each one cross-links the others.
 
-- `plans/mockups/landing-t1-user.html` — what a plain learner sees
-- `plans/mockups/landing-t3-editor.html` — what an editor sees (the default
+- `plans/mockups/landing-t1-user.html` - what a plain learner sees
+- `plans/mockups/landing-t3-editor.html` - what an editor sees (the default
   "interesting" view because it surfaces the most personas)
-- `plans/mockups/landing-t5-orgadmin.html` — the fullest view with all 7 personas
+- `plans/mockups/landing-t5-orgadmin.html` - the fullest view with all 7 personas
   plus org-wide tooling
 
 The existing `option-b-clickhouse-style.html` stays as the unauthenticated
@@ -1066,26 +1066,26 @@ the recently-viewed strip.
 
 Adds to §11 above:
 
-9.  **Cold-start render** — visit `/` with no JWT cookie; landing shows
+9.  **Cold-start render** - visit `/` with no JWT cookie; landing shows
     `UNAUTH_USER` view (= same as T1), then re-hydrates within ~150 ms once
     `/api/me` resolves; no admin-flash → snap-shrink (already handled by
     `UNAUTH_USER` default).
-10. **Per-tier persona visibility** — mint a JWT for each tier T1–T6 (using
+10. **Per-tier persona visibility** - mint a JWT for each tier T1–T6 (using
     `scripts/dev-mint-jwt.js`) and screenshot the landing; compare to the new
     mockup HTML files in §12.5.
-11. **RecommendedModules accuracy** — flip a single privilege (e.g.
+11. **RecommendedModules accuracy** - flip a single privilege (e.g.
     `aiCoaching`) on/off in a test JWT and confirm the AI Coaching tile
     appears/disappears within the next page load (no rebuild needed).
-12. **Recently viewed** — visit 3 articles, return to `/`, confirm they appear
+12. **Recently viewed** - visit 3 articles, return to `/`, confirm they appear
     in reverse-chrono order; click "Forget recents" and confirm the strip
     empties (and survives a reload).
-13. **What's new filter** — publish a release note with
+13. **What's new filter** - publish a release note with
     `customProps.roles: [admin]` and verify a T1 user does not see it in the
     feed.
-14. **Search & chatbot CTAs** — confirm the hero search opens
+14. **Search & chatbot CTAs** - confirm the hero search opens
     `/search?q=...` and the chatbot CTA opens the existing widget without
     routing.
-15. **Path-page server guard** — hand-type `/path/admin/` as T1; expect 403
+15. **Path-page server guard** - hand-type `/path/admin/` as T1; expect 403
     (the existing `doc-gates.json` middleware already gates anything we list
     there, but verify the path pages emit `customProps.roles` in their
     frontmatter-equivalent via `Layout`).
@@ -1096,10 +1096,10 @@ Each wireframe shows what a viewer at that tier sees on `/`. Cards are ordered b
 relevance to the primary tier. Privilege-gated tiles (Quiz, AI Coaching, etc.)
 also fall off if the org hasn't licensed them.
 
-**T1 — User (learner)**
+**T1 - User (learner)**
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ Hi Jane — what would you like to do today?         [pill: learner]          │
+│ Hi Jane - what would you like to do today?         [pill: learner]          │
 │ [🔍 Ask anything…]                                                           │
 │ [Open the help bot →]  [Browse modules →]                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -1121,9 +1121,9 @@ also fall off if the org hasn't licensed them.
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**T2 — Manager**
+**T2 - Manager**
 ```
-Hi Mark — managing 6 reportees    [pill: manager] [switch view ▾]
+Hi Mark - managing 6 reportees    [pill: manager] [switch view ▾]
 PICK A PATH
 [📋 Manage a team]  [🎓 Be a learner]  [🆘 Need help]
 RECOMMENDED MODULES (each shows for-learners + for-managers)
@@ -1132,12 +1132,12 @@ RECOMMENDED MODULES (each shows for-learners + for-managers)
 WHAT'S NEW FOR YOU
 · Manager dashboard: reportee KPI drill-down redesign
 · Coaching review history filter improvements
-PICK UP WHERE YOU LEFT OFF — your last 5 articles…
+PICK UP WHERE YOU LEFT OFF - your last 5 articles…
 ```
 
-**T3 — Editor**
+**T3 - Editor**
 ```
-Hi Eve — authoring for Acme Sales   [pill: editor] [switch view ▾]
+Hi Eve - authoring for Acme Sales   [pill: editor] [switch view ▾]
 PICK A PATH
 [🛠 Author content]  [📊 Want a report]  [🎓 Be a learner]  [🆘 Need help]
 RECOMMENDED MODULES (full sub-shape per module)
@@ -1151,9 +1151,9 @@ RECENTLY VIEWED
 · SmartPath · Features · Module + segment structure
 ```
 
-**T4 — Admin**
+**T4 - Admin**
 ```
-Hi Alex — admin at Acme Sales      [pill: admin]
+Hi Alex - admin at Acme Sales      [pill: admin]
 PICK A PATH
 [⚙️ Administer the org]  [🔌 Integrate SmartWinnr]  [🛠 Author content]
 [📊 Want a report]  [📋 Manage a team]  [🎓 Be a learner]  [🆘 Need help]
@@ -1163,25 +1163,25 @@ WHAT'S NEW FOR YOU
 · SCIM provisioning v2  · Azure AD: app registration walkthrough
 ```
 
-**T5 — OrgAdmin**
+**T5 - OrgAdmin**
 ```
-Hi Olivia — org admin (Acme + 2 child orgs)   [pill: orgadmin]
+Hi Olivia - org admin (Acme + 2 child orgs)   [pill: orgadmin]
 PICK A PATH
 [⚙️ Administer the org]  [🔌 Integrate SmartWinnr]  [📊 Want a report]
 [🛠 Author content]  [📋 Manage a team]  [🎓 Be a learner]  [🆘 Need help]
-ORG-WIDE TOOLS (new strip — orgadmin/lamadmin only)
+ORG-WIDE TOOLS (new strip - orgadmin/lamadmin only)
 [🏢 Org privileges] [🔔 Custom notifications] [🔄 Transformation layer]
 [💼 Incentive plans] [🧩 CRM components] [👤 HR module] [💰 Secondary sales]
 RECOMMENDED MODULES (full)
 ```
 
-**T6 — Superadmin**
+**T6 - Superadmin**
 ```
-Sasha — superadmin   [pill: superadmin]  [Previewing as ▾]
+Sasha - superadmin   [pill: superadmin]  [Previewing as ▾]
 SUPERADMIN OPS (highlighted strip at top)
 [🛡 Platform ops] [💬 Cross-org chat logs] [🧪 Debug & diagnostics] [🔍 Gate inspector]
 PICK A PATH  (all 7 cards visible)
-RECOMMENDED MODULES (all modules visible regardless of viewing org privileges —
+RECOMMENDED MODULES (all modules visible regardless of viewing org privileges -
 PRIVILEGE_BYPASS_ROLES applies here)
 ```
 
@@ -1196,11 +1196,11 @@ Three regressions surfaced in the live LP-1…LP-3 ship; each has a small,
 self-contained fix. Font/typography differences are explicitly **out of scope**
 here (separate, dedicated task).
 
-##### Fix A — Render the landing & path pages under the docs layout (restores left sidebar)
+##### Fix A - Render the landing & path pages under the docs layout (restores left sidebar)
 
 The current implementation lives in `src/pages/index.tsx` and
 `src/pages/path/<persona>.tsx`. Docusaurus' `@theme/Layout` (used by anything
-under `src/pages/`) is the bare site shell — no docs sidebar, narrower main
+under `src/pages/`) is the bare site shell - no docs sidebar, narrower main
 column. Solution: move the page bodies into MDX docs that import the existing
 React components.
 
@@ -1218,7 +1218,7 @@ React components.
    import Landing from '@site/src/components/Landing/Landing';
    <Landing />
    ```
-3. Create `docs/path/<persona>.mdx` (×7) — one per persona, e.g.
+3. Create `docs/path/<persona>.mdx` (×7) - one per persona, e.g.
    `docs/path/editor.mdx`:
    ```mdx
    ---
@@ -1249,7 +1249,7 @@ React components.
    is the entry point for a journey, set `displayed_sidebar: tutorialSidebar`
    (the existing global sidebar) so the docs tree is visible alongside.
 
-##### Fix B — Point every persona entry-point at a real article
+##### Fix B - Point every persona entry-point at a real article
 
 `src/components/Landing/PathContent.ts` currently maps to module **directory
 URLs** (e.g. `/modules/quiz/create-and-manage/`). Rewrite to specific built
@@ -1263,7 +1263,7 @@ article slugs. Concrete mapping (verified against the migrated tree):
 | learner      | Practice AI Coaching              | `/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt`         |
 | learner      | Engage with SmartFeed             | `/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed`              |
 | learner      | View your KPI scorecard           | `/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard`                |
-| learner      | Respond to a survey               | `/modules/survey/` (no learner-facing leaf yet — module home)                            |
+| learner      | Respond to a survey               | `/modules/survey/` (no learner-facing leaf yet - module home)                            |
 | learner      | Manage your notifications         | `/modules/notifications/for-learners/how-to-view-notifications`                          |
 | manager      | Read team dashboards              | `/reports-and-analytics/legacy/team-analytics`                                           |
 | manager      | Review reportee coaching          | `/modules/video-coaching/for-managers/what-is-my-team-coaching`                          |
@@ -1291,14 +1291,14 @@ new `scripts/validate-path-content.js`) that loads `PathContent.ts` and asserts
 every `entries[].href` either matches a key in `build/doc-gates.json#exact`
 or is a known section URL ending in `/`. Fail the build if any entry is dead.
 
-##### Fix C — Suppress "requires X" hints while privilege gating is off
+##### Fix C - Suppress "requires X" hints while privilege gating is off
 
 In `src/components/Landing/PathPage.tsx` (and the new `PathBody.tsx`), the
 yellow `requires <X>` pill is currently shown whenever the user's
 `privileges` array does not include the entry's privilege. With
 `PRIVILEGE_GATING_ENABLED = false` in `src/access-policy.ts:70`, the
 viewer's privileges field may be empty even when the org actually has the
-feature licensed — so the hint is misleading.
+feature licensed - so the hint is misleading.
 
 Solution: read the same flag from `shared/access-policy.cjs` (already exported)
 and gate the hint render on it:
@@ -1308,14 +1308,14 @@ const showPrivilegeHints = PRIVILEGE_GATING_ENABLED;
 const locked = showPrivilegeHints && !!e.privilege && !privileges.includes(e.privilege);
 ```
 Export `PRIVILEGE_GATING_ENABLED` from `src/access-policy.ts` (currently a
-file-local const — flip to `export const`). When `false`, the pill never
+file-local const - flip to `export const`). When `false`, the pill never
 shows; when `true`, only entries the org truly lacks are dimmed with the hint.
 
-##### Fix D — Drop bespoke header on the landing
+##### Fix D - Drop bespoke header on the landing
 
 When the landing is an MDX doc, the docs layout already provides a title
 header. The greeting/hero remains inside the `<Landing />` component but
-needs no separate `<h1>` — Docusaurus' page title is derived from
+needs no separate `<h1>` - Docusaurus' page title is derived from
 `title: SmartWinnr Help` in frontmatter. Strip the `<Layout title="..." />`
 prop hand-rolling that was needed for `src/pages/index.tsx`.
 
@@ -1333,10 +1333,10 @@ prop hand-rolling that was needed for `src/pages/index.tsx`.
 |---|---|
 | `docs/index.mdx` (new) | Replaces `src/pages/index.tsx`; `slug: /`; imports `<Landing />` |
 | `docs/path/<persona>.mdx` (×7, new) | Replaces `src/pages/path/<persona>.tsx`; carries role gate in frontmatter |
-| `src/components/Landing/Landing.tsx` (new) | Presenter — composes Hero · PersonaGrid · RecommendedModules · WhatsNew · HelpFooter without `<Layout>` |
-| `src/components/Landing/PathBody.tsx` (new) | Presenter — replaces the body of `PathPage.tsx`, no `<Layout>` |
-| `src/pages/index.tsx` (deleted) | — |
-| `src/pages/path/*.tsx` (deleted, ×7) | — |
+| `src/components/Landing/Landing.tsx` (new) | Presenter - composes Hero · PersonaGrid · RecommendedModules · WhatsNew · HelpFooter without `<Layout>` |
+| `src/components/Landing/PathBody.tsx` (new) | Presenter - replaces the body of `PathPage.tsx`, no `<Layout>` |
+| `src/pages/index.tsx` (deleted) | - |
+| `src/pages/path/*.tsx` (deleted, ×7) | - |
 | `src/components/Landing/PathContent.ts` | Rewrite every `href` per Fix B table |
 | `src/components/Landing/PathPage.tsx` (deleted) | Superseded by `PathBody.tsx` |
 | `src/access-policy.ts` | Export `PRIVILEGE_GATING_ENABLED` (currently file-local) |
@@ -1345,15 +1345,15 @@ prop hand-rolling that was needed for `src/pages/index.tsx`.
 
 ##### Verification additions (extends §11)
 
-16. **Sidebar present on landing & path pages** — visit `/` and `/path/editor/`;
+16. **Sidebar present on landing & path pages** - visit `/` and `/path/editor/`;
     confirm the same left-side docs sidebar renders as on any module page.
-17. **Entry-point clicks land on real articles** — open `/path/editor/`, click
+17. **Entry-point clicks land on real articles** - open `/path/editor/`, click
     each entry; verify each navigates to a built `.html` page that has content
     (not a category index with only sub-folder links).
-18. **No yellow "requires X" pills with gating off** — confirm with the current
+18. **No yellow "requires X" pills with gating off** - confirm with the current
     `PRIVILEGE_GATING_ENABLED = false`. Flip the flag locally to verify the
     pills come back when gating is on.
-19. **Sidebar items hidden** — the landing and path pages should NOT appear as
+19. **Sidebar items hidden** - the landing and path pages should NOT appear as
     sidebar links anywhere (no "SmartWinnr Help" or "Author content" entries
     in the autogen tree).
 
@@ -1365,14 +1365,14 @@ that clashes with the site's actual brand palette
 rest of the page. Three pieces of content on the hero are also redundant or
 out of place:
 
-- **Search input** — duplicates the global navbar search (`⌘K`); users
+- **Search input** - duplicates the global navbar search (`⌘K`); users
   already have a discoverable, fast search path.
-- **Org ID** (e.g. `Org: 64b9031d0a46a470954f02f2`) — a database identifier
+- **Org ID** (e.g. `Org: 64b9031d0a46a470954f02f2`) - a database identifier
   no real user knows or cares about.
-- **Region** (e.g. `Region: http://localhost:3000`) — currently shows the
+- **Region** (e.g. `Region: http://localhost:3000`) - currently shows the
   raw region URL, not a friendly label; misleading and unhelpful.
 
-**What stays.** Personalized greeting (`Hi <Name> — what would you like to
+**What stays.** Personalized greeting (`Hi <Name> - what would you like to
 do today?`), the role pill (`learner` / `editor` / etc.), and the two
 existing CTAs (Open the help bot · Browse modules).
 
@@ -1383,19 +1383,19 @@ brand-aligned panel** that uses Infima theme tokens so dark mode auto-flips:
 ┌─────────────────────────────────────────────────────────────────────┐
 │  [editor]                                                            │
 │                                                                      │
-│  Hi Sai — what would you like to do today?                          │
+│  Hi Sai - what would you like to do today?                          │
 │                                                                      │
 │  [💬 Open the help bot]  [📚 Browse modules]                          │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-- Background: a subtle wash — either
+- Background: a subtle wash - either
   `var(--ifm-color-primary-lightest)` (very pale purple) or a near-white
   card with a thin left accent bar in `var(--ifm-color-primary)`. The plan
   recommends the **pale purple wash** for warmth without losing the
   emphasis.
 - Heading: dark text (`var(--ifm-heading-color)`), 26-28 px, weight 700.
-- Role pill: white background with a 1 px purple border + purple text —
+- Role pill: white background with a 1 px purple border + purple text -
   reads as a tasteful chip rather than a frosted-glass capsule.
 - CTAs: primary button uses solid `var(--ifm-color-primary)` filled with
   white text (standard Infima button); secondary uses an outlined variant.
@@ -1411,7 +1411,7 @@ brand-aligned panel** that uses Infima theme tokens so dark mode auto-flips:
 panel auto-flips:
 - Light: pale-purple wash, dark text.
 - Dark: faint dark-purple wash (Infima's primary-lightest in dark mode is
-  `#c4b5fd` — works as a thin accent line; use
+  `#c4b5fd` - works as a thin accent line; use
   `var(--ifm-color-emphasis-100)` for the panel background).
 
 **Files to touch.**
@@ -1421,28 +1421,28 @@ panel auto-flips:
 | `src/components/Landing/Hero.tsx` | Delete the `<form>` search block and the two `<span>`s reading `user.orgId` / `user.region`. Keep greeting, role pill, CTAs. |
 | `src/components/Landing/styles.module.css` | Rewrite `.hero` + `.hero h1` + `.hero .rolePill` + `.hero .cta*` selectors to use Infima tokens; delete `.hero .search` + `.hero .search input` + `.hero .search::before`. |
 
-**Out of scope here.** Global font-family alignment with Infima — that is
+**Out of scope here.** Global font-family alignment with Infima - that is
 the dedicated typography task already deferred.
 
 **Verification.**
 
-20. **Hero contains no search input** — `grep "<input" build/index.html`
+20. **Hero contains no search input** - `grep "<input" build/index.html`
     finds no input at the top of the page.
-21. **No Org / Region text** — `grep -E "Org:|Region:" build/index.html`
+21. **No Org / Region text** - `grep -E "Org:|Region:" build/index.html`
     returns nothing.
-22. **Palette aligned** — visit `/`; the hero panel uses the same purple
+22. **Palette aligned** - visit `/`; the hero panel uses the same purple
     family as the rest of the site (link color, focus ring, primary
     buttons in deep doc pages).
-23. **Dark mode** — toggle the navbar's light/dark switch; the hero
+23. **Dark mode** - toggle the navbar's light/dark switch; the hero
     background swaps without unreadable contrast or hard-coded white text.
-24. **CTA hierarchy** — primary "Open the help bot" reads as the active
+24. **CTA hierarchy** - primary "Open the help bot" reads as the active
     call to action; secondary "Browse modules" reads as a quieter
     alternative.
 
 - Migrating the `manager` and `lamadmin` role definitions in the LMS itself.
-- Rewriting article bodies for style / Diátaxis tone — that is a separate content
+- Rewriting article bodies for style / Diátaxis tone - that is a separate content
   pass (the existing `DOCUMENTATION-UPDATE-PLAN.md`).
-- Localizing menu labels — current Docusaurus i18n setup is unchanged.
+- Localizing menu labels - current Docusaurus i18n setup is unchanged.
 - Adding a new privilege to the LMS enum. We **read** it; we do not extend it.
 
 ## What is **deferred** (next iteration)

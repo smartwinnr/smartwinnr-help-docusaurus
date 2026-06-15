@@ -653,11 +653,11 @@ function moduleFromPageUrl(url) {
  * Phrase -> module slug map for tagging unanswered queries by query
  * CONTENT. More-specific phrases come first so they win the includes()
  * scan before generic fallbacks ("ai coaching" beats the bare "coaching"
- * suffix). The slugs `coaching-group` and `multiple` are synthetic — the
+ * suffix). The slugs `coaching-group` and `multiple` are synthetic - the
  * client maps them to friendly labels ("Coaching", "Multiple").
  */
 const QUERY_KEYWORDS = [
-  // Specific coaching variants — MUST precede the generic "coaching"
+  // Specific coaching variants - MUST precede the generic "coaching"
   ['ai coaching',    'ai-coaching'],
   ['video coaching', 'video-coaching'],
   ['field coaching', 'field-coaching'],
@@ -677,7 +677,7 @@ const QUERY_KEYWORDS = [
   ['survey',         'survey'],
   ['forms',          'forms'],
   ['notification',   'notifications'],
-  // Generic group label — last; cleaned up below if a specific coaching
+  // Generic group label - last; cleaned up below if a specific coaching
   // variant was also detected.
   ['coaching',       'coaching-group'],
 ];
@@ -727,7 +727,7 @@ function resolveClusterModule(querySlugs, urlModuleCounts) {
     return only;
   }
 
-  // Multiple specific modules mentioned — let page_url break the tie.
+  // Multiple specific modules mentioned - let page_url break the tie.
   if (urlDominant && querySlugs.has(urlDominant)) return urlDominant;
   return 'multiple';
 }

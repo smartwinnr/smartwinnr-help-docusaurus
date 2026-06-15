@@ -214,7 +214,7 @@ module.exports = [
     }
   },
   {
-    // MD-SW-001 — articles under docs/modules/<module>/ must live in the
+    // MD-SW-001 - articles under docs/modules/<module>/ must live in the
     // module root (overview.md / quickstart.md) or in one of the 8 canonical
     // sub-folders. See plans/help-menu-redesign.md §5.
     "names": ["MD-SW-001", "module-sub-section-placement"],
@@ -265,7 +265,7 @@ module.exports = [
     }
   },
   {
-    // MD-SW-002 — articles must declare a non-empty `description:` in
+    // MD-SW-002 - articles must declare a non-empty `description:` in
     // frontmatter. Used by SEO, preview cards, and chatbot grounding.
     // See STYLE.md.
     "names": ["MD-SW-002", "description-required"],
@@ -300,7 +300,7 @@ module.exports = [
     }
   },
   {
-    // MD-SW-003 — every image must have non-empty, non-filename-derived
+    // MD-SW-003 - every image must have non-empty, non-filename-derived
     // alt text. See STYLE.md (Screenshots section).
     "names": ["MD-SW-003", "alt-text-required"],
     "description": "Image must have semantic alt text",

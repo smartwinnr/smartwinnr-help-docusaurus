@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
-import {useNotify} from '@site/src/components/admin/authoring/Notify';
+import {useNotify, type Notify} from '@site/src/components/admin/authoring/Notify';
 import styles from './styles.module.css';
 
 /**
@@ -81,7 +81,7 @@ function parsePath(p: string): {module: string; subFolder: string; slug: string}
  * Mirror the wizard's STORAGE_KEY constant in `index.tsx`. Update both
  * places together if the key ever changes. Used here to invalidate the
  * wizard's persisted state when the draft it references is deleted /
- * published — otherwise a new Authoring visit would restore a wizard
+ * published - otherwise a new Authoring visit would restore a wizard
  * pointing at a now-stale file path.
  */
 const WIZARD_STORAGE_KEY = 'sw.authoring.wizard.v1';
@@ -116,8 +116,7 @@ function clearWizardState() {
 // Drafts tab
 // ─────────────────────────────────────────────────────────────────────────
 
-function DraftsTab(): ReactNode {
-  const notify = useNotify();
+function DraftsTab({notify}: {notify: Notify}): ReactNode {
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null);
@@ -335,8 +334,7 @@ function DraftsTab(): ReactNode {
 // Published tab
 // ─────────────────────────────────────────────────────────────────────────
 
-function PublishedTab(): ReactNode {
-  const notify = useNotify();
+function PublishedTab({notify}: {notify: Notify}): ReactNode {
   const [moduleSlug, setModuleSlug] = useState<string>('');
   const [subFolder, setSubFolder] = useState<string>('');
   const [articles, setArticles] = useState<Article[]>([]);
@@ -396,14 +394,14 @@ function PublishedTab(): ReactNode {
           <label className={styles.inlineLabel}>
             Module
             <select value={moduleSlug} onChange={(e) => setModuleSlug(e.target.value)}>
-              <option value="">— pick a module —</option>
+              <option value="">- pick a module -</option>
               {MODULES.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
             </select>
           </label>
           <label className={styles.inlineLabel}>
             Sub-folder
             <select value={subFolder} onChange={(e) => setSubFolder(e.target.value)}>
-              <option value="">— pick a sub-folder —</option>
+              <option value="">- pick a sub-folder -</option>
               {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
             </select>
           </label>
@@ -513,7 +511,7 @@ function QueuePage(): ReactNode {
         </button>
       </div>
 
-      {tab === 'drafts' ? <DraftsTab /> : <PublishedTab />}
+      {tab === 'drafts' ? <DraftsTab notify={notify} /> : <PublishedTab notify={notify} />}
 
       {notify.host}
     </div>

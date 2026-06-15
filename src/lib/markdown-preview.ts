@@ -16,7 +16,7 @@ export function useMarkdownHtml(md: string): string {
       try {
         // markdown-it ships only ESM without bundled .d.ts, so TS can't
         // resolve types here. The dynamic import resolves at runtime via
-        // Docusaurus's webpack — suppress the missing-types error.
+        // Docusaurus's webpack - suppress the missing-types error.
         // @ts-expect-error - no @types/markdown-it
         const mod = (await import('markdown-it')) as unknown as {default?: unknown};
         const Ctor = (mod.default ?? mod) as unknown as new (opts?: object) => {render(s: string): string};

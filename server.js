@@ -1002,7 +1002,7 @@ const DEPLOY_DEBOUNCE_MS = parseInt(process.env.AUTHORING_DEPLOY_DEBOUNCE_MS || 
 const DEPLOY_MIN_INTERVAL_MS = parseInt(process.env.AUTHORING_DEPLOY_MIN_INTERVAL_MS || String(60 * 60 * 1000), 10);
 const GIT_PUSH_ENABLED = process.env.AUTHORING_GIT_PUSH === 'true';
 const GIT_PUSH_TOKEN = process.env.GIT_PUSH_TOKEN || '';
-// Repo identity: "<owner>/<repo>" — e.g. "smartwinnr/smartwinnr-help-docusaurus".
+// Repo identity: "<owner>/<repo>" - e.g. "smartwinnr/smartwinnr-help-docusaurus".
 const GITHUB_REPO = process.env.GITHUB_REPO || '';
 const GIT_PUBLISH_BRANCH = process.env.GIT_PUBLISH_BRANCH || 'main';
 const GITHUB_API = process.env.GITHUB_API || 'https://api.github.com';
@@ -1057,7 +1057,7 @@ function scheduleDeploy() {
   debounceTimer = setTimeout(() => { fireDeploy().catch((e) => console.error('[deploy] auto-fire failed:', e.message)); }, delay);
 }
 
-/** GitHub Git Data API helpers — composes a single atomic commit out of
+/** GitHub Git Data API helpers - composes a single atomic commit out of
  *  N file changes by building blobs → tree → commit → ref update. The
  *  fine-grained PAT in GIT_PUSH_TOKEN must have Contents: Read & Write
  *  scoped to ONLY the configured repo. */
@@ -1090,14 +1090,14 @@ async function ghPatch(pathSuffix, body) {
 
 /** Run a deploy: build a single commit out of every queued file via the
  *  GitHub Git Data API. Triggers Railway auto-deploy via the ref update.
- *  Best-effort — on failure the queue is preserved for the next attempt. */
+ *  Best-effort - on failure the queue is preserved for the next attempt. */
 async function fireDeploy() {
   if (deployInFlight) return { ok: false, reason: 'in-flight' };
   if (deployQueue.size === 0) return { ok: false, reason: 'empty-queue' };
 
   if (!GIT_PUSH_ENABLED) {
-    // Local dev or feature off — clear queue without any git work.
-    console.log('[deploy] AUTHORING_GIT_PUSH not set — clearing queue as no-op');
+    // Local dev or feature off - clear queue without any git work.
+    console.log('[deploy] AUTHORING_GIT_PUSH not set - clearing queue as no-op');
     deployQueue.clear();
     lastDeployTs = Date.now();
     persistDeployState();

@@ -1,4 +1,4 @@
-/* Option C — Persona-led "door" landing. Shared styles for the front-door
+/* Option C - Persona-led "door" landing. Shared styles for the front-door
  * picker and the behind-the-door persona hero. Pairs with _styles.css +
  * _landing.css from the same directory. */
 
@@ -115,7 +115,7 @@
   text-transform: uppercase;
 }
 
-/* Doors a role can't enter — show but visibly muted. */
+/* Doors a role can't enter - show but visibly muted. */
 .door.locked {
   opacity: 0.55;
   cursor: not-allowed;
@@ -255,7 +255,7 @@
   color: #94a3b8;
 }
 
-/* Mode swap rail — links to the other doors */
+/* Mode swap rail - links to the other doors */
 .modeRail {
   display: flex;
   gap: 10px;

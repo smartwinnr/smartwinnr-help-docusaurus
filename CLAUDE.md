@@ -8,13 +8,13 @@ A Docusaurus documentation site for SmartWinnr help content, plus an integrated 
 backend (`server.js`) that serves the static build AND a chatbot/vector-search API. Docs
 are Markdown in `docs/` (26 category dirs, 877+ files); a RAG pipeline indexes them into
 ChromaDB and answers questions via OpenAI. See `ARCHITECTURE.md` for the full RAG,
-indexing, and Freshdesk-pipeline detail — but note the corrections in "Gotchas" below.
+indexing, and Freshdesk-pipeline detail - but note the corrections in "Gotchas" below.
 
 ## Commands
 
 ```bash
 npm run dev            # Docusaurus dev server, hot reload, docs only, port 3001 (NO chatbot API)
-npm run dev:full       # Docs (3000) + chatbot API (3002) in parallel — but see gotcha re services/
+npm run dev:full       # Docs (3000) + chatbot API (3002) in parallel - but see gotcha re services/
 npm run build          # Compile docs to static build/
 node server.js         # Unified Express server: serves build/ + all /api routes on PORT (default 3000)
 npm start              # build + node server.js (production-like, single port)
@@ -29,13 +29,13 @@ npm run typecheck      # tsc (no emit)
 
 No automated test suite exists. Validation is: `lint:docs`, `typecheck`, and `build`.
 
-## Dev role switching — test different roles without re-logging-in
+## Dev role switching - test different roles without re-logging-in
 
-Real sign-in requires a Mailgun magic-link round-trip through the main app —
+Real sign-in requires a Mailgun magic-link round-trip through the main app -
 too slow for iterating on per-role UI. Three layered shortcuts work in dev
 (`NODE_ENV !== 'production'`) and are **disabled in production builds**.
 
-### 1. The fastest: `/auth/dev-login` — one URL per role
+### 1. The fastest: `/auth/dev-login` - one URL per role
 
 While the server is running locally, hit any of:
 
@@ -58,7 +58,7 @@ Optional query params (all default sensibly):
 | Param | Default | Use case |
 |---|---|---|
 | `role` | `user` | Comma-list for multi-role users: `role=editor,manager` |
-| `privileges` | **none** | The realistic default — a role on its own gets you only the role's reach, no licensed modules. Pass `*` for all (`privileges=*`), or a comma-list for a subset (`privileges=quiz,smartpaths`). Pass empty (`?privileges=`) for the same effect as omitting. |
+| `privileges` | **none** | The realistic default - a role on its own gets you only the role's reach, no licensed modules. Pass `*` for all (`privileges=*`), or a comma-list for a subset (`privileges=quiz,smartpaths`). Pass empty (`?privileges=`) for the same effect as omitting. |
 | `email` | `dev@example.com` | The greeting uses the first word |
 | `displayName` | derived from email | `Hi <displayName>` in the hero |
 | `orgName` | `Dev Org` | Carried through to `/api/me` |
@@ -82,7 +82,7 @@ The script prints two lines to stdout:
 1. The raw JWT (for tools that set `Authorization`-style headers directly)
 2. A copy-paste-friendly `Set-Cookie: swhelp_session=…` line
 
-Reads `HELP_JWT_SECRET` from `.env` — same secret the running server uses,
+Reads `HELP_JWT_SECRET` from `.env` - same secret the running server uses,
 so cookies it mints are accepted by `/api/me`, `auth/middleware.js`, and the
 URL guard in `server.js`.
 
@@ -111,17 +111,17 @@ real session.
 | Learner with NO licensed modules (sees upsell on every module) | `/auth/dev-login?role=user` |
 | Learner with Quiz licensed only | `/auth/dev-login?role=user&privileges=quiz` |
 | Fully-licensed learner (all modules visible) | `/auth/dev-login?role=user&privileges=*` |
-| Manager — see **For Managers** sub-sections inside modules | `/auth/dev-login?role=manager&privileges=managerView,quiz` |
+| Manager - see **For Managers** sub-sections inside modules | `/auth/dev-login?role=manager&privileges=managerView,quiz` |
 | Manager with full org licensing | `/auth/dev-login?role=manager&privileges=*` |
 | Editor with full authoring tree | `/auth/dev-login?role=editor&privileges=*` |
 | Editor whose org only has Quiz + SmartPath | `/auth/dev-login?role=editor&privileges=quiz,smartpaths` |
-| Multi-role user (editor + manager) — see ALL sub-sections | `/auth/dev-login?role=editor,manager&privileges=*` |
+| Multi-role user (editor + manager) - see ALL sub-sections | `/auth/dev-login?role=editor,manager&privileges=*` |
 | Custom name in the greeting | `/auth/dev-login?role=editor&privileges=*&displayName=Charan` |
 | Superadmin previewing user view | sign in normally, then visit `/?as=user` |
 
 > **Trap:** the **For Managers** sub-folder inside each module requires `managerView`
 > privilege in addition to the manager role. If you log in as `?role=manager` with
-> no `&privileges=...`, you'll see User + Editor leaves but NOT For Managers —
+> no `&privileges=...`, you'll see User + Editor leaves but NOT For Managers -
 > because `managerView` isn't in your dev privileges. That's the intended gate
 > (mirrors the LMS-side licensing for team-view UI). Add `managerView` to your
 > privileges, or just use `&privileges=*`.
@@ -141,15 +141,15 @@ redirects to login.
 
 ### Plumbing reference
 
-- `auth/routes.js` — registers `/auth/dev-login` inside an
+- `auth/routes.js` - registers `/auth/dev-login` inside an
   `IS_DEV` guard at module load.
-- `auth/jwt.js` — `signSessionToken({email, displayName, roles, region,
+- `auth/jwt.js` - `signSessionToken({email, displayName, roles, region,
   orgId, orgName, privileges})` is the shared signer used by `/auth/callback`,
   `/auth/dev-login`, and the CLI.
-- `auth/middleware.js` — `maybeApplyPreview(req)` applies `?as=` after the
+- `auth/middleware.js` - `maybeApplyPreview(req)` applies `?as=` after the
   cookie has been verified.
-- `scripts/dev-mint-cookie.js` — wraps `signSessionToken`.
-- `data/known-privileges.json` — drives the "all privileges by default"
+- `scripts/dev-mint-cookie.js` - wraps `signSessionToken`.
+- `data/known-privileges.json` - drives the "all privileges by default"
   behavior.
 
 ## Architecture (big picture)
@@ -166,7 +166,7 @@ redirects to login.
 - **Auth:** `auth/` gates the whole site. Users arrive via a magic link from the main
   SmartWinnr app; `/auth/callback?token=<JWT>` verifies the JWT (must have editor/admin
   role), then sets a session cookie. `initAuth(app)` in server.js mounts `/auth` routes
-  (public) then `requireAuth` — everything mounted after is protected. Admin chat-log
+  (public) then `requireAuth` - everything mounted after is protected. Admin chat-log
   endpoints additionally require `requireRole('superadmin')`.
 - **Chat logging:** `db/chat-logger.js` persists every exchange to SQLite (better-sqlite3)
   at `CHAT_LOG_DB_PATH`. It has a circuit breaker (degrades gracefully, never breaks chat),
@@ -182,19 +182,19 @@ redirects to login.
 
 - **`services/chatbot/` does NOT exist.** The `package.json` scripts `chatbot:start`,
   `chatbot:dev`, `index-docs`, and `start:production` point at `services/chatbot/*.ts`
-  files that aren't in the repo — they are stale and will fail. The real backend entry is
+  files that aren't in the repo - they are stale and will fail. The real backend entry is
   `server.js`. Use `node server.js` / `npm start`, not those scripts.
 - **`ARCHITECTURE.md` §8 is outdated**: it says "no authentication." Auth now exists and
   gates the entire site (see Auth above). Treat its RAG/indexing sections as accurate but
   its access-control claims as superseded by `auth/`.
 - **All SmartWinnr roles can sign in** (`user`, `manager`, `editor`, `admin`, `orgadmin`,
-  `lamadmin`, `superadmin`) — `auth/routes.js` no longer restricts to editor/admin. What
+  `lamadmin`, `superadmin`) - `auth/routes.js` no longer restricts to editor/admin. What
   each role sees inside is decided by the swizzled `DocSidebarItem/{Category,Link}`
   wrappers reading `customProps.{roles, privilege, anyPrivilege}` from `sidebars.ts` and
   `_category_.json` files. Gate-resolution logic lives in `src/access-policy.ts`
   (`isAllowed`); `superadmin` bypasses privilege checks (`PRIVILEGE_BYPASS_ROLES`).
   **Caveat**: the sidebar hides categories, but `express.static` still serves
-  hand-typed/shared URLs for those paths — there is no server-side URL guard yet (Phase D
+  hand-typed/shared URLs for those paths - there is no server-side URL guard yet (Phase D
   in `AUTH_MENU_PLAN.md`).
 - **`GET /api/me`** is the only endpoint the React client calls on mount to hydrate
   `UserContext` (`src/contexts/UserContext.tsx` → `src/theme/Root.tsx`). Response shape:
@@ -293,7 +293,7 @@ The migrator buckets per-collection so deletes/audits are scoped. Existing on-di
 with non-zero size are not re-downloaded.
 
 `scripts/migrate-images.js` handles non-Help-Scout sources (Google Drive,
-support.smartwinnr.com) and is a one-shot cleanup tool — it is NOT part of the canonical
+support.smartwinnr.com) and is a one-shot cleanup tool - it is NOT part of the canonical
 re-sync pipeline.
 
 ### Re-sync runbook

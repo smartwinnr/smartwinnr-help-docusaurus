@@ -26,7 +26,7 @@ import styles from './styles.module.css';
 
 const STORAGE_KEY = 'sw.authoring.wizard.v1';
 
-// Modules — `value` is the slug used in `docs/modules/<value>/`, `label`
+// Modules - `value` is the slug used in `docs/modules/<value>/`, `label`
 // is the display string. We hand-curate the labels rather than auto-
 // title-casing because some names have non-standard capitalization
 // (AI, SmartFeed, SmartPath, KPI).
@@ -196,7 +196,7 @@ function titleStartsWithVerbOrQuestion(t: string): boolean {
  * Hand-rolled frontmatter parser scoped to the fields the wizard cares
  * about. Same shape the migrate-helpscout + authoring-generate paths
  * produce so the round-trip is lossless for the fields below. We don't
- * pull in a YAML library on the client — these regexes match exactly
+ * pull in a YAML library on the client - these regexes match exactly
  * the canonical frontmatter format and ignore anything else.
  */
 function parseDraftFrontmatter(markdown: string): Partial<Inputs> | null {
@@ -215,7 +215,7 @@ function parseDraftFrontmatter(markdown: string): Partial<Inputs> | null {
       .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
       .filter(Boolean);
   };
-  // privilege lives under customProps — regex matches both top-level and nested.
+  // privilege lives under customProps - regex matches both top-level and nested.
   const privMatch = /^\s*privilege\s*:\s*["']?([A-Za-z0-9_]+)["']?\s*$/m.exec(fm);
   return {
     title: scalar('title'),

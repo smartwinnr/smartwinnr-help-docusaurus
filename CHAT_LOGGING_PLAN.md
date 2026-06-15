@@ -96,13 +96,13 @@ const { requireRole } = require('./auth/requireRole');
 app.use('/api/admin/chat-logs', requireRole('superadmin'));
 ```
 
-- `GET /api/admin/chat-logs` — paginated recent exchanges
-- `GET /api/admin/chat-logs/low-confidence` — poor-match queries (filters on `relevance_score`)
-- `GET /api/admin/chat-logs/stats` — summary metrics
-- `GET /api/admin/chat-logs/export` — JSON/CSV export
-- `GET /api/admin/chat-logs/health` — DB health & metrics
-- `DELETE /api/admin/chat-logs/:conversationId` — delete conversation (GDPR)
-- `DELETE /api/admin/chat-logs/by-email/:email` — delete by user email (GDPR)
+- `GET /api/admin/chat-logs` - paginated recent exchanges
+- `GET /api/admin/chat-logs/low-confidence` - poor-match queries (filters on `relevance_score`)
+- `GET /api/admin/chat-logs/stats` - summary metrics
+- `GET /api/admin/chat-logs/export` - JSON/CSV export
+- `GET /api/admin/chat-logs/health` - DB health & metrics
+- `DELETE /api/admin/chat-logs/:conversationId` - delete conversation (GDPR)
+- `DELETE /api/admin/chat-logs/by-email/:email` - delete by user email (GDPR)
 
 Each endpoint calls `auditLog(req, action)` to record the admin's email, action, endpoint, params, and timestamp.
 
@@ -134,20 +134,20 @@ Role-checking middleware for `superadmin` access on admin endpoints.
 
 ### 2. New: `db/chat-logger.js`
 Core logging module:
-- `getDb()` — lazy-init SQLite, create tables/indexes, set pragmas, run migrations
-- `runMigrations(db)` — sequential schema migrations via `schema_version` table
-- `logExchange(data)` — INSERT into both tables with circuit breaker protection
-- `auditLog(req, action)` — INSERT into `admin_audit_log`
-- `getRecentExchanges(limit, offset)` — paginated review
-- `getLowConfidenceExchanges(threshold, limit)` — filters on `relevance_score`
-- `getStats(days)` — summary metrics (total queries, avg confidence, fallback rate, token usage)
-- `getHealth()` — DB size, row counts, WAL size, circuit breaker status
-- `exportToJSON(startDate, endDate, anonymize)` — bulk export with optional anonymization
-- `cleanOldRecords(retentionDays)` — delete records older than N days (run on startup)
-- `deleteConversation(conversationId)` — CASCADE delete (GDPR)
-- `deleteByEmail(email)` — delete all conversations for a user email (GDPR)
-- `rateExchange(exchangeId, rating)` — update `user_rating`
-- `classifyQuery(query)` — keyword-based query type classification
+- `getDb()` - lazy-init SQLite, create tables/indexes, set pragmas, run migrations
+- `runMigrations(db)` - sequential schema migrations via `schema_version` table
+- `logExchange(data)` - INSERT into both tables with circuit breaker protection
+- `auditLog(req, action)` - INSERT into `admin_audit_log`
+- `getRecentExchanges(limit, offset)` - paginated review
+- `getLowConfidenceExchanges(threshold, limit)` - filters on `relevance_score`
+- `getStats(days)` - summary metrics (total queries, avg confidence, fallback rate, token usage)
+- `getHealth()` - DB size, row counts, WAL size, circuit breaker status
+- `exportToJSON(startDate, endDate, anonymize)` - bulk export with optional anonymization
+- `cleanOldRecords(retentionDays)` - delete records older than N days (run on startup)
+- `deleteConversation(conversationId)` - CASCADE delete (GDPR)
+- `deleteByEmail(email)` - delete all conversations for a user email (GDPR)
+- `rateExchange(exchangeId, rating)` - update `user_rating`
+- `classifyQuery(query)` - keyword-based query type classification
 - Check `CHAT_LOGGING_ENABLED` env var; silently skip if `false`
 - Circuit breaker: disable logging after 5 consecutive write failures, auto-reset after `CHAT_LOGGER_CIRCUIT_RESET_MS` (default 60000ms)
 - WAL checkpoint on startup + every 6 hours via `setInterval`
@@ -174,15 +174,15 @@ Core logging module:
   - In the fallback catch (line 287), set `isFallback = true`
   - Update `generateAIResponse()` to return `{ message, usage }` for token tracking
 - Add admin endpoints (protected by `requireRole('superadmin')`):
-  - `GET /api/admin/chat-logs` — paginated recent exchanges
-  - `GET /api/admin/chat-logs/low-confidence` — poor-match queries
-  - `GET /api/admin/chat-logs/stats` — summary metrics
-  - `GET /api/admin/chat-logs/export` — JSON/CSV export with optional anonymization
-  - `GET /api/admin/chat-logs/health` — DB health metrics
-  - `DELETE /api/admin/chat-logs/:conversationId` — GDPR deletion
-  - `DELETE /api/admin/chat-logs/by-email/:email` — GDPR deletion by email
+  - `GET /api/admin/chat-logs` - paginated recent exchanges
+  - `GET /api/admin/chat-logs/low-confidence` - poor-match queries
+  - `GET /api/admin/chat-logs/stats` - summary metrics
+  - `GET /api/admin/chat-logs/export` - JSON/CSV export with optional anonymization
+  - `GET /api/admin/chat-logs/health` - DB health metrics
+  - `DELETE /api/admin/chat-logs/:conversationId` - GDPR deletion
+  - `DELETE /api/admin/chat-logs/by-email/:email` - GDPR deletion by email
 - Add rating endpoint:
-  - `POST /api/chat/:exchangeId/rate` — update user_rating (no auth required)
+  - `POST /api/chat/:exchangeId/rate` - update user_rating (no auth required)
 
 ### 4. Modify: `src/components/ChatBot/ChatBot.tsx`
 - Add `pageUrl: window.location.pathname` to the `userContext` object sent with chat requests
@@ -256,7 +256,7 @@ Core logging module:
 
 ## Using Data to Improve the Chatbot
 
-1. **Doc gap detection**: Query exchanges where `relevance_score < 0.5` — these are questions the docs can't answer well. Group by keyword similarity to find common themes, then write new articles.
+1. **Doc gap detection**: Query exchanges where `relevance_score < 0.5` - these are questions the docs can't answer well. Group by keyword similarity to find common themes, then write new articles.
 2. **Fallback analysis**: Review `is_fallback = 1` rows to understand AI service failures.
 3. **Prompt tuning**: Low-relevance exchanges reveal where the system prompt (`server.js:188`) needs adjustment.
 4. **Performance monitoring**: Track `response_time_ms` trends to catch degradation.
@@ -299,7 +299,7 @@ Core logging module:
 10. `query_type` auto-classified correctly for sample queries
 11. Verify `pageUrl` appears from frontend context
 12. Set `CHAT_LOGGING_ENABLED=false`, verify no writes occur
-13. Circuit breaker activates after 5 consecutive write failures — chat endpoint unaffected
+13. Circuit breaker activates after 5 consecutive write failures - chat endpoint unaffected
 14. Schema migration adds new column to existing DB without data loss
 15. Export script `--anonymize` flag strips PII fields
 16. Docker build succeeds with `better-sqlite3` native compilation

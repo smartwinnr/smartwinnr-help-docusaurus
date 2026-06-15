@@ -16,7 +16,7 @@ const VALID_PREVIEW_ROLES = new Set([
  * - In dev (NODE_ENV !== 'production'): any cookied user can preview.
  * - In production: only a real `superadmin` may preview as a lower tier.
  *
- * The override is purely runtime — the cookie is NOT rewritten. Drop the
+ * The override is purely runtime - the cookie is NOT rewritten. Drop the
  * query param to restore the real session.
  */
 function maybeApplyPreview(req) {
@@ -88,7 +88,7 @@ function requireAuth(req, res, next) {
       maybeApplyPreview(req);
       return next();
     } catch (err) {
-      // Invalid/expired token — fall through to unauthenticated handling
+      // Invalid/expired token - fall through to unauthenticated handling
     }
   }
 

@@ -1,4 +1,4 @@
-/* Landing-page shell — extends _styles.css + _role-shell.css */
+/* Landing-page shell - extends _styles.css + _role-shell.css */
 
 .landing-hero {
   background: linear-gradient(135deg, var(--sw-blue) 0%, var(--sw-blue-dark) 100%);

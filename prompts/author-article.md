@@ -141,15 +141,15 @@ present, otherwise "Tips" or the final Step).
 - Alt text uses the editor's caption verbatim (cleaned up to ≤140
   chars if needed; remove trailing punctuation, keep meaning).
 - **Placement priority order, strongest signal first:**
-  1. **`stepAnchor`** — if an image has a non-empty `stepAnchor` field,
+  1. **`stepAnchor`** - if an image has a non-empty `stepAnchor` field,
      treat that as the primary placement signal. Place the image under
      the step whose body most closely matches the `stepAnchor` text.
      The `stepAnchor` is the editor telling you explicitly which step
      this image illustrates; honor it even if the caption suggests
      otherwise.
-  2. **Caption text** — if no `stepAnchor`, place the image under the
+  2. **Caption text** - if no `stepAnchor`, place the image under the
      step whose body most closely matches the caption.
-  3. **Array order** — if both the `stepAnchor` and caption are vague
+  3. **Array order** - if both the `stepAnchor` and caption are vague
      or could match multiple steps, fall back to the image's position
      in the input array (image #1 under the first step that needs an
      illustration, #2 under the next, and so on). The editor controls

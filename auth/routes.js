@@ -37,7 +37,7 @@ function guessFirstName(email) {
 }
 
 /**
- * GET /auth/login — Serve standalone login page
+ * GET /auth/login - Serve standalone login page
  */
 router.get('/login', (req, res) => {
   const error = req.query.error === 'invalid_token'
@@ -48,7 +48,7 @@ router.get('/login', (req, res) => {
 });
 
 /**
- * GET /auth/callback — Receive JWT from smartwinnr_prd, verify, set cookie
+ * GET /auth/callback - Receive JWT from smartwinnr_prd, verify, set cookie
  * Query param: ?token=<JWT>&redirect=<optional path>
  */
 router.get('/callback', (req, res) => {
@@ -96,7 +96,7 @@ router.get('/callback', (req, res) => {
 });
 
 /**
- * POST /auth/logout — Clear cookie, redirect to login
+ * POST /auth/logout - Clear cookie, redirect to login
  */
 router.post('/logout', (req, res) => {
   res.clearCookie(COOKIE_NAME, { path: '/' });
@@ -104,7 +104,7 @@ router.post('/logout', (req, res) => {
 });
 
 /**
- * GET /auth/status — Return current auth status from cookie
+ * GET /auth/status - Return current auth status from cookie
  */
 router.get('/status', (req, res) => {
   const token = req.cookies && req.cookies[COOKIE_NAME];
@@ -131,7 +131,7 @@ router.get('/status', (req, res) => {
 });
 
 /**
- * GET /auth/dev-login — DEV-ONLY (process.env.NODE_ENV !== 'production').
+ * GET /auth/dev-login - DEV-ONLY (process.env.NODE_ENV !== 'production').
  * Mints a session cookie for the supplied role + privileges so devs can flip
  * tiers in one click without the Mailgun magic-link round-trip.
  *
@@ -151,7 +151,7 @@ router.get('/status', (req, res) => {
  *   orgName     → 'Dev Org'
  *   region      → 'local'
  *
- * Not registered in production builds — a curl in prod returns 404.
+ * Not registered in production builds - a curl in prod returns 404.
  */
 if (IS_DEV) {
   router.get('/dev-login', (req, res) => {

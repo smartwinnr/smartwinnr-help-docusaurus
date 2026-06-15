@@ -120,7 +120,7 @@ const QUERY_TYPE_LABEL: Record<string, string> = {
 };
 
 // Friendly labels for module slugs surfaced on the dashboard. Slugs that
-// aren't mapped fall through to their raw slug; null/empty stays as "—".
+// aren't mapped fall through to their raw slug; null/empty stays as "-".
 const MODULE_LABEL: Record<string, string> = {
   'quiz':                  'Quiz',
   'smartpath':             'SmartPath',
@@ -141,7 +141,7 @@ const MODULE_LABEL: Record<string, string> = {
 };
 
 function fmtModule(slug: string | null): string {
-  if (!slug) return '—';
+  if (!slug) return '-';
   return MODULE_LABEL[slug] || slug;
 }
 
@@ -345,7 +345,7 @@ function Dashboard(): JSX.Element {
           </div>
 
           {/* Top Unanswered Queries */}
-          <h2>Top Unanswered Queries — what to write</h2>
+          <h2>Top Unanswered Queries - what to write</h2>
           <p className={styles.subhead}>
             Questions the bot couldn't answer from the docs (fallback fired, or top
             doc distance was too high). Clustered by normalised text.
@@ -386,7 +386,7 @@ function Dashboard(): JSX.Element {
           )}
 
           {/* Article Performance */}
-          <h2>Article Performance — what to fix</h2>
+          <h2>Article Performance - what to fix</h2>
           <p className={styles.subhead}>
             Articles the bot has cited at least 3 times. Sort by 👎 or low confidence
             to find articles the bot reaches for but can't get good answers from.

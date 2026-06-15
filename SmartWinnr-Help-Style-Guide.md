@@ -35,7 +35,7 @@ Every help document should have one main title (H1) and optional subheadings (H2
   - "How to Add a New User"
   - "Steps to Download Your Report"
 
-- Keep them scan-friendly — users should know what's inside the section at a glance.
+- Keep them scan-friendly - users should know what's inside the section at a glance.
 
 - Use parallel structure:
   - If one heading starts with "How to…," keep the others similar ("How to…," "How to…").
