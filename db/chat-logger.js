@@ -485,38 +485,65 @@ function getLowConfidenceExchanges(threshold = 0.5, limit = 50) {
   `).all(threshold, limit);
 }
 
-function getStats(days = 30) {
+/**
+ * Build an AND-prefixed WHERE clause for filtering by role and/or org. Used
+ * by the V3 dashboard filters. Returns `{sql, params}` you can splice into a
+ * query that has a chat_exchanges alias `e` joined to conversations alias `c`.
+ *
+ * Role filter uses LIKE on the JSON-stringified user_roles column - works
+ * because logExchange writes well-formed JSON arrays like ["editor","admin"].
+ * Not a substring on labels because the role strings are stable identifiers.
+ */
+function buildConvFilter({role, orgId} = {}) {
+  const conds = [];
+  const params = [];
+  if (role && typeof role === 'string' && /^[a-z][a-z0-9_-]{0,40}$/i.test(role)) {
+    conds.push('c.user_roles LIKE ?');
+    params.push(`%"${role}"%`);
+  }
+  if (orgId && typeof orgId === 'string') {
+    conds.push('c.org_id = ?');
+    params.push(orgId);
+  }
+  return { sql: conds.length ? ' AND ' + conds.join(' AND ') : '', params };
+}
+
+function getStats(days = 30, filter = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const f = buildConvFilter(filter);
   return db.prepare(`
     SELECT
       COUNT(*) as total_exchanges,
-      COUNT(DISTINCT conversation_id) as total_conversations,
-      ROUND(AVG(confidence), 2) as avg_confidence,
-      ROUND(AVG(relevance_score), 2) as avg_relevance_score,
-      ROUND(AVG(response_time_ms), 0) as avg_response_time_ms,
-      SUM(CASE WHEN is_fallback = 1 THEN 1 ELSE 0 END) as fallback_count,
-      SUM(CASE WHEN is_refusal = 1 THEN 1 ELSE 0 END) as refusal_count,
-      SUM(COALESCE(prompt_tokens, 0)) as total_prompt_tokens,
-      SUM(COALESCE(completion_tokens, 0)) as total_completion_tokens,
-      SUM(CASE WHEN user_rating = 1 THEN 1 ELSE 0 END) as thumbs_up,
-      SUM(CASE WHEN user_rating = -1 THEN 1 ELSE 0 END) as thumbs_down,
-      SUM(CASE WHEN is_duplicate = 1 THEN 1 ELSE 0 END) as duplicate_count
-    FROM chat_exchanges
-    WHERE created_at >= ?
-  `).get(since);
+      COUNT(DISTINCT e.conversation_id) as total_conversations,
+      ROUND(AVG(e.confidence), 2) as avg_confidence,
+      ROUND(AVG(e.relevance_score), 2) as avg_relevance_score,
+      ROUND(AVG(e.response_time_ms), 0) as avg_response_time_ms,
+      SUM(CASE WHEN e.is_fallback = 1 THEN 1 ELSE 0 END) as fallback_count,
+      SUM(CASE WHEN e.is_refusal = 1 THEN 1 ELSE 0 END) as refusal_count,
+      SUM(COALESCE(e.prompt_tokens, 0)) as total_prompt_tokens,
+      SUM(COALESCE(e.completion_tokens, 0)) as total_completion_tokens,
+      SUM(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END) as thumbs_up,
+      SUM(CASE WHEN e.user_rating = -1 THEN 1 ELSE 0 END) as thumbs_down,
+      SUM(CASE WHEN e.is_duplicate = 1 THEN 1 ELSE 0 END) as duplicate_count
+    FROM chat_exchanges e
+    LEFT JOIN conversations c ON c.id = e.conversation_id
+    WHERE e.created_at >= ?${f.sql}
+  `).get(since, ...f.params);
 }
 
-function getQueryTypeStats(days = 30) {
+function getQueryTypeStats(days = 30, filter = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const f = buildConvFilter(filter);
   return db.prepare(`
-    SELECT query_type, COUNT(*) as count
-    FROM chat_exchanges
-    WHERE created_at >= ?
-    GROUP BY query_type
+    SELECT e.query_type, COUNT(*) as count
+    FROM chat_exchanges e
+    LEFT JOIN conversations c ON c.id = e.conversation_id
+    WHERE e.created_at >= ?${f.sql}
+    GROUP BY e.query_type
     ORDER BY count DESC
-  `).all(since);
+  `).all(since, ...f.params);
 }
 
 function getHealth() {
@@ -567,17 +594,18 @@ function getHealth() {
  *     lastAskedAt, avgRelevance}]
  * sorted by count desc, then distinct users desc.
  */
-function getTopUnansweredQueries({days = 30, limit = 25} = {}) {
+function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const f = buildConvFilter({role, orgId});
   const rows = db.prepare(`
     SELECT e.user_query, e.relevance_score, e.created_at, c.user_email
     FROM chat_exchanges e
     LEFT JOIN conversations c ON c.id = e.conversation_id
     WHERE e.created_at >= ?
       AND (e.is_refusal = 1 OR e.is_fallback = 1
-           OR (e.relevance_score IS NOT NULL AND e.relevance_score < 0.3))
-  `).all(since);
+           OR (e.relevance_score IS NOT NULL AND e.relevance_score < 0.3))${f.sql}
+  `).all(since, ...f.params);
 
   const clusters = new Map();
   for (const r of rows) {
@@ -647,15 +675,17 @@ function getTopUnansweredQueries({days = 30, limit = 25} = {}) {
  * sorted by citationCount desc. `helpfulPct` is null when no ratings
  * exist on the citing exchanges.
  */
-function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
+function getArticlePerformance({days = 30, minCitations = 3, limit = 50, role, orgId} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const f = buildConvFilter({role, orgId});
   const rows = db.prepare(`
-    SELECT citations_json, citation_clicks_json, relevance_score, user_rating
-    FROM chat_exchanges
-    WHERE created_at >= ?
-      AND citations_json IS NOT NULL
-  `).all(since);
+    SELECT e.citations_json, e.citation_clicks_json, e.relevance_score, e.user_rating
+    FROM chat_exchanges e
+    LEFT JOIN conversations c ON c.id = e.conversation_id
+    WHERE e.created_at >= ?
+      AND e.citations_json IS NOT NULL${f.sql}
+  `).all(since, ...f.params);
 
   const byUrl = new Map();
   for (const r of rows) {
@@ -740,9 +770,10 @@ function getArticlePerformance({days = 30, minCitations = 3, limit = 50} = {}) {
  *
  * Returns: {totalConversations, abandoned, abandonedPct}
  */
-function getAbandonmentStats({days = 30} = {}) {
+function getAbandonmentStats({days = 30, role, orgId} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  const f = buildConvFilter({role, orgId});
   const row = db.prepare(`
     WITH conv AS (
       SELECT
@@ -751,14 +782,14 @@ function getAbandonmentStats({days = 30} = {}) {
         MAX(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END) AS got_thumbs_up
       FROM conversations c
       LEFT JOIN chat_exchanges e ON e.conversation_id = c.id
-      WHERE c.created_at >= ?
+      WHERE c.created_at >= ?${f.sql}
       GROUP BY c.id
     )
     SELECT
       COUNT(*) AS total,
       SUM(CASE WHEN exchange_count = 1 AND got_thumbs_up = 0 THEN 1 ELSE 0 END) AS abandoned
     FROM conv
-  `).get(since);
+  `).get(since, ...f.params);
   const total = row.total || 0;
   const abandoned = row.abandoned || 0;
   return {
@@ -766,6 +797,28 @@ function getAbandonmentStats({days = 30} = {}) {
     abandoned,
     abandonedPct: total > 0 ? Math.round((abandoned / total) * 100) : null,
   };
+}
+
+/**
+ * Distinct orgs that have any conversation in the window. Used to populate
+ * the org filter dropdown on the analytics dashboard, so we never show an
+ * org with zero data to filter on. Sorted by conversation count desc.
+ *
+ * Returns: [{orgId, orgName, conversationCount}]
+ */
+function getAvailableOrgs({days = 30} = {}) {
+  const db = getDb();
+  const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  return db.prepare(`
+    SELECT
+      org_id    AS orgId,
+      MAX(org_name) AS orgName,
+      COUNT(*)  AS conversationCount
+    FROM conversations
+    WHERE created_at >= ? AND org_id IS NOT NULL AND org_id != ''
+    GROUP BY org_id
+    ORDER BY conversationCount DESC
+  `).all(since);
 }
 
 // ---------------------------------------------------------------------------
@@ -891,6 +944,7 @@ module.exports = {
   getTopUnansweredQueries,
   getArticlePerformance,
   getAbandonmentStats,
+  getAvailableOrgs,
   exportToJSON,
   deleteConversation,
   deleteByEmail,

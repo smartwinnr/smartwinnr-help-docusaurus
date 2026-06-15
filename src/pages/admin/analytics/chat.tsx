@@ -76,16 +76,31 @@ type Health = {
   logging_enabled: boolean;
 };
 
+type OrgRow = {orgId: string; orgName: string | null; conversationCount: number};
+
 type Dashboard = {
   ok: boolean;
   windowDays: number;
+  filter: {role: string | null; orgId: string | null};
   stats: Stats;
   queryTypes: QueryTypeRow[];
   topUnanswered: TopUnansweredRow[];
   articlePerformance: ArticleRow[];
   abandonment: Abandonment;
+  availableOrgs: OrgRow[];
   health: Health;
 };
+
+// Role filter options - only the user-facing role taxonomy. lamadmin and
+// superadmin are deliberately omitted to keep their existence out of the UI;
+// their conversations still count toward the "All roles" totals.
+const ROLE_OPTIONS: Array<{value: string; label: string}> = [
+  {value: 'user',     label: 'Learner'},
+  {value: 'manager',  label: 'Manager'},
+  {value: 'editor',   label: 'Author / Editor'},
+  {value: 'admin',    label: 'Admin'},
+  {value: 'orgadmin', label: 'Org admin'},
+];
 
 const WINDOW_OPTIONS = [
   {label: '24 hours', days: 1},
@@ -132,6 +147,8 @@ function authoringHref(q: TopUnansweredRow): string {
 function Dashboard(): JSX.Element {
   const user = useCurrentUser();
   const [days, setDays] = useState(30);
+  const [roleFilter, setRoleFilter] = useState<string>('');
+  const [orgFilter, setOrgFilter] = useState<string>('');
   const [data, setData] = useState<Dashboard | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -144,7 +161,10 @@ function Dashboard(): JSX.Element {
     if (!isSuperadmin) return;
     setLoading(true);
     setError(null);
-    fetch(`/api/admin/chat-logs/dashboard?days=${days}`, {credentials: 'same-origin'})
+    const params = new URLSearchParams({days: String(days)});
+    if (roleFilter) params.set('role', roleFilter);
+    if (orgFilter) params.set('orgId', orgFilter);
+    fetch(`/api/admin/chat-logs/dashboard?${params.toString()}`, {credentials: 'same-origin'})
       .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
       .then((d: Dashboard) => {
         if (d && d.ok) setData(d);
@@ -152,7 +172,7 @@ function Dashboard(): JSX.Element {
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false));
-  }, [days, isSuperadmin]);
+  }, [days, roleFilter, orgFilter, isSuperadmin]);
 
   const refusalRate = useMemo(() => {
     if (!data || !data.stats.total_exchanges) return 0;
@@ -226,6 +246,43 @@ function Dashboard(): JSX.Element {
             ))}
           </select>
         </label>
+        <label>
+          Role:
+          <select value={roleFilter} onChange={(e) => setRoleFilter(e.target.value)}>
+            <option value="">All roles</option>
+            {ROLE_OPTIONS.map((r) => (
+              <option key={r.value} value={r.value}>{r.label}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Organization:
+          <select value={orgFilter} onChange={(e) => setOrgFilter(e.target.value)}>
+            <option value="">All orgs</option>
+            {(data?.availableOrgs || []).map((o) => (
+              <option key={o.orgId} value={o.orgId}>
+                {(o.orgName || o.orgId)} ({o.conversationCount})
+              </option>
+            ))}
+          </select>
+        </label>
+        {(roleFilter || orgFilter) && (
+          <button
+            type="button"
+            onClick={() => { setRoleFilter(''); setOrgFilter(''); }}
+            style={{
+              fontFamily: 'inherit',
+              fontSize: '0.85em',
+              padding: '4px 10px',
+              border: '1px solid var(--ifm-color-emphasis-300)',
+              borderRadius: 6,
+              background: 'transparent',
+              cursor: 'pointer',
+              color: 'var(--ifm-color-content-secondary)',
+            }}>
+            Clear filters
+          </button>
+        )}
       </div>
 
       {loading && <p>Loading…</p>}

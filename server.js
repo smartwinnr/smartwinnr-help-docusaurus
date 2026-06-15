@@ -608,14 +608,21 @@ app.get('/api/admin/chat-logs/dashboard', (req, res) => {
     chatLogger.auditLog(req, 'view_dashboard');
     const days = Math.min(Math.max(parseInt(req.query.days || '30', 10), 1), 365);
     const minCitations = Math.max(parseInt(req.query.minCitations || '3', 10), 1);
+    // V3 filters: optional. Empty string is treated as "no filter" so the
+    // client can send a single param shape for both states.
+    const role = (req.query.role && String(req.query.role).trim()) || undefined;
+    const orgId = (req.query.orgId && String(req.query.orgId).trim()) || undefined;
+    const filter = {role, orgId};
     res.json({
       ok: true,
       windowDays: days,
-      stats: chatLogger.getStats(days),
-      queryTypes: chatLogger.getQueryTypeStats(days),
-      topUnanswered: chatLogger.getTopUnansweredQueries({days, limit: 25}),
-      articlePerformance: chatLogger.getArticlePerformance({days, minCitations, limit: 50}),
-      abandonment: chatLogger.getAbandonmentStats({days}),
+      filter: {role: role || null, orgId: orgId || null},
+      stats: chatLogger.getStats(days, filter),
+      queryTypes: chatLogger.getQueryTypeStats(days, filter),
+      topUnanswered: chatLogger.getTopUnansweredQueries({days, limit: 25, ...filter}),
+      articlePerformance: chatLogger.getArticlePerformance({days, minCitations, limit: 50, ...filter}),
+      abandonment: chatLogger.getAbandonmentStats({days, ...filter}),
+      availableOrgs: chatLogger.getAvailableOrgs({days}),
       health: chatLogger.getHealth(),
     });
   } catch (error) {
