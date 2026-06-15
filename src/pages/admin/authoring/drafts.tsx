@@ -38,6 +38,41 @@ function parsePath(p: string): {module: string; subFolder: string; slug: string}
   return m ? {module: m[1], subFolder: m[2], slug: m[3]} : null;
 }
 
+/**
+ * Mirror the wizard's STORAGE_KEY constant in `index.tsx`. Update both
+ * places together if the key ever changes. Used here to invalidate the
+ * wizard's persisted state when the draft it references is deleted /
+ * published — otherwise a new Authoring visit would restore a wizard
+ * pointing at a now-stale file path.
+ */
+const WIZARD_STORAGE_KEY = 'sw.authoring.wizard.v1';
+
+function clearWizardStateIfTargets(parsed: {module: string; subFolder: string; slug: string}) {
+  if (typeof window === 'undefined') return;
+  try {
+    const raw = window.localStorage.getItem(WIZARD_STORAGE_KEY);
+    if (!raw) return;
+    const persisted = JSON.parse(raw);
+    const inp = persisted && persisted.inputs;
+    if (
+      inp
+      && inp.module === parsed.module
+      && inp.subFolder === parsed.subFolder
+      && inp.slug === parsed.slug
+    ) {
+      window.localStorage.removeItem(WIZARD_STORAGE_KEY);
+    }
+  } catch { /* swallow */ }
+}
+
+/** Unconditional wizard-state clear, fired by the "New article" link so
+ *  the wizard always opens fresh. Other entry points (navbar, in-place
+ *  refresh) keep the autosave / resume-work behavior. */
+function clearWizardState() {
+  if (typeof window === 'undefined') return;
+  try { window.localStorage.removeItem(WIZARD_STORAGE_KEY); } catch { /* swallow */ }
+}
+
 function DraftsList(): ReactNode {
   const user = useCurrentUser();
   const notify = useNotify();
@@ -127,6 +162,11 @@ function DraftsList(): ReactNode {
         const summary = blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ');
         notify.error(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
+        // Publish flips draft:true → false; the wizard's persisted state
+        // (which pointed at this draft) is now stale. Drop it so a fresh
+        // /admin/authoring/ visit doesn't restore a wizard against a
+        // file that's no longer a draft.
+        clearWizardStateIfTargets(parsed);
         notify.success(`Published "${d.title}".`);
         await refresh();
       }
@@ -158,6 +198,10 @@ function DraftsList(): ReactNode {
         const data = await res.json();
         notify.error(data.error || 'Delete failed');
       } else {
+        // Server file is gone — drop the wizard's persisted state if it
+        // was pointing at this draft, so a fresh /admin/authoring/ visit
+        // doesn't restore a wizard against a deleted file.
+        clearWizardStateIfTargets(parsed);
         notify.success(`Deleted "${d.title}".`);
         await refresh();
       }
@@ -183,7 +227,7 @@ function DraftsList(): ReactNode {
           <h1>Drafts queue</h1>
           <p className={styles.subhead}>
             Articles flagged <code>draft: true</code>. Hidden in production builds.{' '}
-            <Link to="/admin/authoring">New article →</Link>
+            <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>
           </p>
           {deployState && deployState.queue.length > 0 && (
             <div className={styles.deployStrip}>
@@ -217,7 +261,7 @@ function DraftsList(): ReactNode {
 
       {loading && <p className={styles.hint}>Loading…</p>}
       {!loading && drafts.length === 0 && (
-        <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring">authoring wizard</Link>.</p>
+        <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring" onClick={clearWizardState}>authoring wizard</Link>.</p>
       )}
       {!loading && drafts.length > 0 && (
         <table className={styles.draftTable}>
@@ -236,6 +280,18 @@ function DraftsList(): ReactNode {
                 <td><code className={styles.smallCode}>{d.path}</code></td>
                 <td className={styles.tabular}>{d.lastUpdate ?? '-'}</td>
                 <td className={styles.rowActions}>
+                  {(() => {
+                    const parsed = parsePath(d.path);
+                    if (!parsed) return null;
+                    const qs = new URLSearchParams(parsed).toString();
+                    return (
+                      <Link
+                        to={`/admin/authoring/?${qs}`}
+                        className={styles.btnGhost}>
+                        Edit
+                      </Link>
+                    );
+                  })()}
                   <button
                     type="button"
                     className={styles.btnPrimary}

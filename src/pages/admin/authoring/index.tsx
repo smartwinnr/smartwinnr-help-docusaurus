@@ -2,6 +2,7 @@ import React, {useEffect, useReducer, useState, type ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
+import {useLocation} from '@docusaurus/router';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import styles from './styles.module.css';
@@ -106,6 +107,12 @@ type State = {
   saving: boolean;
   error: string | null;
   saved: string | null;
+  /** True when the wizard was opened to edit an existing draft via URL
+   *  params (?module=&subFolder=&slug=). Hides Step 1-3 navigation,
+   *  swaps the header subhead to an "Editing draft" banner, and gates
+   *  the empty-state requirement on `roughExplanation` (which the draft
+   *  doesn't preserve). */
+  isEditing: boolean;
 };
 
 const initial: State = {
@@ -129,6 +136,7 @@ const initial: State = {
   saving: false,
   error: null,
   saved: null,
+  isEditing: false,
 };
 
 type Action =
@@ -139,7 +147,8 @@ type Action =
   | {type: 'saving'; on: boolean}
   | {type: 'saved'; path: string}
   | {type: 'error'; message: string}
-  | {type: 'reset'};
+  | {type: 'reset'}
+  | {type: 'loadDraft'; inputs: Inputs; markdown: string};
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
@@ -151,6 +160,13 @@ function reducer(s: State, a: Action): State {
     case 'saved':     return {...s, saving: false, saved: a.path};
     case 'error':     return {...s, error: a.message, generating: false, saving: false};
     case 'reset':     return initial;
+    case 'loadDraft': return {
+      ...initial,
+      inputs: a.inputs,
+      markdown: a.markdown,
+      step: 4,
+      isEditing: true,
+    };
   }
 }
 
@@ -175,15 +191,60 @@ function titleStartsWithVerbOrQuestion(t: string): boolean {
   return verbs.has(first);
 }
 
+/**
+ * Hand-rolled frontmatter parser scoped to the fields the wizard cares
+ * about. Same shape the migrate-helpscout + authoring-generate paths
+ * produce so the round-trip is lossless for the fields below. We don't
+ * pull in a YAML library on the client — these regexes match exactly
+ * the canonical frontmatter format and ignore anything else.
+ */
+function parseDraftFrontmatter(markdown: string): Partial<Inputs> | null {
+  const m = /^---\s*\n([\s\S]*?)\n---\s*\n/.exec(markdown);
+  if (!m) return null;
+  const fm = m[1];
+  const scalar = (key: string): string => {
+    const r = new RegExp(`^${key}\\s*:\\s*["']?([^"'\\n]+?)["']?\\s*$`, 'm').exec(fm);
+    return r ? r[1].trim() : '';
+  };
+  const arrayField = (key: string): string[] => {
+    const r = new RegExp(`^\\s*${key}\\s*:\\s*\\[([^\\]]*)\\]`, 'm').exec(fm);
+    if (!r) return [];
+    return r[1]
+      .split(',')
+      .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
+  };
+  // privilege lives under customProps — regex matches both top-level and nested.
+  const privMatch = /^\s*privilege\s*:\s*["']?([A-Za-z0-9_]+)["']?\s*$/m.exec(fm);
+  return {
+    title: scalar('title'),
+    description: scalar('description'),
+    slug: scalar('slug'),
+    audienceRoles: arrayField('roles'),
+    privilege: privMatch ? privMatch[1] : '',
+    tags: arrayField('tags'),
+  };
+}
+
 function loadState(): State | null {
   if (typeof window === 'undefined') return null;
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+    if (!raw) return null;
+    const parsed: State = JSON.parse(raw);
+    // Edit mode is URL-driven: don't restore a stale edit-mode session from
+    // localStorage. Otherwise deleting a draft and returning to the wizard
+    // (or clicking the "Authoring" link from anywhere) would re-open the
+    // deleted draft.
+    if (parsed && parsed.isEditing) return null;
+    return parsed;
   } catch { return null; }
 }
 function saveState(s: State) {
   if (typeof window === 'undefined') return;
+  // Edit mode state is per-URL-session, not per-user. Skip persisting so
+  // localStorage never holds a draft reference that may have been deleted.
+  if (s.isEditing) return;
   try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {/* swallow */}
 }
 
@@ -583,7 +644,9 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 
   return (
     <div className={styles.previewWrap}>
-      <h2 className={styles.stepHead}>Step 4 · Review + refine</h2>
+      <h2 className={styles.stepHead}>
+        {state.isEditing ? 'Refine + save' : 'Step 4 · Review + refine'}
+      </h2>
       {state.generating && <p className={styles.hint}>Generating…</p>}
       {!state.generating && state.markdown && (
         <>
@@ -684,6 +747,7 @@ function canAdvance(s: State): boolean {
 function Wizard(): ReactNode {
   const user = useCurrentUser();
   const notify = useNotify();
+  const location = useLocation();
   const [state, dispatch] = useReducer(reducer, initial, (init) => loadState() || init);
 
   useEffect(() => { saveState(state); }, [state]);
@@ -697,6 +761,59 @@ function Wizard(): ReactNode {
     if (state.error) notify.error(state.error);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.error]);
+
+  // Edit-an-existing-draft entry. When the wizard is opened with
+  // ?module=&subFolder=&slug=, fetch the draft, parse its frontmatter,
+  // and dispatch loadDraft to jump straight to Step 4 with the markdown
+  // loaded. URL params take priority over any localStorage-persisted
+  // wizard state so an editor clicking Edit always lands in edit mode.
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const moduleSlug = params.get('module');
+    const subFolder = params.get('subFolder');
+    const slug = params.get('slug');
+    if (!moduleSlug || !subFolder || !slug) {
+      // No edit-mode params on this URL. If state somehow ended up in
+      // edit mode (rare race, or migrating from a build that persisted
+      // it), reset to a fresh wizard. Authoring entry from the navbar /
+      // sidebar should always land a fresh new-draft session.
+      if (state.isEditing) dispatch({type: 'reset'});
+      return;
+    }
+    // Avoid re-fetching if we already loaded this draft in this session.
+    if (state.isEditing && state.inputs.slug === slug && state.inputs.module === moduleSlug) return;
+
+    (async () => {
+      try {
+        const qs = new URLSearchParams({module: moduleSlug, subFolder, slug});
+        const res = await fetch(`/api/admin/authoring/draft?${qs}`, {credentials: 'same-origin'});
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({error: res.statusText}));
+          dispatch({type: 'error', message: `Failed to load draft: ${err.error || res.statusText}`});
+          return;
+        }
+        const {markdown} = await res.json();
+        const fm = parseDraftFrontmatter(markdown);
+        const inputs: Inputs = {
+          module: moduleSlug,
+          subFolder,
+          audienceRoles: fm?.audienceRoles ?? [],
+          privilege: fm?.privilege ?? '',
+          title: fm?.title ?? '',
+          description: fm?.description ?? '',
+          tags: fm?.tags ?? [],
+          roughExplanation: '',
+          images: [],
+          slug: fm?.slug ?? slug,
+        };
+        dispatch({type: 'loadDraft', inputs, markdown});
+      } catch (err) {
+        dispatch({type: 'error', message: `Failed to load draft: ${(err as Error).message}`});
+      }
+    })();
+    // Only react to URL changes, not to wizard state churn.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search]);
 
   if (!(user.roles || []).includes('superadmin')) {
     return (
@@ -712,36 +829,47 @@ function Wizard(): ReactNode {
     <div className={styles.wrap}>
       <header className={styles.header}>
         <div>
-          <h1>Authoring</h1>
-          <p className={styles.subhead}>
-            Step {state.step} of 4 ·{' '}
-            <Link to="/admin/authoring/drafts">Drafts queue →</Link>
-          </p>
+          <h1>{state.isEditing ? 'Edit draft' : 'Authoring'}</h1>
+          {state.isEditing ? (
+            <p className={styles.subhead}>
+              Editing <code>{state.inputs.slug}</code> ·{' '}
+              <Link to="/admin/authoring/drafts">← Back to drafts queue</Link>
+            </p>
+          ) : (
+            <p className={styles.subhead}>
+              Step {state.step} of 4 ·{' '}
+              <Link to="/admin/authoring/drafts">Drafts queue →</Link>
+            </p>
+          )}
         </div>
-        <button
-          type="button"
-          className={styles.btnGhost}
-          onClick={async () => {
-            const ok = await notify.confirm({
-              title: 'Discard wizard state?',
-              message: 'You will lose the current inputs and any generated draft preview. This cannot be undone.',
-              confirmLabel: 'Start over',
-              cancelLabel: 'Keep editing',
-              danger: true,
-            });
-            if (ok) dispatch({type: 'reset'});
-          }}>
-          Start over
-        </button>
+        {!state.isEditing && (
+          <button
+            type="button"
+            className={styles.btnGhost}
+            onClick={async () => {
+              const ok = await notify.confirm({
+                title: 'Discard wizard state?',
+                message: 'You will lose the current inputs and any generated draft preview. This cannot be undone.',
+                confirmLabel: 'Start over',
+                cancelLabel: 'Keep editing',
+                danger: true,
+              });
+              if (ok) dispatch({type: 'reset'});
+            }}>
+            Start over
+          </button>
+        )}
       </header>
 
-      <ol className={styles.stepper}>
-        {[1, 2, 3, 4].map((n) => (
-          <li key={n} className={state.step === n ? styles.stepOn : state.step > n ? styles.stepDone : styles.stepOff}>
-            {n}
-          </li>
-        ))}
-      </ol>
+      {!state.isEditing && (
+        <ol className={styles.stepper}>
+          {[1, 2, 3, 4].map((n) => (
+            <li key={n} className={state.step === n ? styles.stepOn : state.step > n ? styles.stepDone : styles.stepOff}>
+              {n}
+            </li>
+          ))}
+        </ol>
+      )}
 
       {state.error && <div className={styles.error}>⚠ {state.error}</div>}
 
