@@ -26,6 +26,7 @@
     "index-internal": "node scripts/internal-indexer.js",
     "inventory": "node scripts/generate-article-inventory.js",
     "backup:docs": "node scripts/backup-docs.js",
+    "db:heal": "node scripts/heal-chat-logger.js",
     "helpscout:inventory": "node scripts/list-helpscout-structure.js",
     "helpscout:migrate": "node scripts/migrate-helpscout.js",
     "lint:docs": "markdownlint-cli2",
