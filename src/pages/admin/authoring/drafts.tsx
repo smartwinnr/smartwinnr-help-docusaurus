@@ -7,12 +7,19 @@ import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import styles from './styles.module.css';
 
 /**
- * Drafts queue - lists every article with `draft: true` in frontmatter,
- * with **Publish** + **Delete** actions. Superadmin only. See plan §19.5.
+ * Authoring queue. Two tabs:
+ *
+ *   Drafts    - articles with `draft: true`. Edit (wizard), Publish, Delete.
+ *   Published - all published articles in a chosen module + sub-folder.
+ *               Edit raw (raw markdown editor), Delete.
+ *
+ * Superadmin only. See plan §B.
  *
  * GET    /api/admin/authoring/drafts
+ * GET    /api/admin/authoring/articles?module=&subFolder=&filter=published
  * POST   /api/admin/authoring/publish
  * DELETE /api/admin/authoring/draft
+ * DELETE /api/admin/authoring/article?path=...
  */
 
 type Draft = {
@@ -21,6 +28,8 @@ type Draft = {
   title: string;
   lastUpdate: string | null;
 };
+
+type Article = Draft & { draft: boolean };
 
 type DeployState = {
   queue: Array<{path: string; slug: string; title: string}>;
@@ -32,6 +41,36 @@ type DeployState = {
   gitPushEnabled: boolean;
   configOk: boolean;
 };
+
+// Module + sub-folder taxonomy. Mirrors the wizard's lists in index.tsx
+// (kept inline rather than imported to avoid coupling the queue page to
+// the wizard's full audience-metadata shape, which is wizard-specific).
+const MODULES: Array<{value: string; label: string}> = [
+  {value: 'ai-coaching',      label: 'AI Coaching'},
+  {value: 'cross-module',     label: 'Cross-Module'},
+  {value: 'field-coaching',   label: 'Field Coaching'},
+  {value: 'forms',            label: 'Forms'},
+  {value: 'knowledge-hub',    label: 'Knowledge Hub'},
+  {value: 'kpi-gamification', label: 'KPI & Gamification'},
+  {value: 'notifications',    label: 'Notifications'},
+  {value: 'quiz',             label: 'Quiz'},
+  {value: 'smartfeed',        label: 'SmartFeed'},
+  {value: 'smartpath',        label: 'SmartPath'},
+  {value: 'survey',           label: 'Survey'},
+  {value: 'video-coaching',   label: 'Video Coaching'},
+];
+
+const SUB_FOLDERS: Array<{value: string; label: string}> = [
+  {value: 'for-learners',          label: 'For Learners'},
+  {value: 'for-managers',          label: 'For Managers'},
+  {value: 'create-and-manage',     label: 'Create & Manage'},
+  {value: 'assign-and-schedule',   label: 'Assign & Schedule'},
+  {value: 'features',              label: 'Features'},
+  {value: 'reports-and-analytics', label: 'Reports & Analytics'},
+  {value: 'settings-and-permissions', label: 'Settings & Permissions'},
+  {value: 'best-practices',        label: 'Best Practices'},
+  {value: 'faqs-and-troubleshooting', label: 'FAQs & Troubleshooting'},
+];
 
 function parsePath(p: string): {module: string; subFolder: string; slug: string} | null {
   const m = /^docs\/modules\/([^/]+)\/([^/]+)\/([^/]+)\.(md|mdx)$/.exec(p.replace(/\\/g, '/'));
@@ -73,8 +112,11 @@ function clearWizardState() {
   try { window.localStorage.removeItem(WIZARD_STORAGE_KEY); } catch { /* swallow */ }
 }
 
-function DraftsList(): ReactNode {
-  const user = useCurrentUser();
+// ─────────────────────────────────────────────────────────────────────────
+// Drafts tab
+// ─────────────────────────────────────────────────────────────────────────
+
+function DraftsTab(): ReactNode {
   const notify = useNotify();
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [loading, setLoading] = useState(true);
@@ -130,21 +172,13 @@ function DraftsList(): ReactNode {
   }
 
   useEffect(() => {
-    if (!(user.roles || []).includes('superadmin')) return;
     refresh();
     refreshDeployState();
-    // Poll deploy state every 30 s so the "next available in M min" countdown
-    // stays current while the page sits open.
     const id = window.setInterval(refreshDeployState, 30_000);
     return () => window.clearInterval(id);
-  }, [user]);
+  }, []);
 
   async function publishDraft(d: Draft) {
-    await publish(d);
-    await refreshDeployState();  // pick up the new queue size
-  }
-
-  async function publish(d: Draft) {
     const parsed = parsePath(d.path);
     if (!parsed) { notify.error('Could not parse path'); return; }
     setBusy(d.path);
@@ -162,16 +196,13 @@ function DraftsList(): ReactNode {
         const summary = blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ');
         notify.error(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
-        // Publish flips draft:true → false; the wizard's persisted state
-        // (which pointed at this draft) is now stale. Drop it so a fresh
-        // /admin/authoring/ visit doesn't restore a wizard against a
-        // file that's no longer a draft.
         clearWizardStateIfTargets(parsed);
         notify.success(`Published "${d.title}".`);
         await refresh();
       }
     } finally {
       setBusy(null);
+      await refreshDeployState();
     }
   }
 
@@ -198,9 +229,6 @@ function DraftsList(): ReactNode {
         const data = await res.json();
         notify.error(data.error || 'Delete failed');
       } else {
-        // Server file is gone — drop the wizard's persisted state if it
-        // was pointing at this draft, so a fresh /admin/authoring/ visit
-        // doesn't restore a wizard against a deleted file.
         clearWizardStateIfTargets(parsed);
         notify.success(`Deleted "${d.title}".`);
         await refresh();
@@ -210,54 +238,41 @@ function DraftsList(): ReactNode {
     }
   }
 
-  if (!(user.roles || []).includes('superadmin')) {
-    return (
-      <div className={styles.wrap}>
-        <h1>Drafts</h1>
-        <p>You don't have access to this page.</p>
-        <p><Link to="/">← Back to the homepage</Link></p>
-      </div>
-    );
-  }
-
   return (
-    <div className={styles.wrap}>
-      <header className={styles.header}>
-        <div>
-          <h1>Drafts queue</h1>
-          <p className={styles.subhead}>
-            Articles flagged <code>draft: true</code>. Hidden in production builds.{' '}
-            <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>
-          </p>
-          {deployState && deployState.queue.length > 0 && (
-            <div className={styles.deployStrip}>
-              <div>
-                <strong>{deployState.queue.length}</strong> article(s) published, waiting to deploy.
-                {!deployState.canDeployNow && (
-                  <span className={styles.hint}>
-                    {' '}Next deploy available in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
-                  </span>
-                )}
-                {!deployState.configOk && deployState.queue.length > 0 && (
-                  <span className={styles.warn}>
-                    {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITHUB_REPO not all set).
-                  </span>
-                )}
-              </div>
-              <button
-                type="button"
-                className={styles.btnPrimary}
-                disabled={deploying || !deployState.canDeployNow}
-                onClick={deployNow}>
-                {deploying ? 'Deploying…' : 'Deploy now'}
-              </button>
-            </div>
-          )}
+    <>
+      {deployState && deployState.queue.length > 0 && (
+        <div className={styles.deployStrip}>
+          <div>
+            <strong>{deployState.queue.length}</strong> article(s) published, waiting to deploy.
+            {!deployState.canDeployNow && (
+              <span className={styles.hint}>
+                {' '}Next deploy available in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
+              </span>
+            )}
+            {!deployState.configOk && deployState.queue.length > 0 && (
+              <span className={styles.warn}>
+                {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITHUB_REPO not all set).
+              </span>
+            )}
+          </div>
+          <button
+            type="button"
+            className={styles.btnPrimary}
+            disabled={deploying || !deployState.canDeployNow}
+            onClick={deployNow}>
+            {deploying ? 'Deploying…' : 'Deploy now'}
+          </button>
         </div>
+      )}
+
+      <div className={styles.tabToolbar}>
+        <span className={styles.hint}>
+          Articles flagged <code>draft: true</code>. Hidden in production builds.
+        </span>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>
           Refresh
         </button>
-      </header>
+      </div>
 
       {loading && <p className={styles.hint}>Loading…</p>}
       {!loading && drafts.length === 0 && (
@@ -312,6 +327,194 @@ function DraftsList(): ReactNode {
           </tbody>
         </table>
       )}
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Published tab
+// ─────────────────────────────────────────────────────────────────────────
+
+function PublishedTab(): ReactNode {
+  const notify = useNotify();
+  const [moduleSlug, setModuleSlug] = useState<string>('');
+  const [subFolder, setSubFolder] = useState<string>('');
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [busy, setBusy] = useState<string | null>(null);
+
+  async function refresh() {
+    if (!moduleSlug || !subFolder) { setArticles([]); return; }
+    setLoading(true);
+    try {
+      const qs = new URLSearchParams({module: moduleSlug, subFolder, filter: 'published'});
+      const res = await fetch(`/api/admin/authoring/articles?${qs}`, {credentials: 'same-origin'});
+      const data = await res.json();
+      if (!res.ok) { notify.error(data.error || `${res.status} ${res.statusText}`); return; }
+      setArticles(data.articles || []);
+    } catch (err) {
+      notify.error(`Failed to load articles: ${(err as Error).message}`);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => { refresh(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [moduleSlug, subFolder]);
+
+  async function remove(a: Article) {
+    const ok = await notify.confirm({
+      title: `Delete "${a.title}"?`,
+      message: `This removes a PUBLISHED article from docs/. The change ships on the next deploy. The action cannot be undone.`,
+      confirmLabel: 'Delete article',
+      cancelLabel: 'Keep it',
+      danger: true,
+    });
+    if (!ok) return;
+    setBusy(a.path);
+    try {
+      const qs = new URLSearchParams({path: a.path}).toString();
+      const res = await fetch(`/api/admin/authoring/article?${qs}`, {
+        method: 'DELETE',
+        credentials: 'same-origin',
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        notify.error(data.error || 'Delete failed');
+      } else {
+        notify.success(`Deleted "${a.title}".`);
+        await refresh();
+      }
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  return (
+    <>
+      <div className={styles.tabToolbar}>
+        <div className={styles.selectorRow}>
+          <label className={styles.inlineLabel}>
+            Module
+            <select value={moduleSlug} onChange={(e) => setModuleSlug(e.target.value)}>
+              <option value="">— pick a module —</option>
+              {MODULES.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
+            </select>
+          </label>
+          <label className={styles.inlineLabel}>
+            Sub-folder
+            <select value={subFolder} onChange={(e) => setSubFolder(e.target.value)}>
+              <option value="">— pick a sub-folder —</option>
+              {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+            </select>
+          </label>
+        </div>
+        <button
+          type="button"
+          className={styles.btnGhost}
+          onClick={refresh}
+          disabled={loading || !moduleSlug || !subFolder}>
+          Refresh
+        </button>
+      </div>
+
+      {(!moduleSlug || !subFolder) && (
+        <p className={styles.hint}>Pick a module and sub-folder to list published articles.</p>
+      )}
+      {moduleSlug && subFolder && loading && <p className={styles.hint}>Loading…</p>}
+      {moduleSlug && subFolder && !loading && articles.length === 0 && (
+        <p className={styles.hint}>No published articles in this folder.</p>
+      )}
+      {!loading && articles.length > 0 && (
+        <table className={styles.draftTable}>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Path</th>
+              <th>Last update</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {articles.map((a) => (
+              <tr key={a.path}>
+                <td><strong>{a.title}</strong></td>
+                <td><code className={styles.smallCode}>{a.path}</code></td>
+                <td className={styles.tabular}>{a.lastUpdate ?? '-'}</td>
+                <td className={styles.rowActions}>
+                  <Link
+                    to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
+                    className={styles.btnGhost}>
+                    Edit raw
+                  </Link>
+                  <button
+                    type="button"
+                    className={styles.btnGhost}
+                    disabled={busy === a.path}
+                    onClick={() => remove(a)}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Page shell
+// ─────────────────────────────────────────────────────────────────────────
+
+function QueuePage(): ReactNode {
+  const user = useCurrentUser();
+  const notify = useNotify();
+  const [tab, setTab] = useState<'drafts' | 'published'>('drafts');
+
+  if (!(user.roles || []).includes('superadmin')) {
+    return (
+      <div className={styles.wrap}>
+        <h1>Authoring queue</h1>
+        <p>You don't have access to this page.</p>
+        <p><Link to="/">← Back to the homepage</Link></p>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.wrap}>
+      <header className={styles.header}>
+        <div>
+          <h1>Authoring queue</h1>
+          <p className={styles.subhead}>
+            Manage drafts and edit published articles.{' '}
+            <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.tabBar} role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'drafts'}
+          className={tab === 'drafts' ? styles.tabActive : styles.tabInactive}
+          onClick={() => setTab('drafts')}>
+          Drafts
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'published'}
+          className={tab === 'published' ? styles.tabActive : styles.tabInactive}
+          onClick={() => setTab('published')}>
+          Published
+        </button>
+      </div>
+
+      {tab === 'drafts' ? <DraftsTab /> : <PublishedTab />}
+
       {notify.host}
     </div>
   );
@@ -319,9 +522,9 @@ function DraftsList(): ReactNode {
 
 export default function DraftsPage(): ReactNode {
   return (
-    <Layout title="Drafts - Admin" description="Draft articles waiting to be published.">
+    <Layout title="Authoring queue - Admin" description="Drafts and published articles.">
       <BrowserOnly fallback={<div className={styles.wrap}><p>Loading…</p></div>}>
-        {() => <DraftsList />}
+        {() => <QueuePage />}
       </BrowserOnly>
     </Layout>
   );

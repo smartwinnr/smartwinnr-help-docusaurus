@@ -560,3 +560,112 @@
 }
 .tabular { font-variant-numeric: tabular-nums; }
 .rowActions { display: flex; gap: var(--space-2); justify-content: flex-end; }
+
+/* ───────── Queue tabs (drafts.tsx) ──────────────────────────────────── */
+.tabBar {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin: 0 0 var(--space-4);
+}
+.tabActive, .tabInactive {
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+.tabActive {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+}
+.tabInactive {
+  color: var(--ifm-color-content-secondary);
+}
+.tabInactive:hover { color: var(--ifm-color-content); }
+
+.tabToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+.selectorRow {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.inlineLabel {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-label);
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  color: var(--ifm-color-content-secondary);
+}
+.inlineLabel select {
+  font-family: inherit;
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-regular);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ifm-color-content);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  min-width: 200px;
+}
+.inlineLabel select:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+}
+
+/* ───────── Raw markdown editor (edit.tsx) ───────────────────────────── */
+.editWrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-5) var(--space-7);
+}
+.editLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  margin: var(--space-3) 0;
+}
+.editTextarea {
+  font-family: var(--ifm-font-family-monospace, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 13px;
+  line-height: 1.55;
+  padding: var(--space-4);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  outline: none;
+  resize: vertical;
+  min-height: 70vh;
+  tab-size: 2;
+}
+.editTextarea:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+}
+.editPreview {
+  min-height: 70vh;
+  max-height: 80vh;
+  overflow: auto;
+}
+@media (max-width: 960px) {
+  .editLayout { grid-template-columns: 1fr; }
+  .editPreview { max-height: 60vh; }
+}

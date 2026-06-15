@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
+import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
 import styles from './styles.module.css';
 
 /**
@@ -708,27 +709,6 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       )}
     </div>
   );
-}
-
-// ════════ Markdown rendering hook ═════════════════════════════════════════
-
-function useMarkdownHtml(md: string): string {
-  const [html, setHtml] = useState('');
-  useEffect(() => {
-    if (!md) { setHtml(''); return; }
-    (async () => {
-      try {
-        const mod = await import('markdown-it');
-        const MarkdownIt = (mod as {default?: typeof import('markdown-it')}).default || mod;
-        const ctor = (MarkdownIt as unknown as new (opts?: object) => {render(s: string): string});
-        const renderer = new ctor({html: false, linkify: true, typographer: true});
-        // Strip frontmatter for preview rendering - it isn't HTML
-        const body = md.replace(/^---[\s\S]*?\n---\s*\n?/, '');
-        setHtml(renderer.render(body));
-      } catch { setHtml('<pre>' + md.replace(/</g, '&lt;') + '</pre>'); }
-    })();
-  }, [md]);
-  return html;
 }
 
 // ════════ Wizard root ═════════════════════════════════════════════════════

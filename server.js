@@ -20,8 +20,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-// const PORT = 3001; // Dev
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -1385,6 +1385,104 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
     res.json({ ok: true });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// ─────────────────────────────────────────────────────────────────────────
+// Phase B - raw markdown editor support.
+//
+// `/draft` GET/DELETE above only target draft:true files, gated by the
+// 3-part {module, subFolder, slug} key. The raw editor needs to load + save
+// ANY article (draft or published) by its docs/ path. These endpoints accept
+// `?path=docs/modules/<m>/<sub>/<slug>.md` and validate the path matches the
+// same canonical structure as resolveDraftPath, just expressed as a single
+// relative path string instead of three components.
+// ─────────────────────────────────────────────────────────────────────────
+
+function resolveArticlePath(relPath) {
+  if (typeof relPath !== 'string' || !relPath) throw new Error('path required');
+  const norm = relPath.replace(/\\/g, '/');
+  const m = /^docs\/modules\/([^/]+)\/([^/]+)\/([^/]+)\.(md|mdx)$/.exec(norm);
+  if (!m) throw new Error('Path must match docs/modules/<module>/<sub-folder>/<slug>.{md,mdx}');
+  const [, moduleSlug, subFolder, slug] = m;
+  if (!isValidSlug(moduleSlug) || !isValidSlug(slug)) throw new Error('Invalid slug in path');
+  if (!CANONICAL_SUBFOLDERS.has(subFolder)) throw new Error('Sub-folder not canonical');
+  const target = path.resolve(__dirname, norm);
+  if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
+  return target;
+}
+
+app.get('/api/admin/authoring/article', requireRole('superadmin'), (req, res) => {
+  try {
+    const target = resolveArticlePath(req.query.path);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
+    const markdown = fsSync.readFileSync(target, 'utf8');
+    res.json({ markdown, path: path.relative(__dirname, target) });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) => {
+  try {
+    const { module: moduleSlug, subFolder, filter = 'all' } = req.query;
+    if (!isValidSlug(moduleSlug)) return res.status(400).json({ error: 'Invalid module' });
+    if (!CANONICAL_SUBFOLDERS.has(subFolder)) return res.status(400).json({ error: 'Invalid sub-folder' });
+    const dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
+    if (!fsSync.existsSync(dir)) return res.json({ articles: [] });
+    const articles = [];
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isFile()) continue;
+      if (!/\.(md|mdx)$/.test(entry.name)) continue;
+      const p = path.join(dir, entry.name);
+      const text = fsSync.readFileSync(p, 'utf8');
+      const isDraft = /^draft:\s*true\b/m.test(text);
+      if (filter === 'drafts' && !isDraft) continue;
+      if (filter === 'published' && isDraft) continue;
+      const titleMatch = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
+      const lastUpdMatch = /^\s*date:\s*(\S+)/m.exec(text);
+      articles.push({
+        path: path.relative(__dirname, p),
+        slug: path.basename(p).replace(/\.(md|mdx)$/, ''),
+        title: titleMatch ? titleMatch[1] : path.basename(p),
+        lastUpdate: lastUpdMatch ? lastUpdMatch[1] : null,
+        draft: isDraft,
+      });
+    }
+    articles.sort((a, b) => String(b.lastUpdate).localeCompare(String(a.lastUpdate)));
+    res.json({ articles });
+  } catch (error) {
+    console.error('❌ authoring/articles failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) => {
+  try {
+    const { path: relPath, markdown } = req.body || {};
+    if (!markdown) return res.status(400).json({ error: 'markdown required' });
+    const target = resolveArticlePath(relPath);
+    // Audit runs advisory - the raw editor surfaces findings as warnings, not
+    // blockers. The wizard's /save is the strict gate; raw edits trust the
+    // superadmin's judgment for surgical fixes.
+    const audit = gradeMarkdown(markdown);
+    fsSync.mkdirSync(path.dirname(target), { recursive: true });
+    fsSync.writeFileSync(target, markdown, 'utf8');
+    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+  } catch (error) {
+    console.error('❌ authoring/save-raw failed:', error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res) => {
+  try {
+    const target = resolveArticlePath(req.query.path);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
+    fsSync.unlinkSync(target);
+    res.json({ ok: true });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
 });
 
