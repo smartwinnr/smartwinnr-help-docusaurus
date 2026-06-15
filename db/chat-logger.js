@@ -649,6 +649,89 @@ function moduleFromPageUrl(url) {
   return m ? m[1] : null;
 }
 
+/**
+ * Phrase -> module slug map for tagging unanswered queries by query
+ * CONTENT. More-specific phrases come first so they win the includes()
+ * scan before generic fallbacks ("ai coaching" beats the bare "coaching"
+ * suffix). The slugs `coaching-group` and `multiple` are synthetic — the
+ * client maps them to friendly labels ("Coaching", "Multiple").
+ */
+const QUERY_KEYWORDS = [
+  // Specific coaching variants — MUST precede the generic "coaching"
+  ['ai coaching',    'ai-coaching'],
+  ['video coaching', 'video-coaching'],
+  ['field coaching', 'field-coaching'],
+  // Specific modules
+  ['smartpath',      'smartpath'],
+  ['smart path',     'smartpath'],
+  ['smartfeed',      'smartfeed'],
+  ['smart feed',     'smartfeed'],
+  ['knowledge hub',  'knowledge-hub'],
+  ['khub',           'knowledge-hub'],
+  ['kpi',            'kpi-gamification'],
+  ['scorecard',      'kpi-gamification'],
+  ['gamification',   'kpi-gamification'],
+  ['competition',    'kpi-gamification'],
+  ['achievement',    'kpi-gamification'],
+  ['quiz',           'quiz'],
+  ['survey',         'survey'],
+  ['forms',          'forms'],
+  ['notification',   'notifications'],
+  // Generic group label — last; cleaned up below if a specific coaching
+  // variant was also detected.
+  ['coaching',       'coaching-group'],
+];
+
+const COACHING_CHILD_SLUGS = new Set(['ai-coaching', 'video-coaching', 'field-coaching']);
+
+/** Return the set of module slugs mentioned in a normalized query. */
+function modulesFromQueryText(normalizedText) {
+  const found = new Set();
+  if (!normalizedText) return found;
+  for (const [phrase, slug] of QUERY_KEYWORDS) {
+    if (normalizedText.includes(phrase)) found.add(slug);
+  }
+  // If we picked up a specific coaching child AND the generic group,
+  // drop the group (specific wins).
+  if (found.has('coaching-group') && [...found].some((s) => COACHING_CHILD_SLUGS.has(s))) {
+    found.delete('coaching-group');
+  }
+  return found;
+}
+
+/** Pick the dominant module for a cluster, combining query-text keyword
+ *  signal with page_url-derived signal:
+ *    - 1 specific module in query                            -> that
+ *    - 1 generic group in query + page_url is a group child  -> child
+ *    - 1 generic group in query + no matching page_url       -> group
+ *    - >1 module in query, page_url matches one of them      -> matching
+ *    - >1 module in query, no match                          -> 'multiple'
+ *    - 0 modules in query                                    -> page_url mode (or null)
+ */
+function resolveClusterModule(querySlugs, urlModuleCounts) {
+  // Mode of URL-derived modules.
+  let urlDominant = null;
+  let urlMax = 0;
+  for (const [mod, count] of Object.entries(urlModuleCounts || {})) {
+    if (count > urlMax) { urlMax = count; urlDominant = mod; }
+  }
+
+  if (!querySlugs || querySlugs.size === 0) return urlDominant; // fallback to URL signal
+
+  if (querySlugs.size === 1) {
+    const only = querySlugs.values().next().value;
+    if (only === 'coaching-group') {
+      if (urlDominant && COACHING_CHILD_SLUGS.has(urlDominant)) return urlDominant;
+      return 'coaching-group';
+    }
+    return only;
+  }
+
+  // Multiple specific modules mentioned — let page_url break the tie.
+  if (urlDominant && querySlugs.has(urlDominant)) return urlDominant;
+  return 'multiple';
+}
+
 function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
   const db = getDb();
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
@@ -702,16 +785,11 @@ function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
 
   const out = [];
   for (const b of clusters.values()) {
-    // Dominant module = mode of the per-cluster moduleCounts. Returns null
-    // when no exchanges in this cluster were from a /modules/ page.
-    let dominantModule = null;
-    let topModuleCount = 0;
-    for (const [mod, count] of Object.entries(b.moduleCounts)) {
-      if (count > topModuleCount) {
-        topModuleCount = count;
-        dominantModule = mod;
-      }
-    }
+    // Hybrid signal: query-text keywords are primary (most direct evidence
+    // of intent); page_url is a tiebreaker for ambiguous cases. See
+    // resolveClusterModule for the full decision table.
+    const querySlugs = modulesFromQueryText(b.normalizedQuery);
+    const module = resolveClusterModule(querySlugs, b.moduleCounts);
     out.push({
       normalizedQuery: b.normalizedQuery,
       exampleQuery: b.exampleQuery,
@@ -721,7 +799,7 @@ function getTopUnansweredQueries({days = 30, limit = 25, role, orgId} = {}) {
       avgRelevance: b.relevanceCount > 0
         ? Math.round((b.relevanceSum / b.relevanceCount) * 100) / 100
         : null,
-      module: dominantModule,
+      module,
     });
   }
   out.sort((a, b) => b.count - a.count || b.distinctUsers - a.distinctUsers);

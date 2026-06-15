@@ -134,6 +134,10 @@ const MODULE_LABEL: Record<string, string> = {
   'kpi-gamification':      'KPI & Gamification',
   'notifications':         'Notifications',
   'cross-module-features': 'Cross-module',
+  // Synthetic slugs returned by the chat-logger tagger when the query
+  // is genuinely ambiguous and page_url can't disambiguate.
+  'coaching-group':        'Coaching',
+  'multiple':              'Multiple',
 };
 
 function fmtModule(slug: string | null): string {
