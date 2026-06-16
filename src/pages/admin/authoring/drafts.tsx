@@ -42,23 +42,10 @@ type DeployState = {
   configOk: boolean;
 };
 
-// Module + sub-folder taxonomy. Mirrors the wizard's lists in index.tsx
-// (kept inline rather than imported to avoid coupling the queue page to
-// the wizard's full audience-metadata shape, which is wizard-specific).
-const MODULES: Array<{value: string; label: string}> = [
-  {value: 'ai-coaching',      label: 'AI Coaching'},
-  {value: 'cross-module',     label: 'Cross-Module'},
-  {value: 'field-coaching',   label: 'Field Coaching'},
-  {value: 'forms',            label: 'Forms'},
-  {value: 'knowledge-hub',    label: 'Knowledge Hub'},
-  {value: 'kpi-gamification', label: 'KPI & Gamification'},
-  {value: 'notifications',    label: 'Notifications'},
-  {value: 'quiz',             label: 'Quiz'},
-  {value: 'smartfeed',        label: 'SmartFeed'},
-  {value: 'smartpath',        label: 'SmartPath'},
-  {value: 'survey',           label: 'Survey'},
-  {value: 'video-coaching',   label: 'Video Coaching'},
-];
+// Modules are fetched from GET /api/admin/authoring/modules on Published-tab
+// mount (sourced from data/modules.json). Adding a module via
+// /admin/authoring/modules makes it appear here on next render.
+type ModuleEntry = {slug: string; label: string};
 
 const SUB_FOLDERS: Array<{value: string; label: string}> = [
   {value: 'for-learners',          label: 'For Learners'},
@@ -340,6 +327,20 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [busy, setBusy] = useState<string | null>(null);
+  const [modules, setModules] = useState<ModuleEntry[]>([]);
+  const [modulesLoading, setModulesLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/authoring/modules', {credentials: 'same-origin'});
+        if (!res.ok) { setModulesLoading(false); return; }
+        const data = await res.json();
+        setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
+      } catch {/* fail soft */}
+      finally { setModulesLoading(false); }
+    })();
+  }, []);
 
   async function refresh() {
     if (!moduleSlug || !subFolder) { setArticles([]); return; }
@@ -393,9 +394,12 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
         <div className={styles.selectorRow}>
           <label className={styles.inlineLabel}>
             Module
-            <select value={moduleSlug} onChange={(e) => setModuleSlug(e.target.value)}>
-              <option value="">- pick a module -</option>
-              {MODULES.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
+            <select
+              value={moduleSlug}
+              disabled={modulesLoading}
+              onChange={(e) => setModuleSlug(e.target.value)}>
+              <option value="">{modulesLoading ? 'Loading…' : '- pick a module -'}</option>
+              {modules.map((m) => <option key={m.slug} value={m.slug}>{m.label}</option>)}
             </select>
           </label>
           <label className={styles.inlineLabel}>
@@ -487,7 +491,8 @@ function QueuePage(): ReactNode {
           <h1>Authoring queue</h1>
           <p className={styles.subhead}>
             Manage drafts and edit published articles.{' '}
-            <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>
+            <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>{' · '}
+            <Link to="/admin/authoring/modules">Manage modules →</Link>
           </p>
         </div>
       </header>

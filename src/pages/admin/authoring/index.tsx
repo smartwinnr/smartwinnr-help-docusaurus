@@ -26,24 +26,11 @@ import styles from './styles.module.css';
 
 const STORAGE_KEY = 'sw.authoring.wizard.v1';
 
-// Modules - `value` is the slug used in `docs/modules/<value>/`, `label`
-// is the display string. We hand-curate the labels rather than auto-
-// title-casing because some names have non-standard capitalization
-// (AI, SmartFeed, SmartPath, KPI).
-const MODULES: Array<{value: string; label: string}> = [
-  {value: 'ai-coaching',      label: 'AI Coaching'},
-  {value: 'cross-module',     label: 'Cross-Module'},
-  {value: 'field-coaching',   label: 'Field Coaching'},
-  {value: 'forms',            label: 'Forms'},
-  {value: 'knowledge-hub',    label: 'Knowledge Hub'},
-  {value: 'kpi-gamification', label: 'KPI & Gamification'},
-  {value: 'notifications',    label: 'Notifications'},
-  {value: 'quiz',             label: 'Quiz'},
-  {value: 'smartfeed',        label: 'SmartFeed'},
-  {value: 'smartpath',        label: 'SmartPath'},
-  {value: 'survey',           label: 'Survey'},
-  {value: 'video-coaching',   label: 'Video Coaching'},
-];
+// Modules are loaded from GET /api/admin/authoring/modules (sourced from
+// data/modules.json). The wizard fetches them on Step-1 mount; adding a
+// new module via /admin/authoring/modules makes it available here on
+// next render.
+type ModuleEntry = {slug: string; label: string; privilege?: string; anyPrivilege?: string[]; position?: number};
 
 const SUB_FOLDERS = [
   {value: 'for-learners',          label: 'For Learners',          audience: ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
@@ -254,6 +241,19 @@ function saveState(s: State) {
 function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
   const sub = SUB_FOLDERS.find((s) => s.value === i.subFolder);
+  const [modules, setModules] = useState<ModuleEntry[]>([]);
+  const [modulesLoading, setModulesLoading] = useState(true);
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/authoring/modules', {credentials: 'same-origin'});
+        if (!res.ok) { setModulesLoading(false); return; }
+        const data = await res.json();
+        setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
+      } catch {/* fail soft - dropdown will be empty, user can refresh */}
+      finally { setModulesLoading(false); }
+    })();
+  }, []);
   function setSub(value: string) {
     const def = SUB_FOLDERS.find((s) => s.value === value);
     dispatch({type: 'set', patch: {subFolder: value, audienceRoles: def ? def.audience : []}});
@@ -263,10 +263,16 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       <h2 className={styles.stepHead}>Step 1 · Where + who</h2>
       <div className={styles.field}>
         <label>Module</label>
-        <select value={i.module} onChange={(e) => dispatch({type: 'set', patch: {module: e.target.value}})}>
-          <option value="">Select a module…</option>
-          {MODULES.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
+        <select
+          value={i.module}
+          disabled={modulesLoading}
+          onChange={(e) => dispatch({type: 'set', patch: {module: e.target.value}})}>
+          <option value="">{modulesLoading ? 'Loading modules…' : 'Select a module…'}</option>
+          {modules.map((m) => <option key={m.slug} value={m.slug}>{m.label}</option>)}
         </select>
+        <span className={styles.hint}>
+          Don't see your module? <Link to="/admin/authoring/modules">Add a module →</Link>
+        </span>
       </div>
       <div className={styles.field}>
         <label>Sub-folder</label>

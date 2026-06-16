@@ -1486,6 +1486,190 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
   }
 });
 
+// ─────────────────────────────────────────────────────────────────────────
+// Module taxonomy - data/modules.json + add-new endpoint.
+//
+// data/modules.json is the source of truth for the wizard's Step-1 dropdown
+// and the drafts queue's Published tab. The on-disk docs/modules/<slug>/
+// tree is what Docusaurus actually serves; the JSON is the human-edited
+// index that drives "what slugs are valid choices in the authoring UI."
+//
+// Adding a module writes the JSON entry AND the full _category_.json
+// skeleton (module root + 9 canonical sub-folders) using a single shared
+// template parameterized by the module's privilege.
+// ─────────────────────────────────────────────────────────────────────────
+
+const MODULES_JSON_PATH = path.join(__dirname, 'data', 'modules.json');
+const KNOWN_PRIVILEGES_PATH = path.join(__dirname, 'data', 'known-privileges.json');
+
+const ALL_ROLES = ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
+const MANAGER_PLUS = ['manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
+const EDITOR_PLUS = ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
+
+const SUBFOLDER_TEMPLATE = [
+  { slug: 'for-learners',             label: 'For Learners',             position: 3, roles: ALL_ROLES },
+  { slug: 'for-managers',             label: 'For Managers',             position: 4, roles: MANAGER_PLUS, extraPrivilege: 'managerView' },
+  { slug: 'create-and-manage',        label: 'Create & Manage',          position: 3, roles: EDITOR_PLUS },
+  { slug: 'assign-and-schedule',      label: 'Assign & Schedule',        position: 4, roles: EDITOR_PLUS },
+  { slug: 'features',                 label: 'Features',                 position: 5, roles: EDITOR_PLUS },
+  { slug: 'reports-and-analytics',    label: 'Reports & Analytics',      position: 6, roles: EDITOR_PLUS },
+  { slug: 'settings-and-permissions', label: 'Settings & Permissions',   position: 7, roles: EDITOR_PLUS },
+  { slug: 'best-practices',           label: 'Best Practices',           position: 8, roles: EDITOR_PLUS },
+  { slug: 'faqs-and-troubleshooting', label: 'FAQs & Troubleshooting',   position: 9, roles: ALL_ROLES },
+];
+
+function loadModules() {
+  if (!fsSync.existsSync(MODULES_JSON_PATH)) return { modules: [] };
+  return JSON.parse(fsSync.readFileSync(MODULES_JSON_PATH, 'utf8'));
+}
+
+function saveModules(doc) {
+  fsSync.writeFileSync(MODULES_JSON_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+}
+
+function loadKnownPrivileges() {
+  if (!fsSync.existsSync(KNOWN_PRIVILEGES_PATH)) return { privileges: [] };
+  return JSON.parse(fsSync.readFileSync(KNOWN_PRIVILEGES_PATH, 'utf8'));
+}
+
+function saveKnownPrivileges(doc) {
+  fsSync.writeFileSync(KNOWN_PRIVILEGES_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+}
+
+function buildCategoryJson({ label, position, roles, privilege, anyPrivilege, allPrivileges, generatedIndexSlug }) {
+  const customProps = { roles };
+  if (privilege) customProps.privilege = privilege;
+  if (anyPrivilege && anyPrivilege.length) customProps.anyPrivilege = anyPrivilege;
+  if (allPrivileges && allPrivileges.length) customProps.allPrivileges = allPrivileges;
+  const out = { label, position, collapsible: true, collapsed: true };
+  if (generatedIndexSlug) {
+    out.link = { type: 'generated-index', title: label, slug: generatedIndexSlug };
+  }
+  out.customProps = customProps;
+  return out;
+}
+
+/** Write docs/modules/<slug>/_category_.json + each sub-folder's
+ *  _category_.json. Refuses if the module directory already exists. */
+function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position }) {
+  const moduleDir = path.join(MODULES_ROOT, slug);
+  if (fsSync.existsSync(moduleDir)) {
+    throw new Error(`docs/modules/${slug}/ already exists on disk`);
+  }
+  const written = [];
+
+  fsSync.mkdirSync(moduleDir, { recursive: true });
+  const moduleCategory = buildCategoryJson({ label, position, roles: ALL_ROLES });
+  const moduleCategoryPath = path.join(moduleDir, '_category_.json');
+  fsSync.writeFileSync(moduleCategoryPath, JSON.stringify(moduleCategory, null, 2) + '\n', 'utf8');
+  written.push(path.relative(__dirname, moduleCategoryPath));
+
+  for (const sf of SUBFOLDER_TEMPLATE) {
+    const sfDir = path.join(moduleDir, sf.slug);
+    fsSync.mkdirSync(sfDir, { recursive: true });
+    // For-managers carries the LMS-standard combo: managerView gate plus
+    // the module's own privilege as an allPrivileges constraint (user must
+    // hold BOTH). Other sub-folders use the module's single privilege.
+    const sfCategory = sf.extraPrivilege
+      ? buildCategoryJson({
+          label: sf.label,
+          position: sf.position,
+          roles: sf.roles,
+          privilege: sf.extraPrivilege,
+          allPrivileges: privilege ? [privilege] : undefined,
+          generatedIndexSlug: `/modules/${slug}/${sf.slug}`,
+        })
+      : buildCategoryJson({
+          label: sf.label,
+          position: sf.position,
+          roles: sf.roles,
+          privilege,
+          anyPrivilege,
+          generatedIndexSlug: `/modules/${slug}/${sf.slug}`,
+        });
+    const sfPath = path.join(sfDir, '_category_.json');
+    fsSync.writeFileSync(sfPath, JSON.stringify(sfCategory, null, 2) + '\n', 'utf8');
+    written.push(path.relative(__dirname, sfPath));
+  }
+
+  return written;
+}
+
+app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
+  try {
+    const modulesDoc = loadModules();
+    const privDoc = loadKnownPrivileges();
+    res.json({
+      modules: modulesDoc.modules || [],
+      privileges: privDoc.privileges || [],
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
+  try {
+    const { slug, label, privilege, anyPrivilege, description } = req.body || {};
+    if (!isValidSlug(slug)) {
+      return res.status(400).json({ error: 'slug must be kebab-case (a-z, 0-9, hyphen)' });
+    }
+    if (!label || typeof label !== 'string' || !label.trim()) {
+      return res.status(400).json({ error: 'label required' });
+    }
+
+    const modulesDoc = loadModules();
+    const modules = modulesDoc.modules || [];
+    if (modules.some((m) => m.slug === slug)) {
+      return res.status(409).json({ error: `Module slug "${slug}" already exists` });
+    }
+    if (fsSync.existsSync(path.join(MODULES_ROOT, slug))) {
+      return res.status(409).json({ error: `docs/modules/${slug}/ already exists on disk` });
+    }
+
+    let privilegeAdded = false;
+    let novelPrivilege = null;
+    if (privilege && typeof privilege === 'string' && privilege.trim()) {
+      const privDoc = loadKnownPrivileges();
+      const list = privDoc.privileges || [];
+      if (!list.includes(privilege)) {
+        list.push(privilege);
+        list.sort((a, b) => a.localeCompare(b));
+        privDoc.privileges = list;
+        saveKnownPrivileges(privDoc);
+        privilegeAdded = true;
+        novelPrivilege = privilege;
+      }
+    }
+
+    const position = modules.length === 0
+      ? 10
+      : Math.max(...modules.map((m) => Number(m.position) || 0)) + 10;
+
+    const entry = { slug, label: label.trim(), position };
+    if (privilege) entry.privilege = privilege;
+    if (Array.isArray(anyPrivilege) && anyPrivilege.length) entry.anyPrivilege = anyPrivilege;
+    if (description) entry.description = String(description);
+
+    const written = writeModuleSkeleton({
+      slug,
+      label: entry.label,
+      privilege: entry.privilege,
+      anyPrivilege: entry.anyPrivilege,
+      position,
+    });
+
+    modules.push(entry);
+    modulesDoc.modules = modules;
+    saveModules(modulesDoc);
+
+    res.json({ ok: true, slug, privilegeAdded, novelPrivilege, paths: written });
+  } catch (error) {
+    console.error('❌ authoring/modules POST failed:', error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
 // Error handling middleware
 app.use((error, req, res, next) => {
   console.error('❌ Unhandled error:', error);
