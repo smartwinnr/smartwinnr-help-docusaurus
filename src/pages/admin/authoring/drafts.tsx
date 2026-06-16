@@ -32,7 +32,7 @@ type Draft = {
 type Article = Draft & { draft: boolean };
 
 type DeployState = {
-  queue: Array<{path: string; slug: string; title: string}>;
+  queue: Array<{path: string; slug: string; title: string; action: 'upsert' | 'delete'}>;
   lastDeployTs: number;
   nextAutoDeployAt: number | null;
   canDeployNow: boolean;
@@ -226,10 +226,16 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
 
   return (
     <>
-      {deployState && deployState.queue.length > 0 && (
+      {deployState && deployState.queue.length > 0 && (() => {
+        const upserts = deployState.queue.filter((q) => q.action !== 'delete').length;
+        const deletes = deployState.queue.filter((q) => q.action === 'delete').length;
+        const parts: string[] = [];
+        if (upserts) parts.push(`${upserts} publish${upserts === 1 ? '' : 'es'}`);
+        if (deletes) parts.push(`${deletes} delete${deletes === 1 ? '' : 's'}`);
+        return (
         <div className={styles.deployStrip}>
           <div>
-            <strong>{deployState.queue.length}</strong> article(s) published, waiting to deploy.
+            <strong>{deployState.queue.length}</strong> change(s) queued ({parts.join(', ')}), waiting to deploy.
             {!deployState.canDeployNow && (
               <span className={styles.hint}>
                 {' '}Next deploy available in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
@@ -249,7 +255,8 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
             {deploying ? 'Deploying…' : 'Deploy now'}
           </button>
         </div>
-      )}
+        );
+      })()}
 
       <div className={styles.tabToolbar}>
         <span className={styles.hint}>
@@ -380,7 +387,12 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
         const data = await res.json();
         notify.error(data.error || 'Delete failed');
       } else {
-        notify.success(`Deleted "${a.title}".`);
+        const data = await res.json().catch(() => ({}));
+        if (data.queuedForDeploy) {
+          notify.success(`Deleted "${a.title}". Queued for deploy - production drops it on the next deploy.`);
+        } else {
+          notify.success(`Deleted "${a.title}".`);
+        }
         await refresh();
       }
     } finally {

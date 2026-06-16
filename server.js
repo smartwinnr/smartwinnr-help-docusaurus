@@ -1007,17 +1007,35 @@ const GITHUB_REPO = process.env.GITHUB_REPO || '';
 const GIT_PUBLISH_BRANCH = process.env.GIT_PUBLISH_BRANCH || 'main';
 const GITHUB_API = process.env.GITHUB_API || 'https://api.github.com';
 
-const deployQueue = new Set();
+// deployQueue tracks per-path actions so the same pipeline that publishes
+// an upserted article can also commit a delete. Map<relPath, 'upsert' | 'delete'>.
+const deployQueue = new Map();
 let lastDeployTs = 0;
 let debounceTimer = null;
 let deployInFlight = false;
+
+function enqueueUpsert(relPath) {
+  deployQueue.set(relPath, 'upsert');
+}
+
+function enqueueDelete(relPath) {
+  // If the path was previously queued as an upsert (e.g. published-then-
+  // deleted before the deploy fired), the delete supersedes - end state
+  // on prod is "absent".
+  deployQueue.set(relPath, 'delete');
+}
 
 function loadDeployState() {
   try {
     if (fsSync.existsSync(DEPLOY_STATE_PATH)) {
       const s = JSON.parse(fsSync.readFileSync(DEPLOY_STATE_PATH, 'utf8'));
       lastDeployTs = Number(s.lastDeployTs) || 0;
-      for (const p of (s.queue || [])) deployQueue.add(p);
+      for (const item of (s.queue || [])) {
+        // Backwards-compat: the old persisted shape was an array of path
+        // strings (upserts only). Accept either string or {path, action}.
+        if (typeof item === 'string') deployQueue.set(item, 'upsert');
+        else if (item && item.path) deployQueue.set(item.path, item.action === 'delete' ? 'delete' : 'upsert');
+      }
       console.log(`📦 deploy-state: queue=${deployQueue.size}, lastDeployTs=${lastDeployTs ? new Date(lastDeployTs).toISOString() : 'never'}`);
     }
   } catch (e) {
@@ -1029,7 +1047,7 @@ function persistDeployState() {
     fsSync.mkdirSync(path.dirname(DEPLOY_STATE_PATH), { recursive: true });
     fsSync.writeFileSync(DEPLOY_STATE_PATH, JSON.stringify({
       lastDeployTs,
-      queue: [...deployQueue],
+      queue: [...deployQueue].map(([p, action]) => ({ path: p, action })),
     }, null, 2), 'utf8');
   } catch (e) {
     console.warn('[deploy] failed to persist state:', e.message);
@@ -1113,29 +1131,37 @@ async function fireDeploy() {
   }
 
   deployInFlight = true;
-  const filePaths = [...deployQueue];
+  // Snapshot the queue into [{rel, action}] so concurrent enqueues don't
+  // perturb the in-flight set.
+  const queueSnapshot = [...deployQueue].map(([rel, action]) => ({ rel, action }));
   try {
-    // Read file contents into memory + drop any that have since vanished.
+    // Read upsert contents into memory + drop any that have since vanished
+    // (the file was deleted between enqueue and now - safe to skip; an
+    // explicit delete would be in the queue with action='delete').
     const files = [];
-    for (const rel of filePaths) {
-      const abs = path.join(__dirname, rel);
+    for (const item of queueSnapshot) {
+      if (item.action !== 'upsert') continue;
+      const abs = path.join(__dirname, item.rel);
       if (!fsSync.existsSync(abs)) {
-        console.warn(`[deploy] skipping missing file: ${rel}`);
+        console.warn(`[deploy] skipping missing upsert file: ${item.rel}`);
         continue;
       }
-      files.push({ rel, content: fsSync.readFileSync(abs, 'utf8') });
+      files.push({ rel: item.rel, content: fsSync.readFileSync(abs, 'utf8') });
     }
-    if (files.length === 0) {
+    const deletes = queueSnapshot.filter((q) => q.action === 'delete').map((q) => q.rel);
+
+    if (files.length === 0 && deletes.length === 0) {
       deployQueue.clear();
       deployInFlight = false;
+      persistDeployState();
       return { ok: false, reason: 'no-files' };
     }
 
-    // Scan article bodies for image references and pull any locally-existing
-    // files into the commit. Without this, articles publish but their
-    // screenshots stay on the container's ephemeral disk and never reach
-    // git → Docusaurus's build-time "image not found" check fails on the
-    // next Railway redeploy.
+    // Scan upsert article bodies for image references and pull any locally-
+    // existing files into the commit. Without this, articles publish but
+    // their screenshots stay on the container's ephemeral disk and never
+    // reach git → Docusaurus's build-time "image not found" check fails on
+    // the next Railway redeploy.
     const IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)]+)\)/g;
     const imageRels = new Set();
     for (const f of files) {
@@ -1161,7 +1187,7 @@ async function fireDeploy() {
     const baseCommitResp = await ghGet(`/git/commits/${baseCommitSha}`);
     const baseTreeSha = baseCommitResp.data.tree.sha;
 
-    // 2. Upload each file as a blob.
+    // 2. Upload each upsert file as a blob.
     //    - .md / .mdx → utf-8
     //    - images     → base64 (binary content)
     const treeEntries = [];
@@ -1189,6 +1215,16 @@ async function fireDeploy() {
         sha: blobResp.data.sha,
       });
     }
+    // Deletes: per GitHub Trees API, `sha: null` removes the path from the
+    // base_tree. No blob upload needed.
+    for (const rel of deletes) {
+      treeEntries.push({
+        path: rel,
+        mode: '100644',
+        type: 'blob',
+        sha: null,
+      });
+    }
 
     // 3. New tree based on the current main tree + our overrides.
     const treeResp = await ghPost(`/git/trees`, {
@@ -1197,9 +1233,14 @@ async function fireDeploy() {
     });
 
     // 4. Create the commit.
-    const slugs = files.map((f) => path.basename(f.rel, '.md')).slice(0, 3);
-    const imgNote = images.length > 0 ? ` + ${images.length} image${images.length === 1 ? '' : 's'}` : '';
-    const message = `publish: ${files.length} article${files.length === 1 ? '' : 's'}${imgNote} (${slugs.join(', ')}${files.length > 3 ? '...' : ''})`;
+    const changedSlugs = [...files.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
+                         ...deletes.map((d) => '-' + path.basename(d).replace(/\.(md|mdx)$/, ''))].slice(0, 3);
+    const parts = [];
+    if (files.length) parts.push(`${files.length} article${files.length === 1 ? '' : 's'}`);
+    if (deletes.length) parts.push(`${deletes.length} delete${deletes.length === 1 ? '' : 's'}`);
+    if (images.length) parts.push(`${images.length} image${images.length === 1 ? '' : 's'}`);
+    const totalChanges = files.length + deletes.length;
+    const message = `publish: ${parts.join(' + ')} (${changedSlugs.join(', ')}${totalChanges > 3 ? '...' : ''})`;
     const commitResp = await ghPost(`/git/commits`, {
       message,
       tree: treeResp.data.sha,
@@ -1214,12 +1255,12 @@ async function fireDeploy() {
       force: false,
     });
 
-    console.log(`[deploy] pushed ${files.length} file(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
+    console.log(`[deploy] pushed ${files.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
     deployQueue.clear();
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
-    return { ok: true, committed: files.length, images: images.length, sha: commitResp.data.sha };
+    return { ok: true, committed: files.length, deleted: deletes.length, images: images.length, sha: commitResp.data.sha };
   } catch (e) {
     const ghMsg = e.response?.data?.message || e.message;
     console.error('[deploy] GitHub push failed:', ghMsg);
@@ -1251,7 +1292,7 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
 
     // Queue for deploy + reset the debounce timer (so a burst batches).
     const relPath = path.relative(__dirname, target);
-    deployQueue.add(relPath);
+    enqueueUpsert(relPath);
     persistDeployState();
     scheduleDeploy();
 
@@ -1269,15 +1310,18 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
 });
 
 app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, res) => {
-  const items = [...deployQueue].map((rel) => {
+  const items = [...deployQueue].map(([rel, action]) => {
     const abs = path.join(__dirname, rel);
-    let title = path.basename(rel, '.md');
-    try {
-      const t = fsSync.readFileSync(abs, 'utf8');
-      const m = /^title:\s*["']?(.+?)["']?\s*$/m.exec(t);
-      if (m) title = m[1];
-    } catch {/* ignore */}
-    return { path: rel, slug: path.basename(rel, '.md'), title };
+    let title = path.basename(rel).replace(/\.(md|mdx)$/, '');
+    // Deleted files are no longer on disk - keep the slug-derived title.
+    if (action !== 'delete') {
+      try {
+        const t = fsSync.readFileSync(abs, 'utf8');
+        const m = /^title:\s*["']?(.+?)["']?\s*$/m.exec(t);
+        if (m) title = m[1];
+      } catch {/* ignore */}
+    }
+    return { path: rel, slug: path.basename(rel).replace(/\.(md|mdx)$/, ''), title, action };
   });
   res.json({
     queue: items,
@@ -1479,8 +1523,27 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
   try {
     const target = resolveArticlePath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
+    // Read frontmatter BEFORE unlinking - if the article was non-draft
+    // (i.e. ever published to git) we need to enqueue a delete-commit so
+    // production actually drops it. Drafts never reached git, so a local
+    // unlink is sufficient.
+    let wasPublished = false;
+    try {
+      const raw = fsSync.readFileSync(target, 'utf8');
+      wasPublished = !/^draft:\s*true\b/m.test(raw);
+    } catch {/* if unreadable, assume published - safer to over-deploy */ wasPublished = true; }
+
     fsSync.unlinkSync(target);
-    res.json({ ok: true });
+
+    let queued = false;
+    if (wasPublished) {
+      const relPath = path.relative(__dirname, target);
+      enqueueDelete(relPath);
+      persistDeployState();
+      scheduleDeploy();
+      queued = true;
+    }
+    res.json({ ok: true, queuedForDeploy: queued, queueSize: deployQueue.size });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
