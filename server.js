@@ -1425,8 +1425,18 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
     if (!/^draft:\s*true\b/m.test(text)) {
       return res.status(400).json({ error: 'Refusing to delete - frontmatter is not marked draft:true' });
     }
+    const imageRefs = imagesReferencedBy(text);
     fsSync.unlinkSync(target);
-    res.json({ ok: true });
+    // Drafts never reached git, so cleanup is local-only - no deploy queue.
+    let imagesRemoved = 0;
+    for (const imgUrl of imageRefs) {
+      if (isImageReferencedElsewhere(imgUrl, target)) continue;
+      const imgAbs = path.join(__dirname, 'static' + imgUrl);
+      if (fsSync.existsSync(imgAbs)) {
+        try { fsSync.unlinkSync(imgAbs); imagesRemoved++; } catch {/* ignore */}
+      }
+    }
+    res.json({ ok: true, imagesRemoved });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -1519,31 +1529,82 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
   }
 });
 
+/** Scan an article body for /img/helpscout/authored/... image URLs.
+ *  Returns a Set of root-relative URLs (e.g. "/img/helpscout/authored/foo.png"). */
+function imagesReferencedBy(markdown) {
+  const re = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+  const out = new Set();
+  for (const m of markdown.matchAll(re)) out.add(m[1]);
+  return out;
+}
+
+/** Walk docs/modules/ for any .md/.mdx article (other than `excludeAbs`)
+ *  that references `imgUrl`. Used to avoid deleting an image another doc
+ *  still needs. Sharing is rare with the wizard's random-suffix uploads
+ *  but possible if someone hand-edited a path. */
+function isImageReferencedElsewhere(imgUrl, excludeAbs) {
+  function walk(dir) {
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (walk(p)) return true;
+      } else if (entry.isFile() && /\.(md|mdx)$/.test(entry.name) && p !== excludeAbs) {
+        try {
+          if (fsSync.readFileSync(p, 'utf8').includes(imgUrl)) return true;
+        } catch {/* ignore */}
+      }
+    }
+    return false;
+  }
+  return fsSync.existsSync(MODULES_ROOT) ? walk(MODULES_ROOT) : false;
+}
+
 app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res) => {
   try {
     const target = resolveArticlePath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
-    // Read frontmatter BEFORE unlinking - if the article was non-draft
-    // (i.e. ever published to git) we need to enqueue a delete-commit so
-    // production actually drops it. Drafts never reached git, so a local
-    // unlink is sufficient.
+    // Read frontmatter + image refs BEFORE unlinking. If the article was
+    // non-draft (ever published to git) we need to enqueue a delete-commit
+    // for the .md AND for the now-orphan images. Drafts never reached git,
+    // so a local unlink is sufficient there.
     let wasPublished = false;
+    let imageRefs = new Set();
     try {
       const raw = fsSync.readFileSync(target, 'utf8');
       wasPublished = !/^draft:\s*true\b/m.test(raw);
+      imageRefs = imagesReferencedBy(raw);
     } catch {/* if unreadable, assume published - safer to over-deploy */ wasPublished = true; }
 
     fsSync.unlinkSync(target);
+
+    // Cull images this article referenced, but only if no other article
+    // still needs them. Locally always; via deploy queue if was-published.
+    const imagesRemovedRel = [];
+    for (const imgUrl of imageRefs) {
+      if (isImageReferencedElsewhere(imgUrl, target)) continue;
+      const imgRel = 'static' + imgUrl;  // /img/helpscout/authored/X → static/img/helpscout/authored/X
+      const imgAbs = path.join(__dirname, imgRel);
+      if (fsSync.existsSync(imgAbs)) {
+        try { fsSync.unlinkSync(imgAbs); } catch {/* ignore */}
+      }
+      imagesRemovedRel.push(imgRel);
+    }
 
     let queued = false;
     if (wasPublished) {
       const relPath = path.relative(__dirname, target);
       enqueueDelete(relPath);
+      for (const imgRel of imagesRemovedRel) enqueueDelete(imgRel);
       persistDeployState();
       scheduleDeploy();
       queued = true;
     }
-    res.json({ ok: true, queuedForDeploy: queued, queueSize: deployQueue.size });
+    res.json({
+      ok: true,
+      queuedForDeploy: queued,
+      queueSize: deployQueue.size,
+      imagesRemoved: imagesRemovedRel.length,
+    });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

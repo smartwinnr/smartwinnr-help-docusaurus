@@ -388,10 +388,13 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
         notify.error(data.error || 'Delete failed');
       } else {
         const data = await res.json().catch(() => ({}));
+        const imgNote = data.imagesRemoved > 0
+          ? ` Also removed ${data.imagesRemoved} associated image${data.imagesRemoved === 1 ? '' : 's'}.`
+          : '';
         if (data.queuedForDeploy) {
-          notify.success(`Deleted "${a.title}". Queued for deploy - production drops it on the next deploy.`);
+          notify.success(`Deleted "${a.title}".${imgNote} Queued for deploy - production drops it on the next deploy.`);
         } else {
-          notify.success(`Deleted "${a.title}".`);
+          notify.success(`Deleted "${a.title}".${imgNote}`);
         }
         await refresh();
       }
