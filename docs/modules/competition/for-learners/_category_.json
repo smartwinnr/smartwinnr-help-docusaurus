@@ -1,0 +1,23 @@
+{
+  "label": "For Learners",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "For Learners",
+    "slug": "/modules/competition/for-learners"
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}

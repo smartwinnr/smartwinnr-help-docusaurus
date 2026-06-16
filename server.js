@@ -20,8 +20,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-// const PORT = 3001; // Dev
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -1487,19 +1487,23 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
 });
 
 // ─────────────────────────────────────────────────────────────────────────
-// Module taxonomy - data/modules.json + add-new endpoint.
+// Module taxonomy - static/module-overviews.json + add-new endpoint.
 //
-// data/modules.json is the source of truth for the wizard's Step-1 dropdown
-// and the drafts queue's Published tab. The on-disk docs/modules/<slug>/
-// tree is what Docusaurus actually serves; the JSON is the human-edited
-// index that drives "what slugs are valid choices in the authoring UI."
+// static/module-overviews.json is the single source of truth for module
+// identity (label + privilege gate + landing-page metadata). It's already
+// read by:
+//   - src/components/Modules/ModuleOverview.tsx (renders the per-module page)
+//   - scripts/audit-gates.js (derives the expected sub-folder gate from
+//     the module's privilege)
 //
-// Adding a module writes the JSON entry AND the full _category_.json
-// skeleton (module root + 9 canonical sub-folders) using a single shared
-// template parameterized by the module's privilege.
+// Adding a module appends to overviews.json AND writes the on-disk skeleton:
+//   - docs/modules/<slug>/_category_.json (no privilege - module root is open)
+//   - 9 sub-folder _category_.json files (privilege/anyPrivilege inherited
+//     from the parent module so audit-gates.js's expected gate matches)
+//   - docs/modules/<slug>/index.mdx (renders <ModuleOverview slug=...>)
 // ─────────────────────────────────────────────────────────────────────────
 
-const MODULES_JSON_PATH = path.join(__dirname, 'data', 'modules.json');
+const OVERVIEWS_JSON_PATH = path.join(__dirname, 'static', 'module-overviews.json');
 const KNOWN_PRIVILEGES_PATH = path.join(__dirname, 'data', 'known-privileges.json');
 
 const ALL_ROLES = ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
@@ -1518,13 +1522,26 @@ const SUBFOLDER_TEMPLATE = [
   { slug: 'faqs-and-troubleshooting', label: 'FAQs & Troubleshooting',   position: 9, roles: ALL_ROLES },
 ];
 
-function loadModules() {
-  if (!fsSync.existsSync(MODULES_JSON_PATH)) return { modules: [] };
-  return JSON.parse(fsSync.readFileSync(MODULES_JSON_PATH, 'utf8'));
+function loadOverviews() {
+  if (!fsSync.existsSync(OVERVIEWS_JSON_PATH)) return { modules: {} };
+  return JSON.parse(fsSync.readFileSync(OVERVIEWS_JSON_PATH, 'utf8'));
 }
 
-function saveModules(doc) {
-  fsSync.writeFileSync(MODULES_JSON_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+function saveOverviews(doc) {
+  fsSync.writeFileSync(OVERVIEWS_JSON_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+}
+
+/** Flatten overviews.modules (object keyed by slug) into the array shape
+ *  the wizard + drafts queue dropdowns consume. */
+function modulesFromOverviews(doc) {
+  const map = (doc && doc.modules) || {};
+  return Object.entries(map).map(([slug, meta]) => {
+    const out = { slug, label: meta.label || slug };
+    if (meta.privilege) out.privilege = meta.privilege;
+    if (Array.isArray(meta.anyPrivilege) && meta.anyPrivilege.length) out.anyPrivilege = meta.anyPrivilege;
+    if (meta.tagline) out.tagline = meta.tagline;
+    return out;
+  });
 }
 
 function loadKnownPrivileges() {
@@ -1549,9 +1566,26 @@ function buildCategoryJson({ label, position, roles, privilege, anyPrivilege, al
   return out;
 }
 
-/** Write docs/modules/<slug>/_category_.json + each sub-folder's
- *  _category_.json. Refuses if the module directory already exists. */
-function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position }) {
+/** Inspect docs/modules/* for the max `position` already used on disk. */
+function maxModulePositionOnDisk() {
+  if (!fsSync.existsSync(MODULES_ROOT)) return 0;
+  let max = 0;
+  for (const entry of fsSync.readdirSync(MODULES_ROOT, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const catFile = path.join(MODULES_ROOT, entry.name, '_category_.json');
+    if (!fsSync.existsSync(catFile)) continue;
+    try {
+      const cat = JSON.parse(fsSync.readFileSync(catFile, 'utf8'));
+      if (typeof cat.position === 'number' && cat.position > max) max = cat.position;
+    } catch {/* ignore parse errors */}
+  }
+  return max;
+}
+
+/** Write docs/modules/<slug>/_category_.json, each sub-folder's
+ *  _category_.json, and the module landing index.mdx. Refuses if the
+ *  module directory already exists. */
+function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position, tagline }) {
   const moduleDir = path.join(MODULES_ROOT, slug);
   if (fsSync.existsSync(moduleDir)) {
     throw new Error(`docs/modules/${slug}/ already exists on disk`);
@@ -1559,17 +1593,26 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position })
   const written = [];
 
   fsSync.mkdirSync(moduleDir, { recursive: true });
+  // Module root carries ALL_ROLES with NO privilege - the landing page must
+  // stay reachable so unlicensed users see the upsell. scripts/audit-gates.js
+  // enforces this.
   const moduleCategory = buildCategoryJson({ label, position, roles: ALL_ROLES });
   const moduleCategoryPath = path.join(moduleDir, '_category_.json');
   fsSync.writeFileSync(moduleCategoryPath, JSON.stringify(moduleCategory, null, 2) + '\n', 'utf8');
   written.push(path.relative(__dirname, moduleCategoryPath));
 
+  const indexPath = path.join(moduleDir, 'index.mdx');
+  fsSync.writeFileSync(indexPath, buildModuleIndexMdx({ slug, label, tagline }), 'utf8');
+  written.push(path.relative(__dirname, indexPath));
+
   for (const sf of SUBFOLDER_TEMPLATE) {
     const sfDir = path.join(moduleDir, sf.slug);
     fsSync.mkdirSync(sfDir, { recursive: true });
-    // For-managers carries the LMS-standard combo: managerView gate plus
-    // the module's own privilege as an allPrivileges constraint (user must
-    // hold BOTH). Other sub-folders use the module's single privilege.
+    // For-managers gates on managerView AND the parent module's privilege.
+    // Other sub-folders inherit the parent's single privilege OR anyPrivilege.
+    // scripts/audit-gates.js derives the expected gate from the parent
+    // module's privilege in static/module-overviews.json, so writing it
+    // here on each sub-folder is what makes the audit pass.
     const sfCategory = sf.extraPrivilege
       ? buildCategoryJson({
           label: sf.label,
@@ -1577,6 +1620,7 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position })
           roles: sf.roles,
           privilege: sf.extraPrivilege,
           allPrivileges: privilege ? [privilege] : undefined,
+          anyPrivilege,
           generatedIndexSlug: `/modules/${slug}/${sf.slug}`,
         })
       : buildCategoryJson({
@@ -1595,12 +1639,43 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position })
   return written;
 }
 
+function buildModuleIndexMdx({ slug, label, tagline }) {
+  // Matches the format of docs/modules/quiz/index.mdx etc. - frontmatter
+  // with all 7 roles, no privilege; body just embeds <ModuleOverview/>.
+  const desc = (tagline || `${label} - SmartWinnr module.`).replace(/'/g, "''");
+  return `---
+id: module-${slug}
+title: ${label}
+description: '${desc}'
+slug: /modules/${slug}/
+displayed_sidebar: tutorialSidebar
+hide_title: true
+hide_table_of_contents: true
+customProps:
+  roles:
+    - user
+    - manager
+    - editor
+    - admin
+    - orgadmin
+    - lamadmin
+    - superadmin
+tags:
+  - ${slug}
+---
+
+import ModuleOverview from '@site/src/components/Modules/ModuleOverview';
+
+<ModuleOverview slug="${slug}" />
+`;
+}
+
 app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
   try {
-    const modulesDoc = loadModules();
+    const overviews = loadOverviews();
     const privDoc = loadKnownPrivileges();
     res.json({
-      modules: modulesDoc.modules || [],
+      modules: modulesFromOverviews(overviews),
       privileges: privDoc.privileges || [],
     });
   } catch (error) {
@@ -1618,10 +1693,9 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
       return res.status(400).json({ error: 'label required' });
     }
 
-    const modulesDoc = loadModules();
-    const modules = modulesDoc.modules || [];
-    if (modules.some((m) => m.slug === slug)) {
-      return res.status(409).json({ error: `Module slug "${slug}" already exists` });
+    const overviews = loadOverviews();
+    if (overviews.modules && overviews.modules[slug]) {
+      return res.status(409).json({ error: `Module slug "${slug}" already exists in overviews.json` });
     }
     if (fsSync.existsSync(path.join(MODULES_ROOT, slug))) {
       return res.status(409).json({ error: `docs/modules/${slug}/ already exists on disk` });
@@ -1642,26 +1716,34 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
       }
     }
 
-    const position = modules.length === 0
-      ? 10
-      : Math.max(...modules.map((m) => Number(m.position) || 0)) + 10;
-
-    const entry = { slug, label: label.trim(), position };
-    if (privilege) entry.privilege = privilege;
-    if (Array.isArray(anyPrivilege) && anyPrivilege.length) entry.anyPrivilege = anyPrivilege;
-    if (description) entry.description = String(description);
+    const position = maxModulePositionOnDisk() + 10 || 10;
+    const labelTrim = label.trim();
+    const tagline = (description && String(description).trim()) || `${labelTrim} - SmartWinnr module.`;
 
     const written = writeModuleSkeleton({
       slug,
-      label: entry.label,
-      privilege: entry.privilege,
-      anyPrivilege: entry.anyPrivilege,
+      label: labelTrim,
+      privilege: privilege || undefined,
+      anyPrivilege: Array.isArray(anyPrivilege) && anyPrivilege.length ? anyPrivilege : undefined,
       position,
+      tagline,
     });
 
-    modules.push(entry);
-    modulesDoc.modules = modules;
-    saveModules(modulesDoc);
+    // Append to overviews.json AFTER the skeleton writes succeed - that way
+    // a half-written skeleton doesn't leave a dangling overviews entry.
+    overviews.modules = overviews.modules || {};
+    const entry = {
+      label: labelTrim,
+      tagline,
+      description: tagline,
+      keyFeatures: [],
+      who: '',
+      ctaEmail: 'admin@your-org.com',
+    };
+    if (privilege) entry.privilege = privilege;
+    if (Array.isArray(anyPrivilege) && anyPrivilege.length) entry.anyPrivilege = anyPrivilege;
+    overviews.modules[slug] = entry;
+    saveOverviews(overviews);
 
     res.json({ ok: true, slug, privilegeAdded, novelPrivilege, paths: written });
   } catch (error) {

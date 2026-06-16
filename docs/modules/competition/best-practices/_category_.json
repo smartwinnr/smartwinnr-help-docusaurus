@@ -1,0 +1,21 @@
+{
+  "label": "Best Practices",
+  "position": 8,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Best Practices",
+    "slug": "/modules/competition/best-practices"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "label": "Settings & Permissions",
+  "position": 7,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Settings & Permissions",
+    "slug": "/modules/competition/settings-and-permissions"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}

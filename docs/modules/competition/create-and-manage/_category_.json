@@ -1,0 +1,21 @@
+{
+  "label": "Create & Manage",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Create & Manage",
+    "slug": "/modules/competition/create-and-manage"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}

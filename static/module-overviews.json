@@ -149,7 +149,11 @@
         "Division- and metatag-based segmentation"
       ],
       "who": "Configured by Editors. Tracked by Managers. Played by all Learners.",
-      "anyPrivilege": ["kpi", "competitions", "achievements"],
+      "anyPrivilege": [
+        "kpi",
+        "competitions",
+        "achievements"
+      ],
       "ctaEmail": "admin@your-org.com"
     },
     "notifications": {
@@ -164,7 +168,11 @@
         "Rate-limit guardrails"
       ],
       "who": "Designed by Editors and OrgAdmins. Received by all Learners.",
-      "anyPrivilege": ["customNotifications", "notifications", "chat"],
+      "anyPrivilege": [
+        "customNotifications",
+        "notifications",
+        "chat"
+      ],
       "ctaEmail": "admin@your-org.com"
     },
     "cross-module": {
@@ -179,6 +187,15 @@
         "Shared content across competitions and quizzes"
       ],
       "who": "Used by everyone — Learners, Managers, Editors, Admins.",
+      "ctaEmail": "admin@your-org.com"
+    },
+    "competition": {
+      "label": "Competition",
+      "tagline": "Competition - SmartWinnr module.",
+      "description": "Competition - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "privilege": "competitions",
       "ctaEmail": "admin@your-org.com"
     }
   }

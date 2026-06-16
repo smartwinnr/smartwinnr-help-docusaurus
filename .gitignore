@@ -172,14 +172,12 @@ aws-exports.js
 Dockerfile.local
 
 # Freshdesk pipeline data + runtime SQLite + research artifacts.
-# Three files in data/ MUST ship to production though - the build needs them:
+# Two files in data/ MUST ship to production though - the build needs them:
 #   data/known-privileges.json - read by scripts/validate-privilege-keys.js (prebuild)
 #   data/redirects.json        - read by docusaurus.config.ts (build-time redirects)
-#   data/modules.json          - read by server.js for the authoring taxonomy
 data/*
 !data/known-privileges.json
 !data/redirects.json
-!data/modules.json
 scripts/freshdesk/output/
 
 # Generated reports (article inventory, etc.) — root only; do NOT shadow

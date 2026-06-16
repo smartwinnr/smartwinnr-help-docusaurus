@@ -1,0 +1,25 @@
+{
+  "label": "For Managers",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "For Managers",
+    "slug": "/modules/competition/for-managers"
+  },
+  "customProps": {
+    "roles": [
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "managerView",
+    "allPrivileges": [
+      "competitions"
+    ]
+  }
+}

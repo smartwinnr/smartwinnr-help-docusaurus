@@ -1,0 +1,21 @@
+{
+  "label": "Assign & Schedule",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Assign & Schedule",
+    "slug": "/modules/competition/assign-and-schedule"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}

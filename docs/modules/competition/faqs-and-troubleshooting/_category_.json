@@ -1,0 +1,23 @@
+{
+  "label": "FAQs & Troubleshooting",
+  "position": 9,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "FAQs & Troubleshooting",
+    "slug": "/modules/competition/faqs-and-troubleshooting"
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "competitions"
+  }
+}
