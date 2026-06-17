@@ -1,7 +1,7 @@
 # SmartWinnr Help - Implementation progress
 
 Status snapshot of the [Help-site IA redesign](./help-menu-redesign.md).
-Updated **2026-06-12**. Branch: `feature/help-ia-redesign` (uncommitted).
+Updated **2026-06-17**. Branch: `main`.
 
 For decision rationale and full design, see `plans/help-menu-redesign.md` (the
 authoritative plan file - this document is a derived status view).
@@ -32,7 +32,11 @@ authoritative plan file - this document is a derived status view).
 | **Persona-led landing (Option C)** | ✅ done | 5-door hero (`PersonaDoors`) + persona-shell hero in `PathBody` with `taskGrid` card sections + mode rail. Reports + Integrations absorbed into Manager + Admin doors. Manager door gated on `managerView` privilege via new `canEnterPersona()` helper. |
 | **Authoring skill** (`/admin/authoring`) | ✅ done | Plan §19 shipped 2026-06-12: 4-step wizard (Where + who → Hook → Brain dump → Preview + refine + save), superadmin-only, `prompts/author-article.md` system prompt with anti-release-note + anti-hallucination clauses, `db/article-audit.js` `gradeMarkdown()` returns `Finding[]` with blocking flag, `server.js` adds POST `generate`/`save`/`publish`/`upload` + GET `drafts`/`draft` + DELETE `draft` routes (all `requireRole('superadmin')`), drafts queue at `/admin/authoring/drafts` with Publish/Delete. OpenAI Chat Completions (`gpt-4o` default, override via `AUTHORING_MODEL`) via existing axios + `getOpenAIKey()` - no new SDK dep. Server stamps `last_update.date` to today + `last_update.author` to logged-in user. Custom tags allowed in step 2; ≥1 tag required. |
 | **Authoring LLM rate limit** | ✅ done | Plan §20.1 - 10 generates per hour per superadmin via in-memory ring buffer keyed on email. Override via `AUTHORING_RATE_LIMIT` env var. Wizard catches 429 + surfaces "Try again in ~M min" message. |
-| **Authoring publish-to-deploy pipeline** | ⏸ TODO | Plan §20.3–§20.5 - when an editor publishes, the article is invisible until Railway redeploys. Approach: server commits + pushes the changed files to `main` using a GitLab PAT; Railway is already configured to auto-redeploy on push (no deploy-hook URL needed - Railway no longer exposes one in their UI). Need: pending-publish queue + Deploy now button + 30 min debounced auto-fallback (capped at 1 deploy / 60 min). Env vars: `AUTHORING_GIT_PUSH`, `GIT_PUBLISH_BRANCH`, `GIT_PUSH_TOKEN`, `GIT_PUSH_REPO_URL`, `AUTHORING_DEPLOY_DEBOUNCE_MS`, `AUTHORING_DEPLOY_MIN_INTERVAL_MS`. |
+| **Authoring publish-to-deploy pipeline** | ✅ done | Plan §20.3–§20.5 shipped. `server.js` holds a per-action deploy queue (`Map<path, 'upsert'|'delete'>`) persisted to `data/deploy-state.json`. Publish enqueues an upsert; Published-tab Delete enqueues a `sha: null` tree entry (also drops associated `/img/helpscout/authored/*` images that no other article references). `fireDeploy()` composes a single atomic commit via the GitHub Trees API (blobs → tree → commit → ref update) and pushes to the configured branch; Railway auto-redeploys on push. Debounce (30 min after the last enqueue) + min-interval cap (60 min) + manual "Deploy now" on the queue page. Env vars: `AUTHORING_GIT_PUSH`, `GIT_PUSH_TOKEN`, `GITHUB_REPO`, `GIT_PUBLISH_BRANCH`, `AUTHORING_DEPLOY_DEBOUNCE_MS`, `AUTHORING_DEPLOY_MIN_INTERVAL_MS`. |
+| **Authoring: edit existing articles** | ✅ done | Plan §B shipped 2026-06-15. Phase A: Edit button on each drafts row opens the wizard pre-loaded at Step 4 with the draft's content; `loadDraft` reducer action; URL-driven (`?module=&subFolder=&slug=`) — edit-mode state never persists to localStorage. Phase B: new `/admin/authoring/edit?path=...` raw-markdown page (textarea + live MJML preview + Save). Drafts queue renamed to "Authoring queue" with Drafts / Published tabs; Published tab supports Edit raw + Delete. Server: `GET /article`, `GET /articles`, `POST /save-raw`, `DELETE /article`. `useMarkdownHtml` extracted to `src/lib/markdown-preview.ts` for both surfaces. |
+| **Authoring: add new modules** | ✅ done | Shipped 2026-06-16. New `/admin/authoring/modules` admin page (superadmin) lets a user add a module by slug + label + privilege. The server appends to `static/module-overviews.json` (the canonical privilege-identity registry), writes `docs/modules/<slug>/index.mdx` + 10 `_category_.json` files (module root + 9 canonical sub-folders) via a single `SUBFOLDER_TEMPLATE`. Novel privileges auto-append to `data/known-privileges.json` with a yellow LMS-side warning. Wizard + drafts queue switched from hardcoded MODULES arrays to fetching `/api/admin/authoring/modules` at mount. |
+| **Authoring: sub-folder gate auto-create** | ✅ done | Shipped 2026-06-17. The wizard's `mkdirSync({recursive:true})` was creating brand-new sub-folder dirs without a `_category_.json`, so the first article landing in a previously-unused sub-folder shipped ungated and `audit-gates` flagged it. New `ensureSubfolderCategory(module, subFolder)` helper in `server.js` runs at every `/save` and `/save-raw`, derives the gate from `SUBFOLDER_TEMPLATE` + the module's privilege in `static/module-overviews.json`, and writes the file if missing. Backfilled the one in-the-wild gap (`docs/modules/video-coaching/features/_category_.json`). Wizard's Step-1 privilege input also moved from free-text to a `<select>` sourced from `data/known-privileges.json`. |
+| **Analytics digest emails** | ✅ done (help-site) / blocked-shipping (main-app deploy + prod config) | Shipped help-site side as `7f049f8` + `7f6ed45`. New `/admin/digests` admin page (superadmin) manages three subscriber lists: editor-gap (top unanswered + low-CTR + thumbs-down + refusal-rate WoW), ops-snapshot (volume / refusal / fallback / latency / DB health), module-overview (per-module unanswered breakdown). `digest_subscriptions` + `digest_send_log` tables in chat-logs SQLite. Send pipeline groups recipients by region and POSTs `{templateName, to, subject, data}` to `{regionUrl}/api/help-auth/send-digest`; main app renders MJML + sends via existing Mailgun. Railway cron services hit `POST /api/admin/digests/send?type=<t>` Mondays 09:00 UTC (configured in `railway.toml`). Admin page has Preview button that round-trips through the main app's MJML render with `previewOnly:true` and opens the rendered HTML in a new tab. Main-app side (commits `aaccd7ed84` + `c7835ff72d` on `9052-help-site-digest-email`): new `/api/help-auth/send-digest` handler with shared-secret header + three MJML templates modeled on `smartpath-reconciliation-summary`. **Blocked-shipping**: needs (a) `config.helpAuth.digestSecret` line in `config/env/production.js` (auto-mode declined the edit; one-line manual change) and (b) main-app deploy of the branch to every region. |
 | **Chat-logging identity columns** (Group A) | ✅ done | 2026-06-13 - `conversations` gained `user_display_name`, `org_id`, `org_name`, `user_roles`, `user_privileges` (JSON-stringified); `chat_exchanges` gained `chat_model`. Migration v2 in `db/chat-logger.js` is idempotent (catches "duplicate column" on fresh installs where CREATE TABLE already declared them). New index `idx_conversations_org_id`. `server.js` threads all six fields from `req.user` + `CHAT_MODEL` env. `exportToJSON(anonymize=true)` redacts all new identity fields. |
 | **Chat-logging Group B** (quality signals) | ✅ done | 2026-06-15 - schema migration v3 added `is_refusal` (distinct from `is_fallback`) + `citation_clicks_json` to `chat_exchanges`. `server.js` `/api/chat` sets `isRefusal` at write time when search returned nothing or every result was distance ≥ 0.8. New `POST /api/chat/:exchangeId/citation-click` endpoint; `ChatBot.tsx` wires `sendBeacon` on citation link clicks. New helpers `recordCitationClick`, `getArticlePerformance` (now with `clickCount` + `ctrPct`), `getAbandonmentStats` (proxy: single-turn conversations with no thumbs-up). Schema self-heal added on every `getDb()` boot via `ensureSchemaColumns()` so migration drift is recoverable. |
 | **Chat-logging Groups C + D** (privacy + ops) | ⏸ TODO | See [Chat-logging improvements](#chat-logging-improvements-deferred) below. Group C - PII scrubber, per-user opt-out, encryption at rest. Group D - Railway volume verification, S3/R2 backup, circuit-breaker webhook alerting. |
@@ -41,7 +45,7 @@ authoritative plan file - this document is a derived status view).
 | **Post-launch stakeholder feedback (round 1)** | ✅ done | Image border + shadow on `.markdown` images; RelatedStrip widens by audience tier rather than gate (no more learner pages surfacing manager/editor "What's next"); gate-aware Prev/Next paginator with reroute past blocked docs; doc-gate filter applied to vector search, chat citations, WhatsNew, RecentlyViewed; favicon set refreshed; role-label scrub on admin gate copy; `/api/*` path scrub on dashboard subheads. |
 | **Wynnie chatbot - rename + voice + mark** | ✅ done (partial) | Renamed from "SmartWinnr Help Assistant" → Wynnie with custom W+sparkle SVG mark, system prompt rewritten in `prompts/wynnie.md` for conversational voice + threaded follow-ups (last 6 turns sent to OpenAI). **Open**: stakeholder flagged a slang concern; naming exploration ongoing (Sira / Asha / Quill candidates evaluated). No second rename shipped yet. |
 | **Wynnie mascot** | ⏸ pending decisions | `branding/wynnie/designer-brief.md` + PDF generated; brief locked. Awaiting (a) chatbot name decision and (b) brand approver assignment before designer engagement. |
-| **Git commits** | ⏸ open | Tree still uncommitted on `feature/help-ia-redesign` |
+| **Git commits** | ✅ done | All work landed on `main`. Help-site latest at `9d0f774` (sub-folder gate auto-create + privilege dropdown). Main-app digest work on branch `9052-help-site-digest-email`, latest `c7835ff72d`. |
 
 ---
 
@@ -248,6 +252,141 @@ authoritative plan file - this document is a derived status view).
 - Result: editor+manager without `managerView` no longer sees the
   Manager door nor the manager persona page; with `managerView` added
   they get back in
+
+### Edit existing articles + raw markdown editor (2026-06-15)
+- Plan B at `.claude/plans/our-help-site-menus-parsed-kernighan.md` (Phase A + Phase B).
+- **Phase A** (`e339670`): drafts queue gained an Edit button per row →
+  opens the wizard pre-loaded at Step 4 with the draft's content. URL-
+  driven via `?module=&subFolder=&slug=`; `loadDraft` reducer action;
+  edit-mode state explicitly NOT persisted to localStorage so a deleted
+  draft can't resurrect itself on a fresh visit. Refine + Save work in
+  place against the existing file. Fixes follow-on bugs around stale
+  localStorage on delete, publish, and "New article" link clicks.
+- **Phase B** (`c466b5a`): new `/admin/authoring/edit?path=...` page
+  with a textarea + live preview + Save. Drafts queue renamed to
+  "Authoring queue" with Drafts / Published tabs. Published tab adds
+  module + sub-folder dropdowns and per-row "Edit raw" + "Delete".
+  Audit findings are advisory (warnings, not blockers) on raw edits.
+  New endpoints: `GET /article`, `GET /articles`, `POST /save-raw`,
+  `DELETE /article`. `useMarkdownHtml` extracted to
+  `src/lib/markdown-preview.ts` so the wizard and raw editor share it.
+- **Delete fix** (`0306ae4`): the Published-tab Delete only unlinked the
+  runtime file - the article was still in Git, so the next Railway
+  rebuild restored it. The deploy queue now tracks `'upsert' | 'delete'`
+  actions per path; `fireDeploy()` adds `sha: null` tree entries for
+  deletes (per GitHub Trees API), so a single commit removes the file
+  from the repo and Railway redeploys with it gone. Backwards-compatible
+  loader for the old persisted-queue shape.
+- **Image cleanup** (`1980719`): article deletion now scans the body
+  for `/img/helpscout/authored/*` references and, for each image not
+  used by any other article in the docs, unlinks it locally AND
+  (for previously-published articles) enqueues a `sha: null` tree entry
+  for the same deploy commit. Cleanup runs on both drafts (local-only)
+  and published-articles Delete.
+
+### Em-dash sweep + Published-tab Delete confirm-modal fix (2026-06-15)
+- `0cec7ef` - replaced every U+2014 (`—`) with a hyphen-minus across
+  source, plans, prompts, and the style guide (26 files). No `docs/*.md`
+  articles needed the replacement.
+- Same commit: `DraftsTab` and `PublishedTab` were each calling their
+  own `useNotify()` but only the parent rendered `notify.host`, so the
+  confirm modal triggered by `PublishedTab.remove()` never mounted and
+  Delete looked dead. Lifted notify ownership to `QueuePage` and passed
+  the hook down as a prop. One host, both tabs.
+
+### Add new modules from the admin UI (2026-06-16)
+- `498c2e2` + `17a695d` (the latter is the audit-gates fix). New
+  `/admin/authoring/modules` admin page (superadmin) lists the current
+  modules and adds new ones. Form captures `slug`, `label`, `privilege`
+  (combo box of known privileges + a "Use a new privilege…" free-text
+  fallback), and `description`.
+- The server appends to **`static/module-overviews.json`** (the
+  canonical per-module privilege-identity registry that
+  `scripts/audit-gates.js` reads to derive the expected sub-folder
+  gate). It writes the on-disk skeleton: `docs/modules/<slug>/_category_.json`
+  (module root - `ALL_ROLES`, no privilege) + 9 sub-folder
+  `_category_.json` files via `SUBFOLDER_TEMPLATE`, plus a minimal
+  `index.mdx` that embeds `<ModuleOverview slug="..." />` matching the
+  pattern of the existing 12 modules.
+- Novel privileges (not in `data/known-privileges.json`) get appended
+  there too, and the success toast carries an LMS-side warning.
+- The earlier short-lived `data/modules.json` bootstrap (which would
+  have been a parallel registry) was dropped in `17a695d` after the
+  audit-gates regression surfaced - overviews.json is the single source
+  of truth.
+- Wizard's Step-1 dropdown + the Published tab's module selector both
+  fetch from `GET /api/admin/authoring/modules` at mount; adding a
+  module now appears in both surfaces on next render with no rebuild.
+
+### Sub-folder gate auto-create + Step-1 privilege dropdown (2026-06-17)
+- `9d0f774`. The wizard's `mkdirSync({recursive:true})` happily created
+  a brand-new sub-folder dir without writing a matching
+  `_category_.json`, so the first article landing in a previously-
+  unused sub-folder (`docs/modules/video-coaching/features/`) shipped
+  ungated and `audit-gates` failed the next build.
+- New `ensureSubfolderCategory(moduleSlug, subFolder)` helper in
+  `server.js` runs from both `/save` and `/save-raw`. Derives the gate
+  from `SUBFOLDER_TEMPLATE` + the parent module's privilege in
+  `static/module-overviews.json`; idempotent (no-op when the file
+  exists). Backfilled the one production gap and re-ran audit-gates -
+  clean across 13 modules.
+- Same commit: the wizard's Step-1 privilege input moved from
+  free-text to a `<select>` sourced from
+  `data/known-privileges.json`, matching the pattern of
+  `/admin/authoring/modules`. Default option is "Inherit from sub-
+  folder gate (recommended)" - article-level privilege now only gets
+  set when an editor intentionally tightens the gate beyond what the
+  canonical template provides.
+
+### Analytics digest emails (2026-06-17)
+- Plan at `.claude/plans/our-help-site-menus-parsed-kernighan.md`.
+- **Help-site** (`7f049f8`, `7f6ed45`, `9052-help-site-digest-email` on
+  the main-app side):
+  - Three digest types - **editor-gap** (top unanswered + low-CTR +
+    thumbs-down + refusal-rate WoW), **ops-snapshot** (volume / refusal /
+    fallback / latency / DB health), **module-overview** (per-module
+    unanswered-query breakdown).
+  - `digest_subscriptions` + `digest_send_log` SQLite tables in the
+    chat-logs DB; `db/digest-store.js` (CRUD), `db/digest-data.js`
+    (data queries), `db/digest-payload.js` (`{templateName, subject,
+    data}` builders), `db/digest-send.js` (region-aware send pipeline).
+  - `/admin/digests` admin page (superadmin) has three cards (one per
+    digest type) with subscriber tables, Add / Remove, "Send now",
+    "Preview" (round-trips through the main app with `previewOnly:true`
+    and opens the rendered HTML in a new tab), and a recent-sends log
+    table at the bottom.
+  - Send pipeline groups subscribers by `region` and POSTs to that
+    region's main-app instance (`https://app.smartwinnr.com` or
+    `https://ap-south-1.smartwinnr.com`; overridable via
+    `MAIN_APP_URLS_JSON`). Cron endpoint at
+    `POST /api/admin/digests/send` guarded by constant-time
+    `CRON_SECRET` header; admin path `POST /send-now` is `requireRole`.
+    `railway.toml` documents the three cron services to create
+    (Monday 09:00 UTC).
+  - Send pipeline writes one log row per region so a partial regional
+    outage is observable.
+- **Main app** (`aaccd7ed84` + `c7835ff72d`):
+  - New `POST /api/help-auth/send-digest` handler in
+    `modules/helpAuth/server/controllers/helpAuth.server.controller.js`.
+    Validates `x-help-shared-secret` against `config.helpAuth.digestSecret`,
+    loads the named MJML template, compiles via `mjml` + `Handlebars`,
+    and either sends via existing Mailgun OR (when `previewOnly:true`)
+    returns the rendered HTML as JSON for the help-site Preview button.
+  - Three MJML templates under
+    `modules/helpAuth/server/templates/help-digest-*` modeled on the
+    `smartpath-reconciliation-summary` template.
+  - **Module-overview MJML fix** (`c7835ff72d`): MJML strips Handlebars
+    tokens that sit at the body level between sibling `<mj-section>`
+    blocks (same latent bug as smartpath-reconciliation, which only
+    works because they always send with `hasErrors=true`). The
+    module-overview's per-module loop is now wrapped in `<mj-raw>`
+    with plain HTML inside, so the iteration tokens survive MJML's
+    transpile.
+- **Blocked-shipping**: needs `digestSecret: process.env.HELP_DIGEST_SHARED_SECRET`
+  added to the `helpAuth` block of
+  `node_projects/smartwinnr_prd/config/env/production.js` (auto-mode
+  classifier declined the edit; one-line manual change), AND the
+  main-app branch deployed to every region.
 
 ---
 
