@@ -14,7 +14,7 @@ import styles from './styles.module.css';
  * 4-step wizard (plan §19). The editor fills two short forms and a
  * brain-dump; the model handles structure. Superadmin only.
  *
- *   1. Where + who      (module / sub-folder / audience roles / privilege)
+ *   1. Where + who      (module / sub-folder / audience roles)
  *   2. The hook         (title / description / tags)
  *   3. Brain dump       (rough explanation + screenshots)
  *   4. Preview + refine (LLM-generated markdown, audit panel, save)
@@ -242,7 +242,6 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   const i = state.inputs;
   const sub = SUB_FOLDERS.find((s) => s.value === i.subFolder);
   const [modules, setModules] = useState<ModuleEntry[]>([]);
-  const [knownPrivileges, setKnownPrivileges] = useState<string[]>([]);
   const [modulesLoading, setModulesLoading] = useState(true);
   useEffect(() => {
     (async () => {
@@ -251,7 +250,6 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         if (!res.ok) { setModulesLoading(false); return; }
         const data = await res.json();
         setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
-        setKnownPrivileges((data.privileges || []).slice().sort());
       } catch {/* fail soft - dropdown will be empty, user can refresh */}
       finally { setModulesLoading(false); }
     })();
@@ -284,20 +282,14 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         </select>
         {sub && <span className={styles.hint}>Default audience: {sub.audience.join(', ')}</span>}
       </div>
-      <div className={styles.field}>
-        <label>Privilege (optional)</label>
-        <select
-          value={i.privilege}
-          disabled={modulesLoading}
-          onChange={(e) => dispatch({type: 'set', patch: {privilege: e.target.value}})}>
-          <option value="">Inherit from sub-folder gate (recommended)</option>
-          {knownPrivileges.map((p) => <option key={p} value={p}>{p}</option>)}
-        </select>
-        <span className={styles.hint}>
-          Sourced from <code>data/known-privileges.json</code> - mirrors the LMS privileges enum.
-          Pick one only if this article needs a tighter gate than its sub-folder.
-        </span>
-      </div>
+      {/*
+        Per-article privilege is no longer an authoring input. The sub-folder's
+        _category_.json (auto-created by ensureSubfolderCategory in server.js
+        when needed) carries the canonical gate, and articles inherit. If a
+        rare article ever needs a tighter gate, edit its raw frontmatter via
+        /admin/authoring/edit. Keeping `inputs.privilege` in state so existing
+        drafts that already carry one survive the load → save round-trip.
+      */}
     </div>
   );
 }
