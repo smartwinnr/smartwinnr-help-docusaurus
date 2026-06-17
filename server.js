@@ -1119,9 +1119,15 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     }
 
     const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    // Defang decorative emojis (the no-decorative-emojis markdownlint rule
+    // rejects them on the deploy commit). /generate already runs the same
+    // strip, but the edit-existing-draft flow may have loaded a legacy
+    // file that carries them, and a Refine pass through the LLM that
+    // sneaks one in would otherwise survive.
+    const cleanedMarkdown = stripDecorativeEmojis(markdown);
     // Force draft:true in frontmatter - defensive override even if the model
     // emitted draft:false somehow.
-    const text = markdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
+    const text = cleanedMarkdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
     const finalText = /^draft:/m.test(text)
       ? text
       : text.replace(/^---/, '---').replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
@@ -1679,10 +1685,15 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
     const { path: relPath, markdown } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
     const target = resolveArticlePath(relPath);
+    // Defang decorative emojis before audit + write. The pre-commit hook
+    // would reject them on the next deploy commit anyway; doing it here
+    // keeps the saved file consistent with what /save produces and the
+    // audit result reflects the on-disk state.
+    const cleaned = stripDecorativeEmojis(markdown);
     // Audit runs advisory - the raw editor surfaces findings as warnings, not
     // blockers. The wizard's /save is the strict gate; raw edits trust the
     // superadmin's judgment for surgical fixes.
-    const audit = gradeMarkdown(markdown);
+    const audit = gradeMarkdown(cleaned);
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
     // Same gate-protection as /save: derive {module, subFolder} from the
     // validated path and write the sub-folder _category_.json if missing.
@@ -1691,8 +1702,14 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
       path.relative(__dirname, target).replace(/\\/g, '/')
     );
     if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
-    fsSync.writeFileSync(target, markdown, 'utf8');
-    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated });
+    fsSync.writeFileSync(target, cleaned, 'utf8');
+    res.json({
+      ok: true,
+      path: path.relative(__dirname, target),
+      audit,
+      subfolderCreated,
+      emojisStripped: cleaned !== markdown,
+    });
   } catch (error) {
     console.error('❌ authoring/save-raw failed:', error.message);
     res.status(400).json({ error: error.message });
