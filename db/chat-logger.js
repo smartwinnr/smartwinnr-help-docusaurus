@@ -128,6 +128,29 @@ function getDb() {
     CREATE TABLE IF NOT EXISTS schema_version (
       version INTEGER NOT NULL
     );
+
+    -- Analytics digest emails (see src/pages/admin/digests + db/digest-store).
+    -- Co-located in the chat-logs DB because the digests aggregate chat
+    -- exchange data; sharing a connection keeps the read path simple.
+    CREATE TABLE IF NOT EXISTS digest_subscriptions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      digest_type TEXT NOT NULL,           -- editor-gap | ops-snapshot | module-overview
+      email TEXT NOT NULL,
+      region TEXT NOT NULL DEFAULT 'global',  -- global | ap-south-1 | ...
+      added_at TEXT NOT NULL,
+      added_by TEXT,
+      UNIQUE(digest_type, email)
+    );
+
+    CREATE TABLE IF NOT EXISTS digest_send_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      digest_type TEXT NOT NULL,
+      sent_at TEXT NOT NULL,
+      recipient_count INTEGER,
+      status TEXT NOT NULL,                -- sent | failed | no-recipients | no-data
+      error TEXT,
+      meta_json TEXT
+    );
   `);
 
   // Create indexes (IF NOT EXISTS is implicit with CREATE INDEX IF NOT EXISTS)
@@ -142,6 +165,8 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_conversations_user_email ON conversations(user_email);
     CREATE INDEX IF NOT EXISTS idx_conversations_org_id ON conversations(org_id);
     CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
+    CREATE INDEX IF NOT EXISTS idx_digest_subscriptions_type ON digest_subscriptions(digest_type);
+    CREATE INDEX IF NOT EXISTS idx_digest_send_log_sent_at ON digest_send_log(sent_at);
   `);
 
   // Self-heal: ensure every column we depend on exists, regardless of what

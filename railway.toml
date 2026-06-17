@@ -13,3 +13,33 @@ healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 # Force rebuild - updated timestamp
 # Updated: 2025-01-22
+
+# ─────────────────────────────────────────────────────────────────────────
+# Analytics digest emails - Railway cron services
+# ─────────────────────────────────────────────────────────────────────────
+#
+# These run on a schedule and POST to the help site's digest endpoints,
+# guarded by CRON_SECRET. Create one Railway service per cron entry below
+# (Dashboard → New Service → Cron Job), or wire them up via the Railway
+# CLI / GraphQL if you prefer config-as-code.
+#
+# Required env vars (on each cron service):
+#   HELP_SITE_URL = https://help.smartwinnr.com   (or the Railway-public URL)
+#   CRON_SECRET   = <same value as the main service>
+#
+# Schedule (UTC): every Monday at 09:00.
+#
+# editor-gap:
+#   schedule: 0 9 * * 1
+#   command:  curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=editor-gap"
+#
+# ops-snapshot:
+#   schedule: 0 9 * * 1
+#   command:  curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=ops-snapshot"
+#
+# module-overview:
+#   schedule: 0 9 * * 1
+#   command:  curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=module-overview"
+#
+# A non-zero curl exit code (any per-region failure → 500 from the server)
+# marks the cron run as failed in Railway, so partial failures stay visible.

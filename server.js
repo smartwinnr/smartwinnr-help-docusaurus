@@ -13,6 +13,8 @@ const { initAuth } = require('./auth');
 const { requireRole } = require('./auth/requireRole');
 const chatLogger = require('./db/chat-logger');
 const feedbackLogger = require('./db/feedback-logger');
+const digestStore = require('./db/digest-store');
+const { sendDigest } = require('./db/digest-send');
 const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
 const fsSync = require('fs');
@@ -727,6 +729,119 @@ app.get('/api/admin/feedback', requireRole('superadmin'), (req, res) => {
   const result = feedbackLogger.forArticle(String(slug), limit);
   if (!result.ok) return res.status(500).json({ error: result.reason });
   res.json(result);
+});
+
+// ---------------------------------------------------------------------------
+// Analytics digest emails (/admin/digests) - superadmin + cron
+// ---------------------------------------------------------------------------
+// Subscribe/unsubscribe + a send pipeline that POSTs the rendered MJML
+// payload to the main SmartWinnr app's regional instance. See plan in
+// .claude/plans/our-help-site-menus-parsed-kernighan.md.
+//
+//   GET    /api/admin/digests/subscriptions       - list subs
+//   POST   /api/admin/digests/subscriptions       - add a sub
+//   DELETE /api/admin/digests/subscriptions/:id   - remove a sub
+//   GET    /api/admin/digests/log                 - recent sends
+//   GET    /api/admin/digests/last-sent           - last send per type (admin cards)
+//   POST   /api/admin/digests/send-now            - admin button (requireRole)
+//   POST   /api/admin/digests/send                - cron (CRON_SECRET header)
+
+function constantTimeEq(a, b) {
+  const aStr = String(a || ''); const bStr = String(b || '');
+  if (aStr.length !== bStr.length) return false;
+  let diff = 0;
+  for (let i = 0; i < aStr.length; i += 1) diff |= aStr.charCodeAt(i) ^ bStr.charCodeAt(i);
+  return diff === 0;
+}
+
+app.get('/api/admin/digests/subscriptions', requireRole('superadmin'), (req, res) => {
+  try {
+    const digestType = req.query.type ? String(req.query.type) : undefined;
+    res.json({ subscriptions: digestStore.listSubscriptions({ digestType }) });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/admin/digests/subscriptions', requireRole('superadmin'), (req, res) => {
+  try {
+    const { type, email, region } = req.body || {};
+    const result = digestStore.addSubscription({
+      digestType: type,
+      email,
+      region,
+      addedBy: req.user && req.user.email,
+    });
+    if (!result.ok) return res.status(400).json({ error: result.error });
+    res.json({ ok: true, id: result.id });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.delete('/api/admin/digests/subscriptions/:id', requireRole('superadmin'), (req, res) => {
+  try {
+    const result = digestStore.removeSubscription(req.params.id);
+    if (!result.ok) return res.status(404).json({ error: 'Subscription not found' });
+    res.json({ ok: true, removed: result.removed });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get('/api/admin/digests/log', requireRole('superadmin'), (req, res) => {
+  try {
+    const digestType = req.query.type ? String(req.query.type) : undefined;
+    const limit = Math.min(parseInt(req.query.limit || '50', 10), 500);
+    res.json({ log: digestStore.getRecentSends({ digestType, limit }) });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get('/api/admin/digests/last-sent', requireRole('superadmin'), (req, res) => {
+  try { res.json({ lastSent: digestStore.getLastSendByType() }); }
+  catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+app.post('/api/admin/digests/send-now', requireRole('superadmin'), async (req, res) => {
+  try {
+    const type = String(req.query.type || req.body?.type || '');
+    if (!digestStore.isValidType(type)) {
+      return res.status(400).json({ error: `Invalid type. Allowed: ${digestStore.listValidTypes().join(', ')}` });
+    }
+    const results = await sendDigest(type);
+    res.json({ ok: true, results });
+  } catch (e) {
+    console.error('❌ digests/send-now failed:', e.message);
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/** Cron trigger. Guarded by a constant-time CRON_SECRET check on the
+ *  `x-cron-secret` header rather than requireRole, because the Railway
+ *  cron service hits this without a session cookie. The secret lives in
+ *  the cron service env and the help-site env; both must match. */
+app.post('/api/admin/digests/send', async (req, res) => {
+  const expected = process.env.CRON_SECRET || '';
+  const got = req.get('x-cron-secret') || '';
+  if (!expected || !constantTimeEq(got, expected)) {
+    return res.status(401).json({ error: 'unauthorized' });
+  }
+  try {
+    const type = String(req.query.type || '');
+    if (!digestStore.isValidType(type)) {
+      return res.status(400).json({ error: `Invalid type. Allowed: ${digestStore.listValidTypes().join(', ')}` });
+    }
+    const results = await sendDigest(type);
+    // Surface any per-region failure as a non-2xx so the cron service marks
+    // the run as failed and Railway flags it.
+    const anyFailed = results.some((r) => r.status === 'failed');
+    res.status(anyFailed ? 500 : 200).json({ ok: !anyFailed, results });
+  } catch (e) {
+    console.error('❌ digests/send (cron) failed:', e.message);
+    res.status(500).json({ error: e.message });
+  }
 });
 
 // ---------------------------------------------------------------------------
