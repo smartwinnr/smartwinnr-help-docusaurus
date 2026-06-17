@@ -137,7 +137,11 @@ function EditorPanel(): ReactNode {
       if (!res.ok) { notify.error(data.error || 'Save failed'); return; }
       setOriginal(markdown);
       setAudit(data.audit || null);
-      notify.success(`Saved ${data.path}`);
+      if (data.queuedForDeploy) {
+        notify.success(`Saved ${data.path}. Queued for deploy - production picks it up on the next batch.`);
+      } else {
+        notify.success(`Saved ${data.path} (draft - not queued for deploy).`);
+      }
     } catch (err) {
       notify.error((err as Error).message);
     } finally {

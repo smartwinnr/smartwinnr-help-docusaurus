@@ -1703,12 +1703,39 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
     );
     if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
     fsSync.writeFileSync(target, cleaned, 'utf8');
+
+    // If this is a published article (draft:false), the raw save needs to
+    // reach production. Without enqueueing, the change sits on the
+    // container's filesystem - Docusaurus serves the pre-built build/, and
+    // the next Railway redeploy rebuilds from git, both of which see the
+    // OLD content. Enqueue an upsert so fireDeploy commits the change on
+    // the next debounced batch. Drafts skip the enqueue (they never reach
+    // git until Publish flips them).
+    const relTarget = path.relative(__dirname, target);
+    const isDraft = /^draft:\s*true\b/m.test(cleaned);
+    let queuedForDeploy = false;
+    if (!isDraft) {
+      enqueueUpsert(relTarget);
+      // If we just wrote a brand-new sub-folder _category_.json (rare on
+      // a raw save - the article must already live there - but possible
+      // if the dir was scaffolded without the gate), ship it in the same
+      // commit so the audit doesn't fail on the deploy.
+      if (subfolderCreated && m) {
+        enqueueUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'));
+      }
+      persistDeployState();
+      scheduleDeploy();
+      queuedForDeploy = true;
+    }
+
     res.json({
       ok: true,
-      path: path.relative(__dirname, target),
+      path: relTarget,
       audit,
       subfolderCreated,
       emojisStripped: cleaned !== markdown,
+      queuedForDeploy,
+      queueSize: deployQueue.size,
     });
   } catch (error) {
     console.error('❌ authoring/save-raw failed:', error.message);
