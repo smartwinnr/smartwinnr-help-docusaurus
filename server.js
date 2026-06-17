@@ -1102,8 +1102,12 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
       : text.replace(/^---/, '---').replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
 
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
+    // If this is the first article ever written into the sub-folder, make
+    // sure the gate file lands too. Otherwise audit-gates.js fails on the
+    // next build because the sub-folder is ungated.
+    const subfolderCreated = ensureSubfolderCategory(moduleSlug, subFolder);
     fsSync.writeFileSync(target, finalText, 'utf8');
-    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated });
   } catch (error) {
     console.error('❌ authoring/save failed:', error.message);
     res.status(500).json({ error: error.message });
@@ -1655,8 +1659,15 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
     // superadmin's judgment for surgical fixes.
     const audit = gradeMarkdown(markdown);
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
+    // Same gate-protection as /save: derive {module, subFolder} from the
+    // validated path and write the sub-folder _category_.json if missing.
+    let subfolderCreated = false;
+    const m = /^docs\/modules\/([^/]+)\/([^/]+)\/[^/]+\.(md|mdx)$/.exec(
+      path.relative(__dirname, target).replace(/\\/g, '/')
+    );
+    if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
     fsSync.writeFileSync(target, markdown, 'utf8');
-    res.json({ ok: true, path: path.relative(__dirname, target), audit });
+    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated });
   } catch (error) {
     console.error('❌ authoring/save-raw failed:', error.message);
     res.status(400).json({ error: error.message });
@@ -1895,6 +1906,53 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position, t
   }
 
   return written;
+}
+
+/** Ensure docs/modules/<m>/<sub>/_category_.json exists. Called from the
+ *  authoring save endpoints so a brand-new sub-folder (created by mkdirSync
+ *  when an article lands in a previously-unused sub-folder) doesn't ship
+ *  ungated. Derives the gate from SUBFOLDER_TEMPLATE + the module's
+ *  privilege/anyPrivilege in static/module-overviews.json. Returns true if
+ *  it wrote a new file, false otherwise. */
+function ensureSubfolderCategory(moduleSlug, subFolder) {
+  if (!moduleSlug || !subFolder) return false;
+  const dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
+  const target = path.join(dir, '_category_.json');
+  if (fsSync.existsSync(target)) return false;
+
+  const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === subFolder);
+  if (!tmpl) return false;  // unknown sub-folder name; leave alone
+
+  const overviews = loadOverviews();
+  const meta = (overviews.modules || {})[moduleSlug] || {};
+  const modulePrivilege    = meta.privilege || null;
+  const moduleAnyPrivilege = Array.isArray(meta.anyPrivilege) && meta.anyPrivilege.length
+    ? meta.anyPrivilege
+    : null;
+
+  const cat = tmpl.extraPrivilege
+    ? buildCategoryJson({
+        label:    tmpl.label,
+        position: tmpl.position,
+        roles:    tmpl.roles,
+        privilege:    tmpl.extraPrivilege,
+        allPrivileges: modulePrivilege ? [modulePrivilege] : undefined,
+        anyPrivilege:  moduleAnyPrivilege || undefined,
+        generatedIndexSlug: `/modules/${moduleSlug}/${subFolder}`,
+      })
+    : buildCategoryJson({
+        label:    tmpl.label,
+        position: tmpl.position,
+        roles:    tmpl.roles,
+        privilege:    modulePrivilege || undefined,
+        anyPrivilege: moduleAnyPrivilege || undefined,
+        generatedIndexSlug: `/modules/${moduleSlug}/${subFolder}`,
+      });
+
+  fsSync.mkdirSync(dir, { recursive: true });
+  fsSync.writeFileSync(target, JSON.stringify(cat, null, 2) + '\n', 'utf8');
+  console.log(`[authoring] ensureSubfolderCategory: wrote ${path.relative(__dirname, target)}`);
+  return true;
 }
 
 function buildModuleIndexMdx({ slug, label, tagline }) {

@@ -41,7 +41,7 @@ In practical terms, this provides:
 
 Best of all, there’s **nothing to switch on**. The lifecycle applies to every scenario automatically, and the rules are enforced for you.
 
->  *Screenshot: a scenario detail page with the status indicator highlighted at the top.*
+> *Screenshot: a scenario detail page with the status indicator highlighted at the top.*
 
 ## The five statuses, explained
 
@@ -60,7 +60,7 @@ A scenario is always in exactly one status and moves through them **in order** �
 - **Demo users.** A *demo user* is a practice account. Assigning a not-yet-published scenario to a demo user allows you and your reviewers to run the role play and experience it as a learner would — without it counting for real people or appearing in real reporting. Think of it as a dress rehearsal. (See *Setting up demo users* below for how to create them.)
 - **The "live" version.** Once a scenario is published, the **published version** is the single source of truth for learners. Even if you keep editing afterward, the most recent published version is what they see, ensuring ongoing edits do not disrupt learners who are mid-way through.
 
->  *Screenshot: the five status badges shown left to right (Draft → In Review → Approved → Published → Archived).*
+> *Screenshot: the five status badges shown left to right (Draft → In Review → Approved → Published → Archived).*
 
 ## Setting up demo users
 
@@ -77,9 +77,9 @@ A few helpful details:
 - You can **filter** the Users list by the **Demo User** status to see who's currently a demo user.
 - Marking and unmarking is **recorded for audit**, providing a record of who changed a user's demo status and when.
 
->  **Tip:** Keep a small, dedicated set of demo accounts for testing. This keeps your rehearsals separate from real learners and maintains clean reporting.
+> **Tip:** Keep a small, dedicated set of demo accounts for testing. This keeps your rehearsals separate from real learners and maintains clean reporting.
 
->  *Screenshot: a user's profile ⋮ menu showing "Mark as Demo User", and the "Demo User" badge on the Users list.*
+> *Screenshot: a user's profile ⋮ menu showing "Mark as Demo User", and the "Demo User" badge on the Users list.*
 
 ## Who can approve a scenario?
 
@@ -113,7 +113,7 @@ Holding the role alone is **not** enough. Even an Admin or Org Admin cannot appr
 
 If a person doesn't meet **both** conditions, the lifecycle actions aren't available to them, and the system will refuse the action if attempted directly.
 
->  *Screenshot: the lifecycle action buttons as a creator/owner sees them.*
+> *Screenshot: the lifecycle action buttons as a creator/owner sees them.*
 
 ## How to use it — step by step
 
@@ -121,7 +121,7 @@ If a person doesn't meet **both** conditions, the lifecycle actions aren't avail
 
 Build an AI Role Play scenario the way you always have. The moment it's created, it automatically becomes a **Draft** and is saved as **version 1.0**. There's no "start lifecycle" button — it just begins. (As the creator, you're automatically an owner, so you can manage it from here on.)
 
->  *Screenshot: the "Create Coaching" screen.*
+> *Screenshot: the "Create Coaching" screen.*
 
 ### Step 2 — Build and test it
 
@@ -129,13 +129,13 @@ Add everything that makes the scenario work: the AI's role and persona, the prod
 
 While it's still a Draft, assign it to a **demo user** and run through it yourself. This is the best way to catch awkward wording, an off-target persona, or scoring that doesn't behave as expected — *before* anyone else sees it.
 
->  *Screenshot: the scenario edit screen with persona / conversation settings.*
+> *Screenshot: the scenario edit screen with persona / conversation settings.*
 
 ### Step 3 — Submit it for review
 
 When you're happy with it, open the scenario's **⋮ menu** and choose **Submit for Review**. You'll be asked to confirm. Submitting moves the scenario to **In Review** and signals to your team that it's ready for a check. At this moment, SmartWinnr also locks in a clean snapshot of the scenario, so the reviewer always looks at a known version.
 
->  *Screenshot: the ⋮ menu with "Submit for Review" and the confirmation pop-up.*
+> *Screenshot: the ⋮ menu with "Submit for Review" and the confirmation pop-up.*
 
 ### Step 4 — Review and decide
 
@@ -146,7 +146,7 @@ A reviewer — someone who holds an Editor/Admin/Org Admin role **and** is the c
 
 Leaving a clear comment when requesting changes is strongly encouraged — it's captured in the Status History and tells the author exactly what to fix.
 
->  *Screenshot: the Approve / Request changes actions with the comment box open.*
+> *Screenshot: the Approve / Request changes actions with the comment box open.*
 
 ### Step 5 — Publish it
 
@@ -156,7 +156,7 @@ Once a scenario is **Approved**, publish it. Publishing is the moment it truly g
 - You can now assign it to **anyone**: individuals, groups, or meta-tags.
 - It's clearly marked so everyone knows it's the active, official version.
 
->  *Screenshot: the Publish action and the resulting "Published" status badge.*
+> *Screenshot: the Publish action and the resulting "Published" status badge.*
 
 ### Step 6 — Maintain it over time
 
@@ -169,7 +169,7 @@ Publishing isn't the end. Scenarios evolve, and the lifecycle is built for that:
 
 When a scenario has served its purpose, **archive** it. Archived scenarios are kept for your records and reporting history, but they can't be assigned to anyone new. If you ever need it again, an authorized owner can bring it back by unarchiving it (which returns it to a published state).
 
->  *Screenshot: a scenario showing the "Archived" status.*
+> *Screenshot: a scenario showing the "Archived" status.*
 
 ## Assigning scenarios to learners
 
@@ -188,13 +188,13 @@ The lifecycle's most important safety feature is how it controls assignment. The
 - **A friendly reminder appears on the assignment pages.** Whenever a scenario's status limits assignment, you'll see a message stating the current rule. You can dismiss it once you've read it, so it never gets in your way.
 - **"Upload Users" appears only for published scenarios.** Bulk-uploading learners is a broad action, so it's available only once a scenario is live.
 
->  *Screenshot: the assignment page showing the rule-reminder message for a non-published scenario, with the group/meta-tag options unavailable.*
+> *Screenshot: the assignment page showing the rule-reminder message for a non-published scenario, with the group/meta-tag options unavailable.*
 
 ## Tracking changes — Version & Status History
 
 A major benefit of the lifecycle is that **you never have to wonder what happened to a scenario.** Open **Scenario Lifecycle Management** from the scenario's **⋮ menu** to see its full history.
 
->  *Screenshot: the ⋮ menu with "Scenario Lifecycle Management" highlighted.*
+> *Screenshot: the ⋮ menu with "Scenario Lifecycle Management" highlighted.*
 
 ### Version History — what changed in the content
 
@@ -214,7 +214,7 @@ You can click **View** on any version to open a **read-only snapshot** of exactl
 
 So the version number itself tells a story: a jump from v2.x to v3.0 signals a significant rework, while v3.1, v3.2 are gentle refinements.
 
->  *Screenshot: the Version History list with the "Changes" pop-up open, showing the friendly list of changed fields and the change summary.*
+> *Screenshot: the Version History list with the "Changes" pop-up open, showing the friendly list of changed fields and the change summary.*
 
 ### Status History — the scenario's journey
 
@@ -222,7 +222,7 @@ This is the timeline of the scenario's *journey* (as opposed to its content). It
 
 Because approval is tied to each scenario's owners, this history is your accountability record: it always answers "who approved this, and when?"
 
->  *Screenshot: the Status History timeline showing submit → approve → publish entries with names and comments.*
+> *Screenshot: the Status History timeline showing submit → approve → publish entries with names and comments.*
 
 ## Duplicating a scenario
 
@@ -234,7 +234,7 @@ One thing to note about the two *embedded* places you can add a scenario:
 
 - When adding a scenario into a **Competition** or a **SmartPath**, the picker lists only **published** scenarios to choose from, so you're always starting those from a known, live version.
 
->  *Screenshot: the "Duplicate" option on a scenario, and a Competition/SmartPath picker listing published scenarios.*
+> *Screenshot: the "Duplicate" option on a scenario, and a Competition/SmartPath picker listing published scenarios.*
 
 ## A quick mental model
 

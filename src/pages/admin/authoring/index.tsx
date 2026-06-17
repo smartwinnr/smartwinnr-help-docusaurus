@@ -242,6 +242,7 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   const i = state.inputs;
   const sub = SUB_FOLDERS.find((s) => s.value === i.subFolder);
   const [modules, setModules] = useState<ModuleEntry[]>([]);
+  const [knownPrivileges, setKnownPrivileges] = useState<string[]>([]);
   const [modulesLoading, setModulesLoading] = useState(true);
   useEffect(() => {
     (async () => {
@@ -250,6 +251,7 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         if (!res.ok) { setModulesLoading(false); return; }
         const data = await res.json();
         setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
+        setKnownPrivileges((data.privileges || []).slice().sort());
       } catch {/* fail soft - dropdown will be empty, user can refresh */}
       finally { setModulesLoading(false); }
     })();
@@ -284,13 +286,17 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       </div>
       <div className={styles.field}>
         <label>Privilege (optional)</label>
-        <input
-          type="text"
+        <select
           value={i.privilege}
-          placeholder="e.g. quiz, smartpaths, managerView…"
-          onChange={(e) => dispatch({type: 'set', patch: {privilege: e.target.value.trim()}})}
-        />
-        <span className={styles.hint}>Inherits from module's _category_.json if blank.</span>
+          disabled={modulesLoading}
+          onChange={(e) => dispatch({type: 'set', patch: {privilege: e.target.value}})}>
+          <option value="">Inherit from sub-folder gate (recommended)</option>
+          {knownPrivileges.map((p) => <option key={p} value={p}>{p}</option>)}
+        </select>
+        <span className={styles.hint}>
+          Sourced from <code>data/known-privileges.json</code> - mirrors the LMS privileges enum.
+          Pick one only if this article needs a tighter gate than its sub-folder.
+        </span>
       </div>
     </div>
   );
