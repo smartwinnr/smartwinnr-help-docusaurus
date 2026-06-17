@@ -5,7 +5,7 @@ description: "As AI Role Play becomes a bigger part of training, it matters more
 slug: what-is-scenario-lifecycle
 sidebar_position: 999
 last_update:
-  date: 2026-06-16
+  date: 2026-06-17
   author: Sheri Deekshith Reddy
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -33,15 +33,11 @@ As AI Role Play becomes a larger part of training, it is crucial that the *right
 
 The Scenario Lifecycle introduces a **governed journey**. Each scenario carries a visible **status** at all times, maintains a complete **history** of its content and decisions, and is governed by **assignment rules** that determine who can access it based on its completeness.
 
-In practical terms, this provides:
+### Where it all happens — the Scenario Lifecycle Management page
 
-1. **Clarity about what's live.** Quickly identify whether a scenario is still being written, under review, live for learners, or retired.
-2. **A complete audit trail.** Every meaningful edit and status change is automatically recorded, detailing what changed, when, and who made the changes.
-3. **Protection for your learners.** Unfinished scenarios cannot be broadly rolled out; only published scenarios can be assigned to everyone.
+The Scenario Lifecycle Management page is the single place to manage your scenarios. You can submit, approve or request changes, publish, archive or unarchive, and view both Version and Status History. Access this page from the scenario's **⋮ menu** to see all the lifecycle actions in one convenient location.
 
-Best of all, there’s **nothing to switch on**. The lifecycle applies to every scenario automatically, and the rules are enforced for you.
-
-> *Screenshot: a scenario detail page with the status indicator highlighted at the top.*
+> *Screenshot: the ⋮ menu with "Scenario Lifecycle Management" highlighted.*
 
 ## The five statuses, explained
 
@@ -106,10 +102,10 @@ Holding the role alone is **not** enough. Even an Admin or Org Admin cannot appr
 
 | | Has Editor / Admin / Org Admin role | Is creator or owner of the scenario | Can submit / review / approve / publish / archive |
 |---|:---:|:---:|:---:|
-| Creator of the scenario | ✅ | ✅ (automatic) | ✅ |
-| Owner added via Access Permission | ✅ | ✅ | ✅ |
-| Editor/Admin/Org Admin, but **not** an owner | ✅ | ❌ | ❌ |
-| Someone without one of these roles | ❌ | — | ❌ |
+| Creator of the scenario | | (automatic) | |
+| Owner added via Access Permission | | | |
+| Editor/Admin/Org Admin, but **not** an owner | | | |
+| Someone without one of these roles | | — | |
 
 If a person doesn't meet **both** conditions, the lifecycle actions aren't available to them, and the system will refuse the action if attempted directly.
 
@@ -193,8 +189,6 @@ The lifecycle's most important safety feature is how it controls assignment. The
 ## Tracking changes — Version & Status History
 
 A major benefit of the lifecycle is that **you never have to wonder what happened to a scenario.** Open **Scenario Lifecycle Management** from the scenario's **⋮ menu** to see its full history.
-
-> *Screenshot: the ⋮ menu with "Scenario Lifecycle Management" highlighted.*
 
 ### Version History — what changed in the content
 
