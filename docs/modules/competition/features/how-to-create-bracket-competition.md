@@ -29,7 +29,7 @@ Use bracket competitions when you want to:
 ### 1. Navigate to the competition creation page
 Access the **Create Competition** page to start setting up your bracket competition.
 
-![How to reach to create a new competition page](/img/helpscout/authored/how-to-create-bracket-competition-mqhqogor.png)
+![How to reach to create a new competition page](/img/helpscout/authored/how-to-create-bracket-competition-mqhzxk07.png)
 
 ### 2. Select the bracket competition type
 Choose the **Bracket** option to specify the type of competition you want to create.
