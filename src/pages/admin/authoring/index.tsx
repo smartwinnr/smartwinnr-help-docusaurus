@@ -144,7 +144,8 @@ type Action =
   | {type: 'saved'; path: string}
   | {type: 'error'; message: string}
   | {type: 'reset'}
-  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean};
+  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean}
+  | {type: 'addImage'; image: Image};
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
@@ -164,6 +165,10 @@ function reducer(s: State, a: Action): State {
       isEditing: true,
       wasPublished: a.wasPublished,
     };
+    // Closure-safe append: a parallel multi-file upload would otherwise
+    // race on dispatch({type:'set', patch:{images:[...i.images, new]}})
+    // because each closure captures the same stale i.images.
+    case 'addImage': return {...s, inputs: {...s.inputs, images: [...s.inputs.images, a.image]}, error: null};
   }
 }
 
@@ -446,11 +451,16 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
   const [uploading, setUploading] = useState(false);
+  const [dragOver, setDragOver] = useState(false);
 
-  async function onFiles(files: FileList) {
-    if (!files || files.length === 0) return;
+  async function onFiles(files: FileList | File[]) {
+    const list = Array.from(files || []);
+    if (list.length === 0) return;
     setUploading(true);
-    for (const file of Array.from(files)) {
+    // Upload sequentially so each addImage dispatch flushes through React
+    // before the next, and to keep the per-file error message attached to
+    // the file that actually failed.
+    for (const file of list) {
       if (file.size > 5 * 1024 * 1024) {
         dispatch({type: 'error', message: `Image too large (${(file.size / 1024 / 1024).toFixed(1)} MB) - 5 MB max.`});
         continue;
@@ -470,7 +480,11 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         });
         if (!res.ok) throw new Error(await res.text());
         const {url} = await res.json();
-        dispatch({type: 'set', patch: {images: [...i.images, {url, caption: ''}]}});
+        // addImage reducer reads the latest state so multiple uploads in
+        // a single onFiles call all land - using {type:'set', patch:{...}}
+        // with the closed-over i.images value would race and only the
+        // last upload would survive.
+        dispatch({type: 'addImage', image: {url, caption: ''}});
       } catch (err) {
         dispatch({type: 'error', message: `Upload failed: ${(err as Error).message}`});
       }
@@ -519,12 +533,35 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       </div>
       <div className={styles.field}>
         <label>Screenshots (optional)</label>
-        <div className={styles.dropzone}>
+        <div
+          className={`${styles.dropzone} ${dragOver ? styles.dropzoneActive : ''}`}
+          onDragOver={(e) => {
+            // preventDefault is required - without it the browser's default
+            // behavior (navigate to / open the file) eats the drop.
+            e.preventDefault();
+            if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
+            if (!dragOver) setDragOver(true);
+          }}
+          onDragLeave={(e) => {
+            // Only clear dragOver when the cursor truly leaves the dropzone
+            // - not when it crosses over a child element.
+            if (e.currentTarget.contains(e.relatedTarget as Node)) return;
+            setDragOver(false);
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            setDragOver(false);
+            const files = e.dataTransfer && e.dataTransfer.files;
+            if (files && files.length > 0) onFiles(files);
+          }}>
           <input
             type="file"
             multiple
             accept="image/png,image/jpeg,image/gif,image/webp"
-            onChange={(e) => e.target.files && onFiles(e.target.files)}
+            onChange={(e) => {
+              if (e.target.files) onFiles(e.target.files);
+              if (e.target) e.target.value = '';  // allow re-picking the same file
+            }}
           />
           <span>Drop screenshots here or click to upload. PNG/JPG/GIF/WEBP, ≤ 5 MB each.</span>
           {uploading && <span className={styles.hint}>Uploading…</span>}
