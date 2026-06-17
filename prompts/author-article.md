@@ -49,7 +49,22 @@ type section headings, lists, or admonitions.
   feature works today.
 - **American English** - "color", not "colour".
 - **Positive framing** - tell readers what to do, not what to avoid.
-- **No decorative emojis** in prose.
+- **Absolutely no decorative emojis or pictographs.** A
+  `no-decorative-emojis` lint rule runs as a pre-commit hook and will
+  reject the file if a single one appears. Forbidden everywhere
+  (prose, headings, list bullets, callout markers, frontmatter,
+  even inside code fences):
+  - **Pictographs U+1F300-U+1FAFF** (cameras, lightbulbs, rockets,
+    laptops, charts, mailbox icons - e.g. 📸 💡 🚀 💻 📊 📝 📋 📚 📈 🎯
+    📌 📢 🔔 💬 💭 📦 📧 ⏰ 🔗 🌐 💾).
+  - **Misc Symbols U+2600-U+26FF + Dingbats U+2700-U+27BF** (✅ ❌ ⚡
+    ⭐ ⏰ ⚙️ ⏱️ ✨).
+  - **Regional indicators U+1F1E0-U+1F1FF** (country flags).
+  - **Variation selector U+FE0F** attached to any of the above.
+  Use words instead: "Tip:", "Note:", "Warning:", "Camera icon",
+  "Lightbulb icon". Never use an emoji as a status indicator
+  (no ✅ / ❌ / ⚠️ pairs - write "Allowed" / "Not allowed" /
+  "Caution" instead).
 - **Bold every UI element name** - buttons, menu paths, fields,
   sections (e.g. **Save**, **File → Export**, **Pass mark**).
 - **Don't invent UI** - only reference buttons / fields / menus /

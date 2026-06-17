@@ -928,6 +928,25 @@ function stripBogusImageOrigins(markdown) {
  *  frontmatter with today's UTC date and the logged-in user's display
  *  name (or email if no display name). The model can't know either,
  *  so we stamp them server-side. */
+/** Strip decorative emojis the model may have emitted. The
+ *  no-decorative-emojis markdownlint rule (custom-markdownlint-rules.js)
+ *  rejects any of these characters and the pre-commit hook then fails
+ *  the publish, so we belt-and-suspenders the file before it lands on
+ *  disk. Mirrors the lint rule's ranges plus the variation selector
+ *  U+FE0F that often hangs off the codepoint. Also collapses the
+ *  single trailing space so "📸 Screenshot" becomes "Screenshot", not
+ *  " Screenshot". Returns the cleaned markdown. */
+function stripDecorativeEmojis(markdown) {
+  // Codepoint + optional VS16 + optional single trailing space.
+  const re = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E0}-\u{1F1FF}]\u{FE0F}? ?/gu;
+  let stripped = 0;
+  const out = markdown.replace(re, () => { stripped += 1; return ''; });
+  if (stripped > 0) {
+    console.log(`[authoring] stripDecorativeEmojis: removed ${stripped} codepoint(s)`);
+  }
+  return out;
+}
+
 function stampLastUpdate(markdown, user) {
   const today = new Date().toISOString().slice(0, 10);
   const author = (user && (user.displayName || user.email)) || 'Authoring Skill';
@@ -1063,6 +1082,12 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
     // The upload endpoint returns paths like `/img/helpscout/authored/X`
     // and that's the form Docusaurus expects in markdown.
     markdown = stripBogusImageOrigins(markdown);
+
+    // Belt-and-suspenders: defang any decorative emojis the model
+    // emitted despite the prompt. Same character class the markdownlint
+    // no-decorative-emojis rule scans for, so the file lands clean and
+    // the pre-commit hook doesn't fail the publish.
+    markdown = stripDecorativeEmojis(markdown);
 
     const audit = gradeMarkdown(markdown);
     res.json({
