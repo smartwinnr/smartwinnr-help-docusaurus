@@ -14,7 +14,7 @@ const { requireRole } = require('./auth/requireRole');
 const chatLogger = require('./db/chat-logger');
 const feedbackLogger = require('./db/feedback-logger');
 const digestStore = require('./db/digest-store');
-const { sendDigest } = require('./db/digest-send');
+const { sendDigest, previewDigest } = require('./db/digest-send');
 const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
 const fsSync = require('fs');
@@ -802,6 +802,25 @@ app.get('/api/admin/digests/log', requireRole('superadmin'), (req, res) => {
 app.get('/api/admin/digests/last-sent', requireRole('superadmin'), (req, res) => {
   try { res.json({ lastSent: digestStore.getLastSendByType() }); }
   catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+/** Render the digest HTML through the main app's MJML pipeline WITHOUT
+ *  sending. Returns text/html directly so the admin page can `window.open`
+ *  the response into a new tab for visual inspection. */
+app.get('/api/admin/digests/preview', requireRole('superadmin'), async (req, res) => {
+  try {
+    const type = String(req.query.type || '');
+    if (!digestStore.isValidType(type)) {
+      return res.status(400).send('Invalid type. Allowed: ' + digestStore.listValidTypes().join(', '));
+    }
+    const region = req.query.region ? String(req.query.region) : 'global';
+    const result = await previewDigest(type, { region });
+    if (!result.ok) return res.status(502).send('Preview failed: ' + result.error);
+    res.set('Content-Type', 'text/html; charset=utf-8');
+    res.send(result.html || '<!doctype html><p>Empty render.</p>');
+  } catch (e) {
+    res.status(500).send('Preview failed: ' + e.message);
+  }
 });
 
 app.post('/api/admin/digests/send-now', requireRole('superadmin'), async (req, res) => {

@@ -71,7 +71,7 @@ async function sendDigest(digestType) {
   const sharedSecret = process.env.MAIN_APP_SHARED_SECRET || '';
 
   for (const [region, emails] of byRegion.entries()) {
-    const url = urlForRegion(region) + '/api/help/send-digest';
+    const url = urlForRegion(region) + '/api/help-auth/send-digest';
     const body = {
       templateName: payload.templateName,
       to:           emails,
@@ -114,8 +114,40 @@ async function sendDigest(digestType) {
   return results;
 }
 
+/** Round-trip the payload through the main app's MJML renderer WITHOUT
+ *  sending. Returns {ok, html, error?}. Used by the admin "Preview" button
+ *  for end-to-end testing without spamming subscribers. Defaults to the
+ *  `global` region (override via the region arg). */
+async function previewDigest(digestType, { region = 'global' } = {}) {
+  let payload;
+  try { payload = buildPayload(digestType); }
+  catch (e) { return { ok: false, error: e.message }; }
+
+  const url = urlForRegion(region) + '/api/help-auth/send-digest';
+  const sharedSecret = process.env.MAIN_APP_SHARED_SECRET || '';
+  try {
+    const resp = await axios.post(url, {
+      templateName: payload.templateName,
+      to:           ['preview@example.com'],   // required by validation; never used
+      subject:      payload.subject,
+      fromName:     'SmartWinnr Help Analytics',
+      data:         payload.data,
+      previewOnly:  true,
+    }, {
+      headers: { 'Content-Type': 'application/json', 'x-help-shared-secret': sharedSecret },
+      timeout: 30000,
+      validateStatus: (s) => s >= 200 && s < 300,
+    });
+    return { ok: true, region, subject: payload.subject, html: resp.data && resp.data.html };
+  } catch (e) {
+    const errMsg = (e.response && e.response.data && e.response.data.error) || e.message || 'unknown error';
+    return { ok: false, region, error: errMsg };
+  }
+}
+
 module.exports = {
   sendDigest,
+  previewDigest,
   urlForRegion,
   regionUrlMap,
 };

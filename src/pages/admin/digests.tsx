@@ -277,6 +277,14 @@ function DigestsAdmin(): ReactNode {
                 <button type="button" className={styles.btnGhost} onClick={() => addSubscriber(type)}>
                   Add subscriber
                 </button>
+                <a
+                  className={styles.btnGhost}
+                  href={`/api/admin/digests/preview?type=${encodeURIComponent(type)}&region=${encodeURIComponent(draftRegion[type] || 'global')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Render the email in a new tab without sending. Uses the same MJML pipeline production does.">
+                  Preview
+                </a>
                 <button
                   type="button"
                   className={styles.btnPrimary}
