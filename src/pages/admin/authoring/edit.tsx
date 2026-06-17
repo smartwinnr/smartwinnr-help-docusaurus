@@ -1,4 +1,4 @@
-import React, {useEffect, useState, type ReactNode} from 'react';
+import React, {useEffect, useRef, useState, type ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
@@ -37,9 +37,70 @@ function EditorPanel(): ReactNode {
   const [markdown, setMarkdown] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [saving, setSaving] = useState<boolean>(false);
+  const [uploading, setUploading] = useState<boolean>(false);
   const [audit, setAudit] = useState<Audit | null>(null);
   const [loadError, setLoadError] = useState<string>('');
   const previewHtml = useMarkdownHtml(markdown);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  /** Derive the article slug from the path (last segment, no extension).
+   *  The /upload endpoint requires a slug for the filename suffix. */
+  const articleSlug = (() => {
+    const m = /\/([^/]+?)\.(md|mdx)$/.exec(path);
+    return m ? m[1] : 'authored';
+  })();
+
+  /** Insert `text` at the textarea's current cursor position. Returns the
+   *  new full string so React state can be updated. Restores the cursor
+   *  to just after the inserted text. */
+  function insertAtCursor(text: string) {
+    const ta = textareaRef.current;
+    const start = ta ? ta.selectionStart : markdown.length;
+    const end = ta ? ta.selectionEnd : markdown.length;
+    const next = markdown.slice(0, start) + text + markdown.slice(end);
+    setMarkdown(next);
+    // Restore the cursor on the next paint.
+    requestAnimationFrame(() => {
+      if (!ta) return;
+      const pos = start + text.length;
+      ta.focus();
+      ta.setSelectionRange(pos, pos);
+    });
+  }
+
+  async function uploadImageFile(file: File) {
+    if (file.size > 5 * 1024 * 1024) {
+      notify.error(`Image too large (${(file.size / 1024 / 1024).toFixed(1)} MB) - 5 MB max.`);
+      return;
+    }
+    setUploading(true);
+    try {
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        const fr = new FileReader();
+        fr.onload = () => resolve(String(fr.result));
+        fr.onerror = reject;
+        fr.readAsDataURL(file);
+      });
+      const res = await fetch('/api/admin/authoring/upload', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify({dataUrl, slug: articleSlug}),
+      });
+      const data = await res.json();
+      if (!res.ok) { notify.error(data.error || 'Upload failed'); return; }
+      // Markdown image syntax; alt text intentionally empty so the editor
+      // fills it in (and the no-decorative-emoji + alt-text lint rules
+      // nudge them to write something meaningful).
+      insertAtCursor(`![](${data.url})`);
+      notify.success(`Image uploaded as ${data.url.split('/').pop()}.`);
+    } catch (err) {
+      notify.error((err as Error).message);
+    } finally {
+      setUploading(false);
+    }
+  }
 
   useEffect(() => {
     if (!(user.roles || []).includes('superadmin')) return;
@@ -119,6 +180,25 @@ function EditorPanel(): ReactNode {
           </p>
         </div>
         <div className={styles.actions}>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/gif,image/webp"
+            style={{display: 'none'}}
+            onChange={(e) => {
+              const f = e.target.files && e.target.files[0];
+              if (f) uploadImageFile(f);
+              if (e.target) e.target.value = '';  // allow re-picking the same file
+            }}
+          />
+          <button
+            type="button"
+            className={styles.btnGhost}
+            disabled={uploading || loading || !!loadError}
+            onClick={() => fileInputRef.current && fileInputRef.current.click()}
+            title="Upload an image and insert the markdown at the cursor position">
+            {uploading ? 'Uploading…' : 'Upload image'}
+          </button>
           <button
             type="button"
             className={styles.btnGhost}
@@ -143,6 +223,7 @@ function EditorPanel(): ReactNode {
         <>
           <div className={styles.editLayout}>
             <textarea
+              ref={textareaRef}
               className={styles.editTextarea}
               value={markdown}
               spellCheck={false}

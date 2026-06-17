@@ -101,6 +101,13 @@ type State = {
    *  the empty-state requirement on `roughExplanation` (which the draft
    *  doesn't preserve). */
   isEditing: boolean;
+  /** True when the wizard loaded a PUBLISHED article (frontmatter
+   *  `draft: false`). The save endpoint will force draft:true and
+   *  re-draft the article; the live deployed copy stays untouched until
+   *  the editor explicitly Publishes from the queue again. UI uses this
+   *  to swap the banner copy ("Refining published article" vs
+   *  "Editing draft"). */
+  wasPublished: boolean;
 };
 
 const initial: State = {
@@ -125,6 +132,7 @@ const initial: State = {
   error: null,
   saved: null,
   isEditing: false,
+  wasPublished: false,
 };
 
 type Action =
@@ -136,7 +144,7 @@ type Action =
   | {type: 'saved'; path: string}
   | {type: 'error'; message: string}
   | {type: 'reset'}
-  | {type: 'loadDraft'; inputs: Inputs; markdown: string};
+  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean};
 
 function reducer(s: State, a: Action): State {
   switch (a.type) {
@@ -154,6 +162,7 @@ function reducer(s: State, a: Action): State {
       markdown: a.markdown,
       step: 4,
       isEditing: true,
+      wasPublished: a.wasPublished,
     };
   }
 }
@@ -790,7 +799,11 @@ function Wizard(): ReactNode {
           images: [],
           slug: fm?.slug ?? slug,
         };
-        dispatch({type: 'loadDraft', inputs, markdown});
+        // Detect whether the source is a published article. The save flow
+        // forces draft:true regardless, so a Refine -> Save here re-drafts
+        // a live article; UI surfaces this with a different banner.
+        const wasPublished = !/^draft:\s*true\b/m.test(markdown);
+        dispatch({type: 'loadDraft', inputs, markdown, wasPublished});
       } catch (err) {
         dispatch({type: 'error', message: `Failed to load draft: ${(err as Error).message}`});
       }
@@ -813,12 +826,27 @@ function Wizard(): ReactNode {
     <div className={styles.wrap}>
       <header className={styles.header}>
         <div>
-          <h1>{state.isEditing ? 'Edit draft' : 'Authoring'}</h1>
+          <h1>
+            {!state.isEditing
+              ? 'Authoring'
+              : state.wasPublished
+                ? 'Refine published article'
+                : 'Edit draft'}
+          </h1>
           {state.isEditing ? (
-            <p className={styles.subhead}>
-              Editing <code>{state.inputs.slug}</code> ·{' '}
-              <Link to="/admin/authoring/drafts">← Back to drafts queue</Link>
-            </p>
+            state.wasPublished ? (
+              <p className={styles.subhead}>
+                Refining <code>{state.inputs.slug}</code>. Saving will re-draft
+                this article (set <code>draft: true</code>); the live deployed
+                copy stays in place until you Publish again from the queue.{' '}
+                <Link to="/admin/authoring/drafts">← Back to queue</Link>
+              </p>
+            ) : (
+              <p className={styles.subhead}>
+                Editing <code>{state.inputs.slug}</code> ·{' '}
+                <Link to="/admin/authoring/drafts">← Back to drafts queue</Link>
+              </p>
+            )
           ) : (
             <p className={styles.subhead}>
               Step {state.step} of 4 ·{' '}

@@ -458,6 +458,19 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
                 <td><code className={styles.smallCode}>{a.path}</code></td>
                 <td className={styles.tabular}>{a.lastUpdate ?? '-'}</td>
                 <td className={styles.rowActions}>
+                  {(() => {
+                    const parsed = parsePath(a.path);
+                    if (!parsed) return null;
+                    const qs = new URLSearchParams(parsed).toString();
+                    return (
+                      <Link
+                        to={`/admin/authoring/?${qs}`}
+                        className={styles.btnGhost}
+                        title="Open in the wizard for an LLM-driven refine. Saving will re-draft the article; the live deployed copy stays in place until you Publish again.">
+                        Refine
+                      </Link>
+                    );
+                  })()}
                   <Link
                     to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
                     className={styles.btnGhost}>
