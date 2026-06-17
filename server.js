@@ -1017,8 +1017,21 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
   }
   try {
     const { inputs = {}, refinement, previousMarkdown } = req.body || {};
-    if (!inputs.title || !inputs.description || !inputs.roughExplanation) {
-      return res.status(400).json({ error: 'Missing inputs: title, description, roughExplanation are required' });
+    const isRefine = !!(refinement && previousMarkdown);
+    if (isRefine) {
+      // Refine mode: the previous markdown IS the source. Title + description
+      // already live in its frontmatter; the editor's note plus that body are
+      // what the LLM rewrites against. roughExplanation is a wizard-input
+      // concept that doesn't survive into a saved article, so requiring it
+      // here would break every edit-mode Refine.
+      if (!String(previousMarkdown).trim()) {
+        return res.status(400).json({ error: 'previousMarkdown must be non-empty when refining' });
+      }
+    } else {
+      // Fresh-generate mode: the brain-dump is the only signal the LLM has.
+      if (!inputs.title || !inputs.description || !inputs.roughExplanation) {
+        return res.status(400).json({ error: 'Missing inputs: title, description, roughExplanation are required' });
+      }
     }
     if (!inputs.module || !inputs.subFolder) {
       return res.status(400).json({ error: 'Missing inputs: module + subFolder required' });
