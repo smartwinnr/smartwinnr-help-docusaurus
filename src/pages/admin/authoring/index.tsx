@@ -24,7 +24,11 @@ import styles from './styles.module.css';
  * hit the model.
  */
 
-const STORAGE_KEY = 'sw.authoring.wizard.v1';
+// v2 = 3-step layout (where + who → brain dump → preview with editable
+// LLM-suggested title/description/tags). v1 was the 4-step layout where
+// title came before the brain dump; orphaned v1 keys are ignored by
+// loadState() so editors mid-flight at deploy time start fresh.
+const STORAGE_KEY = 'sw.authoring.wizard.v2';
 
 // Modules are loaded from GET /api/admin/authoring/modules (sourced from
 // data/modules.json). The wizard fetches them on Step-1 mount; adding a
@@ -86,7 +90,7 @@ type Audit = {
 };
 
 type State = {
-  step: 1 | 2 | 3 | 4;
+  step: 1 | 2 | 3;
   inputs: Inputs;
   markdown: string;
   audit: Audit | null;
@@ -137,9 +141,10 @@ const initial: State = {
 
 type Action =
   | {type: 'set'; patch: Partial<Inputs>}
-  | {type: 'step'; step: 1 | 2 | 3 | 4}
+  | {type: 'step'; step: 1 | 2 | 3}
   | {type: 'generating'; on: boolean}
   | {type: 'generated'; markdown: string; audit: State['audit']; tokens: State['tokens']}
+  | {type: 'suggestionsLoaded'; patch: Partial<Inputs>}
   | {type: 'saving'; on: boolean}
   | {type: 'saved'; path: string}
   | {type: 'error'; message: string}
@@ -153,6 +158,23 @@ function reducer(s: State, a: Action): State {
     case 'step':      return {...s, step: a.step, error: null};
     case 'generating':return {...s, generating: a.on, error: null};
     case 'generated': return {...s, generating: false, markdown: a.markdown, audit: a.audit, tokens: a.tokens};
+    // Populates title / description / tags from a /generate response's
+    // parsed frontmatter, but ONLY for fields the editor hasn't already
+    // typed into. That way an editor who pre-typed a title doesn't get
+    // overwritten by the LLM's guess on first generate.
+    case 'suggestionsLoaded': {
+      const patch: Partial<Inputs> = {};
+      const i = s.inputs;
+      if (a.patch.title && !i.title)
+        patch.title = a.patch.title;
+      if (a.patch.description && !i.description)
+        patch.description = a.patch.description;
+      if (a.patch.tags && a.patch.tags.length > 0 && i.tags.length === 0)
+        patch.tags = a.patch.tags;
+      // Slug derives from title; only resync if the title actually changed.
+      if (patch.title && !i.slug) patch.slug = slugify(patch.title);
+      return Object.keys(patch).length === 0 ? s : { ...s, inputs: { ...i, ...patch } };
+    }
     case 'saving':    return {...s, saving: a.on};
     case 'saved':     return {...s, saving: false, saved: a.path};
     case 'error':     return {...s, error: a.message, generating: false, saving: false};
@@ -161,7 +183,7 @@ function reducer(s: State, a: Action): State {
       ...initial,
       inputs: a.inputs,
       markdown: a.markdown,
-      step: 4,
+      step: 3,
       isEditing: true,
       wasPublished: a.wasPublished,
     };
@@ -308,7 +330,10 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   );
 }
 
-function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
+/** Extracted from the legacy Step 2 — now rendered above the preview on
+ *  Step 3 so the editor reviews + tweaks the LLM-suggested tag list
+ *  alongside the suggested title + description. */
+function TagPicker({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
   const [customTag, setCustomTag] = useState('');
   const [tagError, setTagError] = useState<string | null>(null);
@@ -337,118 +362,83 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     setTagError(null);
   }
 
-  const titleOk = titleStartsWithVerbOrQuestion(i.title);
   const availableVocab = TAG_VOCAB.filter((t) => !i.tags.includes(t));
   const tagsRequired = i.tags.length === 0;
 
   return (
-    <div className={styles.form}>
-      <h2 className={styles.stepHead}>Step 2 · The hook</h2>
-      <div className={styles.field}>
-        <label>Title</label>
-        <input
-          type="text"
-          value={i.title}
-          placeholder="How to create a manual quiz"
-          onChange={(e) => {
-            const t = e.target.value;
-            dispatch({type: 'set', patch: {title: t, slug: slugify(t)}});
-          }}
-        />
-        {i.title && !titleOk && (
-          <span className={styles.warn}>
-            Should start with an action verb or question word (How, What, Add, Create, Configure…).
-          </span>
-        )}
-      </div>
-      <div className={styles.field}>
-        <label>Description (one sentence, 60–160 chars)</label>
-        <input
-          type="text"
-          value={i.description}
-          placeholder="Build a quiz from scratch with hand-picked questions and a reviewer."
-          maxLength={160}
-          onChange={(e) => dispatch({type: 'set', patch: {description: e.target.value}})}
-        />
-        <span className={styles.hint}>{i.description.length}/160</span>
-      </div>
-      <div className={styles.field}>
-        <label>
-          Tags <span className={styles.required}>· at least 1 required</span>{' '}
-          <span className={styles.hint}>({i.tags.length}/5)</span>
-        </label>
+    <div className={styles.field}>
+      <label>
+        Tags <span className={styles.required}>· at least 1 required</span>{' '}
+        <span className={styles.hint}>({i.tags.length}/5)</span>
+      </label>
 
-        {/* Selected tags - show with × to remove. */}
-        {i.tags.length > 0 && (
+      {i.tags.length > 0 && (
+        <div className={styles.tagRow}>
+          {i.tags.map((t) => (
+            <button
+              key={t}
+              type="button"
+              className={styles.tagOn}
+              onClick={() => removeTag(t)}
+              title="Remove tag">
+              {t} <span className={styles.tagRemove}>×</span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {availableVocab.length > 0 && i.tags.length < 5 && (
+        <>
+          <span className={styles.hint}>Pick from common tags:</span>
           <div className={styles.tagRow}>
-            {i.tags.map((t) => (
+            {availableVocab.map((t) => (
               <button
                 key={t}
                 type="button"
-                className={styles.tagOn}
-                onClick={() => removeTag(t)}
-                title="Remove tag">
-                {t} <span className={styles.tagRemove}>×</span>
+                className={styles.tagOff}
+                onClick={() => addTag(t)}>
+                + {t}
               </button>
             ))}
           </div>
-        )}
+        </>
+      )}
 
-        {/* Add from controlled vocabulary. */}
-        {availableVocab.length > 0 && i.tags.length < 5 && (
-          <>
-            <span className={styles.hint}>Pick from common tags:</span>
-            <div className={styles.tagRow}>
-              {availableVocab.map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  className={styles.tagOff}
-                  onClick={() => addTag(t)}>
-                  + {t}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
+      {i.tags.length < 5 && (
+        <div className={styles.tagAddRow}>
+          <input
+            type="text"
+            value={customTag}
+            placeholder="Or create a new tag (e.g. event-quiz)"
+            maxLength={32}
+            onChange={(e) => { setCustomTag(e.target.value); setTagError(null); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                addTag(customTag);
+                setCustomTag('');
+              }
+            }}
+          />
+          <button
+            type="button"
+            className={styles.btnGhost}
+            disabled={!customTag.trim()}
+            onClick={() => { addTag(customTag); setCustomTag(''); }}>
+            Add
+          </button>
+        </div>
+      )}
 
-        {/* Create a new tag. */}
-        {i.tags.length < 5 && (
-          <div className={styles.tagAddRow}>
-            <input
-              type="text"
-              value={customTag}
-              placeholder="Or create a new tag (e.g. event-quiz)"
-              maxLength={32}
-              onChange={(e) => { setCustomTag(e.target.value); setTagError(null); }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  e.preventDefault();
-                  addTag(customTag);
-                  setCustomTag('');
-                }
-              }}
-            />
-            <button
-              type="button"
-              className={styles.btnGhost}
-              disabled={!customTag.trim()}
-              onClick={() => { addTag(customTag); setCustomTag(''); }}>
-              Add
-            </button>
-          </div>
-        )}
-
-        {tagError && <span className={styles.warn}>{tagError}</span>}
-        {tagsRequired && !tagError && (
-          <span className={styles.warn}>Pick at least one tag to continue.</span>
-        )}
-      </div>
+      {tagError && <span className={styles.warn}>{tagError}</span>}
+      {tagsRequired && !tagError && (
+        <span className={styles.warn}>At least one tag is required.</span>
+      )}
     </div>
   );
 }
 
-function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
+function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
   const [uploading, setUploading] = useState(false);
   const [dragOver, setDragOver] = useState(false);
@@ -518,7 +508,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 
   return (
     <div className={styles.form}>
-      <h2 className={styles.stepHead}>Step 3 · Tell us about this feature</h2>
+      <h2 className={styles.stepHead}>Step 2 · Tell us about this feature</h2>
       <div className={styles.field}>
         <label>Rough explanation</label>
         <textarea
@@ -616,7 +606,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   );
 }
 
-function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
+function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const [refinement, setRefinement] = useState('');
   const i = state.inputs;
   const previewHtml = useMarkdownHtml(state.markdown);
@@ -657,6 +647,15 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       }
       const data = await res.json();
       dispatch({type: 'generated', markdown: data.markdown, audit: data.audit, tokens: data.tokens});
+      // Surface LLM-suggested title / description / tags into the
+      // editable fields above the preview - but only for empty inputs,
+      // so an editor who already typed something keeps their value.
+      const fm = parseDraftFrontmatter(data.markdown || '');
+      if (fm) dispatch({type: 'suggestionsLoaded', patch: {
+        title: fm.title,
+        description: fm.description,
+        tags: fm.tags,
+      }});
       setRefinement('');
     } catch (err) {
       dispatch({type: 'error', message: (err as Error).message});
@@ -666,12 +665,21 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   async function save() {
     dispatch({type: 'saving', on: true});
     try {
+      // Splice the editor's final title/description/tags into the
+      // frontmatter just-in-time. The LLM's first-pass values may have
+      // been edited inline; the file on disk should reflect what the
+      // editor chose, not the original suggestion.
+      const finalMarkdown = replaceFrontmatterFields(state.markdown, {
+        title: i.title,
+        description: i.description,
+        tags: i.tags,
+      });
       const res = await fetch('/api/admin/authoring/save', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
         body: JSON.stringify({
-          markdown: state.markdown,
+          markdown: finalMarkdown,
           module: i.module,
           subFolder: i.subFolder,
           slug: i.slug,
@@ -693,14 +701,58 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const titleOk = titleStartsWithVerbOrQuestion(i.title);
+  const saveBlockedByMetadata = !canSave(state);
+  const saveBlockedByAudit = !!(state.audit && state.audit.findings.some((f) => f.blocking));
+
   return (
     <div className={styles.previewWrap}>
       <h2 className={styles.stepHead}>
-        {state.isEditing ? 'Refine + save' : 'Step 4 · Review + refine'}
+        {state.isEditing ? 'Refine + save' : 'Step 3 · Review + refine'}
       </h2>
       {state.generating && <p className={styles.hint}>Generating…</p>}
       {!state.generating && state.markdown && (
         <>
+          {/*
+            LLM-suggested metadata, populated by the suggestionsLoaded
+            reducer action after each /generate call (only fills empty
+            fields - editor edits survive). On Save, the wizard splices
+            the current values back into the markdown frontmatter via
+            replaceFrontmatterFields(), so the file on disk reflects
+            what the editor saw + tweaked here, not the LLM's first guess.
+          */}
+          <div className={styles.form}>
+            <div className={styles.field}>
+              <label>Title</label>
+              <input
+                type="text"
+                value={i.title}
+                placeholder="How to create a manual quiz"
+                onChange={(e) => {
+                  const t = e.target.value;
+                  dispatch({type: 'set', patch: {title: t, slug: slugify(t)}});
+                }}
+              />
+              {i.title && !titleOk && (
+                <span className={styles.warn}>
+                  Should start with an action verb or question word (How, What, Add, Create, Configure…).
+                </span>
+              )}
+            </div>
+            <div className={styles.field}>
+              <label>Description (one sentence, 60–160 chars)</label>
+              <input
+                type="text"
+                value={i.description}
+                placeholder="Build a quiz from scratch with hand-picked questions and a reviewer."
+                maxLength={160}
+                onChange={(e) => dispatch({type: 'set', patch: {description: e.target.value}})}
+              />
+              <span className={styles.hint}>{i.description.length}/160</span>
+            </div>
+            <TagPicker state={state} dispatch={dispatch} />
+          </div>
+
           <article className={styles.preview} dangerouslySetInnerHTML={{__html: previewHtml}} />
           {state.audit && (
             <div className={styles.auditPanel}>
@@ -738,8 +790,9 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
               <button
                 type="button"
                 className={styles.btnPrimary}
-                disabled={state.saving || !!(state.audit && state.audit.findings.some((f) => f.blocking))}
-                onClick={save}>
+                disabled={state.saving || saveBlockedByMetadata || saveBlockedByAudit}
+                onClick={save}
+                title={saveBlockedByMetadata ? 'Fill the title, description, and at least one tag to save.' : ''}>
                 {state.saving ? 'Saving…' : 'Save as draft'}
               </button>
             </div>
@@ -766,12 +819,54 @@ function Step4({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 function canAdvance(s: State): boolean {
   const i = s.inputs;
   if (s.step === 1) return !!i.module && !!i.subFolder && i.audienceRoles.length > 0;
-  if (s.step === 2) return !!i.title && titleStartsWithVerbOrQuestion(i.title)
-    && i.description.length >= 60 && i.description.length <= 160
-    && i.tags.length >= 1 && i.tags.length <= 5;
-  if (s.step === 3) return i.roughExplanation.length >= 200
+  // Step 2 is the brain dump (with screenshots). Title/description/tags
+  // are no longer entered upfront - the LLM suggests them on Step 3.
+  if (s.step === 2) return i.roughExplanation.length >= 200
     && i.images.every((img) => img.caption.trim().length >= 4);
   return true;
+}
+
+/** True when the article is ready to save. Checks the metadata fields
+ *  that used to live on Step 2 - title, description, tags - which the
+ *  LLM now pre-fills and the editor reviews on Step 3 above the
+ *  preview. Used to disable the Save button. */
+function canSave(s: State): boolean {
+  const i = s.inputs;
+  if (!i.title || !titleStartsWithVerbOrQuestion(i.title)) return false;
+  if (i.description.length < 60 || i.description.length > 160) return false;
+  if (i.tags.length < 1 || i.tags.length > 5) return false;
+  return true;
+}
+
+/** Splice editor-edited title/description/tags into the markdown's
+ *  YAML frontmatter immediately before /save. The LLM's first-pass
+ *  values may differ from what the editor finally chose; this keeps
+ *  the saved file consistent with the wizard's Step-3 inputs.
+ *  Regex-replaces the three keys on their own lines; preserves field
+ *  order. Quoting style matches the existing prompt template ("…"). */
+function replaceFrontmatterFields(markdown: string, patch: {title?: string; description?: string; tags?: string[]}): string {
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  if (!fmMatch) return markdown;
+  let fm = fmMatch[1];
+  if (patch.title !== undefined) {
+    const v = JSON.stringify(patch.title);
+    fm = /^title\s*:/m.test(fm)
+      ? fm.replace(/^title\s*:.*$/m, `title: ${v}`)
+      : fm + `\ntitle: ${v}`;
+  }
+  if (patch.description !== undefined) {
+    const v = JSON.stringify(patch.description);
+    fm = /^description\s*:/m.test(fm)
+      ? fm.replace(/^description\s*:.*$/m, `description: ${v}`)
+      : fm + `\ndescription: ${v}`;
+  }
+  if (patch.tags !== undefined) {
+    const v = '[' + patch.tags.map((t) => JSON.stringify(t)).join(', ') + ']';
+    fm = /^tags\s*:/m.test(fm)
+      ? fm.replace(/^tags\s*:.*$/m, `tags: ${v}`)
+      : fm + `\ntags: ${v}`;
+  }
+  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
 }
 
 function Wizard(): ReactNode {
@@ -886,7 +981,7 @@ function Wizard(): ReactNode {
             )
           ) : (
             <p className={styles.subhead}>
-              Step {state.step} of 4 ·{' '}
+              Step {state.step} of 3 ·{' '}
               <Link to="/admin/authoring/drafts">Drafts queue →</Link>
             </p>
           )}
@@ -912,7 +1007,7 @@ function Wizard(): ReactNode {
 
       {!state.isEditing && (
         <ol className={styles.stepper}>
-          {[1, 2, 3, 4].map((n) => (
+          {[1, 2, 3].map((n) => (
             <li key={n} className={state.step === n ? styles.stepOn : state.step > n ? styles.stepDone : styles.stepOff}>
               {n}
             </li>
@@ -925,17 +1020,16 @@ function Wizard(): ReactNode {
       {state.step === 1 && <Step1 state={state} dispatch={dispatch} />}
       {state.step === 2 && <Step2 state={state} dispatch={dispatch} />}
       {state.step === 3 && <Step3 state={state} dispatch={dispatch} />}
-      {state.step === 4 && <Step4 state={state} dispatch={dispatch} />}
 
       {notify.host}
 
-      {state.step < 4 && (
+      {state.step < 3 && (
         <div className={styles.actions}>
           {state.step > 1 && (
             <button
               type="button"
               className={styles.btnGhost}
-              onClick={() => dispatch({type: 'step', step: (state.step - 1) as 1 | 2 | 3})}>
+              onClick={() => dispatch({type: 'step', step: (state.step - 1) as 1 | 2})}>
               ← Back
             </button>
           )}
@@ -943,8 +1037,8 @@ function Wizard(): ReactNode {
             type="button"
             className={styles.btnPrimary}
             disabled={!canAdvance(state)}
-            onClick={() => dispatch({type: 'step', step: (state.step + 1) as 2 | 3 | 4})}>
-            {state.step === 3 ? 'Generate →' : 'Next →'}
+            onClick={() => dispatch({type: 'step', step: (state.step + 1) as 2 | 3})}>
+            {state.step === 2 ? 'Generate →' : 'Next →'}
           </button>
         </div>
       )}

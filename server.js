@@ -1028,9 +1028,13 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
         return res.status(400).json({ error: 'previousMarkdown must be non-empty when refining' });
       }
     } else {
-      // Fresh-generate mode: the brain-dump is the only signal the LLM has.
-      if (!inputs.title || !inputs.description || !inputs.roughExplanation) {
-        return res.status(400).json({ error: 'Missing inputs: title, description, roughExplanation are required' });
+      // Fresh-generate mode: the brain-dump + sub-folder are the only
+      // signals the LLM strictly needs. Title + description are now
+      // OPTIONAL - when empty, the prompt's sub-folder shape table
+      // instructs the LLM to invent them, and the editor reviews +
+      // edits the result on the preview step before saving.
+      if (!inputs.roughExplanation) {
+        return res.status(400).json({ error: 'Missing inputs: roughExplanation is required' });
       }
     }
     if (!inputs.module || !inputs.subFolder) {

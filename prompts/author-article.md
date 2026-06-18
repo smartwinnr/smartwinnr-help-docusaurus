@@ -77,8 +77,10 @@ type section headings, lists, or admonitions.
 ```markdown
 ---
 id: <kebab-case slug derived from title>
-title: "<Editor's title verbatim>"
-description: "<Editor's description verbatim>"
+title: "<editor's title verbatim if provided; otherwise invent it from
+        the brain dump using the sub-folder shape table below>"
+description: "<editor's description verbatim if provided; otherwise
+              invent a 60-160 character stand-alone first sentence>"
 slug: <kebab-case-slug>
 sidebar_position: 999
 last_update:
@@ -189,11 +191,39 @@ settings, admin, troubleshooting, billing, onboarding, mobile, web,
 integration
 ```
 
+## Title shape by sub-folder
+
+When the editor leaves the `title` empty, infer it from the brain dump
+and shape it per the sub-folder the article lives in. Pick the closest
+template and fill in the verb / object / topic from the editor's notes.
+
+| Sub-folder | Title shape |
+|---|---|
+| `create-and-manage` | "How to `<verb>` `<object>`" (e.g. "How to create a manual quiz") |
+| `assign-and-schedule` | "How to assign `<object>`" / "How to schedule `<object>`" |
+| `for-learners` | "How to `<verb>` `<object>`" (second-person, learner tone) |
+| `for-managers` | "How to `<verb>` `<object>` for your team" (manager tone) |
+| `features` | "What is `<feature>`" or "Understanding `<feature>`" |
+| `reports-and-analytics` | "How to read the `<report>`" or "Understanding the `<report>` report" |
+| `settings-and-permissions` | "Configure `<thing>`" or "Set up `<thing>`" |
+| `best-practices` | "Best practices for `<topic>`" |
+| `faqs-and-troubleshooting` | Question-shaped ("Why does `<X>` happen?", "Can I `<verb>` `<X>`?") OR "Troubleshooting `<X>`" |
+
+If the editor's title is non-empty, ignore this table and reproduce
+their title verbatim.
+
+When the `description` is empty, write a stand-alone first sentence
+(60-160 chars) that completes the thought "This article shows you how
+to ..." but without those leading words. Mirror the title's topic; no
+"we", no "we have updated".
+
 ## Hard constraints
 
-1. **Preserve every editor input verbatim** for: title, description,
-   tags, audience roles, privilege. These appear in the frontmatter
-   without modification.
+1. **Preserve editor inputs verbatim when non-empty** for: title,
+   description, tags, audience roles, privilege. When `title` or
+   `description` is empty, follow the Title-shape table above to invent
+   one; the other editor inputs (tags, roles, privilege) are still
+   preserved verbatim. Frontmatter always contains every field.
 2. **Always set `draft: true`** in the frontmatter. The article is a
    draft until a separate publish step flips this.
 3. **The h1 title is NOT in the body.** Docusaurus renders the
