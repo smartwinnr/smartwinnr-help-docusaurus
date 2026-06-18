@@ -51,13 +51,17 @@ function rank(persona: Persona, viewerTier: number): number {
 }
 
 export default function PersonaDoors({user, loading}: Props): JSX.Element {
-  // Personas only carry spotlightAtTier values 1..5 (learner -> orgadmin).
-  // Superadmin (tier 6) is a meta-role with no dedicated lens, so clamp to
-  // 5 - it inherits the orgadmin spotlight. Keeps the "Your primary lens"
-  // highlight consistent across roles; without the clamp, superadmin sees
-  // doors but no spotlight at all.
-  const viewerTier = Math.min(primaryTier(user), 5);
   const visibleDoors = PERSONAS.filter((p) => !p.hiddenFromDoors);
+  // Spotlight matches `p.spotlightAtTier === viewerTier`. Roles above the
+  // highest visible spotlight (today: admin = 4; superadmin sits at 6 and
+  // would otherwise match no door) inherit the top visible persona's
+  // spotlight. Computed dynamically so persona reshuffles (e.g. promoting
+  // integrations back to a visible door at 5) don't regress this.
+  const maxVisibleSpotlight = visibleDoors.reduce(
+    (m, p) => Math.max(m, p.spotlightAtTier ?? 0),
+    0,
+  );
+  const viewerTier = Math.min(primaryTier(user), maxVisibleSpotlight || 1);
   const ordered = [...visibleDoors].sort(
     (a, b) => rank(a, viewerTier) - rank(b, viewerTier),
   );
