@@ -3,6 +3,11 @@
   "position": 20,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Manager Workflows",
+    "slug": "/guides/manager"
+  },
   "customProps": {
     "roles": ["manager", "editor", "admin", "orgadmin", "lamadmin", "superadmin"],
     "privilege": "managerView"

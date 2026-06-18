@@ -3,6 +3,11 @@
   "position": 90,
   "collapsible": true,
   "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Reports (Legacy)",
+    "slug": "/reports-and-analytics/legacy"
+  },
   "customProps": {
     "roles": ["editor", "admin", "orgadmin", "lamadmin", "superadmin"],
     "anyPrivilege": ["learnerReport", "adminReports", "generatedReports"]
