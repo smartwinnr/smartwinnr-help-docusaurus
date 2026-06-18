@@ -1530,6 +1530,41 @@ app.post('/api/admin/authoring/deploy', requireRole('superadmin'), async (req, r
   res.json(result);
 });
 
+/** Bulk-enqueue delete actions in the deploy queue. Used by
+ *  scripts/prune-orphan-images.js (which runs file unlinks locally and
+ *  then asks the live server to commit those same removals to git).
+ *  Guarded by constant-time CRON_SECRET so the script can run without a
+ *  session cookie. Body: { paths: ['static/img/.../X.png', ...] }. */
+app.post('/api/admin/authoring/deploy/enqueue-deletes', (req, res) => {
+  const expected = process.env.CRON_SECRET || '';
+  const got = req.get('x-cron-secret') || '';
+  if (!expected || !constantTimeEq(got, expected)) {
+    return res.status(401).json({ error: 'unauthorized' });
+  }
+  const { paths } = req.body || {};
+  if (!Array.isArray(paths) || paths.length === 0) {
+    return res.status(400).json({ error: 'paths must be a non-empty array' });
+  }
+  let queued = 0;
+  for (const p of paths) {
+    // Defensive: only accept relative paths inside static/img/helpscout/
+    // so a leaked CRON_SECRET can't queue deletion of arbitrary repo files.
+    if (typeof p !== 'string') continue;
+    const norm = p.replace(/\\/g, '/');
+    if (!/^static\/img\/helpscout\/[^/]+\/[^/]+\.(png|jpe?g|gif|webp)$/i.test(norm)) {
+      console.warn(`[deploy/enqueue-deletes] rejecting path outside helpscout image tree: ${p}`);
+      continue;
+    }
+    enqueueDelete(norm);
+    queued += 1;
+  }
+  if (queued > 0) {
+    persistDeployState();
+    scheduleDeploy();
+  }
+  res.json({ ok: true, queued, queueSize: deployQueue.size });
+});
+
 app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) => {
   try {
     const { dataUrl, slug, suffix } = req.body || {};
