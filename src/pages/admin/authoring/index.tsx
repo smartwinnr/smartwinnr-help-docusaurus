@@ -202,9 +202,71 @@ function slugify(s: string): string {
     .slice(0, 80);
 }
 
-function titleStartsWithVerbOrQuestion(t: string): boolean {
-  if (!t) return false;
-  const first = t.trim().split(/\s+/)[0].toLowerCase();
+/** Sub-folder-aware title-shape table. Each sub-folder maps to (a) the
+ *  prefixes a title should start with, (b) a human-readable hint shown
+ *  under the field when the title doesn't match. Mirrors the
+ *  Title-shape-by-sub-folder table in prompts/author-article.md so the
+ *  wizard's soft warning and the LLM's generation rules agree.
+ *
+ *  Unknown sub-folder slugs fall back to a generic verb/question check
+ *  (the legacy behavior) so cross-module / not-yet-defined sub-folders
+ *  still get *some* coaching. */
+const TITLE_SHAPE_BY_SUBFOLDER: Record<string, {prefixes: RegExp[]; hint: string}> = {
+  'create-and-manage': {
+    prefixes: [/^how to\b/i],
+    hint: 'Should start with "How to ..." (e.g. "How to create a manual quiz").',
+  },
+  'assign-and-schedule': {
+    prefixes: [/^how to\b/i],
+    hint: 'Should start with "How to assign ..." or "How to schedule ..." (e.g. "How to assign a quiz to a group").',
+  },
+  'for-learners': {
+    prefixes: [/^how to\b/i],
+    hint: 'Should start with "How to ..." in learner-facing tone (e.g. "How to retake a quiz").',
+  },
+  'for-managers': {
+    prefixes: [/^how to\b/i],
+    hint: 'Should start with "How to ..." in manager-facing tone (e.g. "How to review your team\'s scores").',
+  },
+  'features': {
+    prefixes: [/^what is\b/i, /^understanding\b/i],
+    hint: 'Should start with "What is ..." or "Understanding ..." (e.g. "What is auto-quiz").',
+  },
+  'reports-and-analytics': {
+    prefixes: [/^how to read\b/i, /^understanding\b/i, /^how to\b/i],
+    hint: 'Should start with "How to read the ..." or "Understanding the ... report" (e.g. "How to read the engagement report").',
+  },
+  'settings-and-permissions': {
+    prefixes: [/^configure\b/i, /^set up\b/i, /^enable\b/i, /^disable\b/i],
+    hint: 'Should start with "Configure ...", "Set up ...", "Enable ...", or "Disable ..." (e.g. "Configure SSO").',
+  },
+  'best-practices': {
+    prefixes: [/^best practices\b/i, /^tips for\b/i],
+    hint: 'Should start with "Best practices for ..." (e.g. "Best practices for writing quiz questions").',
+  },
+  'faqs-and-troubleshooting': {
+    prefixes: [
+      /^(why|what|how|when|where|who|can|do(es)?|is|are|will|should)\b/i,
+      /^troubleshooting\b/i,
+    ],
+    hint: 'Should be a question ("Why does ...?", "Can I ...?") or start with "Troubleshooting ..." (e.g. "Why does my quiz score show 0?").',
+  },
+};
+
+/** Returns {ok, hint} for the title against the article's sub-folder.
+ *  `ok=false` means the title should be reshaped; `hint` is the message
+ *  to surface to the editor. Empty titles or missing sub-folders return
+ *  ok=true so we don't double-warn before the editor has even typed. */
+function checkTitleShape(title: string, subFolder: string): {ok: boolean; hint: string} {
+  const t = (title || '').trim();
+  if (!t || !subFolder) return {ok: true, hint: ''};
+  const shape = TITLE_SHAPE_BY_SUBFOLDER[subFolder];
+  if (shape) {
+    const ok = shape.prefixes.some((re) => re.test(t));
+    return {ok, hint: shape.hint};
+  }
+  // Fallback for unmapped sub-folders: legacy verb/question check.
+  const first = t.split(/\s+/)[0].toLowerCase();
   const verbs = new Set([
     'how', 'what', 'why', 'when', 'where', 'who',
     'add', 'configure', 'create', 'manage', 'edit', 'delete', 'send',
@@ -212,7 +274,10 @@ function titleStartsWithVerbOrQuestion(t: string): boolean {
     'assign', 'review', 'duplicate', 'troubleshoot', 'build', 'find',
     'submit', 'open', 'close', 'archive',
   ]);
-  return verbs.has(first);
+  return {
+    ok: verbs.has(first),
+    hint: 'Should start with an action verb or question word (How, What, Add, Create, Configure…).',
+  };
 }
 
 /**
@@ -701,7 +766,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const titleOk = titleStartsWithVerbOrQuestion(i.title);
+  const titleShape = checkTitleShape(i.title, i.subFolder);
   const saveBlockedByMetadata = !canSave(state);
   const saveBlockedByAudit = !!(state.audit && state.audit.findings.some((f) => f.blocking));
 
@@ -733,10 +798,8 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
                   dispatch({type: 'set', patch: {title: t, slug: slugify(t)}});
                 }}
               />
-              {i.title && !titleOk && (
-                <span className={styles.warn}>
-                  Should start with an action verb or question word (How, What, Add, Create, Configure…).
-                </span>
+              {i.title && !titleShape.ok && (
+                <span className={styles.warn}>{titleShape.hint}</span>
               )}
             </div>
             <div className={styles.field}>
@@ -832,7 +895,11 @@ function canAdvance(s: State): boolean {
  *  preview. Used to disable the Save button. */
 function canSave(s: State): boolean {
   const i = s.inputs;
-  if (!i.title || !titleStartsWithVerbOrQuestion(i.title)) return false;
+  if (!i.title) return false;
+  // Title must match the shape the article's sub-folder expects
+  // (How to ... for create-and-manage, question-shaped for FAQs, etc.).
+  // Sub-folder unknown -> falls back to the legacy verb/question check.
+  if (!checkTitleShape(i.title, i.subFolder).ok) return false;
   if (i.description.length < 60 || i.description.length > 160) return false;
   if (i.tags.length < 1 || i.tags.length > 5) return false;
   return true;
