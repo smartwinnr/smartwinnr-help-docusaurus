@@ -754,7 +754,28 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       });
       const data = await res.json();
       if (!res.ok) {
-        dispatch({type: 'error', message: data.error || 'Save failed'});
+        // The save endpoint returns {error, audit} on a blocking-audit
+        // 400. Surface the specific blocking findings in the toast so
+        // the editor can see WHICH gate fired (emptyDescription /
+        // noHeadings / ghostStub / badAltText / inlineStep /
+        // malformedFrontmatter) instead of the generic banner. Also
+        // refresh state.audit so the on-screen audit panel reflects
+        // the truth-on-disk view, not the stale /generate snapshot.
+        const blockers = (data.audit?.findings || []).filter((f: Finding) => f.blocking);
+        if (blockers.length > 0 && data.audit) {
+          dispatch({
+            type: 'generated',
+            markdown: state.markdown,
+            audit: data.audit,
+            tokens: state.tokens,
+          });
+        }
+        const detail = blockers.length
+          ? ' - ' + blockers
+              .map((f: Finding) => f.label + (f.detail ? ` (${f.detail})` : ''))
+              .join('; ')
+          : '';
+        dispatch({type: 'error', message: (data.error || 'Save failed') + detail});
         return;
       }
       dispatch({type: 'saved', path: data.path});
@@ -911,29 +932,39 @@ function canSave(s: State): boolean {
  *  YAML frontmatter immediately before /save. The LLM's first-pass
  *  values may differ from what the editor finally chose; this keeps
  *  the saved file consistent with the wizard's Step-3 inputs.
- *  Regex-replaces the three keys on their own lines; preserves field
- *  order. Quoting style matches the existing prompt template ("…"). */
+ *
+ *  Each key's existing entry is replaced **including any continuation
+ *  lines** (block scalars `>-` / `|`, block sequences `- item`, block
+ *  mappings). The previous single-line regex left orphan continuation
+ *  lines, producing malformed YAML and failing the audit on save.
+ *
+ *  Other multi-line blocks we're not touching (last_update, source,
+ *  customProps) are unaffected because their key names don't match. */
 function replaceFrontmatterFields(markdown: string, patch: {title?: string; description?: string; tags?: string[]}): string {
   const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
   if (!fmMatch) return markdown;
   let fm = fmMatch[1];
+
+  // Replace a top-level key's whole block (key line + any subsequent
+  // indented continuation lines). Appends a fresh line if the key is
+  // absent from the frontmatter.
+  const replaceKey = (src: string, key: string, line: string): string => {
+    // Matches `<key>:<rest of line>` plus zero or more subsequent lines
+    // that begin with whitespace (continuation under that key). Stops at
+    // the next non-indented line (a sibling key) or end-of-frontmatter.
+    const re = new RegExp(`^${key}\\s*:[^\\n]*(?:\\n[ \\t]+[^\\n]*)*`, 'm');
+    return re.test(src) ? src.replace(re, line) : src + '\n' + line;
+  };
+
   if (patch.title !== undefined) {
-    const v = JSON.stringify(patch.title);
-    fm = /^title\s*:/m.test(fm)
-      ? fm.replace(/^title\s*:.*$/m, `title: ${v}`)
-      : fm + `\ntitle: ${v}`;
+    fm = replaceKey(fm, 'title', `title: ${JSON.stringify(patch.title)}`);
   }
   if (patch.description !== undefined) {
-    const v = JSON.stringify(patch.description);
-    fm = /^description\s*:/m.test(fm)
-      ? fm.replace(/^description\s*:.*$/m, `description: ${v}`)
-      : fm + `\ndescription: ${v}`;
+    fm = replaceKey(fm, 'description', `description: ${JSON.stringify(patch.description)}`);
   }
   if (patch.tags !== undefined) {
     const v = '[' + patch.tags.map((t) => JSON.stringify(t)).join(', ') + ']';
-    fm = /^tags\s*:/m.test(fm)
-      ? fm.replace(/^tags\s*:.*$/m, `tags: ${v}`)
-      : fm + `\ntags: ${v}`;
+    fm = replaceKey(fm, 'tags', `tags: ${v}`);
   }
   return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
 }
