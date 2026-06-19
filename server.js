@@ -22,8 +22,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-// const PORT = process.env.PORT || 3001;
-const PORT = 3001; // Dev
+const PORT = process.env.PORT || 3001;
+// const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
