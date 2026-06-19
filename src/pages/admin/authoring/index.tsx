@@ -675,6 +675,7 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 
 function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const [refinement, setRefinement] = useState('');
+  const [regeneratingField, setRegeneratingField] = useState<'title' | 'description' | null>(null);
   const i = state.inputs;
   const previewHtml = useMarkdownHtml(state.markdown);
 
@@ -789,6 +790,46 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** Per-field LLM suggest. Targets title or description only - the
+   *  article body and other fields stay untouched. Backed by the
+   *  /suggest-field endpoint which counts against the same per-superadmin
+   *  rate limit as /generate. */
+  async function regenerateField(field: 'title' | 'description') {
+    setRegeneratingField(field);
+    try {
+      const res = await fetch('/api/admin/authoring/suggest-field', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          field,
+          module: i.module,
+          subFolder: i.subFolder,
+          body: state.markdown,
+          brainDump: i.roughExplanation,
+          currentValue: field === 'title' ? i.title : i.description,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        dispatch({type: 'error', message: data.message || data.error || `${field} suggest failed`});
+        return;
+      }
+      if (data.value) {
+        // Title change also re-derives slug (same side-effect as direct
+        // editing on the input).
+        const patch: Partial<Inputs> = field === 'title'
+          ? {title: data.value, slug: slugify(data.value)}
+          : {description: data.value};
+        dispatch({type: 'set', patch});
+      }
+    } catch (err) {
+      dispatch({type: 'error', message: (err as Error).message});
+    } finally {
+      setRegeneratingField(null);
+    }
+  }
+
   const titleShape = checkTitleShape(i.title, i.subFolder);
   const saveBlockedByMetadata = !canSave(state);
   const saveBlockedByAudit = !!(state.audit && state.audit.findings.some((f) => f.blocking));
@@ -821,6 +862,16 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
                   dispatch({type: 'set', patch: {title: t, slug: slugify(t)}});
                 }}
               />
+              <div className={styles.fieldActions}>
+                <button
+                  type="button"
+                  className={styles.btnGhost}
+                  disabled={!!regeneratingField || state.generating || state.saving || !state.markdown}
+                  onClick={() => regenerateField('title')}
+                  title="Ask the LLM to suggest a new title from the article body + sub-folder shape. Body untouched.">
+                  {regeneratingField === 'title' ? 'Suggesting…' : 'Suggest a new title'}
+                </button>
+              </div>
               {i.title && !titleShape.ok && (
                 <span className={styles.warn}>{titleShape.hint}</span>
               )}
@@ -834,7 +885,17 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
                 maxLength={160}
                 onChange={(e) => dispatch({type: 'set', patch: {description: e.target.value}})}
               />
-              <span className={styles.hint}>{i.description.length}/160</span>
+              <div className={styles.fieldActions}>
+                <button
+                  type="button"
+                  className={styles.btnGhost}
+                  disabled={!!regeneratingField || state.generating || state.saving || !state.markdown}
+                  onClick={() => regenerateField('description')}
+                  title="Ask the LLM to suggest a new description from the article body. Body untouched.">
+                  {regeneratingField === 'description' ? 'Suggesting…' : 'Suggest a new description'}
+                </button>
+                <span className={styles.hint}>{i.description.length}/160</span>
+              </div>
             </div>
             <TagPicker state={state} dispatch={dispatch} />
           </div>

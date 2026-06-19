@@ -85,6 +85,20 @@
   box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
 }
 .field textarea { resize: vertical; min-height: 200px; }
+/* Inline action row under a field (e.g. "Suggest a new title" button +
+ * the character counter to its right). Sits between the input and any
+ * warn/hint text below. */
+.fieldActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.fieldActions .btnGhost {
+  font-size: var(--text-caption);
+  padding: 4px var(--space-3);
+}
 .hint {
   font-size: var(--text-caption);
   color: var(--ifm-color-content-secondary);

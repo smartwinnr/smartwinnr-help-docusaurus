@@ -22,8 +22,8 @@ const fsSync = require('fs');
 const PRIVACY_NOTICE_VERSION = '1.0';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-// const PORT = 3001; // Dev
+// const PORT = process.env.PORT || 3001;
+const PORT = 3001; // Dev
 
 // Basic middleware setup
 app.use(express.json({ limit: '10mb' }));
@@ -1118,6 +1118,118 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
   } catch (error) {
     console.error('❌ authoring/generate failed:', error.response?.data || error.message);
     res.status(500).json({ error: 'Generation failed', message: error.response?.data?.error?.message || error.message });
+  }
+});
+
+/** Per-field LLM suggestion. Lets editors regenerate just the title or
+ *  just the description without rewriting the body or other fields. Body
+ *  stays UNTOUCHED on the client - the response is a plain string and
+ *  the wizard updates only state.inputs[field], no markdown re-splice.
+ *
+ *  Body: { field: 'title' | 'description', module, subFolder, body,
+ *          brainDump?, currentValue? }
+ *  Returns: { field, value, tokens }
+ *
+ *  Same per-superadmin rate limit as /generate (a per-field call costs a
+ *  token call too, even if it's tiny). Tight max_tokens (200) so a misbehaving
+ *  prompt can't burn budget.
+ */
+app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async (req, res) => {
+  const rate = checkRate((req.user || {}).email);
+  if (!rate.ok) {
+    return res.status(429).json({
+      error: 'Rate limit',
+      message: `You've used ${rate.used} generates this hour (limit ${RATE_LIMIT}). Try again in ~${Math.ceil(rate.retryAfterMs / 60000)} min.`,
+      retryAfterMs: rate.retryAfterMs,
+      limit: RATE_LIMIT,
+      used: rate.used,
+    });
+  }
+  try {
+    const { field, module: moduleSlug, subFolder, body = '', brainDump = '', currentValue = '' } = req.body || {};
+    if (field !== 'title' && field !== 'description') {
+      return res.status(400).json({ error: "field must be 'title' or 'description'" });
+    }
+    if (!moduleSlug || !subFolder) {
+      return res.status(400).json({ error: 'module + subFolder required' });
+    }
+    if (!body && !brainDump) {
+      return res.status(400).json({ error: 'body or brainDump required for context' });
+    }
+
+    // Title-shape guide mirrors the wizard's TITLE_SHAPE_BY_SUBFOLDER
+    // table and the per-sub-folder rules in prompts/author-article.md so
+    // all three places agree on what a "good" title looks like.
+    const titleShape = {
+      'create-and-manage':        '"How to <verb> <object>" (e.g. "How to create a manual quiz")',
+      'assign-and-schedule':      '"How to assign <object>" or "How to schedule <object>"',
+      'for-learners':             '"How to <verb> <object>" in learner-facing tone',
+      'for-managers':             '"How to <verb> <object> for your team" in manager-facing tone',
+      'features':                 '"What is <feature>" or "Understanding <feature>"',
+      'reports-and-analytics':    '"How to read the <report>" or "Understanding the <report> report"',
+      'settings-and-permissions': '"Configure <thing>", "Set up <thing>", "Enable <thing>", or "Disable <thing>"',
+      'best-practices':           '"Best practices for <topic>"',
+      'faqs-and-troubleshooting': 'a question shape ("Why does X happen?", "Can I Y?") or "Troubleshooting <X>"',
+    };
+
+    const sys = field === 'title'
+      ? `You suggest one help-article title for SmartWinnr. Return ONE line containing JUST the title - no quotes, no markdown, no preamble, no explanation. ` +
+        `Shape for sub-folder "${subFolder}": ${titleShape[subFolder] || 'start with an action verb or question word'}. ` +
+        `Keep it short (under 80 chars), specific, and use lowercase except for proper nouns and the first word.`
+      : `You suggest one help-article description for SmartWinnr. Return ONE line containing JUST the description - no quotes, no markdown, no preamble. ` +
+        `Length must be between 60 and 160 characters. Stand-alone first sentence, no "we", no "we have updated", no "this article shows". ` +
+        `Mirror the topic of the article body; complete the unspoken phrase "This article shows you how to ..." but without those leading words.`;
+
+    // Provide all available context. Truncate the body so we don't blow
+    // through max_tokens on an edge-case 30-page draft.
+    const userParts = [
+      `Sub-folder: ${subFolder}`,
+      `Module: ${moduleSlug}`,
+      currentValue ? `Current ${field} (editor wants this regenerated): ${currentValue}` : null,
+      brainDump ? `Editor's brain dump:\n${String(brainDump).slice(0, 2000)}` : null,
+      body ? `Current article (frontmatter + body):\n${String(body).slice(0, 4000)}` : null,
+    ].filter(Boolean);
+
+    const openaiApiKey = getOpenAIKey();
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: AUTHORING_MODEL,
+        messages: [
+          { role: 'system', content: sys },
+          { role: 'user', content: userParts.join('\n\n') },
+        ],
+        temperature: 0.4,
+        max_tokens: 200,
+      },
+      {
+        headers: { Authorization: `Bearer ${openaiApiKey}`, 'Content-Type': 'application/json' },
+        timeout: 30000,
+      },
+    );
+
+    // The model still likes to add quotes or markdown fences despite the
+    // prompt; strip them. Take only the first line (title + description
+    // are single-line).
+    let value = String(response.data?.choices?.[0]?.message?.content || '').trim();
+    value = value.replace(/^```[^\n]*\n?|\n?```$/g, '').trim();   // strip code fences
+    value = value.split('\n')[0].trim();                          // first line only
+    value = value.replace(/^["'`“‘]+|["'`”’]+$/g, '').trim();  // strip wrap-quotes
+
+    res.json({
+      field,
+      value,
+      tokens: {
+        prompt: response.data?.usage?.prompt_tokens || 0,
+        completion: response.data?.usage?.completion_tokens || 0,
+      },
+    });
+  } catch (error) {
+    console.error('❌ authoring/suggest-field failed:', error.response?.data || error.message);
+    res.status(500).json({
+      error: 'Suggest-field failed',
+      message: error.response?.data?.error?.message || error.message,
+    });
   }
 });
 
