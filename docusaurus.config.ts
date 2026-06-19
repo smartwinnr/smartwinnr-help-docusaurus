@@ -18,8 +18,56 @@ const redirectsFile = path.join(__dirname, 'data', 'redirects.json');
 const rawRedirects: RedirectEntry[] = fs.existsSync(redirectsFile)
   ? (JSON.parse(fs.readFileSync(redirectsFile, 'utf8')).redirects ?? [])
   : [];
+
+/**
+ * Walk docs/ and build a map of every article URL -> {file, isDraft}.
+ * Used by the redirect normalizer to drop redirects whose target is
+ * currently a draft (Docusaurus excludes drafts from the prod build,
+ * so the redirect would fail the build's target-exists check). Once
+ * the article is republished, the draft flag flips and the redirect
+ * comes back on the next build.
+ *
+ * Doesn't try to enumerate category / generated-index landings - if
+ * a redirect target isn't in this map at all, we keep the redirect
+ * and let Docusaurus's own validation flag it.
+ */
+type DocEntry = {file: string; isDraft: boolean};
+function buildDocUrlMap(): Map<string, DocEntry> {
+  const map = new Map<string, DocEntry>();
+  const docsRoot = path.join(__dirname, 'docs');
+  if (!fs.existsSync(docsRoot)) return map;
+  function walk(dir: string) {
+    for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(p); continue; }
+      if (!/\.(md|mdx)$/i.test(entry.name)) continue;
+      let content = '';
+      try { content = fs.readFileSync(p, 'utf8'); } catch { continue; }
+      const fmMatch = /^---\n([\s\S]*?)\n---/.exec(content);
+      const fm = fmMatch ? fmMatch[1] : '';
+      const isDraft = /^draft\s*:\s*true\b/m.test(fm);
+      const rel = path.relative(docsRoot, p).replace(/\\/g, '/');
+      const dirRel = rel.replace(/\/?[^/]+\.(md|mdx)$/i, '');
+      const fileBase = path.basename(p).replace(/\.(md|mdx)$/i, '');
+      const slugMatch = /^slug\s*:\s*["']?([^"'\n]+?)["']?\s*$/m.exec(fm);
+      let url: string;
+      if (slugMatch) {
+        const s = slugMatch[1].trim();
+        url = s.startsWith('/') ? s : '/' + (dirRel ? dirRel + '/' : '') + s;
+      } else {
+        url = '/' + (dirRel ? dirRel + '/' : '') + fileBase;
+      }
+      map.set(normPath(url), {file: p, isDraft});
+    }
+  }
+  walk(docsRoot);
+  return map;
+}
+const docUrlMap = buildDocUrlMap();
+
 const seen = new Set<string>();
 const redirects: RedirectEntry[] = [];
+let droppedDraft = 0;
 for (const r of rawRedirects) {
   const from = normPath(r.from);
   const to = normPath(r.to);
@@ -27,7 +75,19 @@ for (const r of rawRedirects) {
   const key = from + '→' + to;
   if (seen.has(key)) continue;
   seen.add(key);
+  // If the target is a known article AND that article is currently a
+  // draft, drop the redirect. Drafts aren't routed in prod; a redirect
+  // to a missing route fails the build. Unmapped targets (category
+  // landings, generated-index, custom pages) pass through unchanged.
+  const target = docUrlMap.get(to);
+  if (target && target.isDraft) {
+    droppedDraft += 1;
+    continue;
+  }
   redirects.push({from, to});
+}
+if (droppedDraft > 0) {
+  console.log(`[redirects] dropped ${droppedDraft} redirect(s) whose target is a draft article`);
 }
 
 const config: Config = {
