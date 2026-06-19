@@ -100,10 +100,12 @@ type State = {
   error: string | null;
   saved: string | null;
   /** True when the wizard was opened to edit an existing draft via URL
-   *  params (?module=&subFolder=&slug=). Hides Step 1-3 navigation,
-   *  swaps the header subhead to an "Editing draft" banner, and gates
-   *  the empty-state requirement on `roughExplanation` (which the draft
-   *  doesn't preserve). */
+   *  params (?module=&subFolder=&slug=). Lands directly on Step 3
+   *  (preview + editable metadata + Refine + Save), hides the Step 1-2
+   *  navigation stepper, and swaps the header subhead to an "Editing
+   *  draft" (or "Refining published article") banner. `roughExplanation`
+   *  isn't preserved in saved articles, so it stays empty - canAdvance's
+   *  Step-2 gate doesn't apply because we never visit Step 2. */
   isEditing: boolean;
   /** True when the wizard loaded a PUBLISHED article (frontmatter
    *  `draft: false`). The save endpoint will force draft:true and
@@ -954,11 +956,16 @@ function Wizard(): ReactNode {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.error]);
 
-  // Edit-an-existing-draft entry. When the wizard is opened with
-  // ?module=&subFolder=&slug=, fetch the draft, parse its frontmatter,
-  // and dispatch loadDraft to jump straight to Step 4 with the markdown
-  // loaded. URL params take priority over any localStorage-persisted
-  // wizard state so an editor clicking Edit always lands in edit mode.
+  // Edit-an-existing-draft (and refine-a-published-article) entry.
+  // When the wizard is opened with ?module=&subFolder=&slug=, fetch the
+  // article via /draft, parse its frontmatter into inputs (title /
+  // description / tags / audienceRoles / privilege / slug), and
+  // dispatch loadDraft to jump straight to Step 3 (preview + editable
+  // metadata + Refine + Save) with the markdown loaded. inputs.subFolder
+  // comes from the URL, so the sub-folder-aware title-shape check
+  // (checkTitleShape) fires in edit mode exactly like fresh-generate.
+  // URL params take priority over any localStorage-persisted wizard
+  // state so an editor clicking Edit always lands in edit mode.
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const moduleSlug = params.get('module');
