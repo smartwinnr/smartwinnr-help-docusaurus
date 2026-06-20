@@ -63,7 +63,9 @@ export default function PersonaGrid({
               to={`/path/${p.slug}/`}
               className={className}
               aria-disabled={isLocked}>
-              <span className={styles.pico}>{p.icon}</span>
+              <span className={styles.pico} aria-hidden="true">
+                <p.icon size={32} strokeWidth={2} />
+              </span>
               <div>
                 <h3>{p.label}</h3>
                 <p>{isLocked ? `Requires ${tierName(p.tier)}+. Ask your admin to unlock.` : p.blurb}</p>

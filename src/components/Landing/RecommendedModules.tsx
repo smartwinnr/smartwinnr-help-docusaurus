@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {Package} from 'lucide-react';
 import type {CurrentUser} from '@site/src/access-policy';
 import {ROLE_TIER} from '@site/src/access-policy';
+import {MODULE_ICON_BY_SLUG} from '@site/src/lib/module-icons';
 import styles from './styles.module.css';
 
 type ModuleEntry = {
@@ -19,13 +21,29 @@ type ModuleEntry = {
 
 type Manifest = {version: number; modules: ModuleEntry[]};
 
-const ICON_BY_SLUG: Record<string, string> = {
-  quiz: '📝', smartpath: '🛤', smartfeed: '📺',
-  'video-coaching': '🎥', 'ai-coaching': '🤖', 'field-coaching': '🚗',
-  survey: '📋', 'knowledge-hub': '📚', forms: '🧾',
-  'kpi-gamification': '🏆', notifications: '🔔',
-  'cross-module': '🧩',
-};
+// Display order for the Recommended modules strip.
+// Grouping mirrors how editors think about the modules: coaching family,
+// then the LMS core (quiz/feed/forms/survey), then SmartPath + KHub, then
+// gamification + everything else. Slugs not listed here sort to the end.
+const MODULE_ORDER: string[] = [
+  'ai-coaching',
+  'video-coaching',
+  'field-coaching',
+  'quiz',
+  'smartfeed',
+  'forms',
+  'survey',
+  'smartpath',
+  'knowledge-hub',
+  'kpi-gamification',
+  'competition',
+  'notifications',
+  'cross-module',
+];
+function moduleRank(slug: string): number {
+  const i = MODULE_ORDER.indexOf(slug);
+  return i === -1 ? MODULE_ORDER.length : i;
+}
 
 function hasOrgPrivilege(user: CurrentUser, m: ModuleEntry): boolean {
   const privs = user.privileges || [];
@@ -80,6 +98,7 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
     if (!moduleHasContentForRole(user, m)) continue;
     visible.push({...m, locked: !hasOrgPrivilege(user, m)});
   }
+  visible.sort((a, b) => moduleRank(a.slug) - moduleRank(b.slug));
 
   if (visible.length === 0) return null;
 
@@ -90,7 +109,9 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
         <Link className={styles.seeAll} to="/modules/">All modules →</Link>
       </h2>
       <div className={moduleGridStyle}>
-        {visible.map((m) => (
+        {visible.map((m) => {
+          const Icon = MODULE_ICON_BY_SLUG[m.slug] ?? Package;
+          return (
           <Link
             key={m.slug}
             // Locked tiles now route to the module's universal index page,
@@ -100,7 +121,9 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
             title={m.locked
               ? `Your org has not enabled ${m.privilege || 'this module'} - click to learn more.`
               : m.label}>
-            <span className="sw-module-ico">{ICON_BY_SLUG[m.slug] ?? '📦'}</span>
+            <span className="sw-module-ico" aria-hidden="true">
+              <Icon size={22} strokeWidth={2} />
+            </span>
             <div>
               <strong className={m.locked ? 'sw-module-title sw-module-title-locked' : 'sw-module-title'}>
                 {m.label}
@@ -110,7 +133,8 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
               </span>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -169,7 +193,17 @@ if (typeof document !== 'undefined' && !document.getElementById('sw-module-strip
       background: var(--ifm-color-emphasis-100);
       border-color: var(--ifm-color-emphasis-300);
     }
-    .sw-module-ico { font-size: 20px; line-height: 1; }
+    .sw-module-ico {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ifm-color-primary-darker);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .sw-module-tile-locked .sw-module-ico {
+      color: var(--ifm-color-emphasis-500);
+    }
     .sw-module-title {
       display: block;
       color: var(--ifm-heading-color);

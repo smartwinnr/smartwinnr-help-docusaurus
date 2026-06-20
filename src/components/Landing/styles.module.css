@@ -163,8 +163,10 @@
   border-width: 2px;
 }
 .pico {
-  font-size: 26px;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
+  color: var(--ifm-color-primary-darker);
 }
 .pcard h3 {
   margin: 0 0 var(--space-1);
@@ -186,7 +188,7 @@
   pointer-events: none;
 }
 .pcard.disabled .pico {
-  filter: grayscale(1);
+  color: var(--ifm-color-emphasis-500);
 }
 
 /* ────────────────────── Help footer cards ────────────────────────────── */
@@ -336,10 +338,13 @@
   color: inherit;
 }
 .doorIco {
-  font-size: 32px;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
   margin-bottom: var(--space-3);
+  color: var(--ifm-color-primary-darker);
 }
+.doorLocked .doorIco { color: var(--ifm-color-emphasis-500); }
 .door h3 {
   font-size: var(--text-h3);
   line-height: var(--lh-h3);
@@ -405,7 +410,9 @@
   box-shadow: 0 1px 2px rgba(17, 12, 46, 0.04);
 }
 .doorLocked .doorEnter { color: var(--ifm-color-emphasis-500); }
-.doorLocked .doorEnter::after { content: '🔒'; }
+/* Locked doors render an inline <Lock> icon in JSX; suppress the default
+ * arrow that .doorEnter::after would otherwise add. */
+.doorLocked .doorEnter::after { content: none; }
 
 /* ══════════════════════════════════════════════════════════════════════════
  * Persona shell (behind-the-door hero used by PathBody)
@@ -438,10 +445,16 @@
   gap: var(--space-4);
 }
 .personaIco {
-  font-size: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   line-height: 1;
   flex-shrink: 0;
+  color: var(--ifm-color-primary-darker);
 }
+.personaIco svg { width: 40px; height: 40px; }
 .personaShell h1 {
   font-size: var(--text-display);
   line-height: var(--lh-display);
@@ -542,9 +555,12 @@
   color: inherit;
 }
 .taskCard .ti {
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
+  color: var(--ifm-color-primary-darker);
 }
+.taskCardLocked .ti { color: var(--ifm-color-emphasis-500); }
 .taskCard strong {
   font-size: var(--text-body);
   line-height: var(--lh-body);

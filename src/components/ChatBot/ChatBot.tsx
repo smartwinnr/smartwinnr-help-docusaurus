@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { BookOpen } from 'lucide-react';
 import WynnieMark from './WynnieMark';
 import styles from './ChatBot.module.css';
 
@@ -283,7 +284,10 @@ const ChatBot: React.FC = () => {
 
     return (
       <div className={styles.citations}>
-        <div className={styles.citationsTitle}>📚 Sources:</div>
+        <div className={styles.citationsTitle} style={{display: 'flex', alignItems: 'center', gap: 6}}>
+          <BookOpen size={14} strokeWidth={2} aria-hidden="true" />
+          Sources:
+        </div>
         {citations.map((citation, index) => (
           <div key={index} className={styles.citation}>
             <a

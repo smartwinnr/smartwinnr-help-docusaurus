@@ -12,6 +12,17 @@
  * "ask your admin to enable X" hint rather than a 404.
  */
 
+import type {LucideIcon} from 'lucide-react';
+import {
+  GraduationCap,
+  Users,
+  SquarePen,
+  Settings,
+  LifeBuoy,
+  ChartColumn,
+  Plug,
+} from 'lucide-react';
+
 import type {CurrentUser, OrgPrivilege, SmartWinnrRole} from '@site/src/access-policy';
 import {PRIVILEGE_GATING_ENABLED, hasMinTier} from '@site/src/access-policy';
 
@@ -28,7 +39,7 @@ export type Persona = {
   slug: PersonaSlug;
   label: string;
   blurb: string;
-  icon: string;
+  icon: LucideIcon;
   tier: number;
   /** Highlights this card with the brand-primary border when the viewer's tier
    *  matches; "Author content" gets the spotlight for editors, etc. */
@@ -67,8 +78,8 @@ export type EntryPoint = {
   label: string;
   href: string;
   blurb?: string;
-  /** Optional emoji rendered on the task card. Falls back to the persona icon. */
-  icon?: string;
+  /** Optional Lucide icon rendered on the task card. Falls back to the persona icon. */
+  icon?: LucideIcon;
   /** Optional org privilege required to USE the linked feature (not to read the doc). */
   privilege?: OrgPrivilege;
 };
@@ -86,7 +97,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'learner',
     label: "I'm a learner",
-    icon: '🎓',
+    icon: GraduationCap,
     tier: 1,
     blurb: 'Take quizzes, follow SmartPaths, submit coaching, view your KPIs and badges.',
     spotlightAtTier: 1,
@@ -94,7 +105,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'manager',
     label: 'I manage a team',
-    icon: '📋',
+    icon: Users,
     tier: 2,
     blurb: 'Read team dashboards, review coaching, drive KPIs and competitions.',
     spotlightAtTier: 2,
@@ -103,7 +114,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'editor',
     label: "I'm an Author",
-    icon: '🛠',
+    icon: SquarePen,
     tier: 3,
     blurb: 'Build quizzes, SmartPaths, SmartFeeds, surveys, and coachings.',
     spotlightAtTier: 3,
@@ -111,7 +122,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'reports',
     label: 'I want a report',
-    icon: '📊',
+    icon: ChartColumn,
     tier: 2,
     blurb: 'Learner, admin, generated, automated reports and overall dashboards.',
     // Absorbed into the Manager + Admin doors. Page still resolvable.
@@ -120,7 +131,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'admin',
     label: 'I administer the org',
-    icon: '⚙️',
+    icon: Settings,
     tier: 4,
     blurb: 'Users, roles, divisions, audit log, approval flow, org privileges.',
     spotlightAtTier: 4,
@@ -128,7 +139,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'integrations',
     label: "I'm integrating SmartWinnr",
-    icon: '🔌',
+    icon: Plug,
     tier: 4,
     blurb: 'Azure AD, SCIM, xAPI, SCORM, REST API, webhook patterns.',
     spotlightAtTier: 5,
@@ -137,7 +148,7 @@ export const PERSONAS: Persona[] = [
   {
     slug: 'help',
     label: 'I need help',
-    icon: '🆘',
+    icon: LifeBuoy,
     tier: 1,
     blurb: 'FAQs, troubleshooting, glossary, and contact support.',
   },

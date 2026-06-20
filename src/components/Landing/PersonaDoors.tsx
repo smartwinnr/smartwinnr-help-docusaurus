@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import {Lock} from 'lucide-react';
 import type {CurrentUser} from '@site/src/access-policy';
 import {ROLE_TIER, hasMinTier} from '@site/src/access-policy';
 import {PERSONAS, canEnterPersona, type Persona} from './PathContent';
@@ -97,17 +98,24 @@ export default function PersonaDoors({user, loading}: Props): JSX.Element {
               : `Requires ${tierName(p.tier)}+. Ask your admin to unlock.`;
             return (
               <div key={p.slug} className={className} aria-disabled="true">
-                <span className={styles.doorIco}>{p.icon}</span>
+                <span className={styles.doorIco} aria-hidden="true">
+                  <p.icon size={32} strokeWidth={2} />
+                </span>
                 <h3>{p.label}</h3>
                 <p>{reason}</p>
-                <span className={styles.doorEnter}>Locked</span>
+                <span className={styles.doorEnter}>
+                  Locked
+                  <Lock size={12} strokeWidth={2} style={{marginLeft: 4}} aria-hidden="true" />
+                </span>
               </div>
             );
           }
 
           return (
             <Link key={p.slug} to={`/path/${p.slug}/`} className={className}>
-              <span className={styles.doorIco}>{p.icon}</span>
+              <span className={styles.doorIco} aria-hidden="true">
+                <p.icon size={32} strokeWidth={2} />
+              </span>
               <h3>{p.label}</h3>
               <p>{p.blurb}</p>
               <span className={styles.doorEnter}>Enter {p.slug}</span>

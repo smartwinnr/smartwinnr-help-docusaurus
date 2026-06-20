@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import {Lock} from 'lucide-react';
 import {useCurrentUser, useIsUserReady} from '@site/src/contexts/UserContext';
 import {PRIVILEGE_GATING_ENABLED} from '@site/src/access-policy';
 import {
@@ -37,12 +38,12 @@ type Props = {
   slug: PersonaSlug;
 };
 
-const OTHER_DOORS: Array<{slug: PersonaSlug; icon: string; label: string}> = [
-  {slug: 'learner', icon: '🎓', label: 'Learner'},
-  {slug: 'manager', icon: '📋', label: 'Manager'},
-  {slug: 'editor',  icon: '🛠', label: 'Author'},
-  {slug: 'admin',   icon: '⚙️', label: 'Admin'},
-  {slug: 'help',    icon: '🆘', label: 'Help'},
+const OTHER_DOORS: Array<{slug: PersonaSlug; label: string}> = [
+  {slug: 'learner', label: 'Learner'},
+  {slug: 'manager', label: 'Manager'},
+  {slug: 'editor',  label: 'Author'},
+  {slug: 'admin',   label: 'Admin'},
+  {slug: 'help',    label: 'Help'},
 ];
 
 function upsellHref(originalHref: string): string | null {
@@ -76,10 +77,15 @@ function TaskCard({
     PRIVILEGE_GATING_ENABLED && !!e.privilege && !privileges.includes(e.privilege);
   const upsell = lockedByPrivilege ? upsellHref(e.href) : null;
   const effectiveHref = upsell ?? e.href;
-  const icon = e.icon || persona.icon;
-  const desc = lockedByPrivilege
-    ? `🔒 needs ${e.privilege} - see module page`
-    : e.blurb;
+  const Icon = e.icon || persona.icon;
+  const desc: React.ReactNode = lockedByPrivilege ? (
+    <>
+      <Lock size={12} strokeWidth={2} style={{verticalAlign: '-1px', marginRight: 4}} aria-hidden="true" />
+      needs {e.privilege} - see module page
+    </>
+  ) : (
+    e.blurb
+  );
 
   const className = [
     styles.taskCard,
@@ -90,7 +96,9 @@ function TaskCard({
 
   const inner = (
     <>
-      <span className={styles.ti}>{icon}</span>
+      <span className={styles.ti} aria-hidden="true">
+        <Icon size={20} strokeWidth={2} />
+      </span>
       <strong>{e.label}</strong>
       {desc && <span className={styles.desc}>{desc}</span>}
     </>
@@ -151,16 +159,19 @@ function GroupSection({
 }
 
 function PathSkeleton({persona}: {persona: Persona}): JSX.Element {
+  const PIcon = persona.icon;
   return (
     <div className={styles.wrap}>
       <section className={styles.personaShell}>
         <div className={styles.personaCrumb}>
           <Link to="/">← Home</Link>
           {' '}›{' '}
-          {persona.icon} {persona.label}
+          <PIcon size={14} strokeWidth={2} style={{verticalAlign: '-2px'}} /> {persona.label}
         </div>
         <div className={styles.personaRow}>
-          <span className={styles.personaIco}>{persona.icon}</span>
+          <span className={styles.personaIco} aria-hidden="true">
+            <PIcon size={32} strokeWidth={2} />
+          </span>
           <div>
             <h1>{persona.label}</h1>
             <p className={styles.personaSub}>{persona.blurb}</p>
@@ -188,6 +199,7 @@ function Inner({slug}: Props): JSX.Element {
   const privileges = user.privileges || [];
   const groups: EntryGroup[] =
     GROUPS[slug] ?? [{title: 'Where to start', entries: ENTRIES[slug] || []}];
+  const PIcon = persona.icon;
 
   return (
     <div className={styles.wrap}>
@@ -195,10 +207,12 @@ function Inner({slug}: Props): JSX.Element {
         <div className={styles.personaCrumb}>
           <Link to="/">← Home</Link>
           {' '}›{' '}
-          {persona.icon} {persona.label}
+          <PIcon size={14} strokeWidth={2} style={{verticalAlign: '-2px'}} /> {persona.label}
         </div>
         <div className={styles.personaRow}>
-          <span className={styles.personaIco}>{persona.icon}</span>
+          <span className={styles.personaIco} aria-hidden="true">
+            <PIcon size={32} strokeWidth={2} />
+          </span>
           <div>
             <h1>{persona.label}</h1>
             <p className={styles.personaSub}>{persona.blurb}</p>
@@ -232,11 +246,16 @@ function Inner({slug}: Props): JSX.Element {
             const p = PERSONAS.find((x) => x.slug === d.slug);
             return p && canEnterPersona(user, p);
           })
-          .map((d) => (
-            <Link key={d.slug} to={`/path/${d.slug}/`}>
-              {d.icon} {d.label}
-            </Link>
-          ))}
+          .map((d) => {
+            const p = PERSONAS.find((x) => x.slug === d.slug)!;
+            const DIcon = p.icon;
+            return (
+              <Link key={d.slug} to={`/path/${d.slug}/`}>
+                <DIcon size={14} strokeWidth={2} style={{verticalAlign: '-2px', marginRight: 4}} />
+                {d.label}
+              </Link>
+            );
+          })}
       </nav>
     </div>
   );

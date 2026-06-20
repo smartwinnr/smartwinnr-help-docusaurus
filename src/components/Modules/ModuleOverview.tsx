@@ -2,6 +2,22 @@ import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import type {LucideIcon} from 'lucide-react';
+import {
+  GraduationCap,
+  Users,
+  SquarePen,
+  Send,
+  LayoutGrid,
+  ChartColumn,
+  Settings,
+  Lightbulb,
+  LifeBuoy,
+  BookOpen,
+  Rocket,
+  FileText,
+  Mail,
+} from 'lucide-react';
 import {useCurrentUser, useIsUserReady} from '@site/src/contexts/UserContext';
 import {hasMinTier, PRIVILEGE_GATING_ENABLED} from '@site/src/access-policy';
 import type {CurrentUser} from '@site/src/access-policy';
@@ -35,18 +51,18 @@ type Props = {
   slug: string;
 };
 
-const CARD_ICONS: Record<string, string> = {
-  'for-learners': '🎓',
-  'for-managers': '📋',
-  'create-and-manage': '🛠',
-  'assign-and-schedule': '📤',
-  'features': '🧩',
-  'reports-and-analytics': '📊',
-  'settings-and-permissions': '⚙️',
-  'best-practices': '💡',
-  'faqs-and-troubleshooting': '🛟',
-  'overview': '📘',
-  'quickstart': '🚀',
+const CARD_ICONS: Record<string, LucideIcon> = {
+  'for-learners': GraduationCap,
+  'for-managers': Users,
+  'create-and-manage': SquarePen,
+  'assign-and-schedule': Send,
+  'features': LayoutGrid,
+  'reports-and-analytics': ChartColumn,
+  'settings-and-permissions': Settings,
+  'best-practices': Lightbulb,
+  'faqs-and-troubleshooting': LifeBuoy,
+  'overview': BookOpen,
+  'quickstart': Rocket,
 };
 
 const CARD_TITLES: Record<string, string> = {
@@ -147,8 +163,12 @@ function UpsellBlock({slug, meta}: {slug: string; meta: ModuleMeta}) {
         ))}
       </ul>
       <div className={styles.ctaRow}>
-        <a className={styles.cta} href={`mailto:${email}?subject=${subject}&body=${body}`}>
-          ✉️ Talk to your admin
+        <a
+          className={styles.cta}
+          href={`mailto:${email}?subject=${subject}&body=${body}`}
+          style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+          <Mail size={16} strokeWidth={2} aria-hidden="true" />
+          Talk to your admin
         </a>
         <Link className={styles.ctaSecondary} to="/modules/">
           Browse other modules
@@ -172,13 +192,18 @@ function GetStartedCards({
     <section className={styles.section}>
       <h2>Get started</h2>
       <div className={styles.cardGrid}>
-        {cardsForViewer(tier, managerViewOk).map((sub) => (
-          <Link key={sub} to={`${baseUrl}${sub}/`} className={styles.card}>
-            <span className={styles.ico}>{CARD_ICONS[sub] ?? '📄'}</span>
-            <h3>{CARD_TITLES[sub] ?? sub}</h3>
-            <p>{CARD_BLURBS[sub] ?? ''}</p>
-          </Link>
-        ))}
+        {cardsForViewer(tier, managerViewOk).map((sub) => {
+          const Icon = CARD_ICONS[sub] ?? FileText;
+          return (
+            <Link key={sub} to={`${baseUrl}${sub}/`} className={styles.card}>
+              <span className={styles.ico} aria-hidden="true">
+                <Icon size={24} strokeWidth={2} />
+              </span>
+              <h3>{CARD_TITLES[sub] ?? sub}</h3>
+              <p>{CARD_BLURBS[sub] ?? ''}</p>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

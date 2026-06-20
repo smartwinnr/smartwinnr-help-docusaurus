@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Lightbulb } from 'lucide-react';
 import VectorSearch from '@site/src/components/VectorSearch/VectorSearch';
 import './styles.css';
 
@@ -71,7 +72,10 @@ export default function SearchBar(): JSX.Element {
             </div>
             <div className="search-modal-footer">
               <div className="search-modal-tips">
-                <span>💡 Try: "How to create a quiz?" or "Setting up competitions"</span>
+                <span style={{display: 'inline-flex', alignItems: 'center', gap: 6}}>
+                  <Lightbulb size={14} strokeWidth={2} aria-hidden="true" />
+                  Try: "How to create a quiz?" or "Setting up competitions"
+                </span>
               </div>
               <div className="search-modal-shortcuts">
                 <kbd>↵</kbd> to select • <kbd>↑↓</kbd> to navigate • <kbd>esc</kbd> to close

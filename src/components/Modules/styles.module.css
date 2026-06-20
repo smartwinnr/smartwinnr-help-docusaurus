@@ -102,9 +102,11 @@
   color: inherit;
 }
 .card .ico {
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
   margin-bottom: var(--space-1);
+  color: var(--ifm-color-primary-darker);
 }
 .card h3 {
   font-size: var(--text-h3);
