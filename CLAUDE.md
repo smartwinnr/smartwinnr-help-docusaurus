@@ -184,18 +184,20 @@ redirects to login.
   `chatbot:dev`, `index-docs`, and `start:production` point at `services/chatbot/*.ts`
   files that aren't in the repo - they are stale and will fail. The real backend entry is
   `server.js`. Use `node server.js` / `npm start`, not those scripts.
-- **`ARCHITECTURE.md` §8 is outdated**: it says "no authentication." Auth now exists and
-  gates the entire site (see Auth above). Treat its RAG/indexing sections as accurate but
-  its access-control claims as superseded by `auth/`.
 - **All SmartWinnr roles can sign in** (`user`, `manager`, `editor`, `admin`, `orgadmin`,
   `lamadmin`, `superadmin`) - `auth/routes.js` no longer restricts to editor/admin. What
   each role sees inside is decided by the swizzled `DocSidebarItem/{Category,Link}`
   wrappers reading `customProps.{roles, privilege, anyPrivilege}` from `sidebars.ts` and
   `_category_.json` files. Gate-resolution logic lives in `src/access-policy.ts`
   (`isAllowed`); `superadmin` bypasses privilege checks (`PRIVILEGE_BYPASS_ROLES`).
-  **Caveat**: the sidebar hides categories, but `express.static` still serves
-  hand-typed/shared URLs for those paths - there is no server-side URL guard yet (Phase D
-  in `AUTH_MENU_PLAN.md`).
+- **Server-side URL guard is live.** `plugins/access-gate-emit.js` walks `_category_.json`
+  files + article frontmatter at build time and writes `build/doc-gates.json` (a
+  longest-prefix lookup table). The middleware in `server.js` (around line 2322) loads
+  that table and 403s on any disallowed path, using AND-of-all-matching-gates semantics
+  (every ancestor category must allow the viewer). The same `isUrlAllowedForUser`
+  helper filters vector-search results and chatbot citations so what we feed the LLM
+  matches what the site would serve. Falls open if `doc-gates.json` is absent (e.g. dev
+  with no build), so local dev still works.
 - **`GET /api/me`** is the only endpoint the React client calls on mount to hydrate
   `UserContext` (`src/contexts/UserContext.tsx` → `src/theme/Root.tsx`). Response shape:
   `{ email, roles, region, orgId, privileges }`. The session JWT carries the same fields,

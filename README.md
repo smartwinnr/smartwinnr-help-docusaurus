@@ -1,645 +1,146 @@
-# SmartWinnr Help Documentation
+# SmartWinnr Help Center
 
-A Docusaurus-based documentation site with integrated AI chatbot functionality for SmartWinnr help content. Features a reorganized, user-friendly documentation structure with locally hosted images and automated image management capabilities.
+Customer-facing help center for SmartWinnr. A Docusaurus documentation site
+served by an integrated Express backend (`server.js`) that also hosts a
+RAG-powered chatbot (**Wynnie**), magic-link authentication, role-based access
+control, an LLM-assisted authoring wizard, and analytics dashboards.
 
-## Prerequisites
+The whole stack — static docs + every API route — runs as a single Node
+process. There is no separate chatbot service in production.
 
-- Node.js (version 16 or higher)
-- npm or yarn package manager
-- OpenAI API key for chatbot functionality
+## What's in the box
 
-## Production Deployment
+| Surface | What it does |
+|---|---|
+| **Docs site** (`docs/`, 26 categories, 900+ articles) | Markdown articles, sidebar gated by viewer role + org privileges. Auto-generated category routes; per-module landing pages render via a swizzled `ModuleOverview`. |
+| **Auth** (`auth/`) | Magic-link sign-in through a Mailgun Lambda. JWT cookie carries email, roles, region, orgId, privileges. Three dev shortcuts (`/auth/dev-login`, `?as=<role>` preview, headless cookie minter) are stripped at production build. |
+| **URL guard** (`plugins/access-gate-emit.js` + `server.js`) | Walks `_category_.json` + frontmatter at build, emits `build/doc-gates.json`, then middleware enforces AND-of-all-matching-gates so a hand-typed URL can't bypass the swizzled sidebar. Same logic filters vector search + chatbot citations. |
+| **Wynnie chatbot** (`/api/chat`, widget in `src/components/ChatBot/`) | RAG over `smartwinnr_docs` ChromaDB collection. OpenAI `text-embedding-3-small` + a chat completion. Every exchange persists to SQLite with retention and circuit breaker. |
+| **Authoring wizard** (`/admin/authoring`, superadmin only) | LLM-assisted 3-step flow: where + who → brain dump + image upload → preview/refine. Produces canonical-frontmatter markdown, supports drafts, image upload, and an auto-deploy pipeline that pushes to GitHub. |
+| **Analytics** (`/admin/analytics/{chat,feedback}`, `/admin/digests`) | Per-article feedback ("Was this helpful?"), chat-log stats with citation CTR and low-confidence triage, scheduled email digests. |
+| **Content pipelines** | `scripts/freshdesk/` ingests support-ticket CSVs and generates new articles; `scripts/migrate-helpscout.js` is the canonical Help Scout re-sync tool. |
 
-### Railway (Current Production Environment)
+## Ports + scripts
 
-The project is successfully deployed on Railway with the following services:
+`server.js` is the single entry. In production it serves the built site
+**and** every `/api/*` route on one port. In dev there's no such unified mode —
+either run Docusaurus dev (no APIs) or build + serve (full stack).
 
-- **Documentation Site**: https://docusaurus-production.up.railway.app
-- **Chatbot API**: https://chatbot-api-production-32f8.up.railway.app
-- **ChromaDB**: https://chroma-production-ebac.up.railway.app (Internal vector database)
+| Service | Local port | URL | Notes |
+|---|---|---|---|
+| Docusaurus dev (hot-reload, **no chatbot API**) | `3001` | `http://localhost:3001` | `npm run dev` |
+| Unified server (build + every API on one port) | `3001` | `http://localhost:3001` | `npm start` (= `npm run build && node server.js`) |
+| ChromaDB (local only) | `8000` | `http://localhost:8000` | Optional, only if running locally instead of pointing at the prod Chroma. |
+| Health check | — | `http://localhost:3001/api/health` | Public, before auth middleware. |
 
-**Deployment Files:**
-- 📖 `RAILWAY_DEPLOYMENT.md` - Complete Railway deployment guide
-- ⚙️ `RAILWAY_ENVIRONMENT_VARIABLES.md` - Environment variables reference
-- 🐳 `Dockerfile.chatbot` - Chatbot API container configuration
-- 🐳 `Dockerfile.docusaurus` - Documentation site container configuration
-- 🔄 `scripts/internal-indexer.js` - Automatic document indexing system
+> **Trap:** `package.json` still has stale scripts (`chatbot:start`,
+> `chatbot:dev`, `start:docs`, `index-docs`, `start:production`) pointing
+> at a `services/chatbot/` directory that doesn't exist. Don't use them.
+> The current entry is `server.js`.
 
-**✅ Key Features:**
-- **Automatic Document Indexing**: Documentation is automatically indexed when deployed
-- **Internal Service Communication**: Services communicate via Railway's secure internal network
-- **AI-Powered Search**: ChromaDB stores document embeddings for intelligent chatbot responses
-- **Zero Public API Exposure**: Only the documentation website is publicly accessible
-
-**🔧 Technical Implementation:**
-- ChromaDB service uses Railway's official template with IPv6 binding (`CHROMA_HOST_ADDR=::`)
-- Internal networking uses `chatbot-api.railway.internal` for service-to-service communication
-- Automatic indexing runs after Docusaurus deployment with 45-second startup delay
-- OpenAI embeddings generated via internal chatbot-api service calls
-- Retry logic with exponential backoff ensures reliable service communication
-
-## Setup
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Set up environment variables:**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Edit the `.env` file and configure the following variables:
-   - `OPENAI_API_KEY`: Your OpenAI API key
-   - Other configuration options as needed (see `.env.example` for details)
-
-## Running the Project
-
-### Prerequisites for Local Development
-
-Before running the project locally, ensure you have all required services installed:
-
-#### 1. ChromaDB Installation
-
-**Check if ChromaDB is already installed:**
-```bash
-which chroma
-```
-
-**If not installed, install ChromaDB:**
-```bash
-# Option A: Using pip
-pip install chromadb
-
-# Option B: Using conda
-conda install -c conda-forge chromadb
-
-# Option C: Using Docker (alternative)
-docker pull chromadb/chroma:0.6.3
-```
-
-#### 2. Node.js Dependencies
-```bash
-npm install
-```
-
-#### 3. Environment Configuration
-```bash
-cp .env.example .env
-# Edit .env file with your OpenAI API key and other settings
-```
-
-### Complete Local Development Setup (All 3 Services)
-
-For the full development experience with AI chatbot functionality, run all three services:
-
-#### Step 1: Start ChromaDB Server
-```bash
-# Start ChromaDB on port 8000 with local data storage
-chroma run --host 0.0.0.0 --port 8000 --path ./chroma_data
-```
-
-Keep this terminal open. ChromaDB will display:
-```
-Connect to Chroma at: http://localhost:8000
-Listening on 0.0.0.0:8000
-```
-
-#### Step 2: Start Docusaurus + Chatbot (New Terminal)
-```bash
-# Start both documentation site and chatbot API with colored output
-npm run dev:full
-```
-
-This will start:
-- **Documentation site**: `http://localhost:3000`
-- **Chatbot API server**: `http://localhost:3002`
-- **ChromaDB connection**: Chatbot will connect to ChromaDB automatically
-
-#### Verify All Services Are Running
-
-| Service | URL | Status Check |
-|---------|-----|--------------|
-| **Docusaurus** | http://localhost:3000 | Visit in browser |
-| **Chatbot API** | http://localhost:3002/health | Should return `{"status":"healthy"}` |
-| **ChromaDB** | http://localhost:8000 | Vector database running |
-
-### Individual Components
-
-**Documentation site only:**
-```bash
-npm run start:docs    # Runs on port 3000
-# or
-npm start            # Also runs on port 3000
-```
-
-**Chatbot server only:**
-```bash
-npm run chatbot:dev  # Runs on port 3002
-# Note: Requires ChromaDB to be running on port 8000
-```
-
-**ChromaDB only:**
-```bash
-chroma run --host 0.0.0.0 --port 8000 --path ./chroma_data
-```
-
-### Alternative ChromaDB Setup (Docker)
-
-If you prefer using Docker for ChromaDB:
-```bash
-# Run ChromaDB with Docker
-docker run -d --name chromadb-local -p 8000:8000 \
-  -v chromadb_data:/chroma/data \
-  -e IS_PERSISTENT=TRUE \
-  -e PERSIST_DIRECTORY=/chroma/data \
-  chromadb/chroma:0.6.3
-
-# Stop ChromaDB container
-docker stop chromadb-local
-
-# Remove ChromaDB container
-docker rm chromadb-local
-```
-
-### Production
-
-**Build for production:**
-```bash
-npm run build
-```
-
-**Serve production build:**
-```bash
-npm run serve:docs   # Serves on port 3000
-# or  
-npm run serve        # Also serves on port 3000
-```
-
-## Documentation Structure
-
-The documentation has been reorganized into intuitive, workflow-based sections:
-
-### 🚀 **Getting Started** (5 consolidated guides)
-- **Account Setup & Login** - Login, password recovery, account troubleshooting
-- **Profile & Settings** - Password management, profile customization, language settings
-- **App Management** - Updates, version checking, system requirements
-- **Manager Features** - Switching between user and manager views
-- **About SmartWinnr** - Platform overview and key features
-
-### 📝 **Quiz Management** (3 comprehensive guides)
-- **Creating Quizzes** - All question types, manual/automatic quiz creation
-- **Quiz Administration** - Settings, permissions, user management
-- **Quiz Analytics & Reports** - Performance insights and reporting
-
-### 📚 **Learning & Training** (3 content-focused guides)
-- **SmartFeed Management** - Bite-sized content creation and distribution
-- **SmartPath Management** - Structured learning journeys and modules
-- **Knowledge Hub (KHub)** - Centralized knowledge repository
-
-### Additional Sections
-- **🎯 Coaching & Performance**
-- **🏆 Competitions & Gamification** 
-- **📋 Surveys & Feedback**
-- **📊 Reports & Analytics**
-- **👥 Administration**
-- **🔧 Troubleshooting**
-
-## Image Management System
-
-### Local Image Storage
-All documentation images are now hosted locally under `/static/img/` with organized directory structure:
-- `/static/img/getting-started/` - Setup and login images
-- `/static/img/quizzes/` - Quiz management screenshots
-- `/static/img/learning/` - Learning content images
-- And more category-specific folders
-
-### Image Migration & Mapping
-- **Migration Script**: `/scripts/migrate-images.js` - Automated HelpScout image migration
-- **Image Mapping**: `/static/img/image-mapping.json` - Complete image metadata and usage tracking
-- **Automated Generation Ready**: Structure supports automated image generation after production pushes
-
-### Running Image Migration
-```bash
-# Migrate external images to local storage
-node scripts/migrate-images.js
-```
-
-## Port Configuration
-
-| Service | Port | URL | Description |
-|---------|------|-----|-------------|
-| **Documentation** | 3000 | http://localhost:3000 | Docusaurus site |
-| **Chatbot API** | 3002 | http://localhost:3002 | AI backend |
-| **ChromaDB** | 8000 | http://localhost:8000 | Vector database |
-
-See [PORT_CONFIG.md](./PORT_CONFIG.md) for detailed port configuration and troubleshooting.
-
-### Local Development Troubleshooting
-
-#### Port Conflicts
-If you encounter port conflicts:
+## Quick start
 
 ```bash
-# Check what's using a specific port
-lsof -ti:3000  # Replace 3000 with your port
-lsof -ti:3002
-lsof -ti:8000
+git clone <repo> && cd smartwinnr-help-docusaurus
+npm install --legacy-peer-deps          # better-sqlite3 needs native build deps
+cp .env.example .env                    # add your OPENAI_API_KEY, auth secrets, etc.
 
-# Kill process using a port
-kill $(lsof -ti:3000)
+npm run dev                             # docs only on 3001, no chatbot API
+# OR
+npm start                               # build + unified server on 3001 (full stack)
 ```
 
-#### ChromaDB Connection Issues
-- **Error: "Connection refused"**: Ensure ChromaDB is running on port 8000
-- **Error: "Collection not found"**: The chatbot will create the collection automatically on first run
-- **Slow startup**: First run may take longer as ChromaDB initializes
+To exercise the chatbot or any `/api/*` route locally you **need** the unified
+server, not the dev server.
 
-#### Common Environment Issues
-```bash
-# Clear npm cache if needed
-npm cache clean --force
-
-# Reinstall dependencies
-rm -rf node_modules package-lock.json
-npm install
-
-# Clear Docusaurus cache
-npm run clear
-```
-
-#### Health Check Commands
-```bash
-# Test all services are running
-curl http://localhost:3000                  # Docusaurus (returns HTML)
-curl http://localhost:3002/health           # Chatbot API health
-curl http://localhost:8000/api/v1/version   # ChromaDB (may show deprecation message)
-
-# Test chatbot functionality
-curl -X POST http://localhost:3002/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message":"What is SmartWinnr?"}'
-```
-
-## WYSIWYG Content Management System
-
-### **Access the CMS**
-Navigate to the admin interface for user-friendly content editing:
-```
-http://localhost:3000/admin/          # Development
-https://help.smartwinnr.com/admin/    # Production
-```
-
-### **CMS Features**
-- **📝 WYSIWYG Editor**: Rich text editing with live preview
-- **🖼️ Image Management**: Drag & drop image uploads
-- **📁 Organized Collections**: Edit docs by category
-- **🔄 Git Integration**: Changes saved as Git commits
-- **👥 User Permissions**: Access controlled via GitLab
-- **📱 Mobile Friendly**: Edit on any device
-- **🔍 Search & Filter**: Find content quickly
-- **📋 Editorial Workflow**: Draft → Review → Publish
-
-### **Setup Instructions**
-1. **GitLab OAuth Setup**: 
-   - Go to GitLab → User Settings → Applications
-   - Create new application with redirect URI: `https://help.smartwinnr.com/admin/`
-   - Copy Application ID to `static/admin/config.yml`
-
-2. **Access Control**: 
-   - Only GitLab users with repository access can edit
-   - Maintains same security as current Git workflow
-
-### **Content Collections Available**
-- 📚 Getting Started (27 files)
-- 📝 Quiz & Assessments (51 files) 
-- 🎯 MicroLearning & SmartFeeds (19 files)
-- 🛤️ Learning & SmartPaths (13 files)
-- 📋 Forms & Data Collection (14 files)
-- 🧠 Knowledge Hub (8 files)
-- 📊 Surveys & Feedback (11 files)
-- 📈 Analytics & Reporting (1 file)
-- 🏆 Competitions & Gamification (34 files)
-- 🎯 Coaching & Performance (19 files)
-- ⚙️ Administration (35 files)
-- 📱 Mobile & Platform Tools (1 file)
-- 🆘 Help & Support (2 files)
-
-## Automatic Document Indexing System
-
-### How It Works
-The system uses **intelligent incremental indexing** that only processes changed documents:
-
-1. **Deployment Trigger**: After Docusaurus builds and starts serving
-2. **Change Detection**: Uses SHA256 hashing to identify new, changed, or deleted documents
-3. **Incremental Processing**: Only processes documents that actually changed (90-95% efficiency gain)
-4. **Embedding Generation**: Creates OpenAI embeddings via internal chatbot-api service (only for changed docs)
-5. **Smart Updates**: Uses ChromaDB upsert/delete operations instead of full recreation
-6. **Batch Processing**: Processes changed documents in batches of 10 for optimal performance
-
-### Key Components
-
-**Internal Indexer Script**: `scripts/internal-indexer.js`
-- **Intelligent Change Detection**: SHA256 content hashing for precise change detection
-- **Incremental Processing**: Only processes new, changed, or deleted documents
-- **Efficiency**: 90-95% reduction in processing time for typical deployments
-- **Smart ChromaDB Operations**: Uses upsert/delete instead of full recreation
-- **Retry Logic**: Robust error handling and automatic retries
-- **Cross-Environment**: Works in both local development and Railway production
-
-**Railway Environment Variables**:
-```
-CHROMA_HOST=chroma.railway.internal
-CHROMA_PORT=8000
-OPENAI_API_KEY=your-openai-key
-COLLECTION_NAME=smartwinnr_docs
-FORCE_FULL_REINDEX=false  # Set to 'true' to force full reindex
-```
-
-**Advanced Features**:
-- **Content Hashing**: SHA256-based change detection
-- **Selective Updates**: Only new/changed documents generate embeddings
-- **Document Tracking**: Maintains metadata for change comparison
-- **Deleted File Cleanup**: Automatically removes deleted documents from collection
-- **Performance Logging**: Detailed efficiency metrics and change summaries
-
-### Manual Operations
-
-**Incremental Indexing (Default)**:
-```bash
-# Automatically detects and processes only changed documents
-npm run index-internal
-```
-
-**Force Full Re-indexing**:
-```bash
-# Forces complete reindex of all documents (use sparingly)
-FORCE_FULL_REINDEX=true npm run index-internal
-```
-
-**Local Development Testing**:
-```bash
-# Test incremental indexing locally
-npm run index-docs  # Uses localhost ChromaDB
-```
-
-## Additional Commands
-
-- **Enhanced development:** `npm run dev:full` (with colored output)
-- **Index documentation for chatbot:** `npm run index-docs` (local development)
-- **Internal indexing:** `npm run index-internal` (Railway production)
-- **Type checking:** `npm run typecheck`
-- **Clear Docusaurus cache:** `npm run clear`
-- **Migrate images:** `node scripts/migrate-images.js`
-
-### Health Checks
-```bash
-# Documentation server
-curl http://localhost:3000
-
-# Chatbot API health
-curl http://localhost:3002/health
-
-# Test chatbot functionality
-curl -X POST http://localhost:3002/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message":"What is SmartWinnr?"}'
-```
-
-## 🚀 Production Deployment
-
-### **Vercel Deployment (Frontend)**
-Deploy the documentation site to Vercel:
+## Indexing docs into ChromaDB
 
 ```bash
-# Build and deploy
-npm run build
-npx vercel --prod
+node server.js &                        # the indexer calls /api/vector/embed
+npm run index-internal                  # incremental, SHA-256-keyed
+FORCE_FULL_REINDEX=true npm run index-internal   # nuke + re-embed everything
 ```
 
-### **Production Architecture:**
-- **Frontend**: Vercel (static site hosting)
-- **Backend API**: To be configured with your preferred hosting provider
-- **Database**: Vector database for AI functionality
-- **Secrets**: Secure environment variable management
+## Production deployment (Railway)
 
-## Project Structure
+Two services + a few cron jobs:
+
+| Railway service | Image | Role |
+|---|---|---|
+| `docusaurus` | `Dockerfile.docusaurus` (Node 22 + built site + `server.js`) | Public web + every API route, single port. Builds the site at image-build time so the runtime container is small. |
+| `chroma` | Railway's official ChromaDB template | Vector DB. IPv6-bound (`CHROMA_HOST_ADDR=::`) so the docusaurus service can reach it over Railway's private network. |
+| Cron jobs (one per digest type) | `curlimages/curl` | Hit `/api/admin/digests/send?type=...` weekly, guarded by `CRON_SECRET`. See `railway.toml` for the schedule. |
+
+`docusaurus` runs `npm run start:railway` which is just `node server.js`. The
+build happens in the Dockerfile, not at deploy time. Auto-redeploys are
+triggered by the authoring wizard pushing commits via the GitHub Git Data API
+(see `AUTHORING_GIT_PUSH` / `GIT_PUSH_TOKEN` in `.env.example`).
+
+See:
+- `RAILWAY_DEPLOYMENT.md` — service setup details + ChromaDB-template quirks.
+- `RAILWAY_ENVIRONMENT_VARIABLES.md` — full env-var reference per service.
+- `RAILWAY_SSH_ACCESS.md` — how to shell into a running container for SQLite inspection.
+
+## Key environment variables
+
+Copy `.env.example` → `.env`. Minimum to run anything useful locally:
+
+| Var | What it does | Required when |
+|---|---|---|
+| `OPENAI_API_KEY` | Embeddings + chat completions | Always |
+| `INTERNAL_API_KEY` | Guards `POST /api/vector/embed` (indexer-only) | Always |
+| `CHROMA_HOST` / `CHROMA_PORT` / `CHROMA_SSL` | Where Chroma lives | Always (default `localhost:8000`) |
+| `COLLECTION_NAME` | Override the default collection (`smartwinnr_docs`) | If splitting corpora |
+| `EMBEDDING_MODEL` | Override `text-embedding-3-small` | Rarely |
+| `PORT` | Server listen port | Railway sets this; local default is `3001` |
+| `HELP_JWT_SECRET` | Signs the `swhelp_session` cookie | Production |
+| `HELP_SITE_URL` | Used by the magic-link redirect | Production |
+| `LAMBDA_MAGIC_LINK_URL` | Where the login form POSTs | Production |
+| `CHAT_LOG_DB_PATH` | SQLite path for chat logs (default `./data/chat-logs.db`) | If non-default |
+| `CHAT_LOG_RETENTION_DAYS` | TTL for chat-log rows | If non-default |
+| `CHAT_LOGGING_ENABLED` | Master switch | Defaults `true` |
+| `CRON_SECRET` | Auth header for the digest cron services | If wiring up digests |
+| `AUTHORING_GIT_PUSH` + `GIT_PUSH_TOKEN` + `GITHUB_REPO` + `GIT_PUBLISH_BRANCH` | Authoring-wizard auto-deploy pipeline | If using the publish-to-deploy flow |
+
+## Project structure (top-level)
 
 ```
-├── docs/                           # Documentation content
-│   ├── getting-started/            # Consolidated setup guides
-│   ├── quizzes/                    # Quiz management workflows  
-│   ├── learning/                   # Learning content management
-│   └── [other-sections]/           # Additional documentation
-├── src/                            # Docusaurus theme and components
-├── services/chatbot/               # AI chatbot backend service
-├── static/                         # Static assets
-│   ├── admin/                      # CMS configuration
-│   │   ├── config.yml             # Decap CMS settings
-│   │   └── index.html             # CMS admin interface
-│   └── img/                        # Local image storage
-│       ├── getting-started/        # Category-organized images
-│       ├── quizzes/               
-│       ├── learning/              
-│       └── image-mapping.json      # Image metadata and tracking
-├── scripts/                        # Utility scripts
-│   └── migrate-images.js          # Image migration tool
-└── sidebars.ts                     # Navigation structure
+auth/                  magic-link routes, JWT signer, middleware, login page
+db/                    SQLite layer: chat logs, feedback, digests, article-grade audit
+docs/                  the markdown source (gated by frontmatter + _category_.json)
+plugins/               Docusaurus plugins (chatbot widget injection, access-gate emit)
+prompts/               LLM system prompts (Wynnie, author-article, rewrite-article)
+scripts/               indexer, audit, autofix, Help Scout migration, Freshdesk pipeline
+shared/                code shared between the Docusaurus runtime and server.js (CJS)
+src/                   Docusaurus React app (swizzled sidebar, ChatBot, admin pages)
+static/                images served at /img/
+templates/             authoring templates (canonical frontmatter examples)
+server.js              the unified Express entry
+docusaurus.config.ts   site + plugin config
+sidebars.ts            top-level sidebar tree (auto-generated subtrees from docs/)
+Dockerfile.docusaurus  production image
+railway.json / .toml   Railway service config
+ARCHITECTURE.md        end-to-end system architecture (RAG, indexing, auth, pipelines)
+AUTH_MENU_PLAN.md      role-based menu layout + canonical article format (§C1)
+CLAUDE.md              context for Claude Code sessions
+SmartWinnr-Help-Style-Guide.md   loaded by the rewrite/audit scripts as the prose style source
+INTERNAL_KB_PLAN.md    plan for a separate internal-only KB (handed to another session)
 ```
 
-## Automated Screenshot Capture System
+## Validation
 
-**Status: Implementation Ready** | **Full Plan**: [AUTOMATED_SCREENSHOT_CAPTURE.md](./docs/AUTOMATED_SCREENSHOT_CAPTURE.md)
+There's no automated test suite. The CI gates are:
 
-A comprehensive Puppeteer-based system to automatically capture real screenshots from SmartWinnr test environments, replacing outdated HelpScout screenshots with current, accurate UI images.
+- `npm run lint:docs` — markdownlint with custom rules (`custom-markdownlint-rules.js`), including the no-decorative-emojis rule. A husky pre-commit hook auto-fixes + blocks the commit if it can't.
+- `npm run typecheck` — `tsc --noEmit`.
+- `npm run build` — Docusaurus build (also runs `prebuild` = `validate-privilege-keys` + `audit-gates`).
 
-### System Overview
-- **Target Systems**: SmartWinnr Admin Portal + Manager/User Portal
-- **Current Scale**: 681 screenshots to be captured and maintained
-- **Technology**: Puppeteer with multi-portal authentication
-- **Automation Level**: 95% automated capture with quality controls
-- **Estimated Timeline**: 4 weeks (3 phases)
-- **ROI**: $13,700 annual value, 9-month payback
+Manual verification — sign in via `/auth/dev-login?role=<role>&privileges=*`, exercise the sidebar + chatbot + authoring wizard for each role tier.
 
-### Key Features
+## Where to look next
 
-#### 🎯 **Multi-Portal Screenshot Capture**
-- **Admin Portal**: Desktop screenshots (1440x900px) from https://app.smartwinnr.com/
-- **Manager/User Portal**: iPad screenshots (1024x768px) from https://web.smartwinnr.com/
-- **Authentication**: Dedicated test accounts for each role (Admin, Manager, User)
-- **Smart Navigation**: Optimized page navigation and session management
-
-#### 🔄 **Automated Processing**
-- **Batch Capture**: Process multiple screenshots efficiently
-- **Quality Control**: Automatic validation and optimization
-- **Error Handling**: Retry logic and failure recovery
-- **Change Detection**: Monitor frontend changes for screenshot updates
-
-#### 📊 **Management & Integration**
-- **Mapping Integration**: Seamless integration with existing image-mapping.json
-- **File Organization**: Structured storage in `/static/img/screenshots/`
-- **Version Control**: Track screenshot changes and enable rollbacks
-- **CI/CD Ready**: Designed for future frontend deployment integration
-
-### Implementation Phases
-
-#### **Phase 1: Foundation** (Week 1)
-- Puppeteer setup and authentication system
-- Basic single screenshot capture for proof of concept
-- Credential management and security setup
-
-#### **Phase 2: Batch Processing** (Week 2-3)
-- Multi-screenshot capture system
-- Image mapping integration and replacement
-- Quality control and validation systems
-
-#### **Phase 3: Automation** (Week 4)
-- Batch processing for all 681 screenshots
-- Change detection and automated triggers
-- Monitoring and analytics dashboard
-
-### Technical Specifications
-
-#### **Screenshot Standards**
-- **Format**: PNG (lossless compression)
-- **Admin Resolution**: 1440x900px (desktop)
-- **Manager/User Resolution**: 1024x768px (iPad)
-- **Naming**: `[portal]_[section]_[feature]_[view]_[YYYYMMDD].png`
-
-#### **Target Environments**
-- **Test Server**: Dedicated test environment with dummy data
-- **Admin Portal**: https://app.smartwinnr.com/ (separate system)
-- **Manager/User Portal**: https://web.smartwinnr.com/ (unified system)
-- **Authentication**: Username/password with dedicated test accounts
-
-#### **Directory Structure**
-```
-/static/img/screenshots/
-├── admin/          # Admin portal screenshots
-├── manager/        # Manager view screenshots
-├── user/          # User view screenshots
-└── screenshot-mapping.json
-```
-
-### Current Infrastructure
-
-#### **Screenshot Mapping System**
-- **Enhanced Metadata**: Extended image-mapping.json with capture specifications
-- **Portal Routing**: Automatic portal and role detection
-- **Dependency Tracking**: Manage authentication and page dependencies
-- **Quality Metrics**: Capture success rates and validation
-
-#### **Automation-Ready Features**
-- **Session Management**: Persistent authentication across captures
-- **Smart Selectors**: Flexible element targeting with fallbacks
-- **Error Recovery**: Retry logic and alternative capture methods
-- **Resource Optimization**: Memory and performance management
-
-### Cost Structure
-- **Development**: $10,500 one-time setup
-- **Operational**: ~$60/month (hosting, storage, monitoring)
-- **Annual Savings**: $13,700 (time savings + maintenance efficiency)
-- **Per Screenshot Cost**: <$0.15 total cost including capture and processing
-
-### Rollout Plan
-1. **Single Screenshot Pilot**: Proof of concept with one manager portal screenshot
-2. **Section Pilot**: Complete "Getting Started" section (10-15 screenshots)
-3. **Full Deployment**: All 681 screenshots across both portals
-4. **CI/CD Integration**: Automated capture on frontend changes
-
-### Next Steps
-1. **Week 1**: Setup Puppeteer, authentication, and single screenshot capture
-2. **Week 2**: Implement batch processing and mapping integration
-3. **Week 3**: Deploy section pilot and quality validation
-4. **Week 4**: Full deployment with monitoring and analytics
-
-*See [AUTOMATED_SCREENSHOT_CAPTURE.md](./docs/AUTOMATED_SCREENSHOT_CAPTURE.md) for complete technical specifications, implementation details, and code examples.*
-
-## Environment Configuration
-
-The project supports both development and production environments:
-
-- **Development:** Uses local OpenAI API key from `.env` file
-- **Production:** Fetches API key from AWS Secrets Manager
-
-See `.env.example` for detailed configuration options.
-
-## Documentation Style Guide & Workflow
-
-This project includes automated validation to ensure all documentation follows the [SmartWinnr Help Document Style Guide](./SmartWinnr-Help-Style-Guide.md).
-
-### Writing New Documentation
-
-1. **Use Templates**: Start with pre-built templates in `/templates/`:
-   - `help-document-template.md` - For step-by-step guides
-   - `feature-overview-template.md` - For feature introductions
-   - `troubleshooting-template.md` - For problem-solving guides
-
-2. **Follow Style Guidelines**: 
-   - Action-oriented titles (e.g., "Upload a Training Video")
-   - American English spelling
-   - Bold UI elements (**Save** button)
-   - Positive framing ("Remember to..." not "Don't forget...")
-   - Short sentences (15-20 words max)
-
-3. **Automated Validation**: 
-   - Run `npm run lint:docs` to check style compliance
-   - Run `npm run lint:docs:fix` to auto-fix formatting issues
-   - Pre-commit hooks automatically check and fix documentation
-
-### Style Validation System
-
-#### Local Development
-```bash
-# Check all documentation for style issues
-npm run lint:docs
-
-# Automatically fix style issues
-npm run lint:docs:fix
-```
-
-#### Git Integration
-- **Pre-commit Hooks**: Automatically validate and fix documentation before commits
-- **GitLab CI/CD**: Merge requests are blocked if documentation fails style checks
-- **Custom Rules**: Enforce action-oriented titles, UI formatting, and tone guidelines
-
-#### Custom Style Rules
-Our markdownlint configuration includes custom rules that enforce:
-- Action-oriented H1 titles
-- Bold formatting for UI elements
-- Positive framing instead of negative language
-- American English spelling
-- Sentence length limits for readability
-
-### Contributing
-
-#### Documentation Updates
-1. **Start with Templates**: Use appropriate template from `/templates/`
-2. **Follow Style Guide**: Adhere to SmartWinnr documentation standards
-3. **Use Validation Tools**: Run `npm run lint:docs:fix` before committing
-4. **Structured Organization**: Place content in appropriate category folders
-5. **Image Management**: Add images to `/static/img/[category]/` folders
-
-#### Image Management
-- **New Images**: Add to appropriate category folder
-- **External Images**: Use migration script or add manually with proper metadata
-- **Naming Convention**: `source-description-hash.extension`
-- **Mapping Updates**: Ensure image-mapping.json stays current
-
-#### Quality Assurance
-- Pre-commit hooks prevent style violations
-- GitLab CI validates all documentation changes
-- Automated fixes maintain consistency
-- Style guide integration ensures professional quality
-
-## Migration Notes
-
-This documentation has been significantly reorganized from the original HelpScout structure:
-- **Eliminated duplicates**: Removed repeated menu items and redundant content
-- **Workflow-based organization**: Grouped content by user tasks rather than features
-- **Comprehensive guides**: Combined related topics into complete workflows
-- **Local image hosting**: Migrated from external hosting to local storage
-- **Improved navigation**: Clearer, more intuitive structure for users
-
-The reorganization maintains all original content while dramatically improving discoverability and user experience.
+- **First time on the codebase:** read `CLAUDE.md` end-to-end (it's the densest survey).
+- **System design:** `ARCHITECTURE.md`.
+- **Adding articles:** `SmartWinnr-Help-Style-Guide.md` + the authoring wizard at `/admin/authoring`. The wizard handles canonical frontmatter for you.
+- **Role-based access:** `AUTH_MENU_PLAN.md` § Phase C / §13.8 for category gating; `src/access-policy.ts` for the actual `isAllowed` function.
+- **Help Scout re-sync:** the runbook is in `CLAUDE.md` (search for "Re-sync runbook").

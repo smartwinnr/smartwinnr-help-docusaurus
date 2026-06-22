@@ -1,22 +1,35 @@
 # Railway Environment Variables Reference
 
-This document contains all the environment variables for each service in the Railway deployment.
+All env vars for each Railway service. Pair with `RAILWAY_DEPLOYMENT.md` for
+service-setup steps and `.env.example` for local-dev defaults.
 
-## Project Information
+## Project info
 
-- **Project ID**: `c444ae51-eed3-4b16-b14d-7ebf13e3f317`
-- **Project Name**: `smartwinnr_help`
-- **Environment**: `production`
-- **Environment ID**: `be1f5b5e-79db-44f4-ac3a-fbc3523d7efa`
+| | |
+|---|---|
+| **Project ID** | `c444ae51-eed3-4b16-b14d-7ebf13e3f317` |
+| **Project name** | `smartwinnr_help` |
+| **Environment** | `production` |
+| **Environment ID** | `be1f5b5e-79db-44f4-ac3a-fbc3523d7efa` |
 
-## 1. ChromaDB Service (`Chroma`)
+## Services overview
 
-**Service ID**: `88657d7c-a058-41e5-ba9d-a40d73aeeaec`
+| Service | Service ID | Role |
+|---|---|---|
+| `Chroma` | `88657d7c-a058-41e5-ba9d-a40d73aeeaec` | Vector DB (manual template) |
+| `docusaurus` | `17ed88cc-8660-4c9a-acec-a68a038a1ae7` | Unified docusaurus + API + auth |
+| Digest cron (×3) | created per type | Weekly POST to `/api/admin/digests/send` |
 
-### Required Environment Variables
+> **Legacy note:** there used to be a separate `chatbot-api` service
+> (`25d8ac64-8cc5-422e-9c85-f93ffd3fca76`). It's gone. All chat + vector +
+> auth + admin routes now live in `docusaurus`.
+
+---
+
+## 1. `Chroma` service
 
 ```bash
-# Core Configuration
+# Core
 IS_PERSISTENT=True
 PORT=8000
 CHROMA_HOST_PORT=8000
@@ -24,157 +37,193 @@ CHROMA_WORKERS=1
 CHROMA_TIMEOUT_KEEP_ALIVE=30
 ANONYMIZED_TELEMETRY=False
 
-# CRITICAL: IPv6 binding for Railway internal networking
+# CRITICAL: IPv6 binding so other services can reach chroma.railway.internal
 CHROMA_HOST_ADDR=::
 
-# Authentication (optional)
+# Optional
 CHROMA_AUTH_TOKEN_TRANSPORT_HEADER=Authorization
-
-# Railway Internal URLs
 CHROMA_PRIVATE_URL=http://chroma.railway.internal
 
-# Volume Configuration
+# Volume (provided by the template, don't remove)
 RAILWAY_VOLUME_MOUNT_PATH=/chroma/chroma
 ```
 
-### Service URLs
-- **Public**: `https://chroma-production-ebac.up.railway.app`
-- **Internal**: `http://chroma.railway.internal:8000`
+| URL | |
+|---|---|
+| Public | `https://chroma-production-ebac.up.railway.app` |
+| Internal | `http://chroma.railway.internal:8000` |
 
-## 2. Chatbot API Service (`chatbot-api`)
+---
 
-**Service ID**: `25d8ac64-8cc5-422e-9c85-f93ffd3fca76`
+## 2. `docusaurus` service (the main one)
 
-### Required Environment Variables
+This is the unified entry — serves the built site and every `/api/*` route.
+
+### Application + OpenAI
 
 ```bash
-# Application Configuration  
-NODE_ENV=production
-API_PORT=3002
-LOG_LEVEL=info
-
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key_here  # ⚠️ SECRET - Replace with actual key
-CHAT_MODEL=gpt-4o-mini
+NODE_ENV=production            # toggles dev-login, ?as= preview, login-page DEV strip
+OPENAI_API_KEY=sk-...
+CHAT_MODEL=gpt-4o-mini         # or your preferred OpenAI chat model
 EMBEDDING_MODEL=text-embedding-3-small
-
-# ChromaDB Connection (Internal Railway Networking)
-CHROMA_HOST=chroma.railway.internal
-CHROMA_PORT=8000
-CHROMA_SSL=false
-COLLECTION_NAME=smartwinnr_docs
-
-# CORS Configuration
-CORS_ORIGIN=https://docusaurus-production.up.railway.app
+INTERNAL_API_KEY=...           # guards POST /api/vector/embed (indexer-only)
 ```
 
-### Service URLs
-- **Public**: `https://chatbot-api-production-32f8.up.railway.app`
-- **Internal**: `http://chatbot-api.railway.internal`
-
-## 3. Docusaurus Service (`docusaurus`)
-
-**Service ID**: `17ed88cc-8660-4c9a-acec-a68a038a1ae7`
-
-### Required Environment Variables
+### ChromaDB connection (internal Railway DNS)
 
 ```bash
-# Application Configuration
-NODE_ENV=production
-
-# API Connection
-REACT_APP_API_URL=https://chatbot-api-production-32f8.up.railway.app
-
-# Automatic Document Indexing Configuration
 CHROMA_HOST=chroma.railway.internal
 CHROMA_PORT=8000
-CHROMA_SSL=false
+CHROMA_SSL=false               # internal traffic is plain HTTP
 COLLECTION_NAME=smartwinnr_docs
-EMBEDDING_MODEL=text-embedding-3-small
-OPENAI_API_KEY=sk-proj-[your-openai-api-key]
-RAILWAY_SERVICE_CHATBOT_API_URL=chatbot-api-production-32f8.up.railway.app
-
-# Incremental Indexing Control
-FORCE_FULL_REINDEX=false  # Set to 'true' to force complete reindex
 ```
 
-### Intelligent Incremental Indexing Features
-- **SHA256 Change Detection**: Only processes documents with changed content hashes
-- **90-95% Efficiency Gain**: Skips unchanged documents, processes only what's needed
-- **Smart ChromaDB Operations**: Uses upsert/delete instead of full collection recreation
-- **Cross-Environment Support**: Works identically in local development and production
-- **Persistent State**: Maintains document metadata across deployments for comparison
-- **Automatic Optimization**: Dramatically reduces processing time and API costs
+### Auth (magic-link)
 
-### Critical Configuration Files
-- **Package**: `services/docusaurus/package.json` (isolated Docusaurus dependencies)
-- **Dockerfile**: Runs automatic indexing: `npm run serve & sleep 45 && npm run index-internal; wait`
-- **Indexing Script**: `scripts/internal-indexer.js` (processes all documentation)
-- **Host Binding**: `--host 0.0.0.0` for external access
-
-### Service URLs
-- **Public**: `https://docusaurus-production.up.railway.app`
-- **Internal**: `http://docusaurus.railway.internal`
-
-## Critical Notes for Railway Deployment
-
-### 1. ChromaDB Internal Networking
 ```bash
-# ⚠️ CRITICAL: Must use IPv6 binding for Railway internal networking
+HELP_JWT_SECRET=<32+ random bytes>                            # signs the swhelp_session cookie
+HELP_SITE_URL=https://docusaurus-production.up.railway.app    # used by /auth/callback redirect
+LAMBDA_MAGIC_LINK_URL=https://<your-lambda>/auth/issue-magic-link
+```
+
+### Chat logging + feedback (SQLite, needs a volume)
+
+```bash
+CHAT_LOGGING_ENABLED=true
+CHAT_LOG_DB_PATH=/app/data/chat-logs.db
+CHAT_LOG_RETENTION_DAYS=90
+```
+
+Mount a Railway volume at `/app/data`. Without it, every deploy wipes
+`chat-logs.db`, `feedback.db`, and `digests.db`.
+
+### Authoring wizard auto-deploy (optional)
+
+```bash
+AUTHORING_GIT_PUSH=true                              # master switch
+GIT_PUSH_TOKEN=<fine-grained GitHub PAT>             # Contents R/W on this repo only
+GITHUB_REPO=smartwinnr/smartwinnr-help-docusaurus
+GIT_PUBLISH_BRANCH=main
+GITHUB_API=https://api.github.com                    # override only for GHES
+AUTHORING_MODEL=gpt-4o                               # wizard generate model
+AUTHORING_RATE_LIMIT=10                              # generates / superadmin / 60 min
+AUTHORING_DEPLOY_DEBOUNCE_MS=1800000                 # 30 min burst window
+AUTHORING_DEPLOY_MIN_INTERVAL_MS=3600000             # min 60 min between deploys
+```
+
+### Digest cron auth
+
+```bash
+CRON_SECRET=<32+ random bytes>     # must match the cron services
+```
+
+### Indexing controls
+
+```bash
+FORCE_FULL_REINDEX=false           # set true to nuke + re-embed everything
+```
+
+### Port
+
+Railway sets `PORT` automatically. **Do not hard-code 3000 or 3001 here** —
+that overrides Railway's assignment and breaks health checks. `server.js`
+reads `process.env.PORT`.
+
+| URL | |
+|---|---|
+| Public | `https://docusaurus-production.up.railway.app` |
+| Internal | `http://docusaurus.railway.internal` |
+
+---
+
+## 3. Digest cron services (×3)
+
+One service per digest type. Same shape, different `type=` parameter.
+
+```bash
+HELP_SITE_URL=https://docusaurus-production.up.railway.app
+CRON_SECRET=<same value as the main service>
+```
+
+**Schedule + command** (configured in the Railway dashboard, not via env var):
+
+| Service | Schedule (UTC) | Command |
+|---|---|---|
+| `digest-editor-gap` | `0 9 * * 1` | `curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=editor-gap"` |
+| `digest-ops-snapshot` | `0 9 * * 1` | `curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=ops-snapshot"` |
+| `digest-module-overview` | `0 9 * * 1` | `curl -fsS -X POST -H "x-cron-secret: $CRON_SECRET" "$HELP_SITE_URL/api/admin/digests/send?type=module-overview"` |
+
+A non-zero curl exit code (any per-region failure → 500 from the server)
+marks the cron run as failed in Railway, so partial failures stay visible.
+
+---
+
+## Critical configuration callouts
+
+### ChromaDB IPv6 binding
+
+```bash
 CHROMA_HOST_ADDR=::
 ```
-Without this setting, other services cannot connect to ChromaDB via `chroma.railway.internal`.
 
-### 2. Service Communication
-- **Use internal URLs** for service-to-service communication
-- **Use public URLs** only for external access
-- **Internal networking uses HTTP** (no SSL between services)
+Without this on the `Chroma` service, internal DNS to `chroma.railway.internal`
+fails silently — the docusaurus service can't connect.
 
-### 3. Security
-- **Never commit** actual `OPENAI_API_KEY` values
-- **Use Railway's environment variable encryption** for secrets
-- **Internal networking is private** within Railway's network
+### Internal vs public URLs
+
+- **Service-to-service** uses internal hostnames (`chroma.railway.internal`).
+  No SSL — `CHROMA_SSL=false`.
+- **External access** uses public URLs.
+
+### Health check
+
+```bash
+curl https://docusaurus-production.up.railway.app/api/health
+```
+
+Public (runs before auth middleware). Wire this into Railway's health-check
+config.
+
+---
+
+## Common operations
+
+```bash
+# View variables on a service
+railway variables --service docusaurus
+railway variables --service 88657d7c-a058-41e5-ba9d-a40d73aeeaec  # Chroma
+
+# Set a variable
+railway variables --service docusaurus --set "OPENAI_API_KEY=sk-..."
+
+# Deploy
+railway up --service docusaurus
+
+# Tail logs
+railway logs --service docusaurus
+railway logs --service 88657d7c-a058-41e5-ba9d-a40d73aeeaec
+
+# Run a one-off
+railway run --service docusaurus npm run index-internal
+```
+
+## Security
+
+- Never commit `OPENAI_API_KEY`, `INTERNAL_API_KEY`, `HELP_JWT_SECRET`,
+  `GIT_PUSH_TOKEN`, `CRON_SECRET`, or any other secret. Set via the Railway
+  dashboard or CLI.
+- Rotate `HELP_JWT_SECRET` and `GIT_PUSH_TOKEN` periodically. After rotation,
+  every existing user session is invalidated (good).
+- The `GIT_PUSH_TOKEN` must be a **fine-grained** PAT scoped to this repo
+  only — never a classic full-access token.
 
 ## Troubleshooting
 
-### ChromaDB Connection Issues
-1. Verify `CHROMA_HOST_ADDR=::` is set on ChromaDB service
-2. Ensure chatbot-api uses `CHROMA_HOST=chroma.railway.internal`
-3. Check internal networking uses `CHROMA_SSL=false`
-
-### Docusaurus 502 Errors
-1. Ensure Dockerfile uses Railway's `PORT` environment variable
-2. Verify service binds to `0.0.0.0` (not localhost)
-3. Check `services/docusaurus/package.json` has isolated dependencies
-
-### Dependency Conflicts (npm install)
-1. Use isolated package.json files for each service:
-   - `services/chatbot/package.json` (chatbot-only dependencies)
-   - `services/docusaurus/package.json` (docusaurus-only dependencies)
-2. Avoid using root `package.json` in Dockerfiles
-
-### CORS Issues  
-1. Verify `CORS_ORIGIN` matches exact Docusaurus domain
-2. Update after any domain changes
-
-### API Connection Issues
-1. Ensure `REACT_APP_API_URL` points to correct chatbot-api domain
-2. Redeploy Docusaurus after API URL changes
-
-## Deployment Commands
-
-```bash
-# Deploy chatbot-api service
-railway up --service chatbot-api
-
-# Deploy docusaurus service  
-railway up --service docusaurus
-
-# View service variables
-railway variables --service chatbot-api
-railway variables --service docusaurus
-railway variables --service 88657d7c-a058-41e5-ba9d-a40d73aeeaec  # ChromaDB
-
-# Update environment variables
-railway variables --service chatbot-api --set "KEY=value"
-```
+| Symptom | Likely cause |
+|---|---|
+| ChromaDB unreachable from docusaurus | `CHROMA_HOST_ADDR=::` missing on Chroma |
+| Auth-redirect loop | `HELP_JWT_SECRET` mismatch between Lambda and docusaurus |
+| Chat returns 500 | Volume not mounted at `/app/data` → SQLite write fails → circuit breaker trips |
+| Indexer 401s | `INTERNAL_API_KEY` mismatch between indexer and docusaurus |
+| Wizard publish silently no-ops | `AUTHORING_GIT_PUSH` not `true`, or `GIT_PUSH_TOKEN` lacks Contents:write |
+| Digest cron prints 401 | `CRON_SECRET` mismatch between cron service and docusaurus |

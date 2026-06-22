@@ -4,13 +4,14 @@
 
 ### 1.1 Article Authoring
 
-Articles enter the Knowledge Hub through three channels:
+Articles enter the Knowledge Hub through four channels:
 
 | Source | Method | Output |
 |--------|--------|--------|
-| **Manual authoring** | Engineers/writers create `.md` files directly in `docs/{category}/` | Markdown with YAML frontmatter |
-| **Freshdesk pipeline** | `scripts/freshdesk/process-freshdesk.js` ingests support ticket CSV, clusters topics, identifies gaps, generates articles via GPT-4o | New `.md` files in `docs/{category}/` |
-| **Legacy migration** | `scripts/migrate-helpscout.js` converted HelpScout articles | Already completed; articles live in `docs/` |
+| **Authoring wizard** (primary path today) | Superadmin opens `/admin/authoring`. 3-step LLM-assisted flow: where + who → brain dump + image upload → preview/refine. Backed by `/api/admin/authoring/{generate,suggest-field,save,save-raw,publish,upload,deploy}` in `server.js`. Stores drafts, supports image upload to `static/img/helpscout/authored/`, and auto-deploys via the GitHub Git Data API when `AUTHORING_GIT_PUSH=true`. | Canonical-frontmatter `.md` in `docs/{module}/{sub-section}/` |
+| **Hand-written markdown** | Engineers create `.md` files directly in `docs/{category}/` following the same canonical frontmatter | Markdown with YAML frontmatter |
+| **Freshdesk pipeline** (gap-filling) | `scripts/freshdesk/process-freshdesk.js` ingests support ticket CSV, clusters topics, identifies coverage gaps, generates articles via GPT-4o. Used when new ticket exports surface uncovered topics. | New `.md` files in `docs/{category}/` |
+| **Help Scout re-sync** (legacy source-of-truth refresh) | `npm run helpscout:inventory` then `npm run helpscout:migrate` (with `--allow-relocate` / `--prune` as needed) refreshes articles from the Help Scout knowledge base. The original migration is done; this is the periodic re-sync flow. | Upserts to `docs/`; respects manually-set `sidebar_position` |
 
 ### 1.2 Article Format & Storage
 
@@ -64,14 +65,30 @@ docs/
 
 ### 1.4 Build & Deployment
 
+There are **two deploy paths**, both ending at the same Railway service:
+
 ```
-Author writes .md → Git commit → GitLab CI (lint + build) → Railway deployment
+Path A (manual / engineer-driven):
+  Author writes .md → Git commit → GitLab CI (lint + build) → Railway redeploys
+
+Path B (wizard auto-deploy):
+  Wizard publish → server.js calls GitHub Git Data API → push to GIT_PUBLISH_BRANCH →
+  Railway watches the branch → redeploys. Debounced (default 30 min) and rate-limited
+  (default ≤ 1 deploy / 60 min) by AUTHORING_DEPLOY_* env vars.
 ```
 
-- `npm run build` compiles Docusaurus markdown into static HTML/JS/CSS in `build/`
-- `server.js` (Express) serves the static build AND the API endpoints on a single port (3000)
-- Railway pulls latest Git commit, builds Docker image (`Dockerfile.docusaurus`), deploys
-- Post-deployment: `npm run index-internal` re-indexes docs into ChromaDB
+- `npm run build` compiles Docusaurus markdown into static HTML/JS/CSS in `build/` AND
+  emits `build/doc-gates.json` (via `plugins/access-gate-emit.js`) for the URL guard.
+- `prebuild` runs `validate-privilege-keys` + `audit-gates` so a misnamed privilege
+  or unreachable gate fails the build before deploy.
+- `server.js` (Express) serves the static build AND every `/api/*` route on a single
+  port (default `3001` locally, set by `PORT` on Railway).
+- Railway pulls the latest commit, rebuilds the `Dockerfile.docusaurus` image, deploys.
+  ChromaDB is a separate Railway service set up manually.
+- Post-deployment indexing: `npm run index-internal` runs against the live
+  `/api/vector/embed` endpoint. There's no auto-trigger today — run it manually after
+  a deploy that added/changed docs (the wizard's deploy flow currently doesn't kick
+  the indexer; that's a known gap).
 
 ---
 
@@ -327,7 +344,11 @@ This powers the `VectorSearch` React component in the navbar (semantic search ba
 
 ---
 
-## 4. Freshdesk Content Pipeline (Implemented)
+## 4. Content Pipelines
+
+There are two complementary content pipelines: **Freshdesk** (gap-filling, ticket-driven) and **Help Scout** (legacy-source re-sync).
+
+### 4.1 Freshdesk Content Pipeline (gap-filling)
 
 The Freshdesk pipeline feeds new articles into the Knowledge Hub. It is already fully implemented in `scripts/freshdesk/`.
 
@@ -371,6 +392,37 @@ After the Freshdesk pipeline places new `.md` files in `docs/{category}/`:
 
 There is **no automated re-indexing trigger** -- indexing must be run manually after deployment. A post-deploy script or Railway deploy hook could automate this.
 
+### 4.2 Help Scout Re-Sync Pipeline (source-of-truth refresh)
+
+The original Help Scout → Markdown migration is complete (articles live in `docs/`).
+The re-sync pipeline is the way to refresh from Help Scout when the upstream knowledge
+base changes. See the **"Re-sync runbook"** section of `CLAUDE.md` for the full step-by-step.
+
+```
+Pre-flight:
+  npm run backup:docs                                # tarball to data/backups/
+  git checkout -b backup/pre-helpscout-resync-<date> # frozen snapshot
+  git checkout main && git checkout -b feature/helpscout-resync-<YYYY-MM>
+
+Discover what's upstream:
+  npm run helpscout:inventory                        # writes scripts/helpscout-inventory.json
+  # Edit CATEGORY_MAPPING in scripts/migrate-helpscout.js, commit
+
+Migrate:
+  npm run helpscout:migrate                          # upsert; aborts on unmapped collections
+  # Add --allow-relocate to move articles whose canonical dir changed
+  # Add --prune to delete on-disk articles no longer in Help Scout
+
+Validate + redeploy:
+  npm run lint:docs:fix && npm run typecheck && npm run build
+  node server.js & npm run index-internal            # re-embed into ChromaDB
+```
+
+Key invariants `scripts/migrate-helpscout.js` enforces:
+- Refuses to write outside `CANONICAL_DIRS` (the IA defined at the top of the script).
+- Preserves any human-set `sidebar_position` across re-syncs.
+- Images bucket per Help Scout collection at `static/img/helpscout/<collection-slug>/<article-slug>-<n>.<ext>`; existing non-zero-byte files are not re-downloaded.
+
 ---
 
 ## 5. Data Update & Refresh Cycles
@@ -390,54 +442,79 @@ There is **no automated re-indexing trigger** -- indexing must be run manually a
 ## 6. System Architecture Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        BROWSER                               │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  Docusaurus Static Site (HTML/JS/CSS from build/)      │  │
-│  │  ├── VectorSearch component (navbar semantic search)   │  │
-│  │  └── ChatBot widget (floating button → modal)          │  │
-│  └────────────────────┬───────────────────────────────────┘  │
-└───────────────────────┼──────────────────────────────────────┘
-                        │ fetch() (same-origin, no CORS)
-                        ▼
-┌─────────────────────────────────────────────────────────────┐
-│              EXPRESS SERVER (server.js, port 3000)            │
-│                                                              │
-│  Static: express.static('build/')  ← Docusaurus HTML/JS     │
-│                                                              │
-│  API Routes:                                                 │
-│  ├── GET  /api/health                                        │
-│  ├── POST /api/vector/embed   → OpenAI text-embedding-3-small│
-│  ├── POST /api/vector/search  → Embed query → ChromaDB query │
-│  ├── POST /api/chat           → Search + GPT-3.5-turbo RAG  │
-│  ├── GET  /api/chat/:id       → Conversation history         │
-│  └── DELETE /api/chat/:id     → Clear conversation           │
-│                                                              │
-│  In-Memory: conversations Map<uuid, Message[]>               │
-└──────────┬─────────────────────────┬─────────────────────────┘
-           │                         │
-           ▼                         ▼
-┌──────────────────┐      ┌─────────────────────┐
-│    ChromaDB      │      │    OpenAI API        │
-│    :8000         │      │                      │
-│                  │      │  Embeddings:          │
-│  Collection:     │      │  text-embedding-3-small│
-│  smartwinnr_docs │      │  (1536 dimensions)   │
-│  877+ documents  │      │                      │
-│  with embeddings │      │  Chat:               │
-│                  │      │  gpt-3.5-turbo       │
-└──────────────────┘      └─────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────┐
+│                                BROWSER                                    │
+│  Docusaurus static site (served from build/) + injected widgets:          │
+│   - VectorSearch (navbar semantic search)                                 │
+│   - Wynnie ChatBot (floating button → modal)                              │
+│   - FeedbackFooter on every article ("Was this helpful?" + free text)     │
+│   - Admin pages: /admin/authoring, /admin/analytics/{chat,feedback}, …    │
+│  Auth state hydrated by a single GET /api/me on mount (UserContext).      │
+└────────────────────────────────────────┬──────────────────────────────────┘
+                                         │ fetch() w/ swhelp_session cookie
+                                         ▼
+┌──────────────────────────────────────────────────────────────────────────┐
+│            EXPRESS SERVER  (server.js — single port: PORT)                │
+│                                                                           │
+│  Layer 0  Public:    GET /api/health                                      │
+│  Layer 1  Auth:      /auth/login, /auth/callback (cookie set),            │
+│                      /auth/dev-login (DEV only), /auth/logout             │
+│           initAuth() mounts auth/routes.js, then auth/middleware.js       │
+│           verifies the JWT cookie on every following request.             │
+│                                                                           │
+│  Layer 2  URL guard: build/doc-gates.json (emitted by                     │
+│           plugins/access-gate-emit.js) loaded at boot; middleware 403s    │
+│           any path whose AND-of-matching-gates denies the viewer.         │
+│                                                                           │
+│  Layer 3  Static:    express.static('build/')   ← gated by layer 2        │
+│                                                                           │
+│  Layer 4  APIs (auth-protected via Layer 1):                              │
+│    GET    /api/me                              hydrates UserContext       │
+│    POST   /api/vector/embed                    indexer-only (key-guarded) │
+│    POST   /api/vector/search                   results filtered by gates  │
+│    POST   /api/chat                            RAG; citations filtered    │
+│    POST   /api/chat/:id/{rate,citation-click}  feedback signals           │
+│    POST   /api/feedback                        per-article thumbs+comment │
+│    /api/admin/chat-logs/*                      superadmin-only            │
+│    /api/admin/feedback*                        superadmin-only            │
+│    /api/admin/digests/*                        superadmin-only            │
+│    /api/admin/authoring/*                      superadmin-only            │
+└──────────┬────────────────┬──────────────────┬───────────────────────────┘
+           │                │                  │
+           ▼                ▼                  ▼
+   ┌──────────────┐   ┌─────────────┐   ┌────────────────────────┐
+   │  ChromaDB    │   │  OpenAI API │   │  SQLite (better-       │
+   │  :8000       │   │             │   │  sqlite3) — local FS   │
+   │              │   │  Embeddings │   │                        │
+   │  smartwinnr_ │   │  3-small    │   │  chat-logs.db          │
+   │  docs        │   │             │   │  feedback.db           │
+   │  (~900 docs) │   │  Chat:      │   │  digests.db            │
+   │              │   │  gpt-*      │   │  (paths configurable)  │
+   └──────────────┘   └─────────────┘   └────────────────────────┘
+
+External:
+   Mailgun-Lambda  ←──  /auth/login form POSTs here for magic-link issuance
+   GitHub Git API  ←──  authoring wizard publish pushes commits (auto-deploy)
+   Railway cron    ──→  /api/admin/digests/send (weekly digest emails)
 
 OFFLINE PIPELINES:
-┌─────────────────────────────────────────────────────────────┐
-│  scripts/internal-indexer.js                                 │
-│  ├── Scans docs/ → hashes → embeds → upserts to ChromaDB   │
-│  └── Triggered: npm run index-internal (post-deploy)         │
-│                                                              │
-│  scripts/freshdesk/process-freshdesk.js                      │
-│  ├── CSV → clean → cluster → gap analysis → generate → validate│
-│  └── Triggered: manually when new Freshdesk export available │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────┐
+│  scripts/internal-indexer.js                                              │
+│  ├── Scans docs/ → SHA-256 hashes → embeds via /api/vector/embed →        │
+│  │   upserts to ChromaDB                                                  │
+│  └── Triggered: npm run index-internal (manual, post-deploy)              │
+│                                                                           │
+│  scripts/freshdesk/process-freshdesk.js                                   │
+│  ├── CSV → clean → cluster → gap analysis → generate → validate           │
+│  └── Triggered: manually when new Freshdesk export available              │
+│                                                                           │
+│  scripts/migrate-helpscout.js                                             │
+│  ├── Inventories Help Scout → upserts canonical-frontmatter docs/ files   │
+│  └── Triggered: helpscout:inventory + helpscout:migrate (re-sync)         │
+│                                                                           │
+│  scripts/{audit-articles,article-autofix,rewrite-articles}.js             │
+│  └── Article-grade + autofix + LLM-driven rewrite passes for content QA   │
+└──────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -446,27 +523,107 @@ OFFLINE PIPELINES:
 
 | Variable | Used By | Default | Purpose |
 |----------|---------|---------|---------|
-| `OPENAI_API_KEY` | server.js, indexer, freshdesk pipeline | (required) | OpenAI API authentication |
-| `ANTHROPIC_API_KEY` | freshdesk cluster-queries.js | (optional) | Claude API for semantic clustering |
-| `CHROMA_HOST` | server.js, indexer | `localhost` | ChromaDB server hostname |
-| `CHROMA_PORT` | server.js, indexer | `8000` | ChromaDB server port |
-| `CHROMA_SSL` | server.js, indexer | `false` | Use HTTPS for ChromaDB |
-| `COLLECTION_NAME` | server.js, indexer | `smartwinnr_docs` | ChromaDB collection name |
-| `EMBEDDING_MODEL` | server.js, indexer | `text-embedding-3-small` | OpenAI embedding model |
-| `PORT` | server.js | `3000` | Express server port |
+| `OPENAI_API_KEY` | server.js, indexer, authoring wizard, Freshdesk pipeline | (required) | OpenAI API authentication |
+| `ANTHROPIC_API_KEY` | Freshdesk `cluster-queries.js` | (optional) | Claude API for semantic clustering fallback |
+| `CHROMA_HOST` / `CHROMA_PORT` / `CHROMA_SSL` | server.js, indexer | `localhost` / `8000` / `false` | ChromaDB connection |
+| `COLLECTION_NAME` | server.js, indexer | `smartwinnr_docs` | Override the default collection |
+| `EMBEDDING_MODEL` | server.js, indexer | `text-embedding-3-small` | Rarely changed |
+| `CHAT_MODEL` | server.js | model id (OpenAI) | Chatbot generation model |
+| `INTERNAL_API_KEY` | server.js (`/api/vector/embed`) | (required) | Guards the embed endpoint so only the indexer can call it |
+| `PORT` | server.js | `3001` locally, set by Railway in prod | Express listen port |
+| `NODE_ENV` | server.js, auth/* | `development` | Toggles `/auth/dev-login`, `?as=` preview gate, login-page DEV strip |
+| `HELP_JWT_SECRET` | auth/jwt.js | (required prod) | Signs/verifies the `swhelp_session` cookie |
+| `HELP_SITE_URL` | auth/config.js | (required prod) | Used by the magic-link callback redirect |
+| `LAMBDA_MAGIC_LINK_URL` | login page | (required prod) | Where the sign-in form POSTs |
+| `CHAT_LOGGING_ENABLED` | db/chat-logger.js | `true` | Master switch for chat-log persistence |
+| `CHAT_LOG_DB_PATH` | db/chat-logger.js | `./data/chat-logs.db` | SQLite path for chat logs |
+| `CHAT_LOG_RETENTION_DAYS` | db/chat-logger.js | (set in prod) | Row TTL; older rows purged by retention job |
+| `CRON_SECRET` | digest cron services | (required if using digests) | Auth header for `/api/admin/digests/send` |
+| `AUTHORING_MODEL` | wizard `/generate` | `gpt-4o` | Override the wizard's LLM |
+| `AUTHORING_RATE_LIMIT` | wizard | `10` | Generates per superadmin per 60-min window |
+| `AUTHORING_GIT_PUSH` | wizard publish | `false` | Master switch for auto-deploy via GitHub Git Data API |
+| `GIT_PUSH_TOKEN` / `GITHUB_REPO` / `GIT_PUBLISH_BRANCH` | wizard publish | — / — / `main` | Auto-deploy push target |
+| `AUTHORING_DEPLOY_DEBOUNCE_MS` / `AUTHORING_DEPLOY_MIN_INTERVAL_MS` | wizard publish | `1800000` / `3600000` | Debounce + min-interval rate limits |
 | `FORCE_FULL_REINDEX` | indexer | `false` | Delete + rebuild entire collection |
 
 ---
 
 ## 8. Access Control
 
-Currently **no authentication** is implemented:
-- All documentation is publicly accessible
-- All API endpoints (`/api/chat`, `/api/vector/search`) are open
-- CORS allows all origins on `/api/*` routes
-- Conversation storage is in-memory only (no persistence across restarts)
-- OpenAI API key is protected server-side (never exposed to client)
-- The `/api/vector/embed` endpoint is technically public but only called internally
+The help site is **gated end-to-end**. There are three layers, applied in order:
+
+### 8.1 Authentication — magic-link via Lambda
+
+- A user visits any URL on the site. `auth/middleware.js` checks for the
+  `swhelp_session` cookie; if missing or invalid, the request is redirected to
+  `/auth/login`.
+- The login form POSTs the user's email to `LAMBDA_MAGIC_LINK_URL` (a Mailgun-
+  backed Lambda owned by the main SmartWinnr app). Lambda emails a magic link
+  containing a JWT.
+- The user clicks the link → `/auth/callback?token=<JWT>` → `auth/routes.js`
+  verifies the JWT with `HELP_JWT_SECRET`, then sets the `swhelp_session` cookie
+  via `signSessionToken(...)` (`auth/jwt.js`). The session JWT carries:
+  `{ email, displayName, roles, region, orgId, orgName, privileges }`.
+- The React client hydrates `UserContext` from a single `GET /api/me` on mount.
+- All SmartWinnr roles can sign in (`user`, `manager`, `editor`, `admin`,
+  `orgadmin`, `lamadmin`, `superadmin`). What they see inside is decided by the
+  next two layers, not by `/auth/login` itself.
+
+### 8.2 Sidebar gating — `customProps` driven
+
+- The swizzled `DocSidebarItem/{Category,Link}` components read
+  `customProps.{roles, privilege, anyPrivilege}` declared on:
+  - `sidebars.ts` entries, and
+  - `_category_.json` per-directory files.
+- Gate-resolution logic is in `src/access-policy.ts` (`isAllowed`). `superadmin`
+  bypasses privilege checks (`PRIVILEGE_BYPASS_ROLES`); everyone else needs the
+  intersection of role-tier check + privilege check to pass.
+- This layer determines **what's visible in the sidebar**, not what's reachable
+  by URL. Layer 8.3 closes that gap.
+
+### 8.3 Server-side URL guard — `doc-gates.json`
+
+- `plugins/access-gate-emit.js` runs at build time and walks every
+  `_category_.json` + article frontmatter, producing `build/doc-gates.json`
+  shaped as `{ version, prefixes: [{prefix, gate}], exact: {url: gate} }`.
+- At boot, `server.js` (around line 2322) loads that table. The middleware then
+  runs **AND-of-all-matching-gates** semantics: every ancestor-category prefix
+  gate plus any exact-frontmatter gate must allow the viewer. The deeply-nested
+  permission-vs-parent bug (article gated to `user`, parent gated to a
+  `quiz`-only org) is closed by this AND combination.
+- If `doc-gates.json` is absent (dev with no build), the guard falls open so
+  local dev still works. A boot log line (`🔐 doc-gates.json loaded:` /
+  `🔓 doc-gates.json absent`) makes the state observable.
+- The same `isUrlAllowedForUser(url, user)` helper filters vector-search hits
+  and chatbot citations, so the LLM never sees — and never cites — content the
+  viewer couldn't reach. This is critical: without it, a learner asking
+  Wynnie about an admin-only setting could get an admin-only article in the
+  prompt context and surface its information via the answer text, even though
+  the citation link itself would 403.
+
+### 8.4 API endpoint authorization
+
+- Everything mounted **after** `initAuth(app)` is auth-protected. Public
+  exceptions are `/api/health` and the `/auth/*` routes.
+- `/api/vector/embed` is additionally guarded by `INTERNAL_API_KEY` so only the
+  indexer can call it (it's a write endpoint into ChromaDB).
+- Admin endpoints (`/api/admin/chat-logs/*`, `/api/admin/feedback*`,
+  `/api/admin/digests/*`, `/api/admin/authoring/*`) require
+  `requireRole('superadmin')`. The wizard's auto-deploy pipeline that pushes
+  commits via the GitHub Git Data API is gated this way.
+
+### 8.5 Dev shortcuts (NOT available in production)
+
+When `NODE_ENV !== 'production'`:
+- `GET /auth/dev-login?role=<role>&privileges=*` mints a JWT in one redirect.
+- `?as=<role>` query-string preview lets any cookied user see the site as
+  another tier without changing the cookie. In prod, only real `superadmin`
+  may use `?as=`.
+- The `/auth/login` page shows a yellow "DEV: sign in as → role × 6" strip.
+
+All three are off in production. The Dockerfile sets `NODE_ENV=production`
+**after** the build step (so devDependencies install correctly) which gates
+all three off at runtime.
 
 ---
 
@@ -497,21 +654,72 @@ Currently **no authentication** is implemented:
 
 ## 10. Ensuring Accurate, Up-to-Date Answers
 
-The combination of Knowledge Hub + ChromaDB + Chatbot ensures accuracy through:
+The combination of Knowledge Hub + ChromaDB + Chatbot + a quality stack
+ensures accuracy through:
 
-1. **Single source of truth**: All articles live as `.md` files in `docs/` under Git version control. ChromaDB is a derived index, not a primary store.
+### 10.1 Content correctness
 
-2. **Content-hash change detection**: The indexer uses SHA-256 hashes to detect edits. Changed articles are automatically re-embedded on next index run -- stale vectors don't persist.
+1. **Single source of truth.** All articles live as `.md` files in `docs/` under
+   Git version control. ChromaDB is a derived index, not a primary store.
+2. **Content-hash change detection.** The indexer uses SHA-256 hashes to detect
+   edits. Changed articles are automatically re-embedded on next index run —
+   stale vectors don't persist.
+3. **Article-grade audits.** `db/article-audit.js` (`gradeMarkdown`) grades each
+   article on completeness/freshness/style. The authoring wizard surfaces the
+   grade during preview; `npm run audit:articles` runs the same check over the
+   whole corpus and emits a report.
+4. **Autofix + LLM rewrite passes.** `npm run articles:autofix` applies
+   deterministic style-guide fixes; `npm run articles:rewrite` runs the
+   `prompts/rewrite-article.md` system prompt over a batch of articles for
+   prose-quality lift.
+5. **Lint gate.** `npm run lint:docs` (custom rules in
+   `custom-markdownlint-rules.js`) runs as a husky pre-commit hook AND in CI.
+   The `no-decorative-emojis` rule blocks emoji-as-icon contamination.
 
-3. **Semantic retrieval over keyword matching**: ChromaDB's cosine similarity search finds relevant docs even when users phrase questions differently from article titles. A question about "scoring in competitions" matches articles titled "Configure Leaderboards" because the embeddings capture semantic proximity.
+### 10.2 Retrieval correctness
 
-4. **Grounded generation**: The chatbot's GPT-3.5-turbo response is always grounded in retrieved documentation context. The system prompt instructs: *"If the context doesn't contain relevant information, say so."* This prevents hallucination.
+6. **Semantic retrieval over keyword matching.** ChromaDB's cosine similarity
+   search finds relevant docs even when users phrase questions differently from
+   article titles.
+7. **Gates applied to vector hits AND citations.** The `isUrlAllowedForUser`
+   helper (`server.js`) filters search results and chatbot citations through
+   `doc-gates.json` so a learner never sees admin-only content in the LLM
+   context or the citation list.
 
-5. **Citation transparency**: Every chatbot response includes up to 3 citation links to source articles (distance < 0.8 threshold). Users can verify answers against the original documentation.
+### 10.3 Generation correctness
 
-6. **Freshdesk feedback loop**: Support tickets reveal documentation gaps. The Freshdesk pipeline systematically identifies uncovered topics (218 GAPs from 605 tickets) and generates articles to fill them. This closes the loop: user confusion → support ticket → new article → indexed → chatbot can answer next time.
+8. **Grounded generation.** The chatbot response is always grounded in
+   retrieved documentation context. The system prompt
+   (`prompts/wynnie.md`) instructs the model: *"If the context doesn't contain
+   relevant information, say so."* This prevents hallucination.
+9. **Citation transparency.** Every chatbot response includes citation links
+   (distance < threshold) so users can verify against the source.
 
-7. **Incremental efficiency**: Only new/changed documents incur embedding API costs. Full re-index is available via `FORCE_FULL_REINDEX=true` but rarely needed.
+### 10.4 Feedback loops (close the gap when accuracy breaks down)
+
+10. **Per-article feedback footer.** Every doc page renders
+    `src/components/Article/FeedbackFooter.tsx` → thumbs + free-text comment →
+    `POST /api/feedback` → `db/feedback-logger.js`. Visible to admins at
+    `/admin/analytics/feedback`.
+11. **Chat-log analytics.** Every chat exchange persists to
+    `db/chat-logger.js` (SQLite via `better-sqlite3`, circuit-breaker so chat
+    never breaks if the DB is unhealthy). Per-rating, low-confidence triage,
+    citation-click CTR, abandonment, per-article performance, and per-role/org
+    filters are available at `/admin/analytics/chat`.
+12. **Scheduled digest emails.** `db/digest-*.js` builds three weekly digests
+    (editor-gap, ops-snapshot, module-overview) sent by Railway cron jobs
+    hitting `/api/admin/digests/send` with `CRON_SECRET`. Subscribers managed
+    at `/admin/digests`.
+13. **Freshdesk gap-filling loop.** Support tickets reveal documentation gaps;
+    the Freshdesk pipeline (§4.1) systematically identifies uncovered topics
+    and generates articles to fill them. User confusion → support ticket →
+    new article → indexed → chatbot can answer next time.
+
+### 10.5 Cost + operational efficiency
+
+14. **Incremental indexing.** Only new/changed documents incur embedding API
+    costs. Full re-index is available via `FORCE_FULL_REINDEX=true` but rarely
+    needed.
 
 ---
 
