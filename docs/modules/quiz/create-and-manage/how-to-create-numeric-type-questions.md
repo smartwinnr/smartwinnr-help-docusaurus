@@ -1,78 +1,86 @@
 ---
-id: 6451ac447fbafd6b38243f84
-title: How to create 'Numeric Type Questions'
-description: >-
-  In a Numeric Type question, you specify a numeric value as the correct answer
-  and define an allowable error margin.
+id: how-to-create-numeric-type-questions
+title: "How to create numeric type questions"
+description: "Create a Numeric Type question by defining a correct answer and an allowable error margin for assessing precise numerical responses."
 slug: how-to-create-numeric-type-questions
 sidebar_position: 284
 last_update:
-  date: 2026-01-20T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 6451ac447fbafd6b38243f84
-  helpscout_url: 'https://help.smartwinnr.com/article/284-how-to-create-numeric-type-questions'
+  date: 2026-06-26
+  author: Anagha Isal
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: []
   privilege: quiz
-tags:
-  - quiz
-  - admin
+tags: ["quiz"]
+draft: false
 ---
-In a **Numeric Type** question, you specify a numeric value as the correct answer and define an allowable **error margin**. If a learner’s response falls within this error margin, they will receive points based on the **grade percentage** defined for that option.
 
-### **Below are the steps to follow in order to create a Numeric Type Question:**
+> **At a glance** - Create a Numeric Type question by specifying a correct answer and an error margin that allows for variations in responses.
 
-1. Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank.**
-2. Click on the **'Add New Question'** button at the _top right corner_.
+A **Numeric Type** question requires you to define a correct numeric answer along with an allowable **error margin**. This margin determines the range of acceptable answers that will still be considered correct.
 
-![](/img/helpscout/authored/how-to-create-numeric-type-questions-mquula2g.png)
+## When to use this
+Use Numeric Type questions when you want to assess learners on exact numerical values. This is useful for:
 
-3. On the **'Create new Question'** page select the **'Question Type'** as **‘Numeric’**.
+- Math-related assessments.
+- Scenarios where precise measurements are required.
+- Questions that allow for slight variations in answers.
 
-![](/img/helpscout/authored/how-to-create-numeric-type-questions-mquuomq3.png)
+## Steps
 
-4. Enter your question in the **‘Question’** field.
+### 1. Navigate to the Question Bank
+Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank**.
+
+### 2. Add a New Question
+Click on the **'Add New Question'** button at the top right corner.
+
+![Add New Question button](/img/helpscout/authored/how-to-create-numeric-type-questions-mquula2g.png)
+
+### 3. Select Question Type
+On the **'Create new Question'** page, select the **'Question Type'** as **‘Numeric’**.
+
+![Select Numeric question type](/img/helpscout/authored/how-to-create-numeric-type-questions-mquuomq3.png)
+
+### 4. Enter the Question
+Type your question in the **‘Question’** field.
 
 ![Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-numeric-type-questions-2.jpg)
 
-5. In the _Answer_ options section, provide the correct numeric value. Then specify the _Error Margin_. For example, if the correct answer is 50 and you set an error margin of 1, participant responses between 49 and 51 will be considered within the acceptable range.
-6. Define the _Grade_ percentage corresponding to that range. For instance, setting a grade of 100 will award full points to responses within the error margin, while a lower percentage can be used for partial credit.
+### 5. Define the Correct Answer
+In the answer options section, provide the correct numeric value and specify the **Error Margin**. For example, if the correct answer is 50 and the error margin is 1, responses between 49 and 51 will be considered correct.
 
-![Define the Grade percentage corresponding to that range. For instance, setting a grade of 100 will award full points to responses within the](/img/helpscout/editors/how-to-create-numeric-type-questions-3.png)
+### 6. Set the Grade Percentage
+Define the **Grade** percentage for that range. For instance, setting a grade of 100 will award full points for responses within the error margin.
 
-* Example Numeric question:
+![Define the Grade percentage](/img/helpscout/editors/how-to-create-numeric-type-questions-3.png)
 
-![](/img/helpscout/authored/how-to-create-numeric-type-questions-mquv5c69.png)
+### 7. Specify Maximum Points
+Enter the maximum points that can be awarded for the question in the **“Points”** field.
 
-* Specify the maximum points that can be awarded for the question in the **“Points”** field. This setting allows the editor to define the highest number of points that can be assigned to the question.
+![Specify maximum points](/img/helpscout/authored/how-to-create-numeric-type-questions-mquvakav.png)
 
-![](/img/helpscout/authored/how-to-create-numeric-type-questions-mquvakav.png)
+### 8. Add Feedback (Optional)
+Use **‘Correct Answer Feedback’** if you want to add additional information to a question.  (Optional). This will be available to the learner once they complete the quiz and review the answers for the question.
 
-**Correct Answer Feedback:**
+![Add Correct Answer Feedback](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
 
-Use ‘**Correct Answer Feedback**’ if you want to add additional information to a question.  (Optional). This will be available to the learner once they complete the quiz and review the answers for the question. 
+### 9. Add Reviewer Notes (Optional)
+Include any additional feedback for other editors or trainers in the **Reviewer Notes** section.
 
-![Use ‘Correct Answer Feedback’ if you want to add additional information to a question. (Optional)](/img/helpscout/editors/how-to-create-a-missing-words-question-8.png)
+![Add Reviewer Notes](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
 
-**Reviewer Notes:**
+### 10. Assign Categories
+Assign at least one category to the question. Categories are predefined by your administrator, and you can select multiple categories if applicable.
 
-You can add any additional feedback on the question or answer option for other editors/trainers who access the question.
+![Assign Categories](/img/helpscout/editors/how-to-create-a-drag-and-drop-into-text-question-4.png)
 
-![You can add any additional feedback on the question or answer options.](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
+### 11. Save the Question
+Once all details are filled in, click on the **'Save New Question'** button to save your question.
 
-**Categories:**
+### Tips
+- To avoid hidden characters when copying from Microsoft Word, paste your text into Notepad first, then copy it into SmartWinnr.
+- Use various content elements like videos, images, hyperlinks, and audio to enhance your questions.
 
-Every question must be assigned at least **one category**. Categories are predefined by your administrator. You may select multiple categories if applicable.
+## How Learners See the Question
+This is an example of how participants see the Numeric question in the user view.
 
-[![Every question must be assigned at least one category. Categories are predefined by your administrator. You may select multiple categories i](/img/helpscout/editors/how-to-create-a-drag-and-drop-into-text-question-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd1076480488e39007cbd3e/file-5dyt1GCt4G.png)
-
-Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
-
-## How do the learners/participants see the question?
-
-* This is an example of how the participants see the Numeric question in the user view.
-
-![](/img/helpscout/authored/how-to-create-numeric-type-questions-mquvkow8.png)
+![Example of Numeric question for participants](/img/helpscout/authored/how-to-create-numeric-type-questions-mqv73zgq.png)
