@@ -83,4 +83,4 @@ Once all details are filled in, click on the **'Save New Question'** button to s
 ## How Learners See the Question
 This is an example of how participants see the Numeric question in the user view.
 
-![Example of Numeric question for participants](/img/helpscout/authored/how-to-create-numeric-type-questions-mqv73zgq.png)
+![Example of Numeric question for participants](/img/helpscout/authored/how-to-create-numeric-type-questions-mqvwtetv.png)
