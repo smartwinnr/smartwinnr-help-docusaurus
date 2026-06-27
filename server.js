@@ -2031,6 +2031,110 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
   }
 });
 
+/** Replace the (indented) `customProps.roles` block in an article's
+ *  frontmatter with an inline `roles: [a, b, …]`. Scoped to the frontmatter
+ *  block so a stray `roles:` in the body is never touched. Handles both the
+ *  inline `[..]` form and the `- item` block-sequence form; inserts a roles
+ *  line under `customProps:` if none exists. */
+function setFrontmatterRoles(markdown, roles) {
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  if (!fmMatch) return markdown;
+  let fm = fmMatch[1];
+  const inline = `  roles: [${roles.join(', ')}]`;
+  const rolesRe = /^[ \t]+roles[ \t]*:[^\n]*(?:\n[ \t]+-[ \t]*[^\n]*)*/m;
+  if (rolesRe.test(fm)) {
+    fm = fm.replace(rolesRe, inline);
+  } else if (/^customProps[ \t]*:/m.test(fm)) {
+    fm = fm.replace(/^(customProps[ \t]*:[^\n]*\n)/m, `$1${inline}\n`);
+  } else {
+    fm = fm.replace(/\s*$/, '') + `\ncustomProps:\n${inline}`;
+  }
+  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
+}
+
+/** Drop the article-level `customProps.privilege:` line so the destination
+ *  folder's _category_.json gate governs licensing (gates AND-combine). */
+function removeFrontmatterPrivilege(markdown) {
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  if (!fmMatch) return markdown;
+  const fm = fmMatch[1].replace(/^[ \t]+privilege[ \t]*:[^\n]*\n?/m, '');
+  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
+}
+
+// Relocate an article to a different module / sub-folder (slug unchanged).
+// Writes the new file + unlinks the old; for published articles the rename
+// ships as enqueueDelete(old) + enqueueUpsert(new) in one deploy. Images are
+// root-relative + shared, so they are never moved or culled. The moved file's
+// audience (customProps.roles) is rewritten to the destination folder's default
+// and any article-level privilege is dropped, so the destination
+// _category_.json gate governs.
+app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
+  try {
+    const { fromPath, toModule, toSubFolder } = req.body || {};
+    const fromAbs = resolveArticlePath(fromPath);
+    const fromRel = path.relative(__dirname, fromAbs);
+    const slug = path.basename(fromAbs).replace(/\.(md|mdx)$/, '');
+    const toAbs = resolveDraftPath(toModule, toSubFolder, slug);
+    const toRel = path.relative(__dirname, toAbs);
+
+    if (fromAbs === toAbs) {
+      return res.status(400).json({ error: 'Article is already in that folder.' });
+    }
+    if (!fsSync.existsSync(fromAbs)) {
+      return res.status(404).json({ error: 'Article not found' });
+    }
+    if (!fsSync.existsSync(path.join(MODULES_ROOT, toModule))) {
+      return res.status(400).json({ error: `Unknown module: ${toModule}` });
+    }
+    if (fsSync.existsSync(toAbs)) {
+      return res.status(409).json({ error: `An article with slug "${slug}" already exists in ${toModule}/${toSubFolder}.` });
+    }
+
+    const raw = fsSync.readFileSync(fromAbs, 'utf8');
+    const wasPublished = !/^draft:\s*true\b/m.test(raw);
+
+    // Re-home the audience to the destination sub-folder's default roles and
+    // drop any article-level privilege.
+    const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === toSubFolder);
+    const destRoles = (tmpl && tmpl.roles) || ALL_ROLES;
+    let next = setFrontmatterRoles(raw, destRoles);
+    next = removeFrontmatterPrivilege(next);
+    next = stripDecorativeEmojis(next);
+
+    // Gate the destination sub-folder before the file lands there.
+    const created = ensureSubfolderCategory(toModule, toSubFolder);
+
+    fsSync.mkdirSync(path.dirname(toAbs), { recursive: true });
+    fsSync.writeFileSync(toAbs, next, 'utf8');
+    fsSync.unlinkSync(fromAbs);
+
+    let queuedForDeploy = false;
+    if (wasPublished) {
+      enqueueDelete(fromRel);
+      enqueueUpsert(toRel);
+      if (created) {
+        enqueueUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'));
+      }
+      persistDeployState();
+      scheduleDeploy();
+      queuedForDeploy = true;
+    }
+
+    res.json({
+      ok: true,
+      fromPath: fromRel,
+      toPath: toRel,
+      roles: destRoles,
+      subfolderCreated: created,
+      queuedForDeploy,
+      queueSize: deployQueue.size,
+    });
+  } catch (error) {
+    console.error('❌ authoring/move failed:', error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
 /** Scan an article body for /img/helpscout/authored/... image URLs.
  *  Returns a Set of root-relative URLs (e.g. "/img/helpscout/authored/foo.png"). */
 function imagesReferencedBy(markdown) {

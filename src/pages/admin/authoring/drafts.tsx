@@ -4,14 +4,19 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify, type Notify} from '@site/src/components/admin/authoring/Notify';
+import {parsePath, SUB_FOLDERS} from '@site/src/lib/authoring';
 import styles from './styles.module.css';
 
 /**
  * Authoring queue. Two tabs:
  *
- *   Drafts    - articles with `draft: true`. Edit (wizard), Publish, Delete.
+ *   Drafts    - articles with `draft: true`. Edit (unified editor), Publish, Delete.
  *   Published - all published articles in a chosen module + sub-folder.
- *               Refine (wizard), Edit raw, Unpublish (re-draft), Delete.
+ *               Edit (unified editor), Unpublish (re-draft), Delete.
+ *
+ * The unified editor (/admin/authoring/edit?path=) does AI refine + raw text +
+ * image upload + metadata in one screen; the wizard (/admin/authoring) is now
+ * only for creating NEW articles.
  *
  * Superadmin only. See plan §B.
  *
@@ -48,22 +53,6 @@ type DeployState = {
 // /admin/authoring/modules makes it appear here on next render.
 type ModuleEntry = {slug: string; label: string};
 
-const SUB_FOLDERS: Array<{value: string; label: string}> = [
-  {value: 'for-learners',          label: 'For Learners'},
-  {value: 'for-managers',          label: 'For Managers'},
-  {value: 'create-and-manage',     label: 'Create & Manage'},
-  {value: 'assign-and-schedule',   label: 'Assign & Schedule'},
-  {value: 'features',              label: 'Features'},
-  {value: 'reports-and-analytics', label: 'Reports & Analytics'},
-  {value: 'settings-and-permissions', label: 'Settings & Permissions'},
-  {value: 'best-practices',        label: 'Best Practices'},
-  {value: 'faqs-and-troubleshooting', label: 'FAQs & Troubleshooting'},
-];
-
-function parsePath(p: string): {module: string; subFolder: string; slug: string} | null {
-  const m = /^docs\/modules\/([^/]+)\/([^/]+)\/([^/]+)\.(md|mdx)$/.exec(p.replace(/\\/g, '/'));
-  return m ? {module: m[1], subFolder: m[2], slug: m[3]} : null;
-}
 
 /**
  * Mirror the wizard's STORAGE_KEY constant in `index.tsx`. Update both
@@ -361,18 +350,12 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
                 <td><code className={styles.smallCode}>{d.path}</code></td>
                 <td className={styles.tabular}>{d.lastUpdate ?? '-'}</td>
                 <td className={styles.rowActions}>
-                  {(() => {
-                    const parsed = parsePath(d.path);
-                    if (!parsed) return null;
-                    const qs = new URLSearchParams(parsed).toString();
-                    return (
-                      <Link
-                        to={`/admin/authoring/?${qs}`}
-                        className={styles.btnGhost}>
-                        Edit
-                      </Link>
-                    );
-                  })()}
+                  <Link
+                    to={`/admin/authoring/edit?${new URLSearchParams({path: d.path}).toString()}`}
+                    className={styles.btnGhost}
+                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata.">
+                    Edit
+                  </Link>
                   <button
                     type="button"
                     className={styles.btnPrimary}
@@ -571,23 +554,11 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
                 <td><code className={styles.smallCode}>{a.path}</code></td>
                 <td className={styles.tabular}>{a.lastUpdate ?? '-'}</td>
                 <td className={styles.rowActions}>
-                  {(() => {
-                    const parsed = parsePath(a.path);
-                    if (!parsed) return null;
-                    const qs = new URLSearchParams(parsed).toString();
-                    return (
-                      <Link
-                        to={`/admin/authoring/?${qs}`}
-                        className={styles.btnGhost}
-                        title="Open in the wizard for an LLM-driven refine. Saving will re-draft the article; the live deployed copy stays in place until you Publish again.">
-                        Refine
-                      </Link>
-                    );
-                  })()}
                   <Link
                     to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
-                    className={styles.btnGhost}>
-                    Edit raw
+                    className={styles.btnGhost}
+                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata. Saving queues a deploy.">
+                    Edit
                   </Link>
                   <button
                     type="button"

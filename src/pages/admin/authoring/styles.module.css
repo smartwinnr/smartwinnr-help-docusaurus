@@ -588,6 +588,26 @@
 }
 .deployBadge[data-action='delete'] { background: var(--ifm-color-danger); }
 
+/* Draft vs Published pill in the unified editor header. */
+.stateBadge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 var(--space-2);
+  font-size: var(--text-label);
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  border-radius: 999px;
+  font-weight: var(--fw-semibold);
+}
+.stateBadge[data-state='draft'] {
+  background: var(--ifm-color-warning-contrast-background);
+  color: var(--ifm-color-warning-darker);
+}
+.stateBadge[data-state='published'] {
+  background: var(--ifm-color-success);
+  color: white;
+}
+
 /* Drafts table */
 .draftTable {
   width: 100%;
@@ -690,12 +710,41 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: var(--space-5) var(--space-5) var(--space-7);
+  /* Flex column with an even gap gives the editor's sections (header, metadata
+     form, refine row, editor grid, audit) consistent vertical rhythm - the same
+     pattern .previewWrap uses for the wizard. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+/* The shared .header carries its own margin-bottom; null it here so it doesn't
+   double up with the flex gap above. */
+.editWrap > header {
+  margin-bottom: 0;
 }
 .editLayout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-4);
-  margin: var(--space-3) 0;
+  /* Vertical spacing comes from the .editWrap flex gap now. */
+  margin: 0;
+}
+
+/* Bottom action bar - centered, with a divider separating it from the content. */
+.editActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: var(--space-4);
+}
+
+/* The shared .actions carries a top margin meant for standalone action bars;
+   inside the editor's refine row it stacks on the column gap, leaving an
+   awkward void above the Refine button. Scoped to the editor (.editWrap) so the
+   wizard's refine row is untouched. */
+.editWrap .refineRow .actions {
+  margin-top: 0;
 }
 .editTextarea {
   font-family: var(--ifm-font-family-monospace, ui-monospace, SFMono-Regular, Menlo, monospace);

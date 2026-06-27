@@ -6,6 +6,8 @@ import {useLocation} from '@docusaurus/router';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
+import {SUB_FOLDERS, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
+import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
 import styles from './styles.module.css';
 
 /**
@@ -35,25 +37,6 @@ const STORAGE_KEY = 'sw.authoring.wizard.v2';
 // new module via /admin/authoring/modules makes it available here on
 // next render.
 type ModuleEntry = {slug: string; label: string; privilege?: string; anyPrivilege?: string[]; position?: number};
-
-const SUB_FOLDERS = [
-  {value: 'for-learners',          label: 'For Learners',          audience: ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'for-managers',          label: 'For Managers',          audience: ['manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'create-and-manage',     label: 'Create & Manage',       audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'assign-and-schedule',   label: 'Assign & Schedule',     audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'features',              label: 'Features',              audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'reports-and-analytics', label: 'Reports & Analytics',   audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'settings-and-permissions', label: 'Settings & Permissions', audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'best-practices',        label: 'Best Practices',        audience: ['editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-  {value: 'faqs-and-troubleshooting', label: 'FAQs & Troubleshooting', audience: ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin']},
-];
-
-const TAG_VOCAB = [
-  'quiz', 'smartpath', 'smartfeed', 'video-coaching', 'ai-coaching',
-  'field-coaching', 'survey', 'knowledge-hub', 'forms', 'kpi',
-  'gamification', 'reports', 'notifications', 'settings', 'admin',
-  'troubleshooting', 'billing', 'onboarding', 'mobile', 'web', 'integration',
-];
 
 type Image = {
   url: string;
@@ -196,127 +179,6 @@ function reducer(s: State, a: Action): State {
   }
 }
 
-function slugify(s: string): string {
-  return s.toLowerCase()
-    .replace(/['']/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 80);
-}
-
-/** Sub-folder-aware title-shape table. Each sub-folder maps to (a) the
- *  prefixes a title should start with, (b) a human-readable hint shown
- *  under the field when the title doesn't match. Mirrors the
- *  Title-shape-by-sub-folder table in prompts/author-article.md so the
- *  wizard's soft warning and the LLM's generation rules agree.
- *
- *  Unknown sub-folder slugs fall back to a generic verb/question check
- *  (the legacy behavior) so cross-module / not-yet-defined sub-folders
- *  still get *some* coaching. */
-const TITLE_SHAPE_BY_SUBFOLDER: Record<string, {prefixes: RegExp[]; hint: string}> = {
-  'create-and-manage': {
-    prefixes: [/^how to\b/i],
-    hint: 'Should start with "How to ..." (e.g. "How to create a manual quiz").',
-  },
-  'assign-and-schedule': {
-    prefixes: [/^how to\b/i],
-    hint: 'Should start with "How to assign ..." or "How to schedule ..." (e.g. "How to assign a quiz to a group").',
-  },
-  'for-learners': {
-    prefixes: [/^how to\b/i],
-    hint: 'Should start with "How to ..." in learner-facing tone (e.g. "How to retake a quiz").',
-  },
-  'for-managers': {
-    prefixes: [/^how to\b/i],
-    hint: 'Should start with "How to ..." in manager-facing tone (e.g. "How to review your team\'s scores").',
-  },
-  'features': {
-    prefixes: [/^what is\b/i, /^understanding\b/i],
-    hint: 'Should start with "What is ..." or "Understanding ..." (e.g. "What is auto-quiz").',
-  },
-  'reports-and-analytics': {
-    prefixes: [/^how to read\b/i, /^understanding\b/i, /^how to\b/i],
-    hint: 'Should start with "How to read the ..." or "Understanding the ... report" (e.g. "How to read the engagement report").',
-  },
-  'settings-and-permissions': {
-    prefixes: [/^configure\b/i, /^set up\b/i, /^enable\b/i, /^disable\b/i],
-    hint: 'Should start with "Configure ...", "Set up ...", "Enable ...", or "Disable ..." (e.g. "Configure SSO").',
-  },
-  'best-practices': {
-    prefixes: [/^best practices\b/i, /^tips for\b/i],
-    hint: 'Should start with "Best practices for ..." (e.g. "Best practices for writing quiz questions").',
-  },
-  'faqs-and-troubleshooting': {
-    prefixes: [
-      /^(why|what|how|when|where|who|can|do(es)?|is|are|will|should)\b/i,
-      /^troubleshooting\b/i,
-    ],
-    hint: 'Should be a question ("Why does ...?", "Can I ...?") or start with "Troubleshooting ..." (e.g. "Why does my quiz score show 0?").',
-  },
-};
-
-/** Returns {ok, hint} for the title against the article's sub-folder.
- *  `ok=false` means the title should be reshaped; `hint` is the message
- *  to surface to the editor. Empty titles or missing sub-folders return
- *  ok=true so we don't double-warn before the editor has even typed. */
-function checkTitleShape(title: string, subFolder: string): {ok: boolean; hint: string} {
-  const t = (title || '').trim();
-  if (!t || !subFolder) return {ok: true, hint: ''};
-  const shape = TITLE_SHAPE_BY_SUBFOLDER[subFolder];
-  if (shape) {
-    const ok = shape.prefixes.some((re) => re.test(t));
-    return {ok, hint: shape.hint};
-  }
-  // Fallback for unmapped sub-folders: legacy verb/question check.
-  const first = t.split(/\s+/)[0].toLowerCase();
-  const verbs = new Set([
-    'how', 'what', 'why', 'when', 'where', 'who',
-    'add', 'configure', 'create', 'manage', 'edit', 'delete', 'send',
-    'set', 'view', 'enable', 'disable', 'import', 'export', 'update',
-    'assign', 'review', 'duplicate', 'troubleshoot', 'build', 'find',
-    'submit', 'open', 'close', 'archive',
-  ]);
-  return {
-    ok: verbs.has(first),
-    hint: 'Should start with an action verb or question word (How, What, Add, Create, Configure…).',
-  };
-}
-
-/**
- * Hand-rolled frontmatter parser scoped to the fields the wizard cares
- * about. Same shape the migrate-helpscout + authoring-generate paths
- * produce so the round-trip is lossless for the fields below. We don't
- * pull in a YAML library on the client - these regexes match exactly
- * the canonical frontmatter format and ignore anything else.
- */
-function parseDraftFrontmatter(markdown: string): Partial<Inputs> | null {
-  const m = /^---\s*\n([\s\S]*?)\n---\s*\n/.exec(markdown);
-  if (!m) return null;
-  const fm = m[1];
-  const scalar = (key: string): string => {
-    const r = new RegExp(`^${key}\\s*:\\s*["']?([^"'\\n]+?)["']?\\s*$`, 'm').exec(fm);
-    return r ? r[1].trim() : '';
-  };
-  const arrayField = (key: string): string[] => {
-    const r = new RegExp(`^\\s*${key}\\s*:\\s*\\[([^\\]]*)\\]`, 'm').exec(fm);
-    if (!r) return [];
-    return r[1]
-      .split(',')
-      .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
-      .filter(Boolean);
-  };
-  // privilege lives under customProps - regex matches both top-level and nested.
-  const privMatch = /^\s*privilege\s*:\s*["']?([A-Za-z0-9_]+)["']?\s*$/m.exec(fm);
-  return {
-    title: scalar('title'),
-    description: scalar('description'),
-    slug: scalar('slug'),
-    audienceRoles: arrayField('roles'),
-    privilege: privMatch ? privMatch[1] : '',
-    tags: arrayField('tags'),
-  };
-}
-
 function loadState(): State | null {
   if (typeof window === 'undefined') return null;
   try {
@@ -400,110 +262,6 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 /** Extracted from the legacy Step 2 — now rendered above the preview on
  *  Step 3 so the editor reviews + tweaks the LLM-suggested tag list
  *  alongside the suggested title + description. */
-function TagPicker({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
-  const i = state.inputs;
-  const [customTag, setCustomTag] = useState('');
-  const [tagError, setTagError] = useState<string | null>(null);
-
-  function addTag(t: string) {
-    const tag = t.trim().toLowerCase();
-    if (!tag) return;
-    if (!/^[a-z][a-z0-9-]{0,30}$/.test(tag)) {
-      setTagError('Tags use lowercase letters, digits, and dashes only (e.g. ai-coaching).');
-      return;
-    }
-    if (i.tags.includes(tag)) {
-      setTagError(`"${tag}" is already added.`);
-      return;
-    }
-    if (i.tags.length >= 5) {
-      setTagError('Maximum 5 tags. Remove one first.');
-      return;
-    }
-    setTagError(null);
-    dispatch({type: 'set', patch: {tags: [...i.tags, tag]}});
-  }
-
-  function removeTag(t: string) {
-    dispatch({type: 'set', patch: {tags: i.tags.filter((x) => x !== t)}});
-    setTagError(null);
-  }
-
-  const availableVocab = TAG_VOCAB.filter((t) => !i.tags.includes(t));
-  const tagsRequired = i.tags.length === 0;
-
-  return (
-    <div className={styles.field}>
-      <label>
-        Tags <span className={styles.required}>· at least 1 required</span>{' '}
-        <span className={styles.hint}>({i.tags.length}/5)</span>
-      </label>
-
-      {i.tags.length > 0 && (
-        <div className={styles.tagRow}>
-          {i.tags.map((t) => (
-            <button
-              key={t}
-              type="button"
-              className={styles.tagOn}
-              onClick={() => removeTag(t)}
-              title="Remove tag">
-              {t} <span className={styles.tagRemove}>×</span>
-            </button>
-          ))}
-        </div>
-      )}
-
-      {availableVocab.length > 0 && i.tags.length < 5 && (
-        <>
-          <span className={styles.hint}>Pick from common tags:</span>
-          <div className={styles.tagRow}>
-            {availableVocab.map((t) => (
-              <button
-                key={t}
-                type="button"
-                className={styles.tagOff}
-                onClick={() => addTag(t)}>
-                + {t}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-
-      {i.tags.length < 5 && (
-        <div className={styles.tagAddRow}>
-          <input
-            type="text"
-            value={customTag}
-            placeholder="Or create a new tag (e.g. event-quiz)"
-            maxLength={32}
-            onChange={(e) => { setCustomTag(e.target.value); setTagError(null); }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault();
-                addTag(customTag);
-                setCustomTag('');
-              }
-            }}
-          />
-          <button
-            type="button"
-            className={styles.btnGhost}
-            disabled={!customTag.trim()}
-            onClick={() => { addTag(customTag); setCustomTag(''); }}>
-            Add
-          </button>
-        </div>
-      )}
-
-      {tagError && <span className={styles.warn}>{tagError}</span>}
-      {tagsRequired && !tagError && (
-        <span className={styles.warn}>At least one tag is required.</span>
-      )}
-    </div>
-  );
-}
 
 function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
@@ -718,7 +476,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       // Surface LLM-suggested title / description / tags into the
       // editable fields above the preview - but only for empty inputs,
       // so an editor who already typed something keeps their value.
-      const fm = parseDraftFrontmatter(data.markdown || '');
+      const fm = parseFrontmatterFields(data.markdown || '');
       if (fm) dispatch({type: 'suggestionsLoaded', patch: {
         title: fm.title,
         description: fm.description,
@@ -897,7 +655,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
                 <span className={styles.hint}>{i.description.length}/160</span>
               </div>
             </div>
-            <TagPicker state={state} dispatch={dispatch} />
+            <TagPicker tags={state.inputs.tags} onChange={(tags) => dispatch({type: 'set', patch: {tags}})} />
           </div>
 
           <article className={styles.preview} dangerouslySetInnerHTML={{__html: previewHtml}} />
@@ -989,47 +747,6 @@ function canSave(s: State): boolean {
   return true;
 }
 
-/** Splice editor-edited title/description/tags into the markdown's
- *  YAML frontmatter immediately before /save. The LLM's first-pass
- *  values may differ from what the editor finally chose; this keeps
- *  the saved file consistent with the wizard's Step-3 inputs.
- *
- *  Each key's existing entry is replaced **including any continuation
- *  lines** (block scalars `>-` / `|`, block sequences `- item`, block
- *  mappings). The previous single-line regex left orphan continuation
- *  lines, producing malformed YAML and failing the audit on save.
- *
- *  Other multi-line blocks we're not touching (last_update, source,
- *  customProps) are unaffected because their key names don't match. */
-function replaceFrontmatterFields(markdown: string, patch: {title?: string; description?: string; tags?: string[]}): string {
-  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
-  if (!fmMatch) return markdown;
-  let fm = fmMatch[1];
-
-  // Replace a top-level key's whole block (key line + any subsequent
-  // indented continuation lines). Appends a fresh line if the key is
-  // absent from the frontmatter.
-  const replaceKey = (src: string, key: string, line: string): string => {
-    // Matches `<key>:<rest of line>` plus zero or more subsequent lines
-    // that begin with whitespace (continuation under that key). Stops at
-    // the next non-indented line (a sibling key) or end-of-frontmatter.
-    const re = new RegExp(`^${key}\\s*:[^\\n]*(?:\\n[ \\t]+[^\\n]*)*`, 'm');
-    return re.test(src) ? src.replace(re, line) : src + '\n' + line;
-  };
-
-  if (patch.title !== undefined) {
-    fm = replaceKey(fm, 'title', `title: ${JSON.stringify(patch.title)}`);
-  }
-  if (patch.description !== undefined) {
-    fm = replaceKey(fm, 'description', `description: ${JSON.stringify(patch.description)}`);
-  }
-  if (patch.tags !== undefined) {
-    const v = '[' + patch.tags.map((t) => JSON.stringify(t)).join(', ') + ']';
-    fm = replaceKey(fm, 'tags', `tags: ${v}`);
-  }
-  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
-}
-
 function Wizard(): ReactNode {
   const user = useCurrentUser();
   const notify = useNotify();
@@ -1084,7 +801,7 @@ function Wizard(): ReactNode {
           return;
         }
         const {markdown} = await res.json();
-        const fm = parseDraftFrontmatter(markdown);
+        const fm = parseFrontmatterFields(markdown);
         const inputs: Inputs = {
           module: moduleSlug,
           subFolder,
