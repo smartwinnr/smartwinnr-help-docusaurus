@@ -892,9 +892,18 @@ const CANONICAL_SUBFOLDERS = new Set([
 ]);
 const AUTHORING_MODEL = process.env.AUTHORING_MODEL || 'gpt-4o-mini';
 const AUTHOR_PROMPT_PATH = path.join(__dirname, 'prompts', 'author-article.md');
+// Refine-only overlay. Appended AFTER the base prompt so its
+// preserve-all-content rules dominate the base prompt's strip/compact rules
+// (later instructions win). Without it, refine reuses the fresh-generate
+// prompt and heavily shortens existing articles. See prompts/refine-overlay.md.
+const REFINE_OVERLAY_PATH = path.join(__dirname, 'prompts', 'refine-overlay.md');
 
 function readSystemPrompt() {
   return fsSync.readFileSync(AUTHOR_PROMPT_PATH, 'utf8');
+}
+
+function readRefineOverlay() {
+  return fsSync.readFileSync(REFINE_OVERLAY_PATH, 'utf8');
 }
 
 function isValidSlug(s) { return /^[a-z0-9][a-z0-9-]{0,120}$/.test(String(s || '')); }
@@ -1044,15 +1053,28 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
       return res.status(400).json({ error: `subFolder must be one of: ${[...CANONICAL_SUBFOLDERS].join(', ')}` });
     }
 
-    const systemPrompt = readSystemPrompt();
+    // In refine mode, append the overlay so its preserve-all-content rules
+    // override the base prompt's strip/compact rules. Fresh-generate uses the
+    // base prompt unchanged.
+    const systemPrompt = isRefine
+      ? readSystemPrompt() + '\n\n' + readRefineOverlay()
+      : readSystemPrompt();
     const messages = [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: 'Generate the article from these inputs:\n\n' + JSON.stringify(inputs, null, 2) },
     ];
-    if (refinement && previousMarkdown) {
+    if (isRefine) {
       messages.push({ role: 'assistant', content: previousMarkdown });
-      messages.push({ role: 'user', content: `Refine the article above. Editor's note:\n\n${refinement}` });
+      messages.push({ role: 'user', content: `Refine the article above following REFINE MODE. Preserve all of its content, steps, and detail - apply only the editor's note plus grammar, wording, and formatting improvements. Do not shorten or drop anything.\n\nEditor's note:\n\n${refinement}` });
     }
+
+    // Long articles must not be truncated when refine preserves their length.
+    // Scale the cap to the source size (~/3 chars-per-token with headroom),
+    // capped at gpt-4o-mini's 16384-token output ceiling. Fresh-generate keeps
+    // the original 4000 cap.
+    const maxTokens = isRefine
+      ? Math.min(16000, Math.max(4000, Math.ceil(String(previousMarkdown).length / 3)))
+      : 4000;
 
     const openaiApiKey = getOpenAIKey();
     const response = await axios.post(
@@ -1061,7 +1083,7 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
         model: AUTHORING_MODEL,
         messages,
         temperature: 0.4,
-        max_tokens: 4000,
+        max_tokens: maxTokens,
       },
       {
         headers: { Authorization: `Bearer ${openaiApiKey}`, 'Content-Type': 'application/json' },
@@ -1321,6 +1343,27 @@ function enqueueDelete(relPath) {
   // deleted before the deploy fired), the delete supersedes - end state
   // on prod is "absent".
   deployQueue.set(relPath, 'delete');
+}
+
+/** Drop queued `upsert` entries whose target file no longer exists on disk -
+ *  stale entries left by a prior session, a reverted file, or a branch switch
+ *  (the persisted queue in data/deploy-state.json outlives the files). These
+ *  can never deploy (fireDeploy skips missing upserts), so a phantom one keeps
+ *  the "waiting to deploy" strip + Deploy now button up with nothing real
+ *  behind it. `delete` entries are kept - they legitimately target an
+ *  already-absent file. Returns how many were pruned; persists if any changed. */
+function pruneStaleQueue() {
+  let pruned = 0;
+  for (const [rel, action] of [...deployQueue]) {
+    if (action !== 'upsert') continue;
+    if (!fsSync.existsSync(path.join(__dirname, rel))) {
+      deployQueue.delete(rel);
+      pruned += 1;
+      console.warn(`[deploy] pruned stale upsert from queue: ${rel}`);
+    }
+  }
+  if (pruned > 0) persistDeployState();
+  return pruned;
 }
 
 function loadDeployState() {
@@ -1607,7 +1650,88 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
   }
 });
 
+// Reverse of /publish: re-draft a published article (draft:false -> true).
+// Two cases, decided by whether the publish has deployed yet:
+//   • Still queued (published, not yet deployed): cancel the pending publish
+//     outright by dropping it from the deploy queue. The repo still holds the
+//     pre-publish (draft) version, so nothing needs to ship.
+//   • Already live (not in queue): queue the re-draft so the next deploy
+//     commits draft:true - production builds hide draft articles, pulling it.
+app.post('/api/admin/authoring/unpublish', requireRole('superadmin'), (req, res) => {
+  try {
+    const { module: moduleSlug, subFolder, slug } = req.body || {};
+    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    const relPath = path.relative(__dirname, target);
+
+    if (!fsSync.existsSync(target)) {
+      // File is gone. If it's a stale queued upsert, still honor "cancel" by
+      // dropping it from the queue (it could never deploy anyway). Otherwise
+      // there's genuinely nothing to act on.
+      if (deployQueue.get(relPath) === 'upsert') {
+        deployQueue.delete(relPath);
+        persistDeployState();
+        return res.json({
+          ok: true,
+          path: relPath,
+          canceledPendingPublish: true,
+          fileMissing: true,
+          queueSize: deployQueue.size,
+        });
+      }
+      return res.status(404).json({ error: 'Article not found' });
+    }
+
+    const raw = fsSync.readFileSync(target, 'utf8');
+    const pendingPublish = deployQueue.get(relPath) === 'upsert';
+    const alreadyDraft = /^draft:\s*true\s*$/m.test(raw);
+
+    // Already a draft AND nothing queued -> there's nothing to undo. (If it's
+    // a draft but still queued, we fall through to drop the stale queue entry.)
+    if (alreadyDraft && !pendingPublish) {
+      return res.status(400).json({ error: 'Article is already a draft (nothing to unpublish)' });
+    }
+
+    if (!alreadyDraft) {
+      // Flip an explicit draft:false, or insert the flag if it's missing
+      // entirely (an absent draft flag means published, same as the wizard's
+      // wasPublished detection).
+      let next = raw.replace(/^draft:\s*false\s*$/m, 'draft: true');
+      if (next === raw) {
+        next = raw.replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
+        if (next === raw) {
+          return res.status(400).json({ error: 'Could not parse frontmatter to set draft flag' });
+        }
+      }
+      fsSync.writeFileSync(target, next, 'utf8');
+    }
+
+    if (pendingPublish) {
+      deployQueue.delete(relPath);
+    } else {
+      enqueueUpsert(relPath);
+    }
+    persistDeployState();
+    // Only a live-article re-draft needs to ship; a canceled pending publish
+    // ships nothing, so don't (re)arm the debounce for it.
+    if (!pendingPublish) scheduleDeploy();
+
+    res.json({
+      ok: true,
+      path: relPath,
+      canceledPendingPublish: pendingPublish,
+      queued: !pendingPublish,
+      queueSize: deployQueue.size,
+    });
+  } catch (error) {
+    console.error('❌ authoring/unpublish failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, res) => {
+  // Self-heal: purge phantom upserts (file gone) so the strip + Deploy now
+  // reflect only changes that can actually ship.
+  pruneStaleQueue();
   const items = [...deployQueue].map(([rel, action]) => {
     const abs = path.join(__dirname, rel);
     let title = path.basename(rel).replace(/\.(md|mdx)$/, '');

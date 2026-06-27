@@ -11,13 +11,14 @@ import styles from './styles.module.css';
  *
  *   Drafts    - articles with `draft: true`. Edit (wizard), Publish, Delete.
  *   Published - all published articles in a chosen module + sub-folder.
- *               Edit raw (raw markdown editor), Delete.
+ *               Refine (wizard), Edit raw, Unpublish (re-draft), Delete.
  *
  * Superadmin only. See plan §B.
  *
  * GET    /api/admin/authoring/drafts
  * GET    /api/admin/authoring/articles?module=&subFolder=&filter=published
  * POST   /api/admin/authoring/publish
+ * POST   /api/admin/authoring/unpublish
  * DELETE /api/admin/authoring/draft
  * DELETE /api/admin/authoring/article?path=...
  */
@@ -157,6 +158,46 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
     }
   }
 
+  // Cancel a queued publish straight from the deploy strip. Re-drafts the
+  // article and drops it from the queue (via /unpublish), so a pending publish
+  // is findable + revertible without hunting for it on the Published tab.
+  async function cancelQueued(item: DeployState['queue'][number]) {
+    const parsed = parsePath(item.path);
+    if (!parsed) { notify.error('This queued item cannot be canceled from here.'); return; }
+    const label = item.title || item.slug;
+    const ok = await notify.confirm({
+      title: `Cancel queued publish?`,
+      message: `Removes "${label}" from the deploy queue and re-drafts it (draft: true). It won't ship. You can re-publish it any time from the Drafts tab.`,
+      confirmLabel: 'Cancel publish',
+      cancelLabel: 'Keep it queued',
+      danger: true,
+    });
+    if (!ok) return;
+    setBusy(item.path);
+    try {
+      const res = await fetch('/api/admin/authoring/unpublish', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify(parsed),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        notify.error(data.error || 'Cancel failed');
+      } else {
+        notify.success(data.fileMissing
+          ? `Removed "${label}" from the deploy queue (its file was already gone).`
+          : `Canceled "${label}". Re-drafted and removed from the deploy queue.`);
+        await refresh();
+        await refreshDeployState();
+      }
+    } catch (err) {
+      notify.error((err as Error).message);
+    } finally {
+      setBusy(null);
+    }
+  }
+
   useEffect(() => {
     refresh();
     refreshDeployState();
@@ -233,6 +274,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         if (upserts) parts.push(`${upserts} publish${upserts === 1 ? '' : 'es'}`);
         if (deletes) parts.push(`${deletes} delete${deletes === 1 ? '' : 's'}`);
         return (
+        <>
         <div className={styles.deployStrip}>
           <div>
             <strong>{deployState.queue.length}</strong> change(s) queued ({parts.join(', ')}), waiting to deploy.
@@ -255,6 +297,37 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
             {deploying ? 'Deploying…' : 'Deploy now'}
           </button>
         </div>
+        <ul className={styles.deployQueue}>
+          {deployState.queue.map((item) => {
+            const isDelete = item.action === 'delete';
+            const canCancel = !isDelete && !!parsePath(item.path);
+            return (
+              <li key={item.path} className={styles.deployQueueItem}>
+                <span
+                  className={styles.deployBadge}
+                  data-action={item.action}>
+                  {isDelete ? 'Delete' : 'Publish'}
+                </span>
+                <span className={styles.deployQueueTitle}>{item.title || item.slug}</span>
+                <code className={styles.smallCode}>{item.path}</code>
+                <span className={styles.deployQueueSpacer} />
+                {canCancel ? (
+                  <button
+                    type="button"
+                    className={styles.btnGhost}
+                    disabled={busy === item.path}
+                    onClick={() => cancelQueued(item)}
+                    title="Re-draft this article and remove it from the deploy queue.">
+                    Cancel
+                  </button>
+                ) : (
+                  <span className={styles.hint}>{isDelete ? 'Drops on deploy' : '—'}</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        </>
         );
       })()}
 
@@ -403,6 +476,46 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
     }
   }
 
+  // Reverse a publish: re-draft the article (draft:true). The server cancels a
+  // still-queued publish outright, or queues the re-draft if it's already live
+  // (production hides draft:true on the next deploy). Moves the row to the
+  // Drafts tab, so we just refresh the published list afterward.
+  async function unpublish(a: Article) {
+    const parsed = parsePath(a.path);
+    if (!parsed) { notify.error('Could not parse path'); return; }
+    const ok = await notify.confirm({
+      title: `Unpublish "${a.title}"?`,
+      message: `This re-drafts the article (sets draft: true). If the publish hasn't deployed yet, it's canceled and nothing ships. If it's already live, production hides it on the next deploy. You can re-publish it any time from the Drafts tab.`,
+      confirmLabel: 'Unpublish',
+      cancelLabel: 'Keep published',
+      danger: true,
+    });
+    if (!ok) return;
+    setBusy(a.path);
+    try {
+      const res = await fetch('/api/admin/authoring/unpublish', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify(parsed),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        notify.error(data.error || 'Unpublish failed');
+      } else if (data.canceledPendingPublish) {
+        notify.success(`Unpublished "${a.title}". Pending publish canceled - nothing will deploy.`);
+        await refresh();
+      } else {
+        notify.success(`Unpublished "${a.title}". Queued for deploy - production hides it on the next deploy.`);
+        await refresh();
+      }
+    } catch (err) {
+      notify.error((err as Error).message);
+    } finally {
+      setBusy(null);
+    }
+  }
+
   return (
     <>
       <div className={styles.tabToolbar}>
@@ -476,6 +589,14 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
                     className={styles.btnGhost}>
                     Edit raw
                   </Link>
+                  <button
+                    type="button"
+                    className={styles.btnGhost}
+                    disabled={busy === a.path}
+                    onClick={() => unpublish(a)}
+                    title="Re-draft this article (draft: true). Cancels a pending publish, or hides it from production on the next deploy.">
+                    Unpublish
+                  </button>
                   <button
                     type="button"
                     className={styles.btnGhost}

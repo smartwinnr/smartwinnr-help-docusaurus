@@ -553,6 +553,41 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Queued-changes list under the deploy strip - one row per pending change,
+ * each cancelable (re-draft + dequeue) without leaving the Drafts tab. */
+.deployQueue {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.deployQueueItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  font-size: var(--text-body-sm);
+}
+.deployQueueTitle { font-weight: var(--fw-semibold); }
+.deployQueueSpacer { margin-left: auto; }
+.deployBadge {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  font-size: var(--text-label);
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  border-radius: 999px;
+  font-weight: var(--fw-semibold);
+  color: white;
+  background: var(--ifm-color-primary);
+}
+.deployBadge[data-action='delete'] { background: var(--ifm-color-danger); }
+
 /* Drafts table */
 .draftTable {
   width: 100%;
