@@ -5,7 +5,7 @@ description: "Learn to create 'Fill-In-The-Blank' questions in SmartWinnr, allow
 slug: how-to-create-fill-in-the-blank-questions
 sidebar_position: 41
 last_update:
-  date: 2026-06-27
+  date: 2026-06-28
   author: Anagha Isal
 source:
   helpscout_id: 5fd4623dc868cb6df3a80fe9
@@ -19,6 +19,9 @@ customProps:
 tags: ["quiz"]
 draft: false
 ---
+
+> **At a glance** - Fill-in-the-blank questions allow participants to provide specific text answers. This article explains how to create and configure these questions in SmartWinnr.
+
 **The fill-in-the-blanks question allows participants to write text answers.** Please note that the answers given by the participants need to exactly match the correct answers provided.
 
 **Here is how you can create a 'Fill in the Blanks' question.**
@@ -100,19 +103,19 @@ You can check if variations of the answer provided will be valid or invalid with
 
 * **Videos** - You can pose a question through a video as well. Choose videos of products, product demonstrations, customer feedback, customer stories, and ask questions based on that. Click on the video icon. You can add your own videos to the question or videos from YouTube, Box, and Brainshark.
 
-    [Learn how to add different videos to a question](https://smartwinnr.helpscoutdocs.com/article/64-how-to-add-a-video-to-a-question)
+    [Learn how to add different videos to a question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-a-video-to-a-question)
 
 * **Images** - Images or pictures can be sent with a question by clicking on the image icon. Then click on the 'Choose File' button to select the required files from the computer.
 
-    [Learn how to add an image to the question](https://smartwinnr.helpscoutdocs.com/article/65-how-to-add-an-image-to-the-question)
+    [Learn how to add an image to the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-an-image-to-the-question)
 
 * **Links** - You can also insert a link with the question by clicking on the links icon.
 
-    [Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
+    [Learn how to embed a link into the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-embed-a-link-into-the-question)
 
 * **Audio** - You can also send an audio file with the question by clicking on the Audio icon.
 
-    [Learn how to embed an audio file into the question](https://smartwinnr.helpscoutdocs.com/article/73-how-to-add-an-audio-file-to-a-question)
+    [Learn how to embed an audio file into the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-an-audio-file-to-a-question)
 
 ## Change Language
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
