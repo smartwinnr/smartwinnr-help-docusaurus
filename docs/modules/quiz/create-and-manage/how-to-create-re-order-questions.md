@@ -31,7 +31,7 @@ The steps to create a **Re-Order** question are outlined below.
 
 ![2\. Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-re-order-questions-1.png)
 
-3. On the '**Create new Question**' select the '**Question Type**' as the Re-Order Option. Also, select the scoring, whether default or partial. Use **Default Scoring** when the question has only one correct answer. Use **Partial Scoring** when the question has multiple correct answers. In **Partial Scoring**, the total score is distributed equally among all correct answer options.
+3. On the '**Create new Question**' select the '**Question Type**' as the Re-Order Option. Also, select the scoring, whether default or partial. Use **Default Scoring** when the score should be given only if the users select the correct order for all the option. Use **Partial Scoring** to award marks for partially correct responses. For reorder-type questions, the score is calculated based on the number of items placed in their correct positions. For example, if a question contains four items to be reordered and the user correctly places two of them, the user will receive marks corresponding to those two correctly positioned items..
 
 ![On the 'Create new Question' select the 'Question Type' as the Re-Order Option. Also, select the scoring, whether default or partial. Use De](/img/helpscout/editors/how-to-create-re-order-questions-2.png)
 
@@ -119,8 +119,10 @@ Choose the language you want to change and then click on the **Save** button.
 
 Users will see the question as shown below, with the answer options displayed in a **shuffled order**. Participants are required to **drag and drop the options into the correct sequence** to answer the question.
 
-![Users will see the question as shown below, with the answer options displayed in a shuffled order. Participants are required to drag and dro](/img/helpscout/editors/how-to-create-re-order-questions-6.png)
+![Users will see the question as shown below, with the answer options displayed in a shuffled order. Participants are required to drag and dro]
+
+![](/img/helpscout/authored/how-to-create-re-order-questions-mqz0z9do.png)
 
 Once they rearrange the order of the options, they can submit that question.
 
-![Once they rearrange the order of the options, they can submit that question.](/img/helpscout/editors/how-to-create-re-order-questions-7.png)
+![Once they rearrange the order of the options, they can submit that question.]![](/img/helpscout/authored/how-to-create-re-order-questions-mqz0zwfb.png)
