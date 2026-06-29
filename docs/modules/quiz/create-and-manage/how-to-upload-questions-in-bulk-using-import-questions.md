@@ -25,13 +25,13 @@ Here are the steps to import questions in bulk:
 
 The first step in the bulk upload is to download the CSV template to create questions. Follow the below steps to download the CSV template:
 
-Go to **Questions and Quizzes > Question Bank**. Click on the **hamburger** icon and select '**Import Questions**'.
+Go to **Questions and Quizzes** under **LEARNING AND KNOWLEDGE** in left menu > **Question Bank**. Click on the **hamburger** icon and select '**Import Questions**'.
 
-[![Go to Questions and Quizzes > Question Bank. Click on the hamburger icon and select 'Import Questions'.](/img/helpscout/editors/how-to-upload-questions-in-bulk-using-import-questions-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4862b4eb32171b80374aa/file-Xhek3xQx3Z.png)
+![](/img/helpscout/authored/how-to-upload-questions-in-bulk-using-import-questions-mqz36ug3.png)
 
 Now, on the import questions page, click on the 'Download Template' button at the top right corner. This downloads the CSV template successfully into your computer.
 
-[![Now, on the import questions page, click on the 'Download Template' button at the top right corner. This downloads the CSV template successf](/img/helpscout/editors/how-to-upload-questions-in-bulk-using-import-questions-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd4864ec868cb6df3a81019/file-AFFgr4SgKv.png)
+![](/img/helpscout/authored/how-to-upload-questions-in-bulk-using-import-questions-mqz3ewfh.png)
 
 Double click on the CSV file to open it.
 
