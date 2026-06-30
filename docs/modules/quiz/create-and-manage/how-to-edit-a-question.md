@@ -1,15 +1,12 @@
 ---
-id: 5ffc7b6c66df373cab7081aa
+id: how-to-edit-a-question
 title: How to edit a question?
 description: 'Follow the below steps in order to edit a question:'
 slug: how-to-edit-a-question
 sidebar_position: 202
 last_update:
-  date: 2021-01-12T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5ffc7b6c66df373cab7081aa
-  helpscout_url: 'https://help.smartwinnr.com/article/202-how-to-edit-a-question'
+  date: 2026-06-30
+  author: Sruthi Suresh
 customProps:
   roles:
     - editor
@@ -18,25 +15,44 @@ customProps:
 tags:
   - quiz
   - admin
+draft: false
 ---
-Follow the below steps in order to edit a question:
 
-EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. It will open the following page:
+> **At a glance** - This article describes how to edit a question in the quiz module, including steps for making changes and adding translations.
 
-![EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. It will open the following page:](/img/helpscout/editors/how-to-edit-a-question-1.png)
+Editing a question allows you to update the content, options, and feedback associated with it. You can also add translations for the question in different languages.
 
-Now, click on a particular question that you want to edit. It will open that following page:
+## When to use this
+Use this feature when you need to:
+- Update a question's wording or options.
+- Correct errors in existing questions.
+- Add translations to reach a wider audience.
 
-![Now, click on a particular question that you want to edit. It will open that following page:](/img/helpscout/editors/how-to-edit-a-question-2.png)
+## Steps
 
-Click on the "Edit" button at the top right corner of the screen. It will open the following page:
+### 1. Navigate to the Question Bank
+Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank**. This will open the Question Bank page.
 
-![Click on the "Edit" button at the top right corner of the screen. It will open the following page:](/img/helpscout/editors/how-to-edit-a-question-3.png)
+![EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. It will open the following page:
+![](/img/helpscout/authored/how-to-edit-a-question-mr0ho1zm.png)
 
-On this page, make all the necessary changes to the question. You can change the question body, the options, the feedback, the categories.
+### 2. Select a Question to Edit
+Click on the specific question you want to edit. This will open the question's detail page.
 
-You can also add a translation to the question in another language. To add the translation, click on the "Add Translation" button at the top right corner of the Question section.
+![Now, click on a particular question that you want to edit. It will open that following page:
+![](/img/helpscout/authored/how-to-edit-a-question-mr0hrrfd.png)
+### 3. Click the Edit Button
+Click on the **Edit** button at the top right corner of the screen. This will take you to the edit page for that question.
 
-![You can also add a translation to the question in another language. To add the translation, click on the "Add Translation" button at the top](/img/helpscout/editors/how-to-edit-a-question-4.png)
+![Click on the "Edit" button at the top right corner of the screen. It will open the following page:
+![](/img/helpscout/authored/how-to-edit-a-question-mr0htn0h.png)
+### 4. Make Your Changes
+On this page, you can make all necessary changes to the question. You can update the question body, options, feedback, and categories.
 
-Once you are done editing the question, click on the "Update" button at the bottom of the screen.
+### 5. Add a Translation (Optional)
+If you want to add a translation for the question in another language, click on the **Add Translation** button at the top right corner of the Question section.
+![](/img/helpscout/authored/how-to-edit-a-question-mr0hymq8.png)
+
+### 6. Save Your Changes
+Once you have finished editing the question, click on the **Update** button at the bottom of the screen to save your changes.
+![](/img/helpscout/authored/how-to-edit-a-question-mr0hwvp4.png)
