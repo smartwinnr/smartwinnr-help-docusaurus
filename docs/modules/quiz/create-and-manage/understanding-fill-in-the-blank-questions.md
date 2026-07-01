@@ -124,4 +124,4 @@ Once you have filled in the required details of the question, click on the **'Sa
 ## How do the participants see the question?
 This is an example of how the participants see the fill-in-the-blank question in the User View.
 
-![](/img/helpscout/authored/understanding-fill-in-the-blank-questions-mr0zreo3.png)
+![](/img/helpscout/authored/understanding-fill-in-the-blank-questions-mr1jdo4x.png)
