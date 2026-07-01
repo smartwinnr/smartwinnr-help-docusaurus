@@ -39,9 +39,11 @@ You can open a CSV file with your Excel application.
 
 This is how a sample CSV file will look like:
 
-[![This is how a sample CSV file will look like:](/img/helpscout/editors/how-to-upload-questions-in-bulk-using-import-questions-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd488ef23119734ee37eda0/file-viH3XdpDyG.png)
 
-It gives samples of all the 3 types of questions that you can create through this method.
+![](/img/helpscout/authored/how-to-upload-questions-in-bulk-using-import-questions-mr1pca2c.png)
+
+
+It gives samples questions that you can create through this method.
 
 **Step:2 Add questions to the CSV**
 
