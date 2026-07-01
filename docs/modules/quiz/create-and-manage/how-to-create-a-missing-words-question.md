@@ -1,6 +1,6 @@
 ---
 id: 641a2df7d6394b6fc7ed9fb2
-title: "understanding missing words questions in quizzes"
+title: "How to create a missing words question?"
 description: >-
   A Missing Words question enables participants to complete a sentence or phrase
   by selecting the correct word(s) from a predefined list of options.
@@ -14,10 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/282-how-to-create-a-missing-words-question
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: quiz
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - quiz
 draft: false
