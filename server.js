@@ -2123,6 +2123,36 @@ function removeFrontmatterPrivilege(markdown) {
   return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
 }
 
+const REDIRECTS_PATH = path.join(__dirname, 'data', 'redirects.json');
+
+/** Keep data/redirects.json consistent when a move changes an article's
+ *  route. The build hard-fails on redirects whose target no longer exists,
+ *  so every entry still pointing at the vacated route is retargeted, any
+ *  entry redirecting FROM the new route is dropped (it would shadow the
+ *  real page), and an oldRoute→newRoute entry is added so inbound links
+ *  keep working. Returns true when the file changed. */
+function updateRedirectsForMove(oldRoute, newRoute) {
+  let doc;
+  try {
+    doc = JSON.parse(fsSync.readFileSync(REDIRECTS_PATH, 'utf8'));
+  } catch {
+    return false;
+  }
+  const before = JSON.stringify(doc.redirects || []);
+  let list = Array.isArray(doc.redirects) ? doc.redirects : [];
+  list = list.filter((r) => r.from !== newRoute);
+  for (const r of list) {
+    if (r.to === oldRoute) r.to = newRoute;
+  }
+  if (!list.some((r) => r.from === oldRoute)) {
+    list.push({ from: oldRoute, to: newRoute });
+  }
+  if (JSON.stringify(list) === before) return false;
+  doc.redirects = list;
+  fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  return true;
+}
+
 /** Routing identity of an article: frontmatter `slug` and `id`, each falling
  *  back to the filename (Docusaurus's own default). Within one directory,
  *  Docusaurus resolves the route from the slug and the doc id from the id -
@@ -2210,11 +2240,27 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
     fsSync.unlinkSync(fromAbs);
 
     let queuedForDeploy = false;
+    let redirectsUpdated = false;
     if (wasPublished) {
+      // The article's route changes with the folder (unless its frontmatter
+      // slug is absolute) - retarget stale redirects and keep the old URL
+      // alive. Draft moves skip this: drafts aren't routed in prod, so a
+      // redirect to one would itself break the build.
+      const routeSlug = articleIdentity(raw, path.basename(fromAbs)).slug;
+      if (!routeSlug.startsWith('/')) {
+        const routeDir = (abs) => '/' + path.relative(DOCS_ROOT, path.dirname(abs)).split(path.sep).join('/');
+        redirectsUpdated = updateRedirectsForMove(
+          `${routeDir(fromAbs)}/${routeSlug}`,
+          `${routeDir(toAbs)}/${routeSlug}`
+        );
+      }
       enqueueDelete(fromRel);
       enqueueUpsert(toRel);
       if (created) {
         enqueueUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'));
+      }
+      if (redirectsUpdated) {
+        enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
       }
       persistDeployState();
       scheduleDeploy();
@@ -2227,6 +2273,7 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
       toPath: toRel,
       roles: destRoles,
       subfolderCreated: created,
+      redirectsUpdated,
       queuedForDeploy,
       queueSize: deployQueue.size,
     });
