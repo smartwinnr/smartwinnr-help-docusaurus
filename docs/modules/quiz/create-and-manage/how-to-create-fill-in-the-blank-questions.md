@@ -15,10 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/41-how-to-create-fill-in-the-blank-question
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: quiz
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - quiz
 ---
