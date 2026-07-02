@@ -39,7 +39,6 @@ You can find multiple options to search for questions using various criteria:
 - The **Question Type** (e.g., Multiple Choice, Fill in the blanks, Matching, Hotspot, Re-Order, Missing Words, Drag and Drop into Text, Short Answer with Multiple Options, Long Answer, Drag and Drop into Image, Numeric questions).
 - Search by categories available for questions by entering the category in the **Category Values** box.
 - Search the questions by entering your search text in the **Search** box.
-![](/img/helpscout/authored/question-bank-mr1q2fcg.png)
 
 ### 3. Use Advanced Search
 Click on the **‘Advanced Search’** link to find the advanced search options available to find your required question set. Here, you can filter questions by:
@@ -47,8 +46,6 @@ Click on the **‘Advanced Search’** link to find the advanced search options 
 - The **business unit** for which the question was created.
 - The **language** in which the question was created. If your question bank contains questions in multiple languages, you can use this filter to view questions created in a specific language available for your organization.
 - You can use the **Competition** filter to view questions that are **Used or Unused** in a specific competition. By default, selecting a competition displays Used questions. Change the Status filter to Unused to view questions that have not been used in the selected competition.
-
-![](/img/helpscout/authored/question-bank-mr1q9dzo.png)
 
 Set **Created By** to **All** to view questions created by all editors. You may also filter the results by **question type**, **business unit**, or **category** to view questions that meet specific criteria.
 

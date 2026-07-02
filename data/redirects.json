@@ -295,7 +295,7 @@
     },
     {
       "from": "/administration/quiz-module/how-to-create-a-missing-words-question",
-      "to": "/modules/quiz/features/how-to-create-a-missing-words-question"
+      "to": "/modules/quiz/create-and-manage/how-to-create-a-missing-words-question"
     },
     {
       "from": "/administration/quiz-module/how-to-create-an-automatic-quiz",
@@ -307,7 +307,7 @@
     },
     {
       "from": "/administration/quiz-module/how-to-create-fill-in-the-blank-questions",
-      "to": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-fill-in-the-blank-questions"
     },
     {
       "from": "/administration/quiz-module/how-to-create-long-answer-questions",
@@ -351,7 +351,7 @@
     },
     {
       "from": "/administration/quiz-module/question-bank",
-      "to": "/modules/quiz/features/question-bank"
+      "to": "/modules/quiz/create-and-manage/question-bank"
     },
     {
       "from": "/administration/quiz-module/question-response-analytics",
@@ -1343,7 +1343,7 @@
     },
     {
       "from": "/modules/quiz/how-to-create-a-missing-words-question",
-      "to": "/modules/quiz/features/how-to-create-a-missing-words-question"
+      "to": "/modules/quiz/create-and-manage/how-to-create-a-missing-words-question"
     },
     {
       "from": "/modules/quiz/how-to-create-an-automatic-quiz",
@@ -1355,7 +1355,7 @@
     },
     {
       "from": "/modules/quiz/how-to-create-fill-in-the-blank-questions",
-      "to": "/modules/quiz/features/how-to-create-fill-in-the-blank-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-fill-in-the-blank-questions"
     },
     {
       "from": "/modules/quiz/how-to-create-long-answer-questions",
@@ -1399,7 +1399,7 @@
     },
     {
       "from": "/modules/quiz/question-bank",
-      "to": "/modules/quiz/features/question-bank"
+      "to": "/modules/quiz/create-and-manage/question-bank"
     },
     {
       "from": "/modules/quiz/question-response-analytics",

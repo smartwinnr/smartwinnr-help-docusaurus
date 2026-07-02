@@ -65,7 +65,7 @@ Re-order questions where you must drag and drop the answer to a question in the 
 
 A **Missing Words question** enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of options.
 
-[./how-to-create-a-missing-words-question.md](./how-to-create-a-missing-words-question.md)
+[How to create a Missing Words question](../create-and-manage/how-to-create-a-missing-words-question.md)
 
 [**7\. Drag and Drop into Text**](https://secure.helpscout.net/docs/5fcc5d85de1bfa158fb55b98/article/641a2df7d6394b6fc7ed9fb2/)
 
