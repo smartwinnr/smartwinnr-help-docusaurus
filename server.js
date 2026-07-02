@@ -1503,23 +1503,69 @@ async function fireDeploy() {
     // their screenshots stay on the container's ephemeral disk and never
     // reach git → Docusaurus's build-time "image not found" check fails on
     // the next Railway redeploy.
-    const IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)]+)\)/g;
-    const imageRels = new Set();
+    //
+    // An image that is neither on disk NOR already in the repo would ship as
+    // a dangling reference and break every subsequent production build, so
+    // articles with such references are held back in the queue instead of
+    // committed. Re-uploading the screenshot (or removing the reference)
+    // unblocks them on the next deploy.
+    const IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+    const repoHasCache = new Map();
+    async function repoHasFile(rel) {
+      if (repoHasCache.has(rel)) return repoHasCache.get(rel);
+      let has = false;
+      try {
+        await ghGet(`/contents/${rel.split('/').map(encodeURIComponent).join('/')}?ref=${GIT_PUBLISH_BRANCH}`);
+        has = true;
+      } catch (e) {
+        // 404 = definitively absent. Anything else (auth, rate-limit,
+        // network) is inconclusive - rethrow so the deploy aborts with the
+        // queue intact rather than guessing.
+        if (e.response?.status !== 404) throw e;
+      }
+      repoHasCache.set(rel, has);
+      return has;
+    }
+
+    const images = [];
+    const imageRelsAdded = new Set();
+    const heldBack = [];
+    const shippable = [];
     for (const f of files) {
+      const missing = [];
+      const bundle = [];
       for (const m of f.content.matchAll(IMAGE_PATTERN)) {
         // /img/helpscout/authored/X → static/img/helpscout/authored/X
         const rel = 'static' + m[1];
-        imageRels.add(rel);
+        if (fsSync.existsSync(path.join(__dirname, rel))) {
+          bundle.push(rel);
+        } else if (!(await repoHasFile(rel))) {
+          missing.push(rel);
+        }
+        // else: not on disk but already in the repo - nothing to upload.
       }
-    }
-    const images = [];
-    for (const rel of imageRels) {
-      const abs = path.join(__dirname, rel);
-      if (!fsSync.existsSync(abs)) {
-        console.warn(`[deploy] referenced image not on disk, skipping: ${rel}`);
+      if (missing.length > 0) {
+        console.error(`[deploy] holding back ${f.rel} - referenced image(s) neither on disk nor in repo: ${missing.join(', ')}`);
+        heldBack.push({ rel: f.rel, missing });
         continue;
       }
-      images.push({ rel, data: fsSync.readFileSync(abs) });
+      shippable.push(f);
+      for (const rel of bundle) {
+        if (imageRelsAdded.has(rel)) continue;
+        imageRelsAdded.add(rel);
+        images.push({ rel, data: fsSync.readFileSync(path.join(__dirname, rel)) });
+      }
+    }
+
+    if (shippable.length === 0 && deletes.length === 0) {
+      // Everything upsertable is held back - nothing safe to commit.
+      deployInFlight = false;
+      return {
+        ok: false,
+        reason: 'held-back',
+        message: 'All queued articles reference images that are neither on disk nor in the repo. Re-upload the screenshots or remove the references, then deploy again.',
+        held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing })),
+      };
     }
 
     // 1. Look up current branch tip + tree
@@ -1532,7 +1578,7 @@ async function fireDeploy() {
     //    - .md / .mdx → utf-8
     //    - images     → base64 (binary content)
     const treeEntries = [];
-    for (const f of files) {
+    for (const f of shippable) {
       const blobResp = await ghPost(`/git/blobs`, {
         content: f.content,
         encoding: 'utf-8',
@@ -1574,13 +1620,13 @@ async function fireDeploy() {
     });
 
     // 4. Create the commit.
-    const changedSlugs = [...files.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
+    const changedSlugs = [...shippable.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
                          ...deletes.map((d) => '-' + path.basename(d).replace(/\.(md|mdx)$/, ''))].slice(0, 3);
     const parts = [];
-    if (files.length) parts.push(`${files.length} article${files.length === 1 ? '' : 's'}`);
+    if (shippable.length) parts.push(`${shippable.length} article${shippable.length === 1 ? '' : 's'}`);
     if (deletes.length) parts.push(`${deletes.length} delete${deletes.length === 1 ? '' : 's'}`);
     if (images.length) parts.push(`${images.length} image${images.length === 1 ? '' : 's'}`);
-    const totalChanges = files.length + deletes.length;
+    const totalChanges = shippable.length + deletes.length;
     const message = `publish: ${parts.join(' + ')} (${changedSlugs.join(', ')}${totalChanges > 3 ? '...' : ''})`;
     const commitResp = await ghPost(`/git/commits`, {
       message,
@@ -1596,12 +1642,22 @@ async function fireDeploy() {
       force: false,
     });
 
-    console.log(`[deploy] pushed ${files.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
+    console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with missing images` : ''}`);
     deployQueue.clear();
+    // Held-back articles stay queued so a re-uploaded screenshot (or an
+    // edited article) ships them on the next deploy.
+    for (const h of heldBack) deployQueue.set(h.rel, 'upsert');
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
-    return { ok: true, committed: files.length, deleted: deletes.length, images: images.length, sha: commitResp.data.sha };
+    return {
+      ok: true,
+      committed: shippable.length,
+      deleted: deletes.length,
+      images: images.length,
+      sha: commitResp.data.sha,
+      held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing })),
+    };
   } catch (e) {
     const ghMsg = e.response?.data?.message || e.message;
     console.error('[deploy] GitHub push failed:', ghMsg);
@@ -1624,6 +1680,12 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
     const blockers = (audit.findings || []).filter((f) => f.blocking);
     if (blockers.length > 0) {
       return res.status(400).json({ error: 'Audit blocking - fix before publishing', audit });
+    }
+    const conflict = findSlugOrIdCollision(target, raw);
+    if (conflict) {
+      return res.status(409).json({
+        error: `Cannot publish: "${conflict}" in the same folder claims the same route slug or doc id, which would break the production build. Delete or re-slug it first.`,
+      });
     }
     const next = raw.replace(/^draft:\s*true\s*$/m, 'draft: false');
     if (next === raw) {
@@ -2061,6 +2123,39 @@ function removeFrontmatterPrivilege(markdown) {
   return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
 }
 
+/** Routing identity of an article: frontmatter `slug` and `id`, each falling
+ *  back to the filename (Docusaurus's own default). Within one directory,
+ *  Docusaurus resolves the route from the slug and the doc id from the id -
+ *  so two files in the same folder sharing either produces duplicate routes
+ *  (non-deterministic routing) or a duplicate-id build failure. */
+function articleIdentity(markdown, filename) {
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  const fm = fmMatch ? fmMatch[1] : '';
+  const slugM = /^slug:[ \t]*['"]?([^'"\n]+?)['"]?[ \t]*$/m.exec(fm);
+  const idM = /^id:[ \t]*['"]?([^'"\n]+?)['"]?[ \t]*$/m.exec(fm);
+  const base = filename.replace(/\.(md|mdx)$/, '');
+  return { slug: slugM ? slugM[1].trim() : base, id: idM ? idM[1].trim() : base };
+}
+
+/** Scan the directory that holds (or will hold) `targetAbs` for a different
+ *  article claiming the same route slug or doc id as `markdown`. Returns the
+ *  conflicting filename, or null when the target is safe to land. */
+function findSlugOrIdCollision(targetAbs, markdown) {
+  const dir = path.dirname(targetAbs);
+  if (!fsSync.existsSync(dir)) return null;
+  const mine = articleIdentity(markdown, path.basename(targetAbs));
+  for (const entry of fsSync.readdirSync(dir)) {
+    if (!/\.(md|mdx)$/.test(entry)) continue;
+    const p = path.join(dir, entry);
+    if (p === targetAbs) continue;
+    let raw;
+    try { raw = fsSync.readFileSync(p, 'utf8'); } catch { continue; }
+    const theirs = articleIdentity(raw, entry);
+    if (theirs.slug === mine.slug || theirs.id === mine.id) return entry;
+  }
+  return null;
+}
+
 // Relocate an article to a different module / sub-folder (slug unchanged).
 // Writes the new file + unlinks the old; for published articles the rename
 // ships as enqueueDelete(old) + enqueueUpsert(new) in one deploy. Images are
@@ -2091,6 +2186,12 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
     }
 
     const raw = fsSync.readFileSync(fromAbs, 'utf8');
+    const conflict = findSlugOrIdCollision(toAbs, raw);
+    if (conflict) {
+      return res.status(409).json({
+        error: `Cannot move: "${conflict}" in ${toModule}/${toSubFolder} already claims the same route slug or doc id, which would break the production build.`,
+      });
+    }
     const wasPublished = !/^draft:\s*true\b/m.test(raw);
 
     // Re-home the audience to the destination sub-folder's default roles and
