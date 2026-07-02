@@ -22,8 +22,6 @@ draft: false
 
 The **Question Bank** in SmartWinnr serves as the central repository for all questions created within your division. It contains questions developed by trainers/editors across your business unit. Any question that you create will automatically be added to the Question Bank.
 
-![](/img/helpscout/authored/question-bank-mr1pf5ql.png)
-
 ## When to use this
 Use the Question Bank when you want to:
 - Access a centralized repository of all questions created within your division.
