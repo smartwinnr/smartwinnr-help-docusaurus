@@ -7,8 +7,8 @@ description: >-
 slug: how-can-i-duplicate-a-quiz
 sidebar_position: 51
 last_update:
-  date: 2021-03-10T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-02
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fd4939923119734ee37edac
   helpscout_url: 'https://help.smartwinnr.com/article/51-how-can-i-duplicate-a-quiz'
@@ -20,23 +20,37 @@ customProps:
 tags:
   - quiz
   - admin
+draft: false
 ---
-## **Duplicate a Quiz**
 
-You can duplicate an existing quiz. The quiz name, description and questions in the quiz will get copied into the new quiz.
+> **At a glance** - You can easily duplicate an existing quiz, including its name, description, and questions.
 
-You will have to add the people to whom you want to send the quiz to.
+You can duplicate an existing quiz. The quiz name, description, and questions in the quiz will get copied into the new quiz. You will have to add the people to whom you want to send the quiz.
 
-Go to **EDITOR > Questions and Quizzes > View All Quizzes**. From there, select the quiz that you want to duplicate. Then, click on the hamburger menu at the top right corner then select the **‘Duplicate Quiz’** option from the available options.
+## When to use this
+Use this feature when you want to create a new quiz based on an existing one without having to recreate all the content from scratch. This is useful for:
 
-[![Go to EDITOR > Questions and Quizzes > View All Quizzes. From there, select the quiz that you want to duplicate. Then, click on the hamburge](/img/helpscout/editors/how-can-i-duplicate-a-quiz-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1cd4c41fcb56e4047d89e/file-UnoJwCH5Mj.png)
+- Creating variations of a quiz for different audiences.
+- Updating quizzes while retaining the original content.
+- Saving time when designing new quizzes.
 
-This will create a new quiz with all the features like timer, pass percentage, review options, retake etc that you have set to the quiz which is duplicated. Also, the new quiz will have all the questions from the quiz which is duplicated. You can then go in and edit the setting or the questions for the new quiz if required.
+## Steps
 
-Once the quiz is duplicated, it will take you to the new duplicated quiz where you can make any changed to the title, description, start date, end date, Quiz Settings etc and then click on the 'Save Changes' button at the bottom.
+### 1. Navigate to View All Quizzes
+Go to **EDITOR > Questions and Quizzes > View All Quizzes**. From there, select the quiz that you want to duplicate. Then, click on the hamburger menu at the top right corner and select the **‘Duplicate Quiz’** option from the available options.
 
-![Once the quiz is duplicated, it will take you to the new duplicated quiz where you can make any changed to the title, description, start dat](/img/helpscout/editors/how-can-i-duplicate-a-quiz-2.png)
+![Go to EDITOR > Questions and Quizzes > View All Quizzes. From there, select the quiz that you want to duplicate. Then, click on the hamburger menu at the top right corner and select the ‘Duplicate Quiz’ option from the available options.](/img/helpscout/editors/how-can-i-duplicate-a-quiz-1.png)
 
-Once the quiz is saved, you can go in and check for the questions and update the questions if required. To check and add/remove questions from the duplicated quiz, go to step 2 and click on the 'Edit Questions' button.
+### 2. Review the New Quiz Settings
+This will create a new quiz with all the features like timer, pass percentage, review options, retake, etc., that you have set for the quiz being duplicated. The new quiz will have all the questions from the original quiz. You can then go in and edit the settings or the questions for the new quiz if required.
 
-![Once the quiz is saved, you can go in and check for the questions and update the questions if required. To check and add/remove questions fr](/img/helpscout/editors/how-can-i-duplicate-a-quiz-3.png)Once the questions are finalized, you can then go to step 3 to assign users to the quiz.
+Once the quiz is duplicated, it will take you to the new duplicated quiz where you can make any changes to the title, description, start date, end date, quiz settings, etc., and then click on the **Save Changes** button at the bottom.
+
+![Once the quiz is duplicated, it will take you to the new duplicated quiz where you can make any changes to the title, description, start date, end date, quiz settings, etc., and then click on the 'Save Changes' button at the bottom.](/img/helpscout/editors/how-can-i-duplicate-a-quiz-2.png)
+
+### 3. Finalize Questions
+Once the quiz is saved, you can check the questions and update them if required. To check and add/remove questions from the duplicated quiz, go to step 2 and click on the **Edit Questions** button.
+
+![Once the quiz is saved, you can check the questions and update them if required. To check and add/remove questions from the duplicated quiz, go to step 2 and click on the 'Edit Questions' button.](/img/helpscout/editors/how-can-i-duplicate-a-quiz-3.png)
+
+Once the questions are finalized, you can then go to step 3 to assign users to the quiz.
