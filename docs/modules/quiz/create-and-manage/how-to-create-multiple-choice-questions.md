@@ -15,10 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/40-how-to-create-multiple-choice-question
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: quiz
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - quiz
 ---
