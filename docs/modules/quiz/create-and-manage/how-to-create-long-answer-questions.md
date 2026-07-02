@@ -13,10 +13,7 @@ source:
   helpscout_id: 60e1fc479e87cb3d01249e3c
   helpscout_url: 'https://help.smartwinnr.com/article/258-how-to-create-short-answer-questions'
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: quiz
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - quiz
 ---
