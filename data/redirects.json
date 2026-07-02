@@ -315,7 +315,7 @@
     },
     {
       "from": "/administration/quiz-module/how-to-create-multiple-choice-questions",
-      "to": "/modules/quiz/features/how-to-create-multiple-choice-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions"
     },
     {
       "from": "/administration/quiz-module/how-to-create-numeric-type-questions",
@@ -1363,7 +1363,7 @@
     },
     {
       "from": "/modules/quiz/how-to-create-multiple-choice-questions",
-      "to": "/modules/quiz/features/how-to-create-multiple-choice-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions"
     },
     {
       "from": "/modules/quiz/how-to-create-numeric-type-questions",
@@ -1784,6 +1784,10 @@
     {
       "from": "/guides/manager/what-is-my-team-coaching",
       "to": "/modules/video-coaching/for-managers/what-is-my-team-coaching"
+    },
+    {
+      "from": "/modules/quiz/features/how-to-create-multiple-choice-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions"
     }
   ]
 }
