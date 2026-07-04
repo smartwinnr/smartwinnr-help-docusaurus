@@ -46,6 +46,7 @@ type DeployState = {
   debounceMs: number;
   gitPushEnabled: boolean;
   configOk: boolean;
+  lastValidationError?: {ts: number; errors: Array<{check: string; message: string}>} | null;
 };
 
 // Modules are fetched from GET /api/admin/authoring/modules on Published-tab
@@ -319,6 +320,21 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         </>
         );
       })()}
+
+      {deployState?.lastValidationError && (
+        <div className={styles.warn} role="alert">
+          <strong>⚠ The last deploy was blocked</strong> - it would have broken the production build:
+          <ul>
+            {deployState.lastValidationError.errors.slice(0, 5).map((e, i) => (
+              <li key={i}>{e.message}</li>
+            ))}
+            {deployState.lastValidationError.errors.length > 5 && (
+              <li>…and {deployState.lastValidationError.errors.length - 5} more</li>
+            )}
+          </ul>
+          Fix the issue(s), then press Deploy now again. Nothing was committed.
+        </div>
+      )}
 
       <div className={styles.tabToolbar}>
         <span className={styles.hint}>

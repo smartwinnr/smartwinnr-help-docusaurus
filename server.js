@@ -17,6 +17,7 @@ const digestStore = require('./db/digest-store');
 const { sendDigest, previewDigest } = require('./db/digest-send');
 const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
+const matter = require('gray-matter');
 const fsSync = require('fs');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
@@ -1128,7 +1129,7 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
     // the pre-commit hook doesn't fail the publish.
     markdown = stripDecorativeEmojis(markdown);
 
-    const audit = gradeMarkdown(markdown);
+    const audit = gradeMarkdown(markdown, auditOpts());
     res.json({
       markdown,
       audit,
@@ -1260,7 +1261,7 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     const { markdown, module: moduleSlug, subFolder, slug } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
 
-    const audit = gradeMarkdown(markdown);
+    const audit = gradeMarkdown(markdown, auditOpts());
     const blockers = (audit.findings || []).filter((f) => f.blocking);
     if (blockers.length > 0) {
       return res.status(400).json({
@@ -1334,6 +1335,16 @@ let lastDeployTs = 0;
 let debounceTimer = null;
 let deployInFlight = false;
 
+// Route hints for queued doc deletes: rel → route at deletion time
+// (frontmatter-slug aware). The deploy pre-flight uses these to subtract
+// vacated routes; the filename-derived fallback is wrong when the article
+// carried a custom slug. Persisted alongside the queue in deploy-state.json.
+const deletedRouteHints = new Map();
+
+// Last pre-flight failure, surfaced via GET /deploy/state so the drafts UI
+// can explain why an auto-deploy is stuck. Cleared on the next green push.
+let lastValidationError = null;
+
 function enqueueUpsert(relPath) {
   deployQueue.set(relPath, 'upsert');
 }
@@ -1377,6 +1388,10 @@ function loadDeployState() {
         if (typeof item === 'string') deployQueue.set(item, 'upsert');
         else if (item && item.path) deployQueue.set(item.path, item.action === 'delete' ? 'delete' : 'upsert');
       }
+      for (const [rel, route] of Object.entries(s.deletedRoutes || {})) {
+        deletedRouteHints.set(rel, route);
+      }
+      lastValidationError = s.lastValidationError || null;
       console.log(`📦 deploy-state: queue=${deployQueue.size}, lastDeployTs=${lastDeployTs ? new Date(lastDeployTs).toISOString() : 'never'}`);
     }
   } catch (e) {
@@ -1389,6 +1404,8 @@ function persistDeployState() {
     fsSync.writeFileSync(DEPLOY_STATE_PATH, JSON.stringify({
       lastDeployTs,
       queue: [...deployQueue].map(([p, action]) => ({ path: p, action })),
+      deletedRoutes: Object.fromEntries(deletedRouteHints),
+      lastValidationError,
     }, null, 2), 'utf8');
   } catch (e) {
     console.warn('[deploy] failed to persist state:', e.message);
@@ -1447,6 +1464,158 @@ async function ghPatch(pathSuffix, body) {
   });
 }
 
+/** Fetch a file's content from the publish branch. Returns the utf-8 string,
+ *  or null on 404; rethrows anything else (auth/rate-limit/network) so
+ *  callers can distinguish "absent" from "unknown". */
+async function ghFetchFile(rel) {
+  try {
+    const resp = await ghGet(`/contents/${rel.split('/').map(encodeURIComponent).join('/')}?ref=${GIT_PUBLISH_BRANCH}`);
+    return Buffer.from(resp.data.content, 'base64').toString('utf8');
+  } catch (e) {
+    if (e.response?.status === 404) return null;
+    throw e;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Audit build-physics plumbing
+// ---------------------------------------------------------------------------
+// @mdx-js/mdx (a Docusaurus dep) is ESM-only, so CJS code loads it once via
+// dynamic import and injects a sync compiler into gradeMarkdown. Until the
+// import resolves (first moments of boot) the MDX check silently no-ops -
+// the deploy pre-flight re-runs it, so nothing build-breaking slips through.
+let compileMdx = null;
+import('@mdx-js/mdx')
+  .then((m) => { compileMdx = (src) => m.compileSync(src, { format: 'mdx' }); })
+  .catch((e) => console.warn('[audit] @mdx-js/mdx unavailable - MDX pre-checks disabled:', e.message));
+
+const KNOWN_PRIVILEGES_PATH = path.join(__dirname, 'data', 'known-privileges.json');
+
+/** Known privilege keys as a Set, or an empty Set when unavailable. The
+ *  Railway volume at /app/data shadows the repo's known-privileges.json, so
+ *  ensureKnownPrivilegesSeeded() copies it down from the publish branch. */
+function knownPrivilegesSet() {
+  try {
+    const doc = JSON.parse(fsSync.readFileSync(KNOWN_PRIVILEGES_PATH, 'utf8'));
+    return new Set(doc.privileges || []);
+  } catch {
+    return new Set();
+  }
+}
+
+async function ensureKnownPrivilegesSeeded() {
+  if (fsSync.existsSync(KNOWN_PRIVILEGES_PATH)) return;
+  if (!GIT_PUSH_ENABLED || !GIT_PUSH_TOKEN || !GITHUB_REPO) return;
+  try {
+    const content = await ghFetchFile('data/known-privileges.json');
+    if (content === null) return;
+    fsSync.mkdirSync(path.dirname(KNOWN_PRIVILEGES_PATH), { recursive: true });
+    fsSync.writeFileSync(KNOWN_PRIVILEGES_PATH, content, 'utf8');
+    console.log('[audit] seeded data/known-privileges.json from publish branch');
+  } catch (e) {
+    console.warn('[audit] could not seed known-privileges.json:', e.message);
+  }
+}
+ensureKnownPrivilegesSeeded();
+
+/** Options bundle wiring the build-physics checks into gradeMarkdown. An
+ *  empty privilege set disables that check rather than flagging everything. */
+function auditOpts() {
+  return { compileMdx, knownPrivileges: knownPrivilegesSet() };
+}
+
+// ---------------------------------------------------------------------------
+// Deploy pre-flight validation
+// ---------------------------------------------------------------------------
+// The Railway build hard-fails on integrity violations (redirects targeting
+// missing routes, uncompilable MDX, duplicate ids, unknown privilege keys) -
+// and a broken production build also strands every subsequent server fix, so
+// nothing may reach GitHub unvalidated. fireDeploy validates the exact
+// content it is about to commit against the local docs tree, which every
+// authoring endpoint keeps in sync with post-commit state.
+
+/** Canonical route form. Keep in sync with normPath in docusaurus.config.ts. */
+function normRoute(p) {
+  let n = String(p).replace(/\/index$/, '');
+  if (n.length > 1) n = n.replace(/\/$/, '');
+  return n || '/';
+}
+
+/** Walk docs/ deriving every article's route the way Docusaurus does.
+ *  Keep in sync with buildDocUrlMap in docusaurus.config.ts.
+ *  Returns [{rel, route, dirRel, id, isDraft}], rel repo-relative. */
+function buildLocalDocEntries() {
+  const entries = [];
+  if (!fsSync.existsSync(DOCS_ROOT)) return entries;
+  (function walk(dir) {
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(p); continue; }
+      if (!/\.(md|mdx)$/i.test(entry.name)) continue;
+      let content;
+      try { content = fsSync.readFileSync(p, 'utf8'); } catch { continue; }
+      // Real YAML parse (not a regex): frontmatter routinely uses block
+      // scalars (slug: >-) that line-based regexes misread. Malformed YAML
+      // falls back to filename-derived identity - the physics check holds
+      // such files back if they're queued.
+      let fm = {};
+      try { fm = matter(content).data || {}; } catch { /* fall back below */ }
+      const relDocs = path.relative(DOCS_ROOT, p).replace(/\\/g, '/');
+      const dirRel = relDocs.replace(/\/?[^/]+\.(md|mdx)$/i, '');
+      const base = entry.name.replace(/\.(md|mdx)$/i, '');
+      const slug = typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : base;
+      const url = slug.startsWith('/') ? slug : '/' + (dirRel ? dirRel + '/' : '') + slug;
+      entries.push({
+        rel: path.relative(__dirname, p).replace(/\\/g, '/'),
+        route: normRoute(url),
+        dirRel,
+        id: fm.id != null && String(fm.id).trim() ? String(fm.id).trim() : base,
+        isDraft: fm.draft === true,
+      });
+    }
+  })(DOCS_ROOT);
+  return entries;
+}
+
+/** Non-doc routes a redirect may legitimately target: custom pages under
+ *  src/pages, category landings declared via _category_.json `link`, and
+ *  the site root. Generated listings (tags, search) are deliberately
+ *  absent - no redirect should target those. */
+function buildNonDocRouteSet() {
+  const routes = new Set(['/']);
+  const pagesRoot = path.join(__dirname, 'src', 'pages');
+  if (fsSync.existsSync(pagesRoot)) {
+    (function walk(dir) {
+      for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, entry.name);
+        if (entry.isDirectory()) { walk(p); continue; }
+        if (entry.name.startsWith('_')) continue;
+        if (!/\.(jsx?|tsx?|md|mdx)$/i.test(entry.name)) continue;
+        const rel = path.relative(pagesRoot, p).replace(/\\/g, '/').replace(/\.(jsx?|tsx?|md|mdx)$/i, '');
+        routes.add(normRoute('/' + rel));
+      }
+    })(pagesRoot);
+  }
+  (function walk(dir) {
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(p); continue; }
+      if (entry.name !== '_category_.json') continue;
+      try {
+        const doc = JSON.parse(fsSync.readFileSync(p, 'utf8'));
+        if (!doc || !doc.link) continue;
+        const dirRel = path.relative(DOCS_ROOT, dir).replace(/\\/g, '/');
+        routes.add(normRoute('/' + dirRel));
+        if (typeof doc.link.slug === 'string') {
+          const s = doc.link.slug;
+          routes.add(normRoute(s.startsWith('/') ? s : '/' + dirRel + '/' + s));
+        }
+      } catch { /* malformed gate file - caught elsewhere */ }
+    }
+  })(DOCS_ROOT);
+  return routes;
+}
+
 /** Run a deploy: build a single commit out of every queued file via the
  *  GitHub Git Data API. Triggers Railway auto-deploy via the ref update.
  *  Best-effort - on failure the queue is preserved for the next attempt. */
@@ -1458,6 +1627,7 @@ async function fireDeploy() {
     // Local dev or feature off - clear queue without any git work.
     console.log('[deploy] AUTHORING_GIT_PUSH not set - clearing queue as no-op');
     deployQueue.clear();
+    deletedRouteHints.clear();
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
@@ -1493,6 +1663,7 @@ async function fireDeploy() {
 
     if (files.length === 0 && deletes.length === 0) {
       deployQueue.clear();
+      deletedRouteHints.clear();
       deployInFlight = false;
       persistDeployState();
       return { ok: false, reason: 'no-files' };
@@ -1527,30 +1698,191 @@ async function fireDeploy() {
       return has;
     }
 
+    // Pre-flight, pass 1 - per-file problems. Articles with problems are
+    // HELD BACK (stay queued, author fixes and redeploys); problems in the
+    // shared redirects.json ABORT the whole deploy - there is no way to
+    // ship "part of" that file safely.
+    const perFile = new Map(); // rel → {missingImages, errors, bundle}
+    for (const f of files) {
+      const status = { missingImages: [], errors: [], bundle: [] };
+      perFile.set(f.rel, status);
+      const relNorm = f.rel.replace(/\\/g, '/');
+      if (/^docs\/.+\.(md|mdx)$/i.test(relNorm)) {
+        for (const m of f.content.matchAll(IMAGE_PATTERN)) {
+          // /img/helpscout/authored/X → static/img/helpscout/authored/X
+          const rel = 'static' + m[1];
+          if (fsSync.existsSync(path.join(__dirname, rel))) {
+            status.bundle.push(rel);
+          } else if (!(await repoHasFile(rel))) {
+            status.missingImages.push(rel);
+          }
+          // else: not on disk but already in the repo - nothing to upload.
+        }
+        // Build-physics: anything gradeMarkdown marks buildBreaking (bad
+        // YAML, uncompilable MDX, unknown privilege key) hard-fails the
+        // Railway build, so it must not ship.
+        const audit = gradeMarkdown(f.content, auditOpts());
+        for (const finding of audit.findings || []) {
+          if (finding.buildBreaking) {
+            status.errors.push(finding.detail ? `${finding.label}: ${finding.detail}` : finding.label);
+          }
+        }
+      } else if (/_category_\.json$/.test(relNorm)) {
+        try {
+          const cp = (JSON.parse(f.content) || {}).customProps || {};
+          const known = knownPrivilegesSet();
+          const keys = [
+            ...(typeof cp.privilege === 'string' ? [cp.privilege] : []),
+            ...(Array.isArray(cp.anyPrivilege) ? cp.anyPrivilege : []),
+            ...(Array.isArray(cp.allPrivileges) ? cp.allPrivileges : []),
+          ];
+          const unknown = known.size > 0 ? keys.filter((k) => !known.has(String(k))) : [];
+          if (unknown.length > 0) {
+            status.errors.push(`Unknown privilege key(s) (fails prebuild): ${unknown.join(', ')}`);
+          }
+        } catch {
+          status.errors.push('Invalid JSON');
+        }
+      }
+    }
+
+    // Pass 2 - batch-level route/doc-id collisions. Two published docs on
+    // one route make routing nondeterministic; two files in one directory
+    // with one doc id fail the build. Hold every queued party - the author
+    // picks the winner. Collisions with no queued party can't be shipped
+    // from here (the last green build proves the repo copy is clean), so
+    // they only warn.
+    const docEntries = buildLocalDocEntries();
+    {
+      const reportCollision = (a, b, what) => {
+        let queuedAny = false;
+        for (const e of [a, b]) {
+          const status = perFile.get(e.rel);
+          if (status) {
+            status.errors.push(`Collides with ${e === a ? b.rel : a.rel} (${what})`);
+            queuedAny = true;
+          }
+        }
+        if (!queuedAny) console.warn(`[deploy] pre-existing collision outside this batch: ${a.rel} vs ${b.rel} (${what})`);
+      };
+      const byRoute = new Map();
+      const byDirId = new Map();
+      for (const e of docEntries) {
+        if (!e.isDraft) {
+          const prior = byRoute.get(e.route);
+          if (prior) reportCollision(prior, e, `route ${e.route}`);
+          else byRoute.set(e.route, e);
+        }
+        const idKey = `${e.dirRel} ${e.id}`;
+        const priorId = byDirId.get(idKey);
+        if (priorId) reportCollision(priorId, e, `doc id "${e.id}"`);
+        else byDirId.set(idKey, e);
+      }
+    }
+
+    const heldRels = new Set(
+      [...perFile].filter(([, s]) => s.missingImages.length > 0 || s.errors.length > 0).map(([rel]) => rel)
+    );
+
+    // Pass 3 - redirect integrity. The build hard-fails when a client
+    // redirect targets a route that won't exist after this commit (the
+    // config only shields draft targets). Validate the redirects file that
+    // will be in effect - the queued copy, else the publish branch's -
+    // against the post-commit route set.
+    {
+      const queuedRedirects = files.find((f) => f.rel.replace(/\\/g, '/') === 'data/redirects.json' && !heldRels.has(f.rel));
+      // A non-404 fetch error throws → the outer catch aborts with the
+      // queue intact, same policy as repoHasFile.
+      const redirectsRaw = queuedRedirects ? queuedRedirects.content : await ghFetchFile('data/redirects.json');
+      let redirectDoc = null;
+      if (redirectsRaw) {
+        try {
+          redirectDoc = JSON.parse(redirectsRaw);
+        } catch {
+          deployInFlight = false;
+          lastValidationError = { ts: Date.now(), errors: [{ check: 'redirects-json', message: 'data/redirects.json is not valid JSON' }] };
+          persistDeployState();
+          return {
+            ok: false,
+            reason: 'validation-failed',
+            message: 'data/redirects.json is not valid JSON - fix it, then deploy again. Nothing was committed.',
+            errors: lastValidationError.errors,
+          };
+        }
+      }
+      if (redirectDoc) {
+        const validRoutes = new Set();
+        const draftRoutes = new Set();
+        for (const e of docEntries) (e.isDraft ? draftRoutes : validRoutes).add(e.route);
+        // Held-back NEW articles won't exist on prod - drop their routes.
+        // A held-back EDIT keeps its repo copy live, so its route stays.
+        for (const e of docEntries) {
+          if (heldRels.has(e.rel) && !(await repoHasFile(e.rel))) {
+            validRoutes.delete(e.route);
+            draftRoutes.delete(e.route);
+          }
+        }
+        // Queued doc deletes vacate their routes.
+        for (const rel of deletes) {
+          const relNorm = rel.replace(/\\/g, '/');
+          if (!/^docs\/.+\.(md|mdx)$/i.test(relNorm)) continue;
+          const fallback = normRoute('/' + relNorm.replace(/^docs\//, '').replace(/\.(md|mdx)$/i, ''));
+          const vacated = deletedRouteHints.get(relNorm) || fallback;
+          validRoutes.delete(vacated);
+          draftRoutes.delete(vacated);
+        }
+        const nonDocRoutes = buildNonDocRouteSet();
+        const badTargets = [];
+        for (const r of (redirectDoc.redirects || [])) {
+          if (!r || typeof r.to !== 'string' || typeof r.from !== 'string') continue;
+          if (!r.to.startsWith('/')) continue; // external URL - plugin skips
+          const to = normRoute(r.to.split(/[?#]/)[0]);
+          // Draft targets are fine: docusaurus.config drops those entries
+          // before they reach the plugin's target-exists check.
+          if (validRoutes.has(to) || draftRoutes.has(to) || nonDocRoutes.has(to)) continue;
+          badTargets.push({ from: r.from, to: r.to });
+        }
+        if (badTargets.length > 0) {
+          deployInFlight = false;
+          lastValidationError = {
+            ts: Date.now(),
+            errors: badTargets.map((b) => ({
+              check: 'redirect-target',
+              message: `Redirect ${b.from} → ${b.to} targets a route that won't exist after this deploy`,
+            })),
+          };
+          persistDeployState();
+          console.error(`[deploy] ABORT - ${badTargets.length} redirect(s) would dangle:`, badTargets.map((b) => `${b.from} → ${b.to}`).join('; '));
+          return {
+            ok: false,
+            reason: 'validation-failed',
+            message: `${badTargets.length} redirect(s) in data/redirects.json would point at routes that won't exist after this deploy. Fix or remove them, then deploy again. Nothing was committed.`,
+            errors: lastValidationError.errors,
+            held: [...heldRels].map((rel) => ({ path: rel, missingImages: perFile.get(rel).missingImages, errors: perFile.get(rel).errors })),
+          };
+        }
+      }
+    }
+
+    // Finalize: split files into shippable vs held-back, bundling only the
+    // images that shippable articles reference.
     const images = [];
     const imageRelsAdded = new Set();
     const heldBack = [];
     const shippable = [];
     for (const f of files) {
-      const missing = [];
-      const bundle = [];
-      for (const m of f.content.matchAll(IMAGE_PATTERN)) {
-        // /img/helpscout/authored/X → static/img/helpscout/authored/X
-        const rel = 'static' + m[1];
-        if (fsSync.existsSync(path.join(__dirname, rel))) {
-          bundle.push(rel);
-        } else if (!(await repoHasFile(rel))) {
-          missing.push(rel);
-        }
-        // else: not on disk but already in the repo - nothing to upload.
-      }
-      if (missing.length > 0) {
-        console.error(`[deploy] holding back ${f.rel} - referenced image(s) neither on disk nor in repo: ${missing.join(', ')}`);
-        heldBack.push({ rel: f.rel, missing });
+      const s = perFile.get(f.rel);
+      if (heldRels.has(f.rel)) {
+        const why = [
+          s.missingImages.length ? `missing image(s): ${s.missingImages.join(', ')}` : '',
+          ...s.errors,
+        ].filter(Boolean).join('; ');
+        console.error(`[deploy] holding back ${f.rel} - ${why}`);
+        heldBack.push({ rel: f.rel, missing: s.missingImages, errors: s.errors });
         continue;
       }
       shippable.push(f);
-      for (const rel of bundle) {
+      for (const rel of s.bundle) {
         if (imageRelsAdded.has(rel)) continue;
         imageRelsAdded.add(rel);
         images.push({ rel, data: fsSync.readFileSync(path.join(__dirname, rel)) });
@@ -1563,8 +1895,8 @@ async function fireDeploy() {
       return {
         ok: false,
         reason: 'held-back',
-        message: 'All queued articles reference images that are neither on disk nor in the repo. Re-upload the screenshots or remove the references, then deploy again.',
-        held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing })),
+        message: 'Every queued article has a problem that would break the production build (see held list). Fix them, then deploy again.',
+        held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing, errors: h.errors })),
       };
     }
 
@@ -1642,10 +1974,19 @@ async function fireDeploy() {
       force: false,
     });
 
-    console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with missing images` : ''}`);
+    console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with build-breaking problems` : ''}`);
     deployQueue.clear();
-    // Held-back articles stay queued so a re-uploaded screenshot (or an
-    // edited article) ships them on the next deploy.
+    deletedRouteHints.clear();
+    lastValidationError = null;
+    // Re-base rule: once the batch's accumulated redirects.json ships, drop
+    // the local copy so the next batch layers onto fresh publish-branch
+    // state (loadRedirectsBase re-fetches it, picking up this push plus any
+    // manual repo edits made between batches).
+    if (shippable.some((f) => f.rel.replace(/\\/g, '/') === 'data/redirects.json')) {
+      try { fsSync.unlinkSync(REDIRECTS_PATH); } catch { /* already absent */ }
+    }
+    // Held-back articles stay queued so a fixed screenshot/markdown ships
+    // them on the next deploy.
     for (const h of heldBack) deployQueue.set(h.rel, 'upsert');
     lastDeployTs = Date.now();
     persistDeployState();
@@ -1656,7 +1997,7 @@ async function fireDeploy() {
       deleted: deletes.length,
       images: images.length,
       sha: commitResp.data.sha,
-      held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing })),
+      held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing, errors: h.errors })),
     };
   } catch (e) {
     const ghMsg = e.response?.data?.message || e.message;
@@ -1676,7 +2017,7 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
 
     const raw = fsSync.readFileSync(target, 'utf8');
-    const audit = gradeMarkdown(raw);
+    const audit = gradeMarkdown(raw, auditOpts());
     const blockers = (audit.findings || []).filter((f) => f.blocking);
     if (blockers.length > 0) {
       return res.status(400).json({ error: 'Audit blocking - fix before publishing', audit });
@@ -1719,6 +2060,12 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
 //     pre-publish (draft) version, so nothing needs to ship.
 //   • Already live (not in queue): queue the re-draft so the next deploy
 //     commits draft:true - production builds hide draft articles, pulling it.
+//
+// Redirect safety: unpublish needs NO redirect reconciliation. Redirects
+// targeting the vacated route stay in data/redirects.json, but
+// docusaurus.config.ts drops any entry whose target doc is draft:true
+// before the plugin's target-exists check runs - and restores it
+// automatically when the article is republished.
 app.post('/api/admin/authoring/unpublish', requireRole('superadmin'), (req, res) => {
   try {
     const { module: moduleSlug, subFolder, slug } = req.body || {};
@@ -1816,6 +2163,7 @@ app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, re
     debounceMs: DEPLOY_DEBOUNCE_MS,
     gitPushEnabled: GIT_PUSH_ENABLED,
     configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITHUB_REPO,
+    lastValidationError,
   });
 });
 
@@ -1828,7 +2176,12 @@ app.post('/api/admin/authoring/deploy', requireRole('superadmin'), async (req, r
     });
   }
   const result = await fireDeploy();
-  if (!result.ok) return res.status(500).json(result);
+  if (!result.ok) {
+    // 422 = the queued content itself is the problem (author-fixable);
+    // 500 = infrastructure (GitHub API, config).
+    const authorFixable = result.reason === 'validation-failed' || result.reason === 'held-back';
+    return res.status(authorFixable ? 422 : 500).json(result);
+  }
   res.json(result);
 });
 
@@ -2030,7 +2383,7 @@ app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) =
   }
 });
 
-app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) => {
+app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req, res) => {
   try {
     const { path: relPath, markdown } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
@@ -2040,10 +2393,47 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
     // keeps the saved file consistent with what /save produces and the
     // audit result reflects the on-disk state.
     const cleaned = stripDecorativeEmojis(markdown);
-    // Audit runs advisory - the raw editor surfaces findings as warnings, not
-    // blockers. The wizard's /save is the strict gate; raw edits trust the
-    // superadmin's judgment for surgical fixes.
-    const audit = gradeMarkdown(cleaned);
+    // Audit runs advisory for STYLE - the raw editor surfaces those findings
+    // as warnings, not blockers; the wizard's /save is the strict gate and
+    // raw edits trust the superadmin's judgment for surgical fixes. Build-
+    // physics findings (bad YAML, uncompilable MDX, unknown privilege keys)
+    // are non-negotiable though: they hard-fail the Railway build.
+    const audit = gradeMarkdown(cleaned, auditOpts());
+    const buildBlockers = (audit.findings || []).filter((f) => f.buildBreaking);
+    if (buildBlockers.length > 0) {
+      return res.status(400).json({
+        error: 'This content would break the production build - fix before saving',
+        audit,
+      });
+    }
+
+    const isDraft = /^draft:\s*true\b/m.test(cleaned);
+    // Route-integrity guards for edits that land on production. The raw
+    // editor can change frontmatter slug/id freely, which (a) may collide
+    // with a sibling article and (b) vacates the article's previous URL -
+    // both broke production builds before these guards existed.
+    let oldRaw = null;
+    try { oldRaw = fsSync.readFileSync(target, 'utf8'); } catch { /* new file */ }
+    if (!isDraft) {
+      const conflict = findSlugOrIdCollision(target, cleaned);
+      if (conflict) {
+        return res.status(409).json({
+          error: `Cannot save: "${conflict}" in the same folder claims the same route slug or doc id, which would break the production build. Re-slug one of them first.`,
+        });
+      }
+    }
+    let redirectsUpdated = false;
+    if (oldRaw && !isDraft && !/^draft:\s*true\b/m.test(oldRaw)) {
+      const oldSlug = articleIdentity(oldRaw, path.basename(target)).slug;
+      const newSlug = articleIdentity(cleaned, path.basename(target)).slug;
+      if (oldSlug !== newSlug) {
+        // A slug change is a rename: same folder, new route. Treat it like
+        // a move so inbound links and existing redirects stay valid.
+        const routeDir = '/' + path.relative(DOCS_ROOT, path.dirname(target)).split(path.sep).join('/');
+        const abs = (s) => (s.startsWith('/') ? s : `${routeDir}/${s}`);
+        redirectsUpdated = await updateRedirectsForMove(abs(oldSlug), abs(newSlug));
+      }
+    }
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
     // Same gate-protection as /save: derive {module, subFolder} from the
     // validated path and write the sub-folder _category_.json if missing.
@@ -2062,7 +2452,6 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
     // the next debounced batch. Drafts skip the enqueue (they never reach
     // git until Publish flips them).
     const relTarget = path.relative(__dirname, target);
-    const isDraft = /^draft:\s*true\b/m.test(cleaned);
     let queuedForDeploy = false;
     if (!isDraft) {
       enqueueUpsert(relTarget);
@@ -2072,6 +2461,9 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
       // commit so the audit doesn't fail on the deploy.
       if (subfolderCreated && m) {
         enqueueUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'));
+      }
+      if (redirectsUpdated) {
+        enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
       }
       persistDeployState();
       scheduleDeploy();
@@ -2084,6 +2476,7 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), (req, res) 
       audit,
       subfolderCreated,
       emojisStripped: cleaned !== markdown,
+      redirectsUpdated,
       queuedForDeploy,
       queueSize: deployQueue.size,
     });
@@ -2125,38 +2518,46 @@ function removeFrontmatterPrivilege(markdown) {
 
 const REDIRECTS_PATH = path.join(__dirname, 'data', 'redirects.json');
 
+/** Load the redirects doc that edits should layer onto. DISK-FIRST: within
+ *  a deploy batch the volume copy at REDIRECTS_PATH accumulates every edit
+ *  (fireDeploy commits it and deletes it after a green push), so it is the
+ *  only correct base while a batch is open - re-fetching GitHub here would
+ *  clobber earlier edits in the same batch with the stale pre-batch state.
+ *  GitHub is fetched only when no disk copy exists (fresh volume, or the
+ *  post-push cleanup removed it), then written through to seed the batch.
+ *  Returns {doc, source} or null when no base is readable anywhere. */
+async function loadRedirectsBase() {
+  try {
+    return { doc: JSON.parse(fsSync.readFileSync(REDIRECTS_PATH, 'utf8')), source: 'disk' };
+  } catch { /* absent or unreadable - fall through to GitHub */ }
+  if (GIT_PUSH_ENABLED && GIT_PUSH_TOKEN && GITHUB_REPO) {
+    try {
+      const raw = await ghFetchFile('data/redirects.json');
+      if (raw !== null) {
+        fsSync.mkdirSync(path.dirname(REDIRECTS_PATH), { recursive: true });
+        fsSync.writeFileSync(REDIRECTS_PATH, raw, 'utf8');
+        return { doc: JSON.parse(raw), source: 'github' };
+      }
+    } catch (e) {
+      console.error(`[redirects] could not fetch data/redirects.json from ${GIT_PUBLISH_BRANCH}: ${e.response?.status || e.message}`);
+    }
+  }
+  return null;
+}
+
 /** Keep data/redirects.json consistent when a move changes an article's
  *  route. The build hard-fails on redirects whose target no longer exists,
  *  so every entry still pointing at the vacated route is retargeted, any
  *  entry redirecting FROM the new route is dropped (it would shadow the
  *  real page), and an oldRoute→newRoute entry is added so inbound links
- *  keep working. Returns true when the file changed.
- *
- *  In production the Railway volume mounted at /app/data SHADOWS the repo's
- *  data/ directory baked into the image, so data/redirects.json is absent
- *  (or stale) on the container's disk. The publish-branch copy on GitHub is
- *  the source of truth there - prefer it whenever git push is configured,
- *  and fall back to the local file for dev. */
+ *  keep working. Returns true when the file changed. */
 async function updateRedirectsForMove(oldRoute, newRoute) {
-  let doc = null;
-  let source = 'disk';
-  if (GIT_PUSH_ENABLED && GIT_PUSH_TOKEN && GITHUB_REPO) {
-    try {
-      const resp = await ghGet(`/contents/data/redirects.json?ref=${GIT_PUBLISH_BRANCH}`);
-      doc = JSON.parse(Buffer.from(resp.data.content, 'base64').toString('utf8'));
-      source = 'github';
-    } catch (e) {
-      console.error(`[redirects] could not fetch data/redirects.json from ${GIT_PUBLISH_BRANCH}: ${e.response?.status || e.message} - falling back to disk`);
-    }
+  const base = await loadRedirectsBase();
+  if (!base) {
+    console.error(`[redirects] SKIPPING redirect maintenance for ${oldRoute} → ${newRoute}: no readable redirects.json on disk or GitHub. The next production build will fail on stale redirect targets - fix data/redirects.json manually.`);
+    return false;
   }
-  if (!doc) {
-    try {
-      doc = JSON.parse(fsSync.readFileSync(REDIRECTS_PATH, 'utf8'));
-    } catch (e) {
-      console.error(`[redirects] SKIPPING redirect maintenance for ${oldRoute} → ${newRoute}: no readable redirects.json (${e.message}). The next production build will fail on stale redirect targets - fix data/redirects.json manually.`);
-      return false;
-    }
-  }
+  const { doc } = base;
   const before = JSON.stringify(doc.redirects || []);
   let list = Array.isArray(doc.redirects) ? doc.redirects : [];
   list = list.filter((r) => r.from !== newRoute);
@@ -2167,14 +2568,12 @@ async function updateRedirectsForMove(oldRoute, newRoute) {
     list.push({ from: oldRoute, to: newRoute });
   }
   const changed = JSON.stringify(list) !== before;
-  doc.redirects = list;
-  // Write-through even when unchanged if we loaded from GitHub: it seeds the
-  // volume-shadowed data/ dir so fireDeploy can read the file it enqueues.
-  if (changed || source === 'github') {
+  if (changed) {
+    doc.redirects = list;
     fsSync.mkdirSync(path.dirname(REDIRECTS_PATH), { recursive: true });
     fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+    console.log(`[redirects] retargeted entries for ${oldRoute} → ${newRoute} (base: ${base.source})`);
   }
-  if (changed) console.log(`[redirects] retargeted entries for ${oldRoute} → ${newRoute} (source: ${source})`);
   return changed;
 }
 
@@ -2184,12 +2583,16 @@ async function updateRedirectsForMove(oldRoute, newRoute) {
  *  so two files in the same folder sharing either produces duplicate routes
  *  (non-deterministic routing) or a duplicate-id build failure. */
 function articleIdentity(markdown, filename) {
-  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
-  const fm = fmMatch ? fmMatch[1] : '';
-  const slugM = /^slug:[ \t]*['"]?([^'"\n]+?)['"]?[ \t]*$/m.exec(fm);
-  const idM = /^id:[ \t]*['"]?([^'"\n]+?)['"]?[ \t]*$/m.exec(fm);
   const base = filename.replace(/\.(md|mdx)$/, '');
-  return { slug: slugM ? slugM[1].trim() : base, id: idM ? idM[1].trim() : base };
+  // Real YAML parse: frontmatter routinely uses block scalars (slug: >-)
+  // that line-based regexes misread as the literal ">-". Malformed YAML
+  // falls back to filename-derived identity.
+  let fm = {};
+  try { fm = matter(markdown).data || {}; } catch { /* fall back below */ }
+  return {
+    slug: typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : base,
+    id: fm.id != null && String(fm.id).trim() ? String(fm.id).trim() : base,
+  };
 }
 
 /** Scan the directory that holds (or will hold) `targetAbs` for a different
@@ -2272,14 +2675,20 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
       // alive. Draft moves skip this: drafts aren't routed in prod, so a
       // redirect to one would itself break the build.
       const routeSlug = articleIdentity(raw, path.basename(fromAbs)).slug;
+      const routeDir = (abs) => '/' + path.relative(DOCS_ROOT, path.dirname(abs)).split(path.sep).join('/');
       if (!routeSlug.startsWith('/')) {
-        const routeDir = (abs) => '/' + path.relative(DOCS_ROOT, path.dirname(abs)).split(path.sep).join('/');
         redirectsUpdated = await updateRedirectsForMove(
           `${routeDir(fromAbs)}/${routeSlug}`,
           `${routeDir(toAbs)}/${routeSlug}`
         );
       }
       enqueueDelete(fromRel);
+      // Route hint for the deploy pre-flight: the old path's file is gone,
+      // so remember which route the queued delete vacates.
+      deletedRouteHints.set(
+        fromRel.replace(/\\/g, '/'),
+        normRoute(routeSlug.startsWith('/') ? routeSlug : `${routeDir(fromAbs)}/${routeSlug}`)
+      );
       enqueueUpsert(toRel);
       if (created) {
         enqueueUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'));
@@ -2338,7 +2747,7 @@ function isImageReferencedElsewhere(imgUrl, excludeAbs) {
   return fsSync.existsSync(MODULES_ROOT) ? walk(MODULES_ROOT) : false;
 }
 
-app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res) => {
+app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req, res) => {
   try {
     const target = resolveArticlePath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
@@ -2348,11 +2757,45 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
     // so a local unlink is sufficient there.
     let wasPublished = false;
     let imageRefs = new Set();
+    let deletedRoute = null;
     try {
       const raw = fsSync.readFileSync(target, 'utf8');
       wasPublished = !/^draft:\s*true\b/m.test(raw);
       imageRefs = imagesReferencedBy(raw);
+      const slug = articleIdentity(raw, path.basename(target)).slug;
+      const routeDir = '/' + path.relative(DOCS_ROOT, path.dirname(target)).split(path.sep).join('/');
+      deletedRoute = normRoute(slug.startsWith('/') ? slug : `${routeDir}/${slug}`);
     } catch {/* if unreadable, assume published - safer to over-deploy */ wasPublished = true; }
+
+    // Reconcile redirects BEFORE the route disappears: any entry still
+    // targeting it would hard-fail the next production build. Retarget
+    // those entries to the module landing (every module has an index.mdx)
+    // and soft-land the vacated URL there too, so inbound links degrade
+    // gracefully instead of 404ing.
+    let redirectsUpdated = false;
+    if (wasPublished && deletedRoute) {
+      const modMatch = /^\/modules\/([^/]+)\//.exec(deletedRoute + '/');
+      const landing = modMatch ? `/modules/${modMatch[1]}` : '/';
+      const base = await loadRedirectsBase();
+      if (base) {
+        const { doc } = base;
+        const before = JSON.stringify(doc.redirects || []);
+        let list = Array.isArray(doc.redirects) ? doc.redirects : [];
+        list = list.map((r) => (r.to === deletedRoute ? { ...r, to: landing } : r))
+                   .filter((r) => r.from !== r.to);
+        if (!list.some((r) => r.from === deletedRoute)) {
+          list.push({ from: deletedRoute, to: landing });
+        }
+        if (JSON.stringify(list) !== before) {
+          doc.redirects = list;
+          fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+          redirectsUpdated = true;
+          console.log(`[redirects] reconciled entries for deleted ${deletedRoute} → ${landing} (base: ${base.source})`);
+        }
+      } else {
+        console.error(`[redirects] SKIPPING delete reconciliation for ${deletedRoute}: no readable redirects.json on disk or GitHub. The deploy pre-flight will abort if any redirect targets this route.`);
+      }
+    }
 
     fsSync.unlinkSync(target);
 
@@ -2373,7 +2816,15 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
     if (wasPublished) {
       const relPath = path.relative(__dirname, target);
       enqueueDelete(relPath);
+      // Route hint for the deploy pre-flight: the file is gone from disk,
+      // so the vacated route (frontmatter-slug aware) must be remembered.
+      if (deletedRoute) {
+        deletedRouteHints.set(relPath.replace(/\\/g, '/'), deletedRoute);
+      }
       for (const imgRel of imagesRemovedRel) enqueueDelete(imgRel);
+      if (redirectsUpdated) {
+        enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
+      }
       persistDeployState();
       scheduleDeploy();
       queued = true;
@@ -2383,6 +2834,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
       queuedForDeploy: queued,
       queueSize: deployQueue.size,
       imagesRemoved: imagesRemovedRel.length,
+      redirectsUpdated,
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -2407,7 +2859,6 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), (req, res)
 // ─────────────────────────────────────────────────────────────────────────
 
 const OVERVIEWS_JSON_PATH = path.join(__dirname, 'static', 'module-overviews.json');
-const KNOWN_PRIVILEGES_PATH = path.join(__dirname, 'data', 'known-privileges.json');
 
 const ALL_ROLES = ['user', 'manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];
 const MANAGER_PLUS = ['manager', 'editor', 'admin', 'orgadmin', 'lamadmin', 'superadmin'];

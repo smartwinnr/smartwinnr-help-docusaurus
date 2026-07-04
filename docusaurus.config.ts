@@ -1,11 +1,13 @@
 import {Config} from '@docusaurus/types';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import matter from 'gray-matter';
 
 // Load IA-migration redirects emitted by scripts/migrate-ia.js.
 // Strip trailing /index since Docusaurus serves index.md at the directory URL,
 // and de-dupe (since collapsing /index can produce identical entries).
 type RedirectEntry = {from: string; to: string};
+// Keep in sync with normRoute in server.js (deploy pre-flight validation).
 function normPath(p: string): string {
   // Strip trailing /index and trailing slash to match Docusaurus' canonical
   // route form (e.g. /modules/ai-coaching, not /modules/ai-coaching/).
@@ -30,6 +32,9 @@ const rawRedirects: RedirectEntry[] = fs.existsSync(redirectsFile)
  * Doesn't try to enumerate category / generated-index landings - if
  * a redirect target isn't in this map at all, we keep the redirect
  * and let Docusaurus's own validation flag it.
+ *
+ * Keep in sync with buildLocalDocEntries in server.js, which ports this
+ * walk for the deploy pre-flight validation.
  */
 type DocEntry = {file: string; isDraft: boolean};
 function buildDocUrlMap(): Map<string, DocEntry> {
@@ -43,20 +48,16 @@ function buildDocUrlMap(): Map<string, DocEntry> {
       if (!/\.(md|mdx)$/i.test(entry.name)) continue;
       let content = '';
       try { content = fs.readFileSync(p, 'utf8'); } catch { continue; }
-      const fmMatch = /^---\n([\s\S]*?)\n---/.exec(content);
-      const fm = fmMatch ? fmMatch[1] : '';
-      const isDraft = /^draft\s*:\s*true\b/m.test(fm);
+      // Real YAML parse (not a regex): frontmatter routinely uses block
+      // scalars (slug: >-) that line-based regexes misread as ">-".
+      let fm: Record<string, unknown> = {};
+      try { fm = matter(content).data ?? {}; } catch { /* fall back below */ }
+      const isDraft = fm.draft === true;
       const rel = path.relative(docsRoot, p).replace(/\\/g, '/');
       const dirRel = rel.replace(/\/?[^/]+\.(md|mdx)$/i, '');
       const fileBase = path.basename(p).replace(/\.(md|mdx)$/i, '');
-      const slugMatch = /^slug\s*:\s*["']?([^"'\n]+?)["']?\s*$/m.exec(fm);
-      let url: string;
-      if (slugMatch) {
-        const s = slugMatch[1].trim();
-        url = s.startsWith('/') ? s : '/' + (dirRel ? dirRel + '/' : '') + s;
-      } else {
-        url = '/' + (dirRel ? dirRel + '/' : '') + fileBase;
-      }
+      const slug = typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : fileBase;
+      const url = slug.startsWith('/') ? slug : '/' + (dirRel ? dirRel + '/' : '') + slug;
       map.set(normPath(url), {file: p, isDraft});
     }
   }

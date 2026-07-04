@@ -1,0 +1,27 @@
+# Defense-in-depth for the authoring pipeline: every push to main (including
+# the publish bot's commits) gets a full production build. The deploy
+# pre-flight in server.js should stop build-breaking commits at the source;
+# this catches whatever it can't anticipate. Enable "Wait for CI" on the
+# Railway service so a red check keeps production on the last good build.
+name: build-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # prebuild runs validate-privilege-keys + audit-gates, then the full
+      # Docusaurus build validates MDX, doc ids, and every redirect target.
+      - run: npm run build

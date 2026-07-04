@@ -8,22 +8,29 @@
  *   gradeMarkdown(text, opts?) → {score, findings: Finding[]}
  *
  * Finding shape:
- *   { key: string,        // defect catalog key, e.g. 'ghostStub'
- *     label: string,      // canonical human label from DEFECTS
- *     detail?: string,    // optional contextual info ("56 words", filename, …)
- *     blocking: boolean } // refuses save/publish when true
+ *   { key: string,          // defect catalog key, e.g. 'ghostStub'
+ *     label: string,        // canonical human label from DEFECTS
+ *     detail?: string,      // optional contextual info ("56 words", filename, …)
+ *     blocking: boolean,    // refuses save/publish when true
+ *     buildBreaking: bool } // would hard-fail the production build (MDX/YAML/
+ *                           // privilege) - enforced even where style findings
+ *                           // are advisory (save-raw, deploy pre-flight)
  *
  * Used by:
  *   • scripts/audit-articles.js - walks docs/** and aggregates findings
  *   • server.js - POST /api/admin/authoring/{save,publish} refuses to
- *     write when any blocking finding fires
+ *     write when any blocking finding fires; save-raw and the deploy
+ *     pre-flight refuse only on buildBreaking findings
  */
 
 const matter = require('gray-matter');
 
 // Defect catalog. `weight` adds to the priority score. `blocking` means
 // the save/publish endpoints refuse to write when this defect fires.
+// `build` means the defect would hard-fail the Railway production build.
 const DEFECTS = {
+  mdxCompileError:  {weight: 10, blocking: true,  build: true, label: 'MDX compile error (breaks the production build)'},
+  unknownPrivilege: {weight: 10, blocking: true,  build: true, label: 'Unknown privilege key (fails prebuild validate-privilege-keys)'},
   emptyDescription: {weight: 10, blocking: true,  label: 'Empty `description:`'},
   noHeadings:       {weight: 10, blocking: true,  label: 'No h2/h3 headings (text wall)'},
   ghostStub:        {weight:  9, blocking: true,  label: 'Ghost stub (<80 words body)'},
@@ -51,7 +58,12 @@ const BOILERPLATE_OPENERS = [
  * @param {object} [opts]
  * @param {string} [opts.parentPrivilege] If set, missing
  *   `customProps.privilege` fires the `missingPrivilege` finding.
- * @returns {{score: number, findings: Array<{key:string,label:string,detail?:string,blocking:boolean}>}}
+ * @param {(body: string) => void} [opts.compileMdx] If set, called with the
+ *   post-frontmatter body; a throw fires `mdxCompileError` with the message.
+ * @param {Set<string>} [opts.knownPrivileges] If set (non-empty), frontmatter
+ *   `customProps.privilege`/`anyPrivilege` keys outside the set fire
+ *   `unknownPrivilege`.
+ * @returns {{score: number, findings: Array<{key:string,label:string,detail?:string,blocking:boolean,buildBreaking:boolean}>}}
  */
 function gradeMarkdown(text, opts = {}) {
   const findings = [];
@@ -66,6 +78,7 @@ function gradeMarkdown(text, opts = {}) {
       label: def.label,
       detail: detail || undefined,
       blocking: !!def.blocking,
+      buildBreaking: !!def.build,
     });
   }
 
@@ -80,8 +93,29 @@ function gradeMarkdown(text, opts = {}) {
       key: 'malformedFrontmatter',
       label: 'Malformed frontmatter (could not parse YAML)',
       blocking: true,
+      buildBreaking: true,
     });
     return {score: 100, findings};
+  }
+
+  // Build-physics checks - these mirror what the Railway build enforces, so
+  // they must catch problems BEFORE a commit ships.
+  if (typeof opts.compileMdx === 'function') {
+    try {
+      opts.compileMdx(body);
+    } catch (e) {
+      const place = e.line ? ` (line ${e.line}${e.column ? `:${e.column}` : ''})` : '';
+      flag('mdxCompileError', `${e.reason || e.message}${place}`);
+    }
+  }
+  if (opts.knownPrivileges instanceof Set && opts.knownPrivileges.size > 0) {
+    const cp = fm.customProps || {};
+    const keys = [
+      ...(typeof cp.privilege === 'string' ? [cp.privilege] : []),
+      ...(Array.isArray(cp.anyPrivilege) ? cp.anyPrivilege : []),
+    ];
+    const unknown = keys.filter((k) => !opts.knownPrivileges.has(String(k)));
+    if (unknown.length > 0) flag('unknownPrivilege', unknown.join(', '));
   }
 
   // Frontmatter checks
