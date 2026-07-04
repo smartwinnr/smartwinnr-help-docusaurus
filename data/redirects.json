@@ -311,7 +311,7 @@
     },
     {
       "from": "/administration/quiz-module/how-to-create-long-answer-questions",
-      "to": "/modules/quiz/features/how-to-create-long-answer-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-long-answer-questions"
     },
     {
       "from": "/administration/quiz-module/how-to-create-multiple-choice-questions",
@@ -375,7 +375,7 @@
     },
     {
       "from": "/administration/quiz-module/understanding-knowledge-categories",
-      "to": "/modules/quiz/features/understanding-knowledge-categories"
+      "to": "/modules/quiz/create-and-manage/understanding-knowledge-categories"
     },
     {
       "from": "/administration/quiz-module/understanding-the-learner-management-tab-on-the-quiz-dashboard",
@@ -1359,7 +1359,7 @@
     },
     {
       "from": "/modules/quiz/how-to-create-long-answer-questions",
-      "to": "/modules/quiz/features/how-to-create-long-answer-questions"
+      "to": "/modules/quiz/create-and-manage/how-to-create-long-answer-questions"
     },
     {
       "from": "/modules/quiz/how-to-create-multiple-choice-questions",
@@ -1423,7 +1423,7 @@
     },
     {
       "from": "/modules/quiz/understanding-knowledge-categories",
-      "to": "/modules/quiz/features/understanding-knowledge-categories"
+      "to": "/modules/quiz/create-and-manage/understanding-knowledge-categories"
     },
     {
       "from": "/modules/quiz/understanding-the-learner-management-tab-on-the-quiz-dashboard",
@@ -1788,6 +1788,14 @@
     {
       "from": "/modules/quiz/features/how-to-create-multiple-choice-questions",
       "to": "/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions"
+    },
+    {
+      "from": "/modules/quiz/features/how-to-create-long-answer-questions",
+      "to": "/modules/quiz/create-and-manage/how-to-create-long-answer-questions"
+    },
+    {
+      "from": "/modules/quiz/features/understanding-knowledge-categories",
+      "to": "/modules/quiz/create-and-manage/understanding-knowledge-categories"
     }
   ]
 }

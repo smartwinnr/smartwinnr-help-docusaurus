@@ -2130,13 +2130,32 @@ const REDIRECTS_PATH = path.join(__dirname, 'data', 'redirects.json');
  *  so every entry still pointing at the vacated route is retargeted, any
  *  entry redirecting FROM the new route is dropped (it would shadow the
  *  real page), and an oldRoute→newRoute entry is added so inbound links
- *  keep working. Returns true when the file changed. */
-function updateRedirectsForMove(oldRoute, newRoute) {
-  let doc;
-  try {
-    doc = JSON.parse(fsSync.readFileSync(REDIRECTS_PATH, 'utf8'));
-  } catch {
-    return false;
+ *  keep working. Returns true when the file changed.
+ *
+ *  In production the Railway volume mounted at /app/data SHADOWS the repo's
+ *  data/ directory baked into the image, so data/redirects.json is absent
+ *  (or stale) on the container's disk. The publish-branch copy on GitHub is
+ *  the source of truth there - prefer it whenever git push is configured,
+ *  and fall back to the local file for dev. */
+async function updateRedirectsForMove(oldRoute, newRoute) {
+  let doc = null;
+  let source = 'disk';
+  if (GIT_PUSH_ENABLED && GIT_PUSH_TOKEN && GITHUB_REPO) {
+    try {
+      const resp = await ghGet(`/contents/data/redirects.json?ref=${GIT_PUBLISH_BRANCH}`);
+      doc = JSON.parse(Buffer.from(resp.data.content, 'base64').toString('utf8'));
+      source = 'github';
+    } catch (e) {
+      console.error(`[redirects] could not fetch data/redirects.json from ${GIT_PUBLISH_BRANCH}: ${e.response?.status || e.message} - falling back to disk`);
+    }
+  }
+  if (!doc) {
+    try {
+      doc = JSON.parse(fsSync.readFileSync(REDIRECTS_PATH, 'utf8'));
+    } catch (e) {
+      console.error(`[redirects] SKIPPING redirect maintenance for ${oldRoute} → ${newRoute}: no readable redirects.json (${e.message}). The next production build will fail on stale redirect targets - fix data/redirects.json manually.`);
+      return false;
+    }
   }
   const before = JSON.stringify(doc.redirects || []);
   let list = Array.isArray(doc.redirects) ? doc.redirects : [];
@@ -2147,10 +2166,16 @@ function updateRedirectsForMove(oldRoute, newRoute) {
   if (!list.some((r) => r.from === oldRoute)) {
     list.push({ from: oldRoute, to: newRoute });
   }
-  if (JSON.stringify(list) === before) return false;
+  const changed = JSON.stringify(list) !== before;
   doc.redirects = list;
-  fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
-  return true;
+  // Write-through even when unchanged if we loaded from GitHub: it seeds the
+  // volume-shadowed data/ dir so fireDeploy can read the file it enqueues.
+  if (changed || source === 'github') {
+    fsSync.mkdirSync(path.dirname(REDIRECTS_PATH), { recursive: true });
+    fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  }
+  if (changed) console.log(`[redirects] retargeted entries for ${oldRoute} → ${newRoute} (source: ${source})`);
+  return changed;
 }
 
 /** Routing identity of an article: frontmatter `slug` and `id`, each falling
@@ -2193,7 +2218,7 @@ function findSlugOrIdCollision(targetAbs, markdown) {
 // audience (customProps.roles) is rewritten to the destination folder's default
 // and any article-level privilege is dropped, so the destination
 // _category_.json gate governs.
-app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
+app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res) => {
   try {
     const { fromPath, toModule, toSubFolder } = req.body || {};
     const fromAbs = resolveArticlePath(fromPath);
@@ -2249,7 +2274,7 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), (req, res) => {
       const routeSlug = articleIdentity(raw, path.basename(fromAbs)).slug;
       if (!routeSlug.startsWith('/')) {
         const routeDir = (abs) => '/' + path.relative(DOCS_ROOT, path.dirname(abs)).split(path.sep).join('/');
-        redirectsUpdated = updateRedirectsForMove(
+        redirectsUpdated = await updateRedirectsForMove(
           `${routeDir(fromAbs)}/${routeSlug}`,
           `${routeDir(toAbs)}/${routeSlug}`
         );
