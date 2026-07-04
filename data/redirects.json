@@ -299,7 +299,7 @@
     },
     {
       "from": "/administration/quiz-module/how-to-create-an-automatic-quiz",
-      "to": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+      "to": "/modules/quiz/create-and-manage/create-automatic-quiz"
     },
     {
       "from": "/administration/quiz-module/how-to-create-an-event-quiz",
@@ -1347,7 +1347,7 @@
     },
     {
       "from": "/modules/quiz/how-to-create-an-automatic-quiz",
-      "to": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz"
+      "to": "/modules/quiz/create-and-manage/create-automatic-quiz"
     },
     {
       "from": "/modules/quiz/how-to-create-an-event-quiz",
@@ -1796,6 +1796,10 @@
     {
       "from": "/modules/quiz/features/understanding-knowledge-categories",
       "to": "/modules/quiz/create-and-manage/understanding-knowledge-categories"
+    },
+    {
+      "from": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz",
+      "to": "/modules/quiz/create-and-manage/create-automatic-quiz"
     }
   ]
 }
