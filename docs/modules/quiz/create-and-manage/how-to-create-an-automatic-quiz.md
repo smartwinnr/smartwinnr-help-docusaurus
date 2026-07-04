@@ -1,134 +1,207 @@
 ---
-id: 5fd48f1123119734ee37eda6
-title: How to create an automatic quiz?
-description: >-
-  Navigate to Editor > Learning and Knowledge > Questions and Quizzes > View All
-  Quizzes. Click Add New Quiz.
-slug: how-to-create-an-automatic-quiz
-sidebar_position: 49
+id: create-automatic-quiz
+title: "How to create an automatic quiz in SmartWinnr"
+description: "Create an automatic quiz that delivers multiple assessments at specified intervals, using a selected question pool for continuous learner engagement."
+slug: create-automatic-quiz
+sidebar_position: 999
 last_update:
-  date: 2026-02-02T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd48f1123119734ee37eda6
-  helpscout_url: 'https://help.smartwinnr.com/article/49-how-to-create-an-automatic-quiz'
+  date: 2026-07-02
+  author: Anagha Isal
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: quiz
-tags:
-  - quiz
-  - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
+draft: false
+tags: ["quiz"]
 ---
-### Steps to Create an Automatic Quiz
 
-* Navigate to **Editor > Learning and Knowledge > Questions and Quizzes > View All Quizzes**.
-* Click **Add New Quiz**.
-* On the **Create New Quiz** page, select **Quiz Type = Automatic**.
-* Select **Auto Mode Type.**
+> **At a glance** - Create an automatic quiz to send multiple quizzes at fixed intervals, using questions from a designated pool.
+
+An automatic quiz in SmartWinnr allows you to send multiple quizzes over a specified period. You can set the frequency of delivery and select questions from a pool based on your chosen settings.This feature is ideal for ongoing assessments and continuous learning, allowing you to assign questions from a larger question bank to learners over a defined period for regular knowledge reinforcement.
+
+## When to use this
+Use the automatic quiz feature when you want to:
+- Assess learners periodically without manual intervention.
+- Ensure consistent engagement through regular quizzes.
+- Utilize a diverse set of questions from a pre-defined question pool from your question bank.
+
+## Steps
+
+### 1. Access the Automatic Quiz Feature
+Navigate to **Editor > Learning and Knowledge > Questions and Quizzes > View All Quizzes > Add New Quiz option** at top right corner.
+
+On the Create New Quiz page, select **Quiz Type = Automatic**.
+
+![This shows the BU, sub BU and the quiz type details](/img/helpscout/authored/authored-mr3pw7xr.png)
+
+- **Business Unit (BU)**: Select the relevant business unit for the quiz.
+- **Sub Business Unit (Sub BU)**: Choose the specific sub-unit if applicable.
+- **Quiz Type**:Here choose the type as **'Automatic'**
+- **Auto Mode Type**: Choose the mode for your Automatic quiz.
 
 You have three different mode available for Automatic quiz:
 
-* **Default Auto Mode** (Balanced reinforcement) **:** Editor chooses this for general spaced practice: mix of new, wrong, and mastered questions. Good for ongoing retention without overloading with new content.
-* **Quick Auto Mode** (Fast coverage of new material) : Editor chooses this when the goal is to expose users to unseen/unanswered questions quickly (70% from unanswered, 30% incorrect). Retires questions after 1 correct.
-* **Sequence Question Auto Mode** (Ordered / curriculum-style learning) : Editor chooses this when questions must be seen in a fixed order (e.g. chapter or course sequence). Each delivery gives the next N questions in quiz order; no random mix.
+- **Default Auto Mode (Balanced reinforcement** : Editor chooses this for general spaced practice: mix of new, wrong, and mastered questions. Good for ongoing retention without overloading with new content.
+- **Quick Auto Mode (Fast coverage of new material)**: Editor chooses this when the goal is to expose users to unseen/unanswered questions quickly (70% from unanswered, 30% incorrect). Retires questions after 1 correct.
+- **Sequence Question Auto Mode (Ordered / curriculum-style learning)** : Editor chooses this when questions must be seen in a fixed order (e.g. chapter or course sequence). Each delivery gives the next N questions in quiz order; no random mix.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-1.png)
 
-Now you can enter the quiz details:
+### 2. Set Quiz details and Duration
+- Add the **Quiz Title**
+- Add the **Quiz Code**(optional)
+- Add the **Quiz Description**(optional)
+- Set the **quiz duration** by specifying its start and end dates. The quiz will be available to learners and continue running until the defined end date.
+- Set the **Availability date** by specifying how long the quizzes will remain available for learners to complete.
 
-* Add the Quiz Title
-* Add the **Quiz Code**(optional)
-* Add the **Quiz Description**(optional)
+![This shows the duration details](/img/helpscout/authored/authored-mr3px8xi.png)
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-2.png)
+### 3. Choose Delivery Days
+Select specific days for quiz delivery. For example, if the frequency is set to every three days for the quizzes, you can exclude weekends by choosing which days the quiz should be delivered to the learners.
 
-* **Start Date:** Click the calendar icon to select the start date and time of the quiz. The quiz will be available to participants from this specified date and time.
-* **End Date:** Click the calendar icon to select the end date and time of the quiz. After this date and time, the quiz will no longer be accessible to participants.
-* **Time Zone:** By default, it will be the timezone of the editor who has logged in. If the editor need to set a different timezone, they can click on **Change** button and update it.
-* **Delivery Days of Week:** These are the days on which you can select to deliver the quizzes.
+![This shows on which dates the auto quiz should be delivered](/img/helpscout/authored/authored-mr3py4by.png)
 
-### **Quiz Cover and Thumbnail Images:**
+- **Delivery Days**: Check or uncheck the days of the week on which the quiz should be sent. For instance, you can opt out of Saturdays and Sundays.
 
-Here you can set the quiz cover image and thumbnail image.
+### 4. Configure Visual Elements
+Set the thumbnail and cover image for the quiz to make it visually appealing. This helps in branding and allows users to recognize the quiz easily.
 
-![Here you can set the quiz cover image and thumbnail image.](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
+![Here we can set the thumbnail and cover image](/img/helpscout/authored/authored-mr3q31m7.png)
 
-**Quiz Settings:**
+- **Thumbnail**: Upload a small image that represents the quiz.
+- **Cover Image**: Upload a larger image that will be displayed prominently when users access the quiz.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-4.png)
+### 5. Adjust Quiz Settings
+Choose various settings for the quiz, including options for review and feedback after quiz completion. These settings help customize the learner's experience.
 
-* **Leaderboard Display Settings:** Configure how quiz results appear on leaderboards. You can choose to:
-  * Add scores to **all leaderboards**
-  * Add scores **only to the quiz leaderboard**
-  * **Exclude** the quiz from all leaderboards
+![Detailed screenshot of quiz setting](/img/helpscout/authored/authored-mr3q5u27.png)
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-5.png)
+Different quiz setting include:
 
-* **Allow Self-Registration:** Quiz where users can have self-registration enabled so that anyone with the quiz link can access the quiz.
-* **Send Notification on Assignment:** Enable this option to send a push notification to users when a quiz is assigned to them.
-* **Send Email on Assignment:** Enable this option to send a email notification to users when a quiz is assigned to them.
-* **Shuffle Answer Options:** Activate this setting to **randomize the order of answer options** for questions within the quiz.
-* **Integrate with LMS (xAPI):** Enable this option to integrate the quiz with an LMS using the **xAPI** standard.
-* **Custom Email Subject:** This option allows you to define a custom subject line for the email notification sent to quiz participants. When enabled, you will be prompted to enter the subject text.
+- **Leaderboard Display Settings**: Configure how quiz results appear on leaderboards. You can choose to:
+  - Add scores to **all leaderboards** including quiz leaderboard, competition leaderboard, quarterly leaderboard, global points leaderboard etc.
+  - Add scores **only** to the **quiz leaderboard**
+  - **Exclude** the quiz score from all leaderboards
+![Leaderboard score in Quiz setting](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4l9xgr.png)
 
-By default, the email subject is **“New Quiz Assigned.”**
+- **Allow Self-Registration**: Quiz where users can have self-registration enabled so that anyone with the quiz link can access the quiz.
 
-* **Enable Completion Notification:** Turn on this option to send a **notification upon quiz completion**.
-* **Show Score:** Enable or disable the display of scores to participants during or after the quiz.
-* **Show Immediate Answer Feedback:** Enable this option to display answer feedback immediately after a participant attempts a question.
-* **Randomize Question by Tag:** Enable this option to assign a random set of questions to each quiz participant.
+- **Send Notification on Assignment**: Enable this option to send a push notification to learners in their mobile device when a quiz is assigned to them.
 
-### Quiz Review Settings
+- **Send Email on Assignment**: Enable this option to send a email notification to users, to their registered email address, when a quiz is assigned to them.
 
-![Quiz Review Settings](/img/helpscout/editors/how-to-create-an-automatic-quiz-6.png)
+- **Shuffle Answer Options**: Activate this setting to randomize the order of answer options for questions within the quiz. This helps reduce the chances of learners copying answers during the quiz.
 
-* **Show quiz review:** This is to enable the quiz review section where the users click on the Review button once they complete the quiz and check their responses and correct answers.
-* **Hide correct answer for incorrect responses:** Enable this to hide the correct answer for the questions where the user has selecte a wrong answer option.
+- **Integrate with LMS (xAPI)**: Enable this option to integrate the quiz with your Learning Management System (LMS) using the xAPI standard. This will help to reports quiz completion status and scoring metrics and maintain consistent learner records across platforms. 
 
-Default Auto Mode Settings
+  - On enabling the Interfrate with LMS option, an additonal field will come up - **'LMS Instance Identifier'**. Enter the unique identifier provided by your Learning Management System (LMS) to establish the xAPI connection. This ID ensures data is synchronized with the correct LMS instance. This field is mandatory only if multiple attempt from LMS is enabled.
 
-![Default Auto Mode Settings](/img/helpscout/editors/how-to-create-an-automatic-quiz-7.png)
+    ![LMS Instance Identifier](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4mnqzh.png)
+  
+- **Custom Email Subject**: This option allows you to define a custom subject line for the email notification sent to quiz participants. When enabled, you will be prompted to enter the subject text.
+        
+    By default, the email subject is “New Quiz Assigned.”
+
+- **Enable Completion Notification**: Turn on this option to enable automated email notifications to designated trainers/stakeholders when learners complete quizzes. This will enable the supervisors and trainers to track learning progress in real-time without manual monitoring.
+
+  Once enabled, an additional field will appear where you can enter the email addresses of the recipients. Enter an email address and click Add Email to include it in the notification list.
+
+  ![Field to collect the email address ](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4n1gxd.png)
+
+- **Enable Pass/Fail**: Enable this option if you would like to set a pass % to each of the quizzes shared in the automated quiz list. Once enabled, you can define the passing criteria and customize the messages displayed to learners based on whether they pass or fail the quiz.
+
+  The following settings are available:
+
+  - **Pass Percent Threshold**: Specify the minimum percentage score required for a learner to pass the quiz.
+  - **Message for Passed Users**: Enter a custom message (up to 140 characters) that will be send to learners who achieve the passing score. This message will be used as the body of the completion email sent to users who pass the quiz.
+  - **Message for Failed Users**: Enter a custom message (up to 140 characters) that will be send to learners who do not meet the passing score. This message will be used as the body of the completion email sent to users who fail the quiz.
+
+  This can be used to encourage learners to review the learning material.
+
+- **Show Score**: Enable or disable the display of scores to participants after the quiz completion. This can be used when you want to temporarily disable the score for certification exams or assessments requiring manual evaluation before score disclosure.
+
+- **Show Immediate Answer Feedback**: Enable this option to display the answer along with feedback after submission of each question response in the quiz.
+
+- **Randomize Question by Tag**: Enable this option if you would like to randomize the question by question tags. This ensure balanced coverage of topics while maintaining question variety. This also ensures learners receive questions across all relevant subject areas. 
+
+  When this option is enabled, after selecting the questions for the quiz, a pop-up will appear (as shown below). In this pop-up, you need to specify how many questions should be included from each tag in the quiz.
+![Randomize Question by Tag](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4t7zvj.png)
+
+- **Mandatory Category Selection**: Enable this option if you want a specify a set of question tags that must appear in every auto quiz delivery. Configure tag counts on the Questions page (Step 2) once the quiz is created.
+
+Once the questions are selected and saved in step 2, goto the **configure** option under Mandatory categories, and specify the minimum number of questions to be included from each tag available in the selected question pool for every quiz.
+![Mandatory Category Selection](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4tr3r3.png)
+
+- **Send Digest Email**: Enable this option to send a summary (digest) email to Learners on completing the quiz.This provides a comprehensive performance report via email containing a PDF of quiz responses with incorrect answers highlighted. Enables self-review and targeted learning focus before potential quiz reattempts.
+
+- **Self-Activated Quiz Assignment**: This allows learners to start assigned quizzes at their own pace. Quiz delivery begins only when the learner starts the quiz. If the learner stops responding before completing the assigned quizzes, the delivery of subsequent quizzes is automatically paused until they resume.
+
+- **Schedule by Last Completion Date**: When this option enabled, learners will automatically receive quizzes based on last completion date. This ensures that learner is consistently engaged.
+
+- **Send by Generic Name**:Enable this option to send quiz notifications from a generic sender name, rather than displaying your name (or name of the trainer/editor who assigned the quiz). This helps maintain a consistent sender identity across all quiz notifications.
+
+![Send by Generic Name](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4u4v6b.png)
+
+
+### 7. Set Review Options
+Define how learners can review their answers after completing the quiz. This includes options for immediate feedback or a summary of results.
+
+- **Show quiz review**: Enabling the quiz review option allows the learner to review their answers after completing the quiz.
+- **Hide correct answer for incorrect responses**: Enable this option to hide the correct answer when a learner selects an incorrect option. On the review page, learners will only be informed that their selected answer is incorrect, without revealing the correct answer.
+
+
+### 8. Configure Automatic Quiz Specifics
 
 In an **automatic quiz**, SmartWinnr automatically delivers targeted questions to each participant based on their past response history. This approach is particularly useful when managing a large question bank and aiming to distribute a limited number of questions per quiz over time, while gradually covering the entire question set.
 
+So, its important to configure settings specific to the automatic quiz based on the selected Auto Mode Type. And this configurations dictate how questions are presented to learners.
+
+![These are the specific settings for Automatic quiz](/img/helpscout/authored/authored-mr3q8l5z.png)
+
 The editor can configure various settings for an automatic quiz, including:
 
-* **The frequency of quiz delivery**: Number of days between successive quiz delivery. For example, if set to 1, every day the SmartWinnr system will send 1 quiz to all the participants assigned to the quiz.
-* **The number of Questions per Quiz**: Determines how many questions should be sent in each quiz.
-* **The number of correct responses for a question to stop it from being repeated**: If set to 1, after the participant has answered a question correctly, it will not be repeated.
-* **Percentage of questions assigned:** The steps from 4-7 will allow you to assign a percentage value of questions assigned from unanswered questions, incorrectly answered questions, partially correct answered questions and correctly answered questions.
-* **Number of incorrect responses for question to stop it from being repeated**: It is the number of incorrect responses for question to stop it from being repeated
+ - **Frequency of quiz delivery in days**: Number of days between successive quiz delivery. For example, if set to 2, in every 2 days, SmartWinnr will send a quiz to all the learners assigned to the quiz.
 
-After entering all the required details to create the quiz, click **Save and Add Questions**.
+- **The number of Questions per Quiz**: Determines how many questions should be sent in each quiz.
 
-## **Adding Questions to the Quiz**
+- **The number of correct responses for a question to stop it from being repeated**:Specify how many times a learner must answer a question correctly before it is removed from future quizzes in the series. For example, if set to 1, the question will no longer appear once the learner answers it correctly once.
 
-Once the quiz has been created, you can proceed to add questions:
+- **Percentage of questions assigned**:Options 4–7 allow you to define the percentage of questions to be selected from each category— **Unanswered, Incorrectly Answered, Partially Correctly Answered, and Correctly Answered**—when generating quizzes. This enables adaptive quiz generation based on the learner's previous responses.
 
-* Use the available **search and filter criteria** to find relevant questions.
-* Select the questions by checking the checkbox to the left of each question you want to include in the quiz.
+- **Number of incorrect responses for question to stop it from being repeated**: Specify the maximum number of times a learner can answer a question incorrectly before it stops appearing in subsequent quizzes.
 
-![Once the quiz has been created, you can proceed to add questions:](/img/helpscout/editors/how-to-create-an-automatic-quiz-8.png)
+Based on the **Auto Mode Type** selected for your automated quiz, SmartWinnr already suggest certain values for each of this configuration, which allows you to setup the quiz in the most effect way.
 
-[https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1c9a9f24ccf588e40008d/file-QKzyQHndbx.png](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1c9a9f24ccf588e40008d/file-QKzyQHndbx.png)
+Following is how each of the auto mode type works for the configuration values:
 
-After selecting the questions, click on ‘ **Save**’. Next, we can assign the quiz to the participants.
+- **Default Mode**: Standard mode for automatic quizzes,where correctly answered, incorrectly answered, and unanswered questions will be repeated based on the configured settings.
+- **Quick Auto Mode**: Optimized for faster learning by not repeating correctly answered questions. Only unanswered and incorrectly answered questions are repeated according to the configured settings.
+- **Sequence Question Auto Mode**: Questions are presented in a specific sequence.Each question is presented only once, with no repetition regardless of the learner's response.
 
-## **Assign the quiz to participants**
+Thus, after entering all the required details to create the quiz, click Save and Add Questions.
 
-After creating the quiz and adding questions, you can assign the quiz to participants:
+### 9. Select Questions for the Quiz
+Choose the questions from your pool that will be included in the automated quiz.
+![This is the second step for auto quiz where the entire list questions for the quiz are selected](/img/helpscout/authored/authored-mr3qd08u.png)
 
-* Use the available **search and filter criteria** to identify the participants you want to assign the quiz to.
-* Select the checkboxes next to the participants’ names.
-* Once you have made your selections, click the **Save** button at the bottom of the page.
-* You can also assign the quiz to a **specific group of participants** instead of selecting individuals.
+- **Question Pool**: Browse through the available questions and select those you want to include.
+- **Search Functionality**: Use search filters to find specific questions quickly.
 
-![](/img/helpscout/editors/how-to-create-an-automatic-quiz-9.png)
+### 10. Update Questions as Needed
+Once the questions are selected, you can update them anytime by adding new questions, removing existing ones, or swapping questions. This flexibility allows you to keep the quiz content fresh and relevant.
 
-[https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1ca6940f24b1b2aaf5e98/file-i6uZt9Q4sP.png](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1ca6940f24b1b2aaf5e98/file-i6uZt9Q4sP.png)
+![Once the questions are selected and saved, we can still go ahead and update the questions](/img/helpscout/authored/authored-mr3qk7xk.png)
 
-Upon successful completion of the action, a **success popup message** will be displayed confirming the operation.
+- **Add Questions**: Include new questions to the quiz.
+- **Remove Questions**: Delete any questions that are no longer relevant.
+- **Swap Questions**: Replace existing questions with new ones.
+- **Tagging**: Add or remove questions based on tags for better organization.
 
-![Upon successful completion of the action, a success popup message will be displayed confirming the operation.](/img/helpscout/editors/how-to-create-an-automatic-quiz-10.png)
+### 11. Add Users to the Quiz
+Finally, add users who will participate in the quiz. This step allows you to assign the quiz to specific learners or groups, ensuring targeted delivery.
+
+![You can now add users to the quiz as the final step](/img/helpscout/authored/authored-mr3qnyrr.png)
+
+- **User Selection**: Choose individual users or groups to receive the quiz.
+
+## Tips
+- Regularly review the question pool to keep quizzes fresh and relevant.
+- Monitor quiz performance to adjust frequency and content as needed.
+- Use the visual elements in questions to enhance engagement and recognition.
