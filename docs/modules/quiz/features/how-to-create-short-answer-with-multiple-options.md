@@ -1,14 +1,14 @@
 ---
 id: 64115177a0408f7cb1038c2d
-title: How to create Short Answer With Multiple Options
+title: "How to create Short Answer With Multiple Matches"
 description: >-
   A Short Answer with Multiple Matches Question allows the participants to
   choose one answer to a particular question from a list of options provided.
 slug: how-to-create-short-answer-with-multiple-options
 sidebar_position: 280
 last_update:
-  date: 2026-01-20T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-04
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 64115177a0408f7cb1038c2d
   helpscout_url: 'https://help.smartwinnr.com/article/280-short-answer-with-multiple-options'
@@ -19,68 +19,76 @@ customProps:
   privilege: quiz
 tags:
   - quiz
+draft: false
 ---
-A Short Answer with Multiple Matches Question allows the participants to choose one answer to a particular question from a list of options provided.
 
-##### Below are the steps to create a missing words question
+> **At a glance** - A Short Answer with Multiple Matches Question allows participants to select one answer from a list of provided options.
 
-1. **Navigate to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank**.
-2. Click on the '**Add New Question**' button at the _top right corner_.
+A **Short Answer with Multiple Matches Question** allows participants to choose one answer to a particular question from a list of options provided.
+
+## When to use this
+Use this feature when you want to assess learners' understanding by allowing them to select the most appropriate answer from multiple options. This is particularly useful for questions that may have several correct answers but require the learner to identify the best one.
+
+## Steps
+
+### 1. Navigate to the Question Bank
+Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank**.
+
+### 2. Add a New Question
+Click on the **Add New Question** button at the **top right corner**.
 
 ![Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-a-missing-words-question-1.png)
 
-3. On the '**Create new Question**' select the '**Question Type**' as Short Answer with Multiple Matches.
+### 3. Select Question Type
+On the **Create new Question** screen, select the **Question Type** as **Short Answer with Multiple Matches**.
 
 ![On the 'Create new Question' select the 'Question Type' as Short Answer with Multiple Matches.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-1.png)
 
-4. Enter your question in the ‘**Question**’ field.
+### 4. Enter Your Question
+Enter your question in the **Question** field.
 
-    ![Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-2.png)
+![Enter your question in the ‘Question’ field.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-2.png)
 
-5. Enter the **possible correct answers** and specify the **grade percentage** for each option. For example, if you wish to award **80%** for a particular option, enter **80** in the _Grade %_ field corresponding to that option. When a learner selects this option, they will receive **80% of the total points** allocated for the question.
+### 5. Specify Possible Answers and Grades
+Enter the **possible correct answers** and specify the **grade percentage** for each option. For example, if you wish to award **80%** for a particular option, enter **80** in the **Grade %** field corresponding to that option. When a learner selects this option, they will receive **80% of the total points** allocated for the question.
 
-![Enter the possible correct answers and specify the grade percentage for each option. For example, if you wish to award 80% for a particular ](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-3.png)
+![Enter the possible correct answers and specify the grade percentage for each option.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-3.png)
 
 **Example:**
 
-![](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-4.png)
+![](/img/helpscout/authored/how-to-create-short-answer-with-multiple-options-mr609vln.png)
 
-6. Points
 
-![Points](/img/helpscout/editors/how-to-create-multiple-choice-questions-9.png)
-
+### 6. Set Points
 The total score for the question should be added here.
 
-Select the “Shuffle Last Option” checkbox to randomize the position of the last answer option in the question.
+Select the **Shuffle Last Option** checkbox to randomize the position of the last answer option in the question.
 
-**Feedback:**
+### 7. Provide Feedback
+This section can be used to provide **additional information or clarification** related to the topic or concept covered in the question. The feedback will be available to learners **after they complete the quiz**.
 
-* This section can be used to provide **additional information or clarification** related to the topic or concept covered in the question. The feedback will be available to learners **after they complete the quiz**.
+**Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
 
-    **Correct answer feedback** will be shown to users who answer the question correctly, while **incorrect answer feedback** will be displayed to users who answer the question incorrectly.
+![Feedback section for correct and incorrect answers.](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-10.png)
+![Feedback section for correct and incorrect answers.](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-11.png)
-
-**Reviewer Notes:**
-
+### 8. Add Reviewer Notes
 You can add any additional feedback on the question or answer options.
 
 ![You can add any additional feedback on the question or answer options.](/img/helpscout/editors/how-to-create-a-missing-words-question-9.png)
 
-_This content in the Correct Answer Feedback and Reviewer Notes is shown to participants_ _**after**_ _they submit their answers and can incorporate text, images, or videos._
+The content in the **Correct Answer Feedback** and **Reviewer Notes** is shown to participants **after** they submit their answers and can incorporate text, images, or videos.
 
-**Categories:**
-
+### 9. Assign Categories
 Every question must be assigned at least **one category**. Categories are predefined by your administrator. You may select multiple categories if applicable.
 
-![Every question must be assigned at least one category. Categories are predefined by your administrator. You may select multiple categories i](/img/helpscout/editors/how-to-create-a-missing-words-question-10.png)
+![Every question must be assigned at least one category. Categories are predefined by your administrator.](/img/helpscout/editors/how-to-create-a-missing-words-question-10.png)
 
-Once you have filled in the required details of the question, click on the 'Save New Question' button in order to save the question.
+Once you have filled in the required details of the question, click on the **Save New Question** button to save the question.
 
-## **How do the participants see the question?**
+## How do participants see the question?
+This is an example of how participants see the **Short Answer With Multiple Matches** question in the User View.
 
-* This is an example of how the participants see the Short Answer With Multiple Options question in the User View.
+![](/img/helpscout/authored/how-to-create-short-answer-with-multiple-options-mr60f4i4.png)
 
-![How do the participants see the question?](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-5.png)
