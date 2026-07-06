@@ -7,11 +7,8 @@ description: >-
 slug: how-to-embed-a-link-into-the-question
 sidebar_position: 66
 last_update:
-  date: 2021-01-25T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd4be483d1d2a5b1c5ea19b
-  helpscout_url: 'https://help.smartwinnr.com/article/66-how-to-embed-a-link-into-the-question'
+  date: 2026-07-06
+  author: Sandeep Bhuthagaddala
 customProps:
   roles:
     - editor
@@ -19,19 +16,31 @@ customProps:
   privilege: quiz
 tags:
   - quiz
+draft: false
 ---
-Sometimes you want to add a link to an external site in your Question body or the Feedback section.
 
-Click on the link icon in the question or feedback box, as shown below:
+> **At a glance** - Learn how to embed an external link into the Question body or Feedback section of your quiz.
 
-[![Click on the link icon in the question or feedback box, as shown below:](/img/helpscout/editors/how-to-embed-a-link-into-the-question-1.png)](https://file2.api.drift.com/drift-prod-file-uploads/ca39%2Fca39bfe310c9bf8a9894688e03a82c19/Screenshot%202020-03-04%20at%201.21.21%20PM.png?mimeType=image%2Fpng)
+Sometimes you want to add a link to an external site in your Question body or the Feedback section. This feature allows you to provide additional resources or references to learners.
 
-**Add External Link**
+## When to use this
+Use this feature when you want to:
+- Direct learners to external resources for further reading.
+- Provide additional context or information related to the quiz question.
+- Enhance the learning experience by linking to relevant articles or websites.
 
-1. Go to the "External Links" tab
-2. Give a title to the link in the "Link Title" field. This will be visible in the mobile app
-3. Provide a link to the external article in the "External Link" field
-4. Then, click on the "Submit" button
-5. The external link will get embedded into the question successfully
+## Steps
 
-[![The external link will get embedded into the question successfully](/img/helpscout/editors/how-to-embed-a-link-into-the-question-2.png)](https://file2.api.drift.com/drift-prod-file-uploads/ef84%2Fef84baf41556d2e82680a0239b996f3c/ext%20link.png?mimeType=image%2Fpng)
+### 1. Click on the link icon
+Click on the **link icon** in the question or feedback box, as shown below:
+
+![Click on the link icon in the question or feedback box, as shown below](/img/helpscout/editors/how-to-embed-a-link-into-the-question-1.png)
+
+### 2. Add External Link
+1. Go to the **External Links** tab.
+2. Give a title to the link in the **Link Title** field. This title will be visible in the mobile app.
+3. Provide a link to the external article in the **External Link** field.
+4. Click on the **Submit** button.
+5. The external link will be embedded into the question successfully.
+
+![The external link will get embedded into the question successfully](/img/helpscout/editors/how-to-embed-a-link-into-the-question-2.png)
