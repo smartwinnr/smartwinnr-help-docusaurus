@@ -122,6 +122,21 @@ under `/app/data`. Mount a Railway volume at `/app/data` so they survive
 deployments. **Without the volume, all chat logs and feedback disappear on
 every deploy.**
 
+**Side effect: the volume SHADOWS the repo's `data/` directory.** The Docker image
+COPYs `data/` in at build time, but at runtime the mount hides it - so repo files
+like `data/redirects.json` and `data/known-privileges.json` are absent from the
+container's disk. `server.js` seeds them from the publish branch on demand
+(`loadRedirectsBase`, `ensureKnownPrivilegesSeeded`) and drops the redirects copy
+after each green deploy so the next batch re-bases on fresh branch state. If you
+add code that reads a repo file under `data/`, it must handle the shadowed case.
+
+### CI build check
+
+`.github/workflows/build-check.yml` runs `npm run build` on every push to `main`,
+including the publish bot's commits. Enable **"Wait for CI"** on the Railway
+service (Settings → Source) so a red check keeps production on the last good
+build instead of deploying a broken one.
+
 ### Port binding
 
 Railway sets `PORT` automatically. `server.js` reads it. Don't hard-code 3000

@@ -210,8 +210,22 @@ redirects to login.
 - **`npm run dev` has no chatbot API.** To exercise chat/search locally you need
   `node server.js` (after `npm run build`) so the `/api` routes are live.
 - **No decorative emojis in docs.** A husky pre-commit hook runs `lint:docs:fix` and
-  BLOCKS the commit if the `no-decorative-emojis` rule fires. GitLab CI also enforces
-  `lint:docs` and `build` on doc/source changes.
+  BLOCKS the commit if the `no-decorative-emojis` rule fires. GitHub Actions
+  (`.github/workflows/build-check.yml`) runs the full build on every push to `main` -
+  including the publish bot's API commits, which never trigger husky hooks. The old
+  `.gitlab-ci.yml` predates the move to GitHub and is NOT part of the deploy path.
+- **The Railway volume at `/app/data` SHADOWS the repo's `data/` directory.** On the
+  production container, repo files like `data/redirects.json` and
+  `data/known-privileges.json` don't exist on disk until the server seeds them from
+  the publish branch (`loadRedirectsBase`, `ensureKnownPrivilegesSeeded` in server.js).
+  Never assume a `data/` file readable locally is readable in production.
+- **The publish bot pre-flights every deploy.** `fireDeploy` (server.js) validates the
+  batch before committing: build-breaking articles (bad MDX/YAML, unknown privilege
+  keys, missing images, route/id collisions) are held back in the queue; a
+  `redirects.json` with dangling targets aborts the deploy with HTTP 422 and a
+  `lastValidationError` surfaced on `/admin/authoring/drafts`. Route-changing actions
+  (move, slug rename in the raw editor, delete) maintain `data/redirects.json`
+  automatically - the build hard-fails on redirects to nonexistent routes.
 - **Docs frontmatter & style** are governed by `SmartWinnr-Help-Style-Guide.md`
   (American English, active voice, bold UI elements, ≤15–20-word sentences).
 

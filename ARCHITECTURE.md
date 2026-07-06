@@ -69,14 +69,28 @@ There are **two deploy paths**, both ending at the same Railway service:
 
 ```
 Path A (manual / engineer-driven):
-  Author writes .md → Git commit → GitLab CI (lint + build) → Railway redeploys
+  Author writes .md → Git commit → push to GitHub → GitHub Actions build-check
+  (.github/workflows/build-check.yml: npm ci + npm run build) → Railway redeploys
 
 Path B (wizard auto-deploy):
-  Wizard publish → server.js calls GitHub Git Data API → push to GIT_PUBLISH_BRANCH →
+  Wizard publish → deploy queue → fireDeploy pre-flight validation →
+  server.js calls GitHub Git Data API → push to GIT_PUBLISH_BRANCH →
   Railway watches the branch → redeploys. Debounced (default 30 min) and rate-limited
   (default ≤ 1 deploy / 60 min) by AUTHORING_DEPLOY_* env vars.
 ```
 
+- **Deploy pre-flight (Path B).** Before committing, `fireDeploy` validates the exact
+  batch it is about to push: articles with uncompilable MDX, malformed YAML, unknown
+  privilege keys, missing images, or route/doc-id collisions are **held back** (stay
+  queued, reported in the deploy result and on `/admin/authoring/drafts`); a
+  `data/redirects.json` whose target routes wouldn't exist after the commit **aborts**
+  the deploy (HTTP 422, `lastValidationError` in `GET /deploy/state`). Route-changing
+  actions (move, slug rename via raw editor, delete) also maintain `redirects.json`
+  at the endpoint so old URLs redirect instead of dangling.
+- The GitHub Actions build-check runs on every push (bot commits included) as
+  defense-in-depth. With Railway's **"Wait for CI"** enabled on the service, a red
+  check keeps production on the last good build. (The old `.gitlab-ci.yml` predates
+  the move to GitHub and is not part of the deploy path.)
 - `npm run build` compiles Docusaurus markdown into static HTML/JS/CSS in `build/` AND
   emits `build/doc-gates.json` (via `plugins/access-gate-emit.js`) for the URL guard.
 - `prebuild` runs `validate-privilege-keys` + `audit-gates` so a misnamed privilege
@@ -667,14 +681,19 @@ ensures accuracy through:
 3. **Article-grade audits.** `db/article-audit.js` (`gradeMarkdown`) grades each
    article on completeness/freshness/style. The authoring wizard surfaces the
    grade during preview; `npm run audit:articles` runs the same check over the
-   whole corpus and emits a report.
+   whole corpus and emits a report. Findings flagged `buildBreaking` (uncompilable
+   MDX, malformed YAML frontmatter, unknown privilege keys) are enforced everywhere -
+   they block save/publish, block even the otherwise-advisory raw editor, and hold
+   articles back at deploy time.
 4. **Autofix + LLM rewrite passes.** `npm run articles:autofix` applies
    deterministic style-guide fixes; `npm run articles:rewrite` runs the
    `prompts/rewrite-article.md` system prompt over a batch of articles for
    prose-quality lift.
 5. **Lint gate.** `npm run lint:docs` (custom rules in
-   `custom-markdownlint-rules.js`) runs as a husky pre-commit hook AND in CI.
-   The `no-decorative-emojis` rule blocks emoji-as-icon contamination.
+   `custom-markdownlint-rules.js`) runs as a husky pre-commit hook on local
+   commits. Bot commits skip hooks (GitHub API), so their gate is the deploy
+   pre-flight plus the GitHub Actions build-check. The `no-decorative-emojis`
+   rule blocks emoji-as-icon contamination.
 
 ### 10.2 Retrieval correctness
 
