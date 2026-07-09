@@ -1,65 +1,68 @@
 ---
-id: 60f9c61c766e8844fc34922e
-title: How Editors evaluate Long Answer Questions?
-description: >-
-  Evaluation is a systematic process of analyzing the user responses to
-  determine the correctness of the response.
+id: how-editors-evaluate-long-answer-questions
+title: "How Editors/Trainer evaluate Long Answer Questions?"
+description: "Evaluate long answer questions by analyzing user responses and providing required feedbacks in SmartWinnr."
 slug: how-editors-evaluate-long-answer-questions
 sidebar_position: 262
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 60f9c61c766e8844fc34922e
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/262-how-editors-evaluate-long-answer-questions
+  date: 2026-07-09
+  author: Anagha Isal
 customProps:
   roles:
     - editor
     - admin
   privilege: quiz
-tags:
-  - quiz
-  - reports
+tags: ["quiz", "reports", "smartpath", "troubleshooting"]
+draft: false
 ---
-Evaluation is a systematic process of analyzing the user responses to determine the correctness of the response.
 
-Navigate to **Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**
+> **At a glance** - This article explains how to evaluate long answer questions in SmartWinnr by analyzing user responses, and providing scores and feedback.
 
-In order to evaluate the Long answer questions, the Editor needs to follow the below steps.
+Evaluating long answer questions is a systematic process that involves analyzing user responses to determine their correctness. Follow these steps to evaluate long answer questions effectively.
 
-1. Navigate to the quiz for which you want to evaluate the response and click on the **"Analytics"** icon towards the quiz as shown in the following screenshot.
+## When to use this
+Use this process when you need to:
+- Assess user responses to long answer questions.
+- Track the evaluation status of quiz participants.
 
-![Navigate to the quiz for which you want to evaluate the response and click on the "Analytics" icon towards the quiz as shown in the followin](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-1.jpg)
+## Steps
 
-2\. On the analytics page, scroll down and go to the section called **Long Answer Analytics**.
+### 1. Navigate to the Quiz Analytics
+Go to **Editor > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**. Locate the quiz you want to evaluate and click on the **Analytics** icon next to it.
 
-![2\. On the analytics page, scroll down and go to the section called Long Answer Analytics.](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-2.jpg)
+![Navigate to the quiz for which you want to evaluate the response and click on the "Analytics" icon towards the quiz](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-1.jpg)
 
-3\. This section will give you a brief summary of the evaluation status of each quiz participant. Click on the **Analytics icon** against the user for which you would like to evaluate the response.
+### 2. Access Long Answer Analytics
+On the analytics page, scroll down to the section called **Long Answer Analytics**.
 
-You can also filter out the candidates based on their evaluation status as shown in the below picture.
+This section provides a summary of the evaluation status for each quiz participant. 
 
-**Pending Evaluation** will show users whose evaluation of long answer questions has not been done yet.
+![On the analytics page, scroll down and go to the section called Long Answer Analytics.](/img/helpscout/authored/how-editors-evaluate-long-answer-questions-mrd6es26.png)
 
-**Evaluated** will show the users whose evaluation of long answer questions has been done.
+### 3. Select a User for Evaluation
+Click on the **Analytics icon** next to the user whose response you want to evaluate.
 
-![](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-3.jpg)
+You can filter users based on their evaluation status:
+- **Pending Evaluation** shows users whose long answer questions have not yet been evaluated.
+- **Evaluated** shows users whose long answer questions have been evaluated.
 
-4.On clicking the **analytics icon** against the user will take you to the user-specified analytics page where you can find the knowledge progress and quiz status of the selected user.
+![Summary of evaluation status for each quiz participant](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-3.jpg)
 
-Here, **Scroll down** to the section called **Quiz Response**. Here, you can find the option called **Evaluate** for a long answer question that has to be evaluated. Click on the Evaluate button on the right side to complete the evaluation.
+### 4. Evaluate the User's Response
+Clicking the **Analytics icon** next to the user takes you to their specific analytics page, where you can view their knowledge progress and quiz status. Scroll down to the section called **Quiz Response**. Here, you will find the **Evaluate** option for the long answer question that needs evaluation. Click the **Evaluate** button on the right side.
 
-![Here, Scroll down to the section called Quiz Response. Here, you can find the option called Evaluate for a long answer question that has to ](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-4.jpg)
+![Scroll down to the section called Quiz Response. Here, you can find the option called Evaluate for a long answer question that has to be evaluated.](/img/helpscout/authored/how-editors-evaluate-long-answer-questions-mrd6jc2d.png)
 
-* Clicking on the Evaluate button will show the following pop-up where the editor can evaluate and write the feedback for the user. Also, score the user based on his response.
+* Clicking the **Evaluate** button opens a pop-up where you can evaluate the response, write feedback, and score the user based on their answer.
 
-![](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-5.jpg)
+![Pop-up for evaluating the response and providing feedback](/img/helpscout/authored/how-editors-evaluate-long-answer-questions-mrd89zm3.png)
 
-* You can give **points** for the question in the scoring section. Then click on the **Save icon**.
+* Assign **points** for the question in the scoring section, then click the **Save icon**.
 
-![](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-6.jpg)
+![Example of scoring by the evaluator](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-6.jpg)
 
-* The below image is an example of Feedback and scoring by the evaluator.
+* The following image shows an example of feedback and scoring provided by the evaluator.
 
-![](/img/helpscout/editors/how-editors-evaluate-long-answer-questions-7.jpg)
+![Example of feedback and scoring](/img/helpscout/authored/how-editors-evaluate-long-answer-questions-mrd8bsgp.png)
+
+On saving the scores and feedbacks for the long answer question, learner can immedately find the same in their SmartWinnr account
