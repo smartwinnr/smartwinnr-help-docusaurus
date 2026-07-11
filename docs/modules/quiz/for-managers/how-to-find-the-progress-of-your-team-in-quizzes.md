@@ -7,12 +7,8 @@ description: >-
 slug: how-to-find-the-progress-of-your-team-in-quizzes
 sidebar_position: 97
 last_update:
-  date: 2021-03-13T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd99582a5d295659b36954f
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/97-how-to-find-the-progress-of-your-team-in-quizzes
+  date: 2026-07-11
+  author: Sruthi Suresh
 customProps:
   roles:
     - manager
@@ -21,35 +17,41 @@ customProps:
   privilege: managerView
 tags:
   - quiz
+draft: false
 ---
-### Find Quiz Report for your Direct Reportee
+
+> **At a glance** - Track your team's quiz progress easily through the SmartWinnr Manager-View. Access detailed reports for direct and second-level reportees.
 
 SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Manager-View. Below are the steps to find the overall quiz report for each team member.
 
-Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.
+## When to use this
+Use this feature when you want to:
+- Monitor quiz progress for your direct reportees.
+- Evaluate participation percentages and average scores.
+- Access detailed reports for second-level reportees.
 
-![Switch to Manager view in SmartWinnr app and go to Left Menu >> Quiz >> Select the Team tab.](https://support.smartwinnr.com/api/v1/attachments/538)
+## Steps
 
-This page will give you the quiz progress report for your direct reportees along with participation percentage and average score. Here you can also find the number of direct reportees and total reportees reporting to you in SmartWinnr.
+### 1. Switch to Manager View
+Switch to the **Manager** view in the SmartWinnr app and go to **Left Menu >> Quiz >> Select the Team tab**.
 
-* Direct Report: Users or Managers that directly report to you.
-* Second level Report: Users or Managers who report to those managers who are reports directly to you.
-* All Report: Direct Report + Second level Report.
+![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfy2em2.png)
 
-You can click on the filter icon on the top right corner to apply the date filter in the quiz report.
+This page provides the quiz progress report for your direct reportees, including participation percentage and average score. Here, you can also find the number of direct reportees and total reportees reporting to you in SmartWinnr.
 
-![You can click on the filter icon on the top right corner to apply the date filter in the quiz report.](https://support.smartwinnr.com/api/v1/attachments/539)
+- **Direct Reports**: Users or Managers that directly report to you.
+- **Second Level Report**: Users or Managers who report to those managers who directly report to you.
+- **Total Reports**: Direct Report + Second Level Report.
 
-You can select the date range and click on "Apply" to successfully apply the date filters.
+You can click on the **filter icon** in the top right corner to apply the date filter in the quiz report.
 
-![You can select the date range and click on "Apply" to successfully apply the date filters.](https://support.smartwinnr.com/api/v1/attachments/540)
+![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfyl9bh.png)
 
-### Find Quiz Report for second-level Reportee
+### 2. Find Quiz Report for Second-Level Reportee
+You will find an arrow next to the manager if they have reportees under them. Clicking on this arrow will take you to the reportees of the selected manager.
 
-You will find an arrow against the manager if he has reportees under him. Clicking on this arrow will take you to the reportees of the selected manager.
-
-![You will find an arrow against the manager if he has reportees under him. Clicking on this arrow will take you to the reportees of the selec](https://support.smartwinnr.com/api/v1/attachments/541)
+![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfyj5nq.png)
 
 Here, you can find the quiz report for the users who report to this selected manager.
 
-![Here, you can find the quiz report for the users who report to this selected manager.](https://support.smartwinnr.com/api/v1/attachments/542)
+![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfyd7vy.png)
