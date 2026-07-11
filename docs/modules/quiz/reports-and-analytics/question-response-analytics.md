@@ -5,11 +5,8 @@ description: 'In order to view the Question Response analytics, follow the below
 slug: question-response-analytics
 sidebar_position: 56
 last_update:
-  date: 2026-01-19T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd4998236980410c9123856
-  helpscout_url: 'https://help.smartwinnr.com/article/56-question-response-analytics'
+  date: 2026-07-11
+  author: Sruthi Suresh
 customProps:
   roles:
     - editor
@@ -18,23 +15,38 @@ customProps:
 tags:
   - quiz
   - reports
+draft: false
 ---
-In order to view the Question Response analytics, follow the below steps:
 
-Navigate to **EDITOR > LEARNING AND KNOWLEDGE** **_\>_****Questions and Quizzes > View All Quizzes**. Then, click on the  **Analytics** icon of a particular quiz. It opens the following page:
+> **At a glance** - This article explains how to access and interpret the Question Response analytics for quizzes.
 
-[![Navigate to EDITOR > LEARNING AND KNOWLEDGE \>Questions and Quizzes > View All Quizzes. Then, click on the Analytics icon of a particular qu](/img/helpscout/editors/question-response-analytics-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1ee206451e825e3b8fac2/file-5tam2GTAsj.png)
+To view the Question Response analytics, follow these steps:
 
-On this page, navigate to the "Questions in Quiz" section. This section shows the analytics of each question in the quiz. These analytics help the quiz masters and the editors to understand how people are performing in each question. The percentage is a measure of how much percentage of people have got this question correct.
+## When to use this
+Use this feature when you want to analyze how participants responded to questions in your quizzes. This information helps you identify which questions are performing well and which may need adjustments.
 
-[![On this page, navigate to the "Questions in Quiz" section. This section shows the analytics of each question in the quiz. These analytics he](/img/helpscout/editors/question-response-analytics-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1eefa6451e825e3b8fac3/file-20DphTQ6xd.png)
+## Steps
 
-Additionally, there is also separate analytics available for the multiple-choice questions. To view the analytics of a multiple-choice question, click on the analytics icon on the right-hand side of a question.
+### 1. Navigate to the Quizzes Section
+Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**. Click on the **Analytics** icon for a specific quiz. This opens the analytics page for that quiz.
 
-[![Additionally, there is also separate analytics available for the multiple-choice questions. To view the analytics of a multiple-choice quest](/img/helpscout/editors/question-response-analytics-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1ef0f41fcb56e4047d8d3/file-TIp2Z479S1.png)
+![](/img/helpscout/authored/question-response-analytics-mrg41kuz.png)
 
-It will open the following pop-up where you can see
+### 2. Review Questions in Quiz Section
+On this page, locate the "Questions in Quiz" section. This section displays the analytics for each question in the quiz. The percentage indicates how many participants answered each question correctly.
 
-* The question,
-* The correct option to the question
-* And the graph that shows all the options of the question and analytics of the number of responses each option has received.
+![On this page, navigate to the "Questions in Quiz" section. This section shows the analytics of each question in the quiz. These analytics help the quiz masters and the editors to understand how people are performing in each question](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1eefa6451e825e3b8fac3/file-20DphTQ6xd.png)
+
+### 3. Access Multiple-Choice Question Analytics
+For multiple-choice questions, click on the analytics icon on the right-hand side of the question. This action opens a pop-up with detailed analytics.
+
+![Additionally, there is also separate analytics available for the multiple-choice questions. To view the analytics of a multiple-choice question, click on the analytics icon on the right-hand side of a question](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff1ef0f41fcb56e4047d8d3/file-TIp2Z479S1.png)
+
+### 4. Analyze the Pop-Up Information
+In the pop-up, you will see:
+- The question itself,
+- The correct option for the question,
+- A graph displaying all options of the question along with the number of responses each option received.
+
+This detailed analysis allows you to assess the effectiveness of each question in your quiz.
+![](/img/helpscout/authored/question-response-analytics-mrg431q5.png)
