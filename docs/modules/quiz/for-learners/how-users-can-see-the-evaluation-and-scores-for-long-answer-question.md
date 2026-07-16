@@ -23,12 +23,22 @@ tags:
   - quiz
   - onboarding
 ---
-* Once the evaluation is completed, the evaluator will give points for each question based on your responses. Then the score will be available to you on the leaderboard. Based on the score, a particular rank will be awarded to you.
+- To check the leaderboard, select the quiz from the **Completed section tab** and choose the quiz. This will allow you to view your results and compare them with others.
 
-![](/img/helpscout/managers-and-team-members/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-1.png)
+![How to view the Quiz score and Feedback?](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-5.png)
 
-* Users can also check the evaluator feedback by clicking on the Review icon at the top right corner and they can access the answers and feedback provided by the editor.
+- By selecting the quiz, you can view the score leaderboard, which provides insights into how you performed compared to others, helping you gauge your understanding of the material.
 
-[![](/img/helpscout/managers-and-team-members/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60f9c937b55c2b04bf6d7077/file-bqk75uF7vX.png)
+![](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-6.png)
 
-This will help the user to gain knowledge about the product on which the training was conducted.
+- You can also check the evaluator's feedback by clicking on the **Review** icon at the top right corner. This feedback is crucial for understanding your strengths and areas for improvement, guiding your future learning efforts.
+
+![](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-7.png)
+
+- This will redirect you to a page where you can access your answers and feedback provided by the evaluator. This review process is an important step in your learning journey.
+
+![](/img/helpscout/managers-and-team-members/how-to-answer-long-answer-type-questions-in-smartwinnr-8.png)
+
+- **User Response:** This is the answer submitted by you during the quiz, showcasing your understanding of the topic. Reviewing your response can help you identify areas for improvement.
+- **Evaluator Feedback:** This feedback includes the correct answer for the long answer question provided before the quiz started, helping you learn the expected response and understand the evaluator's perspective.
+- **Additional Feedback:** This feedback is based on your response after the quiz is completed, providing insights into how you can improve in future quizzes. This constructive criticism is valuable for enhancing your skills and knowledge.

@@ -92,7 +92,7 @@ A Short Answer with Multiple Matches Question can be used when there are multi
 
 Long answer questions are generally open-ended questions that require participants to construct a response. Long answer questions require a concise and focused response.
 
-[How to create Short Answer questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-long-answer-questions)
+[How to create Long Answer questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-long-answer-questions)
 
 - **Drag and Drop into Image**
 
