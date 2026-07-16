@@ -607,6 +607,23 @@
   background: var(--ifm-color-success);
   color: white;
 }
+/* PersistenceStatus (git backup) pill variants. */
+.stateBadge[data-state='ok'] {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-darker);
+}
+.stateBadge[data-state='pending'] {
+  background: var(--ifm-color-warning-contrast-background);
+  color: var(--ifm-color-warning-darker);
+}
+.stateBadge[data-state='error'] {
+  background: var(--ifm-color-danger);
+  color: white;
+}
+.stateBadge[data-state='off'] {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
 
 /* Drafts table */
 .draftTable {

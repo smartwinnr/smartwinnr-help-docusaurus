@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
+import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
 import {
   parsePath,
@@ -66,6 +67,8 @@ function EditorPanel(): ReactNode {
   const [refinement, setRefinement] = useState<string>('');
   const [audit, setAudit] = useState<Audit | null>(null);
   const [loadError, setLoadError] = useState<string>('');
+  // Bumped on every successful save so the backup pill re-checks immediately.
+  const [saveTick, setSaveTick] = useState(0);
   const previewHtml = useMarkdownHtml(markdown);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -328,6 +331,7 @@ function EditorPanel(): ReactNode {
       if (!res.ok) { notify.error(data.error || 'Save failed'); return; }
       setOriginal(markdown);
       setAudit(data.audit || null);
+      setSaveTick((t) => t + 1);
       if (data.queuedForDeploy) {
         notify.success(`Saved ${data.path}. Queued for deploy - production picks it up on the next batch.`);
       } else {
@@ -374,14 +378,16 @@ function EditorPanel(): ReactNode {
               <span className={styles.stateBadge} data-state={isDraft ? 'draft' : 'published'}>
                 {isDraft ? 'Draft' : 'Published'}
               </span>
-            )}
+            )}{' '}
+            <PersistenceStatus refreshKey={saveTick} />
           </h1>
           <p className={styles.subhead}>
             Saves to <code className={styles.smallCode}>{path || '…'}</code>.{' '}
             {isDraft
               ? 'A draft does not ship until you Publish from the queue.'
               : 'Saving queues a deploy; production updates on the next batch.'}{' '}
-            <Link to="/admin/authoring/drafts">← Back to queue</Link>
+            <Link to="/admin/authoring/drafts">← Back to queue</Link>{' · '}
+            <Link to="/admin/authoring/guide">Guide →</Link>
           </p>
         </div>
       </header>

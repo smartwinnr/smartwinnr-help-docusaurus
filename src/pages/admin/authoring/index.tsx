@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
+import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
 import {SUB_FOLDERS, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
 import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
@@ -711,6 +712,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
             <p className={styles.savedNote}>
               Saved to <code>{state.saved}</code>. The draft is hidden in production builds -
               flip <code>draft: true</code> to <code>false</code> via the publish action when ready.
+              The pill in the header shows whether your work is backed up to git.
             </p>
           )}
         </>
@@ -752,11 +754,16 @@ function Wizard(): ReactNode {
   const notify = useNotify();
   const location = useLocation();
   const [state, dispatch] = useReducer(reducer, initial, (init) => loadState() || init);
+  // Bumped on every successful save so the backup pill re-checks immediately.
+  const [saveTick, setSaveTick] = useState(0);
 
   useEffect(() => { saveState(state); }, [state]);
 
   useEffect(() => {
-    if (state.saved) notify.success(`Saved as draft: ${state.saved}`);
+    if (state.saved) {
+      notify.success(`Saved as draft: ${state.saved}`);
+      setSaveTick((t) => t + 1);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.saved]);
 
@@ -846,7 +853,8 @@ function Wizard(): ReactNode {
               ? 'Authoring'
               : state.wasPublished
                 ? 'Refine published article'
-                : 'Edit draft'}
+                : 'Edit draft'}{' '}
+            <PersistenceStatus refreshKey={saveTick} />
           </h1>
           {state.isEditing ? (
             state.wasPublished ? (
@@ -865,7 +873,8 @@ function Wizard(): ReactNode {
           ) : (
             <p className={styles.subhead}>
               Step {state.step} of 3 ·{' '}
-              <Link to="/admin/authoring/drafts">Drafts queue →</Link>
+              <Link to="/admin/authoring/drafts">Drafts queue →</Link>{' · '}
+              <Link to="/admin/authoring/guide">Guide →</Link>
             </p>
           )}
         </div>

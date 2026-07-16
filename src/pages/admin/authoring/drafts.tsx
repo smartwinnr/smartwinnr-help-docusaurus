@@ -4,6 +4,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify, type Notify} from '@site/src/components/admin/authoring/Notify';
+import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {parsePath, SUB_FOLDERS} from '@site/src/lib/authoring';
 import styles from './styles.module.css';
 
@@ -346,33 +347,12 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         </div>
       )}
 
-      {deployState?.journal?.enabled && (() => {
-        const j = deployState.journal;
-        if (j.lastError) {
-          return (
-            <div className={styles.warn} role="alert">
-              <strong>⚠ Git backup is failing</strong> — unsaved work is at risk if the server
-              restarts: {j.lastError.message}
-            </div>
-          );
-        }
-        if (j.pendingCount > 0) {
-          return (
-            <div className={styles.hint}>
-              Backing up {j.pendingCount} change(s) to git (<code>{j.branch}</code>)…
-            </div>
-          );
-        }
-        if (j.lastCommitTs > 0) {
-          const mins = Math.round((Date.now() - j.lastCommitTs) / 60000);
-          return (
-            <div className={styles.hint}>
-              All changes backed up to git (<code>{j.branch}</code>) {mins < 1 ? 'moments' : `~${mins} min`} ago.
-            </div>
-          );
-        }
-        return null;
-      })()}
+      {deployState?.journal?.enabled && deployState.journal.lastError && (
+        <div className={styles.warn} role="alert">
+          <strong>⚠ Git backup is failing</strong> — recent changes exist on this server only
+          and a restart could lose them: {deployState.journal.lastError.message}
+        </div>
+      )}
 
       {deployState?.journal?.conflicts && deployState.journal.conflicts.length > 0 && (
         <div className={styles.warn} role="alert">
@@ -675,11 +655,12 @@ function QueuePage(): ReactNode {
     <div className={styles.wrap}>
       <header className={styles.header}>
         <div>
-          <h1>Authoring queue</h1>
+          <h1>Authoring queue <PersistenceStatus /></h1>
           <p className={styles.subhead}>
             Manage drafts and edit published articles.{' '}
             <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>{' · '}
-            <Link to="/admin/authoring/modules">Manage modules →</Link>
+            <Link to="/admin/authoring/modules">Manage modules →</Link>{' · '}
+            <Link to="/admin/authoring/guide">Guide →</Link>
           </p>
         </div>
       </header>
