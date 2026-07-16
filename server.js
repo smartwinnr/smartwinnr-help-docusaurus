@@ -1345,8 +1345,112 @@ const deletedRouteHints = new Map();
 // can explain why an auto-deploy is stuck. Cleared on the next green push.
 let lastValidationError = null;
 
+// Queued-but-unshipped content lives on the container's EPHEMERAL disk
+// (docs/, static/img/) - only data/ sits on the Railway volume. Any restart
+// before the batch ships (crash, env-var change, redeploy) resets those
+// files to the image's last-committed state, so the queue would then commit
+// stale bytes or skip vanished files. Snapshot every queued upsert (plus the
+// authored images its body references) under data/pending-files/ at enqueue
+// time and restore the snapshots over the fresh disk on boot.
+const PENDING_FILES_DIR = path.join(__dirname, 'data', 'pending-files');
+const AUTHORED_IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+
+function snapshotQueuedFile(relPath) {
+  try {
+    const src = path.join(__dirname, relPath);
+    if (!fsSync.existsSync(src)) return;
+    const dst = path.join(PENDING_FILES_DIR, relPath);
+    fsSync.mkdirSync(path.dirname(dst), { recursive: true });
+    fsSync.copyFileSync(src, dst);
+    if (/\.(md|mdx)$/i.test(relPath)) {
+      const body = fsSync.readFileSync(src, 'utf8');
+      for (const m of body.matchAll(AUTHORED_IMAGE_PATTERN)) {
+        const imgRel = 'static' + m[1];
+        const imgSrc = path.join(__dirname, imgRel);
+        if (!fsSync.existsSync(imgSrc)) continue;
+        const imgDst = path.join(PENDING_FILES_DIR, imgRel);
+        fsSync.mkdirSync(path.dirname(imgDst), { recursive: true });
+        fsSync.copyFileSync(imgSrc, imgDst);
+      }
+    }
+  } catch (e) {
+    console.warn(`[deploy] failed to snapshot ${relPath}:`, e.message);
+  }
+}
+
+/** Copy pending-file snapshots back over the (fresh-from-image) disk for
+ *  every queued upsert, plus any snapshotted authored images the disk is
+ *  missing. Runs once on boot, before anything can prune or ship the queue. */
+function restoreQueuedSnapshots() {
+  let restored = 0;
+  for (const [rel, action] of deployQueue) {
+    if (action !== 'upsert') continue;
+    try {
+      const snap = path.join(PENDING_FILES_DIR, rel);
+      if (!fsSync.existsSync(snap)) continue;
+      const live = path.join(__dirname, rel);
+      const snapBytes = fsSync.readFileSync(snap);
+      if (fsSync.existsSync(live) && snapBytes.equals(fsSync.readFileSync(live))) continue;
+      fsSync.mkdirSync(path.dirname(live), { recursive: true });
+      fsSync.writeFileSync(live, snapBytes);
+      restored += 1;
+    } catch (e) {
+      console.warn(`[deploy] failed to restore snapshot ${rel}:`, e.message);
+    }
+  }
+  // Authored images: restore only what the disk lacks (identical names are
+  // never re-uploaded with different bytes - uploads get random suffixes).
+  const imgSnapRoot = path.join(PENDING_FILES_DIR, 'static');
+  (function walk(dir) {
+    if (!fsSync.existsSync(dir)) return;
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(p); continue; }
+      const rel = path.relative(PENDING_FILES_DIR, p);
+      const live = path.join(__dirname, rel);
+      try {
+        if (!fsSync.existsSync(live)) {
+          fsSync.mkdirSync(path.dirname(live), { recursive: true });
+          fsSync.copyFileSync(p, live);
+          restored += 1;
+        }
+      } catch (e) {
+        console.warn(`[deploy] failed to restore snapshot ${rel}:`, e.message);
+      }
+    }
+  })(imgSnapRoot);
+  if (restored > 0) console.log(`[deploy] restored ${restored} pending file(s) from data/pending-files/`);
+}
+
+/** Keep data/pending-files/ in step with the queue: drop snapshots for
+ *  articles no longer queued, and wipe the whole tree (images included)
+ *  once no upserts remain. Called from persistDeployState so every queue
+ *  mutation path stays covered. */
+function syncQueueSnapshots() {
+  try {
+    if (!fsSync.existsSync(PENDING_FILES_DIR)) return;
+    if (![...deployQueue.values()].includes('upsert')) {
+      fsSync.rmSync(PENDING_FILES_DIR, { recursive: true, force: true });
+      return;
+    }
+    (function walk(dir) {
+      for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, entry.name);
+        if (entry.isDirectory()) { walk(p); continue; }
+        const rel = path.relative(PENDING_FILES_DIR, p);
+        // Images are shared across queued articles; they go with the final wipe.
+        if (rel.replace(/\\/g, '/').startsWith('static/')) continue;
+        if (deployQueue.get(rel) !== 'upsert') fsSync.unlinkSync(p);
+      }
+    })(PENDING_FILES_DIR);
+  } catch (e) {
+    console.warn('[deploy] failed to sync pending-file snapshots:', e.message);
+  }
+}
+
 function enqueueUpsert(relPath) {
   deployQueue.set(relPath, 'upsert');
+  snapshotQueuedFile(relPath);
 }
 
 function enqueueDelete(relPath) {
@@ -1410,8 +1514,15 @@ function persistDeployState() {
   } catch (e) {
     console.warn('[deploy] failed to persist state:', e.message);
   }
+  syncQueueSnapshots();
 }
 loadDeployState();
+// The queue survives restarts (volume) but its content and timer do not:
+// put the queued bytes back on disk, then re-arm the auto-deploy timer -
+// without this, a restart leaves the batch "waiting to deploy" forever
+// (until the next publish or a manual Deploy now).
+restoreQueuedSnapshots();
+if (deployQueue.size > 0) scheduleDeploy();
 
 function nextAutoDeployAt() {
   if (deployQueue.size === 0 || !debounceTimer) return null;
