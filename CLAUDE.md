@@ -226,6 +226,15 @@ redirects to login.
   `lastValidationError` surfaced on `/admin/authoring/drafts`. Route-changing actions
   (move, slug rename in the raw editor, delete) maintain `data/redirects.json`
   automatically - the build hard-fails on redirects to nonexistent routes.
+- **The `authoring-wip` branch is machine-owned - never push to it.** When
+  `AUTHORING_JOURNAL=true`, the server write-through-commits every wizard
+  save/upload/move/delete to that branch within seconds (durability journal;
+  see the journal section in server.js). Its invariant is "publish-branch tree
+  at `baseMainSha` + all runtime-dirty files + `.authoring/journal.json`
+  manifest", and after every green deploy the server force-rebases it onto the
+  new main tip - manual commits there get clobbered. On boot the server
+  materializes manifest entries back onto the ephemeral disk (after the
+  `data/pending-files/` snapshot restore, which stays as the offline fallback).
 - **Docs frontmatter & style** are governed by `SmartWinnr-Help-Style-Guide.md`
   (American English, active voice, bold UI elements, ≤15–20-word sentences).
 

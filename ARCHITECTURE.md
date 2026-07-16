@@ -104,6 +104,34 @@ Path B (wizard auto-deploy):
   a deploy that added/changed docs (the wizard's deploy flow currently doesn't kick
   the indexer; that's a known gap).
 
+### 1.5 Authoring durability journal (`authoring-wip`)
+
+`docs/` and `static/` are ephemeral container disk — a restart resets them to the
+image's last-committed state, and Path B's debounce means published-but-unshipped
+work used to live only there. Two layers now protect authored content:
+
+1. **Volume snapshots (offline floor).** Queued upserts are copied to
+   `data/pending-files/` at enqueue time and restored (sync) on boot.
+2. **Write-through journal (primary, `AUTHORING_JOURNAL=true`).** Every wizard
+   mutation (save, publish, unpublish, upload, move, delete, module skeleton,
+   redirects/overviews/known-privileges writes) calls `journalRecordUpsert/Delete`,
+   which debounces ~5 s, coalesces, and commits the touched files to the
+   **machine-owned** branch `authoring-wip` via the Git Data API. Invariant:
+   its tip tree = publish-branch tree at `baseMainSha` + all runtime-dirty files
+   + the in-branch manifest `.authoring/journal.json`.
+   - **Boot reconcile:** after the snapshot restore, the server materializes every
+     manifest entry from the branch back onto disk (blob-sha compare, no redundant
+     downloads); entries already identical on main are pruned; a path that changed
+     on main *and* in the journal is a conflict — the authored version wins on disk
+     and the conflict is surfaced via `GET /deploy/state` → drafts UI.
+   - **Post-deploy rebase:** after each green `fireDeploy`, shipped paths are pruned
+     from the manifest and the branch is force-rebased onto the new main tip.
+   - All branch mutations (flush / rebase / boot repair) are serialized on one
+     in-process promise chain; a `/api/admin/authoring` middleware holds requests
+     until the boot reconcile settles. GitHub outages never block saves — entries
+     stay dirty and retry with backoff, surfaced in the drafts UI.
+   - **Never push to `authoring-wip` manually** — the next rebase clobbers it.
+
 ---
 
 ## 2. ChromaDB Vector Storage Architecture

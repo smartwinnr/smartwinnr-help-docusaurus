@@ -1013,6 +1013,15 @@ function checkRate(email) {
   return {ok: true, remaining: RATE_LIMIT - arr.length};
 }
 
+// Hold authoring requests until the boot reconcile has put journaled content
+// back on disk - otherwise an editor saving seconds after a restart writes
+// onto pre-restore state and the journal then flushes a stale-base commit.
+// Never blocks forever: the reconcile's GitHub calls carry their own
+// timeouts, and both settle paths fall through to next().
+app.use('/api/admin/authoring', (req, res, next) => {
+  journalBootPromise.then(() => next(), () => next());
+});
+
 app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req, res) => {
   // Gate before the LLM call - stuck retry loops can burn tokens fast.
   const rate = checkRate(req.user && req.user.email);
@@ -1290,6 +1299,10 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     // next build because the sub-folder is ungated.
     const subfolderCreated = ensureSubfolderCategory(moduleSlug, subFolder);
     fsSync.writeFileSync(target, finalText, 'utf8');
+    journalRecordUpsert(path.relative(__dirname, target), req.user?.email);
+    if (subfolderCreated) {
+      journalRecordUpsert(path.join('docs', 'modules', moduleSlug, subFolder, '_category_.json'), req.user?.email);
+    }
     res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated });
   } catch (error) {
     console.error('❌ authoring/save failed:', error.message);
@@ -1327,6 +1340,17 @@ const GIT_PUSH_TOKEN = process.env.GIT_PUSH_TOKEN || '';
 const GITHUB_REPO = process.env.GITHUB_REPO || '';
 const GIT_PUBLISH_BRANCH = process.env.GIT_PUBLISH_BRANCH || 'main';
 const GITHUB_API = process.env.GITHUB_API || 'https://api.github.com';
+
+// Write-through durability journal: every runtime file mutation is committed
+// to a machine-owned branch within seconds of the save, so authored content
+// survives restarts, redeploys, and even volume loss. Deploys to the publish
+// branch are untouched - the journal is durability, not publishing.
+const JOURNAL_BRANCH = process.env.AUTHORING_JOURNAL_BRANCH || 'authoring-wip';
+const JOURNAL_DEBOUNCE_MS = parseInt(process.env.AUTHORING_JOURNAL_DEBOUNCE_MS || '5000', 10);
+const JOURNAL_ENABLED = process.env.AUTHORING_JOURNAL === 'true'
+  && process.env.AUTHORING_GIT_PUSH === 'true'
+  && !!process.env.GIT_PUSH_TOKEN && !!process.env.GITHUB_REPO;
+const JOURNAL_MANIFEST_PATH = '.authoring/journal.json';
 
 // deployQueue tracks per-path actions so the same pipeline that publishes
 // an upserted article can also commit a delete. Map<relPath, 'upsert' | 'delete'>.
@@ -1575,18 +1599,362 @@ async function ghPatch(pathSuffix, body) {
   });
 }
 
-/** Fetch a file's content from the publish branch. Returns the utf-8 string,
- *  or null on 404; rethrows anything else (auth/rate-limit/network) so
- *  callers can distinguish "absent" from "unknown". */
-async function ghFetchFile(rel) {
+/** Fetch a file's content from the publish branch (or `ref`). Returns the
+ *  utf-8 string, or null on 404; rethrows anything else (auth/rate-limit/
+ *  network) so callers can distinguish "absent" from "unknown". */
+async function ghFetchFile(rel, ref = GIT_PUBLISH_BRANCH) {
   try {
-    const resp = await ghGet(`/contents/${rel.split('/').map(encodeURIComponent).join('/')}?ref=${GIT_PUBLISH_BRANCH}`);
+    const resp = await ghGet(`/contents/${rel.split('/').map(encodeURIComponent).join('/')}?ref=${ref}`);
     return Buffer.from(resp.data.content, 'base64').toString('utf8');
   } catch (e) {
     if (e.response?.status === 404) return null;
     throw e;
   }
 }
+
+// ---------------------------------------------------------------------------
+// Authoring durability journal (write-through to the JOURNAL_BRANCH)
+// ---------------------------------------------------------------------------
+// docs/ and static/ are ephemeral container disk; only data/ is a volume.
+// Durability used to arrive only when the batched deploy shipped to the
+// publish branch - a restart inside that window destroyed authored work.
+// The journal makes content durable at SAVE time: every mutation is recorded
+// here and flushed (debounced a few seconds, coalesced) as a commit on
+// JOURNAL_BRANCH. Invariant: the branch tip tree = publish-branch tree at
+// `baseMainSha` + every runtime-dirty file + the manifest. The branch is
+// MACHINE-OWNED: post-deploy rebases force-update it, clobbering any manual
+// pushes. The in-branch manifest (.authoring/journal.json) records which
+// paths are dirty, so recovery works even after total volume loss.
+
+/** Resolve a branch's tip commit sha, or null when the branch doesn't exist. */
+async function ghGetRef(branch) {
+  try {
+    const resp = await ghGet(`/git/refs/heads/${branch}`);
+    return resp.data.object.sha;
+  } catch (e) {
+    if (e.response?.status === 404) return null;
+    throw e;
+  }
+}
+
+/** Create a branch at `sha`. A 422 "already exists" (racing create) is fine. */
+async function ghCreateRef(branch, sha) {
+  try {
+    await ghPost('/git/refs', { ref: `refs/heads/${branch}`, sha });
+  } catch (e) {
+    if (e.response?.status !== 422) throw e;
+  }
+}
+
+/** Full recursive tree of a commit as Map<path, blobSha>. */
+async function ghGetTreeRecursive(commitSha) {
+  const commitResp = await ghGet(`/git/commits/${commitSha}`);
+  const treeResp = await ghGet(`/git/trees/${commitResp.data.tree.sha}?recursive=1`);
+  if (treeResp.data.truncated) {
+    console.warn(`[journal] tree listing for ${commitSha.slice(0, 7)} was truncated by GitHub - reconcile may miss paths`);
+  }
+  const map = new Map();
+  for (const entry of treeResp.data.tree || []) {
+    if (entry.type === 'blob') map.set(entry.path, entry.sha);
+  }
+  return map;
+}
+
+/** Raw blob bytes (handles binaries; the Contents API caps JSON at 1 MB). */
+async function ghGetBlob(sha) {
+  const resp = await ghGet(`/git/blobs/${sha}`);
+  return Buffer.from(resp.data.content, 'base64');
+}
+
+/** Git's blob object id for a buffer - lets boot reconcile compare disk
+ *  content against tree entries without downloading the blob. */
+function gitBlobShaOf(buf) {
+  return require('crypto').createHash('sha1')
+    .update(`blob ${buf.length}\0`).update(buf).digest('hex');
+}
+
+// rel → {action:'upsert'|'delete', ts, seq, author}. Entries leave the map
+// only after the commit that carries them lands (seq-guarded, so a write
+// racing an in-flight flush survives to the next one).
+const journalDirty = new Map();
+let journalSeq = 0;
+let journalFlushTimer = null;
+let journalRetryDelayMs = 0;
+// Single promise-chain mutex over EVERY journal-branch ref mutation
+// (flush, post-deploy rebase, boot repair) - they must never interleave.
+let journalChain = Promise.resolve();
+let journalBootPromise = Promise.resolve();
+const journalStatus = {
+  enabled: JOURNAL_ENABLED,
+  lastCommitTs: 0,
+  lastCommitSha: null,
+  lastError: null,
+  bootRestored: 0,
+  conflicts: [],
+};
+
+/** Paths the journal will record AND materialize on restore. Enforced on
+ *  both sides so a tampered manifest can't write outside authored trees. */
+function journalPathAllowed(rel) {
+  return /^docs\//.test(rel)
+    || /^static\/img\/helpscout\/authored\//.test(rel)
+    || rel === 'static/module-overviews.json'
+    || rel === 'data/redirects.json'
+    || rel === 'data/known-privileges.json';
+}
+
+function journalRecord(rel, action, author) {
+  if (!JOURNAL_ENABLED) return;
+  const norm = String(rel).replace(/\\/g, '/');
+  if (!journalPathAllowed(norm)) {
+    console.warn(`[journal] refusing to record path outside authored trees: ${norm}`);
+    return;
+  }
+  journalDirty.set(norm, { action, ts: Date.now(), seq: ++journalSeq, author: author || null });
+  scheduleJournalFlush();
+}
+function journalRecordUpsert(rel, author) { journalRecord(rel, 'upsert', author); }
+function journalRecordDelete(rel, author) { journalRecord(rel, 'delete', author); }
+
+function scheduleJournalFlush(delayMs = JOURNAL_DEBOUNCE_MS) {
+  if (journalFlushTimer) clearTimeout(journalFlushTimer);
+  journalFlushTimer = setTimeout(() => {
+    journalFlushTimer = null;
+    journalChain = journalChain
+      .then(() => journalFlushOnce())
+      .catch((e) => console.error('[journal] flush failed:', e.message));
+  }, delayMs);
+}
+
+function parseJournalManifest(raw) {
+  try {
+    const doc = JSON.parse(raw);
+    if (doc && typeof doc === 'object' && doc.entries && typeof doc.entries === 'object') return doc;
+  } catch { /* fall through */ }
+  return null;
+}
+
+/** Commit everything currently dirty onto the journal branch. Failures leave
+ *  the entries in place and re-arm with backoff - a save is never blocked or
+ *  failed by GitHub being down (disk + pending-files remain the floor). */
+async function journalFlushOnce() {
+  if (!JOURNAL_ENABLED || journalDirty.size === 0) return;
+  const captured = [...journalDirty.entries()].map(([rel, e]) => [rel, { ...e }]);
+  try {
+    // Branch tip (create from the publish branch tip on first use).
+    let tipSha = await ghGetRef(JOURNAL_BRANCH);
+    if (!tipSha) {
+      const mainSha = await ghGetRef(GIT_PUBLISH_BRANCH);
+      if (!mainSha) throw new Error(`publish branch ${GIT_PUBLISH_BRANCH} not found`);
+      await ghCreateRef(JOURNAL_BRANCH, mainSha);
+      tipSha = (await ghGetRef(JOURNAL_BRANCH)) || mainSha;
+    }
+    const tipTree = await ghGetTreeRecursive(tipSha);
+
+    // Current manifest (fresh one on first commit).
+    let manifest = null;
+    const manifestSha = tipTree.get(JOURNAL_MANIFEST_PATH);
+    if (manifestSha) manifest = parseJournalManifest((await ghGetBlob(manifestSha)).toString('utf8'));
+    if (!manifest) manifest = { version: 1, baseMainSha: tipSha, rebasedTs: Date.now(), entries: {} };
+
+    const treeEntries = [];
+    const slugs = [];
+    for (const [rel, entry] of captured) {
+      if (entry.action === 'upsert') {
+        const abs = path.join(__dirname, rel);
+        if (!fsSync.existsSync(abs)) {
+          console.warn(`[journal] dirty upsert vanished from disk, skipping: ${rel}`);
+          continue;
+        }
+        const buf = fsSync.readFileSync(abs);
+        const isText = /\.(md|mdx|json)$/i.test(rel);
+        const blobResp = await ghPost('/git/blobs', isText
+          ? { content: buf.toString('utf8'), encoding: 'utf-8' }
+          : { content: buf.toString('base64'), encoding: 'base64' });
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: blobResp.data.sha });
+      } else if (tipTree.has(rel)) {
+        // Trees API errors on sha:null for a path absent from base_tree.
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: null });
+      }
+      manifest.entries[rel] = { action: entry.action, ts: entry.ts, seq: entry.seq, author: entry.author };
+      slugs.push((entry.action === 'delete' ? '-' : '') + path.basename(rel));
+    }
+
+    const manifestBlob = await ghPost('/git/blobs', {
+      content: JSON.stringify(manifest, null, 2) + '\n',
+      encoding: 'utf-8',
+    });
+    treeEntries.push({ path: JOURNAL_MANIFEST_PATH, mode: '100644', type: 'blob', sha: manifestBlob.data.sha });
+
+    const tipCommit = await ghGet(`/git/commits/${tipSha}`);
+    const treeResp = await ghPost('/git/trees', { base_tree: tipCommit.data.tree.sha, tree: treeEntries });
+    const message = `journal: ${captured.length} file(s) (${slugs.slice(0, 3).join(', ')}${captured.length > 3 ? '...' : ''})`;
+    const commitResp = await ghPost('/git/commits', { message, tree: treeResp.data.sha, parents: [tipSha] });
+    try {
+      await ghPatch(`/git/refs/heads/${JOURNAL_BRANCH}`, { sha: commitResp.data.sha, force: false });
+    } catch (e) {
+      // Tip moved under us (manual push - the mutex rules out our own
+      // writers). Leave entries dirty; the re-armed flush retries on the
+      // new tip.
+      throw new Error(`ref update rejected (${e.response?.status || e.message}) - will retry`);
+    }
+
+    for (const [rel, entry] of captured) {
+      const current = journalDirty.get(rel);
+      if (current && current.seq === entry.seq) journalDirty.delete(rel);
+    }
+    journalStatus.lastCommitTs = Date.now();
+    journalStatus.lastCommitSha = commitResp.data.sha;
+    journalStatus.lastError = null;
+    journalRetryDelayMs = 0;
+    console.log(`[journal] committed ${captured.length} file(s) → ${JOURNAL_BRANCH} (${commitResp.data.sha.slice(0, 7)})`);
+    if (journalDirty.size > 0) scheduleJournalFlush();
+  } catch (e) {
+    const msg = e.response?.data?.message || e.message;
+    journalStatus.lastError = { ts: Date.now(), message: msg };
+    journalRetryDelayMs = Math.min(Math.max(journalRetryDelayMs * 2, 10000), 5 * 60 * 1000);
+    console.error(`[journal] flush failed (${msg}) - retrying in ${Math.round(journalRetryDelayMs / 1000)}s`);
+    scheduleJournalFlush(journalRetryDelayMs);
+  }
+}
+
+/** After a green deploy to the publish branch: drop shipped paths from the
+ *  manifest and rebuild the journal branch on the new tip, so its tree stays
+ *  "new main + still-dirty files" instead of accumulating stale layers.
+ *  Failure here is harmless - the stale branch still holds correct content,
+ *  just with redundant entries; the next flush or rebase repairs it. */
+async function journalRebaseAfterDeploy(newMainSha, shippedRels) {
+  if (!JOURNAL_ENABLED) return;
+  try {
+    const tipSha = await ghGetRef(JOURNAL_BRANCH);
+    if (!tipSha) return;
+    const tipTree = await ghGetTreeRecursive(tipSha);
+    const manifestSha = tipTree.get(JOURNAL_MANIFEST_PATH);
+    let manifest = manifestSha
+      ? parseJournalManifest((await ghGetBlob(manifestSha)).toString('utf8'))
+      : null;
+    if (!manifest) manifest = { version: 1, baseMainSha: newMainSha, rebasedTs: Date.now(), entries: {} };
+
+    for (const rel of shippedRels) delete manifest.entries[rel.replace(/\\/g, '/')];
+    manifest.baseMainSha = newMainSha;
+    manifest.rebasedTs = Date.now();
+
+    const mainCommit = await ghGet(`/git/commits/${newMainSha}`);
+    const mainTree = await ghGetTreeRecursive(newMainSha);
+    const treeEntries = [];
+    for (const [rel, entry] of Object.entries(manifest.entries)) {
+      if (!journalPathAllowed(rel)) { delete manifest.entries[rel]; continue; }
+      if (entry.action === 'upsert') {
+        const abs = path.join(__dirname, rel);
+        if (!fsSync.existsSync(abs)) {
+          console.warn(`[journal] rebase: dirty upsert missing from disk, dropping: ${rel}`);
+          delete manifest.entries[rel];
+          continue;
+        }
+        const buf = fsSync.readFileSync(abs);
+        const isText = /\.(md|mdx|json)$/i.test(rel);
+        const blobResp = await ghPost('/git/blobs', isText
+          ? { content: buf.toString('utf8'), encoding: 'utf-8' }
+          : { content: buf.toString('base64'), encoding: 'base64' });
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: blobResp.data.sha });
+      } else if (mainTree.has(rel)) {
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: null });
+      }
+    }
+    const manifestBlob = await ghPost('/git/blobs', {
+      content: JSON.stringify(manifest, null, 2) + '\n',
+      encoding: 'utf-8',
+    });
+    treeEntries.push({ path: JOURNAL_MANIFEST_PATH, mode: '100644', type: 'blob', sha: manifestBlob.data.sha });
+
+    const treeResp = await ghPost('/git/trees', { base_tree: mainCommit.data.tree.sha, tree: treeEntries });
+    const commitResp = await ghPost('/git/commits', {
+      message: `journal: rebase onto ${newMainSha.slice(0, 7)}`,
+      tree: treeResp.data.sha,
+      parents: [newMainSha],
+    });
+    // force: the branch is machine-owned; the rebase intentionally rewrites it.
+    await ghPatch(`/git/refs/heads/${JOURNAL_BRANCH}`, { sha: commitResp.data.sha, force: true });
+    console.log(`[journal] rebased ${JOURNAL_BRANCH} onto ${newMainSha.slice(0, 7)} (${Object.keys(manifest.entries).length} dirty file(s) kept)`);
+  } catch (e) {
+    const msg = e.response?.data?.message || e.message;
+    journalStatus.lastError = { ts: Date.now(), message: `rebase: ${msg}` };
+    console.error('[journal] post-deploy rebase failed:', msg);
+  }
+}
+
+/** Boot reconcile: materialize every manifest entry from the journal branch
+ *  onto the fresh-from-image disk. Runs AFTER the (sync, volume-local)
+ *  pending-files restore - the journal is a superset with >= freshness, so
+ *  layering it second converges and degrades safely when GitHub is down. */
+async function journalBootReconcile() {
+  if (!JOURNAL_ENABLED) return;
+  const tipSha = await ghGetRef(JOURNAL_BRANCH);
+  if (!tipSha) return; // first boot: branch appears lazily on first flush
+  const wipTree = await ghGetTreeRecursive(tipSha);
+  const manifestSha = wipTree.get(JOURNAL_MANIFEST_PATH);
+  if (!manifestSha) return;
+  const manifest = parseJournalManifest((await ghGetBlob(manifestSha)).toString('utf8'));
+  if (!manifest) return;
+
+  const mainSha = await ghGetRef(GIT_PUBLISH_BRANCH);
+  const mainTree = (manifest.baseMainSha === mainSha) ? null : await ghGetTreeRecursive(mainSha);
+  const prunable = [];
+  const conflicts = [];
+  let restored = 0;
+
+  for (const [rel, entry] of Object.entries(manifest.entries)) {
+    if (!journalPathAllowed(rel)) {
+      console.warn(`[journal] boot: ignoring manifest entry outside authored trees: ${rel}`);
+      continue;
+    }
+    try {
+      const abs = path.join(__dirname, rel);
+      if (entry.action === 'delete') {
+        // Only unlink inside trees whose files the wizard alone owns.
+        if ((/^docs\//.test(rel) || /^static\/img\/helpscout\/authored\//.test(rel)) && fsSync.existsSync(abs)) {
+          fsSync.unlinkSync(abs);
+          restored += 1;
+        }
+        if (mainTree && !mainTree.has(rel)) prunable.push(rel);
+        continue;
+      }
+      const wipSha = wipTree.get(rel);
+      if (!wipSha) {
+        console.warn(`[journal] boot: manifest/tree drift for ${rel} - no blob on ${JOURNAL_BRANCH}`);
+        continue;
+      }
+      if (mainTree) {
+        const mainBlobSha = mainTree.get(rel);
+        if (mainBlobSha === wipSha) { prunable.push(rel); continue; } // already durable on main
+        if (mainBlobSha) conflicts.push(rel); // wip (author's latest) wins on disk, but surface it
+      }
+      if (fsSync.existsSync(abs) && gitBlobShaOf(fsSync.readFileSync(abs)) === wipSha) continue;
+      const bytes = await ghGetBlob(wipSha);
+      fsSync.mkdirSync(path.dirname(abs), { recursive: true });
+      fsSync.writeFileSync(abs, bytes);
+      restored += 1;
+    } catch (e) {
+      console.warn(`[journal] boot: failed to reconcile ${rel}:`, e.message);
+    }
+  }
+
+  journalStatus.bootRestored = restored;
+  journalStatus.conflicts = conflicts;
+  console.log(`[journal] boot reconcile: restored=${restored}, prunable=${prunable.length}, conflicts=${conflicts.length}`);
+  if (prunable.length > 0 || (mainSha && manifest.baseMainSha !== mainSha)) {
+    journalChain = journalChain
+      .then(() => journalRebaseAfterDeploy(mainSha, prunable))
+      .catch((e) => console.error('[journal] boot rebase failed:', e.message));
+  }
+}
+
+// Runs at module load, right after the pending-files restore above (file
+// order), and before app.listen - the /api/admin/authoring gate awaits it.
+journalBootPromise = journalBootReconcile().catch((e) => {
+  journalStatus.lastError = { ts: Date.now(), message: `boot: ${e.message}` };
+  console.error('[journal] boot reconcile failed:', e.message);
+});
 
 // ---------------------------------------------------------------------------
 // Audit build-physics plumbing
@@ -2102,6 +2470,16 @@ async function fireDeploy() {
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
+    // Everything just shipped is durable on the publish branch - drop it
+    // from the journal manifest and rebuild the journal branch on the new
+    // tip. Chained so it can't interleave with an in-flight journal flush.
+    {
+      const shippedRels = [...shippable.map((f) => f.rel), ...deletes, ...images.map((i) => i.rel)];
+      const newMainSha = commitResp.data.sha;
+      journalChain = journalChain
+        .then(() => journalRebaseAfterDeploy(newMainSha, shippedRels))
+        .catch((e) => console.error('[journal] post-deploy rebase failed:', e.message));
+    }
     return {
       ok: true,
       committed: shippable.length,
@@ -2147,6 +2525,7 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
 
     // Queue for deploy + reset the debounce timer (so a burst batches).
     const relPath = path.relative(__dirname, target);
+    journalRecordUpsert(relPath, req.user?.email);
     enqueueUpsert(relPath);
     persistDeployState();
     scheduleDeploy();
@@ -2223,6 +2602,7 @@ app.post('/api/admin/authoring/unpublish', requireRole('superadmin'), (req, res)
         }
       }
       fsSync.writeFileSync(target, next, 'utf8');
+      journalRecordUpsert(relPath, req.user?.email);
     }
 
     if (pendingPublish) {
@@ -2275,6 +2655,16 @@ app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, re
     gitPushEnabled: GIT_PUSH_ENABLED,
     configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITHUB_REPO,
     lastValidationError,
+    journal: {
+      enabled: JOURNAL_ENABLED,
+      branch: JOURNAL_BRANCH,
+      lastCommitTs: journalStatus.lastCommitTs,
+      lastCommitSha: journalStatus.lastCommitSha,
+      pendingCount: journalDirty.size,
+      lastError: journalStatus.lastError,
+      bootRestored: journalStatus.bootRestored,
+      conflicts: journalStatus.conflicts,
+    },
   });
 });
 
@@ -2322,6 +2712,7 @@ app.post('/api/admin/authoring/deploy/enqueue-deletes', (req, res) => {
       continue;
     }
     enqueueDelete(norm);
+    journalRecordDelete(norm);
     queued += 1;
   }
   if (queued > 0) {
@@ -2350,6 +2741,7 @@ app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) =>
     const tail = isValidSlug(suffix) ? `-${suffix}` : '';
     const filename = `${slug}${tail}-${stamp}.${ext}`;
     fsSync.writeFileSync(path.join(IMAGE_ROOT, filename), buf);
+    journalRecordUpsert(`static/img/helpscout/authored/${filename}`, req.user?.email);
     res.json({ url: `/img/helpscout/authored/${filename}` });
   } catch (error) {
     console.error('❌ authoring/upload failed:', error.message);
@@ -2410,13 +2802,16 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
     }
     const imageRefs = imagesReferencedBy(text);
     fsSync.unlinkSync(target);
-    // Drafts never reached git, so cleanup is local-only - no deploy queue.
+    // Drafts never reach the publish branch, so cleanup skips the deploy
+    // queue - but the journal must drop its copies or a restart resurrects
+    // the deleted draft.
+    journalRecordDelete(path.relative(__dirname, target), req.user?.email);
     let imagesRemoved = 0;
     for (const imgUrl of imageRefs) {
       if (isImageReferencedElsewhere(imgUrl, target)) continue;
       const imgAbs = path.join(__dirname, 'static' + imgUrl);
       if (fsSync.existsSync(imgAbs)) {
-        try { fsSync.unlinkSync(imgAbs); imagesRemoved++; } catch {/* ignore */}
+        try { fsSync.unlinkSync(imgAbs); imagesRemoved++; journalRecordDelete('static' + imgUrl, req.user?.email); } catch {/* ignore */}
       }
     }
     res.json({ ok: true, imagesRemoved });
@@ -2554,6 +2949,10 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     );
     if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
     fsSync.writeFileSync(target, cleaned, 'utf8');
+    journalRecordUpsert(path.relative(__dirname, target), req.user?.email);
+    if (subfolderCreated && m) {
+      journalRecordUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'), req.user?.email);
+    }
 
     // If this is a published article (draft:false), the raw save needs to
     // reach production. Without enqueueing, the change sits on the
@@ -2683,6 +3082,7 @@ async function updateRedirectsForMove(oldRoute, newRoute) {
     doc.redirects = list;
     fsSync.mkdirSync(path.dirname(REDIRECTS_PATH), { recursive: true });
     fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+    journalRecordUpsert('data/redirects.json');
     console.log(`[redirects] retargeted entries for ${oldRoute} → ${newRoute} (base: ${base.source})`);
   }
   return changed;
@@ -2777,6 +3177,11 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
     fsSync.mkdirSync(path.dirname(toAbs), { recursive: true });
     fsSync.writeFileSync(toAbs, next, 'utf8');
     fsSync.unlinkSync(fromAbs);
+    journalRecordUpsert(toRel, req.user?.email);
+    journalRecordDelete(fromRel, req.user?.email);
+    if (created) {
+      journalRecordUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'), req.user?.email);
+    }
 
     let queuedForDeploy = false;
     let redirectsUpdated = false;
@@ -2900,6 +3305,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
         if (JSON.stringify(list) !== before) {
           doc.redirects = list;
           fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+          journalRecordUpsert('data/redirects.json', req.user?.email);
           redirectsUpdated = true;
           console.log(`[redirects] reconciled entries for deleted ${deletedRoute} → ${landing} (base: ${base.source})`);
         }
@@ -2909,6 +3315,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
     }
 
     fsSync.unlinkSync(target);
+    journalRecordDelete(path.relative(__dirname, target), req.user?.email);
 
     // Cull images this article referenced, but only if no other article
     // still needs them. Locally always; via deploy queue if was-published.
@@ -2921,6 +3328,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
         try { fsSync.unlinkSync(imgAbs); } catch {/* ignore */}
       }
       imagesRemovedRel.push(imgRel);
+      journalRecordDelete(imgRel, req.user?.email);
     }
 
     let queued = false;
@@ -2994,6 +3402,7 @@ function loadOverviews() {
 
 function saveOverviews(doc) {
   fsSync.writeFileSync(OVERVIEWS_JSON_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  journalRecordUpsert('static/module-overviews.json');
 }
 
 /** Flatten overviews.modules (object keyed by slug) into the array shape
@@ -3016,6 +3425,7 @@ function loadKnownPrivileges() {
 
 function saveKnownPrivileges(doc) {
   fsSync.writeFileSync(KNOWN_PRIVILEGES_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  journalRecordUpsert('data/known-privileges.json');
 }
 
 function buildCategoryJson({ label, position, roles, privilege, anyPrivilege, allPrivileges, generatedIndexSlug }) {
@@ -3101,6 +3511,7 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position, t
     written.push(path.relative(__dirname, sfPath));
   }
 
+  for (const rel of written) journalRecordUpsert(rel);
   return written;
 }
 

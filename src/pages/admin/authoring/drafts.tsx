@@ -47,6 +47,16 @@ type DeployState = {
   gitPushEnabled: boolean;
   configOk: boolean;
   lastValidationError?: {ts: number; errors: Array<{check: string; message: string}>} | null;
+  journal?: {
+    enabled: boolean;
+    branch: string;
+    lastCommitTs: number;
+    lastCommitSha: string | null;
+    pendingCount: number;
+    lastError: {ts: number; message: string} | null;
+    bootRestored: number;
+    conflicts: string[];
+  } | null;
 };
 
 // Modules are fetched from GET /api/admin/authoring/modules on Published-tab
@@ -333,6 +343,47 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
             )}
           </ul>
           Fix the issue(s), then press Deploy now again. Nothing was committed.
+        </div>
+      )}
+
+      {deployState?.journal?.enabled && (() => {
+        const j = deployState.journal;
+        if (j.lastError) {
+          return (
+            <div className={styles.warn} role="alert">
+              <strong>⚠ Git backup is failing</strong> — unsaved work is at risk if the server
+              restarts: {j.lastError.message}
+            </div>
+          );
+        }
+        if (j.pendingCount > 0) {
+          return (
+            <div className={styles.hint}>
+              Backing up {j.pendingCount} change(s) to git (<code>{j.branch}</code>)…
+            </div>
+          );
+        }
+        if (j.lastCommitTs > 0) {
+          const mins = Math.round((Date.now() - j.lastCommitTs) / 60000);
+          return (
+            <div className={styles.hint}>
+              All changes backed up to git (<code>{j.branch}</code>) {mins < 1 ? 'moments' : `~${mins} min`} ago.
+            </div>
+          );
+        }
+        return null;
+      })()}
+
+      {deployState?.journal?.conflicts && deployState.journal.conflicts.length > 0 && (
+        <div className={styles.warn} role="alert">
+          <strong>⚠ Restore conflicts</strong> — these files changed on the publish branch while
+          an unshipped edit existed; the authored version was kept:
+          <ul>
+            {deployState.journal.conflicts.slice(0, 5).map((p) => (<li key={p}><code>{p}</code></li>))}
+            {deployState.journal.conflicts.length > 5 && (
+              <li>…and {deployState.journal.conflicts.length - 5} more</li>
+            )}
+          </ul>
         </div>
       )}
 

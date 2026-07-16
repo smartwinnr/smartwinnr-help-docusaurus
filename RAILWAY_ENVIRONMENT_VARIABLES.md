@@ -111,6 +111,20 @@ AUTHORING_DEPLOY_DEBOUNCE_MS=1800000                 # 30 min burst window
 AUTHORING_DEPLOY_MIN_INTERVAL_MS=3600000             # min 60 min between deploys
 ```
 
+### Authoring durability journal (recommended with the wizard)
+
+Write-through backup: every wizard save/upload/move/delete is committed to a
+machine-owned branch within seconds, so authored work survives container
+restarts and even volume loss. Requires the auto-deploy vars above (same
+token). The branch is force-rebased after each deploy — never push to it
+manually.
+
+```bash
+AUTHORING_JOURNAL=true                               # off unless exactly 'true'
+AUTHORING_JOURNAL_BRANCH=authoring-wip               # machine-owned journal branch
+AUTHORING_JOURNAL_DEBOUNCE_MS=5000                   # save-to-commit coalescing window
+```
+
 ### Digest cron auth
 
 ```bash
