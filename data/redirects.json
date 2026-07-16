@@ -1800,6 +1800,10 @@
     {
       "from": "/modules/quiz/create-and-manage/how-to-create-an-automatic-quiz",
       "to": "/modules/quiz/create-and-manage/create-automatic-quiz"
+    },
+    {
+      "from": "/modules/quiz/create-and-manage/update-questions-in-automatic-quiz",
+      "to": "/modules/quiz/features/update-questions-in-automatic-quiz"
     }
   ]
 }
