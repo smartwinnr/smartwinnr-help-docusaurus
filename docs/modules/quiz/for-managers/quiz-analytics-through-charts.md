@@ -1,17 +1,12 @@
 ---
 id: 5fd997c6a5d295659b369555
-title: Quiz Analytics through Charts
-description: >-
-  SmartWinnr allows you to analytics the knowledge of your team based on their
-  performance in the quizzes assigned to them.
+title: "How to analyze quiz performance for your team"
+description: "Analyze your team's knowledge through quiz performance analytics, identifying strengths and areas for improvement using SmartWinnr's detailed charts."
 slug: quiz-analytics-through-charts
 sidebar_position: 98
 last_update:
-  date: 2021-01-23T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd997c6a5d295659b369555
-  helpscout_url: 'https://help.smartwinnr.com/article/98-analytics-through-charts'
+  date: 2026-07-17
+  author: Anagha Isal
 customProps:
   roles:
     - manager
@@ -20,49 +15,51 @@ customProps:
   privilege: managerView
 tags:
   - quiz
+draft: false
 ---
-### Overall Team Analytics through Charts
 
-SmartWinnr allows you to analytics the knowledge of your team based on their performance in the quizzes assigned to them. The quiz analytics in Manager-view explains the performance of your team based on various knowledge categories available in SmartWinnr.
+> **At a glance** - SmartWinnr provides detailed analytics on team quiz performance through various charts, helping you identify strengths and areas for improvement.
 
-To access the quiz analytics page for your team, go to Left Menu >> Quiz >> Click on  Analytics tab in the Manager view.
+SmartWinnr allows you to analyze the knowledge of your team based on their performance in the quizzes assigned to them. The quiz analytics in the Manager view explains the performance of your team across various knowledge categories available in SmartWinnr.
 
-This will take you through the team Analytics which is represented with several graphs.
+To access the quiz analytics page for your team, go to **Left Menu** >> **Quiz** >> Click on the **Analytics** tab in the Manager view. This will take you through the team analytics, which is represented with several graphs.
 
-![This will take you through the team Analytics which is represented with several graphs.](https://lh4.googleusercontent.com/nmza_2Ag6Vjj3kRuaGjPDcVg_qdOOB5P0C93_XrNVPRNSie91zIkpsOUSwA_BhRAmxZRxZtl9C_r7zY7ia0FzFDpTvt-L5B6MN7IBagho0WSQiwDH-yd6mqSOE9hYdC--fLwGBWm)
+![This will take you through the team Analytics which is represented with several graphs.](/img/helpscout/authored/quiz-analytics-through-charts-mromdqvr.png)
 
-Following are the brief description of each graph in the Team Analytics:
+## When to use this
+Use quiz analytics to:
+- Assess overall team performance across different knowledge categories.
+- Identify areas of strength and improvement within your team.
+- Compare individual team members' performance.
+- Evaluate your team's performance against the organization average.
 
-### 1\. Quiz Category-Wise Performance of your Team
+## Steps
 
-This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboarding, Compliance etc. This will help you to identify the areas of strength and areas of improvement in your team.
+### 1. Access Quiz Category-Wise Performance
+This chart provides the overall performance of your team across different categories such as Knowledge Attributes, Selling Skills, Onboarding, Compliance, etc. It helps you identify areas of strength and areas for improvement in your team.
 
-![This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboard](https://lh6.googleusercontent.com/I0iuxW7LsucvJZ8XUVOeIGCeu_HCTUTQuRNfU7sN3jx_CzD-0GH2GoMsxjHLs-zSVXeZaT2F-0Te1KyepF0uYW7T_er5ZxvjMOasxIG14eQc26af-yf-oqhlDsCYY9dDn9Q1NkYC)
+![This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboarding, Compliance, etc.](/img/helpscout/authored/quiz-analytics-through-charts-mromem2j.png)
 
-You can change the category to see other areas by clicking on the Filter button.
+You can change the category to see other areas by clicking on the **Filter** button.If you have access to multiple Business Units in SmartWinnr, you can also filter with the BU and identify your team's performance for the selected knowledge category within that specific Business Unit.
 
-![You can change the category to see other areas by clicking on the Filter button.](https://lh3.googleusercontent.com/rM6cypG0oFrfjGazXbG64ETDar5fzEKW9rmBQKbZolt9KZVn3n9iouINfBFxI06wNUIc0hTwetgs1-i_Lmkqa4uuf4cTUw96iayqwoS52exQzATu6Uc6PHMqPmH_iFail6ilt2FQ)
+![You can change the category to see other areas by clicking on the Filter button.](/img/helpscout/authored/quiz-analytics-through-charts-mromf1h0.png)
 
-2\. Detailed Performance by Quiz Category and Territory
+### 2. View Detailed Performance by Quiz Category and Country/Territory
+This is a color-coded chart that shows the performance of quiz categories by territory, business function, and more based on the employee categorisation available for your organisation.
 
-This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.
+![This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.](/img/helpscout/authored/quiz-analytics-through-charts-mromfxyc.png)
 
-                                                                                 ![This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.](https://support.smartwinnr.com/api/v1/attachments/551)
+Click on the **Filter** option to filter it by territory, region, country, designation etc based on the employee categorisation available for your organisation. 
 
-Click on the Filter option to filter it with the territory, business function, distributors, and more.
 
-                                                                               ![Click on the Filter option to filter it with the territory, business function, distributors, and more.](https://support.smartwinnr.com/api/v1/attachments/552)
+### 3. Compare Each Team Member by Quiz Category
+You can select team members and compare their performance across different topics. This feature allows you to easily identify the areas for improvement and strengths of each person in your team.
 
-3\. Compare Each Team Member by Quiz Category
+Click on the **Select Members** button to choose specific members in your team.
 
-You will be able to select team members and compare their performance across different topics. You can easily identify the areas of improvements and areas of strength of every person in your team.
+![Click on the 'Select Members' button to select specific members in your team.](/img/helpscout/authored/quiz-analytics-through-charts-mromi5gg.png)
 
-Click on the 'Select Members' button to select specific members in your team.
+### 4. Compare Your Team's Performance vs. Organization Average
+Assess how your team stands in comparison to the rest of the organization.
 
-                                                                              ![Click on the 'Select Members' button to select specific members in your team.](https://support.smartwinnr.com/api/v1/attachments/553)
-
-4\. Compare your Team's Performance vs Organization Average
-
-Check how your team stands with respect to the rest of the organization.
-
-                                                                                ![Check how your team stands with respect to the rest of the organization.](https://support.smartwinnr.com/api/v1/attachments/554)
+![Check how your team stands with respect to the rest of the organization.](/img/helpscout/authored/quiz-analytics-through-charts-mromjbh0.png)
