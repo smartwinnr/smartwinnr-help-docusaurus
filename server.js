@@ -1973,10 +1973,13 @@ async function journalBootReconcile() {
         console.warn(`[journal] boot: manifest/tree drift for ${rel} - no blob on ${JOURNAL_BRANCH}`);
         continue;
       }
-      if (mainTree) {
+      {
         const mainBlobSha = mainTree.get(rel);
         if (mainBlobSha === wipSha) { prunable.push(rel); continue; } // already durable on main
-        if (mainBlobSha) conflicts.push(rel); // wip (author's latest) wins on disk, but surface it
+        // A dirty file DIFFERING from main is the normal state of an
+        // unshipped edit - only a publish branch that MOVED since the edit
+        // was journaled can mean someone else changed it underneath.
+        if (mainBlobSha && manifest.baseMainSha !== mainSha) conflicts.push(rel); // wip wins on disk, but surface it
       }
       if (fsSync.existsSync(abs) && gitBlobShaOf(fsSync.readFileSync(abs)) === wipSha) continue;
       const bytes = await ghGetBlob(wipSha);
