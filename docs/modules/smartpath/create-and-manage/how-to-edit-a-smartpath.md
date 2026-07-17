@@ -7,8 +7,8 @@ description: >-
 slug: how-to-edit-a-smartpath
 sidebar_position: 79
 last_update:
-  date: 2026-07-16
-  author: Sruthi Suresh
+  date: 2026-07-17
+  author: Charan
 source:
   helpscout_id: 5fd713904eb32171b80377f7
   helpscout_url: 'https://help.smartwinnr.com/article/79-how-to-edit-a-smartpath'
@@ -25,7 +25,7 @@ draft: false
 
 > **At a glance** - This article explains how to edit an existing SmartPath, including updating its details and modifying its content.
 
-You can edit an existing SmartPath at any time to update its details or modify its content. The fields that can be edited include the SmartPath’s title, description, language, cover image, modules, and assignment settings. 
+You can edit an existing SmartPath at any time to update its details or modify its content. The fields that can be edited include the SmartPath's title, description, language, cover image, modules, and assignment settings.
 
 Please note that once batch users have started the SmartPath, the system will not allow the removal of existing modules from the SmartPath.
 
@@ -33,7 +33,7 @@ Please note that once batch users have started the SmartPath, the system will no
 Use this feature when you need to update the content or details of an existing SmartPath. This may include changing the title, description, or structure of the learning path.
 
 ## Before you start
-Ensure you have the necessary permissions to edit SmartPaths.
+Ensure you have the necessary permissions to edit SmartPaths. Note that a SmartPath has no start or end date of its own - the schedule window belongs to each **batch**. To change dates, edit the batch, not the SmartPath.
 
 ## Steps
 
@@ -62,6 +62,7 @@ On the first page, you can modify the following:
 * **Language** – change the language tag if needed.
 * **Cover Image** – upload a new image to visually represent the SmartPath.
 * **Theme Color** – adjust the color for branding or differentiation.
+* **Completion Points** – adjust the points awarded for finishing the SmartPath (shown when **Add Score to Global Leaderboard On Completion** is enabled).
 * **Include/Update the certificate** – any certificate changes will not affect learners who have already received the certificate before this change.
 
 After making changes, click **"Update"** to apply the updates.
@@ -74,7 +75,7 @@ To modify the learning path structure:
    Use the available options to:
    
    * **Add Modules** – include additional modules to the path.
-   * **Remove Modules** – delete modules that are no longer required (the system will not allow you to remove modules that have already been completed by some users).
+   * **Remove Modules** – delete modules that are no longer required (the system will not allow you to remove a module once any user has started it).
    * **Reorder Modules** – change the sequence of modules for better flow.
 ![](/img/helpscout/authored/how-to-edit-a-smartpath-mrn75frr.png)
 2. Save your changes when done.
@@ -88,4 +89,4 @@ If a batch already exists for the SmartPath, you must select the batch while upd
 
 To update the segments in a module, kindly refer to the following article:
 
-[How to update segments in Module?](https://help.smartwinnr.com/article/297-how-to-update-add-remove-segments-from-module-in-smartpath)
+[How to update segments in Module?](./how-to-add-remove-segments-in-module-added-to-smartpath.md)
