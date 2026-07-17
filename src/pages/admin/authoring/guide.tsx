@@ -51,7 +51,7 @@ function GuidePage(): ReactNode {
           <tbody>
             <tr>
               <td>In this browser</td>
-              <td>As you type (the wizard autosaves your inputs locally)</td>
+              <td>As you type (the wizard autosaves your inputs locally — one article at a time, so don't draft in two tabs at once)</td>
               <td>A page reload — but not clearing the browser or switching devices</td>
             </tr>
             <tr>
@@ -114,6 +114,7 @@ function GuidePage(): ReactNode {
         <ul>
           <li>Use the queue's <strong>Move</strong> action to relocate an article, the raw editor to change a slug, and the queue's <strong>Delete</strong> action to remove one.</li>
           <li>These actions maintain URL redirects automatically, so links readers bookmarked keep working.</li>
+          <li>Deleted articles (and their images) are kept on the server for 30 days — an admin can recover an accidental delete from the trash.</li>
           <li>Never ask for files to be moved or edited directly in the git repository — that bypasses the redirect and audit safety nets.</li>
         </ul>
 
@@ -123,6 +124,7 @@ function GuidePage(): ReactNode {
           <li><strong>The last deploy was blocked</strong> — something in the queued batch would break the site build. The banner lists the exact problems; fix the named articles and press <strong>Deploy now</strong> again. Nothing was lost.</li>
           <li><strong>Restore conflicts</strong> — after a server restart, a file had changed in two places at once. The authored version was kept; review the listed articles to confirm they look right.</li>
           <li><strong>Deploy now says rate-limited</strong> — a deploy ran within the last hour. Wait for the shown time and retry; your queue is safe meanwhile.</li>
+          <li><strong>"Someone else changed this article"</strong> on Save — another editor saved a newer version while you were editing. Review their version from the queue before deciding; saving again overwrites it with yours.</li>
         </ul>
 
         <h2>Please don't</h2>

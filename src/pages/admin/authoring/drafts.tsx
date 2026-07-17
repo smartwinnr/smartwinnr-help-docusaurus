@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify, type Notify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
-import {parsePath, SUB_FOLDERS} from '@site/src/lib/authoring';
+import {parsePath, SUB_FOLDERS, WIZARD_STORAGE_KEY} from '@site/src/lib/authoring';
 import styles from './styles.module.css';
 
 /**
@@ -67,13 +67,12 @@ type ModuleEntry = {slug: string; label: string};
 
 
 /**
- * Mirror the wizard's STORAGE_KEY constant in `index.tsx`. Update both
- * places together if the key ever changes. Used here to invalidate the
- * wizard's persisted state when the draft it references is deleted /
- * published - otherwise a new Authoring visit would restore a wizard
- * pointing at a now-stale file path.
+ * Shared with the wizard via src/lib/authoring.ts (a hardcoded copy here
+ * once drifted a version behind, silently disabling these clears). Used to
+ * invalidate the wizard's persisted state when the draft it references is
+ * deleted / published - otherwise a new Authoring visit would restore a
+ * wizard pointing at a now-stale file path.
  */
-const WIZARD_STORAGE_KEY = 'sw.authoring.wizard.v1';
 
 function clearWizardStateIfTargets(parsed: {module: string; subFolder: string; slug: string}) {
   if (typeof window === 'undefined') return;

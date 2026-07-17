@@ -1267,7 +1267,7 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
 
 app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
   try {
-    const { markdown, module: moduleSlug, subFolder, slug } = req.body || {};
+    const { markdown, module: moduleSlug, subFolder, slug, baseHash } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
 
     const audit = gradeMarkdown(markdown, auditOpts());
@@ -1280,6 +1280,22 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     }
 
     const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    // Optimistic concurrency: when the client says which version it loaded
+    // (baseHash from GET /draft), refuse to clobber a newer server copy -
+    // another editor saved in between. Clients that omit baseHash keep the
+    // old last-write-wins behavior (the wizard's new-article flow).
+    if (baseHash && fsSync.existsSync(target)) {
+      const current = fsSync.readFileSync(target, 'utf8');
+      const currentHash = contentHash(current);
+      if (currentHash !== baseHash) {
+        return res.status(409).json({
+          error: 'stale-base',
+          message: 'This article changed on the server after you loaded it (another editor saved). Reload it, or save again to overwrite their version.',
+          currentHash,
+          markdown: current,
+        });
+      }
+    }
     // Defang decorative emojis (the no-decorative-emojis markdownlint rule
     // rejects them on the deploy commit). /generate already runs the same
     // strip, but the edit-existing-draft flow may have loaded a legacy
@@ -1303,7 +1319,7 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     if (subfolderCreated) {
       journalRecordUpsert(path.join('docs', 'modules', moduleSlug, subFolder, '_category_.json'), req.user?.email);
     }
-    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated });
+    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated, hash: contentHash(finalText) });
   } catch (error) {
     console.error('❌ authoring/save failed:', error.message);
     res.status(500).json({ error: error.message });
@@ -1358,6 +1374,10 @@ const deployQueue = new Map();
 let lastDeployTs = 0;
 let debounceTimer = null;
 let deployInFlight = false;
+// Rels captured by the in-flight deploy's snapshot. An unpublish for one of
+// these must NOT just drop the queue entry - the snapshot ships the
+// published version regardless, so the re-draft has to ship afterwards.
+let inFlightSnapshotRels = new Set();
 
 // Route hints for queued doc deletes: rel → route at deletion time
 // (frontmatter-slug aware). The deploy pre-flight uses these to subtract
@@ -1492,6 +1512,11 @@ function enqueueDelete(relPath) {
  *  behind it. `delete` entries are kept - they legitimately target an
  *  already-absent file. Returns how many were pruned; persists if any changed. */
 function pruneStaleQueue() {
+  // With the journal enabled, a missing file is only PROVABLY stale after a
+  // clean boot reconcile - before that (or after a failed one) the file may
+  // simply not have been restored yet, and pruning would destroy publish
+  // intent that the journal could still recover.
+  if (JOURNAL_ENABLED && (!journalStatus.bootCompleted || journalStatus.lastError)) return 0;
   let pruned = 0;
   for (const [rel, action] of [...deployQueue]) {
     if (action !== 'upsert') continue;
@@ -1580,23 +1605,40 @@ function ghHeaders() {
     'User-Agent': 'smartwinnr-help-authoring',
   };
 }
+// Fine-grained PATs report their expiry on every API response. Capture it
+// so the UI can warn WEEKS before the token dies - an expired token silently
+// froze all deploys (and would freeze journal backups) once already.
+let ghTokenExpiresAt = null; // ms epoch, or null when unknown
+function captureTokenExpiry(resp) {
+  const h = resp?.headers?.['github-authentication-token-expiration'];
+  if (!h) return;
+  // Header format: "2027-07-16 07:20:50 UTC"
+  const t = Date.parse(String(h).replace(' UTC', 'Z').replace(' ', 'T'));
+  if (!Number.isNaN(t)) ghTokenExpiresAt = t;
+}
 async function ghGet(pathSuffix) {
-  return axios.get(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, {
+  const resp = await axios.get(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, {
     headers: ghHeaders(),
     timeout: 30000,
   });
+  captureTokenExpiry(resp);
+  return resp;
 }
 async function ghPost(pathSuffix, body) {
-  return axios.post(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
+  const resp = await axios.post(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
     headers: ghHeaders(),
     timeout: 60000,
   });
+  captureTokenExpiry(resp);
+  return resp;
 }
 async function ghPatch(pathSuffix, body) {
-  return axios.patch(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
+  const resp = await axios.patch(`${GITHUB_API}/repos/${GITHUB_REPO}${pathSuffix}`, body, {
     headers: ghHeaders(),
     timeout: 30000,
   });
+  captureTokenExpiry(resp);
+  return resp;
 }
 
 /** Fetch a file's content from the publish branch (or `ref`). Returns the
@@ -1691,6 +1733,10 @@ const journalStatus = {
   lastError: null,
   bootRestored: 0,
   conflicts: [],
+  // True once the boot reconcile ran to completion. While false (still
+  // running, or it failed - e.g. GitHub down), queue pruning is unsafe:
+  // files may be "missing" only because they haven't been restored yet.
+  bootCompleted: false,
 };
 
 /** Paths the journal will record AND materialize on restore. Enforced on
@@ -1890,15 +1936,18 @@ async function journalRebaseAfterDeploy(newMainSha, shippedRels) {
 async function journalBootReconcile() {
   if (!JOURNAL_ENABLED) return;
   const tipSha = await ghGetRef(JOURNAL_BRANCH);
-  if (!tipSha) return; // first boot: branch appears lazily on first flush
+  if (!tipSha) { journalStatus.bootCompleted = true; return; } // first boot: branch appears lazily on first flush
   const wipTree = await ghGetTreeRecursive(tipSha);
   const manifestSha = wipTree.get(JOURNAL_MANIFEST_PATH);
-  if (!manifestSha) return;
+  if (!manifestSha) { journalStatus.bootCompleted = true; return; }
   const manifest = parseJournalManifest((await ghGetBlob(manifestSha)).toString('utf8'));
-  if (!manifest) return;
+  if (!manifest) { journalStatus.bootCompleted = true; return; }
 
   const mainSha = await ghGetRef(GIT_PUBLISH_BRANCH);
-  const mainTree = (manifest.baseMainSha === mainSha) ? null : await ghGetTreeRecursive(mainSha);
+  // Always fetch the publish-branch tree: the reconcile compares per-path
+  // blobs against it, and the queue self-heal below needs it even when the
+  // journal base is current.
+  const mainTree = await ghGetTreeRecursive(mainSha);
   const prunable = [];
   const conflicts = [];
   let restored = 0;
@@ -1947,6 +1996,43 @@ async function journalBootReconcile() {
       .then(() => journalRebaseAfterDeploy(mainSha, prunable))
       .catch((e) => console.error('[journal] boot rebase failed:', e.message));
   }
+
+  // Queue self-heal: publish intent lives in data/deploy-state.json on the
+  // volume - if that file is lost or corrupted, queued changes are forgotten
+  // even though their content is safe here. Re-derive the queue from the
+  // manifest: a published (draft:false) article, a gate file, or the
+  // redirects doc whose journal blob differs from main should be queued;
+  // a manifest delete whose path still exists on main should ship too.
+  // Images and module-skeleton files are excluded - they ship bundled with
+  // (or alongside) their articles, never on their own.
+  const prunedSet = new Set(prunable);
+  let requeued = 0;
+  for (const [rel, entry] of Object.entries(manifest.entries)) {
+    if (!journalPathAllowed(rel) || prunedSet.has(rel)) continue;
+    try {
+      if (entry.action === 'delete') {
+        if (mainTree.has(rel) && !deployQueue.has(rel)) { enqueueDelete(rel); requeued += 1; }
+        continue;
+      }
+      const isArticle = /^docs\/.+\.(md|mdx)$/i.test(rel);
+      const isGateOrRedirects = /_category_\.json$/.test(rel) || rel === 'data/redirects.json';
+      if (!isArticle && !isGateOrRedirects) continue;
+      const abs = path.join(__dirname, rel);
+      if (!fsSync.existsSync(abs)) continue;
+      if (isArticle && /^draft:\s*true\b/m.test(fsSync.readFileSync(abs, 'utf8'))) continue; // drafts never ship
+      const wipSha = wipTree.get(rel);
+      if (wipSha && mainTree.get(rel) === wipSha) continue; // already durable on main
+      if (!deployQueue.has(rel)) { enqueueUpsert(rel); requeued += 1; }
+    } catch (e) {
+      console.warn(`[journal] boot: queue self-heal skipped ${rel}:`, e.message);
+    }
+  }
+  if (requeued > 0) {
+    console.log(`[journal] boot: re-derived ${requeued} deploy-queue entr${requeued === 1 ? 'y' : 'ies'} from the manifest`);
+    persistDeployState();
+    scheduleDeploy();
+  }
+  journalStatus.bootCompleted = true;
 }
 
 // Runs at module load, right after the pending-files restore above (file
@@ -2124,6 +2210,7 @@ async function fireDeploy() {
   // Snapshot the queue into [{rel, action}] so concurrent enqueues don't
   // perturb the in-flight set.
   const queueSnapshot = [...deployQueue].map(([rel, action]) => ({ rel, action }));
+  inFlightSnapshotRels = new Set(queueSnapshot.map((q) => q.rel));
   try {
     // Read upsert contents into memory + drop any that have since vanished
     // (the file was deleted between enqueue and now - safe to skip; an
@@ -2454,8 +2541,16 @@ async function fireDeploy() {
     });
 
     console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with build-breaking problems` : ''}`);
-    deployQueue.clear();
-    deletedRouteHints.clear();
+    // Remove ONLY what this deploy snapshotted - and only if the queued
+    // action hasn't changed since. A publish/delete that arrived during the
+    // multi-second GitHub round-trips stays queued for the next batch;
+    // a blanket clear() here silently destroyed that publish intent.
+    for (const { rel, action } of queueSnapshot) {
+      if (deployQueue.get(rel) === action) deployQueue.delete(rel);
+      if (action === 'delete' && !deployQueue.has(rel)) {
+        deletedRouteHints.delete(rel.replace(/\\/g, '/'));
+      }
+    }
     lastValidationError = null;
     // Re-base rule: once the batch's accumulated redirects.json ships, drop
     // the local copy so the next batch layers onto fresh publish-branch
@@ -2470,6 +2565,12 @@ async function fireDeploy() {
     lastDeployTs = Date.now();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
+    // Changes that arrived mid-deploy survived the per-rel cleanup above -
+    // re-arm the timer so they ship on the next batch without waiting for
+    // another publish. (Held-back items alone don't re-arm: they need an
+    // author fix first, and re-deploying them unchanged would fail again.)
+    const heldSet = new Set(heldBack.map((h) => h.rel));
+    if ([...deployQueue.keys()].some((rel) => !heldSet.has(rel))) scheduleDeploy();
     // Everything just shipped is durable on the publish branch - drop it
     // from the journal manifest and rebuild the journal branch on the new
     // tip. Chained so it can't interleave with an in-flight journal flush.
@@ -2494,6 +2595,7 @@ async function fireDeploy() {
     return { ok: false, reason: 'push-failed', message: ghMsg };
   } finally {
     deployInFlight = false;
+    inFlightSnapshotRels = new Set();
   }
 }
 
@@ -2581,7 +2683,13 @@ app.post('/api/admin/authoring/unpublish', requireRole('superadmin'), (req, res)
     }
 
     const raw = fsSync.readFileSync(target, 'utf8');
-    const pendingPublish = deployQueue.get(relPath) === 'upsert';
+    // A queued publish is only truly cancelable while no deploy is shipping
+    // it. Once fireDeploy snapshotted the rel, the published version reaches
+    // production regardless - so the re-draft must ship as a follow-up
+    // instead of being silently dropped with the queue entry.
+    const pendingPublish = deployQueue.get(relPath) === 'upsert'
+      && !inFlightSnapshotRels.has(relPath.replace(/\\/g, '/'))
+      && !inFlightSnapshotRels.has(relPath);
     const alreadyDraft = /^draft:\s*true\s*$/m.test(raw);
 
     // Already a draft AND nothing queued -> there's nothing to undo. (If it's
@@ -2664,6 +2772,8 @@ app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, re
       lastError: journalStatus.lastError,
       bootRestored: journalStatus.bootRestored,
       conflicts: journalStatus.conflicts,
+      tokenExpiresAt: ghTokenExpiresAt,
+      tokenDaysLeft: ghTokenExpiresAt ? Math.floor((ghTokenExpiresAt - Date.now()) / 86400000) : null,
     },
   });
 });
@@ -2785,11 +2895,54 @@ app.get('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
     const target = resolveDraftPath(moduleSlug, subFolder, slug);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
     const markdown = fsSync.readFileSync(target, 'utf8');
-    res.json({ markdown, path: path.relative(__dirname, target) });
+    res.json({ markdown, path: path.relative(__dirname, target), hash: contentHash(markdown) });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
+// ─────────────────────────────────────────────────────────────────────────
+// Deletion trash. Published articles stay recoverable from the publish
+// branch's immutable history, but a deleted DRAFT only ever existed on
+// disk + the journal branch - and the journal's post-deploy force-rebase
+// eventually erases that history. Copy files to the volume before unlink
+// so any deletion is recoverable for 30 days.
+// ─────────────────────────────────────────────────────────────────────────
+const TRASH_DIR = path.join(__dirname, 'data', 'trash');
+const TRASH_RETENTION_MS = 30 * 24 * 60 * 60 * 1000;
+
+function trashOpDir(slug) {
+  return `${new Date().toISOString().replace(/[:.]/g, '-')}__${slug}`;
+}
+/** Best-effort copy into data/trash/<opDir>/ before a delete. */
+function trashFile(absPath, opDir) {
+  try {
+    if (!fsSync.existsSync(absPath)) return;
+    const dst = path.join(TRASH_DIR, opDir, path.basename(absPath));
+    fsSync.mkdirSync(path.dirname(dst), { recursive: true });
+    fsSync.copyFileSync(absPath, dst);
+  } catch (e) {
+    console.warn(`[trash] failed to snapshot ${absPath} before delete:`, e.message);
+  }
+}
+function pruneTrash() {
+  try {
+    if (!fsSync.existsSync(TRASH_DIR)) return;
+    let pruned = 0;
+    for (const entry of fsSync.readdirSync(TRASH_DIR, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const p = path.join(TRASH_DIR, entry.name);
+      if (Date.now() - fsSync.statSync(p).mtimeMs > TRASH_RETENTION_MS) {
+        fsSync.rmSync(p, { recursive: true, force: true });
+        pruned += 1;
+      }
+    }
+    if (pruned > 0) console.log(`[trash] pruned ${pruned} deletion snapshot(s) older than 30 days`);
+  } catch (e) {
+    console.warn('[trash] prune failed:', e.message);
+  }
+}
+pruneTrash();
 
 app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
   try {
@@ -2801,6 +2954,8 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
       return res.status(400).json({ error: 'Refusing to delete - frontmatter is not marked draft:true' });
     }
     const imageRefs = imagesReferencedBy(text);
+    const opDir = trashOpDir(String(slug));
+    trashFile(target, opDir);
     fsSync.unlinkSync(target);
     // Drafts never reach the publish branch, so cleanup skips the deploy
     // queue - but the journal must drop its copies or a restart resurrects
@@ -2811,6 +2966,7 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
       if (isImageReferencedElsewhere(imgUrl, target)) continue;
       const imgAbs = path.join(__dirname, 'static' + imgUrl);
       if (fsSync.existsSync(imgAbs)) {
+        trashFile(imgAbs, opDir);
         try { fsSync.unlinkSync(imgAbs); imagesRemoved++; journalRecordDelete('static' + imgUrl, req.user?.email); } catch {/* ignore */}
       }
     }
@@ -2831,6 +2987,13 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
 // relative path string instead of three components.
 // ─────────────────────────────────────────────────────────────────────────
 
+/** Content fingerprint for optimistic concurrency: GET /draft and
+ *  GET /article return it, the save endpoints compare it. Two editors on
+ *  the same article were previously silent last-write-wins. */
+function contentHash(text) {
+  return require('crypto').createHash('sha1').update(text, 'utf8').digest('hex');
+}
+
 function resolveArticlePath(relPath) {
   if (typeof relPath !== 'string' || !relPath) throw new Error('path required');
   const norm = relPath.replace(/\\/g, '/');
@@ -2849,7 +3012,7 @@ app.get('/api/admin/authoring/article', requireRole('superadmin'), (req, res) =>
     const target = resolveArticlePath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
     const markdown = fsSync.readFileSync(target, 'utf8');
-    res.json({ markdown, path: path.relative(__dirname, target) });
+    res.json({ markdown, path: path.relative(__dirname, target), hash: contentHash(markdown) });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -2891,9 +3054,23 @@ app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) =
 
 app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req, res) => {
   try {
-    const { path: relPath, markdown } = req.body || {};
+    const { path: relPath, markdown, baseHash } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
     const target = resolveArticlePath(relPath);
+    // Optimistic concurrency (see /save): refuse to clobber a copy that
+    // changed after the client loaded it, unless the client omits baseHash.
+    if (baseHash && fsSync.existsSync(target)) {
+      const current = fsSync.readFileSync(target, 'utf8');
+      const currentHash = contentHash(current);
+      if (currentHash !== baseHash) {
+        return res.status(409).json({
+          error: 'stale-base',
+          message: 'This article changed on the server after you loaded it (another editor saved). Reload it, or save again to overwrite their version.',
+          currentHash,
+          markdown: current,
+        });
+      }
+    }
     // Defang decorative emojis before audit + write. The pre-commit hook
     // would reject them on the next deploy commit anyway; doing it here
     // keeps the saved file consistent with what /save produces and the
@@ -2989,6 +3166,7 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
       redirectsUpdated,
       queuedForDeploy,
       queueSize: deployQueue.size,
+      hash: contentHash(cleaned),
     });
   } catch (error) {
     console.error('❌ authoring/save-raw failed:', error.message);
@@ -3055,6 +3233,18 @@ async function loadRedirectsBase() {
   return null;
 }
 
+/** Serialize every redirects.json read-modify-write. loadRedirectsBase can
+ *  await a GitHub fetch, so two concurrent moves/deletes would otherwise
+ *  interleave around that await and the second write would drop the first
+ *  request's entry - a silently lost redirect that later breaks the build. */
+let redirectsChain = Promise.resolve();
+function withRedirectsLock(fn) {
+  const run = redirectsChain.then(fn, fn);
+  // Keep the chain alive regardless of fn's outcome; callers see the real result.
+  redirectsChain = run.then(() => undefined, () => undefined);
+  return run;
+}
+
 /** Keep data/redirects.json consistent when a move changes an article's
  *  route. The build hard-fails on redirects whose target no longer exists,
  *  so every entry still pointing at the vacated route is retargeted, any
@@ -3062,6 +3252,9 @@ async function loadRedirectsBase() {
  *  real page), and an oldRoute→newRoute entry is added so inbound links
  *  keep working. Returns true when the file changed. */
 async function updateRedirectsForMove(oldRoute, newRoute) {
+  return withRedirectsLock(() => updateRedirectsForMoveUnlocked(oldRoute, newRoute));
+}
+async function updateRedirectsForMoveUnlocked(oldRoute, newRoute) {
   const base = await loadRedirectsBase();
   if (!base) {
     console.error(`[redirects] SKIPPING redirect maintenance for ${oldRoute} → ${newRoute}: no readable redirects.json on disk or GitHub. The next production build will fail on stale redirect targets - fix data/redirects.json manually.`);
@@ -3292,8 +3485,12 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
     if (wasPublished && deletedRoute) {
       const modMatch = /^\/modules\/([^/]+)\//.exec(deletedRoute + '/');
       const landing = modMatch ? `/modules/${modMatch[1]}` : '/';
-      const base = await loadRedirectsBase();
-      if (base) {
+      redirectsUpdated = await withRedirectsLock(async () => {
+        const base = await loadRedirectsBase();
+        if (!base) {
+          console.error(`[redirects] SKIPPING delete reconciliation for ${deletedRoute}: no readable redirects.json on disk or GitHub. The deploy pre-flight will abort if any redirect targets this route.`);
+          return false;
+        }
         const { doc } = base;
         const before = JSON.stringify(doc.redirects || []);
         let list = Array.isArray(doc.redirects) ? doc.redirects : [];
@@ -3302,18 +3499,18 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
         if (!list.some((r) => r.from === deletedRoute)) {
           list.push({ from: deletedRoute, to: landing });
         }
-        if (JSON.stringify(list) !== before) {
-          doc.redirects = list;
-          fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
-          journalRecordUpsert('data/redirects.json', req.user?.email);
-          redirectsUpdated = true;
-          console.log(`[redirects] reconciled entries for deleted ${deletedRoute} → ${landing} (base: ${base.source})`);
-        }
-      } else {
-        console.error(`[redirects] SKIPPING delete reconciliation for ${deletedRoute}: no readable redirects.json on disk or GitHub. The deploy pre-flight will abort if any redirect targets this route.`);
-      }
+        if (JSON.stringify(list) === before) return false;
+        doc.redirects = list;
+        fsSync.mkdirSync(path.dirname(REDIRECTS_PATH), { recursive: true });
+        fsSync.writeFileSync(REDIRECTS_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+        journalRecordUpsert('data/redirects.json', req.user?.email);
+        console.log(`[redirects] reconciled entries for deleted ${deletedRoute} → ${landing} (base: ${base.source})`);
+        return true;
+      });
     }
 
+    const opDir = trashOpDir(path.basename(target).replace(/\.(md|mdx)$/, ''));
+    trashFile(target, opDir);
     fsSync.unlinkSync(target);
     journalRecordDelete(path.relative(__dirname, target), req.user?.email);
 
@@ -3325,6 +3522,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
       const imgRel = 'static' + imgUrl;  // /img/helpscout/authored/X → static/img/helpscout/authored/X
       const imgAbs = path.join(__dirname, imgRel);
       if (fsSync.existsSync(imgAbs)) {
+        trashFile(imgAbs, opDir);
         try { fsSync.unlinkSync(imgAbs); } catch {/* ignore */}
       }
       imagesRemovedRel.push(imgRel);
@@ -3841,13 +4039,28 @@ app.listen(PORT, '0.0.0.0', () => {
   // }
 });
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received, shutting down');
+// Graceful shutdown: Railway sends SIGTERM on every redeploy/restart. A save
+// made inside the journal's debounce window would otherwise die with the
+// container - flush it (best-effort, hard 8s cap so shutdown can't hang).
+let shuttingDown = false;
+async function gracefulShutdown(signal) {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  console.log(`${signal} received, shutting down`);
+  try {
+    persistDeployState();
+    if (JOURNAL_ENABLED && (journalDirty.size > 0 || journalFlushTimer)) {
+      if (journalFlushTimer) { clearTimeout(journalFlushTimer); journalFlushTimer = null; }
+      console.log(`[journal] final flush before exit (${journalDirty.size} dirty file(s))`);
+      await Promise.race([
+        journalChain.then(() => journalFlushOnce()).catch((e) => console.error('[journal] final flush failed:', e.message)),
+        new Promise((resolve) => setTimeout(resolve, 8000)),
+      ]);
+    }
+  } catch (e) {
+    console.error('shutdown cleanup failed:', e.message);
+  }
   process.exit(0);
-});
-
-process.on('SIGINT', () => {
-  console.log('SIGINT received, shutting down');
-  process.exit(0);
-});
+}
+process.on('SIGTERM', () => { gracefulShutdown('SIGTERM'); });
+process.on('SIGINT', () => { gracefulShutdown('SIGINT'); });

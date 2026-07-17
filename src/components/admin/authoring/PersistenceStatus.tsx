@@ -26,6 +26,8 @@ type JournalState = {
   lastError: {ts: number; message: string} | null;
   bootRestored: number;
   conflicts: string[];
+  tokenExpiresAt?: number | null;
+  tokenDaysLeft?: number | null;
 };
 
 const IDLE_POLL_MS = 30_000;
@@ -87,6 +89,18 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
         data-state="pending"
         title={`${journal.pendingCount} change(s) on their way to git (${journal.branch}).`}>
         Backing up…
+      </span>
+    );
+  }
+  // The token that powers backups AND deploys expires on a fixed date -
+  // last time it lapsed silently and froze publishing for days. Warn early.
+  if (typeof journal.tokenDaysLeft === 'number' && journal.tokenDaysLeft < 14) {
+    return (
+      <span
+        className={styles.stateBadge}
+        data-state={journal.tokenDaysLeft < 3 ? 'error' : 'pending'}
+        title={`The GitHub deploy token expires in ${Math.max(0, journal.tokenDaysLeft)} day(s). Once it lapses, publishing and git backup both stop - rotate GIT_PUSH_TOKEN now.`}>
+        Token expires in {Math.max(0, journal.tokenDaysLeft)}d
       </span>
     );
   }

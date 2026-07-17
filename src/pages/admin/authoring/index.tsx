@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useState, type ReactNode} from 'react';
+import React, {useEffect, useReducer, useRef, useState, type ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
@@ -7,7 +7,7 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
-import {SUB_FOLDERS, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
+import {SUB_FOLDERS, WIZARD_STORAGE_KEY, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
 import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
 import styles from './styles.module.css';
 
@@ -31,7 +31,8 @@ import styles from './styles.module.css';
 // LLM-suggested title/description/tags). v1 was the 4-step layout where
 // title came before the brain dump; orphaned v1 keys are ignored by
 // loadState() so editors mid-flight at deploy time start fresh.
-const STORAGE_KEY = 'sw.authoring.wizard.v2';
+// Shared with drafts.tsx (which clears it) via src/lib/authoring.ts.
+const STORAGE_KEY = WIZARD_STORAGE_KEY;
 
 // Modules are loaded from GET /api/admin/authoring/modules (sourced from
 // data/modules.json). The wizard fetches them on Step-1 mount; adding a
@@ -98,6 +99,10 @@ type State = {
    *  to swap the banner copy ("Refining published article" vs
    *  "Editing draft"). */
   wasPublished: boolean;
+  /** Server content hash captured at load/save time (edit mode). Sent as
+   *  baseHash on save so the wizard can't silently overwrite a version
+   *  another editor saved in between (server answers 409 stale-base). */
+  loadedHash: string | null;
 };
 
 const initial: State = {
@@ -123,6 +128,7 @@ const initial: State = {
   saved: null,
   isEditing: false,
   wasPublished: false,
+  loadedHash: null,
 };
 
 type Action =
@@ -132,10 +138,10 @@ type Action =
   | {type: 'generated'; markdown: string; audit: State['audit']; tokens: State['tokens']}
   | {type: 'suggestionsLoaded'; patch: Partial<Inputs>}
   | {type: 'saving'; on: boolean}
-  | {type: 'saved'; path: string}
+  | {type: 'saved'; path: string; hash?: string}
   | {type: 'error'; message: string}
   | {type: 'reset'}
-  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean}
+  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean; hash?: string}
   | {type: 'addImage'; image: Image};
 
 function reducer(s: State, a: Action): State {
@@ -162,7 +168,7 @@ function reducer(s: State, a: Action): State {
       return Object.keys(patch).length === 0 ? s : { ...s, inputs: { ...i, ...patch } };
     }
     case 'saving':    return {...s, saving: a.on};
-    case 'saved':     return {...s, saving: false, saved: a.path};
+    case 'saved':     return {...s, saving: false, saved: a.path, loadedHash: a.hash ?? s.loadedHash};
     case 'error':     return {...s, error: a.message, generating: false, saving: false};
     case 'reset':     return initial;
     case 'loadDraft': return {
@@ -172,6 +178,7 @@ function reducer(s: State, a: Action): State {
       step: 3,
       isEditing: true,
       wasPublished: a.wasPublished,
+      loadedHash: a.hash ?? null,
     };
     // Closure-safe append: a parallel multi-file upload would otherwise
     // race on dispatch({type:'set', patch:{images:[...i.images, new]}})
@@ -435,6 +442,9 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const [refinement, setRefinement] = useState('');
   const [regeneratingField, setRegeneratingField] = useState<'title' | 'description' | null>(null);
+  // Set after a 409 stale-base so the editor's NEXT Save deliberately
+  // overwrites the other editor's version; cleared on success.
+  const staleOverrideRef = useRef(false);
   const i = state.inputs;
   const previewHtml = useMarkdownHtml(state.markdown);
 
@@ -510,9 +520,23 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           module: i.module,
           subFolder: i.subFolder,
           slug: i.slug,
+          // Edit mode sends the hash of the version it loaded so the server
+          // 409s instead of clobbering another editor's newer save. After
+          // one stale-base warning, the next Save deliberately overwrites.
+          ...(state.isEditing && state.loadedHash && !staleOverrideRef.current
+            ? {baseHash: state.loadedHash}
+            : {}),
         }),
       });
       const data = await res.json();
+      if (res.status === 409 && data.error === 'stale-base') {
+        staleOverrideRef.current = true;
+        dispatch({
+          type: 'error',
+          message: 'This article changed on the server after you loaded it (another editor saved). Open the queue to review their version, or press Save again to overwrite it with yours.',
+        });
+        return;
+      }
       if (!res.ok) {
         // The save endpoint returns {error, audit} on a blocking-audit
         // 400. Surface the specific blocking findings in the toast so
@@ -538,7 +562,8 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         dispatch({type: 'error', message: (data.error || 'Save failed') + detail});
         return;
       }
-      dispatch({type: 'saved', path: data.path});
+      staleOverrideRef.current = false;
+      dispatch({type: 'saved', path: data.path, hash: data.hash});
     } catch (err) {
       dispatch({type: 'error', message: (err as Error).message});
     }
@@ -807,7 +832,7 @@ function Wizard(): ReactNode {
           dispatch({type: 'error', message: `Failed to load draft: ${err.error || res.statusText}`});
           return;
         }
-        const {markdown} = await res.json();
+        const {markdown, hash} = await res.json();
         const fm = parseFrontmatterFields(markdown);
         const inputs: Inputs = {
           module: moduleSlug,
@@ -825,7 +850,7 @@ function Wizard(): ReactNode {
         // forces draft:true regardless, so a Refine -> Save here re-drafts
         // a live article; UI surfaces this with a different banner.
         const wasPublished = !/^draft:\s*true\b/m.test(markdown);
-        dispatch({type: 'loadDraft', inputs, markdown, wasPublished});
+        dispatch({type: 'loadDraft', inputs, markdown, wasPublished, hash});
       } catch (err) {
         dispatch({type: 'error', message: `Failed to load draft: ${(err as Error).message}`});
       }

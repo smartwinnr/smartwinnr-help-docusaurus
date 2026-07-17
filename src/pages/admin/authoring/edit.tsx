@@ -69,6 +69,9 @@ function EditorPanel(): ReactNode {
   const [loadError, setLoadError] = useState<string>('');
   // Bumped on every successful save so the backup pill re-checks immediately.
   const [saveTick, setSaveTick] = useState(0);
+  // Server content hash from load/save - sent back as baseHash so a save
+  // can't silently clobber another editor's newer version (409 stale-base).
+  const [serverHash, setServerHash] = useState<string>('');
   const previewHtml = useMarkdownHtml(markdown);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -249,6 +252,7 @@ function EditorPanel(): ReactNode {
         if (!res.ok) { setLoadError(data.error || `${res.status} ${res.statusText}`); return; }
         setOriginal(data.markdown || '');
         setMarkdown(data.markdown || '');
+        setServerHash(data.hash || '');
       } catch (err) {
         setLoadError((err as Error).message);
       } finally {
@@ -306,7 +310,7 @@ function EditorPanel(): ReactNode {
       try {
         const r2 = await fetch(`/api/admin/authoring/article?${new URLSearchParams({path: data.toPath})}`, {credentials: 'same-origin'});
         const d2 = await r2.json();
-        if (r2.ok) { setOriginal(d2.markdown || ''); setMarkdown(d2.markdown || ''); }
+        if (r2.ok) { setOriginal(d2.markdown || ''); setMarkdown(d2.markdown || ''); setServerHash(d2.hash || ''); }
       } catch {/* non-fatal - the move already succeeded */}
       // Keep the URL in sync so a refresh reloads the new location.
       window.history.replaceState(null, '', `/admin/authoring/edit?${new URLSearchParams({path: data.toPath})}`);
@@ -318,19 +322,31 @@ function EditorPanel(): ReactNode {
     }
   }
 
-  async function save() {
+  async function save(overwrite = false) {
     setSaving(true);
     try {
       const res = await fetch('/api/admin/authoring/save-raw', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify({path, markdown}),
+        body: JSON.stringify({path, markdown, ...(overwrite || !serverHash ? {} : {baseHash: serverHash})}),
       });
       const data = await res.json();
+      if (res.status === 409 && data.error === 'stale-base') {
+        const ok = await notify.confirm({
+          title: 'Someone else changed this article',
+          message: 'Another editor saved a newer version after you loaded it. Overwrite their version with yours? (Cancel keeps your editor as-is - copy anything you need, then reload to see their version.)',
+          confirmLabel: 'Overwrite anyway',
+          cancelLabel: 'Cancel',
+          danger: true,
+        });
+        if (ok) { setSaving(false); return save(true); }
+        return;
+      }
       if (!res.ok) { notify.error(data.error || 'Save failed'); return; }
       setOriginal(markdown);
       setAudit(data.audit || null);
+      setServerHash(data.hash || '');
       setSaveTick((t) => t + 1);
       if (data.queuedForDeploy) {
         notify.success(`Saved ${data.path}. Queued for deploy - production picks it up on the next batch.`);
@@ -563,7 +579,7 @@ function EditorPanel(): ReactNode {
               type="button"
               className={styles.btnPrimary}
               disabled={!dirty || busy || loading || !!loadError || tagMissing}
-              onClick={save}
+              onClick={() => save()}
               title={tagMissing ? 'Add at least one tag before saving.' : ''}>
               {saving ? 'Saving…' : 'Save'}
             </button>

@@ -6,6 +6,14 @@
  * duplicating them.
  */
 
+/** localStorage slot for the wizard's autosaved state. Single source of
+ *  truth: the wizard persists to it and the queue clears it (after delete/
+ *  publish, and via "New article"). A version mismatch between the two
+ *  files once made those clears silent no-ops - stale wizard state could
+ *  then resurrect a deleted draft's content. Bump the suffix on layout
+ *  changes; loadState() ignores orphaned old-version keys. */
+export const WIZARD_STORAGE_KEY = 'sw.authoring.wizard.v2';
+
 /** The 9 canonical sub-folders every module has, with display labels and the
  *  default audience roles each grants. Mirrors server-side CANONICAL_SUBFOLDERS
  *  + SUBFOLDER_TEMPLATE. Single source for the wizard's Step 1 picker, the
