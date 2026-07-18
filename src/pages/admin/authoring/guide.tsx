@@ -124,10 +124,11 @@ function GuidePage(): ReactNode {
           and press <strong>New article here</strong> — the destination comes pre-selected.
         </p>
         <p>
-          Need a new folder inside a section? Pick <strong>+ Create a new folder…</strong> in
-          Step 1's folder list. The folder inherits the section's audience and appears in the
-          sidebar once its first article is published. (New top-level sections and module
-          folders are fixed — ask the engineering team for those.)
+          Need a new folder? Pick <strong>+ Create a new folder…</strong> in Step 1's folder
+          list — inside any section or module. Section folders inherit the section's audience;
+          module folders stay protected by the module's licensing. The folder appears in the
+          sidebar once its first article is published. (Only new top-level sections need the
+          engineering team.)
         </p>
 
         <h2>Reordering articles</h2>

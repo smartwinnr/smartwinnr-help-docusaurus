@@ -995,16 +995,18 @@ function setSidebarPosition(markdown, position) {
 
 /** Build the docs path for a draft, ensuring it sandboxes inside docs/modules/. */
 function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
-  if (!isValidSlug(moduleSlug) || !isValidSlug(articleSlug)) {
+  if (!isValidSlug(moduleSlug) || !isValidSlug(articleSlug) || !isValidSlug(subFolder)) {
     throw new Error('Invalid slug');
-  }
-  if (!CANONICAL_SUBFOLDERS.has(subFolder)) {
-    throw new Error('Invalid sub-folder');
   }
   const target = path.join(MODULES_ROOT, moduleSlug, subFolder, `${articleSlug}.md`);
   const real = path.resolve(target);
   if (!real.startsWith(MODULES_ROOT + path.sep)) {
     throw new Error('Path escapes docs/modules/');
+  }
+  // Canonical sub-folders may be auto-created; author-created custom
+  // folders must already exist (POST /folders wrote their gate file).
+  if (!CANONICAL_SUBFOLDERS.has(subFolder) && !fsSync.existsSync(path.dirname(real))) {
+    throw new Error('Invalid sub-folder');
   }
   return real;
 }
@@ -3063,9 +3065,14 @@ function resolveArticlePath(relPath) {
   if (!m) throw new Error('Path must match docs/modules/<module>/<sub-folder>/<slug>.{md,mdx}');
   const [, moduleSlug, subFolder, slug] = m;
   if (!isValidSlug(moduleSlug) || !isValidSlug(slug)) throw new Error('Invalid slug in path');
-  if (!CANONICAL_SUBFOLDERS.has(subFolder)) throw new Error('Sub-folder not canonical');
   const target = path.resolve(__dirname, norm);
   if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
+  // Canonical sub-folders always resolve; author-created custom folders
+  // resolve once they exist on disk (created via POST /folders, which
+  // guarantees a licensing-correct _category_.json).
+  if (!CANONICAL_SUBFOLDERS.has(subFolder) && !fsSync.existsSync(path.dirname(target))) {
+    throw new Error('Sub-folder not found');
+  }
   return target;
 }
 
@@ -3108,11 +3115,14 @@ function resolveAnyDocDir(dir) {
   const modMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(norm);
   if (norm === 'docs/modules' || norm.startsWith('docs/modules/')) {
     if (!modMatch) throw new Error('Module folders must be docs/modules/<module>/<sub-folder>');
-    if (!isValidSlug(modMatch[1]) || !CANONICAL_SUBFOLDERS.has(modMatch[2])) {
-      throw new Error('Sub-folder not canonical');
-    }
+    if (!isValidSlug(modMatch[1]) || !isValidSlug(modMatch[2])) throw new Error('Invalid folder name');
     target = path.resolve(__dirname, norm);
     if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
+    // Canonical or an existing author-created folder (the existsSync check
+    // below covers the latter for both cases).
+    if (!CANONICAL_SUBFOLDERS.has(modMatch[2]) && !fsSync.existsSync(target)) {
+      throw new Error('Folder not found');
+    }
   } else {
     const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(norm);
     if (!m) throw new Error('Folder must be docs/<section> or docs/<section>/<sub-folder>');
@@ -3337,12 +3347,14 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     let queuedForDeploy = false;
     if (!isDraft) {
       enqueueUpsert(relTarget);
-      // If we just wrote a brand-new sub-folder _category_.json (rare on
-      // a raw save - the article must already live there - but possible
-      // if the dir was scaffolded without the gate), ship it in the same
-      // commit so the audit doesn't fail on the deploy.
-      if (subfolderCreated && m) {
-        enqueueUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'));
+      // Ship the folder's gate file in the same commit - the gate audit
+      // hard-fails on an ungated module sub-folder, so a fresh
+      // author-created folder's _category_.json must never miss its first
+      // article's deploy. For long-shipped folders this is an
+      // identical-content no-op.
+      const rawCatAbs = path.join(path.dirname(target), '_category_.json');
+      if (fsSync.existsSync(rawCatAbs)) {
+        enqueueUpsert(path.relative(__dirname, rawCatAbs));
       }
       if (redirectsUpdated) {
         enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
@@ -3558,14 +3570,18 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
     const slug = path.basename(fromAbs).replace(/\.(md|mdx)$/, '');
     let toDirAbs;
     if (isModuleDest) {
-      // Module destinations may not exist yet (first article in a sub-folder)
-      // - validate the module dir and canonical sub-folder like resolveDraftPath.
+      // Canonical module destinations may not exist yet (first article in a
+      // sub-folder - the gate is scaffolded below); author-created custom
+      // folders must already exist on disk.
       const m = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(toDirRel);
-      if (!m || !isValidSlug(m[1]) || !CANONICAL_SUBFOLDERS.has(m[2])) {
-        return res.status(400).json({ error: 'Destination must be docs/modules/<module>/<canonical-sub-folder>' });
+      if (!m || !isValidSlug(m[1]) || !isValidSlug(m[2])) {
+        return res.status(400).json({ error: 'Destination must be docs/modules/<module>/<sub-folder>' });
       }
       if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) {
         return res.status(400).json({ error: `Unknown module: ${m[1]}` });
+      }
+      if (!CANONICAL_SUBFOLDERS.has(m[2]) && !fsSync.existsSync(path.join(__dirname, toDirRel))) {
+        return res.status(400).json({ error: 'That folder does not exist in this module.' });
       }
       toDirAbs = path.join(__dirname, toDirRel);
     } else {
@@ -3637,8 +3653,12 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
         normRoute(routeSlug.startsWith('/') ? routeSlug : `${routeDir(fromAbs)}/${routeSlug}`)
       );
       enqueueUpsert(toRel);
-      if (created && destModMatch) {
-        enqueueUpsert(path.join('docs', 'modules', destModMatch[1], destModMatch[2], '_category_.json'));
+      // Ship the destination folder's gate file with the move - required
+      // for a fresh author-created module folder (ungated sub-folders fail
+      // the gate audit); an identical-content no-op everywhere else.
+      const destCatAbs = path.join(toDirAbs, '_category_.json');
+      if (fsSync.existsSync(destCatAbs)) {
+        enqueueUpsert(path.relative(__dirname, destCatAbs));
       }
       if (redirectsUpdated) {
         enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
@@ -4042,15 +4062,18 @@ app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =>
   }
 });
 
-/** Create a new sub-folder inside an existing docs SECTION (not modules -
- *  their 9 sub-folders are canonical and enforced by the gate audit; not new
- *  top-level sections - those need a hand-authored sidebars.ts entry). The
- *  folder gets a _category_.json inheriting the section's audience roles.
- *  The gate file is journaled immediately for durability; it normally ships
- *  alongside the folder's first published article (see /publish), and
- *  shipping it alone (e.g. via the boot self-heal) is also safe - verified:
- *  Docusaurus omits article-less categories from the sidebar and the build
- *  passes. */
+/** Create a new sub-folder inside an existing docs SECTION or MODULE (not
+ *  new top-level sections - those need a hand-authored sidebars.ts entry).
+ *  - Section folders inherit the section's audience roles.
+ *  - Module folders MUST carry the module's license privilege - the module
+ *    root is deliberately ungated (upsell landing), so sub-folder gates are
+ *    the only privilege carrier. Custom module folders get ALL_ROLES + the
+ *    module's privilege/anyPrivilege (per-article roles narrow the audience);
+ *    a CANONICAL name (e.g. "Features") uses the exact template gate instead,
+ *    because the gate audit hard-fails on canonical-name mismatches.
+ *  The gate file is journaled immediately for durability; it ships alongside
+ *  the folder's first published article (see /publish), and shipping it alone
+ *  is also build-safe (verified: article-less categories are omitted). */
 app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) => {
   try {
     const { sectionDir, label } = req.body || {};
@@ -4059,49 +4082,91 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
       return res.status(400).json({ error: 'Give the folder a name (up to 60 characters).' });
     }
     const norm = String(sectionDir || '').replace(/\\/g, '/').replace(/\/+$/, '');
-    if (!/^docs\/[a-z0-9-]+$/.test(norm) || norm === 'docs/modules'
-        || AUTHORING_DENY_PREFIXES.some((p) => norm + '/' === p || norm.startsWith(p))) {
-      return res.status(400).json({ error: 'New folders can only be created inside an existing section.' });
+    const modMatch = /^docs\/modules\/([a-z0-9-]+)$/.exec(norm);
+    const isSection = /^docs\/[a-z0-9-]+$/.test(norm) && norm !== 'docs/modules'
+      && !AUTHORING_DENY_PREFIXES.some((p) => norm + '/' === p || norm.startsWith(p));
+    if (!modMatch && !isSection) {
+      return res.status(400).json({ error: 'New folders can only be created inside an existing section or module.' });
     }
-    const sectionAbs = path.resolve(__dirname, norm);
-    if (!sectionAbs.startsWith(DOCS_ROOT + path.sep) || !fsSync.existsSync(sectionAbs) || !fsSync.statSync(sectionAbs).isDirectory()) {
+    const parentAbs = path.resolve(__dirname, norm);
+    if (!parentAbs.startsWith(DOCS_ROOT + path.sep) || !fsSync.existsSync(parentAbs) || !fsSync.statSync(parentAbs).isDirectory()) {
       return res.status(400).json({ error: "That section doesn't exist." });
     }
     const slug = cleanLabel.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
     if (!isValidSlug(slug)) {
       return res.status(400).json({ error: 'The folder name must contain at least one letter or number.' });
     }
-    const dirAbs = path.join(sectionAbs, slug);
+    const dirAbs = path.join(parentAbs, slug);
     if (fsSync.existsSync(dirAbs)) {
-      return res.status(409).json({ error: `A folder called "${cleanLabel}" already exists in this section.` });
+      return res.status(409).json({ error: `A folder called "${cleanLabel}" already exists here.` });
     }
 
-    // Inherit the section's audience; position after the last sibling.
     const readCat = (abs) => {
       try { return JSON.parse(fsSync.readFileSync(path.join(abs, '_category_.json'), 'utf8')); } catch { return null; }
     };
-    const sectionCat = readCat(sectionAbs);
-    const roles = (Array.isArray(sectionCat?.customProps?.roles) && sectionCat.customProps.roles.length > 0)
-      ? sectionCat.customProps.roles
-      : ALL_ROLES;
     let maxPos = 0;
-    for (const entry of fsSync.readdirSync(sectionAbs, { withFileTypes: true })) {
+    for (const entry of fsSync.readdirSync(parentAbs, { withFileTypes: true })) {
       if (!entry.isDirectory()) continue;
-      const sib = readCat(path.join(sectionAbs, entry.name));
+      const sib = readCat(path.join(parentAbs, entry.name));
       if (typeof sib?.position === 'number' && sib.position > maxPos) maxPos = sib.position;
     }
 
-    fsSync.mkdirSync(dirAbs, { recursive: true });
-    const category = {
-      label: cleanLabel,
-      position: maxPos + 1,
-      collapsible: true,
-      collapsed: true,
-      customProps: { roles },
-    };
-    const catRel = `${norm}/${slug}/_category_.json`;
-    fsSync.writeFileSync(path.join(dirAbs, '_category_.json'), JSON.stringify(category, null, 2) + '\n', 'utf8');
-    journalRecordUpsert(catRel, req.user?.email);
+    let roles;
+    let catRel;
+    if (modMatch) {
+      const moduleSlug = modMatch[1];
+      if (CANONICAL_SUBFOLDERS.has(slug)) {
+        // Canonical name: the gate audit demands the exact template gate -
+        // reuse the canonical scaffolder (template roles + module privilege).
+        if (!ensureSubfolderCategory(moduleSlug, slug)) {
+          return res.status(400).json({ error: 'Could not create the standard folder - check the module setup.' });
+        }
+        roles = (SUBFOLDER_TEMPLATE.find((s) => s.slug === slug)?.roles) || ALL_ROLES;
+        catRel = `docs/modules/${moduleSlug}/${slug}/_category_.json`;
+        // ensureSubfolderCategory wrote + created; journal it for durability.
+        journalRecordUpsert(catRel, req.user?.email);
+      } else {
+        // Custom module folder: audience is governed per-article (ALL_ROLES
+        // here), licensing carried by the module's privilege gate. The gate
+        // audit only warns on unknown folder names WITH a gate file.
+        const overviews = loadOverviews();
+        const meta = (overviews.modules || {})[moduleSlug] || {};
+        roles = ALL_ROLES;
+        const category = {
+          label: cleanLabel,
+          position: maxPos + 1,
+          collapsible: true,
+          collapsed: true,
+          link: { type: 'generated-index', title: cleanLabel, slug: `/modules/${moduleSlug}/${slug}` },
+          customProps: { roles },
+        };
+        if (meta.privilege) category.customProps.privilege = meta.privilege;
+        if (Array.isArray(meta.anyPrivilege) && meta.anyPrivilege.length > 0) {
+          category.customProps.anyPrivilege = meta.anyPrivilege;
+        }
+        fsSync.mkdirSync(dirAbs, { recursive: true });
+        catRel = `${norm}/${slug}/_category_.json`;
+        fsSync.writeFileSync(path.join(dirAbs, '_category_.json'), JSON.stringify(category, null, 2) + '\n', 'utf8');
+        journalRecordUpsert(catRel, req.user?.email);
+      }
+    } else {
+      // Section folder: inherit the section's audience.
+      const sectionCat = readCat(parentAbs);
+      roles = (Array.isArray(sectionCat?.customProps?.roles) && sectionCat.customProps.roles.length > 0)
+        ? sectionCat.customProps.roles
+        : ALL_ROLES;
+      fsSync.mkdirSync(dirAbs, { recursive: true });
+      const category = {
+        label: cleanLabel,
+        position: maxPos + 1,
+        collapsible: true,
+        collapsed: true,
+        customProps: { roles },
+      };
+      catRel = `${norm}/${slug}/_category_.json`;
+      fsSync.writeFileSync(path.join(dirAbs, '_category_.json'), JSON.stringify(category, null, 2) + '\n', 'utf8');
+      journalRecordUpsert(catRel, req.user?.email);
+    }
 
     console.log(`[authoring] created folder ${norm}/${slug} (roles: ${roles.join(',')})`);
     res.json({ ok: true, dir: `${norm}/${slug}`, label: cleanLabel, roles });
@@ -4166,19 +4231,36 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
     const modules = modulesFromOverviews(loadOverviews())
       .slice()
       .sort((a, b) => a.label.localeCompare(b.label))
-      .map((m) => ({
-        dir: `docs/modules/${m.slug}`,
-        label: m.label,
-        position: 999,
-        kind: 'module',
-        allowRoot: false,
-        roles: ALL_ROLES,
-        subs: SUBFOLDER_TEMPLATE.map((sf) => ({
+      .map((m) => {
+        const subs = SUBFOLDER_TEMPLATE.map((sf) => ({
           dir: `docs/modules/${m.slug}/${sf.slug}`,
           label: sf.label,
           roles: sf.roles,
-        })),
-      }));
+        }));
+        // Author-created custom folders (non-canonical, on disk) join the
+        // canonical nine, with their own gate's label and roles.
+        const modAbs = path.join(MODULES_ROOT, m.slug);
+        if (fsSync.existsSync(modAbs)) {
+          for (const child of fsSync.readdirSync(modAbs, { withFileTypes: true })) {
+            if (!child.isDirectory() || CANONICAL_SUBFOLDERS.has(child.name)) continue;
+            const meta = categoryMeta(path.join(modAbs, child.name));
+            subs.push({
+              dir: `docs/modules/${m.slug}/${child.name}`,
+              label: meta.label || titleCase(child.name),
+              roles: meta.roles || ALL_ROLES,
+            });
+          }
+        }
+        return {
+          dir: `docs/modules/${m.slug}`,
+          label: m.label,
+          position: 999,
+          kind: 'module',
+          allowRoot: false,
+          roles: ALL_ROLES,
+          subs,
+        };
+      });
 
     res.json({ sections: [...sections, ...modules] });
   } catch (error) {

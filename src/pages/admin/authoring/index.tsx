@@ -358,7 +358,7 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
             <option value={currentLocation.dir}>(section root)</option>
           )}
           {currentLocation?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
-          {currentLocation?.kind === 'section' && (
+          {currentLocation && (
             <option value="__new__">+ Create a new folder…</option>
           )}
         </select>
@@ -391,7 +391,9 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         )}
         {showNewFolder && (
           <span className={styles.hint}>
-            The new folder appears in this section's sidebar once its first article is published. It inherits the section's audience.
+            {currentLocation?.kind === 'module'
+              ? "The new folder appears in this module's sidebar once its first article is published. It stays protected by the module's licensing; each article's audience is set individually."
+              : "The new folder appears in this section's sidebar once its first article is published. It inherits the section's audience."}
           </span>
         )}
         {!showNewFolder && i.dir && i.audienceRoles.length > 0 && (
