@@ -1,6 +1,6 @@
 ---
 id: 5fd6f70a23119734ee37f088
-title: How to create a module for SmartPath.
+title: "How to create a module for SmartPath?"
 description: >-
   To build a structured learning experience within a SmartPath, you first need
   to create the modules that will be included in it.

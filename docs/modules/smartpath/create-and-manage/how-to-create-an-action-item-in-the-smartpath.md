@@ -1,14 +1,14 @@
 ---
 id: 696f3433e924466a410b9501
-title: How to create an action item in the SmartPath
+title: "How to create an action item in the SmartPath?"
 description: >-
   Action items are tasks or checklists that learners must complete as part of
   the learning journey.
 slug: how-to-create-an-action-item-in-the-smartpath
 sidebar_position: 300
 last_update:
-  date: 2026-01-20T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-18
+  author: Charan
 source:
   helpscout_id: 696f3433e924466a410b9501
   helpscout_url: >-
@@ -22,50 +22,62 @@ tags:
   - smartpath
   - admin
 ---
-Action items are tasks or checklists that learners must complete as part of the learning journey.
 
-When learners are required to complete specific action items as part of a SmartPath course, you can list those action items within a module. Learners can then mark each action item as complete by selecting the corresponding checkbox once the task is finished. Action items can be marked as completed either by the learner or by the respective manager, based on the configuration set for item.
+> **At a glance** - An Action Item segment is a checklist inside a SmartPath module. Learners (or their managers, depending on configuration) tick off each task as it is completed.
 
-Since action items must be created within a SmartPath module, you need to either create a new module or select an existing module where the action item will be added.
+Action items are tasks or checklists that learners must complete as part of the learning journey. List the tasks in a module, and learners mark each one complete with a checkbox. Depending on the configuration, either the learner or their manager can mark an item as done.
 
-[Learn how to create a module for SmartPath](https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath)
+## Before you start
 
-1. While creating the Segments, Choose the segment type as **Action Item** from the available options. Then add a **name** to your Action Item list.
+Action items live inside a SmartPath module. Create a new module or pick an existing one - see [How to create a module for SmartPath](./how-to-create-a-module-for-smartpath.md).
+
+## Steps
+
+### 1. Add an Action Item segment
+
+While adding segments, choose the segment type **Action Item**. Then enter a **name** for your action item list and click **Create**.
 
 ![While creating the Segments, Choose the segment type as Action Item from the available options. Then add a name to your Action Item list.](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-1.png)
 
-2. Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create and configure your **Action Items** for the SmartPath module.
+### 2. Configure the action item list
 
-![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create and configure your Action I](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-2.png)
+The configuration page opens:
 
-* **Action Title :** Enter a clear and meaningful title, for your list of action items (for example, _Checklist for Onboarding_).
-* **Description:** You can add a brief description on the action item. (optional)
-* **Editable By:** Define who can mark the action item as completed. This can be set to **User** (learner) or **Manager**, based on your requirement.
+![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create and configure your Action Items.](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-2.png)
 
-* * *
+* **Action Title:** A clear, meaningful title for the list (for example, *Checklist for Onboarding*). Required.
+* **Description:** A brief description of the list (optional).
+* **Cover Image:** Optionally add a cover image for the action item list.
+* **Editable by:** Who can mark items complete - **User** (learner), **Manager**, or both. User is selected by default.
 
-3. ### Creating Groups for Action Item
+### 3. Create groups (optional)
 
-* Adding groups to action items is optional. However, if you have a large number of action items for learners to complete, using groups helps organize them more effectively.
+Groups organize a long checklist into categories.
 
 ![Creating Groups for Action Item](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-3.png)
 
-* **Group Name:** Create groups/category to logically organize multiple action items (for example, _Pre-Joining Tasks_, Joining Formalities) etc.
-* **Group Description :** Describe the purpose of the group for better clarity.
+* **Group Name:** A logical category (for example, *Pre-Joining Tasks*, *Joining Formalities*).
+* **Group Description:** The purpose of the group.
 
-You can add multiple groups using the **Add Group** option.
+Use **Add Group** to create as many groups as you need.
 
-* * *
-
-4. ### Creating Action Items
+### 4. Create the action items
 
 ![Creating Action Items](/img/helpscout/editors/how-to-create-an-action-item-in-the-smartpath-4.png)
 
-* **Groups:** Assign the action item to a specific group/category
-* **Action Item Title:** Enter the task name that learners will see.
-* **Description:** Describe the task or activity to be completed.
-* **Is Mandatory:** Enable this option if the action item must be completed as part of the SmartPath.
+For each item:
 
-Use the **Add Action Item** button to create multiple action items under the same module.
+* **Groups:** Assign the item to one of your groups.
+* **Action Item Title:** The task name learners see.
+* **Description:** What must be done to complete the task.
+* **Is Mandatory:** Enable when the item must be completed as part of the SmartPath.
 
-5. Click **Save** to create the action item and make it available within the selected SmartPath module.
+Use **Add Action Item** to add more items to the list.
+
+### 5. Save
+
+Click **Save** to create the action item list and make it available in the selected SmartPath module.
+
+## Tracking completion
+
+Learner progress on action items rolls into the SmartPath's completion tracking, and per-item analytics are available from the action item's analytics view.

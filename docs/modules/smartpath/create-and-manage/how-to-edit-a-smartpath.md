@@ -1,9 +1,7 @@
 ---
 id: 5fd713904eb32171b80377f7
-title: How to edit a SmartPath.
-description: >-
-  You can edit an existing SmartPath at any time to update its details or modify
-  its content.
+title: "How to edit a SmartPath?"
+description: "Edit an existing SmartPath to update its details, modify content, and adjust module settings as needed."
 slug: how-to-edit-a-smartpath
 sidebar_position: 79
 last_update:

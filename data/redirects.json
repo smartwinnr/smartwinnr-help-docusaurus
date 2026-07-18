@@ -431,7 +431,7 @@
     },
     {
       "from": "/administration/smartpath-module/how-to-create-assignment-in-smartpath",
-      "to": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+      "to": "/modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath"
     },
     {
       "from": "/administration/smartpath-module/how-to-create-smartpath-with-learning-sessions",
@@ -1523,7 +1523,7 @@
     },
     {
       "from": "/modules/smartpath/how-to-create-assignment-in-smartpath",
-      "to": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath"
+      "to": "/modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath"
     },
     {
       "from": "/modules/smartpath/how-to-create-smartpath-with-learning-sessions",
@@ -1804,6 +1804,10 @@
     {
       "from": "/modules/quiz/create-and-manage/update-questions-in-automatic-quiz",
       "to": "/modules/quiz/features/update-questions-in-automatic-quiz"
+    },
+    {
+      "from": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath",
+      "to": "/modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath"
     }
   ]
 }
