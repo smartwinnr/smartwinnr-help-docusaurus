@@ -60,13 +60,13 @@ function GuidePage(): ReactNode {
               <td>Closing your browser — but not a server restart</td>
             </tr>
             <tr>
-              <td>Backed up to git</td>
-              <td>Automatically, seconds after any save or upload</td>
-              <td>Everything, including server restarts and redeploys</td>
+              <td>Backed up</td>
+              <td>Automatically, seconds after any save or upload — copied to a safe location outside the server</td>
+              <td>Everything, including server restarts and updates</td>
             </tr>
             <tr>
               <td>Live on the help site</td>
-              <td>After you <strong>Publish</strong> and the next deploy runs</td>
+              <td>After you <strong>Publish</strong> and the next site update runs</td>
               <td>This is the published state readers see</td>
             </tr>
           </tbody>
@@ -75,20 +75,20 @@ function GuidePage(): ReactNode {
           The badge next to the Save button (and in the header) of every authoring page shows the backup state:
         </p>
         <ul>
-          <li><strong>Backed up ✓</strong> — everything you saved is committed to git. Safe to close the tab.</li>
+          <li><strong>Backed up ✓</strong> — everything you saved is safely stored. Safe to close the tab.</li>
           <li><strong>Backing up…</strong> — your latest save is on its way. It usually completes within ~10 seconds.</li>
           <li><strong>Backup failing</strong> — your saves exist on the server only; a restart could lose them. Keep the tab open, copy your text somewhere safe, and tell an admin.</li>
-          <li><strong>Server only</strong> — git backup is not enabled on this server. Published changes still reach git when a deploy runs; unsaved drafts depend on the server staying up.</li>
+          <li><strong>Server only</strong> — automatic backup is not enabled on this server. Published changes are still stored safely when a site update runs; unsaved drafts depend on the server staying up.</li>
         </ul>
 
-        <h2>Draft → Publish → Deploy</h2>
+        <h2>Draft → Publish → Go live</h2>
         <ol>
-          <li><strong>Draft.</strong> Saving in the wizard creates a draft. Drafts are invisible to readers — they never appear on the production site.</li>
-          <li><strong>Publish.</strong> Publishing from the <Link to="/admin/authoring/drafts">Authoring queue</Link> marks the article live and adds it to the deploy queue.</li>
-          <li><strong>Deploy.</strong> Queued changes ship in batches: about 30 minutes after the last publish, and at most once per hour. <strong>Deploy now</strong> on the queue page skips the wait (still limited to once per hour). After the deploy, the site rebuilds for a few minutes before readers see the change.</li>
+          <li><strong>Draft.</strong> Saving in the wizard creates a draft. Drafts are invisible to readers — they never appear on the live site.</li>
+          <li><strong>Publish.</strong> Publishing from the <Link to="/admin/authoring/drafts">Authoring queue</Link> marks the article ready and adds it to the next site update.</li>
+          <li><strong>Go live.</strong> Updates ship in batches: about 30 minutes after the last publish, and at most once per hour. <strong>Deploy now</strong> on the queue page skips the wait (still limited to once per hour). After that, the site rebuilds for a few minutes before readers see the change.</li>
         </ol>
         <p>
-          Publishing several articles in one sitting is ideal — they batch into a single deploy.
+          Publishing several articles in one sitting is ideal — they go live together in a single update.
           You can watch the queue and cancel a pending publish on the{' '}
           <Link to="/admin/authoring/drafts">Authoring queue</Link> page.
         </p>
@@ -120,10 +120,10 @@ function GuidePage(): ReactNode {
 
         <h2>If you see a warning banner</h2>
         <ul>
-          <li><strong>Git backup is failing</strong> — your work is not durable yet. Keep your tab open, copy long text out, and contact an admin (usually an expired GitHub token).</li>
-          <li><strong>The last deploy was blocked</strong> — something in the queued batch would break the site build. The banner lists the exact problems; fix the named articles and press <strong>Deploy now</strong> again. Nothing was lost.</li>
-          <li><strong>Restore conflicts</strong> — after a server restart, a file had changed in two places at once. The authored version was kept; review the listed articles to confirm they look right.</li>
-          <li><strong>Deploy now says rate-limited</strong> — a deploy ran within the last hour. Wait for the shown time and retry; your queue is safe meanwhile.</li>
+          <li><strong>Backup is failing</strong> — your work is not safely stored yet. Keep your tab open, copy long text out, and tell an admin (usually a connection that needs renewing).</li>
+          <li><strong>The last update was blocked</strong> — something in the batch would break the live site. The banner lists the exact problems; fix the named articles and press <strong>Deploy now</strong> again. Nothing was published, and nothing was lost.</li>
+          <li><strong>Heads up — changed in two places at once</strong> — after a server restart, an article had been edited in two places. The version saved through this tool was kept; review the listed articles to confirm they look right.</li>
+          <li><strong>Deploy now is unavailable</strong> — an update ran within the last hour. Wait for the shown time and retry; your queue is safe meanwhile.</li>
           <li><strong>"Someone else changed this article"</strong> on Save — another editor saved a newer version while you were editing. Review their version from the queue before deciding; saving again overwrites it with yours.</li>
         </ul>
 
@@ -131,7 +131,7 @@ function GuidePage(): ReactNode {
         <ul>
           <li>Don't push to the <code>authoring-wip</code> git branch — it's machine-owned and gets overwritten automatically.</li>
           <li>Don't edit published articles directly in the repository — use the wizard or raw editor so audits, redirects, and backups all apply.</li>
-          <li>Don't keep work only in your browser overnight — press <strong>Save</strong> and check the pill says <strong>Backed up ✓</strong>.</li>
+          <li>Don't keep work only in your browser overnight — press <strong>Save</strong> and check the badge says <strong>Backed up ✓</strong>.</li>
         </ul>
       </div>
     </div>
