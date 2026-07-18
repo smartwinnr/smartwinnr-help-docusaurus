@@ -72,7 +72,7 @@ function GuidePage(): ReactNode {
           </tbody>
         </table>
         <p>
-          The pill in the header of every authoring page shows the git-backup state:
+          The badge next to the Save button (and in the header) of every authoring page shows the backup state:
         </p>
         <ul>
           <li><strong>Backed up ✓</strong> — everything you saved is committed to git. Safe to close the tab.</li>

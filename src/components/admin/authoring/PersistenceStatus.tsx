@@ -67,7 +67,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
       <span
         className={styles.stateBadge}
         data-state="off"
-        title="Git backup is not enabled on this server. Saves live on the server disk; published changes reach git when a deploy runs.">
+        title="Backup to a safe copy is not enabled on this server. Your saves stay on the server; tell an admin if you expected backups.">
         Server only
       </span>
     );
@@ -77,7 +77,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
       <span
         className={styles.stateBadge}
         data-state="error"
-        title={`Recent changes are on the server only - a restart could lose them. Tell an admin. (${journal.lastError.message})`}>
+        title={`Your recent changes are saved on the server but NOT backed up yet - a restart could lose them. Keep this tab open and tell an admin. (${journal.lastError.message})`}>
         Backup failing
       </span>
     );
@@ -87,7 +87,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
       <span
         className={styles.stateBadge}
         data-state="pending"
-        title={`${journal.pendingCount} change(s) on their way to git (${journal.branch}).`}>
+        title={`${journal.pendingCount} change(s) being backed up to a safe copy - usually done in seconds.`}>
         Backing up…
       </span>
     );
@@ -99,7 +99,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
       <span
         className={styles.stateBadge}
         data-state={journal.tokenDaysLeft < 3 ? 'error' : 'pending'}
-        title={`The GitHub deploy token expires in ${Math.max(0, journal.tokenDaysLeft)} day(s). Once it lapses, publishing and git backup both stop - rotate GIT_PUSH_TOKEN now.`}>
+        title={`The connection used to publish to the live site expires in ${Math.max(0, journal.tokenDaysLeft)} day(s). An admin must renew it (GIT_PUSH_TOKEN) before then.`}>
         Token expires in {Math.max(0, journal.tokenDaysLeft)}d
       </span>
     );
@@ -110,7 +110,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
       <span
         className={styles.stateBadge}
         data-state="ok"
-        title={`All changes are committed to git (${journal.branch}), ${mins < 1 ? 'moments' : `~${mins} min`} ago.`}>
+        title={`All your changes are safely backed up (${mins < 1 ? 'moments' : `~${mins} min`} ago). It's safe to close this tab.`}>
         Backed up ✓
       </span>
     );
@@ -120,7 +120,7 @@ export default function PersistenceStatus({refreshKey = 0}: {refreshKey?: number
     <span
       className={styles.stateBadge}
       data-state="ok"
-      title={`Git backup is active (${journal.branch}). Changes are committed within seconds of saving.`}>
+      title="Backup is active. Every save is copied to a safe location within seconds.">
       Backup on
     </span>
   );

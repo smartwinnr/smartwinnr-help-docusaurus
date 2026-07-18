@@ -439,7 +439,7 @@ function Step2({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
   );
 }
 
-function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
+function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.Dispatch<Action>; saveTick?: number}): ReactNode {
   const [refinement, setRefinement] = useState('');
   const [regeneratingField, setRegeneratingField] = useState<'title' | 'description' | null>(null);
   // Set after a 409 stale-base so the editor's NEXT Save deliberately
@@ -533,7 +533,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
         staleOverrideRef.current = true;
         dispatch({
           type: 'error',
-          message: 'This article changed on the server after you loaded it (another editor saved). Open the queue to review their version, or press Save again to overwrite it with yours.',
+          message: 'Someone else saved this article after you opened it. Check the queue to see their version, or press Save again to replace it with yours.',
         });
         return;
       }
@@ -711,6 +711,7 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
               onChange={(e) => setRefinement(e.target.value)}
             />
             <div className={styles.actions}>
+              <PersistenceStatus refreshKey={saveTick} />
               <button
                 type="button"
                 className={styles.btnGhost}
@@ -735,9 +736,8 @@ function Step3({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           )}
           {state.saved && (
             <p className={styles.savedNote}>
-              Saved to <code>{state.saved}</code>. The draft is hidden in production builds -
-              flip <code>draft: true</code> to <code>false</code> via the publish action when ready.
-              The pill in the header shows whether your work is backed up to git.
+              Your draft is saved. The badge next to Save shows when it's backed up.
+              Drafts stay invisible to readers until you publish from the Authoring queue.
             </p>
           )}
         </>
@@ -786,7 +786,7 @@ function Wizard(): ReactNode {
 
   useEffect(() => {
     if (state.saved) {
-      notify.success(`Saved as draft: ${state.saved}`);
+      notify.success("Draft saved - backing up now. Readers can't see it yet; publish it from the Authoring queue when it's ready.");
       setSaveTick((t) => t + 1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -884,14 +884,14 @@ function Wizard(): ReactNode {
           {state.isEditing ? (
             state.wasPublished ? (
               <p className={styles.subhead}>
-                Refining <code>{state.inputs.slug}</code>. Saving will re-draft
-                this article (set <code>draft: true</code>); the live deployed
-                copy stays in place until you Publish again from the queue.{' '}
+                Refining "{state.inputs.title || state.inputs.slug}". Saving creates a
+                NEW draft of this article - the live version readers see stays unchanged
+                until you publish the new draft from the queue.{' '}
                 <Link to="/admin/authoring/drafts">← Back to queue</Link>
               </p>
             ) : (
               <p className={styles.subhead}>
-                Editing <code>{state.inputs.slug}</code> ·{' '}
+                Editing draft "{state.inputs.title || state.inputs.slug}" ·{' '}
                 <Link to="/admin/authoring/drafts">← Back to drafts queue</Link>
               </p>
             )
@@ -936,7 +936,7 @@ function Wizard(): ReactNode {
 
       {state.step === 1 && <Step1 state={state} dispatch={dispatch} />}
       {state.step === 2 && <Step2 state={state} dispatch={dispatch} />}
-      {state.step === 3 && <Step3 state={state} dispatch={dispatch} />}
+      {state.step === 3 && <Step3 state={state} dispatch={dispatch} saveTick={saveTick} />}
 
       {notify.host}
 

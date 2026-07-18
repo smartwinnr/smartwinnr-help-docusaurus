@@ -144,7 +144,7 @@ function EditorPanel(): ReactNode {
       // Empty alt text on purpose so the editor fills in something meaningful
       // (the alt-text lint rule nudges them).
       insertAtCursor(`![](${data.url})`);
-      notify.success(`Image uploaded as ${data.url.split('/').pop()}.`);
+      notify.success('Image added. It will be published together with the article.');
     } catch (err) {
       notify.error((err as Error).message);
     } finally {
@@ -230,7 +230,7 @@ function EditorPanel(): ReactNode {
       setMarkdown(refined);
       setAudit(data.audit || null);
       setRefinement('');
-      notify.success('Refined. Review the changes, then Save.');
+      notify.success('Refined - review the changes below, then press Save to keep them.');
     } catch (err) {
       notify.error((err as Error).message);
     } finally {
@@ -289,7 +289,7 @@ function EditorPanel(): ReactNode {
     const modLabel = modules.find((m) => m.slug === moveModule)?.label ?? moveModule;
     const ok = await notify.confirm({
       title: 'Move article?',
-      message: `Move to ${modLabel} / ${subLabel}? This changes the article's URL and resets its audience to that folder's default.${isDraft ? '' : ' It ships on the next deploy.'}`,
+      message: `Move to ${modLabel} / ${subLabel}? The article's web address changes (the old address will redirect automatically) and its audience resets to that folder's default.${isDraft ? '' : ' The move goes live with the next site update.'}`,
       confirmLabel: 'Move',
       cancelLabel: 'Cancel',
     });
@@ -314,7 +314,7 @@ function EditorPanel(): ReactNode {
       } catch {/* non-fatal - the move already succeeded */}
       // Keep the URL in sync so a refresh reloads the new location.
       window.history.replaceState(null, '', `/admin/authoring/edit?${new URLSearchParams({path: data.toPath})}`);
-      notify.success(`Moved to ${data.toPath}.${data.queuedForDeploy ? ' Queued for deploy.' : ''}`);
+      notify.success(`Moved to ${modLabel} / ${subLabel}. The old address now redirects automatically.${data.queuedForDeploy ? ' Goes live with the next site update.' : ''}`);
     } catch (err) {
       notify.error((err as Error).message);
     } finally {
@@ -349,9 +349,9 @@ function EditorPanel(): ReactNode {
       setServerHash(data.hash || '');
       setSaveTick((t) => t + 1);
       if (data.queuedForDeploy) {
-        notify.success(`Saved ${data.path}. Queued for deploy - production picks it up on the next batch.`);
+        notify.success('Saved and backing up. Your changes are scheduled for the next site update - watch progress on the Authoring queue.');
       } else {
-        notify.success(`Saved ${data.path} (draft - not queued for deploy until you Publish).`);
+        notify.success("Draft saved and backing up. Publish it from the Authoring queue when you're ready.");
       }
     } catch (err) {
       notify.error((err as Error).message);
@@ -398,10 +398,9 @@ function EditorPanel(): ReactNode {
             <PersistenceStatus refreshKey={saveTick} />
           </h1>
           <p className={styles.subhead}>
-            Saves to <code className={styles.smallCode}>{path || '…'}</code>.{' '}
             {isDraft
-              ? 'A draft does not ship until you Publish from the queue.'
-              : 'Saving queues a deploy; production updates on the next batch.'}{' '}
+              ? "You're editing a draft - readers can't see it until you publish it from the queue."
+              : "You're editing the LIVE article - saved changes go to readers with the next site update."}{' '}
             <Link to="/admin/authoring/drafts">← Back to queue</Link>{' · '}
             <Link to="/admin/authoring/guide">Guide →</Link>
           </p>
@@ -549,6 +548,7 @@ function EditorPanel(): ReactNode {
           )}
 
           <div className={styles.editActions}>
+            <PersistenceStatus refreshKey={saveTick} />
             <input
               ref={fileInputRef}
               type="file"

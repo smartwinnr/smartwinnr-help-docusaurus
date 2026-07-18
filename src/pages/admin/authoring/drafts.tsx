@@ -144,10 +144,10 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
       if (!res.ok) {
         notify.error(data.message || data.error || 'Deploy failed');
       } else if (data.mode === 'noop') {
-        notify.info('Queue cleared (AUTHORING_GIT_PUSH is off - no commit made).');
+        notify.info("Queue cleared - this server isn't connected to the live site (test mode).");
         await refresh();
       } else {
-        notify.success(`Deployed ${data.committed} article(s) - Railway will redeploy in ~2-5 min.`);
+        notify.success(`Publishing ${data.committed} update(s) now. The site rebuilds for a few minutes - readers see the changes when it finishes.`);
         await refresh();
       }
     } catch (err) {
@@ -167,7 +167,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
     const label = item.title || item.slug;
     const ok = await notify.confirm({
       title: `Cancel queued publish?`,
-      message: `Removes "${label}" from the deploy queue and re-drafts it (draft: true). It won't ship. You can re-publish it any time from the Drafts tab.`,
+      message: `Takes "${label}" out of the next site update and turns it back into a draft. Nothing changes for readers. You can publish it again any time.`,
       confirmLabel: 'Cancel publish',
       cancelLabel: 'Keep it queued',
       danger: true,
@@ -186,8 +186,8 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         notify.error(data.error || 'Cancel failed');
       } else {
         notify.success(data.fileMissing
-          ? `Removed "${label}" from the deploy queue (its file was already gone).`
-          : `Canceled "${label}". Re-drafted and removed from the deploy queue.`);
+          ? `Removed "${label}" from the update queue.`
+          : `"${label}" is a draft again - it won't go live.`);
         await refresh();
         await refreshDeployState();
       }
@@ -224,7 +224,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         notify.error(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
         clearWizardStateIfTargets(parsed);
-        notify.success(`Published "${d.title}".`);
+        notify.success(`Published "${d.title}" - it goes live with the next site update (see the banner above).`);
         await refresh();
       }
     } finally {
@@ -236,7 +236,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   async function remove(d: Draft) {
     const ok = await notify.confirm({
       title: `Delete "${d.title}"?`,
-      message: 'This removes the file from docs/. The action cannot be undone.',
+      message: `Deletes the draft "${d.title}". Readers never saw it. An admin can recover it from the trash for up to 30 days.`,
       confirmLabel: 'Delete draft',
       cancelLabel: 'Keep it',
       danger: true,
@@ -257,7 +257,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         notify.error(data.error || 'Delete failed');
       } else {
         clearWizardStateIfTargets(parsed);
-        notify.success(`Deleted "${d.title}".`);
+        notify.success(`Deleted "${d.title}". (Recoverable by an admin for 30 days.)`);
         await refresh();
       }
     } finally {
@@ -277,15 +277,21 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         <>
         <div className={styles.deployStrip}>
           <div>
-            <strong>{deployState.queue.length}</strong> change(s) queued ({parts.join(', ')}), waiting to deploy.
-            {!deployState.canDeployNow && (
+            <strong>{deployState.queue.length}</strong> update{deployState.queue.length === 1 ? '' : 's'} ready to go live ({parts.join(', ')}).
+            {deployState.canDeployNow ? (
               <span className={styles.hint}>
-                {' '}Next deploy available in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
+                {' '}They publish together automatically ~30 min after your last change, or press Deploy now.
+              </span>
+            ) : (
+              <span className={styles.hint}>
+                {' '}They publish together automatically; Deploy now unlocks in ~{Math.max(1, Math.ceil((deployState.minIntervalMs - (Date.now() - deployState.lastDeployTs)) / 60000))} min.
               </span>
             )}
             {!deployState.configOk && deployState.queue.length > 0 && (
-              <span className={styles.warn}>
-                {' '}⚠ Deploy is set to no-op (AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITHUB_REPO not all set).
+              <span
+                className={styles.warn}
+                title="AUTHORING_GIT_PUSH / GIT_PUSH_TOKEN / GITHUB_REPO are not all set on this server.">
+                {' '}⚠ Publishing to the live site isn't set up on this server - tell an admin.
               </span>
             )}
           </div>
@@ -317,11 +323,11 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
                     className={styles.btnGhost}
                     disabled={busy === item.path}
                     onClick={() => cancelQueued(item)}
-                    title="Re-draft this article and remove it from the deploy queue.">
+                    title="Take this article out of the next site update and turn it back into a draft.">
                     Cancel
                   </button>
                 ) : (
-                  <span className={styles.hint}>{isDelete ? 'Drops on deploy' : '—'}</span>
+                  <span className={styles.hint}>{isDelete ? 'Removed on next update' : '—'}</span>
                 )}
               </li>
             );
@@ -333,7 +339,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
 
       {deployState?.lastValidationError && (
         <div className={styles.warn} role="alert">
-          <strong>⚠ The last deploy was blocked</strong> - it would have broken the production build:
+          <strong>⚠ The last update was blocked</strong> - it would have broken the live site:
           <ul>
             {deployState.lastValidationError.errors.slice(0, 5).map((e, i) => (
               <li key={i}>{e.message}</li>
@@ -342,21 +348,21 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
               <li>…and {deployState.lastValidationError.errors.length - 5} more</li>
             )}
           </ul>
-          Fix the issue(s), then press Deploy now again. Nothing was committed.
+          Fix the issue(s), then press Deploy now again. Nothing was published, and nothing was lost.
         </div>
       )}
 
       {deployState?.journal?.enabled && deployState.journal.lastError && (
         <div className={styles.warn} role="alert">
-          <strong>⚠ Git backup is failing</strong> — recent changes exist on this server only
-          and a restart could lose them: {deployState.journal.lastError.message}
+          <strong>⚠ Backup is failing</strong> — recent changes exist on this server only and
+          could be lost if it restarts. Tell an admin now: {deployState.journal.lastError.message}
         </div>
       )}
 
       {deployState?.journal?.conflicts && deployState.journal.conflicts.length > 0 && (
         <div className={styles.warn} role="alert">
-          <strong>⚠ Restore conflicts</strong> — these files changed on the publish branch while
-          an unshipped edit existed; the authored version was kept:
+          <strong>⚠ Heads up</strong> — these articles were changed in two places at once.
+          The version saved through this tool was kept; review them:
           <ul>
             {deployState.journal.conflicts.slice(0, 5).map((p) => (<li key={p}><code>{p}</code></li>))}
             {deployState.journal.conflicts.length > 5 && (
@@ -368,7 +374,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
 
       <div className={styles.tabToolbar}>
         <span className={styles.hint}>
-          Articles flagged <code>draft: true</code>. Hidden in production builds.
+          Drafts are only visible here - readers never see them until you publish.
         </span>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>
           Refresh
@@ -472,7 +478,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
   async function remove(a: Article) {
     const ok = await notify.confirm({
       title: `Delete "${a.title}"?`,
-      message: `This removes a PUBLISHED article from docs/. The change ships on the next deploy. The action cannot be undone.`,
+      message: `Removes "${a.title}" from the live help site with the next site update. Its web address will redirect readers to the module page. An admin can recover the content from the trash for up to 30 days.`,
       confirmLabel: 'Delete article',
       cancelLabel: 'Keep it',
       danger: true,
@@ -491,10 +497,10 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
       } else {
         const data = await res.json().catch(() => ({}));
         const imgNote = data.imagesRemoved > 0
-          ? ` Also removed ${data.imagesRemoved} associated image${data.imagesRemoved === 1 ? '' : 's'}.`
+          ? ` Its ${data.imagesRemoved} screenshot${data.imagesRemoved === 1 ? '' : 's'} ${data.imagesRemoved === 1 ? 'was' : 'were'} removed too.`
           : '';
         if (data.queuedForDeploy) {
-          notify.success(`Deleted "${a.title}".${imgNote} Queued for deploy - production drops it on the next deploy.`);
+          notify.success(`Deleted "${a.title}".${imgNote} It disappears from the site with the next update.`);
         } else {
           notify.success(`Deleted "${a.title}".${imgNote}`);
         }
@@ -514,7 +520,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
     if (!parsed) { notify.error('Could not parse path'); return; }
     const ok = await notify.confirm({
       title: `Unpublish "${a.title}"?`,
-      message: `This re-drafts the article (sets draft: true). If the publish hasn't deployed yet, it's canceled and nothing ships. If it's already live, production hides it on the next deploy. You can re-publish it any time from the Drafts tab.`,
+      message: `Hides "${a.title}" from readers. If it hasn't gone live yet, it simply won't ship. If it's already live, it disappears with the next site update. You can publish it again any time.`,
       confirmLabel: 'Unpublish',
       cancelLabel: 'Keep published',
       danger: true,
@@ -532,10 +538,10 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
       if (!res.ok) {
         notify.error(data.error || 'Unpublish failed');
       } else if (data.canceledPendingPublish) {
-        notify.success(`Unpublished "${a.title}". Pending publish canceled - nothing will deploy.`);
+        notify.success(`"${a.title}" is a draft again - the pending publish was canceled.`);
         await refresh();
       } else {
-        notify.success(`Unpublished "${a.title}". Queued for deploy - production hides it on the next deploy.`);
+        notify.success(`"${a.title}" will be hidden from readers on the next site update.`);
         await refresh();
       }
     } catch (err) {
@@ -603,7 +609,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
                   <Link
                     to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
                     className={styles.btnGhost}
-                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata. Saving queues a deploy.">
+                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata. Saved changes go live with the next site update.">
                     Edit
                   </Link>
                   <button
@@ -611,7 +617,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
                     className={styles.btnGhost}
                     disabled={busy === a.path}
                     onClick={() => unpublish(a)}
-                    title="Re-draft this article (draft: true). Cancels a pending publish, or hides it from production on the next deploy.">
+                    title="Turn this article back into a draft - readers stop seeing it on the next site update.">
                     Unpublish
                   </button>
                   <button

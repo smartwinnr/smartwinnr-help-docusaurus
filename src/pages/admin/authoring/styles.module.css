@@ -267,6 +267,7 @@
 /* Buttons */
 .actions {
   display: flex;
+  align-items: center;
   gap: var(--space-2);
   margin-top: var(--space-5);
 }
@@ -750,6 +751,7 @@
 /* Bottom action bar - centered, with a divider separating it from the content. */
 .editActions {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: var(--space-2);
   border-top: 1px solid var(--ifm-color-emphasis-200);
