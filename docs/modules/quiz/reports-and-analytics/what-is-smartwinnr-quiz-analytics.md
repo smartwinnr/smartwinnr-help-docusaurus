@@ -1,14 +1,12 @@
 ---
 id: 5fd4955723119734ee37edb5
-title: What is SmartWinnr Quiz Analytics?
-description: >-
-  SmartWinnr provides a very detailed set of analytics on every quiz that you
-  have created and assigned to people.
+title: "Understanding the Quiz Analytics and Report"
+description: "Understand how to access and interpret detailed analytics for quizzes created in SmartWinnr, including participation rates, scores, and individual responses."
 slug: what-is-smartwinnr-quiz-analytics
 sidebar_position: 53
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-18
+  author: Anagha Isal
 source:
   helpscout_id: 5fd4955723119734ee37edb5
   helpscout_url: 'https://help.smartwinnr.com/article/53-what-is-smartwinnr-quiz-analytics'
@@ -20,50 +18,57 @@ customProps:
 tags:
   - quiz
   - reports
+draft: false
 ---
-SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.
 
-**Go to EDITOR > LEARNING AND KNOWLEDGE >** **Questions and Quizzes > View All Quizzes**
+> **At a glance** - SmartWinnr's quiz analytics report provides detailed insights into quiz performance, including participation rates, average scores, and individual user responses.
 
-![SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-1.png)
+SmartWinnr provides a comprehensive set of analytics for every quiz you create and assign. These analytics help you understand how participants are engaging with your quizzes and their performance.
 
-This list shows the quizzes that you have created. For every quiz, it shows a summary of
+## When to use this
+Use the quiz analytics report to:
 
-1. **Participation** – The overall participation percentage along with actual numbers. For example, in the screenshot, it shows that the participation for the quiz 'Sales Objection Handling' till now is 60%, with 6 person out of 10 have taken the quiz.
-2. **Percentage Score** – The average percentage score of all the people who have taken the quiz till now.
-3. **Status** – This shows the status of the quiz – whether it's still active, or closed or yet to start
-4. **Analytics** – This is a button that will take you to detailed analytics of the quiz where the participation of the quiz is displayed.
+- Evaluate participant engagement and participation rates.
+- Analyze average scores to assess the effectiveness of your quiz.
+- Review individual responses to identify areas for improvement or common misconceptions.
 
-![Analytics – This is a button that will take you to detailed analytics of the quiz where the participation of the quiz is displayed.](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-2.png)
+## Steps
 
-5. **Download report** – This will give you a detailed report on the quiz in an Excel format.
+### 1. Access the Quiz Analytics Report
+Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**.
 
-**Download the report** **from Analytics:**
+![Access the Quiz Analytics Report](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-1.png)
 
-When you click on the analytics button, it will open the below pop-up. The reports will contain 4 sheets as given below. The editor can select the required sheets and click on the **Download** button.
+This list displays all quizzes you've created. Switching to **Other quizzes** tab will display all the quizzes you have provided access to. 
 
-![When you click on the analytics button, it will open the below pop-up. The reports will contain 4 sheets as given below. The editor can sele](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-3.png)
+For each quiz, you can view:
 
-* **Participants:**
+1. **Participation** – The overall participation percentage along with actual numbers. For example, the quiz 'Sales Objection Handling' shows a participation rate of 60%, with 6 out of 10 participants having taken the quiz.
+2. **Percentage Score** – The average percentage score of all participants who have completed the quiz.
+3. **Status** – The current status of the quiz, indicating whether it is active, closed, or yet to start.
+4. **Analytics** – Click this button to access detailed analytics for the quiz, including participation metrics.
+5. **Download Icon**: Click this icon to download the detailed report on selected quiz.
 
-This report will show the participation of the users in the quiz, whether they participated or not; it will also provide the quiz score of the participants.
+### Download the Quiz Report
 
-![This report will show the participation of the users in the quiz, whether they participated or not; it will also provide the quiz score of t](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-4.png)
+To download a detailed report, click on the **Download** icon against the quiz.
 
-* **Participant-Answer-Analysis-Reports**
+This will open a pop-up window where you can select the sheets/data you want to include in your report. The report contains four sheets:
 
-This report will provide a detailed report on the options selected by the users for each questions.
+![](/img/helpscout/authored/what-is-smartwinnr-quiz-analytics-mrq0s7mp.png)
 
-![This report will provide a detailed report on the options selected by the users for each questions.](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-5.png)
+- **Participants**: This sheet provided the overall status of the quiz participants including their completion status scores, number of correct/incorrect answers, quiz submmitted date etc.
 
-* **Quiz-Details**
+![Participants Sheet](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-4.png)
 
-This report will provide you the details of the quiz.
+- **Participant Answer Analysis Reports**: This sheet provides a detailed breakdown of the options selected by participant along with the score obtained for each question, allowing you to see trends in responses.
 
-![This report will provide you the details of the quiz.](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-6.png)
+![Participant Answer Analysis Reports](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-5.png)
 
-4. **Quiz-Questions-Details**
+- **Quiz Details**: This sheet contains the overall details of the quiz, including its settings and configurations.
 
-This report will give you the questions in the quiz.
+![Quiz Details](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-6.png)
 
-![This report will give you the questions in the quiz.](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-7.png)
+- **Quiz Questions Details**: This sheet lists all the questions included in the quiz, providing insight into the content being assessed.
+
+![Quiz Questions Details](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-7.png)

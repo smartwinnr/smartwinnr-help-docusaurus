@@ -14,10 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/304-how-to-create-assignment-in-smartpath
 customProps:
-  roles:
-    - editor
-    - admin
-  privilege: smartpaths
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartpath
   - admin

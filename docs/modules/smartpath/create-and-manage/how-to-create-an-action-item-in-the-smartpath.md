@@ -1,6 +1,6 @@
 ---
 id: 696f3433e924466a410b9501
-title: How to create an action item in the SmartPath
+title: "How to create an action item in the SmartPath?"
 description: >-
   Action items are tasks or checklists that learners must complete as part of
   the learning journey.
