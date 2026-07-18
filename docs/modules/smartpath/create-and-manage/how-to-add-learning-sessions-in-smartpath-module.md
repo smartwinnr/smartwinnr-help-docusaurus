@@ -7,8 +7,8 @@ description: >-
 slug: how-to-add-learning-sessions-in-smartpath-module
 sidebar_position: 242
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-18
+  author: Charan
 source:
   helpscout_id: 60a645beeb3af44cc120aa6d
   helpscout_url: >-
@@ -22,59 +22,77 @@ tags:
   - smartpath
   - admin
 ---
-Your SmartPaths can be enhanced with **Learning Sessions** to provide scheduled instructor-led or facilitated activities as part of the learning journey.
 
-SmartWinnr allows you to set up Learning sessions as part of the SmartPath. There are two types of learning sessions available in SmartWinnr:
+> **At a glance** - A Learning Session is a scheduled, instructor-led segment inside a SmartPath module. It can be a physical classroom session or a virtual session, with an optional calendar invitation for learners.
 
-* **Classroom Learning Session** \- This is basically an offline classroom session where the training is scheduled on SmartWinnr and users have to attend the classroom training session physically.
-* **Virtual Learning Session** \- This is an online session conducted on any virtual platform like Zoom, Google meet, etc where the learning session can be scheduled under the Smartwinnr platform.
+SmartWinnr supports two types of Learning Sessions:
 
-To conduct and schedule a learning session, the editor must create a **SmartPath Module** under which either an **offline classroom session** or an **online virtual session** can be scheduled. Creating a SmartPath Module for learning sessions follows the same process as creating modules for **quizzes, surveys, or SmartFeeds**.
+* **Classroom Session** - an offline session. The training is scheduled on SmartWinnr, and learners attend in person at the given location.
+* **Virtual Session** - an online session conducted on a platform like Zoom, Microsoft Teams, or Google Meet, scheduled through SmartWinnr with a join link.
 
-A module can include a mix of segment including learning sessions and other segments like quiz/SmartFeed etc.
+## Before you start
 
-Please follow the below steps to add a Learning session to your SmartPath Module:
+Learning Sessions are created inside a **SmartPath module**, the same way you add quiz, survey, or SmartFeed segments. A single module can mix Learning Sessions with other segment types.
 
-a) Go to  **EDITOR** > **LEARNING AND KNOWLEDGE** > **SmartPaths** > **View All Modules**
+## Steps
 
-b) Here, create a new module or select the module in which you would like to add a Learning session.
+### 1. Open your module
 
-![b) Here, create a new module or select the module in which you would like to add a Learning session.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-1.jpg)
+Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All Modules**. Create a new module or select the module where you want the session.
 
-c) Once your module is created or selected, go to step 2, where you add Segments to your module.  _Click_ on the '**Add Segment** _button_ at the _top right corner_ of the page.
+![Here, create a new module or select the module in which you would like to add a Learning session.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-1.jpg)
 
-![c) Once your module is created or selected, go to step 2, where you add Segments to your module. Click on the 'Add Segment button at the top](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-2.jpg)
+### 2. Add a segment
 
-d) To create a segment that is basically the classroom/virtual session,  _choose_ the option- **Learning Session** in the '**Select Segment Type**' dropdown as shown below.
+In the module's segments step, click **Add Segment** at the top right corner.
 
-![d) To create a segment that is basically the classroom/virtual session, choose the option- Learning Session in the 'Select Segment Type' dro](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-3.png)
+![Once your module is created or selected, go to step 2, where you add Segments to your module. Click on the Add Segment button at the top right.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-2.jpg)
 
-e) After selecting the Learning Session,  _enter_ the 'Name' for the segment and you can select how many points the user will get after completing this segment under **Point Distribution>> On Completion** and click on the '**Create**' button. This will successfully create your segment for Learning Session. Refer to the below picture for reference.
+### 3. Choose the Learning Session segment type
 
-![e) After selecting the Learning Session, enter the 'Name' for the segment and you can select how many points the user will get after complet](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-4.jpg)
+In the **Select Segment Type** dropdown, choose **Learning Session**.
 
-f) Once the learning segment is created, it will take you to the following page where you can fill in the details of the Learning Session.
+![To create a segment that is the classroom/virtual session, choose the option Learning Session in the Select Segment Type dropdown.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-3.png)
 
-* **Title** for your session
-* **Description**\- You can mention the details about the training in the description (Optional).
-* **Session type** where you can find two options: **Virtual Session and Classroom Session.**
-  * **Virtual Session:** Virtual session says that you are going to conduct your training virtually through some online platform. When you choose the session type as Virtual Session, in the further steps, the system will ask you to provide the link where the meetings can be conducted virtually. (Example: Microsoft Teams, Google Meet)
-  * **Classroom Session:** This is like the normal classroom sessions where the trainer and trainees come in tow a classroom or conference Hall to attend the training. When you choose the session type as Classroom Session, in the further steps, the system will ask you to mention the address of the place where the session will be conducted.
+### 4. Name the segment and set points
 
-![](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-5.jpg)
+Enter a **Name** for the segment. Under **Point Distribution > On Completion**, set how many points learners earn for attending. Then click **Create**.
 
-You can also send a calendar invitation for the scheduled training session so that the user can be prepared for the training. Enable the **Send Calendar Invitation** option to send the invitation.
+![After selecting the Learning Session, enter the Name for the segment and set the completion points under Point Distribution, then click Create.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-4.jpg)
 
-![You can also send a calendar invitation for the scheduled training session so that the user can be prepared for the training. Enable the Sen](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-6.jpg)
+### 5. Fill in the session details
 
-When the Editor enables the calendar invite, the user will receive the invitation as shown below, based on the session details provided in the **SmartPath Batch**.
+The session setup page opens. Enter:
 
-![When the Editor enables the calendar invite, the user will receive the invitation as shown below, based on the session details provided in t](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-7.png)
+* **Title** - the session name learners see.
+* **Description** - details about the training (optional).
+* **Image** - an optional cover image for the session.
+* **Session Type** - choose one:
+  * **Virtual Session:** the training happens online. Later, at batch creation, the system asks for the meeting link (for example, Microsoft Teams or Google Meet).
+  * **Classroom Session:** the trainer and learners meet in a classroom or conference hall. Later, at batch creation, the system asks for the session location.
 
-Then click on the **Save button** to complete creating the learning session.
+![Session details form with Title, Description, and Session type](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-5.jpg)
+
+### 6. Send a calendar invitation (optional)
+
+Enable **Send Calendar Invitation** so learners receive the session in their calendar and can plan ahead.
+
+![You can also send a calendar invitation for the scheduled training session. Enable the Send Calendar Invitation option to send the invitation.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-6.jpg)
+
+When enabled, learners receive an invitation based on the session details provided in the **SmartPath Batch**:
+
+![When the Editor enables the calendar invite, the user receives the invitation based on the session details provided in the SmartPath Batch.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-7.png)
+
+### 7. Save
+
+Click **Save** to finish creating the Learning Session.
 
 ![Then click on the Save button to complete creating the learning session.](/img/helpscout/editors/how-to-add-learning-sessions-in-smartpath-module-8.jpg)
 
-Once your Module is created with the Learning session segment, you need to attach this module to a SmartPath to assign this to the users who will take the training.
+## Next steps
 
-[Click here](https://help.smartwinnr.com/article/248-how-to-create-a-learning-session-for-smartpaths) to learn more on how to attach a module with a learning session to SmartPath.
+Attach this module to a SmartPath and assign it to learners. The exact session date, time, instructor, and link/location are entered when you create the **batch** - see [How to Create SmartPath with Learning Sessions](./how-to-create-smartpath-with-learning-sessions.md).
+
+After the session, the instructor marks attendance - the segment turns **Completed** for each learner only once attendance is recorded. Attendance can be marked per user, in bulk, or through a QR code that learners scan at the session. See [how to mark attendance for Learning Sessions](../for-managers/how-to-mark-the-attendance-for-users-in-learning-sessions.md).
+
+![the QR-code attendance option](/img/helpscout/authored/how-to-add-learning-sessions-in-smartpath-module-mrpxx94h.png)
