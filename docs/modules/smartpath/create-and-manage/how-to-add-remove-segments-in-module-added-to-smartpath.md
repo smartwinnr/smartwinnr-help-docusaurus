@@ -5,8 +5,8 @@ description: You can add or remove any segments from module as per the requireme
 slug: how-to-add-remove-segments-in-module-added-to-smartpath
 sidebar_position: 297
 last_update:
-  date: 2026-07-16
-  author: Sruthi Suresh
+  date: 2026-07-18
+  author: Charan
 source:
   helpscout_id: 696c7d311e938328836da344
   helpscout_url: >-
@@ -19,7 +19,6 @@ customProps:
 tags:
   - smartpath
   - admin
-draft: false
 ---
 
 > **At a glance** - Use the SmartPath Sync feature to add or remove segments from modules in SmartPath, ensuring learners always see the most current version.
@@ -59,6 +58,12 @@ Open the SmartPath, and it will show you a message confirming the SmartPath Sync
 ### 7. Sync Changes
 Click on **Yes** to confirm the sync and reflect the changes made in the module.
 
+## Making a segment optional instead of removing it
+
+If you only want to stop enforcing a segment for a live SmartPath, you do not have to delete it. Open the SmartPath's segment view and use the **Update Optional Segments** option (available when enabled for your organization) to change each segment's **Is Mandatory?** flag. Optional segments stay visible to learners but no longer block completion.
+
+![the Update Segments pop-up showing the Is Mandatory toggle per segment ](/img/helpscout/authored/how-to-add-remove-segments-in-module-added-to-smartpath-mrpxhusr.png)
+
 ## Segment Addition/Deletion Sync
 When segments are added or removed from a module, the same changes can be synced to the SmartPath. This ensures that learners always see the most current version of the module in their SmartPath.
 
@@ -77,9 +82,10 @@ The sync feature is applied to the following segment types:
 No change made inside a content/segment will be identified to sync a segment.
 
 ## Score & Completion Status
-For users who haven’t completed the module yet, their score and completion status will be updated based on the synced content. For learners who have already completed the SmartPath, the completion status and scores will remain unchanged. This ensures accurate tracking of learner progress.
+For users who haven't completed the module yet, their score and completion status will be updated based on the synced content. Removing a segment a learner had completed also subtracts its points from their score, and can move them back to In Progress. For learners who have already completed the SmartPath, the completion status and scores will remain unchanged. Batches whose end date has passed are not updated by the sync. This ensures accurate tracking of learner progress.
+
+The sync feature also updates segment order: when you reorder segments in the module, the SmartPath and existing learner instances are rearranged to match the module's order on the next sync.
 
 Following changes made in the module will not be applied in the sync feature:
-- Reordering the segments will not get updated in Sync.
-- Updating the rule for segments in the module (e.g., visibility conditions, prerequisites) will not be synced to the SmartPath.
+- Editing an existing segment's access rules (e.g., visibility conditions, prerequisites) will not trigger a sync on its own. Rules attached to newly added segments are carried over when those segments sync.
 - If the segment included is a learning session, it will not get updated to the existing batches created for the SmartPath. The new learning session will be applied to the new batches that will get created for the SmartPath.

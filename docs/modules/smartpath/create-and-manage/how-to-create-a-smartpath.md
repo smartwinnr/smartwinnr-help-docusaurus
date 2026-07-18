@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-smartpath
 sidebar_position: 78
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-17
+  author: Charan
 source:
   helpscout_id: 5fd711e636980410c9123b73
   helpscout_url: 'https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath'
@@ -21,101 +21,93 @@ tags:
   - smartpath
   - admin
 ---
-A **SmartPath** is a structured sequence of learning modules designed to guide learners step by step through a curated learning journey. Before creating a SmartPath, ensure you have already created the individual modules that you want to include.
 
-_Prerequisite: Please refer to the_ [_article on creating modules_](https://smartwinnr.helpscoutdocs.com/article/76-how-can-i-create-a-module-for-smartpath) _before you proceed with creating SmartPath_
+> **At a glance** - Creating a SmartPath is a four-part flow: create the SmartPath, add modules with rules and milestones, assign learner batches, and (if coaching is included) add coaches.
+
+A **SmartPath** is a structured sequence of learning modules that guides learners step by step through a curated journey.
+
+## Before you start
+
+Create the modules you want to include first - see [How to create a module for SmartPath](./how-to-create-a-module-for-smartpath.md).
 
 ## Step 1: Create New SmartPath
 
-1. Navigate to: **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths**.
+Navigate to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths** and click **Create SmartPath** at the top right corner.
 
-    Click the **Create SmartPath** button at top right corner.
+Enter the basic details:
 
-    In the SmartPath setup screen, enter the following basic details:
+* **Business Unit:** Select the relevant unit. (The label of this field can vary by organization.)
+* **Course Type:** Tag the SmartPath by delivery style - **Blended**, **ILT** (Instructor-Led Training), **E-Learning**, or **Classroom**. Defaults to **None**.
+* **Type:** Classify the SmartPath as **Mandatory** or **Optional** (defaults to **None**). This classification is informational and does not enforce completion.
+* **SmartPath Title:** A clear name for the SmartPath. Required.
+* **SmartPath Code:** A code that helps you uniquely identify the SmartPath.
+* **Description:** A short summary of what the SmartPath covers.
 
-    * **Business Unit**: Select the relevant unit.
+The SmartPath itself has no start or end date - scheduling happens later, per batch, when you assign learners (Step 3).
 
-        **Course type**: You can tag your SmartPath based on the type of content it includes-such as Blended, ILT (Instructor-Led Training), E-learning, or Classroom.
+You may also:
 
-        **Type:** SmartPaths can be classified as Mandatory or Optional. This classification is informational and does not trigger any system-enforced completion requirements.
+* Change the **language** of the SmartPath (per-language content tabs).
+* Update the **cover image** and **theme color**.
+* Enable **Add Score to Global Leaderboard On Completion** if the SmartPath score should count toward your organization's leaderboard. When enabled, a required **Completion Points** field appears - the points learners earn for finishing the whole SmartPath.
+* Select a **Completion Certificate** to award on finishing.
+* For ILT course types, an **Enforce Visibility Restriction** option can appear when enabled for your organization.
 
-        **SmartPath Title**: Provide a clear name for your SmartPath.
+![SmartPath creation form](/img/helpscout/editors/how-to-create-a-smartpath-1.png)
 
-        **SmartPath Code:** You can give a SmartPath code which helps you to uniquely identify the SmartPath.
+Change the Cover Image and Color using these icons:
 
-        **Description**: Add a short summary of what the SmartPath covers, which helps the learners.
+![You can change the Cover Image and Color of the SmartPath using the icons below.](/img/helpscout/editors/how-to-create-a-smartpath-2.png)
 
-        You may also:
+Select a **Completion Certificate** to award participants when they finish. Create the certificate in advance so it appears in the list.
 
-        * Change the **language** of the SmartPath.
-        * Update the **cover image** and **theme color**.
-        * Upload a **completion certificate** to reward participants on finishing the SmartPath.
+![You can also add a Completion Certificate that would be awarded to the participants on the completion of the SmartPath.](/img/helpscout/editors/how-to-create-a-smartpath-3.png)
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-1.png)
+Click **Save SmartPath** to move to the next step.
 
-You can change the Cover Image and Color of the SmartPath using the icons below:
+## Step 2: Add Modules to the SmartPath
 
-[![You can change the Cover Image and Color of the SmartPath using the icons below:](/img/helpscout/editors/how-to-create-a-smartpath-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6015004b1f25b9041beb997d/file-JHjOQfvCWt.png)
-
-You can also add a  **'Completion Certificate'** that would be awarded to the participants on the completion of the SmartPath, using the option below. Make sure the certificate is created in advance so that you can select the required certificate for the SmartPath completion.
-
-![You can also add a 'Completion Certificate' that would be awarded to the participants on the completion of the SmartPath, using the option b](/img/helpscout/editors/how-to-create-a-smartpath-3.png)
-
-3. Click **Save SmartPath** to move to the next step.  This will take you to the next step in the creation of SmartPath.
-
-## **Step 2: Add Modules to the SmartPath**
-
-1. On the next screen, you will see a list of available modules. Use the search or business unit filter to find specific modules.
+1. The next screen lists available modules. Use the search or business unit filter to find them.
 
 ![On the next screen, you will see a list of available modules. Use the search or business unit filter to find specific modules.](/img/helpscout/editors/how-to-create-a-smartpath-4.png)
 
-2. Select the desired modules and click **Add Selected**.
-3. The modules you choose will be added to the SmartPath.
+2. Select the modules you want and click **Add Selected**. The chosen modules attach to the SmartPath:
 
-Then it opens the following page where the list of modules assigned to the SmartPath is shown:
+![Then it opens the following page where the list of modules assigned to the SmartPath is shown.](/img/helpscout/editors/how-to-create-a-smartpath-5.png)
 
-![Then it opens the following page where the list of modules assigned to the SmartPath is shown:](/img/helpscout/editors/how-to-create-a-smartpath-5.png)
+3. Change the order with **Reorder Modules** - drag modules into the preferred sequence, then click **Save**.
 
-4. You can change the order of modules by clicking **Re-order Modules** and dragging them into the preferred sequence. Once done, _click_ on the **'Save'** button to save the changes.
+![You can change the order of modules by clicking Re-order Modules and dragging them into the preferred sequence.](/img/helpscout/editors/how-to-create-a-smartpath-6.png)
 
-    [![You can change the order of modules by clicking Re-order Modules and dragging them into the preferred sequence. Once done, click on the 'Sav](/img/helpscout/editors/how-to-create-a-smartpath-6.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/60165f37ac2f834ec5383989/file-wC8ihdMKFE.png)
+4. Optionally set **module access rules**. Rules apply from the second module onwards and control progression. Click **Manage Rules** beside a module:
 
-5. Optionally, you can set **module access rules** based on:
-    * Completion of a previous module
-    * A specific date and time
-    * Achieving a certain score in a prior module
+![To apply rules, click on the Manage Rules button that is beside each module. It opens the following pop-up.](/img/helpscout/editors/how-to-create-a-smartpath-7.png)
 
-NB: These rules are applied from the **second module onwards** and help control the learning path progression.
+* **By Day:** Select the day and time from which the module opens, then click **Add Rule**.
 
-To apply rules, _click_ on the **'Manage Rules'** button that is beside each module. It opens the following pop-up:
+![By Day rule](/img/helpscout/editors/how-to-create-a-smartpath-8.png)
 
-![To apply rules, click on the 'Manage Rules' button that is beside each module. It opens the following pop-up:](/img/helpscout/editors/how-to-create-a-smartpath-7.png)
+* **On Completion:** Select a prerequisite module. Learners access this module only after completing it. Click **Add Rule**.
 
-* **By Day****:** If you select the Type as By Day, then you have to select a day and time at which the module can be accessed. Once you enter these details, _click_ on the **'Add Rule'** button to add the module successfully.
+![On Completion rule](/img/helpscout/editors/how-to-create-a-smartpath-9.png)
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-8.png)
+* **By Score:** Choose a module, a **Score**, and a **Comparator** (**Less than**, **Greater than**, **Equal to**). Learners unlock this module only when they meet the threshold.
 
-* **On Completion****:** If you select **'On Completion'**, you have to select a module. Only upon completion of this module, the participants will be able to access the next module. _Click_ on **'Add Rule'** once done.
+![By Score rule](/img/helpscout/editors/how-to-create-a-smartpath-10.png)
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-9.png)
+5. Optionally assign **milestones** - badges or certificates awarded when a learner completes a module. Click **Manage Milestone** next to the module:
 
-* **By score****:** If you select this option, you have to choose a module in Modules. Only on achieving the threshold score that is set for this module, the participant will be able to access the next module. For example, you can say that only if someone gets a score of 10 in the previous module, he will be able to access the next module.  As shown in the screenshot below, You can set a Score and a Comparator--  **'Less Than', 'Greater Than', 'Equal To'**
+![To configure a milestone for a module, click Manage Milestone next to the relevant module.](/img/helpscout/editors/how-to-create-a-smartpath-11.png)
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-10.png)
+Select the badge or certificate and click **Save**:
 
-6. You can assign milestones to individual modules, such as badges or certificates, which learners receive upon completion. To configure a milestone for a module, click **Manage Milestone** next to the relevant module.
+![It will open up the following pop-up where you can select the required badge/certificate and click Save.](/img/helpscout/editors/how-to-create-a-smartpath-12.png)
 
-![You can assign milestones to individual modules, such as badges or certificates, which learners receive upon completion. To configure a mile](/img/helpscout/editors/how-to-create-a-smartpath-11.png)
+## Step 3: Assign Batches
 
-It will open up the following pop-up where you can select the required badge/certificate and click '**Save**'.
+SmartPath assignments are created in **batches**, so the same SmartPath can be reused for different learner groups without rebuilding it.
 
-![It will open up the following pop-up where you can select the required badge/certificate and click 'Save'.](/img/helpscout/editors/how-to-create-a-smartpath-12.png)
-
-## **Step 3: Assign Batches**
-
-The next step is to assign the SmartPath to the required set of learners. In SmartPath, assignments are created in **batches**. The idea behind batches is that the same SmartPath can be reused multiple times for different groups of learners. This eliminates the need to recreate the SmartPath each time a new set of users is enrolled for the same course.
-
-1. After modules are added to the SmartPath, to create the batch of learners for the SmartPath, click **View Batches** at the top right.
+1. Click **View Batches** at the top right.
 
 ![After modules are added to the SmartPath, to create the batch of learners for the SmartPath, click View Batches at the top right.](/img/helpscout/editors/how-to-create-a-smartpath-13.png)
 
@@ -123,45 +115,37 @@ The next step is to assign the SmartPath to the required set of learners. In Sma
 
 ![Select Create Batch.](/img/helpscout/editors/how-to-create-a-smartpath-14.png)
 
-3. Fill the below details to create the batch:
+3. Fill in the batch details:
 
 * **Batch Name**
-* **Duration of the batch** \- start date/time and edit date/time
-* **Due date of the batch** \- This date is displayed on the learner’s calendar as the deadline to complete the SmartPath.
+* **Duration of the batch** - start date/time and end date/time, with the timezone (changeable via **Change**). This is where the SmartPath's schedule actually lives - each batch has its own window.
+* **Due Date of the batch** - shown on the learner's calendar as the deadline to complete the SmartPath (availability can depend on your organization's configuration).
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-15.png)
+![Batch details form](/img/helpscout/editors/how-to-create-a-smartpath-15.png)
 
-3. If learning sessions are included as part of the SmartPath, you can enter the session details for the batch. The following details are **required** for each learning session:
+4. If the SmartPath includes Learning Sessions, enter the session details for this batch - date, time, instructor, and link or location. See [How to Create SmartPath with Learning Sessions](./how-to-create-smartpath-with-learning-sessions.md) for the full field reference.
 
-* **Start Date & Time:** Specify when the session begins.
-* **End Date & Time:** Specify when the session ends.
-* **Instructor:** Specify the instructor who will conduct the session. The instructor may or may not have a SmartWinnr account. If an account exists, start typing to select the instructor from the list; otherwise, enter the instructor’s name manually.
-* **Session Link:** Mandatory for **virtual sessions**. Provide the link learners will use to join the session.
-* **Session Location:** Mandatory for **classroom sessions**. Specify the location where the session will be conducted.
-* **Session Details:** Topic covered in the session or any additional information you would like learners to know before joining the session. You can include clear objectives for the session here so learners understand what they will achieve. This field can also be used to communicate any prerequisites to learners in advance.
+![Learning session details at batch creation](/img/helpscout/editors/how-to-create-a-smartpath-16.png)
 
-![](/img/helpscout/editors/how-to-create-a-smartpath-16.png)
+5. Select the users for the batch. Filter participants by business unit, country, group, and more.
 
-3. Once the batch details are filled, you can select the users for the batch. You can filter participants by business unit, country, group etc
-4. You can also add reminders for the users notifying them to complete their training and attend the learning session.
+6. Optionally add **reminders** that nudge users to complete their training and attend sessions.
 
 ![You can also add reminders for the users notifying them to complete their training and attend the learning session.](/img/helpscout/editors/how-to-create-a-smartpath-17.png)
 
-5. Click **Assign Users** to complete the batch assignment. This finalises the SmartPath for the selected users.
+7. Click **Assign Users** to complete the batch assignment.
 
-[![Click Assign Users to complete the batch assignment. This finalises the SmartPath for the selected users.](/img/helpscout/editors/how-to-create-a-smartpath-18.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/601664d2ac2f834ec538398d/file-clZMmBQkYO.png)
+![Click Assign Users to complete the batch assignment. This finalises the SmartPath for the selected users.](/img/helpscout/editors/how-to-create-a-smartpath-18.png)
 
-Whenever you need to use the same SmartPath for another setup of learners, you can go in and create new batches anytime.
+Create new batches any time you need to run the same SmartPath for another group of learners.
 
-## **Step 4: Add Coach (Optional)**
+## Step 4: Add Coach (Optional)
 
-You will get to this step only if you have added video coaching as a segment to any module added to the SmartPath. This is the step where you add coaches to that video coaching.
+This step appears only when a video coaching segment exists in one of the SmartPath's modules.
 
-1. On the coaching assignment screen, enter:
-    * Number of **coaches** to assign per participant
-    * Select the coach for each participant. If the same coach applies to all participants, you can select the coach directly under **Select Coach** in the first row. If different coaches are assigned to individual participants, you can manually select a coach for each user.
+1. On the coaching assignment screen, enter the number of **coaches** per participant, then select the coach for each participant. If one coach applies to everyone, select them under **Select Coach** in the first row; otherwise pick a coach per user.
 2. Click **Assign Coach** to complete the setup.
 
 ![Click Assign Coach to complete the setup.](/img/helpscout/editors/how-to-create-a-smartpath-19.png)
 
-This assigns the selected coaches to the SmartPath’s coaching segments.
+This assigns the selected coaches to the SmartPath's coaching segments.
