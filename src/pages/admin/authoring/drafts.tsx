@@ -405,28 +405,30 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
               <tr key={d.path}>
                 <td><strong>{d.title}</strong></td>
                 <td><code className={styles.smallCode}>{d.path}</code></td>
-                <td className={styles.tabular}>{d.lastUpdate ?? '-'}</td>
-                <td className={styles.rowActions}>
-                  <Link
-                    to={`/admin/authoring/edit?${new URLSearchParams({path: d.path}).toString()}`}
-                    className={styles.btnGhost}
-                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata.">
-                    Edit
-                  </Link>
-                  <button
-                    type="button"
-                    className={styles.btnPrimary}
-                    disabled={busy === d.path}
-                    onClick={() => publishDraft(d)}>
-                    Publish
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.btnGhost}
-                    disabled={busy === d.path}
-                    onClick={() => remove(d)}>
-                    Delete
-                  </button>
+                <td className={styles.tabular}>{(d.lastUpdate ?? '-').slice(0, 10)}</td>
+                <td className={styles.actionsCell}>
+                  <div className={styles.rowActions}>
+                    <Link
+                      to={`/admin/authoring/edit?${new URLSearchParams({path: d.path}).toString()}`}
+                      className={styles.btnGhost}
+                      title="Open the editor: AI refine, hand-edit text, upload images, edit metadata.">
+                      Edit
+                    </Link>
+                    <button
+                      type="button"
+                      className={styles.btnPrimary}
+                      disabled={busy === d.path}
+                      onClick={() => publishDraft(d)}>
+                      Publish
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.btnGhost}
+                      disabled={busy === d.path}
+                      onClick={() => remove(d)}>
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -694,49 +696,53 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
             {articles.map((a, i) => (
               <tr key={a.path}>
                 <td className={styles.tabular}>
-                  {i + 1}{' '}
-                  <button
-                    type="button"
-                    className={styles.btnGhost}
-                    disabled={i === 0 || !!busy || loading}
-                    onClick={() => moveRow(i, -1)}
-                    title="Move this article up in the sidebar order.">
-                    ▲
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.btnGhost}
-                    disabled={i === articles.length - 1 || !!busy || loading}
-                    onClick={() => moveRow(i, 1)}
-                    title="Move this article down in the sidebar order.">
-                    ▼
-                  </button>
+                  <span className={styles.orderCell}>
+                    {i + 1}
+                    <button
+                      type="button"
+                      className={`${styles.btnGhost} ${styles.orderBtn}`}
+                      disabled={i === 0 || !!busy || loading}
+                      onClick={() => moveRow(i, -1)}
+                      title="Move this article up in the sidebar order.">
+                      ▲
+                    </button>
+                    <button
+                      type="button"
+                      className={`${styles.btnGhost} ${styles.orderBtn}`}
+                      disabled={i === articles.length - 1 || !!busy || loading}
+                      onClick={() => moveRow(i, 1)}
+                      title="Move this article down in the sidebar order.">
+                      ▼
+                    </button>
+                  </span>
                 </td>
                 <td><strong>{a.title}</strong></td>
                 <td><code className={styles.smallCode}>{a.path}</code></td>
-                <td className={styles.tabular}>{a.lastUpdate ?? '-'}</td>
-                <td className={styles.rowActions}>
-                  <Link
-                    to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
-                    className={styles.btnGhost}
-                    title="Open the editor: AI refine, hand-edit text, upload images, edit metadata. Saved changes go live with the next site update.">
-                    Edit
-                  </Link>
-                  <button
-                    type="button"
-                    className={styles.btnGhost}
-                    disabled={busy === a.path}
-                    onClick={() => unpublish(a)}
-                    title="Turn this article back into a draft - readers stop seeing it on the next site update.">
-                    Unpublish
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.btnGhost}
-                    disabled={busy === a.path}
-                    onClick={() => remove(a)}>
-                    Delete
-                  </button>
+                <td className={styles.tabular}>{(a.lastUpdate ?? '-').slice(0, 10)}</td>
+                <td className={styles.actionsCell}>
+                  <div className={styles.rowActions}>
+                    <Link
+                      to={`/admin/authoring/edit?${new URLSearchParams({path: a.path}).toString()}`}
+                      className={styles.btnGhost}
+                      title="Open the editor: AI refine, hand-edit text, upload images, edit metadata. Saved changes go live with the next site update.">
+                      Edit
+                    </Link>
+                    <button
+                      type="button"
+                      className={styles.btnGhost}
+                      disabled={busy === a.path}
+                      onClick={() => unpublish(a)}
+                      title="Turn this article back into a draft - readers stop seeing it on the next site update.">
+                      Unpublish
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.btnGhost}
+                      disabled={busy === a.path}
+                      onClick={() => remove(a)}>
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}

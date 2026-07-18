@@ -653,6 +653,23 @@
 }
 .tabular { font-variant-numeric: tabular-nums; }
 .rowActions { display: flex; gap: var(--space-2); justify-content: flex-end; }
+/* Table cells host a flex WRAPPER, never flex the <td> itself - a flexed
+   table cell escapes the row grid and renders as a floating box. */
+.actionsCell { text-align: right; white-space: nowrap; }
+.actionsCell .rowActions { display: inline-flex; }
+/* Compact reorder controls: number + tiny arrows on one line. */
+.orderCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.orderBtn {
+  padding: 0 6px;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  min-width: 0;
+}
 
 /* ───────── Queue tabs (drafts.tsx) ──────────────────────────────────── */
 .tabBar {
