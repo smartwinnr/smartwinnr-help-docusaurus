@@ -979,6 +979,20 @@ function stampLastUpdate(markdown, user) {
   return markdown.replace(fmMatch[0], `---\n${nextFm}\n---`);
 }
 
+/** Surgically set `sidebar_position` in the frontmatter, leaving everything
+ *  else byte-identical. Returns null when the document has no frontmatter
+ *  block (caller should refuse to reorder that file). */
+function setSidebarPosition(markdown, position) {
+  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
+  if (!fmMatch) return null;
+  const fm = fmMatch[1];
+  const line = `sidebar_position: ${position}`;
+  const nextFm = /^sidebar_position\s*:/m.test(fm)
+    ? fm.replace(/^sidebar_position\s*:[^\n]*/m, line)
+    : fm.trimEnd() + '\n' + line;
+  return markdown.replace(fmMatch[0], `---\n${nextFm}\n---`);
+}
+
 /** Build the docs path for a draft, ensuring it sandboxes inside docs/modules/. */
 function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
   if (!isValidSlug(moduleSlug) || !isValidSlug(articleSlug)) {
@@ -2606,8 +2620,8 @@ async function fireDeploy() {
 
 app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) => {
   try {
-    const { module: moduleSlug, subFolder, slug } = req.body || {};
-    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    const { module: moduleSlug, subFolder, slug, path: relIn } = req.body || {};
+    const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
 
     const raw = fsSync.readFileSync(target, 'utf8');
@@ -2663,8 +2677,8 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
 // automatically when the article is republished.
 app.post('/api/admin/authoring/unpublish', requireRole('superadmin'), (req, res) => {
   try {
-    const { module: moduleSlug, subFolder, slug } = req.body || {};
-    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    const { module: moduleSlug, subFolder, slug, path: relIn } = req.body || {};
+    const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
     const relPath = path.relative(__dirname, target);
 
     if (!fsSync.existsSync(target)) {
@@ -2883,7 +2897,13 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
         }
       }
     }
-    if (fsSync.existsSync(MODULES_ROOT)) walk(MODULES_ROOT);
+    // Every section, not just modules - but never the role-routing landing
+    // pages or internal docs (they can't be authored from here).
+    for (const entry of fsSync.readdirSync(DOCS_ROOT, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      if (entry.name === 'internal' || entry.name === 'path') continue;
+      walk(path.join(DOCS_ROOT, entry.name));
+    }
     drafts.sort((a, b) => String(b.lastUpdate).localeCompare(String(a.lastUpdate)));
     res.json({ drafts });
   } catch (error) {
@@ -2894,8 +2914,8 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
 
 app.get('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
   try {
-    const { module: moduleSlug, subFolder, slug } = req.query;
-    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    const { module: moduleSlug, subFolder, slug, path: relIn } = req.query;
+    const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
     const markdown = fsSync.readFileSync(target, 'utf8');
     res.json({ markdown, path: path.relative(__dirname, target), hash: contentHash(markdown) });
@@ -2949,15 +2969,15 @@ pruneTrash();
 
 app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
   try {
-    const { module: moduleSlug, subFolder, slug } = req.query;
-    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    const { module: moduleSlug, subFolder, slug, path: relIn } = req.query;
+    const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
     const text = fsSync.readFileSync(target, 'utf8');
     if (!/^draft:\s*true\b/m.test(text)) {
       return res.status(400).json({ error: 'Refusing to delete - frontmatter is not marked draft:true' });
     }
     const imageRefs = imagesReferencedBy(text);
-    const opDir = trashOpDir(String(slug));
+    const opDir = trashOpDir(path.basename(target).replace(/\.(md|mdx)$/, ''));
     trashFile(target, opDir);
     fsSync.unlinkSync(target);
     // Drafts never reach the publish branch, so cleanup skips the deploy
@@ -3010,9 +3030,66 @@ function resolveArticlePath(relPath) {
   return target;
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// Section-general path resolution. The raw editor / queue / reorder work on
+// EVERY docs section, not just modules. Modules paths delegate to
+// resolveArticlePath (keeping the canonical-subfolder invariant and leaving
+// module index.mdx landing pages uneditable). The role-routing landing pages
+// (docs/path/) and docs/internal/ stay off-limits.
+// ─────────────────────────────────────────────────────────────────────────
+const AUTHORING_DENY_PREFIXES = ['docs/internal/', 'docs/path/'];
+
+function resolveAnyDocPath(relPath) {
+  if (typeof relPath !== 'string' || !relPath) throw new Error('path required');
+  const norm = relPath.replace(/\\/g, '/');
+  if (norm.startsWith('docs/modules/')) return resolveArticlePath(norm);
+  if (AUTHORING_DENY_PREFIXES.some((p) => norm.startsWith(p))) {
+    throw new Error('This area is not editable from the authoring tool');
+  }
+  const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/([a-z0-9._-]+)\.(md|mdx)$/.exec(norm);
+  if (!m) throw new Error('Path must match docs/<section>[/<sub-folder>]/<slug>.{md,mdx}');
+  const [, section, sub, slug] = m;
+  if (!isValidSlug(section) || (sub && !isValidSlug(sub))) throw new Error('Invalid folder in path');
+  if (!/^[a-z0-9][a-z0-9._-]*$/.test(slug)) throw new Error('Invalid slug in path');
+  const target = path.resolve(__dirname, norm);
+  if (!target.startsWith(DOCS_ROOT + path.sep)) throw new Error('Path escapes docs/');
+  return target;
+}
+
+/** Resolve a folder authors may list/reorder/move into:
+ *  docs/<section>[/<sub>] or docs/modules/<module>/<canonical-sub>.
+ *  Must already exist on disk. */
+function resolveAnyDocDir(dir) {
+  if (typeof dir !== 'string' || !dir) throw new Error('dir required');
+  const norm = dir.replace(/\\/g, '/').replace(/\/+$/, '');
+  if (AUTHORING_DENY_PREFIXES.some((p) => norm.startsWith(p) || norm + '/' === p)) {
+    throw new Error('This area is not editable from the authoring tool');
+  }
+  let target;
+  const modMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(norm);
+  if (norm === 'docs/modules' || norm.startsWith('docs/modules/')) {
+    if (!modMatch) throw new Error('Module folders must be docs/modules/<module>/<sub-folder>');
+    if (!isValidSlug(modMatch[1]) || !CANONICAL_SUBFOLDERS.has(modMatch[2])) {
+      throw new Error('Sub-folder not canonical');
+    }
+    target = path.resolve(__dirname, norm);
+    if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
+  } else {
+    const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(norm);
+    if (!m) throw new Error('Folder must be docs/<section> or docs/<section>/<sub-folder>');
+    if (!isValidSlug(m[1]) || (m[2] && !isValidSlug(m[2]))) throw new Error('Invalid folder name');
+    target = path.resolve(__dirname, norm);
+    if (!target.startsWith(DOCS_ROOT + path.sep)) throw new Error('Path escapes docs/');
+  }
+  if (!fsSync.existsSync(target) || !fsSync.statSync(target).isDirectory()) {
+    throw new Error('Folder not found');
+  }
+  return target;
+}
+
 app.get('/api/admin/authoring/article', requireRole('superadmin'), (req, res) => {
   try {
-    const target = resolveArticlePath(req.query.path);
+    const target = resolveAnyDocPath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
     const markdown = fsSync.readFileSync(target, 'utf8');
     res.json({ markdown, path: path.relative(__dirname, target), hash: contentHash(markdown) });
@@ -3023,11 +3100,16 @@ app.get('/api/admin/authoring/article', requireRole('superadmin'), (req, res) =>
 
 app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) => {
   try {
-    const { module: moduleSlug, subFolder, filter = 'all' } = req.query;
-    if (!isValidSlug(moduleSlug)) return res.status(400).json({ error: 'Invalid module' });
-    if (!CANONICAL_SUBFOLDERS.has(subFolder)) return res.status(400).json({ error: 'Invalid sub-folder' });
-    const dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
-    if (!fsSync.existsSync(dir)) return res.json({ articles: [] });
+    const { dir: dirIn, module: moduleSlug, subFolder, filter = 'all' } = req.query;
+    let dir;
+    if (dirIn) {
+      dir = resolveAnyDocDir(dirIn);
+    } else {
+      if (!isValidSlug(moduleSlug)) return res.status(400).json({ error: 'Invalid module' });
+      if (!CANONICAL_SUBFOLDERS.has(subFolder)) return res.status(400).json({ error: 'Invalid sub-folder' });
+      dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
+      if (!fsSync.existsSync(dir)) return res.json({ articles: [] });
+    }
     const articles = [];
     for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
       if (!entry.isFile()) continue;
@@ -3039,15 +3121,26 @@ app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) =
       if (filter === 'published' && isDraft) continue;
       const titleMatch = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
       const lastUpdMatch = /^\s*date:\s*(\S+)/m.exec(text);
+      const posMatch = /^sidebar_position:\s*(\d+)\s*$/m.exec(text);
       articles.push({
         path: path.relative(__dirname, p),
         slug: path.basename(p).replace(/\.(md|mdx)$/, ''),
         title: titleMatch ? titleMatch[1] : path.basename(p),
         lastUpdate: lastUpdMatch ? lastUpdMatch[1] : null,
         draft: isDraft,
+        position: posMatch ? parseInt(posMatch[1], 10) : null,
       });
     }
-    articles.sort((a, b) => String(b.lastUpdate).localeCompare(String(a.lastUpdate)));
+    if (dirIn) {
+      // Sidebar order - what reordering operates on.
+      articles.sort((a, b) => {
+        const pa = a.position ?? Infinity;
+        const pb = b.position ?? Infinity;
+        return pa !== pb ? pa - pb : String(a.title).localeCompare(String(b.title));
+      });
+    } else {
+      articles.sort((a, b) => String(b.lastUpdate).localeCompare(String(a.lastUpdate)));
+    }
     res.json({ articles });
   } catch (error) {
     console.error('❌ authoring/articles failed:', error.message);
@@ -3055,11 +3148,63 @@ app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) =
   }
 });
 
+/** Persist a new article order for one folder. Stamps sidebar_position in
+ *  10-step increments over exactly the paths the client sent (drafts are
+ *  deliberately absent - they keep their old positions and land at the end
+ *  of the folder when published). Re-reads every file from disk before the
+ *  surgical frontmatter edit, so a body save that landed a moment ago is
+ *  never clobbered. Published files queue for deploy; drafts just persist. */
+app.post('/api/admin/authoring/reorder', requireRole('superadmin'), (req, res) => {
+  try {
+    const { dir: dirIn, orderedPaths } = req.body || {};
+    const dirAbs = resolveAnyDocDir(dirIn);
+    if (!Array.isArray(orderedPaths) || orderedPaths.length === 0) {
+      return res.status(400).json({ error: 'orderedPaths must be a non-empty array' });
+    }
+    if (new Set(orderedPaths).size !== orderedPaths.length) {
+      return res.status(400).json({ error: 'orderedPaths contains duplicates' });
+    }
+    const targets = orderedPaths.map((rel) => {
+      const abs = resolveAnyDocPath(rel);
+      if (path.dirname(abs) !== dirAbs) throw new Error(`${rel} is not in ${dirIn}`);
+      if (!fsSync.existsSync(abs)) throw new Error(`${rel} not found`);
+      return { rel: rel.replace(/\\/g, '/'), abs };
+    });
+
+    let changed = 0;
+    let queued = 0;
+    for (let i = 0; i < targets.length; i++) {
+      const { rel, abs } = targets[i];
+      const raw = fsSync.readFileSync(abs, 'utf8');
+      const next = setSidebarPosition(raw, (i + 1) * 10);
+      if (next === null) {
+        return res.status(400).json({ error: `${rel} has no frontmatter - cannot set its position` });
+      }
+      if (next === raw) continue;
+      fsSync.writeFileSync(abs, next, 'utf8');
+      journalRecordUpsert(rel, req.user?.email);
+      changed += 1;
+      if (!/^draft:\s*true\b/m.test(next)) {
+        enqueueUpsert(rel);
+        queued += 1;
+      }
+    }
+    if (queued > 0) {
+      persistDeployState();
+      scheduleDeploy();
+    }
+    res.json({ ok: true, changed, queuedForDeploy: queued > 0, queueSize: deployQueue.size });
+  } catch (error) {
+    console.error('❌ authoring/reorder failed:', error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
 app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req, res) => {
   try {
     const { path: relPath, markdown, baseHash } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
-    const target = resolveArticlePath(relPath);
+    const target = resolveAnyDocPath(relPath);
     // Optimistic concurrency (see /save): refuse to clobber a copy that
     // changed after the client loaded it, unless the client omits baseHash.
     if (baseHash && fsSync.existsSync(target)) {
@@ -3321,20 +3466,65 @@ function findSlugOrIdCollision(targetAbs, markdown) {
   return null;
 }
 
-// Relocate an article to a different module / sub-folder (slug unchanged).
-// Writes the new file + unlinks the old; for published articles the rename
-// ships as enqueueDelete(old) + enqueueUpsert(new) in one deploy. Images are
-// root-relative + shared, so they are never moved or culled. The moved file's
-// audience (customProps.roles) is rewritten to the destination folder's default
-// and any article-level privilege is dropped, so the destination
-// _category_.json gate governs.
+/** Default audience for a move destination. Module sub-folders keep the
+ *  SUBFOLDER_TEMPLATE behavior. Section folders read the destination's
+ *  _category_.json roles, falling back to the parent section's; when neither
+ *  declares roles, return null and the article keeps its own audience. */
+function destinationRoles(toDirRel) {
+  const norm = toDirRel.replace(/\\/g, '/');
+  const modMatch = /^docs\/modules\/[a-z0-9-]+\/([a-z0-9-]+)$/.exec(norm);
+  if (modMatch) {
+    const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === modMatch[1]);
+    return (tmpl && tmpl.roles) || ALL_ROLES;
+  }
+  const candidates = [norm];
+  const parent = norm.split('/').slice(0, 2).join('/');
+  if (parent !== norm) candidates.push(parent);
+  for (const rel of candidates) {
+    try {
+      const cat = JSON.parse(fsSync.readFileSync(path.join(__dirname, rel, '_category_.json'), 'utf8'));
+      const roles = cat?.customProps?.roles;
+      if (Array.isArray(roles) && roles.length > 0) return roles;
+    } catch { /* try the next candidate */ }
+  }
+  return null;
+}
+
+// Relocate an article to a different folder (slug unchanged) - any module
+// sub-folder or docs section. Writes the new file + unlinks the old; for
+// published articles the rename ships as enqueueDelete(old) +
+// enqueueUpsert(new) in one deploy. Images are root-relative + shared, so
+// they are never moved or culled. The moved file's audience
+// (customProps.roles) is rewritten to the destination folder's default (when
+// the destination declares one) and any article-level privilege is dropped,
+// so the destination _category_.json gate governs.
 app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res) => {
   try {
-    const { fromPath, toModule, toSubFolder } = req.body || {};
-    const fromAbs = resolveArticlePath(fromPath);
+    const { fromPath, toDir: toDirIn, toModule, toSubFolder } = req.body || {};
+    const toDirRel = (toDirIn || (toModule && toSubFolder ? `docs/modules/${toModule}/${toSubFolder}` : ''))
+      .replace(/\\/g, '/').replace(/\/+$/, '');
+    if (!toDirRel) return res.status(400).json({ error: 'toDir (or toModule + toSubFolder) required' });
+    const isModuleDest = toDirRel.startsWith('docs/modules/');
+
+    const fromAbs = resolveAnyDocPath(fromPath);
     const fromRel = path.relative(__dirname, fromAbs);
     const slug = path.basename(fromAbs).replace(/\.(md|mdx)$/, '');
-    const toAbs = resolveDraftPath(toModule, toSubFolder, slug);
+    let toDirAbs;
+    if (isModuleDest) {
+      // Module destinations may not exist yet (first article in a sub-folder)
+      // - validate the module dir and canonical sub-folder like resolveDraftPath.
+      const m = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(toDirRel);
+      if (!m || !isValidSlug(m[1]) || !CANONICAL_SUBFOLDERS.has(m[2])) {
+        return res.status(400).json({ error: 'Destination must be docs/modules/<module>/<canonical-sub-folder>' });
+      }
+      if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) {
+        return res.status(400).json({ error: `Unknown module: ${m[1]}` });
+      }
+      toDirAbs = path.join(__dirname, toDirRel);
+    } else {
+      toDirAbs = resolveAnyDocDir(toDirRel);
+    }
+    const toAbs = path.join(toDirAbs, path.basename(fromAbs));
     const toRel = path.relative(__dirname, toAbs);
 
     if (fromAbs === toAbs) {
@@ -3343,40 +3533,38 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
     if (!fsSync.existsSync(fromAbs)) {
       return res.status(404).json({ error: 'Article not found' });
     }
-    if (!fsSync.existsSync(path.join(MODULES_ROOT, toModule))) {
-      return res.status(400).json({ error: `Unknown module: ${toModule}` });
-    }
     if (fsSync.existsSync(toAbs)) {
-      return res.status(409).json({ error: `An article with slug "${slug}" already exists in ${toModule}/${toSubFolder}.` });
+      return res.status(409).json({ error: `An article with slug "${slug}" already exists in that folder.` });
     }
 
     const raw = fsSync.readFileSync(fromAbs, 'utf8');
     const conflict = findSlugOrIdCollision(toAbs, raw);
     if (conflict) {
       return res.status(409).json({
-        error: `Cannot move: "${conflict}" in ${toModule}/${toSubFolder} already claims the same route slug or doc id, which would break the production build.`,
+        error: `Cannot move: "${conflict}" in the destination folder already claims the same route slug or doc id, which would break the production build.`,
       });
     }
     const wasPublished = !/^draft:\s*true\b/m.test(raw);
 
-    // Re-home the audience to the destination sub-folder's default roles and
-    // drop any article-level privilege.
-    const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === toSubFolder);
-    const destRoles = (tmpl && tmpl.roles) || ALL_ROLES;
-    let next = setFrontmatterRoles(raw, destRoles);
+    // Re-home the audience to the destination folder's default roles (when it
+    // declares one) and drop any article-level privilege.
+    const destRoles = destinationRoles(toDirRel);
+    let next = destRoles ? setFrontmatterRoles(raw, destRoles) : raw;
     next = removeFrontmatterPrivilege(next);
     next = stripDecorativeEmojis(next);
 
-    // Gate the destination sub-folder before the file lands there.
-    const created = ensureSubfolderCategory(toModule, toSubFolder);
+    // Gate a brand-new module sub-folder before the file lands there
+    // (no-ops for section destinations, which must already exist).
+    const destModMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(toDirRel);
+    const created = destModMatch ? ensureSubfolderCategory(destModMatch[1], destModMatch[2]) : false;
 
     fsSync.mkdirSync(path.dirname(toAbs), { recursive: true });
     fsSync.writeFileSync(toAbs, next, 'utf8');
     fsSync.unlinkSync(fromAbs);
     journalRecordUpsert(toRel, req.user?.email);
     journalRecordDelete(fromRel, req.user?.email);
-    if (created) {
-      journalRecordUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'), req.user?.email);
+    if (created && destModMatch) {
+      journalRecordUpsert(path.join('docs', 'modules', destModMatch[1], destModMatch[2], '_category_.json'), req.user?.email);
     }
 
     let queuedForDeploy = false;
@@ -3402,8 +3590,8 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
         normRoute(routeSlug.startsWith('/') ? routeSlug : `${routeDir(fromAbs)}/${routeSlug}`)
       );
       enqueueUpsert(toRel);
-      if (created) {
-        enqueueUpsert(path.join('docs', 'modules', toModule, toSubFolder, '_category_.json'));
+      if (created && destModMatch) {
+        enqueueUpsert(path.join('docs', 'modules', destModMatch[1], destModMatch[2], '_category_.json'));
       }
       if (redirectsUpdated) {
         enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
@@ -3438,7 +3626,7 @@ function imagesReferencedBy(markdown) {
   return out;
 }
 
-/** Walk docs/modules/ for any .md/.mdx article (other than `excludeAbs`)
+/** Walk ALL of docs/ for any .md/.mdx article (other than `excludeAbs`)
  *  that references `imgUrl`. Used to avoid deleting an image another doc
  *  still needs. Sharing is rare with the wizard's random-suffix uploads
  *  but possible if someone hand-edited a path. */
@@ -3456,12 +3644,12 @@ function isImageReferencedElsewhere(imgUrl, excludeAbs) {
     }
     return false;
   }
-  return fsSync.existsSync(MODULES_ROOT) ? walk(MODULES_ROOT) : false;
+  return fsSync.existsSync(DOCS_ROOT) ? walk(DOCS_ROOT) : false;
 }
 
 app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req, res) => {
   try {
-    const target = resolveArticlePath(req.query.path);
+    const target = resolveAnyDocPath(req.query.path);
     if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Article not found' });
     // Read frontmatter + image refs BEFORE unlinking. If the article was
     // non-draft (ever published to git) we need to enqueue a delete-commit
@@ -3803,6 +3991,72 @@ app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =>
       privileges: privDoc.privileges || [],
     });
   } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+/** The full location tree authors can browse / move into: every docs section
+ *  (with its sub-folders) plus every module x canonical sub-folder. Labels
+ *  come from _category_.json when present, else Title-Cased dirnames. */
+app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) => {
+  try {
+    const titleCase = (s) => s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const categoryMeta = (dirAbs) => {
+      try {
+        const cat = JSON.parse(fsSync.readFileSync(path.join(dirAbs, '_category_.json'), 'utf8'));
+        return { label: cat.label || null, position: typeof cat.position === 'number' ? cat.position : null };
+      } catch { return { label: null, position: null }; }
+    };
+
+    const sections = [];
+    for (const entry of fsSync.readdirSync(DOCS_ROOT, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      if (entry.name === 'internal' || entry.name === 'path' || entry.name === 'modules') continue;
+      const secAbs = path.join(DOCS_ROOT, entry.name);
+      const meta = categoryMeta(secAbs);
+      const subs = [];
+      let hasRootArticles = false;
+      for (const child of fsSync.readdirSync(secAbs, { withFileTypes: true })) {
+        if (child.isFile() && /\.(md|mdx)$/.test(child.name)) hasRootArticles = true;
+        if (child.isDirectory()) {
+          const subAbs = path.join(secAbs, child.name);
+          const subMeta = categoryMeta(subAbs);
+          subs.push({
+            dir: `docs/${entry.name}/${child.name}`,
+            label: subMeta.label || titleCase(child.name),
+          });
+        }
+      }
+      subs.sort((a, b) => a.label.localeCompare(b.label));
+      sections.push({
+        dir: `docs/${entry.name}`,
+        label: meta.label || titleCase(entry.name),
+        position: meta.position ?? 99,
+        kind: 'section',
+        allowRoot: hasRootArticles,
+        subs,
+      });
+    }
+    sections.sort((a, b) => (a.position - b.position) || a.label.localeCompare(b.label));
+
+    const modules = modulesFromOverviews(loadOverviews())
+      .slice()
+      .sort((a, b) => a.label.localeCompare(b.label))
+      .map((m) => ({
+        dir: `docs/modules/${m.slug}`,
+        label: m.label,
+        position: 999,
+        kind: 'module',
+        allowRoot: false,
+        subs: SUBFOLDER_TEMPLATE.map((sf) => ({
+          dir: `docs/modules/${m.slug}/${sf.slug}`,
+          label: sf.label,
+        })),
+      }));
+
+    res.json({ sections: [...sections, ...modules] });
+  } catch (error) {
+    console.error('❌ authoring/sections failed:', error.message);
     res.status(500).json({ error: error.message });
   }
 });
