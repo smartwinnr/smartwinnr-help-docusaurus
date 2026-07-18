@@ -183,3 +183,5 @@ scripts/freshdesk/output/
 # Generated reports (article inventory, etc.) — root only; do NOT shadow
 # docs/administration/reports which is real content.
 /reports/
+# Local staging for authoring-tool paste-ins (never committed directly)
+article-staging/
