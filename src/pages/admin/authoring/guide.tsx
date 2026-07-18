@@ -117,6 +117,12 @@ function GuidePage(): ReactNode {
           Pick the section on the queue's <strong>Published</strong> tab. Only the special
           role-landing pages are off-limits (they're managed by the engineering team).
         </p>
+        <p>
+          Creating works everywhere too: <strong>New article</strong> lets you pick any section
+          or module on Step 1 (the audience is pre-set to match the folder), and the AI drafts
+          in that section's tone. Or browse to a folder on the <strong>Published</strong> tab
+          and press <strong>New article here</strong> — the destination comes pre-selected.
+        </p>
 
         <h2>Reordering articles</h2>
         <ul>

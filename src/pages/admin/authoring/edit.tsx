@@ -86,9 +86,6 @@ function EditorPanel(): ReactNode {
   const fm = useMemo(() => parseFrontmatterFields(markdown) ?? EMPTY_FM, [markdown]);
   const parsed = useMemo(() => parseDocPath(path), [path]);
   const isDraft = getDraftFlag(markdown) === true;
-  // AI assist (Refine / Suggest) posts module+subFolder, and the generate
-  // endpoints are modules-only by design - hide it for section articles.
-  const aiAvailable = !!parsed?.module;
   const titleShape = checkTitleShape(fm.title, parsed?.subFolder ?? '');
   const busy = saving || refining || uploading || moving || suggesting !== null;
   // Mirror the wizard's metadata gate: an article must carry at least one tag.
@@ -156,7 +153,7 @@ function EditorPanel(): ReactNode {
 
   /** Per-field LLM suggestion for title / description. Body untouched. */
   async function suggestField(field: 'title' | 'description') {
-    if (!parsed?.module) { notify.error('AI assist is available for module articles only.'); return; }
+    if (!parsed) { notify.error('Cannot suggest: unrecognized article path.'); return; }
     setSuggesting(field);
     try {
       const res = await fetch('/api/admin/authoring/suggest-field', {
@@ -165,6 +162,7 @@ function EditorPanel(): ReactNode {
         credentials: 'same-origin',
         body: JSON.stringify({
           field,
+          dir: parsed.dir,
           module: parsed.module,
           subFolder: parsed.subFolder,
           body: markdown,
@@ -191,7 +189,7 @@ function EditorPanel(): ReactNode {
    *  publish state (the generate prompt hard-sets draft:true, which would
    *  silently re-draft a published article). */
   async function refine() {
-    if (!parsed?.module) { notify.error('AI assist is available for module articles only.'); return; }
+    if (!parsed) { notify.error('Cannot refine: unrecognized article path.'); return; }
     if (!refinement.trim()) return;
     setRefining(true);
     try {
@@ -202,6 +200,7 @@ function EditorPanel(): ReactNode {
         credentials: 'same-origin',
         body: JSON.stringify({
           inputs: {
+            dir: parsed.dir,
             module: parsed.module,
             subFolder: parsed.subFolder,
             slug: parsed.slug,
@@ -441,16 +440,14 @@ function EditorPanel(): ReactNode {
                 onChange={(e) => patchFrontmatter({title: e.target.value})}
               />
               <div className={styles.fieldActions}>
-                {aiAvailable && (
                 <button
                   type="button"
                   className={styles.btnGhost}
                   disabled={busy || !parsed}
                   onClick={() => suggestField('title')}
-                  title="Ask the LLM to suggest a new title from the article body + sub-folder shape. Body untouched.">
+                  title="Suggest a new title from the article body. Body untouched.">
                   {suggesting === 'title' ? 'Suggesting…' : 'Suggest a new title'}
                 </button>
-                )}
               </div>
               {fm.title && !titleShape.ok && (
                 <span className={styles.warn}>{titleShape.hint}</span>
@@ -467,16 +464,14 @@ function EditorPanel(): ReactNode {
                 onChange={(e) => patchFrontmatter({description: e.target.value})}
               />
               <div className={styles.fieldActions}>
-                {aiAvailable && (
                 <button
                   type="button"
                   className={styles.btnGhost}
                   disabled={busy || !parsed}
                   onClick={() => suggestField('description')}
-                  title="Ask the LLM to suggest a new description from the article body. Body untouched.">
+                  title="Suggest a new description from the article body. Body untouched.">
                   {suggesting === 'description' ? 'Suggesting…' : 'Suggest a new description'}
                 </button>
-                )}
                 <span className={styles.hint}>{fm.description.length}/160</span>
               </div>
             </div>
@@ -534,10 +529,7 @@ function EditorPanel(): ReactNode {
             </div>
           </div>
 
-          {/* AI refine - rewrites the body per the note, preserving publish
-              state. Modules-only: the generate endpoints validate canonical
-              module sub-folders. */}
-          {aiAvailable && (
+          {/* AI refine - rewrites the body per the note, preserving publish state. */}
           <div className={styles.refineRow}>
             <textarea
               rows={2}
@@ -557,7 +549,6 @@ function EditorPanel(): ReactNode {
               </button>
             </div>
           </div>
-          )}
 
           <div className={styles.editLayout}>
             <textarea

@@ -647,13 +647,24 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
             </select>
           </label>
         </div>
-        <button
-          type="button"
-          className={styles.btnGhost}
-          onClick={refresh}
-          disabled={loading || !dir}>
-          Refresh
-        </button>
+        <div className={styles.rowActions}>
+          {dir && (
+            <Link
+              to={`/admin/authoring?${new URLSearchParams({dir}).toString()}`}
+              onClick={clearWizardState}
+              className={styles.btnPrimary}
+              title="Start a new article in this folder - the destination is pre-selected.">
+              New article here
+            </Link>
+          )}
+          <button
+            type="button"
+            className={styles.btnGhost}
+            onClick={refresh}
+            disabled={loading || !dir}>
+            Refresh
+          </button>
+        </div>
       </div>
 
       {!dir && (

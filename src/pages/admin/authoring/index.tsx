@@ -7,7 +7,7 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
-import {SUB_FOLDERS, WIZARD_STORAGE_KEY, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
+import {WIZARD_STORAGE_KEY, parseDocPath, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
 import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
 import styles from './styles.module.css';
 
@@ -38,7 +38,15 @@ const STORAGE_KEY = WIZARD_STORAGE_KEY;
 // data/modules.json). The wizard fetches them on Step-1 mount; adding a
 // new module via /admin/authoring/modules makes it available here on
 // next render.
-type ModuleEntry = {slug: string; label: string; privilege?: string; anyPrivilege?: string[]; position?: number};
+/** One pickable destination from GET /sections (a docs section or module). */
+type SectionEntry = {
+  dir: string;
+  label: string;
+  kind: 'section' | 'module';
+  allowRoot: boolean;
+  roles?: string[];
+  subs: Array<{dir: string; label: string; roles?: string[]}>;
+};
 
 type Image = {
   url: string;
@@ -50,6 +58,12 @@ type Image = {
 };
 
 type Inputs = {
+  /** Destination folder, e.g. docs/get-started/onboarding or
+   *  docs/modules/quiz/features. The primary location key. */
+  dir: string;
+  /** Friendly destination label ("Get Started / Onboarding") - LLM context. */
+  sectionLabel: string;
+  /** Set only for module destinations (title shapes, legacy routing). */
   module: string;
   subFolder: string;
   audienceRoles: string[];
@@ -108,6 +122,8 @@ type State = {
 const initial: State = {
   step: 1,
   inputs: {
+    dir: '',
+    sectionLabel: '',
     module: '',
     subFolder: '',
     audienceRoles: [],
@@ -213,52 +229,104 @@ function saveState(s: State) {
 
 function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action>}): ReactNode {
   const i = state.inputs;
-  const sub = SUB_FOLDERS.find((s) => s.value === i.subFolder);
-  const [modules, setModules] = useState<ModuleEntry[]>([]);
-  const [modulesLoading, setModulesLoading] = useState(true);
+  const [locations, setLocations] = useState<SectionEntry[]>([]);
+  const [locationsLoading, setLocationsLoading] = useState(true);
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/admin/authoring/modules', {credentials: 'same-origin'});
-        if (!res.ok) { setModulesLoading(false); return; }
+        const res = await fetch('/api/admin/authoring/sections', {credentials: 'same-origin'});
+        if (!res.ok) { setLocationsLoading(false); return; }
         const data = await res.json();
-        setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
+        setLocations(data.sections || []);
       } catch {/* fail soft - dropdown will be empty, user can refresh */}
-      finally { setModulesLoading(false); }
+      finally { setLocationsLoading(false); }
     })();
   }, []);
-  function setSub(value: string) {
-    const def = SUB_FOLDERS.find((s) => s.value === value);
-    dispatch({type: 'set', patch: {subFolder: value, audienceRoles: def ? def.audience : []}});
+
+  // The Section select keeps its own state so clearing/re-picking the folder
+  // never blanks it. Seed from a preselected destination (deep link / resume).
+  const [pickedLocation, setPickedLocation] = useState('');
+  useEffect(() => {
+    if (!pickedLocation && i.dir && locations.length > 0) {
+      const loc = locations.find((l) => i.dir === l.dir || i.dir.startsWith(l.dir + '/'));
+      if (loc) setPickedLocation(loc.dir);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i.dir, locations.length]);
+  const currentLocation = locations.find((l) => l.dir === pickedLocation) || null;
+
+  /** Apply a picked destination folder: remember the dir + friendly labels,
+   *  derive module/subFolder for module dirs (title shapes, save routing),
+   *  and prefill the audience from the folder's gate. */
+  function pickFolder(dir: string, loc: SectionEntry | null) {
+    if (!dir || !loc) {
+      dispatch({type: 'set', patch: {dir: '', sectionLabel: loc ? loc.label : '', module: '', subFolder: ''}});
+      return;
+    }
+    const sub = loc.subs.find((s) => s.dir === dir);
+    const roles = (sub?.roles || loc.roles || []) as string[];
+    const m = /^docs\/modules\/([^/]+)\/([^/]+)$/.exec(dir);
+    dispatch({type: 'set', patch: {
+      dir,
+      sectionLabel: sub ? `${loc.label} / ${sub.label}` : loc.label,
+      module: m ? m[1] : '',
+      subFolder: m ? m[2] : '',
+      audienceRoles: roles,
+    }});
   }
+
   return (
     <div className={styles.form}>
       <h2 className={styles.stepHead}>Step 1 · Where + who</h2>
       <div className={styles.field}>
-        <label>Module</label>
+        <label>Section</label>
         <select
-          value={i.module}
-          disabled={modulesLoading}
-          onChange={(e) => dispatch({type: 'set', patch: {module: e.target.value}})}>
-          <option value="">{modulesLoading ? 'Loading modules…' : 'Select a module…'}</option>
-          {modules.map((m) => <option key={m.slug} value={m.slug}>{m.label}</option>)}
+          value={pickedLocation}
+          disabled={locationsLoading}
+          onChange={(e) => {
+            setPickedLocation(e.target.value);
+            const loc = locations.find((l) => l.dir === e.target.value) || null;
+            // Auto-land on the location itself when it has no sub-folders.
+            if (loc && loc.subs.length === 0 && loc.allowRoot) pickFolder(loc.dir, loc);
+            else pickFolder('', loc);
+          }}>
+          <option value="">{locationsLoading ? 'Loading…' : 'Select a section…'}</option>
+          <optgroup label="Sections">
+            {locations.filter((l) => l.kind === 'section').map((l) => (
+              <option key={l.dir} value={l.dir}>{l.label}</option>
+            ))}
+          </optgroup>
+          <optgroup label="Modules">
+            {locations.filter((l) => l.kind === 'module').map((l) => (
+              <option key={l.dir} value={l.dir}>{l.label}</option>
+            ))}
+          </optgroup>
         </select>
         <span className={styles.hint}>
           Don't see your module? <Link to="/admin/authoring/modules">Add a module →</Link>
         </span>
       </div>
       <div className={styles.field}>
-        <label>Sub-folder</label>
-        <select value={i.subFolder} onChange={(e) => setSub(e.target.value)}>
-          <option value="">Select a sub-folder…</option>
-          {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+        <label>Folder</label>
+        <select
+          value={i.dir}
+          disabled={!currentLocation || (currentLocation.subs.length === 0 && currentLocation.allowRoot)}
+          onChange={(e) => pickFolder(e.target.value, currentLocation)}>
+          <option value="">Select a folder…</option>
+          {currentLocation?.allowRoot && (
+            <option value={currentLocation.dir}>(section root)</option>
+          )}
+          {currentLocation?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
         </select>
-        {sub && <span className={styles.hint}>Default audience: {sub.audience.join(', ')}</span>}
+        {i.dir && i.audienceRoles.length > 0 && (
+          <span className={styles.hint}>
+            Audience: {i.audienceRoles.join(', ')} - pre-set to match this folder; change only if this article should be narrower.
+          </span>
+        )}
       </div>
       {/*
-        Per-article privilege is no longer an authoring input. The sub-folder's
-        _category_.json (auto-created by ensureSubfolderCategory in server.js
-        when needed) carries the canonical gate, and articles inherit. If a
+        Per-article privilege is no longer an authoring input. The folder's
+        _category_.json carries the canonical gate, and articles inherit. If a
         rare article ever needs a tighter gate, edit its raw frontmatter via
         /admin/authoring/edit. Keeping `inputs.privilege` in state so existing
         drafts that already carry one survive the load → save round-trip.
@@ -517,6 +585,7 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         credentials: 'same-origin',
         body: JSON.stringify({
           markdown: finalMarkdown,
+          dir: i.dir,
           module: i.module,
           subFolder: i.subFolder,
           slug: i.slug,
@@ -587,6 +656,7 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         credentials: 'same-origin',
         body: JSON.stringify({
           field,
+          dir: i.dir,
           module: i.module,
           subFolder: i.subFolder,
           body: state.markdown,
@@ -750,7 +820,7 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
 
 function canAdvance(s: State): boolean {
   const i = s.inputs;
-  if (s.step === 1) return !!i.module && !!i.subFolder && i.audienceRoles.length > 0;
+  if (s.step === 1) return !!i.dir && i.audienceRoles.length > 0;
   // Step 2 is the brain dump (with screenshots). Title/description/tags
   // are no longer entered upfront - the LLM suggests them on Step 3.
   if (s.step === 2) return i.roughExplanation.length >= 200
@@ -812,31 +882,42 @@ function Wizard(): ReactNode {
     const moduleSlug = params.get('module');
     const subFolder = params.get('subFolder');
     const slug = params.get('slug');
-    if (!moduleSlug || !subFolder || !slug) {
-      // No edit-mode params on this URL. If state somehow ended up in
-      // edit mode (rare race, or migrating from a build that persisted
-      // it), reset to a fresh wizard. Authoring entry from the navbar /
-      // sidebar should always land a fresh new-draft session.
+    const pathParam = params.get('path');
+    const dirParam = params.get('dir');
+    const legacyKey = moduleSlug && subFolder && slug;
+    if (!legacyKey && !pathParam) {
+      // No edit-mode params. A ?dir= deep link ("New article here" from the
+      // Published tab) preselects the destination on a fresh wizard.
       if (state.isEditing) dispatch({type: 'reset'});
+      if (dirParam && !state.isEditing && state.inputs.dir !== dirParam) {
+        dispatch({type: 'set', patch: {dir: dirParam}});
+      }
       return;
     }
     // Avoid re-fetching if we already loaded this draft in this session.
-    if (state.isEditing && state.inputs.slug === slug && state.inputs.module === moduleSlug) return;
+    if (state.isEditing && legacyKey && state.inputs.slug === slug && state.inputs.module === moduleSlug) return;
+    if (state.isEditing && pathParam && parseDocPath(pathParam)?.slug === state.inputs.slug) return;
 
     (async () => {
       try {
-        const qs = new URLSearchParams({module: moduleSlug, subFolder, slug});
+        const qs = pathParam
+          ? new URLSearchParams({path: pathParam})
+          : new URLSearchParams({module: moduleSlug as string, subFolder: subFolder as string, slug: slug as string});
         const res = await fetch(`/api/admin/authoring/draft?${qs}`, {credentials: 'same-origin'});
         if (!res.ok) {
           const err = await res.json().catch(() => ({error: res.statusText}));
           dispatch({type: 'error', message: `Failed to load draft: ${err.error || res.statusText}`});
           return;
         }
-        const {markdown, hash} = await res.json();
+        const {markdown, hash, path: loadedPath} = await res.json();
         const fm = parseFrontmatterFields(markdown);
+        const loc = parseDocPath(pathParam || loadedPath || '')
+          || (legacyKey ? {dir: `docs/modules/${moduleSlug}/${subFolder}`, slug: slug as string, module: moduleSlug as string, subFolder: subFolder as string} : null);
         const inputs: Inputs = {
-          module: moduleSlug,
-          subFolder,
+          dir: loc?.dir ?? '',
+          sectionLabel: '',
+          module: loc?.module ?? '',
+          subFolder: loc?.subFolder ?? '',
           audienceRoles: fm?.audienceRoles ?? [],
           privilege: fm?.privilege ?? '',
           title: fm?.title ?? '',
@@ -844,7 +925,7 @@ function Wizard(): ReactNode {
           tags: fm?.tags ?? [],
           roughExplanation: '',
           images: [],
-          slug: fm?.slug ?? slug,
+          slug: fm?.slug ?? (loc?.slug ?? ''),
         };
         // Detect whether the source is a published article. The save flow
         // forces draft:true regardless, so a Refine -> Save here re-drafts
