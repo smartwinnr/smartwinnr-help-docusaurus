@@ -243,6 +243,11 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     })();
   }, []);
 
+  // Inline "create a new folder" mini-form (sections only).
+  const [showNewFolder, setShowNewFolder] = useState(false);
+  const [newFolderName, setNewFolderName] = useState('');
+  const [creatingFolder, setCreatingFolder] = useState(false);
+
   // The Section select keeps its own state so clearing/re-picking the folder
   // never blanks it. Seed from a preselected destination (deep link / resume).
   const [pickedLocation, setPickedLocation] = useState('');
@@ -275,6 +280,37 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
     }});
   }
 
+  /** Create a section sub-folder on the server, add it to the tree, and
+   *  select it as the destination. */
+  async function createFolder() {
+    const loc = currentLocation;
+    if (!loc || !newFolderName.trim() || creatingFolder) return;
+    setCreatingFolder(true);
+    try {
+      const res = await fetch('/api/admin/authoring/folders', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify({sectionDir: loc.dir, label: newFolderName.trim()}),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        dispatch({type: 'error', message: data.error || 'Could not create the folder'});
+        return;
+      }
+      const newSub = {dir: data.dir, label: data.label, roles: data.roles};
+      const nextLoc = {...loc, subs: [...loc.subs, newSub]};
+      setLocations(locations.map((l) => (l.dir === loc.dir ? nextLoc : l)));
+      pickFolder(data.dir, nextLoc);
+      setShowNewFolder(false);
+      setNewFolderName('');
+    } catch (err) {
+      dispatch({type: 'error', message: (err as Error).message});
+    } finally {
+      setCreatingFolder(false);
+    }
+  }
+
   return (
     <div className={styles.form}>
       <h2 className={styles.stepHead}>Step 1 · Where + who</h2>
@@ -285,6 +321,7 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           disabled={locationsLoading}
           onChange={(e) => {
             setPickedLocation(e.target.value);
+            setShowNewFolder(false);
             const loc = locations.find((l) => l.dir === e.target.value) || null;
             // Auto-land on the location itself when it has no sub-folders.
             if (loc && loc.subs.length === 0 && loc.allowRoot) pickFolder(loc.dir, loc);
@@ -309,16 +346,55 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
       <div className={styles.field}>
         <label>Folder</label>
         <select
-          value={i.dir}
-          disabled={!currentLocation || (currentLocation.subs.length === 0 && currentLocation.allowRoot)}
-          onChange={(e) => pickFolder(e.target.value, currentLocation)}>
+          value={showNewFolder ? '__new__' : i.dir}
+          disabled={!currentLocation || (currentLocation.subs.length === 0 && currentLocation.allowRoot && currentLocation.kind !== 'section')}
+          onChange={(e) => {
+            if (e.target.value === '__new__') { setShowNewFolder(true); return; }
+            setShowNewFolder(false);
+            pickFolder(e.target.value, currentLocation);
+          }}>
           <option value="">Select a folder…</option>
           {currentLocation?.allowRoot && (
             <option value={currentLocation.dir}>(section root)</option>
           )}
           {currentLocation?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
+          {currentLocation?.kind === 'section' && (
+            <option value="__new__">+ Create a new folder…</option>
+          )}
         </select>
-        {i.dir && i.audienceRoles.length > 0 && (
+        {showNewFolder && currentLocation && (
+          <div className={styles.selectorRow}>
+            <input
+              type="text"
+              value={newFolderName}
+              maxLength={60}
+              placeholder="Folder name, e.g. Advanced Setup"
+              disabled={creatingFolder}
+              onChange={(e) => setNewFolderName(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); createFolder(); } }}
+            />
+            <button
+              type="button"
+              className={styles.btnPrimary}
+              disabled={creatingFolder || !newFolderName.trim()}
+              onClick={createFolder}>
+              {creatingFolder ? 'Creating…' : 'Create folder'}
+            </button>
+            <button
+              type="button"
+              className={styles.btnGhost}
+              disabled={creatingFolder}
+              onClick={() => { setShowNewFolder(false); setNewFolderName(''); }}>
+              Cancel
+            </button>
+          </div>
+        )}
+        {showNewFolder && (
+          <span className={styles.hint}>
+            The new folder appears in this section's sidebar once its first article is published. It inherits the section's audience.
+          </span>
+        )}
+        {!showNewFolder && i.dir && i.audienceRoles.length > 0 && (
           <span className={styles.hint}>
             Audience: {i.audienceRoles.join(', ')} - pre-set to match this folder; change only if this article should be narrower.
           </span>

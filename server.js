@@ -2677,6 +2677,14 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
     const relPath = path.relative(__dirname, target);
     journalRecordUpsert(relPath, req.user?.email);
     enqueueUpsert(relPath);
+    // Ship the folder's gate file together with the article. For a freshly
+    // author-created folder this is its first trip to the publish branch
+    // (an empty category alone could break the site build); for existing
+    // folders it's an identical-content no-op in the commit.
+    const catAbs = path.join(path.dirname(target), '_category_.json');
+    if (fsSync.existsSync(catAbs)) {
+      enqueueUpsert(path.relative(__dirname, catAbs));
+    }
     persistDeployState();
     scheduleDeploy();
 
@@ -4022,6 +4030,73 @@ app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =>
       privileges: privDoc.privileges || [],
     });
   } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+/** Create a new sub-folder inside an existing docs SECTION (not modules -
+ *  their 9 sub-folders are canonical and enforced by the gate audit; not new
+ *  top-level sections - those need a hand-authored sidebars.ts entry). The
+ *  folder gets a _category_.json inheriting the section's audience roles.
+ *  The gate file is journaled immediately for durability but ships to the
+ *  publish branch only alongside the folder's first published article (see
+ *  /publish) - an empty category alone can break the site build. */
+app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) => {
+  try {
+    const { sectionDir, label } = req.body || {};
+    const cleanLabel = String(label || '').trim();
+    if (!cleanLabel || cleanLabel.length > 60) {
+      return res.status(400).json({ error: 'Give the folder a name (up to 60 characters).' });
+    }
+    const norm = String(sectionDir || '').replace(/\\/g, '/').replace(/\/+$/, '');
+    if (!/^docs\/[a-z0-9-]+$/.test(norm) || norm === 'docs/modules'
+        || AUTHORING_DENY_PREFIXES.some((p) => norm + '/' === p || norm.startsWith(p))) {
+      return res.status(400).json({ error: 'New folders can only be created inside an existing section.' });
+    }
+    const sectionAbs = path.resolve(__dirname, norm);
+    if (!sectionAbs.startsWith(DOCS_ROOT + path.sep) || !fsSync.existsSync(sectionAbs) || !fsSync.statSync(sectionAbs).isDirectory()) {
+      return res.status(400).json({ error: "That section doesn't exist." });
+    }
+    const slug = cleanLabel.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
+    if (!isValidSlug(slug)) {
+      return res.status(400).json({ error: 'The folder name must contain at least one letter or number.' });
+    }
+    const dirAbs = path.join(sectionAbs, slug);
+    if (fsSync.existsSync(dirAbs)) {
+      return res.status(409).json({ error: `A folder called "${cleanLabel}" already exists in this section.` });
+    }
+
+    // Inherit the section's audience; position after the last sibling.
+    const readCat = (abs) => {
+      try { return JSON.parse(fsSync.readFileSync(path.join(abs, '_category_.json'), 'utf8')); } catch { return null; }
+    };
+    const sectionCat = readCat(sectionAbs);
+    const roles = (Array.isArray(sectionCat?.customProps?.roles) && sectionCat.customProps.roles.length > 0)
+      ? sectionCat.customProps.roles
+      : ALL_ROLES;
+    let maxPos = 0;
+    for (const entry of fsSync.readdirSync(sectionAbs, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const sib = readCat(path.join(sectionAbs, entry.name));
+      if (typeof sib?.position === 'number' && sib.position > maxPos) maxPos = sib.position;
+    }
+
+    fsSync.mkdirSync(dirAbs, { recursive: true });
+    const category = {
+      label: cleanLabel,
+      position: maxPos + 1,
+      collapsible: true,
+      collapsed: true,
+      customProps: { roles },
+    };
+    const catRel = `${norm}/${slug}/_category_.json`;
+    fsSync.writeFileSync(path.join(dirAbs, '_category_.json'), JSON.stringify(category, null, 2) + '\n', 'utf8');
+    journalRecordUpsert(catRel, req.user?.email);
+
+    console.log(`[authoring] created folder ${norm}/${slug} (roles: ${roles.join(',')})`);
+    res.json({ ok: true, dir: `${norm}/${slug}`, label: cleanLabel, roles });
+  } catch (error) {
+    console.error('❌ authoring/folders failed:', error.message);
     res.status(500).json({ error: error.message });
   }
 });

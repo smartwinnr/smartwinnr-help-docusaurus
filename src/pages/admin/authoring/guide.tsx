@@ -123,6 +123,12 @@ function GuidePage(): ReactNode {
           in that section's tone. Or browse to a folder on the <strong>Published</strong> tab
           and press <strong>New article here</strong> — the destination comes pre-selected.
         </p>
+        <p>
+          Need a new folder inside a section? Pick <strong>+ Create a new folder…</strong> in
+          Step 1's folder list. The folder inherits the section's audience and appears in the
+          sidebar once its first article is published. (New top-level sections and module
+          folders are fixed — ask the engineering team for those.)
+        </p>
 
         <h2>Reordering articles</h2>
         <ul>
