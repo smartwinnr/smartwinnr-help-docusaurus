@@ -3210,15 +3210,23 @@ app.post('/api/admin/authoring/reorder', requireRole('superadmin'), (req, res) =
       return { rel: rel.replace(/\\/g, '/'), abs };
     });
 
-    let changed = 0;
-    let queued = 0;
-    for (let i = 0; i < targets.length; i++) {
-      const { rel, abs } = targets[i];
+    // Two phases so a bad file mid-list can never leave a half-stamped
+    // folder: compute every new content first (any failure → 400 with
+    // nothing written), then write.
+    const stamped = targets.map(({ rel, abs }, i) => {
       const raw = fsSync.readFileSync(abs, 'utf8');
       const next = setSidebarPosition(raw, (i + 1) * 10);
       if (next === null) {
-        return res.status(400).json({ error: `${rel} has no frontmatter - cannot set its position` });
+        const err = new Error(`${rel} has no frontmatter - cannot set its position`);
+        err.statusCode = 400;
+        throw err;
       }
+      return { rel, abs, raw, next };
+    });
+
+    let changed = 0;
+    let queued = 0;
+    for (const { rel, abs, raw, next } of stamped) {
       if (next === raw) continue;
       fsSync.writeFileSync(abs, next, 'utf8');
       journalRecordUpsert(rel, req.user?.email);
@@ -4038,9 +4046,11 @@ app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =>
  *  their 9 sub-folders are canonical and enforced by the gate audit; not new
  *  top-level sections - those need a hand-authored sidebars.ts entry). The
  *  folder gets a _category_.json inheriting the section's audience roles.
- *  The gate file is journaled immediately for durability but ships to the
- *  publish branch only alongside the folder's first published article (see
- *  /publish) - an empty category alone can break the site build. */
+ *  The gate file is journaled immediately for durability; it normally ships
+ *  alongside the folder's first published article (see /publish), and
+ *  shipping it alone (e.g. via the boot self-heal) is also safe - verified:
+ *  Docusaurus omits article-less categories from the sidebar and the build
+ *  passes. */
 app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) => {
   try {
     const { sectionDir, label } = req.body || {};
