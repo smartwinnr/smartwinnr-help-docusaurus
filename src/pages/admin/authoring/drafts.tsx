@@ -1,11 +1,11 @@
-import React, {useEffect, useState, type ReactNode} from 'react';
+import React, {useEffect, useRef, useState, type ReactNode} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
 import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify, type Notify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
-import {parsePath, SUB_FOLDERS, WIZARD_STORAGE_KEY} from '@site/src/lib/authoring';
+import {parsePath, parseDocPath, WIZARD_STORAGE_KEY} from '@site/src/lib/authoring';
 import styles from './styles.module.css';
 
 /**
@@ -36,7 +36,17 @@ type Draft = {
   lastUpdate: string | null;
 };
 
-type Article = Draft & { draft: boolean };
+type Article = Draft & { draft: boolean; position?: number | null };
+
+/** One pickable location from GET /sections: a docs section or a module,
+ *  with its sub-folders. `allowRoot` = the location itself holds articles. */
+type SectionEntry = {
+  dir: string;
+  label: string;
+  kind: 'section' | 'module';
+  allowRoot: boolean;
+  subs: Array<{dir: string; label: string}>;
+};
 
 type DeployState = {
   queue: Array<{path: string; slug: string; title: string; action: 'upsert' | 'delete'}>;
@@ -59,11 +69,6 @@ type DeployState = {
     conflicts: string[];
   } | null;
 };
-
-// Modules are fetched from GET /api/admin/authoring/modules on Published-tab
-// mount (sourced from data/modules.json). Adding a module via
-// /admin/authoring/modules makes it appear here on next render.
-type ModuleEntry = {slug: string; label: string};
 
 
 /**
@@ -162,7 +167,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   // article and drops it from the queue (via /unpublish), so a pending publish
   // is findable + revertible without hunting for it on the Published tab.
   async function cancelQueued(item: DeployState['queue'][number]) {
-    const parsed = parsePath(item.path);
+    const parsed = parseDocPath(item.path);
     if (!parsed) { notify.error('This queued item cannot be canceled from here.'); return; }
     const label = item.title || item.slug;
     const ok = await notify.confirm({
@@ -179,7 +184,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify(parsed),
+        body: JSON.stringify({path: item.path}),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -206,15 +211,15 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   }, []);
 
   async function publishDraft(d: Draft) {
-    const parsed = parsePath(d.path);
-    if (!parsed) { notify.error('Could not parse path'); return; }
+    if (!parseDocPath(d.path)) { notify.error('This article cannot be published from here.'); return; }
+    const wizardKey = parsePath(d.path);
     setBusy(d.path);
     try {
       const res = await fetch('/api/admin/authoring/publish', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify(parsed),
+        body: JSON.stringify({path: d.path}),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -223,7 +228,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         const summary = blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ');
         notify.error(`${data.error}${summary ? ' - ' + summary : ''}`);
       } else {
-        clearWizardStateIfTargets(parsed);
+        if (wizardKey) clearWizardStateIfTargets(wizardKey);
         notify.success(`Published "${d.title}" - it goes live with the next site update (see the banner above).`);
         await refresh();
       }
@@ -243,11 +248,11 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
     });
     if (!ok) return;
 
-    const parsed = parsePath(d.path);
-    if (!parsed) { notify.error('Could not parse path'); return; }
+    if (!parseDocPath(d.path)) { notify.error('This article cannot be deleted from here.'); return; }
+    const wizardKey = parsePath(d.path);
     setBusy(d.path);
     try {
-      const q = new URLSearchParams(parsed).toString();
+      const q = new URLSearchParams({path: d.path}).toString();
       const res = await fetch(`/api/admin/authoring/draft?${q}`, {
         method: 'DELETE',
         credentials: 'same-origin',
@@ -256,7 +261,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         const data = await res.json();
         notify.error(data.error || 'Delete failed');
       } else {
-        clearWizardStateIfTargets(parsed);
+        if (wizardKey) clearWizardStateIfTargets(wizardKey);
         notify.success(`Deleted "${d.title}". (Recoverable by an admin for 30 days.)`);
         await refresh();
       }
@@ -306,7 +311,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         <ul className={styles.deployQueue}>
           {deployState.queue.map((item) => {
             const isDelete = item.action === 'delete';
-            const canCancel = !isDelete && !!parsePath(item.path);
+            const canCancel = !isDelete && !!parseDocPath(item.path);
             return (
               <li key={item.path} className={styles.deployQueueItem}>
                 <span
@@ -437,31 +442,45 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
 // ─────────────────────────────────────────────────────────────────────────
 
 function PublishedTab({notify}: {notify: Notify}): ReactNode {
-  const [moduleSlug, setModuleSlug] = useState<string>('');
-  const [subFolder, setSubFolder] = useState<string>('');
+  const [locations, setLocations] = useState<SectionEntry[]>([]);
+  const [locationsLoading, setLocationsLoading] = useState<boolean>(true);
+  const [locationDir, setLocationDir] = useState<string>('');
+  const [dir, setDir] = useState<string>('');
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [busy, setBusy] = useState<string | null>(null);
-  const [modules, setModules] = useState<ModuleEntry[]>([]);
-  const [modulesLoading, setModulesLoading] = useState<boolean>(true);
+  const [normalizedNote, setNormalizedNote] = useState<boolean>(false);
+  const reorderTimer = useRef<number | null>(null);
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/admin/authoring/modules', {credentials: 'same-origin'});
-        if (!res.ok) { setModulesLoading(false); return; }
+        const res = await fetch('/api/admin/authoring/sections', {credentials: 'same-origin'});
+        if (!res.ok) { setLocationsLoading(false); return; }
         const data = await res.json();
-        setModules((data.modules || []).slice().sort((a: ModuleEntry, b: ModuleEntry) => a.label.localeCompare(b.label)));
+        setLocations(data.sections || []);
       } catch {/* fail soft */}
-      finally { setModulesLoading(false); }
+      finally { setLocationsLoading(false); }
     })();
   }, []);
 
+  const location = locations.find((l) => l.dir === locationDir) || null;
+
+  // Picking a location with no sub-folders (or only root articles) lands
+  // straight on the location itself; otherwise the author picks a folder.
+  function pickLocation(nextDir: string) {
+    setLocationDir(nextDir);
+    setNormalizedNote(false);
+    const loc = locations.find((l) => l.dir === nextDir);
+    if (loc && loc.subs.length === 0 && loc.allowRoot) setDir(loc.dir);
+    else setDir('');
+  }
+
   async function refresh() {
-    if (!moduleSlug || !subFolder) { setArticles([]); return; }
+    if (!dir) { setArticles([]); return; }
     setLoading(true);
     try {
-      const qs = new URLSearchParams({module: moduleSlug, subFolder, filter: 'published'});
+      const qs = new URLSearchParams({dir, filter: 'published'});
       const res = await fetch(`/api/admin/authoring/articles?${qs}`, {credentials: 'same-origin'});
       const data = await res.json();
       if (!res.ok) { notify.error(data.error || `${res.status} ${res.statusText}`); return; }
@@ -473,12 +492,53 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
     }
   }
 
-  useEffect(() => { refresh(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [moduleSlug, subFolder]);
+  useEffect(() => {
+    if (reorderTimer.current) { window.clearTimeout(reorderTimer.current); reorderTimer.current = null; }
+    setNormalizedNote(false);
+    refresh();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dir]);
+  useEffect(() => () => { if (reorderTimer.current) window.clearTimeout(reorderTimer.current); }, []);
+
+  /** Swap a row with its neighbor, then debounce-save the whole order.
+   *  Each click gives instant visual feedback; the save batches. */
+  function moveRow(index: number, delta: -1 | 1) {
+    const next = articles.slice();
+    const j = index + delta;
+    if (j < 0 || j >= next.length) return;
+    [next[index], next[j]] = [next[j], next[index]];
+    setArticles(next);
+    if (reorderTimer.current) window.clearTimeout(reorderTimer.current);
+    reorderTimer.current = window.setTimeout(async () => {
+      reorderTimer.current = null;
+      try {
+        const res = await fetch('/api/admin/authoring/reorder', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'same-origin',
+          body: JSON.stringify({dir, orderedPaths: next.map((a) => a.path)}),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          notify.error(data.error || 'Could not save the new order');
+          await refresh();
+          return;
+        }
+        if (data.queuedForDeploy) {
+          notify.success('Order saved - it goes live with the next site update.');
+        }
+        if (data.changed > 2) setNormalizedNote(true);
+      } catch (err) {
+        notify.error((err as Error).message);
+        await refresh();
+      }
+    }, 1500);
+  }
 
   async function remove(a: Article) {
     const ok = await notify.confirm({
       title: `Delete "${a.title}"?`,
-      message: `Removes "${a.title}" from the live help site with the next site update. Its web address will redirect readers to the module page. An admin can recover the content from the trash for up to 30 days.`,
+      message: `Removes "${a.title}" from the live help site with the next site update. Its web address will redirect readers to a related page. An admin can recover the content from the trash for up to 30 days.`,
       confirmLabel: 'Delete article',
       cancelLabel: 'Keep it',
       danger: true,
@@ -516,8 +576,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
   // (production hides draft:true on the next deploy). Moves the row to the
   // Drafts tab, so we just refresh the published list afterward.
   async function unpublish(a: Article) {
-    const parsed = parsePath(a.path);
-    if (!parsed) { notify.error('Could not parse path'); return; }
+    if (!parseDocPath(a.path)) { notify.error('This article cannot be unpublished from here.'); return; }
     const ok = await notify.confirm({
       title: `Unpublish "${a.title}"?`,
       message: `Hides "${a.title}" from readers. If it hasn't gone live yet, it simply won't ship. If it's already live, it disappears with the next site update. You can publish it again any time.`,
@@ -532,7 +591,7 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify(parsed),
+        body: JSON.stringify({path: a.path}),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -556,20 +615,35 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
       <div className={styles.tabToolbar}>
         <div className={styles.selectorRow}>
           <label className={styles.inlineLabel}>
-            Module
+            Section
             <select
-              value={moduleSlug}
-              disabled={modulesLoading}
-              onChange={(e) => setModuleSlug(e.target.value)}>
-              <option value="">{modulesLoading ? 'Loading…' : '- pick a module -'}</option>
-              {modules.map((m) => <option key={m.slug} value={m.slug}>{m.label}</option>)}
+              value={locationDir}
+              disabled={locationsLoading}
+              onChange={(e) => pickLocation(e.target.value)}>
+              <option value="">{locationsLoading ? 'Loading…' : '- pick a section -'}</option>
+              <optgroup label="Sections">
+                {locations.filter((l) => l.kind === 'section').map((l) => (
+                  <option key={l.dir} value={l.dir}>{l.label}</option>
+                ))}
+              </optgroup>
+              <optgroup label="Modules">
+                {locations.filter((l) => l.kind === 'module').map((l) => (
+                  <option key={l.dir} value={l.dir}>{l.label}</option>
+                ))}
+              </optgroup>
             </select>
           </label>
           <label className={styles.inlineLabel}>
-            Sub-folder
-            <select value={subFolder} onChange={(e) => setSubFolder(e.target.value)}>
-              <option value="">- pick a sub-folder -</option>
-              {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+            Folder
+            <select
+              value={dir}
+              disabled={!location || (location.subs.length === 0 && location.allowRoot)}
+              onChange={(e) => { setDir(e.target.value); }}>
+              <option value="">- pick a folder -</option>
+              {location?.allowRoot && (
+                <option value={location.dir}>(section root)</option>
+              )}
+              {location?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
             </select>
           </label>
         </div>
@@ -577,22 +651,28 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
           type="button"
           className={styles.btnGhost}
           onClick={refresh}
-          disabled={loading || !moduleSlug || !subFolder}>
+          disabled={loading || !dir}>
           Refresh
         </button>
       </div>
 
-      {(!moduleSlug || !subFolder) && (
-        <p className={styles.hint}>Pick a module and sub-folder to list published articles.</p>
+      {!dir && (
+        <p className={styles.hint}>Pick a section and folder to list published articles.</p>
       )}
-      {moduleSlug && subFolder && loading && <p className={styles.hint}>Loading…</p>}
-      {moduleSlug && subFolder && !loading && articles.length === 0 && (
+      {dir && loading && <p className={styles.hint}>Loading…</p>}
+      {dir && !loading && articles.length === 0 && (
         <p className={styles.hint}>No published articles in this folder.</p>
+      )}
+      {normalizedNote && (
+        <p className={styles.hint}>
+          This folder's order was normalized - all its articles ship with the next update.
+        </p>
       )}
       {!loading && articles.length > 0 && (
         <table className={styles.draftTable}>
           <thead>
             <tr>
+              <th>Order</th>
               <th>Title</th>
               <th>Path</th>
               <th>Last update</th>
@@ -600,8 +680,27 @@ function PublishedTab({notify}: {notify: Notify}): ReactNode {
             </tr>
           </thead>
           <tbody>
-            {articles.map((a) => (
+            {articles.map((a, i) => (
               <tr key={a.path}>
+                <td className={styles.tabular}>
+                  {i + 1}{' '}
+                  <button
+                    type="button"
+                    className={styles.btnGhost}
+                    disabled={i === 0 || !!busy || loading}
+                    onClick={() => moveRow(i, -1)}
+                    title="Move this article up in the sidebar order.">
+                    ▲
+                  </button>
+                  <button
+                    type="button"
+                    className={styles.btnGhost}
+                    disabled={i === articles.length - 1 || !!busy || loading}
+                    onClick={() => moveRow(i, 1)}
+                    title="Move this article down in the sidebar order.">
+                    ▼
+                  </button>
+                </td>
                 <td><strong>{a.title}</strong></td>
                 <td><code className={styles.smallCode}>{a.path}</code></td>
                 <td className={styles.tabular}>{a.lastUpdate ?? '-'}</td>

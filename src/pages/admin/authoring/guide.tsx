@@ -110,6 +110,22 @@ function GuidePage(): ReactNode {
           <li>Deleting an article also cleans up images no other article uses.</li>
         </ul>
 
+        <h2>Which parts of the site can I manage?</h2>
+        <p>
+          Everything readers see: all module articles plus every section — Get Started, Guides,
+          Reports &amp; Analytics, Integrations, Administration, Reference, and Release Notes.
+          Pick the section on the queue's <strong>Published</strong> tab. Only the special
+          role-landing pages are off-limits (they're managed by the engineering team).
+        </p>
+
+        <h2>Reordering articles</h2>
+        <ul>
+          <li>On the <strong>Published</strong> tab, pick a section and folder, then use the <strong>▲</strong>/<strong>▼</strong> buttons to move articles up or down. The order you see is the order readers see in the sidebar.</li>
+          <li>Changes save automatically a moment after your last click, and go live with the next site update.</li>
+          <li>The first time you reorder a folder, the whole folder's order is normalized — all its articles ship together in the next update. After that, each swap touches only two articles.</li>
+          <li>Drafts don't appear in the ordering list; when published, they join at the end of the folder — just reorder again to place them.</li>
+        </ul>
+
         <h2>Moving, renaming, deleting</h2>
         <ul>
           <li>Use the queue's <strong>Move</strong> action to relocate an article, the raw editor to change a slug, and the queue's <strong>Delete</strong> action to remove one.</li>

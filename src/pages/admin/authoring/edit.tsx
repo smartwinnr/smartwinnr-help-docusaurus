@@ -8,13 +8,12 @@ import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
 import {
-  parsePath,
+  parseDocPath,
   parseFrontmatterFields,
   replaceFrontmatterFields,
   checkTitleShape,
   getDraftFlag,
   setDraftFlag,
-  SUB_FOLDERS,
   type FrontmatterFields,
 } from '@site/src/lib/authoring';
 import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
@@ -75,24 +74,27 @@ function EditorPanel(): ReactNode {
   const previewHtml = useMarkdownHtml(markdown);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  // Move-to-folder control.
-  const [modules, setModules] = useState<Array<{slug: string; label: string}>>([]);
-  const [moveModule, setMoveModule] = useState<string>('');
-  const [moveSubFolder, setMoveSubFolder] = useState<string>('');
+  // Move-to-folder control, driven by the GET /sections location tree.
+  const [locations, setLocations] = useState<Array<{dir: string; label: string; kind: string; allowRoot: boolean; subs: Array<{dir: string; label: string}>}>>([]);
+  const [moveLocation, setMoveLocation] = useState<string>('');
+  const [moveDir, setMoveDir] = useState<string>('');
   const [moving, setMoving] = useState<boolean>(false);
 
   // markdown is the single source of truth. Metadata fields are derived from
   // its frontmatter and write back through replaceFrontmatterFields, so the
   // textarea, the fields, and the saved file never drift apart.
   const fm = useMemo(() => parseFrontmatterFields(markdown) ?? EMPTY_FM, [markdown]);
-  const parsed = useMemo(() => parsePath(path), [path]);
+  const parsed = useMemo(() => parseDocPath(path), [path]);
   const isDraft = getDraftFlag(markdown) === true;
+  // AI assist (Refine / Suggest) posts module+subFolder, and the generate
+  // endpoints are modules-only by design - hide it for section articles.
+  const aiAvailable = !!parsed?.module;
   const titleShape = checkTitleShape(fm.title, parsed?.subFolder ?? '');
   const busy = saving || refining || uploading || moving || suggesting !== null;
   // Mirror the wizard's metadata gate: an article must carry at least one tag.
   const tagMissing = fm.tags.length === 0;
   // Move target differs from the article's current folder?
-  const moveChanged = !!parsed && (moveModule !== parsed.module || moveSubFolder !== parsed.subFolder);
+  const moveChanged = !!parsed && !!moveDir && moveDir !== parsed.dir;
 
   /** Article slug for the /upload filename suffix (path's last segment). */
   const articleSlug = (() => {
@@ -154,7 +156,7 @@ function EditorPanel(): ReactNode {
 
   /** Per-field LLM suggestion for title / description. Body untouched. */
   async function suggestField(field: 'title' | 'description') {
-    if (!parsed) { notify.error('Cannot suggest: unrecognized article path.'); return; }
+    if (!parsed?.module) { notify.error('AI assist is available for module articles only.'); return; }
     setSuggesting(field);
     try {
       const res = await fetch('/api/admin/authoring/suggest-field', {
@@ -189,7 +191,7 @@ function EditorPanel(): ReactNode {
    *  publish state (the generate prompt hard-sets draft:true, which would
    *  silently re-draft a published article). */
   async function refine() {
-    if (!parsed) { notify.error('Cannot refine: unrecognized article path.'); return; }
+    if (!parsed?.module) { notify.error('AI assist is available for module articles only.'); return; }
     if (!refinement.trim()) return;
     setRefining(true);
     try {
@@ -261,35 +263,49 @@ function EditorPanel(): ReactNode {
     })();
   }, [user, location.search]);
 
-  // Module list for the Move picker (same source as the wizard's Step 1).
+  // Location tree for the Move picker (sections + modules).
   useEffect(() => {
     if (!(user.roles || []).includes('superadmin')) return;
     (async () => {
       try {
-        const res = await fetch('/api/admin/authoring/modules', {credentials: 'same-origin'});
+        const res = await fetch('/api/admin/authoring/sections', {credentials: 'same-origin'});
         if (!res.ok) return;
         const data = await res.json();
-        setModules((data.modules || []).slice().sort(
-          (a: {label: string}, b: {label: string}) => a.label.localeCompare(b.label)));
+        setLocations(data.sections || []);
       } catch {/* fail soft - the picker just stays empty */}
     })();
   }, [user]);
 
   // Default the Move selects to the article's current folder once the path resolves.
   useEffect(() => {
-    if (parsed) { setMoveModule(parsed.module); setMoveSubFolder(parsed.subFolder); }
-  }, [parsed?.module, parsed?.subFolder]);
+    if (parsed) {
+      const loc = locations.find((l) => parsed.dir === l.dir || parsed.dir.startsWith(l.dir + '/'));
+      setMoveLocation(loc ? loc.dir : '');
+      setMoveDir(parsed.dir);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [parsed?.dir, locations.length]);
 
-  /** Relocate the article to the selected module / sub-folder. Operates on the
+  const moveLoc = locations.find((l) => l.dir === moveLocation) || null;
+  /** Human label for a destination dir, from the sections tree. */
+  function dirLabel(d: string): string {
+    for (const l of locations) {
+      if (l.dir === d) return l.label;
+      const sub = l.subs.find((s) => s.dir === d);
+      if (sub) return `${l.label} / ${sub.label}`;
+    }
+    return d;
+  }
+
+  /** Relocate the article to the selected folder. Operates on the
    *  saved file (Move is disabled while there are unsaved edits), then reloads
    *  the server-rewritten frontmatter and re-points the URL to the new path. */
   async function move() {
     if (!parsed || !moveChanged) return;
-    const subLabel = SUB_FOLDERS.find((s) => s.value === moveSubFolder)?.label ?? moveSubFolder;
-    const modLabel = modules.find((m) => m.slug === moveModule)?.label ?? moveModule;
+    const destLabel = dirLabel(moveDir);
     const ok = await notify.confirm({
       title: 'Move article?',
-      message: `Move to ${modLabel} / ${subLabel}? The article's web address changes (the old address will redirect automatically) and its audience resets to that folder's default.${isDraft ? '' : ' The move goes live with the next site update.'}`,
+      message: `Move to ${destLabel}? The article's web address changes (the old address will redirect automatically) and its audience may reset to that folder's default.${isDraft ? '' : ' The move goes live with the next site update.'}`,
       confirmLabel: 'Move',
       cancelLabel: 'Cancel',
     });
@@ -300,7 +316,7 @@ function EditorPanel(): ReactNode {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify({fromPath: path, toModule: moveModule, toSubFolder: moveSubFolder}),
+        body: JSON.stringify({fromPath: path, toDir: moveDir}),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) { notify.error(data.error || 'Move failed'); return; }
@@ -314,7 +330,7 @@ function EditorPanel(): ReactNode {
       } catch {/* non-fatal - the move already succeeded */}
       // Keep the URL in sync so a refresh reloads the new location.
       window.history.replaceState(null, '', `/admin/authoring/edit?${new URLSearchParams({path: data.toPath})}`);
-      notify.success(`Moved to ${modLabel} / ${subLabel}. The old address now redirects automatically.${data.queuedForDeploy ? ' Goes live with the next site update.' : ''}`);
+      notify.success(`Moved to ${destLabel}. The old address now redirects automatically.${data.queuedForDeploy ? ' Goes live with the next site update.' : ''}`);
     } catch (err) {
       notify.error((err as Error).message);
     } finally {
@@ -425,6 +441,7 @@ function EditorPanel(): ReactNode {
                 onChange={(e) => patchFrontmatter({title: e.target.value})}
               />
               <div className={styles.fieldActions}>
+                {aiAvailable && (
                 <button
                   type="button"
                   className={styles.btnGhost}
@@ -433,6 +450,7 @@ function EditorPanel(): ReactNode {
                   title="Ask the LLM to suggest a new title from the article body + sub-folder shape. Body untouched.">
                   {suggesting === 'title' ? 'Suggesting…' : 'Suggest a new title'}
                 </button>
+                )}
               </div>
               {fm.title && !titleShape.ok && (
                 <span className={styles.warn}>{titleShape.hint}</span>
@@ -449,6 +467,7 @@ function EditorPanel(): ReactNode {
                 onChange={(e) => patchFrontmatter({description: e.target.value})}
               />
               <div className={styles.fieldActions}>
+                {aiAvailable && (
                 <button
                   type="button"
                   className={styles.btnGhost}
@@ -457,24 +476,41 @@ function EditorPanel(): ReactNode {
                   title="Ask the LLM to suggest a new description from the article body. Body untouched.">
                   {suggesting === 'description' ? 'Suggesting…' : 'Suggest a new description'}
                 </button>
+                )}
                 <span className={styles.hint}>{fm.description.length}/160</span>
               </div>
             </div>
             <TagPicker tags={fm.tags} onChange={(tags) => patchFrontmatter({tags})} disabled={busy} />
             <div className={styles.field}>
-              <label>Folder (module / sub-folder)</label>
+              <label>Folder (section / sub-folder)</label>
               <div className={styles.selectorRow}>
                 <select
-                  value={moveModule}
+                  value={moveLocation}
                   disabled={busy || !parsed}
-                  onChange={(e) => setMoveModule(e.target.value)}>
-                  {modules.map((m) => <option key={m.slug} value={m.slug}>{m.label}</option>)}
+                  onChange={(e) => {
+                    setMoveLocation(e.target.value);
+                    const loc = locations.find((l) => l.dir === e.target.value);
+                    setMoveDir(loc && loc.subs.length === 0 && loc.allowRoot ? loc.dir : '');
+                  }}>
+                  <option value="">- pick a section -</option>
+                  <optgroup label="Sections">
+                    {locations.filter((l) => l.kind === 'section').map((l) => (
+                      <option key={l.dir} value={l.dir}>{l.label}</option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="Modules">
+                    {locations.filter((l) => l.kind === 'module').map((l) => (
+                      <option key={l.dir} value={l.dir}>{l.label}</option>
+                    ))}
+                  </optgroup>
                 </select>
                 <select
-                  value={moveSubFolder}
-                  disabled={busy || !parsed}
-                  onChange={(e) => setMoveSubFolder(e.target.value)}>
-                  {SUB_FOLDERS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+                  value={moveDir}
+                  disabled={busy || !parsed || !moveLoc}
+                  onChange={(e) => setMoveDir(e.target.value)}>
+                  <option value="">- pick a folder -</option>
+                  {moveLoc?.allowRoot && <option value={moveLoc.dir}>(section root)</option>}
+                  {moveLoc?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
                 </select>
                 <button
                   type="button"
@@ -489,7 +525,7 @@ function EditorPanel(): ReactNode {
               </div>
               {moveChanged && !dirty && (
                 <span className={styles.hint}>
-                  Moving changes the article's URL and resets its audience to the destination folder's default.
+                  Moving changes the article's web address (the old one redirects) and may reset its audience to the destination folder's default.
                 </span>
               )}
               {moveChanged && dirty && (
@@ -498,7 +534,10 @@ function EditorPanel(): ReactNode {
             </div>
           </div>
 
-          {/* AI refine - rewrites the body per the note, preserving publish state. */}
+          {/* AI refine - rewrites the body per the note, preserving publish
+              state. Modules-only: the generate endpoints validate canonical
+              module sub-folders. */}
+          {aiAvailable && (
           <div className={styles.refineRow}>
             <textarea
               rows={2}
@@ -518,6 +557,7 @@ function EditorPanel(): ReactNode {
               </button>
             </div>
           </div>
+          )}
 
           <div className={styles.editLayout}>
             <textarea

@@ -245,6 +245,30 @@ export function parsePath(p: string): {module: string; subFolder: string; slug: 
   return m ? {module: m[1], subFolder: m[2], slug: m[3]} : null;
 }
 
+/** Section-general article location. Matches any authoring-editable docs
+ *  path - docs/<section>/<slug>, docs/<section>/<sub>/<slug>, and the
+ *  modules shape (for which `module`/`subFolder` are also set). The
+ *  role-routing landing pages (docs/path/) and docs/internal/ are excluded,
+ *  mirroring the server's deny-list. */
+export type DocLocation = {dir: string; slug: string; module?: string; subFolder?: string};
+export function parseDocPath(p: string): DocLocation | null {
+  const norm = p.replace(/\\/g, '/');
+  if (norm.startsWith('docs/internal/') || norm.startsWith('docs/path/')) return null;
+  const mod = parsePath(norm);
+  if (mod) {
+    return {
+      dir: `docs/modules/${mod.module}/${mod.subFolder}`,
+      slug: mod.slug,
+      module: mod.module,
+      subFolder: mod.subFolder,
+    };
+  }
+  if (norm.startsWith('docs/modules/')) return null; // module index/landing pages stay off-limits
+  const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/([a-z0-9._-]+)\.(md|mdx)$/.exec(norm);
+  if (!m) return null;
+  return {dir: m[2] ? `docs/${m[1]}/${m[2]}` : `docs/${m[1]}`, slug: m[3]};
+}
+
 /** Read the frontmatter `draft:` flag. Returns true/false, or null when the
  *  field is absent (Docusaurus treats absent as published). */
 export function getDraftFlag(markdown: string): boolean | null {
