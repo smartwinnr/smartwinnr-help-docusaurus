@@ -209,6 +209,15 @@ template and fill in the verb / object / topic from the editor's notes.
 | `best-practices` | "Best practices for `<topic>`" |
 | `faqs-and-troubleshooting` | Question-shaped ("Why does `<X>` happen?", "Can I `<verb>` `<X>`?") OR "Troubleshooting `<X>`" |
 
+When the destination is a SITE SECTION rather than a module sub-folder
+(the inputs carry a `dir` outside `docs/modules/`, e.g. Get Started,
+Administration, Reference), no table row applies. Use the generic rule:
+start the title with an action verb ("Create ...", "Set up ...",
+"Log in to ...") or a question word, and match the tone to the section -
+onboarding-manual tone for Get Started, admin-manual tone for
+Administration, reference tone for Reference. Use the `sectionLabel` /
+`folderLabel` inputs for context.
+
 If the editor's title is non-empty, ignore this table and reproduce
 their title verbatim.
 

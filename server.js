@@ -1070,11 +1070,22 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
         return res.status(400).json({ error: 'Missing inputs: roughExplanation is required' });
       }
     }
-    if (!inputs.module || !inputs.subFolder) {
-      return res.status(400).json({ error: 'Missing inputs: module + subFolder required' });
-    }
-    if (!CANONICAL_SUBFOLDERS.has(inputs.subFolder)) {
-      return res.status(400).json({ error: `subFolder must be one of: ${[...CANONICAL_SUBFOLDERS].join(', ')}` });
+    // Destination: either a dir (any docs section or module sub-folder -
+    // the resolver enforces the deny-list and canonical module rules) or the
+    // legacy module + subFolder pair.
+    if (inputs.dir) {
+      try {
+        resolveAnyDocDir(inputs.dir);
+      } catch (e) {
+        return res.status(400).json({ error: "That folder doesn't exist any more - pick another destination." });
+      }
+    } else {
+      if (!inputs.module || !inputs.subFolder) {
+        return res.status(400).json({ error: 'Pick a destination folder first.' });
+      }
+      if (!CANONICAL_SUBFOLDERS.has(inputs.subFolder)) {
+        return res.status(400).json({ error: `subFolder must be one of: ${[...CANONICAL_SUBFOLDERS].join(', ')}` });
+      }
     }
 
     // In refine mode, append the overlay so its preserve-all-content rules
@@ -1192,12 +1203,18 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
     });
   }
   try {
-    const { field, module: moduleSlug, subFolder, body = '', brainDump = '', currentValue = '' } = req.body || {};
+    const { field, dir, module: moduleSlug, subFolder, body = '', brainDump = '', currentValue = '' } = req.body || {};
     if (field !== 'title' && field !== 'description') {
       return res.status(400).json({ error: "field must be 'title' or 'description'" });
     }
-    if (!moduleSlug || !subFolder) {
-      return res.status(400).json({ error: 'module + subFolder required' });
+    if (dir) {
+      try {
+        resolveAnyDocDir(dir);
+      } catch (e) {
+        return res.status(400).json({ error: "That folder doesn't exist any more." });
+      }
+    } else if (!moduleSlug || !subFolder) {
+      return res.status(400).json({ error: 'A destination folder is required.' });
     }
     if (!body && !brainDump) {
       return res.status(400).json({ error: 'body or brainDump required for context' });
@@ -1218,9 +1235,10 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
       'faqs-and-troubleshooting': 'a question shape ("Why does X happen?", "Can I Y?") or "Troubleshooting <X>"',
     };
 
+    const shapeHint = (subFolder && titleShape[subFolder]) || 'start with an action verb or question word';
     const sys = field === 'title'
       ? `You suggest one help-article title for SmartWinnr. Return ONE line containing JUST the title - no quotes, no markdown, no preamble, no explanation. ` +
-        `Shape for sub-folder "${subFolder}": ${titleShape[subFolder] || 'start with an action verb or question word'}. ` +
+        `Title shape: ${shapeHint}. ` +
         `Keep it short (under 80 chars), specific, and use lowercase except for proper nouns and the first word.`
       : `You suggest one help-article description for SmartWinnr. Return ONE line containing JUST the description - no quotes, no markdown, no preamble. ` +
         `Length must be between 60 and 160 characters. Stand-alone first sentence, no "we", no "we have updated", no "this article shows". ` +
@@ -1229,8 +1247,9 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
     // Provide all available context. Truncate the body so we don't blow
     // through max_tokens on an edge-case 30-page draft.
     const userParts = [
-      `Sub-folder: ${subFolder}`,
-      `Module: ${moduleSlug}`,
+      dir ? `Destination folder: ${dir}` : null,
+      subFolder ? `Sub-folder: ${subFolder}` : null,
+      moduleSlug ? `Module: ${moduleSlug}` : null,
       currentValue ? `Current ${field} (editor wants this regenerated): ${currentValue}` : null,
       brainDump ? `Editor's brain dump:\n${String(brainDump).slice(0, 2000)}` : null,
       body ? `Current article (frontmatter + body):\n${String(body).slice(0, 4000)}` : null,
@@ -1281,7 +1300,7 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
 
 app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
   try {
-    const { markdown, module: moduleSlug, subFolder, slug, baseHash } = req.body || {};
+    const { markdown, dir, module: moduleSlug, subFolder, slug, baseHash } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
 
     const audit = gradeMarkdown(markdown, auditOpts());
@@ -1293,7 +1312,15 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
       });
     }
 
-    const target = resolveDraftPath(moduleSlug, subFolder, slug);
+    // Destination: a dir (any docs section or module sub-folder) + slug, or
+    // the legacy module + subFolder + slug triple.
+    let target;
+    if (dir) {
+      if (!isValidSlug(slug)) return res.status(400).json({ error: 'Invalid slug' });
+      target = path.join(resolveAnyDocDir(dir), `${slug}.md`);
+    } else {
+      target = resolveDraftPath(moduleSlug, subFolder, slug);
+    }
     // Optimistic concurrency: when the client says which version it loaded
     // (baseHash from GET /draft), refuse to clobber a newer server copy -
     // another editor saved in between. Clients that omit baseHash keep the
@@ -1324,14 +1351,18 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
       : text.replace(/^---/, '---').replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
 
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
-    // If this is the first article ever written into the sub-folder, make
-    // sure the gate file lands too. Otherwise audit-gates.js fails on the
-    // next build because the sub-folder is ungated.
-    const subfolderCreated = ensureSubfolderCategory(moduleSlug, subFolder);
+    // If this is the first article ever written into a MODULE sub-folder,
+    // make sure the gate file lands too - otherwise audit-gates.js fails on
+    // the next build because the sub-folder is ungated. Section folders
+    // already exist with their own gates (resolveAnyDocDir enforces
+    // existence), so this correctly no-ops for them.
+    const targetRel = path.relative(__dirname, target).replace(/\\/g, '/');
+    const modMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)\//.exec(targetRel);
+    const subfolderCreated = modMatch ? ensureSubfolderCategory(modMatch[1], modMatch[2]) : false;
     fsSync.writeFileSync(target, finalText, 'utf8');
-    journalRecordUpsert(path.relative(__dirname, target), req.user?.email);
-    if (subfolderCreated) {
-      journalRecordUpsert(path.join('docs', 'modules', moduleSlug, subFolder, '_category_.json'), req.user?.email);
+    journalRecordUpsert(targetRel, req.user?.email);
+    if (subfolderCreated && modMatch) {
+      journalRecordUpsert(path.join('docs', 'modules', modMatch[1], modMatch[2], '_category_.json'), req.user?.email);
     }
     res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated, hash: contentHash(finalText) });
   } catch (error) {
@@ -4004,8 +4035,11 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
     const categoryMeta = (dirAbs) => {
       try {
         const cat = JSON.parse(fsSync.readFileSync(path.join(dirAbs, '_category_.json'), 'utf8'));
-        return { label: cat.label || null, position: typeof cat.position === 'number' ? cat.position : null };
-      } catch { return { label: null, position: null }; }
+        const roles = Array.isArray(cat?.customProps?.roles) && cat.customProps.roles.length > 0
+          ? cat.customProps.roles
+          : null;
+        return { label: cat.label || null, position: typeof cat.position === 'number' ? cat.position : null, roles };
+      } catch { return { label: null, position: null, roles: null }; }
     };
 
     const sections = [];
@@ -4014,6 +4048,9 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
       if (entry.name === 'internal' || entry.name === 'path' || entry.name === 'modules') continue;
       const secAbs = path.join(DOCS_ROOT, entry.name);
       const meta = categoryMeta(secAbs);
+      // Audience defaults for the wizard: the folder's own gate roles, then
+      // the section's, then everyone. Never empty.
+      const sectionRoles = meta.roles || ALL_ROLES;
       const subs = [];
       let hasRootArticles = false;
       for (const child of fsSync.readdirSync(secAbs, { withFileTypes: true })) {
@@ -4024,6 +4061,7 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
           subs.push({
             dir: `docs/${entry.name}/${child.name}`,
             label: subMeta.label || titleCase(child.name),
+            roles: subMeta.roles || sectionRoles,
           });
         }
       }
@@ -4034,6 +4072,7 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
         position: meta.position ?? 99,
         kind: 'section',
         allowRoot: hasRootArticles,
+        roles: sectionRoles,
         subs,
       });
     }
@@ -4048,9 +4087,11 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
         position: 999,
         kind: 'module',
         allowRoot: false,
+        roles: ALL_ROLES,
         subs: SUBFOLDER_TEMPLATE.map((sf) => ({
           dir: `docs/modules/${m.slug}/${sf.slug}`,
           label: sf.label,
+          roles: sf.roles,
         })),
       }));
 
