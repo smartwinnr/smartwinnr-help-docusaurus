@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-assignment-in-smartpath
 sidebar_position: 304
 last_update:
-  date: 2026-01-20T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-17
+  author: Charan
 source:
   helpscout_id: 696faec0dadc293bb313334c
   helpscout_url: >-
@@ -22,40 +22,54 @@ tags:
   - smartpath
   - admin
 ---
-Assignments help evaluate learner understanding by requiring them to complete specific tasks, submit responses, or upload supporting files as part of the SmartPath learning journey.
 
-An **Assignment** is a segment that can be created within a SmartPath module, allowing learners to type responses to assignment questions or submit supporting files-such as PDFs or images-as part of their submission.
+> **At a glance** - An Assignment is a SmartPath segment where learners type a response, upload supporting files, or both. An editor then reviews each submission and awards a score.
 
-Since Assignment must be created within a SmartPath module, you need to either create a new module or select an existing module where the assignment will be added.
+Assignments help evaluate learner understanding. Learners complete a task, submit a typed response, or upload supporting files such as PDFs or images as part of the SmartPath journey.
 
-[Learn how to create a module for SmartPath](https://help.smartwinnr.com/article/76-how-can-i-create-a-module-for-smartpath)
+## When to use this
 
-1. While creating the Segments, Choose the segment type as **Assignment** from the available options. Then add a **name** to your Assignment.
+Use an Assignment segment when a task needs human evaluation. Examples include written exercises, field evidence uploads, and project submissions.
+
+## Before you start
+
+Assignments live inside a SmartPath module. Create a new module or pick an existing one first. See [How to create a module for SmartPath](../create-and-manage/how-to-create-a-module-for-smartpath.md).
+
+## Steps
+
+### 1. Add an Assignment segment
+
+While adding segments to your module, choose the segment type **Assignment**. Then enter a **name** for your assignment segment and click **Create**.
 
 ![While creating the Segments, Choose the segment type as Assignment from the available options. Then add a name to your Assignment.](/img/helpscout/editors/how-to-create-assignment-in-smartpath-1.png)
 
-2. Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create your **Assignment** for the SmartPath module.
+### 2. Open the assignment setup page
 
-![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create your Assignment for the Sma](/img/helpscout/editors/how-to-create-assignment-in-smartpath-2.png)
+After the segment is created, the assignment setup page opens. Here you configure what learners see and submit.
 
-3. ### Fill out the assignment details here
+![Upon creating the segment, you will be redirected to the following page, which allows trainers/editors to create your Assignment for the SmartPath module.](/img/helpscout/editors/how-to-create-assignment-in-smartpath-2.png)
 
-* **Title:** Enter a clear and meaningful title for the assignment as it will appear to learners.
-* **Description:** Provide a brief description of the assignment (Optional)
-* **Instruction’s Text:** Enter detailed instructions explaining what learners are expected to complete or submit.
-* **Score:** Define the total points allocated for the assignment.
-* **Answer Mandatory:** Enable this option to make submission of an answer mandatory for completing the assignment. This option will allow the learner to type their response in the textbox provided in the Assignment segment.
-* **Resource Mandatory:** Enable this option to require learners to upload supporting documents or files. Leaners can upload a PDF or Image file as assignment submission.
-* **Upload Files:** Upload reference materials, templates, or resources that learners may need to complete the assignment.
+### 3. Fill out the assignment details
 
-Following is how the assignment instructions will be available to the learner in user view
+* **Title:** Enter a clear, meaningful title. Learners see this title on the segment.
+* **Description:** Add a brief description of the assignment (optional).
+* **Cover Image:** Optionally add a cover image for the assignment.
+* **Instruction's text:** Explain exactly what learners must complete or submit. This field is required.
+* **Score:** Set the total points available for the assignment.
+* **Answer Mandatory:** Enable this to require a typed response. Learners get a text box inside the assignment segment.
+* **Resource Mandatory:** Enable this to require a file upload. Learners can submit a PDF or an image file. This option is enabled by default.
+* **Upload Files:** Attach reference materials, templates, or resources learners need. PDF and image files are supported.
+
+Here is how the assignment instructions appear to the learner:
 
 ![Following is how the assignment instructions will be available to the learner in user view](/img/helpscout/editors/how-to-create-assignment-in-smartpath-3.png)
 
-4. Click **Save** to create the assignment and add it to the SmartPath module.
+### 4. Save the assignment
 
-# How the Editor can review the assignment submission and give the scoring?
+Click **Save** to create the assignment and add it to the SmartPath module.
 
-Once the leaner submit the assignment, editor needs to go in an review the submission for the completion status and score to get updated for the SmartPath.
+## How the editor reviews submissions and awards scores
 
-[Click here to learn how to evaluate the assignment submitted by the learners](../reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath.md)
+Once a learner submits the assignment, an editor reviews the submission. The editor enters written feedback and a score (up to the maximum you set). The learner's completion status and SmartPath score update after the review.
+
+See [how to evaluate the assignment submitted by learners](../reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath.md).
