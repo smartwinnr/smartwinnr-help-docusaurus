@@ -26,6 +26,8 @@ tags:
 
 This tab provides insights into individual learners and categorizes users by performance and risk level.
 
+![](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrstrxt3.png)
+
 ### Learner Management Metrics
 
 #### New Learners
@@ -82,6 +84,7 @@ This tab provides insights into individual learners and categorizes users by per
 * * *
 
 #### Certification Due
+![](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrstxyx0.png)
 
 **What it shows:** The number of learners who have certification quizzes due within the next 30 days.
 
@@ -99,6 +102,7 @@ This tab provides insights into individual learners and categorizes users by per
 * * *
 
 ### User Engagement Trend
+![](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrsuef98.png)
 
 This dual-bar chart compares logged-in activity with actual quiz-taking activity over time.
 
@@ -128,9 +132,9 @@ This donut chart categorizes learners by performance level.
 
 **What it shows:** Three performance categories:
 
-* **High Performers (blue)**: Learners scoring above 80%
-* **Normal Users (green)**: Learners scoring between 51-80%
-* **At-Risk Users (purple)**: Learners scoring at or below 50%
+* **High Performers (Green)**: Learners scoring above 80%
+* **Normal Users (Orange)**: Learners scoring between 51-80%
+* **At-Risk Users (Red)**: Learners scoring at or below 50%
 
 **How to read it:**
 

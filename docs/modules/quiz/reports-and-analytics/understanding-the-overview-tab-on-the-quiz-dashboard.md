@@ -29,6 +29,8 @@ This tab provides a high-level snapshot of quiz activity, performance, and engag
 ### Key Metrics Section
 
 This section displays four core metrics that summarize quiz performance.
+![](/img/helpscout/authored/understanding-the-overview-tab-on-the-quiz-dashboard-mrsuremb.png)
+
 
 #### Active Learners
 
@@ -36,8 +38,8 @@ This section displays four core metrics that summarize quiz performance.
 
 **How to read it:**
 
-* The main number (e.g., 6) shows total active quiz takers
-* The percentage below (e.g., "+20% vs previous period") shows the change compared to the previous period of equal length
+* The main number (e.g., 19) shows total active quiz takers
+* The percentage below (e.g., "+72% vs previous period") shows the change compared to the previous period of equal length
 * A green upward arrow indicates growth
 * A red downward arrow would indicate a decline
 
@@ -53,7 +55,7 @@ This section displays four core metrics that summarize quiz performance.
 
 **How to read it:**
 
-* The main number (e.g., 87%) shows the completion rate
+* The main number (e.g., 80%) shows the completion rate
 * The percentage below (e.g., "-9% vs previous period") shows the change from the prior period
 * This measures completion, not just participation
 
@@ -71,8 +73,8 @@ This section displays four core metrics that summarize quiz performance.
 
 **How to read it:**
 
-* The main number (e.g., 23) shows total attempts
-* The percentage below (e.g., "-4% vs previous period") shows the change from the prior period
+* The main number (e.g., 44) shows total attempts
+* The percentage below (e.g., "-68% vs previous period") shows the change from the prior period
 * This includes retakes and multiple attempts by the same learner
 
 **Why this matters:** This metric shows overall quiz activity volume. Multiple attempts by learners often indicate they're using quizzes to improve their knowledge-a positive sign of engagement.
@@ -87,8 +89,8 @@ This section displays four core metrics that summarize quiz performance.
 
 **How to read it:**
 
-* The main number (e.g., 41%) shows the average performance
-* The percentage below (e.g., "-27% vs previous period") shows the change from the prior period
+* The main number (e.g., 51%) shows the average performance
+* The percentage below (e.g., "-9% vs previous period") shows the change from the prior period
 
 **Why this matters:** This indicates overall knowledge proficiency across your organization. Low average scores might suggest:
 
@@ -121,7 +123,7 @@ This chart tracks how quiz scores change over time.
 
 **Why this matters:** This helps you understand whether your training initiatives are working. If you've launched new training materials or coaching programs, you should see scores improve over time. If scores are declining, investigate whether content is outdated or if learners need refresher training.
 
-![](/img/helpscout/editors/understanding-the-overview-tab-on-the-quiz-dashboard-1.png)
+![](/img/helpscout/authored/understanding-the-overview-tab-on-the-quiz-dashboard-mrsuv38s.png)
 
 Quiz Performance Trend
 
@@ -133,7 +135,7 @@ This section lists the quizzes with the most activity, ranked by number of attem
 
 **What it shows:** A table displaying individual quizzes with key metrics:
 
-* Quiz name (e.g., "Anatomy Knowledge Quiz," "SoP Knowledge Quiz")
+* Quiz name (e.g., "Onboarding," "pick up quizz")
 * Number of attempts
 * Average score
 * Pass rate
