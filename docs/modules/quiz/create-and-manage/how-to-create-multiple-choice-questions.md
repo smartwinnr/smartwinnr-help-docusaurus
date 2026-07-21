@@ -34,7 +34,7 @@ tags:
         * In **Partial Scoring**, the total score is **distributed equally** among all correct answer options.
         * In **Graded Scoring**, you can **assign a specific percentage of the total score** to each correct answer option.
 
-![](/img/helpscout/editors/how-to-create-multiple-choice-questions-2.png)
+![](/img/helpscout/authored/how-to-create-multiple-choice-questions-mru8kel0.png)
 
 4. Enter Question Title if needed. Enter your question in the **‘Question’** field.
 
@@ -42,7 +42,7 @@ tags:
 
     _For the question,_ _you can have various elements like Simple Text, Videos, Images, Links, or Audio files._
 
-5. Enter the answer options for the multiple-choice question and use the **checkbox** to indicate the correct answer (mandatory). You can also enhance the options by adding **rich content**, such as videos, images, or formatted text, using the **Select Rich Text** editor.
+5. Enter the answer options for the multiple-choice question and use the **Mark this as the correct answer option** checkbox to indicate the correct answer. Mark more than one option as correct answer option if you would like to create a multi select type question. You can also enhance the options by adding **rich content**, such as videos, images, or formatted text, using the **Select Rich Text** editor.
 
 * ![Enter the answer options for the multiple-choice question and use the checkbox to indicate the correct answer (mandatory). You can also enha](/img/helpscout/editors/how-to-create-multiple-choice-questions-4.png)
 
@@ -132,8 +132,7 @@ Choose the language to which you want to change and then click on the " **Save**
 * This is an example of how the participants see the Multiple Choice question in the User View.
 * 1\. Question with Multiple answer options.
 
-![How do the participants see the question?](/img/helpscout/editors/how-to-create-multiple-choice-questions-14.png)
-
+How do the participants see the question?![](/img/helpscout/authored/how-to-create-multiple-choice-questions-mru98qj5.png)
 2. Question with single correct answer option.
 
-![Question with single correct answer option.](/img/helpscout/editors/how-to-create-multiple-choice-questions-15.png)
+![](/img/helpscout/authored/how-to-create-multiple-choice-questions-mru9ba6x.png)
