@@ -1,6 +1,6 @@
 ---
 id: placeholder-access-permissions
-title: "How to manage access permissions for co-trainers in SmartWinnr"
+title: "Manage Access Permissions"
 description: "Manage access permissions for co-trainers in SmartWinnr to control collaboration and content editing across your training materials."
 slug: access-permissions
 sidebar_position: 1
