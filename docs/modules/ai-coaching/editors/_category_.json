@@ -1,0 +1,23 @@
+{
+  "label": "Editors",
+  "position": 10,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Editors",
+    "slug": "/modules/ai-coaching/editors"
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "aiCoaching"
+  }
+}
