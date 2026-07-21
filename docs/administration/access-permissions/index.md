@@ -1,26 +1,34 @@
 ---
 id: placeholder-access-permissions
-title: Access Permissions
-description: Admin-only guides for permission sets and access control.
+title: "How to manage access permissions for co-trainers in SmartWinnr"
+description: "Manage access permissions for co-trainers in SmartWinnr to control collaboration and content editing across your training materials."
 slug: access-permissions
 sidebar_position: 1
 tags:
   - admin
   - settings
+draft: false
+last_update:
+  date: 2026-07-21
+  author: Anagha Isal
 ---
 
-# Access Permissions
+> **At a glance** - Control who can edit your content in SmartWinnr by managing access permissions for co-trainers.
 
-Control who can edit which content in SmartWinnr. Use access permissions to grant
-specific editors collaborator-level access on a quiz, smartpath, content, or
-coaching they did not create - so authoring work can be shared across a team
-without giving everyone full admin rights.
+Access permissions allow you to control who can access your specific task/activity in SmartWinnr. Use these permissions to grant co-trainers collaborator-level access to quizzes, smartpaths, content, or coaching they did not create. This feature enables shared authoring work across your team.
 
-## What's in this section
+## When to use this
+Use access permissions when you want to:
 
-- **Granting access to other editors** - Add or remove editors from an activity
-  you own.
-- **Activity-level access on specific items** - Share a single quiz, content, or
-  smartpath with a chosen editor rather than the whole organization.
+- Collaborate with co-trainers on specific content or activities.
+- Limit access to certain quizzes, smartpaths, or coaching materials.
+- Maintain control over your content while allowing others to contribute.
 
-This section is visible to administrators only.
+## Types of access permissions
+You have two types of access permissions available in SmartWinnr:
+
+- **Global level access**: Granting global level access to a module (e.g., quiz) allows those selected editors to access both existing and future tasks created under that module. For example, if you give an editor global access to your quizzes, they will be able to access all quizzes you have created and any quizzes you create in the future. This access can be removed at any time based on your requirements.
+
+- **Task-specific access**: If you want an editor or set of editors to access a specific task (like a quiz or survey) for tracking progress or accessing reports, you can grant them access at the task level. This allows them to view and interact with that specific task without granting them access to all your content.
+
+By utilizing access permissions, you can effectively collaborate with your co-trainers in setting up tasks and accessing progress and reports from their own accounts.
