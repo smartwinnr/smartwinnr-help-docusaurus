@@ -5,32 +5,44 @@ description: 'Go to Admin>>Manage Divisions, it will open the following page'
 slug: how-to-add-a-new-division
 sidebar_position: 132
 last_update:
-  date: 2021-01-22T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdad976b624c71b7985a56b
-  helpscout_url: 'https://help.smartwinnr.com/article/132-how-to-add-a-new-division'
+  date: 2026-07-21
+  author: Aswani TK
 customProps:
   roles:
     - admin
 tags:
   - admin
   - settings
+draft: false
 ---
-Go to Admin>>Manage Divisions, it will open the following page
 
-![Go to Admin>>Manage Divisions, it will open the following page](https://support.smartwinnr.com/api/v1/attachments/1120)You can add division in two ways:
+> **At a glance** - This article explains how to add a new division in the SmartWinnr platform through the Admin settings.
 
-1. Business Unit
-2. Country
+Go to **Admin** >> **Manage Divisions** to access the division management page.
 
-* For Adding Division using Business Unit, you need to select the Business unit tab and then click on "Add More Business Unit", it will open the following  pop up
+## When to use this
+Use this feature when you need to organize your teams or departments into divisions for better management and reporting. You might want to add a new division in the following scenarios:
+- When creating a new business unit.
+- When expanding operations to a new country.
+- To streamline the organization of your teams.
 
-![Country](https://support.smartwinnr.com/api/v1/attachments/1121)
+## Steps
 
-you will have to enter the business unit name and click on "Save".This will create a division under the Business Unit.
+### 1. Access the Manage Divisions Page
+Navigate to **Admin** and select **Manage Divisions**. This will open the division management page.
 
-* For adding Division using Country, you need to click on the Country tab and then click on "Add More Country", it opens the following pop up
-![you will have to enter the business unit name and click on "Save".This will create a division under the Business Unit.](https://support.smartwinnr.com/api/v1/attachments/1122)
+![Manage Divisions page](/img/helpscout/authored/how-to-add-a-new-division-mrubbu2g.png)
 
-* you will have to enter the Country Division name and click on "Save",a new division will be added.
+### 2. Add Division or Business Unit
+To add a division or a Business Unit, select the **Business Unit** tab and click on **Add More Business Unit**. This will open a pop-up window.
+
+![Add Business Unit pop-up](/img/helpscout/authored/how-to-add-a-new-division-mrubdgk0.png)
+
+Enter the business unit name and click on **Save**. This will create a division or the Business Unit.
+
+### 3. Add Country Under a Division
+To add a Country under a division, click on the **Country** tab and then click on **Add More Country**. This will open another pop-up window.
+
+![Add Country pop-up](/img/helpscout/authored/how-to-add-a-new-division-mrubgcl1.png)
+
+Enter the country name and click on **Save**. A new country will be added under the divisions.
