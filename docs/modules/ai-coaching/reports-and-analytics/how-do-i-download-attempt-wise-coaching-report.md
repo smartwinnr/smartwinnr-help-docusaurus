@@ -5,7 +5,7 @@ description: This report shows all attempts for a specific coaching.
 slug: how-do-i-download-attempt-wise-coaching-report
 sidebar_position: 315
 last_update:
-  date: 2026-07-16
+  date: 2026-07-22
   author: Sruthi Suresh
 customProps:
   roles:
@@ -18,7 +18,7 @@ tags:
 draft: false
 ---
 
-> **At a glance** - This article explains how to download the Attempt-wise Coaching Report, which details all attempts for a specific coaching.
+> **At a glance** - This article explains how to download the Attempt-wise Coaching Report, which details all attempts for a specific coaching session.
 
 The Attempt-wise Coaching Report provides insights into all attempts made for a particular coaching session. You can download this report to analyze performance and engagement.
 
@@ -27,6 +27,9 @@ Use the Attempt-wise Coaching Report when you want to:
 - Review individual attempts for a specific coaching session.
 - Analyze performance trends over time.
 - Identify areas for improvement in coaching effectiveness.
+
+## Before you start
+Ensure you have the necessary permissions to access coaching analytics.
 
 ## Steps
 
@@ -61,7 +64,6 @@ Find the report you generated and click the download icon to save it.
 ![Locate your report and click the download icon to save it to your computer](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-3.png)
 
 ## Tips
-- Ensure you have the necessary permissions to access coaching analytics.
 - Regularly check for new reports to stay updated on coaching performance.
 
 ## Things to know
