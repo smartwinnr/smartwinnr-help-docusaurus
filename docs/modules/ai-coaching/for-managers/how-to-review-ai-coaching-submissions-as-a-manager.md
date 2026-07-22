@@ -26,6 +26,8 @@ tags:
 ---
 As a manager, you can review AI coaching submissions from your team members. When a rep completes an AI role-play, you have the option to provide additional feedback beyond the automated AI evaluation. This helps you give personalized coaching, identify skill gaps, and support reps who may need extra guidance.
 
+***Note:** Manager reviews are only available when the manager has been assigned as the **Coach** for the corresponding coaching scenario.*
+
 ## When should you use this
 
 Use this feature when you want to:
