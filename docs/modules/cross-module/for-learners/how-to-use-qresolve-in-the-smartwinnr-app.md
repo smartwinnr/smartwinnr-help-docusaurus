@@ -36,3 +36,76 @@ QResolve follows a simple workflow:
 3. The SPOC reviews the query and submits a response.
 4. The user can view the response within QResolve.
 
+
+### Raising a Query in QResolve
+
+Users can submit queries through both the SmartWinnr Mobile App and the SmartWinnr Web App (PWA).
+
+**Steps**
+
+**1. Log in:** Sign in to the SmartWinnr Mobile App or SmartWinnr Web App (PWA).
+
+**2. Open QResolve:** Navigate to the QResolve section.
+
+**3. Create a New Query:** Click the + (Plus) icon available at the bottom-right corner of the screen.
+![](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-mrvwgfc9.png)
+
+**4. Select a Tag/Category:** Choose the appropriate Query Type (Tag/Category) that best matches your query.
+
+- Selecting the correct Tag/Category ensures that your query reaches the appropriate SPOC.
+![](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-mrvwjgwv.png)
+**5. Enter Your Query:** Provide a clear description of your question or issue.
+
+- If required, you can also attach supporting documents related to your query.
+
+Examples of attachments include:
+- Images
+- PDF documents
+- Screenshots
+- Other supporting files
+
+**6. Submit:** Click Submit to post your query.
+
+The query will now be available for the assigned SPOC to review and respond.
+
+### Responding to Queries as a SPOC
+
+Users who are mapped as SPOCs for one or more Tags/Categories can review and answer queries assigned to them.
+
+**Steps**
+
+**1. Log in**: Sign in to the SmartWinnr Mobile App or SmartWinnr Web App (PWA).
+
+**2. Open QResolve:** Navigate to the QResolve section.
+
+**3. Access the Available Tabs:** The QResolve page contains the following sections:
+
+- **All Queries**
+
+Displays all queries raised by users across the organization (subject to permissions configured by the organization).
+
+- **My Queries**
+
+Displays the queries submitted by you.
+
+- **My Answers**
+
+Displays the queries assigned to you based on the Tags/Categories mapped to your profile.
+
+This is the primary workspace for SPOCs.
+
+**4. Respond to a Query**
+
+- Open the required query from the My Answers section.
+
+- Review the user's question and provide an appropriate response.
+
+- Once submitted, the response becomes visible to the user.
+
+### QResolve Sections
+*Section with Description:*
+
+- **All Queries** - 	Displays all available queries based on your access permissions.
+- **My Queries** -	Displays the queries that you have submitted.
+- **My Answers** -	Displays queries assigned to you based on the Tags/Categories mapped to your profile. This section is available to designated SPOCs.
+
