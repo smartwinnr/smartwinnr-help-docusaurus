@@ -7,11 +7,8 @@ description: >-
 slug: custom-notifications
 sidebar_position: 165
 last_update:
-  date: 2021-08-05T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdb086ea5d295659b369c51
-  helpscout_url: 'https://help.smartwinnr.com/article/165-custom-notifications'
+  date: 2026-07-23
+  author: Sruthi Suresh
 customProps:
   roles:
     - editor
@@ -19,37 +16,38 @@ customProps:
   privilege: customNotifications
 tags:
   - notifications
+draft: false
 ---
-Custom notification enable you to send a push notification and an email to the sales rep, notifying specific information.
 
-This option will be available only if the user has an editor role in SmartWinnr.
+> **At a glance** - Custom notifications allow you to send push notifications and emails to sales representatives with specific information.
 
-You can follow the below given steps to send a custom notification to sales reps.
+Custom notifications enable you to send a push notification and an email to the sales rep, notifying them of specific information. This option is available only to users with an editor role in SmartWinnr.
 
-Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page
+## When to use this
+Use custom notifications to:
+- Inform sales reps of important updates or changes.
+- Notify specific groups or individuals within your organization.
+- Enhance communication and engagement with your sales team.
 
-![Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications.This will lead to the following page](/img/helpscout/editors/custom-notifications-1.png)
+## Steps
 
-This page  will provide the logs of custom notifications that have been sent so far
+### 1. Access Custom Notifications
+Go to **Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications**. This will lead you to the custom notifications page.
 
-Editor can also search for notifications by "Date Range", "Business Unit", "Created By".
+![Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications. This will lead to the following page](/img/helpscout/editors/custom-notifications-1.png)
 
-## Adding a new Custom Notification
+This page will provide the logs of custom notifications that have been sent so far. You can also search for notifications by "Date Range", "Business Unit", or "Created By".
 
-In order to add a new custom notification ,Editor needs to click on the "Add Notification"  button on the top right.
+### 2. Add a New Custom Notification
+To add a new custom notification, click on the **Add Notification** button in the top right corner.
 
-![In order to add a new custom notification ,Editor needs to click on the "Add Notification" button on the top right.](/img/helpscout/editors/custom-notifications-2.png)
+![In order to add a new custom notification, Editor needs to click on the "Add Notification" button on the top right.](/img/helpscout/editors/custom-notifications-2.png)
 
-The Notifying message needs to be typed in the Message box, also the type of notification should be checked wether the notification is going to be a "SMS" or an "Email".
+Type the notifying message in the message box. You should also specify whether the notification will be sent as an "SMS" or an "Email". Note that the notifying message should not exceed 140 characters.
 
-Kindly note that the notifying message should not be more than 140 character.
-
-## Selection of the Notification Recipient
-
+### 3. Select Notification Recipients
 ![Selection of the Notification Recipient](/img/helpscout/editors/custom-notifications-3.png)
 
-Editor needs to select the "Business Unit" , "Country", "Group" for searching the notification recipients.
+Select the "Business Unit", "Country", and "Group" to search for notification recipients. For advanced search options, refer to the [Advanced Options for Projects](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) section.
 
-For "Advanced Search " options [Click Here](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) and check section 1.1.
-
-After search is complete, Editor can select the recipients and click on "Send Notification".Then the notification is out successfully to the sales reps.
+After completing your search, select the recipients and click on **Send Notification**. The notification will then be successfully sent to the sales reps.

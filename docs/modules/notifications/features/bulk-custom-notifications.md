@@ -1,15 +1,12 @@
 ---
-id: 5fdb08a97129911ba1b21e3d
+id: bulk-custom-notifications
 title: Bulk Custom Notifications
 description: The above action will lead to the following page
 slug: bulk-custom-notifications
 sidebar_position: 166
 last_update:
-  date: 2021-01-22T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdb08a97129911ba1b21e3d
-  helpscout_url: 'https://help.smartwinnr.com/article/166-bulk-custom-notifications'
+  date: 2026-07-23
+  author: Sruthi Suresh
 customProps:
   roles:
     - editor
@@ -17,22 +14,46 @@ customProps:
   privilege: customNotifications
 tags:
   - notifications
+draft: false
 ---
-Go to Editor>>Custom Notifications>>Click on Hamburger Menu>>Send Notifications to bulk users
-![Go to Editor>>Custom Notifications>>Click on Hamburger Menu>>Send Notifications to bulk users](https://support.smartwinnr.com/api/v1/attachments/1088)
 
-The above action will lead to the following page
+> **At a glance** - This article explains how to create and send bulk custom notifications to users through the SmartWinnr platform.
 
-![The above action will lead to the following page](https://support.smartwinnr.com/api/v1/attachments/1089)
+Bulk custom notifications allow you to send messages to multiple users at once. This feature is useful for communicating important updates or announcements efficiently.
 
-The Editor needs to Type the message that is to be sent as a notification.
+## When to use this
+Use bulk custom notifications when you need to:
+- Inform a large group of users about an event or update.
+- Send reminders for upcoming deadlines or tasks.
+- Share important announcements that require immediate attention.
 
-This notification can also be sent as a "SMS", by checking the "SMS" checkbox.
+## Before you start
+Ensure you have the necessary permissions to access the **Custom Notifications** feature.
 
-#### Upload Users Data File
+## Steps
 
-Editor needs to select the "User Identifier" type, basically a means by which the user can be uniquely identified.
+### 1. Access Custom Notifications
+Go to **Editor → GAMIFICATION AND ENGAGEMENT → Custom Notifications**. Click on **Add Notification** in the top right corner.
 
-After the "Download Template" button will be activated, Editor needs to download the template and fill the email ids's of the recipients and save them.
+![The above action will lead to the following page](/img/helpscout/authored/bulk-custom-notifications-mrx5gl7p.png)
 
-After this step Editor should select the  file and click on "Upload".
+### 2. Type Your Message
+The above action will lead to the notification creation page. Type the message that you want to send as a notification. 
+
+You can also send this notification as an SMS by checking the **SMS** checkbox.
+
+### 3. Upload Users Data File
+Select the **User Identifier** type, which is a means by which the user can be uniquely identified.
+
+![User Identifier selection](/img/helpscout/authored/bulk-custom-notifications-mrx5nijz.png)
+
+After the **Download Template** button is activated, download the template, fill in the email addresses of the recipients, and save the file.
+
+![Download Template button](/img/helpscout/authored/bulk-custom-notifications-mrx5otsc.png)
+
+### 4. Upload the File
+Select the file you just saved and click on **Upload**.
+
+![Upload file step](/img/helpscout/authored/bulk-custom-notifications-mrx5qk28.png)
+
+![File upload confirmation](/img/helpscout/authored/bulk-custom-notifications-mrx5r6do.png)
