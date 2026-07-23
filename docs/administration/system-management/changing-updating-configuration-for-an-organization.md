@@ -17,5 +17,6 @@ customProps:
 tags:
   - admin
   - settings
+draft: true
 ---
 

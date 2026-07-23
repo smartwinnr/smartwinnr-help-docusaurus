@@ -1,0 +1,23 @@
+{
+  "label": "Assign & Schedule",
+  "position": 11,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Assign & Schedule",
+    "slug": "/modules/ai-coaching/assign-schedule"
+  },
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "aiCoaching"
+  }
+}
