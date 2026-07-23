@@ -7,8 +7,8 @@ description: >-
 slug: user-login-reports
 sidebar_position: 143
 last_update:
-  date: 2021-03-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-23
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fdae19bb624c71b7985a579
   helpscout_url: 'https://help.smartwinnr.com/article/143-user-login-reports'
@@ -18,12 +18,16 @@ customProps:
   privilege: learnerReport
 tags:
   - reports
+draft: false
 ---
-Go to **Left Menu >> Admin >> Reports>> User Login Reports**, this will open the following page
 
-![Go to Left Menu >> Admin >> Reports>> User Login Reports, this will open the following page](https://support.smartwinnr.com/api/v1/attachments/1118)
+> **At a glance** - Access the User Login Reports to monitor user activity and login statistics within your SmartWinnr account.
 
-You can search for a specific user to find if he has logged in or not by various criteria's which are as follows:
+Go to **Left Menu >> Admin >> Reports >> User Login Reports**. This will open the User Login Reports page.
+
+![User Login Reports page](/img/helpscout/authored/user-login-reports-mrx1rth3.png)
+
+You can search for a specific user to find out if they have logged in or not by various criteria, which are as follows:
 
 * Business Unit
 * Country
@@ -35,18 +39,18 @@ Here, you can find three different types of login reports:
 
 ![Here, you can find three different types of login reports:](/img/helpscout/admins/user-login-reports-2.png)
 
-* Initial login report - This will give you the list of users who have completed their initial login into the SmartWinnr account.
-* All Login Reports - This will give you the report of all users who have logged into their SmartWinnr account for the selected date range. This will also give you two type of reports - the total number of users who have logged into the system of a specific date range and number of times each user have logged in to their account.
-* Not Using SmartWinnr yet - This will give you the list of users who have not logged in to their SmartWinnr account yet.
+* **Initial Login Report** - This report provides a list of users who have completed their initial login into the SmartWinnr account.
+* **All Login Reports** - This report shows all users who have logged into their SmartWinnr account for the selected date range. It includes two types of reports: the total number of users who have logged in during a specific date range and the number of times each user has logged into their account.
+* **Not Using SmartWinnr Yet** - This report lists users who have not logged into their SmartWinnr account yet.
 
 You can also use filters to view the analytics chart of the users. The various options are as follows:
 
-* Frequency: The total number of users logged in, can be set to "Daily", "Weekly", "Quarterly", "Annually".
-* Date Range: Specify the date range for which you want the user number of the user's report.
+* **Frequency**: The total number of users logged in can be set to "Daily", "Weekly", "Quarterly", or "Annually".
+* **Date Range**: Specify the date range for which you want the user report.
 
-After the appropriate setting of filters, you can download the analytics report as:
+After setting the appropriate filters, you can download the analytics report in the following formats:
 
-1. Image: click on the image icon.
-2. Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format
+1. **Image**: Click on the image icon.
+2. **Excel Report**: Click on the Hamburger Menu, which will provide the option to download the report in Excel format.
 
 ![Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format](/img/helpscout/admins/user-login-reports-3.png)

@@ -50,7 +50,7 @@ You will see detailed analytics for the selected coaching.
 ### 5. Click the **Hamburger menu** in the top right corner
 Access additional options by clicking the hamburger menu.
 
-### 6. Select **Attempt-wise Overall Coaching Report**
+### 6. Select **Attempt Wise Overall Coaching Report**
 Choose the Attempt-wise Overall Coaching Report from the menu.
 
 ![Select Attempt-wise Overall Coaching Report](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-2.png)

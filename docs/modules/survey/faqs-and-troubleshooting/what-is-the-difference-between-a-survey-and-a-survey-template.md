@@ -7,12 +7,8 @@ description: >-
 slug: what-is-the-difference-between-a-survey-and-a-survey-template
 sidebar_position: 63
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd4a80723119734ee37edd6
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template
+  date: 2026-07-23
+  author: Sruthi Suresh
 customProps:
   roles:
     - editor
@@ -21,8 +17,21 @@ customProps:
 tags:
   - survey
   - troubleshooting
+draft: false
 ---
+
+> **At a glance** - In SmartWinnr, **Surveys** are one-time questionnaires for feedback, while **Survey Templates** are reusable structures for creating multiple surveys.
+
 In SmartWinnr, **Surveys** and **Survey Templates** serve different purposes based on how often and in what context they are used.
+
+## When to use this
+
+Understanding the difference between Surveys and Survey Templates can help you choose the right tool for your feedback needs. Use this information when:
+
+* You need to collect one-time feedback from participants.
+* You want to create a standardized questionnaire for repeated use.
+* You are planning a training program and need to assess participant readiness.
+* You aim to gather consistent data across multiple surveys.
 
 ## Survey
 
