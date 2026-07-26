@@ -1,7 +1,7 @@
 ---
 id: how-to-set-competencies
-title: How to set competencies.
-description: Only users with Admin role can add/modify competencies.
+title: "Set up competencies for video coaching"
+description: "Set up and manage coaching competencies to evaluate learners based on specific skills and behaviors, accessible only to Admin users."
 slug: how-to-set-competencies
 sidebar_position: 91
 last_update:

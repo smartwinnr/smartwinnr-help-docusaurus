@@ -7,8 +7,8 @@ description: >-
 slug: what-is-my-team-coaching
 sidebar_position: 89
 last_update:
-  date: 2021-02-25T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-07-26
+  author: Anagha Isal
 source:
   helpscout_id: 5fd758ea7129911ba1b20b11
   helpscout_url: 'https://help.smartwinnr.com/article/89-what-is-my-team-coaching'
@@ -20,31 +20,45 @@ customProps:
   privilege: managerView
 tags:
   - video-coaching
+draft: false
 ---
-'My Team Coaching' enables the manager to view the coaching that has been assigned to all her team members. This way, the manager gets to know about the coaching her team members are taking currently.
 
-Below are the steps to view the coachings that have been assigned to your team members.
+> **At a glance** - 'My Team Coaching' allows managers to view coaching assignments for all his team members, making it easier to track progress and submissions.
 
-Log in to the SmartWinnr app.
+**'My Team Coaching'** enables the manager to view the coaching that has been assigned to all his team members. This feature allows managers to monitor the coaching activities their team members are engaged in, ensuring they stay informed about their progress, submissions and scores.
 
-Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'My Team'.
+## When to use this
+Use **'My Team Coaching'** when you want to:
+- Track the coaching assignments of your team members.
+- Review the response videos submitted by your reportees.
+- Filter coaching assignments by date to focus on specific timeframes.
 
-![Switch to MANAGER VIEW > Goto Left Menu >> Under Coaching Section select 'My Team'.](https://lh5.googleusercontent.com/Jme-owP1voxDwDCqXHJ4PFaiTvxhELwEYgfDXkBpsnUzv_aGTvE_RbV7etnBcWDv4B9dQvRwE0d6TbIGB1kD0CXm19eXn74pQf61lb1m0JHap6JL73eKyUiVNkpNQF6f6ud_3Ss5)
+## Steps
 
-Here you can find all your reportees and the response videos that they have submitted for the coaching assigned to them. Click on the "View Submissions" button to view the submissions by the team members.
+### 1. Log in to the SmartWinnr app
+Start by logging into your SmartWinnr account to access the manager features.
 
-![Here you can find all your reportees and the response videos that they have submitted for the coaching assigned to them. Click on the "View ](https://lh6.googleusercontent.com/upWPDI7M_Fen7u6SqREqV7UM19aum8EGCWy356V9-7TocIxRKBsFKyVQDlziTIx3wBu4Y5oL-2Rv6DaPwXLMDRy2kGNN_oBibjxpvepp3MNBxvvQ8Mv01gKx5C4NxXm0uZmOU61q)
+### 2. Switch to Manager View
+Navigate to **MANAGER VIEW**. Go to the left menu and click on **My Team** under **Coaching** section.
 
-It will show all the response videos submitted by your reportee for the various coaching assignments assigned to him in SmartWinnr.
+![](/img/helpscout/authored/what-is-my-team-coaching-ms1m8bbo.png)
 
-![It will show all the response videos submitted by your reportee for the various coaching assignments assigned to him in SmartWinnr.](https://lh3.googleusercontent.com/1XJqkeViUn3KojrDsUaclQhFagjFRip5f7BAJKlmN2AC_Cr9OvV2kuMTSwAnxlYlDmjkg8QjUS5H4xXyIWEpHGx2qJtou_lWINj4Vv1mrU6IU0VliVAOUPTAZ2Kr9NvlMn6eOyWr)
+### 3. View Team Coaching Assignments
+In this section, you will find all your reportees along with the response videos they have submitted for the coaching assigned to them. Click on the **View Submissions** button to see the submissions made by each team member.
 
-You can search for a specific reportee in the search bar available on the top or you can apply a date filter which will give you the coaching assignments within the selected date range.
+![](/img/helpscout/authored/what-is-my-team-coaching-ms1m5m95.png)
 
-Click on the **filter** icon at the top right corner to apply the 'Date Range' filter.
+### 4. Review Submitted Videos
+You will see all the response videos submitted by your reportee for the various coaching assignments assigned to them in SmartWinnr.
 
-![Click on the filter icon at the top right corner to apply the 'Date Range' filter.](https://lh6.googleusercontent.com/BmCR5jN5VHkXDcjxl-VI47XyGPEk68ljwXUmlDLjCTVrdm5McmV0a9j_hKEbSFGoWolxN3eTJFAUSoW9cquS7UI6O8rt2Xve4GFXdTWoTcjnGDsw79hYjp0krp1nodwDyW_yak90)
+![](/img/helpscout/authored/what-is-my-team-coaching-ms1m98m4.png)
 
-You can select the date range and click on " **Apply**" button to successfully apply the date filters.
+### 5. Search for Specific Reportees
+You can search for a specific reportee using the search bar available at the top. Additionally, you can apply a date filter to view coaching assignments within a selected date range.
 
-![You can select the date range and click on " Apply" button to successfully apply the date filters.](https://lh6.googleusercontent.com/M2449Fe1JHh4lOrwRjVmsp4h3x_A23TNYT3kNJ8lPeyhxu9WJ0izXvFHEOZHwVK8duHob7LypwUcaHLpV8SqscNTGFd1tjmwMT7UOHOLjs_O4PfnCQ84yOGUm4kOs4f2MbrvwXSY)
+### 6. Apply Date Range Filter
+Click on the **filter** icon at the top left corner to apply the 'Date Range' filter.
+
+![](/img/helpscout/authored/what-is-my-team-coaching-ms1n6yx1.png)
+
+You can select the desired date range and click on the **Apply** button to successfully apply the date filters.
