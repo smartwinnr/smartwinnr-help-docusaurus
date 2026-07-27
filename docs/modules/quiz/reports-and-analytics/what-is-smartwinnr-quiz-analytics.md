@@ -65,7 +65,7 @@ This will open a pop-up window where you can select the sheets/data you want to 
 
 ![Participant Answer Analysis Reports](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-5.png)
 
-- **Quiz Details**: This sheet contains the overall details of the quiz, including its settings and configurations.
+- **Quiz Details**: This sheet contains the overall details of the quiz, including its settings and configurations, duration etc.
 
 ![Quiz Details](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-6.png)
 
