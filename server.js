@@ -4768,23 +4768,39 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('🎉 No more CORS issues - ChatBot API is now integrated!');
 
-  console.log(`[DEBUG] RUN_INDEXER = "${process.env.RUN_INDEXER}" (type: ${typeof process.env.RUN_INDEXER})`);
-
-  // if (process.env.RUN_INDEXER === 'true') {
-    const forceReindex = true;
-    console.log(`🗂️  Spawning internal indexer...${forceReindex ? ' (FORCE_FULL_REINDEX)' : ''}`);
-    const indexer = spawn('node', ['scripts/internal-indexer.js'], {
-      stdio: 'inherit',
-      env: { ...process.env }
-    });
-    indexer.on('exit', (code) => {
-      if (code === 0) {
-        console.log('✅ Internal indexer completed successfully');
-      } else {
-        console.error(`❌ Internal indexer exited with code ${code}`);
-      }
-    });
-  // }
+  // Post-boot indexing keeps ChromaDB in sync with the docs the deploy just
+  // shipped. But the child process hashes every doc and hammers the shared
+  // CPU/disk - launched at boot it starved the authoring endpoints (a
+  // 0.3s drafts listing took 25s+ right after every deploy). So: wait out
+  // the boot rush, then run the scan at the lowest CPU priority. Set
+  // RUN_INDEXER=false to disable entirely (e.g. local dev with no Chroma).
+  if (process.env.RUN_INDEXER === 'false') {
+    console.log('🗂️  Internal indexer disabled (RUN_INDEXER=false)');
+  } else {
+    const INDEXER_DELAY_MS = parseInt(process.env.INDEXER_DELAY_MS, 10) || 90000;
+    console.log(`🗂️  Internal indexer scheduled in ${Math.round(INDEXER_DELAY_MS / 1000)}s (incremental)`);
+    setTimeout(() => {
+      const indexer = spawn('nice', ['-n', '19', 'node', 'scripts/internal-indexer.js'], {
+        stdio: 'inherit',
+        env: { ...process.env }
+      });
+      indexer.on('error', (err) => {
+        // `nice` missing (some minimal images) - fall back to a plain spawn.
+        console.warn(`⚠️ nice unavailable (${err.message}), running indexer at normal priority`);
+        spawn('node', ['scripts/internal-indexer.js'], { stdio: 'inherit', env: { ...process.env } })
+          .on('exit', (code) => {
+            console.log(code === 0 ? '✅ Internal indexer completed successfully' : `❌ Internal indexer exited with code ${code}`);
+          });
+      });
+      indexer.on('exit', (code) => {
+        if (code === 0) {
+          console.log('✅ Internal indexer completed successfully');
+        } else if (code !== null) {
+          console.error(`❌ Internal indexer exited with code ${code}`);
+        }
+      });
+    }, INDEXER_DELAY_MS);
+  }
 });
 
 // Graceful shutdown: Railway sends SIGTERM on every redeploy/restart. A save
