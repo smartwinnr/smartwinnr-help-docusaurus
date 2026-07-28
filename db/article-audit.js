@@ -136,20 +136,34 @@ function gradeMarkdown(text, opts = {}) {
   const headingLines = body.split('\n').filter((l) => /^#{2,3}\s/.test(l));
   if (headingLines.length === 0 && words.length > 200) flag('noHeadings');
 
-  // Images
-  const imageMatches = [...body.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)];
-  let badAltCount = 0;
+  // Images. An alt is bad when it's empty, still the editor's insertion
+  // placeholder, or clearly the file's name rather than a description.
+  // A short human word ("dashboard") is NOT flagged - authors kept hitting
+  // false positives when any lowercase alt counted as filename-derived.
+  const imageMatches = [...body.matchAll(/!\[([^\]]*)\]\(\s*([^)\s]+)\s*\)/g)];
+  const badAltImages = [];
   for (const m of imageMatches) {
     const alt = (m[1] || '').trim();
-    const filenameDerived = alt && /^[a-z0-9-]+(\.[a-z]+)?$/.test(alt);
-    if (!alt || filenameDerived) badAltCount++;
+    const url = m[2] || '';
+    const base = url.split('/').pop() || '';
+    const baseNoExt = base.replace(/\.[a-z0-9]+$/i, '');
+    const looksLikeFilename = alt
+      && (/\.(png|jpe?g|gif|webp|svg)$/i.test(alt)
+        || alt.toLowerCase() === base.toLowerCase()
+        || alt.toLowerCase() === baseNoExt.toLowerCase()
+        || (/^[a-z0-9-]+$/.test(alt) && /\d/.test(alt)));
+    if (!alt || alt === 'describe this screenshot' || looksLikeFilename) {
+      badAltImages.push(base || url);
+    }
   }
-  if (badAltCount > 0) {
-    score += DEFECTS.badAltText.weight * badAltCount;
+  if (badAltImages.length > 0) {
+    score += DEFECTS.badAltText.weight * badAltImages.length;
+    const shown = badAltImages.slice(0, 3).join(', ')
+      + (badAltImages.length > 3 ? `, +${badAltImages.length - 3} more` : '');
     findings.push({
       key: 'badAltText',
       label: DEFECTS.badAltText.label,
-      detail: `${badAltCount} image(s)`,
+      detail: `${badAltImages.length} image(s) need a short description inside the square brackets, e.g. ![Login screen](...) - ${shown}`,
       blocking: DEFECTS.badAltText.blocking,
     });
   }

@@ -104,8 +104,11 @@ function EditorPanel(): ReactNode {
     setMarkdown((md) => replaceFrontmatterFields(md, patch));
   }
 
-  /** Insert `text` at the textarea's cursor; restores the caret after paint. */
-  function insertAtCursor(text: string) {
+  /** Insert `text` at the textarea's cursor; restores the caret after paint.
+   *  When `selectRange` [from, to] (relative to `text`) is given, that slice
+   *  is left selected instead - used to pre-select a placeholder so the
+   *  author's next keystroke replaces it. */
+  function insertAtCursor(text: string, selectRange?: [number, number]) {
     const ta = textareaRef.current;
     const start = ta ? ta.selectionStart : markdown.length;
     const end = ta ? ta.selectionEnd : markdown.length;
@@ -113,9 +116,13 @@ function EditorPanel(): ReactNode {
     setMarkdown(next);
     requestAnimationFrame(() => {
       if (!ta) return;
-      const pos = start + text.length;
       ta.focus();
-      ta.setSelectionRange(pos, pos);
+      if (selectRange) {
+        ta.setSelectionRange(start + selectRange[0], start + selectRange[1]);
+      } else {
+        const pos = start + text.length;
+        ta.setSelectionRange(pos, pos);
+      }
     });
   }
 
@@ -140,10 +147,12 @@ function EditorPanel(): ReactNode {
       });
       const data = await res.json();
       if (!res.ok) { notify.error(data.error || 'Upload failed'); return; }
-      // Empty alt text on purpose so the editor fills in something meaningful
-      // (the alt-text lint rule nudges them).
-      insertAtCursor(`![](${data.url})`);
-      notify.success('Image added. It will be published together with the article.');
+      // Placeholder alt, pre-selected so typing replaces it. The audit
+      // treats the untouched placeholder (and empty alt) as a publish
+      // blocker, so it can't slip through unedited.
+      const placeholder = 'describe this screenshot';
+      insertAtCursor(`![${placeholder}](${data.url})`, [2, 2 + placeholder.length]);
+      notify.success('Image added - type a short description for it (the highlighted text). It publishes together with the article.');
     } catch (err) {
       notify.error((err as Error).message);
     } finally {
