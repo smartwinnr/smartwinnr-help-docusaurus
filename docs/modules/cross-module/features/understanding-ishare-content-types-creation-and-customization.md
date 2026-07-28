@@ -28,8 +28,6 @@ Use iShare content types when you need to:
 ### 1. Access the iShare Content Creation
 Navigate to the iShare content creation section in your dashboard. Go to **LEARNING AND KNOWLEDGE > iShare > Gallery**. The following page will open. Click on the **Create** button on the left side and select **Item**.
 
-![Access the iShare content creation section]( /img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mryo7nfc.png)
-
 ### 2. Fill in Mandatory Fields
 Enter the required information, including:
 - **Title**: The title of your content.
