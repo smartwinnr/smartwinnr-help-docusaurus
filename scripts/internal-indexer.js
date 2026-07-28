@@ -262,7 +262,17 @@ class InternalIndexer {
       } catch (error) {
         console.error(`  ❌ Failed to remove ${doc.filePath}:`, error.message);
       }
+      await this.pace();
     }
+  }
+
+  /** Pause between HTTP calls. The indexer shares its container (and, for
+   *  embeddings, its HTTP server) with the live site - back-to-back calls
+   *  starve the authoring endpoints for the whole run. A small gap keeps the
+   *  site responsive; a typical post-deploy batch still finishes in seconds. */
+  pace(ms) {
+    const delay = ms ?? (parseInt(process.env.INDEXER_EMBED_DELAY_MS, 10) || 250);
+    return new Promise((resolve) => setTimeout(resolve, delay));
   }
 
   /**
@@ -289,17 +299,18 @@ class InternalIndexer {
         try {
           // Generate embedding via internal API
           const embedding = await this.generateEmbedding(doc.content);
-          
+
           batchDocuments.push(doc.content);
           batchEmbeddings.push(embedding);
           batchMetadatas.push(doc.metadata);
           batchIds.push(doc.id);
-          
+
           processed++;
           console.log(`  ✅ ${doc.filePath}`);
         } catch (error) {
           console.error(`  ❌ Failed to process ${doc.filePath}:`, error.message);
         }
+        await this.pace();
       }
       
       // Upsert batch to collection (this will add new or update existing)
@@ -366,13 +377,16 @@ class InternalIndexer {
       // Process all current documents and generate hashes
       console.log('🔍 Processing current documents...');
       const currentDocs = [];
-      for (const filePath of docFiles) {
+      for (let fi = 0; fi < docFiles.length; fi += 1) {
         try {
-          const doc = this.processMarkdownFile(filePath);
+          const doc = this.processMarkdownFile(docFiles[fi]);
           if (doc) currentDocs.push(doc);
         } catch (error) {
-          console.error(`❌ Failed to process ${filePath}:`, error.message);
+          console.error(`❌ Failed to process ${docFiles[fi]}:`, error.message);
         }
+        // Read+hash of 300+ files back-to-back is a solid IO burst that
+        // competes with the live server's own disk reads - break it up.
+        if ((fi + 1) % 20 === 0) await this.pace(50);
       }
       
       // Handle force full reindex

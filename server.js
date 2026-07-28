@@ -4292,8 +4292,12 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
 // cached for 10 minutes per window; a GitHub outage degrades to
 // disk-only stats instead of failing the endpoint.
 const STATS_CACHE_TTL_MS = 10 * 60 * 1000;
+// GitHub-degraded payloads get a short TTL: still cached (so an outage can't
+// trigger a disk-walk + 30s-timeout storm on every request), but retried soon.
+const STATS_DEGRADED_TTL_MS = 60 * 1000;
 const statsCache = new Map();    // days → {ts, payload}
 const statsInFlight = new Map(); // days → Promise<payload>, dedupes concurrent recomputes
+const statsTtl = (payload) => (payload.github ? STATS_CACHE_TTL_MS : STATS_DEGRADED_TTL_MS);
 
 async function computeAuthoringStats(days) {
     const titleCase = (s) => s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -4495,7 +4499,7 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
   try {
     const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
     const cached = statsCache.get(days);
-    if (cached && Date.now() - cached.ts < STATS_CACHE_TTL_MS) {
+    if (cached && Date.now() - cached.ts < statsTtl(cached.payload)) {
       return res.json(cached.payload);
     }
     // One recompute per window at a time - a second visitor while a
@@ -4506,9 +4510,7 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
       if (!p) {
         p = computeAuthoringStats(days)
           .then((payload) => {
-            // Only cache complete results - caching a GitHub-degraded
-            // payload would pin zeros for the next 10 minutes.
-            if (payload.github) statsCache.set(days, { ts: Date.now(), payload });
+            statsCache.set(days, { ts: Date.now(), payload });
             return payload;
           })
           .finally(() => statsInFlight.delete(days));
@@ -4777,17 +4779,27 @@ app.listen(PORT, '0.0.0.0', () => {
   if (process.env.RUN_INDEXER === 'false') {
     console.log('🗂️  Internal indexer disabled (RUN_INDEXER=false)');
   } else {
-    const INDEXER_DELAY_MS = parseInt(process.env.INDEXER_DELAY_MS, 10) || 90000;
+    // Short head start only - the indexer is paced (INDEXER_EMBED_DELAY_MS)
+    // so it's gentle from the first call; starting early means finishing
+    // early. A long delay just moved the work into the minutes when authors
+    // reopen the site to check their deploy.
+    const INDEXER_DELAY_MS = parseInt(process.env.INDEXER_DELAY_MS, 10) || 15000;
     console.log(`🗂️  Internal indexer scheduled in ${Math.round(INDEXER_DELAY_MS / 1000)}s (incremental)`);
+    // Boot runs are ALWAYS incremental: a FORCE_FULL_REINDEX=true left in the
+    // service env would re-embed all ~316 docs on every deploy - minutes of
+    // sequential OpenAI calls hammering this same process while authors use
+    // the site. Manual `npm run index-internal` still honors the flag.
+    const indexerEnv = { ...process.env };
+    delete indexerEnv.FORCE_FULL_REINDEX;
     setTimeout(() => {
       const indexer = spawn('nice', ['-n', '19', 'node', 'scripts/internal-indexer.js'], {
         stdio: 'inherit',
-        env: { ...process.env }
+        env: indexerEnv
       });
       indexer.on('error', (err) => {
         // `nice` missing (some minimal images) - fall back to a plain spawn.
         console.warn(`⚠️ nice unavailable (${err.message}), running indexer at normal priority`);
-        spawn('node', ['scripts/internal-indexer.js'], { stdio: 'inherit', env: { ...process.env } })
+        spawn('node', ['scripts/internal-indexer.js'], { stdio: 'inherit', env: indexerEnv })
           .on('exit', (code) => {
             console.log(code === 0 ? '✅ Internal indexer completed successfully' : `❌ Internal indexer exited with code ${code}`);
           });
