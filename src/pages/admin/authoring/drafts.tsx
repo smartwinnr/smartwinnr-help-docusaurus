@@ -781,6 +781,7 @@ function QueuePage(): ReactNode {
             Manage drafts and edit published articles.{' '}
             <Link to="/admin/authoring" onClick={clearWizardState}>New article →</Link>{' · '}
             <Link to="/admin/authoring/modules">Manage modules →</Link>{' · '}
+            <Link to="/admin/authoring/stats">Stats →</Link>{' · '}
             <Link to="/admin/authoring/guide">Guide →</Link>
           </p>
         </div>

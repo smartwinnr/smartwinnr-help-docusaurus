@@ -36,7 +36,8 @@ function GuidePage(): ReactNode {
           <p className={styles.subhead}>
             How your work is saved, published, and deployed.{' '}
             <Link to="/admin/authoring">New article →</Link>{' · '}
-            <Link to="/admin/authoring/drafts">Authoring queue →</Link>
+            <Link to="/admin/authoring/drafts">Authoring queue →</Link>{' · '}
+            <Link to="/admin/authoring/stats">Stats →</Link>
           </p>
         </div>
       </header>

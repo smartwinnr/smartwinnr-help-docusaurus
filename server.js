@@ -4281,6 +4281,217 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
   }
 });
 
+// ─────────────────────────────────────────────────────────────────────────
+// Authoring stats - activity dashboard for author managers.
+// ─────────────────────────────────────────────────────────────────────────
+// "How many articles were generated in the last 7 days?" and friends.
+// Publish history comes from the publish branch's bot commits (message
+// prefix "publish: ") - that survives container restarts and is the
+// ground truth for what actually went live. Current-state numbers
+// (drafts, totals) come from the docs/ tree on disk. GitHub results are
+// cached for 10 minutes per window; a GitHub outage degrades to
+// disk-only stats instead of failing the endpoint.
+const STATS_CACHE_TTL_MS = 10 * 60 * 1000;
+const statsCache = new Map(); // days → {ts, payload}
+
+app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res) => {
+  try {
+    const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
+    const cached = statsCache.get(days);
+    if (cached && Date.now() - cached.ts < STATS_CACHE_TTL_MS) {
+      return res.json(cached.payload);
+    }
+
+    const titleCase = (s) => s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const sinceIso = new Date(Date.now() - days * 86400000).toISOString();
+
+    // ── Current state from disk ──
+    let totalArticles = 0;
+    let totalDrafts = 0;
+    const draftsTouchedInWindow = [];
+    const sinceDate = sinceIso.slice(0, 10);
+    function walkDisk(dir) {
+      for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, entry.name);
+        if (entry.isDirectory()) walkDisk(p);
+        else if (entry.isFile() && /\.(md|mdx)$/.test(entry.name)) {
+          totalArticles += 1;
+          const text = fsSync.readFileSync(p, 'utf8');
+          if (/^draft:\s*true\b/m.test(text)) {
+            totalDrafts += 1;
+            const d = /^\s*date:\s*(\S+)/m.exec(text);
+            if (d && d[1] >= sinceDate) {
+              const t = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
+              const au = /^\s*author:\s*["']?(.+?)["']?\s*$/m.exec(text);
+              draftsTouchedInWindow.push({
+                path: path.relative(__dirname, p),
+                title: t ? t[1] : entry.name,
+                author: au ? au[1] : null,
+                date: d[1],
+              });
+            }
+          }
+        }
+      }
+    }
+    for (const entry of fsSync.readdirSync(DOCS_ROOT, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      if (entry.name === 'internal' || entry.name === 'path') continue;
+      walkDisk(path.join(DOCS_ROOT, entry.name));
+    }
+
+    // ── Publish history from the publish branch ──
+    let github = true;
+    let githubError = null;
+    const perDay = new Map();      // YYYY-MM-DD → {created, updated}
+    const createdRels = new Map(); // rel → first commit date
+    const updatedRels = new Map();
+    const deletedRels = new Set();
+    let imagesAdded = 0;
+    const deployBatches = [];
+    try {
+      const listResp = await ghGet(
+        `/commits?sha=${GIT_PUBLISH_BRANCH}&since=${encodeURIComponent(sinceIso)}&per_page=100`
+      );
+      const publishCommits = (listResp.data || [])
+        .filter((c) => /^publish: /.test(c.commit?.message || ''))
+        .slice(0, 60); // hard cap on per-commit detail fetches
+      // Oldest first so "created then edited later" attributes correctly.
+      publishCommits.reverse();
+      for (const c of publishCommits) {
+        const detail = await ghGet(`/commits/${c.sha}`);
+        const date = (c.commit.committer?.date || c.commit.author?.date || '').slice(0, 10);
+        if (!perDay.has(date)) perDay.set(date, { created: 0, updated: 0 });
+        const day = perDay.get(date);
+        const batch = { sha: c.sha.slice(0, 7), date, created: 0, updated: 0, deleted: 0, images: 0 };
+        for (const f of detail.data.files || []) {
+          const rel = f.filename;
+          if (/^static\/img\/helpscout\/authored\//.test(rel) && f.status === 'added') {
+            imagesAdded += 1;
+            batch.images += 1;
+          }
+          if (!/^docs\/.+\.(md|mdx)$/i.test(rel)) continue;
+          if (f.status === 'added') {
+            createdRels.set(rel, date);
+            day.created += 1;
+            batch.created += 1;
+          } else if (f.status === 'removed') {
+            deletedRels.add(rel);
+            batch.deleted += 1;
+          } else {
+            // modified / renamed. A file created earlier in this window
+            // counts as created, not double-counted as an update.
+            if (!createdRels.has(rel)) {
+              updatedRels.set(rel, date);
+              day.updated += 1;
+              batch.updated += 1;
+            }
+          }
+        }
+        deployBatches.push(batch);
+      }
+      deployBatches.reverse(); // newest first for display
+    } catch (e) {
+      github = false;
+      githubError = e.response?.status ? `GitHub API error ${e.response.status}` : e.message;
+      console.error('❌ authoring/stats GitHub fetch failed:', githubError);
+    }
+
+    // ── Attribution: author + title from current disk frontmatter ──
+    const overviews = loadOverviews();
+    const sectionLabel = (rel) => {
+      const parts = rel.split('/');
+      if (parts[1] === 'modules' && parts[2]) {
+        return overviews.modules?.[parts[2]]?.label || titleCase(parts[2]);
+      }
+      const secAbs = path.join(DOCS_ROOT, parts[1] || '');
+      try {
+        const cat = JSON.parse(fsSync.readFileSync(path.join(secAbs, '_category_.json'), 'utf8'));
+        if (cat.label) return cat.label;
+      } catch {/* fall through */}
+      return titleCase(parts[1] || 'unknown');
+    };
+    const describe = (rel, date) => {
+      const abs = path.join(__dirname, rel);
+      let title = path.basename(rel).replace(/\.(md|mdx)$/, '');
+      let author = null;
+      try {
+        const text = fsSync.readFileSync(abs, 'utf8');
+        const t = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
+        const au = /^\s*author:\s*["']?(.+?)["']?\s*$/m.exec(text);
+        if (t) title = t[1];
+        if (au) author = au[1];
+      } catch {/* deleted or moved since - keep basename */}
+      return { path: rel, title, author, section: sectionLabel(rel), date };
+    };
+    const createdList = [...createdRels].map(([rel, date]) => describe(rel, date));
+    const updatedList = [...updatedRels].map(([rel, date]) => describe(rel, date));
+
+    const perAuthor = new Map();
+    for (const a of createdList) {
+      const key = a.author || 'Unknown';
+      if (!perAuthor.has(key)) perAuthor.set(key, { author: key, created: 0, updated: 0 });
+      perAuthor.get(key).created += 1;
+    }
+    for (const a of updatedList) {
+      const key = a.author || 'Unknown';
+      if (!perAuthor.has(key)) perAuthor.set(key, { author: key, created: 0, updated: 0 });
+      perAuthor.get(key).updated += 1;
+    }
+    const perSection = new Map();
+    for (const a of createdList) {
+      if (!perSection.has(a.section)) perSection.set(a.section, { section: a.section, created: 0, updated: 0 });
+      perSection.get(a.section).created += 1;
+    }
+    for (const a of updatedList) {
+      if (!perSection.has(a.section)) perSection.set(a.section, { section: a.section, created: 0, updated: 0 });
+      perSection.get(a.section).updated += 1;
+    }
+
+    // Fill every day in the window so the chart has a continuous axis.
+    const perDayFilled = [];
+    for (let i = days - 1; i >= 0; i -= 1) {
+      const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+      const v = perDay.get(d) || { created: 0, updated: 0 };
+      perDayFilled.push({ date: d, created: v.created, updated: v.updated });
+    }
+
+    const payload = {
+      days,
+      generatedAt: new Date().toISOString(),
+      github,
+      githubError,
+      totals: {
+        articles: totalArticles,
+        published: totalArticles - totalDrafts,
+        drafts: totalDrafts,
+      },
+      window: {
+        created: createdRels.size,
+        updated: updatedRels.size,
+        deleted: deletedRels.size,
+        imagesAdded,
+        deploys: deployBatches.length,
+        perDay: perDayFilled,
+        perAuthor: [...perAuthor.values()].sort((a, b) => (b.created + b.updated) - (a.created + a.updated)),
+        perSection: [...perSection.values()].sort((a, b) => (b.created + b.updated) - (a.created + a.updated)),
+        createdArticles: createdList.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 50),
+        draftsInProgress: draftsTouchedInWindow.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 50),
+        deployBatches: deployBatches.slice(0, 30),
+      },
+      queue: {
+        size: deployQueue.size,
+        lastDeployTs,
+      },
+    };
+    if (github) statsCache.set(days, { ts: Date.now(), payload });
+    res.json(payload);
+  } catch (error) {
+    console.error('❌ authoring/stats failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
   try {
     const { slug, label, privilege, anyPrivilege, description } = req.body || {};
