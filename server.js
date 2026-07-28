@@ -931,6 +931,13 @@ function stripBogusImageOrigins(markdown) {
     /!\[([^\]]*)\]\(https?:\/\/(img\/[^\s)]+)\)/g,
     '![$1](/$2)',
   );
+  // Pass 3: whitespace padding inside the parens. `]( /img/X.png )` is valid
+  // CommonMark so Docusaurus renders it, but padded URLs are easy for
+  // downstream scanners to miss - normalize to the canonical tight form.
+  result = result.replace(
+    /!\[([^\]]*)\]\(\s+(\/img\/[^\s)]+)\s*\)/g,
+    '![$1]($2)',
+  );
   return result;
 }
 
@@ -1344,7 +1351,7 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     // strip, but the edit-existing-draft flow may have loaded a legacy
     // file that carries them, and a Refine pass through the LLM that
     // sneaks one in would otherwise survive.
-    const cleanedMarkdown = stripDecorativeEmojis(markdown);
+    const cleanedMarkdown = stripDecorativeEmojis(stripBogusImageOrigins(markdown));
     // Force draft:true in frontmatter - defensive override even if the model
     // emitted draft:false somehow.
     const text = cleanedMarkdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
@@ -1444,7 +1451,10 @@ let lastValidationError = null;
 // authored images its body references) under data/pending-files/ at enqueue
 // time and restore the snapshots over the fresh disk on boot.
 const PENDING_FILES_DIR = path.join(__dirname, 'data', 'pending-files');
-const AUTHORED_IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+// Tolerate whitespace inside the parens - `]( /img/...)` is valid CommonMark
+// (Docusaurus resolves it), so a scanner that misses it ships articles
+// without their screenshots and breaks every subsequent production build.
+const AUTHORED_IMAGE_PATTERN = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
 
 function snapshotQueuedFile(relPath) {
   try {
@@ -2296,7 +2306,9 @@ async function fireDeploy() {
     // articles with such references are held back in the queue instead of
     // committed. Re-uploading the screenshot (or removing the reference)
     // unblocks them on the next deploy.
-    const IMAGE_PATTERN = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+    // Whitespace-tolerant (`]( /img/...)` is valid CommonMark) - a miss here
+    // means the image is neither bundled nor held back, and CI breaks.
+    const IMAGE_PATTERN = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
     const repoHasCache = new Map();
     async function repoHasFile(rel) {
       if (repoHasCache.has(rel)) return repoHasCache.get(rel);
@@ -3687,7 +3699,7 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
 /** Scan an article body for /img/helpscout/authored/... image URLs.
  *  Returns a Set of root-relative URLs (e.g. "/img/helpscout/authored/foo.png"). */
 function imagesReferencedBy(markdown) {
-  const re = /!\[[^\]]*\]\((\/img\/helpscout\/authored\/[^)\s]+)\)/g;
+  const re = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
   const out = new Set();
   for (const m of markdown.matchAll(re)) out.add(m[1]);
   return out;
