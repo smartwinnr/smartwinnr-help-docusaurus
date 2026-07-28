@@ -16,6 +16,6 @@
       "lamadmin",
       "superadmin"
     ],
-    "privilege": "authoringtools"
+    "privilege": "authoringTools"
   }
 }

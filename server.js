@@ -4494,7 +4494,8 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
 
 app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
   try {
-    const { slug, label, privilege, anyPrivilege, description } = req.body || {};
+    const { slug, label, anyPrivilege, description } = req.body || {};
+    let { privilege } = req.body || {};
     if (!isValidSlug(slug)) {
       return res.status(400).json({ error: 'slug must be kebab-case (a-z, 0-9, hyphen)' });
     }
@@ -4512,9 +4513,21 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
 
     let privilegeAdded = false;
     let novelPrivilege = null;
+    let privilegeCorrected = null;
     if (privilege && typeof privilege === 'string' && privilege.trim()) {
       const privDoc = loadKnownPrivileges();
       const list = privDoc.privileges || [];
+      // LMS privilege keys are camelCase and authors type them by hand.
+      // A case-insensitive match against the known list is a typo for the
+      // canonical key, not a new privilege - "authoringtools" once minted
+      // a novel key beside the real "authoringTools" and gated a whole
+      // module on a privilege no org has.
+      const canonical = list.find((k) => k.toLowerCase() === privilege.toLowerCase());
+      if (canonical && canonical !== privilege) {
+        privilegeCorrected = { from: privilege, to: canonical };
+        privilege = canonical;
+        console.log(`[authoring] privilege key auto-corrected: "${privilegeCorrected.from}" → "${canonical}"`);
+      }
       if (!list.includes(privilege)) {
         list.push(privilege);
         list.sort((a, b) => a.localeCompare(b));
@@ -4564,7 +4577,7 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
     enqueueUpsert('static/module-overviews.json');
     persistDeployState();
 
-    res.json({ ok: true, slug, privilegeAdded, novelPrivilege, paths: written });
+    res.json({ ok: true, slug, privilegeAdded, novelPrivilege, privilegeCorrected, paths: written });
   } catch (error) {
     console.error('❌ authoring/modules POST failed:', error.message);
     res.status(400).json({ error: error.message });
