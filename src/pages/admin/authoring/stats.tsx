@@ -20,6 +20,7 @@ type StatsPayload = {
   generatedAt: string;
   github: boolean;
   githubError: string | null;
+  stale?: boolean;
   totals: {articles: number; published: number; drafts: number};
   window: {
     created: number;
@@ -144,9 +145,11 @@ function StatsPage(): ReactNode {
         ))}
         {data && (
           <span className={styles.hint}>
-            {data.github
-              ? `Updated ${new Date(data.generatedAt).toLocaleTimeString()} - refreshes every 10 minutes.`
-              : `Live publish history is unavailable right now (${data.githubError ?? 'GitHub unreachable'}) - showing current-state numbers only.`}
+            {!data.github
+              ? `Live publish history is unavailable right now (${data.githubError ?? 'GitHub unreachable'}) - showing current-state numbers only.`
+              : data.stale
+                ? `Showing numbers from ${new Date(data.generatedAt).toLocaleTimeString()} - fresher ones are being prepared, refresh in a moment.`
+                : `Updated ${new Date(data.generatedAt).toLocaleTimeString()} - refreshes every 10 minutes.`}
           </span>
         )}
       </div>

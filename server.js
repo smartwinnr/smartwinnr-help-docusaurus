@@ -4292,16 +4292,10 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
 // cached for 10 minutes per window; a GitHub outage degrades to
 // disk-only stats instead of failing the endpoint.
 const STATS_CACHE_TTL_MS = 10 * 60 * 1000;
-const statsCache = new Map(); // days → {ts, payload}
+const statsCache = new Map();    // days → {ts, payload}
+const statsInFlight = new Map(); // days → Promise<payload>, dedupes concurrent recomputes
 
-app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res) => {
-  try {
-    const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
-    const cached = statsCache.get(days);
-    if (cached && Date.now() - cached.ts < STATS_CACHE_TTL_MS) {
-      return res.json(cached.payload);
-    }
-
+async function computeAuthoringStats(days) {
     const titleCase = (s) => s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     const sinceIso = new Date(Date.now() - days * 86400000).toISOString();
 
@@ -4358,8 +4352,18 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
         .slice(0, 60); // hard cap on per-commit detail fetches
       // Oldest first so "created then edited later" attributes correctly.
       publishCommits.reverse();
+      // Fetch commit details in parallel batches - done sequentially this
+      // was ~0.5s per commit and dominated first-load latency (20+ commits
+      // in a busy week meant a 10-15s wait for the dashboard).
+      const detailBySha = new Map();
+      const DETAIL_BATCH = 6;
+      for (let i = 0; i < publishCommits.length; i += DETAIL_BATCH) {
+        const chunk = publishCommits.slice(i, i + DETAIL_BATCH);
+        const resolved = await Promise.all(chunk.map((c) => ghGet(`/commits/${c.sha}`)));
+        chunk.forEach((c, j) => detailBySha.set(c.sha, resolved[j]));
+      }
       for (const c of publishCommits) {
-        const detail = await ghGet(`/commits/${c.sha}`);
+        const detail = detailBySha.get(c.sha);
         const date = (c.commit.committer?.date || c.commit.author?.date || '').slice(0, 10);
         if (!perDay.has(date)) perDay.set(date, { created: 0, updated: 0 });
         const day = perDay.get(date);
@@ -4484,8 +4488,41 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
         lastDeployTs,
       },
     };
-    if (github) statsCache.set(days, { ts: Date.now(), payload });
-    res.json(payload);
+    return payload;
+}
+
+app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res) => {
+  try {
+    const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
+    const cached = statsCache.get(days);
+    if (cached && Date.now() - cached.ts < STATS_CACHE_TTL_MS) {
+      return res.json(cached.payload);
+    }
+    // One recompute per window at a time - a second visitor while a
+    // recompute is running awaits the same promise instead of doubling
+    // the GitHub traffic.
+    const kick = () => {
+      let p = statsInFlight.get(days);
+      if (!p) {
+        p = computeAuthoringStats(days)
+          .then((payload) => {
+            // Only cache complete results - caching a GitHub-degraded
+            // payload would pin zeros for the next 10 minutes.
+            if (payload.github) statsCache.set(days, { ts: Date.now(), payload });
+            return payload;
+          })
+          .finally(() => statsInFlight.delete(days));
+        statsInFlight.set(days, p);
+      }
+      return p;
+    };
+    if (cached) {
+      // Stale-while-refresh: serve the expired copy instantly and rebuild
+      // in the background, so only the very first visitor ever waits.
+      kick().catch((e) => console.warn('[stats] background refresh failed:', e.message));
+      return res.json({ ...cached.payload, stale: true });
+    }
+    res.json(await kick());
   } catch (error) {
     console.error('❌ authoring/stats failed:', error.message);
     res.status(500).json({ error: error.message });
