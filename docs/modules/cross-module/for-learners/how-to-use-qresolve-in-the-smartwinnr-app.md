@@ -48,12 +48,14 @@ Users can submit queries through both the SmartWinnr Mobile App and the SmartWin
 **2. Open QResolve:** Navigate to the QResolve section.
 
 **3. Create a New Query:** Click the + (Plus) icon available at the bottom-right corner of the screen.
-![](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-mrvwgfc9.png)
+![describe this screenshot](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-ms4y4hij.png)
+
 
 **4. Select a Tag/Category:** Choose the appropriate Query Type (Tag/Category) that best matches your query.
 
 - Selecting the correct Tag/Category ensures that your query reaches the appropriate SPOC.
-![](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-mrvwjgwv.png)
+
+![describe this screenshot](/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-ms4ycndf.png)
 **5. Enter Your Query:** Provide a clear description of your question or issue.
 
 - If required, you can also attach supporting documents related to your query.
