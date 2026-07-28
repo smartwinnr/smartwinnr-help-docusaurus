@@ -4554,6 +4554,16 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
     overviews.modules[slug] = entry;
     saveOverviews(overviews);
 
+    // These two files must ship with the module's gates: the repo's
+    // prebuild validates every _category_.json privilege key against
+    // data/known-privileges.json, and the module landing reads
+    // static/module-overviews.json. The journal alone made them durable
+    // but never put them in the deploy queue, so the first publish from
+    // a new module hard-failed CI on the unknown privilege key.
+    if (privilegeAdded) enqueueUpsert('data/known-privileges.json');
+    enqueueUpsert('static/module-overviews.json');
+    persistDeployState();
+
     res.json({ ok: true, slug, privilegeAdded, novelPrivilege, paths: written });
   } catch (error) {
     console.error('❌ authoring/modules POST failed:', error.message);

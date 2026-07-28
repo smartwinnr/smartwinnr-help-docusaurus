@@ -197,6 +197,24 @@
       "who": "",
       "privilege": "competitions",
       "ctaEmail": "admin@your-org.com"
+    },
+    "authoringtools": {
+      "label": "Authoring Tools",
+      "tagline": "Authoring Tools - SmartWinnr module.",
+      "description": "Authoring Tools - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
+    },
+    "i-share": {
+      "label": "I Share",
+      "tagline": "I Share - SmartWinnr module.",
+      "description": "I Share - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "shareableContent"
     }
   }
 }
