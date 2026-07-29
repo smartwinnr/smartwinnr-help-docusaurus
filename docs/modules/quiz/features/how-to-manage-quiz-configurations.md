@@ -1,90 +1,84 @@
 ---
-id: 5fda45eaa5d295659b36989e
+id: how-to-manage-quiz-configurations
 title: How to manage Quiz configurations?
-description: 'Go to Admin>>Quiz Setting, it will open the following page'
+description: Go to Admin>>Quiz Setting, it will open the following page
 slug: how-to-manage-quiz-configurations
 sidebar_position: 112
 last_update:
-  date: 2021-01-22T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fda45eaa5d295659b36989e
-  helpscout_url: 'https://help.smartwinnr.com/article/112-how-to-manage-quiz-configurations'
+  date: 2026-07-29
+  author: Sandeep Bhuthagaddala
 customProps:
   roles:
     - admin
   privilege: quiz
 tags:
   - quiz
+draft: false
 ---
-**How to Manage Quiz Configurations**
+
+> **At a glance** - This article explains how to manage quiz configurations, including scoring, badge settings, notifications, multiple attempts, and knowledge categories.
 
 Quiz Configurations allow Administrators and Editors to control how quizzes are delivered, scored, and managed for users. These settings determine quiz behavior, notifications, multiple attempts, knowledge categories, and automatic quiz generation.
 
-**Prerequisites**
+## When to use this
+Use this feature when you need to:
+- Adjust scoring rules for quizzes.
+- Set up badge awards based on quiz performance.
+- Configure notification settings for quiz-related events.
+- Manage multiple attempts for users.
+- Organize knowledge categories for quiz questions.
+
+## Before you start
 - You must have Administrator or Editor access.
 - Log in to the Admin Portal.
 
-**Navigation**
-- Log in to the Admin Portal.
-- From the left navigation menu, select Admin.
-- Navigate to Quiz Settings -> Manage Configurations.
+## Steps
 
-Quiz setting contains the default settings that were created by the editor while creating the quiz. You can change the points for selecting the correct answer as well as the wrong answer.
+### 1. Log in to the Admin Portal
+Access your Admin Portal using your credentials.
 
+### 2. Navigate to Quiz Settings
+From the left navigation menu, select **Admin**, then navigate to **Quiz Settings** -> **Manage Configurations**.
 
-You can also select set the threshold (minimum average score required ) to get a particular type of badge.
-Configuration Sections
-**1. Scoring**
+### 3. Configure Scoring
+Adjust how quiz scores are calculated:
+- **Points per Correct Answer**: Define the score awarded for each correct answer.
+- **Points per Incorrect Answer**: Define the score awarded (or deducted) for each incorrect answer. A value of 0 means no penalty for wrong answers.
 
-Configure how quiz scores are calculated.
+![Configure Scoring](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn6x51q.png)
 
-Points per Correct Answer : Defines the score awarded for each correct answer.
-
-Points per Incorrect Answer : Defines the score awarded (or deducted) for each incorrect answer. A value of 0 means no penalty for wrong answers.
-
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn6x51q.png)
-
-### 2. Quiz Badge Settings
-
+### 4. Set Up Quiz Badge Settings
 Configure the badges awarded based on quiz performance.
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn70rxu.png)
 
+![Quiz Badge Settings](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn70rxu.png)
 
+### 5. Configure Quiz Notification Settings
+Set how quiz-related notifications are sent to users. Available options are shown below.
 
-### 3. Quiz Notification Settings
+![Quiz Notification Settings](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn75jbz.png)
 
-Configure how quiz-related notifications are sent to users.
+### 6. Manage Multiple Attempts Configuration
+Set the threshold for allowing users to retake quizzes by specifying the limit and checking the appropriate checkbox.
 
-Available options include as shown below
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn75jbz.png)
+![Multiple Attempts Configuration](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn789nt.png)
 
+### 7. Configure Knowledge Category Settings
+Manage participants' performance regarding their knowledge of relevant quiz topics. Each question is tagged, allowing for analytics after quiz completion.
 
+- To add a new knowledge category, click on **Add New** and specify the required category tags.
+- To edit an existing knowledge category, click on **Edit Tag**, make the necessary changes, and save.
 
-### 4. Multiple Attempts Configuration
+![Knowledge Category Settings](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7g5gh.png)
 
-Admin can also set the threshold for allowing users to appear for quiz multiple times, by specifying the threshold and also by checking the checkbox, as shown below.
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn789nt.png)
+### 8. Review Default Auto Mode
+This section contains the default values set by the editor when creating the manual quiz type.
 
-### Knowledge Category Settings
+![Default Auto Mode](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7jdbp.png)
 
-Knowledge category settings will enable you to manage the performance of the participants about their knowledge of the relevant topics of the quiz questions. Each question created in question is attached with a certain tag so that after the quiz is completed. Analytics can be performed to have an understanding of the reach of the topic.
+### 9. Review Quick Auto Mode
+This section contains the values set during the creation of the "Auto Quiz." These values can also be overridden by the editor.
 
-You can also add a new knowledge category by clicking on "Add New" and specifying the required category tags.
+![Quick Auto Mode](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7nl54.png)
 
-You can also edit the existing knowledge category by clicking on "Edit Tag", and by making the appropriate changes and saving it.
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7g5gh.png)
-
-
-### Default Auto Mode
-
-This contains the default values that were set by the editor while creating the manual quiz type. 
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7jdbp.png)
-
-### Quick Auto Mode
-
-This contains the values that were set while the creation of the "Auto Quiz", the values can also be overridden by the editor.
-
-![](/img/helpscout/authored/how-to-manage-quiz-configurations-mrn7nl54.png)
-
-After all the required changes are made click on "Save" on top of the page.
+### 10. Save Changes
+After making all the required changes, click on **Save** at the top of the page.

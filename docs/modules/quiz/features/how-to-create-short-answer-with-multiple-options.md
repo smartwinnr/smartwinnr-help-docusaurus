@@ -7,7 +7,7 @@ description: >-
 slug: how-to-create-short-answer-with-multiple-options
 sidebar_position: 280
 last_update:
-  date: 2026-07-04
+  date: 2026-07-29
   author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 64115177a0408f7cb1038c2d
@@ -40,9 +40,9 @@ Click on the **Add New Question** button at the **top right corner**.
 ![Click on the 'Add New Question' button at the top right corner.](/img/helpscout/editors/how-to-create-a-missing-words-question-1.png)
 
 ### 3. Select Question Type
-On the **Create new Question** screen, select the **Question Type** as **Short Answer with Multiple Matches**.
+On the **Create New Question** screen, select the **Question Type** as **Short Answer with Multiple Matches**.
 
-![On the 'Create new Question' select the 'Question Type' as Short Answer with Multiple Matches.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-1.png)
+![On the 'Create New Question' select the 'Question Type' as Short Answer with Multiple Matches.](/img/helpscout/editors/how-to-create-short-answer-with-multiple-options-1.png)
 
 ### 4. Enter Your Question
 Enter your question in the **Question** field.
@@ -57,7 +57,6 @@ Enter the **possible correct answers** and specify the **grade percentage** for 
 **Example:**
 
 ![](/img/helpscout/authored/how-to-create-short-answer-with-multiple-options-mr609vln.png)
-
 
 ### 6. Set Points
 The total score for the question should be added here.
@@ -91,4 +90,3 @@ Once you have filled in the required details of the question, click on the **Sav
 This is an example of how participants see the **Short Answer With Multiple Matches** question in the User View.
 
 ![](/img/helpscout/authored/how-to-create-short-answer-with-multiple-options-mr60f4i4.png)
-

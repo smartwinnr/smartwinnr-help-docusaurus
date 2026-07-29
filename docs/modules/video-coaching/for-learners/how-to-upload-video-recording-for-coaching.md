@@ -45,11 +45,11 @@ Go to the left menu and select **Coachings**. Then, click on the **Assigned** ta
 ### 2. Record Your Video
 It will take you to the coaching details page.
 
-![](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u08qu.png)
+![coaching details](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u08qu.png)
 
 On the coaching details page, click on the **“Record Video”** button. This will initiate the video recording process.
 
-![](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u546f.png)
+![record video page](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u546f.png)
 
 ### 3. Capture Your Video
 It will now request you to provide the mircophone and camrea access to start recording the video. Provide the required access and on enabling the camera access, it will give you two options -
@@ -66,7 +66,7 @@ On clicking the '**Record Video**', it wil take you to the following screen wher
 - Once the recording is completed, click on 'Stop recording'
 - Once the recording is completed, you can preview your response video, download the same or retry if you would like to make a fresh recording again.
 
-![](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms2sg6b1.jpg)
+![Record Video](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms2sg6b1.jpg)
 
 ### 4. Upload the Recorded Video
 Once the video is recorded successfully, click on the **“Upload Video”** button to upload your video file. It will request for a confirmation.
