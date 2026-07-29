@@ -64,18 +64,17 @@ On clicking the '**Record Video**', it wil take you to the following screen wher
 
 - Click on 'Start recording' to start recording your response video.
 - Once the recording is completed, click on 'Stop recording'
-- Once the recording is completed, you can preview your response video, download the same or retake if you would like to make a fresh recording again.
+- Once the recording is completed, you can preview your response video, download the same or retry if you would like to make a fresh recording again.
 
 ![](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms2sg6b1.jpg)
 
 ### 4. Upload the Recorded Video
-Once the video is recorded successfully, click on the **“Upload”** button to upload your video file. 
+Once the video is recorded successfully, click on the **“Upload Video”** button to upload your video file. It will request for a confirmation.
 
-![Upload the Recorded Video](/img/helpscout/managers-and-team-members/how-to-upload-video-recording-for-coaching-4.png)
-
+![describe this screenshot](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms5ziwp3.jpg)
 ### 5. Confirmation of Upload
-After the upload is complete, you will see a confirmation screen indicating that your video recording has been uploaded successfully.
+On confirming, the response video will be uploaded sucessfully. After the upload is complete, you will see a confirmation screen indicating that your video recording has been uploaded successfully.
 
-![Confirmation of Upload](/img/helpscout/managers-and-team-members/how-to-upload-video-recording-for-coaching-5.png)
+![describe this screenshot](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms5zkkx2.jpg)
 
 A confirmation email is imediately sent to your reviewer if a coach is assigned to review your response video.
