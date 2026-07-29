@@ -1,6 +1,6 @@
 ---
 id: create-eshare-content-type
-title: "Understanding iShare content types creation and customization"
+title: "Understanding iShare Content types creation and Customization"
 description: "Learn how to create and customize iShare content types for various materials."
 slug: create-eshare-content-type
 sidebar_position: 999
