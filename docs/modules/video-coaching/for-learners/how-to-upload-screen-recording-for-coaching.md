@@ -52,22 +52,21 @@ a) Record Video
 
 b) Record Screen
 
-![describe this screenshot](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77z9lw.png)
+![record video](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77z9lw.png)
 
 Click on '**Record Video**' option to start recording your video response. If you click on '**Record screen**', it will record your screen where you can present the screen and do the recording for the coaching assignment. 
 
 ### 3. Share Your Screen
 Click on the Record screen option, a pop-up message will show requesting to choose the screen that you would like to share. Select the part of your screen you want to record. This is the area that will be submitted for coaching.
 
+![screen access permission](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms788mcw.png)
 
-![Step:3 Here you can click on the screen share icon and record the screen which you would like to submit for the coaching.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-3.png)
+Once the required screen is selected, click on '**Start recording**'. Proceed with your recording and once completed, click on '**Stop Recording**'. Once the recording is completed, you can preview the same and retake if needed.
+
+![stat recording](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms78ox0q.png)
 
 ### 4. Upload Your Recorded File
-Once your screen is recorded successfully, click on the **“Upload Recorded File”** button to upload the recording file to the coaching assignment.
-
-![Step:4 Once the screen is recorded successfully. Kindly click on the “Upload Recorded File” button to upload that recording file.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-4.png)
+Once your screen is recorded successfully and finalized, click on the **“Upload”** button to upload the recording file to the coaching assignment.
 
 ### 5. Confirm Successful Upload
 After the upload is complete, you will see a confirmation screen indicating that your screen recording has been uploaded successfully. This ensures that your submission is complete and ready for review.
-
-![Step:5 After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-5.png)
