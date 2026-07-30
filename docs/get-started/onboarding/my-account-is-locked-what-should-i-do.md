@@ -3,30 +3,30 @@ id: 5fce219904cebe5254a298fa
 title: My Account is locked - what should I do?
 description: >-
   Your account gets locked if you enter a wrong password 5 times. Following
-  screenshot shows the login error that you will get once your account is locked
-  :
+  screenshot shows the login error that you will get once your account is locked:
 slug: my-account-is-locked-what-should-i-do
 sidebar_position: 14
 last_update:
-  date: 2020-12-26T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fce219904cebe5254a298fa
-  helpscout_url: 'https://help.smartwinnr.com/article/14-my-account-is-locked-what-should-i-do'
+  date: 2026-07-30
+  author: Sruthi Suresh
 customProps:
   roles:
     - user
     - manager
     - editor
     - admin
-tags: []
+tags: ["login"]
+draft: false
 ---
-Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login error that you will get once your account is locked :
 
-![Your account gets locked if you enter a wrong password 5 times. Following screenshot shows the login error that you will get once your accou](/img/helpscout/managers-and-team-members/my-account-is-locked-what-should-i-do-1.png)
+> **At a glance** - If your account is locked due to multiple incorrect password attempts, you can either wait for it to unlock automatically or contact support for assistance.
 
-Once your account is locked, it will stay locked for 20 minutes. So, you can wait for 20 min for auto-unlock.
+Your account gets locked if you enter a wrong password five times. The following screenshot shows the login error you will receive once your account is locked:
 
-Otherwise, you can contact your system admin or write to the SmartWinnr support at [support@smartwinnr.com](mailto:support@smartwinnr.com) to unlock your account.
+![Login error when account is locked](/img/helpscout/authored/my-account-is-locked-what-should-i-do-ms7612c7.png)
 
-But please note that once your account is unlocked and if you enter the wrong password again for 5 times, it is going to lock you out again. So, it would be a good idea to change the password or you can ask your system administrator to change the password.
+Once your account is locked, it will remain locked for 20 minutes. You can wait for this duration for the account to auto-unlock.
+
+Alternatively, you can contact your system administrator or write to SmartWinnr support at [support@smartwinnr.com](mailto:support@smartwinnr.com) to unlock your account.
+
+Please note that once your account is unlocked, if you enter the wrong password again five times, it will lock you out again. It would be a good idea to change your password or ask your system administrator to change it.

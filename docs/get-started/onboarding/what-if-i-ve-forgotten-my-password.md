@@ -7,35 +7,44 @@ description: >-
 slug: what-if-i-ve-forgotten-my-password
 sidebar_position: 12
 last_update:
-  date: 2020-12-26T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fce1bf84664bd7a123eb447
-  helpscout_url: 'https://help.smartwinnr.com/article/12-what-if-ive-forgotten-my-password'
+  date: 2026-07-30
+  author: Sruthi Suresh
 customProps:
   roles:
     - user
     - manager
     - editor
     - admin
-tags: []
+tags: ["login"]
+draft: false
 ---
+
+> **At a glance** - If you forget your password, use the ‘**Forgot Password**?’ link on the login page to reset it.
+
 If you have forgotten your password, you can click on the link called ‘**Forgot Password**?’ in the login page of the SmartWinnr app.
 
-![If you have forgotten your password, you can click on the link called ‘Forgot Password?’ in the login page of the SmartWinnr app.](/img/helpscout/managers-and-team-members/what-if-i-ve-forgotten-my-password-1.png)
+## When to use this
+Use this feature when you cannot remember your password and need to reset it. This process applies in the following scenarios:
+- You have forgotten your password and cannot log in.
+- You want to regain access to your SmartWinnr account.
 
-Enter your username and click on the button ‘Forgot Password’.
+## Steps
 
-The username can be your official email id or your mobile number which you have received in your welcome SMS or welcome email.
+### 1. Click on ‘Forgot Password?’
+On the SmartWinnr app login page, click on the link labeled ‘**Forgot Password**’.
 
-**When the username is your official email id:**
+![Forgot Password link on login page](/img/helpscout/authored/what-if-i-ve-forgotten-my-password-ms75vsc5.png)
 
-You will receive an email with a link to reset your password. Once you have reset your password, open the SmartWinnr app’s login page, enter your email id as the username and the new password.
+### 2. Enter your username
+Enter your username, which can be your official email address or your mobile number that you received in your welcome SMS or welcome email. 
 
-**When the username is your mobile number:**
+### 3. Check your email or SMS
+- **When the username is your official email id:**  
+  You will receive an email with a link to reset your password. Once you have reset your password, open the SmartWinnr app’s login page, enter your email id as the username, and use the new password.
 
-You will receive an SMS from SmartWInnr with the new password for your account. Once you receive the new password, open the SmartWinnr app’s login page, enter your mobile number as the username and the new password.
+- **When the username is your mobile number:**  
+  You will receive an SMS from SmartWinnr with the new password for your account. Once you receive the new password, open the SmartWinnr app’s login page, enter your mobile number as the username, and use the new password.
 
-**What if I did not receive the reset password link or SMS?**
-
-If you could not find the reset password email or SMS, you can either write to your system administrator or write to [support@smartwinnr.com](mailto:support@smartwinnr.com) for resetting your password.
+### 4. Contact support if needed
+**What if I did not receive the reset password link or SMS?**  
+If you could not find the reset password email or SMS, you can either write to your system administrator or contact [support@smartwinnr.com](mailto:support@smartwinnr.com) for assistance in resetting your password.

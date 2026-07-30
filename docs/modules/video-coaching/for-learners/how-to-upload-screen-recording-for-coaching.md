@@ -1,18 +1,12 @@
 ---
-id: 62aa1c6df6341f7edc2a55ee
+id: how-to-upload-screen-recording-for-coaching
 title: How to upload Screen Recording for Coaching
-description: >-
-  Follow the below steps to upload your screen recording for the coaching
-  assignment.
+description: Follow the below steps to upload your screen recording for the coaching assignment.
 slug: how-to-upload-screen-recording-for-coaching
 sidebar_position: 269
 last_update:
-  date: 2022-06-20T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 62aa1c6df6341f7edc2a55ee
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/269-how-to-record-screen-into-video-coaching
+  date: 2026-07-29
+  author: Anagha Isal
 customProps:
   roles:
     - user
@@ -22,28 +16,58 @@ customProps:
 tags:
   - video-coaching
   - onboarding
+draft: false
 ---
-Follow the below steps to upload your screen recording for the coaching assignment.
 
-Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.
+> **At a glance** - This article outlines the steps to upload your screen recording for a coaching assignment.Note that the option to share screen for a video coaching is available only in the SmartWinnr web version. You cannot find the screen share option in the SmartWinnr mobile App.
 
-![Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-1.png)
+Follow the steps below to successfully upload your screen recording for the coaching assignment.
 
-Step:2 On the coaching details page, click on the **“Record Screen”** button to record your screen.
+## When to use this
+Use this guide when you need to submit a screen recording for a coaching assignment. This is particularly useful for 
+- demonstrating processes
+- sharing insights
+- providing feedbacks during the conversation
 
-![Step:2 On the coaching details page, click on the “Record Screen” button to record your screen.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-1.png)
+## Steps
 
-Step:3 Here you can click on the screen share icon and record the screen which you would like to submit for the coaching.
+## 1. Access the Coaching Assignment
+Go to the left menu and select **Coachings**. Then, click on the **Assigned** tab to view your coaching assignments. Select the specific coaching assignment you wish to submit the response video for.
 
-![Step:3 Here you can click on the screen share icon and record the screen which you would like to submit for the coaching.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-2.png)
-**Note:** When you click on the screen share icon >> It will show you a pop-up message asking for confirmation of screen sharing. Click the **"Allow"** button to continue.
+![coaching list page](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77vbiu.png)
+
+### 2. Record Your Video
+It will take you to the coaching details page.
+![Access the Coaching Assignment](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77t9lo.png)
+
+
+On the coaching details page, click on the **“Record Video”** button. This will initiate the video recording process.
+
+![coaching details](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77wx8h.png)
+
+### 3. Capture Your Video
+It will now request you to provide the mircophone and camera access to start recording the video. Provide the required access and on enabling the camera access, it will give you two options -
+
+a) Record Video
+
+b) Record Screen
+
+![describe this screenshot](/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms77z9lw.png)
+
+Click on '**Record Video**' option to start recording your video response. If you click on '**Record screen**', it will record your screen where you can present the screen and do the recording for the coaching assignment. 
+
+### 3. Share Your Screen
+Click on the Record screen option, a pop-up message will show requesting to choose the screen that you would like to share. Select the part of your screen you want to record. This is the area that will be submitted for coaching.
+
 
 ![Step:3 Here you can click on the screen share icon and record the screen which you would like to submit for the coaching.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-3.png)
 
-Step:4  Once the screen is recorded successfully. Kindly click on the **“Upload Recorded File”** button to upload that recording file.
+### 4. Upload Your Recorded File
+Once your screen is recorded successfully, click on the **“Upload Recorded File”** button to upload the recording file to the coaching assignment.
 
 ![Step:4 Once the screen is recorded successfully. Kindly click on the “Upload Recorded File” button to upload that recording file.](/img/helpscout/managers-and-team-members/how-to-upload-screen-recording-for-coaching-4.png)
 
-Step:5  After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.
+### 5. Confirm Successful Upload
+After the upload is complete, you will see a confirmation screen indicating that your screen recording has been uploaded successfully. This ensures that your submission is complete and ready for review.
 
 ![Step:5 After that you will get a confirmation screen like the one below, once your screen recording gets uploaded successfully.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-5.png)
