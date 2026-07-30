@@ -34,20 +34,20 @@ Use custom notifications to:
 ### 1. Access Custom Notifications
 Go to **Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications**. This will lead you to the custom notifications page.
 
-![Go to Left Menu > GAMIFICATION AND ENGAGEMENT > Custom Notifications. This will lead to the following page](/img/helpscout/editors/custom-notifications-1.png)
+![Access Custom Notifications](/img/helpscout/authored/custom-notifications-ms7sp0ar.png)
 
 This page will provide the logs of custom notifications that have been sent so far. You can also search for notifications by "Date Range", "Business Unit", or "Created By".
 
 ### 2. Add a New Custom Notification
 To add a new custom notification, click on the **Add Notification** button in the top right corner.
 
-![In order to add a new custom notification, Editor needs to click on the "Add Notification" button on the top right.](/img/helpscout/editors/custom-notifications-2.png)
+![describe this screenshot](/img/helpscout/authored/custom-notifications-ms7sq39c.png)
 
-Type the notifying message in the message box. You should also specify whether the notification will be sent as an "SMS" or an "Email". Note that the notifying message should not exceed 140 characters.
+Type the notifying message in the message box. You should also specify whether the notification will be sent as an "Email" also. Note that the notifying message should not exceed 170 characters. Click on the "Send Notification" to send the notifications to to all the users in the organization.
 
-### 3. Select Notification Recipients
-![Selection of the Notification Recipient](/img/helpscout/editors/custom-notifications-3.png)
+### 3. Select Specific Recipients of Notification
+![Select Recipients](/img/helpscout/authored/custom-notifications-ms7su981.png)
 
-Select the "Business Unit", "Country", and "Group" to search for notification recipients. For advanced search options, refer to the [Advanced Options for Projects](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) section.
+If you want to send the notifications to specific users, select the "Business Unit", "Country", and "Group" of the recipients. For advanced search options, refer to the [Advanced Options for Projects](https://smartwinnr.helpscoutdocs.com/article/188-advanced-options-for-projects) section.
 
 After completing your search, select the recipients and click on **Send Notification**. The notification will then be successfully sent to the sales reps.

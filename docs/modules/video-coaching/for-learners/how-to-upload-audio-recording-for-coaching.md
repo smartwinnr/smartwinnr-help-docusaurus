@@ -1,5 +1,5 @@
 ---
-id: 62a2fa1957320007925236d9
+id: how-to-upload-audio-recording-for-coaching
 title: How to upload Audio Recording for Coaching
 description: >-
   Follow the below steps to upload your audio recording for the coaching
@@ -7,12 +7,8 @@ description: >-
 slug: how-to-upload-audio-recording-for-coaching
 sidebar_position: 266
 last_update:
-  date: 2022-06-20T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 62a2fa1957320007925236d9
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/266-how-to-record-audio-into-video-coaching
+  date: 2026-07-30
+  author: Anagha Isal
 customProps:
   roles:
     - user
@@ -22,25 +18,41 @@ customProps:
 tags:
   - video-coaching
   - onboarding
+draft: false
 ---
-Follow the below steps to upload your audio recording for the coaching assignment.
 
-Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.
+> **At a glance** - This article outlines the steps to upload your audio recording for a coaching assignment.
 
-![Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-1.png)
+Follow these steps to upload your audio recording for the coaching assignment.
 
-Step:2 On the coaching details page, click on the **“Record Audio”** button to record your audio.
+## When to use this
+Use this feature when you need to submit an audio recording as part of your coaching assignment. This is particularly useful for demonstrating your skills or providing feedback.
 
-![Step:2 On the coaching details page, click on the “Record Audio” button to record your audio.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-2.png)
+## Steps
 
-Step:3 Here you can click on the speaker icon and record the audio which you would like to submit for the coaching.
+### 1. Access the Coaching Assignment
+Go to the left menu and select **Coachings**. Then, click on the **Assigned** tab to view your coaching assignments. Select the specific coaching assignment you wish to submit the response video for.
 
-![Step:3 Here you can click on the speaker icon and record the audio which you would like to submit for the coaching.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-3.png)
+![Access the Coaching Assignment](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1tdgdb.png)
 
-Step:4 Once the audio is recorded successfully. Kindly click on the **“Upload Recorded File”** button to upload that audio file.
+### 2. Record Your Audio
+It will take you to the coaching details page.
 
-![Step:4 Once the audio is recorded successfully. Kindly click on the “Upload Recorded File” button to upload that audio file.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-4.png)
+![coaching details](/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u08qu.png)
 
-Step:5 After that you will get a confirmation screen like the one below, once your audio gets uploaded successfully.
+On the coaching details page, click on the **“Record Audio”** button to begin recording your audio.
 
-![Step:5 After that you will get a confirmation screen like the one below, once your audio gets uploaded successfully.](/img/helpscout/managers-and-team-members/how-to-upload-audio-recording-for-coaching-5.png)
+![On the coaching details page, click on the “Record Audio” button to record your audio.](/img/helpscout/authored/how-to-upload-audio-recording-for-coaching-ms7t7elw.jpg)
+
+### 3. Start Recording
+Click on '**Open Audio Recorder**' to start recording the audio that you would like to submit for the coaching. 
+
+![Click on the speaker icon and record the audio which you would like to submit for the coaching.](/img/helpscout/authored/how-to-upload-audio-recording-for-coaching-ms7tyzb1.png)
+
+### 4. Upload the Recorded File
+Once your audio is recorded successfully, click on the **“Upload Audio”** button to upload the audio file.
+
+![audio submit page](/img/helpscout/authored/how-to-upload-audio-recording-for-coaching-ms7u181z.jpg)
+
+### 5. Confirmation of Upload
+After the upload, you will see a confirmation screen indicating that your audio has been uploaded successfully.
