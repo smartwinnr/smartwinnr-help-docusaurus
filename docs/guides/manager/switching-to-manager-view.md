@@ -1,35 +1,44 @@
 ---
-id: 5fd98ecb27288b7f895d5ddc
+id: switching-to-manager-view
 title: Switching to Manager View
 description: How To Enable Manager View In SmartWinnr
 slug: switching-to-manager-view
 sidebar_position: 96
 last_update:
-  date: 2024-10-18T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd98ecb27288b7f895d5ddc
-  helpscout_url: 'https://help.smartwinnr.com/article/96-quiz-report-for-managers'
+  date: 2026-07-31
+  author: Sandeep Bhuthagaddala
 customProps:
   roles:
     - manager
     - editor
     - admin
   privilege: managerView
-tags: []
+tags: ["quiz"]
+draft: false
 ---
-How To Enable Manager View In SmartWinnr
 
-If you have both manager and user roles, you will be able to access both in the SmartWinnr app and web view.
+> **At a glance** - Learn how to switch between user and manager views in SmartWinnr to access different features based on your role.
 
- Here is how you do that:
+If you have both manager and user roles, you can access both views in the SmartWinnr app and web interface. Follow these steps to enable Manager View:
 
-1.Open the SmartWinnr app and click on the profile image at the top left corner. It will take you to the following screen:
+## When to use this
+Use the Manager View when you need to oversee team performance, access reports, or manage content. This view is essential for:
 
-![1.Open the SmartWinnr app and click on the profile image at the top left corner. It will take you to the following screen:](/img/helpscout/managers-and-team-members/switching-to-manager-view-1.png)
+- Monitoring team progress and performance metrics.
+- Accessing manager-specific features and reports.
+- Switching back and forth between user and manager roles as needed.
 
-2\. Here, you have a toggle button on the screen to change between the manager view and the user view.
+## Steps
 
-3\. When you toggle it to the manager's side, it will take you to the manager view in SmartWinnr. Once you switch to the manager view, you can see that the left menu changes based on the Manager view content.
+### 1. Open the SmartWinnr app
+Click on your profile image at the top left corner. This will take you to the following screen:
 
-![3\. When you toggle it to the manager's side, it will take you to the manager view in SmartWinnr. Once you switch to the manager view, you c](/img/helpscout/managers-and-team-members/switching-to-manager-view-2.png)
+![Click on your profile image at the top left corner to access the menu](/img/helpscout/managers-and-team-members/switching-to-manager-view-1.png)
+
+### 2. Toggle to Manager View
+You will see a toggle button on the screen to change between the Manager View and the User View. 
+
+### 3. Access Manager View
+When you toggle it to the manager's side, you will enter the Manager View in SmartWinnr. The left menu will change to reflect the content available in Manager View.
+
+![The left menu changes based on the Manager View content](/img/helpscout/managers-and-team-members/switching-to-manager-view-2.png)
