@@ -34,12 +34,12 @@ Use this guide when you need to:
 
 ## Steps
 
-### 1. Add Name, Description, and Dates to the Competition
+### 1. Add Name, Competition Type, Description, and Dates to the Competition
 Give a catchy name to your competition and add a description. Every competition must have a start and end date. You can also add a theme for the competition and upload a PDF related to it if needed.
 
 Once you have entered these details, click on the **Save** button.
 
-![Add Name, Description, and Dates to the Competition](/img/helpscout/editors/how-to-create-a-competition-1.png)
+![describe this screenshot](/img/helpscout/authored/how-to-create-a-competition-ms8xxfsn.png)
 
 ### 2. Add Participants to the Competition
 The next step is to add participants to the competition. Select the desired participants and add them to the competition.
