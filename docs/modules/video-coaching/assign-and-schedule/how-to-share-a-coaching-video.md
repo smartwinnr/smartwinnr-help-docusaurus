@@ -65,13 +65,6 @@ On the sharing page, select the users with whom you wish to share the video. You
 ### 4. Share the Video
 Once you have selected the users, click on the **Share Video** button. The video will then be shared with the selected users successfully.
 
-The users with whom the video has been shared will receive an email notification about it. Below is a screenshot of the email notification they will receive.
+The users with whom the video has been shared will receive an email notification about it. Below is a screenshot of the email notification they will receive. Click on '**View Video**' to watch the shared video.
 
 ![The users with whom the video has been shared will get an email notification about it. Below is the screenshot of the email notification.](/img/helpscout/editors/how-to-share-a-coaching-video-3.png)
-
-### 5. View the Shared Video
-Now, click on the **View Video** button, which opens the page with the video.
-
-![Here you can watch the video.](/img/helpscout/editors/how-to-share-a-coaching-video-4.png)
-
-Here, you can watch the video and utilize it for your coaching or training needs.
