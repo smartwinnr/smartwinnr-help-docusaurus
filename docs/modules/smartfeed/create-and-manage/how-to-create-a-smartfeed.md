@@ -46,7 +46,7 @@ SmartWinnr allows you to create SmartFeeds with various types of content like im
 
 * If you would like to send a Powerpoint presentation as a SmartFeed, you can choose the content type as '**Presentation'**.
 
-![](/img/helpscout/editors/how-to-create-a-smartfeed-4.png)
+![create smartfeed](/img/helpscout/editors/how-to-create-a-smartfeed-4.png)
 
 ## Choose Language
 
@@ -70,87 +70,79 @@ Add the title under the SmartFeed Title section.
 
 If the content is a simple message that you want to send, start by writing the text in the box below.
 
-![If the content is a simple message that you want to send, start by writing the text in the box below.](/img/helpscout/editors/how-to-create-a-smartfeed-6.png)
+![If the content is a simple message that you want to send, start by writing the text in the box below.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8r0q2r.png)
 
 ## Send Videos
 
 You can also send videos of products, product demonstrations, customer feedback, customer stories, and more in SmartFeed.
 
-[Learn how to add a video to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/68-how-to-add-a-video-to-your-content)
+[Learn how to add a video to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content)
 
 Following is how a SmartFeed with videos appears in the SmartWinnr app:
 
-![Following is how a SmartFeed with videos appears in the SmartWinnr app:](/img/helpscout/editors/how-to-create-a-smartfeed-7.png)
+![Following is how a SmartFeed with videos appears in the SmartWinnr app:](/img/helpscout/authored/how-to-create-a-smartfeed-ms8rfy4t.png)
 
 ## Send Pictures
 
-If you would like to add an image to your SmartFeed, [learn how to add an image to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/69-how-to-add-a-image-to-your-content)
+If you would like to add an image to your SmartFeed, [learn how to add an image to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content)
 
 Following is how a SmartFeed with an image appears in the SmartWinnr app.
 
-![Following is how a SmartFeed with an image appears in the SmartWinnr app.](/img/helpscout/editors/how-to-create-a-smartfeed-8.png)
+![Following is how a SmartFeed with an image appears in the SmartWinnr app.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8rhxuq.png)
 
 ## Send Reference Links
 
-If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/70-how-to-add-reference-to-an-external-link-to-your-content)
+If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content)
 
 Following is how a SmartFeed with an external link appears in the SmartWinnr app.
 
-![Following is how a SmartFeed with an external link appears in the SmartWinnr app.](/img/helpscout/editors/how-to-create-a-smartfeed-9.png)
+![Following is how a SmartFeed with an external link appears in the SmartWinnr app.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8rq3gu.png)
 
 ## Send Audios
 
-If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/71-how-to-add-an-audio-file-to-your-content)
+If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/features/how-to-add-an-audio-file-to-your-content/)
 
 Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on the play button to listen to the audio file.
 
-![Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on the play button to listen to the audio file.](/img/helpscout/editors/how-to-create-a-smartfeed-10.png)
+![Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on the play button to listen to the audio file.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8rz4w8.png)
 
 ## Send PDF Documents
 
-If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/72-how-to-attach-pdf-file-to-your-content)
+If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content)
 
 Following is how a SmartFeed with PDF file appears in the SmartWinnr app.
 
-![Following is how a SmartFeed with PDF file appears in the SmartWinnr app.](/img/helpscout/editors/how-to-create-a-smartfeed-11.png)
+![Following is how a SmartFeed with PDF file appears in the SmartWinnr app.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8s21yl.png)
 
 Click on the PDF file open the PDF.
 
 ![Click on the PDF file open the PDF.](/img/helpscout/editors/how-to-create-a-smartfeed-12.png)
 
-This will open the PDF file attached to the SmartFeed as follows.
-
-![This will open the PDF file attached to the SmartFeed as follows.](/img/helpscout/editors/how-to-create-a-smartfeed-13.png)
+This will open the PDF file attached to the SmartFeed.
 
 ## Send Powerpoint Presentations
 
-You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add a PowerPoint presentation to your SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed)
+You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add a PowerPoint presentation to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed)
 
 ## Settings
 
-In the **Settings** section, you can configure when and how a SmartFeed is delivered and shared.
+In the **Settings** section, you can configure how a SmartFeed is delivered and shared.
 
-* **Send Now**: Publishes the SmartFeed immediately.
+* 
+    **Expiration**: This allows to set an expire to your SmartFeed.
 
-    **Schedule**: Allows you to schedule the SmartFeed for a later date and time.
+  * **Never**: Keeps the SmartFeed available indefinitely in the feed list for users.
+  * **Set Expiry Date**: Makes the SmartFeed expire on a specific date and time. This is useful when you share content which is relevent only to a specific time period.
 
-    **Expiration**:
-
-  * **Never**: Keeps the SmartFeed available indefinitely.
-  * **Set Expiry Date**: Makes the SmartFeed unavailable after the selected date.
 * **Enable Share**: Allows recipients to share the SmartFeed via **WhatsApp** or **email**.
+
+* **Show progress slider**: This will show the progress slider option in the video content. This option allows users to see how much of the video has been watched and how much remains. This makes it easier for users to track their progress and enhances the overall viewing experience.
+Also, if you dont want to allow users to skip through the video, you can uncheck this option, so that progress slider will be hidden in the videos.
 
 These options help you control the timing, visibility, and reach of your SmartFeeds effectively.
 
-![These options help you control the timing, visibility, and reach of your SmartFeeds effectively.](/img/helpscout/editors/how-to-create-a-smartfeed-14.png)
+![These options help you control the timing, visibility, and reach of your SmartFeeds effectively.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8t8gfp.png)
 
-* **Show Video Progress Slider**\-The Show Video Progress Slider setting in SmartFeed allows users to view and track their progress while watching a video.
-
-![](/img/helpscout/editors/how-to-create-a-smartfeed-15.png)
-
-When this setting is enabled, a progress bar is displayed at the bottom of the video, allowing users to see how much of the video has been watched and how much remains. This makes it easier for users to track their progress and enhances the overall viewing experience.
-
-![When this setting is enabled, a progress bar is displayed at the bottom of the video, allowing users to see how much of the video has been w](/img/helpscout/editors/how-to-create-a-smartfeed-16.png)
 
 ### Maximum File Size Limits for SmartFeed
 
