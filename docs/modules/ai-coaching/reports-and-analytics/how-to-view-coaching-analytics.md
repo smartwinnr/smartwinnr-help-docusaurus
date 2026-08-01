@@ -8,7 +8,8 @@ last_update:
   date: 2026-07-22
   author: Sandeep Bhuthagaddala
 customProps:
-  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
+  privilege: aiCoaching
 draft: false
 tags: ["ai-coaching"]
 ---

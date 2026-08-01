@@ -1,12 +1,12 @@
 {
-  "label": "Editors",
-  "position": 10,
+  "label": "FAQs & Troubleshooting",
+  "position": 8,
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "title": "Editors",
-    "slug": "/modules/ai-coaching/editors"
+    "title": "FAQs & Troubleshooting",
+    "slug": "/modules/video-coaching/faqs-and-troubleshooting"
   },
   "customProps": {
     "roles": [
@@ -18,6 +18,6 @@
       "lamadmin",
       "superadmin"
     ],
-    "privilege": "aiCoaching"
+    "privilege": "coaching"
   }
 }

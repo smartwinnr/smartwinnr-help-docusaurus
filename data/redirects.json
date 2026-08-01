@@ -1832,6 +1832,30 @@
     {
       "from": "/modules/cross-module/features/create-visiting-card",
       "to": "/modules/i-share/features/create-visiting-card"
+    },
+    {
+      "from": "/modules/ai-coaching/editors/viewing-coaching-analytics",
+      "to": "/modules/ai-coaching/reports-and-analytics/viewing-coaching-analytics"
+    },
+    {
+      "from": "/modules/ai-coaching/editors",
+      "to": "/modules/ai-coaching/reports-and-analytics"
+    },
+    {
+      "from": "/modules/field-coaching/reports-analytics/create-field-coaching-templates",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+    },
+    {
+      "from": "/modules/field-coaching/reports-analytics",
+      "to": "/modules/field-coaching/create-and-manage"
+    },
+    {
+      "from": "/modules/video-coaching/faqs-troubleshooting/unable-to-view-coachings",
+      "to": "/modules/video-coaching/faqs-and-troubleshooting/unable-to-view-coachings"
+    },
+    {
+      "from": "/modules/video-coaching/faqs-troubleshooting",
+      "to": "/modules/video-coaching/faqs-and-troubleshooting"
     }
   ]
 }
