@@ -1808,6 +1808,30 @@
     {
       "from": "/modules/smartpath/assign-and-schedule/how-to-create-assignment-in-smartpath",
       "to": "/modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath"
+    },
+    {
+      "from": "/modules/cross-module/features/create-an-ishare",
+      "to": "/modules/i-share/features/create-an-ishare"
+    },
+    {
+      "from": "/modules/cross-module/features/what-is-ishare",
+      "to": "/modules/i-share/features/what-is-ishare"
+    },
+    {
+      "from": "/modules/cross-module/features/create-youtube-content",
+      "to": "/modules/i-share/features/create-youtube-content"
+    },
+    {
+      "from": "/modules/cross-module/features/create-customer-engagement-content",
+      "to": "/modules/i-share/features/create-customer-engagement-content"
+    },
+    {
+      "from": "/modules/cross-module/features/create-eshare-content-type",
+      "to": "/modules/i-share/features/create-eshare-content-type"
+    },
+    {
+      "from": "/modules/cross-module/features/create-visiting-card",
+      "to": "/modules/i-share/features/create-visiting-card"
     }
   ]
 }
