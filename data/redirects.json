@@ -1811,27 +1811,27 @@
     },
     {
       "from": "/modules/cross-module/features/create-an-ishare",
-      "to": "/modules/i-share/features/create-an-ishare"
+      "to": "/modules"
     },
     {
       "from": "/modules/cross-module/features/what-is-ishare",
-      "to": "/modules/i-share/features/what-is-ishare"
+      "to": "/modules"
     },
     {
       "from": "/modules/cross-module/features/create-youtube-content",
-      "to": "/modules/i-share/features/create-youtube-content"
+      "to": "/modules"
     },
     {
       "from": "/modules/cross-module/features/create-customer-engagement-content",
-      "to": "/modules/i-share/features/create-customer-engagement-content"
+      "to": "/modules"
     },
     {
       "from": "/modules/cross-module/features/create-eshare-content-type",
-      "to": "/modules/i-share/features/create-eshare-content-type"
+      "to": "/modules"
     },
     {
       "from": "/modules/cross-module/features/create-visiting-card",
-      "to": "/modules/i-share/features/create-visiting-card"
+      "to": "/modules"
     },
     {
       "from": "/modules/ai-coaching/editors/viewing-coaching-analytics",
@@ -1856,6 +1856,38 @@
     {
       "from": "/modules/video-coaching/faqs-troubleshooting",
       "to": "/modules/video-coaching/faqs-and-troubleshooting"
+    },
+    {
+      "from": "/modules/i-share",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/create-and-manage/create-ishareshare-link",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/create-an-ishare",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/create-visiting-card",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/what-is-ishare",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/create-eshare-content-type",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/create-youtube-content",
+      "to": "/modules"
+    },
+    {
+      "from": "/modules/i-share/features/create-customer-engagement-content",
+      "to": "/modules"
     }
   ]
 }

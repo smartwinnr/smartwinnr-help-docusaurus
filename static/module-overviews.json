@@ -206,15 +206,6 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "authoringTools"
-    },
-    "i-share": {
-      "label": "I Share",
-      "tagline": "I Share - SmartWinnr module.",
-      "description": "I Share - SmartWinnr module.",
-      "keyFeatures": [],
-      "who": "",
-      "ctaEmail": "admin@your-org.com",
-      "privilege": "shareableContent"
     }
   }
 }
