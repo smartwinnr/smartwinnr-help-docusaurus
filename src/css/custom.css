@@ -751,12 +751,24 @@ a.card.padding--lg p[class*="cardDescription_"] {
  * surfaces from the prose around them. Infima's emphasis-200 token flips
  * for dark mode automatically; the shadow fades to nearly-invisible on
  * dark backgrounds so the border carries the visual weight there. */
+/* Sizing cap for every article-body image (bare or figure-wrapped).
+ * 640px keeps a uniform size on large monitors; 70vh keeps tall images within
+ * the fold on short laptops. Wide images are already bounded by the 72ch
+ * column, so this only bites on tall/portrait screenshots. Full detail is one
+ * click away via the image lightbox (src/components/ImageLightbox). */
+.markdown p img,
+.markdown figure img {
+  max-width: 100%;
+  max-height: min(70vh, 640px);
+  height: auto;
+  width: auto; /* let width shrink proportionally when max-height bites */
+}
+/* Framing surface: bare inline images + figure boxes (figures carry the frame,
+ * so their inner img is NOT re-framed above). */
 .markdown figure,
 .markdown p img {
   display: block;
   margin: var(--space-5) auto;
-  max-width: 100%;
-  height: auto;
   border-radius: 8px;
   border: 1px solid var(--ifm-color-emphasis-200);
   box-shadow:
