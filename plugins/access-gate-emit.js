@@ -146,6 +146,14 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
       // module's privilege and which audience sub-folders are present. The
       // landing component filters this by the viewer's role + privileges.
       const modulesRoot = path.join(docsRoot, 'modules');
+      // Per-module taglines drive the tile sub-header on the landing page.
+      let overviewMeta = {};
+      try {
+        const ov = JSON.parse(
+          fs.readFileSync(path.join(siteDir, 'static', 'module-overviews.json'), 'utf8'),
+        );
+        overviewMeta = ov.modules || {};
+      } catch {/* no overviews: tiles fall back to no sub-header */}
       const modulesOut = {version: 1, modules: []};
       if (fs.existsSync(modulesRoot)) {
         const moduleNames = fs
@@ -174,6 +182,7 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
           modulesOut.modules.push({
             slug: mod,
             label,
+            tagline: (overviewMeta[mod] && overviewMeta[mod].tagline) || '',
             privilege,
             anyPrivilege,
             hasLearner: subs.includes('for-learners'),

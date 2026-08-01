@@ -10,6 +10,7 @@ import styles from './styles.module.css';
 type ModuleEntry = {
   slug: string;
   label: string;
+  tagline: string;
   privilege: string | null;
   anyPrivilege: string[] | null;
   hasLearner: boolean;
@@ -129,7 +130,9 @@ export default function RecommendedModules({user}: Props): JSX.Element | null {
                 {m.label}
               </strong>
               <span className="sw-module-desc">
-                {m.locked ? 'Ask your admin to enable' : describeRole(user, m)}
+                {m.locked
+                  ? 'Ask your admin to enable'
+                  : (m.tagline || describeRole(user, m))}
               </span>
             </div>
           </Link>
