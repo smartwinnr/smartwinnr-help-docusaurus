@@ -160,7 +160,7 @@ type Action =
   | {type: 'generated'; markdown: string; audit: State['audit']; tokens: State['tokens']}
   | {type: 'suggestionsLoaded'; patch: Partial<Inputs>}
   | {type: 'saving'; on: boolean}
-  | {type: 'saved'; path: string; hash?: string}
+  | {type: 'saved'; path: string; hash?: string; audit?: State['audit']}
   | {type: 'error'; message: string}
   | {type: 'reset'}
   | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean; hash?: string}
@@ -190,7 +190,7 @@ function reducer(s: State, a: Action): State {
       return Object.keys(patch).length === 0 ? s : { ...s, inputs: { ...i, ...patch } };
     }
     case 'saving':    return {...s, saving: a.on};
-    case 'saved':     return {...s, saving: false, saved: a.path, loadedHash: a.hash ?? s.loadedHash};
+    case 'saved':     return {...s, saving: false, saved: a.path, loadedHash: a.hash ?? s.loadedHash, audit: a.audit ?? s.audit};
     case 'error':     return {...s, error: a.message, generating: false, saving: false};
     case 'reset':     return initial;
     case 'loadDraft': return {
@@ -742,7 +742,11 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         return;
       }
       staleOverrideRef.current = false;
-      dispatch({type: 'saved', path: data.path, hash: data.hash});
+      // Refresh the audit panel from the server's truth-on-disk view. A draft
+      // now saves even with quality warnings (empty description, short body),
+      // so surface those remaining items instead of a clean slate - the author
+      // still has to clear them before /publish.
+      dispatch({type: 'saved', path: data.path, hash: data.hash, audit: data.audit});
     } catch (err) {
       dispatch({type: 'error', message: (err as Error).message});
     }

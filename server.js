@@ -1323,11 +1323,18 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     const { markdown, dir, module: moduleSlug, subFolder, slug, baseHash } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
 
+    // Saving always writes draft:true, so it must NOT block on content-quality
+    // findings (empty description, <80-word body, missing headings). Those are
+    // exactly what an unfinished draft looks like - refusing to save them lost
+    // real in-progress work. Only refuse on build-physics findings (bad
+    // MDX/YAML, unknown privilege keys) that would hard-fail the Railway build.
+    // The full `blocking` quality gate still applies at /publish. Warnings are
+    // returned via `audit` so the wizard can surface them without discarding work.
     const audit = gradeMarkdown(markdown, auditOpts());
-    const blockers = (audit.findings || []).filter((f) => f.blocking);
-    if (blockers.length > 0) {
+    const buildBlockers = (audit.findings || []).filter((f) => f.buildBreaking);
+    if (buildBlockers.length > 0) {
       return res.status(400).json({
-        error: 'Audit blocking - article cannot be saved as-is',
+        error: 'This content would break the production build - fix before saving',
         audit,
       });
     }
