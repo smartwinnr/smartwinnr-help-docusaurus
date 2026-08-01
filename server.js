@@ -891,6 +891,17 @@ const CANONICAL_SUBFOLDERS = new Set([
   'features', 'reports-and-analytics', 'settings-and-permissions',
   'best-practices', 'faqs-and-troubleshooting',
 ]);
+// Human-readable list for error messages, in template order.
+const CANONICAL_SUBFOLDER_LIST = [...CANONICAL_SUBFOLDERS].join(', ');
+/** Reason string when a module sub-folder is not canonical, or null when it
+ *  is. Modules draw ALL their leaves from CANONICAL_SUBFOLDERS - custom
+ *  folders (e.g. `editors`, `reports-analytics`) are rejected so the tree
+ *  stays uniform and audit-gates.js stays clean. Sections (docs/<section>/)
+ *  are NOT subject to this - they may have arbitrary sub-folders. */
+function canonicalSubfolderError(sub) {
+  if (CANONICAL_SUBFOLDERS.has(sub)) return null;
+  return `"${sub}" is not a standard module folder. Modules use a fixed set: ${CANONICAL_SUBFOLDER_LIST}.`;
+}
 const AUTHORING_MODEL = process.env.AUTHORING_MODEL || 'gpt-4o-mini';
 const AUTHOR_PROMPT_PATH = path.join(__dirname, 'prompts', 'author-article.md');
 // Refine-only overlay. Appended AFTER the base prompt so its
@@ -1010,11 +1021,11 @@ function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
   if (!real.startsWith(MODULES_ROOT + path.sep)) {
     throw new Error('Path escapes docs/modules/');
   }
-  // Canonical sub-folders may be auto-created; author-created custom
-  // folders must already exist (POST /folders wrote their gate file).
-  if (!CANONICAL_SUBFOLDERS.has(subFolder) && !fsSync.existsSync(path.dirname(real))) {
-    throw new Error('Invalid sub-folder');
-  }
+  // Only canonical module sub-folders are allowed - reject anything else even
+  // if a stray directory already exists on disk (belt-and-suspenders with the
+  // /folders creation guard).
+  const subErr = canonicalSubfolderError(subFolder);
+  if (subErr) throw new Error(subErr);
   return real;
 }
 
@@ -3130,11 +3141,9 @@ function resolveAnyDocDir(dir) {
     if (!isValidSlug(modMatch[1]) || !isValidSlug(modMatch[2])) throw new Error('Invalid folder name');
     target = path.resolve(__dirname, norm);
     if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
-    // Canonical or an existing author-created folder (the existsSync check
-    // below covers the latter for both cases).
-    if (!CANONICAL_SUBFOLDERS.has(modMatch[2]) && !fsSync.existsSync(target)) {
-      throw new Error('Folder not found');
-    }
+    // Modules only accept canonical sub-folders - reject custom names outright.
+    const subErr = canonicalSubfolderError(modMatch[2]);
+    if (subErr) throw new Error(subErr);
   } else {
     const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(norm);
     if (!m) throw new Error('Folder must be docs/<section> or docs/<section>/<sub-folder>');
@@ -4088,7 +4097,7 @@ app.get('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =>
  *  is also build-safe (verified: article-less categories are omitted). */
 app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) => {
   try {
-    const { sectionDir, label } = req.body || {};
+    const { sectionDir, label, subFolder } = req.body || {};
     const cleanLabel = String(label || '').trim();
     if (!cleanLabel || cleanLabel.length > 60) {
       return res.status(400).json({ error: 'Give the folder a name (up to 60 characters).' });
@@ -4104,7 +4113,12 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
     if (!parentAbs.startsWith(DOCS_ROOT + path.sep) || !fsSync.existsSync(parentAbs) || !fsSync.statSync(parentAbs).isDirectory()) {
       return res.status(400).json({ error: "That section doesn't exist." });
     }
-    const slug = cleanLabel.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
+    // For a module, the canonical picker sends the exact canonical slug via
+    // `subFolder`. Prefer it: display labels like "Settings & Permissions"
+    // slugify to "settings-permissions", missing the canonical "-and-".
+    const slug = (modMatch && subFolder && CANONICAL_SUBFOLDERS.has(subFolder))
+      ? subFolder
+      : cleanLabel.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
     if (!isValidSlug(slug)) {
       return res.status(400).json({ error: 'The folder name must contain at least one letter or number.' });
     }
@@ -4127,40 +4141,23 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
     let catRel;
     if (modMatch) {
       const moduleSlug = modMatch[1];
-      if (CANONICAL_SUBFOLDERS.has(slug)) {
-        // Canonical name: the gate audit demands the exact template gate -
-        // reuse the canonical scaffolder (template roles + module privilege).
-        if (!ensureSubfolderCategory(moduleSlug, slug)) {
-          return res.status(400).json({ error: 'Could not create the standard folder - check the module setup.' });
-        }
-        roles = (SUBFOLDER_TEMPLATE.find((s) => s.slug === slug)?.roles) || ALL_ROLES;
-        catRel = `docs/modules/${moduleSlug}/${slug}/_category_.json`;
-        // ensureSubfolderCategory wrote + created; journal it for durability.
-        journalRecordUpsert(catRel, req.user?.email);
-      } else {
-        // Custom module folder: audience is governed per-article (ALL_ROLES
-        // here), licensing carried by the module's privilege gate. The gate
-        // audit only warns on unknown folder names WITH a gate file.
-        const overviews = loadOverviews();
-        const meta = (overviews.modules || {})[moduleSlug] || {};
-        roles = ALL_ROLES;
-        const category = {
-          label: cleanLabel,
-          position: maxPos + 1,
-          collapsible: true,
-          collapsed: true,
-          link: { type: 'generated-index', title: cleanLabel, slug: `/modules/${moduleSlug}/${slug}` },
-          customProps: { roles },
-        };
-        if (meta.privilege) category.customProps.privilege = meta.privilege;
-        if (Array.isArray(meta.anyPrivilege) && meta.anyPrivilege.length > 0) {
-          category.customProps.anyPrivilege = meta.anyPrivilege;
-        }
-        fsSync.mkdirSync(dirAbs, { recursive: true });
-        catRel = `${norm}/${slug}/_category_.json`;
-        fsSync.writeFileSync(path.join(dirAbs, '_category_.json'), JSON.stringify(category, null, 2) + '\n', 'utf8');
-        journalRecordUpsert(catRel, req.user?.email);
+      // Modules use a fixed set of canonical folders - reject custom names so
+      // the tree stays uniform and audit-gates.js stays clean. (Sections, the
+      // isSection branch below, are unaffected and may have custom folders.)
+      if (!CANONICAL_SUBFOLDERS.has(slug)) {
+        return res.status(400).json({
+          error: `Modules use a fixed set of folders and "${cleanLabel}" isn't one of them. Choose a standard folder: ${CANONICAL_SUBFOLDER_LIST}.`,
+        });
       }
+      // Canonical name: the gate audit demands the exact template gate -
+      // reuse the canonical scaffolder (template roles + module privilege).
+      if (!ensureSubfolderCategory(moduleSlug, slug)) {
+        return res.status(400).json({ error: 'Could not create the standard folder - check the module setup.' });
+      }
+      roles = (SUBFOLDER_TEMPLATE.find((s) => s.slug === slug)?.roles) || ALL_ROLES;
+      catRel = `docs/modules/${moduleSlug}/${slug}/_category_.json`;
+      // ensureSubfolderCategory wrote + created; journal it for durability.
+      journalRecordUpsert(catRel, req.user?.email);
     } else {
       // Section folder: inherit the section's audience.
       const sectionCat = readCat(parentAbs);

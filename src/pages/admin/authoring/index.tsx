@@ -7,7 +7,13 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import {useNotify} from '@site/src/components/admin/authoring/Notify';
 import PersistenceStatus from '@site/src/components/admin/authoring/PersistenceStatus';
 import {useMarkdownHtml} from '@site/src/lib/markdown-preview';
-import {WIZARD_STORAGE_KEY, parseDocPath, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields} from '@site/src/lib/authoring';
+import {WIZARD_STORAGE_KEY, parseDocPath, slugify, checkTitleShape, parseFrontmatterFields, replaceFrontmatterFields, SUB_FOLDERS} from '@site/src/lib/authoring';
+
+// Canonical module folders the wizard offers for creation. Excludes the
+// deprecating `assign-and-schedule` (still accepted server-side for existing
+// content, but not offered for new folders). Modules draw ALL their leaves
+// from this fixed set; sections may have arbitrary folders.
+const MODULE_CANONICAL_SUBS = SUB_FOLDERS.filter((s) => s.value !== 'assign-and-schedule');
 import {TagPicker} from '@site/src/components/admin/authoring/TagPicker';
 import styles from './styles.module.css';
 
@@ -282,16 +288,30 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
 
   /** Create a section sub-folder on the server, add it to the tree, and
    *  select it as the destination. */
-  async function createFolder() {
+  // Missing canonical folders for the current module (none for sections).
+  function missingCanonicalSubs(loc: typeof currentLocation) {
+    if (!loc || loc.kind !== 'module') return [];
+    const have = new Set(loc.subs.map((s) => s.dir.split('/').pop()));
+    return MODULE_CANONICAL_SUBS.filter((s) => !have.has(s.value));
+  }
+
+  async function createFolder(labelArg?: string) {
     const loc = currentLocation;
-    if (!loc || !newFolderName.trim() || creatingFolder) return;
+    const label = (labelArg ?? newFolderName).trim();
+    if (!loc || !label || creatingFolder) return;
+    // On a module pick, `label` is a canonical folder label - send its exact
+    // slug so the server doesn't have to re-derive it from the label (which
+    // drops the "-and-" in names like "Settings & Permissions").
+    const canonical = loc.kind === 'module'
+      ? MODULE_CANONICAL_SUBS.find((s) => s.label === label)
+      : undefined;
     setCreatingFolder(true);
     try {
       const res = await fetch('/api/admin/authoring/folders', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         credentials: 'same-origin',
-        body: JSON.stringify({sectionDir: loc.dir, label: newFolderName.trim()}),
+        body: JSON.stringify({sectionDir: loc.dir, label, subFolder: canonical?.value}),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -349,18 +369,30 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
           value={showNewFolder ? '__new__' : i.dir}
           disabled={!currentLocation || (currentLocation.subs.length === 0 && currentLocation.allowRoot && currentLocation.kind !== 'section')}
           onChange={(e) => {
-            if (e.target.value === '__new__') { setShowNewFolder(true); return; }
+            const v = e.target.value;
+            if (v === '__new__') { setShowNewFolder(true); return; }
+            if (v.startsWith('__create__:')) {
+              const entry = MODULE_CANONICAL_SUBS.find((s) => s.value === v.slice('__create__:'.length));
+              if (entry) createFolder(entry.label);
+              return;
+            }
             setShowNewFolder(false);
-            pickFolder(e.target.value, currentLocation);
+            pickFolder(v, currentLocation);
           }}>
           <option value="">Select a folder…</option>
           {currentLocation?.allowRoot && (
             <option value={currentLocation.dir}>(section root)</option>
           )}
           {currentLocation?.subs.map((s) => <option key={s.dir} value={s.dir}>{s.label}</option>)}
-          {currentLocation && (
-            <option value="__new__">+ Create a new folder…</option>
-          )}
+          {/* Modules: offer only the missing canonical folders (no free-text).
+              Sections: keep free-text folder creation. */}
+          {currentLocation?.kind === 'module'
+            ? missingCanonicalSubs(currentLocation).map((s) => (
+                <option key={s.value} value={`__create__:${s.value}`}>+ Add {s.label}</option>
+              ))
+            : currentLocation && (
+                <option value="__new__">+ Create a new folder…</option>
+              )}
         </select>
         {showNewFolder && currentLocation && (
           <div className={styles.selectorRow}>
@@ -377,7 +409,7 @@ function Step1({state, dispatch}: {state: State; dispatch: React.Dispatch<Action
               type="button"
               className={styles.btnPrimary}
               disabled={creatingFolder || !newFolderName.trim()}
-              onClick={createFolder}>
+              onClick={() => createFolder()}>
               {creatingFolder ? 'Creating…' : 'Create folder'}
             </button>
             <button
