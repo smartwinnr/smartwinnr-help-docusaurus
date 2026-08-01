@@ -5,12 +5,8 @@ description: This report focuses on one specific coaching.
 slug: how-do-i-download-coaching-wise-report
 sidebar_position: 316
 last_update:
-  date: 2026-01-29T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 6970ebe71252a7004208b8b8
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/316-how-do-i-download-coaching-wise-report
+  date: 2026-08-01
+  author: Anagha Isal
 customProps:
   roles:
     - editor
@@ -19,20 +15,77 @@ customProps:
 tags:
   - ai-coaching
   - reports
+draft: false
 ---
-### Download Scenario-wise (Coaching-wise) Report
 
-This report focuses on one specific coaching.
+> **At a glance** - SmartWinnr provides multiple reports for your AI coachings. You can download the overall coaching-wise Report to analyze the performance of a specific coaching scenario.
 
-**Steps:**
+The Coaching-wise overall Report provides insights into a particular coaching scenario, allowing you to evaluate its effectiveness and make informed decisions. You can easily download this report by following the steps below.
 
-1. Go to **Editor → Coaching → View Coachings**
-2. Scroll to the coaching scenario you want to report on
-3. **Do NOT click the coaching hyperlink**
-4. Instead, click the **Download icon** directly next to the coaching name
+## When to use this
+Use the Coaching-wise Report when you want to:
+- Analyze the performance of a specific coaching scenario.
+- Review coaching outcomes for individual learners.
+- Make data-driven decisions to improve coaching strategies.
 
-The report will download immediately.
+## Steps
 
-![The report will download immediately.](/img/helpscout/editors/how-do-i-download-coaching-wise-report-1.png)
+### 1. Navigate to the Coaching Section
+Go to **Editor → Coaching → View Coachings** in the SmartWinnr platform. This section contains all the coaching scenarios available to you.
 
-Click Download Icon
+![Coaching list](/img/helpscout/authored/how-do-i-download-coaching-wise-report-msa61w0h.png)
+
+### 2. Locate the Desired Coaching Scenario
+Scroll through the list to find the coaching scenario you want to report on.
+
+### 3. Click the Download Icon
+Click the **Download icon** directly next to the coaching name. This action will initiate the download of the Coaching-wise Report.
+
+The report will download immediately, providing you with the necessary data for your analysis.
+
+![Click Download Icon](/img/helpscout/editors/how-do-i-download-coaching-wise-report-1.png)
+
+The Overall Coaching Report provides a comprehensive view of learner coaching submissions, evaluation results, coach feedback, and coaching configuration details. It enables you to monitor learner participation, review evaluation outcomes, and analyze coaching performance across the organization.
+
+The report consists of the following worksheets:
+
+### 1. Overall Coaching Report
+
+This worksheet provides an overall summary of each learner's coaching submission, including: 
+- Learner information (Name, Email, Employee ID, Org User Identifier)
+- Coaching response status, Submission date and total time spent, Overall score etc - Coach review status, score, review date, and feedback
+- Average coach score
+- Device and application information
+
+This worksheet is useful for tracking learner participation, submission status, coaching progress, and evaluation results.
+
+### 2. Coach Report
+
+The Coach Report provides a detailed breakdown of each coaching evaluation performed by the coach.
+
+It includes:
+- Learner information
+- Review status and review date
+- Competency-wise scores assigned by the coach
+- Weighted overall score
+- Coach feedback
+
+This worksheet helps you analyze individual coach evaluations and review competency-level performance for each learner.
+
+### 3. Coaching Details
+
+This worksheet contains the configuration details of the coaching activity, including:Coaching title, Coaching duration etc 
+
+This information serves as a reference for the coaching activity included in the report.
+
+### 4. Coaching Competencies
+
+This worksheet provides the competency framework used for evaluating learner submissions.
+
+## Tips
+- Ensure you have the necessary permissions to access and download reports.
+- Check your downloads folder for the report file after initiating the download.
+- Review the report format to ensure it meets your reporting needs.
+
+## Things to know
+The Coaching-wise Report is specific to the selected coaching scenario. If you need reports for multiple scenarios, you will need to repeat the download process for each one.

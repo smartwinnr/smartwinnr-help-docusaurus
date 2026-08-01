@@ -1,7 +1,7 @@
 ---
 id: add-metatags
-title: "How to add metatags "
-description: "This article shows you how to create metatags individually or in bulk."
+title: "How to create and manage metatags effectively"
+description: "Learn to create and manage metatags individually or in bulk for effective organization and categorization of user metadata."
 slug: add-metatags
 sidebar_position: 999
 last_update:
