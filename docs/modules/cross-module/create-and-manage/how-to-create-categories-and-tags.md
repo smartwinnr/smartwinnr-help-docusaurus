@@ -8,7 +8,7 @@ last_update:
   date: 2026-07-31
   author: Aswani TK
 customProps:
-  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 draft: false
 tags: ["settings"]
 ---

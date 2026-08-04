@@ -1888,6 +1888,10 @@
     {
       "from": "/modules/i-share/features/create-customer-engagement-content",
       "to": "/modules"
+    },
+    {
+      "from": "/get-started/overview/create-categories-and-tags",
+      "to": "/modules/cross-module/create-and-manage/create-categories-and-tags"
     }
   ]
 }
