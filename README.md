@@ -2,7 +2,7 @@
 
 Customer-facing help center for SmartWinnr. A Docusaurus documentation site
 served by an integrated Express backend (`server.js`) that also hosts a
-RAG-powered chatbot (**Wynnie**), magic-link authentication, role-based access
+RAG-powered chatbot (**Ally**), magic-link authentication, role-based access
 control, an LLM-assisted authoring wizard, and analytics dashboards.
 
 The whole stack — static docs + every API route — runs as a single Node
@@ -15,7 +15,7 @@ process. There is no separate chatbot service in production.
 | **Docs site** (`docs/`, 26 categories, 900+ articles) | Markdown articles, sidebar gated by viewer role + org privileges. Auto-generated category routes; per-module landing pages render via a swizzled `ModuleOverview`. |
 | **Auth** (`auth/`) | Magic-link sign-in through a Mailgun Lambda. JWT cookie carries email, roles, region, orgId, privileges. Three dev shortcuts (`/auth/dev-login`, `?as=<role>` preview, headless cookie minter) are stripped at production build. |
 | **URL guard** (`plugins/access-gate-emit.js` + `server.js`) | Walks `_category_.json` + frontmatter at build, emits `build/doc-gates.json`, then middleware enforces AND-of-all-matching-gates so a hand-typed URL can't bypass the swizzled sidebar. Same logic filters vector search + chatbot citations. |
-| **Wynnie chatbot** (`/api/chat`, widget in `src/components/ChatBot/`) | RAG over `smartwinnr_docs` ChromaDB collection. OpenAI `text-embedding-3-small` + a chat completion. Every exchange persists to SQLite with retention and circuit breaker. |
+| **Ally chatbot** (`/api/chat`, widget in `src/components/ChatBot/`) | RAG over `smartwinnr_docs` ChromaDB collection. OpenAI `text-embedding-3-small` + a chat completion. Every exchange persists to SQLite with retention and circuit breaker. |
 | **Authoring wizard** (`/admin/authoring`, superadmin only) | LLM-assisted 3-step flow: where + who → brain dump + image upload → preview/refine. Produces canonical-frontmatter markdown, supports drafts, image upload, and an auto-deploy pipeline that pushes to GitHub. |
 | **Analytics** (`/admin/analytics/{chat,feedback}`, `/admin/digests`) | Per-article feedback ("Was this helpful?"), chat-log stats with citation CTR and low-confidence triage, scheduled email digests. |
 | **Content pipelines** | `scripts/freshdesk/` ingests support-ticket CSVs and generates new articles; `scripts/migrate-helpscout.js` is the canonical Help Scout re-sync tool. |
@@ -109,7 +109,7 @@ auth/                  magic-link routes, JWT signer, middleware, login page
 db/                    SQLite layer: chat logs, feedback, digests, article-grade audit
 docs/                  the markdown source (gated by frontmatter + _category_.json)
 plugins/               Docusaurus plugins (chatbot widget injection, access-gate emit)
-prompts/               LLM system prompts (Wynnie, author-article, rewrite-article)
+prompts/               LLM system prompts (Ally, author-article, rewrite-article)
 scripts/               indexer, audit, autofix, Help Scout migration, Freshdesk pipeline
 shared/                code shared between the Docusaurus runtime and server.js (CJS)
 src/                   Docusaurus React app (swizzled sidebar, ChatBot, admin pages)

@@ -27,7 +27,7 @@
 ```
 src/
 ├── components/                    Custom React components
-│   ├── ChatBot/                   The Wynnie widget
+│   ├── ChatBot/                   The Ally widget
 │   ├── Landing/                   Homepage persona doors + module strip
 │   ├── Modules/                   Per-module landing page (ModuleOverview)
 │   ├── Article/                   FeedbackFooter, MetaChip, RelatedStrip
@@ -292,7 +292,7 @@ This way:
 
 ### Common changes
 
-**Change the prompt** — edit `prompts/wynnie.md`. Server reads it per
+**Change the prompt** — edit `prompts/ally.md`. Server reads it per
 request; no rebuild needed for prompt-only changes.
 
 **Change the widget UI** — edit `src/components/ChatBot/ChatBot.tsx`.
@@ -302,7 +302,7 @@ Hot reload works under Mode A; under Mode B you need `npm run build`.
 `/api/chat`), not the widget. See
 [05-tasks-backend.md](./05-tasks-backend.md#task-change-the-chatbot-prompt-or-retrieval).
 
-**Change the floating button icon** — `WynnieMark` component. Plain SVG
+**Change the floating button icon** — `AllyMark` component. Plain SVG
 inline; matches the Lucide-style stroke we use everywhere else.
 
 ### Citations

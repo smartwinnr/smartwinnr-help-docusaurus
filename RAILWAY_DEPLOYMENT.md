@@ -4,7 +4,7 @@ The SmartWinnr Help Center deploys to Railway as **two services + a few cron job
 
 | Service | Image | Role |
 |---|---|---|
-| `docusaurus` | `Dockerfile.docusaurus` (Node 22 + built site + `server.js`) | Serves the built Docusaurus site **and** every `/api/*` route on a single port. Hosts auth, Wynnie chat, vector search, the authoring wizard, and the admin analytics dashboards. |
+| `docusaurus` | `Dockerfile.docusaurus` (Node 22 + built site + `server.js`) | Serves the built Docusaurus site **and** every `/api/*` route on a single port. Hosts auth, Ally chat, vector search, the authoring wizard, and the admin analytics dashboards. |
 | `chroma` | Railway's official ChromaDB template | Vector database storing the `smartwinnr_docs` collection. Reached over Railway's private network. |
 | Digest cron jobs (×3) | `curlimages/curl` | One per digest type (`editor-gap`, `ops-snapshot`, `module-overview`). POST weekly to `/api/admin/digests/send?type=...` with `CRON_SECRET`. |
 

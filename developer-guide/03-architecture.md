@@ -23,7 +23,7 @@
 
 ## Single-process design
 
-All four surfaces — docs, Wynnie, the authoring wizard, the admin
+All four surfaces — docs, Ally, the authoring wizard, the admin
 dashboards — run inside the same Express process. `server.js` is the
 single entrypoint in production:
 
@@ -249,7 +249,7 @@ article gated to `role: user` lives under a category gated to a
 - chatbot retrieval context (`/api/chat`)
 - chatbot citations in the answer
 
-So if a learner asks Wynnie about an admin-only setting, the gated
+So if a learner asks Ally about an admin-only setting, the gated
 articles are never passed to the LLM context — the answer won't even
 *mention* them. This is the difference between defense-in-depth and
 "oops we put private content in a public-looking response."
@@ -336,7 +336,7 @@ components and custom widgets. The integration points worth knowing:
 | `src/contexts/UserContext.tsx` | Fetches `/api/me` once on mount. Every gated component reads from this context. |
 | `src/theme/Root.tsx` | Wraps the app in `UserProvider`. Plus a `ToastProvider`, plus boots a few singletons. |
 | `src/theme/DocSidebarItem/{Category,Link}/index.tsx` | Swizzled — reads `customProps.{roles, privilege, anyPrivilege}` and calls `isAllowed()` to hide gated entries. |
-| `src/components/ChatBot/ChatBot.tsx` | The Wynnie widget. Floating button → modal → `/api/chat`. |
+| `src/components/ChatBot/ChatBot.tsx` | The Ally widget. Floating button → modal → `/api/chat`. |
 | `plugins/chatbot-plugin.js` | Docusaurus plugin: injects `chatbot-client.js` as a client module so the widget mounts on every page. |
 | `plugins/chatbot-client.js` | Boot script that mounts `<ChatBot />` in its own React root **outside** `Root.tsx` (so it can fetch `/api/me` independently and doesn't block the rest of the app). |
 | `src/components/Article/FeedbackFooter.tsx` | "Was this helpful?" footer on every article. POSTs to `/api/feedback`. |
@@ -378,7 +378,7 @@ See [04-tasks-content.md](./04-tasks-content.md) for how to operate them.
                  │  Docusaurus static site (served from build/)          │
                  │   - Sidebar (swizzled, role-gated)                    │
                  │   - Article body with FeedbackFooter                  │
-                 │   - Wynnie ChatBot (floating)                         │
+                 │   - Ally ChatBot (floating)                         │
                  │   - VectorSearch (navbar)                             │
                  │   - /admin/* pages (superadmin)                       │
                  │  UserContext hydrated via single GET /api/me          │

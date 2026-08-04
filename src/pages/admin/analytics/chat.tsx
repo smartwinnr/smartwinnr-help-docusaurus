@@ -6,7 +6,7 @@ import {useCurrentUser} from '@site/src/contexts/UserContext';
 import styles from './feedback.module.css';
 
 /**
- * Wynnie chat analytics dashboard. Superadmin-only.
+ * Ally chat analytics dashboard. Superadmin-only.
  *
  * Reads:
  *   GET /api/admin/chat-logs/dashboard?days=30
@@ -524,7 +524,7 @@ function Dashboard(): JSX.Element {
 
 export default function ChatAnalyticsDashboard(): JSX.Element {
   return (
-    <Layout title="Chat analytics - Admin" description="Wynnie chat-log rollups and article-performance signals">
+    <Layout title="Chat analytics - Admin" description="Ally chat-log rollups and article-performance signals">
       <BrowserOnly fallback={<div className={styles.wrap}><p>Loading…</p></div>}>
         {() => <Dashboard />}
       </BrowserOnly>

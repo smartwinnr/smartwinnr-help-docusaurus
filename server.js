@@ -247,24 +247,24 @@ function calculateRelevanceScore(searchResults, citations) {
   return Math.round(score * 100) / 100;
 }
 
-// Wynnie's system prompt lives in prompts/wynnie.md so non-engineers can
+// Ally's system prompt lives in prompts/ally.md so non-engineers can
 // iterate on voice without touching server code. Cached at module init -
 // changes require a process restart, same as other config.
-const WYNNIE_PROMPT_PATH = require('path').join(__dirname, 'prompts', 'wynnie.md');
-let _wynniePromptTemplate = null;
-function getWynniePromptTemplate() {
-  if (_wynniePromptTemplate) return _wynniePromptTemplate;
+const ALLY_PROMPT_PATH = require('path').join(__dirname, 'prompts', 'ally.md');
+let _allyPromptTemplate = null;
+function getAllyPromptTemplate() {
+  if (_allyPromptTemplate) return _allyPromptTemplate;
   try {
-    _wynniePromptTemplate = require('fs').readFileSync(WYNNIE_PROMPT_PATH, 'utf8');
+    _allyPromptTemplate = require('fs').readFileSync(ALLY_PROMPT_PATH, 'utf8');
   } catch (e) {
-    console.error('⚠️  Failed to read prompts/wynnie.md - falling back to inline prompt:', e.message);
-    _wynniePromptTemplate =
-      'You are Wynnie, SmartWinnr\'s help assistant.\n\n' +
+    console.error('⚠️  Failed to read prompts/ally.md - falling back to inline prompt:', e.message);
+    _allyPromptTemplate =
+      'You are Ally, SmartWinnr\'s help assistant.\n\n' +
       'CONTEXT (retrieved from SmartWinnr documentation):\n{{CONTEXT}}\n\n' +
       'Answer using ONLY the context. Address the user as "you". If the context\n' +
       'is silent, say "I don\'t have docs on that yet" and suggest where to look.';
   }
-  return _wynniePromptTemplate;
+  return _allyPromptTemplate;
 }
 
 // How many prior turns of conversation to forward to OpenAI. 6 turns
@@ -279,7 +279,7 @@ async function generateAIResponse(query, context, history = []) {
   try {
     const openaiApiKey = getOpenAIKey();
 
-    const systemPrompt = getWynniePromptTemplate().replace('{{CONTEXT}}', context);
+    const systemPrompt = getAllyPromptTemplate().replace('{{CONTEXT}}', context);
 
     const priorTurns = Array.isArray(history)
       ? history

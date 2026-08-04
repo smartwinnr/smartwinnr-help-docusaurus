@@ -293,7 +293,7 @@ For exact line numbers, see [05-tasks-backend.md](./05-tasks-backend.md#serverjs
 | `data/known-privileges.json` | Canonical privilege keys. `validate:privileges` reads this. |
 | `data/modules.json` | The authoring wizard's "where to put it?" picklist. |
 | `plugins/access-gate-emit.js` | Build-time emitter of `build/doc-gates.json`. |
-| `prompts/wynnie.md` | Chatbot system prompt. Reloaded per request. |
+| `prompts/ally.md` | Chatbot system prompt. Reloaded per request. |
 | `prompts/author-article.md` | Wizard system prompt. |
 | `prompts/rewrite-article.md` | `articles:rewrite` system prompt. |
 | `SmartWinnr-Help-Style-Guide.md` | Loaded by content-quality scripts. |
@@ -305,7 +305,7 @@ For exact line numbers, see [05-tasks-backend.md](./05-tasks-backend.md#serverjs
 
 | Term | Definition |
 |---|---|
-| **Wynnie** | The RAG chatbot widget. Codename across the codebase. |
+| **Ally** | The RAG chatbot widget. Codename across the codebase. |
 | **The wizard** | The 3-step authoring UI at `/admin/authoring/`. |
 | **Magic link** | A signed-URL email sign-in. JWT in the URL. |
 | **Cookie / `swhelp_session`** | The session cookie. JWT-signed by `HELP_JWT_SECRET`. HttpOnly + SameSite=Lax. |

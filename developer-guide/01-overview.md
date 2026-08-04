@@ -21,7 +21,7 @@
 
 The SmartWinnr Help Center is the **customer-facing documentation site** for
 SmartWinnr. It serves articles for end users, gates content by their role
-and the modules their org has licensed, lets a chatbot ("Wynnie") answer
+and the modules their org has licensed, lets a chatbot ("Ally") answer
 questions over those articles, and lets internal authors write or update
 articles through a built-in admin wizard.
 
@@ -41,7 +41,7 @@ single repository.
 
 ```
 Customer → /docs page    →  Gated by role + org privileges    →  Read the article
-Customer → /api/chat     →  RAG over the same docs corpus      →  Wynnie answers + cites
+Customer → /api/chat     →  RAG over the same docs corpus      →  Ally answers + cites
 Author    → /admin/...   →  LLM-assisted wizard / dashboards   →  New article → commit → deploy
 ```
 
@@ -69,10 +69,10 @@ same Express app.
   loading `build/doc-gates.json`) returns `403` for any role-disallowed
   path so hand-typed URLs can't bypass the sidebar.
 
-### 2. Wynnie — the RAG chatbot
+### 2. Ally — the RAG chatbot
 
 - **Files**: `src/components/ChatBot/ChatBot.tsx` (widget),
-  `plugins/chatbot-plugin.js` (injection), `prompts/wynnie.md` (system
+  `plugins/chatbot-plugin.js` (injection), `prompts/ally.md` (system
   prompt), `server.js` `/api/chat` route, `db/chat-logger.js` (persistence).
 - **Backed by**: ChromaDB collection `smartwinnr_docs` (vector store) +
   OpenAI chat-completion model.
@@ -132,7 +132,7 @@ server.js                                        (Express)
 The customer's browser receives HTML
 Docusaurus's React app hydrates
 UserContext fetches /api/me once → role-aware sidebar renders
-Wynnie widget mounts → ready for chat
+Ally widget mounts → ready for chat
 ```
 
 Every `/api/*` request goes through the same Layer 1 + Layer 2, except
@@ -156,10 +156,10 @@ smartwinnr-help-docusaurus/
 ├── db/                         # SQLite layer: chat logs, feedback,
 │                                 digests, article-grade audit.
 ├── plugins/                    # Docusaurus plugins:
-│   ├── chatbot-plugin.js       #   - injects the Wynnie widget
+│   ├── chatbot-plugin.js       #   - injects the Ally widget
 │   └── access-gate-emit.js     #   - emits build/doc-gates.json
 ├── prompts/                    # LLM system prompts (one per task):
-│   ├── wynnie.md
+│   ├── ally.md
 │   ├── author-article.md
 │   └── rewrite-article.md
 ├── scripts/                    # CLI tools:

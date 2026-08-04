@@ -488,7 +488,7 @@ Key invariants `scripts/migrate-helpscout.js` enforces:
 │                                BROWSER                                    │
 │  Docusaurus static site (served from build/) + injected widgets:          │
 │   - VectorSearch (navbar semantic search)                                 │
-│   - Wynnie ChatBot (floating button → modal)                              │
+│   - Ally ChatBot (floating button → modal)                              │
 │   - FeedbackFooter on every article ("Was this helpful?" + free text)     │
 │   - Admin pages: /admin/authoring, /admin/analytics/{chat,feedback}, …    │
 │  Auth state hydrated by a single GET /api/me on mount (UserContext).      │
@@ -639,7 +639,7 @@ The help site is **gated end-to-end**. There are three layers, applied in order:
 - The same `isUrlAllowedForUser(url, user)` helper filters vector-search hits
   and chatbot citations, so the LLM never sees — and never cites — content the
   viewer couldn't reach. This is critical: without it, a learner asking
-  Wynnie about an admin-only setting could get an admin-only article in the
+  Ally about an admin-only setting could get an admin-only article in the
   prompt context and surface its information via the answer text, even though
   the citation link itself would 403.
 
@@ -737,7 +737,7 @@ ensures accuracy through:
 
 8. **Grounded generation.** The chatbot response is always grounded in
    retrieved documentation context. The system prompt
-   (`prompts/wynnie.md`) instructs the model: *"If the context doesn't contain
+   (`prompts/ally.md`) instructs the model: *"If the context doesn't contain
    relevant information, say so."* This prevents hallucination.
 9. **Citation transparency.** Every chatbot response includes citation links
    (distance < threshold) so users can verify against the source.

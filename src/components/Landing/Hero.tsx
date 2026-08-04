@@ -62,7 +62,7 @@ export default function Hero({user, loading}: Props): JSX.Element {
           type="button"
           className={`${styles.cta} ${styles.ctaPrimary}`}
           onClick={openChatbot}>
-          💬 Ask Wynnie
+          💬 Ask Ally
         </button>
         <a className={styles.cta} href="/modules/">
           📚 Browse modules

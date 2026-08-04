@@ -407,13 +407,13 @@ Steps in order:
 
 ### The prompt
 
-`prompts/wynnie.md` is the system prompt. Edit it directly. The server
+`prompts/ally.md` is the system prompt. Edit it directly. The server
 reads it on every chat request (no restart needed), so iteration is
 fast.
 
 ```bash
 # Open the prompt
-$EDITOR prompts/wynnie.md
+$EDITOR prompts/ally.md
 # Test against a real query
 curl -X POST -b "swhelp_session=<cookie>" \
   http://localhost:3001/api/chat \
@@ -431,7 +431,7 @@ In `server.js`, the `/api/chat` route does roughly:
 3. Filter chunks by isUrlAllowedForUser(chunk.url, req.user).
 4. Build the context string: top-N chunks concatenated, with
    citation IDs.
-5. Call OpenAI chat completion with prompts/wynnie.md as system,
+5. Call OpenAI chat completion with prompts/ally.md as system,
    context as user.
 6. Parse citations from the response, filter through
    isUrlAllowedForUser one more time, return.

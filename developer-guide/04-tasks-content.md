@@ -164,7 +164,7 @@ can target it).
    npm run build         # the URL guard re-emits doc-gates.json here
    ```
 
-5. Optionally re-index so Wynnie can find it:
+5. Optionally re-index so Ally can find it:
 
    ```bash
    # In another terminal, with the server running:

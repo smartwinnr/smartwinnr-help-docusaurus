@@ -30,7 +30,7 @@ bucket first cuts triage time in half.
 |---|---|---|
 | **Auth** | Redirect loop on `/auth/login`, 401 on `/api/me`, no cookie set after callback | `auth/jwt.js`, `auth/middleware.js`, `HELP_JWT_SECRET` |
 | **Gating** | Content visible to the wrong role, "403 Forbidden" for someone who should have access | `_category_.json` `customProps`, frontmatter, `build/doc-gates.json`, `src/access-policy.ts` |
-| **RAG / Chat** | Chatbot returns "I don't know" for a known answer, citations link to 403 pages, hallucinations | `prompts/wynnie.md`, `server.js` `/api/chat`, `scripts/internal-indexer.js`, ChromaDB |
+| **RAG / Chat** | Chatbot returns "I don't know" for a known answer, citations link to 403 pages, hallucinations | `prompts/ally.md`, `server.js` `/api/chat`, `scripts/internal-indexer.js`, ChromaDB |
 | **Build** | "Privilege not in known-privileges.json", "Unreachable gate", build fails before deploy | `data/known-privileges.json`, `_category_.json`, `scripts/audit-gates.js` |
 | **DB** | `/admin/analytics/chat` shows zero rows, `/api/feedback` returns 500, digest emails not arriving | `db/<name>.js`, SQLite circuit breaker, `/app/data/*.db`, `npm run db:heal` |
 

@@ -90,7 +90,7 @@ If your change includes:
 - **A schema change to a SQLite DB** → confirm the `CREATE TABLE IF NOT
   EXISTS` / lazy `ALTER TABLE ADD COLUMN` pattern is followed (see
   [05-tasks-backend.md](./05-tasks-backend.md#when-to-add-a-new-table-to-an-existing-db)).
-- **A new docs section that needs immediate Wynnie support** → plan to
+- **A new docs section that needs immediate Ally support** → plan to
   run `npm run index-internal` after deploy.
 
 ---
@@ -215,7 +215,7 @@ curl https://docusaurus-production.up.railway.app/api/health
 # Expect: 403.
 ```
 
-If your deploy added or changed docs, the Wynnie corpus is stale until
+If your deploy added or changed docs, the Ally corpus is stale until
 you re-index. Either:
 
 - Wait for the next scheduled re-index (none today — see "Caveats"
@@ -227,7 +227,7 @@ you re-index. Either:
   ```
 
 > **Caveat — no auto-reindex.** Railway doesn't automatically run the
-> indexer post-deploy. New articles ship invisibly to Wynnie until
+> indexer post-deploy. New articles ship invisibly to Ally until
 > someone re-indexes. There's a known gap to fix; for now,
 > re-index manually after any docs change.
 
