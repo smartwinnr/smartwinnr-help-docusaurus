@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/190-how-can-i-view-a-competition-leaderboard
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - kpi
   - gamification

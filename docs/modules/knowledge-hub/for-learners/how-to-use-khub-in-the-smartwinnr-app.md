@@ -12,11 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/150-how-to-use-khub-in-the-smartwinnr-app
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - knowledge-hub
   - onboarding

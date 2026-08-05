@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd10c66b6c6251cd1c34b95
   helpscout_url: 'https://help.smartwinnr.com/article/29-how-to-edit-a-smartfeed'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

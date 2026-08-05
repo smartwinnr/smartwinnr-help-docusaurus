@@ -12,8 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/116-how-to-track-my-organizational-resource-usage
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/146-how-can-i-create-folders-and-items-in-khub
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub

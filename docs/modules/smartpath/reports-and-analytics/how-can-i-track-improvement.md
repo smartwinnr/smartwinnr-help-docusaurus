@@ -13,9 +13,7 @@ source:
   helpscout_id: 697108ae08cad8770d366373
   helpscout_url: 'https://help.smartwinnr.com/article/319-how-can-i-track-improvement'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

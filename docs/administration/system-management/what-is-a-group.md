@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fda55167129911ba1b21b2c
   helpscout_url: 'https://help.smartwinnr.com/article/128-what-is-a-group'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: groups
 tags:
   - admin

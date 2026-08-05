@@ -11,8 +11,7 @@ last_update:
   date: 2026-07-29
   author: Sandeep Bhuthagaddala
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings
@@ -24,13 +23,16 @@ draft: false
 Activating or deactivating users in SmartWinnr allows you to manage user access effectively. If you selected the “Set password by user” option during bulk user creation, SmartWinnr will send a welcome email to the user with an activation link. Until the account is activated, you cannot assign any quizzes, SmartFeeds, or Surveys to the user.
 
 ## When to use this
+
 Use this feature when you need to manage user access in SmartWinnr. This includes:
+
 - Activating a user who has not yet completed the onboarding process.
 - Deactivating a user who no longer requires access to the system.
 
 ## Steps
 
 ### 1. Activate user
+
 To activate a user, follow these steps:
 
 1. Go to **ADMIN > Manage Users**.
@@ -42,6 +44,7 @@ By clicking “**Activate**”, SmartWinnr will force-activate the user and send
 ![Go to ADMIN > Manage Users. Click on the user you want to activate. Then select the “Activate” option from the hamburger menu.](/img/helpscout/admins/how-to-activate-or-deactivate-a-user-1.png)
 
 ### 2. Deactivate user
+
 To deactivate a user, follow these steps:
 
 1. Go to **ADMIN > Manage Users**.

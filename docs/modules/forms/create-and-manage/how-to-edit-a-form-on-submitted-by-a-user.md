@@ -12,9 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/250-how-to-edit-and-submit-form-on-behalf-of-the-user
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms

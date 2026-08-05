@@ -13,9 +13,7 @@ source:
   helpscout_id: 6317a3ed4cde766bbe1426fe
   helpscout_url: 'https://help.smartwinnr.com/article/275-how-to-edit-folder-name-in-khub'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub

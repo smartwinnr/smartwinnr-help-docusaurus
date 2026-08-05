@@ -18,12 +18,15 @@ tags: ["ai-coaching"]
 The **General Screen Sharing** feature enables users to share their screen during coaching sessions. This allows for effective product demonstrations, application walkthroughs, and discussions around documents, all of which are recorded for later review.
 
 ## When to use this
+
 Use the General Screen Sharing feature when you need to:
+
 - Conduct product demonstrations, application walkthroughs, presentations, or document discussions during a live coaching session.
 - Walk through documents or presentations with participants.
 - Record the coaching session for future reference.
 
 ## Before you start
+
 To enable screen sharing in video coaching, navigate to **Editor > Coaching > View Coaching**. The list of coaching sessions you have access to will be displayed.
 
 ![List of coaching sessions](/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2yn7md.png)
@@ -35,6 +38,7 @@ Open the coaching session that you need to enable screen sharing for, go to **Se
 ## How Screen Sharing Works in Coachings
 
 ### Start the coaching session
+
 Begin by initiating your coaching session as you normally would. Select the language by clicking on the **CHOOSE LANGUAGE** button.
 
 ![Start the coaching session](/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2vx1h8.png)
@@ -66,6 +70,7 @@ You can interact with the AI while sharing your screen.
 After completing the interaction, you can stop sharing and end the role play. The recorded session will be saved, and the score will be generated based on the interaction.
 
 ## Best Practices
+
 - Share the **Entire Screen** if you need to switch between multiple applications.
 - Close unnecessary applications to avoid sharing sensitive information.
 - Ensure the required document or application is open before starting screen sharing.
@@ -73,6 +78,7 @@ After completing the interaction, you can stop sharing and end the role play. Th
 - End screen sharing once the demonstration is complete.
 
 ## Things to know
+
 :::note
 Screen sharing is only available after the coaching session has started. The coaching document remains accessible within the session while screen sharing.
 :::

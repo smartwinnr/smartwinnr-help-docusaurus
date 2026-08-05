@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/28-how-to-add-a-powerpoint-presentation-to-smartfeed
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb1646a5d295659b369c8d
   helpscout_url: 'https://help.smartwinnr.com/article/180-how-to-create-a-group-challenge'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

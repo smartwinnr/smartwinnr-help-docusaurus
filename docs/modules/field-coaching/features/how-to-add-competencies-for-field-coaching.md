@@ -12,8 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/237-how-to-add-competencies-for-field-coaching
 customProps:
-  roles:
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching
 tags:
   - field-coaching

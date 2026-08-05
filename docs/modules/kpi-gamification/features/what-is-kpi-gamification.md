@@ -14,9 +14,7 @@ source:
   helpscout_id: 5fdb0bb6a5d295659b369c5d
   helpscout_url: 'https://help.smartwinnr.com/article/168-what-is-kpi-gamification'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

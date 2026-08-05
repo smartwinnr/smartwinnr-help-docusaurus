@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fdae19bb624c71b7985a579
   helpscout_url: 'https://help.smartwinnr.com/article/143-user-login-reports'
 customProps:
-  roles:
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: learnerReport
 tags:
   - reports

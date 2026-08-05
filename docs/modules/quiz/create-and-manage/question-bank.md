@@ -23,7 +23,9 @@ draft: false
 The **Question Bank** in SmartWinnr serves as the central repository for all questions created within your division. It contains questions developed by trainers/editors across your business unit. Any question that you create will automatically be added to the Question Bank.
 
 ## When to use this
+
 Use the Question Bank when you want to:
+
 - Access a centralized repository of all questions created within your division.
 - Manage and organize questions developed by trainers.
 - Search for specific questions based on various criteria.
@@ -31,10 +33,13 @@ Use the Question Bank when you want to:
 ## Steps
 
 ### 1. Access the Question Bank
+
 Navigate to the **Left Menu > Questions and Quizzes > Question Bank** section in SmartWinnr to view all available questions.
 
 ### 2. Search for Questions
+
 You can find multiple options to search for questions using various criteria:
+
 - The name of the person who created the question.
 - The **Question Type** (e.g., Multiple Choice, Fill in the blanks, Matching, Hotspot, Re-Order, Missing Words, Drag and Drop into Text, Short Answer with Multiple Options, Long Answer, Drag and Drop into Image, Numeric questions).
 - Search by categories available for questions by entering the category in the **Category Values** box.
@@ -43,6 +48,7 @@ You can find multiple options to search for questions using various criteria:
 ![](/img/helpscout/authored/question-bank-mr3eoo5j.png)
 
 ### 3. Use Advanced Search
+
 Click on the **‘Advanced Search’** link to find the advanced search options available to find your required question set. Here, you can filter questions by:
 
 - The **business unit** for which the question was created.
@@ -54,14 +60,18 @@ Click on the **‘Advanced Search’** link to find the advanced search options 
 Set **Created By** to **All** to view questions created by all editors. You may also filter the results by **question type**, **business unit**, or **category** to view questions that meet specific criteria.
 
 ### 4. Search by Question Text
+
 Paste the question text into the **Search** field and click the **Search** button to display the relevant question. To clear the search results, delete the text from the **Search** box and click the **Search** button again.
 
 ## Tips
+
 - Regularly review and organize questions in the Question Bank to maintain clarity and ease of access.
 - Utilize the advanced search features to quickly locate specific questions based on your needs.
 
 ## Things to know
+
 The Question Bank is a powerful tool for managing questions, but remember:
+
 - Questions are automatically added to the bank upon creation.
 - Ensure that you have the necessary permissions to access and manage the Question Bank.
 

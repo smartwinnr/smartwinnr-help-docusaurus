@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fd10365db2fa3720c7d7a2f
   helpscout_url: 'https://help.smartwinnr.com/article/27-how-to-create-a-smartfeed'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed
@@ -128,7 +126,7 @@ You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add 
 
 In the **Settings** section, you can configure how a SmartFeed is delivered and shared.
 
-* 
+*
     **Expiration**: This allows to set an expire to your SmartFeed.
 
   * **Never**: Keeps the SmartFeed available indefinitely in the feed list for users.
@@ -142,7 +140,6 @@ Also, if you dont want to allow users to skip through the video, you can uncheck
 These options help you control the timing, visibility, and reach of your SmartFeeds effectively.
 
 ![These options help you control the timing, visibility, and reach of your SmartFeeds effectively.](/img/helpscout/authored/how-to-create-a-smartfeed-ms8t8gfp.png)
-
 
 ### Maximum File Size Limits for SmartFeed
 

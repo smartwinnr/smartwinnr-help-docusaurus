@@ -11,9 +11,7 @@ source:
   helpscout_id: 64ec366fab3ec13db0b391bd
   helpscout_url: 'https://help.smartwinnr.com/article/287-how-to-delete-a-survey'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

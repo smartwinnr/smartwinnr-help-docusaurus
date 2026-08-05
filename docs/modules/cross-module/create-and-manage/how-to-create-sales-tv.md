@@ -11,9 +11,7 @@ source:
   helpscout_id: 60b9e109fd393f6bf704a9f2
   helpscout_url: 'https://help.smartwinnr.com/article/249-how-to-create-sales-tv'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

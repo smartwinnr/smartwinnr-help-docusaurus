@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0cafa5d295659b369c60
   helpscout_url: 'https://help.smartwinnr.com/article/172-what-are-field-mappings'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

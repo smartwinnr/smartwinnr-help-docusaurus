@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb0817b624c71b7985a5e5
   helpscout_url: 'https://help.smartwinnr.com/article/163-what-is-the-purpose-of-notifications'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: customNotifications
 tags:
   - notifications

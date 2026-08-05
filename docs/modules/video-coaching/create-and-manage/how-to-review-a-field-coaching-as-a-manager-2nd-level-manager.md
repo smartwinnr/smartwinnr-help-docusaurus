@@ -12,9 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/277-how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: coaching
 tags:
   - video-coaching

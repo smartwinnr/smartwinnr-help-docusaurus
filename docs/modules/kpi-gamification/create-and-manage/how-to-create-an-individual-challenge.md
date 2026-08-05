@@ -12,9 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/179-how-to-create-an-individual-challenge
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

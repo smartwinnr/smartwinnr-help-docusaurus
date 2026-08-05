@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fce2291eb7cc612aa3556fa
   helpscout_url: 'https://help.smartwinnr.com/article/15-how-can-i-change-my-profile-image'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 ## Changing your profile picture after you have logged in

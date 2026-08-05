@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0e290b11ce44f63931c7
   helpscout_url: 'https://help.smartwinnr.com/article/174-how-to-upload-kpi-data'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

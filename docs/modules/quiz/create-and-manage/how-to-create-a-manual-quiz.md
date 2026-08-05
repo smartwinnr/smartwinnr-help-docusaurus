@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd490113d1d2a5b1c5ea153
   helpscout_url: 'https://help.smartwinnr.com/article/50-how-to-create-a-manual-quiz'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

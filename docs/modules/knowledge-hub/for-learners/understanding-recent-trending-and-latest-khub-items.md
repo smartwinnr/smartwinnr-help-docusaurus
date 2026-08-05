@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/148-understanding-recent-trending-and-latest-khub-items
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - knowledge-hub
   - onboarding

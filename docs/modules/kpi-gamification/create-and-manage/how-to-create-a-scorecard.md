@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb13f67129911ba1b21e6b
   helpscout_url: 'https://help.smartwinnr.com/article/176-how-to-create-a-scorecard'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

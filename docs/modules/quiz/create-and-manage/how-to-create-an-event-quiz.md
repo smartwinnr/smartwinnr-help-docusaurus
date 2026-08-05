@@ -11,9 +11,7 @@ source:
   helpscout_id: 631c9fb5c713d51da3edd565
   helpscout_url: 'https://help.smartwinnr.com/article/276-how-to-open-and-close-a-quiz'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

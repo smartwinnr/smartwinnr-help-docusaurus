@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fdadc3e7129911ba1b21dbe
   helpscout_url: 'https://help.smartwinnr.com/article/135-how-to-add-new-contacts'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: contacts
 tags:
   - admin

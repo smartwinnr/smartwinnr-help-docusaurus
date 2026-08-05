@@ -12,10 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/224-how-managers-approve-kpi-submission-form
 customProps:
-  roles:
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView
 tags:
   - forms

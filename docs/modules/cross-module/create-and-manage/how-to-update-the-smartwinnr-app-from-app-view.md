@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/290-httpshelpsmartwinnrcomarticle290-how-can-i-update-the-smartwinnr-app-from-the-app-view
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

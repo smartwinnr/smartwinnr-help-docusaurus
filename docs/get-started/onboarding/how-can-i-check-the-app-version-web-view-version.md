@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/19-how-can-i-check-the-app-version-web-view-version
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 ## Below are the steps to check the version of your SmartWinnr app

@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb509ab624c71b7985a72e
   helpscout_url: 'https://help.smartwinnr.com/article/193-what-is-an-achievement'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: achievements
 tags:
   - kpi

@@ -12,9 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/314-how-can-i-download-attempt-wise-user-objective-report
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching

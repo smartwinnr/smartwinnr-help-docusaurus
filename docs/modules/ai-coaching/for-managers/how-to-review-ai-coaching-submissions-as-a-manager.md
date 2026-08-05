@@ -15,11 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/318-how-to-review-ai-coaching-submissions-as-a-manager
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching

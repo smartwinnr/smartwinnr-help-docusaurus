@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fda513db624c71b7985a2a8
   helpscout_url: 'https://help.smartwinnr.com/article/124-change-user-password'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

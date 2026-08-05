@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd711e636980410c9123b73
   helpscout_url: 'https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

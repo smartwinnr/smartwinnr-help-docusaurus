@@ -13,9 +13,7 @@ source:
   helpscout_id: 600a9329b9a8501b295d308e
   helpscout_url: 'https://help.smartwinnr.com/article/227-how-to-add-a-form-to-a-competition'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

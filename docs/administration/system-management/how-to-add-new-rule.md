@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fdadd747129911ba1b21dc5
   helpscout_url: 'https://help.smartwinnr.com/article/140-how-to-add-new-rule'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

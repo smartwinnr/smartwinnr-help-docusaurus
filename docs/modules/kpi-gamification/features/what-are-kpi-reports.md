@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb1843a5d295659b369c92
   helpscout_url: 'https://help.smartwinnr.com/article/182-what-are-kpi-reports'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

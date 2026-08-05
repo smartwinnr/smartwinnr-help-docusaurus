@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd4ea8523119734ee37ee1f
   helpscout_url: 'https://help.smartwinnr.com/article/69-how-to-add-a-image-to-your-content'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/107-how-to-add-a-challenge-to-the-competition
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

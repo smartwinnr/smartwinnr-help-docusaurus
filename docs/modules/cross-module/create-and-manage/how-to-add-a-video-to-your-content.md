@@ -14,9 +14,7 @@ source:
   helpscout_id: 5fd4e5ddc868cb6df3a8109f
   helpscout_url: 'https://help.smartwinnr.com/article/68-how-to-add-a-video-to-your-content'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

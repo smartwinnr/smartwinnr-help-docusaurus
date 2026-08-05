@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0e92a5d295659b369c6c
   helpscout_url: 'https://help.smartwinnr.com/article/175-what-are-scorecards'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

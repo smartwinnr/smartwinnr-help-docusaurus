@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb168a0b11ce44f63931e3
   helpscout_url: 'https://help.smartwinnr.com/article/181-how-to-create-a-manager-challenge'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

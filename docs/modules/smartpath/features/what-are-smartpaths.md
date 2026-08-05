@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd7119336980410c9123b70
   helpscout_url: 'https://help.smartwinnr.com/article/77-what-are-smartpaths'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

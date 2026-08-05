@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/291-how-to-update-the-smartwinnr-app-from-web-view
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 ## Below are the steps to update the SmartWinnr app from Web View

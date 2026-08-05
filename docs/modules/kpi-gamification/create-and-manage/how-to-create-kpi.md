@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0c4f0b11ce44f63931c0
   helpscout_url: 'https://help.smartwinnr.com/article/171-how-to-create-kpi'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

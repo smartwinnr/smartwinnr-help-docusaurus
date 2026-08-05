@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/242-how-to-add-learning-sessions-in-smartpath
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

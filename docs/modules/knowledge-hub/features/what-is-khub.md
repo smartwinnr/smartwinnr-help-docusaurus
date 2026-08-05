@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdae88db624c71b7985a587
   helpscout_url: 'https://help.smartwinnr.com/article/145-what-is-khub'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub

@@ -18,6 +18,7 @@ tags: ["ai-coaching", "video-coaching"]
 Managers can monitor the coaching progress of their team members through the Coaching section in SmartWinnr. Understanding the difference between the **All Coachings** and **My Review** tabs helps you efficiently track learner progress and review coaching submissions.
 
 ## When to use this
+
 Use the **All Coachings** tab to get an overview of your team's coaching assignments and their completion status. Switch to the **My Review** tab when you need to review specific coaching submissions for which you are the assigned coach.
 
 - Track overall coaching progress for your team.
@@ -27,13 +28,16 @@ Use the **All Coachings** tab to get an overview of your team's coaching assignm
 ## Steps
 
 ### 1. Log in to SmartWinnr
+
 Access the SmartWinnr Mobile App or Web App (PWA) to begin.
 
 ### 2. Navigate to Coaching
+
 From the left navigation menu, select **Coaching** to access the coaching tabs.
 ![This images shows the coaching section in left menu](/img/helpscout/authored/how-to-differentiate-coaching-tabs-all-coachings-and-my-review-ms7gqzva.png)
 
 ### 3. Explore the All Coachings tab
+
 The **All Coachings** tab provides a progress overview of coaching assignments for users under your reporting hierarchy. Here, you can see:
 
 - Users assigned to coaching scenarios.
@@ -44,12 +48,14 @@ The **All Coachings** tab provides a progress overview of coaching assignments f
 Note: The **All Coachings** tab is for tracking progress only. You cannot review or provide feedback on submissions from this tab.
 
 ### 4. Access the My Review tab
+
 The **My Review** tab is your review workspace. It displays coaching scenarios where you are assigned as the Coach. For each coaching submission, you can check the current status:
 
 - **Submission Pending** – The learner has not yet submitted their response.
 - **Submitted** – The learner has completed the submission and it's available for review.
 
 ### 5. Review coaching submissions
+
 Once a learner submits their video coaching response, you can:
 
 - Open the submission.

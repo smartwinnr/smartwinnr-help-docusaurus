@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fdadc160b11ce44f639313f
   helpscout_url: 'https://help.smartwinnr.com/article/134-how-to-view-existing-contacts'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: contacts
 tags:
   - admin

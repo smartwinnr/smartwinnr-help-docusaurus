@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fdaddc6b624c71b7985a570
   helpscout_url: 'https://help.smartwinnr.com/article/141-what-is-a-rule'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

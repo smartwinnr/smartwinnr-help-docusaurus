@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdae9650b11ce44f639315d
   helpscout_url: 'https://help.smartwinnr.com/article/147-how-can-i-edit-a-khub-item'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub

@@ -11,11 +11,7 @@ source:
   helpscout_id: 5fdb083d27288b7f895d6541
   helpscout_url: 'https://help.smartwinnr.com/article/164-how-to-view-notifications'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - notifications
   - onboarding

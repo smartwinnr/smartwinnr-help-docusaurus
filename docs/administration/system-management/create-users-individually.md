@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
   helpscout_url: 'https://help.smartwinnr.com/article/119-create-users-individually'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings
@@ -28,6 +27,7 @@ SmartWinnr allows administrators to create users individually through the backen
 > **Note:** Only users with the appropriate **administrative privileges** can create new users.
 
 ## When to use this
+
 Use this feature when you need to:
 
 * Onboard new users individually.

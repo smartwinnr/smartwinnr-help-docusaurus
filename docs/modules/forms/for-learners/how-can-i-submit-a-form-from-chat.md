@@ -13,11 +13,7 @@ source:
   helpscout_id: 603c7d19b3ebfb109b586e66
   helpscout_url: 'https://help.smartwinnr.com/article/230-how-can-i-submit-a-form-from-chat'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - forms
   - onboarding

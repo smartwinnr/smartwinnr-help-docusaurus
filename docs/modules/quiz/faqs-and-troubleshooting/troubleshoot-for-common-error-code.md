@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd48e84c868cb6df3a8101f
   helpscout_url: 'https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

@@ -12,8 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/279-changing-updating-configuration-for-an-organisation
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

@@ -8,9 +8,7 @@ last_update:
   date: 2026-07-29
   author: Sandeep Bhuthagaddala
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz
@@ -23,18 +21,22 @@ draft: false
 The following are the main differences between creating questions using the **Add New Question** method and the **bulk upload** method.
 
 ## When to use this
+
 Use the **Add New Question** method when you want to create individual questions quickly. Opt for the **bulk upload** method when you have multiple questions to add at once.
 
 ## Steps
 
 ### 1. Understand the creation method
-- The **Add New Question** method allows you to create only one question at a time. 
+
+- The **Add New Question** method allows you to create only one question at a time.
 - The **bulk upload** method lets you create multiple questions at once and upload them.
 
 ### 2. Know the options limit
-- You can have any number of options for a multi-select question if it is created using the **Add New Question** method. 
+
+- You can have any number of options for a multi-select question if it is created using the **Add New Question** method.
 - In contrast, using the **bulk upload** method, you can have at most six options for the multi-select question.
 
 ### 3. Identify question types
-- You can create a **Hotspot** question using the **Add New Question** method. 
+
+- You can create a **Hotspot** question using the **Add New Question** method.
 - It is not possible to create a **Hotspot** question using the **bulk upload** method.

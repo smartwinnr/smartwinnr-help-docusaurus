@@ -54,7 +54,7 @@ Together, these modules create a continuous learning experience rather than isol
 
 The objective of the first 30 days is to build a strong knowledge foundation.
 
-Recommended SmartWinnr Modules: 
+Recommended SmartWinnr Modules:
 
 - **SmartPaths**:  Create a structured onboarding journey consisting of:
   - Welcome videos
@@ -63,7 +63,7 @@ Recommended SmartWinnr Modules:
   - Company policies
   - Sales methodology
   - Certification checkpoints
- 
+
 SmartPaths ensure learners complete content in the required sequence.
 
 - **K-Hub** : Provide learners with a centralized knowledge repository containing:
@@ -89,9 +89,9 @@ SmartFeeds keep learners engaged without overwhelming them.
 
 Collect learner expectations before training using:
 
-  - Pre-training surveys
-  - Skill assessments
-  - Readiness questionnaires
+- Pre-training surveys
+- Skill assessments
+- Readiness questionnaires
 
 This helps identify knowledge gaps before the learning journey begins.
 
@@ -99,9 +99,9 @@ This helps identify knowledge gaps before the learning journey begins.
 
 Validate learning after each module through:
 
-  - Topic-based quizzes
-  - Certification quizzes
-  - Knowledge checks
+- Topic-based quizzes
+- Certification quizzes
+- Knowledge checks
 
 Gamification encourages healthy competition while tracking learner progress.
 
@@ -130,8 +130,8 @@ AI provides immediate feedback, enabling learners to improve continuously.
 
 - **Situational Quizzes**: Create scenario-based quizzes that test application rather than memorization. Examples include:
 
-    - What would you recommend to this customer?
-    - Which objection handling technique is most appropriate?
+  - What would you recommend to this customer?
+  - Which objection handling technique is most appropriate?
   - What should be your next sales action?
   
 - **Field Coaching**: Managers can reinforce learning through field observations and coaching discussions. This helps bridge the gap between digital learning and real-world execution.
@@ -140,7 +140,7 @@ AI provides immediate feedback, enabling learners to improve continuously.
 
 The final phase focuses on long-term knowledge retention, continuous reinforcement, and performance improvement.
 
-Recommended SmartWinnr Modules: 
+Recommended SmartWinnr Modules:
 
 - **SmartFeeds**: Continue reinforcing learning by sending:
 
@@ -175,14 +175,14 @@ These insights help optimize future learning journeys.
 
 Throughout the journey, SmartWinnr Analytics helps administrators track:
 
-  - Course completion rates
-  - Quiz performance
-  - Coaching scores
-  - AI Role Play evaluations
-  - Knowledge growth
-  - Learner engagement
-  - Manager feedback
-  - Overall adoption trends
+- Course completion rates
+- Quiz performance
+- Coaching scores
+- AI Role Play evaluations
+- Knowledge growth
+- Learner engagement
+- Manager feedback
+- Overall adoption trends
 
 These insights enable organizations to identify knowledge gaps early and continuously optimize their learning programs.
 
@@ -190,10 +190,10 @@ These insights enable organizations to identify knowledge gaps early and continu
 
 Implementing a structured 30/60/90 learning journey in SmartWinnr enables organizations to:
 
-  - Deliver a consistent onboarding experience.
-  - Reinforce learning through spaced repetition.
-  - Improve knowledge retention with micro-learning.
-  - Develop practical skills through coaching and AI role plays.
-  - Increase learner engagement using gamification.
-  - Provide managers with actionable performance insights.
-  - Build a continuous learning culture that extends well beyond initial onboarding.
+- Deliver a consistent onboarding experience.
+- Reinforce learning through spaced repetition.
+- Improve knowledge retention with micro-learning.
+- Develop practical skills through coaching and AI role plays.
+- Increase learner engagement using gamification.
+- Provide managers with actionable performance insights.
+- Build a continuous learning culture that extends well beyond initial onboarding.

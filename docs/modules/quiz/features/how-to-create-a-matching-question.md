@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd46a20c868cb6df3a80ff5
   helpscout_url: 'https://help.smartwinnr.com/article/43-how-to-create-a-matching-question'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

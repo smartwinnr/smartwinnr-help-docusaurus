@@ -12,8 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template
 customProps:
-  roles:
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching
 tags:
   - field-coaching

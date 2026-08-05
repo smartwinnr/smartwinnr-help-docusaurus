@@ -22,6 +22,7 @@ const fsSync = require('fs');
 // Shared docs-path -> live-route resolver (also used by the internal indexer).
 const docRoutes = require('./lib/doc-routes');
 const { normRoute, resolveLiveUrl } = docRoutes;
+const { setFrontmatterRoles, removeFrontmatterPrivilege } = require('./lib/frontmatter');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -3636,35 +3637,9 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
   }
 });
 
-/** Replace the (indented) `customProps.roles` block in an article's
- *  frontmatter with an inline `roles: [a, b, …]`. Scoped to the frontmatter
- *  block so a stray `roles:` in the body is never touched. Handles both the
- *  inline `[..]` form and the `- item` block-sequence form; inserts a roles
- *  line under `customProps:` if none exists. */
-function setFrontmatterRoles(markdown, roles) {
-  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
-  if (!fmMatch) return markdown;
-  let fm = fmMatch[1];
-  const inline = `  roles: [${roles.join(', ')}]`;
-  const rolesRe = /^[ \t]+roles[ \t]*:[^\n]*(?:\n[ \t]+-[ \t]*[^\n]*)*/m;
-  if (rolesRe.test(fm)) {
-    fm = fm.replace(rolesRe, inline);
-  } else if (/^customProps[ \t]*:/m.test(fm)) {
-    fm = fm.replace(/^(customProps[ \t]*:[^\n]*\n)/m, `$1${inline}\n`);
-  } else {
-    fm = fm.replace(/\s*$/, '') + `\ncustomProps:\n${inline}`;
-  }
-  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
-}
-
-/** Drop the article-level `customProps.privilege:` line so the destination
- *  folder's _category_.json gate governs licensing (gates AND-combine). */
-function removeFrontmatterPrivilege(markdown) {
-  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
-  if (!fmMatch) return markdown;
-  const fm = fmMatch[1].replace(/^[ \t]+privilege[ \t]*:[^\n]*\n?/m, '');
-  return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
-}
+// setFrontmatterRoles / removeFrontmatterPrivilege now live in
+// lib/frontmatter.js (imported at the top), shared with
+// scripts/restamp-article-roles.js so article gating has one implementation.
 
 const REDIRECTS_PATH = path.join(__dirname, 'data', 'redirects.json');
 

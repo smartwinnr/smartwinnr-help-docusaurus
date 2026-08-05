@@ -15,9 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/110-how-to-duplicate-a-survey-and-survey-template
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

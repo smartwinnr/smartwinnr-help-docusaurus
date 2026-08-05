@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/264-how-to-mark-the-attendance-for-users-in-learning-sessions
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartpath
 ---

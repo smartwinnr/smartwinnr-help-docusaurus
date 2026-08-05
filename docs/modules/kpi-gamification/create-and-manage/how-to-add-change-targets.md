@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb14bf27288b7f895d6570
   helpscout_url: 'https://help.smartwinnr.com/article/177-how-to-add-change-targets'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

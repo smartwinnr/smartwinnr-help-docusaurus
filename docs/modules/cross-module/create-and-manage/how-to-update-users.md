@@ -13,9 +13,7 @@ source:
   helpscout_id: 696cf34e0ef05b444cde8d3c
   helpscout_url: 'https://help.smartwinnr.com/article/298-how-to-update-users'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

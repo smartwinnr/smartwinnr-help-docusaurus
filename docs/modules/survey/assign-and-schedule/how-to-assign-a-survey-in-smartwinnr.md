@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd49e6623119734ee37edbd
   helpscout_url: 'https://help.smartwinnr.com/article/60-assign-a-survey'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

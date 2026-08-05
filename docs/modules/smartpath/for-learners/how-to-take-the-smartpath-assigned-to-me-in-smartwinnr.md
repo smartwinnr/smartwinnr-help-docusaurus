@@ -15,11 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/265-how-to-take-the-smartpath-assigned-to-me-in-smartwinnr
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartpath
   - onboarding

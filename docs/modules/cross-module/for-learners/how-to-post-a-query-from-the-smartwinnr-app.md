@@ -12,11 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/160-how-to-post-a-query-from-the-smartwinnr-app
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - onboarding
@@ -41,6 +37,7 @@ tags:
 - If required, you can also attach supporting documents related to your query.
 
 Examples of attachments include:
+
 - Images
 - PDF documents
 - Screenshots

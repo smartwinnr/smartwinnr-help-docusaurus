@@ -11,9 +11,7 @@ source:
   helpscout_id: 60a4febd13fd125a39b4516e
   helpscout_url: 'https://help.smartwinnr.com/article/235-how-to-create-field-coaching'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: coaching
 tags:
   - video-coaching

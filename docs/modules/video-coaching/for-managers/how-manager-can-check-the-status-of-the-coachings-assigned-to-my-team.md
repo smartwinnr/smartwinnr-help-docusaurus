@@ -14,10 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/229-how-manager-can-view-and-check-the-status-of-the-coachings-assigned-to-my-team
 customProps:
-  roles:
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView
 tags:
   - video-coaching

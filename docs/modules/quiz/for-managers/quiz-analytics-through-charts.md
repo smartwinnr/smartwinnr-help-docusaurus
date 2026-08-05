@@ -8,10 +8,7 @@ last_update:
   date: 2026-07-17
   author: Anagha Isal
 customProps:
-  roles:
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView
 tags:
   - quiz
@@ -27,7 +24,9 @@ To access the quiz analytics page for your team, go to **Left Menu** >> **Quiz**
 ![This will take you through the team Analytics which is represented with several graphs.](/img/helpscout/authored/quiz-analytics-through-charts-mromdqvr.png)
 
 ## When to use this
+
 Use quiz analytics to:
+
 - Assess overall team performance across different knowledge categories.
 - Identify areas of strength and improvement within your team.
 - Compare individual team members' performance.
@@ -36,6 +35,7 @@ Use quiz analytics to:
 ## Steps
 
 ### 1. Access Quiz Category-Wise Performance
+
 This chart provides the overall performance of your team across different categories such as Knowledge Attributes, Selling Skills, Onboarding, Compliance, etc. It helps you identify areas of strength and areas for improvement in your team.
 
 ![This chart will give you the Overall Performance of your Team across Different categories like Knowledge Attributes, Selling Skills, Onboarding, Compliance, etc.](/img/helpscout/authored/quiz-analytics-through-charts-mromem2j.png)
@@ -45,14 +45,15 @@ You can change the category to see other areas by clicking on the **Filter** but
 ![You can change the category to see other areas by clicking on the Filter button.](/img/helpscout/authored/quiz-analytics-through-charts-mromf1h0.png)
 
 ### 2. View Detailed Performance by Quiz Category and Country/Territory
+
 This is a color-coded chart that shows the performance of quiz categories by territory, business function, and more based on the employee categorisation available for your organisation.
 
 ![This is a colour-coded chart to show the performance of quiz categories by territory, business function, distributors, and more.](/img/helpscout/authored/quiz-analytics-through-charts-mromfxyc.png)
 
-Click on the **Filter** option to filter it by territory, region, country, designation etc based on the employee categorisation available for your organisation. 
-
+Click on the **Filter** option to filter it by territory, region, country, designation etc based on the employee categorisation available for your organisation.
 
 ### 3. Compare Each Team Member by Quiz Category
+
 You can select team members and compare their performance across different topics. This feature allows you to easily identify the areas for improvement and strengths of each person in your team.
 
 Click on the **Select Members** button to choose specific members in your team.
@@ -60,6 +61,7 @@ Click on the **Select Members** button to choose specific members in your team.
 ![Click on the 'Select Members' button to select specific members in your team.](/img/helpscout/authored/quiz-analytics-through-charts-mromi5gg.png)
 
 ### 4. Compare Your Team's Performance vs. Organization Average
+
 Assess how your team stands in comparison to the rest of the organization.
 
 ![Check how your team stands with respect to the rest of the organization.](/img/helpscout/authored/quiz-analytics-through-charts-mromjbh0.png)

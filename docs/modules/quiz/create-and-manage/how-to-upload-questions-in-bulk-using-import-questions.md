@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fd48497c868cb6df3a81016
   helpscout_url: 'https://help.smartwinnr.com/article/46-how-to-use-import-questions'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

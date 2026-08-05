@@ -18,7 +18,9 @@ tags: ["ai-coaching", "troubleshooting"]
 During an AI coaching roleplay, there is no dedicated option to pause the session. However, if you need a brief moment, you can naturally ask the AI Health Coaching Partner (HCP) for a pause by making a request during the conversation.
 
 ## When to use this
+
 Use this approach when you find yourself needing a moment to think or refer to notes during a roleplay. This can happen in various scenarios, such as:
+
 - You need to review your notes for accurate information.
 - You want to consult a specific document before proceeding.
 - You require a moment to gather your thoughts and respond effectively.
@@ -26,7 +28,9 @@ Use this approach when you find yourself needing a moment to think or refer to n
 ## Steps
 
 ### 1. Ask the AI for a moment
+
 During the roleplay, you can say something like:
+
 - "Could you give me a moment while I review my notes?"
 - "Let me refer to the ICVA document and I'll be right back."
 

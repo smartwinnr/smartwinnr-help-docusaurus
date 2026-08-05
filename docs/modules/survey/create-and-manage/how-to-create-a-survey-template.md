@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd4a44e36980410c9123862
   helpscout_url: 'https://help.smartwinnr.com/article/61-how-to-create-a-survey-template'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

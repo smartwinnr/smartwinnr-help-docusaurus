@@ -8,9 +8,7 @@ last_update:
   date: 2026-07-08
   author: Anagha Isal
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags: ["quiz", "smartpath", "gamification"]
 draft: false
@@ -21,6 +19,7 @@ draft: false
 SmartWinnr offers various quiz types to enhance learning and assessment. Understanding these quiz types helps you choose the right format for your needs.
 
 ## When to use this
+
 Use the different quiz types in SmartWinnr to:
 
 - Assess knowledge before training sessions with a one-time quiz.
@@ -29,14 +28,17 @@ Use the different quiz types in SmartWinnr to:
 - Distribute targeted questions based on participant performance over time.
 
 ## Before you start
+
 Familiarize yourself with the quiz creation process in SmartWinnr.
 
 ## Steps
 
 ### 1. Understand Manual Quiz
+
 **Manual quizzes** are created and sent by the quiz editor. The editor manually selects the questions included in the quiz, and while the quiz can be scheduled for future delivery, it requires manual initiation.
 
 ### 2. Explore Automatic Quiz
+
 In an **automatic quiz**, SmartWinnr delivers targeted questions to each participant based on their previous response history. This approach is useful when you have a large question bank and want to distribute a limited number of questions per quiz over time while eventually covering the entire question bank or a large pool of questions.
 
 The editor can configure various options for an automatic quiz, including:
@@ -48,6 +50,7 @@ The editor can configure various options for an automatic quiz, including:
 - **Correct Response Threshold for Question Repetition:** Determines how many times a participant must answer a question correctly before it is removed from future quizzes. For example, if set to **1**, the question will no longer be repeated once the participant answers it correctly.
 
 ### 3. Choose the Right Quiz Type
+
 Different types of quizzes can be created within SmartWinnr. Use this simple list to decide which quiz type suits your needs:
 
 | Number | Requirement | SmartWinnr Quiz Type | How to Create? |

@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fd713904eb32171b80377f7
   helpscout_url: 'https://help.smartwinnr.com/article/79-how-to-edit-a-smartpath'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath
@@ -28,30 +26,37 @@ You can edit an existing SmartPath at any time to update its details or modify i
 Please note that once batch users have started the SmartPath, the system will not allow the removal of existing modules from the SmartPath.
 
 ## When to use this
+
 Use this feature when you need to update the content or details of an existing SmartPath. This may include changing the title, description, or structure of the learning path.
 
 ## Before you start
+
 Ensure you have the necessary permissions to edit SmartPaths. Note that a SmartPath has no start or end date of its own - the schedule window belongs to each **batch**. To change dates, edit the batch, not the SmartPath.
 
 ## Steps
 
 ### 1. Navigate to SmartPaths
+
 Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths**.
 
 ### 2. Select the SmartPath
+
 From the list of SmartPaths, locate the one you want to update.
 
 ### 3. Edit the SmartPath
+
 On the particular SmartPath card, click on the **'Edit'** button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the **'Edit SmartPath'** button at the top right corner of the screen.
 
 ![On the particular SmartPath card, click on the 'Edit' button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the 'Edit SmartPath' button at the top right corner of the screen.](/img/helpscout/editors/how-to-edit-a-smartpath-1.png)
 
 ### 4. Open SmartPath in Edit Mode
+
 This opens the SmartPath in edit mode.
 
 ![This opens the SmartPath in edit mode.](/img/helpscout/editors/how-to-edit-a-smartpath-2.png)
 
 ### 5. Update SmartPath Basic Details
+
 On the first page, you can modify the following:
 
 * **Title** – update the name of the SmartPath.
@@ -66,12 +71,13 @@ On the first page, you can modify the following:
 After making changes, click **"Update"** to apply the updates.
 
 ### 6. Update Modules in the SmartPath
+
 To modify the learning path structure:
 
 1. Select **Add Modules** or the module section within the SmartPath.
 
    Use the available options to:
-   
+
    * **Add Modules** – include additional modules to the path.
    * **Remove Modules** – delete modules that are no longer required (the system will not allow you to remove a module once any user has started it).
    * **Reorder Modules** – change the sequence of modules for better flow.
@@ -79,6 +85,7 @@ To modify the learning path structure:
 2. Save your changes when done.
 
 ### 7. Reconfigure Module Access Rules
+
 If your SmartPath modules have access conditions (such as score thresholds or completion prerequisites), you can update these rules while editing the modules. Adjust the conditions as needed to ensure the progression logic matches your learning strategy.
 
 If a batch already exists for the SmartPath, you must select the batch while updating the module rules for those rules to be applied to the existing batch.

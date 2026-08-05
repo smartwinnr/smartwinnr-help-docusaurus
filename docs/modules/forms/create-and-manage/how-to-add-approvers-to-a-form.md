@@ -11,9 +11,7 @@ source:
   helpscout_id: 60bb5a63f6392f0aaff521ab
   helpscout_url: 'https://help.smartwinnr.com/article/251-how-to-add-approvers-to-a-form'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms

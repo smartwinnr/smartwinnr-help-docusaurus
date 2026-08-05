@@ -11,11 +11,7 @@ source:
   helpscout_id: 60086bd71c64ad47e4b711c2
   helpscout_url: 'https://help.smartwinnr.com/article/225-how-can-i-submit-a-form'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - forms
   - onboarding

@@ -16,11 +16,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/299-how-learners-can-mark-the-attendance-by-themself
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartpath
   - onboarding

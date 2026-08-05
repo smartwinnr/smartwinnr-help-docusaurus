@@ -11,9 +11,7 @@ source:
   helpscout_id: 6778cfe33656557cafadaee0
   helpscout_url: 'https://help.smartwinnr.com/article/294-create-a-coaching'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching
 tags:
   - field-coaching

@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdaf7eeb624c71b7985a5ad
   helpscout_url: 'https://help.smartwinnr.com/article/156-how-to-download-a-chat'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: chat
 tags:
   - notifications

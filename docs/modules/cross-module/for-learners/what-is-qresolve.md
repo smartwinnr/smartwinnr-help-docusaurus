@@ -13,11 +13,7 @@ source:
   helpscout_id: 60003222c64fe14d0e1fac76
   helpscout_url: 'https://help.smartwinnr.com/article/209-what-is-qresolve'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - onboarding

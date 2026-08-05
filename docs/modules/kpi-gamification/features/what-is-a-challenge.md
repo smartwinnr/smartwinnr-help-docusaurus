@@ -14,9 +14,7 @@ source:
   helpscout_id: 5fdb1597a5d295659b369c89
   helpscout_url: 'https://help.smartwinnr.com/article/178-what-is-a-challenge'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

@@ -13,9 +13,7 @@ source:
   helpscout_id: 696fa0ff73ca242018625d4a
   helpscout_url: 'https://help.smartwinnr.com/article/303-ai-coaching-dashboard'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching

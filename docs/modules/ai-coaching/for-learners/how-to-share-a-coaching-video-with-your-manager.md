@@ -18,7 +18,9 @@ tags: ["video-coaching", "ai-coaching"]
 In SmartWinnr, you can share your coaching video with your manager to facilitate feedback and discussion. This feature allows for better communication and support in your learning journey.
 
 ## When to use this
+
 Use this feature when you want to:
+
 - Share insights from your coaching session.
 - Request feedback on your performance.
 - Collaborate with your manager on your development.
@@ -26,6 +28,7 @@ Use this feature when you want to:
 ## Steps
 
 ### 1. Click "SHARE WITH THE MANAGER"
+
 To share the video, simply click on the **SHARE WITH THE MANAGER** button.
 
 ![Click on the button "SHARE WITH THE MANAGER"](/img/helpscout/authored/authored-mrwbmblp.png)

@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd9adaa7129911ba1b2173b
   helpscout_url: 'https://help.smartwinnr.com/article/102-how-to-add-a-quiz-to-a-competition'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

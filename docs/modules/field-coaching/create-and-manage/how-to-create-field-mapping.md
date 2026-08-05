@@ -11,9 +11,7 @@ source:
   helpscout_id: 6943caf79c8f912774281514
   helpscout_url: 'https://help.smartwinnr.com/article/296-how-to-create-field-mapping'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching
 tags:
   - field-coaching

@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/330-understanding-the-participation-tab-on-the-quiz-dashboard
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz
@@ -29,6 +27,7 @@ draft: false
 The Participation tab focuses on engagement patterns, completion status, and when learners are most active with quizzes.
 
 ## Participation Metrics
+
 ![Participation metrics overview](/img/helpscout/authored/understanding-the-participation-tab-on-the-quiz-dashboard-mrsvautp.png)
 
 ### Daily Active Users

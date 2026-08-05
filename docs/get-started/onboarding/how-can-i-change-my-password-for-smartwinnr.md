@@ -14,11 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/16-how-can-i-change-my-password-for-smartwinnr
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 Open the SmartWinnr app and click on the **hamburger icon** at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:

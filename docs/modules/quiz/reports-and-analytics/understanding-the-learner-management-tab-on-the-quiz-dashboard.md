@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz
@@ -29,6 +27,7 @@ draft: false
 The **Learner Management** tab offers valuable insights into individual learners and categorizes users based on their performance and risk level.
 
 ## When to use this
+
 Use the **Learner Management** tab when you want to:
 
 * Track user growth and onboarding activity.
@@ -39,14 +38,17 @@ Use the **Learner Management** tab when you want to:
 ## Steps
 
 ### 1. Access the Learner Management Tab
+
 Navigate to the **Quiz Dashboard** and select the **Learner Management** tab.
 
 ![Learner Management Tab](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrstrxt3.png)
 
 ### 2. Review Learner Management Metrics
+
 The tab displays several key metrics:
 
 #### New Learners
+
 **What it shows:** The number of users added to the system during the selected time period.
 
 **How to read it:**
@@ -59,6 +61,7 @@ The tab displays several key metrics:
 * * *
 
 #### High Performers
+
 **What it shows:** The number of learners scoring above a defined performance threshold during the selected time period.
 
 **How to read it:**
@@ -73,6 +76,7 @@ The tab displays several key metrics:
 * * *
 
 #### At-Risk Users
+
 **What it shows:** The number of learners flagged as needing support based on performance or engagement issues.
 
 **How to read it:**
@@ -97,6 +101,7 @@ The tab displays several key metrics:
 * * *
 
 #### Certification Due
+
 ![Certification Due](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrstxyx0.png)
 
 **What it shows:** The number of learners who have certification quizzes due within the next 30 days.
@@ -115,6 +120,7 @@ The tab displays several key metrics:
 * * *
 
 ### 3. Analyze User Engagement Trend
+
 ![User Engagement Trend](/img/helpscout/authored/understanding-the-learner-management-tab-on-the-quiz-dashboard-mrsuef98.png)
 
 This dual-bar chart compares logged-in activity with actual quiz-taking activity over time.
@@ -140,6 +146,7 @@ This dual-bar chart compares logged-in activity with actual quiz-taking activity
 * * *
 
 ### 4. Review User Segmentation
+
 This donut chart categorizes learners by performance level.
 
 **What it shows:** Three performance categories:
@@ -171,6 +178,7 @@ This indicates widespread performance issues requiring immediate intervention.
 * * *
 
 ### 5. Examine User Performance Overview
+
 This table provides detailed individual learner statistics.
 
 **What it shows:** A sortable table with columns:

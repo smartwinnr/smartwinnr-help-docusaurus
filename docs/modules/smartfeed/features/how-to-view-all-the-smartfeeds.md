@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd11017db2fa3720c7d7aae
   helpscout_url: 'https://help.smartwinnr.com/article/32-how-to-view-all-the-smartfeeds'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

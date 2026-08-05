@@ -12,10 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/206-how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
 customProps:
-  roles:
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView
 tags:
   - kpi

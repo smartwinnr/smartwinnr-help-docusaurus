@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdbab410b11ce44f6393516
   helpscout_url: 'https://help.smartwinnr.com/article/199-download-reports'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: learnerReport
 tags:
   - reports

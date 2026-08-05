@@ -14,9 +14,7 @@ source:
   helpscout_id: 5fd9ac9fa5d295659b36957e
   helpscout_url: 'https://help.smartwinnr.com/article/101-what-is-a-competition'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

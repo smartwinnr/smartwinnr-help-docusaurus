@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd713dc23119734ee37f0cb
   helpscout_url: 'https://help.smartwinnr.com/article/80-how-to-view-the-smartpath-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

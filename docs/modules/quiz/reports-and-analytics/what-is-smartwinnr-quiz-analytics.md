@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fd4955723119734ee37edb5
   helpscout_url: 'https://help.smartwinnr.com/article/53-what-is-smartwinnr-quiz-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz
@@ -26,6 +24,7 @@ draft: false
 SmartWinnr provides a comprehensive set of analytics for every quiz you create and assign. These analytics help you understand how participants are engaging with your quizzes and their performance.
 
 ## When to use this
+
 Use the quiz analytics report to:
 
 - Evaluate participant engagement and participation rates.
@@ -35,11 +34,12 @@ Use the quiz analytics report to:
 ## Steps
 
 ### 1. Access the Quiz Analytics Report
+
 Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**.
 
 ![Access the Quiz Analytics Report](/img/helpscout/editors/what-is-smartwinnr-quiz-analytics-1.png)
 
-This list displays all quizzes you've created. Switching to **Other quizzes** tab will display all the quizzes you have provided access to. 
+This list displays all quizzes you've created. Switching to **Other quizzes** tab will display all the quizzes you have provided access to.
 
 For each quiz, you can view:
 

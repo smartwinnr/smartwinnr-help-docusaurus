@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0c19a5d295659b369c5f
   helpscout_url: 'https://help.smartwinnr.com/article/170-define-kpis'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

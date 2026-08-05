@@ -12,11 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/246-how-to-edit-the-form-submission-from-managers-view
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - forms
 ---

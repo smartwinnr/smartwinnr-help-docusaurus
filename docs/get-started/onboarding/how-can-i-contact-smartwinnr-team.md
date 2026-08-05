@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fce43c3eb7cc612aa3557ae
   helpscout_url: 'https://help.smartwinnr.com/article/22-how-can-i-contact-smartwinnr-team'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["onboarding"]
 draft: false
 ---
@@ -29,21 +25,25 @@ You can write to the SmartWinnr support team for all your queries regarding Smar
 ## Steps
 
 ### 1. Open the SmartWinnr app
+
 Open the SmartWinnr app and click on the **hamburger** icon at the top left corner of the screen. This will show a left menu bar as shown in the screenshot below:
 
 ![Click on the profile](/img/helpscout/authored/how-can-i-contact-smartwinnr-team-ms7bnepa.jpg)
 
 ### 2. Click on your profile picture
+
 Click on the **profile picture** at the top. This will take you to the following screen:
 
 ![describe this screenshot](/img/helpscout/authored/how-can-i-contact-smartwinnr-team-ms7bob3j.jpg)
 
 ### 3. Access Settings
+
 Click on the **Settings** icon at the top right corner, which is highlighted in red, then go to the option **Contact Us**.
 
 ![Click on the Contact Us](/img/helpscout/authored/how-can-i-contact-smartwinnr-team-ms7bp9yb.png)
 
 ### 4. Write your query
+
 You will be taken to a screen where you can send your query to the support team.
 
 ![Write your query](/img/helpscout/authored/how-can-i-contact-smartwinnr-team-ms7btydy.png)

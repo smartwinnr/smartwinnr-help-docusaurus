@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fda48bca5d295659b3698b1
   helpscout_url: 'https://help.smartwinnr.com/article/114-how-to-change-company-logo'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

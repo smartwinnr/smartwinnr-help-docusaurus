@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fda509f27288b7f895d61ff
   helpscout_url: 'https://help.smartwinnr.com/article/122-search-users'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

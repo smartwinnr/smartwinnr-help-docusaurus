@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fd1110180488e39007cbd8f
   helpscout_url: 'https://help.smartwinnr.com/article/33-how-do-i-like-a-smartfeed'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartfeed
   - onboarding

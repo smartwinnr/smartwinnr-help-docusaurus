@@ -18,6 +18,7 @@ last_update:
 Access permissions allow you to control who can access your specific task/activity in SmartWinnr. Use these permissions to grant co-trainers collaborator-level access to quizzes, smartpaths, content, or coaching they did not create. This feature enables shared authoring work across your team.
 
 ## When to use this
+
 Use access permissions when you want to:
 
 - Collaborate with co-trainers on specific content or activities.
@@ -25,6 +26,7 @@ Use access permissions when you want to:
 - Maintain control over your content while allowing others to contribute.
 
 ## Types of access permissions
+
 You have two types of access permissions available in SmartWinnr:
 
 - **Global level access**: Granting global level access to a module (e.g., quiz) allows those selected editors to access both existing and future tasks created under that module. For example, if you give an editor global access to your quizzes, they will be able to access all quizzes you have created and any quizzes you create in the future. This access can be removed at any time based on your requirements.

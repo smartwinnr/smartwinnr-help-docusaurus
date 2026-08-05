@@ -18,7 +18,9 @@ tags: ["video-coaching", "smartfeed", "quiz", "troubleshooting", "forms"]
 You can find content created by other editors in SmartWinnr if you have been granted access. The content will be organized under the **Other** tab within the relevant module, making it easy to locate quizzes, coachings, surveys, and forms.
 
 ## When to use this
+
 Use this feature when you need to **access content or track reports** that another editor has created and shared with you. This includes:
+
 - Finding quizzes shared with you by a different editor.
 - Locating coaching sessions you have access to.
 - Accessing surveys and forms shared by other editors.
@@ -26,24 +28,30 @@ Use this feature when you need to **access content or track reports** that anoth
 ## Steps
 
 ### 1. How to find quizzes I have access to?
+
 Go to the **Left Menu** >> Under **Questions and Quizzes**, choose **View all quizzes** >> Switch to the **'Other Quizzes'** tab to see the quizzes you have access to.
 
 ![Other quizzes tab which lists down the quizzes I have access to](/img/helpscout/authored/authored-ms8ozpxn.png)
 
 ### 2. How to find coachings I have access to?
+
 Go to the **Left Menu** >> Under the **Video Coaching** section, choose **View coachings** >> Switch to the **'Other Coachings'** tab to see the coachings you have access to.
 
 ![Other coachings tab which lists down the coachings I have access to](/img/helpscout/authored/authored-ms8p09ie.png)
 
 ### 3. How to find surveys and forms I have access to?
+
 In a similar way, you can locate the **SmartFeeds, Surveys, and Forms** that you have access to under the **Other** tab.
 
 ## Tips
+
 - Ensure you have the necessary permissions to view content created by other editors.
 - Check each module's **Other** tab for a comprehensive list of accessible content.
 
 ## Things to know
+
 You can receive two types of access permissions in SmartWinnr:
+
 - Access to a specific task created by an editor.
 - Access to all tasks created under a specific module.
 

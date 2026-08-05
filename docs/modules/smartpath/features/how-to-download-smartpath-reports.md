@@ -13,9 +13,7 @@ source:
   helpscout_id: 6970853970321255a2cc1eef
   helpscout_url: 'https://help.smartwinnr.com/article/308-how-to-download-smartpath-reports'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

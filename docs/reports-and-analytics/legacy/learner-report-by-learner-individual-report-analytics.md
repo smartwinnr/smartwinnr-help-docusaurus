@@ -11,9 +11,7 @@ source:
   helpscout_id: 60c206d796768369c70bc6b4
   helpscout_url: 'https://help.smartwinnr.com/article/255-learner-report-by-learner'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: learnerReport
 tags:
   - reports

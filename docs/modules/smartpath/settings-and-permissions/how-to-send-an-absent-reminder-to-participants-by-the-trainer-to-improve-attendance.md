@@ -17,9 +17,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/253-how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

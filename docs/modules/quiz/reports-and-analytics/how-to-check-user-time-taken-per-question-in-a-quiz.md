@@ -18,7 +18,9 @@ tags: ["quiz"]
 To analyze the time taken by each user for individual quiz questions, access the **Participants Question Analytics** sheet in the quiz report. This provides detailed insights into user performance.
 
 ## When to use this
+
 Use this feature when you need to:
+
 - Evaluate the time efficiency of users on specific questions.
 - Identify questions that may require more time for users.
 - Analyze user engagement and performance during quizzes.
@@ -26,11 +28,13 @@ Use this feature when you need to:
 ## Steps
 
 ### 1. Download the quiz report
+
 Click on the down arrow next to the quiz to download the report.
 
 ![Click on down arrow to download the report](/img/helpscout/authored/authored-mrvyxmsv.png)
 
 ### 2. Open the report and review analytics
+
 Open the downloaded report and navigate to the **Participants Question Analytics** sheet. Here, you will find all questions listed alongside each user, with the **Time Taken** column indicating how long each user took to answer each question.
 
 ![Screenshot of the Report](/img/helpscout/authored/authored-mrvz1ff1.png)

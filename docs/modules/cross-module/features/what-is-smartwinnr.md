@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fcc6288de1bfa158fb55b9b
   helpscout_url: 'https://help.smartwinnr.com/article/4-what-is-smartwinnr'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 SmartWinnr is the world's number 1 mobile-first Sales Productivity platform. It's a single platform through which you can drive

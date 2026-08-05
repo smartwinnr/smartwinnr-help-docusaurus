@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdaf5db7129911ba1b21dfa
   helpscout_url: 'https://help.smartwinnr.com/article/153-when-are-chat-groups-needed'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: chat
 tags:
   - notifications

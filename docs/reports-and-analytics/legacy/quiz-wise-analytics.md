@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdba102a5d295659b369f9f
   helpscout_url: 'https://help.smartwinnr.com/article/198-quiz-wise-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: learnerReport
 tags:
   - reports

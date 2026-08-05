@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd49bd14eb32171b80374c6
   helpscout_url: 'https://help.smartwinnr.com/article/58-how-can-i-create-a-survey'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fce210dde1bfa158fb55ed9
   helpscout_url: 'https://help.smartwinnr.com/article/13-what-if-ive-forgotten-my-pin'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 When you log in to SmartWinnr, if you are asked to enter a PIN, this section is applicable to you.

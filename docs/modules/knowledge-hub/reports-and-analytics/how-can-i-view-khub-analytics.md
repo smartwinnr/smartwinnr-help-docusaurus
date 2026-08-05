@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdaebcca5d295659b369c02
   helpscout_url: 'https://help.smartwinnr.com/article/149-how-can-i-view-khub-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub

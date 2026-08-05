@@ -15,11 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/21-how-can-i-enable-push-notification-for-smartwinnr-app
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you,

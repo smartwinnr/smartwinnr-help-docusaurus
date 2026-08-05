@@ -14,9 +14,7 @@ source:
   helpscout_id: 697086628446705a3c6f686c
   helpscout_url: 'https://help.smartwinnr.com/article/309-what-is-ai-coaching'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching

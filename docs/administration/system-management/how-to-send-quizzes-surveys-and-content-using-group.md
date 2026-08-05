@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/130-how-to-send-quizzes-surveys-and-content-using-group
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: groups
 tags:
   - admin

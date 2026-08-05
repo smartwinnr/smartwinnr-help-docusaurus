@@ -13,9 +13,7 @@ source:
   helpscout_id: 697115b9f35cc6035d0b99b3
   helpscout_url: 'https://help.smartwinnr.com/article/320-how-can-i-track-improvement'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz
@@ -54,9 +52,11 @@ You need the following to access the Quiz Analytics Dashboard:
 ## Steps
 
 ### 1. Access the Quiz Analytics Dashboard
+
 Navigate to the **Dashboard** section in your SmartWinnr account and select **Quiz Analytics**. This will open the dashboard where you can view all relevant metrics.
 
 ### 2. Navigate the dashboard tabs
+
 The Quiz Analytics Dashboard has four main tabs at the top:
 
 * [**Overview**](./understanding-the-overview-tab-on-the-quiz-dashboard.md#Overview-Tab-USrFb): Shows high-level metrics, performance trends, and recent activity
@@ -67,6 +67,7 @@ The Quiz Analytics Dashboard has four main tabs at the top:
 Click each tab to view different aspects of your quiz program's effectiveness.
 
 ### 3. Change the time range
+
 At the top of the dashboard, you'll see time range buttons and a **Filters** option.
 
 **To change the time range:**
@@ -77,6 +78,7 @@ At the top of the dashboard, you'll see time range buttons and a **Filters** opt
 **All metrics across all four tabs update** based on the selected time period.
 
 ### 4. Use Filters
+
 Click the **Filters** button to access filtering options including:
 
 * Zone
@@ -88,6 +90,7 @@ Click the **Filters** button to access filtering options including:
 All applied filters affect every tab simultaneously, allowing you to analyze specific segments of your quiz data.
 
 ### 5. Review the Learner Management Tab
+
 This tab provides insights into individual learner performance, helping you identify those who may need additional support.
 
 ## What happens next

@@ -13,9 +13,7 @@ source:
   helpscout_id: 600850fdcfe30d219ccd99f3
   helpscout_url: 'https://help.smartwinnr.com/article/223-how-to-approve-kpi-submission-forms'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms

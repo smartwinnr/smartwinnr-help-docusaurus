@@ -14,9 +14,7 @@ source:
   helpscout_id: 5fd112c50ca0c372c6f09352
   helpscout_url: 'https://help.smartwinnr.com/article/34-how-to-delete-smartfeeds'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

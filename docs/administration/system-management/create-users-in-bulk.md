@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fda4abb27288b7f895d61dd
   helpscout_url: 'https://help.smartwinnr.com/article/118-create-users-in-bulk'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags: ["admin", "settings", "onboarding"]
 draft: false
 ---
@@ -21,7 +20,9 @@ draft: false
 SmartWinnr allows you to upload a CSV file to create or modify user accounts in bulk. This feature is particularly useful when you need to add or update a large number of users at once. The email ID serves as the key for SmartWinnr to search for existing records in the database. If the system finds existing records, it updates the details of the account based on the values in the CSV. If no existing records are found, the system creates new users.
 
 ## When to use this
+
 Use the bulk user creation feature when you need to:
+
 - Add a large number of users to the system at once.
 - Update existing set of user information efficiently.
 - Ensure consistency in user data by using a standardized CSV format.
@@ -29,20 +30,24 @@ Use the bulk user creation feature when you need to:
 ## Steps
 
 ### 1. Go to Manage Users
+
 Navigate to **ADMIN > Manage Users**. Click on the **Add Users in Bulk** option from the hamburger menu.
 
 ![Go to ADMIN > Manage Users. Click on the “Add Users in Bulk” button from the hamburger menu.](/img/helpscout/admins/create-users-in-bulk-1.png)
 
 ### 2. Check and Map the File Sample
-In order to create/update multiple user accounts in bulk, you need to prepare a CSV file in a specific template format which collects the required details of the user. 
+
+In order to create/update multiple user accounts in bulk, you need to prepare a CSV file in a specific template format which collects the required details of the user.
 After initiating the bulk user upload process, prepare your CSV file using the following steps:
 
 #### Choose the User Upload Mapping
+
 - The **default user upload mapping** for your organization will be **automatically selected** in the top drop-down.
 - If additonal user upload mappings are created for your organisation, click on the drop-down list to find the same.
 - If the user upload mapping is not selected or available, please **contact your system administrator** or write to support@smartwinnr.com for assistance.
 
 #### Download the Sample CSV
+
 - The CSV file that you prepare to create/update user details should follow a **specific format**.
 - Click on the **Download Sample CSV** button to download the standard template, which tells you the column heading and details that can go into the user upload file.
 
@@ -61,6 +66,7 @@ The file needs to be in CSV format. For best results, save the spreadsheet as CS
 Here's a short description for each column in the SmartWinnr User Upload template:
 
 **Core Identity**
+
 | Column | Description |Is Mandatory  |
 |--------|-------------|---------------|
 | FirstName | User's first name |Mandatory |
@@ -75,6 +81,7 @@ Here's a short description for each column in the SmartWinnr User Upload templat
 | Phone | User's work phone number |Optional |
 
 **Org Structure**
+
 | Column | Description |Is Mandatory  |
 |--------|-------------|---------------|
 | DivisionName | Division/Business unit the user belongs to |Mandatory |
@@ -113,8 +120,8 @@ Here's a short description for each column in the SmartWinnr User Upload templat
 | timezone | User's time zone for scheduling and notifications. This is important to set if you are creating the accounts for Editors, becasue the activities/task scheduled by the editor will go out in this time zone. By default, if no values are filled in this column, system will consider CET time zone | Optional |
 | LanguageCode | User's preferred language (e.g., en, zh, de). By default it takes English as the language for the user. |Optional |
 
-
 #### Important Notes
+
 - Follow the column headings exactly as provided in the sample template.
 - Do not modify or delete column headers.
 - Incomplete or incorrect data may result in upload failures.
@@ -122,10 +129,13 @@ Here's a short description for each column in the SmartWinnr User Upload templat
 Once the CSV file is correctly filled and validated, proceed to the next step to upload the file.
 
 ### 3. Set Password Options
+
 During user upload or creation, SmartWinnr provides multiple options to configure user login credentials. Administrators can choose the most appropriate option based on security policies and onboarding requirements.
 
 #### Available Password Options
+
 **1. Allow user to set Password**
+
 - An **activation email** is sent to the user’s registered email ID.
 - The user must click the activation link and **set their own password**.
 - Until the account is activated by the user:
@@ -134,6 +144,7 @@ During user upload or creation, SmartWinnr provides multiple options to configur
 - This option is recommended when user-driven activation is preferred.
 
 **2. Set Random Password**
+
 - The system automatically generates a password based on the **organization’s password policy**.
 - The user account is **activated immediately**.
 - A welcome email is sent to the user containing:
@@ -142,6 +153,7 @@ During user upload or creation, SmartWinnr provides multiple options to configur
 - Users can be assigned quizzes, surveys, and SmartFeeds **immediately after creation**.
 
 **3. Manually Set Password**
+
 - The administrator manually defines a password for the users during creation.
 - The account is activated immediately
 A welcome email is sent to the user containing:
@@ -150,12 +162,14 @@ A welcome email is sent to the user containing:
 - Recommended for individual user creation or controlled access scenarios where you want all accounts to have same password set.
 
 **4. Consider from File**
+
 - The password is taken directly from the **uploaded file** during bulk user upload.
 - Each user can have the **password** defined in the file.
 - Accounts are activated immediately upon successful upload.
 - Administrators must ensure the file follows the required password policy.
 
 **5. Not Applicable - SAML**
+
 - This option applies when **SAML (Single Sign-On)** is enabled for the organization. Make sure to have the login method as '**SAML**' in this case.
 - Passwords are **not managed in SmartWinnr**.
 - Users authenticate using their **corporate SSO credentials**.
@@ -164,6 +178,7 @@ A welcome email is sent to the user containing:
 ![Password options for user creation](/img/helpscout/admins/create-users-in-bulk-4.png)
 
 ### 4. Upload CSV File
+
 Upload the prepared CSV file to begin the bulk user creation process.
 
 - Once the file is uploaded, the system provides **real-time status updates** on the processing progress.

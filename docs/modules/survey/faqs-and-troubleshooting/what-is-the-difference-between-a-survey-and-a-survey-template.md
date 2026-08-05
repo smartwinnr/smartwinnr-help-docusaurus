@@ -10,9 +10,7 @@ last_update:
   date: 2026-07-23
   author: Sruthi Suresh
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

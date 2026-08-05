@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb9acd27288b7f895d6884
   helpscout_url: 'https://help.smartwinnr.com/article/197-team-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: learnerReport
 tags:
   - reports

@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fda2e397129911ba1b21a07
   helpscout_url: 'https://help.smartwinnr.com/article/111-survey-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
 tags:
   - survey

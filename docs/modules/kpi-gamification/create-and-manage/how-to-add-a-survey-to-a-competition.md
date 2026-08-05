@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd9d20127288b7f895d5e73
   helpscout_url: 'https://help.smartwinnr.com/article/104-how-to-add-a-survey-to-a-competition'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

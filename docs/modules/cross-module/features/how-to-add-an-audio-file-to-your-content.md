@@ -14,9 +14,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/71-how-to-add-an-audio-file-to-your-content
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
 ---
 You can send an audio file as part of your SmartFeed or you can attach an audio file to your question created in SmartWinnr.

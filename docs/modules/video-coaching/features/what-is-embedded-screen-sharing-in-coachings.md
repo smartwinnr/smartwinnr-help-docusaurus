@@ -18,7 +18,9 @@ draft: false
 The **Embedded Screen Sharing** feature in Coachings enables users to share their screen directly within the coaching session interface. This functionality allows for demonstrations, document explanations, and walkthroughs without needing to switch to external screen-sharing applications. All activities during screen sharing are recorded as part of the final coaching session recording.
 
 ## When to use this
+
 Use the Embedded Screen Sharing feature when you want to:
+
 - Conduct product demonstrations.
 - Practice sales pitches.
 - Present documents or applications.
@@ -26,6 +28,7 @@ Use the Embedded Screen Sharing feature when you want to:
 - Share knowledge in a collaborative session.
 
 ## Before you start
+
 To enable screen sharing in video coaching, navigate to **Editor > Coaching > View Coaching**. The list of coaching sessions you have access to will be displayed.
 
 ![List of coaching sessions](/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2yn7md.png)
@@ -39,6 +42,7 @@ Open the coaching session that you need to enable screen sharing for, go to **Se
 ### How Embedded Screen Sharing Works in Coachings
 
 ### 1. Start the coaching session
+
 Begin by initiating your coaching session as you normally would. Select the language by clicking on the **CHOOSE LANGUAGE** button.
 
 ![embedded-screen-one](/img/helpscout/authored/what-is-embedded-screen-sharing-in-coachings-ms31k7l5.png)
@@ -66,11 +70,13 @@ The next screen will appear, allowing you to see the documents added. You can sh
 After completion, click on **END ROLE PLAY**.
 
 ## Tips
+
 - Ensure your browser permissions are set to allow screen sharing.
 - Have the necessary documents or applications ready before starting the session.
 - Use screen sharing to enhance clarity during document-based discussions.
 
 ## Things to know
+
 :::caution
 Screen sharing is only available after the coaching session has started.
 :::

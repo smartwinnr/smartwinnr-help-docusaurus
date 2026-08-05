@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fda49060b11ce44f6392e3f
   helpscout_url: 'https://help.smartwinnr.com/article/115-manage-password-policy'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

@@ -38,6 +38,7 @@ The Scenario Lifecycle introduces a **governed journey**. Each scenario carries 
 The Scenario Lifecycle Management page is the single place to manage your scenarios. You can submit, approve or request changes, publish, archive or unarchive, and view both Version and Status History. Access this page from the scenario's **⋮ menu** to see all the lifecycle actions in one convenient location.
 
 ![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1adpa.png)
+
 ## The five statuses, explained
 
 A scenario is always in exactly one status and moves through them **in order** — it cannot jump ahead. For example, a Draft cannot become Published without being submitted, reviewed, and approved first.
@@ -220,7 +221,6 @@ However it's created, the copy always begins as its own fresh **Draft**, with a 
 One thing to note about the two *embedded* places you can add a scenario:
 
 - When adding a scenario into a **Competition** or a **SmartPath**, the picker lists only **published** scenarios to choose from, so you're always starting those from a known, live version.
-
 
 ## A quick mental model
 

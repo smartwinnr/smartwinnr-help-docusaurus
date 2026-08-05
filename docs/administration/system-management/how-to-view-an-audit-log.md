@@ -11,8 +11,7 @@ source:
   helpscout_id: 5fdadcf77129911ba1b21dc2
   helpscout_url: 'https://help.smartwinnr.com/article/138-how-to-view-an-audit-log'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: auditLog
 tags:
   - admin

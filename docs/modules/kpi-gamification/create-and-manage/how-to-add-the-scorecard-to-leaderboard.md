@@ -11,9 +11,7 @@ source:
   helpscout_id: 60a5315013fd125a39b45357
   helpscout_url: 'https://help.smartwinnr.com/article/238-how-to-add-the-scorecard-leaderboard'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi

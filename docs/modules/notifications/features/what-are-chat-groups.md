@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdaf5650b11ce44f6393174
   helpscout_url: 'https://help.smartwinnr.com/article/152-what-are-chat-groups'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: chat
 tags:
   - notifications

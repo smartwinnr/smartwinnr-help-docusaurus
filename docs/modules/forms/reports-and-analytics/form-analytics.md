@@ -11,9 +11,7 @@ source:
   helpscout_id: 60099176c64fe14d0e1fd224
   helpscout_url: 'https://help.smartwinnr.com/article/226-form-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms

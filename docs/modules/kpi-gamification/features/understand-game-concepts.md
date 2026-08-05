@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb0be80b11ce44f63931bb
   helpscout_url: 'https://help.smartwinnr.com/article/169-understand-game-concepts'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

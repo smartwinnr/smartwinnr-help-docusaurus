@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fdb05910b11ce44f63931a2
   helpscout_url: 'https://help.smartwinnr.com/article/161-how-can-i-answer-a-query'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - onboarding

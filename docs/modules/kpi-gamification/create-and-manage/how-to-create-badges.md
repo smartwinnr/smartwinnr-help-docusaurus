@@ -13,9 +13,7 @@ source:
   helpscout_id: 64649da87d89467e9da791da
   helpscout_url: 'https://help.smartwinnr.com/article/285-how-to-create-badges'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: achievements
 tags:
   - kpi

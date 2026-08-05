@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdaf6350b11ce44f6393177
   helpscout_url: 'https://help.smartwinnr.com/article/154-how-to-enable-a-chat-group'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: chat
 tags:
   - notifications

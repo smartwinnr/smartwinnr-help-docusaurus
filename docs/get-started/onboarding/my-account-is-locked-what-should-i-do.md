@@ -10,11 +10,7 @@ last_update:
   date: 2026-07-30
   author: Sruthi Suresh
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["login"]
 draft: false
 ---

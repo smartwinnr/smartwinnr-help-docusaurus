@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd714514eb32171b80377f9
   helpscout_url: 'https://help.smartwinnr.com/article/81-how-can-i-gamify-a-smartpath'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags:
   - smartpath

@@ -13,11 +13,7 @@ source:
   helpscout_id: 69720db5015ae02ac0021a31
   helpscout_url: 'https://help.smartwinnr.com/article/332-how-can-a-user-check-the-ai-feedback'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching

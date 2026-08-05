@@ -11,11 +11,7 @@ source:
   helpscout_id: 5fd728293d1d2a5b1c5ea4c8
   helpscout_url: 'https://help.smartwinnr.com/article/86-how-do-i-upload-a-coaching-video'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - video-coaching
   - onboarding

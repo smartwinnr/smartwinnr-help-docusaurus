@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fcf7718da652271f08d3f5e
   helpscout_url: 'https://help.smartwinnr.com/article/26-what-are-smartfeeds'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

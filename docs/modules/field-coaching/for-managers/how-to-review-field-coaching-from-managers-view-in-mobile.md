@@ -12,11 +12,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/244-how-to-review-field-coaching-from-managers-view
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - field-coaching
 ---

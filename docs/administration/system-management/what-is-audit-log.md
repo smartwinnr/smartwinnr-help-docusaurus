@@ -13,8 +13,7 @@ source:
   helpscout_id: 5fdadcca7129911ba1b21dc1
   helpscout_url: 'https://help.smartwinnr.com/article/137-what-is-audit-log'
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: auditLog
 tags:
   - admin

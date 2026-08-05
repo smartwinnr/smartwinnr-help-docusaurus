@@ -10,10 +10,7 @@ last_update:
   date: 2026-07-11
   author: Sruthi Suresh
 customProps:
-  roles:
-    - manager
-    - editor
-    - admin
+  roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView
 tags:
   - quiz
@@ -25,7 +22,9 @@ draft: false
 SmartWinnr allows you to track the quiz progress of your team from SmartWinnr Manager-View. Below are the steps to find the overall quiz report for each team member.
 
 ## When to use this
+
 Use this feature when you want to:
+
 - Monitor quiz progress for your direct reportees.
 - Evaluate participation percentages and average scores.
 - Access detailed reports for second-level reportees.
@@ -33,6 +32,7 @@ Use this feature when you want to:
 ## Steps
 
 ### 1. Switch to Manager View
+
 Switch to the **Manager** view in the SmartWinnr app and go to **Left Menu >> Quiz >> Select the Team tab**.
 
 ![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfy2em2.png)
@@ -48,6 +48,7 @@ You can click on the **filter icon** in the top right corner to apply the date f
 ![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfyl9bh.png)
 
 ### 2. Find Quiz Report for Second-Level Reportee
+
 You will find an arrow next to the manager if they have reportees under them. Clicking on this arrow will take you to the reportees of the selected manager.
 
 ![](/img/helpscout/authored/how-to-find-the-progress-of-your-team-in-quizzes-mrfyj5nq.png)

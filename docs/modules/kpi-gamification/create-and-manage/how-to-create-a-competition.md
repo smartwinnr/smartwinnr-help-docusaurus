@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fd9ba357129911ba1b21757
   helpscout_url: 'https://help.smartwinnr.com/article/103-how-to-create-a-competition'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
 tags:
   - kpi
@@ -27,7 +25,9 @@ draft: false
 Only users with the editor role can create competitions. If you have the privilege to create competitions, you will see the link **Competitions** under the **Editor** section of your left menu. Follow the steps below to create a new competition:
 
 ## When to use this
+
 Use this guide when you need to:
+
 - Organize a new competition within your organization.
 - Engage participants through gamification.
 - Track performance and scores in a structured manner.
@@ -35,6 +35,7 @@ Use this guide when you need to:
 ## Steps
 
 ### 1. Add Name, Competition Type, Description, and Dates to the Competition
+
 Give a catchy name to your competition and add a description. Every competition must have a start and end date. You can also add a theme for the competition and upload a PDF related to it if needed.
 
 Once you have entered these details, click on the **Save** button.
@@ -42,6 +43,7 @@ Once you have entered these details, click on the **Save** button.
 ![describe this screenshot](/img/helpscout/authored/how-to-create-a-competition-ms8xxfsn.png)
 
 ### 2. Add Participants to the Competition
+
 The next step is to add participants to the competition. Select the desired participants and add them to the competition.
 
 You can filter these participants based on **Business Unit**, **Country**, **Group**, **Name**, **Email**, and **Meta Tags**. Once you have selected the participants, click on the **Save** button to save the selection.
@@ -49,6 +51,7 @@ You can filter these participants based on **Business Unit**, **Country**, **Gro
 ![Add Participants to the Competition](/img/helpscout/editors/how-to-create-a-competition-2.png)
 
 ### 3. Add Leaderboard to the Competition
+
 Next, add leaderboards to this competition. You can add multiple leaderboards. There are two types of leaderboards: team leaderboards and individual leaderboards.
 
 Follow the steps below to create these two types of leaderboards for a competition:
@@ -99,6 +102,7 @@ If you are creating an individual leaderboard (if you selected **Type** as **By 
 You can filter and choose these participants based on **Business Unit**, **Country**, **Group**, **Name**, **Email**, and **Meta Tags**. Once you have entered the required information and selected the desired participants, click on the **Save** button. This will successfully create the leaderboard and add it to the competition.
 
 ### 4. Add Tasks to the Competition
+
 The final step in creating a competition is to add tasks. You can add various tasks such as **Quiz**, **Survey**, **Video Coaching**, **Scorecard**, and **Challenge**. Refer to the articles below to learn how to add these tasks:
 
 - [How to add a Quiz to a Competition?](https://smartwinnr.helpscoutdocs.com/article/102-how-to-add-a-quiz-to-a-competition)

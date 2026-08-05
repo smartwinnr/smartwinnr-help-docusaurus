@@ -18,6 +18,7 @@ draft: false
 SmartWinnr AI Coaching allows organizations to provide AI-driven coaching in multiple languages. This feature is ideal for companies with diverse geographical and linguistic environments, ensuring effective communication and engagement.
 
 ## When to use this
+
 Use SmartWinnr AI Coaching language support when:
 
 - You have a multinational team that speaks different languages.
@@ -25,6 +26,7 @@ Use SmartWinnr AI Coaching language support when:
 - You want to enhance learner engagement through localized coaching experiences.
 
 ## Global Language Support
+
 SmartWinnr AI Coaching currently supports 30 global languages, including:
 
 - Arabic
@@ -60,6 +62,7 @@ SmartWinnr AI Coaching currently supports 30 global languages, including:
 - Cantonese
 
 ## Indian Regional Language Support
+
 In addition to global languages, SmartWinnr AI Coaching supports 13 Indian regional languages:
 
 - Assamese
@@ -77,4 +80,5 @@ In addition to global languages, SmartWinnr AI Coaching supports 13 Indian regio
 - Urdu
 
 ## Summary
+
 SmartWinnr AI Coaching supports a total of 43 languages, combining 30 global languages and 13 Indian regional languages. This extensive language support allows for effective coaching tailored to the linguistic needs of your learners.

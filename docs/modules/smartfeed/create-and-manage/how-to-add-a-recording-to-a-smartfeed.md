@@ -15,9 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

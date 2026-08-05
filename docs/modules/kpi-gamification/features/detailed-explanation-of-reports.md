@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fdb188b0b11ce44f63931e7
   helpscout_url: 'https://help.smartwinnr.com/article/183-detailed-explanation-of-reports'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi

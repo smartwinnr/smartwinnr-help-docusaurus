@@ -11,11 +11,7 @@ source:
   helpscout_id: 60b77f6d9c887a0dfc555ad2
   helpscout_url: 'https://help.smartwinnr.com/article/247-how-to-add-new-form-submission'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - forms
   - onboarding

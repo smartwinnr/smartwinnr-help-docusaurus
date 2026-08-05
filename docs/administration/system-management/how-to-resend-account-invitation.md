@@ -8,8 +8,7 @@ last_update:
   date: 2026-07-29
   author: Sandeep Bhuthagaddala
 customProps:
-  roles:
-    - admin
+  roles: [admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
   - settings

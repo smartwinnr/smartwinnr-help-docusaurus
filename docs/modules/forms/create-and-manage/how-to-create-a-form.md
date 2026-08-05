@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd8c043b624c71b798599c8
   helpscout_url: 'https://help.smartwinnr.com/article/93-how-to-create-a-form'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms

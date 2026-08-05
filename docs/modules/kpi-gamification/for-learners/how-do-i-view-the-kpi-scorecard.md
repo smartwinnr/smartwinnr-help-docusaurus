@@ -13,11 +13,7 @@ source:
   helpscout_id: 5fdb421527288b7f895d662f
   helpscout_url: 'https://help.smartwinnr.com/article/191-how-do-i-view-the-kpi-scorecard'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - kpi
   - gamification

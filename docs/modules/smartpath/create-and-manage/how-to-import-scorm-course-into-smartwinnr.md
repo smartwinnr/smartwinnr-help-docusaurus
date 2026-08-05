@@ -10,9 +10,7 @@ last_update:
   date: 2026-07-24
   author: Anagha Isal
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
 tags: ["smartpath", "admin", "onboarding"]
 draft: false
@@ -28,15 +26,19 @@ SmartWinnr supports the import of SCORM courses, enabling you to incorporate ext
 Follow the steps below to successfully upload and configure your SCORM package.
 
 ## When to use this
+
 Use this guide when you want to:
+
 - Import SCORM courses into SmartWinnr.
 - Create a module for SmartPath using SCORM content.
 - Ensure that your SCORM course is properly configured for tracking and reporting.
 
 ## Before you start
+
 You need to export your SCORM course from the respective platform. This guide will use Articulate 360 as an example for exporting SCORM courses.
 
 ### How to export courses from Articulate 360
+
 1. Choose your course from **Articulate 360** and select the contents you would like to include in the SCORM course.
 2. Click on the **Publish** option in the top right-hand corner of the page, then select **LMS**.
 
@@ -45,10 +47,12 @@ You need to export your SCORM course from the respective platform. This guide wi
 Follow the instructions below while exporting the SCORM course to ensure it uploads properly into SmartPath:
 
 #### Publish Settings
+
 - **LMS:** Choose SCORM version as 1.2 or SCORM 2004.
 - **Edition:** If you choose SCORM 2004, select the edition as 3rd Edition.
 
 #### Tracking
+
 You can track progress and completion in different ways:
 
 ![You can track progress and completion in different ways:
@@ -61,6 +65,7 @@ You can track progress and completion in different ways:
 - **Hide Cover Page:** It is recommended to keep this option enabled so that learners understand that the SCORM course is loading for them.
 
 ### How to create a module for SmartPath
+
 Since the SCORM course needs to be imported into the SmartPath module, you must create a module for SmartPath.
 
 [Learn how to create a module for SmartPath](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath)
@@ -88,6 +93,7 @@ Here, you can define the SCORM version, course details, language, and upload the
 - **Choose Content Center Item:** Select an existing SCORM package from the Content Center, if applicable.
 
 ### How to create a SmartPath
+
 The next step is to create a SmartPath and attach the module that you created with the SCORM course.
 
 ##### [Learn how to create a SmartPath](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartpath/create-and-manage/how-to-create-a-smartpath)

@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd113efb6c6251cd1c34bc5
   helpscout_url: 'https://help.smartwinnr.com/article/35-how-to-view-smartfeed-analytics'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed

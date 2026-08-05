@@ -13,9 +13,7 @@ source:
   helpscout_id: 5fd4640136980410c912381c
   helpscout_url: 'https://help.smartwinnr.com/article/42-how-to-create-a-hotspot-question'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
 tags:
   - quiz

@@ -15,9 +15,7 @@ source:
   helpscout_url: >-
     https://help.smartwinnr.com/article/70-how-to-add-reference-to-an-external-link-to-your-content
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
 ---

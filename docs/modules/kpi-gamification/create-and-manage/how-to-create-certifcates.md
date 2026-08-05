@@ -11,9 +11,7 @@ source:
   helpscout_id: 5fdb50c1b624c71b7985a730
   helpscout_url: 'https://help.smartwinnr.com/article/194-how-to-create-an-achievements'
 customProps:
-  roles:
-    - editor
-    - admin
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: achievements
 tags:
   - kpi

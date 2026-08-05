@@ -13,11 +13,7 @@ source:
   helpscout_id: 69721470ddd77241ca3daa61
   helpscout_url: 'https://help.smartwinnr.com/article/333-understanding-the-feedback-screen'
 customProps:
-  roles:
-    - user
-    - manager
-    - editor
-    - admin
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching
