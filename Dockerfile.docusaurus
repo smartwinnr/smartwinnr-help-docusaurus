@@ -27,6 +27,10 @@ COPY src/ ./src/
 COPY static/ ./static/
 COPY plugins/ ./plugins/
 COPY scripts/ ./scripts/
+# Shared CommonJS helpers required by server.js, the indexer, and the prebuild
+# audits (lib/doc-routes.js). Missing here, `npm run build` fails in prebuild
+# and server.js crashes on boot with MODULE_NOT_FOUND.
+COPY lib/ ./lib/
 COPY auth/ ./auth/
 COPY db/ ./db/
 COPY shared/ ./shared/
