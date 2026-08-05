@@ -202,7 +202,9 @@ export const ENTRIES: Record<PersonaSlug, EntryPoint[]> = {
     {label: 'Activate or deactivate a user', href: '/administration/system-management/how-to-activate-or-deactivate-a-user'},
     {label: 'Add a new division',           href: '/administration/system-management/how-to-add-a-new-division'},
     {label: 'Give access to other editors', href: '/administration/access-permissions/how-do-i-give-access-permission-to-other-editors'},
-    {label: 'Update org configuration',     href: '/administration/system-management/changing-updating-configuration-for-an-organization'},
+    // 'Update org configuration' removed: its article is draft: true, so it is
+    // excluded from the production build and the tile 404'd. Restore it when
+    // changing-updating-configuration-for-an-organization.md is published.
     {label: 'Resend account invitations',   href: '/administration/system-management/how-to-resend-account-invitation'},
     {label: 'Track resource usage',         href: '/administration/system-management/how-to-track-my-organizational-resource-usage'},
   ],

@@ -93,6 +93,11 @@ tags: [<editor's tags>]
 draft: true
 ---
 
+Emit `sidebar_position: 999` exactly as shown - it is a placeholder. The server
+replaces it on save with the next free slot in the destination folder, so do not
+try to guess a real position. Likewise `slug` and `id`: the wizard rewrites both
+from the editor's final title, so the value you emit only has to be well-formed.
+
 > **At a glance** - <one or two-sentence TL;DR. Optional; include only when
 > the article describes a multi-step how-to. Skip for short concept or FAQ
 > articles.>

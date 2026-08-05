@@ -19,6 +19,9 @@ const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
 const matter = require('gray-matter');
 const fsSync = require('fs');
+// Shared docs-path -> live-route resolver (also used by the internal indexer).
+const docRoutes = require('./lib/doc-routes');
+const { normRoute, resolveLiveUrl } = docRoutes;
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -69,8 +72,101 @@ app.get('/api/me', (req, res) => {
   });
 });
 
-// In-memory conversation storage (replace with database in production)
+// In-memory conversation storage (replace with database in production).
+// Entries are {owner, messages, touchedAt}. `owner` is what makes a
+// conversation private: the id alone used to be enough to read or delete
+// anyone's transcript. Bounded so a long-lived process can't grow forever -
+// durable history lives in SQLite via db/chat-logger.js, this Map is only the
+// working set for follow-up turns.
 const conversations = new Map();
+const CONVERSATION_TTL_MS = 24 * 60 * 60 * 1000; // 24h
+const MAX_CONVERSATIONS = 500;
+
+/** Stable identity for conversation ownership. */
+function conversationOwner(user) {
+  if (!user) return 'anonymous';
+  return `${user.orgId || 'no-org'}:${(user.email || 'unknown').toLowerCase()}`;
+}
+
+/** Evict expired conversations, then the oldest if we're still over cap. */
+function pruneConversations() {
+  const cutoff = Date.now() - CONVERSATION_TTL_MS;
+  for (const [id, c] of conversations) {
+    if (!c || c.touchedAt < cutoff) conversations.delete(id);
+  }
+  if (conversations.size <= MAX_CONVERSATIONS) return;
+  const byAge = [...conversations.entries()].sort((a, b) => a[1].touchedAt - b[1].touchedAt);
+  for (const [id] of byAge.slice(0, conversations.size - MAX_CONVERSATIONS)) {
+    conversations.delete(id);
+  }
+}
+
+/** Fetch a conversation only if this user owns it. Returns null otherwise,
+ *  so callers can 404 rather than confirm the id exists. */
+function getOwnedConversation(convId, user) {
+  const c = conversations.get(convId);
+  if (!c) return null;
+  return c.owner === conversationOwner(user) ? c : null;
+}
+
+// Per-user token bucket for the two expensive endpoints. Each /api/chat and
+// /api/vector/search call costs an OpenAI embedding (and chat completion), and
+// nothing else throttles them - a stuck client or a held-down key could spend
+// real money in a loop.
+const RATE_LIMIT_CAPACITY = 30;      // burst
+const RATE_LIMIT_REFILL_PER_SEC = 1; // sustained
+const rateBuckets = new Map();
+
+function takeRateToken(user) {
+  const key = conversationOwner(user);
+  const now = Date.now();
+  let b = rateBuckets.get(key);
+  if (!b) {
+    b = { tokens: RATE_LIMIT_CAPACITY, at: now };
+    rateBuckets.set(key, b);
+  }
+  b.tokens = Math.min(
+    RATE_LIMIT_CAPACITY,
+    b.tokens + ((now - b.at) / 1000) * RATE_LIMIT_REFILL_PER_SEC
+  );
+  b.at = now;
+  if (rateBuckets.size > 5000) {
+    for (const [k, v] of rateBuckets) if (now - v.at > 3600_000) rateBuckets.delete(k);
+  }
+  if (b.tokens < 1) return false;
+  b.tokens -= 1;
+  return true;
+}
+
+/** Longest question / query we accept. Anything past this is a paste, not a
+ *  question - and an over-length embedding request just errors out anyway. */
+const MAX_QUERY_CHARS = 2000;
+
+/** Generic "where to go next" links offered alongside a chat answer. Every one
+ *  is route-checked and role-checked before it reaches the user (see the
+ *  relatedLinks mapping in /api/chat), so a retired page drops out on its own. */
+const RELATED_LINK_CANDIDATES = [
+  {
+    title: 'Getting Started',
+    url: '/get-started/overview',
+    description: 'Sign in, find your way around, and set up the basics',
+  },
+  {
+    title: 'Quiz Module',
+    url: '/modules/quiz',
+    description: 'Create, assign, and report on quizzes',
+  },
+];
+
+/** Thrown by searchDocuments when the index itself is unreachable, so callers
+ *  can say "search is down" instead of "that article doesn't exist". */
+class SearchUnavailableError extends Error {
+  constructor(cause) {
+    super('Documentation search is unavailable');
+    this.name = 'SearchUnavailableError';
+    this.cause = cause;
+  }
+}
 
 // Initialize ChromaDB client
 const CHROMA_HOST = process.env.CHROMA_HOST || 'localhost';
@@ -141,9 +237,15 @@ app.post('/api/vector/embed', async (req, res) => {
 app.post('/api/vector/search', async (req, res) => {
   try {
     const { query, limit = 8 } = req.body;
-    
+
     if (!query) {
       return res.status(400).json({ error: 'Query is required for search' });
+    }
+    if (typeof query !== 'string' || query.length > MAX_QUERY_CHARS) {
+      return res.status(400).json({ error: `Query must be a string of at most ${MAX_QUERY_CHARS} characters` });
+    }
+    if (!takeRateToken(req.user)) {
+      return res.status(429).json({ error: 'Too many searches - please slow down.' });
     }
 
     console.log(`🔍 Document search query: "${query}"`);
@@ -151,17 +253,21 @@ app.post('/api/vector/search', async (req, res) => {
     // Search documents using the same function as chat
     const searchResults = await searchDocuments(query, limit, req.user);
     
-    // Transform results to match the expected format for the search component
-    const results = searchResults.map((doc) => ({
-      id: doc.metadata?.source || `doc_${Math.random()}`,
-      content: doc.content || '',
-      metadata: {
-        source: doc.metadata?.source || '',
-        title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.md$/, '').replace(/^.*\//, '') : 'Unknown'),
-        url: doc.metadata?.url || ''
-      },
-      distance: doc.distance || 0
-    }));
+    // Transform results to match the expected format for the search component.
+    // Results whose URL no longer resolves are dropped rather than rendered as
+    // a dead link (see resolveCitationUrl).
+    const results = searchResults
+      .filter((doc) => doc.liveUrl)
+      .map((doc) => ({
+        id: doc.metadata?.source || `doc_${Math.random()}`,
+        content: doc.content || '',
+        metadata: {
+          source: doc.metadata?.source || '',
+          title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.mdx?$/, '').replace(/^.*\//, '') : 'Unknown'),
+          url: doc.liveUrl
+        },
+        distance: doc.distance || 0
+      }));
 
     console.log(`📄 Found ${results.length} matching documents`);
     
@@ -171,6 +277,10 @@ app.post('/api/vector/search', async (req, res) => {
       total: results.length
     });
   } catch (error) {
+    if (error instanceof SearchUnavailableError) {
+      // 503 so the client can say "search is down" instead of "no results".
+      return res.status(503).json({ error: 'Documentation search is temporarily unavailable' });
+    }
     console.error('❌ Error in vector search:', error);
     res.status(500).json({ error: 'Search failed' });
   }
@@ -206,13 +316,18 @@ async function searchDocuments(query, limit = 5, user = null) {
       include: ['documents', 'metadatas', 'distances']
     });
 
-    // Format results
+    // Format results. liveUrl is the URL callers may actually link to: the
+    // stored metadata.url resolved against the current docs tree and repaired
+    // through data/redirects.json, or null when it resolves to nothing. See
+    // resolveCitationUrl below.
     const documents = [];
     if (results.documents && results.documents[0]) {
       for (let i = 0; i < results.documents[0].length; i++) {
+        const metadata = results.metadatas[0][i];
         documents.push({
           content: results.documents[0][i],
-          metadata: results.metadatas[0][i],
+          metadata,
+          liveUrl: resolveCitationUrl(metadata && metadata.url, metadata && metadata.source),
           distance: results.distances[0][i]
         });
       }
@@ -220,11 +335,13 @@ async function searchDocuments(query, limit = 5, user = null) {
 
     // Gate filter - drops docs the viewer can't open so search + chat
     // citations stay consistent with what the URL guard would serve.
-    // Doc-shape metadata.url is the canonical path (e.g. /modules/quiz/...).
-    // When user is null (internal indexer calls) the filter is skipped.
+    // Gate the RESOLVED url: a stale/nonexistent path matches no exact gate
+    // entry, so gating it directly would inherit only its ancestor prefixes
+    // and wave it through. When user is null (internal indexer calls) the
+    // filter is skipped.
     const filtered = user
       ? documents.filter((d) => {
-          const url = d && d.metadata && d.metadata.url;
+          const url = d.liveUrl || (d.metadata && d.metadata.url);
           if (!url) return true; // no URL means we can't gate; pass through
           return isUrlAllowedForUser(url, user);
         })
@@ -232,8 +349,13 @@ async function searchDocuments(query, limit = 5, user = null) {
 
     return filtered.slice(0, limit);
   } catch (error) {
+    // Do NOT swallow this into an empty array. An unreachable ChromaDB or a
+    // failing embedding call used to look exactly like "no article matched",
+    // so users were told the documentation didn't exist, and the exchange was
+    // logged as a content gap. Callers turn this into an explicit outage
+    // message (chat) or a 503 (search).
     console.error('❌ Error searching documents:', error.message);
-    return [];
+    throw new SearchUnavailableError(error);
   }
 }
 
@@ -328,10 +450,20 @@ app.post('/api/chat', async (req, res) => {
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
     }
+    if (typeof message !== 'string' || message.length > MAX_QUERY_CHARS) {
+      return res.status(400).json({ error: `Message must be a string of at most ${MAX_QUERY_CHARS} characters` });
+    }
+    if (!takeRateToken(req.user)) {
+      return res.status(429).json({ error: 'Too many messages - please slow down.' });
+    }
 
-    // Get or create conversation
-    const convId = conversationId || uuidv4();
-    const history = conversations.get(convId) || [];
+    // Get or create conversation. A client-supplied conversationId is only
+    // honored when this user owns it; otherwise we start a fresh conversation
+    // rather than appending to (and later replying with) someone else's thread.
+    const owned = conversationId ? getOwnedConversation(conversationId, req.user) : null;
+    const convId = owned ? conversationId : uuidv4();
+    const conversation = owned || { owner: conversationOwner(req.user), messages: [], touchedAt: Date.now() };
+    const history = conversation.messages;
 
     // Add user message to history
     const userMessage = {
@@ -342,9 +474,27 @@ app.post('/api/chat', async (req, res) => {
     };
     history.push(userMessage);
 
-    // Search for relevant documents
+    // Search for relevant documents. An index outage is NOT a content gap:
+    // answer honestly instead of letting Ally say the docs don't cover it.
     console.log('🔍 Searching for relevant documents...');
-    const searchResults = await searchDocuments(message, 5, req.user);
+    let searchResults;
+    try {
+      searchResults = await searchDocuments(message, 5, req.user);
+    } catch (searchError) {
+      if (!(searchError instanceof SearchUnavailableError)) throw searchError;
+      return res.status(503).json({
+        conversationId: convId,
+        message: { id: uuidv4(), role: 'assistant', timestamp: new Date() },
+        response: {
+          message: "I can't reach the documentation index right now, so I don't want to guess. Please try again in a moment - if it keeps happening, let your SmartWinnr admin know.",
+          citations: [],
+          relatedLinks: [],
+          confidence: 0,
+          relevanceScore: 0,
+          unavailable: true,
+        },
+      });
+    }
 
     // Build context from search results
     let context = '';
@@ -352,11 +502,14 @@ app.post('/api/chat', async (req, res) => {
 
     if (searchResults.length > 0) {
       context = searchResults.map((result, index) => {
-        // Add to citations if it's a good match (distance < 0.8)
-        if (result.distance < 0.8 && result.metadata) {
+        // Add to citations if it's a good match (distance < 0.8) AND its URL
+        // still resolves to a live route. A doc with a dead URL still feeds
+        // the LLM its context below - we just don't hand the user a link we
+        // know is broken.
+        if (result.distance < 0.8 && result.metadata && result.liveUrl) {
           citations.push({
             title: result.metadata.title || 'SmartWinnr Documentation',
-            url: result.metadata.url || '/',
+            url: result.liveUrl,
             snippet: result.content.substring(0, 150) + '...',
             source: result.metadata.source || 'help.smartwinnr.com'
           });
@@ -408,18 +561,13 @@ Content: ${result.content.substring(0, 750)}...
     const response = {
       message: aiMessage,
       citations: citations.slice(0, 3), // Limit to top 3 citations
-      relatedLinks: [
-        {
-          title: 'Getting Started Guide',
-          url: '/administration',
-          description: 'Learn the basics of SmartWinnr administration'
-        },
-        {
-          title: 'Quiz Management',
-          url: '/quiz',
-          description: 'Create and manage quizzes'
-        }
-      ],
+      // Same two rules as citations: the URL must resolve to a live route, and
+      // the viewer must be allowed to open it. The previous hardcoded pair
+      // failed both - /administration is admin-gated (a `user` following it
+      // gets a 403) and /quiz has never existed.
+      relatedLinks: RELATED_LINK_CANDIDATES
+        .map((l) => ({ ...l, url: resolveCitationUrl(l.url, 'relatedLinks') }))
+        .filter((l) => l.url && isUrlAllowedForUser(l.url, req.user)),
       confidence: citations.length > 0 ? 0.8 : 0.4,
       relevanceScore: calculateRelevanceScore(searchResults, citations)
     };
@@ -434,8 +582,10 @@ Content: ${result.content.substring(0, 750)}...
     };
     history.push(assistantMessage);
 
-    // Store updated conversation
-    conversations.set(convId, history);
+    // Store updated conversation (owner-tagged, TTL/size bounded)
+    conversation.touchedAt = Date.now();
+    conversations.set(convId, conversation);
+    pruneConversations();
 
     // Async log to SQLite (never blocks the response)
     const responseTimeMs = Date.now() - startTime;
@@ -484,16 +634,22 @@ Content: ${result.content.substring(0, 750)}...
   }
 });
 
-// Get conversation history
+// Get conversation history. Owner-only: a conversation is a transcript of
+// someone's own questions, and the id used to be the only thing standing
+// between any signed-in user and any other user's session. 404 rather than 403
+// so a non-owner can't even confirm the id exists.
 app.get('/api/chat/:conversationId', (req, res) => {
   try {
     const { conversationId } = req.params;
-    const history = conversations.get(conversationId) || [];
-    
+    const conversation = getOwnedConversation(conversationId, req.user);
+    if (!conversation) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
+
     res.json({
       conversationId,
-      messages: history,
-      messageCount: history.length
+      messages: conversation.messages,
+      messageCount: conversation.messages.length
     });
   } catch (error) {
     console.error('❌ Error getting conversation:', error);
@@ -501,12 +657,15 @@ app.get('/api/chat/:conversationId', (req, res) => {
   }
 });
 
-// Clear conversation
+// Clear conversation - owner-only, same reasoning as the GET above.
 app.delete('/api/chat/:conversationId', (req, res) => {
   try {
     const { conversationId } = req.params;
+    if (!getOwnedConversation(conversationId, req.user)) {
+      return res.status(404).json({ error: 'Conversation not found' });
+    }
     conversations.delete(conversationId);
-    
+
     res.json({ message: 'Conversation cleared successfully' });
   } catch (error) {
     console.error('❌ Error clearing conversation:', error);
@@ -1095,6 +1254,9 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
     // legacy module + subFolder pair.
     if (inputs.dir) {
       try {
+        // A canonical module leaf with no articles yet is a valid destination -
+        // scaffold it rather than dead-ending the author's brain dump.
+        ensureCanonicalModuleLeaf(inputs.dir);
         resolveAnyDocDir(inputs.dir);
       } catch (e) {
         return res.status(400).json({ error: "That folder doesn't exist any more - pick another destination." });
@@ -1318,9 +1480,9 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
   }
 });
 
-app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
+app.post('/api/admin/authoring/save', requireRole('superadmin'), async (req, res) => {
   try {
-    const { markdown, dir, module: moduleSlug, subFolder, slug, baseHash } = req.body || {};
+    const { markdown, dir, module: moduleSlug, subFolder, slug, baseHash, fromPath } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
 
     // Saving always writes draft:true, so it must NOT block on content-quality
@@ -1344,16 +1506,46 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     let target;
     if (dir) {
       if (!isValidSlug(slug)) return res.status(400).json({ error: 'Invalid slug' });
+      // Materialize a canonical module leaf on first use so it isn't a dead end.
+      ensureCanonicalModuleLeaf(dir);
       target = path.join(resolveAnyDocDir(dir), `${slug}.md`);
     } else {
       target = resolveDraftPath(moduleSlug, subFolder, slug);
     }
+    // The article this edit session opened, when the client told us. A title
+    // change moves the route, and without this the save writes a SECOND file
+    // and leaves the original live - the wizard seeds its slug from
+    // frontmatter, which differs from the filename for ~a fifth of the corpus.
+    let previous = null;
+    if (fromPath) {
+      try {
+        previous = resolveAnyDocPath(fromPath);
+      } catch {
+        return res.status(400).json({ error: 'fromPath is not an editable article path' });
+      }
+      if (!fsSync.existsSync(previous)) previous = null;
+    }
+
+    // Refuse to write on top of an article this session didn't open. The
+    // baseHash check below only fires when the client supplies one, and the
+    // new-article flow never does - so two authors writing "How to create a
+    // quiz" used to silently overwrite each other's live article and re-draft
+    // it, with the original recoverable only from git history.
+    if (!previous && fsSync.existsSync(target) && !baseHash) {
+      return res.status(409).json({
+        error: 'article-exists',
+        message: `"${path.relative(__dirname, target)}" already exists. Open that article to edit it, or change the title so this one gets its own address.`,
+        path: path.relative(__dirname, target),
+      });
+    }
+
     // Optimistic concurrency: when the client says which version it loaded
     // (baseHash from GET /draft), refuse to clobber a newer server copy -
     // another editor saved in between. Clients that omit baseHash keep the
     // old last-write-wins behavior (the wizard's new-article flow).
-    if (baseHash && fsSync.existsSync(target)) {
-      const current = fsSync.readFileSync(target, 'utf8');
+    const hashTarget = previous || target;
+    if (baseHash && fsSync.existsSync(hashTarget)) {
+      const current = fsSync.readFileSync(hashTarget, 'utf8');
       const currentHash = contentHash(current);
       if (currentHash !== baseHash) {
         return res.status(409).json({
@@ -1373,9 +1565,23 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     // Force draft:true in frontmatter - defensive override even if the model
     // emitted draft:false somehow.
     const text = cleanedMarkdown.replace(/^draft:\s*(true|false)\s*$/m, 'draft: true');
-    const finalText = /^draft:/m.test(text)
+    const withDraft = /^draft:/m.test(text)
       ? text
       : text.replace(/^---/, '---').replace(/^(---[\s\S]*?\n)(---)/, (m, fm, end) => fm + 'draft: true\n' + end);
+
+    // Two things the model must not be the authority on:
+    //  - audience: reconcile customProps.roles against the destination
+    //    folder's gate, exactly as /move does. An article stamped narrower
+    //    than its folder is invisible to the readers the folder is for, and
+    //    the superadmin author previewing it can never notice (privilege
+    //    bypass). Article-level `privilege` is dropped - the folder gate owns it.
+    //  - sidebar order: the prompt used to hardcode `sidebar_position: 999`,
+    //    so every new article tied and Docusaurus fell back to alphabetical.
+    const targetDirRel = path.relative(__dirname, path.dirname(target)).replace(/\\/g, '/');
+    const destRoles = destinationRoles(targetDirRel);
+    let staged = destRoles ? setFrontmatterRoles(withDraft, destRoles) : withDraft;
+    staged = removeFrontmatterPrivilege(staged);
+    const finalText = ensureSidebarPosition(staged, path.dirname(target), previous || target);
 
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
     // If this is the first article ever written into a MODULE sub-folder,
@@ -1391,7 +1597,43 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), (req, res) => {
     if (subfolderCreated && modMatch) {
       journalRecordUpsert(path.join('docs', 'modules', modMatch[1], modMatch[2], '_category_.json'), req.user?.email);
     }
-    res.json({ ok: true, path: path.relative(__dirname, target), audit, subfolderCreated, hash: contentHash(finalText) });
+
+    // The title changed enough to move the article: retire the old file and
+    // leave a redirect behind, the way /save-raw already handles a slug edit.
+    // Without this the wizard left the original published at its old URL and
+    // a duplicate claiming the same doc id, which then 409s at publish.
+    let renamedFrom = null;
+    let redirectsUpdated = false;
+    if (previous && path.resolve(previous) !== path.resolve(target)) {
+      const prevRel = path.relative(__dirname, previous).replace(/\\/g, '/');
+      const prevRaw = fsSync.readFileSync(previous, 'utf8');
+      const wasPublished = !/^draft:\s*true\s*$/m.test(prevRaw);
+      fsSync.unlinkSync(previous);
+      journalRecordDelete(prevRel, req.user?.email);
+      renamedFrom = prevRel;
+
+      const oldRoute = docRoutes.resolveDocRoute(previous, DOCS_ROOT, prevRaw).route;
+      const newRoute = docRoutes.resolveDocRoute(target, DOCS_ROOT, finalText).route;
+      // Only a live article needs a redirect - a draft was never reachable.
+      if (wasPublished && oldRoute !== newRoute) {
+        redirectsUpdated = await updateRedirectsForMove(oldRoute, newRoute);
+        enqueueDelete(prevRel);
+        if (redirectsUpdated) {
+          enqueueUpsert(path.relative(__dirname, REDIRECTS_PATH));
+        }
+        persistDeployState();
+      }
+    }
+
+    res.json({
+      ok: true,
+      path: path.relative(__dirname, target),
+      audit,
+      subfolderCreated,
+      renamedFrom,
+      redirectsUpdated,
+      hash: contentHash(finalText),
+    });
   } catch (error) {
     console.error('❌ authoring/save failed:', error.message);
     res.status(500).json({ error: error.message });
@@ -1460,6 +1702,14 @@ const deletedRouteHints = new Map();
 // Last pre-flight failure, surfaced via GET /deploy/state so the drafts UI
 // can explain why an auto-deploy is stuck. Cleared on the next green push.
 let lastValidationError = null;
+
+// Articles the last deploy refused to ship (missing image, build-breaking
+// markdown, route/doc-id collision). They stay queued awaiting an author fix,
+// but until now the only record was a console.error on the container: the
+// author saw a green "Publishing N update(s)" toast and their article silently
+// never went live. Surfaced via GET /deploy/state; an entry clears when that
+// article next ships or leaves the queue.
+let lastHeldBack = [];
 
 // Queued-but-unshipped content lives on the container's EPHEMERAL disk
 // (docs/, static/img/) - only data/ sits on the Railway volume. Any restart
@@ -1665,7 +1915,15 @@ function scheduleDeploy() {
   const minWait = DEPLOY_MIN_INTERVAL_MS - (Date.now() - lastDeployTs);
   const delay = Math.max(DEPLOY_DEBOUNCE_MS, minWait);
   console.log(`[deploy] scheduled in ${Math.round(delay / 60000)} min (queue: ${deployQueue.size})`);
-  debounceTimer = setTimeout(() => { fireDeploy().catch((e) => console.error('[deploy] auto-fire failed:', e.message)); }, delay);
+  // Null the handle as the timer fires. nextAutoDeployAt() reports a countdown
+  // whenever debounceTimer is truthy, and the paths that bail out of fireDeploy
+  // (invalid redirects, dangling targets, everything held back) never re-arm -
+  // so a stale handle left the drafts page promising a publish that would
+  // never happen. fireDeploy re-arms itself when there's something to retry.
+  debounceTimer = setTimeout(() => {
+    debounceTimer = null;
+    fireDeploy().catch((e) => console.error('[deploy] auto-fire failed:', e.message));
+  }, delay);
 }
 
 /** GitHub Git Data API helpers - composes a single atomic commit out of
@@ -2177,47 +2435,15 @@ function auditOpts() {
 // content it is about to commit against the local docs tree, which every
 // authoring endpoint keeps in sync with post-commit state.
 
-/** Canonical route form. Keep in sync with normPath in docusaurus.config.ts. */
-function normRoute(p) {
-  let n = String(p).replace(/\/index$/, '');
-  if (n.length > 1) n = n.replace(/\/$/, '');
-  return n || '/';
-}
+// The docs-path -> live-route walk these two used to inline now lives in
+// lib/doc-routes.js, shared with scripts/internal-indexer.js so the URL the
+// chatbot cites is derived exactly like the route the site serves. Thin
+// wrappers keep the deploy pre-flight call sites below unchanged.
 
 /** Walk docs/ deriving every article's route the way Docusaurus does.
- *  Keep in sync with buildDocUrlMap in docusaurus.config.ts.
  *  Returns [{rel, route, dirRel, id, isDraft}], rel repo-relative. */
 function buildLocalDocEntries() {
-  const entries = [];
-  if (!fsSync.existsSync(DOCS_ROOT)) return entries;
-  (function walk(dir) {
-    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
-      const p = path.join(dir, entry.name);
-      if (entry.isDirectory()) { walk(p); continue; }
-      if (!/\.(md|mdx)$/i.test(entry.name)) continue;
-      let content;
-      try { content = fsSync.readFileSync(p, 'utf8'); } catch { continue; }
-      // Real YAML parse (not a regex): frontmatter routinely uses block
-      // scalars (slug: >-) that line-based regexes misread. Malformed YAML
-      // falls back to filename-derived identity - the physics check holds
-      // such files back if they're queued.
-      let fm = {};
-      try { fm = matter(content).data || {}; } catch { /* fall back below */ }
-      const relDocs = path.relative(DOCS_ROOT, p).replace(/\\/g, '/');
-      const dirRel = relDocs.replace(/\/?[^/]+\.(md|mdx)$/i, '');
-      const base = entry.name.replace(/\.(md|mdx)$/i, '');
-      const slug = typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : base;
-      const url = slug.startsWith('/') ? slug : '/' + (dirRel ? dirRel + '/' : '') + slug;
-      entries.push({
-        rel: path.relative(__dirname, p).replace(/\\/g, '/'),
-        route: normRoute(url),
-        dirRel,
-        id: fm.id != null && String(fm.id).trim() ? String(fm.id).trim() : base,
-        isDraft: fm.draft === true,
-      });
-    }
-  })(DOCS_ROOT);
-  return entries;
+  return docRoutes.buildLocalDocEntries(__dirname);
 }
 
 /** Non-doc routes a redirect may legitimately target: custom pages under
@@ -2225,38 +2451,7 @@ function buildLocalDocEntries() {
  *  the site root. Generated listings (tags, search) are deliberately
  *  absent - no redirect should target those. */
 function buildNonDocRouteSet() {
-  const routes = new Set(['/']);
-  const pagesRoot = path.join(__dirname, 'src', 'pages');
-  if (fsSync.existsSync(pagesRoot)) {
-    (function walk(dir) {
-      for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
-        const p = path.join(dir, entry.name);
-        if (entry.isDirectory()) { walk(p); continue; }
-        if (entry.name.startsWith('_')) continue;
-        if (!/\.(jsx?|tsx?|md|mdx)$/i.test(entry.name)) continue;
-        const rel = path.relative(pagesRoot, p).replace(/\\/g, '/').replace(/\.(jsx?|tsx?|md|mdx)$/i, '');
-        routes.add(normRoute('/' + rel));
-      }
-    })(pagesRoot);
-  }
-  (function walk(dir) {
-    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
-      const p = path.join(dir, entry.name);
-      if (entry.isDirectory()) { walk(p); continue; }
-      if (entry.name !== '_category_.json') continue;
-      try {
-        const doc = JSON.parse(fsSync.readFileSync(p, 'utf8'));
-        if (!doc || !doc.link) continue;
-        const dirRel = path.relative(DOCS_ROOT, dir).replace(/\\/g, '/');
-        routes.add(normRoute('/' + dirRel));
-        if (typeof doc.link.slug === 'string') {
-          const s = doc.link.slug;
-          routes.add(normRoute(s.startsWith('/') ? s : '/' + dirRel + '/' + s));
-        }
-      } catch { /* malformed gate file - caught elsewhere */ }
-    }
-  })(DOCS_ROOT);
-  return routes;
+  return docRoutes.buildNonDocRouteSet(__dirname);
 }
 
 /** Run a deploy: build a single commit out of every queued file via the
@@ -2535,9 +2730,20 @@ async function fireDeploy() {
       }
     }
 
+    // Record what's being held so the drafts UI can explain it. Written on
+    // BOTH the all-held and partial-hold paths - a partial hold used to be
+    // completely invisible, because the batch technically succeeded.
+    lastHeldBack = heldBack.map((h) => ({
+      path: h.rel,
+      missingImages: h.missing,
+      errors: h.errors,
+      ts: Date.now(),
+    }));
+
     if (shippable.length === 0 && deletes.length === 0) {
       // Everything upsertable is held back - nothing safe to commit.
       deployInFlight = false;
+      persistDeployState();
       return {
         ok: false,
         reason: 'held-back',
@@ -2640,7 +2846,9 @@ async function fireDeploy() {
       try { fsSync.unlinkSync(REDIRECTS_PATH); } catch { /* already absent */ }
     }
     // Held-back articles stay queued so a fixed screenshot/markdown ships
-    // them on the next deploy.
+    // them on the next deploy. lastHeldBack (set above) keeps the reason
+    // visible in the drafts UI until the fix lands - a partially successful
+    // batch is exactly the case that used to look like a clean success.
     for (const h of heldBack) deployQueue.set(h.rel, 'upsert');
     lastDeployTs = Date.now();
     persistDeployState();
@@ -2851,6 +3059,9 @@ app.get('/api/admin/authoring/deploy/state', requireRole('superadmin'), (req, re
     gitPushEnabled: GIT_PUSH_ENABLED,
     configOk: GIT_PUSH_ENABLED && !!GIT_PUSH_TOKEN && !!GITHUB_REPO,
     lastValidationError,
+    // Articles the last deploy refused to ship. Only those still queued are
+    // reported - once the author fixes one and it ships, it drops out.
+    heldBack: lastHeldBack.filter((h) => deployQueue.has(h.path)),
     journal: {
       enabled: JOURNAL_ENABLED,
       branch: JOURNAL_BRANCH,
@@ -3135,6 +3346,22 @@ function resolveAnyDocPath(relPath) {
 /** Resolve a folder authors may list/reorder/move into:
  *  docs/<section>[/<sub>] or docs/modules/<module>/<canonical-sub>.
  *  Must already exist on disk. */
+/** A canonical module leaf that simply hasn't been started yet is a legitimate
+ *  destination - the 8-leaf template defines it, and a leaf materializes when
+ *  its first article lands. 46 of the 126 offered leaves are in that state, and
+ *  resolveAnyDocDir's existence check turned every one of them into a 400
+ *  ("Folder not found") *after* the author had written their brain dump.
+ *  Scaffold the gate instead, which is what /save did a moment later anyway.
+ *  Returns true when it created the folder. Write paths only. */
+function ensureCanonicalModuleLeaf(dirRel) {
+  const m = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(String(dirRel || '').replace(/\\/g, '/'));
+  if (!m) return false;
+  if (!CANONICAL_SUBFOLDERS.has(m[2])) return false;
+  if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) return false;  // unknown module
+  if (fsSync.existsSync(path.join(MODULES_ROOT, m[1], m[2]))) return false;
+  return ensureSubfolderCategory(m[1], m[2]);
+}
+
 function resolveAnyDocDir(dir) {
   if (typeof dir !== 'string' || !dir) throw new Error('dir required');
   const norm = dir.replace(/\\/g, '/').replace(/\/+$/, '');
@@ -3575,6 +3802,40 @@ function destinationRoles(toDirRel) {
     } catch { /* try the next candidate */ }
   }
   return null;
+}
+
+/** Give a new article a real place in the sidebar.
+ *
+ *  The generation prompt used to hardcode `sidebar_position: 999`, so every
+ *  wizard-written article carried the same value; Docusaurus breaks ties
+ *  alphabetically, which is why new articles landed in apparently random
+ *  order. Assign max(siblings) + 10, matching the 10-step convention
+ *  /reorder already uses so a later manual reorder has room to slot between.
+ *
+ *  An article that already carries a deliberate position keeps it - only the
+ *  999 placeholder and a missing field are replaced. `selfAbs` is excluded
+ *  from the sibling scan so re-saving doesn't leapfrog the article past itself.
+ */
+function ensureSidebarPosition(markdown, dirAbs, selfAbs) {
+  const m = /^sidebar_position:\s*(\d+)\s*$/m.exec(markdown);
+  if (m && Number(m[1]) !== 999) return markdown;
+
+  let max = 0;
+  try {
+    for (const entry of fsSync.readdirSync(dirAbs, { withFileTypes: true })) {
+      if (!entry.isFile() || !/\.mdx?$/i.test(entry.name)) continue;
+      const abs = path.join(dirAbs, entry.name);
+      if (selfAbs && path.resolve(abs) === path.resolve(selfAbs)) continue;
+      const sib = /^sidebar_position:\s*(\d+)\s*$/m.exec(fsSync.readFileSync(abs, 'utf8'));
+      const n = sib ? Number(sib[1]) : 0;
+      if (Number.isFinite(n) && n !== 999 && n > max) max = n;
+    }
+  } catch { /* new folder - fall through to the first slot */ }
+
+  const next = max + 10;
+  return m
+    ? markdown.replace(/^sidebar_position:\s*\d+\s*$/m, `sidebar_position: ${next}`)
+    : markdown.replace(/^(---[\s\S]*?\n)(---)/, (all, fm, end) => `${fm}sidebar_position: ${next}\n${end}`);
 }
 
 // Relocate an article to a different folder (slug unchanged) - any module
@@ -4248,10 +4509,16 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
       .slice()
       .sort((a, b) => a.label.localeCompare(b.label))
       .map((m) => {
+        // `exists` distinguishes a leaf that's really there from one this
+        // module simply hasn't started yet. All nine are offered either way
+        // (that's the canonical template), but the wizard has to know: picking
+        // an absent one used to 400 with "Folder not found" at Generate, after
+        // the author had already typed their brain dump, with no way back.
         const subs = SUBFOLDER_TEMPLATE.map((sf) => ({
           dir: `docs/modules/${m.slug}/${sf.slug}`,
           label: sf.label,
           roles: sf.roles,
+          exists: fsSync.existsSync(path.join(MODULES_ROOT, m.slug, sf.slug)),
         }));
         // Author-created custom folders (non-canonical, on disk) join the
         // canonical nine, with their own gate's label and roles.
@@ -4618,6 +4885,13 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
     // a new module hard-failed CI on the unknown privilege key.
     if (privilegeAdded) enqueueUpsert('data/known-privileges.json');
     enqueueUpsert('static/module-overviews.json');
+    // ...and so must the skeleton itself. writeModuleSkeleton journals the
+    // module-root _category_.json + index.mdx, but journaling only makes them
+    // survive a restart - it doesn't ship them. /publish carries the article
+    // and its SUB-folder gate only, so the first publish from a new module
+    // used to leave /modules/<slug> a 404 on the live site while the tile in
+    // module-overviews.json (which did ship) advertised it.
+    for (const rel of written) enqueueUpsert(rel);
     persistDeployState();
 
     res.json({ ok: true, slug, privilegeAdded, novelPrivilege, privilegeCorrected, paths: written });
@@ -4700,6 +4974,42 @@ function isUrlAllowedForUser(url, user) {
     if (!isAllowed(g, user)) return false;
   }
   return true;
+}
+
+/**
+ * Last line of defense against linking a user to a 404.
+ *
+ * A URL stored in ChromaDB is only as good as the indexer run that wrote it:
+ * an article re-slugged, moved, or deleted since then leaves a vector pointing
+ * at a route that no longer exists (the original bug: the indexer derived URLs
+ * from file paths, so every article whose frontmatter `slug` differed from its
+ * filename was cited as a dead link). Rather than trust the stored value, we
+ * re-resolve it against the live docs tree, repair it through
+ * data/redirects.json when the article simply moved, and return null when
+ * nothing resolves - callers then drop the link instead of shipping the 404.
+ *
+ * A non-empty warn log here means the vector index has drifted from docs/ and
+ * `npm run index-internal` is overdue.
+ */
+function resolveCitationUrl(url, source) {
+  if (!url) return null;
+  try {
+    const index = docRoutes.getRouteIndex(__dirname);
+    const live = resolveLiveUrl(url, index);
+    if (!live) {
+      console.warn(`⚠️  [citations] dropping dead URL ${url}${source ? ` (from ${source})` : ''} - reindex docs/`);
+      return null;
+    }
+    if (live !== url) {
+      console.log(`↪️  [citations] repaired ${url} → ${live}`);
+    }
+    return live;
+  } catch (e) {
+    // Never let route resolution break search or chat - fall back to the
+    // stored value, which is what shipped before this check existed.
+    console.error('⚠️  [citations] route resolution failed:', e.message);
+    return url;
+  }
 }
 
 app.use((req, res, next) => {

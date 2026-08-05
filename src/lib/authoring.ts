@@ -207,7 +207,7 @@ export function parseFrontmatterFields(markdown: string): FrontmatterFields | nu
 
 export function replaceFrontmatterFields(
   markdown: string,
-  patch: {title?: string; description?: string; tags?: string[]},
+  patch: {title?: string; description?: string; tags?: string[]; slug?: string; id?: string},
 ): string {
   const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
   if (!fmMatch) return markdown;
@@ -233,6 +233,18 @@ export function replaceFrontmatterFields(
   if (patch.tags !== undefined) {
     const v = '[' + patch.tags.map((t) => JSON.stringify(t)).join(', ') + ']';
     fm = replaceKey(fm, 'tags', `tags: ${v}`);
+  }
+  // slug/id decide the live URL - Docusaurus routes by frontmatter `slug`,
+  // NOT by filename. The wizard derives the filename from the editor's final
+  // title, so leaving these at whatever the model first proposed published
+  // articles at a URL the author never saw. Patch them together with the
+  // title that produced them, and the file, the frontmatter, and the route
+  // agree by construction.
+  if (patch.slug !== undefined) {
+    fm = replaceKey(fm, 'slug', `slug: ${patch.slug}`);
+  }
+  if (patch.id !== undefined) {
+    fm = replaceKey(fm, 'id', `id: ${patch.id}`);
   }
   return markdown.replace(fmMatch[0], `---\n${fm}\n---`);
 }

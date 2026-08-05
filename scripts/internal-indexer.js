@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const matter = require('gray-matter');
 const { ChromaClient } = require('chromadb');
+const { resolveDocRoute } = require('../lib/doc-routes');
+
+const REPO_ROOT = path.join(__dirname, '..');
+const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
 
 /**
  * Internal Document Indexer
@@ -103,26 +108,35 @@ class InternalIndexer {
   processMarkdownFile(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     const stats = fs.statSync(filePath);
+    const relativePath = path.relative(DOCS_ROOT, filePath).replace(/\\/g, '/');
 
-    // Parse frontmatter
-    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-    let fmTitle = null;
-    let fmDescription = null;
-    if (frontmatterMatch) {
-      const fmBlock = frontmatterMatch[1];
-      const titleMatch = fmBlock.match(/^title:\s*"?([^"\n]+)"?\s*$/m);
-      if (titleMatch) fmTitle = titleMatch[1].trim();
-      const descMatch = fmBlock.match(/^description:\s*"?([^"\n]*)"?\s*$/m);
-      if (descMatch) fmDescription = descMatch[1].trim();
+    // Real YAML parse - line regexes misread block scalars (slug: >-), and a
+    // misread slug means a citation link to a route that doesn't exist.
+    let fm = {};
+    try {
+      fm = matter(content).data || {};
+    } catch (e) {
+      console.log(`  ⚠️  Unparseable frontmatter, using filename identity: ${relativePath}`);
+    }
+
+    // Drafts aren't routed in a production build - indexing one guarantees a
+    // dead citation. Returning null drops it from currentDocs, so the normal
+    // delete diff also evicts any vector indexed before the draft flag flipped.
+    if (fm.draft === true) {
+      console.log(`  ⏭️  Skipping (draft): ${relativePath}`);
+      return null;
     }
 
     // Extract title: prefer frontmatter title, then first heading, then filename
     const headingMatch = content.match(/^#\s+(.+)$/m);
-    const title = fmTitle || (headingMatch ? headingMatch[1] : path.basename(filePath, '.md'));
+    const fmTitle = typeof fm.title === 'string' && fm.title.trim() ? fm.title.trim() : null;
+    const title = fmTitle
+      || (headingMatch ? headingMatch[1] : path.basename(filePath).replace(/\.(md|mdx)$/i, ''));
 
-    // Create relative URL path
-    const relativePath = path.relative(path.join(process.cwd(), 'docs'), filePath);
-    const url = `/${relativePath.replace(/\.md$/, '').replace(/\\/g, '/')}`;
+    // The live route, resolved the way Docusaurus resolves it: frontmatter
+    // `slug` wins over the filename. Deriving this from the file path is what
+    // made the chatbot cite 404s for the ~23% of articles where they differ.
+    const { route: url, slug } = resolveDocRoute(filePath, DOCS_ROOT, content);
 
     // Remove frontmatter for processing
     const cleanContent = content.replace(/^---[\s\S]*?---\n/, '').trim();
@@ -133,7 +147,10 @@ class InternalIndexer {
       return null;
     }
 
-    const contentHash = this.generateContentHash(cleanContent);
+    // Hash body AND the identity we store alongside it. Hashing the body alone
+    // meant a re-slug or re-title never re-embedded the doc, so a stale URL
+    // survived every incremental run until someone forced a full reindex.
+    const contentHash = this.generateContentHash([cleanContent, title, url].join('\u0000'));
 
     return {
       id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for cross-machine consistency
@@ -144,6 +161,7 @@ class InternalIndexer {
         title,
         source: relativePath,
         url,
+        slug,
         lastModified: stats.mtime.toISOString(),
         contentHash,
         type: 'documentation'
@@ -361,7 +379,7 @@ class InternalIndexer {
       }
       
       // Get all document files
-      const docsDir = path.join(process.cwd(), 'docs');
+      const docsDir = DOCS_ROOT;
       if (!fs.existsSync(docsDir)) {
         throw new Error(`Docs directory not found: ${docsDir}`);
       }

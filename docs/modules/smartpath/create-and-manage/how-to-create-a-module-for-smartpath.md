@@ -89,7 +89,7 @@ The next page collects the details specific to the segment type you chose. See:
 * [How to create a Video Coaching](../../video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment.md)
 * [How to add a Learning Session](./how-to-add-learning-sessions-in-smartpath-module.md)
 * [How to create an Action Item](./how-to-create-an-action-item-in-the-smartpath.md)
-* [How to create an Assignment](../assign-and-schedule/how-to-create-assignment-in-smartpath.md)
+* [How to create an Assignment](./how-to-create-assignment-in-smartpath.md)
 
 ### 3. Reuse existing content as a segment (optional)
 

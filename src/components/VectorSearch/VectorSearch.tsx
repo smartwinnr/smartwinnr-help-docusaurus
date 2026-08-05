@@ -7,9 +7,27 @@ interface SearchResult {
   metadata: {
     source: string;
     title?: string;
+    /** The live route, resolved server-side from frontmatter `slug` and
+     *  repaired through data/redirects.json. Never derive this from `source`:
+     *  the file path and the route differ for ~20% of articles. */
+    url?: string;
   };
   distance: number;
 }
+
+/** Escape user input before it goes into a RegExp. Without this, a query like
+ *  `c++`, `*` or `?` throws during render and takes the whole page down with
+ *  it - including on load via /search?q=... */
+const escapeRegExp = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/** Search backend is unreachable (ChromaDB / embedding API down). */
+class SearchUnavailableError extends Error {}
+/** The session cookie expired while the page was open. */
+class SessionExpiredError extends Error {}
+
+/** Longest query we'll send. The server caps this too; this just avoids a
+ *  pointless round trip when someone pastes a document into the box. */
+const MAX_QUERY_LENGTH = 500;
 
 interface VectorSearchProps {
   placeholder?: string;
@@ -34,6 +52,13 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const hasRunInitial = useRef(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latestSearchSeq = useRef(0);
+
+  // Drop any in-flight debounce when the component goes away.
+  useEffect(() => () => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+  }, []);
 
   // Run the search once on mount if an initial query was passed in.
   useEffect(() => {
@@ -46,10 +71,10 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
 
   const searchAPI = async (searchQuery: string): Promise<SearchResult[]> => {
     // Use same-origin API call (no CORS issues)
-    const API_BASE_URL = typeof window !== 'undefined' 
+    const API_BASE_URL = typeof window !== 'undefined'
       ? window.location.origin  // Same origin as the current site
       : '';
-      
+
     const response = await fetch(`${API_BASE_URL}/api/vector/search`, {
       method: 'POST',
       headers: {
@@ -57,6 +82,15 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
       },
       body: JSON.stringify({ query: searchQuery, limit: 8 }),
     });
+
+    // Distinguish "search is down" from "nothing matched" - rendering an
+    // outage as "No results found" tells the user the article doesn't exist.
+    if (response.status === 503) {
+      throw new SearchUnavailableError();
+    }
+    if (response.status === 401) {
+      throw new SessionExpiredError();
+    }
 
     if (!response.ok) {
       throw new Error('Search failed');
@@ -73,56 +107,59 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
       return;
     }
 
+    // Sequence guard: every search gets a ticket, and only the newest one is
+    // allowed to write state. Without it a slow early request can land after a
+    // fast later one and leave results for a prefix of what was typed.
+    const seq = ++latestSearchSeq.current;
+
     setIsLoading(true);
     setError(null);
     setIsOpen(true);
 
     try {
-      const searchResults = await searchAPI(searchQuery);
+      const searchResults = await searchAPI(searchQuery.slice(0, MAX_QUERY_LENGTH));
+      if (seq !== latestSearchSeq.current) return;
       setResults(searchResults);
     } catch (err) {
-      setError('Search failed. Please try again.');
+      if (seq !== latestSearchSeq.current) return;
+      if (err instanceof SearchUnavailableError) {
+        setError('Search is temporarily unavailable. Please try again in a moment.');
+      } else if (err instanceof SessionExpiredError) {
+        setError('Your session expired. Please sign in again to search.');
+      } else {
+        setError('Search failed. Please try again.');
+      }
       setResults([]);
     } finally {
-      setIsLoading(false);
+      if (seq === latestSearchSeq.current) setIsLoading(false);
     }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
-    
-    // Debounce search
-    const timeoutId = setTimeout(() => {
+
+    // Debounce. The previous version returned a cleanup function from the
+    // event handler - React discards that, so the timer was never cleared and
+    // every keystroke fired its own search (and its own OpenAI embedding call).
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
       handleSearch(value);
     }, 300);
-
-    return () => clearTimeout(timeoutId);
   };
 
   const handleResultClick = (result: SearchResult) => {
-    // Navigate to the source document
-    const source = result.metadata.source;
-    if (source) {
-      // Convert file path to URL path - source should be like "quizzes/understanding-knowledge-categories.md"
-      let urlPath = '/' + source.replace(/\.md$/, ''); // Add leading slash and remove .md extension
-      
-      // Handle index.md files - remove /index from the end
-      if (urlPath.endsWith('/index')) {
-        urlPath = urlPath.replace('/index', '');
-      }
-      
-      // Ensure we don't have double slashes and handle root case
-      urlPath = urlPath.replace(/\/+/g, '/');
-      if (urlPath === '' || urlPath === '/') urlPath = '/';
-      
-      console.log('Navigating to:', urlPath); // Debug log
-      
-      // Use window.location.assign for proper navigation that doesn't cause URL duplication
-      // This ensures we navigate to the absolute URL correctly
-      window.location.assign(window.location.origin + urlPath);
+    // Navigate using the URL the server resolved for us. This used to rebuild
+    // the path from result.metadata.source, which sent 68 of 333 articles to
+    // "Page Not Found" - Docusaurus routes by frontmatter `slug`, not by
+    // filename. The server already validated this URL against the live route
+    // set (server.js -> resolveCitationUrl), so a missing one means the
+    // article isn't reachable and we should not guess.
+    const url = result.metadata.url;
+    if (url) {
+      window.location.assign(window.location.origin + url);
     }
-    
+
     setIsOpen(false);
     setQuery('');
     onClose?.();
@@ -150,8 +187,14 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
 
   const highlightText = (text: string, query: string): JSX.Element => {
     if (!query.trim()) return <>{text}</>;
-    
-    const parts = text.split(new RegExp(`(${query})`, 'gi'));
+
+    let parts: string[];
+    try {
+      parts = text.split(new RegExp(`(${escapeRegExp(query)})`, 'gi'));
+    } catch {
+      // Belt and braces: highlighting is decorative, never worth a blank page.
+      return <>{text}</>;
+    }
     return (
       <>
         {parts.map((part, index) => 

@@ -52,6 +52,6 @@ readable, but the feature isn't live for you.
 ## Where to go next
 
 - [**Modules** →](/modules/) - browse the full module catalog.
-- [**Getting started** →](/get-started/onboarding/how-can-i-login-to-smartwinnr-app.md) - sign in to the app for the first time.
+- [**Getting started** →](/get-started/onboarding/how-can-i-login-to-smartwinnr-app) - sign in to the app for the first time.
 - [**Help & support** →](/reference/help-support/) - open a ticket, read FAQs.
 - [**Release notes** →](/release-notes/) - what's new.

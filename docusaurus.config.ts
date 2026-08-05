@@ -99,8 +99,13 @@ const config: Config = {
   url: 'https://help.smartwinnr.com',
   baseUrl: '/',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  // Broken links fail the build: a dead link is a user-visible 404, and
+  // 'warn' meant nobody ever saw them scroll past in CI.
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  // Still 'warn' - there are 16 known-broken Help Scout anchors
+  // (#Overview-Tab-USrFb style) left over from the migration. Flip this to
+  // 'throw' once those headings get explicit {#anchor} ids.
   onBrokenAnchors: 'warn',
 
   i18n: {

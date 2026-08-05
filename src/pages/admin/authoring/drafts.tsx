@@ -58,6 +58,10 @@ type DeployState = {
   gitPushEnabled: boolean;
   configOk: boolean;
   lastValidationError?: {ts: number; errors: Array<{check: string; message: string}>} | null;
+  /** Articles the last deploy refused to ship. They stay queued until fixed;
+   *  without this the batch looked like a clean success and the article
+   *  silently never went live. */
+  heldBack?: Array<{path: string; missingImages: string[]; errors: string[]; ts: number}>;
   journal?: {
     enabled: boolean;
     branch: string;
@@ -152,7 +156,17 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         notify.info("Queue cleared - this server isn't connected to the live site (test mode).");
         await refresh();
       } else {
-        notify.success(`Publishing ${data.committed} update(s) now. The site rebuilds for a few minutes - readers see the changes when it finishes.`);
+        // A partially successful deploy is still a partial FAILURE for the
+        // articles it held back - saying "publishing N update(s)" and nothing
+        // else is how an article could silently never reach readers.
+        const held = data.held?.length ?? 0;
+        if (held > 0) {
+          notify.error(
+            `Publishing ${data.committed} update(s), but ${held} article(s) were held back and did NOT go live - see the list below.`,
+          );
+        } else {
+          notify.success(`Publishing ${data.committed} update(s) now. The site rebuilds for a few minutes - readers see the changes when it finishes.`);
+        }
         await refresh();
       }
     } catch (err) {
@@ -354,6 +368,31 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
             )}
           </ul>
           Fix the issue(s), then press Deploy now again. Nothing was published, and nothing was lost.
+        </div>
+      )}
+
+      {/*
+        Articles the deploy refused to ship. The batch around them may well
+        have succeeded, so nothing else on this page says anything is wrong -
+        these used to fail silently into a console log on the server.
+      */}
+      {!!deployState?.heldBack?.length && (
+        <div className={styles.warn} role="alert">
+          <strong>⚠ {deployState.heldBack.length} article(s) did not go live</strong> - they stay
+          queued until the problem is fixed:
+          <ul>
+            {deployState.heldBack.map((h) => (
+              <li key={h.path}>
+                <code>{h.path}</code>
+                {h.missingImages?.length > 0 && (
+                  <> — missing image(s): {h.missingImages.join(', ')}</>
+                )}
+                {h.errors?.length > 0 && <> — {h.errors.join('; ')}</>}
+              </li>
+            ))}
+          </ul>
+          Fix each one (re-upload the screenshot, or open the article and correct the
+          flagged issue), then press Deploy now.
         </div>
       )}
 

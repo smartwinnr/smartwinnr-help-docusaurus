@@ -80,7 +80,7 @@ A Missing Words question enables participants to complete a sentence or phrase b
 
 A Drag and Drop into Text question requires participants to select and drag text options from a pool of answers into specific blanks within the question text.
 
-[How to create a Drag and Drop into Text question](.https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question)
+[How to create a Drag and Drop into Text question](/modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question)
 
 - **Short Answer with Multiple Options**
 

@@ -43,9 +43,23 @@ interface RelatedLink {
 }
 
 // Use same-origin API - no more CORS issues!
-const API_BASE_URL = typeof window !== 'undefined' 
+const API_BASE_URL = typeof window !== 'undefined'
   ? window.location.origin  // Same origin as the Docusaurus site
   : '';
+
+/** Give up on a chat request after this long so the widget can't lock up. */
+const REQUEST_TIMEOUT_MS = 60_000;
+
+/** Carries the HTTP status so the catch block can explain what happened
+ *  (expired session vs. rate limit vs. index outage) instead of guessing. */
+class ChatRequestError extends Error {
+  status: number;
+  constructor(status: number) {
+    super(`Chat request failed with status ${status}`);
+    this.name = 'ChatRequestError';
+    this.status = status;
+  }
+}
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -143,27 +157,38 @@ const ChatBot: React.FC = () => {
         userContext: { role: viewerRole }
       });
 
-      const response = await fetch(`${API_BASE_URL}/api/chat`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: inputValue,
-          conversationId: conversationId,
-          userContext: {
-            role: viewerRole,
-            pageUrl: window.location.pathname,
-          }
-        }),
-      });
+      // Hard timeout: without one, a hung backend leaves the three-dot bubble
+      // spinning forever with the textarea disabled - the widget is stuck and
+      // the only way out is a page reload.
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+      let response: Response;
+      try {
+        response = await fetch(`${API_BASE_URL}/api/chat`, {
+          method: 'POST',
+          signal: controller.signal,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: inputValue,
+            conversationId: conversationId,
+            userContext: {
+              role: viewerRole,
+              pageUrl: window.location.pathname,
+            }
+          }),
+        });
+      } finally {
+        clearTimeout(timeoutId);
+      }
 
       console.log('🔄 Response status:', response.status, response.statusText);
 
       if (!response.ok) {
         const errorText = await response.text();
         console.error('❌ Response error:', errorText);
-        throw new Error(`Failed to get response: ${response.status} ${response.statusText}`);
+        throw new ChatRequestError(response.status);
       }
 
       const data = await response.json();
@@ -187,11 +212,28 @@ const ChatBot: React.FC = () => {
 
     } catch (error) {
       console.error('Error sending message:', error);
-      
+
+      // Say what actually went wrong. Everything used to collapse into "the
+      // chatbot service might not be running" - including an expired session,
+      // which left people retyping questions into a dead widget.
+      let content =
+        'I apologize, but I encountered an error. Please try again. If the problem persists, the chatbot service might not be running.';
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        content = 'That took too long to answer and I stopped waiting. Please try asking again.';
+      } else if (error instanceof ChatRequestError) {
+        if (error.status === 401) {
+          content = 'Your session has expired. Please refresh the page and sign in again to keep chatting.';
+        } else if (error.status === 429) {
+          content = "You're sending messages faster than I can answer. Please wait a moment and try again.";
+        } else if (error.status === 503) {
+          content = "I can't reach the documentation index right now. Please try again in a moment.";
+        }
+      }
+
       const errorMessage: ChatMessage = {
         id: `error-${Date.now()}`,
         role: 'assistant',
-        content: 'I apologize, but I encountered an error. Please try again. If the problem persists, the chatbot service might not be running.',
+        content,
         timestamp: new Date()
       };
 
@@ -244,8 +286,15 @@ const ChatBot: React.FC = () => {
   };
 
   const formatMessage = (content: string) => {
-    // Simple markdown-like formatting
-    return content
+    // Simple markdown-like formatting. The result goes through
+    // dangerouslySetInnerHTML, so escape first - answers quote documentation
+    // verbatim, and any stray `<` in the corpus would otherwise be parsed as
+    // live markup.
+    const escaped = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    return escaped
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
       .replace(/`(.*?)`/g, '<code>$1</code>')

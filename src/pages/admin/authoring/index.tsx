@@ -86,7 +86,11 @@ type Finding = {
   key: string;
   label: string;
   detail?: string;
+  /** Refused at publish (quality gate). Saving a draft is still allowed. */
   blocking: boolean;
+  /** Would hard-fail the production build (bad MDX/YAML, unknown privilege
+   *  key). This is the only class that blocks a save, matching the server. */
+  buildBreaking?: boolean;
 };
 
 type Audit = {
@@ -123,6 +127,12 @@ type State = {
    *  baseHash on save so the wizard can't silently overwrite a version
    *  another editor saved in between (server answers 409 stale-base). */
   loadedHash: string | null;
+  /** Repo-relative path of the article this edit session opened. Sent as
+   *  `fromPath` on save so a title change RENAMES the article (old file
+   *  removed, redirect written) instead of leaving a duplicate behind - the
+   *  wizard's slug comes from the frontmatter, which differs from the
+   *  filename for ~a fifth of the corpus. */
+  loadedPath: string | null;
 };
 
 const initial: State = {
@@ -151,6 +161,7 @@ const initial: State = {
   isEditing: false,
   wasPublished: false,
   loadedHash: null,
+  loadedPath: null,
 };
 
 type Action =
@@ -163,7 +174,7 @@ type Action =
   | {type: 'saved'; path: string; hash?: string; audit?: State['audit']}
   | {type: 'error'; message: string}
   | {type: 'reset'}
-  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean; hash?: string}
+  | {type: 'loadDraft'; inputs: Inputs; markdown: string; wasPublished: boolean; hash?: string; loadedPath?: string}
   | {type: 'addImage'; image: Image};
 
 function reducer(s: State, a: Action): State {
@@ -201,6 +212,7 @@ function reducer(s: State, a: Action): State {
       isEditing: true,
       wasPublished: a.wasPublished,
       loadedHash: a.hash ?? null,
+      loadedPath: a.loadedPath ?? null,
     };
     // Closure-safe append: a parallel multi-file upload would otherwise
     // race on dispatch({type:'set', patch:{images:[...i.images, new]}})
@@ -688,6 +700,10 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         title: i.title,
         description: i.description,
         tags: i.tags,
+        // The slug the file is named after must also be the slug the site
+        // routes by, or the article publishes at a URL nobody chose.
+        slug: i.slug,
+        id: i.slug,
       });
       const res = await fetch('/api/admin/authoring/save', {
         method: 'POST',
@@ -705,6 +721,10 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
           ...(state.isEditing && state.loadedHash && !staleOverrideRef.current
             ? {baseHash: state.loadedHash}
             : {}),
+          // Which article this edit session opened. Lets the server rename in
+          // place (and write the redirect) when the title change moves the
+          // route, instead of writing a second file next to the first.
+          ...(state.isEditing && state.loadedPath ? {fromPath: state.loadedPath} : {}),
         }),
       });
       const data = await res.json();
@@ -716,6 +736,13 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         });
         return;
       }
+      // A different article already owns this address. The server refuses
+      // rather than overwriting it - that used to replace someone's live
+      // article with this draft, recoverable only from git history.
+      if (res.status === 409 && data.error === 'article-exists') {
+        dispatch({type: 'error', message: data.message});
+        return;
+      }
       if (!res.ok) {
         // The save endpoint returns {error, audit} on a blocking-audit
         // 400. Surface the specific blocking findings in the toast so
@@ -724,7 +751,10 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
         // malformedFrontmatter) instead of the generic banner. Also
         // refresh state.audit so the on-screen audit panel reflects
         // the truth-on-disk view, not the stale /generate snapshot.
-        const blockers = (data.audit?.findings || []).filter((f: Finding) => f.blocking);
+        // /save only 400s on build-breaking findings now, so report those -
+        // listing every `blocking` finding named quality warnings that had
+        // nothing to do with the refusal.
+        const blockers = (data.audit?.findings || []).filter((f: Finding) => f.buildBreaking);
         if (blockers.length > 0 && data.audit) {
           dispatch({
             type: 'generated',
@@ -799,8 +829,17 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
   }
 
   const titleShape = checkTitleShape(i.title, i.subFolder);
-  const saveBlockedByMetadata = !canSave(state);
-  const saveBlockedByAudit = !!(state.audit && state.audit.findings.some((f) => f.blocking));
+  // Mirrors resolveDocRoute() in lib/doc-routes.js: the route is the article's
+  // directory (minus the leading `docs/`) plus the frontmatter slug.
+  const plannedUrl = '/' + `${(i.dir || '').replace(/^docs\/?/, '')}/${i.slug}`.replace(/^\/+/, '').replace(/\/+/g, '/');
+  const saveBlockReasonMsg = saveBlockReason(state);
+  const saveBlockedByMetadata = saveBlockReasonMsg !== null;
+  // Match the server: /save refuses only build-breaking findings, deliberately
+  // allowing quality warnings so an unfinished draft isn't lost (see the
+  // comment on the /save handler). Testing `blocking` here re-imposed the
+  // exact block that change removed. The full quality gate still applies at
+  // publish, which is where it belongs.
+  const saveBlockedByAudit = !!(state.audit && state.audit.findings.some((f) => f.buildBreaking));
 
   return (
     <div className={styles.previewWrap}>
@@ -843,6 +882,17 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
               {i.title && !titleShape.ok && (
                 <span className={styles.warn}>{titleShape.hint}</span>
               )}
+              {/*
+                The route readers will actually land on. The title drives the
+                slug, the slug drives both the filename AND the frontmatter
+                `slug` Docusaurus routes by - showing it here is what makes a
+                surprise URL impossible to miss before it ships.
+              */}
+              {i.slug && (
+                <span className={styles.hint}>
+                  Publishes at <code>{plannedUrl}</code>
+                </span>
+              )}
             </div>
             <div className={styles.field}>
               <label>Description (one sentence, 60–160 chars)</label>
@@ -880,7 +930,13 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
                     <li key={f.key + '-' + idx} className={f.blocking ? styles.findBlock : styles.findWarn}>
                       <strong>{f.label}</strong>
                       {f.detail && <span className={styles.findDetail}> - {f.detail}</span>}
-                      {f.blocking && <span className={styles.findBadge}> blocks save</span>}
+                      {/* Be accurate about which gate a finding actually trips:
+                          only build-breakers stop a save; quality findings stop
+                          the publish. Saying "blocks save" for both is what made
+                          the draft-safety fix look like it hadn't shipped. */}
+                      {f.buildBreaking
+                        ? <span className={styles.findBadge}> blocks save</span>
+                        : f.blocking && <span className={styles.findBadge}> blocks publish</span>}
                     </li>
                   ))}
                 </ul>
@@ -908,7 +964,10 @@ function Step3({state, dispatch, saveTick = 0}: {state: State; dispatch: React.D
                 className={styles.btnPrimary}
                 disabled={state.saving || saveBlockedByMetadata || saveBlockedByAudit}
                 onClick={save}
-                title={saveBlockedByMetadata ? 'Fill the title, description, and at least one tag to save.' : ''}>
+                title={
+                  saveBlockReasonMsg
+                  || (saveBlockedByAudit ? 'This content would break the site build - fix the flagged issue to save.' : '')
+                }>
                 {state.saving ? 'Saving…' : 'Save as draft'}
               </button>
             </div>
@@ -946,16 +1005,21 @@ function canAdvance(s: State): boolean {
  *  that used to live on Step 2 - title, description, tags - which the
  *  LLM now pre-fills and the editor reviews on Step 3 above the
  *  preview. Used to disable the Save button. */
-function canSave(s: State): boolean {
+/** Why Save is disabled, or null when it's allowed. The message names the
+ *  actual failing field - the old tooltip said "Fill the title, description,
+ *  and at least one tag" for every cause, including two it didn't mention.
+ *
+ *  Only genuinely required fields block. Title shape and description length
+ *  are coaching, shown as warnings next to their fields (see checkTitleShape's
+ *  own doc-comment): as hard gates they made Save permanently impossible for
+ *  a third of the existing corpus, so editing an older article was a dead end. */
+function saveBlockReason(s: State): string | null {
   const i = s.inputs;
-  if (!i.title) return false;
-  // Title must match the shape the article's sub-folder expects
-  // (How to ... for create-and-manage, question-shaped for FAQs, etc.).
-  // Sub-folder unknown -> falls back to the legacy verb/question check.
-  if (!checkTitleShape(i.title, i.subFolder).ok) return false;
-  if (i.description.length < 60 || i.description.length > 160) return false;
-  if (i.tags.length < 1 || i.tags.length > 5) return false;
-  return true;
+  if (!i.title.trim()) return 'Add a title to save.';
+  if (!i.description.trim()) return 'Add a one-sentence description to save.';
+  if (i.tags.length < 1) return 'Add at least one tag to save.';
+  if (i.tags.length > 5) return 'Use at most 5 tags.';
+  return null;
 }
 
 function Wizard(): ReactNode {
@@ -1045,7 +1109,7 @@ function Wizard(): ReactNode {
         // forces draft:true regardless, so a Refine -> Save here re-drafts
         // a live article; UI surfaces this with a different banner.
         const wasPublished = !/^draft:\s*true\b/m.test(markdown);
-        dispatch({type: 'loadDraft', inputs, markdown, wasPublished, hash});
+        dispatch({type: 'loadDraft', inputs, markdown, wasPublished, hash, loadedPath: pathParam || loadedPath});
       } catch (err) {
         dispatch({type: 'error', message: `Failed to load draft: ${(err as Error).message}`});
       }
@@ -1151,6 +1215,22 @@ function Wizard(): ReactNode {
             disabled={!canAdvance(state)}
             onClick={() => dispatch({type: 'step', step: (state.step + 1) as 2 | 3})}>
             {state.step === 2 ? 'Generate →' : 'Next →'}
+          </button>
+        </div>
+      )}
+
+      {/*
+        Step 3 with nothing generated means the generate call failed. Without a
+        way back, the only exit was "Start over", which discards the brain dump
+        the author just typed.
+      */}
+      {state.step === 3 && !state.isEditing && !state.markdown && !state.generating && (
+        <div className={styles.actions}>
+          <button
+            type="button"
+            className={styles.btnGhost}
+            onClick={() => dispatch({type: 'step', step: 2})}>
+            ← Back to your notes
           </button>
         </div>
       )}
