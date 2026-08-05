@@ -1,7 +1,7 @@
 ---
 id: 5fd48497c868cb6df3a81016
 title: How to upload questions in bulk using 'Import Questions'.
-description: Here are the steps to import questions in bulk:
+description: "Here are the steps to import questions in bulk."
 slug: how-to-upload-questions-in-bulk-using-import-questions
 sidebar_position: 46
 last_update:
@@ -26,6 +26,7 @@ draft: false
 You can efficiently upload multiple questions to your quiz by using the 'Import Questions' feature. This process involves downloading a CSV template, filling it with your questions, and then uploading it back to the platform.
 
 ## When to use this
+
 Use the bulk upload feature when you have a large number of questions to add to your quiz. This method is ideal for:
 
 - Streamlining the question creation process.
@@ -35,6 +36,7 @@ Use the bulk upload feature when you have a large number of questions to add to 
 ## Steps
 
 ### 1. Download CSV Template
+
 The first step in the bulk upload is to download the CSV template to create questions. Follow the steps below to download the CSV template:
 
 Go to **Questions and Quizzes** under **LEARNING AND KNOWLEDGE** in the left menu > **Question Bank**. Click on the **hamburger** icon and select '**Import Questions**'.
@@ -54,6 +56,7 @@ This is how a sample CSV file will look:
 It provides sample questions that you can create through this method.
 
 ### 2. Add questions to the CSV
+
 Open the downloaded CSV file and fill all the fields in it. Here are the various fields in the CSV file and how you can fill them out:
 
 - **Question Text:** This field contains the question text.
@@ -71,10 +74,12 @@ Certain mandatory fields must be filled to upload the CSV file successfully. The
 **Here are Do's and Don'ts to keep in mind while creating the CSV file:**
 
 **Do's:**
+
 1. Ensure all mandatory fields in the CSV are filled.
 2. Verify that the values you fill are correct and align with the predefined categories.
 
 **Don'ts:**
+
 1. Do not add or remove a column.
 2. Do not change the order of the columns.
 3. Keep the column headers as they are.
@@ -82,6 +87,7 @@ Certain mandatory fields must be filled to upload the CSV file successfully. The
 Once the CSV file is filled with all the questions and necessary information, it will be ready for upload.
 
 ### 3. Upload CSV
+
 To upload the CSV file, click on the **Choose File** button and select the CSV file to be uploaded. Then, click on the **Upload** button.
 
 ![Upload the CSV file](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489a423119734ee37eda1/file-QXxeYElTyE.png)
@@ -93,11 +99,13 @@ On successful upload, you will see the list of questions in the file in the **Us
 You can view a question by clicking on the **View Question** button.
 
 ### Common Error Codes
+
 If there are any missing or incorrect values in the CSV file, errors will display while uploading it. You will see the list of errors in the file in the **Validation Errors During Upload** section.
 
 ![Validation errors during upload](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489a423119734ee37eda1/file-QXxeYElTyE.png)
 
 ### View Logs and Check Questions
+
 You can view the log status by clicking on the **View Logs** button.
 
 ![View Logs button](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd489ee36980410c912383b/file-Ie7QamTmvr.png)

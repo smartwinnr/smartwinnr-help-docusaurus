@@ -51,7 +51,10 @@ function buildDocUrlMap(): Map<string, DocEntry> {
       // Real YAML parse (not a regex): frontmatter routinely uses block
       // scalars (slug: >-) that line-based regexes misread as ">-".
       let fm: Record<string, unknown> = {};
-      try { fm = matter(content).data ?? {}; } catch { /* fall back below */ }
+      // Options arg bypasses gray-matter's content-keyed cache, which returns
+      // `{data:{}}` when re-parsing a string whose first parse threw - broken
+      // frontmatter would otherwise look like an article that simply has none.
+      try { fm = matter(content, {}).data ?? {}; } catch { /* fall back below */ }
       const isDraft = fm.draft === true;
       const rel = path.relative(docsRoot, p).replace(/\\/g, '/');
       const dirRel = rel.replace(/\/?[^/]+\.(md|mdx)$/i, '');

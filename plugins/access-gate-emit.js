@@ -27,48 +27,58 @@
 
 const fs = require('fs');
 const path = require('path');
+const matter = require('gray-matter');
 
 const DOCS_DIR = 'docs';
 const OUT_FILE = 'doc-gates.json';
 
+/** Read an article's routing identity + access gate from its frontmatter.
+ *
+ *  Uses a real YAML parser, not regexes. The previous version matched roles
+ *  only in inline form (`roles: [a, b]`), but most of the corpus writes the
+ *  equivalent block sequence:
+ *
+ *      customProps:
+ *        roles:
+ *          - editor
+ *
+ *  Those articles silently produced NO gate, so the server-side URL guard
+ *  fell back to ancestor categories alone and served articles to roles they
+ *  explicitly excluded - while the sidebar (which reads the same frontmatter
+ *  through Docusaurus' own YAML parsing) correctly hid them. That gap is
+ *  precisely what the URL guard exists to close.
+ *
+ *  The `{}` options arg bypasses gray-matter's content-keyed cache, which
+ *  returns `{data:{}}` when re-parsing a string whose first parse threw.
+ */
 function readFmCustomProps(filePath) {
   const text = fs.readFileSync(filePath, 'utf8');
   if (!text.startsWith('---')) return null;
-  const end = text.indexOf('\n---', 3);
-  if (end === -1) return null;
-  const fm = text.slice(3, end);
+
+  let data;
+  try {
+    data = matter(text, {}).data || {};
+  } catch {
+    // Broken YAML: emit no gate rather than a wrong one. `npm run audit:links`
+    // fails the build on this, so it can't ship unnoticed.
+    return null;
+  }
 
   const out = {};
+  if (data.slug != null && String(data.slug).trim()) out.slug = String(data.slug).trim();
+  if (data.id != null && String(data.id).trim()) out.id = String(data.id).trim();
 
-  // slug:
-  const slugMatch = /^slug\s*:\s*["']?([^"'\n]+?)["']?\s*$/m.exec(fm);
-  if (slugMatch) out.slug = slugMatch[1].trim();
-
-  // id: (fallback if slug missing)
-  const idMatch = /^id\s*:\s*["']?([^"'\n]+?)["']?\s*$/m.exec(fm);
-  if (idMatch) out.id = idMatch[1].trim();
-
-  // customProps block - supports the common shape produced by migrate-helpscout.js.
-  const cpStart = fm.indexOf('\ncustomProps:');
-  if (cpStart !== -1) {
-    const cp = fm.slice(cpStart);
-    const roles = /^\s*roles\s*:\s*\[([^\]]*)\]/m.exec(cp);
-    const priv = /^\s*privilege\s*:\s*["']?([A-Za-z0-9_]+)["']?\s*$/m.exec(cp);
-    const any = /^\s*anyPrivilege\s*:\s*\[([^\]]*)\]/m.exec(cp);
+  const cp = data.customProps;
+  if (cp && typeof cp === 'object') {
     const gate = {};
-    if (roles) {
-      gate.roles = roles[1]
-        .split(',')
-        .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
-        .filter(Boolean);
-    }
-    if (priv) gate.privilege = priv[1];
-    if (any) {
-      gate.anyPrivilege = any[1]
-        .split(',')
-        .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
-        .filter(Boolean);
-    }
+    const list = (v) => (Array.isArray(v) ? v.map((s) => String(s).trim()).filter(Boolean) : null);
+    const roles = list(cp.roles);
+    if (roles && roles.length) gate.roles = roles;
+    if (cp.privilege != null && String(cp.privilege).trim()) gate.privilege = String(cp.privilege).trim();
+    const any = list(cp.anyPrivilege);
+    if (any && any.length) gate.anyPrivilege = any;
+    const all = list(cp.allPrivileges);
+    if (all && all.length) gate.allPrivileges = all;
     if (Object.keys(gate).length > 0) out.gate = gate;
   }
 
@@ -209,10 +219,9 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
       // tags} so the strip can pick 3 nearest siblings without re-parsing
       // markdown at runtime.
       //
-      // Use gray-matter for proper YAML parsing - many articles use folded
-      // block syntax for `description: >-` and a hand-rolled regex would
-      // capture the literal ">-" instead of the folded value.
-      const matter = require('gray-matter');
+      // gray-matter (imported at the top) does the YAML parsing - many
+      // articles use folded block syntax for `description: >-` and a
+      // hand-rolled regex captures the literal ">-" instead of the value.
       const articles = [];
       function visitArticles(dir) {
         for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
@@ -223,7 +232,10 @@ module.exports = function accessGateEmitPlugin(_context, _options) {
           } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
             let fmData;
             try {
-              fmData = matter(fs.readFileSync(full, 'utf8')).data;
+              // Options arg bypasses gray-matter's content-keyed cache (a
+              // re-parse of a string that threw returns `{data:{}}`), so a
+              // file with broken YAML behaves the same on every call.
+              fmData = matter(fs.readFileSync(full, 'utf8'), {}).data;
             } catch {
               continue;
             }

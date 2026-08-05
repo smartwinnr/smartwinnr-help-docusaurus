@@ -3754,7 +3754,11 @@ function articleIdentity(markdown, filename) {
   // that line-based regexes misread as the literal ">-". Malformed YAML
   // falls back to filename-derived identity.
   let fm = {};
-  try { fm = matter(markdown).data || {}; } catch { /* fall back below */ }
+  // Options arg bypasses gray-matter's content-keyed cache, which otherwise
+  // returns `{data:{}}` on a re-parse of a string whose first parse threw -
+  // silently turning broken frontmatter into "no frontmatter". See the same
+  // note in lib/doc-routes.js.
+  try { fm = matter(markdown, {}).data || {}; } catch { /* fall back below */ }
   return {
     slug: typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : base,
     id: fm.id != null && String(fm.id).trim() ? String(fm.id).trim() : base,

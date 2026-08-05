@@ -60,6 +60,20 @@ function main() {
   const warnings = [];
   const rel = (p) => path.relative(REPO_ROOT, p).replace(/\\/g, '/');
 
+  // Frontmatter that doesn't parse fails silently everywhere it matters: the
+  // route resolver falls back to filename identity, and the gate emitter drops
+  // the article's customProps entirely - so a narrower-than-folder audience is
+  // quietly widened. Nothing else in the pipeline reports it, because every
+  // consumer swallows the parse error to stay resilient. Catch it here.
+  // (`{}` bypasses gray-matter's cache - see lib/doc-routes.js.)
+  for (const f of docFiles) {
+    try {
+      matter(fs.readFileSync(f, 'utf8'), {});
+    } catch (e) {
+      errors.push(`${rel(f)}: frontmatter is not valid YAML - ${String(e.message).split('\n')[0]}`);
+    }
+  }
+
   const checkRoute = (url, where, kind) => {
     const norm = normRoute(url.split(/[?#]/)[0]);
     if (draftRoutes.has(norm)) {
