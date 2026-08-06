@@ -7,58 +7,67 @@ description: >-
 slug: how-to-update-the-smartwinnr-app-web-view
 sidebar_position: 20
 last_update:
-  date: 2024-08-29T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-06
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fce3d864664bd7a123eb4ea
   helpscout_url: >-
     https://help.smartwinnr.com/article/20-how-to-update-the-smartwinnr-app-web-view
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
-tags: []
+tags: ["onboarding"]
+draft: false
 ---
-Before you update your SmartWinnr app, please check the version of the app installed in your mobile device. Learn how to check the version of the SmartWinnr app.
+
+> **At a glance** - This article explains how to update the SmartWinnr app on both Android and iOS devices, as well as how to refresh the web view on your laptop or desktop.
+
+Before you update your SmartWinnr app, please check the version of the app installed on your mobile device. Learn how to check the version of the SmartWinnr app.
 
 [Learn how to check the version of the SmartWinnr web view.](https://smartwinnr.helpscoutdocs.com/article/19-how-can-i-check-the-app-version-web-view-version)
 
-### How to update SmartWinnr app in an Android device?
+## When to use this
+Use this guide when you need to update the SmartWinnr app on your mobile device or refresh the web view on your laptop or desktop. 
 
-Once you check the version of your SmartWinnr app installed in your device, open Google PlayStore in your phone and search for SmartWinnr. That will show the SmartWinnr app in Google PlayStore.
+- You want to ensure you are using the latest features of the SmartWinnr app.
+- You experience issues with the current version and need to refresh it.
+- You want to verify that your SmartWinnr web view is up to date.
 
-![Once you check the version of your SmartWinnr app installed in your device, open Google PlayStore in your phone and search for SmartWinnr. T](/img/helpscout/managers-and-team-members/how-to-update-the-smartwinnr-app-web-view-1.jpg)
+## How to update SmartWinnr app in an Android device
 
-_Don’t click on the ‘Update’ button yet. Please follow the next steps to ensure that your Google PlayStore is showing the latest version of the app._
+Once you check the version of your SmartWinnr app installed on your device, open **Google Play Store** on your phone and search for **SmartWinnr**. This will show the SmartWinnr app in Google Play Store.
 
-Once you are on this page in Google PlayStore, click on the ‘SmartWinnr’ name. Then click on the ‘What’s new’ section.
+![describe this screenshot](/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh3freg.jpg)
 
-![Once you are on this page in Google PlayStore, click on the ‘SmartWinnr’ name. Then click on the ‘What’s new’ section.](/img/helpscout/managers-and-team-members/how-to-update-the-smartwinnr-app-web-view-2.jpg)
+_Don’t click on the ‘Update’ button yet. Please follow the next steps to ensure that your Google Play Store is showing the latest version of the app._
 
-Scroll down to check the version of the app on your Google PlayStore. This will show you the latest version of SmartWinnr app with the features available in the new version of the app.
+Once you are on this page in Google Play Store, click on the **SmartWinnr** name. Then click on the **What’s new** section.
 
-![Scroll down to check the version of the app on your Google PlayStore. This will show you the latest version of SmartWinnr app with the featu](/img/helpscout/managers-and-team-members/how-to-update-the-smartwinnr-app-web-view-3.jpg)
+![describe this screenshot](/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh3in7i.jpg)
 
-_If you see any older version it means that the Google Play cache is showing an older version of the SmartWinnr app. Kindly restart your phone and check once again._
+Scroll down to check the version of the app on your Google Play Store. This will show you the latest version of the SmartWinnr app with the features available in the new version.
 
-If you see that the version of the app installed in your device is older than the version in PlayStore,  click on the back button on the top left corner of the page. And then click on the ‘Update’ button. This will update the SmartWinnr app.
+![describe this screenshot](/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh3oblq.jpg)
 
-### How to update SmartWinnr app in an IOS device?
+_If you see an older version, it means that the Google Play cache is showing an outdated version of the SmartWinnr app. Kindly restart your phone and check once again._
 
-Once you check the SmartWinnr app version installed in your device, Open **Apple AppStore** in your phone and search with **SmartWinnr**. That will show the SmartWinnr app in AppStore.
+If you see that the version of the app installed on your device is older than the version in Play Store, click on the back button on the top left corner of the page. Then click on the **Update** button. This will update the SmartWinnr app.
 
-_Don’t click on the ‘****Update****’ button yet. Please follow the next steps to ensure that your App Store is showing the latest version of the app._
+## How to update SmartWinnr app in an iOS device
 
-Once you are on this page in AppStore, click on the ‘ SmartWinnr’ name. This will show the details of the app.
+Once you check the SmartWinnr app version installed on your device, open **Apple App Store** on your phone and search for **SmartWinnr**. This will show the SmartWinnr app in the App Store.
 
-![Once you are on this page in AppStore, click on the ‘ SmartWinnr’ name. This will show the details of the app.](/img/helpscout/managers-and-team-members/how-to-update-the-smartwinnr-app-web-view-4.png)
+_Don’t click on the ‘Update’ button yet. Please follow the next steps to ensure that your App Store is showing the latest version of the app._
 
-Now check the ‘ Whats New’ section. This will show you the latest version of SmartWinnr app with the features available in the new version of the app.
+Once you are on this page in the App Store, click on the **SmartWinnr** name. This will show the details of the app.
 
-If you see that the version of the app installed in your device is older than the version in AppStore,  click on the ‘ **Update**’ button. This will update the SmartWinnr app.
+Now check the **What’s New** section. This will show you the latest version of the SmartWinnr app with the features available in the new version.
 
-### How to update SmartWinnr web view in your Laptop/Desktop?
+If you see that the version of the app installed on your device is older than the version in the App Store, click on the **Update** button. This will update the SmartWinnr app.
+
+## How to update SmartWinnr web view on your laptop/desktop
 
 [Learn how to check the version of the SmartWinnr web view.](https://smartwinnr.helpscoutdocs.com/article/19-how-can-i-check-the-app-version-web-view-version)
 
-To update the version of the SmartWinnr web view in your system, kindly refresh the page multiple times.
+To update the version of the SmartWinnr web view on your system, kindly refresh the page multiple times.
 
-_Please note that the version might not change in a single refresh._
+_Please note that the version might not change with a single refresh._
