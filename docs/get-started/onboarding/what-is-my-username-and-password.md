@@ -14,7 +14,7 @@ source:
   helpscout_url: 'https://help.smartwinnr.com/article/11-what-is-my-username-and-password'
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
-tags: []
+tags: ["onboarding"]
 ---
 Once your account gets created in SmartWinnr, you will receive a welcome email/SMS to your registered email address or registered mobile number.
 

@@ -58,9 +58,13 @@ Once you check the SmartWinnr app version installed on your device, open **Apple
 
 _Don’t click on the ‘Update’ button yet. Please follow the next steps to ensure that your App Store is showing the latest version of the app._
 
+![describe this screenshot](/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh6wfeh.jpg)
+
 Once you are on this page in the App Store, click on the **SmartWinnr** name. This will show the details of the app.
 
 Now check the **What’s New** section. This will show you the latest version of the SmartWinnr app with the features available in the new version.
+
+![describe this screenshot](/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh6yiax.png)
 
 If you see that the version of the app installed on your device is older than the version in the App Store, click on the **Update** button. This will update the SmartWinnr app.
 
