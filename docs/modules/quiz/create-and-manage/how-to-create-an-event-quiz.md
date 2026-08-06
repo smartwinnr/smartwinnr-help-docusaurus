@@ -29,19 +29,21 @@ Use this guide when you need to create a quiz specifically for an event. This is
 Go to **Editor > Learning and Knowledge > Competition**.
 
 ### 2. Create the Quiz
-Create a quiz in the usual manner by selecting the Manual Mode Type "Event" as shown below.
+Create a quiz in the usual manner by selecting the Manual Mode Type "Event." 
 
-![Create a quiz in a normal way by selecting the Manual Mode Type "Event" as shown below.](/img/helpscout/editors/how-to-create-an-event-quiz-1.png)
+Mandatory settings: Always select a future date as the **Start Date** of the quiz. You can select any future date as the **End Date**. Between these two dates, the editor can open and close the quiz. Once the end date is reached, the quiz will close automatically.
+
+![Create a quiz in a normal way by selecting the Manual Mode Type "Event."](/img/helpscout/editors/how-to-create-an-event-quiz-1.png)
 
 ### 3. Open or Close the Quiz
-After creating the quiz, you can choose to **open an inactive quiz** or **close an active quiz** by following these steps:
+After creating the quiz, you can choose to **open the event quiz** or **close an active event quiz** by following these steps:
 
 1. Navigate to **Editor > Learning and Knowledge > Competition**.
 2. Open the relevant competition.
 3. Click on the **View Tasks** tab (the fourth tab).
 4. On the _Tasks_ page, you will see the list of quizzes associated with the competition.
-5. Identify the quiz you want to manage.
-6. To activate the quiz, click the **Open Quiz** button for the selected quiz.
+5. Identify the event quiz you want to manage, which will have the **Open Quiz** and **Close Quiz** buttons.
+6. To activate the quiz, click the **Open Quiz** button for the selected quiz. This button automatically converts to the **Close Quiz** button once you open it.
 7. To end the quiz, click the **Close Quiz** button.
 
 ![Once a quiz is closed, users who have already started the quiz will be allowed to complete it. However, users who have not yet started will no longer be able to access or attempt the quiz.](/img/helpscout/editors/how-to-create-an-event-quiz-2.png)

@@ -43,7 +43,11 @@ A Hotspot refers to a predefined area within an image, defined by specific pixel
 
     [![Use your mouse pointer to select the correct area. You might need multiple clicks to define the outline.](/img/helpscout/editors/how-to-create-a-hotspot-question-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c1a40c64fe14d0e1fde2b/file-9UEttmexxQ.png)
 
-    _Undo:_ _This button lets you undo the last selection.__Clear Selection:_ _This button allows you to clear the entire selection that you have made.__Change Image:_ _This button allows you to change the image._
+**Undo**: This button lets you undo the last selection.
+
+**Clear Selection**: This button allows you to clear the entire selection that you have made.
+
+**Change Image**: This button allows you to change the image.
 
 7. Points
 
