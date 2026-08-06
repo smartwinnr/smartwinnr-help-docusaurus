@@ -151,7 +151,7 @@
     },
     {
       "from": "/user-guide/how-to-update-the-smartwinnr-app-from-web-view",
-      "to": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view"
+      "to": "/get-started/onboarding/how-to-update-the-smartwinnr-app-from-web-view"
     },
     {
       "from": "/user-guide/how-to-upload-audio-recording-for-coaching",
@@ -883,7 +883,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-add-a-image-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-image-to-your-content"
     },
     {
       "from": "/administration/cross-module-features/how-to-add-a-video-to-your-content",
@@ -907,7 +907,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-download-detailed-smartfeed-report",
-      "to": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report"
+      "to": "/modules/smartfeed/reports-and-analytics/how-to-download-detailed-smartfeed-report"
     },
     {
       "from": "/administration/cross-module-features/how-to-set-reminder-for-your-tasks",
@@ -1011,7 +1011,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-add-a-image-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-image-to-your-content"
     },
     {
       "from": "/modules/cross-module/how-to-add-a-video-to-your-content",
@@ -1035,7 +1035,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-download-detailed-smartfeed-report",
-      "to": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report"
+      "to": "/modules/smartfeed/reports-and-analytics/how-to-download-detailed-smartfeed-report"
     },
     {
       "from": "/modules/cross-module/how-to-set-reminder-for-your-tasks",
@@ -1900,6 +1900,18 @@
     {
       "from": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
       "to": "/modules/field-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+    },
+    {
+      "from": "/modules/cross-module/reports-and-analytics/how-to-download-detailed-smartfeed-report",
+      "to": "/modules/smartfeed/reports-and-analytics/how-to-download-detailed-smartfeed-report"
+    },
+    {
+      "from": "/guides/learner/how-to-update-the-smartwinnr-app-from-web-view",
+      "to": "/get-started/onboarding/how-to-update-the-smartwinnr-app-from-web-view"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-image-to-your-content"
     }
   ]
 }

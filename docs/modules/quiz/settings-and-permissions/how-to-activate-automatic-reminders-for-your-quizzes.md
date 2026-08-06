@@ -7,7 +7,7 @@ description: >-
 slug: how-to-activate-automatic-reminders-for-your-quizzes
 sidebar_position: 52
 last_update:
-  date: 2026-07-30
+  date: 2026-08-06
   author: Aswani TK
 source:
   helpscout_id: 5fd49470c868cb6df3a8102a
