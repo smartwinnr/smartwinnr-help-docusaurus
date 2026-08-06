@@ -887,7 +887,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-add-a-video-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-video-to-your-content"
     },
     {
       "from": "/administration/cross-module-features/how-to-add-an-audio-file-to-your-content",
@@ -1015,7 +1015,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-add-a-video-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-video-to-your-content"
     },
     {
       "from": "/modules/cross-module/how-to-add-an-audio-file-to-your-content",
@@ -1912,6 +1912,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content",
       "to": "/modules/smartfeed/create-and-manage/how-to-add-a-image-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-a-video-to-your-content"
     }
   ]
 }
