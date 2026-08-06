@@ -39,10 +39,13 @@ Use this feature when you want to enhance your content with videos for better en
 - Including customer feedback to build trust.
 - Adding educational content to support learning.
 
+## Before you start
+Ensure you have the necessary permissions to add videos to your content in SmartWinnr.
+
 ## Steps
 
 ### 1. Add a video from YouTube
-1. Click on the **video icon** and the pop-up will appear.
+1. Click on the **video icon**, and the pop-up will appear.
 2. Search for the video on YouTube.
 3. Copy the URL from YouTube directly into the **Video URL** box, as shown below.
 4. Click on **Submit**.
@@ -51,7 +54,7 @@ Use this feature when you want to enhance your content with videos for better en
 ![The video will get embedded into the content.](/img/helpscout/editors/how-to-add-a-video-to-your-content-3.png)
 
 ### 2. Add a Box video
-1. Click on the **video icon** and the pop-up will appear.
+1. Click on the **video icon**, and the pop-up will appear.
 2. Click on the **Box** tab.
 
 ![Click on the ‘Box’ tab.](/img/helpscout/editors/how-to-add-a-video-to-your-content-4.png)
@@ -61,7 +64,7 @@ Use this feature when you want to enhance your content with videos for better en
 - **Video Shared Link**: Go to box.com and find the video you want to use. Follow the screenshots below to generate the **Video Shared Link**. Copy this URL into the **Video Shared Link** textbox.
 
 ### 3. Add a Brainshark video
-1. Click on the **video icon** and the pop-up will appear.
+1. Click on the **video icon**, and the pop-up will appear.
 2. Click on the **Brainshark** tab.
 
 ![Click on the ‘Brainshark’ tab.](/img/helpscout/editors/how-to-add-a-video-to-your-content-5.png)
@@ -76,7 +79,7 @@ Use this feature when you want to enhance your content with videos for better en
 - **Video Shared Link**: Log in to your Brainshark account and select the video you want to use. Generate a **share** link and copy that into the SmartWinnr video pop-up.
 
 ### 4. Add a video from your local computer
-1. Click on the **video icon** and the pop-up will appear.
+1. Click on the **video icon**, and the pop-up will appear.
 2. Click on the **Upload Video** tab.
 3. Click on the **Choose File** button.
 4. Choose a video file from your system and then click on the **Submit** button.
@@ -85,10 +88,10 @@ Use this feature when you want to enhance your content with videos for better en
 
 Kindly note that the video format should be MP4.
 
-**How a YouTube Video SmartFeed Appears in the User View**(Science Behinf Sleep)
+**How a YouTube Video SmartFeed Appears in the User View** (Science Behind Sleep)
 
 ![describe this screenshot](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiq3vo.jpg)
 
-**How a Video SmartFeed Appears in the User View**(How to use Guide)
+**How a Video SmartFeed Appears in the User View** (How to use Guide)
 
 ![describe this screenshot](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiv2fs.jpg)
