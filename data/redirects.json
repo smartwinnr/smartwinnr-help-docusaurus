@@ -527,7 +527,7 @@
     },
     {
       "from": "/administration/video-coaching-module/how-to-create-field-coaching",
-      "to": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
     },
     {
       "from": "/administration/video-coaching-module/how-to-enable-the-streaming-links-for-video-coaching",
@@ -539,7 +539,7 @@
     },
     {
       "from": "/administration/video-coaching-module/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
-      "to": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+      "to": "/modules/field-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
     },
     {
       "from": "/administration/video-coaching-module/how-to-review-a-video-coaching-assignment",
@@ -1611,7 +1611,7 @@
     },
     {
       "from": "/modules/video-coaching/how-to-create-field-coaching",
-      "to": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching"
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
     },
     {
       "from": "/modules/video-coaching/how-to-enable-the-streaming-links-for-video-coaching",
@@ -1623,7 +1623,7 @@
     },
     {
       "from": "/modules/video-coaching/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
-      "to": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
+      "to": "/modules/field-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
     },
     {
       "from": "/modules/video-coaching/how-to-review-a-video-coaching-assignment",
@@ -1892,6 +1892,14 @@
     {
       "from": "/get-started/overview/create-categories-and-tags",
       "to": "/modules/cross-module/create-and-manage/create-categories-and-tags"
+    },
+    {
+      "from": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
+      "to": "/modules/field-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager"
     }
   ]
 }
