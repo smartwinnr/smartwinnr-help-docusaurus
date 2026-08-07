@@ -1,0 +1,1261 @@
+{
+  "version": 1,
+  "baseMainSha": "3c93eb78610ce1b6e3aa62c6a26862d66491c37c",
+  "rebasedTs": 1786097839874,
+  "entries": {
+    "static/img/helpscout/authored/how-to-add-learning-sessions-in-smartpath-module-mrpxwykp.png": {
+      "action": "upsert",
+      "ts": 1784353352713,
+      "seq": 4,
+      "author": "sai.charanreddyt@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqnw99r.png": {
+      "action": "upsert",
+      "ts": 1784396989935,
+      "seq": 1,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqnwqmp.png": {
+      "action": "upsert",
+      "ts": 1784397012433,
+      "seq": 2,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqnx6z0.png": {
+      "action": "upsert",
+      "ts": 1784397033613,
+      "seq": 3,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqnz55b.png": {
+      "action": "upsert",
+      "ts": 1784397124559,
+      "seq": 4,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqo0t41.png": {
+      "action": "upsert",
+      "ts": 1784397202274,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-users-can-see-the-evaluation-and-scores-for-long-answer-question-mrqo2ftj.png": {
+      "action": "upsert",
+      "ts": 1784397278360,
+      "seq": 6,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-multiple-choice-questions-mru99o6t.png": {
+      "action": "upsert",
+      "ts": 1784614286262,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrudxxqz.png": {
+      "action": "upsert",
+      "ts": 1784622136860,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrue0ecg.png": {
+      "action": "upsert",
+      "ts": 1784622251680,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrue1v02.png": {
+      "action": "upsert",
+      "ts": 1784622319923,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrue3427.png": {
+      "action": "upsert",
+      "ts": 1784622378319,
+      "seq": 4,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrufaqd0.png": {
+      "action": "upsert",
+      "ts": 1784624413428,
+      "seq": 5,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrufdfkj.png": {
+      "action": "upsert",
+      "ts": 1784624539411,
+      "seq": 6,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-view-khub-analytics-mrugbnfu.png": {
+      "action": "upsert",
+      "ts": 1784626135914,
+      "seq": 7,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrujrq0x.png": {
+      "action": "upsert",
+      "ts": 1784631924613,
+      "seq": 8,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrujuq9j.png": {
+      "action": "upsert",
+      "ts": 1784632064889,
+      "seq": 9,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/reports-and-analytics/how-to-check-user-attempts-in-ai-coaching.md": {
+      "action": "upsert",
+      "ts": 1784633344159,
+      "seq": 13,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-check-user-attempts-in-ai-coaching-mrukjgq7.jpg": {
+      "action": "upsert",
+      "ts": 1784633218929,
+      "seq": 12,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrukzlpk.png": {
+      "action": "upsert",
+      "ts": 1784633971881,
+      "seq": 14,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrul1sxt.png": {
+      "action": "upsert",
+      "ts": 1784634074561,
+      "seq": 15,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrul44hq.png": {
+      "action": "upsert",
+      "ts": 1784634182847,
+      "seq": 16,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrul7q0w.png": {
+      "action": "upsert",
+      "ts": 1784634350721,
+      "seq": 17,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrulnd25.png": {
+      "action": "upsert",
+      "ts": 1784635080413,
+      "seq": 19,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrulp035.png": {
+      "action": "upsert",
+      "ts": 1784635156913,
+      "seq": 20,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrulqjz6.png": {
+      "action": "upsert",
+      "ts": 1784635229346,
+      "seq": 21,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum2qgb.png": {
+      "action": "upsert",
+      "ts": 1784635797611,
+      "seq": 22,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum3626.png": {
+      "action": "upsert",
+      "ts": 1784635817839,
+      "seq": 23,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum3mx6.png": {
+      "action": "upsert",
+      "ts": 1784635839690,
+      "seq": 24,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum5k7o.png": {
+      "action": "upsert",
+      "ts": 1784635929492,
+      "seq": 25,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum5vzm.png": {
+      "action": "upsert",
+      "ts": 1784635944755,
+      "seq": 26,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrum6a7h.png": {
+      "action": "upsert",
+      "ts": 1784635963181,
+      "seq": 27,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrun8s0p.png": {
+      "action": "upsert",
+      "ts": 1784637759194,
+      "seq": 33,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrunpdzq.png": {
+      "action": "upsert",
+      "ts": 1784638534166,
+      "seq": 34,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrunpo4h.png": {
+      "action": "upsert",
+      "ts": 1784638547297,
+      "seq": 35,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrunta7v.png": {
+      "action": "upsert",
+      "ts": 1784638715899,
+      "seq": 36,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrunxpbm.png": {
+      "action": "upsert",
+      "ts": 1784638922099,
+      "seq": 37,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mruoy35r.png": {
+      "action": "upsert",
+      "ts": 1784640619647,
+      "seq": 38,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mruoyone.png": {
+      "action": "upsert",
+      "ts": 1784640647498,
+      "seq": 39,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mruozens.png": {
+      "action": "upsert",
+      "ts": 1784640681208,
+      "seq": 40,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mruoztee.png": {
+      "action": "upsert",
+      "ts": 1784640700310,
+      "seq": 41,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrup0iqm.png": {
+      "action": "upsert",
+      "ts": 1784640733150,
+      "seq": 42,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrup4bl4.png": {
+      "action": "upsert",
+      "ts": 1784640910504,
+      "seq": 43,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrup54lz.png": {
+      "action": "upsert",
+      "ts": 1784640948119,
+      "seq": 44,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mruwj9th.png": {
+      "action": "upsert",
+      "ts": 1784653365365,
+      "seq": 70,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvn7k6f.png": {
+      "action": "upsert",
+      "ts": 1784698168551,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvnc9ud.png": {
+      "action": "upsert",
+      "ts": 1784698388438,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvo79eg.png": {
+      "action": "upsert",
+      "ts": 1784699834200,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvpceci.png": {
+      "action": "upsert",
+      "ts": 1784701753506,
+      "seq": 8,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvpdc1z.png": {
+      "action": "upsert",
+      "ts": 1784701797192,
+      "seq": 9,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvr3b4q.png": {
+      "action": "upsert",
+      "ts": 1784704688666,
+      "seq": 5,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvrp3v6.png": {
+      "action": "upsert",
+      "ts": 1784705705682,
+      "seq": 6,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvt3x0x.png": {
+      "action": "upsert",
+      "ts": 1784708076274,
+      "seq": 13,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvt9hld.png": {
+      "action": "upsert",
+      "ts": 1784708336210,
+      "seq": 15,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvtjl76.png": {
+      "action": "upsert",
+      "ts": 1784708807442,
+      "seq": 16,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvtpamu.png": {
+      "action": "upsert",
+      "ts": 1784709073686,
+      "seq": 17,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvttyva.png": {
+      "action": "upsert",
+      "ts": 1784709291719,
+      "seq": 18,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvuz3gy.png": {
+      "action": "upsert",
+      "ts": 1784711210578,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvvbqbo.png": {
+      "action": "upsert",
+      "ts": 1784711800068,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvve7jn.png": {
+      "action": "upsert",
+      "ts": 1784711915699,
+      "seq": 8,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-mrvwi6n0.png": {
+      "action": "upsert",
+      "ts": 1784713780765,
+      "seq": 17,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvwjmjf.png": {
+      "action": "upsert",
+      "ts": 1784713848027,
+      "seq": 19,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvwmh5s.png": {
+      "action": "upsert",
+      "ts": 1784713981024,
+      "seq": 21,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrvwnubp.png": {
+      "action": "upsert",
+      "ts": 1784714044741,
+      "seq": 22,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrwvv5sn.png": {
+      "action": "upsert",
+      "ts": 1784773172765,
+      "seq": 17,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrwvyu8f.png": {
+      "action": "upsert",
+      "ts": 1784773344401,
+      "seq": 18,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrwzw7bo.png": {
+      "action": "upsert",
+      "ts": 1784779939860,
+      "seq": 19,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx17qht.png": {
+      "action": "upsert",
+      "ts": 1784782157538,
+      "seq": 22,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx1db63.png": {
+      "action": "upsert",
+      "ts": 1784782417611,
+      "seq": 25,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx1hjjl.png": {
+      "action": "upsert",
+      "ts": 1784782615090,
+      "seq": 27,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx22wg7.png": {
+      "action": "upsert",
+      "ts": 1784783611592,
+      "seq": 35,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2lyzf.png": {
+      "action": "upsert",
+      "ts": 1784784501340,
+      "seq": 38,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2mrqs.png": {
+      "action": "upsert",
+      "ts": 1784784538612,
+      "seq": 39,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2nzxx.png": {
+      "action": "upsert",
+      "ts": 1784784595893,
+      "seq": 40,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2rkub.png": {
+      "action": "upsert",
+      "ts": 1784784762947,
+      "seq": 41,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2rxqj.png": {
+      "action": "upsert",
+      "ts": 1784784779660,
+      "seq": 42,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2ya6g.png": {
+      "action": "upsert",
+      "ts": 1784785075721,
+      "seq": 43,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2yv8m.png": {
+      "action": "upsert",
+      "ts": 1784785103014,
+      "seq": 44,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx2zr04.png": {
+      "action": "upsert",
+      "ts": 1784785144180,
+      "seq": 45,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx31lbz.png": {
+      "action": "upsert",
+      "ts": 1784785230144,
+      "seq": 46,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx329u5.png": {
+      "action": "upsert",
+      "ts": 1784785261901,
+      "seq": 47,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx35hvs.png": {
+      "action": "upsert",
+      "ts": 1784785412297,
+      "seq": 48,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx3988x.png": {
+      "action": "upsert",
+      "ts": 1784785586433,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx39893.png": {
+      "action": "upsert",
+      "ts": 1784785586439,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx3bt57.png": {
+      "action": "upsert",
+      "ts": 1784785706827,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx3cm3n.png": {
+      "action": "upsert",
+      "ts": 1784785744355,
+      "seq": 4,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx3d1rk.png": {
+      "action": "upsert",
+      "ts": 1784785764656,
+      "seq": 5,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx4w3jr.png": {
+      "action": "upsert",
+      "ts": 1784788333047,
+      "seq": 17,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrx4x5df.png": {
+      "action": "upsert",
+      "ts": 1784788382068,
+      "seq": 19,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/bulk-custom-notifications-mrx5egcv.png": {
+      "action": "upsert",
+      "ts": 1784789189456,
+      "seq": 27,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/bulk-custom-notifications-mrx5etoz.png": {
+      "action": "upsert",
+      "ts": 1784789206739,
+      "seq": 28,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/bulk-custom-notifications-mrx5juo3.png": {
+      "action": "upsert",
+      "ts": 1784789441284,
+      "seq": 30,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/bulk-custom-notifications-mrx5l6w4.png": {
+      "action": "upsert",
+      "ts": 1784789503780,
+      "seq": 31,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxa4xfp.png": {
+      "action": "upsert",
+      "ts": 1784797143109,
+      "seq": 6,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxb24v5.png": {
+      "action": "upsert",
+      "ts": 1784798692386,
+      "seq": 1,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxb5qfs.png": {
+      "action": "upsert",
+      "ts": 1784798860313,
+      "seq": 2,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbc3sm.png": {
+      "action": "upsert",
+      "ts": 1784799157559,
+      "seq": 5,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbcq0a.png": {
+      "action": "upsert",
+      "ts": 1784799186347,
+      "seq": 6,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbgn32.png": {
+      "action": "upsert",
+      "ts": 1784799369182,
+      "seq": 7,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbhk4e.png": {
+      "action": "upsert",
+      "ts": 1784799411999,
+      "seq": 8,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbkb1d.png": {
+      "action": "upsert",
+      "ts": 1784799540193,
+      "seq": 9,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxblc2m.png": {
+      "action": "upsert",
+      "ts": 1784799588190,
+      "seq": 10,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxbn521.png": {
+      "action": "upsert",
+      "ts": 1784799672409,
+      "seq": 11,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxce357.png": {
+      "action": "upsert",
+      "ts": 1784800929644,
+      "seq": 15,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcugjv.png": {
+      "action": "upsert",
+      "ts": 1784801693515,
+      "seq": 18,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcugp6.png": {
+      "action": "upsert",
+      "ts": 1784801693706,
+      "seq": 19,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcugv8.png": {
+      "action": "upsert",
+      "ts": 1784801693924,
+      "seq": 20,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcuh17.png": {
+      "action": "upsert",
+      "ts": 1784801694139,
+      "seq": 21,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcuh6r.png": {
+      "action": "upsert",
+      "ts": 1784801694339,
+      "seq": 22,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcuhbt.png": {
+      "action": "upsert",
+      "ts": 1784801694521,
+      "seq": 23,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcuhgy.png": {
+      "action": "upsert",
+      "ts": 1784801694706,
+      "seq": 24,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcuhm3.png": {
+      "action": "upsert",
+      "ts": 1784801694891,
+      "seq": 25,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcxqe6.png": {
+      "action": "upsert",
+      "ts": 1784801846239,
+      "seq": 28,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcxqmt.png": {
+      "action": "upsert",
+      "ts": 1784801846549,
+      "seq": 29,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcxr02.png": {
+      "action": "upsert",
+      "ts": 1784801847026,
+      "seq": 31,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxcxrgj.png": {
+      "action": "upsert",
+      "ts": 1784801847620,
+      "seq": 34,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxd8pna.png": {
+      "action": "upsert",
+      "ts": 1784802358486,
+      "seq": 38,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxd8ps9.png": {
+      "action": "upsert",
+      "ts": 1784802358665,
+      "seq": 39,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxd8py9.png": {
+      "action": "upsert",
+      "ts": 1784802358882,
+      "seq": 40,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxd9l1e.png": {
+      "action": "upsert",
+      "ts": 1784802399170,
+      "seq": 41,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdaoar.png": {
+      "action": "upsert",
+      "ts": 1784802450052,
+      "seq": 42,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdllgh.png": {
+      "action": "upsert",
+      "ts": 1784802959585,
+      "seq": 45,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdm87k.png": {
+      "action": "upsert",
+      "ts": 1784802989073,
+      "seq": 46,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdog3x.png": {
+      "action": "upsert",
+      "ts": 1784803092621,
+      "seq": 47,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdp4yz.png": {
+      "action": "upsert",
+      "ts": 1784803124843,
+      "seq": 48,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxdra1f.png": {
+      "action": "upsert",
+      "ts": 1784803224723,
+      "seq": 49,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxenvdy.png": {
+      "action": "upsert",
+      "ts": 1784804745383,
+      "seq": 2,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxepcpp.png": {
+      "action": "upsert",
+      "ts": 1784804814493,
+      "seq": 3,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxer352.png": {
+      "action": "upsert",
+      "ts": 1784804895398,
+      "seq": 4,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxey3xm.png": {
+      "action": "upsert",
+      "ts": 1784805223019,
+      "seq": 7,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-reminders-to-coachings-mrxft94j.png": {
+      "action": "upsert",
+      "ts": 1784806676083,
+      "seq": 14,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mrxgeqsd.png": {
+      "action": "upsert",
+      "ts": 1784807678749,
+      "seq": 18,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-zappi-coaching-scenario-mrxjhz6r.png": {
+      "action": "upsert",
+      "ts": 1784812868451,
+      "seq": 42,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-an-ishare-and-how-to-manage-its-contents-mrylmlsf.png": {
+      "action": "upsert",
+      "ts": 1784876909775,
+      "seq": 15,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-an-ishare-and-how-to-manage-its-contents-mrymfi2x.png": {
+      "action": "upsert",
+      "ts": 1784878257994,
+      "seq": 25,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mryo7nfc.png": {
+      "action": "upsert",
+      "ts": 1784881250904,
+      "seq": 34,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mryo8obo.png": {
+      "action": "upsert",
+      "ts": 1784881298724,
+      "seq": 36,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mryo9irf.png": {
+      "action": "upsert",
+      "ts": 1784881338171,
+      "seq": 37,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mryoabfl.png": {
+      "action": "upsert",
+      "ts": 1784881375330,
+      "seq": 38,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-ishare-content-types-creation-and-customization-mrys32pv.png": {
+      "action": "upsert",
+      "ts": 1784887755907,
+      "seq": 9,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwdkun.png": {
+      "action": "upsert",
+      "ts": 1784955430615,
+      "seq": 2,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwfcve.png": {
+      "action": "upsert",
+      "ts": 1784955513582,
+      "seq": 3,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwhdwl.png": {
+      "action": "upsert",
+      "ts": 1784955608229,
+      "seq": 4,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwj4tl.png": {
+      "action": "upsert",
+      "ts": 1784955689769,
+      "seq": 5,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwpq5d.png": {
+      "action": "upsert",
+      "ts": 1784955997349,
+      "seq": 6,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzwud2u.png": {
+      "action": "upsert",
+      "ts": 1784956213690,
+      "seq": 7,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzx260d.png": {
+      "action": "upsert",
+      "ts": 1784956577774,
+      "seq": 9,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzxo6te.png": {
+      "action": "upsert",
+      "ts": 1784957605251,
+      "seq": 16,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-customer-engagement-content-creation-mrzyh1ib.png": {
+      "action": "upsert",
+      "ts": 1784958951395,
+      "seq": 25,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-visiting-card-feature-in-ishare-ms03t8po.png": {
+      "action": "upsert",
+      "ts": 1784967918684,
+      "seq": 40,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-visiting-card-feature-in-ishare-ms03wxat.png": {
+      "action": "upsert",
+      "ts": 1784968090517,
+      "seq": 41,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-my-team-coaching-ms1m3xes.png": {
+      "action": "upsert",
+      "ts": 1785059116521,
+      "seq": 47,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-my-team-coaching-ms1mckmr.png": {
+      "action": "upsert",
+      "ts": 1785059519859,
+      "seq": 51,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1tcfl7.png": {
+      "action": "upsert",
+      "ts": 1785071270635,
+      "seq": 55,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u273a.png": {
+      "action": "upsert",
+      "ts": 1785072472678,
+      "seq": 58,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms1u2oly.png": {
+      "action": "upsert",
+      "ts": 1785072495383,
+      "seq": 59,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms21x345.jpg": {
+      "action": "upsert",
+      "ts": 1785085671173,
+      "seq": 61,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2vqmiv.png": {
+      "action": "upsert",
+      "ts": 1785135758215,
+      "seq": 67,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2vt321.png": {
+      "action": "upsert",
+      "ts": 1785135872954,
+      "seq": 68,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2xpnix.png": {
+      "action": "upsert",
+      "ts": 1785139072090,
+      "seq": 73,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2xq3zc.png": {
+      "action": "upsert",
+      "ts": 1785139093417,
+      "seq": 74,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2xqduq.png": {
+      "action": "upsert",
+      "ts": 1785139106211,
+      "seq": 75,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-general-screen-sharing-in-video-coaching-ms2yp618.png": {
+      "action": "upsert",
+      "ts": 1785140729037,
+      "seq": 82,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-ms4y2zx0.png": {
+      "action": "upsert",
+      "ts": 1785260627028,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-ms4yb4mb.png": {
+      "action": "upsert",
+      "ts": 1785261006372,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-use-qresolve-in-the-smartwinnr-app-ms4ybunv.png": {
+      "action": "upsert",
+      "ts": 1785261040124,
+      "seq": 4,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-visiting-card-feature-in-ishare-ms5pz5mc.png": {
+      "action": "upsert",
+      "ts": 1785307477044,
+      "seq": 11,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-visiting-card-feature-in-ishare-ms5q5z92.png": {
+      "action": "upsert",
+      "ts": 1785307795383,
+      "seq": 14,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-visiting-card-feature-in-ishare-ms5q7l19.png": {
+      "action": "upsert",
+      "ts": 1785307870270,
+      "seq": 15,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-video-recording-for-coaching-ms5zi0dw.jpg": {
+      "action": "upsert",
+      "ts": 1785323473269,
+      "seq": 1,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms743dz2.jpg": {
+      "action": "upsert",
+      "ts": 1785391655296,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms7443vo.jpg": {
+      "action": "upsert",
+      "ts": 1785391688869,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms744sz9.jpg": {
+      "action": "upsert",
+      "ts": 1785391721398,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms74b9ev.png": {
+      "action": "upsert",
+      "ts": 1785392022632,
+      "seq": 4,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms74o7gf.png": {
+      "action": "upsert",
+      "ts": 1785392626624,
+      "seq": 5,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms74rzjd.jpg": {
+      "action": "upsert",
+      "ts": 1785392802985,
+      "seq": 6,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms74zaqz.png": {
+      "action": "upsert",
+      "ts": 1785393144107,
+      "seq": 7,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms74znbr.png": {
+      "action": "upsert",
+      "ts": 1785393160407,
+      "seq": 9,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-change-my-password-for-smartwinnr-ms750aaj.png": {
+      "action": "upsert",
+      "ts": 1785393190172,
+      "seq": 10,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-ms7524nl.png": {
+      "action": "upsert",
+      "ts": 1785393276177,
+      "seq": 11,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-ms754d89.png": {
+      "action": "upsert",
+      "ts": 1785393380601,
+      "seq": 12,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-if-i-ve-forgotten-my-password-ms75u5cj.png": {
+      "action": "upsert",
+      "ts": 1785394583443,
+      "seq": 24,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/my-account-is-locked-what-should-i-do-ms7608p5.png": {
+      "action": "upsert",
+      "ts": 1785394867723,
+      "seq": 28,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-screen-recording-for-coaching-ms7885sd.png": {
+      "action": "upsert",
+      "ts": 1785398596432,
+      "seq": 41,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-contact-smartwinnr-team-ms7bt2j2.png": {
+      "action": "upsert",
+      "ts": 1785404610830,
+      "seq": 4,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms7gpz6n.png": {
+      "action": "upsert",
+      "ts": 1785412864608,
+      "seq": 8,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms7tiayn.png": {
+      "action": "upsert",
+      "ts": 1785434341635,
+      "seq": 6,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms7tj6yr.png": {
+      "action": "upsert",
+      "ts": 1785434383108,
+      "seq": 7,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-audio-recording-for-coaching-ms7u0her.jpg": {
+      "action": "upsert",
+      "ts": 1785435189797,
+      "seq": 13,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8kjkp2.png": {
+      "action": "upsert",
+      "ts": 1785479750535,
+      "seq": 2,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8knzc4.png": {
+      "action": "upsert",
+      "ts": 1785479956133,
+      "seq": 3,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8kpf1p.png": {
+      "action": "upsert",
+      "ts": 1785480023150,
+      "seq": 4,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8kxh76.png": {
+      "action": "upsert",
+      "ts": 1785480399187,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8kxlcs.png": {
+      "action": "upsert",
+      "ts": 1785480404573,
+      "seq": 6,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8ky8d4.png": {
+      "action": "upsert",
+      "ts": 1785480434392,
+      "seq": 7,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8kyoym.png": {
+      "action": "upsert",
+      "ts": 1785480455903,
+      "seq": 8,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8p0iqf.png": {
+      "action": "upsert",
+      "ts": 1785487259607,
+      "seq": 3,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms8p10cj.png": {
+      "action": "upsert",
+      "ts": 1785487282435,
+      "seq": 4,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-smartfeed-ms8qwsjd.png": {
+      "action": "upsert",
+      "ts": 1785490444922,
+      "seq": 13,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-smartfeed-ms8rd7rn.png": {
+      "action": "upsert",
+      "ts": 1785491211155,
+      "seq": 16,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-detailing-contest-ms8vzegs.png": {
+      "action": "upsert",
+      "ts": 1785498964733,
+      "seq": 15,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-detailing-contest-ms8w7ml9.png": {
+      "action": "upsert",
+      "ts": 1785499348509,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms99mab2.jpg": {
+      "action": "upsert",
+      "ts": 1785521867438,
+      "seq": 11,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-ms99mejr.jpg": {
+      "action": "upsert",
+      "ts": 1785521872935,
+      "seq": 12,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-msa9jwpo.jpg": {
+      "action": "upsert",
+      "ts": 1785582222685,
+      "seq": 4,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-msa9k0w0.jpg": {
+      "action": "upsert",
+      "ts": 1785582228096,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-update-the-smartwinnr-app-web-view-msh3l7ut.jpg": {
+      "action": "upsert",
+      "ts": 1785995469318,
+      "seq": 3,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-hotspot-question-mshddxnh.png": {
+      "action": "upsert",
+      "ts": 1786011925662,
+      "seq": 7,
+      "author": "aswani.tk@smartwinnr.com"
+    }
+  }
+}
