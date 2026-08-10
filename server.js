@@ -23,6 +23,7 @@ const fsSync = require('fs');
 const docRoutes = require('./lib/doc-routes');
 const { normRoute, resolveLiveUrl } = docRoutes;
 const { setFrontmatterRoles, removeFrontmatterPrivilege } = require('./lib/frontmatter');
+const { toIndexableText, toSnippet } = require('./lib/doc-text');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -257,14 +258,21 @@ app.post('/api/vector/search', async (req, res) => {
     // Transform results to match the expected format for the search component.
     // Results whose URL no longer resolves are dropped rather than rendered as
     // a dead link (see resolveCitationUrl).
+    // Hand the browser prose and a route - never the raw document body or the
+    // repo file path. `snippet` is cleaned here rather than client-side so a
+    // vector indexed before the sanitizer shipped still renders as text, not
+    // as `import ModuleOverview from '@site/...'`.
     const results = searchResults
       .filter((doc) => doc.liveUrl)
       .map((doc) => ({
-        id: doc.metadata?.source || `doc_${Math.random()}`,
-        content: doc.content || '',
+        // The route doubles as the result's identity. This used to be
+        // metadata.source - the repo file path - which shipped to the browser
+        // in every search payload even though only the UI's key attribute used it.
+        id: doc.liveUrl,
+        snippet: toSnippet(doc.content || '', 200) || (doc.metadata?.description || ''),
         metadata: {
-          source: doc.metadata?.source || '',
-          title: doc.metadata?.title || (doc.metadata?.source ? doc.metadata.source.replace(/\.mdx?$/, '').replace(/^.*\//, '') : 'Unknown'),
+          title: doc.metadata?.title || 'SmartWinnr Documentation',
+          description: doc.metadata?.description || '',
           url: doc.liveUrl
         },
         distance: doc.distance || 0
@@ -507,18 +515,24 @@ app.post('/api/chat', async (req, res) => {
         // still resolves to a live route. A doc with a dead URL still feeds
         // the LLM its context below - we just don't hand the user a link we
         // know is broken.
+        // Prose, not raw markdown/MDX. This snippet is rendered verbatim in the
+        // widget, so a bare substring showed readers `**bold**`, `> **At a
+        // glance**` and - for the module landing pages - import statements.
+        const clean = toIndexableText(result.content || '');
         if (result.distance < 0.8 && result.metadata && result.liveUrl) {
           citations.push({
             title: result.metadata.title || 'SmartWinnr Documentation',
             url: result.liveUrl,
-            snippet: result.content.substring(0, 150) + '...',
+            snippet: toSnippet(clean, 150) || (result.metadata.description || ''),
             source: result.metadata.source || 'help.smartwinnr.com'
           });
         }
 
+        // The model gets the same cleaned text. Feeding it JSX and imports
+        // wasted context and invited it to describe our components as features.
         return `Document ${index + 1}:
 Title: ${result.metadata?.title || 'Untitled'}
-Content: ${result.content.substring(0, 750)}...
+Content: ${clean.substring(0, 750)}...
 ---`;
       }).join('\n\n');
     } else {
@@ -5029,19 +5043,25 @@ app.get('*', (req, res, next) => {
     return next();
   }
 
-  const candidates = [
-    path.join(buildPath, req.path, 'index.html'),
-    path.join(buildPath, 'index.html'),
-  ];
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return res.sendFile(candidate);
-    }
+  const page = path.join(buildPath, req.path, 'index.html');
+  if (fs.existsSync(page)) {
+    return res.sendFile(page);
   }
 
+  // Unknown path. Docusaurus emits an index.html for every real route, so
+  // there is nothing to serve here - answer 404, with the built 404 page.
+  // Falling back to build/index.html (as this used to) returned HTTP 200 with
+  // the site shell for every bad URL, which made the 404 page unreachable and
+  // told crawlers and uptime checks that broken links were fine.
   const notFound = path.join(buildPath, '404.html');
   if (fs.existsSync(notFound)) {
     return res.status(404).sendFile(notFound);
+  }
+
+  // No 404 page (partial build) - serve the shell so the auth flow still works.
+  const shell = path.join(buildPath, 'index.html');
+  if (fs.existsSync(shell)) {
+    return res.status(404).sendFile(shell);
   }
 
   return res.status(503).json({

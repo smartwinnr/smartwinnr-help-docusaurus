@@ -150,12 +150,9 @@ const ChatBot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      console.log('🔄 Sending message to API');
-      console.log('🔄 Request body:', {
-        message: inputValue,
-        conversationId: conversationId,
-        userContext: { role: viewerRole }
-      });
+      // No request/response logging: this printed the user's typed question,
+      // their role, and the full answer payload (citations and their file
+      // paths included) into the browser console of a production build.
 
       // Hard timeout: without one, a hung backend leaves the three-dot bubble
       // spinning forever with the textarea disabled - the widget is stuck and
@@ -183,16 +180,11 @@ const ChatBot: React.FC = () => {
         clearTimeout(timeoutId);
       }
 
-      console.log('🔄 Response status:', response.status, response.statusText);
-
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('❌ Response error:', errorText);
         throw new ChatRequestError(response.status);
       }
 
       const data = await response.json();
-      console.log('✅ Response data:', data);
       setConversationId(data.conversationId);
 
       const assistantMessage: ChatMessage = {

@@ -3,14 +3,17 @@ import styles from './VectorSearch.module.css';
 
 interface SearchResult {
   id: string;
-  content: string;
+  /** Prose preview, cleaned of markdown/MDX server-side. The raw document body
+   *  is deliberately no longer sent to the browser - it previewed the module
+   *  landing pages as their own import statements. */
+  snippet: string;
   metadata: {
-    source: string;
     title?: string;
+    description?: string;
     /** The live route, resolved server-side from frontmatter `slug` and
-     *  repaired through data/redirects.json. Never derive this from `source`:
-     *  the file path and the route differ for ~20% of articles. */
-    url?: string;
+     *  repaired through data/redirects.json. Never derive this from a file
+     *  path: the two differ for ~20% of articles. */
+    url: string;
   };
   distance: number;
 }
@@ -208,33 +211,10 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
     );
   };
 
-  const cleanMarkdownContent = (content: string): string => {
-    return content
-      // Remove markdown headers
-      .replace(/#{1,6}\s+/g, '')
-      // Remove markdown bold/italic
-      .replace(/\*\*(.+?)\*\*/g, '$1')
-      .replace(/\*(.+?)\*/g, '$1')
-      .replace(/__(.+?)__/g, '$1')
-      .replace(/_(.+?)_/g, '$1')
-      // Remove markdown links
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-      // Remove markdown code blocks
-      .replace(/```[\s\S]*?```/g, '')
-      .replace(/`([^`]+)`/g, '$1')
-      // Remove markdown lists
-      .replace(/^\s*[-*+]\s+/gm, '')
-      .replace(/^\s*\d+\.\s+/gm, '')
-      // Remove extra whitespace
-      .replace(/\s+/g, ' ')
-      .trim();
-  };
-
-  const truncateContent = (content: string, maxLength: number = 150): string => {
-    const cleanContent = cleanMarkdownContent(content);
-    if (cleanContent.length <= maxLength) return cleanContent;
-    return cleanContent.substring(0, maxLength) + '...';
-  };
+  // Markdown cleaning used to happen here, and it missed MDX imports, JSX
+  // tags, admonition fences and blockquote markers. The server now sends a
+  // `snippet` already reduced to prose by lib/doc-text.js - one sanitizer for
+  // search, chat citations, and the model's context.
 
   return (
     <div ref={searchRef} className={`${styles.searchContainer} ${isModal ? styles.modal : ''}`}>
@@ -298,16 +278,21 @@ const VectorSearch: React.FC<VectorSearchProps> = ({
                   onClick={() => handleResultClick(result)}
                 >
                   <div className={styles.resultTitle}>
-                    {result.metadata.title || 
-                     result.metadata.source.replace(/^docs\//, '').replace(/\/index\.md$/, '').replace(/\.md$/, '')}
+                    {result.metadata.title || 'SmartWinnr Documentation'}
                   </div>
                   <div className={styles.resultContent}>
-                    {highlightText(truncateContent(result.content), query)}
+                    {highlightText(
+                      result.snippet || result.metadata.description || '',
+                      query,
+                    )}
                   </div>
                   <div className={styles.resultMeta}>
-                    <span className={styles.resultSource}>
-                      {result.metadata.source.replace(/^docs\//, '').replace(/\.md$/, '')}
-                    </span>
+                    {/*
+                      The article's route, not its file path. This line used to
+                      render metadata.source - a repo path like
+                      `modules/video-coaching/index.mdx`, extension and all.
+                    */}
+                    <span className={styles.resultSource}>{result.metadata.url}</span>
                   </div>
                 </div>
               ))}

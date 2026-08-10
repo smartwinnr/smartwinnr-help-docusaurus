@@ -172,7 +172,11 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          editUrl: 'https://gitlab.com/smartwinnr/help-docs/edit/main/',
+          // No editUrl: it rendered an "Edit this page" link on all 328 pages
+          // exposing the repo name and the article's internal file path
+          // (docs/modules/.../index.mdx) to every reader - and it pointed at a
+          // GitLab repo this project no longer deploys from, so it 404'd.
+          // Editors publish through the in-app tool at /admin/authoring.
         },
         blog: false,
         theme: {

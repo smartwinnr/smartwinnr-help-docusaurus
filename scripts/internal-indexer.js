@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const matter = require('gray-matter');
 const { ChromaClient } = require('chromadb');
 const { resolveDocRoute } = require('../lib/doc-routes');
+const { toIndexableText, synthesizeFromFrontmatter } = require('../lib/doc-text');
 
 const REPO_ROOT = path.join(__dirname, '..');
 const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
@@ -138,13 +139,30 @@ class InternalIndexer {
     // made the chatbot cite 404s for the ~23% of articles where they differ.
     const { route: url, slug } = resolveDocRoute(filePath, DOCS_ROOT, content);
 
-    // Remove frontmatter for processing
-    const cleanContent = content.replace(/^---[\s\S]*?---\n/, '').trim();
+    // Reduce the body to plain prose. Storing the raw source meant search
+    // results and chat citations previewed articles as their own MDX -
+    // `import ModuleOverview from '@site/...'` - and the same text was
+    // embedded and fed to the model as documentation.
+    const body = content.replace(/^---[\s\S]*?---\n/, '').trim();
+    let cleanContent = toIndexableText(body);
+
+    // Module landing pages and persona paths are a component invocation and
+    // nothing else - their prose is rendered client-side from a manifest. Index
+    // their frontmatter instead, so searching "video coaching" can still find
+    // the Video Coaching page.
+    let synthesized = false;
+    if (!cleanContent) {
+      cleanContent = synthesizeFromFrontmatter(fm);
+      synthesized = !!cleanContent;
+    }
 
     // Skip files with no meaningful body content
     if (!cleanContent) {
       console.log(`  ⏭️  Skipping (no body content): ${relativePath}`);
       return null;
+    }
+    if (synthesized) {
+      console.log(`  ℹ️  Indexing from frontmatter (no prose body): ${relativePath}`);
     }
 
     // Hash body AND the identity we store alongside it. Hashing the body alone
@@ -162,6 +180,9 @@ class InternalIndexer {
         source: relativePath,
         url,
         slug,
+        // Frontmatter description - a reliable one-line summary for the UI to
+        // show, independent of whatever the body happens to start with.
+        description: typeof fm.description === 'string' ? fm.description.trim() : '',
         lastModified: stats.mtime.toISOString(),
         contentHash,
         type: 'documentation'
