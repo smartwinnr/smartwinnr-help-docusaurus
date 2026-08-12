@@ -45,7 +45,7 @@ Organizations using AI Coaching in SmartWinnr report:
 
 ## AI Role-Plays in SmartWinnr
 
-AI Coaching in SmartWinnr works through role-plays. There are two main types: [One-Way AI Role-Plays](#A-One-Way-AI-Role-Plays-Heff0) and [Two-Way AI Role-Plays](#B-Two-Way-AI-Role-Plays-0PWOU).
+AI Coaching in SmartWinnr works through role-plays. There are two main types: [One-Way AI Role-Plays](#a-one-way-ai-role-plays) and [Two-Way AI Role-Plays](#b-two-way-ai-role-plays).
 
 * * *
 

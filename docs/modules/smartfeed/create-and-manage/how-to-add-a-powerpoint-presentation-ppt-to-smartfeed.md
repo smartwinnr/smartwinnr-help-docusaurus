@@ -93,7 +93,7 @@ Once you have selected the required users, click **Send SmartFeed** to successfu
 1. Set the **Send Date** (Send Now or Schedule Later).
 2. Set the **Expiry Date** (Never expire or choose a specific date).
 
-[Learn more on send date, expiry date and category value for SmartFeed.](https://smartwinnr.helpscoutdocs.com/article/27-how-to-create-a-smartfeed)
+[Learn more on send date, expiry date and category value for SmartFeed.](/modules/smartfeed/create-and-manage/how-to-create-a-smartfeed)
 
 Following is how a SmartFeed with the presentation will appear in the SmartWinnr app.
 

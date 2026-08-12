@@ -68,7 +68,7 @@ You can track progress and completion in different ways:
 
 Since the SCORM course needs to be imported into the SmartPath module, you must create a module for SmartPath.
 
-[Learn how to create a module for SmartPath](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath)
+[Learn how to create a module for SmartPath](/modules/smartpath/create-and-manage/how-to-create-a-module-for-smartpath)
 
 When creating the segments, choose the segment type as SCORM from the available options.
 
@@ -96,6 +96,6 @@ Here, you can define the SCORM version, course details, language, and upload the
 
 The next step is to create a SmartPath and attach the module that you created with the SCORM course.
 
-##### [Learn how to create a SmartPath](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartpath/create-and-manage/how-to-create-a-smartpath)
+##### [Learn how to create a SmartPath](/modules/smartpath/create-and-manage/how-to-create-a-smartpath)
 
 Once you create the SmartPath successfully, you can assign it to the desired participants.

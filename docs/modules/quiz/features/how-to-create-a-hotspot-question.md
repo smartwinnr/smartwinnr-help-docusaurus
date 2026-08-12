@@ -89,19 +89,19 @@ Every question in SmartWinnr must be assigned at least one knowledge category, w
 ### 10. Add Multimedia
 You can pose a question through a video as well. Choose videos of products, product demonstrations, customer feedback, customer stories, and ask questions based on that. Click on the video icon. You can add your own videos to the question or videos from YouTube, Box, and Brainshark.
 
-[Learn how to add different videos to a question](https://smartwinnr.helpscoutdocs.com/article/64-how-to-add-a-video-to-a-question)
+[Learn how to add different videos to a question](/modules/quiz/features/how-to-add-a-video-to-a-question)
 
 You can also send images or pictures with a question by clicking on the image icon. Then click on the 'Choose File' button to select the required files from your computer.
 
-[Learn how to add an image to the question](https://smartwinnr.helpscoutdocs.com/article/65-how-to-add-an-image-to-the-question)
+[Learn how to add an image to the question](/modules/quiz/features/how-to-add-an-image-to-the-question)
 
 You can insert a link with the question by clicking on the links icon.
 
-[Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
+[Learn how to embed a link into the question](/modules/quiz/features/how-to-embed-a-link-into-the-question)
 
 You can send an audio file with the question by clicking on the Audio icon.
 
-[Learn how to embed an audio file into the question](https://smartwinnr.helpscoutdocs.com/article/73-how-to-add-an-audio-file-to-a-question)
+[Learn how to embed an audio file into the question](/modules/quiz/features/how-to-add-an-audio-file-to-a-question)
 
 ### 11. Change Language
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open a popup where you can choose the language to which you want to change and then click on the "Save" button.

@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 631fbb2490c29a3d732c6e6e
   helpscout_url: >-
-    https://help.smartwinnr.com/article/277-how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
+    /modules/field-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:

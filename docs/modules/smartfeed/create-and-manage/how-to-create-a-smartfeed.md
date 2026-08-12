@@ -74,7 +74,7 @@ If the content is a simple message that you want to send, start by writing the t
 
 You can also send videos of products, product demonstrations, customer feedback, customer stories, and more in SmartFeed.
 
-[Learn how to add a video to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-a-video-to-your-content)
+[Learn how to add a video to your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-add-a-video-to-your-content)
 
 Following is how a SmartFeed with videos appears in the SmartWinnr app:
 
@@ -82,7 +82,7 @@ Following is how a SmartFeed with videos appears in the SmartWinnr app:
 
 ## Send Pictures
 
-If you would like to add an image to your SmartFeed, [learn how to add an image to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-a-image-to-your-content)
+If you would like to add an image to your SmartFeed, [learn how to add an image to your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-add-a-image-to-your-content)
 
 Following is how a SmartFeed with an image appears in the SmartWinnr app.
 
@@ -90,7 +90,7 @@ Following is how a SmartFeed with an image appears in the SmartWinnr app.
 
 ## Send Reference Links
 
-If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content)
+If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content)
 
 Following is how a SmartFeed with an external link appears in the SmartWinnr app.
 
@@ -98,7 +98,7 @@ Following is how a SmartFeed with an external link appears in the SmartWinnr app
 
 ## Send Audios
 
-If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/features/how-to-add-an-audio-file-to-your-content/)
+If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](/modules/cross-module/features/how-to-add-an-audio-file-to-your-content/)
 
 Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on the play button to listen to the audio file.
 
@@ -106,7 +106,7 @@ Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on 
 
 ## Send PDF Documents
 
-If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content)
+If you would like to add a PDF file to your SmartFeed, [learn how to add a PDF to your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-attach-pdf-file-to-your-content)
 
 Following is how a SmartFeed with PDF file appears in the SmartWinnr app.
 
@@ -120,7 +120,7 @@ This will open the PDF file attached to the SmartFeed.
 
 ## Send Powerpoint Presentations
 
-You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add a PowerPoint presentation to your SmartFeed.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed)
+You can also add a Powerpoint presentation to your SmartFeed. [Learn how to add a PowerPoint presentation to your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed)
 
 ## Settings
 

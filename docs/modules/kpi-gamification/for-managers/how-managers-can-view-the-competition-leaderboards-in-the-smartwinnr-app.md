@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fffe8aa2e764327f87be765
   helpscout_url: >-
-    https://help.smartwinnr.com/article/206-how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
+    /modules/kpi-gamification/for-managers/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView

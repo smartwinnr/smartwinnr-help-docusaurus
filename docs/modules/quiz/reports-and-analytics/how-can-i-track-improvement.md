@@ -59,10 +59,10 @@ Navigate to the **Dashboard** section in your SmartWinnr account and select **Qu
 
 The Quiz Analytics Dashboard has four main tabs at the top:
 
-* [**Overview**](./understanding-the-overview-tab-on-the-quiz-dashboard.md#Overview-Tab-USrFb): Shows high-level metrics, performance trends, and recent activity
-* [**Performance**](./understanding-the-performance-tab-on-the-quiz-dashboard.md#Performance-Tab-nCOco): Displays detailed score distributions, pass/fail rates, and certification metrics
-* [**Participation**](./understanding-the-participation-tab-on-the-quiz-dashboard.md#Participation-Tab-MRxse): Tracks engagement patterns, completion status, and usage times
-* [**Learner Management**](./understanding-the-participation-tab-on-the-quiz-dashboard.md#Learner-Management-Tab-5Ab1n): Provides individual learner insights and categorizes users by performance level
+* [**Overview**](./understanding-the-overview-tab-on-the-quiz-dashboard.md): Shows high-level metrics, performance trends, and recent activity
+* [**Performance**](./understanding-the-performance-tab-on-the-quiz-dashboard.md): Displays detailed score distributions, pass/fail rates, and certification metrics
+* [**Participation**](./understanding-the-participation-tab-on-the-quiz-dashboard.md): Tracks engagement patterns, completion status, and usage times
+* [**Learner Management**](./understanding-the-learner-management-tab-on-the-quiz-dashboard.md): Provides individual learner insights and categorizes users by performance level
 
 Click each tab to view different aspects of your quiz program's effectiveness.
 

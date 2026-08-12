@@ -37,7 +37,7 @@ A matching question enables participants to correctly pair items from one list w
 
 5. Add the left-hand side with an **Answer Options** as a text, image, video, or audio. By clicking on the **Rich Text** checkbox, you will be able to add video, audio etc as answer options. Then, add the match element on the right-hand side section. **Distractors** allow you to add additional answer choices that will come on the right side. This can be useful if you have only a few matching pairs and want to increase selection difficulty.
 
-    [Click to know more about distractors.](#distractors)
+    [Click to know more about distractors.](#answer-options)
 
     Click on the **Add Pair** option to add more answer options. Click on **Add Distrctors** to add more    distractors.
 
@@ -69,25 +69,25 @@ Once you have filled in the required details of the question, click on the 'Save
 
 You can pose a question through a video as well. Choose videos of products, product demonstrations, customer feedback, and customer stories and ask questions based on that. Click on the video icon. You can add your own videos to the question or videos from YouTube, Box, and Brainshark.
 
-[Learn how to add different videos to a question](https://smartwinnr.helpscoutdocs.com/article/64-how-to-add-a-video-to-a-question)
+[Learn how to add different videos to a question](/modules/quiz/features/how-to-add-a-video-to-a-question)
 
 **Images**
 
 Images or pictures can be sent with a question by clicking on the image icon. Then click on the 'Choose File' button to select the required files from the computer.
 
-[Learn how to add an image to the question](https://smartwinnr.helpscoutdocs.com/article/65-how-to-add-an-image-to-the-question)
+[Learn how to add an image to the question](/modules/quiz/features/how-to-add-an-image-to-the-question)
 
 **Links**
 
 You can also insert a link with the question by clicking on the links icon.
 
-[Learn how to embed a link into the question](https://smartwinnr.helpscoutdocs.com/article/66-how-to-embed-a-link-into-the-question)
+[Learn how to embed a link into the question](/modules/quiz/features/how-to-embed-a-link-into-the-question)
 
 **Audio**
 
 You can also send an audio file with the question by clicking on the Audio icon.
 
-[Learn how to embed an audio file into the question](https://smartwinnr.helpscoutdocs.com/article/73-how-to-add-an-audio-file-to-a-question)
+[Learn how to embed an audio file into the question](/modules/quiz/features/how-to-add-an-audio-file-to-a-question)
 
 You can change the language of the question by clicking on the "Change Language" button at the top right corner of this section. It will open the following popup:
 

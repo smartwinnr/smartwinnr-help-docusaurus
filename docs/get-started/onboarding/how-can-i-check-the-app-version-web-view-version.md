@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fce355804cebe5254a29954
   helpscout_url: >-
-    https://help.smartwinnr.com/article/19-how-can-i-check-the-app-version-web-view-version
+    /get-started/onboarding/how-can-i-check-the-app-version-web-view-version
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["onboarding"]

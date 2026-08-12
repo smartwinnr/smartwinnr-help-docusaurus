@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6971f1c008cad8770d36663c
   helpscout_url: >-
-    https://help.smartwinnr.com/article/328-understanding-the-overview-tab-on-the-quiz-dashboard
+    /modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

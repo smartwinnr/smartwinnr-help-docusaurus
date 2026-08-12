@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6324e1941ec1962d58a8036e
   helpscout_url: >-
-    https://help.smartwinnr.com/article/278-how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed
+    /modules/smartpath/create-and-manage/how-to-archive-a-smartpath-and-unhide-them-in-future-if-needed
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths

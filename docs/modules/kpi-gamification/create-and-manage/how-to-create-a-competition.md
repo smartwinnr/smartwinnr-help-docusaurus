@@ -105,9 +105,9 @@ You can filter and choose these participants based on **Business Unit**, **Count
 
 The final step in creating a competition is to add tasks. You can add various tasks such as **Quiz**, **Survey**, **Video Coaching**, **Scorecard**, and **Challenge**. Refer to the articles below to learn how to add these tasks:
 
-- [How to add a Quiz to a Competition?](https://smartwinnr.helpscoutdocs.com/article/102-how-to-add-a-quiz-to-a-competition)
-- [How to add a Survey to a Competition?](https://smartwinnr.helpscoutdocs.com/article/104-how-to-add-a-survey-to-a-competition)
-- [How to add a Scorecard to a Competition?](https://smartwinnr.helpscoutdocs.com/article/105-how-to-add-a-scorecard-to-a-competition)
-- [How to add a Video Coaching to a Competition?](https://smartwinnr.helpscoutdocs.com/article/106-how-to-add-a-video-coaching-to-the-competition)
-- [How to add a Challenge to a Competition?](https://smartwinnr.helpscoutdocs.com/article/107-how-to-add-a-challenge-to-the-competition)
-- [How to add a Form to a Competition?](https://smartwinnr.helpscoutdocs.com/article/227-how-to-add-a-form-to-a-competition)
+- [How to add a Quiz to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-quiz-to-a-competition)
+- [How to add a Survey to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-survey-to-a-competition)
+- [How to add a Scorecard to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition)
+- [How to add a Video Coaching to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition)
+- [How to add a Challenge to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition)
+- [How to add a Form to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition)

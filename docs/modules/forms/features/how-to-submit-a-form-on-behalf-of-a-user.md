@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 60bb69c690777e23fb8ada49
   helpscout_url: >-
-    https://help.smartwinnr.com/article/252-how-to-submit-a-form-on-behalf-of-a-user
+    /modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms

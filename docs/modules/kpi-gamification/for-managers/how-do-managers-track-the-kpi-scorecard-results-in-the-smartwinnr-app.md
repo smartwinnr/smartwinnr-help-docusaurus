@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 60001addcfe30d219ccd7a03
   helpscout_url: >-
-    https://help.smartwinnr.com/article/207-how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app
+    /modules/kpi-gamification/for-managers/how-do-managers-track-the-kpi-scorecard-results-in-the-smartwinnr-app
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: managerView

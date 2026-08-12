@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 696faec0dadc293bb313334c
   helpscout_url: >-
-    https://help.smartwinnr.com/article/304-how-to-create-assignment-in-smartpath
+    /modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:

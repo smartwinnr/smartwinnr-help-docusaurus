@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6106ee53b55c2b04bf6da2c0
   helpscout_url: >-
-    https://help.smartwinnr.com/article/264-how-to-mark-the-attendance-for-users-in-learning-sessions
+    /modules/smartpath/features/how-to-mark-the-attendance-for-users-in-learning-sessions
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

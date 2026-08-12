@@ -69,4 +69,4 @@ You can find the number of your responses pending evaluation at the top of the l
 
 Once the evaluation is complete, your score will be visible on the leaderboard. This score reflects your performance based on the evaluator's assessment of your answers.
 
-[Learn how to view the score and feedbacks obtained for your long answer question.](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question/)
+[Learn how to view the score and feedbacks obtained for your long answer question.](/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question/)

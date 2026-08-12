@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 62b450c10b51ec1ae83f9bf8
   helpscout_url: >-
-    https://help.smartwinnr.com/article/272-how-to-access-the-scorm-course-from-the-smartwinnr-app
+    /modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

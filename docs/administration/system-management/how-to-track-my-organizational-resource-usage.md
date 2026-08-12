@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fda496f0b11ce44f6392e44
   helpscout_url: >-
-    https://help.smartwinnr.com/article/116-how-to-track-my-organizational-resource-usage
+    /administration/system-management/how-to-track-my-organizational-resource-usage
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]
 tags:

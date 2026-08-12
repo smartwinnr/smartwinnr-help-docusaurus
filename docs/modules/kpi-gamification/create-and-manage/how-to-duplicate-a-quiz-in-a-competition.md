@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fda263d27288b7f895d60b7
   helpscout_url: >-
-    https://help.smartwinnr.com/article/108-how-to-duplicate-a-quiz-in-a-competition
+    /modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions

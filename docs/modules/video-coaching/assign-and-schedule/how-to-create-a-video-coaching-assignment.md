@@ -64,7 +64,7 @@ Fill the required coaching details on this page.
 * Start/End Date: Select the start date/time of the coaching. If you would like to schedule the coaching to a future date and time, select the required future date and time.
 * Competencies: Select competencies to evaluate coaches. For example, during a product launch, a coach can be assigned on her knowledge about the new product, features, etc. You can also assign a weightage for these competencies. The list of available competencies for your organization is displayed. Contact your System Administrator to add/modify existing competencies. View details at How to set competencies?
 * Categories: Select a knowledge category related to this coaching assessment. This will be used by SmartWinnr to analyze the correlation between knowledge and coaching.
-* Set Reminder: This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.   [Learn How to Add a Reminder for your Video Coaching](https://smartwinnr.helpscoutdocs.com/article/219-how-to-set-reminder-for-quiz-survey)
+* Set Reminder: This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.   [Learn How to Add a Reminder for your Video Coaching](/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks)
 
 It is recommended to have not more than 3 competencies for a specific coaching session. This helps the coaches to focus on specific areas of improvement.
 

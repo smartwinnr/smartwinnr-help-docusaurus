@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fda04347129911ba1b218a5
   helpscout_url: >-
-    https://help.smartwinnr.com/article/106-how-to-add-a-video-coaching-to-the-competition
+    /modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
@@ -37,4 +37,4 @@ Below is a screenshot illustrating how to add a **Video Coaching** task to a com
 
 For detailed instructions on creating a Video Coaching task, refer to the relevant articles:
 
-[How can I create a Video Coaching assignment?](https://smartwinnr.helpscoutdocs.com/article/85-how-can-i-create-a-video-coaching-assignment)
+[How can I create a Video Coaching assignment?](/modules/video-coaching/assign-and-schedule/how-to-create-a-video-coaching-assignment)

@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 696f3433e924466a410b9501
   helpscout_url: >-
-    https://help.smartwinnr.com/article/300-how-to-create-an-action-item-in-the-smartpath
+    /modules/smartpath/create-and-manage/how-to-create-an-action-item-in-the-smartpath
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths

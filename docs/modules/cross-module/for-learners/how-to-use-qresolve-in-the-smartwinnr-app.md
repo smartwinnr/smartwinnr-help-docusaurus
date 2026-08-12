@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fdb04a37129911ba1b21e2a
   helpscout_url: >-
-    https://help.smartwinnr.com/article/159-how-to-use-qresolve-in-the-smartwinnr-app
+    /modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms

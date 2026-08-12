@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fdb0522b624c71b7985a5d7
   helpscout_url: >-
-    https://help.smartwinnr.com/article/160-how-to-post-a-query-from-the-smartwinnr-app
+    /modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms

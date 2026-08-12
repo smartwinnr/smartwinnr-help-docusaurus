@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 603cf4db661b720174a71d5e
   helpscout_url: >-
-    https://help.smartwinnr.com/article/231-how-to-view-the-data-and-leaderboard-for-scorecard
+    /modules/kpi-gamification/features/how-to-view-the-data-and-leaderboard-for-scorecard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi

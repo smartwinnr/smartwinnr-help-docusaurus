@@ -39,6 +39,6 @@ During a training program, multiple quizzes may need to be shared with the same 
 * **Reusable:** Use the same group for recurring quizzes, surveys, or SmartFeeds.
 * **Scalable:** Ideal for training programs, assessments, and large teams.
 
-[Learn how to create a group](https://smartwinnr.helpscoutdocs.com/article/129-how-to-create-a-group)
+[Learn how to create a group](/administration/system-management/how-to-create-a-group)
 
-[Learn how to send quizzes, surveys, and content using group](https://smartwinnr.helpscoutdocs.com/article/130-how-to-send-quizzes-surveys-and-content-using-group)
+[Learn how to send quizzes, surveys, and content using group](/administration/system-management/how-to-send-quizzes-surveys-and-content-using-group)

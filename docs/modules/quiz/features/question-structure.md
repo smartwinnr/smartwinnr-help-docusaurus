@@ -44,37 +44,37 @@ In this type of question, participants select correct answers from a list of opt
 * True and False Question
 * Yes or No question
 
-[Click here for more information on Multiple-Choice questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions)
+[Click here for more information on Multiple-Choice questions](/modules/quiz/create-and-manage/how-to-create-multiple-choice-questions)
 
 * **Fill in the Blanks**
 
 A Fill in the Blank question consists of a phrase, sentence, or paragraph with one or more blank spaces where a participant provides the missing word or words.
 
-[Click here for more information on Fill-in-the-blanks questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/how-to-create-fill-in-the-blank-questions)
+[Click here for more information on Fill-in-the-blanks questions](/modules/quiz/create-and-manage/how-to-create-fill-in-the-blank-questions)
 
 * **Matching**
 
 With Matching questions, participants pair items in Left Hand side column to items in Right Hand side column. You can have additional items (distractors) in the Right Hand side column that don't match any item. This increases the difficulty as participants cannot guess the correct answers through the process of elimination.
 
-[Click here for more information on the Matching question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-a-matching-question)
+[Click here for more information on the Matching question](/modules/quiz/features/how-to-create-a-matching-question)
 
 * **Hotspot**
 
 A Hotspot question presents an image to the learner and asks them to select a particular area from the image as the correct answer. For example, locate the heart in human anatomy, where the image of Human Anatomy is shown to the learner.
 
-[Click here for more information on Hotspot questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-a-hotspot-question)
+[Click here for more information on Hotspot questions](/modules/quiz/features/how-to-create-a-hotspot-question)
 
 * **Re-Order Question**
 
 Re-order questions require participants to drag and drop the answers to a question in the correct order. You can move multiple answers to their desired order and submit them.
 
-[Click here for more information on Re-Order questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/how-to-create-re-order-questions)
+[Click here for more information on Re-Order questions](/modules/quiz/create-and-manage/how-to-create-re-order-questions)
 
 * **Missing Words**
 
 A Missing Words question enables participants to complete a sentence or phrase by selecting the correct word(s) from a predefined list of answer options.
 
-[How to create a Missing Words question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/how-to-create-a-missing-words-question)
+[How to create a Missing Words question](/modules/quiz/create-and-manage/how-to-create-a-missing-words-question)
 
 * **Drag and Drop into Text**
 
@@ -86,25 +86,25 @@ A Drag and Drop into Text question requires participants to select and drag te
 
 A Short Answer with Multiple Matches Question can be used when there are multiple acceptable answers for the same question.
 
-[Short Answer with Multiple Options](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-short-answer-with-multiple-options)
+[Short Answer with Multiple Options](/modules/quiz/features/how-to-create-short-answer-with-multiple-options)
 
 * **Long Answer**
 
 Long answer questions are generally open-ended questions that require participants to construct a response. Long answer questions require a concise and focused response.
 
-[How to create Long Answer questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-long-answer-questions)
+[How to create Long Answer questions](/modules/quiz/create-and-manage/how-to-create-long-answer-questions)
 
 * **Drag and Drop into Image**
 
 A Drag and Drop into Image Question allows participants to drag and drop the correct answer from a pool of answers, onto the given image.
 
-[How to create a Drag and Drop into Image question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question)
+[How to create a Drag and Drop into Image question](/modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question)
 
 * **Numeric Type**
 
 In a **Numeric Type** question, you specify a numeric value as the correct answer and define an allowable **error margin**. If a learner’s response falls within this error margin, they will receive points based on the **grade percentage** defined for that option.
 
-[How to create Numeric Type questions](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/how-to-create-numeric-type-questions)
+[How to create Numeric Type questions](/modules/quiz/create-and-manage/how-to-create-numeric-type-questions)
 
 ### 2. Question Text
 

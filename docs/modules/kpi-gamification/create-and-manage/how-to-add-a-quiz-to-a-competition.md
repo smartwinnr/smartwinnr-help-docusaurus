@@ -37,9 +37,9 @@ Below is a screenshot of adding a quiz to a competition:
 
 For detailed instructions on creating a quiz, refer to the following articles:
 
-[How to create an automatic quiz?](https://smartwinnr.helpscoutdocs.com/article/49-how-to-create-an-automatic-quiz)
+[How to create an automatic quiz?](/modules/quiz/create-and-manage/create-automatic-quiz)
 
-[How to create a manual quiz?](https://smartwinnr.helpscoutdocs.com/article/50-how-to-create-a-manual-quiz)
+[How to create a manual quiz?](/modules/quiz/create-and-manage/how-to-create-a-manual-quiz)
 
 Clicking on the "Duplicate Quiz" button opens the following pop-up from where you can select an existing quiz and duplicate it.
 

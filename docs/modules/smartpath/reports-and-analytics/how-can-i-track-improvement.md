@@ -46,7 +46,7 @@ Use the SmartPath Dashboard to:
 
 The SmartPath Dashboard has two main tabs at the top:
 
-* [**Overview**](./understanding-the-overview-tab-on-the-smartpath-dashboard.md#Overview-Tab-13ZtH): Shows high-level metrics, completion trends, and top performers
-* [**Module Wise Analysis**](./understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard.md#Module-Wise-Analysis-Tab-6lEz9): Displays detailed performance for each type of learning component (quizzes, surveys, SmartFeeds, SCORM courses)
+* [**Overview**](./understanding-the-overview-tab-on-the-smartpath-dashboard.md#overview-tab): Shows high-level metrics, completion trends, and top performers
+* [**Module Wise Analysis**](./understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard.md#module-wise-analysis-tab): Displays detailed performance for each type of learning component (quizzes, surveys, SmartFeeds, SCORM courses)
 
 Click each tab to view different aspects of your learning program's performance.

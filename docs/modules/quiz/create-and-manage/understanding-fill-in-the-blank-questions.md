@@ -111,19 +111,19 @@ Questions can incorporate a variety of content elements, including plain text, v
 
 * **Videos** - You can pose a question through a video as well. Choose videos of products, product demonstrations, customer feedback, customer stories, and ask questions based on that. Click on the video icon. You can add your own videos to the question or videos from YouTube, Box, and Brainshark.
 
-    [Learn how to add different videos to a question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-a-video-to-a-question)
+    [Learn how to add different videos to a question](/modules/quiz/features/how-to-add-a-video-to-a-question)
 
 * **Images** - Images or pictures can be sent with a question by clicking on the image icon. Then click on the 'Choose File' button to select the required files from the computer.
 
-    [Learn how to add an image to the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-an-image-to-the-question)
+    [Learn how to add an image to the question](/modules/quiz/features/how-to-add-an-image-to-the-question)
 
 * **Links** - You can also insert a link with the question by clicking on the links icon.
 
-    [Learn how to embed a link into the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-embed-a-link-into-the-question)
+    [Learn how to embed a link into the question](/modules/quiz/features/how-to-embed-a-link-into-the-question)
 
 * **Audio** - You can also send an audio file with the question by clicking on the Audio icon.
 
-    [Learn how to embed an audio file into the question](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/features/how-to-add-an-audio-file-to-a-question)
+    [Learn how to embed an audio file into the question](/modules/quiz/features/how-to-add-an-audio-file-to-a-question)
 
 ## Change Language
 

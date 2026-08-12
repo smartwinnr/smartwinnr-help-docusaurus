@@ -35,9 +35,9 @@ Below is a screenshot illustrating how to add a survey to a competition:
 6. **Assign Points:** Specify the **points** to be awarded to participants upon completing the survey. Enter the value in the provided field.
 7. **Create the Survey:** Click the **“Create”** button. You will be redirected to a page where you can **create a new survey** and add it to the competition.
 
-[How can I create a survey?](https://smartwinnr.helpscoutdocs.com/article/58-how-can-i-create-a-survey)
+[How can I create a survey?](/modules/survey/create-and-manage/how-to-create-a-survey)
 
-[What are the different question types in a survey?](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
+[What are the different question types in a survey?](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template)
 
 Clicking on the "Duplicate Survey" button opens the following pop-up from where you can select an existing survey and duplicate it.
 

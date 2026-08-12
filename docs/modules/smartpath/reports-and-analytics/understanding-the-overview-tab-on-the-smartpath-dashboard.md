@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 6971f00808cad8770d366631
   helpscout_url: >-
-    https://help.smartwinnr.com/article/326-understanding-the-overview-tab-on-the-smartpath-dashboard
+    /modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths

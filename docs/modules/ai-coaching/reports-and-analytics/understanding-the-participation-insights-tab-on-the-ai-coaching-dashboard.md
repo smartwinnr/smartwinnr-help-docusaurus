@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6971e1b1015ae02ac002197d
   helpscout_url: >-
-    https://help.smartwinnr.com/article/325-understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
+    /modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching

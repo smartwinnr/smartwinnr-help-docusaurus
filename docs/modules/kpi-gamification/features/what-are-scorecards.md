@@ -19,7 +19,7 @@ tags:
   - kpi
   - gamification
 ---
-Scorecards are a great way to measure your sales rep's performance against the KPIs that are set. After [Step 1 - Define KPIs](https://smartwinnr.helpscoutdocs.com/article/170-define-kpis) and [Step 2 - Create Field Mappings](https://smartwinnr.helpscoutdocs.com/article/173-how-to-create-a-field-mapping), this is the 3rd step of the KPI Gamification process setup.
+Scorecards are a great way to measure your sales rep's performance against the KPIs that are set. After [Step 1 - Define KPIs](/modules/kpi-gamification/features/define-kpis) and [Step 2 - Create Field Mappings](/modules/field-coaching/create-and-manage/how-to-create-field-mapping), this is the 3rd step of the KPI Gamification process setup.
 
 Scorecards allow you to measure these KPIs daily, weekly, monthly, quarterly, or yearly. You can set targets for the teams. And also set individual targets for a new joiner or an experienced rep. This is also the place where we determine the scoring mechanism. Before you start to create a scorecard, take a while to think of these 2 important aspects:
 

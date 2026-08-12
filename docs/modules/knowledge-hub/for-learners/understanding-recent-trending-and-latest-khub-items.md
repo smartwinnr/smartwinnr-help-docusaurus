@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fdae9d67129911ba1b21de5
   helpscout_url: >-
-    https://help.smartwinnr.com/article/148-understanding-recent-trending-and-latest-khub-items
+    /modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

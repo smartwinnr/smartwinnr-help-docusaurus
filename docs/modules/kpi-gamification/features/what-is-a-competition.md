@@ -24,4 +24,4 @@ SmartWinnr enables you to create competitions amongst various teams. Competition
 
 The result of the competition gets put up on the leader board where everyone in the organization can see who the top performers are and which team is performing well. You can also add team mascots for every team.
 
-There can be multiple leader boards for a Competition. You can view the leader board of a particular competition at an individual or team level. Learn more about the [leaderboards of the competition](https://smartwinnr.helpscoutdocs.com/article/109-leaderboards-of-a-competition).
+There can be multiple leader boards for a Competition. You can view the leader board of a particular competition at an individual or team level. Learn more about the [leaderboards of the competition](/modules/kpi-gamification/features/leaderboards-of-a-competition).

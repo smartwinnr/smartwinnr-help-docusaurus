@@ -50,7 +50,7 @@ This report provides a coachee-wise summary across all coaching sessions in the 
 
 Use this report when you need a complete picture of how each team member is performing across all assigned coaching activities.
 
-[How do I download Overall Coaching Report?](https://help.smartwinnr.com/article/313-how-to-download-overall-coaching-report#Download-Overall-Coaching-Report-LRCHL)
+[How do I download Overall Coaching Report?](/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report)
 
 * * *
 
@@ -69,7 +69,7 @@ This report focuses on one specific coaching scenario and shows how users perfor
 
 Use this report when you want a snapshot of team performance for a single coaching scenario-ideal for evaluating how well a specific training initiative is working.
 
-[How do I download Coaching-wise Report?](../reports-and-analytics/how-do-i-download-coaching-wise-report.md#Download-Scenario-wise-Coaching-wise-Report-we65w)
+[How do I download Coaching-wise Report?](../reports-and-analytics/how-do-i-download-coaching-wise-report.md)
 
 * * *
 
@@ -87,7 +87,7 @@ This report captures all attempts made by users for a specific coaching scenario
 
 Use this report to track how users are improving with practice. It's especially useful for identifying learners who may need additional support or those who are making steady progress.
 
-[How do I download Attempt-wise Coaching Report?](../reports-and-analytics/how-do-i-download-attempt-wise-coaching-report.md#Download-Attempt-wise-Coaching-Report-6MboV)
+[How do I download Attempt-wise Coaching Report?](../reports-and-analytics/how-do-i-download-attempt-wise-coaching-report.md)
 
 * * *
 
@@ -135,4 +135,4 @@ Use this report when you need to:
 
 This report is essential for deep performance analysis and precision coaching.
 
-[How do I download Attempt-wise User Objective Report?](../reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report.md#Download-Attempt-wise-User-Objective-Report-pQA_Z)
+[How do I download Attempt-wise User Objective Report?](../reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report.md#download-attempt-wise-user-objective-report)

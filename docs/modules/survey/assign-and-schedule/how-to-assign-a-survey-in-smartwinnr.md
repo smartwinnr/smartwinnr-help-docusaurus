@@ -56,7 +56,7 @@ After selecting the required participants, click **Send to Selected People** to 
 
 On success, a success notification will be shown.
 
-[![On success, a success notification will be shown.](/img/helpscout/editors/how-to-assign-a-survey-in-smartwinnr-3.png)](https://file2.api.drift.com/drift-prod-file-uploads/cae4%2Fcae49428bfb0b994ad9fadc8ebf2344c/notification.png?mimeType=image%2Fpng)
+![On success, a success notification will be shown.](/img/helpscout/editors/how-to-assign-a-survey-in-smartwinnr-3.png)
 
 This process allows you to efficiently assign surveys to your targeted audience and track response delivery.
 

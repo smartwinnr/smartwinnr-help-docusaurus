@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 5fce42e9eb7cc612aa3557ab
   helpscout_url: >-
-    https://help.smartwinnr.com/article/21-how-can-i-enable-push-notification-for-smartwinnr-app
+    /get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []

@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 60a50e4827c86942e80697e9
   helpscout_url: >-
-    https://help.smartwinnr.com/article/236-how-to-create-field-coaching-template
+    /modules/field-coaching/create-and-manage/how-to-create-field-coaching-template
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching

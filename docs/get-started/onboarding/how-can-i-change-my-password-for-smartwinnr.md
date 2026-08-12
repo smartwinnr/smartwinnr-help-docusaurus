@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fce244aeb7cc612aa355702
   helpscout_url: >-
-    https://help.smartwinnr.com/article/16-how-can-i-change-my-password-for-smartwinnr
+    /get-started/onboarding/how-can-i-change-my-password-for-smartwinnr
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: []

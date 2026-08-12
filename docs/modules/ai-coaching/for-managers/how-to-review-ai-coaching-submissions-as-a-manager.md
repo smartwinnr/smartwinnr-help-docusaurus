@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 6970fbe61252a7004208b915
   helpscout_url: >-
-    https://help.smartwinnr.com/article/318-how-to-review-ai-coaching-submissions-as-a-manager
+    /modules/ai-coaching/for-managers/how-to-review-ai-coaching-submissions-as-a-manager
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching

@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 696fc2e4dadc293bb31333c6
   helpscout_url: >-
-    https://help.smartwinnr.com/article/305-how-to-evaluate-the-assignment-submitted-in-smartpath
+    /modules/smartpath/reports-and-analytics/how-to-evaluate-the-assignment-submitted-in-smartpath
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths

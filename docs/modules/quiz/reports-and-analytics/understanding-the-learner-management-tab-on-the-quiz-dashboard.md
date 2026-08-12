@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6971f2ff425fd115e68cbc8b
   helpscout_url: >-
-    https://help.smartwinnr.com/article/331-understanding-the-participation-tab-on-the-quiz-dashboard
+    /modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

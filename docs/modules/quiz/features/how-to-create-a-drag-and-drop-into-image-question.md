@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 641a2e5bdf67f62fb768a4ca
   helpscout_url: >-
-    https://help.smartwinnr.com/article/283-how-to-create-a-drag-and-drop-into-image-question
+    /modules/quiz/features/how-to-create-a-drag-and-drop-into-image-question
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

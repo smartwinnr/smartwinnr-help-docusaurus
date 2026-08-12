@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 66448bf460cfc03ad3491583
   helpscout_url: >-
-    https://help.smartwinnr.com/article/288-how-to-award-points-on-badge-assignment
+    /modules/kpi-gamification/assign-and-schedule/how-to-award-points-on-badge-assignment
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions

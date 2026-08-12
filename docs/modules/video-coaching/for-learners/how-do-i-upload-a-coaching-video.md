@@ -51,19 +51,19 @@ Apart from the normal way of uploading response to the coaching assignment, Smar
 
     SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your voice using a microphone and upload the same into SmartWinnr.
 
-      [Learn How to upload Audio Recording for Coaching](https://help.smartwinnr.com/article/266-how-to-record-audio-into-video-coaching)
+      [Learn How to upload Audio Recording for Coaching](/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching)
 
 * **Record Screen**
 
     SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your screen using a screen share option and upload the same into SmartWinnr.
 
-      [Learn How to upload screen Recording for Coaching](https://help.smartwinnr.com/article/269-how-to-record-screen-into-video-coaching)
+      [Learn How to upload screen Recording for Coaching](/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching)
 
 * **Record Video**
 
    SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your video using a camera and upload the same into SmartWinnr.
 
-  [Learn How to record video for Coaching response](https://help.smartwinnr.com/article/268-how-to-record-video-into-video-coaching)
+  [Learn How to record video for Coaching response](/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching)
 
 ## How to upload a coaching video from the web view
 

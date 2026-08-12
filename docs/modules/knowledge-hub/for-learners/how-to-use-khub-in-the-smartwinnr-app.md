@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fdaec3c7129911ba1b21de9
   helpscout_url: >-
-    https://help.smartwinnr.com/article/150-how-to-use-khub-in-the-smartwinnr-app
+    /modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

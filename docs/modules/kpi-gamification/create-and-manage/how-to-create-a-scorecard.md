@@ -20,7 +20,7 @@ tags:
   - gamification
   - admin
 ---
-Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. [Read more](https://smartwinnr.helpscoutdocs.com/article/175-what-are-scorecards) about Scorecards.
+Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. [Read more](/modules/kpi-gamification/features/what-are-scorecards) about Scorecards.
 
 Here is how to go about filling each field to create a scorecard:
 
@@ -118,6 +118,6 @@ The third step in this process is to view each participant's targets. Here is ho
 
 ![The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:](/img/helpscout/editors/how-to-create-a-scorecard-11.png)
 
-You can choose to change targets for the entire team by editing in the line of the 'Target'. Refer to [How to add/change targets?](https://smartwinnr.helpscoutdocs.com/article/177-how-to-add-change-targets) to know more about editing the targets
+You can choose to change targets for the entire team by editing in the line of the 'Target'. Refer to [How to add/change targets?](/modules/kpi-gamification/create-and-manage/how-to-add-change-targets) to know more about editing the targets
 
 Once all the changes are done, click on 'Save' and the scorecard is on.

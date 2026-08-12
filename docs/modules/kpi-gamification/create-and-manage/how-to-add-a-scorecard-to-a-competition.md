@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fd9ff840b11ce44f6392c14
   helpscout_url: >-
-    https://help.smartwinnr.com/article/105-how-to-add-a-scorecard-to-a-competition
+    /modules/kpi-gamification/create-and-manage/how-to-add-a-scorecard-to-a-competition
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions

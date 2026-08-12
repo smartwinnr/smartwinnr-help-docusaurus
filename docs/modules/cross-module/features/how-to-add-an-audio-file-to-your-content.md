@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fd4eb633d1d2a5b1c5ea1d3
   helpscout_url: >-
-    https://help.smartwinnr.com/article/71-how-to-add-an-audio-file-to-your-content
+    /modules/cross-module/features/how-to-add-an-audio-file-to-your-content
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: []

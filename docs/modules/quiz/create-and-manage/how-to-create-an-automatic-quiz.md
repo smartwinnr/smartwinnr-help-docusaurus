@@ -201,7 +201,7 @@ Once the questions are selected, you can update them anytime by adding new quest
 - **Swap Questions**: Replace existing questions with new ones.
 - **Tagging**: Add or remove questions based on tags for better organization.
 
-[Learn more on how to update the questions for a running automatic quiz](https://smartwinnr-help-docusaurus-production.up.railway.app/modules/quiz/create-and-manage/create-automatic-quiz/)
+[Learn more on how to update the questions for a running automatic quiz](/modules/quiz/create-and-manage/create-automatic-quiz/)
 
 ### 11. Add Users to the Quiz
 

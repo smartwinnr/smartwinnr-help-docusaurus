@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 6411592461f16344e3a359c8
   helpscout_url: >-
-    https://help.smartwinnr.com/article/281-how-to-create-a-drag-and-drop-into-text-question
+    /modules/quiz/features/how-to-create-a-drag-and-drop-into-text-question
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

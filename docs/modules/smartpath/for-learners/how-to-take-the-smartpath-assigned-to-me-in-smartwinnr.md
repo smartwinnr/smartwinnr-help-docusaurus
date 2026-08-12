@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 610775ae64a230081ba1b1b8
   helpscout_url: >-
-    https://help.smartwinnr.com/article/265-how-to-take-the-smartpath-assigned-to-me-in-smartwinnr
+    /modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

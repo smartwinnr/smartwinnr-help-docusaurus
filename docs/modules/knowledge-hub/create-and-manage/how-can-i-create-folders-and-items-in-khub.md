@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fdae8ca27288b7f895d64e3
   helpscout_url: >-
-    https://help.smartwinnr.com/article/146-how-can-i-create-folders-and-items-in-khub
+    /modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub

@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 5fda2c167129911ba1b219fb
   helpscout_url: >-
-    https://help.smartwinnr.com/article/110-how-to-duplicate-a-survey-and-survey-template
+    /modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey

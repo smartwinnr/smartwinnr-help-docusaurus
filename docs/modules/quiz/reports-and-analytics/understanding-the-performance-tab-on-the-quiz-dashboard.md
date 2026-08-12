@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6971f21ef35cc6035d0b9bd9
   helpscout_url: >-
-    https://help.smartwinnr.com/article/329-understanding-the-performance-tab-on-the-quiz-dashboard
+    /modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

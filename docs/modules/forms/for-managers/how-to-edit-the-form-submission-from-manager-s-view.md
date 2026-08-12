@@ -20,7 +20,7 @@ SmartWinnr allows the managers to edit the form submitted by their reporters.
 
 The first step is to log in through the manager's view and click on the forms from the left side menu.
 
-Refer to this link https://help.smartwinnr.com/article/96-quiz-report-for-managers
+Refer to this link /modules/quiz/for-managers/how-to-view-quiz-performance-for-your-team
 
 Select the form for which you want to edit the form submission.
 

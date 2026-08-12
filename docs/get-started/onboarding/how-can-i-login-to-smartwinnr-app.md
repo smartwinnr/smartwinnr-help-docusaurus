@@ -33,10 +33,10 @@ Upon clicking **Next**, it will display the field where the password has to be e
 
 The app will remember your password unless you install a new version of the app or uninstall and reinstall the app again.
 
-If you forgot your password, [click here to learn how to get your forgotten password](https://smartwinnr.helpscoutdocs.com/article/12-what-if-ive-forgotten-my-password).
+If you forgot your password, [click here to learn how to get your forgotten password](/get-started/onboarding/what-if-i-ve-forgotten-my-password).
 
 Once you successfully log in to the app, you will see the home screen of the SmartWinnr app. The home screen shows you a dashboard as shown in the picture below:
 
 ![](/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-ms75ggog.png)
 
-If you have the system-generated password for your account, it is recommended to change the password. [Learn how to change the password for your SmartWinnr account](https://smartwinnr.helpscoutdocs.com/article/16-how-can-i-change-my-password-for-smartwinnr).
+If you have the system-generated password for your account, it is recommended to change the password. [Learn how to change the password for your SmartWinnr account](/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr).

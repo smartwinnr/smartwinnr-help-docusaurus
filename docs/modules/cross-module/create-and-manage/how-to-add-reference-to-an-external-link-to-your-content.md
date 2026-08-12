@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 5fd4eaf9c868cb6df3a810a3
   helpscout_url: >-
-    https://help.smartwinnr.com/article/70-how-to-add-reference-to-an-external-link-to-your-content
+    /modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:

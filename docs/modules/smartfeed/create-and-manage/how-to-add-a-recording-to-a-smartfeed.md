@@ -13,7 +13,7 @@ last_update:
 source:
   helpscout_id: 60a60efceb3af44cc120a91b
   helpscout_url: >-
-    https://help.smartwinnr.com/article/239-how-to-add-a-recording-to-a-smartfeed
+    /modules/smartfeed/create-and-manage/how-to-add-a-recording-to-a-smartfeed
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content

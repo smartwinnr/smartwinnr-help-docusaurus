@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 6970a2b7bb534a540aeb8dbf
   helpscout_url: >-
-    https://help.smartwinnr.com/article/310-how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
+    /modules/ai-coaching/reports-and-analytics/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching

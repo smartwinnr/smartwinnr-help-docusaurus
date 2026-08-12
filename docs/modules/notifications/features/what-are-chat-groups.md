@@ -18,7 +18,7 @@ customProps:
 tags:
   - notifications
 ---
-You need to first create a group in order to create a 'Chat Group'. [Learn how to create a group](https://smartwinnr.helpscoutdocs.com/article/129-how-to-create-a-group).
+You need to first create a group in order to create a 'Chat Group'. [Learn how to create a group](/administration/system-management/how-to-create-a-group).
 
 SmartWinnr enables you to create a group for your employees where they can chat with their peers within the organization. An employee can be a part of various groups at the same time.
 

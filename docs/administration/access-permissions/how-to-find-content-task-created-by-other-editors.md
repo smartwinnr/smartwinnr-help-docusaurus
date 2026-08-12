@@ -55,4 +55,4 @@ You can receive two types of access permissions in SmartWinnr:
 - Access to a specific task created by an editor.
 - Access to all tasks created under a specific module.
 
-[Learn more about the access permission feature available in SmartWinnr](https://smartwinnr-help-docusaurus-production.up.railway.app/administration/access-permissions/access-permissions)
+[Learn more about the access permission feature available in SmartWinnr](/administration/access-permissions/access-permissions)

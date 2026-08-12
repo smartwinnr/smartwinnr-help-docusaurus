@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 60a370cfeb3af44cc12099d5
   helpscout_url: >-
-    https://help.smartwinnr.com/article/234-how-to-add-observers-to-the-competition-leaderboard
+    /modules/kpi-gamification/create-and-manage/how-to-add-observers-to-the-competition-leaderboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions

@@ -43,15 +43,15 @@ Use the AI Coaching Dashboard to:
 
 The AI Coaching Dashboard has three main tabs at the top:
 
-[**Overview Analysis**](https://help.smartwinnr.com/article/323-understanding-the-overview-tab-on-ai-coaching-dashboard#Overview-Analysis-Tab-sf1XK)
+[**Overview Analysis**](/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard)
 
 Shows high-level participation metrics and engagement trends
 
-[**Competency & Skills Insights**](https://help.smartwinnr.com/article/324-11#Competency--Skills-Insights-Tab-pjCBA)
+[**Competency & Skills Insights**](/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard)
 
 Displays detailed skill development and performance by region or group
 
-[**Participation Insights**](./understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard.md#Participation-Insights-Tab-H95ZC)
+[**Participation Insights**](./understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard.md)
 
 Provides metrics on session duration and engagement patterns
 

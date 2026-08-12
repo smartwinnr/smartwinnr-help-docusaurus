@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fdb74880b11ce44f63933a3
   helpscout_url: >-
-    https://help.smartwinnr.com/article/196-how-do-i-give-access-permission-to-other-editors
+    /administration/access-permissions/how-do-i-give-access-permission-to-other-editors
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]
 tags:

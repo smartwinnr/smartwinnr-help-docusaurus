@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fce3d864664bd7a123eb4ea
   helpscout_url: >-
-    https://help.smartwinnr.com/article/20-how-to-update-the-smartwinnr-app-web-view
+    /get-started/onboarding/how-to-update-the-smartwinnr-app-web-view
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["onboarding"]
@@ -23,7 +23,7 @@ draft: false
 
 Before you update your SmartWinnr app, please check the version of the app installed on your mobile device. Learn how to check the version of the SmartWinnr app.
 
-[Learn how to check the version of the SmartWinnr web view.](https://smartwinnr.helpscoutdocs.com/article/19-how-can-i-check-the-app-version-web-view-version)
+[Learn how to check the version of the SmartWinnr web view.](/get-started/onboarding/how-can-i-check-the-app-version-web-view-version)
 
 ## When to use this
 Use this guide when you need to update the SmartWinnr app on your mobile device or refresh the web view on your laptop or desktop. 
@@ -70,7 +70,7 @@ If you see that the version of the app installed on your device is older than th
 
 ## How to update SmartWinnr web view on your laptop/desktop
 
-[Learn how to check the version of the SmartWinnr web view.](https://smartwinnr.helpscoutdocs.com/article/19-how-can-i-check-the-app-version-web-view-version)
+[Learn how to check the version of the SmartWinnr web view.](/get-started/onboarding/how-can-i-check-the-app-version-web-view-version)
 
 To update the version of the SmartWinnr web view on your system, kindly refresh the page multiple times.
 

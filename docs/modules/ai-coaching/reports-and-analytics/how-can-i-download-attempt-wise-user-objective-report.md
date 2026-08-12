@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 6970dad10c0e4405a5768525
   helpscout_url: >-
-    https://help.smartwinnr.com/article/314-how-can-i-download-attempt-wise-user-objective-report
+    /modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching

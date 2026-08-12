@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 68c928f875baeb18e18df8a1
   helpscout_url: >-
-    https://help.smartwinnr.com/article/295-how-to-update-the-thumbnail-of-a-smartfeed
+    /modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content

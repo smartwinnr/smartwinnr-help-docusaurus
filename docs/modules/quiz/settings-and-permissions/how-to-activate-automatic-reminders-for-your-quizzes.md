@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fd49470c868cb6df3a8102a
   helpscout_url: >-
-    https://help.smartwinnr.com/article/52-how-to-activate-automatic-reminders-for-your-quizzes
+    /modules/quiz/settings-and-permissions/how-to-activate-automatic-reminders-for-your-quizzes
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz

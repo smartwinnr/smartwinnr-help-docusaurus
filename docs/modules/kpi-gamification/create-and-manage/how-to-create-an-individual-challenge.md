@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fdb15d60b11ce44f63931e1
   helpscout_url: >-
-    https://help.smartwinnr.com/article/179-how-to-create-an-individual-challenge
+    /modules/kpi-gamification/create-and-manage/how-to-create-an-individual-challenge
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi

@@ -12,7 +12,7 @@ last_update:
 source:
   helpscout_id: 5fda24cfa5d295659b3697bf
   helpscout_url: >-
-    https://help.smartwinnr.com/article/107-how-to-add-a-challenge-to-the-competition
+    /modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions

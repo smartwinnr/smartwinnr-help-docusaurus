@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 5fdaf691a5d295659b369c17
   helpscout_url: >-
-    https://help.smartwinnr.com/article/155-how-to-add-or-remove-users-to-a-chat-group
+    /modules/notifications/create-and-manage/how-to-add-or-remove-users-to-a-chat-group
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: chat

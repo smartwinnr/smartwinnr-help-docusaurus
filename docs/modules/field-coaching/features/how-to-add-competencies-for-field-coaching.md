@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 60a50e711df47a61c5ad2f4d
   helpscout_url: >-
-    https://help.smartwinnr.com/article/237-how-to-add-competencies-for-field-coaching
+    /modules/field-coaching/features/how-to-add-competencies-for-field-coaching
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: fCoaching

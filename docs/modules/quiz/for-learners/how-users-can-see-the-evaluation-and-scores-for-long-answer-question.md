@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 60f9c51c6ffe270af2a91817
   helpscout_url: >-
-    https://help.smartwinnr.com/article/261-how-users-can-see-the-evaluation-and-scores-for-long-answer-question
+    /modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:

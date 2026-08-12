@@ -142,4 +142,4 @@ Once you complete the coaching session:
 
 **Practice makes progress**: The more you practice, the better you'll become. Studies show that reps who complete multiple attempts improve their scores significantly over time.
 
-[How to View Feedback Immediately After Submission?](https://help.smartwinnr.com/article/332-how-can-a-user-check-the-ai-feedback#How-to-View-Feedback-Immediately-After-Submission-SHR1f)
+[How to View Feedback Immediately After Submission?](/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching#how-to-view-feedback-immediately-after-submission)

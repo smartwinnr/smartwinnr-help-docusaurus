@@ -10,7 +10,7 @@ last_update:
 source:
   helpscout_id: 6971f071425fd115e68cbc7d
   helpscout_url: >-
-    https://help.smartwinnr.com/article/327-understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard
+    /modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths

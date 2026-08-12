@@ -40,11 +40,11 @@ This will open the survey creation page, where you can proceed with configuring 
 
 **Type:** Here is where you get to select if you want to create a **Survey** or a **Survey Template**.
 
-[Learn about the difference between these two](https://smartwinnr.helpscoutdocs.com/article/63-what-is-the-difference-between-a-survey-and-a-survey-template).
+[Learn about the difference between these two](/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template).
 
 Since we are creating a survey here select Type = Survey.
 
-[Refer to this article to know how to create a survey template](https://smartwinnr.helpscoutdocs.com/article/61-how-to-create-a-survey-template)
+[Refer to this article to know how to create a survey template](/modules/survey/create-and-manage/how-to-create-a-survey-template)
 
 [![Refer to this article to know how to create a survey template](/img/helpscout/editors/how-to-create-a-survey-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49ca723119734ee37edbc/file-wpQ5PNDEho.png)
 
@@ -88,7 +88,7 @@ After selecting the survey type and question visibility, proceed with the follow
 
 Ensure all details are accurate before moving on to add survey questions.
 
-[![Ensure all details are accurate before moving on to add survey questions.](/img/helpscout/editors/how-to-create-a-survey-5.png)](https://file2.api.drift.com/drift-prod-file-uploads/32e1%2F32e1cedad9925c5cd5884f56dd71cff0/surv.png?mimeType=image%2Fpng)
+![Ensure all details are accurate before moving on to add survey questions.](/img/helpscout/editors/how-to-create-a-survey-5.png)
 
 ### Response Settings
 
@@ -108,11 +108,11 @@ Schedule a Reminder
 
 This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.
 
-[Learn How to Add a Reminder for your Survey](https://smartwinnr.helpscoutdocs.com/article/219-how-to-set-reminder-for-quiz-survey)
+[Learn How to Add a Reminder for your Survey](/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks)
 
 ### Add Questions
 
-[Refer to this article](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template) to know how to add various questions to the survey.
+[Refer to this article](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template) to know how to add various questions to the survey.
 
 ### Adding Sections to a Survey
 
@@ -122,11 +122,11 @@ If you select **Question Visibility Type = Section Wise**, you will have the opt
 
 * Click the **Add Sections** button under the **Sections** area.
 
-[![To add sections to a survey](/img/helpscout/editors/how-to-create-a-survey-6.png)](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)
+![To add sections to a survey](/img/helpscout/editors/how-to-create-a-survey-6.png)
 
 * A pop-up window will appear, allowing you to define and configure the survey sections.
 
-[![[](https://file2.api.drift.com/drift-prod-file-uploads/1cd8%2F1cd826d097a98c5689ad0df299c648ef/section2.PNG?mimeType=image%2Fpng)](/img/helpscout/editors/how-to-create-a-survey-7.png)](https://file2.api.drift.com/drift-prod-file-uploads/8b9e%2F8b9e354869c75ecba34f433c2af62ca2/sec1.png?mimeType=image%2Fpng)
+![](/img/helpscout/editors/how-to-create-a-survey-7.png)
 
 ### Adding Multiple Sections
 
@@ -138,7 +138,7 @@ In the **Add Sections** pop-up, you can create multiple sections as required.
 
 The added sections will now be available for assigning questions within the survey.
 
-[![The added sections will now be available for assigning questions within the survey.](/img/helpscout/editors/how-to-create-a-survey-8.png)](https://file2.api.drift.com/drift-prod-file-uploads/7c42%2F7c42ac3e0bff618fe1cce64ed7d42094/sec3.png?mimeType=image%2Fpng)
+![The added sections will now be available for assigning questions within the survey.](/img/helpscout/editors/how-to-create-a-survey-8.png)
 
 ### Adding Questions and Saving the Survey
 
@@ -146,7 +146,7 @@ After creating the sections, proceed to add questions to each section:
 
 * Click **Add Question** within the respective section to include survey questions
 
-[Learn the types of questions that you can add to a survey.](https://smartwinnr.helpscoutdocs.com/article/62-what-are-the-different-question-types-in-a-survey-template)
+[Learn the types of questions that you can add to a survey.](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template)
 
 * Select the appropriate question type based on your requirements.
 
