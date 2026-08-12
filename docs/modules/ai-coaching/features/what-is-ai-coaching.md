@@ -8,8 +8,8 @@ description: >-
 slug: what-is-ai-coaching
 sidebar_position: 309
 last_update:
-  date: 2026-01-29T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-12
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 697086628446705a3c6f686c
   helpscout_url: 'https://help.smartwinnr.com/article/309-what-is-ai-coaching'
@@ -18,28 +18,30 @@ customProps:
   privilege: aiCoaching
 tags:
   - ai-coaching
+draft: false
 ---
-# What is AI Coaching in SmartWinnr
+
+> **At a glance** - AI Coaching in SmartWinnr enables users to practice conversations with HCPs in a simulated environment and receive automated evaluations, improving skills and readiness.
 
 ## Introduction
 
 ### What is AI Coaching
 
-AI Coaching in SmartWinnr is a feature that allows users to practice conversations with HCPs in a simulated environment and receive automated evaluation. Users complete role-plays that replicate real HCP interactions, presentations, or internal communications. The AI analyzes the submission and provides structured feedback on performance.
+AI Coaching in SmartWinnr is a feature that allows users to practice conversations with HCPs in a simulated environment and receive automated evaluations. Users complete role-plays that replicate real HCP interactions, presentations, or internal communications. The AI analyzes the submission and provides structured feedback on performance.
 
 ### Why SmartWinnr Uses AI Coaching
 
 Traditional coaching requires a trainer or manager to observe each user individually, provide feedback, and schedule follow-ups. This approach does not scale for large teams or frequent practice needs.
 
-SmartWinnr's AI Coaching removes these constraints. Users can practice unlimited times, receive instant feedback, and improve without waiting for trainer availability. Trainers focus their time on coaching users who need additional support rather than evaluating every submission.
+SmartWinnr's AI Coaching removes these constraints. Users can practice unlimited times, receive instant feedback, and improve without waiting for trainer availability. Trainers can focus their time on coaching users who need additional support rather than evaluating every submission.
 
 ### Business Outcomes
 
 Organizations using AI Coaching in SmartWinnr report:
 
-* **Skill improvement**: Users practice more frequently, leading to measurable gains in conversation quality and competency scores
-* **Readiness**: New hires and existing teams reach proficiency faster through repeated practice with immediate feedback
-* **Consistency**: All users are evaluated against the same rubric, ensuring uniform standards across regions and teams
+* **Skill improvement**: Users practice more frequently, leading to measurable gains in conversation quality and competency scores.
+* **Readiness**: New hires and existing teams reach proficiency faster through repeated practice with immediate feedback.
+* **Consistency**: All users are evaluated against the same rubric, ensuring uniform standards across regions and teams.
 
 * * *
 
@@ -51,20 +53,20 @@ AI Coaching in SmartWinnr works through role-plays. There are two main types: [O
 
 ## A. One-Way AI Role-Plays
 
-In one-way AI role-plays, the user records their response without live interaction. The AI evaluates the submission after recording is complete.
+In one-way AI role-plays, the user records their response without live interaction. The AI evaluates the submission after the recording is complete.
 
 One-way AI role-plays include two formats: Video Coaching and Presentation Coaching.
 
-### 1\. Video Coaching
+### 1. Video Coaching
 
 Video Coaching is the simplest format of AI Coaching in SmartWinnr.
 
 **How it works:**
 
-* The user receives a coaching assignment with a scenario (e.g., "Deliver a 3-minute pitch on Product X to a skeptical buyer")
-* The user records a video response using their camera
-* The user submits the recording
-* The AI analyzes the video and provides feedback
+* The user receives a coaching assignment with a scenario (e.g., "Deliver a 3-minute pitch on Product X to a skeptical buyer").
+* The user records a video response using their camera.
+* The user submits the recording.
+* The AI analyzes the video and provides feedback.
 
 **No live AI interaction occurs.** The user speaks to the camera, not to an AI avatar. This is a one-way AI coaching format where evaluation happens after submission.
 
@@ -72,45 +74,45 @@ Video Coaching is the simplest format of AI Coaching in SmartWinnr.
 
 SmartWinnr's AI analyzes the following parameters in Video Coaching:
 
-* **Keywords**: Whether the user mentioned required terms, product names, or key phrases defined in the coaching rubric
-* **Sentiment**: The tone and emotional delivery detected in the user's speech (confident, hesitant, neutral, persuasive)
-* **Talk time**: Total duration of the response and whether the user stayed within expected time limits
-* **Structure**: Whether the user followed a logical flow (opening, body, closing) as defined by the coaching objectives
-* **Competencies**: Specific skills assessed based on the rubric, such as clarity, credibility, engagement, or persuasiveness
-* **Rate of speech**: Words per minute, with feedback if the user spoke too quickly or too slowly
+* **Keywords**: Whether the user mentioned required terms, product names, or key phrases defined in the coaching rubric.
+* **Sentiment**: The tone and emotional delivery detected in the user's speech (confident, hesitant, neutral, persuasive).
+* **Talk time**: Total duration of the response and whether the user stayed within expected time limits.
+* **Structure**: Whether the user followed a logical flow (opening, body, closing) as defined by the coaching objectives.
+* **Competencies**: Specific skills assessed based on the rubric, such as clarity, credibility, engagement, or persuasiveness.
+* **Rate of speech**: Words per minute, with feedback if the user spoke too quickly or too slowly.
 
 **Evaluation and tracking:**
 
 Video Coaching uses the same evaluation framework as two-way AI coaching. Users receive:
 
-* An overall score
-* Scores for each competency or objective
-* Strengths and improvement areas
-* Specific recommendations for better performance
+* An overall score.
+* Scores for each competency or objective.
+* Strengths and improvement areas.
+* Specific recommendations for better performance.
 
 **Use cases for Video Coaching:**
 
-* Practicing a sales pitch without needing live conversation
-* Preparing for customer presentations
-* Leadership communication practice (e.g., delivering team updates or announcements)
-* Situations where the focus is on delivery, not interaction
+* Practicing a sales pitch without needing live conversation.
+* Preparing for customer presentations.
+* Leadership communication practice (e.g., delivering team updates or announcements).
+* Situations where the focus is on delivery, not interaction.
 
 Video Coaching is useful when the goal is to evaluate how a user presents information, not how they respond to questions or objections.
 
 * * *
 
-### 2\. Presentation Coaching
+### 2. Presentation Coaching
 
 Presentation Coaching is a distinct one-way AI coaching format designed specifically for evaluating presentation skills.
 
 **How it works:**
 
-* The user's camera is turned on (to capture body language and confidence)
-* A second screen is visible to the AI avatar, showing the user's presentation deck or slides
-* The user delivers their presentation as if presenting to a real audience
-* The AI avatar acts as the audience, observing the presentation
-* The user submits the presentation after completing it
-* The AI evaluates the performance
+* The user's camera is turned on (to capture body language and confidence).
+* A second screen is visible to the AI avatar, showing the user's presentation deck or slides.
+* The user delivers their presentation as if presenting to a real audience.
+* The AI avatar acts as the audience, observing the presentation.
+* The user submits the presentation after completing it.
+* The AI evaluates the performance.
 
 **This is also one-way AI coaching.** The AI does not interrupt or ask questions during the presentation. The user delivers the content, and the AI observes and evaluates afterward.
 
@@ -118,20 +120,20 @@ Presentation Coaching is a distinct one-way AI coaching format designed specific
 
 SmartWinnr's AI focuses on presentation-specific parameters:
 
-* **Presentation structure**: Whether the presentation followed a clear flow (introduction, agenda, key points, conclusion)
-* **Confidence**: Body language, eye contact (when facing the camera), and vocal confidence
-* **Slide flow**: How smoothly the user transitioned between slides and whether slides supported the narrative
-* **Storytelling**: Whether the user created a compelling narrative rather than simply reading from slides
-* **Clarity**: Whether the user communicated complex information in an understandable way
-* **Engagement**: Whether the user maintained an engaging tone and delivery style suitable for an audience
+* **Presentation structure**: Whether the presentation followed a clear flow (introduction, agenda, key points, conclusion).
+* **Confidence**: Body language, eye contact (when facing the camera), and vocal confidence.
+* **Slide flow**: How smoothly the user transitioned between slides and whether slides supported the narrative.
+* **Storytelling**: Whether the user created a compelling narrative rather than simply reading from slides.
+* **Clarity**: Whether the user communicated complex information in an understandable way.
+* **Engagement**: Whether the user maintained an engaging tone and delivery style suitable for an audience.
 
 **Business purpose of Presentation Coaching:**
 
 Presentation Coaching is used to:
 
-* Test presentation skills before high-stakes customer meetings or executive reviews
-* Rate delivery quality for in-service training presentations (common in pharmaceutical and medical device industries)
-* Improve stakeholder communication by practicing how to present data, reports, or proposals
+* Test presentation skills before high-stakes customer meetings or executive reviews.
+* Rate delivery quality for in-service training presentations (common in pharmaceutical and medical device industries).
+* Improve stakeholder communication by practicing how to present data, reports, or proposals.
 
 Presentation Coaching differs from Video Coaching because it evaluates how effectively a user uses visual aids and delivers structured content to an audience, not just how they speak.
 
@@ -143,13 +145,13 @@ In two-way AI role-plays, the AI interacts with the user in real time. The AI av
 
 **How it works:**
 
-* The user starts a role-play session
-* An AI avatar appears on screen, representing a specific persona (e.g., a skeptical doctor, a busy executive, a curious customer)
-* The AI avatar speaks first or responds to the user's opening
-* The user and AI have a back-and-forth conversation
-* The AI adapts its responses based on what the user says
-* The conversation continues until the user completes the scenario or reaches a natural endpoint
-* The AI evaluates the conversation immediately after it ends
+* The user starts a role-play session.
+* An AI avatar appears on screen, representing a specific persona (e.g., a skeptical doctor, a busy executive, a curious customer).
+* The AI avatar speaks first or responds to the user's opening.
+* The user and AI have a back-and-forth conversation.
+* The AI adapts its responses based on what the user says.
+* The conversation continues until the user completes the scenario or reaches a natural endpoint.
+* The AI evaluates the conversation immediately after it ends.
 
 **Key difference from one-way coaching:**
 
@@ -159,28 +161,28 @@ Two-way AI role-plays are dynamic. The AI does not follow a script. It responds 
 
 SmartWinnr's AI tracks the same evaluation criteria as one-way coaching (competencies, objectives, keywords, structure), but it also assesses:
 
-* **Objection handling**: How well the user addressed concerns or challenges raised by the AI avatar
-* **Discovery**: Whether the user asked questions to understand the AI avatar's needs before pitching
-* **Negotiation**: How the user navigated pricing, timelines, or terms raised by the AI
-* **Conversation flow**: Whether the user maintained a natural, two-way dialogue rather than delivering a monologue
-* **Adaptability**: Whether the user adjusted their approach based on the AI avatar's responses
+* **Objection handling**: How well the user addressed concerns or challenges raised by the AI avatar.
+* **Discovery**: Whether the user asked questions to understand the AI avatar's needs before pitching.
+* **Negotiation**: How the user navigated pricing, timelines, or terms raised by the AI.
+* **Conversation flow**: Whether the user maintained a natural, two-way dialogue rather than delivering a monologue.
+* **Adaptability**: Whether the user adjusted their approach based on the AI avatar's responses.
 
 **The AI adapts its behavior:**
 
 SmartWinnr's AI avatars are customized to reflect different customer types. For example:
 
-* A transactional persona responds quickly and demands concise answers
-* A data-driven persona asks for clinical studies or evidence
-* A skeptical persona challenges claims and questions credibility
+* A transactional persona responds quickly and demands concise answers.
+* A data-driven persona asks for clinical studies or evidence.
+* A skeptical persona challenges claims and questions credibility.
 
 This ensures users practice conversations that match real-world scenarios.
 
 **Use cases for two-way AI role-plays:**
 
-* Objection handling practice (e.g., responding to "Your competitor's product is cheaper")
-* Discovery skills (learning to ask the right questions before presenting a solution)
-* Negotiation practice (handling pricing or contract discussions)
-* Compliance conversations (ensuring users follow approved messaging in regulated industries)
+* Objection handling practice (e.g., responding to "Your competitor's product is cheaper").
+* Discovery skills (learning to ask the right questions before presenting a solution).
+* Negotiation practice (handling pricing or contract discussions).
+* Compliance conversations (ensuring users follow approved messaging in regulated industries).
 
 Two-way AI role-plays prepare users for situations where they must think on their feet and respond to unpredictable customer behavior.
 
@@ -194,10 +196,10 @@ All AI Coaching in SmartWinnr is evaluated using a structured framework. This en
 
 Every coaching assignment is built around specific learning objectives. For example:
 
-* "Introduce the product clearly"
-* "Address unmet patient needs"
-* "Explain the mechanism of action"
-* "Close by asking for a commitment"
+* "Introduce the product clearly."
+* "Address unmet patient needs."
+* "Explain the mechanism of action."
+* "Close by asking for a commitment."
 
 Objectives define what the user is expected to accomplish during the role-play.
 
@@ -205,12 +207,12 @@ Objectives define what the user is expected to accomplish during the role-play.
 
 Competencies are the skills being assessed. SmartWinnr uses a competency dictionary that can be customized by your organization. Common competencies include:
 
-* Listening
-* Objection handling
-* Closing
-* Confidence
-* Clarity
-* Persuasiveness
+* Listening.
+* Objection handling.
+* Closing.
+* Confidence.
+* Clarity.
+* Persuasiveness.
 
 Each coaching assignment selects one or more competencies to evaluate.
 
@@ -218,9 +220,9 @@ Each coaching assignment selects one or more competencies to evaluate.
 
 If a coaching assignment evaluates multiple competencies, your trainer can assign different weightages to each. For example:
 
-* Objection handling: 50%
-* Closing: 30%
-* Confidence: 20%
+* Objection handling: 50%.
+* Closing: 30%.
+* Confidence: 20%.
 
 This helps users focus on the most important aspects of the coaching scenario.
 
@@ -232,9 +234,9 @@ SmartWinnr's AI generates two types of scores:
 
 **Objective-specific Scores**: Individual scores for each objective or competency. For example:
 
-* Opening: 85%
-* Objection handling: 70%
-* Closing: 60%
+* Opening: 85%.
+* Objection handling: 70%.
+* Closing: 60%.
 
 Scores are calculated based on how well the user met the criteria defined in the rubric.
 
@@ -246,7 +248,7 @@ After scoring, the AI generates structured feedback:
 
 **Improvement Areas**: Specific recommendations for improvement (e.g., "You should have asked for a commitment at the end of the conversation. For example: 'Doctor, based on our discussion, would you consider prescribing this to your next eligible patient?'")
 
-**Actionable suggestions**: The AI provides examples of what the user could have said or done differently.
+**Actionable Suggestions**: The AI provides examples of what the user could have said or done differently.
 
 This feedback loop allows users to improve with each attempt.
 
