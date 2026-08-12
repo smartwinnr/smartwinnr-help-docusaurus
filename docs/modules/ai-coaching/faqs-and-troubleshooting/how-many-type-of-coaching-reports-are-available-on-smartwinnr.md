@@ -7,8 +7,8 @@ description: >-
 slug: how-many-type-of-coaching-reports-are-available-on-smartwinnr
 sidebar_position: 312
 last_update:
-  date: 2026-01-29T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-12
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 6970d8920c0e4405a576851c
   helpscout_url: >-
@@ -19,18 +19,18 @@ customProps:
 tags:
   - ai-coaching
   - troubleshooting
+draft: false
 ---
-## Introduction
+
+> **At a glance** - SmartWinnr offers four types of coaching reports that provide insights into learner performance and training effectiveness.
 
 Coaching reports provide critical insights into learner performance, skill development, and training effectiveness. These reports help you track progress, identify knowledge gaps, and make data-driven decisions about coaching interventions.
 
-The platform offers multiple report types-each designed for a specific purpose. Whether you need a high-level overview of all coaching activities or granular, objective-level performance data, there's a report to match your needs.
+The platform offers multiple report types, each designed for a specific purpose. Whether you need a high-level overview of all coaching activities or granular, objective-level performance data, there's a report to match your needs.
 
 **Who can access these reports?**
 
 Editors and Managers can download coaching reports from the system.
-
-* * *
 
 ## Types of Coaching Reports
 
@@ -67,7 +67,7 @@ This report focuses on one specific coaching scenario and shows how users perfor
 
 **When to use it:**
 
-Use this report when you want a snapshot of team performance for a single coaching scenario-ideal for evaluating how well a specific training initiative is working.
+Use this report when you want a snapshot of team performance for a single coaching scenario—ideal for evaluating how well a specific training initiative is working.
 
 [How do I download Coaching-wise Report?](../reports-and-analytics/how-do-i-download-coaching-wise-report.md)
 
@@ -75,7 +75,7 @@ Use this report when you want a snapshot of team performance for a single coachi
 
 ### C. Attempt-wise Coaching Report
 
-This report captures all attempts made by users for a specific coaching scenario-not just their latest submission.
+This report captures all attempts made by users for a specific coaching scenario—not just their latest submission.
 
 **What it shows:**
 
@@ -115,8 +115,8 @@ The report will display each of these scores in separate columns, allowing you t
 
 Each row in the report represents one attempt. This means:
 
-* If 1 user makes 5 attempts, the report will contain 5 rows for that user
-* If 50 users each make 2 attempts, the report will contain 100 rows
+* If 1 user makes 5 attempts, the report will contain 5 rows for that user.
+* If 50 users each make 2 attempts, the report will contain 100 rows.
 
 Each row includes:
 
