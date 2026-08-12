@@ -55,3 +55,11 @@ You will be taken to a screen where you can send your query to the support team.
 Once you fill in the details, click on the **Contact Us** option to send your query to the SmartWinnr support team.
 
 Please remember to add your official email id in this form. Our Support Team will contact you at this email address.
+
+**If you have not logged in to SmartWinnr but need assistance with queries such as login credentials or other access-related issues, you can contact the SmartWinnr Support Team directly from the login page. 
+
+Below is the login page for SmartWinnr. Click on the contact Us option at bottom left corner and it will take you to the same page where you can fill your details and message for the SmartWinnr team.
+
+![SmartWinnr login page](/img/helpscout/authored/how-can-i-contact-smartwinnr-team-mspun8sc.png)
+
+Note: You can use this option when you are unable to log in to SmartWinnr and need support with your account or access.
