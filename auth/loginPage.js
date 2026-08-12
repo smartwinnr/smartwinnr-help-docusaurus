@@ -344,7 +344,7 @@ function renderLoginPage(lambdaUrl, errorMessage, isDev) {
   <!-- Sign-in card -->
   <div class="card">
     <h1>Sign in</h1>
-    <p class="subtitle">Use your SmartWinnr email. What you see inside is tailored to your role and your organization's enabled modules.</p>
+    <p class="subtitle">Enter the email address you use to sign in to SmartWinnr. Help Center access is available only to users with an active SmartWinnr account.</p>
 
     <form id="loginForm">
       <label for="email">Email address</label>
