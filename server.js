@@ -252,8 +252,9 @@ app.post('/api/vector/search', async (req, res) => {
 
     console.log(`🔍 Document search query: "${query}"`);
     
-    // Search documents using the same function as chat
-    const searchResults = await searchDocuments(query, limit, req.user);
+    // Search documents using the same function as chat, collapsed to one
+    // result per article (vectors are per-chunk).
+    const searchResults = await searchDocuments(query, limit, req.user, { uniqueByUrl: true });
     
     // Transform results to match the expected format for the search component.
     // Results whose URL no longer resolves are dropped rather than rendered as
@@ -295,8 +296,11 @@ app.post('/api/vector/search', async (req, res) => {
   }
 });
 
-// AI search function
-async function searchDocuments(query, limit = 5, user = null) {
+// AI search function. Results are chunk-level: each hit is one ~1500-char
+// chunk of an article. Pass uniqueByUrl to collapse to one hit per article
+// (best chunk wins) - the search bar wants distinct articles, while chat
+// benefits from multiple chunks of the same doc as extra context.
+async function searchDocuments(query, limit = 5, user = null, { uniqueByUrl = false } = {}) {
   try {
     // Generate embedding for the query
     const embeddingResponse = await axios.post(`http://localhost:${PORT}/api/vector/embed`, {
@@ -313,11 +317,12 @@ async function searchDocuments(query, limit = 5, user = null) {
     // Get the collection
     const collection = await chromaClient.getCollection({ name: COLLECTION_NAME });
 
-    // Over-fetch when we'll be gate-filtering, so a few blocked results
-    // don't starve the chatbot of context. 2x buffer is enough for typical
-    // orgs; if filtering leaves zero docs, callers see an empty array and
-    // the chat handler emits its standard "no documentation" refusal.
-    const fetchN = user ? Math.max(limit * 2, limit + 4) : limit;
+    // Over-fetch: gate-filtering drops results the viewer can't open, and
+    // since each vector is one chunk, several results can be the same article
+    // (the search endpoint dedupes to one row per article). The buffer keeps
+    // either from starving callers; if filtering still leaves zero docs, the
+    // chat handler emits its standard "no documentation" refusal.
+    const fetchN = user ? Math.max(limit * 3, limit + 8) : limit * 2;
 
     const results = await collection.query({
       queryEmbeddings: [queryEmbedding],
@@ -348,13 +353,24 @@ async function searchDocuments(query, limit = 5, user = null) {
     // entry, so gating it directly would inherit only its ancestor prefixes
     // and wave it through. When user is null (internal indexer calls) the
     // filter is skipped.
-    const filtered = user
+    let filtered = user
       ? documents.filter((d) => {
           const url = d.liveUrl || (d.metadata && d.metadata.url);
           if (!url) return true; // no URL means we can't gate; pass through
           return isUrlAllowedForUser(url, user);
         })
       : documents;
+
+    if (uniqueByUrl) {
+      const seen = new Set();
+      filtered = filtered.filter((d) => {
+        const url = d.liveUrl || (d.metadata && d.metadata.url);
+        if (!url) return true;
+        if (seen.has(url)) return false;
+        seen.add(url);
+        return true;
+      });
+    }
 
     return filtered.slice(0, limit);
   } catch (error) {
@@ -510,6 +526,10 @@ app.post('/api/chat', async (req, res) => {
     const citations = [];
 
     if (searchResults.length > 0) {
+      // Results are chunks, so two of them can come from the same article -
+      // cite each article once (best-distance chunk wins; results arrive
+      // sorted by distance).
+      const citedUrls = new Set();
       context = searchResults.map((result, index) => {
         // Add to citations if it's a good match (distance < 0.8) AND its URL
         // still resolves to a live route. A doc with a dead URL still feeds
@@ -519,7 +539,8 @@ app.post('/api/chat', async (req, res) => {
         // widget, so a bare substring showed readers `**bold**`, `> **At a
         // glance**` and - for the module landing pages - import statements.
         const clean = toIndexableText(result.content || '');
-        if (result.distance < 0.8 && result.metadata && result.liveUrl) {
+        if (result.distance < 0.8 && result.metadata && result.liveUrl && !citedUrls.has(result.liveUrl)) {
+          citedUrls.add(result.liveUrl);
           citations.push({
             title: result.metadata.title || 'SmartWinnr Documentation',
             url: result.liveUrl,
@@ -528,11 +549,16 @@ app.post('/api/chat', async (req, res) => {
           });
         }
 
-        // The model gets the same cleaned text. Feeding it JSX and imports
-        // wasted context and invited it to describe our components as features.
+        // The model gets the same cleaned text. Chunks are ~1500 chars, so the
+        // whole retrieved passage fits; the cap only bites on whole-article
+        // vectors indexed before chunking (which used to be cut at 750).
+        const chunkCount = Number(result.metadata?.chunkCount) || 1;
+        const partLabel = chunkCount > 1
+          ? ` (part ${(Number(result.metadata?.chunkIndex) || 0) + 1} of ${chunkCount})`
+          : '';
         return `Document ${index + 1}:
-Title: ${result.metadata?.title || 'Untitled'}
-Content: ${clean.substring(0, 750)}...
+Title: ${result.metadata?.title || 'Untitled'}${partLabel}
+Content: ${clean.substring(0, 2500)}
 ---`;
       }).join('\n\n');
     } else {

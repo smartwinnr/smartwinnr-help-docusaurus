@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const matter = require('gray-matter');
 const { ChromaClient } = require('chromadb');
 const { resolveDocRoute } = require('../lib/doc-routes');
-const { toIndexableText, synthesizeFromFrontmatter } = require('../lib/doc-text');
+const { toIndexableText, synthesizeFromFrontmatter, chunkIndexableText } = require('../lib/doc-text');
 
 const REPO_ROOT = path.join(__dirname, '..');
 const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
@@ -165,6 +165,12 @@ class InternalIndexer {
       console.log(`  ℹ️  Indexing from frontmatter (no prose body): ${relativePath}`);
     }
 
+    // One vector per ~1500-char chunk, not per article: a whole-article
+    // embedding averages every topic the article covers, so specific
+    // questions matched long articles poorly, and the chat handler could only
+    // forward a truncated head of the matched text.
+    const chunks = chunkIndexableText(cleanContent);
+
     // Hash body AND the identity we store alongside it. Hashing the body alone
     // meant a re-slug or re-title never re-embedded the doc, so a stale URL
     // survived every incremental run until someone forced a full reindex.
@@ -173,6 +179,7 @@ class InternalIndexer {
     return {
       id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for cross-machine consistency
       content: cleanContent,
+      chunks,
       hash: contentHash,
       filePath: relativePath, // Store relative path for tracking
       metadata: {
@@ -294,9 +301,10 @@ class InternalIndexer {
     
     for (const doc of deletedDocs) {
       try {
-        // Use relative path for cross-machine consistent ID generation
-        const docId = `doc_${Buffer.from(doc.filePath).toString('base64')}`;
-        await collection.delete({ ids: [docId] });
+        // Delete by source rather than by id: a doc owns one vector per chunk
+        // (ids `<docId>::c<n>`), and entries indexed before chunking used the
+        // bare `<docId>`. Matching on metadata.source evicts all of them.
+        await collection.delete({ where: { source: doc.filePath } });
         console.log(`  ✅ Removed: ${doc.filePath}`);
       } catch (error) {
         console.error(`  ❌ Failed to remove ${doc.filePath}:`, error.message);
@@ -315,44 +323,72 @@ class InternalIndexer {
   }
 
   /**
-   * Process and upsert new/changed documents
+   * Process and upsert new/changed documents, one vector per chunk.
+   *
+   * Per-doc all-or-nothing: if any chunk's embedding fails after retries, none
+   * of the doc's chunks are written. A partial write would carry the doc's
+   * contentHash into the collection, so the next incremental run would see
+   * "unchanged" and never repair the missing chunks. Skipping the whole doc
+   * leaves no (or stale) vectors, and the next run retries it as new/changed.
+   *
+   * Docs flagged `stale` (changed docs, whose vectors already exist) have
+   * their old vectors deleted by source right before the upsert - chunk
+   * counts can shrink, and upsert alone would leave the surplus chunk ids
+   * (and any pre-chunking bare-id entry) serving stale content forever.
    */
   async processChangedDocuments(collection, documents) {
     if (documents.length === 0) return 0;
-    
+
     console.log(`📝 Processing ${documents.length} new/changed documents...`);
-    
-    const batchSize = 10;
+
+    const batchSize = 10; // docs per upsert
     let processed = 0;
-    
+
     for (let i = 0; i < documents.length; i += batchSize) {
       const batch = documents.slice(i, i + batchSize);
       const batchDocuments = [];
       const batchEmbeddings = [];
       const batchMetadatas = [];
       const batchIds = [];
-      
-      console.log(`📄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(documents.length/batchSize)}`);
-      
-      for (const doc of batch) {
-        try {
-          // Generate embedding via internal API
-          const embedding = await this.generateEmbedding(doc.content);
+      const staleSources = [];
 
-          batchDocuments.push(doc.content);
-          batchEmbeddings.push(embedding);
-          batchMetadatas.push(doc.metadata);
-          batchIds.push(doc.id);
+      console.log(`📄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(documents.length/batchSize)}`);
+
+      for (const doc of batch) {
+        const chunks = (doc.chunks && doc.chunks.length) ? doc.chunks : [doc.content];
+        try {
+          // Embed every chunk before queuing any of them (see all-or-nothing
+          // note above).
+          const embeddings = [];
+          for (const chunk of chunks) {
+            embeddings.push(await this.generateEmbedding(chunk));
+            await this.pace();
+          }
+
+          chunks.forEach((chunk, ci) => {
+            batchDocuments.push(chunk);
+            batchEmbeddings.push(embeddings[ci]);
+            batchMetadatas.push({ ...doc.metadata, chunkIndex: ci, chunkCount: chunks.length });
+            batchIds.push(`${doc.id}::c${ci}`);
+          });
+          if (doc.stale) staleSources.push(doc.filePath);
 
           processed++;
-          console.log(`  ✅ ${doc.filePath}`);
+          console.log(`  ✅ ${doc.filePath} (${chunks.length} chunk${chunks.length === 1 ? '' : 's'})`);
         } catch (error) {
           console.error(`  ❌ Failed to process ${doc.filePath}:`, error.message);
         }
+      }
+
+      // Evict the changed docs' old vectors, then upsert the new set.
+      for (const source of staleSources) {
+        try {
+          await collection.delete({ where: { source } });
+        } catch (error) {
+          console.error(`  ❌ Failed to clear old vectors for ${source}:`, error.message);
+        }
         await this.pace();
       }
-      
-      // Upsert batch to collection (this will add new or update existing)
       if (batchDocuments.length > 0) {
         try {
           await collection.upsert({
@@ -366,7 +402,7 @@ class InternalIndexer {
         }
       }
     }
-    
+
     return processed;
   }
 
@@ -476,7 +512,9 @@ class InternalIndexer {
         await this.removeDeletedDocuments(collection, changes.deleted);
       }
       
-      // 2. Process new and changed documents
+      // 2. Process new and changed documents. Changed docs are flagged so
+      //    their existing vectors get evicted before the new chunks land.
+      changes.changed.forEach((doc) => { doc.stale = true; });
       const documentsToProcess = [...changes.new, ...changes.changed];
       if (documentsToProcess.length > 0) {
         totalProcessed = await this.processChangedDocuments(collection, documentsToProcess);
