@@ -29,7 +29,7 @@ This feature lets you set a reminder and schedule it to be delivered to users ab
 
 In the popup, select the **Send Type**. This field lets you decide if you want to send the reminder on a specific date or if you want to send it depending on the end date of the quiz.
 
-![Send Type selection in the reminder popup](/img/helpscout/editors/how-to-set-reminder-for-your-tasks-1.png)
+![describe this screenshot](/img/helpscout/authored/how-to-set-reminder-for-your-tasks-msr2t1xu.png)
 
 ### 2. Set Date to Send
 

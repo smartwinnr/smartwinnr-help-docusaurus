@@ -895,7 +895,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-add-reference-to-an-external-link-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
     },
     {
       "from": "/administration/cross-module-features/how-to-attach-pdf-file-to-your-content",
@@ -1023,7 +1023,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-add-reference-to-an-external-link-to-your-content",
-      "to": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
     },
     {
       "from": "/modules/cross-module/how-to-attach-pdf-file-to-your-content",
@@ -1920,6 +1920,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/how-to-attach-pdf-file-to-your-content",
       "to": "/modules/smartfeed/create-and-manage/how-to-attach-pdf-file-to-your-content"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
     }
   ]
 }
