@@ -5,26 +5,42 @@ description: >-
   Once you create a KHub item, you have an option to edit it in case you need to
   change anything. Below are the steps to edit a KHub item:
 slug: how-can-i-edit-a-khub-item
-sidebar_position: 147
+sidebar_position: 999
 last_update:
-  date: 2021-01-13T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdae9650b11ce44f639315d
-  helpscout_url: 'https://help.smartwinnr.com/article/147-how-can-i-edit-a-khub-item'
+  date: 2026-08-14
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub
+draft: false
 ---
-Once you create a KHub item, you have an option to edit it in case you need to change anything. Below are the steps to edit a KHub item:
 
-EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Open an existing folder and then open the item that you want to edit in it. This opens the following page:
+> **At a glance** - Editing a KHub item is straightforward. Follow these steps to make changes to existing items in your KHub.
 
-![EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Open an existing folder and then open the item that you want to edit in it. This opens the fo](/img/helpscout/editors/how-can-i-edit-a-khub-item-1.png)
+Once you create a KHub item, you can edit it if you need to make any changes. Below are the steps to edit a KHub item:
 
-Now, click on the "**Edit**" button at the top right corner. It will open the below page where you can edit the created item.
+## When to use this
+Use this feature when you need to update information in an existing KHub item. This is useful in scenarios such as:
+- Correcting errors or outdated information.
+- Adding new content or resources.
+- Modifying existing content for clarity or relevance.
 
-![Now, click on the "Edit" button at the top right corner. It will open the below page where you can edit the created item.](/img/helpscout/editors/how-can-i-edit-a-khub-item-2.png)
-Once you make the necessary changes to the KHub item, click on the "**Update**" button at the bottom. This will save your changes successfully.
+## Steps
+
+### 1. Open the KHub item
+Navigate to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Open an existing folder and then select the item you want to edit. This opens the item page.
+
+![Open the KHub item page](/img/helpscout/authored/how-can-i-edit-a-khub-item-msswpih2.png)
+
+### 2. Click the Edit button
+Click on the "**Edit**" button at the top right corner. This will open the editing page for the selected item.
+
+![Editing page for the KHub item](/img/helpscout/authored/how-can-i-edit-a-khub-item-msswragk.png)
+
+### 3. Make your changes
+Once you are on the editing page, make the necessary changes to the KHub item.
+
+### 4. Save your changes
+After making your edits, click on the "**Update**" button at the bottom. This will save your changes successfully.

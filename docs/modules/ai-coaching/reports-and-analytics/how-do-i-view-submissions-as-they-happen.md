@@ -86,8 +86,8 @@ Once you're viewing an individual submission, use the tabs at the top to see dif
 * **Evaluation Criteria**: Review detailed scoring for each competency or knowledge area the AI evaluated
 * **Compliance and Fact Check**: See compliance violations, factual errors, and suggestions for balanced messaging
 
-![](/img/helpscout/editors/how-do-i-view-submissions-as-they-happen-3.png)
-
+* **Soft Skill**: See the Detailed Performance Metrics under this section.
+![describe this screenshot](/img/helpscout/authored/how-do-i-view-submissions-as-they-happen-mssvk73t.png)
 * * *
 
 ## What happens next

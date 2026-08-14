@@ -3,33 +3,45 @@ id: 6317a3ed4cde766bbe1426fe
 title: How can I edit a KHub folder name ?
 description: >-
   In KHub, you can edit the names of folders. If you have a folder in KHub that
-  you want to change the title of you can simply follow the below steps:
+  you want to change the title of, you can simply follow the steps below:
 slug: how-can-i-edit-a-khub-folder-name
 sidebar_position: 275
 last_update:
-  date: 2022-09-14T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 6317a3ed4cde766bbe1426fe
-  helpscout_url: 'https://help.smartwinnr.com/article/275-how-to-edit-folder-name-in-khub'
+  date: 2026-08-14
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: khub
 tags:
   - knowledge-hub
+draft: false
 ---
-In KHub, you can edit the names of folders. If you have a folder in KHub that you want to change the title of you can simply follow the below steps:
 
-Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:
+> **At a glance** - This article explains how to edit the names of folders in KHub, including step-by-step instructions.
 
-![Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:](/img/helpscout/editors/how-can-i-edit-a-khub-folder-name-1.png)
-Click on the folder for which you want to edit the name.
-After Clicking on the folder it will give you the following screen:
+In KHub, you can edit the names of folders. If you have a folder in KHub that you want to change the title of, you can simply follow the steps below.
 
-![After Clicking on the folder it will give you the following screen:](/img/helpscout/editors/how-can-i-edit-a-khub-folder-name-2.png)
-Now on the top right corner click on the hamburger icon to access the list of options and then select "Edit Folder" option, shown as below:
+## When to use this
+Use this feature when you need to update the title of a folder in KHub to better reflect its contents or purpose.
 
-![Now on the top right corner click on the hamburger icon to access the list of options and then select "Edit Folder" option, shown as below:](/img/helpscout/editors/how-can-i-edit-a-khub-folder-name-3.png)
-After clicking on the "Edit Folder" it will open up a windows to edit the folder name and description. You can change the details and then click on "Create" button shown as below:
+## Steps
 
-![After clicking on the "Edit Folder" it will open up a windows to edit the folder name and description. You can change the details and then c](/img/helpscout/editors/how-can-i-edit-a-khub-folder-name-4.png)
+### 1. Navigate to KHub
+Go to the **Left Menu** > **EDITOR** > **LEARNING AND KNOWLEDGE** > **KHub** > **KHub**. This opens the KHub page.
+
+![KHub page navigation](/img/helpscout/authored/how-can-i-edit-a-khub-folder-name-mssw75o6.png)
+
+### 2. Select the Folder
+Click on the folder for which you want to edit the name. This will take you to the folder details screen.
+
+![Folder details screen](/img/helpscout/authored/how-can-i-edit-a-khub-folder-name-msswdhf4.png)
+
+### 3. Access the Edit Option
+On the top right corner, click on the **hamburger icon** to access the list of options, and then select the **Edit Folder** option.
+
+![Edit Folder option](/img/helpscout/authored/how-can-i-edit-a-khub-folder-name-msswe2z1.png)
+
+### 4. Edit the Folder Name
+After clicking on **Edit Folder**, a window will open allowing you to edit the folder name and description. Make your changes and then click the **Update** button.
+
+![Edit folder name and description](/img/helpscout/authored/how-can-i-edit-a-khub-folder-name-msswf2nv.png)

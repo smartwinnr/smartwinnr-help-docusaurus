@@ -45,6 +45,8 @@ Use this feature when you want to analyze performance data for multiple roleplay
 5. You can select as many coachings as you need—there's no limit.
 6. The dropdown will show how many coachings you've selected (e.g., "2 selected").
 
+![describe this screenshot](/img/helpscout/authored/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time-mssugl7s.png)
+
 ### 3. Apply the filters
 1. Click the **Apply Filters** button at the bottom of the dialog.
 2. The dashboard will refresh to show combined data across all selected coachings.
@@ -77,7 +79,7 @@ Beyond selecting multiple coachings, the **Filters** panel offers several other 
 ### Business Unit & Country Filters
 ![BU filter](/img/helpscout/authored/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time-msspsqaz.png)
 
-**What they do:** These standard organizational filters let you view data for specific parts of your organization.
+**What they do:** These standard organizational filters let you view data for specific Business Unit or Sub - BU of your organization.
 
 **Business Unit:**
 - Select one or more business units.
@@ -106,11 +108,10 @@ Metatag filters are customizable organizational tags that let you segment your d
 - **Therapeutic Area:** Filter by medical specialty or therapeutic focus (common in pharmaceutical sales) to track skill development within specific clinical areas.
 
 **How metatags work:**
-- Some metatag categories are predefined, but the specific values are always customizable to match your organization.
 - Different organizations may see different metatag options based on their setup.
 - You can combine multiple metatag filters for very specific views.
 
-Lastly, the **Status** filter allows you to segment data by learner status (e.g., Active, Inactive).
+Lastly, the **Status** filter allows you to segment data by learner status.
 
 ![User status filter](/img/helpscout/authored/how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time-mssqsp13.png)
 

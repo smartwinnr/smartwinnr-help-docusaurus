@@ -7,8 +7,8 @@ description: >-
 slug: how-can-i-create-folders-and-items-in-khub
 sidebar_position: 146
 last_update:
-  date: 2023-01-11T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-14
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fdae8ca27288b7f895d64e3
   helpscout_url: >-
@@ -19,73 +19,82 @@ customProps:
 tags:
   - knowledge-hub
   - admin
+draft: false
 ---
-_Only users having the editor role will be able to create folders and items in KHub_
 
-In KHub, you can maintain the documents in the form of folders and items. You can create different folders on various topics and upload the related documents/items in them. This segregates the KHub items topic-wise and makes it easy for the sales reps to access them.
+> **At a glance** - This article explains how to create folders and items in KHub, including steps for changing their sequence.
 
-## Folder Creation
+Only users with the editor role can create folders and items in KHub. In KHub, you can maintain documents in the form of folders and items. You can create different folders on various topics and upload the related documents/items in them. This segregates the KHub items by topic and makes it easy for sales reps to access them.
 
-Follow the below steps in order to create a folder in the KHub:
+## When to use this
+Use this feature when you need to organize documents in KHub for easy access and management. This is particularly useful in the following scenarios:
+- You want to create a structured repository of knowledge for your team.
+- You need to categorize documents by topics or projects.
+- You want to ensure that team members can easily find relevant materials.
 
-Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:
+## Before you start
+Ensure you have the editor role to create folders and items in KHub.
 
-![Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-1.png)
+## Steps
 
-Click on the "Create" button at the top left corner and then click on the "Folder" option.
+### 1. Create a Folder
+Follow the steps below to create a folder in KHub:
 
-![Click on the "Create" button at the top left corner and then click on the "Folder" option.](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-2.png)
+Go to **Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub**. It opens the following page:
+
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssrpl4k.png)
+
+Click on the **Create** button at the top left corner and then click on the **Folder** option.
+
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssrscmd.png)
 
 It opens the following pop-up to create the folder:
 
-![It opens the following pop-up to create the folder:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-3.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssrthbn.png)
 
-Give a title to the folder and a short description. You can add an appropriate icon for the folder and click on the **Create** button and the folder will get created successfully.
+Give a title to the folder and a short description. You can add an appropriate icon for the folder and click on the **Create** button, and the folder will be created successfully.
 
-Item Creation
+### 2. Create an Item
+Follow the steps below to create an item in KHub:
 
-Follow the below steps in order to create an item in the KHub:
+Go to **Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub**. It opens the following page:
 
-Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssruj3k.png)
 
-![Go to the Left Menu > EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. It opens the following page:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-4.png)
+Open the desired folder in which you would like to add the content/item. Click on the **Create** button at the top left corner and then click on the **Item** option.
 
-Open the desired folder in which you would like to add the content/item. Click on the "Create" button at the top left corner and then click on the "Item" option.
-
-![Open the desired folder in which you would like to add the content/item. Click on the "Create" button at the top left corner and then click ](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-5.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssrwhwh.png)
 
 It opens the following pop-up to create the item:
 
-![It opens the following pop-up to create the item:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-6.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-mssrylf7.png)
 
-Title: Provide the title of the KHub Item here.
+**Title**: Provide the title of the KHub item here.
 
-Content: The content of the KHub item goes here. You can give a simple text, video, link or audio as the KHub content.
+**Content**: The content of the KHub item goes here. You can provide simple text, video, link, or audio as the KHub content.
 
-Select Category: Select a category for the KHub item here.
+**Select Category**: Select a category for the KHub item here.
 
-Once you have filled all the required details, click on the "Create" button at the bottom of the page and your item gets created inside the folder successfully.
+Once you have filled in all the required details, click on the **Create** button at the bottom of the page, and your item will be created inside the folder successfully.
 
-Change Folder Sequence
+### 3. Change Folder Sequence
+This feature lets you change the sequence of the KHub folders. Follow the steps below to change the sequence of your KHub folders:
 
-This feature lets you change the sequence of the KHub folders. Follow the below steps to change the sequence of your KHub folders:
+Go to **EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub**. Click on the hamburger menu button at the top right corner of the screen and select **Change Folder Sequence**.
 
-EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Click on the hamburger menu button at the top right corner of the screen and select "Change folder Sequence".
-
-![EDITOR > LEARNING AND KNOWLEDGE > KHub > KHub. Click on the hamburger menu button at the top right corner of the screen and select "Change f](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-7.png)
-
-##
+![describe this screenshot](/img/helpscout/authored/how-can-i-create-folders-and-items-in-khub-msss0mdy.png)
 
 It will open the following popup:
 
-![It will open the following popup:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-8.png)Change the sequence according to your wish and click on the Save button.
+![It will open the following popup:](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-8.png)
 
-## Change Item Sequence
+Change the sequence according to your preference and click on the **Save** button.
 
-This feature lets you change the sequence of the KHub items. Follow the below steps to change the sequence of your KHub items:
+### 4. Change Item Sequence
+This feature lets you change the sequence of the KHub items. Follow the steps below to change the sequence of your KHub items:
 
-EDITOR > LEARNING AND KNOWLEDGE > KHub. Click on the Hamberger menu button at the top right corner of the screen and select "Change Item Sequence". It will open the following popup:
+Go to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Click on the hamburger menu button at the top right corner of the screen and select **Change Item Sequence**. It will open the following popup:
 
-                                   ![EDITOR > LEARNING AND KNOWLEDGE > KHub. Click on the Hamberger menu button at the top right corner of the screen and select "Change Item Seq](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-9.png)
+![Go to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Click on the hamburger menu button at the top right corner of the screen and select **Change Item Sequence**.](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-9.png)
 
 Once you change the sequence of the KHub items, click on the **Save** button.
