@@ -1,41 +1,55 @@
 ---
 id: 5fce42e9eb7cc612aa3557ab
-title: How can I enable push notification for SmartWinnr App?
-description: >-
-  When push notification is enabled in your SmartWinnr app, you will receive the
-  notification in your mobile device every time when a new task is assigned to
-  you,
+title: "How to enable push notifications in the SmartWinnr app"
+description: "Enable push notifications in the SmartWinnr app to receive alerts on your mobile device whenever new tasks are assigned to you."
 slug: how-can-i-enable-push-notification-for-smartwinnr-app
 sidebar_position: 21
 last_update:
-  date: 2020-12-26T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fce42e9eb7cc612aa3557ab
-  helpscout_url: >-
-    /get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app
+  date: 2026-08-14
+  author: Anagha Isal
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
-tags: []
+tags: ["onboarding"]
+draft: false
 ---
-When push notification is enabled in your SmartWinnr app, you will receive the notification in your mobile device every time when a new task is assigned to you,
 
-Following are the steps to enable push notification for your SmartWinnr app.
+> **At a glance** - Enable push notifications in the SmartWinnr app to receive alerts on your mobile device whenever a new task is assigned to you.
 
-Open the SmartWinnr app and click on the **hamburger** icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below:
+When push notifications are enabled in your SmartWinnr app, you will receive notifications on your mobile device every time a new task is assigned to you. This feature helps you stay updated and ensures that you never miss important tasks.
 
-![Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the s](/img/helpscout/managers-and-team-members/how-can-i-contact-smartwinnr-team-1.png)
+## When to use this
+Use this feature when you want to receive instant notifications about new tasks assigned to you in the SmartWinnr app. This is particularly useful for:
+- Keeping track of tasks in real-time.
+- Ensuring timely responses to new assignments.
+- Staying organized and managing your workload effectively.
 
-Here, click on the **profile picture** at the top. It will take you to the following screen:
+## Steps
 
-![Here, click on the profile picture at the top. It will take you to the following screen:](https://lh5.googleusercontent.com/AGJCQf4iNzebAOO-YUa1DNepJtYYvRSPP_KYAFINs9SETu3LOsCbNIimsq-6B6ArKBbJlBreKVY4tgQpf1B0ACTI3J-DtrnqCbc3vAORMHm-CKfRKbtELoskYuNLTGucovjy5n-V)
+### 1. Log in to your SmartWinnr account
+Open the SmartWinnr app on your mobile device and log in to your account. Once logged in, click on the **hamburger** icon located at the top left corner of the screen. This action will display the left menu bar.
 
-Click on  **Settings** icon at the top right corner marked in the above screenshot.It will take you to the following screen.
+![Open the SmartWinnr app and click on the hamburger icon at the top left corner of the screen. It will show a left menu bar as shown in the screenshot below.](/img/helpscout/authored/how-can-i-change-my-profile-image-msniylpg.png)
 
-![Click on Settings icon at the top right corner marked in the above screenshot.It will take you to the following screen.](https://lh3.googleusercontent.com/8-fyp62ex6G1CWqmtmRMxV_c8mjzahivh73leIPY9u2COjGjmjTlUxA9EtCka-UUvnNd-ca6VdsqWVYBeb8QyYENTAqUD5npcfotuQ0nWewL6mqHXvzAgnSuoW3tUxtZKoXNWQgZ)
+### 2. Access your profile settings
+Click on your **profile picture** at the top of the left menu bar. This will take you to your profile settings screen, where you can manage your account settings.
 
-Click on **Notification**. It will take you to the following screen. Tap on the **toggle** button to switch on the notification in SmartWinnr.
+![Click on the profile picture at the top. It will take you to the following screen:](/img/helpscout/authored/how-can-i-change-my-profile-image-msnizd6m.png)
 
-![Click on Notification. It will take you to the following screen. Tap on the toggle button to switch on the notification in SmartWinnr.](/img/helpscout/managers-and-team-members/how-can-i-enable-push-notification-for-smartwinnr-app-3.png)
+### 3. Navigate to settings
+On the profile settings screen, click on the **settings** icon located at the top right corner. This will direct you to the settings page in SmartWinnr, where you can adjust various preferences.
 
-Note: With this method you have enabled Push Notification for the mobile app. Push Notification can still be disabled for the app, from your phone. In this case, you will still not receive any notification as the settings of the phone will override the settings of the app.
+![On this screen, click on the settings icon on the profile picture. It will take you to the following screen:](/img/helpscout/authored/how-can-i-change-my-profile-image-msnj001t.png)
+
+### 4. Enable push notifications
+Click on **Notification** in the settings menu. This will take you to the notification settings screen. Here, tap on the **toggle** button to switch on the push notifications in SmartWinnr.
+
+![Notification page](/img/helpscout/authored/how-can-i-enable-push-notification-for-smartwinnr-app-msske7hn.jpg)
+
+## Tips
+- Ensure that your mobile device's settings allow notifications from the SmartWinnr app. If notifications are disabled at the device level, you will not receive alerts even if they are enabled in the app.
+- Regularly check your notification settings to ensure they are configured to your preference.
+
+## Things to know
+:::caution
+Push notifications can still be disabled for the app from your phone's settings. In this case, you will not receive any notifications, as the device settings override the app settings.
+:::
