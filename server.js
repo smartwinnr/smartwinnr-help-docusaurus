@@ -466,6 +466,70 @@ async function generateAIResponse(query, context, history = []) {
   }
 }
 
+// Retrieval embeds the user's message on its own, so a follow-up like "how do
+// I create it?" carried none of the conversation - its embedding matched
+// nothing, and Ally answered "I don't have docs on that" even though the LLM
+// (which does get the history) knew what "it" meant. Condense history + latest
+// message into a standalone question and embed THAT instead. Retrieval-only:
+// the user's original words are what the model answers, the widget shows, and
+// the logger records. Best-effort: any failure falls back to the raw message,
+// which is exactly the pre-rewrite behavior.
+const CONDENSE_TURN_CHARS = 500; // per-turn cap keeps the rewrite call cheap
+
+async function condenseQueryForRetrieval(message, priorTurns) {
+  const turns = Array.isArray(priorTurns)
+    ? priorTurns
+        .slice(-CHAT_HISTORY_TURNS)
+        .filter((t) => t && (t.role === 'user' || t.role === 'assistant') && typeof t.content === 'string')
+    : [];
+  if (turns.length === 0) return message; // first message is already standalone
+
+  try {
+    const openaiApiKey = getOpenAIKey();
+    const transcript = turns
+      .map((t) => `${t.role === 'user' ? 'User' : 'Assistant'}: ${t.content.slice(0, CONDENSE_TURN_CHARS)}`)
+      .join('\n');
+
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: CHAT_MODEL,
+        messages: [
+          {
+            role: 'system',
+            content:
+              'Rewrite the latest user message as one standalone question about SmartWinnr, ' +
+              'resolving pronouns and references ("it", "that", "step 2") from the conversation. ' +
+              'If it is already standalone, return it unchanged. ' +
+              'Reply with the question only - no preamble, no quotes.',
+          },
+          {
+            role: 'user',
+            content: `Conversation so far:\n${transcript}\n\nLatest user message: ${message}`,
+          },
+        ],
+        temperature: 0,
+        max_tokens: 120,
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${openaiApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        timeout: 10000,
+      }
+    );
+
+    const rewritten = response.data.choices?.[0]?.message?.content?.trim();
+    // An empty, refused, or runaway rewrite is worse than the original.
+    if (!rewritten || rewritten.length > MAX_QUERY_CHARS) return message;
+    return rewritten;
+  } catch (error) {
+    console.error('⚠️  Query condense failed, retrieving with raw message:', error.message);
+    return message;
+  }
+}
+
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
   const startTime = Date.now();
@@ -499,12 +563,23 @@ app.post('/api/chat', async (req, res) => {
     };
     history.push(userMessage);
 
+    // `history` already includes the just-pushed user message; the prior
+    // turns are everything before it.
+    const priorHistory = history.slice(0, -1);
+
     // Search for relevant documents. An index outage is NOT a content gap:
     // answer honestly instead of letting Ally say the docs don't cover it.
+    // Follow-ups retrieve with a history-aware standalone rewrite of the
+    // message (see condenseQueryForRetrieval); first messages skip the extra
+    // call and embed as-is.
     console.log('🔍 Searching for relevant documents...');
+    const retrievalQuery = await condenseQueryForRetrieval(message, priorHistory);
+    if (retrievalQuery !== message) {
+      console.log(`🔁 Retrieval query rewritten to: "${retrievalQuery}"`);
+    }
     let searchResults;
     try {
-      searchResults = await searchDocuments(message, 5, req.user);
+      searchResults = await searchDocuments(retrievalQuery, 5, req.user);
     } catch (searchError) {
       if (!(searchError instanceof SearchUnavailableError)) throw searchError;
       return res.status(503).json({
@@ -571,9 +646,8 @@ Content: ${clean.substring(0, 2500)}
     let aiUsage = null;
     let isFallback = false;
     try {
-      // `history` already includes the just-pushed user message; slice it
-      // off so generateAIResponse appends `query` once, not twice.
-      const priorHistory = history.slice(0, -1);
+      // priorHistory excludes the just-pushed user message, so
+      // generateAIResponse appends `query` once, not twice.
       const aiResult = await generateAIResponse(message, context, priorHistory);
       aiMessage = aiResult.message;
       aiUsage = aiResult.usage;
