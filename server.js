@@ -198,14 +198,41 @@ console.log('🚀 Starting SmartWinnr Help Center with integrated ChatBot API...
 
 // API Routes
 
-// OpenAI embedding endpoint (used by indexer)
+// Longest text we'll embed in one call. Indexer chunks top out around 2,300
+// chars plus a title prefix; anything much larger is a bug or an abuse
+// attempt, and it would push the embedding model's token limit anyway.
+const MAX_EMBED_CHARS = 10000;
+
+/** True only for callers presenting the shared internal key. Checked against
+ *  the header directly (not req.user.roles) so a session cookie - including a
+ *  dev-login cookie with an arbitrary role - can never qualify. */
+function isInternalServiceCall(req) {
+  const internalKey = process.env.INTERNAL_API_KEY;
+  const providedKey = req.headers['x-internal-api-key'];
+  if (!internalKey || !providedKey) return false;
+  const a = Buffer.from(internalKey);
+  const b = Buffer.from(providedKey);
+  return a.length === b.length && require('crypto').timingSafeEqual(a, b);
+}
+
+// OpenAI embedding endpoint - internal-only (indexer + searchDocuments' own
+// self-call). No browser code calls it, and leaving it open to any signed-in
+// session meant anyone could spend OpenAI credit through it: unlimited
+// length, no rate limit, and a client-chosen (pricier) model.
 app.post('/api/vector/embed', async (req, res) => {
   try {
-    const { text, model = EMBEDDING_MODEL } = req.body;
-    
+    if (!isInternalServiceCall(req)) {
+      return res.status(403).json({ error: 'Internal endpoint' });
+    }
+
+    const { text } = req.body;
+
     if (!text) {
-      console.log('⚠️text: ', text, 'model: ', model);
+      console.log('⚠️text: ', text);
       return res.status(400).json({ error: 'Text is required for embedding' });
+    }
+    if (typeof text !== 'string' || text.length > MAX_EMBED_CHARS) {
+      return res.status(400).json({ error: `Text must be a string of at most ${MAX_EMBED_CHARS} characters` });
     }
 
     const openaiApiKey = getOpenAIKey();
@@ -213,7 +240,9 @@ app.post('/api/vector/embed', async (req, res) => {
       'https://api.openai.com/v1/embeddings',
       {
         input: text,
-        model: model
+        // Always the server's configured model, never the caller's: queries
+        // and indexed docs must embed identically for search to work at all.
+        model: EMBEDDING_MODEL
       },
       {
         headers: {
