@@ -5,7 +5,7 @@ description: >-
   This tab provides a high-level view of participation, activity trends, and
   AI-generated insights.
 slug: understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
-sidebar_position: 325
+sidebar_position: 110
 last_update:
   date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration

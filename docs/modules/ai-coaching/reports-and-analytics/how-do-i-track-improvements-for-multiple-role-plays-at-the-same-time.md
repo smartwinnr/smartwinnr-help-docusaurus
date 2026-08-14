@@ -5,7 +5,7 @@ description: >-
   You can track improvement across multiple roleplays simultaneously by using
   the Filters feature on the Coaching Dashboard.
 slug: how-do-i-track-improvements-for-multiple-role-plays-at-the-same-time
-sidebar_position: 310
+sidebar_position: 120
 last_update:
   date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration

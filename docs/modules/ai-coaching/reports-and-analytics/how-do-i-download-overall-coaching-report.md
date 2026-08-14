@@ -3,7 +3,7 @@ id: 6970d9e71252a7004208b84e
 title: How do I download Overall Coaching Report?
 description: This report summarizes all coaching activities across all users.
 slug: how-do-i-download-overall-coaching-report
-sidebar_position: 313
+sidebar_position: 30
 last_update:
   date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration

@@ -3,7 +3,7 @@ id: 6970dad10c0e4405a5768525
 title: How can I download Attempt-wise User Objective Report?
 description: This report provides objective-level performance data for each attempt.
 slug: how-can-i-download-attempt-wise-user-objective-report
-sidebar_position: 314
+sidebar_position: 40
 last_update:
   date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration

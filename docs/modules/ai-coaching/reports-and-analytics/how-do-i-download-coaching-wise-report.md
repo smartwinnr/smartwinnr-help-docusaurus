@@ -3,7 +3,7 @@ id: 6970ebe71252a7004208b8b8
 title: How do I download Coaching-wise Report?
 description: This report focuses on one specific coaching.
 slug: how-do-i-download-coaching-wise-report
-sidebar_position: 316
+sidebar_position: 60
 last_update:
   date: 2026-08-01
   author: Anagha Isal

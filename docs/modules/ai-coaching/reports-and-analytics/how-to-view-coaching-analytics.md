@@ -3,7 +3,7 @@ id: viewing-coaching-analytics
 title: "How to view coaching analytics"
 description: "Access detailed insights into coaching assignments and performance metrics in the Editor Portal."
 slug: viewing-coaching-analytics
-sidebar_position: 999
+sidebar_position: 10
 last_update:
   date: 2026-07-22
   author: Sandeep Bhuthagaddala

@@ -3,7 +3,7 @@ id: 6970dfd91252a7004208b87d
 title: How do I download Attempt-wise Coaching Report?
 description: This report shows all attempts for a specific coaching.
 slug: how-do-i-download-attempt-wise-coaching-report
-sidebar_position: 315
+sidebar_position: 50
 last_update:
   date: 2026-07-22
   author: Sruthi Suresh

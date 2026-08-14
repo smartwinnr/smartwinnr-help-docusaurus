@@ -5,7 +5,7 @@ title: >-
   Dashboard
 description: Competency growth Over Time
 slug: understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard
-sidebar_position: 324
+sidebar_position: 100
 last_update:
   date: 2026-02-06T00:00:00.000Z
   author: HelpScout Migration

@@ -5,7 +5,7 @@ description: >-
   This feature allows editors, trainers, and admins to view video coaching
   submissions from users in real time.
 slug: how-do-i-view-submissions-as-they-happen
-sidebar_position: 311
+sidebar_position: 20
 last_update:
   date: 2026-01-29T00:00:00.000Z
   author: HelpScout Migration

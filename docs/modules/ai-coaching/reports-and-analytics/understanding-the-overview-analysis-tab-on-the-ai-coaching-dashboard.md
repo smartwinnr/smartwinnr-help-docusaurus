@@ -3,7 +3,7 @@ id: 6971e01ef35cc6035d0b9b8c
 title: Understanding the Overview Analysis Tab on the AI Coaching Dashboard
 description: ''
 slug: understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard
-sidebar_position: 323
+sidebar_position: 90
 last_update:
   date: 2026-02-14T00:00:00.000Z
   author: HelpScout Migration

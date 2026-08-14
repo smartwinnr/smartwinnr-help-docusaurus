@@ -3,7 +3,7 @@ id: download-coaching-feedback-report
 title: "How to download the coaching feedback report"
 description: "Learn how to download the coaching feedback report in PDF format."
 slug: download-coaching-feedback-report
-sidebar_position: 999
+sidebar_position: 70
 last_update:
   date: 2026-07-23
   author: Sruthi Suresh

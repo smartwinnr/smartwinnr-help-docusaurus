@@ -3,7 +3,7 @@ id: grant-access-to-coaching
 title: "How to Grant Access Permission to a Coaching"
 description: "This article shows you how to grant access to coaching for selected editors in SmartWinnr."
 slug: grant-access-to-coaching
-sidebar_position: 999
+sidebar_position: 130
 last_update:
   date: 2026-07-21
   author: Aswani TK
