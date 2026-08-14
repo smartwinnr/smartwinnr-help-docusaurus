@@ -9,6 +9,13 @@ const { toIndexableText, synthesizeFromFrontmatter, chunkIndexableText } = requi
 const REPO_ROOT = path.join(__dirname, '..');
 const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
 
+// Cosine distance, not Chroma's default L2. server.js thresholds (the 0.8
+// citation/refusal cutoff, the 1-distance relevance score) were written for
+// cosine distances in [0, 2]; against squared-L2 in [0, 4] they were far
+// stricter than intended. Applies on collection CREATION only - an existing
+// L2 collection keeps its space until FORCE_FULL_REINDEX recreates it.
+const COLLECTION_METADATA = { 'hnsw:space': 'cosine' };
+
 /**
  * Internal Document Indexer
  * Runs ONLY within Railway's internal network
@@ -358,10 +365,16 @@ class InternalIndexer {
         const chunks = (doc.chunks && doc.chunks.length) ? doc.chunks : [doc.content];
         try {
           // Embed every chunk before queuing any of them (see all-or-nothing
-          // note above).
+          // note above). The embedded text is title-prefixed while the STORED
+          // text stays the bare chunk: a mid-article chunk like "Assign
+          // Participants: select the users..." says nothing about which
+          // feature it belongs to, so without its title it drifts away from
+          // queries like "how to create video coaching" that its article
+          // should win.
+          const title = doc.metadata && doc.metadata.title ? String(doc.metadata.title).trim() : '';
           const embeddings = [];
           for (const chunk of chunks) {
-            embeddings.push(await this.generateEmbedding(chunk));
+            embeddings.push(await this.generateEmbedding(title ? `${title} - ${chunk}` : chunk));
             await this.pace();
           }
 
@@ -429,8 +442,9 @@ class InternalIndexer {
         console.log('✅ Connected to existing collection');
       } catch (error) {
         // Create collection without embedding function since we handle embeddings manually
-        collection = await this.chromaClient.createCollection({ 
-          name: this.collectionName
+        collection = await this.chromaClient.createCollection({
+          name: this.collectionName,
+          metadata: COLLECTION_METADATA
         });
         console.log('✅ Created new collection');
       }
@@ -471,8 +485,9 @@ class InternalIndexer {
         if (existingCount > 0) {
           await this.chromaClient.deleteCollection({ name: this.collectionName });
           // Create collection without embedding function since we handle embeddings manually
-          collection = await this.chromaClient.createCollection({ 
-            name: this.collectionName
+          collection = await this.chromaClient.createCollection({
+            name: this.collectionName,
+            metadata: COLLECTION_METADATA
           });
         }
         

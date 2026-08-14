@@ -577,9 +577,13 @@ app.post('/api/chat', async (req, res) => {
     if (retrievalQuery !== message) {
       console.log(`🔁 Retrieval query rewritten to: "${retrievalQuery}"`);
     }
+    // 8 chunks, not 5: modules with many sibling articles (coaching's
+    // upload/share/record how-tos) crowd the top ranks, pushing the one
+    // article that actually answers "how do I create X" out of a 5-slot
+    // context. Chunks are ~1500 chars, so 8 still fits comfortably.
     let searchResults;
     try {
-      searchResults = await searchDocuments(retrievalQuery, 5, req.user);
+      searchResults = await searchDocuments(retrievalQuery, 8, req.user);
     } catch (searchError) {
       if (!(searchError instanceof SearchUnavailableError)) throw searchError;
       return res.status(503).json({
