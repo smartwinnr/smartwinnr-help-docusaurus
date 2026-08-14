@@ -90,7 +90,7 @@ Following is how a SmartFeed with an image appears in the SmartWinnr app.
 
 ## Send Reference Links
 
-If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content)
+If you would like to add any reference to an external link in your SmartFeed, [learn how to add an external link reference in your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content)
 
 Following is how a SmartFeed with an external link appears in the SmartWinnr app.
 
