@@ -5,11 +5,8 @@ description: 'Follow the below steps in order to create a manager challenge:'
 slug: how-to-create-a-manager-challenge
 sidebar_position: 181
 last_update:
-  date: 2021-01-13T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdb168a0b11ce44f63931e3
-  helpscout_url: 'https://help.smartwinnr.com/article/181-how-to-create-a-manager-challenge'
+  date: 2026-08-17
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
@@ -17,37 +14,41 @@ tags:
   - kpi
   - gamification
   - admin
+draft: false
 ---
-Follow the below steps in order to create a manager challenge:
 
-Go to EDITOR >  PERFORMANCE > Challenges. Click on the 'Create Challenge' button.  This will open up the following page where you can fill the details of the challenge.
+> **At a glance** - This article outlines the steps to create a Manager Challenge in the SmartWinnr platform.
 
-![Go to EDITOR > PERFORMANCE > Challenges. Click on the 'Create Challenge' button. This will open up the following page where you can fill the](/img/helpscout/editors/how-to-create-a-manager-challenge-1.png)
+Follow the below steps in order to create a Manager Challenge.
 
-Challenge Name: Give the name of the challenge.
+## When to use this
+You can create a Manager Challenge when you want to encourage competition among managers and their teams. This can help in boosting performance and engagement within your organization.
 
-Challenge Description: Give a description of the challenge.
+## Steps
 
-Division: Select a business unit for which the challenge is being created.
+### 1. Navigate to Challenges
+Go to **EDITOR > PERFORMANCE > Challenges**. Click on the **Create Challenge** button. This will open a new page where you can fill in the details of the challenge.
 
-KPI: Select a KPI for the challenge.
+![Challenge creation page](/img/helpscout/authored/how-to-create-a-manager-challenge-mswtzho2.png)
 
-Challenge Type: This is used to specify the type of challenge that you are creating. It gives you three options- User, Manager, and Group. Select 'Manager' to create a manager challenge.
+### 2. Fill in Challenge Details
+- **Challenge Name**: Give a name for the challenge.
+- **Challenge Description**: Provide a description of the challenge.
+- **Division**: Select a business unit for which the challenge is being created.
+- **KPI**: Select a KPI for the challenge.
+- **Challenge Type**: Specify the type of challenge you are creating. Choose 'Manager' to create a Manager Challenge.
+- **Start Date and End Date**: Specify the start and end dates for the challenge.
+- **Win**: Specify the points to be allotted to the winning side.
+- **Lose**: Specify the points to be allotted to the losing side.
+- **Draw**: Specify the points to be allotted in case of a draw.
+- **No Points**: Specify the points to be given if either of the teams does not score any points in the KPI.
 
-Start Date and End Date: Specify the start date and end date for the challenge.
+### 3. Select Challenge Pairs
+In this section, you can select the pairs between whom the challenge will be conducted. Click on the **Add Pair** button to add pairs of competitors. This opens the following pop-up.
 
-Win: Specify the points to be allotted to the winning side.
+![Select Challenge Pairs pop-up](/img/helpscout/editors/how-to-create-a-manager-challenge-2.png)
 
-Lose: Specify the pints to be allotted to the losing side.
+Since you have selected the **Challenge Type** as 'Manager', you will be able to select a pair of managers whose teams will compete against each other in this challenge. Click on the **Add** button once you have added the pairs of participants.
 
-Draw: Specify the points to be allotted in case of a draw.
-
-No Points: Specify the points to be given if either of the teams does not score any points in the KPI.
-
-Select Challenge Pairs: This section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button to add pairs of competitors. It opens the following pop-up.
-
-           ![Select Challenge Pairs: This section lets you select the pairs between whom the challenge will be conducted. Click on the 'Add Pair' button ](/img/helpscout/editors/how-to-create-a-manager-challenge-2.png)
-
-Since you have selected the 'Challenge Type' as 'Manager', you will get to select a pair of managers whose teams will be competing with each other in this competition. Click on the 'Add' button, once you have added the pairs of participants.
-
-Then, click on the 'Create' button at the bottom which will successfully create the challenge.
+### 4. Create the Challenge
+Finally, click on the **Create** button at the bottom to successfully create the challenge.

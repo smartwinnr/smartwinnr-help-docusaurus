@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-scorecard
 sidebar_position: 176
 last_update:
-  date: 2021-06-10T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-17
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fdb13f67129911ba1b21e6b
   helpscout_url: 'https://help.smartwinnr.com/article/176-how-to-create-a-scorecard'
@@ -19,105 +19,109 @@ tags:
   - kpi
   - gamification
   - admin
+draft: false
 ---
+
+> **At a glance** - This article explains how to create a scorecard to measure sales reps against set KPIs, including detailed steps for adding KPIs and selecting users.
+
 Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. [Read more](/modules/kpi-gamification/features/what-are-scorecards) about Scorecards.
 
-Here is how to go about filling each field to create a scorecard:
+Here is how to fill each field to create a scorecard:
 
-## Step 1: Select Measurement Frequency and KPIs
+## When to use this
+Use this feature when you want to track the performance of sales representatives against defined KPIs. Scorecards help in evaluating their achievements and ranking them on leaderboards.
 
-Business Unit: Select the business unit for which you would like to select the scorecard. In most cases, you might not see this field at all.
+## Steps
 
-Measurement Frequency: Specify how frequently you want to measure the KPIs like daily, weekly, monthly,  quarterly or annually.
+### 1. Select Measurement Frequency and KPIs
+**Business Unit:** Select the business unit for which you would like to create the scorecard. In most cases, you might not see this field at all.
 
-Status: Select the status of the scorecard here. Active or Deactive.
+**Measurement Frequency:** Specify how frequently you want to measure the KPIs, such as daily, weekly, monthly, quarterly, or annually.
 
-Visibility: Choose if you want to make this visible to the users or hide it.
+**Status:** Select the status of the scorecard here: Active or Inactive.
 
-Priority: Give a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "1" here, it will get displayed in the 1st position. If you give "2" here, it will get displayed in the second position.
+**Visibility:** Choose if you want to make this visible to the users or hide it.
 
-![Priority: Give a priority to the scorecard here. According to this priority, it will get displayed in the report. For example, if you give "](https://support.smartwinnr.com/api/v1/attachments/787)
+**Priority:** Assign a priority to the scorecard. According to this priority, it will be displayed in the report. For example, if you give "1" here, it will be displayed in the first position. If you give "2," it will be displayed in the second position.
 
-**Scorecard Name:** Give a name to the scorecard here.
+![Select Measurement Frequency and KPIs](/img/helpscout/authored/how-to-create-a-scorecard-mswu8sgl.png)
 
-**Scorecard Description:** Write a short description of the scorecard
+**Scorecard Name:** Give a name to the scorecard.
 
-![](https://support.smartwinnr.com/api/v1/attachments/788)
+**Scorecard Description:** Write a short description of the scorecard.
 
-**KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the 'Add KPI' button.
 
-![](https://support.smartwinnr.com/api/v1/attachments/789)
+**KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the **Add KPI** button.
 
-Here is how to fill the fields to add KPIs.
+![describe this screenshot](/img/helpscout/authored/how-to-create-a-scorecard-mswuqjpo.png)
 
-**Visibility**: Choose if you want to make this KPI visible to the users.
+### 2. Fill in KPI Details
+Here is how to fill the fields to add KPIs:
 
-**Position**: This determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position, 2 shows it in the second position, and so on.
+**Visibility:** Choose if you want to make this KPI visible to the users.
 
-**Measurement Type:** This field takes two types of values- Actual and Level.
+**Position:** This determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position; "2" shows it in the second position, and so on.
 
-* **Actual**: This value lets you give a KPI value and points for that value. Every time a rep achieves the KPI, she will be allotted points. For example, in the below screenshot, for every 20 calls made the rep will be allotted 10 points.
+**Measurement Type:** This field accepts two types of values: Actual and Level.
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-4.jpg)
+- **Actual:** This value allows you to assign a KPI value and points for that value. Every time a rep achieves the KPI, they will be allotted points. For example, in the below screenshot, for every 20 calls made, the rep will be allotted 10 points.
 
-Target: Set a target for the KPI.
+![Actual Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-4.jpg)
 
-Floor: This is the minimum KPI value to achieve in order to get a score.
+**Target:** Set a target for the KPI.
 
-Ceiling: This is the maximum KPI value after which the score will not be given.
+**Floor:** This is the minimum KPI value to achieve in order to receive a score.
 
-* **Level**: This lets you set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
+**Ceiling:** This is the maximum KPI value after which the score will not be awarded.
 
-![Ceiling: This is the maximum KPI value after which the score will not be given.](/img/helpscout/editors/how-to-create-a-scorecard-5.jpg)
+- **Level:** This allows you to set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, three levels have been defined. If the rep makes up to 5 calls, they get 10 points; if they make between 5 and 10 calls, they get 50 points; and if they exceed 10 calls, they get 120 points.
 
-* **Individual Level:** This is similar to Level scoring which lets you set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, 3 levels have been defined. If the rep makes up to 5 calls, she gets 10 points, if she makes between 5 and 10 calls, she gets 50 points and if she is exceptional and makes more than 10 calls, she gets 120 points.
+![Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-5.jpg)
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-6.jpg)
+- **Individual Level:** This is similar to Level scoring, allowing you to set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, three levels have been defined. If the rep makes up to 5 calls, they get 10 points; if they make between 5 and 10 calls, they get 50 points; and if they exceed 10 calls, they get 120 points.
 
-* **Target Actual**: This is similar to the Actual type but the difference is this value is based on the target percentage and not directly based on the uploaded data. Every time a rep reaches a certain percentage, then she will be allotted points. For example, in the below screenshot, when she reaches 20 percent of her target, she received 10 points.
+![Individual Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-6.jpg)
 
-![](/img/helpscout/editors/how-to-create-a-scorecard-7.jpg)
+- **Target Actual:** This is similar to the Actual type, but the difference is that this value is based on the target percentage and not directly on the uploaded data. Every time a rep reaches a certain percentage, they will be allotted points. For example, in the below screenshot, when they reach 20 percent of their target, they receive 10 points.
 
-Target: Set a target percentage for the KPI.
+![Target Actual Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-7.jpg)
 
-Floor: This is the minimum KPI percentage to achieve in order to get a score.
+**Target:** Set a target percentage for the KPI.
 
-Ceiling: This is the maximum KPI percentage after which the score will not be given.
+**Floor:** This is the minimum KPI percentage to achieve in order to receive a score.
 
-* **Target Level**: This is similar to the Level type but the difference is that it lets you set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, 3 levels have been defined. If the rep reaches 30% of the target, she gets 10 points, if she reaches between 30% and 60% of the target percentage, she gets 20 points and if she reaches more than 60%, she gets 30 points.
+**Ceiling:** This is the maximum KPI percentage after which the score will not be awarded.
 
-![Ceiling: This is the maximum KPI percentage after which the score will not be given.](/img/helpscout/editors/how-to-create-a-scorecard-8.jpg)
+- **Target Level:** This is similar to the Level type, but it allows you to set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, three levels have been defined. If the rep reaches 30% of the target, they get 10 points; if they reach between 30% and 60% of the target percentage, they get 20 points; and if they exceed 60%, they get 30 points.
 
-## Step 2: Select the Sales Reps for the Scorecard
+![Target Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-8.jpg)
 
-Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the next page where users have to be added to this scorecard.
+### 3. Select the Sales Reps for the Scorecard
+Once you have filled all the fields, click on the **Create Scorecard** button to successfully create the scorecard. This will take you to the next page where users need to be added to this scorecard.
 
-![Once you have filled all the fields, click on the 'Create Scorecard' button to create the scorecard successfully. This will take you to the ](/img/helpscout/editors/how-to-create-a-scorecard-9.png)
+![Select Sales Reps](/img/helpscout/authored/how-to-create-a-scorecard-mswucd4z.png)
 
-Here, you can search the users based on Business Unit, Zone, Group, Name, Email, and Meta tags and then add them to the scorecard.
+Here, you can search for users based on Business Unit, Zone, Group, Name, Email, and Meta tags, and then add them to the scorecard.
 
-Click on the 'Save' button once you have selected the users.
+Click on the **Save** button once you have selected the users.
 
-Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the “Upload Users” button. It opens the following screen where you can upload a CSV file that contains your user details:
+Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload users, click on the **Upload Users** button. It opens the following screen where you can upload a CSV file that contains your user details:
 
-![Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload, the users click on the “Upload Users” button. It ope](https://support.smartwinnr.com/api/v1/attachments/793)
+![Bulk Upload Users](/img/helpscout/authored/how-to-create-a-scorecard-mswuimvi.png)
 
-Type of action: Here, select if you want to Add Users to the scorecard or Remove Users from the scorecard.
+**User Identifier:** Choose if you want to identify and upload the users by their Email Address or User Identifier.
 
-User identifier: Choose if you want to identify and upload the users by their Email Address or User Identifier
+**CSV Delimiter:** Select the CSV delimiter here—Comma or Semicolon.
 
-CSV Delimiter: Select the CSV delimiter here-- Comma or Semicolon
+**Download Template:** You can download the CSV file template here and fill in the user details.
 
-Download Template: You can download the CSV file template here and fill in the user details.
+**Choose File:** Click on this button and upload your user CSV file.
 
-Choose File: Click on this button and upload your user CSV file
+### 4. Change Targets
+The third step in this process is to view each participant's targets. Here is how you will see the targets of each user:
 
-## Step 3: Change Targets
+![Change Targets](/img/helpscout/authored/how-to-create-a-scorecard-mswukoko.png)
 
-The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:
+You can choose to change targets for the entire team by editing in the line of the **Target**. Refer to [How to add/change targets?](/modules/kpi-gamification/create-and-manage/how-to-add-change-targets) to learn more about editing the targets.
 
-![The third step in this process is to view each participant's targets. Here is how you will get to see the targets of each user:](/img/helpscout/editors/how-to-create-a-scorecard-11.png)
-
-You can choose to change targets for the entire team by editing in the line of the 'Target'. Refer to [How to add/change targets?](/modules/kpi-gamification/create-and-manage/how-to-add-change-targets) to know more about editing the targets
-
-Once all the changes are done, click on 'Save' and the scorecard is on.
+Once all the changes are done, click on **Save**, and the scorecard will be activated.
