@@ -24,6 +24,8 @@ Follow the below steps to create your field coaching to the SmartWinnr account.
 
 You need to select the template first so that you can create the field coaching. After selecting the template, you should click on the " Create Coaching " icon in the top right corner.
 
+![Slect Create Coaching](/img/helpscout/authored/how-to-create-field-coaching-mswytt6c.png)
+
 Fill up the title and description with the details of the coaching and select the time period for which you want to enable the Field Coaching.
 
 ![Fill up the title and description with the details of the coaching and select the time period for which you want to enable the Field Coachin](/img/helpscout/editors/how-to-create-field-coaching-1.jpg)
