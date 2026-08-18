@@ -7,8 +7,8 @@ description: >-
 slug: how-can-a-user-submit-an-ai-coaching-attempt
 sidebar_position: 322
 last_update:
-  date: 2026-01-22T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-18
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 6971d78c6a1b8a42df6acd03
   helpscout_url: >-
@@ -19,10 +19,17 @@ customProps:
 tags:
   - ai-coaching
   - onboarding
+draft: false
 ---
-This guide explains how to complete an AI coaching assignment as a sales rep or field rep. AI coaching helps you practice sales conversations in a realistic, simulated environment. You'll interact with an AI avatar that plays the role of a customer or healthcare professional, receive instant feedback, and improve your skills through multiple practice attempts.
+
+> **At a glance** - This guide explains how to complete an AI coaching assignment as a sales rep or field rep. AI coaching helps you practice sales conversations in a realistic, simulated environment.
+
+AI coaching allows you to interact with an AI avatar that plays the role of a customer or healthcare professional. You will receive instant feedback and improve your skills through multiple practice attempts.
 
 This article is for sales reps, field reps, and any team members who have been assigned AI coaching exercises.
+
+## When to use this
+Use this guide when you need to complete an AI coaching assignment to enhance your sales skills and receive feedback on your performance. 
 
 ## Step-by-step: How to Attempt an AI Coaching
 
@@ -32,43 +39,39 @@ Log in to SmartWinnr using your username and password.
 
 ### Step 2: Navigate to Video Coaching
 
-1. In the left navigation menu, locate the **Coaching** section
-2. Click **Video Coaching**
+1. In the left navigation menu, locate the **Coaching** section.
+2. Click **Video Coaching**.
 
-You'll be taken to the Video Coaching home screen.
+You will be taken to the Video Coaching home screen.
 
 ![You'll be taken to the Video Coaching home screen.](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-1.png)
 
-Video Coaching Page
-
 ### Step 3: Open your coaching folder
 
-1. You'll see folders displayed under **Home**. These folders contain your assigned coaching programs
-2. Click on the folder assigned to you (for example, "SmartDerma")
+1. You will see folders displayed under **Home**. These folders contain your assigned coaching programs.
+2. Click on the folder assigned to you (for example, "SmartDerma").
 
 This opens your list of available coaching assignments.
 
 ### Step 4: Select your assigned coaching
 
-You'll see a card for each coaching assignment with the following information:
+You will see a card for each coaching assignment with the following information:
 
 * Coaching title (for example, "SmartDerma pro Objection Handling & Clinical Evidence Presentation")
 * A brief description of the scenario
-* Number of attempts you've made (displayed in the top-right corner, for example "Attempts: 5")
+* Number of attempts you've made (displayed in the top-right corner, for example, "Attempts: 5")
 
 To start a coaching:
 
-* If this is your first attempt, click **Try Again** (or **Start**)
-* If you've already attempted this coaching, click **Try Again** to make another attempt
-* If you want to review your previous performance, click **View Feedback**
+* If this is your first attempt, click **Try Again** (or **Start**).
+* If you've already attempted this coaching, click **Try Again** to make another attempt.
+* If you want to review your previous performance, click **View Feedback**.
 
-![](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-2.png)
-
-Assigned Coaching
+![Assigned Coaching](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-2.png)
 
 ### Step 5: Review coaching details
 
-Before starting, you'll see a detailed overview of the coaching assignment:
+Before starting, you will see a detailed overview of the coaching assignment:
 
 **Scenario**: A description of the situation you'll be role-playing. This explains who you're meeting with and the context of the conversation.
 
@@ -88,24 +91,22 @@ Take a moment to review this information. Understanding the scenario, objectives
 
 When you're ready:
 
-1. Scroll to the bottom of the coaching details page
-2. Click the **LET'S START** button
+1. Scroll to the bottom of the coaching details page.
+2. Click the **LET'S START** button.
 
 The coaching session will begin.
 
 ![The coaching session will begin.](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-3.png)
 
-AI Coaching - Let's Start
-
 ## During the Coaching Session
 
 Once you start:
 
-1. **An AI Coach appears on screen**: The AI Coach will introduce the scenario and provide context for the role-play
-2. **You interact with an AI avatar**: The avatar plays the role of your customer or healthcare professional. You'll have a real-time conversation with them
-3. **Respond naturally**: Speak clearly and naturally as you would in a real sales conversation. The AI listens to your responses and reacts accordingly
-4. **Complete the objectives**: Work through the session objectives you reviewed earlier
-5. **The session is recorded**: Your conversation is captured automatically
+1. **An AI Coach appears on screen**: The AI Coach will introduce the scenario and provide context for the role-play.
+2. **You interact with an AI avatar**: The avatar plays the role of your customer or healthcare professional. You'll have a real-time conversation with them.
+3. **Respond naturally**: Speak clearly and naturally as you would in a real sales conversation. The AI listens to your responses and reacts accordingly.
+4. **Complete the objectives**: Work through the session objectives you reviewed earlier.
+5. **The session is recorded**: Your conversation is captured automatically.
 
 The AI responds dynamically based on what you say, creating a realistic practice environment.
 
@@ -130,16 +131,11 @@ Once you complete the coaching session:
 
 ## Key Tips
 
-**Prepare before starting**: Review the scenario, objectives, and competencies carefully before clicking LET'S START. Understanding what's expected helps you perform better.
-
-**Ensure good audio and video quality**: Make sure you're in a quiet environment with good lighting. Check that your microphone is working properly so the AI can hear your responses clearly.
-
-**Follow the objectives**: Focus on accomplishing the session objectives listed in the coaching details. These are the key goals that will be evaluated.
-
-**Speak clearly and confidently**: Treat this like a real customer conversation. Speak at a natural pace and articulate your words clearly.
-
-**Use multiple attempts to improve**: Don't worry if your first attempt isn't perfect. Review your feedback, identify areas for improvement, and try again. Each attempt helps you build skills and confidence.
-
-**Practice makes progress**: The more you practice, the better you'll become. Studies show that reps who complete multiple attempts improve their scores significantly over time.
+* **Prepare before starting**: Review the scenario, objectives, and competencies carefully before clicking **LET'S START**. Understanding what's expected helps you perform better.
+* **Ensure good audio and video quality**: Make sure you're in a quiet environment with good lighting. Check that your microphone is working properly so the AI can hear your responses clearly.
+* **Follow the objectives**: Focus on accomplishing the session objectives listed in the coaching details. These are the key goals that will be evaluated.
+* **Speak clearly and confidently**: Treat this like a real customer conversation. Speak at a natural pace and articulate your words clearly.
+* **Use multiple attempts to improve**: Don't worry if your first attempt isn't perfect. Review your feedback, identify areas for improvement, and try again. Each attempt helps you build skills and confidence.
+* **Practice makes progress**: The more you practice, the better you'll become. Studies show that reps who complete multiple attempts improve their scores significantly over time.
 
 [How to View Feedback Immediately After Submission?](/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching#how-to-view-feedback-immediately-after-submission)

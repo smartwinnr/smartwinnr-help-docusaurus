@@ -5,8 +5,8 @@ description: "To use SmartWinnr's audio and video features, camera and microphon
 slug: how-to-enable-camera-and-microphone-permissions-in-smartwinnr
 sidebar_position: 999
 last_update:
-  date: 2026-06-18
-  author: Jasween Kaur
+  date: 2026-08-18
+  author: Sandeep Bhuthagaddala
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching, troubleshooting, settings, onboarding]
@@ -15,7 +15,7 @@ draft: false
 
 > **At a glance** - Enable camera and microphone permissions in your browser to use SmartWinnr's audio and video features.
 
-SmartWinnr requires access to your camera and microphone for features like video role-plays, audio-based assessments, and coaching simulations. If these permissions are blocked, you may have trouble recording or participating in interactive activities.
+SmartWinnr requires access to your camera and microphone for features like video role-plays, audio-based assessments, and coaching simulations. If these permissions are blocked, you may experience difficulties recording or participating in interactive activities.
 
 ## When to use this
 
@@ -26,19 +26,23 @@ Use this guide when you encounter issues with audio or video features in SmartWi
 - You experience issues during coaching simulations.
 - You are unable to participate in video role-plays.
 
+## Before you start
+
+Ensure you are using a compatible browser, as some browsers may have different permission settings.
+
 ## Steps
 
 ### 1. Open Browser Settings
 
 Access your browser settings to manage site permissions for **app.smartwinnr.com** or **web.smartwinnr.com**.
 
-![Browser Settings](/img/helpscout/authored/how-to-enable-camera-and-microphone-permissions-in-smartwinnr-mqjh4lnp.png)
+![Browser settings](/img/helpscout/authored/how-to-enable-camera-and-microphone-permissions-in-smartwinnr-msykkwin.png)
 
 ### 2. Locate Privacy Settings
 
 Find the privacy settings in your browser to check camera and microphone permissions.
 
-![Privacy Settings](/img/helpscout/authored/how-to-enable-camera-and-microphone-permissions-in-smartwinnr-mqjh5v6a.png)
+![Privacy Settings](/img/helpscout/authored/how-to-enable-camera-and-microphone-permissions-in-smartwinnr-msyknozd.png)
 
 ### 3. Enable Camera and Microphone
 
