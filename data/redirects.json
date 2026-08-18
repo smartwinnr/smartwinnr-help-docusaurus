@@ -567,7 +567,7 @@
     },
     {
       "from": "/administration/field-coaching-module/how-to-create-field-mapping",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping"
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping"
     },
     {
       "from": "/administration/ai-coaching/how-can-i-download-attempt-wise-user-objective-report",
@@ -1071,7 +1071,7 @@
     },
     {
       "from": "/modules/field-coaching/how-to-create-field-mapping",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping"
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping"
     },
     {
       "from": "/modules/forms/form-analytics",
@@ -1924,6 +1924,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content",
       "to": "/modules/smartfeed/create-and-manage/how-to-add-reference-to-an-external-link-to-your-content"
+    },
+    {
+      "from": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping",
+      "to": "/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping"
     }
   ]
 }

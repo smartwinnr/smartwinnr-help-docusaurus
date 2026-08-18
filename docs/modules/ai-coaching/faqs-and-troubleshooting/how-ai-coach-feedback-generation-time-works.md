@@ -5,8 +5,8 @@ description: "Learn why AI Coach feedback may take different amounts of time to 
 slug: how-ai-coach-feedback-generation-time-works
 sidebar_position: 999
 last_update:
-  date: 2026-06-19
-  author: Jasween Kaur
+  date: 2026-08-18
+  author: Sandeep Bhuthagaddala
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: [ai-coaching, evaluation, feedback-time, admin, web]
@@ -25,18 +25,21 @@ This information is useful when you want to understand the feedback timeline aft
 - You are a manager checking on your team’s feedback timelines.
 - You are an admin managing the AI Coach settings.
 
+## Before you start
+
+No prerequisites are required to understand feedback generation times.
+
 ## Steps
 
 ### 1. Understand standard evaluation times
 
 Standard evaluations typically take **2 to 3 minutes** to process. This is the usual timeframe for generating feedback after a scenario attempt.
 
-![Soft Skills Enabled](/img/helpscout/authored/how-ai-coach-feedback-generation-time-works-mqkhespo.png)
-
 ### 2. Learn about Soft Skills Evaluation
-![softskills image](/img/helpscout/authored/how-ai-coach-feedback-generation-time-works-msybwuh9.png)
 
 When **Soft Skills Evaluation** is enabled, the system performs a detailed frame-by-frame analysis of video recordings and audio interactions. This assessment focuses on communication, presentation, engagement, and other behavioral skills.
+
+![Soft Skills Evaluation](/img/helpscout/authored/how-ai-coach-feedback-generation-time-works-msybwuh9.png)
 
 ### 3. Expect longer feedback times
 
