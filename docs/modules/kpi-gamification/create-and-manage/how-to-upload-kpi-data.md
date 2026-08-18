@@ -24,9 +24,9 @@ After you have completed creating the Field Mapping ( [How to create a Field Map
 
 Below are the steps to upload your KPI data:
 
-Go to EDITOR > KPI > Upload Data. It opens the following page:
+Go to EDITOR > PERFORMANCE>KPI Scorecards>Upload Data. It opens the following page:
 
-![Go to EDITOR > KPI > Upload Data. It opens the following page:](https://support.smartwinnr.com/api/v1/attachments/774)
+![describe this screenshot](/img/helpscout/authored/how-to-upload-kpi-data-msy8kmon.png)
 
 ### KPI Mapping
 
@@ -36,7 +36,7 @@ Once you choose a KPI Mapping you will get to select the KPIs related to it. T
 
 Download your CSV file by clicking on the 'Download Sample CSV' button.
 
-                                                                             ![Download your CSV file by clicking on the 'Download Sample CSV' button.](https://support.smartwinnr.com/api/v1/attachments/775)
+![describe this screenshot](/img/helpscout/authored/how-to-upload-kpi-data-msy8o3rz.png)                                                             !
 
 Then click on the 'Choose File' button and select the CSV file that you want to upload. Next, click on the 'Upload' button to upload it.
 

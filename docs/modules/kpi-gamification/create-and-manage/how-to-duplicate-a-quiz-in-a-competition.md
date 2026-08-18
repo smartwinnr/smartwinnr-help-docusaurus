@@ -5,14 +5,10 @@ description: >-
   When you duplicate a quiz for a competition, automatically the questions added
   to the quiz will also get duplicated.
 slug: how-to-duplicate-a-quiz-in-a-competition
-sidebar_position: 108
+sidebar_position: 999
 last_update:
-  date: 2021-01-23T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fda263d27288b7f895d60b7
-  helpscout_url: >-
-    /modules/kpi-gamification/create-and-manage/how-to-duplicate-a-quiz-in-a-competition
+  date: 2026-08-18
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
@@ -20,17 +16,31 @@ tags:
   - kpi
   - gamification
   - admin
+draft: false
 ---
-When you duplicate a quiz for a competition, automatically the questions added to the quiz will also get duplicated.
 
-Please follow the below steps to duplicate a quiz as a part of the competition:
+> **At a glance** - Duplicating a quiz in a competition also duplicates all the questions associated with that quiz.
 
-EDITOR > GAMIFICATION AND ENGAGEMENT > Competition > View Tasks > Add New Tasks > Select Type = quiz
+When you duplicate a quiz for a competition, the questions added to the quiz will also be duplicated automatically.
 
-Then, click on the 'Duplicate Quiz' option at the bottom.
+## When to use this
+Use this feature when you want to create a similar quiz for a competition without having to re-enter all the questions. This is useful for:
 
-![Then, click on the 'Duplicate Quiz' option at the bottom.](/img/helpscout/editors/how-to-duplicate-a-quiz-in-a-competition-1.png)
+- Streamlining quiz creation for multiple competitions.
+- Ensuring consistency across quizzes in a competition.
+- Saving time when replicating quizzes with similar content.
 
-It will show the list of available quizzes and click on '**Duplicate'** button towards the quiz you want tho duplicate.
+## Steps
 
-![It will show the list of available quizzes and click on 'Duplicate' button towards the quiz you want tho duplicate.](/img/helpscout/editors/how-to-duplicate-a-quiz-in-a-competition-2.png)
+### 1. Access the Competition
+Navigate to **EDITOR > GAMIFICATION AND ENGAGEMENT > Competition**. Select **View Tasks**, then click on **Add New Tasks**. Choose **Type = quiz**.
+
+### 2. Duplicate the Quiz
+Click on the '**Duplicate Quiz**' option at the bottom.
+
+![Duplicate Quiz option in the competition interface](/img/helpscout/authored/how-to-duplicate-a-quiz-in-a-competition-msy8e4k8.png)
+
+### 3. Select the Quiz to Duplicate
+A list of available quizzes will appear. Click on the '**Duplicate**' button next to the quiz you want to duplicate.
+
+![List of available quizzes with Duplicate button](/img/helpscout/authored/how-to-duplicate-a-quiz-in-a-competition-msy8g38k.png)
