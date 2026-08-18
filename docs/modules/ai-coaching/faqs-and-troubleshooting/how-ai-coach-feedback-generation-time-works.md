@@ -34,6 +34,7 @@ Standard evaluations typically take **2 to 3 minutes** to process. This is the u
 ![Soft Skills Enabled](/img/helpscout/authored/how-ai-coach-feedback-generation-time-works-mqkhespo.png)
 
 ### 2. Learn about Soft Skills Evaluation
+![softskills image](/img/helpscout/authored/how-ai-coach-feedback-generation-time-works-msybwuh9.png)
 
 When **Soft Skills Evaluation** is enabled, the system performs a detailed frame-by-frame analysis of video recordings and audio interactions. This assessment focuses on communication, presentation, engagement, and other behavioral skills.
 
