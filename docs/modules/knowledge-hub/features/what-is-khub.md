@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-> **At a glance** - KHub is a centralized knowledge repository that provides employees with instant access to essential content, enhancing their performance and readiness.
+> **At a glance** - KHub is a centralized knowledge repository that provides employees with instant access to essential content, enhancing their performance and readiness
 
 KHub is a knowledge/content repository for your employees to help them excel at their jobs. This feature lets you share the right content with your team at the right time so that they are prepared to handle any situation.
 

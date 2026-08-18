@@ -38,7 +38,6 @@ Navigate to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Open an existing folder 
 Click on the "**Edit**" button at the top right corner. This will open the editing page for the selected item.
 
 ![Editing page for the KHub item](/img/helpscout/authored/how-can-i-edit-a-khub-item-msswragk.png)
-
 ### 3. Make your changes
 Once you are on the editing page, make the necessary changes to the KHub item.
 

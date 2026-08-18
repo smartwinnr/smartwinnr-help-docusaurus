@@ -97,4 +97,4 @@ Go to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Click on the hamburger menu bu
 
 ![Go to **EDITOR > LEARNING AND KNOWLEDGE > KHub**. Click on the hamburger menu button at the top right corner of the screen and select **Change Item Sequence**.](/img/helpscout/editors/how-can-i-create-folders-and-items-in-khub-9.png)
 
-Once you change the sequence of the KHub items, click on the **Save** button.
+Once you change the sequence of the KHub items,click on the **Save** button.
