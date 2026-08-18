@@ -3,7 +3,7 @@ id: 60a50e4827c86942e80697e9
 title: How to create Field Coaching Template
 description: Only users with ADMIN roles can create field coaching templates.
 slug: how-to-create-field-coaching-template
-sidebar_position: 236
+sidebar_position: 10
 last_update:
   date: 2026-08-17
   author: Aswani TK

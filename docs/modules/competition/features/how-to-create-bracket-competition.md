@@ -1,7 +1,7 @@
 ---
 id: how-to-create-bracket-competition
 title: "How to create Bracket Competition"
-description: "We can create bracket competition, where we can run challenges against paired participants. We can define some predefined rounds based on participants numbers."
+description: "Create a bracket competition to organize challenges between paired participants, defining rounds and winner logic based on participant numbers."
 slug: how-to-create-bracket-competition
 sidebar_position: 999
 last_update:

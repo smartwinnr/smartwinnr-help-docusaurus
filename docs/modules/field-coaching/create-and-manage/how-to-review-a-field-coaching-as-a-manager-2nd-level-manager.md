@@ -3,7 +3,7 @@ id: 631fbb2490c29a3d732c6e6e
 title: How to review a field coaching as a manager/2nd level manager
 description: ''
 slug: how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
-sidebar_position: 277
+sidebar_position: 30
 last_update:
   date: 2022-09-12T00:00:00.000Z
   author: HelpScout Migration
