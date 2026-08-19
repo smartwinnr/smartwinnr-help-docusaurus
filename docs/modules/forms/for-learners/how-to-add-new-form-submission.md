@@ -15,6 +15,7 @@ customProps:
 tags:
   - forms
   - onboarding
+draft: true
 ---
 Only the user with the EDITOR role can add new form submission.
 
