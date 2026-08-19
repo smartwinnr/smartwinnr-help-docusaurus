@@ -891,7 +891,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-add-an-audio-file-to-your-content",
-      "to": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-an-audio-file-to-your-content"
     },
     {
       "from": "/administration/cross-module-features/how-to-add-reference-to-an-external-link-to-your-content",
@@ -1019,7 +1019,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-add-an-audio-file-to-your-content",
-      "to": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content"
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-an-audio-file-to-your-content"
     },
     {
       "from": "/modules/cross-module/how-to-add-reference-to-an-external-link-to-your-content",
@@ -1932,6 +1932,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/how-to-update-users",
       "to": "/administration/system-management/how-to-update-users"
+    },
+    {
+      "from": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content",
+      "to": "/modules/smartfeed/create-and-manage/how-to-add-an-audio-file-to-your-content"
     }
   ]
 }

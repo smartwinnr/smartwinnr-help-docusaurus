@@ -89,7 +89,7 @@ Here's a short description for each column in the SmartWinnr User Upload templat
 | Roles | SmartWinnr role(s) assigned (e.g., User, Manager, Admin, Editor). If the user has multiple roles, enter them as a comma-separated list. |Mandatory |
 | PermissionSets | Permission set(s) controlling feature access. This is specific for restricting the left menus for Admin/Editor based on specific requirements. | Optional |
 | GroupName | Group(s) the user is assigned to |Optional |
-| metaTag0 – 29 | Thirty configurable custom attribute fields used to capture client-specific information such as product specialization, certification level, region mapping, or other organizational attributes not covered by the standard fields. Make sure these metatag values are already created in the system, to get this properly mapped when uploading the user details.| Optional |
+| metaTag0 – 29 | Thirty configurable custom attribute fields used to capture user-specific information such as product specialization, certification level, region mapping, or other organizational attributes not covered by the standard fields. Make sure these metatag values are already created in the system, to get this properly mapped when uploading the user details.| Optional |
 | reportingManagerUniqueIdentifier | Unique identifier of the user's reporting manager. Make sure to fill the orgUserIdentifier value of the manager in this column. Fill this column if you want to set the manager heirarchy in the system |Optional |
 | reportingManagerName | Display name of the reporting manager |Optional |
 
