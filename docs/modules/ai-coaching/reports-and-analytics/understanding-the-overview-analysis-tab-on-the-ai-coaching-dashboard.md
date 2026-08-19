@@ -1,7 +1,7 @@
 ---
 id: 6971e01ef35cc6035d0b9b8c
 title: "How to read the Overview Analysis Tab on the AI coaching dashboard"
-description: "Learn to interpret the Overview Analysis Tab on the AI coaching dashboard, focusing on engagement metrics, performance trends, and skill improvements."
+description: "Understand how to interpret the Overview Analysis Tab on the AI coaching dashboard, focusing on engagement metrics, performance trends, and skill improvements."
 slug: understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard
 sidebar_position: 90
 last_update:

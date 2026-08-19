@@ -1,7 +1,7 @@
 ---
 id: 6971e1b1015ae02ac002197d
-title: "How to read the Participation Insights tab on the Coaching Dashboard"
-description: "Understand how to interpret the Participation Insights tab, focusing on learner engagement, activity trends, and AI-generated performance insights."
+title: "How to read the Participation Insights Tab on the coaching dashboard"
+description: "Learn to interpret the Participation Insights tab, focusing on key metrics like learner engagement, activity trends, and AI-generated performance insights."
 slug: understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 sidebar_position: 110
 last_update:
