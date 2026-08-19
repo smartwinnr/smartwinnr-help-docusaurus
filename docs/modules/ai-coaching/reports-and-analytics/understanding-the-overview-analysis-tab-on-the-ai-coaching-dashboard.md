@@ -33,7 +33,9 @@ Use the Overview Analysis Tab to:
 ## Steps
 
 ### 1. Review Participation Metrics
-The Participation Metrics section includes key engagement statistics:
+The Participation Metrics section includes key engagement statistics.
+
+![Participation Metrics](/img/helpscout/authored/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-msx1rd1j.png)
 
 **Active Learners**
 - The total number of users who submitted at least one roleplay attempt during the selected time period.
@@ -65,8 +67,6 @@ This metric helps trainers understand the potential efficiency gained by using A
 - The percentage shows how this compares to previous periods.
 
 This can help trainers understand the typical amount of time learners spend in each coaching session.
-
-![Participation Metrics](/img/helpscout/authored/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-msx1rd1j.png)
 
 ### 2. Analyze Score Over Attempts
 The Score Over Attempts section tracks how learner performance changes across multiple coaching attempts.
@@ -275,5 +275,4 @@ The AI Insights panel provides intelligent, data-driven observations about learn
 
 **About skill groupings:**
 - The "All Skill Groups" dropdown lets you filter views to specific skills.
-- This affects both the Skill Performance Improvement chart and the Skills Development radar chart.
 - Select "All Skill Groups" to return to the complete view.
