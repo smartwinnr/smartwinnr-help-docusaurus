@@ -76,7 +76,7 @@ The graph displays the progression from Attempt 1 through subsequent attempts, a
 ![Score Over Attempts](/img/helpscout/authored/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard-msx2aojx.png)
 
 **What it shows:**
-- The average score (0-100 scale) for all learners across their 1st, 2nd, 3rd, 4th, and 5th attempts.
+- The average score (0-100 scale) for all learners across their 1st attempt through the further attempts he made.
 - Each point on the line represents the group average for that attempt number.
 - The upward trend line demonstrates that practice leads to improvement.
 
@@ -90,7 +90,6 @@ The graph displays the progression from Attempt 1 through subsequent attempts, a
 - An upward trend confirms that repeated practice is effective.
 - Steeper slopes between attempts indicate rapid improvement.
 - Flatter sections suggest learners may be reaching a plateau and might need additional resources.
-- The most significant improvement typically occurs between Attempt 1 and Attempt 2.
 
 **Why this matters:** This chart validates that your coaching program is effective. Learners should improve with each attempt. If the line is flat or declining, it may indicate that the roleplay scenarios are too difficult, feedback isn't clear enough, or learners need additional coaching support.
 
@@ -108,8 +107,7 @@ The Skill Performance Improvement section shows the percentage improvement achie
 
 **How to read it:**
 - Each bar represents a different skill (e.g., Trust Building, Probing, Engagement, Communicating Skills).
-- The length of the bar shows the improvement percentage.
-- The percentage is displayed at the end of each bar (e.g., 8.9%, 7.4%, 12.4%).
+- The length of the bar shows the improvement percentage and the percentage is displayed at the end of each bar (e.g., 8.9%, 7.4%, 12.4%).
 - Longer bars indicate skills with greater improvement rates.
 
 **Skills displayed:**

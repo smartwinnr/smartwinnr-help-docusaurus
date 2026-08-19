@@ -1,12 +1,12 @@
 ---
 id: 600868c4cfe30d219ccd9aa9
-title: How managers Approve  Form
+title: How managers Approve Form
 description: Follow the below steps to approve a form in SmartWinnr.
 slug: how-managers-approve-form
 sidebar_position: 224
 last_update:
-  date: 2021-01-21T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-19
+  author: Aswani TK
 source:
   helpscout_id: 600868c4cfe30d219ccd9aa9
   helpscout_url: >-
@@ -16,55 +16,77 @@ customProps:
   privilege: managerView
 tags:
   - forms
+draft: false
 ---
-Follow the below steps to approve a form in SmartWinnr.
 
-Go to the Left Menu > Forms.
+> **At a glance** - Approving a form in SmartWinnr involves navigating to the forms section, selecting the desired submission, changing its status, and saving the changes.
 
-![Go to the Left Menu > Forms.](https://lh4.googleusercontent.com/FUSz0Whubvk1ohNqCeqJiKGGXFFcL-CTYHWMUu_LkWkT7665nufOUpGPOdy-ZKrXML1tVfVzp0uoYvSqCKZQ33W8Tdg9MGOyymReaV4KfXcrJFhMnCSTFJ5690P0hhCacu-7YIVS)
+Follow the below steps to approve a form in SmartWinnr.
 
-Here you can find the forms submitted to you in SmartWinnr.Click on the desired form  that you would like to approve now.
+## When to use this
+Use this guide when you need to approve a form submission in SmartWinnr. This process is essential for managing submissions effectively.
 
-![Here you can find the forms submitted to you in SmartWinnr.Click on the desired form that you would like to approve now.](https://lh4.googleusercontent.com/UVmrKZrh6k587lc5pkLBLbNFR9832f67dVsM0xxbdgjSy9L95Ps8MceOcjHZG2BkEMDRiWdobcvIaht_mHOLpvvy759wPv-HL8r2S9ez9xhvxJ-Cn_lMh5j-wR0iuQVtmdTpQywl)
+## Steps
 
+### 1. Go to the Forms Section
+Navigate to the **Left Menu** and select **Forms**.
+
+![Select form from left menu](/img/helpscout/authored/how-managers-approve-form-mszxxf2w.png)
+
+### 2. Select the Desired Form
+Here you can find the forms submitted to you in SmartWinnr. Click on the desired form that you would like to approve.
+
+![List of forms](/img/helpscout/authored/how-managers-approve-form-mszxyr6y.png)
+
+### 3. View Submissions
 This will take you to the submissions made for the particular form.
 
-![This will take you to the submissions made for the particular form.](https://lh3.googleusercontent.com/FweXWhmBV9CIqeyXXfBX2VnpXNZY-H3W2SkeKPfheBVksVGM7AU3WqxBwOFt-_ZI_Urzfv_uzmR-fGS24xsI1jC2cXAGu0iBClOlj_hbrxfC7KLVco55FyCovt0TgLXFUy7Fqn1E)Click on the Pending form.It will open and show the submission details.Then Click on the icon '**Change status'** at the top right corner.
+![List of form submissions](/img/helpscout/authored/how-managers-approve-form-mszy0z8g.png)
 
-![This will take you to the submissions made for the particular form.](https://lh3.googleusercontent.com/jaGLJlwMhNPYBJMGa-sIRM9v2pnCyMjOsvwTz3V7c6XdbaJF2qSMqOe-LXbps0L9YZXP9eZABhgCUYDb1mBT3J8ncOkuBTWcgprZA8bF0qN_-lj3mRFj1NCLnTXgoE0fiTZoLqHT)Select the status Approve from the available statuses.Then Click ok Button.It will change the status to Approved.
+### 4. Select Submission to Approve
+Select the submission you want to approve.
 
-![](https://lh4.googleusercontent.com/3mC01C2plPBdtOV5SLN6ftFr4sl3Eh6yWMGmEgGBZjH1cuvAu9-M6kQQCh1bYESOujE5EP93Hc9ZKhvnK-Jj7HmzX7UtG4qp5Vf79B8LComPdwgqCeBPphR5GkueejnlslYmJsNq)
+![Select the form submission to approve](/img/helpscout/authored/how-managers-approve-form-mszy377y.png)
 
-Now, Click on '**save'** button to save Status.
+### 5. Change Status
+Click on **Change Status** to modify the status of the submission.
 
-![Now, Click on 'save' button to save Status.](https://lh3.googleusercontent.com/DRwXshGGSqDF2vWry68tysbR9lVcDk0XTD6qvO7n7Xzs14pr61V5U5EPO15E3MtDZLoU1GHftQWkRNVu-JfqqjnU4Or6FT0hgP2KHFD1eThmAATdBLrLn0Wun07yrdXm8OWLiiTD)
+![Different status](/img/helpscout/authored/how-managers-approve-form-mszy4li1.png)
 
- It will show the status of Form as Approved.
+### 6. Approve the Submission
+Select **Approved** to approve the form submission. Click on **OK** to save this status.
 
-![It will show the status of Form as Approved.](https://lh6.googleusercontent.com/_s-j6TD9LKi7Zsk7eZI8QNPJmbrM6PT4yZF6SSbXhvz65kkgXSX-4WYTcgbV7hv7tb-U5nSNcleNia6c85YkRqopprr5yFEcdAmHdib_qJGfokb-3-TsYhBsaSauBLk58wtL_U5O)
+### 7. Save the Status
+Now, click on the **Save** button to save the status.
 
-## How to Apply Filter options
+![Save the status](/img/helpscout/authored/how-managers-approve-form-mszyegbh.png)
 
-You can filter the form submissions with specific date,status.
+### 8. Check Status Update
+You will see that the status of the submission has been changed to **Approved**.
 
-Click on the Filter icon at the top right corner.It will show you the different filter options available in SmartWinnr.
+![Status updated to Approved](/img/helpscout/authored/how-managers-approve-form-mszy65nt.png)
 
-![Click on the Filter icon at the top right corner.It will show you the different filter options available in SmartWinnr.](https://lh4.googleusercontent.com/SyhpJoI4_wkjU-IH9OakTexBCRzgzLqOW-Ib8lnMFQcuWen9ZzFypr9yqR_Wv1Zg83p8o_HlSGbut2d6ogNMsf9D7Ag-fzxTNe7ZnjHngETxvYwLvQ4kTtVbVG0UKXLWFAJL9CGc)
+## How to Apply Filter Options
+You can filter form submissions by specific date or status.
 
-If you need to filter the forms within a particular date range,you can apply Date range filter.
+### 1. Click on the Filter Icon
+Click on the **Filter** icon at the top right corner. It will show you the different filter options available in SmartWinnr.
 
-Select the required date range and click on **'Apply'** button.
+![Apply filter](/img/helpscout/authored/how-managers-approve-form-mszyn3h7.jpg)
 
-![Select the required date range and click on 'Apply' button.](https://lh3.googleusercontent.com/Dy06RpA4A7etxLtV_r468TOoheVscjcWHWmQQEEuq0B_WYP_MMpWPZ3itP9CGx1kg36hrGkOS6yBTv9iR5AjbLYn8-cL_QylOtWAVs_8Ix9jueHi7c_NocpjBOGmI6lUV7mbYQEW)
+### 2. Apply Date Range Filter
+If you need to filter the forms within a particular date range, you can apply the **Date Range** filter. Select the required date range and click on the **Apply** button.
 
-If you need to filter the forms with the submission status,you can apply Status filter.
+![Select Date Range](/img/helpscout/authored/how-managers-approve-form-mszynvb4.png)
 
-Select the required date range and click on 'Apply' button.(For example:if you select the status as 'Pending',it will show you the pending forms for approval.
+### 3. Apply Status Filter
+If you need to filter the forms by submission status, you can apply the **Status** filter. For example, if you select the status as **Pending**, it will show you the pending forms for approval.
 
-![Select the required date range and click on 'Apply' button.(For example:if you select the status as 'Pending',it will show you the pending f](https://lh4.googleusercontent.com/rTAYq2iaeDAZRJZPyXUVbph7TKS5YrVzdveEYwkISnqohXOKAHUkSErd5hbjNKfkRrS83251eApH_QOB5QiU6X3w5uLIvJf6hQIDO2HdJSbne8ELFhjbgcpGXk8NrcEMCqU3Buub)
+![Describe this screenshot](/img/helpscout/authored/how-managers-approve-form-mszyqrkb.png)
 
-If you need to filter the forms with the submission of reportees,you can apply 'Reportees' filter.
+### 4. Apply Reportees Filter
+If you need to filter the forms by the submission of reportees, you can apply the **Reportees** filter.
 
-Select the required reportees type and click on 'Apply' button.In case of Top level managers,they were able to see the submissions of all employees in their territory but they can approve the forms of direct reportees.In that case they can use this type of filter.
+![Select the reportees](/img/helpscout/authored/how-managers-approve-form-mszypwbf.png)
 
-![Select the required reportees type and click on 'Apply' button.In case of Top level managers,they were able to see the submissions of all em](https://lh3.googleusercontent.com/MPjsrlpnr7XcKceiufsew1h34PzX7ypaGSAApgzrFpY-EYO-ieDfV-G_F2YYVr-JVkDAY91ckOFyDtQFPV-UQUvsvQeqymJkZCM1vdUnFY8x1Lux-ojQhYlChCOvwnp1v30l11d-)
+Select the required reportee type and click on the **Apply** button. In the case of top-level managers, they can see the submissions of all employees in their territory but can only approve the forms of direct reportees. In that case, they can use this type of filter.

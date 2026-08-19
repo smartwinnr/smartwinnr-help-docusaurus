@@ -919,7 +919,7 @@
     },
     {
       "from": "/administration/cross-module-features/how-to-update-users",
-      "to": "/modules/cross-module/create-and-manage/how-to-update-users"
+      "to": "/administration/system-management/how-to-update-users"
     },
     {
       "from": "/administration/cross-module-features/what-is-smartwinnr",
@@ -1047,7 +1047,7 @@
     },
     {
       "from": "/modules/cross-module/how-to-update-users",
-      "to": "/modules/cross-module/create-and-manage/how-to-update-users"
+      "to": "/administration/system-management/how-to-update-users"
     },
     {
       "from": "/modules/cross-module/what-is-smartwinnr",
@@ -1928,6 +1928,10 @@
     {
       "from": "/modules/field-coaching/create-and-manage/how-to-create-field-mapping",
       "to": "/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/how-to-update-users",
+      "to": "/administration/system-management/how-to-update-users"
     }
   ]
 }

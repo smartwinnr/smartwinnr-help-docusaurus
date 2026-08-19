@@ -17,6 +17,7 @@ customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - admin
+draft: true
 ---
 ## Below are the steps to check the version of your SmartWinnr app
 

@@ -28,11 +28,19 @@ If the welcome email contains the activation link, it looks like this:
 
 Click on the button ‘Activate Account’. It will open the following page in your browser (Use Chrome or Firefox).
 
-![Click on the button ‘Activate Account’. It will open the following page in your browser (Use Chrome or Firefox).](/img/helpscout/managers-and-team-members/what-is-my-username-and-password-2.png)
+![describe this screenshot](/img/helpscout/authored/what-is-my-username-and-password-mszsxh4b.png)
 
+then click on the link Click here to reset your Password so one link will get to your email-click on reset passsword button
+
+![describe this screenshot](/img/helpscout/authored/what-is-my-username-and-password-mszsztou.png)
+
+then you will redirect to this page you can reset the password here
+
+![describe this screenshot](/img/helpscout/authored/what-is-my-username-and-password-mszt1rbm.png)
 Enter your new password and click on ‘Set Password’. Remember this password - you will need this password to login to the app later on. Your username is your company email or mobile number to which you have received the welcome email/SMS.
 
-### Activate your Account with the System Generated Password
+### Activate your Account with the System Generated Password one link will get into your email.
+
 
 If the welcome email has the system generated password, it looks like this with your username and password provided in the email:
 
@@ -40,7 +48,7 @@ If the welcome email has the system generated password, it looks like this with 
 
 If the welcome SMS has the system generated password, it looks like this with your username and password provided in the SMS:
 
-![If the welcome SMS has the system generated password, it looks like this with your username and password provided in the SMS:](/img/helpscout/managers-and-team-members/what-is-my-username-and-password-4.png)
+![describe this screenshot](/img/helpscout/authored/what-is-my-username-and-password-mszy9e86.jpg)
 
 You should use the username and password provided in the welcome email/SMS as the login credentials to log in to your account in SmartWinnr.
 
