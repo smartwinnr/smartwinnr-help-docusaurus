@@ -1,11 +1,11 @@
 ---
 id: module-competition
 title: Competition
-description: 'Competition - SmartWinnr module.'
+description: 'Gamified challenges scored on learning activities, KPIs, brackets, and leagues.'
 slug: /modules/competition/
 displayed_sidebar: tutorialSidebar
 hide_title: true
-hide_table_of_contents: true
+hide_table_of_contents: false
 customProps:
   roles:
     - user
@@ -22,3 +22,91 @@ tags:
 import ModuleOverview from '@site/src/components/Modules/ModuleOverview';
 
 <ModuleOverview slug="competition" />
+
+## Types of competitions
+
+SmartWinnr supports several competition types, based on your objective and the
+activities you want to include. You can also combine different activities within
+a single competition.
+
+### LMS-based competition
+
+An LMS-based competition focuses on learning and training activities.
+Participants earn scores by completing the learning activities you include.
+
+You can include activities such as:
+
+- Learning materials (**SmartFeeds**)
+- **Quizzes**
+- **Surveys**
+- **SmartPaths** and courses
+
+Use this type when your main objective is to drive training completion and
+assess knowledge.
+
+### Performance-based competition
+
+A performance-based competition ranks participants on their performance against
+selected KPIs. You define those KPIs during setup. Participants are then ranked
+on the scores they achieve against them.
+
+Use this type when your objective is measurable business or sales performance.
+
+### Combined learning and performance competition
+
+You can combine LMS activities and performance tracking in the same competition.
+For example, start with courses and quizzes, then track performance against
+selected KPIs. You can also include coaching activities or scenarios when
+required.
+
+This approach creates an end-to-end competition that spans learning, practice,
+and performance measurement.
+
+### Bracket Challenge
+
+The **Bracket Challenge** is a tournament-style competition. Participants compete
+against each other in a series of rounds. A single game can include multiple
+stages, such as Qualifiers, Quarter Finals, Semi Finals, and Finals.
+
+The competition runs on one predefined KPI, such as number of products sold or
+total sales value. You select that KPI during setup.
+
+- The same KPI applies throughout the competition.
+- Participants are evaluated against the selected KPI.
+- Performance is compared between the two participants in each matchup.
+- The participant with the higher performance advances to the next round.
+- The process continues until the final round determines the winner.
+
+This format creates a tournament-style experience while measuring participants
+against a clearly defined performance metric.
+
+### League Game
+
+The **League Game** is a multi-level competition. It encourages continuous
+participation and performance improvement throughout the game.
+
+Participants may start in a single league. Based on their performance, they are
+then distributed across multiple leagues, such as **Gold**, **Silver**,
+**Platinum**, and **Bronze**. From the second month onward, participants move
+between leagues based on their performance within their current league.
+
+- Top performers are promoted to a higher league.
+- Lower-ranked performers move to a lower league.
+- You define the promotion and relegation rules to suit the competition.
+
+For example:
+
+| Relegated | Promoted |
+| --- | --- |
+| Bottom 15 players from Gold move to Silver | Top 15 players from Silver move to Gold |
+| Bottom 15 players from Silver move to Platinum | Top 15 players from Platinum move to Silver |
+| Bottom 15 players from Platinum move to Bronze | Top 15 players from Bronze move to Platinum |
+
+This structure encourages participants to improve their ranking and progress
+toward higher leagues.
+
+:::note
+Competition configurations vary with the requirements of each game. This
+includes the activities, KPIs, participants, teams, scoring method, duration,
+and leaderboard structure.
+:::

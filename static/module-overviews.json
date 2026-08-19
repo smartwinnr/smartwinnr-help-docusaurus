@@ -191,10 +191,16 @@
     },
     "competition": {
       "label": "Competition",
-      "tagline": "Head-to-head brackets, team scoreboards, and detailing contests.",
-      "description": "Competition - SmartWinnr module.",
-      "keyFeatures": [],
-      "who": "",
+      "tagline": "Gamified challenges scored on learning activities, KPIs, brackets, and leagues.",
+      "description": "A Competition engages users through challenges and tracks their performance against defined activities, learning tasks, or performance metrics. You configure participants, teams, scoring criteria, and duration, so people compete individually or as teams. Competitions motivate users to finish assigned learning, reinforce it through practice, and recognize top performers on leaderboards.",
+      "keyFeatures": [
+        "LMS-based competitions scored on SmartFeeds, quizzes, surveys, and SmartPaths",
+        "Performance-based competitions that rank participants against selected KPIs",
+        "Combined competitions pairing learning activities with KPI tracking",
+        "Bracket Challenge: tournament rounds from qualifiers to finals on one KPI",
+        "League Game: Gold, Silver, Platinum, and Bronze tiers with promotion and relegation"
+      ],
+      "who": "Set up by Editors. Open to all Learners, individually or in teams. Leaderboards recognize high-performing users and teams.",
       "privilege": "competitions",
       "ctaEmail": "admin@your-org.com"
     },
