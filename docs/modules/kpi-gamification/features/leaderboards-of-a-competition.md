@@ -7,8 +7,8 @@ description: >-
 slug: leaderboards-of-a-competition
 sidebar_position: 109
 last_update:
-  date: 2026-07-30
-  author: Aswani TK
+  date: 2026-08-18
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fda26d77129911ba1b219c1
   helpscout_url: 'https://help.smartwinnr.com/article/109-leaderboards-of-a-competition'
@@ -39,19 +39,19 @@ Use leaderboards to track performance and rankings in competitions. This feature
 
 By default, when you create a competition, an **Individual Leaderboard** is automatically generated. This leaderboard includes all participants in the competition and displays the **relative rankings of individuals** across all teams. Rankings are based on the **actual scores** of each participant.
 
-![By default, when you create a competition, an Individual Leaderboard is automatically generated. This leaderboard includes all participants ](/img/helpscout/editors/leaderboards-of-a-competition-2.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msyip236.png)
 
 ### 2. Create a Team-wise Leaderboard
 
 If participants in the competition belong to different groups, you can create a **Team Leaderboard**. This leaderboard displays the **rankings and performance of each team** participating in the competition, providing a clear view of team-level progress.
 
-![If participants in the competition belong to different groups, you can create a Team Leaderboard. This leaderboard displays the rankings and](/img/helpscout/editors/leaderboards-of-a-competition-3.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msyiprgs.png)
 
 ### 3. Create a Custom Leaderboard
 
 A **Custom Leaderboard** allows you to select specific participants and display their scores and performance in a separate leaderboard. This feature enables you to **compare the performance of the selected participants independently** from the main competition leaderboards.
 
-![A Custom Leaderboard allows you to select specific participants and display their scores and performance in a separate leaderboard. This fea](/img/helpscout/editors/leaderboards-of-a-competition-4.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msyiqgzh.png)
 
 It is mandatory to create at least one team leaderboard while creating the competition and add groups to it.
 
@@ -100,7 +100,7 @@ Select the users you want to add and click on the **Save** button to create a ne
 
 * **Change Sequence:** Select this option to change the sequence of the leaderboards. It will open a popup where you can drag and drop the available leaderboards to the correct order.
 
-![Select this to change the sequence of the leaderboards. It will open the below popup where you can drag and drop the available leaderboards to correct order.](/img/helpscout/editors/leaderboards-of-a-competition-8.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msyiu56c.png)
 
 * **Manage Groups:** This helps you set the group icon images and cover image of the groups so that they will be reflected in the leaderboards in the user view. Click on the **Change Icons** tab and click on the **Choose File** to select the file from your system or click on the **Choose from suggested Icons** to select the icons available in the SmartWinnr system.
 
@@ -119,19 +119,19 @@ When you click **Duplicate**, a pop-up window opens where you can:
 3. Enable **Duplicate User List** to include the same set of users as the original leaderboard.
 4. Specify the **Number of Duplications** you want to create.
 
-![Specify the Number of Duplications you want to create.](/img/helpscout/editors/leaderboards-of-a-competition-11.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msykfs6x.png)
 
 Click on the **Duplicate** button to create the leaderboard.
 
 * **Manage Leaderboard Observers:** Click on this option to select the observers for all the leaderboards in the contest. It will open a page where you can select the leaderboards and the observers to add.
 
-![Click on the Duplicate button to create the leaderboard.](/img/helpscout/editors/leaderboards-of-a-competition-12.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msykhcwg.png)
 
 Click the **Save** button to save the selected observers. Once saved, the selected observers will be displayed on the **Observers** button corresponding to that leaderboard.
 
 If you want to assign different observers to the leaderboards, click the same button for the respective leaderboard and follow the same steps to add the observers.
 
-![If you want to assign different observers to the leaderboards, click the same button for the respective leaderboard and follow the same step](/img/helpscout/editors/leaderboards-of-a-competition-13.png)
+![describe this screenshot](/img/helpscout/authored/leaderboards-of-a-competition-msykjhpt.png)
 
 ### 8. Edit or Delete Leaderboard
 

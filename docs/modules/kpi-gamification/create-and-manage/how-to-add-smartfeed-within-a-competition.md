@@ -5,12 +5,8 @@ description: ''
 slug: how-to-add-smartfeed-within-a-competition
 sidebar_position: 289
 last_update:
-  date: 2024-06-02T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 665cc161463661770bfb12d6
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/289-how-to-add-smartfeed-within-a-contest
+  date: 2026-08-17
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: competitions
@@ -18,32 +14,63 @@ tags:
   - kpi
   - gamification
   - admin
+draft: false
 ---
-Steps:
 
-* Once you get to the 4th step of creating competition click on the "Add New Task" to create the new task.
+> **At a glance** - This article explains how to add a SmartFeed to a competition, including task creation and participant selection.
+
+Adding a SmartFeed within a competition allows you to engage participants with interactive content. You can assign tasks, set points for interactions, and manage participants effectively.
+
+## When to use this
+Use this feature when you want to enhance your competition by incorporating interactive elements that encourage user engagement. This is particularly useful in scenarios such as:
+- Launching a new product where feedback is essential.
+- Running a campaign that requires user interaction.
+- Encouraging team collaboration through shared content.
+
+## Steps
+
+### 1. Start creating a competition
+Once you reach the fourth step of creating a competition, click on **Add New Task** to create the new task.
 
 ![Steps:](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-1.png)
 
-* To Create the SmartFeed as a task, select the option SmartFeed in the "Select Task" dropdown.
-* Give the name to the SmartFeed.
-* Check  the checkbox ‘Choose Participants Manually’ to manually select the participants of the SmartFeed. This should be used so that you can remove some users from the list.
-* Here, we can give points on comment, on like and on Completion as your wish for the SmartFeed. The corresponding points will be awarded to the users and will get added to the leaderboard when the users like, comment or watch the SmartFeed fully.
-* And then click on the create button to get the SmartFeed created.
+### 2. Select SmartFeed as the task type
+To create the SmartFeed as a task, select the option **SmartFeed** in the **Select Task** dropdown.
 
-![](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-2.png)
+### 3. Name your SmartFeed
+Give a name to the SmartFeed.
 
-* Now, select whatever you want to assign in the SmartFeed. That is image, video, music or any text.
-* In the upload pdf, we can simply attach pdf files also.
+### 4. Choose participants manually
+Check the checkbox **Choose Participants Manually** to manually select the participants of the SmartFeed. This option allows you to remove some users from the list.
 
-![](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-3.png)
+### 5. Set points for interactions
+You can assign points for comments, likes, and completion as desired for the SmartFeed. The corresponding points will be awarded to users and added to the leaderboard when they like, comment, or fully watch the SmartFeed.
 
-* In the settings, we can give the expiry date of the smartFeed if needed.
-* Then, click on the “Save New SmartFeed” to save the smartfeed.
-* When you choose the ‘Choose Participants Manually’ to manually select the participants of SmartFeed, you will be able to schedule the smartfeed for future date also.
+### 6. Create the SmartFeed
+Click on the **Create** button to create the SmartFeed.
 
-![](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-4.png)
+![SmartFeed creation](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-2.png)
 
-* The SmatFeed added competition will be shown like the below.
+### 7. Assign content to the SmartFeed
+Select the type of content you want to assign in the SmartFeed, such as an image, video, music, or any text.
 
-![](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-5.png)
+### 8. Attach additional files
+In the upload section, you can also attach PDF files.
+
+![Content assignment](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-3.png)
+
+### 9. Set expiry date (optional)
+In the settings, you can specify the expiry date for the SmartFeed if needed.
+
+### 10. Save the SmartFeed
+Click on **Save New SmartFeed** to save the SmartFeed.
+
+### 11. Schedule participants (if applicable)
+When you choose **Choose Participants Manually**, you will also be able to schedule the SmartFeed for a future date.
+
+![SmartFeed settings](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-4.png)
+
+### 12. View the added SmartFeed
+The SmartFeed added to the competition will be displayed as shown below.
+
+![SmartFeed display](/img/helpscout/editors/how-to-add-smartfeed-within-a-competition-5.png)

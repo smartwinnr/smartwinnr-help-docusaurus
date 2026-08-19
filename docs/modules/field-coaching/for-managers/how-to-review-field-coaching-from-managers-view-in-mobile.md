@@ -5,8 +5,8 @@ description: 'How to open Field Coaching in Manager view:'
 slug: how-to-review-field-coaching-from-managers-view-in-mobile
 sidebar_position: 244
 last_update:
-  date: 2021-06-03T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-18
+  author: Aswani TK
 source:
   helpscout_id: 60a8e21fdca0fd46b93580f6
   helpscout_url: >-
@@ -15,62 +15,74 @@ customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - field-coaching
+draft: false
 ---
-How to open Field Coaching in Manager view:
 
-* Log in to the web using your username and password.
-* Open Left Menu >>Click on Profile at the top left corner.
-* Change the toggle button to the  Manager side. This will activate the Manager View
+> **At a glance** - This article explains how to access and review Field Coaching from the Manager view on mobile devices.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-1.png)
+To review Field Coaching in Manager view, follow these steps:
 
-* Open Left Menu>>Field Coaching.
-* You can see the available coaching here.
-* Click on the coaching, then you will be able to see a list of your team here
-* Click on the salesperson you want to coach.
+## When to use this
+Use this guide when you need to:
+- Access Field Coaching as a manager.
+- Review coaching sessions for your team members.
+- Submit ratings and feedback on coaching competencies.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-2.png)
+## Steps
 
-**How to do Baseline Assessment**
+### 1. Log in to the App
+Use your username and password to log in.
 
-* Complete the baseline assessment of your salesperson, by clicking on the ‘Baseline Assessment’ button on the top left corner
+### 2. Switch to Manager View
+- Open the **Left Menu** and click on **Profile** at the top left corner.
+- Change the toggle button to the **Manager** side. This activates the Manager View.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-3.png)
+![Switch to manager view](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyz29r4.png)
 
-* Here, you will be able to see the descriptions of the competencies.
+### 3. Access Field Coaching
+- Open the **Left Menu** and select **Field Coaching**.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-4.png)
+![select field coaching from left menu](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzux17.png)
 
-* Click on the ‘Save’ button, after you have completed the rating process
+- You will see the available coaching sessions here.
 
-**How to do Identify Areas of Strength & Areas of Improvement**
+![Field coachings](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzwotu.png)
 
-* Click on the button called ‘Strengths and Improvements’ to start the process of identifying the sales rep’s areas of strengths and areas of improvement.
-* You can mark the strengths using a green checkmark and areas of improvement by using a red checkmark
+- Click on the coaching session to view a list of your team members.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-5.png)
 
-* Click on “Save’ once you have completed
+![describe this screenshot](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msz0bbvo.png)
 
-**Under this section, you can see the active coaching sessions for the current month. Here you can start a coaching session.**
+### 4. Select a Salesperson
+Click on the salesperson you want to coach.
 
-![](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-6.png)
+![describe this screenshot](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msz065vx.png)
 
-Click on View Coaching. There are 2 steps in the coaching session.
 
-Step 1 is the Pre-Call Coaching.
+### 5. Submit Ratings and Other Coaching Fields
+- Click on the **i** button of the competencies to see the rating descriptors for each competency.
 
-Fill out your responses in the area provided.  After entering the details, click on the “save” button at bottom of the screen. This will ensure that your Step 1 responses have been saved.
+![Coaching Descriptors](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzf4ln.png)
 
-![Fill out your responses in the area provided. After entering the details, click on the “save” button at bottom of the screen. This will ensu](/img/helpscout/managers-and-team-members/how-to-review-field-coaching-from-managers-view-in-mobile-7.png)
+- Complete the rating of the coaching competencies for your salesperson by clicking on the rating stars.
 
-* Coaching Discussion Planning: enter your coaching planning here.
-* Coaching Summary: You can enter a coaching summary after a discussion with your sales rep.
+![Submit rating](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzb9ll.png)
 
-Once you complete these steps click on the “Save” button to save the  Coaching.
+- Add values to the other coaching fields.
 
-* In step 2(Post Call Coaching), the manager will be able to change the rating of the sales rep based on the performance in the coaching.
-* Click on the “Change Rating” option in the top right corner then change the rating of the competencies accordingly.
-* When you have completed entering all details, please click on ‘Complete Coaching’ to submit the coaching
+### 6. Save or Complete Coaching
+- Click on the **Save** button to save the values. You can edit the session later and submit the coaching.
+- If all values are correctly added, click on **Complete Coaching** to submit.
 
-Please note that once you have clicked on the ‘**Complete Coaching**’ button, you won’t be able to make any more changes to your coaching session.
+A confirmation pop-up will appear.
+
+![Confirmation pop up](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzlf66.png)
+
+- Click on **Confirm** to submit the coaching. A submission confirmation pop-up will appear.
+
+![Confirmation pop up](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzndpj.png)
+
+### 7. Review Submission
+The submission will look like the example below.
+
+![Session after completing](/img/helpscout/authored/how-to-review-field-coaching-from-managers-view-in-mobile-msyzodsr.png)

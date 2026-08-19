@@ -5,68 +5,70 @@ description: 'Here is how users can access KHub in the SmartWinnr app:'
 slug: how-to-use-khub-in-the-smartwinnr-app
 sidebar_position: 150
 last_update:
-  date: 2021-01-22T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdaec3c7129911ba1b21de9
-  helpscout_url: >-
-    /modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app
+  date: 2026-08-17
+  author: Sruthi Suresh
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - knowledge-hub
   - onboarding
+draft: false
 ---
+
+> **At a glance** - Learn how to access and navigate KHub in the SmartWinnr app, including searching for items, viewing favorites, and changing display settings.
+
 Here is how users can access KHub in the SmartWinnr app:
 
-Go to the Left Menu bar > KHub. It will open the following page where you get to see a list of folders and KHub items:
+Go to the **Left Menu bar** > **KHub**. This will open a page where you can see a list of folders and KHub items:
 
-                                                                  ![Go to the Left Menu bar > KHub. It will open the following page where you get to see a list of folders and KHub items:](https://support.smartwinnr.com/api/v1/attachments/726)
+![KHub items list](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-mssz9qn5.png)
 
-There is a "Search" option at the top of this screen from where KHub items can be searched.
+There is a **Search** option at the top of this screen, allowing you to search for KHub items.
 
 ## Recently Searched
 
-This shows all the KHub items that you have recently searched
+This section shows all the KHub items that you have recently searched.
 
-                                                      ![This shows all the KHub items that you have recently searched](https://support.smartwinnr.com/api/v1/attachments/727)
+![Recently searched items](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszb408.png)
 
 ## Trending
 
-This section shows all the KHub items that are trending (recent and mostly searched ones) currently.
+This section displays all the KHub items that are currently trending, including recently added and frequently searched items.
 
-                                                       ![This section shows all the KHub items that are trending (recent and mostly searched ones) currently.](https://support.smartwinnr.com/api/v1/attachments/728)
+![Trending items](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszbv3x.png)
 
 ## New
 
 This section shows the newly added KHub items.
 
-                                                      ![This section shows the newly added KHub items.](https://support.smartwinnr.com/api/v1/attachments/729)
+![New items](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszcy9c.png)
 
 ## Favourites
 
-This section shows the KHub items which you have marked as favorite.
+This section displays the KHub items that you have marked as favorites.
 
-                                                     ![This section shows the KHub items which you have marked as favorite.](https://support.smartwinnr.com/api/v1/attachments/730)
+![Favorite items](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszd9y9.png)
 
-There is an option to view your KHub items in a Folder or ListView. Click on the "Folders" icon at the top right corner of the screen to change the view of the KHub items to folder view.
+You can view your KHub items in either **Folder View** or **List View**. Click on the **Folders** icon at the top right corner of the screen to change the view of the KHub items to folder view.
 
-![There is an option to view your KHub items in a Folder or ListView. Click on the "Folders" icon at the top right corner of the screen to cha](https://lh4.googleusercontent.com/bH_Ij7KFfUQQrBy2BkQ7tGic6B0QBy3Tt_y7dHlQxPHHMsu85tVl4ZPq4Y25Uv_4FwU_ubNDVUEuLkduxBvbwuLWt_iS98voDkUWaZFVpDgAtBwQTI4FJpyvp8pF9zlHzWODBFf3)
+![Folder view icon](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszeurs.png)
 
-This shows the KHub items in the form of folders. Then click on the "grid view" icon at the top right corner here in order to get a grid view of these KHub folders.
+This will show the KHub items in the form of folders.
 
-![This shows the KHub items in the form of folders. Then click on the "grid view" icon at the top right corner here in order to get a grid vie](https://lh4.googleusercontent.com/Fx9mBekwv5DFZR0XpnVd3feUv-fPep9Ua5tY8ii-42FvZqN2SJfZcbB2DBcIIjyxqA5Vl1V4GDn59kQi80Khc3u0Z8sLvRmnVe3wRwfMrikvPDI5LBaUh77966ldFNMIBzBx-wUd)
+![KHub items in folders](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszfs3w.png)
 
-It opens the following screen where all the KHub items are shown in the grid view.
+Then click on the **Grid View** icon at the top right corner to get a grid view of these KHub folders.
 
-![It opens the following screen where all the KHub items are shown in the grid view.](https://lh6.googleusercontent.com/O0yBTdxg7RCgJx5Esq6yz0sjmU-tBZ-JHEP_m9UmU-WpFB-VvFx7ttdIsyyarluzWkybTUjrV9dzCPqlb05kf_708QBxNyuQj9TiVpnFGXvZvf-tH0SMz-PhKBJNLf6WetkpitNh)
+This opens a screen where all the KHub items are displayed in grid view.
+
+![Grid view of KHub items](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszi73j.png)
 
 ## Marking as Favourite
 
-If you find an item informative and would like to save it, then you can add it to your favorites. Follow the below steps in order to mark an item as a favorite:
+If you find an item informative and would like to save it, you can add it to your favorites. Follow the steps below to mark an item as a favorite:
 
-Click and open an item. Tap on the **'Star**' icon at the top right corner.
+Click and open the item. Tap on the **Star** icon at the top right corner.
 
-![Click and open an item. Tap on the 'Star' icon at the top right corner.](https://lh3.googleusercontent.com/rdt19Oo36SD7yB75m6lyt4Mpa5DEW_Pvy1IeGuzZL_2cpa71-JUxJ_96Wmz0ksb3aX5M6uZ6evxvuJ-NTqcnVahqRQ7c_QPc-kRl0uwqk0-iFq5tR-2H_OCww42CObjKJ3jBpBXY)
+![Mark as favorite](/img/helpscout/authored/how-to-use-khub-in-the-smartwinnr-app-msszjxn5.png)
 
-This marks a particular KHub item as your favorite and saves it for your future reference.
+This action marks a particular KHub item as your favorite and saves it for your future reference.

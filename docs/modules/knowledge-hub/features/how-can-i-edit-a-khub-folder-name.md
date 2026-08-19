@@ -22,7 +22,7 @@ draft: false
 In KHub, you can edit the names of folders. If you have a folder in KHub that you want to change the title of, you can simply follow the steps below.
 
 ## When to use this
-Use this feature when you need to update the title of a folder in KHub to better reflect its contents or purpose.
+Use this feature when you need to update the title of a folder in KHub to better reflect its contents or purpose
 
 ## Steps
 
