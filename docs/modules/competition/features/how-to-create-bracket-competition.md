@@ -74,4 +74,4 @@ Once the competition is set up and live for the players, after each round is com
 
 Following is how the pairs and winners find the game leaderboard in their SmartWinnr account in user view:
 
-![Describe this screenshot](/img/helpscout/authored/how-to-create-bracket-competition-msylvwv5.png)
+![User view leaderboard](/img/helpscout/authored/how-to-create-bracket-competition-msylvwv5.png)
