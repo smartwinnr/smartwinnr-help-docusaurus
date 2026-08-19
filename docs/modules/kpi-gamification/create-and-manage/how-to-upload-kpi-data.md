@@ -20,7 +20,7 @@ tags:
   - gamification
   - admin
 ---
-After you have completed creating the Field Mapping ( [How to create a Field Mapping?](/modules/field-coaching/create-and-manage/how-to-create-field-mapping)) , you can upload data into SmartWinnr against this mapping.
+After you have completed creating the Field Mapping ( [How to create a Field Mapping?](/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping)) , you can upload data into SmartWinnr against this mapping.
 
 Below are the steps to upload your KPI data:
 
