@@ -157,7 +157,7 @@ function StatsPage(): ReactNode {
           </span>
         )}
         {data?.github && data.coverage?.truncated && (
-          <span className={styles.warn}>
+          <span className={`${styles.warn} ${styles.coverageWarn}`}>
             This period has more publish history than we read in one pass.
             {data.coverage.since ? ` Counts below start at ${data.coverage.since}` : ' Counts below are partial'}
             {' '}and are a minimum, not a total.
@@ -190,7 +190,7 @@ function StatsPage(): ReactNode {
             {w.perAuthor.length > 0 && (
               <div className={styles.preview}>
                 <h2>By author</h2>
-                <table>
+                <table className={`${styles.draftTable} ${styles.statTable}`}>
                   <thead><tr><th>Author</th><th>New</th><th>Updated</th></tr></thead>
                   <tbody>
                     {w.perAuthor.map((a) => (
@@ -207,7 +207,7 @@ function StatsPage(): ReactNode {
             {w.perSection.length > 0 && (
               <div className={styles.preview}>
                 <h2>By section</h2>
-                <table>
+                <table className={`${styles.draftTable} ${styles.statTable}`}>
                   <thead><tr><th>Section</th><th>New</th><th>Updated</th></tr></thead>
                   <tbody>
                     {w.perSection.map((s) => (
@@ -222,7 +222,7 @@ function StatsPage(): ReactNode {
           {w.createdArticles.length > 0 && (
             <div className={styles.preview}>
               <h2>New articles in this period</h2>
-              <table>
+              <table className={`${styles.draftTable} ${styles.statTable}`}>
                 <thead><tr><th>Title</th><th>Section</th><th>Author</th><th>Published</th></tr></thead>
                 <tbody>
                   {w.createdArticles.map((a) => (
@@ -241,7 +241,7 @@ function StatsPage(): ReactNode {
           {w.draftsInProgress.length > 0 && (
             <div className={styles.preview}>
               <h2>Drafts in progress</h2>
-              <table>
+              <table className={`${styles.draftTable} ${styles.statTable}`}>
                 <thead><tr><th>Title</th><th>Author</th><th>Last updated</th></tr></thead>
                 <tbody>
                   {w.draftsInProgress.map((a) => (
@@ -265,7 +265,7 @@ function StatsPage(): ReactNode {
           {data.github && w.deployBatches.length > 0 && (
             <div className={styles.preview}>
               <h2>Site updates in this period</h2>
-              <table>
+              <table className={`${styles.draftTable} ${styles.statTable}`}>
                 <thead><tr><th>Date</th><th>New</th><th>Updated</th><th>Deleted</th><th>Images</th></tr></thead>
                 <tbody>
                   {w.deployBatches.map((b) => (

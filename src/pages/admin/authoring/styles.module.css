@@ -105,8 +105,13 @@
 }
 .warn {
   font-size: var(--text-caption);
-  color: var(--ifm-color-warning-dark, #b45309);
+  /* Not --ifm-color-warning-dark: Infima resolves that to #e6a700, which is
+     2.1:1 on a white page - well under AA for 13px text, and this class
+     carries real role="alert" messages. These two are 5.9:1 on light and
+     9.6:1 on the dark surface. */
+  color: #8a5a00;
 }
+:global(html[data-theme='dark']) .warn { color: #f5b942; }
 
 /* Tag picker */
 .tagRow {
@@ -312,6 +317,11 @@
 }
 .preview h1 { font-size: var(--text-h1); margin: 0 0 var(--space-3); }
 .preview h2 { font-size: var(--text-h2); margin: var(--space-6) 0 var(--space-3); }
+/* The stats cards open with an <h2>; the article preview opens with an <h1>.
+   Without this the stats cards carry 32px of dead space above every heading,
+   on top of the card's own 24px of padding. */
+.preview > h2:first-child,
+.preview > h3:first-child { margin-top: 0; }
 .preview h3 { font-size: var(--text-h3); margin: var(--space-5) 0 var(--space-2); }
 .preview p { margin: 0 0 var(--space-4); }
 .preview ul, .preview ol { padding-left: var(--space-5); margin-bottom: var(--space-4); }
@@ -858,6 +868,24 @@
   font-size: 0.78rem;
   color: var(--ifm-color-content-secondary);
 }
+/* Stats tables reuse .draftTable's look (applied alongside it) but opt out
+   of Infima's global `table { display: block }`, which shrink-wraps a table
+   to its content and leaves it ragged inside a full-width card. These tables
+   are 3-5 narrow columns, so they can't overflow the way an article table
+   might. */
+.statTable {
+  display: table;
+  width: 100%;
+  table-layout: auto;
+  /* Infima's 1rem is too much under a card-height table; the notes that
+     follow some of these tables still need to breathe. */
+  margin-bottom: var(--space-3, 12px);
+}
+/* Numeric columns line up only with tabular figures. */
+.statTable td + td { font-variant-numeric: tabular-nums; }
+/* The coverage warning is a full sentence; it gets its own line rather than
+   competing with the range pills and the refreshed-at hint in the flex row. */
+.coverageWarn { flex-basis: 100%; margin-top: var(--space-1, 4px); }
 .statColumns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -900,7 +928,11 @@
   color: var(--ifm-color-content-secondary);
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
+  /* Spill, don't clip. At 90 days each column is ~9px wide and a "MM-DD"
+     label is ~25px, so `overflow: hidden` erased the axis entirely. Only
+     every 15th column is labelled at that width (every 7th at 30 days), so
+     a label always has blank neighbours to spill into. */
+  overflow: visible;
   min-height: 1em;
 }
 .chartLegend {
