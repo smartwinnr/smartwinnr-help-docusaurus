@@ -9,6 +9,7 @@ last_update:
   author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
+  anyPrivilege: [learnerReport, adminReports, generatedReports]
 draft: false
 tags: ["reports"]
 ---

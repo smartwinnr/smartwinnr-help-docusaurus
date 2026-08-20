@@ -931,31 +931,31 @@
     },
     {
       "from": "/administration/reports/index",
-      "to": "/reports-and-analytics/legacy/index"
+      "to": "/reports-and-analytics"
     },
     {
       "from": "/administration/reports/learner-overall-report",
-      "to": "/reports-and-analytics/legacy/learner-overall-report"
+      "to": "/reports-and-analytics/learner-overall-report"
     },
     {
       "from": "/administration/reports/learner-report-by-learner-individual-report-analytics",
-      "to": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics"
+      "to": "/reports-and-analytics/learner-report-by-learner-individual-report-analytics"
     },
     {
       "from": "/administration/reports/quiz-wise-analytics",
-      "to": "/reports-and-analytics/legacy/quiz-wise-analytics"
+      "to": "/reports-and-analytics/quiz-wise-analytics"
     },
     {
       "from": "/administration/reports/team-analytics",
-      "to": "/reports-and-analytics/legacy/team-analytics"
+      "to": "/reports-and-analytics/team-analytics"
     },
     {
       "from": "/administration/reports/team-progress-report",
-      "to": "/reports-and-analytics/legacy/team-progress-report"
+      "to": "/reports-and-analytics/team-progress-report"
     },
     {
       "from": "/administration/reports/user-login-reports",
-      "to": "/reports-and-analytics/legacy/user-login-reports"
+      "to": "/reports-and-analytics/user-login-reports"
     },
     {
       "from": "/modules/ai-coaching/how-can-i-download-attempt-wise-user-objective-report",
@@ -1936,6 +1936,42 @@
     {
       "from": "/modules/cross-module/features/how-to-add-an-audio-file-to-your-content",
       "to": "/modules/smartfeed/create-and-manage/how-to-add-an-audio-file-to-your-content"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/learner-overall-report",
+      "to": "/reports-and-analytics/learner-overall-report"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics",
+      "to": "/reports-and-analytics/learner-report-by-learner-individual-report-analytics"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/quiz-wise-analytics",
+      "to": "/reports-and-analytics/quiz-wise-analytics"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/team-analytics",
+      "to": "/reports-and-analytics/team-analytics"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/team-progress-report",
+      "to": "/reports-and-analytics/team-progress-report"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/coaching-reports",
+      "to": "/reports-and-analytics/coaching-reports"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/user-login-reports",
+      "to": "/reports-and-analytics/user-login-reports"
+    },
+    {
+      "from": "/reports-and-analytics/legacy/where-to-find-downloaded-reports",
+      "to": "/reports-and-analytics/where-to-find-downloaded-reports"
+    },
+    {
+      "from": "/reports-and-analytics/legacy",
+      "to": "/reports-and-analytics"
     }
   ]
 }

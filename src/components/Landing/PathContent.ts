@@ -188,12 +188,12 @@ export const ENTRIES: Record<PersonaSlug, EntryPoint[]> = {
     {label: 'Bulk-import quiz questions',               href: '/modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions',     privilege: 'quiz'},
   ],
   reports: [
-    {label: 'Learner overall report',       href: '/reports-and-analytics/legacy/learner-overall-report',             privilege: 'learnerReport'},
-    {label: 'Per-learner individual report', href: '/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics', privilege: 'learnerReport'},
-    {label: 'Quiz-wise analytics',          href: '/reports-and-analytics/legacy/quiz-wise-analytics',                privilege: 'learnerReport'},
-    {label: 'Team analytics',               href: '/reports-and-analytics/legacy/team-analytics'},
-    {label: 'Team progress report',         href: '/reports-and-analytics/legacy/team-progress-report'},
-    {label: 'User login reports',           href: '/reports-and-analytics/legacy/user-login-reports'},
+    {label: 'Learner overall report',       href: '/reports-and-analytics/learner-overall-report',             privilege: 'learnerReport'},
+    {label: 'Per-learner individual report', href: '/reports-and-analytics/learner-report-by-learner-individual-report-analytics', privilege: 'learnerReport'},
+    {label: 'Quiz-wise analytics',          href: '/reports-and-analytics/quiz-wise-analytics',                privilege: 'learnerReport'},
+    {label: 'Team analytics',               href: '/reports-and-analytics/team-analytics'},
+    {label: 'Team progress report',         href: '/reports-and-analytics/team-progress-report'},
+    {label: 'User login reports',           href: '/reports-and-analytics/user-login-reports'},
     {label: 'Per-module reporting',         href: '/modules/quiz/reports-and-analytics/what-is-smartwinnr-quiz-analytics', blurb: 'Each module also has its own Reports & Analytics leaf.'},
   ],
   admin: [
@@ -257,10 +257,10 @@ export const GROUPS: Partial<Record<PersonaSlug, EntryGroup[]>> = {
     {
       title: 'Reports for your team',
       entries: [
-        {label: 'Team analytics',              href: '/reports-and-analytics/legacy/team-analytics'},
-        {label: 'Team progress report',        href: '/reports-and-analytics/legacy/team-progress-report'},
-        {label: 'Reportee learner report',     href: '/reports-and-analytics/legacy/learner-overall-report',                                   privilege: 'learnerReport'},
-        {label: 'Per-learner individual report', href: '/reports-and-analytics/legacy/learner-report-by-learner-individual-report-analytics', privilege: 'learnerReport'},
+        {label: 'Team analytics',              href: '/reports-and-analytics/team-analytics'},
+        {label: 'Team progress report',        href: '/reports-and-analytics/team-progress-report'},
+        {label: 'Reportee learner report',     href: '/reports-and-analytics/learner-overall-report',                                   privilege: 'learnerReport'},
+        {label: 'Per-learner individual report', href: '/reports-and-analytics/learner-report-by-learner-individual-report-analytics', privilege: 'learnerReport'},
       ],
     },
   ],
