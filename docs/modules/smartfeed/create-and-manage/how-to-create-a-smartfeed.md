@@ -98,7 +98,7 @@ Following is how a SmartFeed with an external link appears in the SmartWinnr app
 
 ## Send Audios
 
-If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](/modules/cross-module/features/how-to-add-an-audio-file-to-your-content/)
+If you would like to add an audio file to your SmartFeed, [learn how to add audio to your SmartFeed.](/modules/smartfeed/create-and-manage/how-to-add-an-audio-file-to-your-content/)
 
 Following is how a SmartFeed with audio appears in the SmartWinnr app. Click on the play button to listen to the audio file.
 

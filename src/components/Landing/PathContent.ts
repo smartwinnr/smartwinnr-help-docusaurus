@@ -162,7 +162,7 @@ export const ENTRIES: Record<PersonaSlug, EntryPoint[]> = {
     {label: 'Submit an AI Coaching attempt',           href: '/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt',              privilege: 'aiCoaching'},
     {label: 'Engage with SmartFeed',                   href: '/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed',                    privilege: 'content'},
     {label: 'View your KPI scorecard',                 href: '/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard',                      privilege: 'kpi'},
-    {label: 'Submit a form',                           href: '/modules/forms/for-learners/how-to-add-new-form-submission',                                   privilege: 'forms'},
+    {label: 'Submit a form',                           href: '/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu',                          privilege: 'forms'},
     {label: 'Manage your notifications',               href: '/modules/notifications/for-learners/how-to-view-notifications'},
     {label: 'Use the Knowledge Hub',                   href: '/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app',                    privilege: 'khub'},
   ],
