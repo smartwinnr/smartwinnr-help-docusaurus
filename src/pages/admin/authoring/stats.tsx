@@ -21,6 +21,10 @@ type StatsPayload = {
   github: boolean;
   githubError: string | null;
   stale?: boolean;
+  /** What the publish history below actually covers. `truncated` means the
+   *  requested window ran past the server's history bounds, so every count
+   *  is a floor rather than a total. */
+  coverage?: {truncated: boolean; since: string | null; deploysCounted: number};
   totals: {articles: number; published: number; drafts: number};
   window: {
     created: number;
@@ -32,7 +36,7 @@ type StatsPayload = {
     perAuthor: Array<{author: string; created: number; updated: number}>;
     perSection: Array<{section: string; created: number; updated: number}>;
     createdArticles: Array<{path: string; title: string; author: string | null; section: string; date: string}>;
-    draftsInProgress: Array<{path: string; title: string; author: string | null; date: string}>;
+    draftsInProgress: Array<{path: string; title: string; author: string | null; date: string | null}>;
     deployBatches: Array<{sha: string; date: string; created: number; updated: number; deleted: number; images: number}>;
   };
   queue: {size: number; lastDeployTs: number};
@@ -152,6 +156,13 @@ function StatsPage(): ReactNode {
                 : `Updated ${new Date(data.generatedAt).toLocaleTimeString()} - refreshes every 10 minutes.`}
           </span>
         )}
+        {data?.github && data.coverage?.truncated && (
+          <span className={styles.warn}>
+            This period has more publish history than we read in one pass.
+            {data.coverage.since ? ` Counts below start at ${data.coverage.since}` : ' Counts below are partial'}
+            {' '}and are a minimum, not a total.
+          </span>
+        )}
       </div>
 
       {loading && <p>Loading stats…</p>}
@@ -229,19 +240,25 @@ function StatsPage(): ReactNode {
 
           {w.draftsInProgress.length > 0 && (
             <div className={styles.preview}>
-              <h2>Drafts being worked on</h2>
+              <h2>Drafts in progress</h2>
               <table>
-                <thead><tr><th>Title</th><th>Author</th><th>Last saved</th></tr></thead>
+                <thead><tr><th>Title</th><th>Author</th><th>Last updated</th></tr></thead>
                 <tbody>
                   {w.draftsInProgress.map((a) => (
                     <tr key={a.path}>
                       <td><Link to={`/admin/authoring/edit?path=${encodeURIComponent(a.path)}`}>{a.title}</Link></td>
                       <td>{a.author ?? '-'}</td>
-                      <td>{a.date}</td>
+                      <td>{a.date ?? '-'}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              <p className={styles.hint}>
+                Every unpublished article, whatever the period - the same set
+                the tile counts. "Last updated" is the article's own
+                last_update date, which unpublishing doesn't change, so an
+                article pulled from the site keeps its publication date.
+              </p>
             </div>
           )}
 

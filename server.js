@@ -4692,6 +4692,13 @@ const STATS_CACHE_TTL_MS = 10 * 60 * 1000;
 // GitHub-degraded payloads get a short TTL: still cached (so an outage can't
 // trigger a disk-walk + 30s-timeout storm on every request), but retried soon.
 const STATS_DEGRADED_TTL_MS = 60 * 1000;
+// History bounds. 5 pages = 500 commits, comfortably more than a 90-day
+// window on this branch (~314 commits in the busiest 90 days so far), and a
+// backstop against paging forever if the branch ever gets noisy. The detail
+// cap bounds the per-commit API calls that follow; when either bites, the
+// payload says so rather than quietly reporting a short window.
+const STATS_MAX_COMMIT_PAGES = 5;
+const STATS_MAX_DETAIL_COMMITS = 250;
 const statsCache = new Map();    // days → {ts, payload}
 const statsInFlight = new Map(); // days → Promise<payload>, dedupes concurrent recomputes
 const statsTtl = (payload) => (payload.github ? STATS_CACHE_TTL_MS : STATS_DEGRADED_TTL_MS);
@@ -4703,8 +4710,14 @@ async function computeAuthoringStats(days) {
     // ── Current state from disk ──
     let totalArticles = 0;
     let totalDrafts = 0;
-    const draftsTouchedInWindow = [];
-    const sinceDate = sinceIso.slice(0, 10);
+    // Every draft on disk, not just ones touched inside the window. This
+    // list answers the same question as the "Drafts in progress (now)"
+    // tile it sits under, so it has to count the same things. Filtering it
+    // by `last_update.date` used to hide most of them: unpublishing a live
+    // article sets draft:true WITHOUT restamping last_update, so an article
+    // pulled today still carries its original publication date and fell
+    // outside every window - tile said 3, table showed 0 rows.
+    const draftsOnDisk = [];
     function walkDisk(dir) {
       for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
         const p = path.join(dir, entry.name);
@@ -4715,16 +4728,14 @@ async function computeAuthoringStats(days) {
           if (/^draft:\s*true\b/m.test(text)) {
             totalDrafts += 1;
             const d = /^\s*date:\s*(\S+)/m.exec(text);
-            if (d && d[1] >= sinceDate) {
-              const t = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
-              const au = /^\s*author:\s*["']?(.+?)["']?\s*$/m.exec(text);
-              draftsTouchedInWindow.push({
-                path: path.relative(__dirname, p),
-                title: t ? t[1] : entry.name,
-                author: au ? au[1] : null,
-                date: d[1],
-              });
-            }
+            const t = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
+            const au = /^\s*author:\s*["']?(.+?)["']?\s*$/m.exec(text);
+            draftsOnDisk.push({
+              path: path.relative(__dirname, p),
+              title: t ? t[1] : entry.name,
+              author: au ? au[1] : null,
+              date: d ? d[1].slice(0, 10) : null,
+            });
           }
         }
       }
@@ -4743,21 +4754,42 @@ async function computeAuthoringStats(days) {
     const updatedRels = new Map();
     const deletedRels = new Set();
     let imagesAdded = 0;
+    let commitsTruncated = false;   // history was capped, numbers are a floor
+    let coversSince = null;         // oldest day the publish history actually reaches
     const deployBatches = [];
     try {
-      const listResp = await ghGet(
-        `/commits?sha=${GIT_PUBLISH_BRANCH}&since=${encodeURIComponent(sinceIso)}&per_page=100`
-      );
-      const publishCommits = (listResp.data || [])
-        .filter((c) => /^publish: /.test(c.commit?.message || ''))
-        .slice(0, 60); // hard cap on per-commit detail fetches
+      // Page through the window. `/commits` returns newest-first, 100 per
+      // page - a single unpaginated call silently dropped everything past
+      // the 100th commit, which on a busy branch is ~3 weeks. The 30- and
+      // 90-day views then reported the same truncated ~3 weeks as the
+      // 7-day one, with no hint on screen that history was missing.
+      const allCommits = [];
+      for (let page = 1; page <= STATS_MAX_COMMIT_PAGES; page += 1) {
+        const resp = await ghGet(
+          `/commits?sha=${GIT_PUBLISH_BRANCH}&since=${encodeURIComponent(sinceIso)}`
+          + `&per_page=100&page=${page}`
+        );
+        const batch = resp.data || [];
+        allCommits.push(...batch);
+        if (batch.length < 100) break;
+        if (page === STATS_MAX_COMMIT_PAGES) commitsTruncated = true;
+      }
+      const allPublish = allCommits.filter((c) => /^publish: /.test(c.commit?.message || ''));
+      // Detail fetches are one API call each, so they stay bounded. When the
+      // bound bites we keep the NEWEST commits and tell the client how far
+      // back the numbers actually reach - see `coverage` in the payload.
+      const publishCommits = allPublish.slice(0, STATS_MAX_DETAIL_COMMITS);
+      if (publishCommits.length < allPublish.length) commitsTruncated = true;
       // Oldest first so "created then edited later" attributes correctly.
       publishCommits.reverse();
+      coversSince = publishCommits.length
+        ? (publishCommits[0].commit.committer?.date || publishCommits[0].commit.author?.date || '').slice(0, 10)
+        : null;
       // Fetch commit details in parallel batches - done sequentially this
       // was ~0.5s per commit and dominated first-load latency (20+ commits
       // in a busy week meant a 10-15s wait for the dashboard).
       const detailBySha = new Map();
-      const DETAIL_BATCH = 6;
+      const DETAIL_BATCH = 8;
       for (let i = 0; i < publishCommits.length; i += DETAIL_BATCH) {
         const chunk = publishCommits.slice(i, i + DETAIL_BATCH);
         const resolved = await Promise.all(chunk.map((c) => ghGet(`/commits/${c.sha}`)));
@@ -4866,6 +4898,14 @@ async function computeAuthoringStats(days) {
       generatedAt: new Date().toISOString(),
       github,
       githubError,
+      // Honest reporting of what the numbers below actually cover. When
+      // `truncated` is true the window ran past our history bounds and every
+      // count is a floor, not a total.
+      coverage: {
+        truncated: commitsTruncated,
+        since: coversSince,
+        deploysCounted: deployBatches.length,
+      },
       totals: {
         articles: totalArticles,
         published: totalArticles - totalDrafts,
@@ -4881,8 +4921,10 @@ async function computeAuthoringStats(days) {
         perAuthor: [...perAuthor.values()].sort((a, b) => (b.created + b.updated) - (a.created + a.updated)),
         perSection: [...perSection.values()].sort((a, b) => (b.created + b.updated) - (a.created + a.updated)),
         createdArticles: createdList.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 50),
-        draftsInProgress: draftsTouchedInWindow.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 50),
-        deployBatches: deployBatches.slice(0, 30),
+        draftsInProgress: draftsOnDisk
+          .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')))
+          .slice(0, 50),
+        deployBatches: deployBatches.slice(0, 60),
       },
       queue: {
         size: deployQueue.size,
