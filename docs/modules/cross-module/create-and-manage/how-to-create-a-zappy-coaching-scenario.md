@@ -1,8 +1,8 @@
 ---
-id: create-zappi-coaching-scenario
-title: "How to Create a Zappi Coaching Scenario"
-description: "This article shows you how to create AI-powered coaching scenarios using Zappi."
-slug: create-zappi-coaching-scenario
+id: create-zappy-coaching-scenario
+title: "How to Create a Zappy Coaching Scenario"
+description: "This article shows you how to create AI-powered coaching scenarios using Zappy."
+slug: create-zappy-coaching-scenario
 sidebar_position: 999
 last_update:
   date: 2026-07-23
@@ -13,13 +13,13 @@ tags: ["ai-coaching"]
 draft: false
 ---
 
-> **At a glance** - Create AI-powered coaching scenarios with Zappi by selecting coaching types, defining objectives, and uploading resources.
+> **At a glance** - Create AI-powered coaching scenarios with Zappy by selecting coaching types, defining objectives, and uploading resources.
 
-Zappi allows you to create engaging coaching scenarios that leverage AI technology. You can configure different coaching types, set objectives, and provide supporting resources to enhance the learning experience.
+Zappy allows you to create engaging coaching scenarios that leverage AI technology. You can configure different coaching types, set objectives, and provide supporting resources to enhance the learning experience.
 
 ## When to use this
 
-Use Zappi when you need to create interactive coaching scenarios for learners. This feature is ideal for:
+Use Zappy when you need to create interactive coaching scenarios for learners. This feature is ideal for:
 
 - Training sessions that require practice and feedback.
 - Scenarios that need to simulate real-life conversations.
@@ -27,9 +27,9 @@ Use Zappi when you need to create interactive coaching scenarios for learners. T
 
 ## Steps
 
-### 1. Navigate to Zappi
+### 1. Navigate to Zappy
 
-Go to **Editor → Authoring Tools → Zappi**. The Zappi dashboard opens, allowing you to create a new coaching scenario.
+Go to **Editor → Authoring Tools → Zappy**. The Zappy dashboard opens, allowing you to create a new coaching scenario.
 
 ![first page how to select zappy option from left menu](/img/helpscout/authored/authored-mrxhs3v3.png)
 

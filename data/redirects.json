@@ -1972,6 +1972,10 @@
     {
       "from": "/reports-and-analytics/legacy",
       "to": "/reports-and-analytics"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/create-zappi-coaching-scenario",
+      "to": "/modules/cross-module/create-and-manage/create-zappy-coaching-scenario"
     }
   ]
 }
