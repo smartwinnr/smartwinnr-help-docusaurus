@@ -68,7 +68,7 @@ Click on **Assign** after completing the process.
 ## Tips
 - Ensure that the images you upload are high quality for the best presentation of certificates.
 - Use clear and concise titles and descriptions to enhance user understanding of the achievements.
-- Regularly review and update achievements to keep them relevant and engaging for users.
+- Regularly review and update achievements to keep them relevant and engaging for users
 
 ## Things to know
 :::caution

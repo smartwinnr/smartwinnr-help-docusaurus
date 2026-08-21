@@ -5,30 +5,47 @@ description: An Editor who has access to the form can edit the submission made b
 slug: how-to-submit-a-form-on-behalf-of-a-user
 sidebar_position: 252
 last_update:
-  date: 2025-01-22T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 60bb69c690777e23fb8ada49
-  helpscout_url: >-
-    /modules/forms/features/how-to-submit-a-form-on-behalf-of-a-user
+  date: 2026-08-20
+  author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
 tags:
   - forms
+draft: false
 ---
-An Editor who has access to the form can edit the submission made by a user
 
-Goto Left Menu >> Editor >> Forms >> View All Forms.
+> **At a glance** - Editors can submit forms on behalf of users, allowing them to enter data and manage submissions efficiently.
 
-![Goto Left Menu >> Editor >> Forms >> View All Forms.](/img/helpscout/editors/how-to-edit-a-form-on-submitted-by-a-user-1.jpg)
+An Editor who has access to the form can edit the submission made by a user. This feature is useful for situations where a user is unable to complete a form or when data needs to be entered on their behalf.
 
-Select the form that you want to submit on behalf of a user and click on that form.
+## When to use this
+Use this feature when you need to:
+- Assist a user who cannot complete the form themselves.
+- Correct or update a submission for accuracy.
+- Manage submissions in a centralized manner.
 
-![Select the form that you want to submit on behalf of a user and click on that form.](/img/helpscout/editors/how-to-submit-a-form-on-behalf-of-a-user-1.jpg)
+## Steps
 
-Click on Submit icon on the top right corner.
+### 1. Access the Forms Section
+Go to the **Left Menu** and select **Editor** followed by **Forms** and then **View All Forms**.
 
-![Click on Submit icon on the top right corner.](/img/helpscout/editors/how-to-submit-a-form-on-behalf-of-a-user-2.png)
+![List of forms](/img/helpscout/authored/how-to-submit-a-form-on-behalf-of-a-user-mt1bf73z.png)
 
-Enter the name to select the user you want to submit and fill in the details in the form and click on Submit icon to finish submitting the form.
+### 2. Select the Desired Form
+Select the form that you want to submit on behalf of a user and click on that form. You will be taken to the view page of the form.
+
+### 3. Click on the Submit Icon
+Click on the **Submit** icon located in the top right corner.
+
+![Submit option](/img/helpscout/authored/how-to-submit-a-form-on-behalf-of-a-user-mt1bhqdp.png)
+
+### 4. Choose the User
+You will be directed to a page where you can see the form fields. Select the name of the user for whom you want to make the submission.
+
+![Select the name of the user](/img/helpscout/authored/how-to-submit-a-form-on-behalf-of-a-user-mt1bmccj.png)
+
+### 5. Enter Field Values
+Enter the required field values and click on the **Submit** button.
+
+![Enter form fields](/img/helpscout/authored/how-to-submit-a-form-on-behalf-of-a-user-mt1bokd7.png)

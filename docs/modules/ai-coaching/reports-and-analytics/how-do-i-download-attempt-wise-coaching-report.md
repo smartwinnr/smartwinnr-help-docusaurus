@@ -46,7 +46,7 @@ Locate the specific coaching session you wish to analyze.
 
 Select the analytics icon associated with the coaching.
 
-![Click View Analytics Icon](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-1.png)
+![describe this screenshot](/img/helpscout/authored/how-do-i-download-attempt-wise-coaching-report-mt2j3xru.png)
 
 ### 4. The coaching analytics page will open
 
@@ -60,7 +60,7 @@ Access additional options by clicking the hamburger menu.
 
 Choose the Attempt-wise Overall Coaching Report from the menu.
 
-![Select Attempt-wise Overall Coaching Report](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-2.png)
+![Select Attempt Wise Overall Coaching Report](/img/helpscout/authored/how-do-i-download-attempt-wise-coaching-report-mt2j63h2.png)
 
 ### 7. Go to **Reports → Generated Reports**
 
@@ -70,7 +70,7 @@ Navigate to the reports section to find your generated reports.
 
 Find the report you generated and click the download icon to save it.
 
-![Locate your report and click the download icon to save it to your computer](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-3.png)
+![Download the report](/img/helpscout/authored/how-do-i-download-attempt-wise-coaching-report-mt2j8okk.png)
 
 ## Tips
 

@@ -42,11 +42,17 @@ Scroll through the list to find the coaching scenario you want to report on.
 
 ### 3. Click the Download Icon
 
-Click the **Download icon** directly next to the coaching name. This action will initiate the download of the Coaching-wise Report.
-
-The report will download immediately, providing you with the necessary data for your analysis.
+Click the **Download icon** directly next to the coaching name. 
 
 ![Click Download Icon](/img/helpscout/editors/how-do-i-download-coaching-wise-report-1.png)
+
+The following pop-up will appear. If you want to retain the coaching data of demo users, select the checkbox. Otherwise, uncheck the checkbox and click the “YES” button.
+
+![confirmation pop up](/img/helpscout/authored/how-do-i-download-coaching-wise-report-mt2jniak.png)
+
+This action will initiate the download of the Coaching-wise Report.
+
+The report will download immediately, providing you with the necessary data for your analysis.
 
 The Overall Coaching Report provides a comprehensive view of learner coaching submissions, evaluation results, coach feedback, and coaching configuration details. It enables you to monitor learner participation, review evaluation outcomes, and analyze coaching performance across the organization.
 

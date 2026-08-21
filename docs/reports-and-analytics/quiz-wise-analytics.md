@@ -7,8 +7,8 @@ description: >-
 slug: quiz-wise-analytics
 sidebar_position: 198
 last_update:
-  date: 2021-01-14T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-20
+  author: Aswani TK
 source:
   helpscout_id: 5fdba102a5d295659b369f9f
   helpscout_url: 'https://help.smartwinnr.com/article/198-quiz-wise-analytics'
@@ -17,51 +17,79 @@ customProps:
   privilege: learnerReport
 tags:
   - reports
+draft: false
 ---
-SmartWinnr provides a very detailed set of analytics on every quiz that you have created and assigned to people.
 
-Follow the below steps in order to view the quiz-wise analytics:
+> **At a glance** - SmartWinnr offers detailed analytics for each quiz you create and assign, helping you track participation and performance.
 
-Go to EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes.
+SmartWinnr provides a comprehensive set of analytics on every quiz that you have created and assigned to people. 
 
-Click on the 'Analytics' icon of a particular quiz.
+## When to use this
+Use Quiz Wise Analytics to monitor quiz participation, assess performance over time, and identify areas for improvement. This feature is particularly useful when you want to:
+- Evaluate the effectiveness of your quizzes.
+- Identify trends in participant performance.
+- Send notifications to participants about their quiz status.
 
-![Click on the 'Analytics' icon of a particular quiz.](/img/helpscout/editors/quiz-wise-analytics-1.png)
+## Steps
 
-You can download quiz results from here by clicking on the 'Download Quiz Results' button.
+### 1. Access Quiz Analytics
+Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > View All Quizzes**.
 
-![You can download quiz results from here by clicking on the 'Download Quiz Results' button.](/img/helpscout/editors/quiz-wise-analytics-2.png)
+### 2. View Analytics for a Quiz
+Click on the **Analytics** icon of a particular quiz.
 
-The 'Send Notification' button sends a notification or an email to the quiz participants about the status of the quiz assigned to them. Clicking on the 'Send Notification' button takes you to the below page.
+![Quiz Analytics](/img/helpscout/authored/quiz-wise-analytics-mt1umrcl.png)
 
-![The 'Send Notification' button sends a notification or an email to the quiz participants about the status of the quiz assigned to them. Clic](/img/helpscout/editors/quiz-wise-analytics-3.png)
+### 3. Download Quiz Results
+You can download quiz results by clicking on the **Download Quiz Results** button.
 
-On this page, you can select the participants you want to send the notification to. You can filter the participants based on the status of the quiz assigned to them which is Not Started and Completed. You can also write a message that you wish to send in the notification. Then, click on the 'Send Notification' button at the bottom of the page in order to send the notification.
+![Quiz Results](/img/helpscout/authored/quiz-wise-analytics-mt1uqfrb.png)
 
-Overall Participation:
+### 4. Send Notifications
+The **Send Notification** button sends a notification or an email to the quiz participants about the status of the quiz assigned to them. Clicking on the **Send Notification** button takes you to the following page.
 
-This gives you a pie chart showing the overall participation percentage along with actual numbers. For example, in the screenshot below, it shows that the participation percentage is 32%. The number of people who have completed the quiz is 10 and the number of people who have not completed it is 21.
+![Send Notification](/img/helpscout/authored/quiz-wise-analytics-mt1uvu0n.png)
 
-![This gives you a pie chart showing the overall participation percentage along with actual numbers. For example, in the screenshot below, it ](/img/helpscout/editors/quiz-wise-analytics-4.png)
+On this page, you can select the participants you want to notify. Filter participants based on the status of the quiz assigned to them, either **Not Started** or **Completed**. You can also write a message to include in the notification. Click on the **Send Notification** button at the bottom of the page to send the notification.
 
-Participation: % By Country: This section gives you a bar graph where it shows the participation percentage by Country.
+### 5. Review Overall Participation
+This section provides a pie chart showing the overall participation percentage along with actual numbers. For example, the screenshot below shows a participation percentage of 32%, with 10 people having completed the quiz and 21 who have not.
 
-![Participation: % By Country: This section gives you a bar graph where it shows the participation percentage by Country.](/img/helpscout/editors/quiz-wise-analytics-5.png)
+![Overall participation](/img/helpscout/authored/quiz-wise-analytics-mt1uxlf0.png)
 
-By clicking on the 'Details' button you will be taken to the 'Quiz Participation Details' page where you can see a list of participants who have not started the quiz and the participants who have completed it. You can drill down the participants based on the status of the quiz assigned to them or you can search for a particular participant by entering their name and email address.
+### 6. Participation by Country
+This section features a bar graph showing the participation percentage by country.
 
-Categorywise Performance for All Country: This section gives you the bar graph of the category wise performance for all Countries.
+![Participation by country](/img/helpscout/authored/quiz-wise-analytics-mt1uz0bh.png)
 
-![Categorywise Performance for All Country: This section gives you the bar graph of the category wise performance for all Countries.](/img/helpscout/editors/quiz-wise-analytics-6.png)
+Clicking on the **Details** button will take you to the **Quiz Participation Details** page, where you can see a list of participants who have not started the quiz and those who have completed it. You can drill down the participants based on their quiz status or search for a specific participant by entering their name and email address.
 
-Performance By Category By Country: This section gives you a heat map which shows the performance by category and by Country.
+### 7. Quiz Participation Over Time
+This section provides graphs that illustrate the number of users assigned to the quiz and the number of users who participated over time.
 
-![Performance By Category By Country: This section gives you a heat map which shows the performance by category and by Country.](/img/helpscout/editors/quiz-wise-analytics-7.png)
+![Quiz Participation Over Time](/img/helpscout/authored/quiz-wise-analytics-mt1v9zue.png)
 
-Questions in Quiz: In this section, you can view the list of questions in a quiz and the percentage of correct answers for each question.
+### 8. Performance Over Time (%)
+This section shows the performance of users on questions from different tags across various categories.
 
-![Questions in Quiz: In this section, you can view the list of questions in a quiz and the percentage of correct answers for each question.](/img/helpscout/editors/quiz-wise-analytics-8.png)
+![describe this screenshot](/img/helpscout/authored/quiz-wise-analytics-mt1vdrbk.png)
 
-Leaderboard: In this section, you will be able to view a quarterly leaderboard of performance. You will be able to see a participant's performance over a period of time by clicking on the 'View Analytics' button. You can search for a particular participant by using the 'Country' filter or by entering your search in the 'Search' box'.
+### 9. Category-wise Performance for All Countries
+This section presents a bar graph of the category-wise performance for all countries.
 
-![Leaderboard: In this section, you will be able to view a quarterly leaderboard of performance. You will be able to see a participant's perfo](/img/helpscout/editors/quiz-wise-analytics-9.png)
+![Categorywise Performance for All Country](/img/helpscout/authored/quiz-wise-analytics-mt1v4dff.png)
+
+### 10. Performance by Category and Country
+This section features a heat map that displays performance by category and by country.
+
+![Performance By Category By Country](/img/helpscout/authored/quiz-wise-analytics-mt1v5g9d.png)
+
+### 11. Questions in Quiz
+In this section, you can view the list of questions in a quiz and the percentage of correct answers for each question.
+
+![Questions in Quiz](/img/helpscout/authored/quiz-wise-analytics-mt1v64dw.png)
+
+### 12. Leaderboard
+This section allows you to view a quarterly leaderboard of performance. You can see a participant's performance over time by clicking on the **View Analytics** button. You can search for a specific participant using the **Country** filter or by entering your search in the **Search** box.
+
+![Leaderboard](/img/helpscout/authored/quiz-wise-analytics-mt1v6jpz.png)

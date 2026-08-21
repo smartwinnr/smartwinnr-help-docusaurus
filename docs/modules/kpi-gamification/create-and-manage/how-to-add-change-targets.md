@@ -48,6 +48,6 @@ You can change targets for the entire team by editing in the line of the **Targe
 ### 4. Change Targets for an Individual
 You can also change the target for an individual person for a specific time frame. This is useful when you want to assign a different target to a new joiner.
 
-In this screenshot, Chihiro Amano is new, and her target for January has been changed to 40,000.
+In this screenshot, Chihiro Amano is new, and her target for January has been changed to 40,000
 
 ![In this screenshot, Chihiro Amano is new and her target for month Jan has been changed to 40000](/img/helpscout/editors/how-to-add-change-targets-3.png)

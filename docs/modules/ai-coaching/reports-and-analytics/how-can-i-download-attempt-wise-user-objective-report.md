@@ -5,45 +5,52 @@ description: This report provides objective-level performance data for each atte
 slug: how-can-i-download-attempt-wise-user-objective-report
 sidebar_position: 40
 last_update:
-  date: 2026-01-29T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 6970dad10c0e4405a5768525
-  helpscout_url: >-
-    /modules/ai-coaching/reports-and-analytics/how-can-i-download-attempt-wise-user-objective-report
+  date: 2026-08-21
+  author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: aiCoaching
 tags:
   - ai-coaching
   - reports
+draft: false
 ---
-### Download Attempt-wise User Objective Report
 
-This report provides objective-level performance data for each attempt.
+> **At a glance** - The Attempt-wise User Objective Report provides detailed performance data for each attempt, allowing you to analyze user progress effectively.
 
-**Steps:**
+The Attempt-wise User Objective Report offers objective-level performance data for each attempt. This report is useful for understanding how users perform on specific objectives during their coaching sessions.
 
-1. Go to **My Coachings**
-2. Click on the coaching you want to analyze
-3. Click  on **View Analytics Icon**
+## When to use this
+Use the Attempt-wise User Objective Report when you want to:
+- Analyze individual user performance on specific objectives.
+- Track progress over multiple attempts.
+- Identify areas where users may need additional support or training.
 
-    ![Click on View Analytics Icon](/img/helpscout/editors/how-do-i-download-attempt-wise-coaching-report-1.png)
+## Steps
 
-    Click on View Analytics Icon
+### 1. Go to **My Coachings**
+Navigate to the **My Coachings** section in your dashboard.
 
-4. The analytics dashboard will open
-5. Click the **Hamburger menu** in the top right corner
-6. Select **Download Attempt-wise User Objective Report**
+### 2. Select the coaching
+Click on the coaching you want to analyze.
 
-    ![Select Download Attempt-wise User Objective Report](/img/helpscout/editors/how-can-i-download-attempt-wise-user-objective-report-1.png)
+### 3. Click on the **View Analytics Icon**
+Locate and click on the **View Analytics Icon**.
 
-    Download report under Hamburger Menu
+![Analytics of the coaching](/img/helpscout/authored/how-can-i-download-attempt-wise-user-objective-report-mt2i470l.png)
 
-7. The report will begin generating
-8. Go to **Reports → Generated Reports**
-9. Locate your report and click the **download icon** to save it to your system
+### 4. Click the **Hamburger menu**
+In analytics page, from the top right corner, click the **Hamburger menu**.
+From the menu, select **Download Attempt-wise User Objective Report**.
 
-    ![Locate your report and click the download icon to save it to your system](/img/helpscout/editors/how-can-i-download-attempt-wise-user-objective-report-2.png)
+![Download the report from the hamburger menu](/img/helpscout/authored/how-can-i-download-attempt-wise-user-objective-report-mt2ijcuk.png)
 
-    Download the report under Generated Reports
+The report will begin generating. This may take a moment.
+
+### 5. Go to **Reports → Generated Reports**
+Navigate to **Reports** and then select **Generated Reports**.
+
+### 6. Download your report
+Locate your report and click the **download icon** to save it to your system.
+
+![Download the report from generated reports](/img/helpscout/authored/how-can-i-download-attempt-wise-user-objective-report-mt2iq1uk.png)

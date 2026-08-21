@@ -22,7 +22,7 @@ draft: false
 
 > **At a glance** - Follow these steps to add a scorecard leaderboard to your competition.
 
-Here are the steps to add a scorecard leaderboard to a competition:
+Here are the steps to add a scorecard leaderboard to a competition
 
 ## When to use this
 Use this process when you want to create a scorecard leaderboard for a specific competition. This is useful for tracking performance metrics and engaging participants.
@@ -42,7 +42,7 @@ After selecting the competition, click on the third step, **View Leaderboards**.
 Click on the **Add** icon at the top right corner.
 
 ### 5. Configure Leaderboard Settings
-Enter the leaderboard name, select the **Scorecard** option in the type, and choose the required options.
+Enter the leaderboard name, select the **Scorecard** option in the type, and choose the required options
 
 ![Enter the leaderboard name and select the scorecard option in type and select the required options](/img/helpscout/editors/how-to-add-the-scorecard-to-leaderboard-1.png)
 

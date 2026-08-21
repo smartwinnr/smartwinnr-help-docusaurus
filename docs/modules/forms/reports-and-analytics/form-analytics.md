@@ -5,8 +5,8 @@ description: Follow the below steps to view Form analytics.
 slug: form-analytics
 sidebar_position: 226
 last_update:
-  date: 2021-01-21T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-20
+  author: Aswani TK
 source:
   helpscout_id: 60099176c64fe14d0e1fd224
   helpscout_url: 'https://help.smartwinnr.com/article/226-form-analytics'
@@ -16,42 +16,50 @@ customProps:
 tags:
   - forms
   - reports
+draft: false
 ---
-Follow the below steps to view Form analytics.
 
-Go to EDITOR > PERFORMANCE > Forms > View All Forms.
+> **At a glance** - This article outlines the steps to access and analyze form submissions through the SmartWinnr platform.
 
-![Go to EDITOR > PERFORMANCE > Forms > View All Forms.](/img/helpscout/editors/form-analytics-1.png)
+Follow the steps below to view Form analytics.
 
-Form analytics gives all forms that have been submitted by the users and can be accessed by clicking on the analytics button of that form type.
+## When to use this
+Use Form analytics when you want to review the submissions made through your forms. This feature allows you to track performance, filter submissions based on various criteria, and download reports for further analysis.
 
-Now under Analytics, click on the analytics icon against the form for which you want to view the analytics.
+## Steps
 
-You will be taken to the following page, where the analytics of the selected form is displayed.
+### 1. Navigate to Form Performance
+Go to **EDITOR > PERFORMANCE > Forms > View All Forms**.
 
-![You will be taken to the following page, where the analytics of the selected form is displayed.](/img/helpscout/editors/form-analytics-2.png)
+![List of forms](/img/helpscout/authored/form-analytics-mt1a3b9w.png)
 
-Analytics of the forms can be filtered and viewed based on the following:
+Form analytics provides insights into all forms submitted by users. Click on the **analytics** icon next to the form for which you want to view the analytics.
 
-* Date range : You can search submissions with particular date range.
-* Status : You can view submissions by filter with different approval status.
+You will be taken to a page displaying the analytics of the selected form.
 
-![Analytics of the forms can be filtered and viewed based on the following:](/img/helpscout/editors/form-analytics-3.png)
+![Graphs of analytics](/img/helpscout/authored/form-analytics-mt19ltdn.png)
 
-All : If you select the status as 'All' from the available statuses,It will show you all the submissions for the form.
+Here, you can see a graphical representation of submission data. You can filter the frequency to get data for different ranges. Below, you will see the submissions.
 
-Pending : If you filter with status 'Pending',It will show the pending submissions for approval.
+### 2. Filter Analytics
+Analytics of the forms can be filtered and viewed based on the following criteria:
 
-Approved : If you filter with status 'Approved',It will show the forms that are approved by the approver.
+- **Date Range**: Search submissions within a specific date range.
+- **Status**: View submissions by filtering with different approval statuses.
 
-Rejected : If you filter with status 'Rejected',It will show the  forms that are rejected by the approver due to some reason.
+![Submissions](/img/helpscout/authored/form-analytics-mt1agro0.png)
 
-* Various Search options: You can filter the submissions with Name,Email,Business Unit and Group.
+- **All**: Selecting 'All' from the available statuses will show all submissions for the form.
+- **Pending**: Filtering with the status 'Pending' will display submissions awaiting approval.
+- **Approved**: Filtering with the status 'Approved' will show forms that have been approved by the approver.
+- **Rejected**: Filtering with the status 'Rejected' will show forms that have been rejected by the approver for specific reasons.
+- **Various Search Options**: Filter submissions by Name, Email, Business Unit, and Group.
 
-## **Download Report**
-
+### 3. Download Report
 You can download the form report using the download option.
 
-Click on the '**Download Report'** Button which is present towards the right corner. The report will be downloaded as an excel sheet.
+Click on the **Download Report** button located in the right corner. The report will be downloaded as an Excel sheet.
 
-The report will consists of user responses,approveal status and approver feedback.
+![Download report](/img/helpscout/authored/form-analytics-mt1aydf8.png)
+
+The report will consist of user responses, approval status, and approver feedback.
