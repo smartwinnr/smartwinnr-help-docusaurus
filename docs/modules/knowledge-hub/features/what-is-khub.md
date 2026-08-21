@@ -7,7 +7,7 @@ description: >-
 slug: what-is-khub
 sidebar_position: 145
 last_update:
-  date: 2026-08-06
+  date: 2026-08-18
   author: Sruthi Suresh
 source:
   helpscout_id: 5fdae88db624c71b7985a587

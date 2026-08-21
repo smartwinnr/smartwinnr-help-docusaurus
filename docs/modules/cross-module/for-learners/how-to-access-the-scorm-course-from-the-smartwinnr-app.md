@@ -5,7 +5,7 @@ description: "Access and complete your SCORM course in SmartWinnr by following t
 slug: how-to-access-the-scorm-course-from-the-smartwinnr-app
 sidebar_position: 272
 last_update:
-  date: 2022-06-24T00:00:00.000Z
+  date: 2026-08-20
   author: HelpScout Migration
 source:
   helpscout_id: 62b450c10b51ec1ae83f9bf8

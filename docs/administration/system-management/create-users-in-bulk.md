@@ -5,7 +5,7 @@ description: "Upload a CSV file in SmartWinnr to create or update multiple user 
 slug: create-users-in-bulk
 sidebar_position: 118
 last_update:
-  date: 2026-07-23
+  date: 2026-08-19
   author: Anagha Isal
 source:
   helpscout_id: 5fda4abb27288b7f895d61dd

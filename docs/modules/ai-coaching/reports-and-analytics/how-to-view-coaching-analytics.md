@@ -5,7 +5,7 @@ description: "Access detailed insights into coaching assignments and performance
 slug: viewing-coaching-analytics
 sidebar_position: 10
 last_update:
-  date: 2026-07-22
+  date: 2026-08-14
   author: Sandeep Bhuthagaddala
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

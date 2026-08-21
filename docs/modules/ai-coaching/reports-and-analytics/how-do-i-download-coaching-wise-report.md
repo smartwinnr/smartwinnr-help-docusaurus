@@ -5,7 +5,7 @@ description: This report focuses on one specific coaching.
 slug: how-do-i-download-coaching-wise-report
 sidebar_position: 60
 last_update:
-  date: 2026-08-01
+  date: 2026-08-21
   author: Anagha Isal
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

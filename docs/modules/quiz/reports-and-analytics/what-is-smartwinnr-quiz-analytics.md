@@ -5,7 +5,7 @@ description: "Understand how to access and interpret detailed analytics for quiz
 slug: what-is-smartwinnr-quiz-analytics
 sidebar_position: 53
 last_update:
-  date: 2026-07-18
+  date: 2026-07-27
   author: Anagha Isal
 source:
   helpscout_id: 5fd4955723119734ee37edb5

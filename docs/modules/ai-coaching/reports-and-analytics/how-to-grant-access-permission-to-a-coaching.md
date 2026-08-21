@@ -5,7 +5,7 @@ description: "This article shows you how to grant access to coaching for selecte
 slug: grant-access-to-coaching
 sidebar_position: 130
 last_update:
-  date: 2026-07-21
+  date: 2026-08-14
   author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

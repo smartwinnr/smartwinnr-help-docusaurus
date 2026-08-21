@@ -5,7 +5,7 @@ description: Only users with Editor and Manager role can create a coaching assig
 slug: how-to-create-a-video-coaching-assignment
 sidebar_position: 85
 last_update:
-  date: 2025-08-19T00:00:00.000Z
+  date: 2026-08-01
   author: HelpScout Migration
 source:
   helpscout_id: 5fd72036c868cb6df3a813bf

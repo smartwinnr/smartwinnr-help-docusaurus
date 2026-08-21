@@ -5,7 +5,7 @@ description: "Understand the standardized structure of various question types av
 slug: question-structure
 sidebar_position: 201
 last_update:
-  date: 2026-07-02
+  date: 2026-07-16
   author: Anagha Isal
 source:
   helpscout_id: 5ffc6928bb5c6f7434e0f991

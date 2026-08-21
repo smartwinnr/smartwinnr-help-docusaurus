@@ -5,7 +5,7 @@ description: "This article shows you how to add translations to quiz questions i
 slug: add-translations-in-bulk
 sidebar_position: 999
 last_update:
-  date: 2026-07-22
+  date: 2026-07-29
   author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

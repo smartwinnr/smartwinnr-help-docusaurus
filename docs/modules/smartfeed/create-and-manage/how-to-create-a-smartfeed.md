@@ -5,7 +5,7 @@ description: Follow the steps below to create and publish a SmartFeed in SmartWi
 slug: how-to-create-a-smartfeed
 sidebar_position: 27
 last_update:
-  date: 2026-01-21T00:00:00.000Z
+  date: 2026-07-31
   author: HelpScout Migration
 source:
   helpscout_id: 5fd10365db2fa3720c7d7a2f

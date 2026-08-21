@@ -5,7 +5,7 @@ description: Only the user with the EDITOR role can add new form submission.
 slug: how-to-add-new-form-submission
 sidebar_position: 247
 last_update:
-  date: 2021-06-02T00:00:00.000Z
+  date: 2026-08-19
   author: HelpScout Migration
 source:
   helpscout_id: 60b77f6d9c887a0dfc555ad2

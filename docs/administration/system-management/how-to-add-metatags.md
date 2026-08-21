@@ -5,7 +5,7 @@ description: "Learn to create and manage metatags individually or in bulk for ef
 slug: add-metatags
 sidebar_position: 999
 last_update:
-  date: 2026-07-22
+  date: 2026-08-01
   author: Aswani TK
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]

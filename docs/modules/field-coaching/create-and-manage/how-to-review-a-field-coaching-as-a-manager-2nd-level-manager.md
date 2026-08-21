@@ -5,7 +5,7 @@ description: ''
 slug: how-to-review-a-field-coaching-as-a-manager-2nd-level-manager
 sidebar_position: 30
 last_update:
-  date: 2022-09-12T00:00:00.000Z
+  date: 2026-08-18
   author: HelpScout Migration
 source:
   helpscout_id: 631fbb2490c29a3d732c6e6e

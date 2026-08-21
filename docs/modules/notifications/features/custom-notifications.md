@@ -7,7 +7,7 @@ description: >-
 slug: custom-notifications
 sidebar_position: 165
 last_update:
-  date: 2026-07-23
+  date: 2026-07-30
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

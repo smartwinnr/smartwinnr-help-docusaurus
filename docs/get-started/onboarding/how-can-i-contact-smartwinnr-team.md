@@ -7,7 +7,7 @@ description: >-
 slug: how-can-i-contact-smartwinnr-team
 sidebar_position: 22
 last_update:
-  date: 2026-07-30
+  date: 2026-08-12
   author: Aswani TK
 source:
   helpscout_id: 5fce43c3eb7cc612aa3557ae

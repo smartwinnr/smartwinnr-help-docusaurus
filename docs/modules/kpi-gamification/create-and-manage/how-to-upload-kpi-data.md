@@ -7,7 +7,7 @@ description: >-
 slug: how-to-upload-kpi-data
 sidebar_position: 174
 last_update:
-  date: 2025-08-13T00:00:00.000Z
+  date: 2026-08-18
   author: HelpScout Migration
 source:
   helpscout_id: 5fdb0e290b11ce44f63931c7

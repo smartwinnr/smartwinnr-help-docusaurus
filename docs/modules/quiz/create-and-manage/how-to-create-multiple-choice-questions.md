@@ -8,7 +8,7 @@ description: >-
 slug: how-to-create-multiple-choice-questions
 sidebar_position: 40
 last_update:
-  date: 2026-01-20T00:00:00.000Z
+  date: 2026-07-21
   author: HelpScout Migration
 source:
   helpscout_id: 5fd45c1523119734ee37ed79

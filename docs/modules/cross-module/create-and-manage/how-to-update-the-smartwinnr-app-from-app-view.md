@@ -7,7 +7,7 @@ description: >-
 slug: how-to-update-the-smartwinnr-app-from-app-view
 sidebar_position: 290
 last_update:
-  date: 2024-08-30T00:00:00.000Z
+  date: 2026-08-19
   author: HelpScout Migration
 source:
   helpscout_id: 66d0cb66d816d165867bf4de

@@ -7,7 +7,7 @@ description: >-
 slug: how-to-set-reminder-for-your-tasks
 sidebar_position: 219
 last_update:
-  date: 2026-07-23
+  date: 2026-08-13
   author: Sruthi Suresh
 source:
   helpscout_id: 6001bb40c64fe14d0e1fb5a3

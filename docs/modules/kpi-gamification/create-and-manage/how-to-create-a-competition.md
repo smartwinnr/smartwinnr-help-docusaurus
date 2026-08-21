@@ -5,7 +5,7 @@ description: Only users with editor role can create competitions.
 slug: how-to-create-a-competition
 sidebar_position: 103
 last_update:
-  date: 2026-07-23
+  date: 2026-07-31
   author: Sruthi Suresh
 source:
   helpscout_id: 5fd9ba357129911ba1b21757

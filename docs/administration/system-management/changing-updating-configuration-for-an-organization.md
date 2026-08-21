@@ -5,7 +5,7 @@ description: ''
 slug: changing-updating-configuration-for-an-organization
 sidebar_position: 279
 last_update:
-  date: 2022-09-26T00:00:00.000Z
+  date: 2026-07-23
   author: HelpScout Migration
 source:
   helpscout_id: 6332221b9c3e7c7d6a1aca3e
