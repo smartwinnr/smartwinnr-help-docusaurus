@@ -59,6 +59,6 @@ Examples of attachments include:
 - Other supporting files
 
 ### 6. Submit
-Click **Submit** to post your query.
+Click **Submit** to post your query
 
 The query will now be available for the assigned SPOC to review and respond.

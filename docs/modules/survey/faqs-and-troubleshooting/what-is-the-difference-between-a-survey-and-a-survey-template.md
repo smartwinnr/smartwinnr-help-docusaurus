@@ -7,8 +7,8 @@ description: >-
 slug: what-is-the-difference-between-a-survey-and-a-survey-template
 sidebar_position: 63
 last_update:
-  date: 2026-07-23
-  author: Sruthi Suresh
+  date: 2026-08-21
+  author: Sandeep Bhuthagaddala
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
   privilege: survey
@@ -20,35 +20,36 @@ draft: false
 
 > **At a glance** - In SmartWinnr, **Surveys** are one-time questionnaires for feedback, while **Survey Templates** are reusable structures for creating multiple surveys.
 
-In SmartWinnr, **Surveys** and **Survey Templates** serve different purposes based on how often and in what context they are used.
+In SmartWinnr, **Surveys** and **Survey Templates** serve different purposes based on how often and in what context they are used. Both are used to collect information from users, but they are designed for different scenarios.
 
-## When to use this
+## The main difference is:
 
-Understanding the difference between Surveys and Survey Templates can help you choose the right tool for your feedback needs. Use this information when:
+- **Survey:** Used for a specific purpose and can be submitted only once by each participant.
+- **Survey Template:** A reusable set of questions that can be used to create multiple surveys.
 
-* You need to collect one-time feedback from participants.
-* You want to create a standardized questionnaire for repeated use.
-* You are planning a training program and need to assess participant readiness.
-* You aim to gather consistent data across multiple surveys.
+## When to use a Survey
 
-## Survey
+Use a Survey when you want to collect feedback or information for a specific activity. Each participant can submit the survey only once.
 
-A **Survey** is a questionnaire that can be taken **only once by each participant**. Surveys are typically used for one-time feedback or assessments.
+### Common Examples
+- Pre-training feedback to understand participant expectations and preparedness.
+- Post-training feedback to collect opinions after completing a training program.
+- One-time feedback for a specific event, activity, or program.
 
-Common use cases include:
+**Note:** Once a participant submits a survey, they cannot retake it.
 
-* Conducting a **pre-training survey** to understand participants’ background, expectations, and preparedness before a training program.
-* Conducting a **post-training survey** to collect feedback, opinions, and insights after the completion of a training program.
+## When to use a Survey Template
 
-Once a participant submits a survey, they cannot retake it.
+Use a Survey Template when you need the same set of questions multiple times. Instead of creating the same questionnaire repeatedly, you can create a template once and reuse it whenever required.
 
-## Survey Template
+### Common Examples
+- Field staff conducting the same customer survey multiple times.
+- Collecting standardized feedback from different groups.
+- Creating multiple surveys with the same set of questions.
 
-A **Survey Template** is a reusable structure containing a predefined set of questions. Templates are designed to be used multiple times for creating new surveys without rebuilding the questionnaire from scratch.
+## Simple Example
 
-Typical use cases include:
+Suppose you want to collect feedback after a training program.
 
-* Field staff conducting **customer surveys** repeatedly using the same set of questions.
-* Standardized data collection where consistency across multiple surveys is required.
-
-Survey templates help save time, ensure uniformity, and simplify the survey creation process.
+- Create a Survey if you need feedback for one specific training program.
+- Create a Survey Template if you want to use the same feedback questions for every future training program.

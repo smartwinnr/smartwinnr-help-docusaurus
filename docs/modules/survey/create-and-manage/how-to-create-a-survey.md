@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-survey
 sidebar_position: 58
 last_update:
-  date: 2026-01-20T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-21
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 5fd49bd14eb32171b80374c6
   helpscout_url: 'https://help.smartwinnr.com/article/58-how-can-i-create-a-survey'
@@ -18,118 +18,98 @@ customProps:
 tags:
   - survey
   - admin
+draft: false
 ---
-## **Create a Survey**
 
-Surveys in SmartWinnr allow you to collect structured feedback from participants quickly and effectively.
+> **At a glance** - This article explains how to create a survey in SmartWinnr, including detailed steps for configuring various settings and adding questions.
 
-Follow the steps below to create a survey in SmartWinnr
+## Create a Survey
 
-* Log in to the **SmartWinnr Admin Portal**.
-* Navigate to **EDITOR > LEARNING AND KNOWLEDGE > Surveys**.
+Surveys in SmartWinnr allow you to collect structured feedback from participants quickly and effectively. Follow the steps below to create a survey in SmartWinnr.
 
-[![Follow the steps below to create a survey in SmartWinnr](/img/helpscout/editors/how-to-create-a-survey-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/600c0aaf2e764327f87c1a0a/file-u6mnfFyELQ.png)
+### When to use this
 
-* On the Surveys page, click the **Add New Survey** button located at the top-right corner of the screen.
+Use this guide when you need to create a survey to gather feedback from participants. This can be useful for:
 
-This will open the survey creation page, where you can proceed with configuring the survey details and questions.
+* Conducting assessments
+* Collecting opinions on products or services
+* Evaluating training programs
+* Understanding customer satisfaction
 
-[![This will open the survey creation page, where you can proceed with configuring the survey details and questions.](/img/helpscout/editors/how-to-create-a-survey-2.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5ff2ecd1bb5c6f7434e0d56f/file-KPqabCOtLE.png)
+### Steps
 
-### **Here is how to fill each of the fields in the Create Survey page**
+### 1. Log in to the SmartWinnr Admin Portal
+Log in to the **SmartWinnr Admin Portal** and navigate to **EDITOR > LEARNING AND KNOWLEDGE > Surveys**.
 
-**Type:** Here is where you get to select if you want to create a **Survey** or a **Survey Template**.
+![Follow the steps below to create a survey in SmartWinnr](/img/helpscout/editors/how-to-create-a-survey-1.png)
+
+### 2. Add a New Survey
+On the Surveys page, click the **Add New Survey** button located at the top-right corner of the screen. This action will open the survey creation page, where you can proceed with configuring the survey details and questions.
+
+![This action will open the survey creation page, where you can proceed with configuring the survey details and questions](/img/helpscout/authored/how-to-create-a-survey-mt2qssyg.png)
+
+### 3. Fill in the Create Survey Fields
+Here is how to fill each of the fields in the Create Survey page:
+
+**Type:** Here is where you select whether you want to create a **Survey** or a **Survey Template**. Since we are creating a survey here, select Type = Survey.
 
 [Learn about the difference between these two](/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template).
 
-Since we are creating a survey here select Type = Survey.
+[Refer to this article to know how to create a survey template](/modules/survey/create-and-manage/how-to-create-a-survey-template).
 
-[Refer to this article to know how to create a survey template](/modules/survey/create-and-manage/how-to-create-a-survey-template)
+![Refer to this article to know how to create a survey template](/img/helpscout/editors/how-to-create-a-survey-3.png)
 
-[![Refer to this article to know how to create a survey template](/img/helpscout/editors/how-to-create-a-survey-3.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49ca723119734ee37edbc/file-wpQ5PNDEho.png)
+### 4. Question Visibility Type
+This setting allows you to control how survey questions are displayed to participants. You can choose one of the following visibility options:
 
-### Question Visibility Type
+* **All**: Select this option to display all survey questions to users at the same time.
+* **Individual**: Select this option to present questions one at a time, allowing participants to view and answer each question individually.
+* **Section Wise**: Select this option to group questions into sections and display them to participants section by section. This is useful for longer surveys or surveys organized by topics.
 
-This setting allows you to control how survey questions are displayed to participants.
+Choose the appropriate visibility type based on the structure and flow you want for your survey.
 
-You can choose one of the following visibility options:
+![Choose the appropriate visibility type based on the structure and flow you want for your survey.](/img/helpscout/editors/how-to-create-a-survey-4.png)
 
-* **All**
-
-    Select this option to display all survey questions to users at the same time.
-
-* **Individual**
-
-    Select this option to present questions one at a time, allowing participants to view and answer each question individually.
-
-* **Section Wise**
-
-    Select this option to group questions into sections and display them to participants section by section. This is useful for longer surveys or surveys organized by topics.
-
-Choose the appropriate visibility type based on the structure and flow you want for your surve
-
-[![Choose the appropriate visibility type based on the structure and flow you want for your surve](/img/helpscout/editors/how-to-create-a-survey-4.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/5fd49cf84eb32171b80374c9/file-7sB0sm70l4.png)
-
-### Survey Title, Description, and Duration
-
+### 5. Survey Title, Description, and Duration
 After selecting the survey type and question visibility, proceed with the following details:
 
-* **Title**
-
-    Enter a clear and descriptive title that reflects the purpose of the survey.
-
-* **Description**
-
-    Provide a brief description to help participants understand the objective of the survey and any instructions they should follow.
-
-* **Start Date and End Date**
-
-    Specify the start and end dates to define the survey availability period. Participants will be able to access and respond to the survey only within this timeframe.
+* **Title**: Enter a clear and descriptive title that reflects the purpose of the survey.
+* **Description**: Provide a brief description to help participants understand the objective of the survey and any instructions they should follow.
+* **Start Date and End Date**: Specify the start and end dates to define the survey availability period. Participants will be able to access and respond to the survey only within this timeframe.
 
 Ensure all details are accurate before moving on to add survey questions.
 
-![Ensure all details are accurate before moving on to add survey questions.](/img/helpscout/editors/how-to-create-a-survey-5.png)
+![Start and End date of Survey](/img/helpscout/authored/how-to-create-a-survey-mt2quqj5.png)
 
-### Response Settings
-
+### 6. Response Settings
 These settings allow you to control how survey responses are handled and shared.
 
-* **Anonymous Response**
-
-    Enable this option to allow participants to submit their survey responses anonymously. When selected, individual user identities will not be captured or displayed in the survey results.
-
-* **Send Response to User**
-
-    Enable this option to send an email to participants containing a copy of the responses they submitted for the survey.
+* **Anonymous Response**: Enable this option to allow participants to submit their survey responses anonymously. When selected, individual user identities will not be captured or displayed in the survey results.
+* **Send Response to User**: Enable this option to send an email to participants containing a copy of the responses they submitted for the survey.
 
 Select the appropriate options based on your survey’s confidentiality and communication requirements.
 
-Schedule a Reminder
-
+### 7. Schedule a Reminder
 This feature lets you set a reminder and schedule it to be delivered to the quiz takers about the status of the quiz.
 
-[Learn How to Add a Reminder for your Survey](/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks)
+[Learn How to Add a Reminder for your Survey](/modules/cross-module/settings-and-permissions/how-to-set-reminder-for-your-tasks).
 
-### Add Questions
+### 8. Add Questions
+[Refer to this article](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template) to know how to add various questions to the survey.
 
-[Refer to this article](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template) to know how to add various questions to the survey.
-
-### Adding Sections to a Survey
-
+### 9. Adding Sections to a Survey
 If you select **Question Visibility Type = Section Wise**, you will have the option to organize your survey into sections.
 
 ### To add sections to a survey
-
 * Click the **Add Sections** button under the **Sections** area.
 
 ![To add sections to a survey](/img/helpscout/editors/how-to-create-a-survey-6.png)
 
 * A pop-up window will appear, allowing you to define and configure the survey sections.
 
-![](/img/helpscout/editors/how-to-create-a-survey-7.png)
+![A pop-up window will appear, allowing you to define and configure the survey sections.](/img/helpscout/editors/how-to-create-a-survey-7.png)
 
-### Adding Multiple Sections
-
+### 10. Adding Multiple Sections
 In the **Add Sections** pop-up, you can create multiple sections as required.
 
 * Click the **Add** button to add each new section.
@@ -140,16 +120,13 @@ The added sections will now be available for assigning questions within the surv
 
 ![The added sections will now be available for assigning questions within the survey.](/img/helpscout/editors/how-to-create-a-survey-8.png)
 
-### Adding Questions and Saving the Survey
-
+### 11. Adding Questions and Saving the Survey
 After creating the sections, proceed to add questions to each section:
 
-* Click **Add Question** within the respective section to include survey questions
+* Click **Add Question** within the respective section to include survey questions.
 
-[Learn the types of questions that you can add to a survey.](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template)
+[Learn the types of questions that you can add to a survey.](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template).
 
 * Select the appropriate question type based on your requirements.
 
-Once all sections and questions have been added and reviewed, click **Save New Survey**.
-
-This action will successfully create and save the survey, making it ready to be sent to participants as per the configured settings.
+Once all sections and questions have been added and reviewed, click **Save New Survey**. This action will successfully create and save the survey, making it ready to be sent to participants as per the configured settings.
