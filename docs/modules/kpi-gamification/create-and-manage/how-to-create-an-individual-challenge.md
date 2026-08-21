@@ -76,11 +76,11 @@ To add more activities to your challenge, click on the '**Add**' option to the r
 
 ![Add more activities](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1uoi2i.png)
 
-### 4. Choose the challenge processing option
+### 5. Choose the challenge processing option
 
 A challenge must be processed to finalize the winners. Until the challenge is processed, SmartWinnr continues to consider the points or scores earned by participants for the activities completed during the challenge period when determining the winner of each pair.
 
-Once the challenge is processed, the results are finalized, and any additional points or scores received after processing will not be considered for determining the winners.
+Once the challenge is processed, the results are finalized, and any additional scores or KPI value received after processing will not be considered for determining the winners.
 
 Processing the challenge also triggers a notification to all participants in the challenge pairs, informing them that the final winners have been announced.
 
@@ -91,7 +91,7 @@ You can choose from the following processing options:
 
 ![process challenge](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1us92b.png)
 
-### 4. Set the Scoring rule for the challenge.
+### 6. Set the Scoring rule for the challenge.
 
 You have two options available for the scoring rule in challenge:
 
@@ -109,7 +109,7 @@ Note: Challege points will be visible only if the challengs are part of any comp
 
 ![KPi data for challenge](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1vei8z.png)
 
-### 5. Select Challenge Pairs
+### 7. Select Challenge Pairs
 
 The **Challenge Pairs** section allows you to select the participants who will compete against each other in the challenge.
 
@@ -152,5 +152,5 @@ Note: Make sure the CSV file follows the required format and uses the selected d
 
 Note: Each pair represents two participants who will compete against each other. Make sure all the required pairs are added correct before clicking Create to set up the challenge.
 
-### 6. Create the Challenge
+### 8. Create the Challenge
 Finally, click on the **Create** button at the bottom, which will successfully create the challenge.

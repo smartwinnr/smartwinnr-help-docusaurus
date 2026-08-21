@@ -43,7 +43,6 @@ Go to **EDITOR > PERFORMANCE > Challenges**. Click on the **Create Challenge** b
 ![customer notification](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1shs0u.png)
 
 
-
 ### 3. Fill in the Settings for your challenge
 
 - **Challenge Type**: Specify the type of challenge you are creating. You have three options: User, Manager, and Group. Select **Group** to create a group challenge, where teams/groups are paired up for the challenge.
@@ -77,22 +76,23 @@ To add more activities to your challenge, click on the '**Add**' option to the r
 
 ![Add more activities](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1uoi2i.png)
 
-### 4. Choose the challenge processing option
+### 5. Choose the challenge processing option
 
 A challenge must be processed to finalize the winners. Until the challenge is processed, SmartWinnr continues to consider the points or scores earned by participants for the activities completed during the challenge period when determining the winner of each pair.
 
-Once the challenge is processed, the results are finalized, and any additional points or scores received after processing will not be considered for determining the winners.
+Once the challenge is processed, the results are finalized, and any additional scores or KPI value received after processing will not be considered for determining the winners.
 
 Processing the challenge also triggers a notification to all participants in the challenge pairs, informing them that the final winners have been announced.
 
 You can choose from the following processing options:
 
-- **Manually**: Select this option if you want the Editor to manually process the challenge. This allows the Editor to review and validate the available scores or KPI data for each participant before processing the challenge and announcing the winners.
+- **Manually**: Select this option if you want the Editor to manually process the challenge. This allows the Editor to review and validate the available scores or KPI data for each team before processing the challenge and announcing the winners.
+
 - **Scheduled**: Select this option to automatically process the challenge at a specified date and time. This eliminates the need for manual intervention from the Editor and ensures that the winners are finalized and announced automatically at the scheduled time.
 
 ![process challenge](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1us92b.png)
 
-### 4. Set the Scoring rule for the challenge.
+### 6. Set the Scoring rule for the challenge.
 
 ![Scoring for group challenge](/img/helpscout/authored/how-to-create-a-group-challenge-mt3368du.png)
 
@@ -104,17 +104,17 @@ You have two options available for the scoring rule in challenge:
     - **Draw:** Specify the points to be awarded when both teams have the same score.
     - **No Points:** Specify the points to be given if team does not score any points/data in the challenge.
 
-Note: Challege points will be visible only if the challengs are part of any competition. This if a user wins, points will be available in competition leaderboard after the challenge is processed.
+Note: Challege points will be visible only if the challengs are part of any competition. This if a team wins, points will be available in competition leaderboard after the challenge is processed.
 
-- **KPI:** Use this option when you want to award KPI values based on the outcome of the challenge. You can configure the KPI value to be awarded to the winner, loser, or participants in case of a draw or no-score outcome. This option allows the challenge results to contribute directly to the selected KPI.
+- **KPI:** Use this option when you want to award KPI values based on the outcome of the challenge. You can configure the KPI value to be awarded to the winner, loser, or team in case of a draw or no-score outcome. This option allows the challenge results to contribute directly to the selected KPI.
 
-![KPi data for challenge](/img/helpscout/authored/how-to-create-an-individual-challenge-mt1vei8z.png)
+![assign points](/img/helpscout/authored/how-to-create-a-manager-challenge-mt38mfu9.png)
 
 **Assign Points To**: This is an option available for Team challenge where you can define whether the points/KPI value should be awared to all team members or members who have scored in the challenge activities.
 
 ![Assign points to field](/img/helpscout/authored/how-to-create-a-group-challenge-mt338ruv.png)
 
-### 5. Select Challenge Pairs
+### 7. Select Challenge Pairs
 
 The **Challenge Pairs** section allows you to select the teams/groups who will compete against each other in the challenge.
 
@@ -130,7 +130,7 @@ You can create multiple pairs by uploading pairs in bulk using the **'Upload Pai
 
 You can use the following options to manage the pairs:
 
-- Add Pair: Add a new pair of participants to the challenge.
+- Add Pair: Add a new pair of teams to the challenge.
 - Upload Pairs: Upload multiple challenge pairs at once.
 - Remove All: Remove all the pairs added to the challenge.
 - Delete: Remove an individual pair from the list.
@@ -158,5 +158,5 @@ Note: Make sure the CSV file follows the required format and uses the selected d
 
 Note: Each pair represents two teams who will compete against each other. Make sure all the required pairs are added correct before clicking Create to set up the challenge.
 
-### 6. Create the Challenge
+### 8. Create the Challenge
 Finally, click on the **Create** button at the bottom, which will successfully create the challenge.
