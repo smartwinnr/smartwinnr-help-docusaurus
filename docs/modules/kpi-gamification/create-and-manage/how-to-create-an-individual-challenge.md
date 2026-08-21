@@ -129,6 +129,27 @@ You can use the following options to manage the pairs:
 - Remove All: Remove all the pairs added to the challenge.
 - Delete: Remove an individual pair from the list.
 
+When you need to create a challenge with a large number of participant, its best to add pairs using the the **'Upload Pairs'** option.
+
+Following is how you can upload pairs for the challenge:
+
+Select **Upload Pair** option under the section 'Select Challenge Pairs'.
+
+![Upload pairs](/img/helpscout/authored/how-to-create-an-individual-challenge-mt35b587.png)
+
+It will open the following pop-up window where you can download the sample template and upload the pairs for the challenge.
+
+![Upload challenge pairs.](/img/helpscout/authored/how-to-create-an-individual-challenge-mt35f2wp.png)
+
+- Challenge Type: Displays the type of challenge such as User, Group or Manager.
+- CSV Delimiter: Select the delimiter used in your CSV file.
+- Sample CSV: Click Sample CSV to download a sample file and use it as a reference when preparing your upload file.
+- Choose File: Select the prepared CSV file containing the challenge pairs from your device. Ensure that the column heading matches with the sample CSV downloaded.
+- Upload: Upload the selected CSV file and validate the pair information.
+- Add: Once the file has been uploaded successfully, click Add to add the pairs to the challenge.
+
+Note: Make sure the CSV file follows the required format and uses the selected delimiter before uploading it.
+
 Note: Each pair represents two participants who will compete against each other. Make sure all the required pairs are added correct before clicking Create to set up the challenge.
 
 ### 6. Create the Challenge
