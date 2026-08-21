@@ -43,6 +43,7 @@
     "module:restamp": "node scripts/write-subsection-categories.js && node scripts/restamp-subsection-gates.js && node scripts/cascade-module-privilege.js && node scripts/audit-gates.js",
     "articles:autofix": "node scripts/article-autofix.js",
     "articles:restamp-roles": "node scripts/restamp-article-roles.js",
+    "articles:backfill-dates": "node scripts/backfill-last-update.js",
     "articles:rewrite": "node scripts/rewrite-articles.js",
     "prebuild": "node scripts/validate-privilege-keys.js && node scripts/audit-gates.js && node scripts/audit-links.js",
     "prepare": "husky"

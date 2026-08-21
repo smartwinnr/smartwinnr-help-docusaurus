@@ -22,7 +22,7 @@ const fsSync = require('fs');
 // Shared docs-path -> live-route resolver (also used by the internal indexer).
 const docRoutes = require('./lib/doc-routes');
 const { normRoute, resolveLiveUrl } = docRoutes;
-const { setFrontmatterRoles, removeFrontmatterPrivilege } = require('./lib/frontmatter');
+const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate } = require('./lib/frontmatter');
 const { toIndexableText, toSnippet } = require('./lib/doc-text');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
@@ -1259,10 +1259,6 @@ function stripBogusImageOrigins(markdown) {
   return result;
 }
 
-/** Overwrite `last_update.date` + `last_update.author` in an article's
- *  frontmatter with today's UTC date and the logged-in user's display
- *  name (or email if no display name). The model can't know either,
- *  so we stamp them server-side. */
 /** Strip decorative emojis the model may have emitted. The
  *  no-decorative-emojis markdownlint rule (custom-markdownlint-rules.js)
  *  rejects any of these characters and the pre-commit hook then fails
@@ -1282,26 +1278,38 @@ function stripDecorativeEmojis(markdown) {
   return out;
 }
 
+/** Overwrite `last_update.date` + `last_update.author` in an article's
+ *  frontmatter with today's UTC date and the logged-in user's display
+ *  name (or email if no display name). The model can't know either,
+ *  so we stamp them server-side. */
 function stampLastUpdate(markdown, user) {
-  const today = new Date().toISOString().slice(0, 10);
-  const author = (user && (user.displayName || user.email)) || 'Authoring Skill';
-  const fmMatch = /^---\n([\s\S]*?)\n---/.exec(markdown);
-  if (!fmMatch) return markdown;
-  const fm = fmMatch[1];
-  const stamp = `last_update:\n  date: ${today}\n  author: ${author.replace(/[\r\n]/g, ' ')}`;
+  return setLastUpdate(markdown, {
+    date: new Date().toISOString().slice(0, 10),
+    author: (user && (user.displayName || user.email)) || 'Authoring Skill',
+  });
+}
 
-  let nextFm;
-  if (/^last_update\s*:/m.test(fm)) {
-    // Replace the whole `last_update:` block: the `last_update:` line
-    // plus any subsequent indented child lines (the YAML mapping body).
-    nextFm = fm.replace(
-      /^last_update\s*:[^\n]*(?:\n[ \t]+[^\n]*)*/m,
-      stamp,
-    );
-  } else {
-    nextFm = fm.trimEnd() + '\n' + stamp;
-  }
-  return markdown.replace(fmMatch[0], `---\n${nextFm}\n---`);
+/** Stamp `last_update` for a human content edit, but leave the existing
+ *  stamp alone when the save changes nothing.
+ *
+ *  Comparing raw bytes cannot work: the stamp itself changes bytes, so every
+ *  re-save of unmodified content would look like an edit and bump the date.
+ *  Instead run BOTH the incoming text and the on-disk copy through the same
+ *  stamp with the same clock and user - that cancels the last_update block
+ *  out of the comparison. If what remains is identical the editor changed
+ *  nothing, so we write `next` untouched and the file keeps its date.
+ *
+ *  Side effect worth keeping: when the ONLY difference is the date itself
+ *  (an editor hand-typing one in the raw editor), the two stamped forms are
+ *  equal too, so the hand-typed value is honored rather than overwritten.
+ *
+ *  A missing or unreadable baseline means a brand-new article - always stamp. */
+function stampIfContentChanged(next, baselineAbs, user) {
+  const stamped = stampLastUpdate(next, user);
+  let base = null;
+  try { base = fsSync.readFileSync(baselineAbs, 'utf8'); } catch { /* new file */ }
+  if (base !== null && stampLastUpdate(base, user) === stamped) return next;
+  return stamped;
 }
 
 /** Surgically set `sidebar_position` in the frontmatter, leaving everything
@@ -1729,7 +1737,16 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), async (req, res
     const destRoles = destinationRoles(targetDirRel);
     let staged = destRoles ? setFrontmatterRoles(withDraft, destRoles) : withDraft;
     staged = removeFrontmatterPrivilege(staged);
-    const finalText = ensureSidebarPosition(staged, path.dirname(target), previous || target);
+    staged = ensureSidebarPosition(staged, path.dirname(target), previous || target);
+    // Server-side truth for "when was this last touched". /generate stamps the
+    // AI's first draft, but every human edit since then landed here unstamped,
+    // so the "Updated <date>" chip (src/components/Article/MetaChip.tsx, whose
+    // only source is this frontmatter) kept advertising the draft date - in the
+    // worst cases a 2021 date on an article edited this month. Runs last so the
+    // roles/privilege/sidebar rewrites above are part of the changed-or-not
+    // comparison, and before contentHash below so the hash the client keeps as
+    // its next baseHash is the hash of the bytes we actually wrote.
+    const finalText = stampIfContentChanged(staged, hashTarget, req.user);
 
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
     // If this is the first article ever written into a MODULE sub-folder,
@@ -3733,7 +3750,12 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
       path.relative(__dirname, target).replace(/\\/g, '/')
     );
     if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
-    fsSync.writeFileSync(target, cleaned, 'utf8');
+    // Same reasoning as /save: a hand-edit in the raw editor is a content
+    // change and must move the "Updated" chip. Stamped at the write, not on
+    // `cleaned`, so the audit, draft flag and slug/id collision checks above
+    // all keep reasoning about exactly the text the editor submitted.
+    const finalText = stampIfContentChanged(cleaned, target, req.user);
+    fsSync.writeFileSync(target, finalText, 'utf8');
     journalRecordUpsert(path.relative(__dirname, target), req.user?.email);
     if (subfolderCreated && m) {
       journalRecordUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'), req.user?.email);
@@ -3776,7 +3798,9 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
       redirectsUpdated,
       queuedForDeploy,
       queueSize: deployQueue.size,
-      hash: contentHash(cleaned),
+      // Hash the bytes on disk, not `cleaned` - the client keeps this as its
+      // baseHash and would otherwise 409 stale-base against its own save.
+      hash: contentHash(finalText),
     });
   } catch (error) {
     console.error('❌ authoring/save-raw failed:', error.message);
