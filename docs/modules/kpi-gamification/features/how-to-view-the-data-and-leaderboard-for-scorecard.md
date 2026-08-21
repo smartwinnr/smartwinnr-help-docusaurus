@@ -39,6 +39,6 @@ Click on **View Data** to see all the uploaded data values for each KPI. You can
 ![View Data options for selecting KPIs and viewing uploaded data](/img/helpscout/authored/how-to-view-the-data-and-leaderboard-for-scorecard-msyfvqg6.png)
 
 ### 3. View Leaders
-Click on **View Leaders** to access the Scorecard leaderboard. This leaderboard displays the performance of users based on the scorecards.
+Click on **View Leaders** to access the Scorecard leaderboard. This leaderboard displays the performance of users based on the scorecards
 
 ![Scorecard leaderboard showing user performance](/img/helpscout/authored/how-to-view-the-data-and-leaderboard-for-scorecard-msyicc4z.png)

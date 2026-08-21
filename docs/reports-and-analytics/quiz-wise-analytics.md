@@ -7,7 +7,7 @@ description: >-
 slug: quiz-wise-analytics
 sidebar_position: 198
 last_update:
-  date: 2026-08-20
+  date: 2026-08-21
   author: Aswani TK
 source:
   helpscout_id: 5fdba102a5d295659b369f9f
@@ -53,7 +53,7 @@ The **Send Notification** button sends a notification or an email to the quiz pa
 On this page, you can select the participants you want to notify. Filter participants based on the status of the quiz assigned to them, either **Not Started** or **Completed**. You can also write a message to include in the notification. Click on the **Send Notification** button at the bottom of the page to send the notification.
 
 ### 5. Review Overall Participation
-This section provides a pie chart showing the overall participation percentage along with actual numbers. For example, the screenshot below shows a participation percentage of 32%, with 10 people having completed the quiz and 21 who have not.
+This section provides a pie chart showing the overall participation percentage along with actual numbers. For example, the screenshot below shows a participation percentage of 41%, with 51 people having completed the quiz and 74 who have not.
 
 ![Overall participation](/img/helpscout/authored/quiz-wise-analytics-mt1uxlf0.png)
 

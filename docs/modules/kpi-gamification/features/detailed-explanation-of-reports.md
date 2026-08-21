@@ -7,8 +7,8 @@ description: >-
 slug: detailed-explanation-of-reports
 sidebar_position: 183
 last_update:
-  date: 2021-01-08T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-21
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fdb188b0b11ce44f63931e7
   helpscout_url: 'https://help.smartwinnr.com/article/183-detailed-explanation-of-reports'
@@ -18,37 +18,46 @@ customProps:
 tags:
   - kpi
   - gamification
+draft: false
 ---
-The KPI report is an extensive one. You can generate different slices and dices of it, as needed.
 
-## Select Participants
+> **At a glance** - The KPI report allows you to filter participants, select KPIs, and analyze user performance through various metrics.
 
-Use the 1st section to filter the participants. You can choose to create a report for a specific country, a group of participants, a single person, or even by territory or any other meta tags that your admin has defined.
+The KPI report is an extensive one. You can generate different slices and dices of it as needed.
 
-![Use the 1st section to filter the participants. You can choose to create a report for a specific country, a group of participants, a single ](/img/helpscout/editors/detailed-explanation-of-reports-1.png)
+## When to use this
+Use this feature when you want to analyze performance metrics across various participants and KPIs. It helps in understanding trends and measuring outcomes effectively.
 
-## Select KPI
+- Generate reports for specific countries or groups.
+- Analyze performance over selected time ranges.
+- Measure various KPIs to assess team effectiveness.
 
-Select the KPIs, frequency of measurement, and operation in the 2nd section.
+## Steps
 
-![Select the KPIs, frequency of measurement, and operation in the 2nd section.](/img/helpscout/editors/detailed-explanation-of-reports-2.png)
+### 1. Select Participants
+Use the first section to filter the participants. You can choose to create a report for a specific country, a group of participants, a single person, or even by territory or any other meta tags that your admin has defined.
 
-For example, you want to see the total number of calls made daily. Then you'd select
+![Use the first section to filter the participants. You can choose to create a report for a specific country, a group of participants, a single person, or even by territory or any other meta tags that your admin has defined.](/img/helpscout/editors/detailed-explanation-of-reports-1.png)
 
-* KPI = New Leads
-* Frequency = Weekly
-* Operation = Sum
+### 2. Select KPI
+Select the KPIs, frequency of measurement, and operation in the second section.
 
-Similarly, you can generate a report of average number of calls per month.
+![Select the KPIs, frequency of measurement, and operation in the second section.](/img/helpscout/editors/detailed-explanation-of-reports-2.png)
 
-## User Data Analytics
+For example, if you want to see the total number of calls made daily, you would select:
 
-This shows a bar graph of the user's performance in the selected KPI for a specified time range. For example, this chart shows the average weekly revenue for the last 90 days.
+- **KPI** = New Leads
+- **Frequency** = Weekly
+- **Operation** = Sum
 
-![This shows a bar graph of the user's performance in the selected KPI for a specified time range. For example, this chart shows the average w](/img/helpscout/editors/detailed-explanation-of-reports-3.png)
+Similarly, you can generate a report of the average number of calls per month.
 
-## Actual Data
+### 3. User Data Analytics
+This section shows a bar graph of the user's performance in the selected KPI for a specified time range. For example, this chart shows the average weekly revenue for the last 90 days.
 
+![This section shows a bar graph of the user's performance in the selected KPI for a specified time range. For example, this chart shows the average weekly revenue for the last 90 days.](/img/helpscout/editors/detailed-explanation-of-reports-3.png)
+
+### 4. Actual Data
 The last section shows the data about the targets assigned and achieved by the user.
 
 ![The last section shows the data about the targets assigned and achieved by the user.](/img/helpscout/editors/detailed-explanation-of-reports-4.png)

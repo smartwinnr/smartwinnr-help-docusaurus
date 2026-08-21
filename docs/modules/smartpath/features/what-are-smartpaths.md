@@ -7,8 +7,8 @@ description: >-
 slug: what-are-smartpaths
 sidebar_position: 77
 last_update:
-  date: 2026-01-16T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-21
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 5fd7119336980410c9123b70
   helpscout_url: 'https://help.smartwinnr.com/article/77-what-are-smartpaths'
@@ -17,41 +17,92 @@ customProps:
   privilege: smartpaths
 tags:
   - smartpath
+draft: false
 ---
-A **SmartPath** is a structured learning journey created for each individual in your team. It consists of a series of learning modules that are arranged in a specific sequence. Learners are required to follow this path and complete one module at a time to fully understand a particular topic or concept.
 
-SmartPath is especially useful when learners need to be guided through concepts in a **defined order** to build a specific skill or capability effectively. It ensures consistent learning, progressive skill development, and better knowledge retention.
+> **At a glance** - A **SmartPath** is a structured learning journey that guides users through a series of learning modules in a defined sequence.
 
-Below is an illustration that shows how a SmartPath works:
+A **SmartPath** is a structured learning journey that guides users through a series of learning modules in a defined sequence. It helps organizations deliver learning in a structured and progressive way, allowing learners to build knowledge and skills step by step. Each SmartPath can include multiple modules, and each module can contain different learning activities and content.
 
-[![Below is an illustration that shows how a SmartPath works:](/img/helpscout/editors/what-are-smartpaths-1.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcc5d22d580ce55a38b4a61/images/6014aaada4cefb30ae5c589d/file-kComQNt7hU.png)
+SmartPaths are especially useful when learners need to understand concepts in a specific order to build a particular skill or capability effectively.
 
-Consider this scenario: you want to improve **sales effectiveness** across your sales team, with a focus on building two critical skills - **Effective Opening** and **Objection Handling**. This is where **SmartPath** helps.
+## When to use this
+SmartPaths help organizations:
 
-### How SmartPath Works?
+- Deliver structured and organized learning journeys.
+- Guide learners through topics in a defined sequence.
+- Build skills progressively.
+- Ensure consistent learning across teams.
+- Improve knowledge retention through structured learning.
+- Combine different types of learning content and activities into one learning journey.
 
-SmartPath follows a **bottom-up approach**.
+## How Does a SmartPath Work?
 
-Before creating a SmartPath, you first create the **modules** that will be part of it. In this case, you would create two modules:
+A SmartPath follows a **bottom-up approach**.
 
-* **Effective Opening**
-* **Objection Handling**
+The structure is:
 
-Next, you add **segments** to each module.
+**Segments → Modules → SmartPath → Batch and Users**
+
+First, learning activities are created and organized as Segments. These Segments are then added to Modules. Once the required Modules are ready, they are combined to create a SmartPath.
+
+The SmartPath can then be assigned to users through a Batch, allowing learners to begin their structured learning journey.
+
+## Understanding the SmartPath Structure
+
+A SmartPath consists of three main levels:
+
+### 1. Segments
+
+Segments are individual learning activities or pieces of content within a Module.
+
+A Segment can include:
+- SmartFeed
+  - Image
+  - PDF
+  - PowerPoint presentation
+  - Video
+  - YouTube video
+  - Audio
+- Quiz
+- Survey
+- SCORM file
+- Coaching
+- Learning Session
+
+Multiple Segments can be added to a Module based on the learning requirements.
+
+### 2. Modules
+
+A Module is a collection of related Segments focused on a particular topic or skill.
+
+For example, if the objective is to improve sales effectiveness, you may create separate Modules for:
+
+- Effective Opening
+- Objection Handling
+
+Each Module can contain different learning activities to help users understand and practice that specific skill.
+
+### 3. SmartPath
+
+A SmartPath brings multiple Modules together to create a complete learning journey.
 
 For example:
 
-* **Module 1: Effective Opening** may include following segments:
-  * 1 SmartFeed
-  * 1 Quiz
-  * 1 Survey
-* **Module 2: Objection Handling** may include following segments:
-  * 2 SmartFeeds
-  * 2 Quizzes
-  * 2 Coachings
+**SmartPath: Sales Effectiveness Excellence**
 
-You can add **as many segments as required** under each module, depending on the depth of learning you want to achieve.
+**Module 1: Effective Opening**
+- SmartFeed
+- Quiz
+- Survey
 
-Once the modules are ready, they are **encapsulated into a SmartPath**, such as **“Sales Effectiveness Excellence.”** This SmartPath can then be assigned to your users, guiding them step by step through the learning journey.
+**Module 2: Objection Handling**
+- SmartFeed
+- SmartFeed
+- SmartFeed
+- Quiz
+- Quiz
+- Coaching
+- Coaching
 
-An added advantage is **reusability** - all modules and SmartPaths you create can be reused multiple times across teams, roles, or learning programs.
+Once these Modules are combined, they become part of the **Sales Effectiveness Excellence SmartPath**.

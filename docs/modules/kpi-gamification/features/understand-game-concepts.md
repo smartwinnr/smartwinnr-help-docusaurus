@@ -3,34 +3,40 @@ id: 5fdb0be80b11ce44f63931bb
 title: Understand Game Concepts
 description: >-
   Here are various game concepts that you can leverage through SmartWinnr's KPI
-  Gamification
+  Gamification.
 slug: understand-game-concepts
 sidebar_position: 169
 last_update:
-  date: 2020-12-17T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdb0be80b11ce44f63931bb
-  helpscout_url: 'https://help.smartwinnr.com/article/169-understand-game-concepts'
+  date: 2026-08-21
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: kpi
 tags:
   - kpi
   - gamification
+draft: false
 ---
-Here are various game concepts that you can leverage through SmartWinnr's KPI Gamification
 
-### Leaderboards
+> **At a glance** - This article explains various game concepts within SmartWinnr's KPI Gamification, including leaderboards, scoring, and challenges.
 
-Leaderboards display the performance of contestants in a competition or challenge. These leaderboards display data that is live, real-time, individual, team-wise, or territory-wise.
+Here are various game concepts that you can leverage through SmartWinnr's KPI Gamification.
 
-### Scoring
+## When to use this
+Use these game concepts to enhance engagement and motivation among your team members. They can help in achieving organizational goals and improving overall performance.
 
- A score is given to individual sales reps or a team when they achieve a particular KPI target. These scores add up to their total score for the quarter or year. Then, the scores are put up on a scoreboard which can be seen by everyone in the organization. This gives the employees a way to brag about their success.
+- When you want to track individual or team performance.
+- To create a competitive environment that encourages achievement.
+- When you need to communicate organizational goals effectively.
 
-### Challenges/Contests
+## Leaderboards
 
-A challenge/contest is a competition between individuals or teams to achieve a specific KPI target. These contests are highly effective in communicating your organizational goals to your employees and motivating them to achieve them.
+**Leaderboards** display the performance of contestants in a competition or challenge. These leaderboards show data that is live, real-time, and can be viewed individually, by team, or by territory.
 
-![A challenge/contest is a competition between individuals or teams to achieve a specific KPI target. These contests are highly effective in c](https://support.smartwinnr.com/api/v1/attachments/736)
+## Scoring
+
+A **score** is assigned to individual sales reps or teams when they achieve a specific KPI target. These scores accumulate to form their total score for the quarter or year. The scores are then displayed on a scoreboard, accessible to everyone in the organization. This visibility allows employees to take pride in their successes.
+
+## Challenges/Contests
+
+A **challenge** or **contest** is a competition between individuals or teams to achieve a specific KPI target. These contests effectively communicate your organizational goals to employees and motivate them to reach those targets.
