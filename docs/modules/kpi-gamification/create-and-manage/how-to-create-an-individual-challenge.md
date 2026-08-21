@@ -5,8 +5,8 @@ description: "Create an individual challenge in KPI Gamification by following th
 slug: how-to-create-an-individual-challenge
 sidebar_position: 179
 last_update:
-  date: 2026-08-17
-  author: Sruthi Suresh
+  date: 2026-08-21
+  author: Anagha Isal
 source:
   helpscout_id: 5fdb15d60b11ce44f63931e1
   helpscout_url: >-
@@ -93,9 +93,9 @@ You can choose from the following processing options:
 
 ### 4. Set the Scoring rule for the challenge.
 
-You can two options available scoring rule in challenge:
+You have two options available for the scoring rule in challenge:
 
-- **Points:** You can define the points that should be for each possible outcome of the challenge:
+- **Points:** You can define the points that should be awarded for each possible outcome of the challenge:
     - **Win:** Specify the points to be awarded to the winning participant.
     - **Lose:** Specify the points to be awarded to the losing participant.
     - **Draw:** Specify the points to be awarded when both participants have the same score.
