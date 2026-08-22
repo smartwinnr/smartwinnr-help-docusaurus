@@ -146,19 +146,33 @@ function primaryTier(roles: string[]): number {
 
 /**
  * A module description may be one paragraph or several, separated by blank
- * lines in module-overviews.json. React collapses "\n\n" inside a single <p>,
- * so split it out into one <p> per paragraph. Single-paragraph descriptions -
- * every module but cross-module today - render exactly as they did before.
+ * lines in module-overviews.json, and a block whose lines all start with "- "
+ * becomes a bullet list. React collapses "\n\n" inside a single <p>, so the
+ * text is split into a <p> per paragraph and a <ul> per bullet block.
+ * Single-paragraph descriptions - most modules - render as they always did.
  */
 function Paragraphs({text, className}: {text: string; className?: string}) {
-  const paras = text.split(/\n{2,}/).map((t) => t.trim()).filter(Boolean);
+  const blocks = text.split(/\n{2,}/).map((t) => t.trim()).filter(Boolean);
   return (
     <>
-      {paras.map((t, i) => (
-        <p key={i} className={className}>
-          {t}
-        </p>
-      ))}
+      {blocks.map((block, i) => {
+        const lines = block.split('\n').map((l) => l.trim()).filter(Boolean);
+        const isList = lines.length > 0 && lines.every((l) => l.startsWith('- '));
+        if (isList) {
+          return (
+            <ul key={i} className={styles.proseList}>
+              {lines.map((l, j) => (
+                <li key={j}>{l.slice(2).trim()}</li>
+              ))}
+            </ul>
+          );
+        }
+        return (
+          <p key={i} className={className}>
+            {block}
+          </p>
+        );
+      })}
     </>
   );
 }

@@ -281,3 +281,18 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   animation: sw-skel-pulse 1.4s ease-in-out infinite;
 }
+
+/* Bullet list inside a module description - plain prose bullets, not the
+   card-grid treatment .featureList gives the upsell block. */
+.proseList {
+  margin: calc(var(--space-3) * -1) 0 var(--space-6);
+  padding-left: var(--space-5);
+  max-width: 64ch;
+  list-style: disc;
+}
+.proseList li {
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--ifm-color-content);
+  margin: 0 0 var(--space-1);
+}

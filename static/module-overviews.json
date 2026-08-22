@@ -35,7 +35,7 @@
     "smartfeed": {
       "label": "SmartFeed",
       "tagline": "Bite-sized video and article content delivered to the right audience.",
-      "description": "SmartFeed is your micro-learning content engine. Editors publish short videos, articles, and PPT decks; learners watch, like, and comment on a personalised feed. Use it for product updates, sales tips, and ongoing reinforcement between formal training.",
+      "description": "SmartFeed is a micro-learning feature that delivers bite-sized learning content to the right users at the right time.\n\nIt allows Editors to share short-form learning content such as videos, images, PowerPoint presentations, PDFs, and recordings through a personalized feed. Learners can access the content directly from their SmartFeed and engage with it by watching, liking, and commenting.\n\nSmartFeed can be used to provide continuous learning and reinforcement outside of formal training programs. It is particularly useful for sharing:\n\n- Product updates and announcements\n- Sales tips and best practices\n- Quick learning resources\n- Important business updates\n- Ongoing training and reinforcement content\n\nBy providing relevant content in a short and easy-to-consume format, SmartFeed helps keep learners engaged, informed, and continuously learning.",
       "keyFeatures": [
         "Video, article, and PPT formats",
         "Episode-style series with auto-thumbnails",
