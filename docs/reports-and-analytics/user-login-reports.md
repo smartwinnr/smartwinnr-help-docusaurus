@@ -7,8 +7,8 @@ description: >-
 slug: user-login-reports
 sidebar_position: 143
 last_update:
-  date: 2026-07-23
-  author: Sruthi Suresh
+  date: 2026-08-22
+  author: Aswani TK
 source:
   helpscout_id: 5fdae19bb624c71b7985a579
   helpscout_url: 'https://help.smartwinnr.com/article/143-user-login-reports'
@@ -36,11 +36,15 @@ To learn more about Advanced Search, [Click here.](http://support.smartwinnr.com
 
 Here, you can find three different types of login reports:
 
-![Here, you can find three different types of login reports:](/img/helpscout/admins/user-login-reports-2.png)
+![describe this screenshot](/img/helpscout/authored/user-login-reports-mt4odndq.png)
 
 * **Initial Login Report** - This report provides a list of users who have completed their initial login into the SmartWinnr account.
+
 * **All Login Reports** - This report shows all users who have logged into their SmartWinnr account for the selected date range. It includes two types of reports: the total number of users who have logged in during a specific date range and the number of times each user has logged into their account.
+
 * **Not Using SmartWinnr Yet** - This report lists users who have not logged into their SmartWinnr account yet.
+
+* **All User Access** - This report gives you the the number of SmartWinnr access done by a user in a date range. It also gives us the number of access date wise.
 
 You can also use filters to view the analytics chart of the users. The various options are as follows:
 
@@ -53,3 +57,16 @@ After setting the appropriate filters, you can download the analytics report in 
 2. **Excel Report**: Click on the Hamburger Menu, which will provide the option to download the report in Excel format.
 
 ![Excel Report: click on the Hamburger Menu which will give you the option to download the report into excel format](/img/helpscout/admins/user-login-reports-3.png)
+
+**Initial Login Report**
+
+To download the initial login report, click on the hamburger menu and select "Download Initial Login Report" which gives the list of users who have logged in to the SmartWinne account for the first time. Click on the "Download Initial Login Report CSV" to download this report in a .csv file format.
+
+![Initial login report](/img/helpscout/authored/user-login-reports-mt4ozmo8.png)
+
+**All Login Reports**
+
+To download the all login report, which give the number of users who logged in to the system during the selected period, you can click on the "Download All Login Report By User". To download the .csv file, click on the "Download All Login Report By User CSV".
+To download the 
+
+
