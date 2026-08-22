@@ -178,7 +178,7 @@
     "cross-module": {
       "label": "Cross-Module Features",
       "tagline": "Behaviour that spans multiple modules — query, app updates, navigation.",
-      "description": "Cross-module features are pieces of SmartWinnr that aren't tied to one module. The QResolve query system, mobile app updates, SCORM course access, and other glue behaviours live here. Every role uses at least some of these.",
+      "description": "Cross-module features are pieces of SmartWinnr that aren't tied to one module. Cross-Module Features in SmartWinnr are capabilities that work across multiple modules, enabling organizations to connect learning, coaching, engagement, performance, and analytics into a unified experience. These features help create a seamless learning journey, provide consistent tracking across activities, and enable admins and trainers to gain a more comprehensive view of user participation and performance.\n\nCross-module capabilities can help you combine different SmartWinnr activities, track progress and outcomes, and use insights from one module to support activities in another, creating a more connected and effective learning and performance experience.",
       "keyFeatures": [
         "QResolve — ask the support team a question",
         "SCORM course access from the app",

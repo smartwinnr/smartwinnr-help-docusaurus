@@ -144,6 +144,25 @@ function primaryTier(roles: string[]): number {
   return roles.reduce((max, r) => Math.max(max, TIER[r] ?? 0), 0);
 }
 
+/**
+ * A module description may be one paragraph or several, separated by blank
+ * lines in module-overviews.json. React collapses "\n\n" inside a single <p>,
+ * so split it out into one <p> per paragraph. Single-paragraph descriptions -
+ * every module but cross-module today - render exactly as they did before.
+ */
+function Paragraphs({text, className}: {text: string; className?: string}) {
+  const paras = text.split(/\n{2,}/).map((t) => t.trim()).filter(Boolean);
+  return (
+    <>
+      {paras.map((t, i) => (
+        <p key={i} className={className}>
+          {t}
+        </p>
+      ))}
+    </>
+  );
+}
+
 function UpsellBlock({slug, meta}: {slug: string; meta: ModuleMeta}) {
   const email = meta.ctaEmail || 'admin@your-org.com';
   const subject = encodeURIComponent(`Please enable "${meta.label}" in SmartWinnr`);
@@ -156,7 +175,7 @@ function UpsellBlock({slug, meta}: {slug: string; meta: ModuleMeta}) {
     <div className={styles.upsell}>
       <span className={styles.badge}>Not yet enabled for your organization</span>
       <h2>What you'd get with {meta.label}</h2>
-      <p className={styles.lede}>{meta.description}</p>
+      <Paragraphs text={meta.description} className={styles.lede} />
       <ul className={styles.featureList}>
         {meta.keyFeatures.map((f) => (
           <li key={f}>{f}</li>
@@ -270,7 +289,7 @@ function Body({slug}: Props): JSX.Element | null {
         <h1>{meta.label}</h1>
         <p className={styles.tagline}>{meta.tagline}</p>
       </div>
-      <p className={styles.description}>{meta.description}</p>
+      <Paragraphs text={meta.description} className={styles.description} />
       <span className={styles.audience}>{meta.who}</span>
       {orgHasIt ? (
         <GetStartedCards slug={slug} tier={tier} managerViewOk={managerViewOk} />
