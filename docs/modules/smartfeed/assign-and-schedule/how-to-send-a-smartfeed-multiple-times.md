@@ -1,11 +1,11 @@
 ---
 id: how-to-send-a-smartfeed-multiple-times
 title: How to send a SmartFeed multiple times?
-description: You can resend a SmartFeed to your team as needed. Follow the steps below to do so.
+description: "Resend a SmartFeed to your team any time by following the steps to ensure important information reaches all relevant participants effectively."
 slug: how-to-send-a-smartfeed-multiple-times
 sidebar_position: 30
 last_update:
-  date: 2026-07-31
+  date: 2026-08-22
   author: Anagha Isal
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -38,13 +38,19 @@ Go to **SmartFeeds > View All SmartFeeds** in your dashboard.
 
 Choose the SmartFeed you want to send again.
 
-### 3. Click the Send Button
-
+### 3. Click the Send Button.
 On the **View SmartFeed** page, click the **Send** button at the top-right corner.
 
-![Click Send SmartFeed to complete the process.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-1.png)
+![Sent smartfeed button](/img/helpscout/authored/how-to-send-a-smartfeed-multiple-times-mt47cjwc.png)
 
-### 4. Choose Participants
+### 4. Select Sending Options
+
+Choose one of the following sending options:
+
+- **Send Now**: Publishes the SmartFeed immediately.
+- **Schedule Later**: Allows you to schedule the SmartFeed for a future date and time.
+
+### 5. Choose Participants
 
 Select the participants to whom you want to resend the SmartFeed. You can choose recipients using different **selection types**:
 
@@ -52,14 +58,11 @@ Select the participants to whom you want to resend the SmartFeed. You can choose
 - **Group**: Select users based on pre-defined groups within your organization.
 - **Metatag**: Select users based on metatags assigned to them.
 
+![These advanced filters allow you to precisely control who receives the SmartFeed, ensuring the right information reaches the right audience.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-2.png)
+
 You can also **filter recipients by division** to ensure that the SmartFeed reaches the appropriate audience efficiently.
 
-### 5. Select Sending Options
-
-Choose one of the following sending options:
-
-- **Send Now**: Publishes the SmartFeed immediately.
-- **Schedule Later**: Allows you to schedule the SmartFeed for a future date and time.
+![Click Send SmartFeed to complete the process.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-1.png)
 
 ### 6. Click Send SmartFeed
 
@@ -75,8 +78,6 @@ In addition to selecting users, groups, and metatags, you can further **filter r
 
 These advanced filters allow you to **precisely control** who receives the SmartFeed, ensuring the right information reaches the right audience.
 
-![These advanced filters allow you to precisely control who receives the SmartFeed, ensuring the right information reaches the right audience.](/img/helpscout/editors/how-to-send-a-smartfeed-multiple-times-2.png)
-
 ## Tips
 
 - Regularly check the **Sent History** to monitor which SmartFeeds have been sent and to whom.
@@ -86,4 +87,4 @@ These advanced filters allow you to **precisely control** who receives the Smart
 
 You can view the history of users with whom the SmartFeed has been shared, along with the dates it was shared, from the Sent History section available within each SmartFeed.
 
-![Sent history](/img/helpscout/authored/how-to-send-a-smartfeed-multiple-times-ms8ubibd.png)
+![Sent history](/img/helpscout/authored/how-to-send-a-smartfeed-multiple-times-mt47ur2m.png)

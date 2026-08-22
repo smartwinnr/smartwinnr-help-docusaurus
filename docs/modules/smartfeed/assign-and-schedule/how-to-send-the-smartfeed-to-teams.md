@@ -7,7 +7,7 @@ description: >-
 slug: how-to-send-the-smartfeed-to-teams
 sidebar_position: 31
 last_update:
-  date: 2026-07-31
+  date: 2026-08-22
   author: Anagha Isal
 source:
   helpscout_id: 5fd10f0ba72c62318a4c08b7
@@ -43,7 +43,7 @@ Choose the SmartFeed you want to share with your teams.
 
 Click the **Send** button located at the top-right corner of the SmartFeed.
 
-![When you assign SmartFeeds to a group, any new members added to the group will automatically receive the active SmartFeeds assigned to that](/img/helpscout/editors/how-to-edit-a-smartfeed-1.png)
+![When you assign SmartFeeds to a group, any new members added to the group will automatically receive the active SmartFeeds assigned to that](/img/helpscout/authored/how-to-send-the-smartfeed-to-teams-mt47jth9.png)
 
 ### 2. Choose recipients
 
@@ -67,12 +67,13 @@ Choose the groups to whom you would like to share the SmartFeed.You can also sea
 
 ### 4. Send the SmartFeed
 
-After selecting the groups, click on **Send SmartFeed** at the end of the page to successfully send the SmartFeed to the participants.
+After selecting the groups, click on **Send SmartFeed** at the end of the page to successfully send the SmartFeed to the selected group members.
 
-![Click on 'Send SmartFeed' to successfully send the SmartFeed](/img/helpscout/editors/how-to-send-the-smartfeed-to-teams-3.png)
+**Note**: SmartFeed visibility is based on the user's group membership. When a new member is added to a group that has a SmartFeed shared with it, the SmartFeed will automatically appear in the user's feed, provided the SmartFeed has not expired. Similarly, when a user is removed from the group, the SmartFeed will no longer be available in their feed.
 
 ### 5. View sent history
 
-You can view the **sent history** of a SmartFeed at any time in the future to track which users or groups have received it.
+You can view the history of users/groups with whom the SmartFeed has been shared, along with the dates it was shared, from the Sent History section available within each SmartFeed.
 
-![View the sent history of a SmartFeed](/img/helpscout/editors/how-to-send-the-smartfeed-to-teams-4.png)
+![sent history](/img/helpscout/authored/how-to-send-the-smartfeed-to-teams-mt47tom8.png)
+
