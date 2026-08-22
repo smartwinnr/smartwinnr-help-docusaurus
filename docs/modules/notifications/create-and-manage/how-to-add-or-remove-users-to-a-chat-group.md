@@ -1,12 +1,12 @@
 ---
 id: 5fdaf691a5d295659b369c17
-title: How to add or remove users to a chat group?
-description: 'Follow the below steps in order to add or delete members from the group:'
+title: "How to add or remove users to a group?"
+description: "Learn how to effectively add or remove users from a chat group by following the outlined steps for managing group membership."
 slug: how-to-add-or-remove-users-to-a-chat-group
 sidebar_position: 155
 last_update:
-  date: 2021-01-21T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-22
+  author: Anagha Isal
 source:
   helpscout_id: 5fdaf691a5d295659b369c17
   helpscout_url: >-
@@ -17,19 +17,32 @@ customProps:
 tags:
   - notifications
   - admin
+draft: false
 ---
-Follow the below steps in order to add or delete members from the group:
 
-Go to EDITOR > Settings > Groups. Click on a group. It opens the below page:
+> **At a glance** - This article outlines the steps to add or remove users from a group/chat group.
 
-![Go to EDITOR > Settings > Groups. Click on a group. It opens the below page:](/img/helpscout/editors/how-to-add-or-remove-users-to-a-chat-group-1.png)
+You can manage group membership by adding or removing users from a group. Follow the steps below to update the members of your group.
 
-  Click on "**Group Members**" tab from here. Then, click on the "**Edit Members**" button.
+## When to use this
+Use this feature when you need to:
+- Add new members to a group.
+- Remove existing members from a group.
+- Update group membership based on changing team dynamics.
 
-![Click on "Group Members" tab from here. Then, click on the "Edit Members" button.](/img/helpscout/editors/how-to-add-or-remove-users-to-a-chat-group-2.png)
+## Steps
 
-It opens the following page:
+### 1. Access the Groups Settings
+Go to **EDITOR > Settings > Groups**. Select the group for which you would like to update the members. This opens the group settings page.
 
-![It opens the following page:](/img/helpscout/editors/how-to-add-or-remove-users-to-a-chat-group-3.png)
+![Go to EDITOR > Settings > Groups. Click on a group. It opens the below page:](/img/helpscout/authored/how-to-add-or-remove-users-to-a-chat-group-mt39c2aq.png)
 
-Here, you can select or deselect members as per your requirement and click on "**Save**" to save the changes. Use the 'Advanced Search' link to use search criteria to define the group.
+### 2. Edit Group Members
+Switch to the **Group Members** tab. Then, click on the **Edit Members** button.
+
+![Click on "Group Members" tab from here. Then, click on the "Edit Members" button.](/img/helpscout/authored/how-to-add-or-remove-users-to-a-chat-group-mt3s6v8a.png)
+
+### 3. Update Membership
+This opens the membership management page. Here, you can select or deselect members as per your requirement. Click on **Save** to save the changes. Use the **Advanced Search** link to apply search criteria for defining the group.
+
+![It opens the following page:](/img/helpscout/authored/how-to-add-or-remove-users-to-a-chat-group-mt3s8e3z.png)
