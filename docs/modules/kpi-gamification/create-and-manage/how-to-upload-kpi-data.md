@@ -3,12 +3,12 @@ id: 5fdb0e290b11ce44f63931c7
 title: How to upload KPI data?
 description: >-
   After you have completed creating the Field Mapping ( How to create a Field
-  Mapping?) , you can upload data into SmartWinnr against this mapping.
+  Mapping?), you can upload data into SmartWinnr against this mapping.
 slug: how-to-upload-kpi-data
 sidebar_position: 174
 last_update:
-  date: 2026-08-18
-  author: HelpScout Migration
+  date: 2026-08-22
+  author: Aswani TK
 source:
   helpscout_id: 5fdb0e290b11ce44f63931c7
   helpscout_url: 'https://help.smartwinnr.com/article/174-how-to-upload-kpi-data'
@@ -19,61 +19,56 @@ tags:
   - kpi
   - gamification
   - admin
+draft: false
 ---
-After you have completed creating the Field Mapping ( [How to create a Field Mapping?](/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping)) , you can upload data into SmartWinnr against this mapping.
 
-Below are the steps to upload your KPI data:
+> **At a glance** - This article explains how to upload KPI data into SmartWinnr after creating the necessary field mapping.
 
-Go to EDITOR > PERFORMANCE>KPI Scorecards>Upload Data. It opens the following page:
+After you have completed creating the Field Mapping ( [How to create a Field Mapping?](/modules/kpi-gamification/create-and-manage/how-to-create-field-mapping)), you can upload data into SmartWinnr against this mapping.
 
-![describe this screenshot](/img/helpscout/authored/how-to-upload-kpi-data-msy8kmon.png)
+## When to use this
+Use this feature when you need to upload KPI data to SmartWinnr after setting up your field mapping. This is essential for ensuring that your KPIs are accurately tracked and reported.
 
-### KPI Mapping
+## Steps
 
- Here, select the kind of KPI mapping that you would like to use.
+### 1. Navigate to the Upload Data page
+Go to **EDITOR > PERFORMANCE > KPI Scorecards > Upload Data**. This opens the upload page.
 
-Once you choose a KPI Mapping you will get to select the KPIs related to it. These KPIs will be available to you in CSV file and you will have to add your values against these KPIs.
+![Download the KPI mapping](/img/helpscout/authored/how-to-upload-kpi-data-mt3xpiqq.png)
 
-Download your CSV file by clicking on the 'Download Sample CSV' button.
+### 2. Select KPI Mapping
+Here, select the kind of KPI mapping that you would like to use. Once you choose a KPI Mapping, you will see the related KPIs. These KPIs will be available in the CSV file, and you will need to add your values against these KPIs.
 
-![describe this screenshot](/img/helpscout/authored/how-to-upload-kpi-data-msy8o3rz.png)                                                             !
+### 3. Download the Sample CSV
+Download your CSV file by clicking on the **Download Sample CSV** button. Fill the CSV mapping with all the details in the format as per the mapping. You can view the field format by clicking on the **View KPI Mapping** button.
 
-Then click on the 'Choose File' button and select the CSV file that you want to upload. Next, click on the 'Upload' button to upload it.
+![KPI Mapping](/img/helpscout/authored/how-to-upload-kpi-data-mt3xs16s.png)
 
-Upon successful upload of all the fields, it shows the status of each record in the uploaded status.
+### 4. Upload the CSV file
+Click on the **Choose File** button and select the CSV file that you want to upload. Next, click on the **Upload** button to upload it.
 
-![Upon successful upload of all the fields, it shows the status of each record in the uploaded status.](https://support.smartwinnr.com/api/v1/attachments/776)
+Upon successful upload of all the fields, the status of each record will be displayed.
 
-In case there are any incorrect values, the status will be shown as 'failed'.
+![Validation errors](/img/helpscout/authored/how-to-upload-kpi-data-mt3yi7tk.png)
 
-![In case there are any incorrect values, the status will be shown as 'failed'.](https://support.smartwinnr.com/api/v1/attachments/777)
+If the record has been successfully uploaded, the status will show as 'uploaded'. In case there are any incorrect values, the status will be shown as 'failed'.
 
-KPI Mapping: This lets you select the mapping that you would like to use.
+### 5. View KPI Mapping
+The **View KPI Mapping** button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that displays a list of KPIs:
 
-                           ![KPI Mapping: This lets you select the mapping that you would like to use.](https://support.smartwinnr.com/api/v1/attachments/778)
+![View KPI mapping](/img/helpscout/authored/how-to-upload-kpi-data-mt3ymv43.png)
 
-### View KPI Mapping
+### 6. Add Mapping
+The **Add Mapping** button takes you to a page where you can create a new mapping.
 
-This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:
+![Add Mapping](/img/helpscout/editors/how-to-upload-kpi-data-7.png)
 
-            ![This button shows you the list of KPIs that need to be matched. Below is a screenshot of the popup that shows a list of KPIs:](https://support.smartwinnr.com/api/v1/attachments/779)
+### 7. View Uploaded Data
+The **View Uploaded Data** button provides an overview of all the data that has been uploaded. Below is a screenshot of this overview:
 
-### Download Sample CSV
+![View uploaded data](/img/helpscout/authored/how-to-upload-kpi-data-mt3yq901.png)
 
- This button downloads a sample CSV file with all the necessary fields. You can then fill in your data in this CSV file and upload it. This makes it easy for you to map all the fields in your file.
+### 8. View Logs
+The **View Logs** button shows the logs of the uploaded data. Below is the screenshot of the logs:
 
-Add Mapping: This button takes you to the below page where you can make changes to the existing CSV fields.
-
-![Add Mapping: This button takes you to the below page where you can make changes to the existing CSV fields.](/img/helpscout/editors/how-to-upload-kpi-data-7.png)
-
-### View Uploaded Data
-
-This button gives you an overview of all the data that is uploaded. Below is a screenshot of it:
-
-![This button gives you an overview of all the data that is uploaded. Below is a screenshot of it:](https://support.smartwinnr.com/api/v1/attachments/781)
-
-### View Logs
-
-This button shows the logs of the uploaded data. Below is the screenshot of it:
-
-![This button shows the logs of the uploaded data. Below is the screenshot of it:](https://support.smartwinnr.com/api/v1/attachments/782)
+![View Logs](/img/helpscout/authored/how-to-upload-kpi-data-mt3yrdry.png)

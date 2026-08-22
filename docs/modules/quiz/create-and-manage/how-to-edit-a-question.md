@@ -5,7 +5,7 @@ description: 'Follow the below steps in order to edit a question:'
 slug: how-to-edit-a-question
 sidebar_position: 202
 last_update:
-  date: 2026-06-30
+  date: 2026-08-22
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -34,21 +34,16 @@ Use this feature when you need to:
 
 Go to **EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank**. This will open the Question Bank page.
 
-![EDITOR > LEARNING AND KNOWLEDGE > Questions and Quizzes > Question Bank. It will open the following page:
 ![](/img/helpscout/authored/how-to-edit-a-question-mr0ho1zm.png)
 
 ### 2. Select a Question to Edit
 
 Click on the specific question you want to edit. This will open the question's detail page.
-
-![Now, click on a particular question that you want to edit. It will open that following page:
 ![](/img/helpscout/authored/how-to-edit-a-question-mr0hrrfd.png)
 
 ### 3. Click the Edit Button
 
 Click on the **Edit** button at the top right corner of the screen. This will take you to the edit page for that question.
-
-![Click on the "Edit" button at the top right corner of the screen. It will open the following page:
 ![](/img/helpscout/authored/how-to-edit-a-question-mr0htn0h.png)
 
 ### 4. Make Your Changes

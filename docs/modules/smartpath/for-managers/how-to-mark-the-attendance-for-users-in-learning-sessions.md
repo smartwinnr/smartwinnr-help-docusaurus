@@ -1,14 +1,14 @@
 ---
 id: 6106ee53b55c2b04bf6da2c0
-title: How to Mark the attendance for Users  in Learning Sessions?
+title: "How to mark attendance for learning sessions in SmartWinnr for your team"
 description: >-
   If you are an instructor for the learning session in a SmartPath created in
   SmartWinnr, you should mark the attendance of the trainees who attended the…
 slug: how-to-mark-the-attendance-for-users-in-learning-sessions
 sidebar_position: 264
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-22
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 6106ee53b55c2b04bf6da2c0
   helpscout_url: >-
@@ -26,7 +26,7 @@ To mark the attendance for the learning session you conducted as part of SmartPa
 
 2\. **Switch to user view in SmartWinnr** in case if you have both user role and manager role.
 
-![2\. Switch to user view in SmartWinnr in case if you have both user role and manager role.](/img/helpscout/managers-and-team-members/how-to-mark-the-attendance-for-users-in-learning-sessions-1.png)
+![switch to manager view](/img/helpscout/authored/how-to-mark-the-attendance-for-users-in-learning-sessions-mt40rh6p.png)
 
 3\. Goto **Left Menu >> SmartPath.**
 
@@ -34,10 +34,10 @@ To mark the attendance for the learning session you conducted as part of SmartPa
 
 5\. Select the learning session for which you would like to mark the attendance now.
 
-![5\. Select the learning session for which you would like to mark the attendance now.](/img/helpscout/managers-and-team-members/how-to-mark-the-attendance-for-users-in-learning-sessions-2.png)
+![SmartPath sessions](/img/helpscout/authored/how-to-mark-the-attendance-for-users-in-learning-sessions-mt40yy3q.png)
 
 6\. This will give you the list of users added to the selected learning session. **Select the users who have attended the learning session** as follows:
 
-![6\. This will give you the list of users added to the selected learning session. Select the users who have attended the learning session as ](/img/helpscout/managers-and-team-members/how-to-mark-the-attendance-for-users-in-learning-sessions-3.png)
+![This will give you the list of users added to the selected learning session. Select the users who have attended the learning session as](/img/helpscout/authored/how-to-mark-the-attendance-for-users-in-learning-sessions-mt40zhn3.png)
 
 Click on the '**Mark Attendance**' button to successfully mark the attendance of select users as 'Present'.

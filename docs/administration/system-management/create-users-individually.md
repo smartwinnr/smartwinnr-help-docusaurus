@@ -7,7 +7,7 @@ description: >-
 slug: create-users-individually
 sidebar_position: 119
 last_update:
-  date: 2026-07-31
+  date: 2026-08-22
   author: Sruthi Suresh
 source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
@@ -123,4 +123,4 @@ Once the user account is successfully created:
 
 > **Note:** If invitation emails are disabled, administrators must share login details or activation instructions with users manually.
 
-![User account creation confirmation screen.](/img/helpscout/admins/create-users-individually-2.png)
+![describe this screenshot](/img/helpscout/authored/create-users-individually-mt421q7s.png)

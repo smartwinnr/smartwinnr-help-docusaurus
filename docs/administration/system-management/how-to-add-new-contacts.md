@@ -5,31 +5,51 @@ description: Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown bel
 slug: how-to-add-new-contacts
 sidebar_position: 135
 last_update:
-  date: 2021-01-15T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fdadc3e7129911ba1b21dbe
-  helpscout_url: 'https://help.smartwinnr.com/article/135-how-to-add-new-contacts'
+  date: 2026-08-22
+  author: Aswani TK
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]
   privilege: contacts
 tags:
   - admin
   - settings
+draft: false
 ---
-Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below
 
-![Go to Admin>>Manage Contacts>>Click on Upload Contacts as shown below](https://support.smartwinnr.com/api/v1/attachments/1116)
+> **At a glance** - This article explains how to add new contacts in the SmartWinnr platform through the Admin panel.
 
-It will open the following page
+To add new contacts, navigate to **Admin** > **Manage Contacts**, then click on **Upload Contacts**. This process involves selecting the appropriate business unit, choosing a CSV delimiter, and mapping fields before uploading your contact data.
 
-![It will open the following page](https://support.smartwinnr.com/api/v1/attachments/1117)
+## When to use this
+Use this feature when you need to upload multiple contacts into the SmartWinnr platform. This is particularly useful for:
 
-You will have to select the following
+- Adding new team members to your organization.
+- Importing contacts from another system.
+- Updating existing contact information in bulk.
 
-* User Identifier: This will help you to identify the user by a unique identifier, for example, a user can be identified by his unique email id or some unique user id.
-* CSV Delimiter: You will have to select the Delimiter type and then click on the Download template button as shown above.
+## Steps
 
-After filling the required information in the downloaded CSV file, you will need to save the file and select the file and click on "Upload".
+### 1. Navigate to Manage Contacts
+Go to **Admin** and select **Manage Contacts**. Click on **Upload Contacts** as shown below.
 
-The newly uploaded contacts will be updated on the view page.
+![Manage contacts](/img/helpscout/authored/how-to-add-new-contacts-mt3x2k8f.png)
+
+### 2. Open the Upload Contacts Page
+This will open the following page:
+
+![Upload Users Data File](/img/helpscout/authored/how-to-add-new-contacts-mt3x3v7q.png)
+
+### 3. Select Required Options
+You will need to select the following options:
+
+- **Business Unit**: Select the division in which you are uploading the data.
+- **CSV Delimiter**: Choose the delimiter type and click on the **Download template** button as shown above.
+- **Field Mapping**: Map the fields according to your data upload requirements.
+
+### 4. Prepare Your CSV File
+After filling in the required information in the downloaded CSV file, save the file.
+
+### 5. Upload the CSV File
+Select the prepared CSV file and click on **Upload**. 
+
+The newly uploaded contacts will now be updated on the view page.

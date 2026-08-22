@@ -7,8 +7,8 @@ description: >-
 slug: how-can-i-view-a-competition-leaderboard
 sidebar_position: 190
 last_update:
-  date: 2023-09-05T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-22
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fdb40777129911ba1b21f1a
   helpscout_url: >-
@@ -19,31 +19,48 @@ tags:
   - kpi
   - gamification
   - onboarding
+draft: false
 ---
-A leaderboard shows the comparative ranking of each participant in your competition. Leaderboards can be of individual participants and teams as well. Follow the below steps to view the leaderboard of the competition:
 
-Open the SmartWinnr app > Tap on the Competition tab.
+> **At a glance** - A leaderboard displays the rankings of participants in your competition, allowing you to view both individual and team scores.
 
-![Open the SmartWinnr app > Tap on the Competition tab.](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-1.png)
+A leaderboard shows the comparative ranking of each participant in your competition. Leaderboards can represent individual participants and teams as well. Follow the steps below to view the leaderboard of the competition:
 
-Click on any competition from the list you want to see the leaderboard.
+## When to use this
+Use the leaderboard feature when you want to:
+- Track individual performance in competitions.
+- Compare team scores against other teams.
+- Analyze competition standings in real-time.
 
-It opens the following page where you can see the competition scores of each participant.
+## Steps
 
-![It opens the following page where you can see the competition scores of each participant.](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-2.png)
+### 1. Open the Competition tab
+Open the SmartWinnr app and tap on the **Competition** tab.
 
-If a team leaderboard is added to your competition, click on the "Competition team Leaderboard". It opens the popup where you can see can choose to view a team leaderboard.
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt42eqiz.jpg)
 
-![If a team leaderboard is added to your competition, click on the "Competition team Leaderboard". It opens the popup where you can see can ch](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-3.png)
+### 2. Select a competition
+Click on any competition from the list to see the leaderboard.
+
+This opens the following page where you can see the competition scores of each participant.
+
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt42g4e0.jpg)
+
+### 3. View the team leaderboard (if applicable)
+If a team leaderboard is added to your competition, click on the **Team Leaderboard**. This opens a popup where you can choose to view the team leaderboard.
+
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt44nuya.jpg)
 
 It will display the rankings of the teams in your competition.
 
-If you click on the team leaderboard name, it will open the following screen where you will get to see a detailed team leaderboard with scores and members of the team.
+### 4. Access detailed team leaderboard
+If you click on the team leaderboard name, it will open a detailed team leaderboard screen with scores and members of the team.
 
-![If you click on the team leaderboard name, it will open the following screen where you will get to see a detailed team leaderboard with scor](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-4.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt44p95l.jpg)
 
-![If you click on the team leaderboard name, it will open the following screen where you will get to see a detailed team leaderboard with scor](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-5.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt44qhn6.jpg)
 
-To view the currently active competitions, click on the close button in the bottom then click on the Arrow button at the top right corner of the screen. It will take to the following screen where all the active competitions are displayed:
+### 5. Return to active competitions
+To view the currently active competitions, click on the close button at the bottom, then click on the arrow button at the top right corner of the screen. This will take you to the screen where all the active competitions are displayed.
 
-![To view the currently active competitions, click on the close button in the bottom then click on the Arrow button at the top right corner of](/img/helpscout/managers-and-team-members/how-can-i-view-a-competition-leaderboard-6.png)
+![describe this screenshot](/img/helpscout/authored/how-can-i-view-a-competition-leaderboard-mt42qy4x.jpg)

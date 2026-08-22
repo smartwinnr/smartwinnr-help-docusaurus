@@ -1,8 +1,6 @@
 ---
 id: 60bf40d2a6d12c2cd643da33
-title: >-
-  How to send an Absent Reminder to Participants by the trainer to Improve
-  Attendance
+title: "Configure absent reminders for participants in SmartPaths"
 description: >-
   An Editor who has access to the SmartPaths can send the Absent Reminder to the
   learners.
@@ -10,8 +8,8 @@ slug: >-
   how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance
 sidebar_position: 253
 last_update:
-  date: 2026-01-18T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-22
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 60bf40d2a6d12c2cd643da33
   helpscout_url: >-
@@ -22,39 +20,54 @@ customProps:
 tags:
   - smartpath
   - settings
+draft: false
 ---
+
+> **At a glance** - Editors can send absent reminders to participants in SmartPaths to improve attendance.
+
 An Editor who has access to the SmartPaths can send the Absent Reminder to the learners.
 
-1. Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths**.
-2. From the list of SmartPaths, locate the one you want to update.
-3. On the particular SmartPath card, _click_ on the **'Batches'** button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the **'View Batches'** button at the top right corner of the screen.
+## When to use this
+Use this feature when you want to remind participants about their absence in a learning session. This can help improve attendance rates and ensure participants are aware of their missed sessions.
 
-![On the particular SmartPath card, click on the 'Batches' button at the bottom right corner. Alternatively, you can click and open a particul](/img/helpscout/editors/how-to-mark-the-attendance-for-users-in-learning-sessions-1.png)
+## Steps
 
-4. It will take you to the batches available for the SmartPath. Click on 'Analytics' icon against the Batch for which you would like to send the Absent reminder.
+### 1. Navigate to SmartPaths
+Go to **EDITOR > LEARNING AND KNOWLEDGE > SmartPaths > View All SmartPaths**.
 
-![It will take you to the batches available for the SmartPath. Click on 'Analytics' icon against the Batch for which you would like to send th](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-1.jpg)
+### 2. Select a SmartPath
+From the list of SmartPaths, locate the one you want to update.
 
-5. It will take you to the following page where you can track the SmartPath progress for the selected batch. Scroll down and click on the attendence icon (Manage Attendance) for the learning session you want to send reminders as shown above.
+### 3. Access Batches
+On the selected SmartPath card, click on the **'Batches'** button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the **'View Batches'** button at the top right corner of the screen.
 
-![It will take you to the following page where you can track the SmartPath progress for the selected batch. Scroll down and click on the atten](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-2.jpg)
+![On the selected SmartPath card, click on the 'Batches' button at the bottom right corner. Alternatively, you can click and open a particular SmartPath and then click on the 'View Batches' button at the top right corner of the screen.](/img/helpscout/editors/how-to-mark-the-attendance-for-users-in-learning-sessions-1.png)
 
-6. It will take you to the following page, where you can mark attendence and send notification to the absent leaners. Click on '**Send Notification'** to send the Absent reminder.
+### 4. Open Batch Analytics
+You will be taken to the batches available for the SmartPath. Click on the **'Analytics'** icon against the Batch for which you would like to send the Absent Reminder.
 
-![It will take you to the following page, where you can mark attendence and send notification to the absent leaners. Click on 'Send Notificati](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-3.png)
+![You will be taken to the batches available for the SmartPath. Click on the 'Analytics' icon against the Batch for which you would like to send the Absent Reminder.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-1.jpg)
 
-7. It will take you to the following page where you can send the notification.
+### 5. Manage Attendance
+You will be directed to a page where you can track the SmartPath progress for the selected batch. Scroll down and click on the attendance icon (**Manage Attendance**) for the learning session you want to send reminders for.
 
-![It will take you to the following page where you can send the notification.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-4.png)
+![You will be directed to a page where you can track the SmartPath progress for the selected batch. Scroll down and click on the attendance icon (Manage Attendance) for the learning session you want to send reminders for.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-2.jpg)
 
-Here, you can customise the notification message and select the intended recipients (user/manager) based on attendance status, who have not attended a session. Once configured, the notification can be sent directly to the selected users.
+### 6. Send Notification
+You will be taken to a page where you can mark attendance and send notifications to the absent learners. Click on **'Send Notification'** to send the Absent Reminder.
 
-_Send to as 'User' will send the notification to selected users and Send to as 'Manager' will send the reminders to the participant's manager._
+![You will be taken to a page where you can mark attendance and send notifications to the absent learners. Click on 'Send Notification' to send the Absent Reminder.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-3.png)
 
-8. Now click on Send notification, which will send the notification to the required group of users based on the **Status** and **Send to** selected.
+### 7. Customize Notification
+You will be directed to a page where you can customize the notification message and select the intended recipients (user/manager) based on attendance status for those who have not attended a session. Once configured, the notification can be sent directly to the selected users.
 
-![Now click on Send notification, which will send the notification to the required group of users based on the Status and Send to selected.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-5.jpg)
+_Send to as 'User' will send the notification to selected users, while Send to as 'Manager' will send the reminders to the participant's manager._
 
-You can also send reminders to the participant's manager by selecting the dropdown of Send To Manager and click on Advanced and select the Roles as Manager. Then select the managers from the list and click on 'Send Notification'.
+### 8. Finalize and Send Notification
+Now click on **Send Notification**, which will send the notification to the required group of users based on the **Status** and **Send to** selected.
 
-![You can also send reminders to the participant's manager by selecting the dropdown of Send To Manager and click on Advanced and select the R](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-6.jpg)
+![Now click on Send Notification, which will send the notification to the required group of users based on the Status and Send to selected.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-5.jpg)
+
+You can also send reminders to the participant's manager by selecting the dropdown of **Send To Manager**, clicking on **Advanced**, and selecting the roles as **Manager**. Then select the managers from the list and click on **Send Notification**.
+
+![You can also send reminders to the participant's manager by selecting the dropdown of Send To Manager and clicking on Advanced and selecting the Roles as Manager.](/img/helpscout/editors/how-to-send-an-absent-reminder-to-participants-by-the-trainer-to-improve-attendance-6.jpg)
