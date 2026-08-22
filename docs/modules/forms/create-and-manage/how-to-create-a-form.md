@@ -38,14 +38,16 @@ Give a catchy name to your form and add a description. Also, set the start date 
 
 SmartWinnr allows you to create two different types of forms. The following are the two types of forms:
 
+![describe this screenshot](/img/helpscout/authored/how-to-create-a-form-mt4aq8db.png)
+
 * Acknowledgement
 * KPI Value Submit Form
+* SmartFeed Template
+* Checklist
 
 ### Acknowledgement Form
 
-The Acknowledgement Form is a declaration form that may be used to authenticate official documents.
-
-![Acknowledgment Form is a declaration form that may be used to authenticate official documents.](/img/helpscout/editors/how-to-create-a-form-3.png)
+Acknowledgment Form is a declaration form that may be used to authenticate official documents.
 
 ### KPI Value Submit Form
 
@@ -55,9 +57,13 @@ The KPI Value Submit Form is used to submit KPIs at multiple levels to evaluate 
 
 Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI.
 
-The fields below will be enabled for both Acknowledgement Form type and KPI Value Submit Form type. Select the appropriate fields of use.
+**Checklist Form**
 
-![Form Settings](/img/helpscout/authored/how-to-create-a-form-mt41qtni.png)
+This will help the editors to create a form which help to enable fields with    scores. The scores of the field can be calculated and displayed in the form itself.
+
+The fields below will be enabled for all types of Form. Select the appropriate fields of use.
+
+![describe this screenshot](/img/helpscout/authored/how-to-create-a-form-mt4b3uy0.png)
 
 **Is Edit Allowed:** If the form submission needs to be updated after submission, then select this checkbox.
 
@@ -134,6 +140,34 @@ Users can specify the components of the form here. You can also add fields by cl
 Forms support different types of fields like textbox, dropdown, date picker, etc. This contains various field types as shown below.
 
 ![field types](/img/helpscout/authored/how-to-create-a-form-mt43fpxe.png)
+
+Textbox: Used when users need to enter a short text response, such as a few words or a brief value.
+
+- **Textarea:** Used when users need to enter a sentence, paragraph, or detailed text response.
+
+- **Dropdown:** Used when users need to select one value from a predefined list of options.
+
+- **Multi Select:** Used when users need to select multiple values from a predefined list of options.
+
+- **Time Picker:** Used when users need to select and submit a specific time.
+
+- **Date Picker:** Used when users need to select and submit a specific date.
+
+- **Date Time Picker:** Used when users need to select and submit both a specific date and time.
+
+- **Heading:** Used to add a heading or title to a section and organize the content within a form or session.
+
+- **Formula:** Used to create a field that automatically calculates a value based on a predefined formula.
+
+- **Image:** Used when users need to upload and submit an image file.
+
+- **PDF:** Used when users need to upload and submit a document in PDF format.
+
+- **File:** Used when users need to upload and submit a file in any supported format.
+
+- **Signature:** Used when users need to provide and submit their digital signature.
+
+- **Video:** Used when users need to upload and submit a video file.
 
 **Data Type:**
 
