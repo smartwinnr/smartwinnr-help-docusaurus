@@ -1,11 +1,11 @@
 ---
 id: 5fdb14bf27288b7f895d6570
-title: How to add/change targets?
+title: "How to add/change Targets?"
 description: 'Follow the below steps in order to add/change the targets in a scorecard:'
 slug: how-to-add-change-targets
 sidebar_position: 177
 last_update:
-  date: 2026-08-17
+  date: 2026-08-24
   author: Sruthi Suresh
 source:
   helpscout_id: 5fdb14bf27288b7f895d6570
@@ -35,10 +35,12 @@ Use this process when you need to update targets in a scorecard for your team or
 ### 1. Navigate to the Scorecards
 Go to **EDITOR > PERFORMANCE > KPI Scorecards > Scorecards**. Click on the scorecard for which you want to edit the target.
 
+![describe this screenshot](/img/helpscout/authored/how-to-add-change-targets-mt6u2se4.png)
+
 ### 2. Edit the Target
 Click on '3', and then select **Edit Target**.
 
-![Here is how you will get to see the targets of each user:](/img/helpscout/editors/how-to-add-change-targets-1.png)
+![describe this screenshot](/img/helpscout/authored/how-to-add-change-targets-mt6u4cy6.png)
 
 ### 3. Change Targets for the Entire Team
 You can change targets for the entire team by editing in the line of the **Target**. This will change the target for the entire month, providing a quick way to update targets for everyone.

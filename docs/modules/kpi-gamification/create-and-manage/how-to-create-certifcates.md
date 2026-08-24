@@ -5,7 +5,7 @@ description: Go to Left Menu>>Editor>>GAMIFICATION AND ENGAGEMENT>>Badges And Ce
 slug: how-to-create-certifcates
 sidebar_position: 194
 last_update:
-  date: 2026-08-17
+  date: 2026-08-24
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -71,6 +71,5 @@ Click on **Assign** after completing the process.
 - Regularly review and update achievements to keep them relevant and engaging for users
 
 ## Things to know
-:::caution
+
 Ensure you have the necessary permissions to create and manage achievements. If you encounter any issues, contact your system administrator.
-:::

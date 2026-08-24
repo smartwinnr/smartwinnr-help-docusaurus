@@ -5,7 +5,7 @@ description: 'Follow the below steps to view the competition results in the Smar
 slug: how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app
 sidebar_position: 206
 last_update:
-  date: 2026-08-22
+  date: 2026-08-24
   author: Sruthi Suresh
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -38,8 +38,7 @@ It will open the following screen where you will see an individual leaderboard t
 ### 2. Filter the leaderboard
 You can filter the leaderboard at the top right corner to view the competition results of just your team, or you can choose to view the results of all users that are part of this leaderboard.
 
-![describe this screenshot](/img/helpscout/authored/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-mt44zs8b.jpg)
-
+![describe this screenshot](/img/helpscout/authored/how-managers-can-view-the-competition-leaderboards-in-the-smartwinnr-app-mt6v1pye.png)
 ### 3. View the team leaderboard
 Besides the individual leaderboard, you can access the team leaderboard. Click on the **Teams** tab to view the team leaderboard. It opens the following screen where you will be able to see the performance of various teams in the competition.
 

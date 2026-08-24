@@ -1,11 +1,11 @@
 ---
 id: 665cc161463661770bfb12d6
-title: How to add smartfeed within a Competition
+title: "How to add SmartFeed within a Competition"
 description: ''
 slug: how-to-add-smartfeed-within-a-competition
 sidebar_position: 289
 last_update:
-  date: 2026-08-17
+  date: 2026-08-24
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

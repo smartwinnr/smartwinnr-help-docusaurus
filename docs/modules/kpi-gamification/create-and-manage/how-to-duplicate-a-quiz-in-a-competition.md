@@ -1,13 +1,13 @@
 ---
 id: 5fda263d27288b7f895d60b7
-title: How to Duplicate a quiz in a Competition?
+title: "How to Duplicate a Quiz in a Competition?"
 description: >-
   When you duplicate a quiz for a competition, automatically the questions added
   to the quiz will also get duplicated.
 slug: how-to-duplicate-a-quiz-in-a-competition
 sidebar_position: 999
 last_update:
-  date: 2026-08-18
+  date: 2026-08-24
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]

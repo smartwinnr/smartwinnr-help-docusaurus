@@ -1,11 +1,11 @@
 ---
 id: 5fd9ba357129911ba1b21757
-title: How to create a competition?
+title: "How to create a Competition?"
 description: Only users with editor role can create competitions.
 slug: how-to-create-a-competition
 sidebar_position: 103
 last_update:
-  date: 2026-07-31
+  date: 2026-08-24
   author: Sruthi Suresh
 source:
   helpscout_id: 5fd9ba357129911ba1b21757
@@ -97,7 +97,7 @@ Go to the third step and click on the **Add** button. This opens a pop-up:
 
 If you are creating an individual leaderboard (if you selected **Type** as **By Participants**), you will next select the participants that will be displayed on the leaderboard.
 
-![Select Participants for Individual Leaderboard](/img/helpscout/editors/how-to-create-a-competition-12.png)
+![describe this screenshot](/img/helpscout/authored/how-to-create-a-competition-mt6udf0f.png)
 
 You can filter and choose these participants based on **Business Unit**, **Country**, **Group**, **Name**, **Email**, and **Meta Tags**. Once you have entered the required information and selected the desired participants, click on the **Save** button. This will successfully create the leaderboard and add it to the competition.
 
