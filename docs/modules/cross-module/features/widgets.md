@@ -15,6 +15,7 @@ source:
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
+draft: true
 ---
 SmartWinnr provides various types of performance analytics on your sales performance in the form of Widgets.
 
