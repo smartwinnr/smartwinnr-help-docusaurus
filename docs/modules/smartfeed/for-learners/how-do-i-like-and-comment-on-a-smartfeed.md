@@ -1,65 +1,67 @@
 ---
-id: 5fd1110180488e39007cbd8f
+id: how-do-i-like-and-comment-on-a-smartfeed
 title: How Do I Like and Comment on a SmartFeed?
-description: >-
-  Only participants can 'Like' and ,Comment' on a SmartFeed from the SmartWinnr
-  mobile app or SmartWinnr web view.
+description: Only participants can 'Like' and 'Comment' on a SmartFeed from the SmartWinnr mobile app or SmartWinnr web view.
 slug: how-do-i-like-and-comment-on-a-smartfeed
-sidebar_position: 33
+sidebar_position: 999
 last_update:
-  date: 2026-01-17T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 5fd1110180488e39007cbd8f
-  helpscout_url: 'https://help.smartwinnr.com/article/33-how-do-i-like-a-smartfeed'
+  date: 2026-08-24
+  author: Anagha Isal
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - smartfeed
   - onboarding
+draft: false
 ---
-_Only participants can 'Like' and ,Comment' on a  SmartFeed from the SmartWinnr mobile app or SmartWinnr web view._
 
-## How to Like a SmartFeed
+> **At a glance** - This article explains how to like and comment on a SmartFeed using the SmartWinnr mobile app or web view.
 
-* Open the **Left Menu** and select **SmartFeeds**.
+Only participants can 'Like' and 'Comment' on a SmartFeed from the SmartWinnr mobile app or SmartWinnr web view. Engaging with SmartFeeds helps foster interaction and feedback within your organization.
 
-    **Alternatively**, navigate to **Learning > SmartFeeds**.
+## When to use this
+Use this feature when you want to:
+- Provide feedback on a SmartFeed you found useful or interesting.
+- Engage with content shared by your peers or managers.
+- Share your thoughts or insights on a specific SmartFeed.
 
-* The SmartFeeds screen will open, displaying the list of SmartFeeds assigned to you.
+## Steps
 
-![](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-1.png)
+### 1. Open SmartFeeds
+Open the **Left Menu** and select **SmartFeeds**.
 
-* Each SmartFeed includes a **Like** button at the bottom.
-* Click the **Like** button on the SmartFeed you found useful or interesting.
+**Alternatively**, navigate to **Learning Tab > SmartFeeds**.
 
-![](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-2.png)
+The SmartFeeds screen will open, displaying the list of SmartFeeds assigned to you.
 
-There are 4 types of like options available for you.
+![SmartFeed list page](/img/helpscout/authored/how-do-i-like-and-comment-on-a-smartfeed-mt73n1ac.png)
+
+### 2. Like a SmartFeed
+Each SmartFeed includes a **Like** button at the bottom. Click the **Like** button on the SmartFeed you found useful or interesting.
+
+![Like options in SmartFeeds](/img/helpscout/authored/how-do-i-like-and-comment-on-a-smartfeed-mt73of44.png)
+
+There are four types of like options available for you.
 
 ![There are 4 types of like options available for you.](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-3.png)
 
-You can see all the likes that a SmartFeed has got at the bottom right of a SmartFeed.You can also see the list of users who have liked a SmartFeed. To do this, click on these likes that are at the bottom right of the SmartFeed.
+You can see all the likes that a SmartFeed has received at the bottom right of the SmartFeed. You can also view the list of users who have liked a SmartFeed by clicking on the likes at the bottom right of the SmartFeed.
 
-![You can see all the likes that a SmartFeed has got at the bottom right of a SmartFeed.You can also see the list of users who have liked a Sm](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-4.png)
+![You can see all the likes that a SmartFeed has got at the bottom right of a SmartFeed. You can also see the list of users who have liked a SmartFeed.](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-4.png)
 
-This will navigate you to a screen displaying the list of users who have liked the selected SmartFeed.
+This action will navigate you to a screen displaying the list of users who have liked the selected SmartFeed.
 
-![This will navigate you to a screen displaying the list of users who have liked the selected SmartFeed.](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-5.png)
+![List of likes](/img/helpscout/authored/how-do-i-like-and-comment-on-a-smartfeed-mt74tu2i.png)
 
-You can also segregate and view the users based on the type of like that they have given to the SmartFeed.
+You can also segregate and view the users based on the type of like they have given to the SmartFeed.
 
-## How to Comment on a SmartFeed
+### 3. Comment on a SmartFeed
+Navigate to the SmartFeed you want to comment on. At the **bottom-right corner** of the SmartFeed, click the **Comment** icon.
 
-1. Navigate to the SmartFeed you want to comment on.
-2. At the **bottom-right corner** of the SmartFeed, click the **Comment** icon.
-
-![At the bottom-right corner of the SmartFeed, click the Comment icon.](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-6.png)
+![SmartFeed comment option](/img/helpscout/authored/how-do-i-like-and-comment-on-a-smartfeed-mt74vrkx.png)
 
 Upon clicking the **Comment** icon, the comment screen will be displayed. Enter your comment in the provided text box, and then click **Comment** to post it to the SmartFeed.
 
-![Upon clicking the Comment icon, the comment screen will be displayed. Enter your comment in the provided text box, and then click Comment to](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-7.png)
+![Post your comment](/img/helpscout/authored/how-do-i-like-and-comment-on-a-smartfeed-mt74xkza.png)
 
-You can view the comment at any time in the future by clicking on the **Comment** icon on the SmartFeed.
-
-![You can view the comment at any time in the future by clicking on the Comment icon on the SmartFeed.](/img/helpscout/managers-and-team-members/how-do-i-like-and-comment-on-a-smartfeed-8.png)
+You can view the comment at any time in the future by clicking on the **Comment** icon on the SmartFeed. This allows for ongoing discussions and feedback on the content shared.
