@@ -2727,9 +2727,16 @@ async function fireDeploy() {
         // Build-physics: anything gradeMarkdown marks buildBreaking (bad
         // YAML, uncompilable MDX, unknown privilege key) hard-fails the
         // Railway build, so it must not ship.
+        //
+        // Alt text rides along as the one non-build-breaking hold. The
+        // endpoints above reject it at the point of editing, but this is the
+        // single chokepoint EVERY path funnels through, and articles queued
+        // before that gate existed are still sitting in the queue. Holding
+        // here is also what makes it recoverable: the article stays queued
+        // and the drafts UI names the images, same as a missing screenshot.
         const audit = gradeMarkdown(f.content, auditOpts());
         for (const finding of audit.findings || []) {
-          if (finding.buildBreaking) {
+          if (finding.buildBreaking || finding.key === 'badAltText') {
             status.errors.push(finding.detail ? `${finding.label}: ${finding.detail}` : finding.label);
           }
         }
@@ -2912,7 +2919,7 @@ async function fireDeploy() {
       return {
         ok: false,
         reason: 'held-back',
-        message: 'Every queued article has a problem that would break the production build (see held list). Fix them, then deploy again.',
+        message: 'Every queued article has a problem that must be fixed before it can go live (see held list). Fix them, then deploy again.',
         held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing, errors: h.errors })),
       };
     }
@@ -3711,6 +3718,19 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     if (buildBlockers.length > 0) {
       return res.status(400).json({
         error: 'This content would break the production build - fix before saving',
+        audit,
+      });
+    }
+    // Alt text is the one style finding that is NOT advisory here. Every
+    // `blocking` finding is enforced at /publish, but only a NEW article
+    // passes through /publish - a raw edit to an already-live article goes
+    // straight to the deploy queue below, so /publish never sees it. Screen
+    // readers get "describe this screenshot" placeholders that way, which is
+    // exactly how they reached production before this gate existed.
+    const altBlockers = (audit.findings || []).filter((f) => f.key === 'badAltText');
+    if (altBlockers.length > 0) {
+      return res.status(400).json({
+        error: `Alt text is required on every image - ${altBlockers[0].detail || altBlockers[0].label}`,
         audit,
       });
     }
