@@ -159,7 +159,7 @@
     "notifications": {
       "label": "Notifications & Chat",
       "tagline": "Custom, scheduled, and triggered notifications plus in-app chat.",
-      "description": "Reach your learners with templated and triggered notifications, scheduled drip campaigns, and a 1:1 / group chat for support. Editors and admins design the templates and delivery rules; learners receive them in-app and via push.",
+      "description": "Notifications & Chat in SmartWinnr keep learners informed, engaged, and connected throughout their learning and performance journey.\n\nSmartWinnr provides custom notifications, scheduled notifications, and activity-based notifications to ensure users receive timely updates and reminders about their assigned activities, tasks, and events.\n\nIt also provides group chat capabilities, allowing users to communicate with their peers, trainers, managers, or other members of their organization.\n\nKey capabilities:\n\n- Custom Notifications: Create notifications with relevant messages and information for users.\n- Scheduled Notifications: Schedule notifications to be delivered at a specific date and time.\n- Triggered Notifications: Send notifications based on specific activities or events in SmartWinnr.\n- Group Chat: Enable communication and collaboration among members of a group.\n- Push Notifications: Deliver timely updates and reminders directly to users through their devices.\n\nNotifications and Chat help organizations communicate important information, remind users about pending activities, and facilitate collaboration and peer interaction within SmartWinnr.",
       "keyFeatures": [
         "Custom notification templates",
         "Scheduled drip campaigns",
