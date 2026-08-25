@@ -10,23 +10,39 @@
  * helper; this script generalises it across the whole authored/ tree so
  * housekeeping doesn't have to wait for an article-delete to fire.
  *
+ * WHERE YOU RUN THIS MATTERS. Drafts live only on the server's volume and
+ * never reach git, so a scan of a local checkout cannot see them and will
+ * report a draft's screenshots as abandoned. --remote asks the live server
+ * for the list instead, which is the only answer safe to act on; a local
+ * scan is a rough estimate and refuses --apply without --force-local.
+ *
  * Usage:
- *   node scripts/prune-orphan-images.js                  # dry run
- *   node scripts/prune-orphan-images.js --apply          # unlink + enqueue deploy
- *   node scripts/prune-orphan-images.js --apply --local-only
- *                                                       # unlink, skip deploy queue
- *   node scripts/prune-orphan-images.js --apply \
+ *   npm run audit:images                                 # local dry run (estimate)
+ *   node scripts/prune-orphan-images.js --remote \
  *     --server=https://help.smartwinnr.com \
- *     --cron-secret=$CRON_SECRET
+ *     --cron-secret=$CRON_SECRET                         # authoritative report
+ *   node scripts/prune-orphan-images.js --remote --apply --server=... --cron-secret=...
+ *                                                       # report, then queue the deletes
+ *   node scripts/prune-orphan-images.js --json           # machine-readable
  *
  * Defaults:
  *   --server          process.env.HELP_SITE_URL or http://localhost:3001
  *   --cron-secret     process.env.CRON_SECRET
+ *   --min-age-days    1 (an upload younger than this is mid-edit, not abandoned)
+ *
+ * Flags:
+ *   --remote          ask the live server (sees drafts) instead of scanning here
+ *   --apply           act on the findings (unlink locally / queue git deletes)
+ *   --local-only      with --apply: unlink here, don't touch the deploy queue
+ *   --force-local     allow --apply on a local scan - only when you know this
+ *                     checkout has every draft the server has
+ *   --json            print JSON, skip the prose report
+ *   -y / --yes        skip the confirmation prompt
  *
  * Exit codes:
  *   0  success (no orphans, or all deletions completed)
  *   1  partial failure (unlinks fine, enqueue failed)
- *   2  bad arguments / config
+ *   2  bad arguments / config / unsafe --apply
  */
 
 const fs = require('fs');
@@ -43,6 +59,10 @@ function parseArgs(argv) {
   const args = {
     apply: false,
     localOnly: false,
+    remote: false,
+    forceLocal: false,
+    json: false,
+    minAgeDays: 1,
     server: process.env.HELP_SITE_URL || 'http://localhost:3001',
     cronSecret: process.env.CRON_SECRET || '',
     yes: false,
@@ -50,6 +70,10 @@ function parseArgs(argv) {
   for (const a of argv.slice(2)) {
     if (a === '--apply') args.apply = true;
     else if (a === '--local-only') args.localOnly = true;
+    else if (a === '--remote') args.remote = true;
+    else if (a === '--force-local') args.forceLocal = true;
+    else if (a === '--json') args.json = true;
+    else if (a.startsWith('--min-age-days=')) args.minAgeDays = Math.max(0, parseFloat(a.slice('--min-age-days='.length)) || 0);
     else if (a === '-y' || a === '--yes') args.yes = true;
     else if (a.startsWith('--server=')) args.server = a.slice('--server='.length);
     else if (a.startsWith('--cron-secret=')) args.cronSecret = a.slice('--cron-secret='.length);
@@ -111,6 +135,27 @@ function confirm(question) {
   });
 }
 
+async function httpJson(method, url, body, headers) {
+  const { URL: NodeURL } = require('url');
+  const u = new NodeURL(url);
+  const lib = u.protocol === 'https:' ? require('https') : require('http');
+  return new Promise((resolve, reject) => {
+    const req = lib.request(u, { method, headers: headers || {} }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => {
+        const text = Buffer.concat(chunks).toString('utf8');
+        let data = null;
+        try { data = JSON.parse(text); } catch { /* leave null */ }
+        resolve({ ok: res.statusCode >= 200 && res.statusCode < 300, status: res.statusCode, data, text });
+      });
+    });
+    req.on('error', reject);
+    if (body) req.write(body);
+    req.end();
+  });
+}
+
 async function httpJsonPost(url, body, headers) {
   const { URL: NodeURL } = require('url');
   const u = new NodeURL(url);
@@ -146,47 +191,112 @@ async function httpJsonPost(url, body, headers) {
 
 async function main() {
   const args = parseArgs(process.argv);
-  const images = listAuthoredImages();
-  if (images.length === 0) {
-    console.log(`No images in ${path.relative(ROOT, IMAGES_DIR)}.`);
-    return;
+  const say = (...m) => { if (!args.json) console.log(...m); };
+
+  // Gather. Remote is authoritative (the server sees drafts); local is an
+  // estimate of the same thing from whatever this checkout happens to hold.
+  let orphans;
+  let scanned;
+  let tooFresh = 0;
+  if (args.remote) {
+    const url = `${args.server.replace(/\/$/, '')}/api/admin/authoring/orphan-images?minAgeDays=${args.minAgeDays}`;
+    say(`Asking ${args.server} for its abandoned-image list…`);
+    let resp;
+    try {
+      resp = await httpJson('GET', url, null, args.cronSecret ? { 'x-cron-secret': args.cronSecret } : {});
+    } catch (e) {
+      console.error(`Network error contacting ${args.server}: ${e.message}`);
+      process.exit(1);
+    }
+    if (!resp.ok) {
+      console.error(`Server returned ${resp.status}: ${resp.text || '(no body)'}`);
+      if (resp.status === 401) console.error('Set CRON_SECRET (or pass --cron-secret=...) to match the server env.');
+      process.exit(1);
+    }
+    scanned = resp.data.scanned;
+    tooFresh = resp.data.orphans.tooFresh;
+    orphans = resp.data.orphans.files.map((f) => ({
+      rel: f.path,
+      abs: path.join(ROOT, f.path),
+      size: f.bytes,
+      mtimeMs: f.mtime,
+    }));
+  } else {
+    const images = listAuthoredImages();
+    if (images.length === 0) {
+      say(`No images in ${path.relative(ROOT, IMAGES_DIR)}.`);
+      if (args.json) console.log(JSON.stringify({ source: 'local', scanned: 0, orphans: [] }, null, 2));
+      return;
+    }
+    say(`Scanned ${images.length} image(s) in ${path.relative(ROOT, IMAGES_DIR)}.`);
+    say('Reading docs/ references…');
+    const corpus = readAllDocsBodies();
+    scanned = images.length;
+    const cutoff = Date.now() - args.minAgeDays * 86400000;
+    orphans = [];
+    for (const img of images) {
+      // Substring-includes is fine here: filenames carry a random suffix so
+      // accidental collisions across articles are negligible.
+      if (corpus.includes(img.url)) continue;
+      if (img.mtimeMs > cutoff) { tooFresh += 1; continue; }
+      orphans.push(img);
+    }
   }
 
-  console.log(`Scanned ${images.length} image(s) in ${path.relative(ROOT, IMAGES_DIR)}.`);
-  console.log(`Reading docs/ references…`);
-  const corpus = readAllDocsBodies();
-
-  const used = [];
-  const orphans = [];
-  for (const img of images) {
-    // Substring-includes is fine here: filenames carry a random suffix so
-    // accidental collisions across articles are negligible.
-    if (corpus.includes(img.url)) used.push(img);
-    else orphans.push(img);
-  }
-
-  const totalSize = images.reduce((a, i) => a + i.size, 0);
   const orphanSize = orphans.reduce((a, i) => a + i.size, 0);
 
-  console.log('');
-  console.log(`  Referenced: ${used.length} (${bytes(totalSize - orphanSize)})`);
-  console.log(`  Orphans:    ${orphans.length} (${bytes(orphanSize)})`);
+  if (args.json) {
+    console.log(JSON.stringify({
+      source: args.remote ? args.server : 'local-checkout',
+      authoritative: args.remote,
+      scanned,
+      minAgeDays: args.minAgeDays,
+      tooFresh,
+      orphanCount: orphans.length,
+      orphanBytes: orphanSize,
+      orphans: orphans.map((o) => ({
+        path: o.rel,
+        bytes: o.size,
+        ageDays: +((Date.now() - o.mtimeMs) / 86400000).toFixed(1),
+      })),
+    }, null, 2));
+  } else {
+    console.log('');
+    console.log(`  Source:     ${args.remote ? args.server + ' (sees drafts)' : 'local checkout (ESTIMATE - cannot see server drafts)'}`);
+    console.log(`  Scanned:    ${scanned}`);
+    console.log(`  Abandoned:  ${orphans.length} (${bytes(orphanSize)})`);
+    if (tooFresh) console.log(`  Too fresh:  ${tooFresh} (under ${args.minAgeDays}d old - may still be mid-edit)`);
+  }
 
   if (orphans.length === 0) {
-    console.log('\nNothing to do.');
+    say('\nNothing to do.');
     return;
   }
 
-  console.log('\nOrphan files (first 30):');
-  for (const o of orphans.slice(0, 30)) {
-    const age = (Date.now() - o.mtimeMs) / 1000 / 60 / 60 / 24;
-    console.log(`  ${o.rel}  (${bytes(o.size)}, ${age.toFixed(1)}d old)`);
+  if (!args.json) {
+    console.log('\nAbandoned files (largest first, first 30):');
+    for (const o of orphans.slice(0, 30)) {
+      const age = (Date.now() - o.mtimeMs) / 86400000;
+      console.log(`  ${o.rel}  (${bytes(o.size)}, ${age.toFixed(1)}d old)`);
+    }
+    if (orphans.length > 30) console.log(`  …and ${orphans.length - 30} more.`);
   }
-  if (orphans.length > 30) console.log(`  …and ${orphans.length - 30} more.`);
 
   if (!args.apply) {
-    console.log('\nDry run. Add --apply to unlink + enqueue git delete.');
+    say(args.remote
+      ? '\nReport only. Add --apply to queue these for deletion.'
+      : '\nReport only, and local scans are an estimate. Re-run with --remote --server=... --cron-secret=... before deleting anything.');
     return;
+  }
+
+  // A local scan cannot see server-side drafts, so its orphan list may
+  // include screenshots an unpublished article is actively using.
+  if (!args.remote && !args.forceLocal) {
+    console.error('\nRefusing --apply on a local scan: drafts on the server are invisible here,');
+    console.error('so this list can contain images an unpublished article still uses.');
+    console.error('Use --remote --server=... --cron-secret=..., or --force-local if this');
+    console.error('checkout genuinely holds every draft the server has.');
+    process.exit(2);
   }
 
   if (!args.yes) {
@@ -195,13 +305,16 @@ async function main() {
     if (!ok) { console.log('Aborted.'); return; }
   }
 
-  // 1. Unlink locally.
+  // 1. Unlink locally. With --remote the list came from the server, so most
+  //    of these won't exist in this checkout - that's expected, not an error.
   let unlinked = 0;
+  let absent = 0;
   for (const o of orphans) {
+    if (!fs.existsSync(o.abs)) { absent += 1; continue; }
     try { fs.unlinkSync(o.abs); unlinked += 1; }
     catch (e) { console.warn(`  failed to unlink ${o.rel}: ${e.message}`); }
   }
-  console.log(`\nUnlinked ${unlinked}/${orphans.length} file(s).`);
+  console.log(`\nUnlinked ${unlinked}/${orphans.length} file(s) here${absent ? ` (${absent} not in this checkout)` : ''}.`);
 
   if (args.localOnly) {
     console.log('--local-only: skipping deploy-queue enqueue.');

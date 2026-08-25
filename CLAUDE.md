@@ -25,6 +25,13 @@ FORCE_FULL_REINDEX=true npm run index-internal   # Delete collection + re-embed 
 npm run lint:docs      # markdownlint-cli2 over docs (custom rules in custom-markdownlint-rules.js)
 npm run lint:docs:fix  # Auto-fix lint issues
 npm run typecheck      # tsc (no emit)
+
+npm run images:audit   # Report wizard uploads under static/img/helpscout/authored/ that no
+                       # article references. A local checkout has no drafts, so this is an
+                       # ESTIMATE and refuses --apply. For the real list, ask the server:
+                       #   node scripts/prune-orphan-images.js --remote \
+                       #     --server=https://help.smartwinnr.com --cron-secret=$CRON_SECRET
+                       # Add --apply there to queue the deletes. Flags: --json, --min-age-days=N
 ```
 
 No automated test suite exists. Validation is: `lint:docs`, `typecheck`, and `build`.

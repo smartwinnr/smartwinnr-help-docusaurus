@@ -1846,6 +1846,13 @@ const JOURNAL_ENABLED = process.env.AUTHORING_JOURNAL === 'true'
   && process.env.AUTHORING_GIT_PUSH === 'true'
   && !!process.env.GIT_PUSH_TOKEN && !!process.env.GITHUB_REPO;
 const JOURNAL_MANIFEST_PATH = '.authoring/journal.json';
+// Tree entries per Trees POST during a journal write. GitHub times out on
+// one big post; layering keeps every request small.
+const JOURNAL_TREE_CHUNK = parseInt(process.env.AUTHORING_JOURNAL_TREE_CHUNK || '50', 10);
+// How long an unreferenced authored image stays in the manifest before the
+// rebase stops carrying it - long enough that an image uploaded just before
+// its article body links it is never dropped mid-edit.
+const JOURNAL_ORPHAN_TTL_MS = parseInt(process.env.AUTHORING_JOURNAL_ORPHAN_TTL_MS || String(24 * 60 * 60 * 1000), 10);
 
 // deployQueue tracks per-path actions so the same pipeline that publishes
 // an upserted article can also commit a delete. Map<relPath, 'upsert' | 'delete'>.
@@ -2213,6 +2220,100 @@ function gitBlobShaOf(buf) {
     .update(`blob ${buf.length}\0`).update(buf).digest('hex');
 }
 
+/** Blob sha for a dirty file, reusing an existing object whenever one of the
+ *  trees we already fetched lists that exact content. The rebase walks EVERY
+ *  manifest entry, so without this it re-uploaded the full dirty set (tens of
+ *  MB of screenshots) on every deploy - which is what pushed the Trees call
+ *  past GitHub's request timeout. */
+async function journalBlobSha(rel, buf, ...knownTrees) {
+  const local = gitBlobShaOf(buf);
+  for (const tree of knownTrees) {
+    if (tree && tree.get(rel) === local) return local;
+  }
+  const isText = /\.(md|mdx|json)$/i.test(rel);
+  const resp = await ghPost('/git/blobs', isText
+    ? { content: buf.toString('utf8'), encoding: 'utf-8' }
+    : { content: buf.toString('base64'), encoding: 'base64' });
+  return resp.data.sha;
+}
+
+/** Build a tree from many entries in layers. GitHub answers a single large
+ *  Trees POST with "your request timed out ... consider building the tree
+ *  incrementally"; each chunk is based on the previous chunk's tree, so the
+ *  result is identical to one big post. */
+async function ghCreateTreeChunked(baseTreeSha, entries, chunkSize = JOURNAL_TREE_CHUNK) {
+  let base = baseTreeSha;
+  for (let i = 0; i < entries.length; i += chunkSize) {
+    const resp = await ghPost('/git/trees', { base_tree: base, tree: entries.slice(i, i + chunkSize) });
+    base = resp.data.sha;
+  }
+  return base;
+}
+
+/** Authored-image paths still referenced by an article on disk (drafts
+ *  included). The wizard uploads a screenshot before the body links it, and
+ *  an author who then removes or replaces it leaves an image nothing points
+ *  at: never shipped, so never pruned from the manifest, dirty forever. */
+function journalReferencedAuthoredImages() {
+  const refs = new Set();
+  const docsRoot = path.join(__dirname, 'docs');
+  const walk = (dir) => {
+    let items = [];
+    try { items = fsSync.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const item of items) {
+      const abs = path.join(dir, item.name);
+      if (item.isDirectory()) { walk(abs); continue; }
+      if (!/\.(md|mdx)$/i.test(item.name)) continue;
+      let text = '';
+      try { text = fsSync.readFileSync(abs, 'utf8'); } catch { continue; }
+      for (const m of text.matchAll(/\/img\/helpscout\/authored\/([A-Za-z0-9._-]+)/g)) {
+        refs.add(`static/img/helpscout/authored/${m[1]}`);
+      }
+    }
+  };
+  walk(docsRoot);
+  // Module overview cards can point at an authored image too - a file only
+  // referenced there is in use, not abandoned.
+  try {
+    const overviews = fsSync.readFileSync(path.join(__dirname, 'static', 'module-overviews.json'), 'utf8');
+    for (const m of overviews.matchAll(/\/img\/helpscout\/authored\/([A-Za-z0-9._-]+)/g)) {
+      refs.add(`static/img/helpscout/authored/${m[1]}`);
+    }
+  } catch { /* absent on a fresh volume - docs alone then */ }
+  return refs;
+}
+
+/** Wizard uploads no article points at any more. Computed from THIS disk on
+ *  purpose: the volume holds drafts that never reach git, so the same scan
+ *  run against a local checkout would call a draft's screenshots abandoned. */
+function collectOrphanImages() {
+  const referenced = journalReferencedAuthoredImages();
+  let names = [];
+  try { names = fsSync.readdirSync(IMAGE_ROOT); } catch { return { scanned: 0, referenced: 0, orphans: [] }; }
+  const now = Date.now();
+  const orphans = [];
+  let scanned = 0;
+  for (const name of names) {
+    if (!/\.(png|jpe?g|gif|webp)$/i.test(name)) continue;
+    scanned += 1;
+    const rel = `static/img/helpscout/authored/${name}`;
+    if (referenced.has(rel)) continue;
+    let st;
+    try { st = fsSync.statSync(path.join(IMAGE_ROOT, name)); } catch { continue; }
+    if (!st.isFile()) continue;
+    orphans.push({
+      path: rel,
+      bytes: st.size,
+      mtime: st.mtimeMs,
+      ageDays: +((now - st.mtimeMs) / 86400000).toFixed(1),
+      queuedForDelete: deployQueue.get(rel) === 'delete',
+      journaled: journalDirty.has(rel),
+    });
+  }
+  orphans.sort((a, b) => b.bytes - a.bytes);
+  return { scanned, referenced: referenced.size, orphans };
+}
+
 // rel → {action:'upsert'|'delete', ts, seq, author}. Entries leave the map
 // only after the commit that carries them lands (seq-guarded, so a write
 // racing an in-flight flush survives to the next one).
@@ -2311,11 +2412,8 @@ async function journalFlushOnce() {
           continue;
         }
         const buf = fsSync.readFileSync(abs);
-        const isText = /\.(md|mdx|json)$/i.test(rel);
-        const blobResp = await ghPost('/git/blobs', isText
-          ? { content: buf.toString('utf8'), encoding: 'utf-8' }
-          : { content: buf.toString('base64'), encoding: 'base64' });
-        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: blobResp.data.sha });
+        const sha = await journalBlobSha(rel, buf, tipTree);
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha });
       } else if (tipTree.has(rel)) {
         // Trees API errors on sha:null for a path absent from base_tree.
         treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: null });
@@ -2331,9 +2429,9 @@ async function journalFlushOnce() {
     treeEntries.push({ path: JOURNAL_MANIFEST_PATH, mode: '100644', type: 'blob', sha: manifestBlob.data.sha });
 
     const tipCommit = await ghGet(`/git/commits/${tipSha}`);
-    const treeResp = await ghPost('/git/trees', { base_tree: tipCommit.data.tree.sha, tree: treeEntries });
+    const treeSha = await ghCreateTreeChunked(tipCommit.data.tree.sha, treeEntries);
     const message = `journal: ${captured.length} file(s) (${slugs.slice(0, 3).join(', ')}${captured.length > 3 ? '...' : ''})`;
-    const commitResp = await ghPost('/git/commits', { message, tree: treeResp.data.sha, parents: [tipSha] });
+    const commitResp = await ghPost('/git/commits', { message, tree: treeSha, parents: [tipSha] });
     try {
       await ghPatch(`/git/refs/heads/${JOURNAL_BRANCH}`, { sha: commitResp.data.sha, force: false });
     } catch (e) {
@@ -2385,7 +2483,11 @@ async function journalRebaseAfterDeploy(newMainSha, shippedRels) {
 
     const mainCommit = await ghGet(`/git/commits/${newMainSha}`);
     const mainTree = await ghGetTreeRecursive(newMainSha);
+    const referencedImages = journalReferencedAuthoredImages();
+    const now = Date.now();
     const treeEntries = [];
+    let orphaned = 0;
+    let reconciled = 0;
     for (const [rel, entry] of Object.entries(manifest.entries)) {
       if (!journalPathAllowed(rel)) { delete manifest.entries[rel]; continue; }
       if (entry.action === 'upsert') {
@@ -2395,12 +2497,22 @@ async function journalRebaseAfterDeploy(newMainSha, shippedRels) {
           delete manifest.entries[rel];
           continue;
         }
+        // Uploaded image no article points at any more, and old enough that
+        // it isn't a save still in flight: nothing will ever ship it, so stop
+        // carrying it. The file stays on disk; only the backup entry goes.
+        if (/^static\/img\/helpscout\/authored\//.test(rel)
+            && !referencedImages.has(rel)
+            && now - (entry.ts || 0) > JOURNAL_ORPHAN_TTL_MS) {
+          delete manifest.entries[rel];
+          orphaned++;
+          continue;
+        }
         const buf = fsSync.readFileSync(abs);
-        const isText = /\.(md|mdx|json)$/i.test(rel);
-        const blobResp = await ghPost('/git/blobs', isText
-          ? { content: buf.toString('utf8'), encoding: 'utf-8' }
-          : { content: buf.toString('base64'), encoding: 'base64' });
-        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: blobResp.data.sha });
+        const sha = await journalBlobSha(rel, buf, tipTree, mainTree);
+        // Already byte-identical on the publish branch (shipped in a batch
+        // this manifest didn't list): durable, no longer dirty.
+        if (mainTree.get(rel) === sha) { delete manifest.entries[rel]; reconciled++; continue; }
+        treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha });
       } else if (mainTree.has(rel)) {
         treeEntries.push({ path: rel, mode: '100644', type: 'blob', sha: null });
       }
@@ -2411,15 +2523,18 @@ async function journalRebaseAfterDeploy(newMainSha, shippedRels) {
     });
     treeEntries.push({ path: JOURNAL_MANIFEST_PATH, mode: '100644', type: 'blob', sha: manifestBlob.data.sha });
 
-    const treeResp = await ghPost('/git/trees', { base_tree: mainCommit.data.tree.sha, tree: treeEntries });
+    const treeSha = await ghCreateTreeChunked(mainCommit.data.tree.sha, treeEntries);
     const commitResp = await ghPost('/git/commits', {
       message: `journal: rebase onto ${newMainSha.slice(0, 7)}`,
-      tree: treeResp.data.sha,
+      tree: treeSha,
       parents: [newMainSha],
     });
     // force: the branch is machine-owned; the rebase intentionally rewrites it.
     await ghPatch(`/git/refs/heads/${JOURNAL_BRANCH}`, { sha: commitResp.data.sha, force: true });
-    console.log(`[journal] rebased ${JOURNAL_BRANCH} onto ${newMainSha.slice(0, 7)} (${Object.keys(manifest.entries).length} dirty file(s) kept)`);
+    // A rebase that succeeds clears the failure banner - otherwise a
+    // transient GitHub error kept "backup is failing" up until the next save.
+    journalStatus.lastError = null;
+    console.log(`[journal] rebased ${JOURNAL_BRANCH} onto ${newMainSha.slice(0, 7)} (${Object.keys(manifest.entries).length} dirty file(s) kept${orphaned ? `, ${orphaned} unreferenced image(s) dropped` : ''}${reconciled ? `, ${reconciled} already on ${GIT_PUBLISH_BRANCH}` : ''})`);
   } catch (e) {
     const msg = e.response?.data?.message || e.message;
     journalStatus.lastError = { ts: Date.now(), message: `rebase: ${msg}` };
@@ -3301,6 +3416,42 @@ app.post('/api/admin/authoring/deploy/enqueue-deletes', (req, res) => {
     scheduleDeploy();
   }
   res.json({ ok: true, queued, queueSize: deployQueue.size });
+});
+
+/** Read-only abandoned-image report. Answers from the live disk, so drafts
+ *  count as references. Superadmin session OR CRON_SECRET, matching the
+ *  enqueue-deletes route the pruning script pairs this with.
+ *  Query: ?minAgeDays=N (default 1) hides uploads too fresh to judge - the
+ *  wizard writes the file before the body links it. */
+app.get('/api/admin/authoring/orphan-images', (req, res) => {
+  const expected = process.env.CRON_SECRET || '';
+  const got = req.get('x-cron-secret') || '';
+  const viaCron = !!expected && constantTimeEq(got, expected);
+  const viaSession = !!(req.user && Array.isArray(req.user.roles) && req.user.roles.includes('superadmin'));
+  if (!viaCron && !viaSession) return res.status(401).json({ error: 'unauthorized' });
+  const minAgeDays = Math.max(0, parseFloat(req.query.minAgeDays ?? '1') || 0);
+  try {
+    const { scanned, referenced, orphans } = collectOrphanImages();
+    const ripe = orphans.filter((o) => o.ageDays >= minAgeDays);
+    const sum = (list) => list.reduce((a, o) => a + o.bytes, 0);
+    res.json({
+      ok: true,
+      generatedTs: Date.now(),
+      dir: 'static/img/helpscout/authored',
+      scanned,
+      referencedImages: referenced,
+      minAgeDays,
+      orphans: {
+        count: ripe.length,
+        bytes: sum(ripe),
+        tooFresh: orphans.length - ripe.length,
+        files: ripe,
+      },
+    });
+  } catch (e) {
+    console.error('❌ orphan-images report failed:', e.message);
+    res.status(500).json({ error: e.message });
+  }
 });
 
 app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) => {
