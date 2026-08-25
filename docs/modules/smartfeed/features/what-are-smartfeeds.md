@@ -38,10 +38,12 @@ All SmartFeeds remain available in the feed for ongoing reference.
 You can share a variety of content formats through SmartFeeds, including:
 
 * **Videos** (e.g., product demonstrations, training videos)
+* ** Audios** (eg: Podcasts on required topics)
 * **PDF documents** (e.g., product specification sheets, clinical trial data)
 * **PowerPoint presentations** (e.g., product knowledge, features and benefits)
 * **Links** to external websites or resources
 * **Images or posters**
+* **Text Content**
 
 ## How Are SmartFeeds Delivered?
 
