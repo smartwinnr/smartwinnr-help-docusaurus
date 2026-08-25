@@ -2283,6 +2283,21 @@ function journalReferencedAuthoredImages() {
   return refs;
 }
 
+/** When the wizard wrote an image, read back off its own filename: the
+ *  upload route stamps Date.now().toString(36) into the name. mtime cannot
+ *  answer this - the container disk is rebuilt on every deploy, so restored
+ *  and image-baked files all carry a date from the last boot, which made
+ *  every abandoned upload look minutes old. */
+function authoredImageUploadedTs(name, fallbackMs) {
+  const stamp = name.replace(/\.[a-z0-9]+$/i, '').split('-').pop();
+  if (!/^[0-9a-z]{7,10}$/.test(stamp)) return fallbackMs;
+  const ms = parseInt(stamp, 36);
+  // Sanity-bound it: a slug tail that merely looks base36 must not pass as a
+  // date. Anything outside "since 2024, not in the future" is not a stamp.
+  if (!Number.isFinite(ms) || ms < 1704067200000 || ms > Date.now() + 86400000) return fallbackMs;
+  return ms;
+}
+
 /** Wizard uploads no article points at any more. Computed from THIS disk on
  *  purpose: the volume holds drafts that never reach git, so the same scan
  *  run against a local checkout would call a draft's screenshots abandoned. */
@@ -2301,11 +2316,13 @@ function collectOrphanImages() {
     let st;
     try { st = fsSync.statSync(path.join(IMAGE_ROOT, name)); } catch { continue; }
     if (!st.isFile()) continue;
+    const uploadedTs = authoredImageUploadedTs(name, st.mtimeMs);
     orphans.push({
       path: rel,
       bytes: st.size,
       mtime: st.mtimeMs,
-      ageDays: +((now - st.mtimeMs) / 86400000).toFixed(1),
+      uploadedTs,
+      ageDays: +((now - uploadedTs) / 86400000).toFixed(1),
       queuedForDelete: deployQueue.get(rel) === 'delete',
       journaled: journalDirty.has(rel),
     });

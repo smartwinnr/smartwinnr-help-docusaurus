@@ -85,6 +85,18 @@ function parseArgs(argv) {
   return args;
 }
 
+/** Upload time from the filename's base36 stamp (the upload route writes
+ *  Date.now().toString(36) into it). mtime is worthless for this: the server
+ *  rebuilds its disk on every deploy, and a git checkout stamps files with
+ *  the clone time. Mirrors authoredImageUploadedTs in server.js. */
+function uploadedTsOf(name, fallbackMs) {
+  const stamp = name.replace(/\.[a-z0-9]+$/i, '').split('-').pop();
+  if (!/^[0-9a-z]{7,10}$/.test(stamp)) return fallbackMs;
+  const ms = parseInt(stamp, 36);
+  if (!Number.isFinite(ms) || ms < 1704067200000 || ms > Date.now() + 86400000) return fallbackMs;
+  return ms;
+}
+
 function listAuthoredImages() {
   if (!fs.existsSync(IMAGES_DIR)) return [];
   return fs
@@ -99,6 +111,7 @@ function listAuthoredImages() {
         url: URL_PREFIX + e.name,                            //      /img/helpscout/authored/X.png
         size: fs.statSync(abs).size,
         mtimeMs: fs.statSync(abs).mtimeMs,
+        uploadedTs: uploadedTsOf(e.name, fs.statSync(abs).mtimeMs),
       };
     });
 }
@@ -220,6 +233,7 @@ async function main() {
       abs: path.join(ROOT, f.path),
       size: f.bytes,
       mtimeMs: f.mtime,
+      uploadedTs: f.uploadedTs || uploadedTsOf(path.basename(f.path), f.mtime),
     }));
   } else {
     const images = listAuthoredImages();
@@ -238,7 +252,7 @@ async function main() {
       // Substring-includes is fine here: filenames carry a random suffix so
       // accidental collisions across articles are negligible.
       if (corpus.includes(img.url)) continue;
-      if (img.mtimeMs > cutoff) { tooFresh += 1; continue; }
+      if (img.uploadedTs > cutoff) { tooFresh += 1; continue; }
       orphans.push(img);
     }
   }
@@ -257,7 +271,8 @@ async function main() {
       orphans: orphans.map((o) => ({
         path: o.rel,
         bytes: o.size,
-        ageDays: +((Date.now() - o.mtimeMs) / 86400000).toFixed(1),
+        uploaded: new Date(o.uploadedTs).toISOString(),
+        ageDays: +((Date.now() - o.uploadedTs) / 86400000).toFixed(1),
       })),
     }, null, 2));
   } else {
@@ -276,7 +291,7 @@ async function main() {
   if (!args.json) {
     console.log('\nAbandoned files (largest first, first 30):');
     for (const o of orphans.slice(0, 30)) {
-      const age = (Date.now() - o.mtimeMs) / 86400000;
+      const age = (Date.now() - o.uploadedTs) / 86400000;
       console.log(`  ${o.rel}  (${bytes(o.size)}, ${age.toFixed(1)}d old)`);
     }
     if (orphans.length > 30) console.log(`  …and ${orphans.length - 30} more.`);
