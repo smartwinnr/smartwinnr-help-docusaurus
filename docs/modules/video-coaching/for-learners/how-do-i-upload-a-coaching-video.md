@@ -1,12 +1,12 @@
 ---
 id: 5fd728293d1d2a5b1c5ea4c8
-title: How do I upload a coaching video?
+title: "How to upload your coaching video in SmartWinnr"
 description: 'Follow the below steps to upload your coaching video in the SmartWinnr app:'
 slug: how-do-i-upload-a-coaching-video
 sidebar_position: 86
 last_update:
-  date: 2022-06-20T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-27
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 5fd728293d1d2a5b1c5ea4c8
   helpscout_url: 'https://help.smartwinnr.com/article/86-how-do-i-upload-a-coaching-video'
@@ -15,82 +15,57 @@ customProps:
 tags:
   - video-coaching
   - onboarding
+draft: false
 ---
-## How to upload a coaching video from the mobile app
 
-Follow the below steps to upload your coaching video in the SmartWinnr app:
+> **At a glance** - This article provides step-by-step instructions for uploading a coaching video in the SmartWinnr app, both via mobile and web.
 
-Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.
+Follow the below steps to upload your coaching video in the SmartWinnr app:
 
-![Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.](https://lh3.googleusercontent.com/SGzRUfcmuvgQP71ZmaDRblrQ33WkY3DqpdIZKHAHhXh9a5D76LzLx43TILws-SnRY6r9J-m4-0LulFPMUtPPS0G9k7LQdpOc12G17fxTGJoa5rC4wXrypRRY3vC3EfjNbxVDLSHE)
+## When to use this
+Use this guide when you need to upload a coaching video for an assignment in the SmartWinnr app. 
 
-Step 2: On the coaching details page, click on the  ' **Record Video**' button to record or select your video from the gallery.
+- You have a coaching assignment that requires a video submission.
+- You want to record a video response using your device.
+- You prefer to upload a pre-recorded video from your gallery.
 
-![Step 2: On the coaching details page, click on the ' Record Video' button to record or select your video from the gallery.](https://lh3.googleusercontent.com/3l3A94irbkNymRtw7brHE2ALHw3stQ793Xk89L21AAORrM195GUnwjvQrrRxAYzq1SOxpt-E6SIcGN67yFhJ65_6siIfcsLUS6Qi1qsQyYC020CJKwKwaMIbbx7oqCoID73zaUDW)
+## Steps
 
-When you click on the ' **Record Video**' button, it gives you two options -
+### 1. Access the Coaching Assignment
+Go to the **Left menu** > **Coachings**. Select the coaching assignment.
 
-1. to record it from the camera
-2. to select a video from the gallery.
+![Left Menu coaching section](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4s8xi.png)
 
-![to select a video from the gallery.](https://lh5.googleusercontent.com/IjplfKHYjlu7GTtFcXJ54QkC3YGSR3IIc4H76S78uxkrK82YUzl2muEEUOj95WMat3kX0LZe4vrTlhnsDJ8OaWs_RSFqUWwjoC3ztqDBNO-_MFcqfSKeW683Z0kxgk0QtctOKznU)
+### 2. Choose Video Upload Option
+On the coaching details page, you have two options for video submission:
 
-When you record the video from the camera, it will get stored in your phone's gallery even if you don't upload it. This way, you can make multiple attempts to record a video, and all your recordings will be available in your gallery. You can then upload your best recording from the gallery.
+1. Click on the **Upload Video** button to select your video from the gallery.
+   ![Upload video option image](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4txlq.png)
+   
+2. Click on the **Record Video** button. This will prompt you to provide microphone and camera access permissions to record the video. Ensure you enable access.
 
-Step 3: You can preview your video on the same page and then click on the ' **Upload Video**' button to submit the video.
+When you record the video, it will be stored in your phone's gallery, allowing you to make multiple attempts. You can upload your best recording from the gallery.
 
-![Step 3: You can preview your video on the same page and then click on the ' Upload Video' button to submit the video.](https://lh3.googleusercontent.com/8J4FbAvKKMcddQfhV5e6VqWk6_0zuFFFgpPW42rqwtPv05KFc6oxLFU7tmQK1lziHQNFVbJjkTZJJXaHBcJFnSrWhFJNN-To58b2c3OCXndG4ctVJdWq05IfHDIsg8CmToCBwnIG)
+### 3. Preview and Submit the Video
+You can preview your video on the same page. After confirming it is satisfactory, click on the **Upload Video** button to submit.
 
-You will get a confirmation screen like the one below, once your video gets uploaded successfully. You will also get a notification once your submission is reviewed by a coach.
+You will see a confirmation screen indicating that your video has been uploaded successfully.
 
-![You will get a confirmation screen like the one below, once your video gets uploaded successfully. You will also get a notification once you](https://lh3.googleusercontent.com/iKiB42UUoSCv-cgKnJhhX7J85a3lfyAKiBV4Jdmd2SShGZ6toiadlg2yIU0zoU3_Ohi06pxv-tnCHYAgIAVbY2vuxpcN5u-UQoWqaDRXw4QSKfhjwwCj66I4g2IAFqnsEdxjhKcR)
+![Complete submission screenshot](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4p9mc.png)
 
-Apart from the normal way of uploading response to the coaching assignment, SmartWinnr provides additional ways for uploading responses to coaching assignment.
+### Additional Upload Options
+Apart from the standard video upload, SmartWinnr provides additional ways to submit responses to coaching assignments:
 
-* **Record Audio**
+- **Record Audio**: SmartWinnr allows you to record your voice using a microphone and upload it as your coaching response.  
+  [Learn how to upload audio recording for coaching](/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching).
 
-    SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your voice using a microphone and upload the same into SmartWinnr.
+- **Record Screen**: You can record your screen using the screen share option and upload it as your coaching response.  
+  [Learn how to upload screen recording for coaching](/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching).
 
-      [Learn How to upload Audio Recording for Coaching](/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching)
+- **Record Video**: You can also record a video using your camera and upload it as your coaching response.  
+  [Learn how to record video for coaching response](/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching).
 
-* **Record Screen**
-
-    SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your screen using a screen share option and upload the same into SmartWinnr.
-
-      [Learn How to upload screen Recording for Coaching](/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching)
-
-* **Record Video**
-
-   SmartWinnr provides a convenient and simple way to record the coaching response for the coaching assignment. It allows you to record your video using a camera and upload the same into SmartWinnr.
-
-  [Learn How to record video for Coaching response](/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching)
-
-## How to upload a coaching video from the web view
-
-Follow the below steps to upload your coaching video in the SmartWinnr app:
-
-Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.
-
-![Step:1 Go to the Left menu > Coachings > Assigned tab. Select the coaching assignment.](/img/helpscout/managers-and-team-members/how-do-i-upload-a-coaching-video-6.png)
-
-Step 2: On the coaching details page, click on the ' Upload Video' button to upload your video. Here you can choose the video which you would like to submit for the coaching
-
-![Step 2: On the coaching details page, click on the ' Upload Video' button to upload your video. Here you can choose the video which you woul](/img/helpscout/managers-and-team-members/how-do-i-upload-a-coaching-video-7.png) It will show you a pop-up message asking for a confirmation to upload the selected video.Click on "CONFIRM" button to continue.
-
-![Step 2: On the coaching details page, click on the ' Upload Video' button to upload your video. Here you can choose the video which you woul](/img/helpscout/managers-and-team-members/how-do-i-upload-a-coaching-video-8.png)
-
-You will get a confirmation screen like the one below, once your video gets uploaded successfully. You will also get a notification once your submission is reviewed by a coach.
-
-![You will get a confirmation screen like the one below, once your video gets uploaded successfully. You will also get a notification once you](/img/helpscout/managers-and-team-members/how-do-i-upload-a-coaching-video-9.png)
-
-[![You will get a confirmation screen like the one below, once your video gets uploaded successfully. You will also get a notification once you](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62a3071392cb8c175b46bb56/file-bqk75uF7vX.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62a3071392cb8c175b46bb56/file-bqk75uF7vX.png)
-
-[![[](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62a3071392cb8c175b46bb56/file-bqk75uF7vX.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62aa1c6df6341f7edc2a55ee/file-bqk75uF7vX.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62aa1c6df6341f7edc2a55ee/file-bqk75uF7vX.png)
-
-[![[](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62aa1c6df6341f7edc2a55ee/file-bqk75uF7vX.png)](https:/](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1eimages/62a2fa1957320007925236d9/file-bqk75uF7vX.png)](https://s3.amazonaws.com/helpscout.net/docs/assets/5fcdfed6d580ce55a38b4d1e/images/62a2fa1957320007925236d9/file-bqk75uF7vX.png)
-
-Only users with the user role can upload the coaching video.
-
-You can preview your video multiple times before you submit it.
-
-Once the coaching is submitted, the participant will not be able to edit or resubmit the video.
+## Things to know
+- Only users with the user role can upload the coaching video.
+- You can preview your video multiple times before submitting it.
+- Once the coaching is submitted, participants cannot edit or resubmit the video.
