@@ -54,6 +54,33 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// External 301s for URLs retired in the 2026-03 IA/marketing consolidation.
+// Pre-auth so Googlebot and old bookmarks get a real 301 instead of
+// bouncing through /auth/login. Data-driven from lib/external-redirects.json.
+// Deliberately NOT under data/ - that directory is shadowed at runtime by
+// the Railway volume mounted at /app/data (see RAILWAY_DEPLOYMENT.md), so a
+// file read only at server startup (not build time, unlike data/redirects.json)
+// would silently go missing on deploy.
+const externalRedirectsPath = path.join(__dirname, 'lib', 'external-redirects.json');
+const externalRedirectMap = new Map();
+try {
+  const raw = JSON.parse(fsSync.readFileSync(externalRedirectsPath, 'utf8'));
+  for (const { from, to } of raw.redirects || []) {
+    const key = from === '/' ? '/' : from.replace(/\/+$/, '');
+    externalRedirectMap.set(key, to);
+  }
+} catch (e) {
+  console.error('[external-redirects] failed to load lib/external-redirects.json:', e.message);
+}
+
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) return next();
+  const key = req.path === '/' ? '/' : req.path.replace(/\/+$/, '');
+  const target = externalRedirectMap.get(key);
+  if (target) return res.redirect(301, target);
+  return next();
+});
+
 // Auth routes (public) + auth middleware (protects everything below)
 initAuth(app);
 

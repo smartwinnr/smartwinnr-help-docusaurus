@@ -182,6 +182,15 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        // The whole site is auth-gated (see auth/index.js) and robots.txt
+        // disallows crawling everything except the retired URLs handled by
+        // the external-redirects middleware in server.js - nothing here is
+        // meant to be indexed. With zero items the plugin skips writing
+        // sitemap.xml entirely (no dangling reference to it belongs in
+        // robots.txt).
+        sitemap: {
+          createSitemapItems: async () => [],
+        },
       },
     ],
   ],

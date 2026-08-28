@@ -1,0 +1,346 @@
+{
+  "version": 1,
+  "generatedFrom": "help-site-301-redirect-map.csv",
+  "redirects": [
+    {
+      "from": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/understanding-the-feedback-screen",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/how-can-a-user-submit-an-ai-coaching-attempt",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/how-many-learners-have-submitted-their-responses",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/assign-schedule/bulk-coaching-assignment",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/understanding-role-play-records-retention",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/why-cant-i-see-my-video-during-role-play",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/how-ai-coach-feedback-generation-time-works",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/why-cant-i-find-a-user-to-assign-coaching",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/add-coaching-scenario-to-folder",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/how-to-enable-camera-and-microphone-permissions-in-smartwinnr",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/smartwinnr-ai-coaching-language-support",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/see-coaching-feedback",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/can-i-pause-roleplay",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/create-coaching-folder",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/faqs-and-troubleshooting/how-to-resume-paused-attempts",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/share-coaching-video-with-manager",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/ai-coaching",
+      "to": "https://smartwinnr.com/product/ai-roleplay"
+    },
+    {
+      "from": "/modules/authoringtools",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/competition",
+      "to": "https://smartwinnr.com/product/gamification"
+    },
+    {
+      "from": "/modules/competition/for-learners/create-detailing-contest",
+      "to": "https://smartwinnr.com/product/gamification"
+    },
+    {
+      "from": "/modules/cross-module/for-learners/how-to-use-qresolve-in-the-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/cross-module/for-learners/how-can-i-answer-a-query",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/cross-module/for-learners/how-to-post-a-query-from-the-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/cross-module/for-learners/how-to-access-the-scorm-course-from-the-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/cross-module/for-learners/what-is-qresolve",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/cross-module",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/field-coaching",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/forms/for-learners/how-to-add-new-form-submission",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/forms/for-learners/how-can-i-submit-a-form-from-left-menu",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/forms/for-learners/how-can-i-submit-a-form-from-chat",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/forms",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/knowledge-hub/for-learners/how-to-use-khub-in-the-smartwinnr-app",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/knowledge-hub/for-learners/provide-khub-access",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/knowledge-hub/for-learners/understanding-recent-trending-and-latest-khub-items",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/knowledge-hub",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/kpi-gamification/for-learners/how-do-i-view-the-kpi-scorecard",
+      "to": "https://smartwinnr.com/product/gamification"
+    },
+    {
+      "from": "/modules/kpi-gamification/for-learners/how-can-i-view-a-competition-leaderboard",
+      "to": "https://smartwinnr.com/product/gamification"
+    },
+    {
+      "from": "/modules/kpi-gamification",
+      "to": "https://smartwinnr.com/product/gamification"
+    },
+    {
+      "from": "/modules/notifications/for-learners/how-to-view-notifications",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/notifications",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/quiz/for-learners/how-to-answer-long-answer-type-questions-in-smartwinnr",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/quiz/faqs-and-troubleshooting/troubleshoot-for-common-error-code",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/quiz/for-learners/how-users-can-see-the-evaluation-and-scores-for-long-answer-question",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/quiz/faqs-and-troubleshooting/setup-quiz-proctoring",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/quiz/faqs-and-troubleshooting/how-import-question-is-different-from-add-new-question",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/quiz",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/smartfeed/for-learners/how-do-i-like-and-comment-on-a-smartfeed",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/smartfeed",
+      "to": "https://smartwinnr.com/product/digital-content-management"
+    },
+    {
+      "from": "/modules/smartpath/for-learners/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/smartpath/for-learners/how-learners-can-mark-attendance-for-smartpath-learning-session-on-their-own",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/smartpath/for-learners/unassign-users-smartpath",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/smartpath",
+      "to": "https://smartwinnr.com/product/targeted-learning"
+    },
+    {
+      "from": "/modules/survey/faqs-and-troubleshooting/what-is-the-difference-between-a-survey-and-a-survey-template",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/survey",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/for-learners/how-to-upload-screen-recording-for-coaching",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/for-learners/how-to-upload-video-recording-for-coaching",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/faqs-and-troubleshooting/unable-to-view-coachings",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching",
+      "to": "https://smartwinnr.com/product/field-coaching"
+    },
+    {
+      "from": "/get-started/onboarding/how-to-update-the-smartwinnr-app-web-view",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/what-is-my-username-and-password",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-login-to-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/reference/help-support/troubleshoot-for-common-error-code",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/overview",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-enable-push-notification-for-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-change-my-profile-image",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-contact-smartwinnr-team",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/what-if-i-ve-forgotten-my-password",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-download-the-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-change-my-language-in-smartwinnr-app",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-check-the-app-version-web-view-version",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/release-notes/announcements",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/reference/help-support",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-to-update-the-smartwinnr-app-from-web-view",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/browser-and-device-support",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/my-account-is-locked-what-should-i-do",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/reference/troubleshooting",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/path/help",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/path/learner",
+      "to": "https://smartwinnr.com/platform"
+    }
+  ]
+}
