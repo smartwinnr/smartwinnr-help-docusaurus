@@ -11,6 +11,7 @@ const { ChromaClient } = require('chromadb');
 
 const { initAuth } = require('./auth');
 const { requireRole } = require('./auth/requireRole');
+const { COOKIE_NAME, verifySessionToken } = require('./auth/jwt');
 const chatLogger = require('./db/chat-logger');
 const feedbackLogger = require('./db/feedback-logger');
 const digestStore = require('./db/digest-store');
@@ -73,12 +74,33 @@ try {
   console.error('[external-redirects] failed to load lib/external-redirects.json:', e.message);
 }
 
+// This middleware runs before cookie-parser (initAuth below sets that up),
+// so parse the session cookie by hand rather than via req.cookies.
+function hasValidSession(req) {
+  const header = req.headers.cookie;
+  if (!header) return false;
+  const prefix = `${COOKIE_NAME}=`;
+  const raw = header.split(';').map((part) => part.trim()).find((part) => part.startsWith(prefix));
+  if (!raw) return false;
+  try {
+    verifySessionToken(decodeURIComponent(raw.slice(prefix.length)));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) return next();
   const key = req.path === '/' ? '/' : req.path.replace(/\/+$/, '');
   const target = externalRedirectMap.get(key);
-  if (target) return res.redirect(301, target);
-  return next();
+  if (!target) return next();
+  // Only bounce anonymous visitors (search engines, stale bookmarks, logged-
+  // out users) to the marketing site. A signed-in user landing on one of
+  // these retired paths should still get the normal gated behavior for the
+  // site, not get yanked out to smartwinnr.com.
+  if (hasValidSession(req)) return next();
+  return res.redirect(301, target);
 });
 
 // Auth routes (public) + auth middleware (protects everything below)
