@@ -1,6 +1,10 @@
 {
   "version": 1,
   "generatedFrom": "help-site-301-redirect-map.csv",
+  "excludedFromSource": {
+    "paths": ["/", "/path/help", "/path/learner"],
+    "reason": "Navigation entry points, not retired content. This middleware runs before requireAuth, so redirecting them sent logged-out visitors to smartwinnr.com instead of /auth/login - leaving no way to reach the login page and therefore no way to ever get a session. Do not re-add these when regenerating from the CSV."
+  },
   "redirects": [
     {
       "from": "/modules/ai-coaching/for-learners/how-can-a-user-view-feedback-after-submitting-an-ai-coaching",
@@ -328,18 +332,6 @@
     },
     {
       "from": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
-      "to": "https://smartwinnr.com/platform"
-    },
-    {
-      "from": "/",
-      "to": "https://smartwinnr.com/platform"
-    },
-    {
-      "from": "/path/help",
-      "to": "https://smartwinnr.com/platform"
-    },
-    {
-      "from": "/path/learner",
       "to": "https://smartwinnr.com/platform"
     }
   ]

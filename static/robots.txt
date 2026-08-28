@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: /
 
-# The 85 paths below were retired in the 2026-03 IA/marketing
+# The 82 paths below were retired in the 2026-03 IA/marketing
 # consolidation and now issue a real HTTP 301 (see the external-redirects
 # middleware in server.js + lib/external-redirects.json). Googlebot must
 # be able to crawl these exact paths to observe the 301 and update its
@@ -88,7 +88,4 @@ Allow: /get-started/onboarding/browser-and-device-support$
 Allow: /get-started/onboarding/my-account-is-locked-what-should-i-do$
 Allow: /reference/troubleshooting$
 Allow: /get-started/onboarding/what-if-i-ve-forgotten-my-pin$
-Allow: /$
-Allow: /path/help$
-Allow: /path/learner$
 
