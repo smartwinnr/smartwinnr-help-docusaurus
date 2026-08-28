@@ -100,6 +100,11 @@ app.use((req, res, next) => {
   // these retired paths should still get the normal gated behavior for the
   // site, not get yanked out to smartwinnr.com.
   if (hasValidSession(req)) return next();
+  // The redirect is conditional on login state, so browsers must never
+  // cache it - a cached 301 would keep bouncing a since-logged-in user
+  // without ever re-checking the server. Search engines don't rely on
+  // this header for indexing, so it costs nothing for SEO.
+  res.set('Cache-Control', 'no-store');
   return res.redirect(301, target);
 });
 
