@@ -7,8 +7,8 @@ description: >-
 slug: troubleshoot-for-common-error-code
 sidebar_position: 47
 last_update:
-  date: 2021-01-23T00:00:00.000Z
-  author: HelpScout Migration
+  date: 2026-08-29
+  author: Anagha Isal
 source:
   helpscout_id: 5fd48e84c868cb6df3a8101f
   helpscout_url: 'https://help.smartwinnr.com/article/47-troubleshoot-for-common-error-code'
@@ -32,12 +32,6 @@ Here is a list of possible errors that you might encounter while uploading a CSV
 **Why does this error occur**?:- If the given categories do not exist in the division
 
 **How can you fix the error?:-** Change the categories, that exists in the selected division or default division (if there is only one division)
-
-**3\. Error:** Only one tag is allowed from each category for a division
-
-**Why does this error occur**?:- You can't select more than one tags from a single category
-
-**How can you fix the error?:-** Keep only one tag from each category.
 
 **4\. Error:** Categories column value can't be blank
 
