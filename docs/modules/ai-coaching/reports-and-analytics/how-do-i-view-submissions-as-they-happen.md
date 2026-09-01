@@ -5,7 +5,7 @@ description: "View video coaching submissions in real time, monitor user activit
 slug: how-do-i-view-submissions-as-they-happen
 sidebar_position: 20
 last_update:
-  date: 2026-08-14
+  date: 2026-09-01
   author: Anagha Isal
 source:
   helpscout_id: 6970aecda77dc93e2023576b
@@ -72,7 +72,9 @@ Ensure you have the appropriate access rights as an editor to view submissions i
     * **Coach name**: The assigned coach or manager who will review this submission.
     * **Submission date and time**: When the user submitted their video.
     * **Video player**: Watch the submitted video directly within the interface.
-    * **Attempts dropdown**: If the user submitted multiple times, select which attempt to view.
+    * **Attempts dropdown**: If the user submitted multiple times, select which attempt to view. To view each response video and analytics for each attempt, select the attempt number from the dropdown list.
+
+![attempt count](/img/helpscout/authored/how-do-i-view-submissions-as-they-happen-mtie4t79.png)
 
 ### 4. Review submission details using the tabs
 
