@@ -57,7 +57,7 @@ function ForbiddenView({title}: {title: string}): JSX.Element {
       <h1>{title}</h1>
       <p>This section requires a higher access level than your current role provides.</p>
       <p>
-        <Link to="/">← Back to the homepage</Link>
+        <Link to="/home">← Back to the homepage</Link>
       </p>
     </div>
   );
@@ -164,7 +164,7 @@ function PathSkeleton({persona}: {persona: Persona}): JSX.Element {
     <div className={styles.wrap}>
       <section className={styles.personaShell}>
         <div className={styles.personaCrumb}>
-          <Link to="/">← Home</Link>
+          <Link to="/home">← Home</Link>
           {' '}›{' '}
           <PIcon size={14} strokeWidth={2} style={{verticalAlign: '-2px'}} /> {persona.label}
         </div>
@@ -205,7 +205,7 @@ function Inner({slug}: Props): JSX.Element {
     <div className={styles.wrap}>
       <section className={styles.personaShell}>
         <div className={styles.personaCrumb}>
-          <Link to="/">← Home</Link>
+          <Link to="/home">← Home</Link>
           {' '}›{' '}
           <PIcon size={14} strokeWidth={2} style={{verticalAlign: '-2px'}} /> {persona.label}
         </div>
@@ -218,7 +218,7 @@ function Inner({slug}: Props): JSX.Element {
             <p className={styles.personaSub}>{persona.blurb}</p>
           </div>
         </div>
-        <Link to="/" className={styles.modeSwitcher}>
+        <Link to="/home" className={styles.modeSwitcher}>
           <span className={styles.modeSwitcherActive}>{persona.label}</span>
           Switch lens →
         </Link>

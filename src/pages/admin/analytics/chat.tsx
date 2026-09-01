@@ -249,7 +249,7 @@ function Dashboard(): JSX.Element {
       <div className={styles.wrap}>
         <h1>Chat analytics</h1>
         <p>You don't have access to this dashboard.</p>
-        <p><Link to="/">← Back to the homepage</Link></p>
+        <p><Link to="/home">← Back to the homepage</Link></p>
       </div>
     );
   }

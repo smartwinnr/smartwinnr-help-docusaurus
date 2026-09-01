@@ -215,6 +215,10 @@ const config: Config = {
         alt: 'SmartWinnr Logo',
         src: 'img/logo_blue.svg',
         srcDark: 'img/logo_white.png',
+        // The homepage lives at /home; bare / is a public 301 to the
+        // marketing site (see the root handler in server.js). Without this
+        // the logo defaults to baseUrl and ejects signed-in users.
+        href: '/home',
       },
       items: [
         {

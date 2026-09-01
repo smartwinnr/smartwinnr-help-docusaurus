@@ -19,7 +19,7 @@ import RelatedStrip from '@site/src/components/Article/RelatedStrip';
  *     ancestor owns the reading column so the title, chip, h2s, paragraphs,
  *     lists, etc. naturally share a left edge - no per-tag constraints,
  *     no specificity fights with Infima's `.anchor` heading classes.
- *   • For pages that embed full-width React components (landing /,
+ *   • For pages that embed full-width React components (landing /home,
  *     /path/<persona>/, /modules/<m>/), skip both the wrapper and the
  *     chrome so the React component keeps its own width.
  */
@@ -37,7 +37,7 @@ function useSyntheticTitle(): string | null {
 // prose-column wrapper and NO chrome.
 function isFullWidthPage(url: string | undefined): boolean {
   if (!url) return false;
-  if (url === '/') return true;
+  if (url === '/home') return true;
   if (url.startsWith('/path/')) return true;
   // Module overview pages: exactly /modules/<m> or /modules/<m>/ - but NOT
   // sub-folders like /modules/<m>/<sub> (those are real articles).

@@ -87,7 +87,18 @@ router.get('/callback', (req, res) => {
 
     // Only allow path-based redirects (must start with /). Reject fragments,
     // empty strings, or absolute URLs to prevent redirect loops and open redirects.
-    var safePath = (redirect && redirect.startsWith('/')) ? redirect : '/';
+    // '//evil.com' and '/\evil.com' are protocol-relative - browsers treat
+    // them as absolute, so they'd be an open redirect.
+    var isSafe = redirect
+      && redirect.startsWith('/')
+      && !redirect.startsWith('//')
+      && !redirect.startsWith('/\\');
+    var safePath = isSafe ? redirect : '/home';
+    // The homepage moved to /home; bare / is a public 301 to the marketing
+    // site. Normalizing here (the single consumer) covers every producer of
+    // ?redirect=%2F - requireAuth, UserContext's 401 handler, and stale
+    // bookmarks - so a user never signs in only to be ejected off-site.
+    if (safePath === '/') safePath = '/home';
     return res.redirect(safePath);
   } catch (err) {
     console.error('Auth: invalid callback token:', err.message);
@@ -189,9 +200,13 @@ if (IS_DEV) {
     const region = String(req.query.region || 'local');
     const orgId = String(req.query.orgId || 'dev-org');
     const redirectRaw = req.query.redirect;
-    const redirect = typeof redirectRaw === 'string' && redirectRaw.startsWith('/')
+    const redirectRawSafe = typeof redirectRaw === 'string'
+      && redirectRaw.startsWith('/')
+      && !redirectRaw.startsWith('//')
+      && !redirectRaw.startsWith('/\\')
       ? redirectRaw
-      : '/';
+      : '/home';
+    const redirect = redirectRawSafe === '/' ? '/home' : redirectRawSafe;
 
     const token = signSessionToken({
       email,

@@ -90,6 +90,35 @@ function hasValidSession(req) {
   }
 }
 
+// The site root is NOT in the redirect map above - it needs asymmetric
+// behavior the generic map can't express. The homepage now lives at /home,
+// so nothing is built at /; a signed-in user falling through here would get
+// a 404 rather than their homepage.
+//
+//   anonymous (incl. Googlebot) -> 301 to the marketing site. This is the
+//     whole point: / carries more inbound links than any other URL on the
+//     subdomain, and robots.txt has an explicit `Allow: /$` so Google can
+//     fetch it and observe the move.
+//   signed-in -> 302 to /home, preserving the query string (a superadmin
+//     hitting /?as=user must keep the preview; maybeApplyPreview runs later,
+//     inside requireAuth, and hasValidSession ignores `as`).
+//
+// Staff who are logged out reach sign-in at /login, which is why redirecting
+// / is safe now when it was not before (see lib/external-redirects.json).
+app.get('/', (req, res) => {
+  // Response varies by cookie, so it must never be cached - a stored 301
+  // would keep ejecting a since-signed-in user without re-asking the server.
+  // no-store does not weaken the 301 for SEO: Google doesn't use cache
+  // headers for canonicalization, and recrawls observe the move sooner.
+  res.set('Cache-Control', 'no-store');
+  res.set('Vary', 'Cookie');
+  if (hasValidSession(req)) {
+    const qs = req.originalUrl.indexOf('?');
+    return res.redirect(302, '/home' + (qs === -1 ? '' : req.originalUrl.slice(qs)));
+  }
+  return res.redirect(301, 'https://smartwinnr.com/platform');
+});
+
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) return next();
   const key = req.path === '/' ? '/' : req.path.replace(/\/+$/, '');
@@ -4423,7 +4452,7 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
     let redirectsUpdated = false;
     if (wasPublished && deletedRoute) {
       const modMatch = /^\/modules\/([^/]+)\//.exec(deletedRoute + '/');
-      const landing = modMatch ? `/modules/${modMatch[1]}` : '/';
+      const landing = modMatch ? `/modules/${modMatch[1]}` : '/home';
       redirectsUpdated = await withRedirectsLock(async () => {
         const base = await loadRedirectsBase();
         if (!base) {
@@ -5477,7 +5506,7 @@ app.use(express.static(buildPath));
 
 // Handle client-side routing for non-API routes. Docusaurus pre-builds an
 // index.html under every doc dir (e.g. build/overview/index.html), so the
-// fallback chain is: <path>/index.html → build/index.html → 404.html → 503.
+// fallback chain is: <path>/index.html → 404.html → build/home/index.html → 503.
 // This prevents a missing/partial build from crashing the auth flow.
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api/')) {
@@ -5500,7 +5529,9 @@ app.get('*', (req, res, next) => {
   }
 
   // No 404 page (partial build) - serve the shell so the auth flow still works.
-  const shell = path.join(buildPath, 'index.html');
+  // The homepage is /home (bare / is a 301 to marketing and is not built), so
+  // the shell lives at build/home/index.html.
+  const shell = path.join(buildPath, 'home', 'index.html');
   if (fs.existsSync(shell)) {
     return res.status(404).sendFile(shell);
   }

@@ -1,7 +1,15 @@
 User-agent: *
 Disallow: /
 
-# The 82 paths below were retired in the 2026-03 IA/marketing
+# The site root. Bare / is a real 301 to smartwinnr.com/platform for
+# anonymous visitors (see the root handler in server.js) - it carries more
+# inbound links than any other URL here, so Googlebot must be able to fetch
+# it to observe the move. The $ anchor matters: it matches ONLY the root,
+# not the whole site. The homepage itself now lives at /home, which stays
+# disallowed along with the rest of the gated docs.
+Allow: /$
+
+# The 84 paths below were retired in the 2026-03 IA/marketing
 # consolidation and now issue a real HTTP 301 (see the external-redirects
 # middleware in server.js + lib/external-redirects.json). Googlebot must
 # be able to crawl these exact paths to observe the 301 and update its
@@ -88,4 +96,6 @@ Allow: /get-started/onboarding/browser-and-device-support$
 Allow: /get-started/onboarding/my-account-is-locked-what-should-i-do$
 Allow: /reference/troubleshooting$
 Allow: /get-started/onboarding/what-if-i-ve-forgotten-my-pin$
+Allow: /path/help$
+Allow: /path/learner$
 

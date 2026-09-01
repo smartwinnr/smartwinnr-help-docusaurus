@@ -2,8 +2,10 @@
   "version": 1,
   "generatedFrom": "help-site-301-redirect-map.csv",
   "excludedFromSource": {
-    "paths": ["/", "/path/help", "/path/learner"],
-    "reason": "Navigation entry points, not retired content. This middleware runs before requireAuth, so redirecting them sent logged-out visitors to smartwinnr.com instead of /auth/login - leaving no way to reach the login page and therefore no way to ever get a session. Do not re-add these when regenerating from the CSV."
+    "paths": [
+      "/"
+    ],
+    "reason": "The site root is handled by a dedicated app.get('/') in server.js, not by this map: it needs asymmetric behavior (anonymous -> 301 to marketing, signed-in -> 302 to /home) that the generic map cannot express, because nothing is built at / since the homepage moved to /home. Do not add '/' here when regenerating from the CSV. /path/help and /path/learner ARE in the map again - they were only excluded while bare / was the sole route to sign-in; logged-out staff now reach it at /login."
   },
   "redirects": [
     {
@@ -332,6 +334,14 @@
     },
     {
       "from": "/get-started/onboarding/what-if-i-ve-forgotten-my-pin",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/path/help",
+      "to": "https://smartwinnr.com/platform"
+    },
+    {
+      "from": "/path/learner",
       "to": "https://smartwinnr.com/platform"
     }
   ]

@@ -113,7 +113,7 @@ function ModulesAdmin(): ReactNode {
       <div className={styles.wrap}>
         <h1>Modules</h1>
         <p>You don't have access to this page.</p>
-        <p><Link to="/">← Back to the homepage</Link></p>
+        <p><Link to="/home">← Back to the homepage</Link></p>
       </div>
     );
   }
