@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-form
 sidebar_position: 999
 last_update:
-  date: 2026-08-22
-  author: Aswani TK
+  date: 2026-09-01
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
@@ -37,15 +37,15 @@ Give a catchy name to your form and add a description. Also, set the start date 
 ## Form Type
 
 SmartWinnr allows you to create two different types of forms. The following are the two types of forms:
+![tyoeforms](/img/helpscout/authored/how-to-create-a-form-mtiicken.png)
 
 * Acknowledgement
 * KPI Value Submit Form
 
+
 ### Acknowledgement Form
 
-The Acknowledgement Form is a declaration form that may be used to authenticate official documents.
-
-![Acknowledgment Form is a declaration form that may be used to authenticate official documents.](/img/helpscout/editors/how-to-create-a-form-3.png)
+Acknowledgment Form is a declaration form that may be used to authenticate official documents.
 
 ### KPI Value Submit Form
 
@@ -55,9 +55,13 @@ The KPI Value Submit Form is used to submit KPIs at multiple levels to evaluate 
 
 Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI.
 
-The fields below will be enabled for both Acknowledgement Form type and KPI Value Submit Form type. Select the appropriate fields of use.
+**Checklist Form**
 
-![Form Settings](/img/helpscout/authored/how-to-create-a-form-mt41qtni.png)
+This will help the editors to create a form which help to enable fields with    scores. The scores of the field can be calculated and displayed in the form itself.
+
+The fields below will be enabled for all types of Form. Select the appropriate fields of use.
+
+![fieldof use](/img/helpscout/authored/how-to-create-a-form-mt4b3uy0.png)
 
 **Is Edit Allowed:** If the form submission needs to be updated after submission, then select this checkbox.
 
@@ -134,6 +138,34 @@ Users can specify the components of the form here. You can also add fields by cl
 Forms support different types of fields like textbox, dropdown, date picker, etc. This contains various field types as shown below.
 
 ![field types](/img/helpscout/authored/how-to-create-a-form-mt43fpxe.png)
+
+Textbox: Used when users need to enter a short text response, such as a few words or a brief value.
+
+- **Textarea:** Used when users need to enter a sentence, paragraph, or detailed text response.
+
+- **Dropdown:** Used when users need to select one value from a predefined list of options.
+
+- **Multi Select:** Used when users need to select multiple values from a predefined list of options.
+
+- **Time Picker:** Used when users need to select and submit a specific time.
+
+- **Date Picker:** Used when users need to select and submit a specific date.
+
+- **Date Time Picker:** Used when users need to select and submit both a specific date and time.
+
+- **Heading:** Used to add a heading or title to a section and organize the content within a form or session.
+
+- **Formula:** Used to create a field that automatically calculates a value based on a predefined formula.
+
+- **Image:** Used when users need to upload and submit an image file.
+
+- **PDF:** Used when users need to upload and submit a document in PDF format.
+
+- **File:** Used when users need to upload and submit a file in any supported format.
+
+- **Signature:** Used when users need to provide and submit their digital signature.
+
+- **Video:** Used when users need to upload and submit a video file.
 
 **Data Type:**
 
@@ -219,6 +251,39 @@ You can choose either a pop-up message or a sticky header to notify users of the
 ![Sticky header: A sticky header is a navigation tool that fixes the menu to the top of the screen as the user scrolls down a page.](/img/helpscout/editors/how-to-create-a-form-25.png)
 
 After filling in the appropriate fields, click on the **Save** button.
+
+Adding logic to fields
+
+If you wanted to logic any logics to fileds means click on the manage Logic button near to field.
+
+![enarfiled](/img/helpscout/authored/how-to-create-a-form-mtic6mdc.png)
+
+After clicking the below given pop up will open.
+
+![popup](/img/helpscout/authored/how-to-create-a-form-mtic975d.png)
+
+then click on the Add button in top right corner to add logic.
+
+![top_right](/img/helpscout/authored/how-to-create-a-form-mticchr3.png)
+
+if you wanted to pop up this field only when reason given qgual to fever means you ghave to guve the reason as per below.
+
+![fevercondition](/img/helpscout/authored/how-to-create-a-form-mticfri8.png)
+
+If you wanted to make that field manadatory means you can check the selectbox -Make Mandatory.
+
+We have the list of operators as per given below'
+![operators](/img/helpscout/authored/how-to-create-a-form-mtichv5x.png)
+we have match types string,Number and date
+
+![numberdate](/img/helpscout/authored/how-to-create-a-form-mticj2yg.png)
+
+If you want to give multiple logic then you can click add and add different logics as per needed.
+if you have more than one logics and in theat time AND and OR can be used if both condition to be true to show one fieeld means use AND and if any one logic should be true then use OR logical operator.
+
+![dlogicaloperator](/img/helpscout/authored/how-to-create-a-form-mticypr7.png)
+
+after adding those click on save button.
 
 ### Step 3: Assign Users to the Form
 
