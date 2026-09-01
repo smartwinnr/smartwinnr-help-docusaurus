@@ -24,10 +24,10 @@ Coaching content often needs to reach teams that work in different languages. Re
 |--------|-------------|
 | **Where to find it** | **Coaching View** > **⋮ Menu** > **Share as Template**, **Import Completed Template**, **Template Requests** |
 | **Who can use it** | Editors, admins and org admins. Trainers do not see these options. |
-| **Applies to** | Any coaching, in organizations where translation templates are enabled |
+| **Applies to** | Any coaching. The first draft option needs AI translation switched on. |
 
 :::note
-These options appear only when translation templates are enabled for your organization. If you do not see them, please contact your SmartWinnr administrator.
+**Share as Template** and **Import Completed Template** are available to every organization. **Automatically fill in a first draft** and **Template Requests** appear only when AI translation is switched on for your organization. If you need them, please contact your SmartWinnr administrator.
 :::
 
 ## When to Use This
@@ -44,7 +44,7 @@ These options appear only when translation templates are enabled for your organi
 2. Select **Share as Template**.
 3. Under **Content is written in**, choose the language the coaching is written in today.
 4. Under **Languages you need back**, select every language you want filled in. Use **Select all** or **Clear** to change the selection quickly.
-5. Select **Automatically fill in a first draft** if you want SmartWinnr to pre-fill the language columns for review. Leave it clear if the language columns should arrive empty for your translator to complete.
+5. Select **Automatically fill in a first draft** if you want SmartWinnr to pre-fill the language columns for review. Leave it clear if the language columns should arrive empty for your translator to complete. This option appears only when AI translation is switched on for your organization.
 6. Click **DOWNLOAD**.
 
 <!-- IMAGE 1: The Share as Template window, with the source language chosen, two or three target languages ticked, and "Automatically fill in a first draft" visible. Alt text: Share as Template window with languages selected -->
@@ -129,7 +129,7 @@ Please do not delete or reorder rows, add columns, or unhide the first column in
 
 | Issue | Solution |
 |-------|----------|
-| The template options are not in the menu | Translation templates are not enabled for your organization. Please contact your SmartWinnr administrator. |
+| The first draft option is not in the window | AI translation is not switched on for your organization. You can still download the template and have it filled in by hand. |
 | The file will not upload | Make sure you are uploading the same file that was downloaded from this coaching, with no rows or columns removed. |
 | A field shows **Not applied** in the review | The field cannot hold a second language on the same coaching. Import as a new coaching to translate it. |
 | A field shows **No change** | The coaching already holds the same text in that language, so nothing needs to be written. |
