@@ -1,11 +1,11 @@
 ---
 id: download-coaching-feedback-report
-title: "How to download the coaching feedback report"
+title: "How to download your AI feedback as a PDF"
 description: "Learn how to download the coaching feedback report in PDF format."
 slug: download-coaching-feedback-report
 sidebar_position: 70
 last_update:
-  date: 2026-08-14
+  date: 2026-09-01
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
