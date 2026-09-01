@@ -5,33 +5,55 @@ description: 'To update the SmartFeed thumbnail, please follow the steps below:'
 slug: how-to-update-the-thumbnail-of-a-smartfeed
 sidebar_position: 295
 last_update:
-  date: 2025-09-19T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 68c928f875baeb18e18df8a1
-  helpscout_url: >-
-    /modules/smartfeed/create-and-manage/how-to-update-the-thumbnail-of-a-smartfeed
+  date: 2026-09-01
+  author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: content
 tags:
   - smartfeed
   - admin
+draft: false
 ---
-**To update the SmartFeed thumbnail**, please follow the steps below:
 
-1. Navigate to **Learning and Knowledge > View All SmartFeeds**.
-2. Click on the specific **SmartFeed** for which you want to update the thumbnail.
+> **At a glance** - This article outlines the steps to update the thumbnail of a SmartFeed, ensuring your content is visually appealing and up-to-date.
 
-![Click on the specific SmartFeed for which you want to update the thumbnail.](/img/helpscout/editors/how-to-update-the-thumbnail-of-a-smartfeed-1.png)
+To update the SmartFeed thumbnail, please follow the steps below:
 
-3. Click on the **hamburger icon (three horizontal dotes)** at the top right corner.
-4. Select the **"Change Thumbnail"** option from the dropdown menu.
+## When to use this
+Use this guide when you need to change the thumbnail image for a SmartFeed to better represent its content or to refresh its appearance.
 
-![Select the "Change Thumbnail" option from the dropdown menu.](/img/helpscout/editors/how-to-update-the-thumbnail-of-a-smartfeed-2.png)
+## Steps
 
-5. A **pop-up window** will appear. From there, you can **upload or update the thumbnail using the "Choose File" option**.
+### 1. Navigate to SmartFeeds
+Go to **Learning and Knowledge > View All SmartFeeds**.
 
-![A pop-up window will appear. From there, you can upload or update the thumbnail using the "Choose File" option.](/img/helpscout/editors/how-to-update-the-thumbnail-of-a-smartfeed-3.png)
+### 2. Select the SmartFeed
+Click on the specific **SmartFeed** for which you want to update the thumbnail.
 
-6.Once the file is uploaded, **click the "Close" button** to save your changes.
+![Smartfeed list page](/img/helpscout/authored/how-to-update-the-thumbnail-of-a-smartfeed-mtijn7h3.png)
+
+### 3. Access the Options Menu
+Click on the **hamburger icon (three horizontal dots)** at the top right corner. Select the **"Download Resources"** option from the dropdown menu.
+
+![Options in the hamburger menu](/img/helpscout/authored/how-to-update-the-thumbnail-of-a-smartfeed-mtijoklu.png)
+
+### 4. Change the Thumbnail
+You will be directed to a page where you can see the current thumbnail of the SmartFeed. Click on the **Change Thumbnail** option to update it.
+
+![Thumbnail Currently available](/img/helpscout/authored/how-to-update-the-thumbnail-of-a-smartfeed-mtijr02r.png)
+
+### 5. Upload the New Thumbnail
+You can select an image from your file manager. After selecting the image from your system, it will be added as shown below.
+
+![Updating the thumbnail](/img/helpscout/authored/how-to-update-the-thumbnail-of-a-smartfeed-mtikof45.png)
+
+Click on the **Save Cropped Image** to save the cropped image as shown in the above screenshot. Click on the **Save Original Image** to upload the exact image file without modifying it. Click on the **Download** button to download the SmartFeed so that you can take a screenshot from the SmartFeed and upload it as the thumbnail.
+
+### 6. Confirm the Upload
+Once you select the option to upload the thumbnail, it will display as shown below.
+
+![Upload the thumbnail](/img/helpscout/authored/how-to-update-the-thumbnail-of-a-smartfeed-mtiky62b.png)
+
+### 7. Save Your Changes
+Click the **Close** button to save your changes.

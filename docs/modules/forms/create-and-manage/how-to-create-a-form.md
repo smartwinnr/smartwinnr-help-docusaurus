@@ -20,78 +20,78 @@ draft: false
 
 > **At a glance** - Creating a form in SmartWinnr involves specifying details, selecting form types, adding components, and assigning users.
 
-To create a form in SmartWinnr, go to **Editor** >> **PERFORMANCE** >> **Forms** >> **View All Forms**. It will take you to the following page where you can see the list of forms created by you.
+To create a form in SmartWinnr, go to **Editor** >> **PERFORMANCE** >> **Forms** >> **View All Forms**. This will take you to a page where you can see the list of forms created by you.
 
-Click on the **Create Form** option at the top-right corner to create a new one. It opens the **Create Form** page.
+Click on the **Create Form** option at the top-right corner to create a new form. This opens the **Create Form** page.
 
 ![how to create a form](/img/helpscout/authored/how-to-create-a-form-mt43kwdr.png)
 
-It will take you to the following screen where you will fill in the details for the form.
+You will be directed to the following screen where you will fill in the details for the form.
 
 ## Step 1: Add Name, Description, and Dates to the Form
 
-Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive and not be visible to the users once the end date has passed.
+Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive and not be visible to users once the end date has passed.
 
 ![Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive an](/img/helpscout/editors/how-to-create-a-form-2.png)
 
 ## Form Type
 
 SmartWinnr allows you to create two different types of forms. The following are the two types of forms:
+
 ![tyoeforms](/img/helpscout/authored/how-to-create-a-form-mtiicken.png)
 
 * Acknowledgement
 * KPI Value Submit Form
 
-
 ### Acknowledgement Form
 
-Acknowledgment Form is a declaration form that may be used to authenticate official documents.
+The Acknowledgment Form is a declaration form that may be used to authenticate official documents.
 
 ### KPI Value Submit Form
 
-The KPI Value Submit Form is used to submit KPIs at multiple levels to evaluate their success in reaching targets. You can also select the competition in which the data should be added. Once you add the competition, you will be able to display this form KPI data in the competition leaderboards.
+The KPI Value Submit Form is used to submit KPIs at multiple levels to evaluate their success in reaching targets. You can also select the competition in which the data should be added. Once you add the competition, you will be able to display this form's KPI data in the competition leaderboards.
 
 ![Select KPI mapping](/img/helpscout/authored/how-to-create-a-form-mt41kvef.png)
 
-Selecting the KPI Value Submit Form enables the above-shown fields where the user needs to select the appropriate mapping for the KPI.
+Selecting the KPI Value Submit Form enables the fields shown above, where the user needs to select the appropriate mapping for the KPI.
 
 **Checklist Form**
 
-This will help the editors to create a form which help to enable fields with    scores. The scores of the field can be calculated and displayed in the form itself.
+This will help the editors create a form that enables fields with scores. The scores of the fields can be calculated and displayed in the form itself.
 
-The fields below will be enabled for all types of Form. Select the appropriate fields of use.
+The fields below will be enabled for all types of forms. Select the appropriate fields for use.
 
 ![fieldof use](/img/helpscout/authored/how-to-create-a-form-mt4b3uy0.png)
 
-**Is Edit Allowed:** If the form submission needs to be updated after submission, then select this checkbox.
+**Is Edit Allowed:** If the form submission needs to be updated after submission, select this checkbox.
 
 **Needs Approval:** Check this option if you would like to add an approver to the form submitted by users. You can make any editors or the corresponding manager of each user the approver.
 
 **Generate PDF:** This option enables you to generate the form submission into a PDF format. You can also send the PDF automatically to the user by checking the option 'Send PDF To User Automatically'.
 
-**Allow Visibility of Submissions:** This option helps the editor to see the form submissions of users.
+**Allow Visibility of Submissions:** This option helps the editor see the form submissions of users.
 
 **Allow Comments:** This option allows editors, approvers, and managers to give feedback on their form submissions.
 
 **Show Comments to User:** Check this option if you would like to show the feedback provided for the submissions to the users who made the form submission.
 
-**Allow Bulk Submission:** This option helps users submit a number of forms under the same set together instead of submitting one by one.
+**Allow Bulk Submission:** This option helps users submit multiple forms under the same set instead of submitting one by one.
 
-**Show Submissions To Managers:** By checking this option, the respective managers of the users will be able to see the submissions of their reporters.
+**Show Submissions To Managers:** By checking this option, the respective managers of the users will be able to see the submissions of their reportees.
 
 **Editor Can Submit The Form:** This option allows you to submit a representative's form in case any of them face difficulty in submitting the form.
 
-**Allow Submissions By Manager:** It allows managers to submit the form on behalf of their reportees.
+**Allow Submissions By Manager:** This allows managers to submit the form on behalf of their reportees.
 
-**Show After Expiry in User View:** It helps to show this form in the user view even after the end date of the form has passed.
+**Show After Expiry in User View:** This helps to show this form in the user view even after the end date of the form has passed.
 
-**Show After Expiry in Manager View:** It helps to show this form in the manager view even after the end date of the form has passed.
+**Show After Expiry in Manager View:** This helps to show this form in the manager view even after the end date of the form has passed.
 
 **Allow Form Submission QR-Code:** This option is for users who want to scan and submit the form.
 
-**Allow User to Change Status:** It allows users to change the status (Pending, Approved, Rejected) of the form.
+**Allow User to Change Status:** This allows users to change the status (Pending, Approved, Rejected) of the form.
 
-**Enable Disclaimer:** This option helps to add a disclaimer in the form. The users need to respond to the disclaimer before starting to submit the form.
+**Enable Disclaimer:** This option helps to add a disclaimer to the form. Users need to respond to the disclaimer before starting to submit the form.
 
 **Default Date Filter:** This option allows you to set a default date range for the date filter. By default, the submissions within the specified date range will be visible to the approvers.
 
@@ -103,11 +103,11 @@ The user needs to select the submission type, whether the submission will be of 
 
 ![The user needs to select the submission type, whether the submission will be of the type none, Frequency, or Count.](/img/helpscout/editors/how-to-create-a-form-7.png)
 
-If you select Frequency as the Submission Type, then you have to select the submission frequency and the number of submissions allowed within the frequency.
+If you select Frequency as the Submission Type, then you have to select the submission frequency and the number of submissions allowed within that frequency.
 
 ![If you select Frequency as the Submission Type, then you have to select the submission frequency and the number of submissions allowed withi](/img/helpscout/editors/how-to-create-a-form-8.png)
 
-If you select 'Count' as the Submission Type, then you need to provide the maximum number of submissions allowed by each user for the Form.
+If you select 'Count' as the Submission Type, then you need to provide the maximum number of submissions allowed by each user for the form.
 
 ![If you select 'Count' as the Submission Type, then you need to provide the maximum number of submissions allowed by each user for the Form.](/img/helpscout/editors/how-to-create-a-form-9.png)
 
@@ -139,37 +139,24 @@ Forms support different types of fields like textbox, dropdown, date picker, etc
 
 ![field types](/img/helpscout/authored/how-to-create-a-form-mt43fpxe.png)
 
-Textbox: Used when users need to enter a short text response, such as a few words or a brief value.
-
+- **Textbox:** Used when users need to enter a short text response, such as a few words or a brief value.
 - **Textarea:** Used when users need to enter a sentence, paragraph, or detailed text response.
-
 - **Dropdown:** Used when users need to select one value from a predefined list of options.
-
 - **Multi Select:** Used when users need to select multiple values from a predefined list of options.
-
 - **Time Picker:** Used when users need to select and submit a specific time.
-
 - **Date Picker:** Used when users need to select and submit a specific date.
-
 - **Date Time Picker:** Used when users need to select and submit both a specific date and time.
-
 - **Heading:** Used to add a heading or title to a section and organize the content within a form or session.
-
 - **Formula:** Used to create a field that automatically calculates a value based on a predefined formula.
-
 - **Image:** Used when users need to upload and submit an image file.
-
 - **PDF:** Used when users need to upload and submit a document in PDF format.
-
 - **File:** Used when users need to upload and submit a file in any supported format.
-
 - **Signature:** Used when users need to provide and submit their digital signature.
-
 - **Video:** Used when users need to upload and submit a video file.
 
 **Data Type:**
 
-This contains the various data types for the field selected.
+This contains the various data types for the selected field.
 
 ![data types](/img/helpscout/authored/how-to-create-a-form-mt43g6br.png)
 
@@ -212,13 +199,13 @@ This will have the user profile details if you want to select which field to be 
 
 **Admin Visibility:** Admin visibility allows you to display the selected field to admins in the form analytics page.
 
-**Keep Previous Value:** This option will prepopulate the value which you selected in your previous form submission.
+**Keep Previous Value:** This option will prepopulate the value that you selected in your previous form submission.
 
 **Approver Can Edit:** This option will let the approver edit the field value while approving or rejecting the submission.
 
 **Convert To Upper Case:** This will convert the value to upper case.
 
-Once you create all the fields, you can save the form with field details. If you want to select the form submission and the pop-up, follow the below steps.
+Once you create all the fields, you can save the form with field details. If you want to select the form submission and the pop-up, follow the steps below.
 
 ### Form Location
 
@@ -233,7 +220,7 @@ SmartWinnr provides you two ways to make a form submission:
 1. Via **Left Menu** >> **Forms**
 2. Via **Chat**
 
-If the user selects the Chat option, a few more fields related to the chat get triggered, as shown below.
+If the user selects the Chat option, a few more fields related to the chat will be triggered, as shown below.
 
 ![Select the chat settings](/img/helpscout/authored/how-to-create-a-form-mt48opb3.png)
 
@@ -252,38 +239,39 @@ You can choose either a pop-up message or a sticky header to notify users of the
 
 After filling in the appropriate fields, click on the **Save** button.
 
-Adding logic to fields
+### Adding Logic to Fields
 
-If you wanted to logic any logics to fileds means click on the manage Logic button near to field.
+If you want to add logic to fields, click on the **Manage Logic** button next to the field.
 
 ![enarfiled](/img/helpscout/authored/how-to-create-a-form-mtic6mdc.png)
 
-After clicking the below given pop up will open.
+After clicking, the following pop-up will open.
 
 ![popup](/img/helpscout/authored/how-to-create-a-form-mtic975d.png)
 
-then click on the Add button in top right corner to add logic.
+Then click on the **Add** button in the top right corner to add logic.
 
 ![top_right](/img/helpscout/authored/how-to-create-a-form-mticchr3.png)
 
-if you wanted to pop up this field only when reason given qgual to fever means you ghave to guve the reason as per below.
+If you want to pop up this field only when a reason given is equal to fever, you have to give the reason as shown below.
 
 ![fevercondition](/img/helpscout/authored/how-to-create-a-form-mticfri8.png)
 
-If you wanted to make that field manadatory means you can check the selectbox -Make Mandatory.
+If you want to make that field mandatory, check the **Make Mandatory** checkbox.
 
-We have the list of operators as per given below'
+We have a list of operators as shown below:
+
 ![operators](/img/helpscout/authored/how-to-create-a-form-mtichv5x.png)
-we have match types string,Number and date
+
+We have match types: string, number, and date.
 
 ![numberdate](/img/helpscout/authored/how-to-create-a-form-mticj2yg.png)
 
-If you want to give multiple logic then you can click add and add different logics as per needed.
-if you have more than one logics and in theat time AND and OR can be used if both condition to be true to show one fieeld means use AND and if any one logic should be true then use OR logical operator.
+If you want to give multiple logic conditions, you can click **Add** to add different logics as needed. If you have more than one logic, you can use AND and OR. Use AND if both conditions need to be true to show one field, and use OR if any one logic should be true.
 
 ![dlogicaloperator](/img/helpscout/authored/how-to-create-a-form-mticypr7.png)
 
-after adding those click on save button.
+After adding those, click on the **Save** button.
 
 ### Step 3: Assign Users to the Form
 
