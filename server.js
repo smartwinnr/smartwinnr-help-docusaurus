@@ -3268,15 +3268,26 @@ async function fireDeploy() {
       tree: treeEntries,
     });
 
-    // 4. Create the commit.
-    const changedSlugs = [...shippable.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
-                         ...deletes.map((d) => '-' + path.basename(d).replace(/\.(md|mdx)$/, ''))].slice(0, 3);
+    // 4. Create the commit. "N articles" counts only .md/.mdx files - the
+    // old shippable.length counted _category_.json files and byte-identical
+    // re-saves too, so messages claimed far more articles than the commit
+    // actually changed (readers summed them into "lots of new articles").
+    const isArticleRel = (rel) => /^docs\/.+\.(md|mdx)$/i.test(String(rel).replace(/\\/g, '/'));
+    const articleUpserts = shippable.filter((f) => isArticleRel(f.rel));
+    const otherUpserts = shippable.length - articleUpserts.length;
+    const changedSlugs = [...articleUpserts.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
+                         ...deletes.filter(isArticleRel).map((d) => '-' + path.basename(d).replace(/\.(md|mdx)$/, ''))].slice(0, 3);
     const parts = [];
-    if (shippable.length) parts.push(`${shippable.length} article${shippable.length === 1 ? '' : 's'}`);
+    if (articleUpserts.length) parts.push(`${articleUpserts.length} article${articleUpserts.length === 1 ? '' : 's'}`);
+    if (otherUpserts) parts.push(`${otherUpserts} file${otherUpserts === 1 ? '' : 's'}`);
     if (deletes.length) parts.push(`${deletes.length} delete${deletes.length === 1 ? '' : 's'}`);
     if (images.length) parts.push(`${images.length} image${images.length === 1 ? '' : 's'}`);
-    const totalChanges = shippable.length + deletes.length;
-    const message = `publish: ${parts.join(' + ')} (${changedSlugs.join(', ')}${totalChanges > 3 ? '...' : ''})`;
+    const totalChanges = articleUpserts.length + deletes.length;
+    // Category-only or image-only batches have no article slugs to name.
+    if (!changedSlugs.length && shippable.length) {
+      changedSlugs.push(path.basename(shippable[0].rel));
+    }
+    const message = `publish: ${parts.join(' + ') || 'no content changes'} (${changedSlugs.join(', ')}${totalChanges > 3 ? '...' : ''})`;
     const commitResp = await ghPost(`/git/commits`, {
       message,
       tree: treeResp.data.sha,
@@ -3316,6 +3327,10 @@ async function fireDeploy() {
     // batch is exactly the case that used to look like a clean success.
     for (const h of heldBack) deployQueue.set(h.rel, 'upsert');
     lastDeployTs = Date.now();
+    // The publish history just changed - drop the cached authoring-stats
+    // payloads so the dashboard reflects this deploy immediately instead of
+    // showing pre-deploy numbers for up to 10 minutes.
+    statsCache.clear();
     persistDeployState();
     if (debounceTimer) { clearTimeout(debounceTimer); debounceTimer = null; }
     // Changes that arrived mid-deploy survived the per-rel cleanup above -
@@ -5153,22 +5168,42 @@ async function computeAuthoringStats(days) {
       // back the numbers actually reach - see `coverage` in the payload.
       const publishCommits = allPublish.slice(0, STATS_MAX_DETAIL_COMMITS);
       if (publishCommits.length < allPublish.length) commitsTruncated = true;
-      // Oldest first so "created then edited later" attributes correctly.
-      publishCommits.reverse();
       coversSince = publishCommits.length
-        ? (publishCommits[0].commit.committer?.date || publishCommits[0].commit.author?.date || '').slice(0, 10)
+        ? (publishCommits[publishCommits.length - 1].commit.committer?.date
+           || publishCommits[publishCommits.length - 1].commit.author?.date || '').slice(0, 10)
         : null;
+      // Hand-committed articles (a human pushing a new doc straight to main)
+      // never appear in publish commits, so they used to be invisible to the
+      // "created" count - and when later published through the wizard they
+      // showed up as "updated" forever. Scan non-merge, non-publish commits
+      // for docs additions too. Merges are skipped: their file list repeats
+      // the publish commits they merge in, which would double-count.
+      const publishShas = new Set(publishCommits.map((c) => c.sha));
+      const manualCommits = allCommits
+        .filter((c) => !publishShas.has(c.sha)
+          && !/^publish: /.test(c.commit?.message || '')
+          && (c.parents || []).length < 2)
+        .slice(0, Math.max(0, STATS_MAX_DETAIL_COMMITS - publishCommits.length));
+      // Oldest first so "created then edited later" attributes correctly.
+      const scanCommits = [...publishCommits.map((c) => ({c, isPublish: true})),
+                           ...manualCommits.map((c) => ({c, isPublish: false}))]
+        .sort((a, b) => String(a.c.commit.committer?.date || '').localeCompare(String(b.c.commit.committer?.date || '')));
       // Fetch commit details in parallel batches - done sequentially this
       // was ~0.5s per commit and dominated first-load latency (20+ commits
       // in a busy week meant a 10-15s wait for the dashboard).
       const detailBySha = new Map();
       const DETAIL_BATCH = 8;
-      for (let i = 0; i < publishCommits.length; i += DETAIL_BATCH) {
-        const chunk = publishCommits.slice(i, i + DETAIL_BATCH);
-        const resolved = await Promise.all(chunk.map((c) => ghGet(`/commits/${c.sha}`)));
-        chunk.forEach((c, j) => detailBySha.set(c.sha, resolved[j]));
+      for (let i = 0; i < scanCommits.length; i += DETAIL_BATCH) {
+        const chunk = scanCommits.slice(i, i + DETAIL_BATCH);
+        const resolved = await Promise.all(chunk.map(({c}) => ghGet(`/commits/${c.sha}`)));
+        chunk.forEach(({c}, j) => detailBySha.set(c.sha, resolved[j]));
       }
-      for (const c of publishCommits) {
+      // A patch that removes `draft: true` (without re-adding it) is the
+      // article's first publication - count it as created, not updated.
+      const flipsDraftOff = (patch) => typeof patch === 'string'
+        && /^-draft:\s*true\b/m.test(patch) && !/^\+draft:\s*true\b/m.test(patch);
+      const addsAsDraft = (patch) => typeof patch === 'string' && /^\+draft:\s*true\b/m.test(patch);
+      for (const {c, isPublish} of scanCommits) {
         const detail = detailBySha.get(c.sha);
         const date = (c.commit.committer?.date || c.commit.author?.date || '').slice(0, 10);
         if (!perDay.has(date)) perDay.set(date, { created: 0, updated: 0 });
@@ -5176,18 +5211,36 @@ async function computeAuthoringStats(days) {
         const batch = { sha: c.sha.slice(0, 7), date, created: 0, updated: 0, deleted: 0, images: 0 };
         for (const f of detail.data.files || []) {
           const rel = f.filename;
-          if (/^static\/img\/helpscout\/authored\//.test(rel) && f.status === 'added') {
+          if (isPublish && /^static\/img\/helpscout\/authored\//.test(rel) && f.status === 'added') {
             imagesAdded += 1;
             batch.images += 1;
           }
           if (!/^docs\/.+\.(md|mdx)$/i.test(rel)) continue;
+          if (!isPublish) {
+            // Manual commits contribute only creations (a new doc that is
+            // not draft:true went live with this push). Their edits/deletes
+            // stay out of the deploy-centric numbers.
+            if (f.status === 'added' && !addsAsDraft(f.patch) && !createdRels.has(rel)) {
+              createdRels.set(rel, date);
+              day.created += 1;
+            }
+            continue;
+          }
           if (f.status === 'added') {
             createdRels.set(rel, date);
+            updatedRels.delete(rel);
             day.created += 1;
             batch.created += 1;
           } else if (f.status === 'removed') {
             deletedRels.add(rel);
             batch.deleted += 1;
+          } else if (flipsDraftOff(f.patch) && !createdRels.has(rel)) {
+            // First publication of a pre-existing draft file. Earlier
+            // in-window edits to the draft stop counting as updates.
+            createdRels.set(rel, date);
+            updatedRels.delete(rel);
+            day.created += 1;
+            batch.created += 1;
           } else {
             // modified / renamed. A file created earlier in this window
             // counts as created, not double-counted as an update.
@@ -5198,7 +5251,7 @@ async function computeAuthoringStats(days) {
             }
           }
         }
-        deployBatches.push(batch);
+        if (isPublish) deployBatches.push(batch);
       }
       deployBatches.reverse(); // newest first for display
     } catch (e) {
