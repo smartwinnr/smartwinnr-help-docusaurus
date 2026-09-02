@@ -5,8 +5,8 @@ description: 'Follow the below steps to upload your coaching video in the SmartW
 slug: how-do-i-upload-a-coaching-video
 sidebar_position: 86
 last_update:
-  date: 2026-08-27
-  author: Sandeep Bhuthagaddala
+  date: 2026-09-02
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fd728293d1d2a5b1c5ea4c8
   helpscout_url: 'https://help.smartwinnr.com/article/86-how-do-i-upload-a-coaching-video'
@@ -20,7 +20,7 @@ draft: false
 
 > **At a glance** - This article provides step-by-step instructions for uploading a coaching video in the SmartWinnr app, both via mobile and web.
 
-Follow the below steps to upload your coaching video in the SmartWinnr app:
+Follow the steps below to upload your coaching video in the SmartWinnr app.
 
 ## When to use this
 Use this guide when you need to upload a coaching video for an assignment in the SmartWinnr app. 
@@ -34,13 +34,22 @@ Use this guide when you need to upload a coaching video for an assignment in the
 ### 1. Access the Coaching Assignment
 Go to the **Left menu** > **Coachings**. Select the coaching assignment.
 
-![Left Menu coaching section](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4s8xi.png)
+![assignment](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjszh0x.jpg)
+
+After opening the coaching, you will be able to see all the coaching details along with the disclaimer. This is how the disclaimer looks when added as a footer.
+
+![footer](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjst0o2.jpg)
+
+You can also see the disclaimer as a popup. Click on **AGREE** to open the coaching.
+
+![agree](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjsxegw.jpg)
 
 ### 2. Choose Video Upload Option
 On the coaching details page, you have two options for video submission:
 
 1. Click on the **Upload Video** button to select your video from the gallery.
-   ![Upload video option image](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4txlq.png)
+ 
+![gallery](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjt0jab.jpg)
    
 2. Click on the **Record Video** button. This will prompt you to provide microphone and camera access permissions to record the video. Ensure you enable access.
 
@@ -51,7 +60,7 @@ You can preview your video on the same page. After confirming it is satisfactory
 
 You will see a confirmation screen indicating that your video has been uploaded successfully.
 
-![Complete submission screenshot](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtb4p9mc.png)
+![uploaded](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjt1eie.jpg)
 
 ### Additional Upload Options
 Apart from the standard video upload, SmartWinnr provides additional ways to submit responses to coaching assignments:
