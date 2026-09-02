@@ -6,13 +6,16 @@ import styles from './styles.module.css';
  * "Was this helpful?" footer.
  *
  * State machine:
- *   idle ─Yes─> voted-up        (terminal)
- *   idle ─No──> awaiting-comment
- *   awaiting-comment ─Send/Skip─> commented (terminal)
+ *   idle ─Yes─> voted-up        (terminal; vote recorded on click)
+ *   idle ─No──> awaiting-comment (vote recorded on click, so navigating
+ *               away no longer loses the down-vote)
+ *   awaiting-comment ─Send─> commented (re-sends to attach the comment;
+ *               the server upserts per viewer so no duplicate row)
+ *   awaiting-comment ─Skip─> commented (no extra request)
  *
  * Vote tracking is per-page-load only - refreshing the page restores the
- * default prompt. Server-side stores the record; the client doesn't try to
- * dedupe across reloads (a determined user could clear localStorage anyway).
+ * default prompt. The server dedupes per (slug, viewer) so re-votes update
+ * the same row instead of inflating the counts.
  */
 
 type State = 'idle' | 'awaiting-comment' | 'voted-up' | 'commented';
@@ -80,6 +83,8 @@ export default function FeedbackFooter(): JSX.Element | null {
             className={styles.feedbackBtn}
             disabled={busy}
             onClick={async () => {
+              // The down-vote was already recorded on the 👎 click; this
+              // re-send attaches the comment (server upserts per viewer).
               await send('down', comment);
               setState('commented');
             }}>
@@ -88,10 +93,7 @@ export default function FeedbackFooter(): JSX.Element | null {
           <button
             className={styles.feedbackBtnGhost}
             disabled={busy}
-            onClick={async () => {
-              await send('down');
-              setState('commented');
-            }}>
+            onClick={() => setState('commented')}>
             Skip
           </button>
         </div>
@@ -115,7 +117,13 @@ export default function FeedbackFooter(): JSX.Element | null {
         <button
           className={styles.feedbackBtnGhost}
           disabled={busy}
-          onClick={() => setState('awaiting-comment')}>
+          onClick={async () => {
+            // Record the down-vote immediately - readers who click 👎 and
+            // navigate away used to never be counted, systematically
+            // undercounting downvotes vs. upvotes (which fire on click).
+            setState('awaiting-comment');
+            await send('down');
+          }}>
           👎 No
         </button>
       </div>

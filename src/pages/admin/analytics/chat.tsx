@@ -2,8 +2,8 @@ import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Link from '@docusaurus/Link';
-import {useCurrentUser} from '@site/src/contexts/UserContext';
-import styles from './feedback.module.css';
+import {useCurrentUser, useIsUserReady} from '@site/src/contexts/UserContext';
+import styles from './analytics.module.css';
 
 /**
  * Ally chat analytics dashboard. Superadmin-only.
@@ -29,6 +29,7 @@ type Stats = {
   avg_response_time_ms: number | null;
   fallback_count: number;
   refusal_count: number;
+  error_count: number;
   total_prompt_tokens: number;
   total_completion_tokens: number;
   thumbs_up: number;
@@ -74,6 +75,7 @@ type Health = {
   oldest_record: string | null;
   circuit_breaker_status: 'open' | 'closed';
   consecutive_failures: number;
+  dropped_writes: number;
   logging_enabled: boolean;
 };
 
@@ -167,12 +169,15 @@ function fmtBytesToMb(b: number): string {
 }
 
 function authoringHref(q: TopUnansweredRow): string {
-  const title = encodeURIComponent(q.exampleQuery.slice(0, 120));
+  // Array.from splits on code points, so the cut can't split a surrogate
+  // pair (a bare String.slice on an emoji query produced a lone surrogate).
+  const title = encodeURIComponent(Array.from(q.exampleQuery).slice(0, 120).join(''));
   return `/admin/authoring/?title=${title}`;
 }
 
 function Dashboard(): JSX.Element {
   const user = useCurrentUser();
+  const userReady = useIsUserReady();
   const [days, setDays] = useState(30);
   const [roleFilter, setRoleFilter] = useState<string>('');
   const [orgFilter, setOrgFilter] = useState<string>('');
@@ -186,27 +191,44 @@ function Dashboard(): JSX.Element {
 
   useEffect(() => {
     if (!isSuperadmin) return;
+    // Cancellation flag (same pattern as UserContext): without it, rapid
+    // filter switches can land responses out of order and leave stale data.
+    let cancelled = false;
     setLoading(true);
     setError(null);
     const params = new URLSearchParams({days: String(days)});
     if (roleFilter) params.set('role', roleFilter);
     if (orgFilter) params.set('orgId', orgFilter);
     fetch(`/api/admin/chat-logs/dashboard?${params.toString()}`, {credentials: 'same-origin'})
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
+      .then((r) =>
+        r.ok
+          ? r.json()
+          : Promise.reject(new Error(`HTTP ${r.status}${r.statusText ? ` ${r.statusText}` : ''}`)),
+      )
       .then((d: Dashboard) => {
+        if (cancelled) return;
         if (d && d.ok) setData(d);
         else throw new Error('Bad response shape');
       })
-      .catch((e) => setError(String(e)))
-      .finally(() => setLoading(false));
+      .catch((e) => {
+        if (!cancelled) setError(e instanceof Error ? e.message : String(e));
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [days, roleFilter, orgFilter, isSuperadmin]);
 
+  // null = no data in the window; rendered as '-' so an empty window is not
+  // conflated with a genuine 0% (matches helpfulRate below).
   const refusalRate = useMemo(() => {
-    if (!data || !data.stats.total_exchanges) return 0;
+    if (!data || !data.stats.total_exchanges) return null;
     return Math.round((data.stats.refusal_count / data.stats.total_exchanges) * 100);
   }, [data]);
   const fallbackRate = useMemo(() => {
-    if (!data || !data.stats.total_exchanges) return 0;
+    if (!data || !data.stats.total_exchanges) return null;
     return Math.round((data.stats.fallback_count / data.stats.total_exchanges) * 100);
   }, [data]);
 
@@ -216,6 +238,11 @@ function Dashboard(): JSX.Element {
     if (!total) return null;
     return Math.round((data.stats.thumbs_up / total) * 100);
   }, [data]);
+
+  const queryTypeTotal = useMemo(
+    () => (data ? data.queryTypes.reduce((a, b) => a + b.count, 0) : 0),
+    [data],
+  );
 
   const sortedArticles = useMemo<ArticleRow[]>(() => {
     if (!data) return [];
@@ -242,6 +269,42 @@ function Dashboard(): JSX.Element {
   function sortIndicator(key: SortKey): string {
     if (key !== sortKey) return '';
     return sortDir === 'asc' ? ' ↑' : ' ↓';
+  }
+
+  // Sortable column header: a real <button> (keyboard-operable) inside a
+  // <th> carrying aria-sort. `srLabel` supplies a text alternative when the
+  // visible label is an emoji.
+  function sortableTh(key: SortKey, label: string, srLabel?: string): JSX.Element {
+    const active = key === sortKey;
+    return (
+      <th
+        scope="col"
+        className={styles.numCol}
+        aria-sort={active ? (sortDir === 'asc' ? 'ascending' : 'descending') : undefined}>
+        <button type="button" className={styles.sortBtn} onClick={() => toggleSort(key)}>
+          {srLabel ? (
+            <>
+              <span aria-hidden="true">{label}</span>
+              <span className={styles.srOnly}>{srLabel}</span>
+            </>
+          ) : (
+            label
+          )}
+          <span aria-hidden="true">{sortIndicator(key)}</span>
+        </button>
+      </th>
+    );
+  }
+
+  // Wait for /api/me before evaluating roles - the bare user starts as the
+  // unauthenticated default, which flashed "You don't have access" at every
+  // superadmin for a moment on load.
+  if (!userReady) {
+    return (
+      <div className={styles.wrap}>
+        <p role="status">Loading…</p>
+      </div>
+    );
   }
 
   if (!isSuperadmin) {
@@ -296,24 +359,15 @@ function Dashboard(): JSX.Element {
         {(roleFilter || orgFilter) && (
           <button
             type="button"
-            onClick={() => { setRoleFilter(''); setOrgFilter(''); }}
-            style={{
-              fontFamily: 'inherit',
-              fontSize: '0.85em',
-              padding: '4px 10px',
-              border: '1px solid var(--ifm-color-emphasis-300)',
-              borderRadius: 6,
-              background: 'transparent',
-              cursor: 'pointer',
-              color: 'var(--ifm-color-content-secondary)',
-            }}>
+            className={styles.clearBtn}
+            onClick={() => { setRoleFilter(''); setOrgFilter(''); }}>
             Clear filters
           </button>
         )}
       </div>
 
-      {loading && <p>Loading…</p>}
-      {error && <p className={styles.error}>Error: {error}</p>}
+      {loading && <p role="status">Loading…</p>}
+      {error && <p role="alert" className={styles.error}>Error: {error}</p>}
 
       {data && (
         <>
@@ -325,16 +379,17 @@ function Dashboard(): JSX.Element {
             </div>
             <div className={styles.tile}>
               <span className={styles.tileLabel}>No-docs refusal</span>
-              <span className={styles.tileValue}>{refusalRate}%</span>
-              <span className={styles.tileLabel} style={{fontSize: '0.7em', opacity: 0.7}}>
+              <span className={styles.tileValue}>{fmtPct(refusalRate)}</span>
+              <span className={`${styles.tileLabel} ${styles.tileCaption}`}>
                 bot had no good citation
               </span>
             </div>
             <div className={styles.tile}>
-              <span className={styles.tileLabel}>👍 rate</span>
-              <span className={styles.tileValue}>
-                {helpfulRate === null ? '-' : `${helpfulRate}%`}
+              <span className={styles.tileLabel}>
+                <span aria-hidden="true">👍</span>
+                <span className={styles.srOnly}>Thumbs-up</span> rate
               </span>
+              <span className={styles.tileValue}>{fmtPct(helpfulRate)}</span>
             </div>
             <div className={styles.tile}>
               <span className={styles.tileLabel}>Avg response</span>
@@ -354,20 +409,23 @@ function Dashboard(): JSX.Element {
             <p className={styles.empty}>No unanswered queries in this window. Either the docs are great or no one's asked yet.</p>
           ) : (
             <table className={styles.table}>
+              <caption className={styles.srOnly}>
+                Top unanswered queries, clustered by normalised text
+              </caption>
               <thead>
                 <tr>
-                  <th>Sample query</th>
-                  <th>Module</th>
-                  <th className={styles.numCol}>Count</th>
-                  <th className={styles.numCol}>Distinct users</th>
-                  <th>Last asked</th>
-                  <th className={styles.numCol}>Avg score</th>
-                  <th />
+                  <th scope="col">Sample query</th>
+                  <th scope="col">Module</th>
+                  <th scope="col" className={styles.numCol}>Count</th>
+                  <th scope="col" className={styles.numCol}>Distinct users</th>
+                  <th scope="col">Last asked (UTC)</th>
+                  <th scope="col" className={styles.numCol}>Avg score</th>
+                  <th scope="col"><span className={styles.srOnly}>Actions</span></th>
                 </tr>
               </thead>
               <tbody>
                 {data.topUnanswered.map((q) => (
-                  <tr key={q.normalizedQuery}>
+                  <tr key={`${q.module ?? ''}|${q.normalizedQuery}`}>
                     <td>{q.exampleQuery}</td>
                     <td>{fmtModule(q.module)}</td>
                     <td className={styles.numCol}>{q.count}</td>
@@ -390,54 +448,44 @@ function Dashboard(): JSX.Element {
           <p className={styles.subhead}>
             Articles the bot has cited at least 3 times. Sort by 👎 or low confidence
             to find articles the bot reaches for but can't get good answers from.
+            {sortedArticles.length >= 50 && (
+              <> Showing the top 50 articles by citation count; sorting reorders
+              within that slice.</>
+            )}
           </p>
           {sortedArticles.length === 0 ? (
             <p className={styles.empty}>No articles have been cited ≥3 times in this window yet.</p>
           ) : (
             <table className={styles.table}>
+              <caption className={styles.srOnly}>
+                Article performance: citations, click-through, and ratings per cited article
+              </caption>
               <thead>
                 <tr>
-                  <th>Article</th>
-                  <th
-                    className={styles.numCol}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => toggleSort('citationCount')}>
-                    Citations{sortIndicator('citationCount')}
+                  <th scope="col">Article</th>
+                  {sortableTh('citationCount', 'Citations')}
+                  {sortableTh('ctrPct', 'CTR')}
+                  {sortableTh('avgConfidence', 'Avg confidence')}
+                  <th scope="col" className={styles.numCol}>
+                    <span aria-hidden="true">👍</span>
+                    <span className={styles.srOnly}>Thumbs up</span>
                   </th>
-                  <th
-                    className={styles.numCol}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => toggleSort('ctrPct')}>
-                    CTR{sortIndicator('ctrPct')}
-                  </th>
-                  <th
-                    className={styles.numCol}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => toggleSort('avgConfidence')}>
-                    Avg confidence{sortIndicator('avgConfidence')}
-                  </th>
-                  <th className={styles.numCol}>👍</th>
-                  <th
-                    className={styles.numCol}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => toggleSort('thumbsDown')}>
-                    👎{sortIndicator('thumbsDown')}
-                  </th>
-                  <th
-                    className={styles.numCol}
-                    style={{cursor: 'pointer'}}
-                    onClick={() => toggleSort('helpfulPct')}>
-                    Helpful %{sortIndicator('helpfulPct')}
-                  </th>
+                  {sortableTh('thumbsDown', '👎', 'Thumbs down')}
+                  {sortableTh('helpfulPct', 'Helpful %')}
                 </tr>
               </thead>
               <tbody>
                 {sortedArticles.map((a) => (
                   <tr key={a.url}>
                     <td>
-                      <Link to={a.url}>
-                        {a.title || a.url}
-                      </Link>
+                      {/* Citation URLs come from stored JSON - only link
+                          root-relative paths, never render an absolute or
+                          javascript: href. */}
+                      {a.url.startsWith('/') ? (
+                        <Link to={a.url}>{a.title || a.url}</Link>
+                      ) : (
+                        a.title || a.url
+                      )}
                     </td>
                     <td className={styles.numCol}>{a.citationCount}</td>
                     <td className={styles.numCol}>{fmtPct(a.ctrPct)}</td>
@@ -457,63 +505,60 @@ function Dashboard(): JSX.Element {
             <p className={styles.empty}>No exchanges classified in this window.</p>
           ) : (
             <table className={styles.table}>
+              <caption className={styles.srOnly}>
+                Exchanges by query type with share of total
+              </caption>
               <thead>
                 <tr>
-                  <th>Type</th>
-                  <th className={styles.numCol}>Count</th>
-                  <th>Share</th>
+                  <th scope="col">Type</th>
+                  <th scope="col" className={styles.numCol}>Count</th>
+                  <th scope="col">Share</th>
                 </tr>
               </thead>
               <tbody>
-                {(() => {
-                  const totalCount = data.queryTypes.reduce((a, b) => a + b.count, 0);
-                  return data.queryTypes.map((q) => {
-                    const pct = totalCount > 0 ? Math.round((q.count / totalCount) * 100) : 0;
-                    return (
-                      <tr key={q.query_type}>
-                        <td>{QUERY_TYPE_LABEL[q.query_type] || q.query_type}</td>
-                        <td className={styles.numCol}>{q.count}</td>
-                        <td>
-                          <span style={{
-                            display: 'inline-block',
-                            width: `${pct}%`,
-                            maxWidth: '180px',
-                            minWidth: '4px',
-                            height: '10px',
-                            background: 'var(--ifm-color-primary)',
-                            opacity: 0.7,
-                            borderRadius: '2px',
-                            verticalAlign: 'middle',
-                          }} /> <span style={{marginLeft: 8, fontSize: '0.85em', color: 'var(--ifm-color-content-secondary)'}}>{pct}%</span>
-                        </td>
-                      </tr>
-                    );
-                  });
-                })()}
+                {data.queryTypes.map((q) => {
+                  const pct = queryTypeTotal > 0 ? Math.round((q.count / queryTypeTotal) * 100) : 0;
+                  return (
+                    <tr key={q.query_type}>
+                      <td>{QUERY_TYPE_LABEL[q.query_type] || q.query_type}</td>
+                      <td className={styles.numCol}>{q.count}</td>
+                      <td>
+                        <span className={styles.shareCell}>
+                          {/* Fixed-width track so bar lengths are comparable
+                              across rows; the adjacent text carries the value
+                              for assistive tech. */}
+                          <span className={styles.shareTrack} aria-hidden="true">
+                            <span className={styles.shareFill} style={{width: `${pct}%`}} />
+                          </span>
+                          <span className={styles.sharePct}>{pct}%</span>
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           )}
 
           {/* Operational footer */}
-          <section style={{
-            marginTop: 'var(--space-7)',
-            padding: 'var(--space-4)',
-            background: 'var(--ifm-color-emphasis-100)',
-            borderRadius: 8,
-            fontSize: '0.9em',
-            color: 'var(--ifm-color-content-secondary)',
-          }}>
-            <strong>Operational health</strong>
-            <ul style={{margin: '8px 0 0', paddingLeft: 18, lineHeight: 1.6}}>
+          <section className={styles.opsFooter}>
+            <h2>Operational health</h2>
+            <ul>
               <li>
-                Conversation abandonment: <strong>{data.abandonment.abandonedPct ?? 0}%</strong>
+                Conversation abandonment: <strong>{fmtPct(data.abandonment.abandonedPct)}</strong>
                 {' '}({data.abandonment.abandoned} of {data.abandonment.totalConversations} conversations were single-turn with no 👍)
               </li>
-              <li>API failure rate: <strong>{fallbackRate}%</strong> (OpenAI errored; bot served the fallback message)</li>
+              <li>API failure rate: <strong>{fmtPct(fallbackRate)}</strong> (OpenAI errored; bot served the fallback message)</li>
+              <li>Errored exchanges: <strong>{data.stats.error_count ?? 0}</strong> (index outage or handler error - the user got no answer)</li>
               <li>DB size: {data.health.db_size_mb} MB · WAL: {fmtBytesToMb(data.health.wal_size_bytes)}</li>
               <li>Tokens this window: {data.stats.total_prompt_tokens?.toLocaleString() ?? 0} prompt · {data.stats.total_completion_tokens?.toLocaleString() ?? 0} completion</li>
-              <li>Total logged: {data.health.total_exchanges} exchanges · {data.health.total_conversations} conversations · oldest: {fmtDateShort(data.health.oldest_record)}</li>
-              <li>Circuit breaker: <strong>{data.health.circuit_breaker_status}</strong> ({data.health.consecutive_failures} consecutive failures) · logging {data.health.logging_enabled ? 'enabled' : 'disabled'}</li>
+              <li>Total logged: {data.health.total_exchanges} exchanges · {data.health.total_conversations} conversations · oldest: {fmtDateShort(data.health.oldest_record)} (UTC)</li>
+              <li>
+                Circuit breaker: <strong>{data.health.circuit_breaker_status}</strong>
+                {' '}({data.health.consecutive_failures} consecutive failures
+                {data.health.dropped_writes ? `, ${data.health.dropped_writes} writes dropped since boot` : ''})
+                {' '}· logging {data.health.logging_enabled ? 'enabled' : 'disabled'}
+              </li>
             </ul>
           </section>
         </>

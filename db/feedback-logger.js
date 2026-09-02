@@ -10,9 +10,10 @@
  *
  * Public API:
  *   recordVote({slug, vote, viewerEmail, comment, userAgent})
- *   summary(days)            → rollup for the dashboard
- *   forArticle(slug, limit)  → per-article detail
- *   getStats()               → {totalVotes, articleCount, helpfulPct}
+ *   summary(days)                  → rollup for the dashboard
+ *   forArticle(slug, limit, days)  → per-article detail
+ *   getStats()                     → {totalVotes, articleCount, helpfulPct}
+ *   deleteByEmail(email)           → GDPR deletion (mirrors chat-logger)
  */
 
 const path = require('path');
@@ -71,13 +72,22 @@ function getDb() {
     );
     CREATE INDEX IF NOT EXISTS feedback_slug_idx ON feedback(slug);
     CREATE INDEX IF NOT EXISTS feedback_ts_idx ON feedback(ts);
+    CREATE INDEX IF NOT EXISTS feedback_slug_email_idx ON feedback(slug, viewer_email);
   `);
-  // Prune old rows on init (cheap; runs once per process).
+  // Prune old rows on init and every 24h (init-only meant retention was
+  // never enforced on a long-lived container between deploys).
+  pruneOldRows(_db);
+  setInterval(() => pruneOldRows(_db), 24 * 3600 * 1000);
+  return _db;
+}
+
+function pruneOldRows(db) {
   try {
     const cutoff = new Date(Date.now() - RETENTION_DAYS * 24 * 3600 * 1000).toISOString();
-    _db.prepare('DELETE FROM feedback WHERE ts < ?').run(cutoff);
-  } catch (_) {/* swallow */}
-  return _db;
+    db.prepare('DELETE FROM feedback WHERE ts < ?').run(cutoff);
+  } catch (err) {
+    console.error('[feedback-logger] prune failed:', err.message);
+  }
 }
 
 function recordVote({slug, vote, viewerEmail, comment, userAgent}) {
@@ -88,17 +98,41 @@ function recordVote({slug, vote, viewerEmail, comment, userAgent}) {
   }
   try {
     const db = getDb();
-    db.prepare(`
-      INSERT INTO feedback (ts, slug, vote, viewer_email, comment, user_agent)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).run(
-      new Date().toISOString(),
-      slug,
-      vote,
-      viewerEmail || null,
-      (comment || '').trim() || null,
-      userAgent || null,
-    );
+    const ts = new Date().toISOString();
+    const trimmedComment = (comment || '').trim() || null;
+    // One vote per (slug, viewer) - a repeat vote updates the existing row
+    // (vote flip, or a comment attached after the initial down-vote) rather
+    // than inserting a duplicate. Refresh-and-vote loops used to inflate
+    // helpfulPct freely. Anonymous votes (no email) still insert plainly.
+    db.transaction(() => {
+      const existing = viewerEmail
+        ? db.prepare(`
+            SELECT id, vote FROM feedback
+            WHERE slug = ? AND viewer_email = ?
+            ORDER BY id DESC LIMIT 1
+          `).get(slug, viewerEmail)
+        : null;
+      if (existing) {
+        // Keep the old comment only when the vote is unchanged and no new
+        // comment came in; a vote flip invalidates the prior comment.
+        db.prepare(`
+          UPDATE feedback
+          SET ts = ?, vote = ?,
+              comment = CASE
+                WHEN ? IS NOT NULL THEN ?
+                WHEN vote = ? THEN comment
+                ELSE NULL
+              END,
+              user_agent = ?
+          WHERE id = ?
+        `).run(ts, vote, trimmedComment, trimmedComment, vote, userAgent || null, existing.id);
+      } else {
+        db.prepare(`
+          INSERT INTO feedback (ts, slug, vote, viewer_email, comment, user_agent)
+          VALUES (?, ?, ?, ?, ?, ?)
+        `).run(ts, slug, vote, viewerEmail || null, trimmedComment, userAgent || null);
+      }
+    })();
     recordSuccess();
     return {ok: true};
   } catch (err) {
@@ -145,21 +179,50 @@ function summary(days = 30) {
   }
 }
 
-function forArticle(slug, limit = 100) {
+function forArticle(slug, limit = 100, days = null) {
   if (!ENABLED) return {ok: false, reason: 'disabled'};
   if (!slug) return {ok: false, reason: 'no-slug'};
   try {
     const db = getDb();
-    const rows = db.prepare(`
-      SELECT id, ts, vote, viewer_email, comment, user_agent
-      FROM feedback
-      WHERE slug = ?
-      ORDER BY ts DESC
-      LIMIT ?
-    `).all(slug, limit);
+    // Optional window so the dashboard's comment drawer matches the page's
+    // date selector instead of always showing all-time rows.
+    const cutoff = days && days > 0
+      ? new Date(Date.now() - days * 24 * 3600 * 1000).toISOString()
+      : null;
+    const rows = cutoff
+      ? db.prepare(`
+          SELECT id, ts, vote, viewer_email, comment, user_agent
+          FROM feedback
+          WHERE slug = ? AND ts >= ?
+          ORDER BY ts DESC
+          LIMIT ?
+        `).all(slug, cutoff, limit)
+      : db.prepare(`
+          SELECT id, ts, vote, viewer_email, comment, user_agent
+          FROM feedback
+          WHERE slug = ?
+          ORDER BY ts DESC
+          LIMIT ?
+        `).all(slug, limit);
     return {ok: true, slug, rows};
   } catch (err) {
     return {ok: false, reason: 'read-failed', error: err.message};
+  }
+}
+
+/**
+ * GDPR deletion - removes every feedback row a viewer left. Counterpart to
+ * chat-logger's deleteByEmail so an account-deletion request clears both DBs.
+ */
+function deleteByEmail(email) {
+  if (!email) return 0;
+  try {
+    const db = getDb();
+    const result = db.prepare('DELETE FROM feedback WHERE viewer_email = ?').run(email);
+    return result.changes;
+  } catch (err) {
+    console.error('[feedback-logger] deleteByEmail failed:', err.message);
+    return 0;
   }
 }
 
@@ -188,4 +251,5 @@ module.exports = {
   summary,
   forArticle,
   getStats,
+  deleteByEmail,
 };

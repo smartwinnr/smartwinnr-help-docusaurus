@@ -203,6 +203,8 @@ function DigestsAdmin(): ReactNode {
           <p className={styles.subhead}>
             Weekly digests with content gaps, ops health, and per-module signal.
             Subscribers receive Monday-morning emails rendered by the main app's MJML templates.
+            {' '}Live views: <Link to="/admin/analytics/chat/">chat analytics</Link>
+            {' · '}<Link to="/admin/analytics/feedback/">article feedback</Link>.
           </p>
         </div>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>Refresh</button>

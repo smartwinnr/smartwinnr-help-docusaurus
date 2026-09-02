@@ -392,8 +392,19 @@ app.post('/api/vector/search', async (req, res) => {
       }));
 
     console.log(`📄 Found ${results.length} matching documents`);
-    
-    res.json({ 
+
+    // Persist the search (zero-result searches are the cheapest content-gap
+    // signal). Fire-and-forget, never blocks the response.
+    process.nextTick(() => {
+      chatLogger.logSearchQuery({
+        query,
+        resultsCount: results.length,
+        userEmail: req.user?.email || null,
+        orgId: req.user?.orgId || null,
+      });
+    });
+
+    res.json({
       results,
       query,
       total: results.length
@@ -698,11 +709,36 @@ app.post('/api/chat', async (req, res) => {
       searchResults = await searchDocuments(retrievalQuery, 8, req.user);
     } catch (searchError) {
       if (!(searchError instanceof SearchUnavailableError)) throw searchError;
+      const outageMessage = "I can't reach the documentation index right now, so I don't want to guess. Please try again in a moment - if it keeps happening, let your SmartWinnr admin know.";
+      // Index outages are the failure mode most worth measuring - log the
+      // exchange with is_error so the dashboard can see them instead of the
+      // 503 vanishing without a trace.
+      process.nextTick(() => {
+        chatLogger.logExchange({
+          conversationId: convId,
+          isError: true,
+          userQuery: message,
+          aiResponse: outageMessage,
+          confidence: 0,
+          relevanceScore: 0,
+          pageUrl: userContext.pageUrl || null,
+          responseTimeMs: Date.now() - startTime,
+          userEmail: req.user?.email || null,
+          userDisplayName: req.user?.displayName || null,
+          orgId: req.user?.orgId || null,
+          orgName: req.user?.orgName || null,
+          userRoles: Array.isArray(req.user?.roles) ? req.user.roles : null,
+          userPrivileges: Array.isArray(req.user?.privileges) ? req.user.privileges : null,
+          userAgent: req.headers['user-agent'] || null,
+          chatModel: CHAT_MODEL,
+          consentVersion: PRIVACY_NOTICE_VERSION,
+        });
+      });
       return res.status(503).json({
         conversationId: convId,
         message: { id: uuidv4(), role: 'assistant', timestamp: new Date() },
         response: {
-          message: "I can't reach the documentation index right now, so I don't want to guess. Please try again in a moment - if it keeps happening, let your SmartWinnr admin know.",
+          message: outageMessage,
           citations: [],
           relatedLinks: [],
           confidence: 0,
@@ -858,6 +894,28 @@ Content: ${clean.substring(0, 2500)}
 
   } catch (error) {
     console.error('❌ Error in chat endpoint:', error);
+    // Handler 500s used to be console-only; record them so error spikes
+    // show up in analytics. Guard the body access - the throw may have
+    // happened before destructuring.
+    const failedQuery = typeof req.body?.message === 'string' ? req.body.message : null;
+    if (failedQuery) {
+      process.nextTick(() => {
+        chatLogger.logExchange({
+          conversationId: (typeof req.body?.conversationId === 'string' && req.body.conversationId) || uuidv4(),
+          isError: true,
+          userQuery: failedQuery,
+          aiResponse: `[handler error] ${error.message || 'unknown'}`.slice(0, 500),
+          responseTimeMs: Date.now() - startTime,
+          userEmail: req.user?.email || null,
+          userRoles: Array.isArray(req.user?.roles) ? req.user.roles : null,
+          orgId: req.user?.orgId || null,
+          orgName: req.user?.orgName || null,
+          userAgent: req.headers['user-agent'] || null,
+          chatModel: CHAT_MODEL,
+          consentVersion: PRIVACY_NOTICE_VERSION,
+        });
+      });
+    }
     res.status(500).json({
       error: 'Failed to process chat message',
       message: 'I apologize, but I encountered an error. Please try again.'
@@ -950,12 +1008,21 @@ app.post('/api/chat/:exchangeId/citation-click', (req, res) => {
 
 app.use('/api/admin/chat-logs', requireRole('superadmin'));
 
+// Clamp an integer query param to [min, max]; NaN falls back to `def`.
+// Unclamped parseInt used to turn `days=abc` into a 500 (RangeError from
+// new Date(NaN).toISOString()) and NaN offsets into binding errors.
+function clampIntParam(raw, def, min, max) {
+  const n = parseInt(raw, 10);
+  if (!Number.isFinite(n)) return def;
+  return Math.min(Math.max(n, min), max);
+}
+
 // Paginated recent exchanges
 app.get('/api/admin/chat-logs', (req, res) => {
   try {
     chatLogger.auditLog(req, 'view_logs');
-    const limit = Math.min(parseInt(req.query.limit || '50', 10), 200);
-    const offset = parseInt(req.query.offset || '0', 10);
+    const limit = clampIntParam(req.query.limit, 50, 1, 200);
+    const offset = clampIntParam(req.query.offset, 0, 0, Number.MAX_SAFE_INTEGER);
     const exchanges = chatLogger.getRecentExchanges(limit, offset);
     res.json({ exchanges, limit, offset });
   } catch (error) {
@@ -968,8 +1035,9 @@ app.get('/api/admin/chat-logs', (req, res) => {
 app.get('/api/admin/chat-logs/low-confidence', (req, res) => {
   try {
     chatLogger.auditLog(req, 'view_low_confidence');
-    const threshold = parseFloat(req.query.threshold || '0.5');
-    const limit = Math.min(parseInt(req.query.limit || '50', 10), 200);
+    const rawThreshold = parseFloat(req.query.threshold);
+    const threshold = Number.isFinite(rawThreshold) ? Math.min(Math.max(rawThreshold, 0), 1) : 0.5;
+    const limit = clampIntParam(req.query.limit, 50, 1, 200);
     const exchanges = chatLogger.getLowConfidenceExchanges(threshold, limit);
     res.json({ exchanges, threshold, limit });
   } catch (error) {
@@ -982,7 +1050,7 @@ app.get('/api/admin/chat-logs/low-confidence', (req, res) => {
 app.get('/api/admin/chat-logs/stats', (req, res) => {
   try {
     chatLogger.auditLog(req, 'view_stats');
-    const days = parseInt(req.query.days || '30', 10);
+    const days = clampIntParam(req.query.days, 30, 1, 365);
     const stats = chatLogger.getStats(days);
     const queryTypes = chatLogger.getQueryTypeStats(days);
     res.json({ stats, queryTypes, days });
@@ -1044,6 +1112,9 @@ app.get('/api/admin/chat-logs/export', (req, res) => {
     if (!from || !to) {
       return res.status(400).json({ error: 'from and to query params required (ISO dates)' });
     }
+    if (Number.isNaN(Date.parse(from)) || Number.isNaN(Date.parse(to))) {
+      return res.status(400).json({ error: 'from and to must be valid ISO dates' });
+    }
     const data = chatLogger.exportToJSON(from, to, anonymize === 'true');
     res.json({ data, count: data.length, from, to, anonymized: anonymize === 'true' });
   } catch (error) {
@@ -1072,7 +1143,10 @@ app.delete('/api/admin/chat-logs/by-email/:email', (req, res) => {
   try {
     chatLogger.auditLog(req, 'delete_by_email');
     const count = chatLogger.deleteByEmail(req.params.email);
-    res.json({ success: true, deletedConversations: count, email: req.params.email });
+    // A GDPR deletion must clear both stores - feedback rows carry the same
+    // viewer email.
+    const feedbackCount = feedbackLogger.deleteByEmail(req.params.email);
+    res.json({ success: true, deletedConversations: count, deletedFeedback: feedbackCount, email: req.params.email });
   } catch (error) {
     console.error('❌ Error deleting by email:', error);
     res.status(500).json({ error: 'Failed to delete by email' });
@@ -1107,17 +1181,21 @@ app.post('/api/feedback', (req, res) => {
 
 // Admin-only - superadmin sees the dashboard.
 app.get('/api/admin/feedback-summary', requireRole('superadmin'), (req, res) => {
-  const days = parseInt(req.query.days || '30', 10);
+  chatLogger.auditLog(req, 'view_feedback_summary');
+  const days = clampIntParam(req.query.days, 30, 1, 365);
   const result = feedbackLogger.summary(days);
   if (!result.ok) return res.status(500).json({ error: result.reason });
   res.json(result);
 });
 
 app.get('/api/admin/feedback', requireRole('superadmin'), (req, res) => {
+  chatLogger.auditLog(req, 'view_feedback_comments');
   const slug = req.query.slug;
   if (!slug) return res.status(400).json({ error: 'slug query param required' });
-  const limit = Math.min(parseInt(req.query.limit || '100', 10), 500);
-  const result = feedbackLogger.forArticle(String(slug), limit);
+  const limit = clampIntParam(req.query.limit, 100, 1, 500);
+  // Optional window so the dashboard's comment drawer matches its selector.
+  const days = req.query.days ? clampIntParam(req.query.days, null, 1, 365) : null;
+  const result = feedbackLogger.forArticle(String(slug), limit, days);
   if (!result.ok) return res.status(500).json({ error: result.reason });
   res.json(result);
 });

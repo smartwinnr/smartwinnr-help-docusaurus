@@ -21,6 +21,10 @@ const MAX_FAILURES = 5;
 let consecutiveFailures = 0;
 let circuitOpenedAt = null;
 let lastCircuitWarning = 0;
+// Writes silently dropped while the circuit was open. Surfaced via getHealth
+// so the dashboard can show that a data-loss window occurred, not just the
+// breaker's current state.
+let droppedWrites = 0;
 
 function isCircuitOpen() {
   if (consecutiveFailures < MAX_FAILURES) return false;
@@ -69,6 +73,9 @@ function getDb() {
   _db.pragma('journal_mode = WAL');
   _db.pragma('synchronous = NORMAL');
   _db.pragma('wal_checkpoint(TRUNCATE)');
+  // Enforce the declared ON DELETE CASCADE on chat_exchanges. Without this
+  // the FK is inert and deletes rely on the defensive explicit DELETEs.
+  _db.pragma('foreign_keys = ON');
 
   // Create tables
   _db.exec(`
@@ -151,6 +158,18 @@ function getDb() {
       error TEXT,
       meta_json TEXT
     );
+
+    -- Vector-search queries from the docs search bar. Zero-result searches
+    -- are the cheapest content-gap signal; before this table they only ever
+    -- hit console.log.
+    CREATE TABLE IF NOT EXISTS search_queries (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      created_at TEXT NOT NULL,
+      query TEXT NOT NULL,
+      results_count INTEGER,
+      user_email TEXT,
+      org_id TEXT
+    );
   `);
 
   // Create indexes (IF NOT EXISTS is implicit with CREATE INDEX IF NOT EXISTS)
@@ -164,9 +183,11 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_conversations_created_at ON conversations(created_at);
     CREATE INDEX IF NOT EXISTS idx_conversations_user_email ON conversations(user_email);
     CREATE INDEX IF NOT EXISTS idx_conversations_org_id ON conversations(org_id);
+    CREATE INDEX IF NOT EXISTS idx_exchanges_user_rating ON chat_exchanges(user_rating);
     CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
     CREATE INDEX IF NOT EXISTS idx_digest_subscriptions_type ON digest_subscriptions(digest_type);
     CREATE INDEX IF NOT EXISTS idx_digest_send_log_sent_at ON digest_send_log(sent_at);
+    CREATE INDEX IF NOT EXISTS idx_search_queries_created_at ON search_queries(created_at);
   `);
 
   // Self-heal: ensure every column we depend on exists, regardless of what
@@ -184,13 +205,16 @@ function getDb() {
   // Clean old records on startup
   cleanOldRecords(RETENTION_DAYS);
 
-  // Schedule periodic WAL checkpoint (every 6 hours)
+  // Periodic maintenance (every 6 hours): WAL checkpoint + retention sweep.
+  // Retention used to run only at first DB touch, so a long-lived container
+  // never enforced it between deploys.
   setInterval(() => {
     try {
       _db.pragma('wal_checkpoint(TRUNCATE)');
     } catch (e) {
       console.error('[chat-logger] WAL checkpoint failed:', e.message);
     }
+    cleanOldRecords(RETENTION_DAYS);
   }, 6 * 60 * 60 * 1000);
 
   console.log(`[chat-logger] SQLite initialised at ${DB_PATH}`);
@@ -229,6 +253,8 @@ const REQUIRED_COLUMNS = {
     // v3 (Group B quality signals)
     ['is_refusal',           'INTEGER DEFAULT 0'],
     ['citation_clicks_json', 'TEXT'],
+    // v4 (failure-event capture: index outage / handler 500)
+    ['is_error',             'INTEGER DEFAULT 0'],
   ],
 };
 
@@ -323,6 +349,16 @@ const MIGRATIONS = [
       "ALTER TABLE chat_exchanges ADD COLUMN citation_clicks_json TEXT",
     ],
   },
+  // Version 4 - failure-event capture. is_error marks exchanges the user
+  // never got a real answer for: the docs index was unreachable (503) or the
+  // chat handler itself threw (500). These were previously invisible to
+  // analytics - the failure mode most worth measuring.
+  {
+    version: 4,
+    statements: [
+      "ALTER TABLE chat_exchanges ADD COLUMN is_error INTEGER DEFAULT 0",
+    ],
+  },
 ];
 
 function runMigrations(db) {
@@ -382,9 +418,10 @@ function classifyQuery(query) {
 function logExchange(data) {
   if (!ENABLED) return;
   if (isCircuitOpen()) {
+    droppedWrites += 1;
     const now = Date.now();
     if (now - lastCircuitWarning > 60000) {
-      console.warn('[chat-logger] Circuit open - logging disabled temporarily');
+      console.warn(`[chat-logger] Circuit open - logging disabled temporarily (${droppedWrites} writes dropped so far)`);
       lastCircuitWarning = now;
     }
     return;
@@ -395,9 +432,6 @@ function logExchange(data) {
     const now = new Date().toISOString();
     const exchangeId = data.exchangeId || uuidv4();
 
-    // Upsert conversation
-    const existingConv = db.prepare('SELECT id, requests_in_window FROM conversations WHERE id = ?').get(data.conversationId);
-
     // Stringify arrays for JSON columns; pass plain strings/null through.
     const userRolesJson = Array.isArray(data.userRoles)
       ? JSON.stringify(data.userRoles)
@@ -406,78 +440,118 @@ function logExchange(data) {
       ? JSON.stringify(data.userPrivileges)
       : null;
 
-    if (!existingConv) {
+    // Conversation upsert + dedup check + exchange insert are one atomic
+    // unit: a failure mid-way used to leave message_count incremented with
+    // no exchange row, permanently skewing abandonment stats.
+    db.transaction(() => {
+      const existingConv = db.prepare('SELECT id, requests_in_window FROM conversations WHERE id = ?').get(data.conversationId);
+
+      if (!existingConv) {
+        db.prepare(`
+          INSERT INTO conversations (
+            id, created_at, updated_at, message_count,
+            user_page_url, user_agent, user_email,
+            user_display_name, org_id, org_name, user_roles, user_privileges,
+            consent_version, requests_in_window
+          )
+          VALUES (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+        `).run(
+          data.conversationId, now, now,
+          data.pageUrl || null,
+          data.userAgent || null,
+          data.userEmail || null,
+          data.userDisplayName || null,
+          data.orgId || null,
+          data.orgName || null,
+          userRolesJson,
+          userPrivilegesJson,
+          data.consentVersion || '1.0'
+        );
+      } else {
+        db.prepare(`
+          UPDATE conversations
+          SET updated_at = ?, message_count = message_count + 1, requests_in_window = requests_in_window + 1
+          WHERE id = ?
+        `).run(now, data.conversationId);
+      }
+
+      // Dedup check: same query in same conversation within 60s. The cutoff
+      // is computed in JS as an ISO string - comparing against SQLite's
+      // datetime() output is broken (space-separated format never matches
+      // the ISO 'T' separator lexicographically).
+      let isDuplicate = 0;
+      if (existingConv) {
+        const cutoff = new Date(Date.now() - 60 * 1000).toISOString();
+        const recent = db.prepare(`
+          SELECT id FROM chat_exchanges
+          WHERE conversation_id = ? AND user_query = ? AND created_at > ?
+          LIMIT 1
+        `).get(data.conversationId, data.userQuery, cutoff);
+        if (recent) isDuplicate = 1;
+      }
+
+      // Insert exchange
       db.prepare(`
-        INSERT INTO conversations (
-          id, created_at, updated_at, message_count,
-          user_page_url, user_agent, user_email,
-          user_display_name, org_id, org_name, user_roles, user_privileges,
-          consent_version, requests_in_window
-        )
-        VALUES (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+        INSERT INTO chat_exchanges (
+          id, conversation_id, user_query, ai_response, confidence, relevance_score,
+          citations_json, num_docs_retrieved, top_doc_distance, page_url,
+          created_at, response_time_ms, is_fallback, prompt_tokens, completion_tokens,
+          user_rating, contains_pii, is_duplicate, query_type, chat_model, is_refusal, is_error
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?, ?, ?)
       `).run(
-        data.conversationId, now, now,
+        exchangeId,
+        data.conversationId,
+        data.userQuery,
+        data.aiResponse,
+        data.confidence ?? null,
+        data.relevanceScore ?? null,
+        data.citations ? JSON.stringify(data.citations) : null,
+        data.numDocsRetrieved ?? null,
+        data.topDocDistance ?? null,
         data.pageUrl || null,
-        data.userAgent || null,
-        data.userEmail || null,
-        data.userDisplayName || null,
-        data.orgId || null,
-        data.orgName || null,
-        userRolesJson,
-        userPrivilegesJson,
-        data.consentVersion || '1.0'
+        now,
+        data.responseTimeMs ?? null,
+        data.isFallback ? 1 : 0,
+        data.promptTokens ?? null,
+        data.completionTokens ?? null,
+        isDuplicate,
+        classifyQuery(data.userQuery),
+        data.chatModel || null,
+        data.isRefusal ? 1 : 0,
+        data.isError ? 1 : 0
       );
-    } else {
-      db.prepare(`
-        UPDATE conversations
-        SET updated_at = ?, message_count = message_count + 1, requests_in_window = requests_in_window + 1
-        WHERE id = ?
-      `).run(now, data.conversationId);
-    }
-
-    // Dedup check: same query in same conversation within 60s
-    let isDuplicate = 0;
-    if (existingConv) {
-      const recent = db.prepare(`
-        SELECT id FROM chat_exchanges
-        WHERE conversation_id = ? AND user_query = ? AND created_at > datetime(?, '-60 seconds')
-        LIMIT 1
-      `).get(data.conversationId, data.userQuery, now);
-      if (recent) isDuplicate = 1;
-    }
-
-    // Insert exchange
-    db.prepare(`
-      INSERT INTO chat_exchanges (
-        id, conversation_id, user_query, ai_response, confidence, relevance_score,
-        citations_json, num_docs_retrieved, top_doc_distance, page_url,
-        created_at, response_time_ms, is_fallback, prompt_tokens, completion_tokens,
-        user_rating, contains_pii, is_duplicate, query_type, chat_model, is_refusal
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?, ?)
-    `).run(
-      exchangeId,
-      data.conversationId,
-      data.userQuery,
-      data.aiResponse,
-      data.confidence ?? null,
-      data.relevanceScore ?? null,
-      data.citations ? JSON.stringify(data.citations) : null,
-      data.numDocsRetrieved ?? null,
-      data.topDocDistance ?? null,
-      data.pageUrl || null,
-      now,
-      data.responseTimeMs ?? null,
-      data.isFallback ? 1 : 0,
-      data.promptTokens ?? null,
-      data.completionTokens ?? null,
-      isDuplicate,
-      classifyQuery(data.userQuery),
-      data.chatModel || null,
-      data.isRefusal ? 1 : 0
-    );
+    })();
 
     recordSuccess();
     return exchangeId;
+  } catch (err) {
+    recordFailure(err);
+  }
+}
+
+/**
+ * Persist a docs-search-bar query. Fire-and-forget from /api/vector/search;
+ * zero-result searches are the cheapest content-gap signal we have.
+ */
+function logSearchQuery({query, resultsCount, userEmail, orgId} = {}) {
+  if (!ENABLED) return;
+  if (isCircuitOpen()) {
+    droppedWrites += 1;
+    return;
+  }
+  try {
+    const db = getDb();
+    db.prepare(`
+      INSERT INTO search_queries (created_at, query, results_count, user_email, org_id)
+      VALUES (?, ?, ?, ?, ?)
+    `).run(
+      new Date().toISOString(),
+      String(query || '').slice(0, 2000),
+      Number.isFinite(resultsCount) ? resultsCount : null,
+      userEmail || null,
+      orgId || null
+    );
+    recordSuccess();
   } catch (err) {
     recordFailure(err);
   }
@@ -489,12 +563,17 @@ function logExchange(data) {
 
 function rateExchange(exchangeId, rating) {
   if (!ENABLED) return false;
+  if (isCircuitOpen()) {
+    droppedWrites += 1;
+    return false;
+  }
   try {
     const db = getDb();
     const result = db.prepare('UPDATE chat_exchanges SET user_rating = ? WHERE id = ?').run(rating, exchangeId);
+    recordSuccess();
     return result.changes > 0;
   } catch (err) {
-    console.error('[chat-logger] rateExchange failed:', err.message);
+    recordFailure(err);
     return false;
   }
 }
@@ -508,22 +587,32 @@ function rateExchange(exchangeId, rating) {
 function recordCitationClick(exchangeId, url) {
   if (!ENABLED) return false;
   if (!exchangeId || !url) return false;
+  if (isCircuitOpen()) {
+    droppedWrites += 1;
+    return false;
+  }
   try {
     const db = getDb();
-    const row = db.prepare('SELECT citation_clicks_json FROM chat_exchanges WHERE id = ?').get(exchangeId);
-    if (!row) return false;
-    let clicks = [];
-    if (row.citation_clicks_json) {
-      try { clicks = JSON.parse(row.citation_clicks_json) || []; }
-      catch { clicks = []; }
-    }
-    if (!Array.isArray(clicks)) clicks = [];
-    if (clicks.includes(url)) return true; // already tracked, no-op
-    clicks.push(url);
-    db.prepare('UPDATE chat_exchanges SET citation_clicks_json = ? WHERE id = ?').run(JSON.stringify(clicks), exchangeId);
-    return true;
+    // Read-modify-write of the JSON array runs inside a transaction so two
+    // concurrent clicks on the same exchange can't lose one.
+    const ok = db.transaction(() => {
+      const row = db.prepare('SELECT citation_clicks_json FROM chat_exchanges WHERE id = ?').get(exchangeId);
+      if (!row) return false;
+      let clicks = [];
+      if (row.citation_clicks_json) {
+        try { clicks = JSON.parse(row.citation_clicks_json) || []; }
+        catch { clicks = []; }
+      }
+      if (!Array.isArray(clicks)) clicks = [];
+      if (clicks.includes(url)) return true; // already tracked, no-op
+      clicks.push(url);
+      db.prepare('UPDATE chat_exchanges SET citation_clicks_json = ? WHERE id = ?').run(JSON.stringify(clicks), exchangeId);
+      return true;
+    })();
+    recordSuccess();
+    return ok;
   } catch (err) {
-    console.error('[chat-logger] recordCitationClick failed:', err.message);
+    recordFailure(err);
     return false;
   }
 }
@@ -589,13 +678,14 @@ function getStats(days = 30, filter = {}) {
       ROUND(AVG(e.confidence), 2) as avg_confidence,
       ROUND(AVG(e.relevance_score), 2) as avg_relevance_score,
       ROUND(AVG(e.response_time_ms), 0) as avg_response_time_ms,
-      SUM(CASE WHEN e.is_fallback = 1 THEN 1 ELSE 0 END) as fallback_count,
-      SUM(CASE WHEN e.is_refusal = 1 THEN 1 ELSE 0 END) as refusal_count,
-      SUM(COALESCE(e.prompt_tokens, 0)) as total_prompt_tokens,
-      SUM(COALESCE(e.completion_tokens, 0)) as total_completion_tokens,
-      SUM(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END) as thumbs_up,
-      SUM(CASE WHEN e.user_rating = -1 THEN 1 ELSE 0 END) as thumbs_down,
-      SUM(CASE WHEN e.is_duplicate = 1 THEN 1 ELSE 0 END) as duplicate_count
+      COALESCE(SUM(CASE WHEN e.is_fallback = 1 THEN 1 ELSE 0 END), 0) as fallback_count,
+      COALESCE(SUM(CASE WHEN e.is_refusal = 1 THEN 1 ELSE 0 END), 0) as refusal_count,
+      COALESCE(SUM(CASE WHEN e.is_error = 1 THEN 1 ELSE 0 END), 0) as error_count,
+      COALESCE(SUM(e.prompt_tokens), 0) as total_prompt_tokens,
+      COALESCE(SUM(e.completion_tokens), 0) as total_completion_tokens,
+      COALESCE(SUM(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END), 0) as thumbs_up,
+      COALESCE(SUM(CASE WHEN e.user_rating = -1 THEN 1 ELSE 0 END), 0) as thumbs_down,
+      COALESCE(SUM(CASE WHEN e.is_duplicate = 1 THEN 1 ELSE 0 END), 0) as duplicate_count
     FROM chat_exchanges e
     LEFT JOIN conversations c ON c.id = e.conversation_id
     WHERE e.created_at >= ?${f.sql}
@@ -644,6 +734,7 @@ function getHealth() {
     oldest_record: totals.oldest_record,
     circuit_breaker_status: isCircuitOpen() ? 'open' : 'closed',
     consecutive_failures: consecutiveFailures,
+    dropped_writes: droppedWrites,
     logging_enabled: ENABLED,
   };
 }
@@ -955,7 +1046,7 @@ function getAbandonmentStats({days = 30, role, orgId} = {}) {
         COUNT(e.id) AS exchange_count,
         MAX(CASE WHEN e.user_rating = 1 THEN 1 ELSE 0 END) AS got_thumbs_up
       FROM conversations c
-      LEFT JOIN chat_exchanges e ON e.conversation_id = c.id
+      LEFT JOIN chat_exchanges e ON e.conversation_id = c.id AND e.created_at >= ?
       WHERE c.created_at >= ?${f.sql}
       GROUP BY c.id
     )
@@ -963,7 +1054,7 @@ function getAbandonmentStats({days = 30, role, orgId} = {}) {
       COUNT(*) AS total,
       SUM(CASE WHEN exchange_count = 1 AND got_thumbs_up = 0 THEN 1 ELSE 0 END) AS abandoned
     FROM conv
-  `).get(since, ...f.params);
+  `).get(since, since, ...f.params);
   const total = row.total || 0;
   const abandoned = row.abandoned || 0;
   return {
@@ -1033,24 +1124,30 @@ function exportToJSON(startDate, endDate, anonymize = false) {
 
 function deleteConversation(conversationId) {
   const db = getDb();
-  // Foreign key cascade handles chat_exchanges
-  db.pragma('foreign_keys = ON');
-  const result = db.prepare('DELETE FROM conversations WHERE id = ?').run(conversationId);
-  // Also explicitly delete exchanges in case FK cascade isn't enabled
-  db.prepare('DELETE FROM chat_exchanges WHERE conversation_id = ?').run(conversationId);
-  return result.changes > 0;
+  return db.transaction(() => {
+    const result = db.prepare('DELETE FROM conversations WHERE id = ?').run(conversationId);
+    // FK cascade (enabled at connect) handles chat_exchanges; keep the
+    // explicit delete as a belt-and-braces for rows orphaned before the
+    // pragma was enforced.
+    db.prepare('DELETE FROM chat_exchanges WHERE conversation_id = ?').run(conversationId);
+    return result.changes > 0;
+  })();
 }
 
 function deleteByEmail(email) {
   const db = getDb();
-  const convIds = db.prepare('SELECT id FROM conversations WHERE user_email = ?').all(email);
-  let deleted = 0;
-  for (const { id } of convIds) {
-    db.prepare('DELETE FROM chat_exchanges WHERE conversation_id = ?').run(id);
-    db.prepare('DELETE FROM conversations WHERE id = ?').run(id);
-    deleted++;
-  }
-  return deleted;
+  // One transaction: a mid-loop failure must not leave a partial GDPR
+  // deletion (some conversations gone, others still holding the user's data).
+  return db.transaction(() => {
+    const convIds = db.prepare('SELECT id FROM conversations WHERE user_email = ?').all(email);
+    let deleted = 0;
+    for (const { id } of convIds) {
+      db.prepare('DELETE FROM chat_exchanges WHERE conversation_id = ?').run(id);
+      db.prepare('DELETE FROM conversations WHERE id = ?').run(id);
+      deleted++;
+    }
+    return deleted;
+  })();
 }
 
 // ---------------------------------------------------------------------------
@@ -1062,17 +1159,22 @@ function cleanOldRecords(retentionDays) {
   try {
     const db = getDb();
     const cutoff = new Date(Date.now() - retentionDays * 24 * 60 * 60 * 1000).toISOString();
-    // Delete exchanges first (FK child)
-    db.prepare(`
-      DELETE FROM chat_exchanges WHERE conversation_id IN (
-        SELECT id FROM conversations WHERE updated_at < ?
-      )
-    `).run(cutoff);
-    const result = db.prepare('DELETE FROM conversations WHERE updated_at < ?').run(cutoff);
-    if (result.changes > 0) {
-      console.log(`[chat-logger] Cleaned ${result.changes} conversations older than ${retentionDays} days`);
-    }
-    return result.changes;
+    return db.transaction(() => {
+      // Retention keys on the exchange's own created_at, not the parent
+      // conversation's updated_at - a conversation touched yesterday must
+      // not shield 90-day-old exchanges from the sweep.
+      const ex = db.prepare('DELETE FROM chat_exchanges WHERE created_at < ?').run(cutoff);
+      const result = db.prepare(`
+        DELETE FROM conversations
+        WHERE updated_at < ?
+          AND id NOT IN (SELECT DISTINCT conversation_id FROM chat_exchanges)
+      `).run(cutoff);
+      db.prepare('DELETE FROM search_queries WHERE created_at < ?').run(cutoff);
+      if (ex.changes > 0 || result.changes > 0) {
+        console.log(`[chat-logger] Cleaned ${ex.changes} exchanges / ${result.changes} conversations older than ${retentionDays} days`);
+      }
+      return result.changes;
+    })();
   } catch (err) {
     console.error('[chat-logger] cleanOldRecords failed:', err.message);
     return 0;
@@ -1084,6 +1186,11 @@ function cleanOldRecords(retentionDays) {
 // ---------------------------------------------------------------------------
 
 function auditLog(req, action) {
+  if (isCircuitOpen()) {
+    droppedWrites += 1;
+    console.warn(`[chat-logger] auditLog dropped (circuit open): ${action}`);
+    return;
+  }
   try {
     const db = getDb();
     db.prepare(`
@@ -1097,8 +1204,9 @@ function auditLog(req, action) {
       req.ip || null,
       new Date().toISOString()
     );
+    recordSuccess();
   } catch (err) {
-    console.error('[chat-logger] auditLog failed:', err.message);
+    recordFailure(err);
   }
 }
 
@@ -1108,6 +1216,7 @@ function auditLog(req, action) {
 
 module.exports = {
   logExchange,
+  logSearchQuery,
   rateExchange,
   recordCitationClick,
   getRecentExchanges,
