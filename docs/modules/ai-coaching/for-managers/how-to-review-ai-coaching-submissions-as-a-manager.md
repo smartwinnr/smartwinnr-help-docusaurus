@@ -8,8 +8,8 @@ description: >-
 slug: how-to-review-ai-coaching-submissions-as-a-manager
 sidebar_position: 318
 last_update:
-  date: 2026-07-30
-  author: Sandeep Bhuthagaddala
+  date: 2026-09-02
+  author: Sruthi Suresh
 source:
   helpscout_id: 6970fbe61252a7004208b915
   helpscout_url: >-
@@ -32,11 +32,11 @@ As a manager, you can review AI coaching submissions from your team members. Whe
 
 Use this feature when you want to:
 
-* Provide personalized feedback on a rep's performance in a role-play scenario
-* Identify specific areas where a team member needs improvement
-* Recognize strong performance and reinforce good habits
-* Support reps who received lower AI scores and need additional coaching
-* Review critical skills like objection handling, product messaging, or communication techniques
+* Provide personalized feedback on a rep's performance in a role-play scenario.
+* Identify specific areas where a team member needs improvement.
+* Recognize strong performance and reinforce good habits.
+* Support reps who received lower AI scores and need additional coaching.
+* Review critical skills like objection handling, product messaging, or communication techniques.
 
 This feature is optional and depends on your availability. The AI provides automated feedback, but your human insight adds valuable context and personalized guidance.
 
@@ -54,9 +54,9 @@ Ensure you have the appropriate permissions to review AI coaching submissions as
 
 You'll see a list of coaching assignments that need your review. Each item shows:
 
-* The coaching title (e.g., "OS Certification", "Price Objection Handling")
-* A brief description of the scenario
-* The submission count (e.g., "1/7" means 1 review completed out of 7 total submissions)
+* The coaching title (e.g., "OS Certification", "Price Objection Handling").
+* A brief description of the scenario.
+* The submission count (e.g., "1/7" means 1 review completed out of 7 total submissions).
 
 ![Access pending coaching reviews](/img/helpscout/managers-and-team-members/how-to-review-ai-coaching-submissions-as-a-manager-1.png)
 
@@ -85,6 +85,16 @@ Some competency rows may show a blue information icon and a percentage (e.g., "8
 7. After evaluating all competencies, scroll to the bottom of the page.
 8. Click **Submit Review**.
 
+You can also add timeline feedback.
+
+**Note:** When this setting is enabled, you will see a toggle option to allow timestamped video feedback when creating a coaching scenario in the admin portal. If you enable this option for a specific coaching, managers reviewing the submission can click on specific moments in the video playback to leave pinned comments at those timestamps. This feature works like comment markers on a video timeline, making it easier to reference exact moments in the submission when giving feedback. To use this feature, ensure that the toggle is enabled when setting up the coaching. Managers will then have the ability to add timeline feedback during their review of coaching videos. This option can be enabled by the editor who is creating the coaching. If this is created by the SmartWinnr team, then they can enable the same if needed.
+
+![Add timeline feedback](/img/helpscout/authored/how-to-review-ai-coaching-submissions-as-a-manager-mtjzeagk.png)
+
+You can click on the **ADD** button and add feedback according to the timeline, then click on the **Save** button.
+
+![Save button](/img/helpscout/authored/how-to-review-ai-coaching-submissions-as-a-manager-mtjzicu2.png)
+
 ## What happens next
 
 After you submit your review:
@@ -99,7 +109,7 @@ After you submit your review:
 * **You can edit your review later.** If you need to update your feedback after submitting, you can return to the submission and make changes.
 * **Review at your own pace.** There's no deadline to complete reviews. Prioritize based on your schedule and which reps need immediate feedback.
 * **Focus on reps with lower AI scores first.** These team members may benefit most from your personalized coaching.
-* **Use the COLLAPSE ALL button** (visible in the top-right of the Competencies section) to minimize the competency list if you need a cleaner view.
+* **Use the **COLLAPSE ALL** button** (visible in the top-right of the Competencies section) to minimize the competency list if you need a cleaner view.
 
 ## Things to know
 
