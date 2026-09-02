@@ -5,7 +5,7 @@ description: "Learn how to enable proctoring features to maintain assessment int
 slug: setup-quiz-proctoring
 sidebar_position: 999
 last_update:
-  date: 2026-07-23
+  date: 2026-09-02
   author: Sruthi Suresh
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -19,7 +19,7 @@ You can set up proctoring for your quizzes to reduce the chances of malpractice 
 
 ## When to use this
 
-Use proctoring when you want to:
+Use proctoring when you want to
 
 - Ensure the integrity of assessments.
 - Monitor users during high-stakes quizzes.

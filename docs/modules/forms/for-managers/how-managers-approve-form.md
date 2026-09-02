@@ -5,8 +5,8 @@ description: Follow the below steps to approve a form in SmartWinnr.
 slug: how-managers-approve-form
 sidebar_position: 224
 last_update:
-  date: 2026-08-19
-  author: Aswani TK
+  date: 2026-09-02
+  author: Sruthi Suresh
 source:
   helpscout_id: 600868c4cfe30d219ccd9aa9
   helpscout_url: >-
@@ -21,7 +21,7 @@ draft: false
 
 > **At a glance** - Approving a form in SmartWinnr involves navigating to the forms section, selecting the desired submission, changing its status, and saving the changes.
 
-Follow the below steps to approve a form in SmartWinnr.
+Follow the steps below to approve a form in SmartWinnr.
 
 ## When to use this
 Use this guide when you need to approve a form submission in SmartWinnr. This process is essential for managing submissions effectively.
@@ -54,7 +54,7 @@ Click on **Change Status** to modify the status of the submission.
 ![Different status](/img/helpscout/authored/how-managers-approve-form-mszy4li1.png)
 
 ### 6. Approve the Submission
-Select **Approved** to approve the form submission. Click on **OK** to save this status.
+Select **Approved** to approve the form submission. Click on **OK** to save this status. You also have the option to select **Rejected** if you need to reject the form.
 
 ### 7. Save the Status
 Now, click on the **Save** button to save the status.
