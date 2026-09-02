@@ -1532,7 +1532,11 @@ app.use('/api/admin/authoring', (req, res, next) => {
   journalBootPromise.then(() => next(), () => next());
 });
 
-app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req, res) => {
+// Extracted to a named function (not an inline route closure) so
+// /api/release-drafts can call it directly, in-process, with the same
+// logic the human-triggered wizard uses - no HTTP round-trip, no
+// duplicated LLM-calling code to drift out of sync.
+async function generateHandler(req, res) {
   // Gate before the LLM call - stuck retry loops can burn tokens fast.
   const rate = checkRate(req.user && req.user.email);
   if (!rate.ok) {
@@ -1675,7 +1679,8 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), async (req,
     console.error('❌ authoring/generate failed:', error.response?.data || error.message);
     res.status(500).json({ error: 'Generation failed', message: error.response?.data?.error?.message || error.message });
   }
-});
+}
+app.post('/api/admin/authoring/generate', requireRole('superadmin'), generateHandler);
 
 /** Per-field LLM suggestion. Lets editors regenerate just the title or
  *  just the description without rewriting the body or other fields. Body
@@ -1797,7 +1802,10 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
   }
 });
 
-app.post('/api/admin/authoring/save', requireRole('superadmin'), async (req, res) => {
+// Extracted to a named function for the same reason as generateHandler
+// above - /api/release-drafts calls it in-process to persist a draft
+// with the exact same concurrency/path/frontmatter rules the wizard gets.
+async function saveHandler(req, res) {
   try {
     const { markdown, dir, module: moduleSlug, subFolder, slug, baseHash, fromPath } = req.body || {};
     if (!markdown) return res.status(400).json({ error: 'markdown required' });
@@ -1964,7 +1972,8 @@ app.post('/api/admin/authoring/save', requireRole('superadmin'), async (req, res
     console.error('❌ authoring/save failed:', error.message);
     res.status(500).json({ error: error.message });
   }
-});
+}
+app.post('/api/admin/authoring/save', requireRole('superadmin'), saveHandler);
 
 // ---------------------------------------------------------------------------
 // Publish-to-deploy pipeline (plan §20.3 - §20.5)
