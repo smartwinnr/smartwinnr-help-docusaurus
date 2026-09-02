@@ -5,7 +5,7 @@ description: "Learn how to download the coaching feedback report in PDF format."
 slug: download-coaching-feedback-report
 sidebar_position: 70
 last_update:
-  date: 2026-09-01
+  date: 2026-09-02
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -27,7 +27,7 @@ Use this feature when you want to provide feedback reports to learners and manag
 
 ## Before you start
 
-Your organization needs to enable the setting that allows downloading AI feedback as PDFs in the coaching module.
+Your organisation needs to enable the setting that allows downloading AI feedback as PDFs in the coaching module.
 
 ## Steps
 
