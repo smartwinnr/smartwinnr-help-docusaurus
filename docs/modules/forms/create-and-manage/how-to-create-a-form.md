@@ -7,7 +7,7 @@ description: >-
 slug: how-to-create-a-form
 sidebar_position: 999
 last_update:
-  date: 2026-09-01
+  date: 2026-09-03
   author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -22,7 +22,7 @@ draft: false
 
 To create a form in SmartWinnr, go to **Editor** >> **PERFORMANCE** >> **Forms** >> **View All Forms**. This will take you to a page where you can see the list of forms created by you.
 
-Click on the **Create Form** option at the top-right corner to create a new form. This opens the **Create Form** page.
+Click on the **Create Form** option at the top-right corner to create a new form. This opens the **Create Form** page
 
 ![how to create a form](/img/helpscout/authored/how-to-create-a-form-mt43kwdr.png)
 
