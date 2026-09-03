@@ -34,6 +34,9 @@ type Draft = {
   slug: string;
   title: string;
   lastUpdate: string | null;
+  origin?: 'pipeline' | 'human';
+  releaseTag?: string | null;
+  issueUrl?: string | null;
 };
 
 type Article = Draft & { draft: boolean; position?: number | null };
@@ -109,6 +112,26 @@ function clearWizardState() {
   try { window.localStorage.removeItem(WIZARD_STORAGE_KEY); } catch { /* swallow */ }
 }
 
+/** Human-readable "Module › Sub-folder" for a draft/article path, resolved
+ *  against the real section labels from GET /sections (the same source
+ *  the wizard's Step 1 picker and the Published tab's filter use) - not
+ *  guessed from the slug. Authors need this to be legible at a glance:
+ *  the release pipeline routes an article's sub-folder from its
+ *  Change-Type (feature/bug/etc.), and that heuristic can be wrong, so
+ *  the folder has to be visible here rather than only readable by
+ *  parsing the raw file path in the Path column. Falls back to the raw
+ *  module/subFolder slugs if the section list hasn't loaded yet or the
+ *  path is outside the canonical modules shape. */
+function labelForPath(path: string, locations: SectionEntry[]): string | null {
+  const parsed = parseDocPath(path);
+  if (!parsed || !parsed.module || !parsed.subFolder) return null;
+  const moduleDir = `docs/modules/${parsed.module}`;
+  const loc = locations.find((l) => l.dir === moduleDir);
+  const sub = loc?.subs.find((s) => s.dir === parsed.dir);
+  if (loc && sub) return `${loc.label} › ${sub.label}`;
+  return `${parsed.module} › ${parsed.subFolder}`;
+}
+
 // ─────────────────────────────────────────────────────────────────────────
 // Drafts tab
 // ─────────────────────────────────────────────────────────────────────────
@@ -119,6 +142,19 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   const [busy, setBusy] = useState<string | null>(null);
   const [deployState, setDeployState] = useState<DeployState | null>(null);
   const [deploying, setDeploying] = useState(false);
+  const [locations, setLocations] = useState<SectionEntry[]>([]);
+  const [originFilter, setOriginFilter] = useState<'all' | 'pipeline' | 'human'>('all');
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/authoring/sections', {credentials: 'same-origin'});
+        if (!res.ok) return;
+        const data = await res.json();
+        setLocations(data.sections || []);
+      } catch {/* fail soft - falls back to the raw module/subFolder slugs */}
+    })();
+  }, []);
 
   async function refresh() {
     setLoading(true);
@@ -420,6 +456,19 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         <span className={styles.hint}>
           Drafts are only visible here - readers never see them until you publish.
         </span>
+        <div className={styles.filterGroup} role="group" aria-label="Filter by origin">
+          {(['all', 'pipeline', 'human'] as const).map((f) => (
+            <button
+              key={f}
+              type="button"
+              className={originFilter === f ? styles.btnPrimary : styles.btnGhost}
+              onClick={() => setOriginFilter(f)}>
+              {f === 'all' ? `All (${drafts.length})`
+                : f === 'pipeline' ? `Release pipeline (${drafts.filter((d) => d.origin === 'pipeline').length})`
+                : `Hand-authored (${drafts.filter((d) => d.origin !== 'pipeline').length})`}
+            </button>
+          ))}
+        </div>
         <button type="button" className={styles.btnGhost} onClick={refresh} disabled={loading}>
           Refresh
         </button>
@@ -429,20 +478,37 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
       {!loading && drafts.length === 0 && (
         <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring" onClick={clearWizardState}>authoring wizard</Link>.</p>
       )}
-      {!loading && drafts.length > 0 && (
+      {(() => {
+        const filtered = drafts.filter((d) => originFilter === 'all' || (originFilter === 'pipeline' ? d.origin === 'pipeline' : d.origin !== 'pipeline'));
+        if (!loading && drafts.length > 0 && filtered.length === 0) {
+          return <p className={styles.hint}>No drafts match this filter.</p>;
+        }
+        if (loading || filtered.length === 0) return null;
+        return (
         <table className={styles.draftTable}>
           <thead>
             <tr>
               <th>Title</th>
+              <th>Location</th>
               <th>Path</th>
               <th>Last update</th>
               <th />
             </tr>
           </thead>
           <tbody>
-            {drafts.map((d) => (
+            {filtered.map((d) => (
               <tr key={d.path}>
-                <td><strong>{d.title}</strong></td>
+                <td>
+                  <strong>{d.title}</strong>
+                  {d.origin === 'pipeline' && (
+                    <span
+                      className={styles.originBadge}
+                      title={d.issueUrl ? `Drafted by the release pipeline${d.releaseTag ? ` (${d.releaseTag})` : ''} - open the source issue: ${d.issueUrl}` : 'Drafted by the release pipeline'}>
+                      Release pipeline
+                    </span>
+                  )}
+                </td>
+                <td>{labelForPath(d.path, locations) ?? <span className={styles.hint}>-</span>}</td>
                 <td><code className={styles.smallCode}>{d.path}</code></td>
                 <td className={styles.tabular}>{(d.lastUpdate ?? '-').slice(0, 10)}</td>
                 <td className={styles.actionsCell}>
@@ -473,7 +539,8 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
             ))}
           </tbody>
         </table>
-      )}
+        );
+      })()}
     </>
   );
 }
