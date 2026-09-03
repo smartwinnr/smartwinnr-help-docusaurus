@@ -399,11 +399,137 @@ npm run module:restamp        # write-subsection-categories + restamp-gates + ca
 `module:restamp` is idempotent - safe to re-run on any existing module to
 reconcile drifted `_category_.json` files back to the canonical template.
 
+## Release-draft pipeline (commits -> draft articles)
+
+Turns a contract-conforming commit in `smartwinnr_9543` into a DRAFT article
+here, automatically, at deploy time. A human always reviews and publishes -
+nothing goes live unattended. Counterpart repo: `smartwinnr_9543`
+(`tools/release/push-article-drafts.js`, `tools/git-hooks/*`,
+`deploy/prod/deploy_git_actions.py` - **not** `deploy_git_actions_py3.py`,
+which is stale and not the script actually run for production deploys).
+
+### Flow
+
+1. A commit in `smartwinnr_9543` carries `Change-Type`/`Audience` trailers
+   and `What changed`/`Why`/`How to use`/`Notes` sections, enforced by that
+   repo's pre-push hook (`tools/git-hooks/msg-contract.js`).
+2. At deploy time, `deploy_git_actions.py` calls
+   `tools/release/push-article-drafts.js <prevTag> <newTag> <masterCommit>`,
+   which collects every `Audience: client` commit since its own marker
+   (`refs/smartwinnr/last-article-dispatch`, held back on any per-change
+   failure - never advances past something that didn't actually draft) and
+   POSTs to this repo's `POST /api/release-drafts`, authenticated by
+   `x-release-shared-secret` (`RELEASE_DRAFTS_SECRET`). That route is
+   registered in the public zone, **before** `initAuth(app)` - it does its
+   own auth, not session-cookie auth.
+3. `findMatchingArticle` searches every canonical sub-folder under the
+   target module for an existing article on the same issue (provenance
+   comment `{/* release-draft: tag=... issue=... url=... */}`, injected
+   into every pipeline-created/updated article) or close keyword overlap.
+   Match -> refines that article in place (no duplicate). No match ->
+   fresh draft via `subFolderForChangeType` (`feature` -> create-and-manage,
+   `bug` -> faqs-and-troubleshooting, else -> features).
+4. Always lands as `draft: true`. A human opens `/admin/authoring/drafts`
+   (badged + filterable by `origin: pipeline` vs hand-authored, with a
+   "Location" column showing the resolved module/sub-folder) and publishes
+   like any other draft.
+
+### Module routing - two maps, not one
+
+`server.js`'s `RELEASE_MODULE_MAP` (source `modules/<dir>` -> destination
+doc module slug) predates verification against the real `smartwinnr_9543`
+repo and several of its keys are generic/singular names
+(`modules/quiz`, `modules/smartpath`, ...) that don't exist there - left
+as-is rather than rewritten. `RELEASE_SOURCE_ALIASES`, right below it, is
+the real, verified routing table (`modules/quizzes` -> `quiz`,
+`modules/coachings` -> `video-coaching`, `modules/contents` -> `smartfeed`,
+etc.) and is checked FIRST in `mapChangeToDestination`, falling back to
+`RELEASE_MODULE_MAP`. **When a new smartwinnr_9543 module needs routing,
+add it to `RELEASE_SOURCE_ALIASES`**, and verify the source directory name
+against the real repo (`ls modules/` there) rather than guessing - this
+exact mismatch caused every commit touching quizzes/smartpaths/surveys/
+competitions/knowledge-hub to silently fail to draft until caught by a
+live test.
+
+### Ownership and notifications
+
+`customProps.owner` in article frontmatter is set ONLY by `publishHandler`
+(never by save/draft) - first publish sets the publisher as owner, every
+later publish reassigns ownership to whoever approved that version.
+Distinct from `last_update.author`, which the release pipeline's service
+account also touches.
+
+- Existing article updated -> `notifyExistingOwner`: an email to
+  `RELEASE_OWNER_NOTIFY_DISTRO_EMAIL` (a shared team/manager address, NOT
+  the owner's personal inbox - the owner is named in the body) plus a
+  plain "For: `<owner>`" Teams post to `RELEASE_DRAFTS_TEAMS_WEBHOOK`
+  (real `@mention` via `msteams.entities` is confirmed NOT to render
+  through the Workflows "Post card" action - don't reintroduce it).
+- New article created -> `notifyNewArticleChannel`: a batched Teams
+  summary on the same webhook.
+- First time an email becomes an owner -> `notifyNewAuthor`: a one-time
+  welcome email straight to that individual (identity verification, so it
+  intentionally does NOT go through the distro), gated by
+  `isEmailApproved` (`lib/email-allowlist.js`): any `@smartwinnr.com`
+  address is allowed outright, anyone else needs approval at
+  `/admin/approved-emails` (superadmin page, backed by the
+  `approved_notify_emails` table).
+- Both email paths require `RELEASE_OWNER_EMAILS_ENABLED=true` (default
+  off) - the kill switch that lets the pipeline be exercised end-to-end
+  without emailing real people. Uses `MAIN_APP_SHARED_SECRET` /
+  `urlForRegion('global')` from `db/digest-send.js` - the SAME path the
+  weekly digests already use, not a separate secret.
+- `lib/authors-registry.js` (`known-authors.json`, tracked in git) records
+  every email that has ever become an owner.
+- Every publish appends to `release-publish-log.jsonl` (gitignored) - a
+  placeholder for a future release-notes aggregator, not one itself.
+
+### Testing locally - and the one sharp edge
+
+Point this repo's config at a local run (`.env`: `RELEASE_DRAFTS_SECRET`
+set), then in `smartwinnr_9543`:
+
+```bash
+git config smartwinnr.articleDestClient "http://localhost:3000"
+git config smartwinnr.articleSecretClient "<same value as RELEASE_DRAFTS_SECRET>"
+DRY_RUN=1 node tools/release/push-article-drafts.js <prevCommit> <fakeTag> <headCommit>   # prints payloads, no network call
+node tools/release/push-article-drafts.js <prevCommit> <fakeTag> <headCommit>             # actually dispatches
+```
+
+**On a real (non-`DRY_RUN`) success, this pushes
+`refs/smartwinnr/last-article-dispatch` to `smartwinnr_9543`'s real
+`origin`** (`release-marker.js`'s `advance()`) - a genuine write to shared
+remote state, not just local. Testing with a scratch commit/branch leaves
+that ref pointing at a SHA that's about to become unreachable once the
+branch is deleted. Clean it up after any local test:
+
+```bash
+git push origin :refs/smartwinnr/last-article-dispatch
+git update-ref -d refs/smartwinnr/last-article-dispatch
+git config --unset smartwinnr.articleDestClient
+git config --unset smartwinnr.articleSecretClient
+```
+
+(Low practical risk if forgotten - the next REAL deploy's `resolvePrev`
+checks `merge-base --is-ancestor <marker> <head>` and gracefully falls
+back to the tag-derived range when the marker isn't in that history - but
+it's a stray write to shared infra and should be cleaned up regardless.)
+
+A commit's `Audience` having real changes but no destination configured
+(`smartwinnr.articleDest<Audience>` unset) is a deliberate, logged skip -
+`push-article-drafts.js` prints e.g. `"1 tech change(s) ready, but
+smartwinnr.articleDestTech is not configured - skipped"` rather than
+staying silent.
+
 ## Key environment variables
 
 `OPENAI_API_KEY` (required), `INTERNAL_API_KEY` (guards `/api/vector/embed`),
 `CHROMA_HOST`/`CHROMA_PORT`/`CHROMA_SSL`/`COLLECTION_NAME`, `EMBEDDING_MODEL`,
 `PORT`. Auth (required in production): `HELP_JWT_SECRET`, `HELP_SITE_URL`,
 `LAMBDA_MAGIC_LINK_URL`. Chat logging: `CHAT_LOG_DB_PATH`, `CHAT_LOG_RETENTION_DAYS`,
-`CHAT_LOGGING_ENABLED`. Copy `.env.example` → `.env` to start. Deployment is Railway
+`CHAT_LOGGING_ENABLED`. Release-draft pipeline (see that section above):
+`RELEASE_DRAFTS_SECRET` (auth for incoming dispatches), `MAIN_APP_SHARED_SECRET`
+(reused from the digest-email path), `RELEASE_OWNER_EMAILS_ENABLED` (default
+off), `RELEASE_OWNER_NOTIFY_DISTRO_EMAIL`, `RELEASE_DRAFTS_TEAMS_WEBHOOK`.
+Copy `.env.example` → `.env` to start. Deployment is Railway
 (see `RAILWAY_DEPLOYMENT.md`); `Dockerfile.docusaurus` is the production image.
