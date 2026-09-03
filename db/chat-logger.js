@@ -170,6 +170,18 @@ function getDb() {
       user_email TEXT,
       org_id TEXT
     );
+
+    -- Non-@smartwinnr.com emails an admin has explicitly approved to
+    -- receive release-pipeline owner-notify / author-welcome emails (see
+    -- lib/email-allowlist.js). Anyone on the smartwinnr.com domain is
+    -- allowed without an entry here; this table is only consulted for
+    -- everyone else.
+    CREATE TABLE IF NOT EXISTS approved_notify_emails (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT NOT NULL UNIQUE,
+      added_at TEXT NOT NULL,
+      added_by TEXT
+    );
   `);
 
   // Create indexes (IF NOT EXISTS is implicit with CREATE INDEX IF NOT EXISTS)
@@ -187,6 +199,7 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_audit_created_at ON admin_audit_log(created_at);
     CREATE INDEX IF NOT EXISTS idx_digest_subscriptions_type ON digest_subscriptions(digest_type);
     CREATE INDEX IF NOT EXISTS idx_digest_send_log_sent_at ON digest_send_log(sent_at);
+    CREATE INDEX IF NOT EXISTS idx_approved_notify_emails_email ON approved_notify_emails(email);
     CREATE INDEX IF NOT EXISTS idx_search_queries_created_at ON search_queries(created_at);
   `);
 

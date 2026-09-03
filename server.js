@@ -15,7 +15,7 @@ const { COOKIE_NAME, verifySessionToken } = require('./auth/jwt');
 const chatLogger = require('./db/chat-logger');
 const feedbackLogger = require('./db/feedback-logger');
 const digestStore = require('./db/digest-store');
-const { sendDigest, previewDigest } = require('./db/digest-send');
+const { sendDigest, previewDigest, urlForRegion } = require('./db/digest-send');
 const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
 const matter = require('gray-matter');
@@ -26,6 +26,7 @@ const { normRoute, resolveLiveUrl } = docRoutes;
 const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate, setFrontmatterOwner, getFrontmatterOwner } = require('./lib/frontmatter');
 const { toIndexableText, toSnippet } = require('./lib/doc-text');
 const { isKnownAuthor, recordAuthor } = require('./lib/authors-registry');
+const { isEmailApproved, listApprovedEmails, addApprovedEmail, removeApprovedEmail } = require('./lib/email-allowlist');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -402,14 +403,23 @@ function findMatchingArticle(change, dest) {
   };
 }
 
-function relOwnerNotifyPayload(change, dest, articlePath, previousOwner) {
+/**
+ * Goes to the shared distribution address (RELEASE_OWNER_NOTIFY_DISTRO_EMAIL),
+ * not the owner's personal inbox - the owner's manager and anyone else on
+ * that list sees it too, and the article's owner is named in the body
+ * (ownerEmail) rather than being the sole recipient. Makes a pending
+ * review observable to more than one person instead of sitting silently
+ * in one inbox.
+ */
+function relOwnerNotifyPayload(change, dest, articlePath, previousOwner, distroEmail) {
   return {
     templateName: 'article-owner-notify',
-    to: [previousOwner],
-    subject: `Your article may need an update: ${change.subject.replace(/\s*\(#\d+\)\s*$/, '')}`,
+    to: [distroEmail],
+    subject: `Article may need an update: ${change.subject.replace(/\s*\(#\d+\)\s*$/, '')}`,
     fromName: 'SmartWinnr Releases',
     data: {
       articleTitle: change.subject.replace(/\s*\(#\d+\)\s*$/, ''),
+      ownerEmail: previousOwner,
       articlePath: path.relative(__dirname, articlePath),
       issueId: change.issueId,
       issueUrl: change.issueUrl,
@@ -425,10 +435,21 @@ function relOwnerNotifyPayload(change, dest, articlePath, previousOwner) {
  * before, and it doubles as a cheap validity check: a real person who
  * didn't expect this can say so immediately, before their email becomes
  * the permanent owner of record for anything.
+ *
+ * Gated on RELEASE_OWNER_EMAILS_ENABLED=true (default off) so the release
+ * pipeline can be exercised end-to-end during testing without emailing
+ * real people, and on isEmailApproved (lib/email-allowlist.js) - anyone
+ * on the smartwinnr.com domain qualifies outright, anyone else needs an
+ * admin to add them at /admin/approved-emails first.
  */
 function notifyNewAuthor(email) {
-  const appUrl = process.env.SMARTWINNR_APP_URL;
-  const secret = process.env.SMARTWINNR_DIGEST_SECRET;
+  if (process.env.RELEASE_OWNER_EMAILS_ENABLED !== 'true') return;
+  if (!isEmailApproved(email)) {
+    console.error('author-welcome notify skipped - not an approved recipient:', email);
+    return;
+  }
+  const appUrl = urlForRegion('global');
+  const secret = process.env.MAIN_APP_SHARED_SECRET;
   if (!appUrl || !secret) return;
   const payload = {
     templateName: 'author-welcome',
@@ -444,13 +465,20 @@ function notifyNewAuthor(email) {
 }
 
 /** Fail-open notification helpers - a notification failure must never
- *  affect whether a draft got created/updated. Both use env-configured
- *  destinations; either being unset just skips that notification. */
+ *  affect whether a draft got created/updated. The email leg goes to
+ *  RELEASE_OWNER_NOTIFY_DISTRO_EMAIL (a shared team/manager address),
+ *  tagging the owner in the body rather than mailing them personally -
+ *  keeps a pending review visible to more than one person. Requires
+ *  RELEASE_OWNER_EMAILS_ENABLED=true (see notifyNewAuthor). The Teams
+ *  leg (notifyExistingOwnerTeams) already posts to a shared channel and
+ *  is unaffected by either setting. */
 function notifyExistingOwner(change, dest, articlePath, previousOwner) {
-  const appUrl = process.env.SMARTWINNR_APP_URL;
-  const secret = process.env.SMARTWINNR_DIGEST_SECRET;
-  if (appUrl && secret && previousOwner) {
-    const payload = relOwnerNotifyPayload(change, dest, articlePath, previousOwner);
+  const emailsOn = process.env.RELEASE_OWNER_EMAILS_ENABLED === 'true';
+  const appUrl = urlForRegion('global');
+  const secret = process.env.MAIN_APP_SHARED_SECRET;
+  const distroEmail = process.env.RELEASE_OWNER_NOTIFY_DISTRO_EMAIL;
+  if (emailsOn && appUrl && secret && distroEmail && previousOwner) {
+    const payload = relOwnerNotifyPayload(change, dest, articlePath, previousOwner, distroEmail);
     axios.post(appUrl.replace(/\/$/, '') + '/api/help-auth/send-digest', payload, {
       headers: { 'x-help-shared-secret': secret },
       timeout: 10000,
@@ -475,9 +503,9 @@ function notifyExistingOwner(change, dest, articlePath, previousOwner) {
  * not achievable from an arbitrary webhook POST, so this function does
  * NOT attempt one. It posts a plainly-worded, addressed message instead
  * ("For: <owner>") and relies on the paired email notification
- * (notifyExistingOwner's email leg, when SMARTWINNR_APP_URL/
- * SMARTWINNR_DIGEST_SECRET are set) as the channel that actually
- * guarantees the owner is reached.
+ * (notifyExistingOwner's email leg, gated on MAIN_APP_SHARED_SECRET
+ * being set - the same secret db/digest-send.js already uses) as the
+ * channel that actually guarantees the owner is reached.
  */
 function notifyExistingOwnerTeams(change, articlePath, previousOwner) {
   const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
@@ -1724,6 +1752,37 @@ app.delete('/api/admin/digests/subscriptions/:id', requireRole('superadmin'), (r
   try {
     const result = digestStore.removeSubscription(req.params.id);
     if (!result.ok) return res.status(404).json({ error: 'Subscription not found' });
+    res.json({ ok: true, removed: result.removed });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Non-@smartwinnr.com emails approved to receive release-pipeline
+// owner-notify / author-welcome emails (see lib/email-allowlist.js).
+// smartwinnr.com addresses need no entry here and won't appear in this list.
+app.get('/api/admin/approved-emails', requireRole('superadmin'), (req, res) => {
+  try {
+    res.json({ approved: listApprovedEmails(), allowedDomain: 'smartwinnr.com' });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.post('/api/admin/approved-emails', requireRole('superadmin'), (req, res) => {
+  try {
+    const result = addApprovedEmail((req.body || {}).email, req.user && req.user.email);
+    if (!result.ok) return res.status(400).json({ error: result.error });
+    res.json({ ok: true, id: result.id });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.delete('/api/admin/approved-emails/:id', requireRole('superadmin'), (req, res) => {
+  try {
+    const result = removeApprovedEmail(req.params.id);
+    if (!result.ok) return res.status(404).json({ error: 'Approved email not found' });
     res.json({ ok: true, removed: result.removed });
   } catch (e) {
     res.status(500).json({ error: e.message });
