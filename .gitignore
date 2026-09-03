@@ -185,3 +185,5 @@ scripts/freshdesk/output/
 /reports/
 # Local staging for authoring-tool paste-ins (never committed directly)
 article-staging/
+# Placeholder data for a future release-notes aggregator (see appendPublishLogEntry)
+release-publish-log.jsonl

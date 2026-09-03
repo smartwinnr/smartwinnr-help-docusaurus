@@ -23,8 +23,9 @@ const fsSync = require('fs');
 // Shared docs-path -> live-route resolver (also used by the internal indexer).
 const docRoutes = require('./lib/doc-routes');
 const { normRoute, resolveLiveUrl } = docRoutes;
-const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate } = require('./lib/frontmatter');
+const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate, setFrontmatterOwner, getFrontmatterOwner } = require('./lib/frontmatter');
 const { toIndexableText, toSnippet } = require('./lib/doc-text');
+const { isKnownAuthor, recordAuthor } = require('./lib/authors-registry');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -135,6 +136,477 @@ app.use((req, res, next) => {
   // this header for indexing, so it costs nothing for SEO.
   res.set('Cache-Control', 'no-store');
   return res.redirect(301, target);
+});
+
+// ---------------------------------------------------------------------------
+// Release-pipeline draft intake (smartwinnr_prd's tools/release/push-article-
+// drafts.js). Machine-authenticated (shared secret, not a superadmin
+// session) - it calls generateHandler/saveHandler in-process so a
+// release-triggered draft goes through the exact same LLM prompt and save
+// rules a human editor gets, just with a synthetic service "user".
+//
+// Payload contract (matches push-article-drafts.js's header doc):
+//   POST /api/release-drafts   header: x-release-shared-secret
+//   { tag, deployedAt, deployer, audience, changes: [
+//       { issueId, issueUrl, changeType, subject, sections, body, files } ] }
+//
+// v1 scope: audience must be "client" (the only destination this repo is
+// today); always creates a fresh draft (no existing-article matching yet -
+// that needs the Chroma index wired in as a second step); no Teams
+// notification yet (documented as the next increment, not built here).
+// ---------------------------------------------------------------------------
+
+const RELEASE_DRAFTS_SECRET = process.env.RELEASE_DRAFTS_SECRET;
+const RELEASE_DRAFTS_MAX_CHANGES = 20; // defensive cap - one deploy should never trigger runaway LLM spend
+
+function requireReleaseSecret(req, res, next) {
+  const provided = req.headers['x-release-shared-secret'];
+  if (!RELEASE_DRAFTS_SECRET || !provided || provided !== RELEASE_DRAFTS_SECRET) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  next();
+}
+
+const RELEASE_SERVICE_USER = { email: 'release-pipeline@smartwinnr.com', roles: ['superadmin'], name: 'Release Pipeline' };
+
+/** Minimal heuristic map from the code module a commit touched to a real
+ *  Docusaurus module + sub-folder. Deliberately small and explicit rather
+ *  than a fuzzy guess - an unmapped module is reported back as a per-change
+ *  error rather than silently misfiled. Extend this table as real deploys
+ *  surface modules it doesn't cover yet. */
+// Which real Docusaurus module a code module maps to. Deliberately small
+// and explicit - an unmapped module is reported back as a per-change
+// error rather than silently misfiled. subFolder is NOT hardcoded here
+// any more (see subFolderForChangeType) - it used to force every article
+// into "features" regardless of what kind of change it actually was.
+const RELEASE_MODULE_MAP = {
+  'modules/quiz': 'quiz',
+  'modules/coaching': 'ai-coaching',
+  'modules/field-coaching': 'field-coaching',
+  'modules/smartpath': 'smartpath',
+  'modules/smartfeed': 'smartfeed',
+  'modules/survey': 'survey',
+  'modules/competition': 'competition',
+  'modules/notifications': 'notifications',
+  'modules/forms': 'forms',
+  'modules/knowledge-hub': 'knowledge-hub',
+};
+
+/** The house style's own title-shape table distinguishes "How to..."
+ *  (create-and-manage) from "What is..." (features) from "Troubleshooting
+ *  ..." (faqs-and-troubleshooting) - Change-Type is the signal we have for
+ *  which of those a release-drafted article actually is. `feature` is
+ *  something new to do, so it gets a how-to home; `bug` is naturally a
+ *  troubleshooting/FAQ entry, not an instructional walkthrough (this also
+ *  discourages the model from inventing a padded "Steps" section for a fix
+ *  with no real user action - see the bug-specific note in
+ *  buildRoughExplanation); `enhancement` explains an existing capability
+ *  that got better. `refactor` shouldn't reach here at all (audience=client
+ *  + Change-Type=refactor is already flagged as a contract smell) but
+ *  falls back to `features` defensively rather than throwing. */
+function subFolderForChangeType(changeType) {
+  if (changeType === 'feature') return 'create-and-manage';
+  if (changeType === 'bug') return 'faqs-and-troubleshooting';
+  return 'features'; // enhancement, refactor (defensive), anything else
+}
+
+function mapChangeToDestination(change) {
+  const files = Array.isArray(change.files) ? change.files : [];
+  for (const f of files) {
+    if (RELEASE_MODULE_MAP[f]) {
+      return { module: RELEASE_MODULE_MAP[f], subFolder: subFolderForChangeType(change.changeType) };
+    }
+  }
+  return null;
+}
+
+function releaseSlugify(s) {
+  return String(s || '').toLowerCase()
+    .replace(/['‘’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 80);
+}
+
+function buildRoughExplanation(change) {
+  const sections = change.sections || {};
+  const order = ['What changed', 'Why', 'How to use', 'Notes'];
+  const parts = [];
+  for (const label of order) {
+    const value = sections[label];
+    if (value && String(value).trim()) parts.push(`${label}: ${String(value).trim()}`);
+  }
+  // The commit's "How to use" legitimately names privileges/permissions for
+  // internal readers, but customers must never see permission or role
+  // names - if a feature isn't visible to them, the answer is "contact
+  // support", not "you're missing privilege X" (an internal identifier).
+  parts.push('Editorial note: if this feature is gated by a specific permission or role, do not name it in the article. Say only that the option may not be visible to everyone, and to contact SmartWinnr support if it is missing.');
+  // Live-verified failure mode: a bug fix has no real user action, but the
+  // canonical article structure still expects a Steps section - left to
+  // its own judgment, the model invents padded busywork ("gather feedback
+  // from learners", "monitor how it behaves") to fill it. A fix is
+  // evergreen-describable without pretending it's a walkthrough.
+  if (change.changeType === 'bug') {
+    parts.push('Editorial note: this is a bug fix, not a feature - there is likely no real action for the reader to take. Do NOT invent a Steps section with made-up actions like "monitor", "gather feedback", or "review your settings" just to fill the template. Instead, briefly describe the correct behavior now (a short paragraph or 2-3 bullets is enough) - the reader is here to confirm the fix, not to follow a procedure. Only include Steps if there is a genuine action, such as a setting the reader must now configure.');
+  }
+  return parts.join('\n\n');
+}
+
+/** Marks a draft as release-pipeline-generated and traces it back to the
+ *  commit that produced it, without touching the frontmatter schema -
+ *  inserted as a comment right after the closing frontmatter fence so it
+ *  never renders and never confuses the strict frontmatter parser. */
+function injectProvenanceComment(markdown, change, tag) {
+  // MDX has no HTML-comment syntax - <!-- --> is a build-breaking parse
+  // error there, not a no-op like in plain markdown. {/* */} is the MDX form.
+  const comment = `{/* release-draft: tag=${tag} issue=${change.issueId} url=${change.issueUrl} */}`;
+  const fenceEnd = markdown.indexOf('\n---', markdown.indexOf('---') + 3);
+  if (fenceEnd === -1) return markdown;
+  const insertAt = fenceEnd + 4;
+  return markdown.slice(0, insertAt) + '\n' + comment + markdown.slice(insertAt);
+}
+
+/** Pulls {tag, issueId, url} out of a release-draft provenance comment if
+ *  the article has one (see injectProvenanceComment), else null. */
+function parseProvenanceComment(markdown) {
+  const m = /\{\/\*\s*release-draft:\s*tag=(\S+)\s+issue=(\S+)\s+url=(\S+)\s*\*\/\}/.exec(markdown);
+  if (!m) return null;
+  return { tag: m[1], issueId: m[2], url: m[3] };
+}
+
+const PUBLISH_LOG_PATH = path.join(__dirname, 'release-publish-log.jsonl');
+
+/** Placeholder for the release-notes step that doesn't exist yet: every
+ *  publish appends one durable, structured line here (article path, who
+ *  approved it, who owned it before, and - when the article originated
+ *  from the release pipeline - the tag/issue that produced it). This is
+ *  NOT a release-notes system; it's the data a future aggregator would
+ *  need, captured now rather than lost, so building that aggregator later
+ *  doesn't require reconstructing history. Append-only, gitignored,
+ *  best-effort - a logging failure must never block a publish. */
+function appendPublishLogEntry(target, preSaveMarkdown, publisherEmail, previousOwner) {
+  try {
+    const provenance = parseProvenanceComment(preSaveMarkdown);
+    const entry = {
+      publishedAt: new Date().toISOString(),
+      path: path.relative(__dirname, target),
+      publisher: publisherEmail || null,
+      previousOwner: previousOwner || null,
+      provenance: provenance || null,
+    };
+    fsSync.appendFileSync(PUBLISH_LOG_PATH, JSON.stringify(entry) + '\n', 'utf8');
+  } catch (e) {
+    console.error('publish-log: failed to append (publish itself unaffected):', e.message);
+  }
+}
+
+/** Minimal in-memory Express res stand-in so generateHandler/saveHandler
+ *  (real route handlers) can be called in-process without an HTTP round-trip. */
+function makeResShim() {
+  const shim = { statusCode: 200, body: null };
+  shim.status = function (code) { shim.statusCode = code; return shim; };
+  shim.json = function (obj) { shim.body = obj; return shim; };
+  return shim;
+}
+
+/** Words scored for a lightweight keyword-overlap match - not real
+ *  semantic search (the repo's existing Chroma index is the natural
+ *  upgrade path once someone's ready to wire it in), but deterministic,
+ *  explainable, and safe: only ever compares within the SAME mapped
+ *  module+subFolder, so it can't accidentally match an unrelated area. */
+function titleWords(text) {
+  return new Set(String(text || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 3));
+}
+
+/**
+ * Finds an existing article this change should UPDATE rather than duplicate.
+ * Two passes, most-confident first:
+ *   1. Exact provenance match - a prior pipeline dispatch already created
+ *      an article for this exact issue id. Always correct when found.
+ *   2. Keyword overlap - the article's title shares enough significant
+ *      words with this change's subject, scoped to the same destination
+ *      folder. Conservative threshold (>=40% overlap of the shorter title's
+ *      words) so it only fires on genuine near-duplicates.
+ * Returns { path, markdown, previousOwner } or null.
+ */
+function findMatchingArticle(change, dest) {
+  // Search every sub-folder under the module, not just the one THIS
+  // dispatch's Change-Type would create in. subFolderForChangeType means
+  // the same issue can legitimately land in different sub-folders across
+  // separate commits over time (e.g. its first commit was a `feature` ->
+  // create-and-manage, a later one for the same issue is a `bug` fix ->
+  // faqs-and-troubleshooting) - searching only the current Change-Type's
+  // folder would miss the real article and wrongly create a duplicate.
+  const moduleDir = path.join(MODULES_ROOT, dest.module);
+  if (!fsSync.existsSync(moduleDir)) return null;
+
+  var byProvenance = null;
+  var byKeyword = null;
+  var bestOverlap = 0;
+  const changeWords = titleWords(change.subject);
+
+  var subFolders;
+  try {
+    subFolders = fsSync.readdirSync(moduleDir).filter((d) => CANONICAL_SUBFOLDERS.has(d));
+  } catch (e) {
+    return null;
+  }
+
+  outer:
+  for (const sf of subFolders) {
+    const dir = path.join(moduleDir, sf);
+    var files;
+    try {
+      files = fsSync.readdirSync(dir).filter((f) => f.endsWith('.md'));
+    } catch (e) {
+      continue;
+    }
+    for (const file of files) {
+      const full = path.join(dir, file);
+      var markdown;
+      try {
+        markdown = fsSync.readFileSync(full, 'utf8');
+      } catch (e) {
+        continue;
+      }
+      const provenance = parseProvenanceComment(markdown);
+      if (provenance && String(provenance.issueId) === String(change.issueId)) {
+        byProvenance = { path: full, markdown: markdown };
+        break outer; // exact match - no need to keep scanning
+      }
+      const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(markdown);
+      const existingWords = titleWords(titleMatch ? titleMatch[1] : file);
+      if (changeWords.size === 0 || existingWords.size === 0) continue;
+      var shared = 0;
+      changeWords.forEach((w) => { if (existingWords.has(w)) shared++; });
+      const overlap = shared / Math.min(changeWords.size, existingWords.size);
+      // Live-verified false positive: a short real title ("How to edit a
+      // question" - 2 significant words) only needs ONE shared word
+      // ("question") to clear a 40%-of-the-shorter-title ratio, which
+      // false-matched and nearly overwrote unrelated real content. Require
+      // a minimum absolute overlap too, so a single generic shared word
+      // can never be enough on its own.
+      if (overlap >= 0.4 && shared >= 2 && overlap > bestOverlap) {
+        bestOverlap = overlap;
+        byKeyword = { path: full, markdown: markdown };
+      }
+    }
+  }
+
+  const found = byProvenance || byKeyword;
+  if (!found) return null;
+  return {
+    path: found.path,
+    markdown: found.markdown,
+    previousOwner: getFrontmatterOwner(found.markdown),
+  };
+}
+
+function relOwnerNotifyPayload(change, dest, articlePath, previousOwner) {
+  return {
+    templateName: 'article-owner-notify',
+    to: [previousOwner],
+    subject: `Your article may need an update: ${change.subject.replace(/\s*\(#\d+\)\s*$/, '')}`,
+    fromName: 'SmartWinnr Releases',
+    data: {
+      articleTitle: change.subject.replace(/\s*\(#\d+\)\s*$/, ''),
+      articlePath: path.relative(__dirname, articlePath),
+      issueId: change.issueId,
+      issueUrl: change.issueUrl,
+      changeType: change.changeType,
+    },
+  };
+}
+
+/**
+ * A one-time notice sent the FIRST time an email becomes an article
+ * owner (see lib/authors-registry.js) - transparency for whoever's about
+ * to start getting "your article needs review" emails they've never seen
+ * before, and it doubles as a cheap validity check: a real person who
+ * didn't expect this can say so immediately, before their email becomes
+ * the permanent owner of record for anything.
+ */
+function notifyNewAuthor(email) {
+  const appUrl = process.env.SMARTWINNR_APP_URL;
+  const secret = process.env.SMARTWINNR_DIGEST_SECRET;
+  if (!appUrl || !secret) return;
+  const payload = {
+    templateName: 'author-welcome',
+    to: [email],
+    subject: 'Your email is now used for SmartWinnr help-article ownership',
+    fromName: 'SmartWinnr Releases',
+    data: { email },
+  };
+  axios.post(appUrl.replace(/\/$/, '') + '/api/help-auth/send-digest', payload, {
+    headers: { 'x-help-shared-secret': secret },
+    timeout: 10000,
+  }).catch((e) => console.error('author-welcome notify failed (publish unaffected):', e.message));
+}
+
+/** Fail-open notification helpers - a notification failure must never
+ *  affect whether a draft got created/updated. Both use env-configured
+ *  destinations; either being unset just skips that notification. */
+function notifyExistingOwner(change, dest, articlePath, previousOwner) {
+  const appUrl = process.env.SMARTWINNR_APP_URL;
+  const secret = process.env.SMARTWINNR_DIGEST_SECRET;
+  if (appUrl && secret && previousOwner) {
+    const payload = relOwnerNotifyPayload(change, dest, articlePath, previousOwner);
+    axios.post(appUrl.replace(/\/$/, '') + '/api/help-auth/send-digest', payload, {
+      headers: { 'x-help-shared-secret': secret },
+      timeout: 10000,
+    }).catch((e) => console.error('owner-notify (email) failed (draft unaffected):', e.message));
+  }
+  notifyExistingOwnerTeams(change, articlePath, previousOwner);
+}
+
+/**
+ * A Teams post naming the owner, on the SAME channel webhook the
+ * new-article summary uses.
+ *
+ * LIVE-TESTED AND CONFIRMED NOT A REAL MENTION (2026-09-03): the
+ * `msteams.entities` mention block below is silently ignored by the
+ * Workflows "Post card in a chat or channel" action - it does not
+ * resolve into a clickable, notifying @mention chip. Worse, the
+ * `<at>...</at>` placeholder text got stripped from the rendered card
+ * with nothing put in its place, so a naive version of this produced a
+ * message that just started with the bare email and no visual emphasis.
+ * A genuine Teams mention needs the underlying Workflow to look up the
+ * user and insert a mention token in its own designer at build time -
+ * not achievable from an arbitrary webhook POST, so this function does
+ * NOT attempt one. It posts a plainly-worded, addressed message instead
+ * ("For: <owner>") and relies on the paired email notification
+ * (notifyExistingOwner's email leg, when SMARTWINNR_APP_URL/
+ * SMARTWINNR_DIGEST_SECRET are set) as the channel that actually
+ * guarantees the owner is reached.
+ */
+function notifyExistingOwnerTeams(change, articlePath, previousOwner) {
+  const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
+  if (!webhook || !previousOwner) return;
+  const title = change.subject.replace(/\s*\(#\d+\)\s*$/, '');
+  // Authors need the article and that it needs review - nothing about the
+  // engineering trail (no issue number/link, no file path).
+  const card = {
+    type: 'AdaptiveCard',
+    '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
+    version: '1.4',
+    body: [
+      { type: 'TextBlock', text: 'Article may need a review', weight: 'Bolder', size: 'Medium', wrap: true },
+      { type: 'TextBlock', text: `For: ${previousOwner}`, wrap: true, spacing: 'Small' },
+      { type: 'TextBlock', text: title, wrap: true, spacing: 'Small' },
+    ],
+  };
+  axios.post(webhook, card, { timeout: 10000 })
+    .catch((e) => console.error('owner-notify (Teams) failed (draft unaffected):', e.message));
+}
+
+function notifyNewArticleChannel(created) {
+  const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
+  if (!webhook || created.length === 0) return;
+  // Authors need to know what to review, not the engineering trail behind
+  // it - no issue numbers/links here, just the article title.
+  const lines = created.map((c) => `- ${c.title}`);
+  const card = {
+    type: 'AdaptiveCard',
+    '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
+    version: '1.4',
+    body: [
+      { type: 'TextBlock', text: `${created.length} new help-site draft(s) ready for review`, weight: 'Bolder', size: 'Medium', wrap: true },
+      { type: 'TextBlock', text: lines.join('\n\n'), wrap: true, spacing: 'Small' },
+    ],
+  };
+  axios.post(webhook, card, { timeout: 10000 })
+    .catch((e) => console.error('new-article channel notify failed (draft unaffected):', e.message));
+}
+
+app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
+  try {
+    const { tag, deployedAt, deployer, audience, changes } = req.body || {};
+    if (audience !== 'client') {
+      return res.status(400).json({ error: `This destination only accepts audience "client" (got "${audience}")` });
+    }
+    if (!Array.isArray(changes) || changes.length === 0) {
+      return res.status(400).json({ error: 'changes must be a non-empty array' });
+    }
+    if (changes.length > RELEASE_DRAFTS_MAX_CHANGES) {
+      return res.status(400).json({ error: `Too many changes in one dispatch (${changes.length} > ${RELEASE_DRAFTS_MAX_CHANGES})` });
+    }
+
+    const results = [];
+    const newlyCreated = [];
+    for (const change of changes) {
+      const dest = mapChangeToDestination(change);
+      if (!dest) {
+        results.push({ issueId: change.issueId, status: 'error', error: `No module mapping for files: ${(change.files || []).join(', ') || '(none)'}` });
+        continue;
+      }
+
+      const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
+      const match = findMatchingArticle(change, dest);
+      // The matched file's own real sub-folder (it can differ from
+      // dest.subFolder - see findMatchingArticle's comment); null when
+      // there's no match, in which case dest.subFolder is used to create.
+      const matchedSubFolder = match ? path.basename(path.dirname(match.path)) : null;
+
+      // generateHandler's destination check runs unconditionally (not only
+      // in fresh-generate mode) - refine-mode requests need inputs.module/
+      // subFolder too, even though the real destination is really implied
+      // by the matched file's own location. Found live: omitting them
+      // produces "Pick a destination folder first." even in refine mode.
+      const genReq = {
+        body: match
+          ? { inputs: { module: dest.module, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: match.markdown }
+          : { inputs: { module: dest.module, subFolder: dest.subFolder, roughExplanation: buildRoughExplanation(change), title } },
+        user: RELEASE_SERVICE_USER,
+      };
+      const genRes = makeResShim();
+      await generateHandler(genReq, genRes);
+      if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
+        results.push({ issueId: change.issueId, status: 'error', error: (genRes.body && genRes.body.error) || 'generate failed', detail: genRes.body });
+        continue;
+      }
+
+      const markdown = injectProvenanceComment(genRes.body.markdown, change, tag);
+      // saveHandler always computes its write target from module/subFolder/slug -
+      // fromPath only enables the "editing an existing article" comparison
+      // logic (concurrency check, skips the article-exists 409), it does NOT
+      // redirect the write. For an update, slug AND subFolder must come
+      // from the MATCHED file's own actual location, not dest.subFolder -
+      // findMatchingArticle now searches every sub-folder in the module
+      // (subFolderForChangeType can route the same issue to a different
+      // sub-folder across separate commits), so the match can legitimately
+      // live somewhere other than what this dispatch's Change-Type would
+      // use. Getting this wrong writes a NEW file instead of updating the
+      // matched one - the exact bug already fixed once today.
+      const slug = match ? path.basename(match.path, '.md') : (releaseSlugify(title) || `issue-${change.issueId}`);
+      const saveReq = {
+        body: match
+          ? { markdown, module: dest.module, subFolder: matchedSubFolder, slug, fromPath: path.relative(__dirname, match.path) }
+          : { markdown, module: dest.module, subFolder: dest.subFolder, slug },
+        user: RELEASE_SERVICE_USER,
+      };
+      const saveRes = makeResShim();
+      await saveHandler(saveReq, saveRes);
+      if (saveRes.statusCode !== 200) {
+        results.push({ issueId: change.issueId, status: 'error', error: (saveRes.body && (saveRes.body.error || saveRes.body.message)) || 'save failed', detail: saveRes.body });
+        continue;
+      }
+
+      const savedPath = saveRes.body && saveRes.body.path;
+      if (match) {
+        results.push({ issueId: change.issueId, status: 'updated', path: savedPath, module: dest.module, subFolder: matchedSubFolder, previousOwner: match.previousOwner });
+        if (match.previousOwner) notifyExistingOwner(change, dest, match.path, match.previousOwner);
+      } else {
+        results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug });
+        newlyCreated.push({ title, issueId: change.issueId, issueUrl: change.issueUrl });
+      }
+    }
+
+    notifyNewArticleChannel(newlyCreated);
+    res.json({ ok: true, tag, deployedAt, deployer, results });
+  } catch (error) {
+    console.error('release-drafts dispatch failed:', error.message);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Auth routes (public) + auth middleware (protects everything below)
@@ -3378,7 +3850,7 @@ async function fireDeploy() {
 
 // ---------------------------------------------------------------------------
 
-app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) => {
+async function publishHandler(req, res) {
   try {
     const { module: moduleSlug, subFolder, slug, path: relIn } = req.body || {};
     const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
@@ -3396,11 +3868,27 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
         error: `Cannot publish: "${conflict}" in the same folder claims the same route slug or doc id, which would break the production build. Delete or re-slug it first.`,
       });
     }
-    const next = raw.replace(/^draft:\s*true\s*$/m, 'draft: false');
+    const previousOwner = getFrontmatterOwner(raw);
+    let next = raw.replace(/^draft:\s*true\s*$/m, 'draft: false');
     if (next === raw) {
       return res.status(400).json({ error: 'No draft: true flag found in frontmatter' });
     }
+    // Ownership transfers to whoever just approved this - the person taking
+    // responsibility for what's live is whoever reviewed it, not whoever
+    // (human or the release pipeline's service account) happened to draft
+    // it. Set on every publish, not just the first.
+    const publisherEmail = req.user && req.user.email;
+    if (publisherEmail) next = setFrontmatterOwner(next, publisherEmail);
     fsSync.writeFileSync(target, next, 'utf8');
+    appendPublishLogEntry(target, raw, publisherEmail, previousOwner);
+
+    // First time this email has ever become an owner - record it and let
+    // them know what that means, before it's silently the permanent owner
+    // of record for something. Never blocks the publish either way.
+    if (publisherEmail && !isKnownAuthor(publisherEmail)) {
+      recordAuthor(publisherEmail);
+      notifyNewAuthor(publisherEmail);
+    }
 
     // Queue for deploy + reset the debounce timer (so a burst batches).
     const relPath = path.relative(__dirname, target);
@@ -3428,7 +3916,8 @@ app.post('/api/admin/authoring/publish', requireRole('superadmin'), (req, res) =
     console.error('❌ authoring/publish failed:', error.message);
     res.status(500).json({ error: error.message });
   }
-});
+}
+app.post('/api/admin/authoring/publish', requireRole('superadmin'), publishHandler);
 
 // Reverse of /publish: re-draft a published article (draft:false -> true).
 // Two cases, decided by whether the publish has deployed yet:
@@ -3695,11 +4184,19 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
           if (!/^draft:\s*true\b/m.test(text)) continue;
           const titleMatch = /^title:\s*["']?(.+?)["']?\s*$/m.exec(text);
           const lastUpdMatch = /^\s*date:\s*(\S+)/m.exec(text);
+          // The file is already fully read for title/date above, so this
+          // costs nothing extra - lets the queue tell a release-pipeline
+          // draft apart from one a human started, which today look
+          // identical in the list (finding: no visual distinction).
+          const provenance = parseProvenanceComment(text);
           drafts.push({
             path: path.relative(__dirname, p),
             slug: path.basename(p).replace(/\.(md|mdx)$/, ''),
             title: titleMatch ? titleMatch[1] : path.basename(p),
             lastUpdate: lastUpdMatch ? lastUpdMatch[1] : null,
+            origin: provenance ? 'pipeline' : 'human',
+            releaseTag: provenance ? provenance.tag : null,
+            issueUrl: provenance ? provenance.url : null,
           });
         }
       }
