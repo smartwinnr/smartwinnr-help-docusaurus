@@ -716,6 +716,31 @@
   flex-wrap: wrap;
   margin-bottom: var(--space-4);
 }
+.filterGroup {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.filterGroup .btnGhost,
+.filterGroup .btnPrimary {
+  padding: 4px var(--space-3);
+  font-size: var(--text-caption);
+}
+/* Marks a title as drafted by the release pipeline, so it's distinguishable
+   from a human-started draft at a glance in the queue. */
+.originBadge {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 1px 8px;
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  line-height: 1.6;
+  border-radius: 999px;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .selectorRow {
   display: flex;
   gap: var(--space-3);
