@@ -193,6 +193,34 @@ const RELEASE_MODULE_MAP = {
   'modules/knowledge-hub': 'knowledge-hub',
 };
 
+// RELEASE_MODULE_MAP above uses generic/singular names that don't match
+// smartwinnr_9543's actual modules/<dir> names (confirmed live - a commit
+// touching modules/quizzes failed with "No module mapping for files" since
+// no "modules/quiz" directory exists there). Rather than rewrite that map,
+// this is a SEPARATE alias layer: real source directory -> destination doc
+// module slug, consulted first in mapChangeToDestination, falling back to
+// RELEASE_MODULE_MAP unchanged. Several source directories legitimately
+// share one destination (quizzes + questions + quiztakenbyusers -> quiz).
+const RELEASE_SOURCE_ALIASES = {
+  'modules/quizzes': 'quiz',
+  'modules/questions': 'quiz',
+  'modules/quiztakenbyusers': 'quiz',
+  // modules/coachings has no clean file-path split between AI-coaching and
+  // video-coaching code (ai-personas/ai-voices/ai-coaching-auto-generator
+  // sit next to coaching-instances/video-converter with no separate
+  // directory) - routed to video-coaching per explicit call, not a guess.
+  'modules/coachings': 'video-coaching',
+  'modules/smartpaths': 'smartpath',
+  // SmartFeed's real source directory is modules/contents (its controllers
+  // are smartFeed-restapi.server.controller.js / smartFeedInstance...),
+  // not a "modules/smartfeed" directory - none exists.
+  'modules/contents': 'smartfeed',
+  'modules/surveys': 'survey',
+  'modules/surveytakenbyusers': 'survey',
+  'modules/competitions': 'competition',
+  'modules/k-hub': 'knowledge-hub',
+};
+
 /** The house style's own title-shape table distinguishes "How to..."
  *  (create-and-manage) from "What is..." (features) from "Troubleshooting
  *  ..." (faqs-and-troubleshooting) - Change-Type is the signal we have for
@@ -214,8 +242,9 @@ function subFolderForChangeType(changeType) {
 function mapChangeToDestination(change) {
   const files = Array.isArray(change.files) ? change.files : [];
   for (const f of files) {
-    if (RELEASE_MODULE_MAP[f]) {
-      return { module: RELEASE_MODULE_MAP[f], subFolder: subFolderForChangeType(change.changeType) };
+    const module = RELEASE_SOURCE_ALIASES[f] || RELEASE_MODULE_MAP[f];
+    if (module) {
+      return { module, subFolder: subFolderForChangeType(change.changeType) };
     }
   }
   return null;
