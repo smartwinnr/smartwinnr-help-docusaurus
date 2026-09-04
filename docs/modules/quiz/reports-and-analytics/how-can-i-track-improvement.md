@@ -7,7 +7,7 @@ description: >-
 slug: how-can-i-track-improvement
 sidebar_position: 320
 last_update:
-  date: 2026-07-11
+  date: 2026-09-04
   author: Sruthi Suresh
 source:
   helpscout_id: 697115b9f35cc6035d0b99b3
@@ -77,6 +77,8 @@ At the top of the dashboard, you'll see time range buttons and a **Filters** opt
 
 **All metrics across all four tabs update** based on the selected time period.
 
+![metrics](/img/helpscout/authored/how-can-i-track-improvement-mtmmc2be.png)
+
 ### 4. Use Filters
 
 Click the **Filters** button to access filtering options including:
@@ -87,11 +89,15 @@ Click the **Filters** button to access filtering options including:
 * Custom organizational tags
 * Specific quizzes
 
+![specific](/img/helpscout/authored/how-can-i-track-improvement-mtmmdcth.png)
+
 All applied filters affect every tab simultaneously, allowing you to analyze specific segments of your quiz data.
 
 ### 5. Review the Learner Management Tab
 
 This tab provides insights into individual learner performance, helping you identify those who may need additional support.
+
+![additional](/img/helpscout/authored/how-can-i-track-improvement-mtmmfrpl.png)
 
 ## What happens next
 
