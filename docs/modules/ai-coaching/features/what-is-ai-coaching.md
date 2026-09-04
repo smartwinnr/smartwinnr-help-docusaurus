@@ -8,7 +8,7 @@ description: >-
 slug: what-is-ai-coaching
 sidebar_position: 309
 last_update:
-  date: 2026-08-12
+  date: 2026-09-04
   author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 697086628446705a3c6f686c
@@ -75,7 +75,6 @@ Video Coaching is the simplest format of AI Coaching in SmartWinnr.
 SmartWinnr's AI analyzes the following parameters in Video Coaching:
 
 * **Keywords**: Whether the user mentioned required terms, product names, or key phrases defined in the coaching rubric.
-* **Sentiment**: The tone and emotional delivery detected in the user's speech (confident, hesitant, neutral, persuasive).
 * **Talk time**: Total duration of the response and whether the user stayed within expected time limits.
 * **Structure**: Whether the user followed a logical flow (opening, body, closing) as defined by the coaching objectives.
 * **Competencies**: Specific skills assessed based on the rubric, such as clarity, credibility, engagement, or persuasiveness.
