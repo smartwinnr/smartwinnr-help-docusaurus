@@ -38,11 +38,7 @@ Choose the appropriate coaching type based on the skill you want the learner to 
 - Use **Live Coaching** when a manager or coach needs to observe and coach performance in a live or field setting.
 - Use **Presentation Coaching** to improve structured presentation and delivery skills.
 
-## Before you start
-
-No prerequisites are required to explore the coaching types in SmartWinnr.
-
-## Steps
+## Understand More on each Coaching types:
 
 ### 1. Video Coaching
 
