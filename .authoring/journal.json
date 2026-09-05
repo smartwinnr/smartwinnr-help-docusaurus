@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "baseMainSha": "d2e04cd8f6e0950ecf34b7c69b7ccceeda086766",
+  "rebasedTs": 1788630468698,
+  "entries": {
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/quiz/for-learners/how-to-retake-a-quiz.md": {
+      "action": "upsert",
+      "ts": 1788504523266,
+      "seq": 8,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-retake-a-quiz-mtmkyj69.png": {
+      "action": "upsert",
+      "ts": 1788503757203,
+      "seq": 3,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-retake-a-quiz-mtml8d69.png": {
+      "action": "upsert",
+      "ts": 1788504215985,
+      "seq": 4,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/modules/quiz/reports-and-analytics/understanding-quiz-leaderboards.md": {
+      "action": "upsert",
+      "ts": 1788517651944,
+      "seq": 17,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/reference/help-support/which-report-should-i-use.md": {
+      "action": "upsert",
+      "ts": 1788513942995,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-quiz-leaderboards-mtmsltf2.png": {
+      "action": "upsert",
+      "ts": 1788516600878,
+      "seq": 8,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-quiz-leaderboards-mtmt5kg7.png": {
+      "action": "upsert",
+      "ts": 1788517522376,
+      "seq": 15,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtmusy1v.png": {
+      "action": "upsert",
+      "ts": 1788520292707,
+      "seq": 26,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtmv1cdt.png": {
+      "action": "upsert",
+      "ts": 1788520684530,
+      "seq": 29,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/modules/quiz/create-and-manage/how-to-join-a-quiz-through-self-registration.md": {
+      "action": "upsert",
+      "ts": 1788522069263,
+      "seq": 36,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/fold-role-play-inventory-into-coachings-expand-its-search.md": {
+      "action": "upsert",
+      "ts": 1788531962027,
+      "seq": 2,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/create-and-manage/how-to-bulk-upload-users-into-smartpath-batches.md": {
+      "action": "upsert",
+      "ts": 1788596836558,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtny1jco.png": {
+      "action": "upsert",
+      "ts": 1788586198584,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtny6jn4.png": {
+      "action": "upsert",
+      "ts": 1788586432240,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtnyafsn.png": {
+      "action": "upsert",
+      "ts": 1788586613879,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtnyccp5.png": {
+      "action": "upsert",
+      "ts": 1788586703177,
+      "seq": 5,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtnyezyy.png": {
+      "action": "upsert",
+      "ts": 1788586826650,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mtnygfqw.png": {
+      "action": "upsert",
+      "ts": 1788586893752,
+      "seq": 7,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mto3ffhr.png": {
+      "action": "upsert",
+      "ts": 1788595244847,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-bulk-upload-users-into-smartpath-batches-mto4cmcs.png": {
+      "action": "upsert",
+      "ts": 1788596793388,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/faqs-and-troubleshooting/can-i-do-a-presentation-role-play-on-a-tablet-or-phone.md": {
+      "action": "upsert",
+      "ts": 1788629266866,
+      "seq": 4,
+      "author": "anagha.isal@smartwinnr.com"
+    }
+  }
+}
