@@ -1,14 +1,12 @@
 ---
 id: 6971d78c6a1b8a42df6acd03
 title: How can a User submit an AI Coaching attempt?
-description: >-
-  This guide explains how to complete an AI coaching assignment as a sales rep
-  or field rep.
+description: "Learn to complete an AI coaching assignment effectively as a sales or field rep to enhance your skills and receive valuable feedback."
 slug: how-can-a-user-submit-an-ai-coaching-attempt
 sidebar_position: 322
 last_update:
-  date: 2026-08-18
-  author: Sandeep Bhuthagaddala
+  date: 2026-09-05
+  author: Anagha Isal
 source:
   helpscout_id: 6971d78c6a1b8a42df6acd03
   helpscout_url: >-
@@ -63,8 +61,12 @@ You will see a card for each coaching assignment with the following information:
 
 To start a coaching:
 
-* If this is your first attempt, click **Try Again** (or **Start**).
-* If you've already attempted this coaching, click **Try Again** to make another attempt.
+* If this is your first attempt, click **Start Now** option to start the senario.
+
+![Start scenario screenshot](/img/helpscout/authored/how-can-a-user-submit-an-ai-coaching-attempt-mton5cl1.png)
+
+* If you've already attempted this coaching, click **Try Again** to make another attempt. You can repeat the practice or make more attempts based on the attempt limit set for the coaching scenario.
+
 * If you want to review your previous performance, click **View Feedback**.
 
 ![Assigned Coaching](/img/helpscout/managers-and-team-members/how-can-a-user-submit-an-ai-coaching-attempt-2.png)
