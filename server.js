@@ -271,6 +271,19 @@ function buildRoughExplanation(change) {
   // names - if a feature isn't visible to them, the answer is "contact
   // support", not "you're missing privilege X" (an internal identifier).
   parts.push('Editorial note: if this feature is gated by a specific permission or role, do not name it in the article. Say only that the option may not be visible to everyone, and to contact SmartWinnr support if it is missing.');
+  // Live-verified failure mode (#9551): "Notes" is written for engineers -
+  // the commit contract itself describes it as "limits, migrations,
+  // follow-ups" - and got reflected into the article almost verbatim,
+  // including a raw script path + CLI flag ("run
+  // scripts/reindex_role_play_inventory.js --execute") presented as
+  // something the reader should do, and a raw internal field name
+  // ("is_indexed") in a warning box. The reader cannot run a script in
+  // this codebase, and a one-time migration the team already performed at
+  // deploy time is not a step for them to take - it directly contradicted
+  // the article's own Steps section, which (correctly, from "How to use")
+  // already described the real customer-facing action as clicking a
+  // button in the UI.
+  parts.push('Editorial note: never write a raw file path, script name, CLI command or flag, or internal field/flag/index name into the article (e.g. a script under scripts/, a flag like --execute, a field like is_indexed) - these are implementation detail for engineers, not something the reader can run or inspect. If "Notes" describes a one-time deploy-time or migration step the team already carried out, that is NOT an instruction for the reader - leave it out of the article entirely. If it explains a real, currently-visible limitation the reader might notice, describe only the visible symptom in plain language (e.g. "newly-added items may take a short time to become searchable") without naming how it works internally. "How to use" is the authoritative source for what the reader actually does - never let "Notes" override or duplicate it.');
   // Live-verified failure mode: a bug fix has no real user action, but the
   // canonical article structure still expects a Steps section - left to
   // its own judgment, the model invents padded busywork ("gather feedback
