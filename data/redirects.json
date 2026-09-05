@@ -1976,6 +1976,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/create-zappi-coaching-scenario",
       "to": "/modules/cross-module/create-and-manage/create-zappy-coaching-scenario"
+    },
+    {
+      "from": "/modules/ai-coaching/for-learners/create-coaching-folder",
+      "to": "/modules/ai-coaching/create-and-manage/create-coaching-folder"
     }
   ]
 }
