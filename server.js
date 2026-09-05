@@ -575,6 +575,61 @@ function notifyNewArticleChannel(created) {
     .catch((e) => console.error('new-article channel notify failed (draft unaffected):', e.message));
 }
 
+/**
+ * True when at least one real article exists anywhere under this module -
+ * i.e. any .md file inside one of its canonical sub-folders. Deliberately
+ * does NOT count the module's own root index.mdx overview page: every
+ * module gets that scaffolded automatically by `npm run module:new`
+ * (see CLAUDE.md's "Creating a new module"), so counting it would make
+ * this always return true and never actually catch a documented-nowhere
+ * module. A module directory that doesn't exist at all - the common case
+ * for something release-drafted for the first time - also returns false.
+ */
+function moduleHasAnyArticles(moduleSlug) {
+  const moduleDir = path.join(MODULES_ROOT, moduleSlug);
+  if (!fsSync.existsSync(moduleDir)) return false;
+  var subFolders;
+  try {
+    subFolders = fsSync.readdirSync(moduleDir).filter((d) => CANONICAL_SUBFOLDERS.has(d));
+  } catch (e) {
+    return false;
+  }
+  for (const sf of subFolders) {
+    const dir = path.join(moduleDir, sf);
+    try {
+      if (fsSync.readdirSync(dir).some((f) => f.endsWith('.md'))) return true;
+    } catch (e) { /* unreadable leaf - keep checking the rest */ }
+  }
+  return false;
+}
+
+/**
+ * A distinct notice for changes that were deliberately NOT drafted because
+ * their module has no existing article at all - see moduleHasAnyArticles.
+ * Fires every dispatch these stay pending (same pattern as the
+ * "destination not configured" skip in push-article-drafts.js) since
+ * nothing here resolves it automatically; an editor has to actually write
+ * the foundational article before this same change gets picked up and
+ * drafted normally on a later run.
+ */
+function notifyMissingFoundationalArticle(pending) {
+  const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
+  if (!webhook || pending.length === 0) return;
+  const lines = pending.map((c) => `- ${c.module}: ${c.title}`);
+  const card = {
+    type: 'AdaptiveCard',
+    '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
+    version: '1.4',
+    body: [
+      { type: 'TextBlock', text: `${pending.length} change(s) held back - no article exists for their module yet`, weight: 'Bolder', size: 'Medium', wrap: true },
+      { type: 'TextBlock', text: lines.join('\n\n'), wrap: true, spacing: 'Small' },
+      { type: 'TextBlock', text: 'Write a foundational article for the module first, then these will draft normally on the next deploy.', wrap: true, spacing: 'Small', isSubtle: true },
+    ],
+  };
+  axios.post(webhook, card, { timeout: 10000 })
+    .catch((e) => console.error('missing-foundational-article channel notify failed (draft unaffected):', e.message));
+}
+
 app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
   try {
     const { tag, deployedAt, deployer, audience, changes } = req.body || {};
@@ -590,6 +645,7 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
 
     const results = [];
     const newlyCreated = [];
+    const missingFoundational = [];
     for (const change of changes) {
       const dest = mapChangeToDestination(change);
       if (!dest) {
@@ -599,6 +655,26 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
 
       const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
       const match = findMatchingArticle(change, dest);
+
+      // No existing article to update AND the module has no article at
+      // all - an incremental change like this would publish with nothing
+      // giving a reader the context of what the module even is. Don't
+      // draft it; flag it instead so an editor writes the foundational
+      // article first (see moduleHasAnyArticles). This is a distinct
+      // status from 'error', but the dispatcher treats it the same way
+      // for marker purposes - held back and retried every deploy until
+      // resolved, same pattern as an unconfigured destination.
+      if (!match && !moduleHasAnyArticles(dest.module)) {
+        results.push({
+          issueId: change.issueId,
+          status: 'needs-foundational-article',
+          module: dest.module,
+          error: `No existing article documents the ${dest.module} module at all - write a foundational/overview article first, then this change will draft normally.`,
+        });
+        missingFoundational.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, module: dest.module });
+        continue;
+      }
+
       // The matched file's own real sub-folder (it can differ from
       // dest.subFolder - see findMatchingArticle's comment); null when
       // there's no match, in which case dest.subFolder is used to create.
@@ -659,6 +735,7 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
     }
 
     notifyNewArticleChannel(newlyCreated);
+    notifyMissingFoundationalArticle(missingFoundational);
     res.json({ ok: true, tag, deployedAt, deployer, results });
   } catch (error) {
     console.error('release-drafts dispatch failed:', error.message);
