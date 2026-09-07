@@ -255,8 +255,8 @@ User Question
 │     ├─ Model: CHAT_MODEL (gpt-5.4-mini)      │
 │     ├─ System: context + guidelines          │
 │     ├─ User: original question               │
-│     ├─ Temperature: 0.7                      │
-│     └─ Max tokens: 500                       │
+│     ├─ Temperature: 0.5                      │
+│     └─ Max output tokens: 750                │
 │                                              │
 │  4. RESPOND: Format + store                  │
 │     ├─ AI message + top 3 citations          │
@@ -330,15 +330,19 @@ Guidelines:
 - Provide actionable advice when possible
 - Use a friendly, professional tone`;
 
-const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-  model: CHAT_MODEL, // env-driven, default gpt-5.4-mini (lib/llm-config.js)
-  messages: [
-    { role: 'system', content: systemPrompt },
-    { role: 'user', content: userQuestion }
-  ],
-  temperature: 0.7,
-  max_tokens: 500
-});
+const response = await axios.post(
+  'https://api.openai.com/v1/chat/completions',
+  chatCompletionBody({            // lib/llm-config.js - see §3.4
+    model: CHAT_MODEL,            // env-driven, default gpt-5.4-mini
+    messages: [
+      { role: 'system', content: systemPrompt },
+      ...priorTurns,              // last 6 turns of the thread
+      { role: 'user', content: userQuestion }
+    ],
+    temperature: 0.5,
+    maxOutputTokens: 750,         // sent as max_completion_tokens
+  }),
+);
 ```
 
 **Step 5 -- Response Formatting**:
@@ -383,6 +387,80 @@ The same retrieval pipeline is also exposed for direct search via `POST /api/vec
 ```
 
 This powers the `VectorSearch` React component in the navbar (semantic search bar with debounced 300ms input, result dropdown, click-to-navigate).
+
+### 3.4 LLM Model Strategy
+
+The help site has two runtime LLM workflows, the Ally chatbot and the
+authoring wizard. Both call OpenAI Chat Completions directly (raw `axios`
+in `server.js`, no SDK client, no tool use, no agent loop). The strategy
+is **cost-effective, next-generation small models, selected entirely by
+environment variables**. There are no hard-coded model names in
+application logic; `lib/llm-config.js` is the single resolver.
+
+| Concern | Variable | Default | Call site in `server.js` | Settings |
+|---|---|---|---|---|
+| Chatbot answer (RAG answer + citations) | `CHAT_MODEL` | `gpt-5.4-mini` | `generateAIResponse` | temp 0.5, 750 output tokens, last 6 turns forwarded |
+| Query condensing (follow-up → standalone retrieval query) | `QUERY_CONDENSING_MODEL` | `gpt-5.4-nano` | `condenseQueryForRetrieval` | temp 0, 120 output tokens, skipped on the first turn, falls back to the raw message on any error |
+| Authoring wizard: generate / refine article | `AUTHORING_MODEL` | `gpt-5.4-mini` | `generateHandler` | temp 0.4, 4000 output tokens (refine: scaled to source length, max 16000) |
+| Authoring wizard: title / description regeneration | `AUTHORING_MODEL` (shared) | `gpt-5.4-mini` | `/api/admin/authoring/suggest-field` | temp 0.4, 200 output tokens |
+| Embeddings (embed route, indexer, search bar) | `EMBEDDING_MODEL` | `text-embedding-3-small` | `/api/vector/embed` | unchanged; see below |
+
+**Why this split.** The chatbot answer and the authoring article are the
+customer-visible outputs, so they get the mini tier. Query condensing
+produces no user-visible text, runs on every follow-up, and only has to
+resolve pronouns, so it gets the nano tier at a fraction of the cost.
+Each concern has its own variable so any one of them can be moved up or
+down a tier without touching the others.
+
+**Rules of the road.**
+
+- **Never hard-code a model name in `server.js`.** Add or change defaults
+  in `MODEL_DEFAULTS` in `lib/llm-config.js`; `npm test` fails on any
+  `gpt-` or `text-embedding-` literal in `server.js`.
+- **Build every chat-completion body with `chatCompletionBody()`.** It
+  emits `max_completion_tokens`; the gpt-5.x family rejects the legacy
+  `max_tokens` with HTTP 400 "Unsupported parameter". The gpt-4o family
+  accepts `max_completion_tokens` too, so older configs keep working.
+- **Reasoning effort is left at the model default (`none`).** At that
+  setting the gpt-5.4 models accept `temperature`, which is why the
+  existing temperatures survive. `reasoning_effort` is deliberately not
+  sent: older models reject the field. If a future model with a
+  non-`none` default is configured, temperature will be rejected; revisit
+  then.
+- **`EMBEDDING_MODEL` is frozen in practice.** Changing it invalidates
+  every vector in ChromaDB and requires
+  `FORCE_FULL_REINDEX=true npm run index-internal`. Model swaps for the
+  three chat-style concerns never require a re-embed.
+- **Explicit env values win over defaults.** A Railway variable pinning
+  `CHAT_MODEL=gpt-4o-mini` keeps production on that model regardless of
+  the code default. Check the boot log.
+
+**Observability.** On boot `server.js` prints one line naming all four
+active models (`🧠 LLM models - chat model: …, query condensing model: …,
+authoring model: …, embedding model: …`). Every chat exchange persists its
+`chat_model` in the SQLite `chat_exchanges` table (§10.4). A condensing
+failure is logged with its model name. API keys and user content are never
+logged with model info.
+
+**Authoring prompt.** `prompts/author-article.md` carries a
+"Write for the customer" section: articles are written from the
+customer's perspective, translate engineering terms, never mention Git,
+commits, PRs, branches, or internal services unless customer-facing,
+treat the editor's notes as the source of truth, and combine related
+changes rather than narrating commits. This is what turns release-draft
+pipeline input (§1.1) into help documentation instead of release notes.
+
+**Out of scope for this strategy.** The offline maintenance scripts pick
+their own models and are intentionally not routed through
+`lib/llm-config.js`: `scripts/rewrite-articles.js` (Claude via
+`REWRITE_MODEL`, default `claude-opus-4-7`), the Freshdesk clustering
+step (`claude-sonnet-4`), and the Freshdesk article generator
+(`gpt-4o`).
+
+**Tests.** `npm test` (Node's built-in `node:test`, no dependencies)
+covers the resolver defaults and overrides, the request-body builder,
+and static wiring checks that each `server.js` call site uses the right
+variable. No test makes a live API call.
 
 ---
 
@@ -685,6 +763,8 @@ all three off at runtime.
 | `scripts/freshdesk/prepare-output.js` | Copy articles to docs/ + recommendations |
 | `scripts/freshdesk/config/category-keywords.json` | 15 categories with keyword dictionaries |
 | `scripts/freshdesk/config/ui-terms.json` | UI terms for bold-checking validation |
+| `lib/llm-config.js` | Resolves CHAT_MODEL / QUERY_CONDENSING_MODEL / AUTHORING_MODEL / EMBEDDING_MODEL and builds chat-completion bodies (§3.4) |
+| `prompts/ally.md`, `prompts/author-article.md`, `prompts/refine-overlay.md` | System prompts for the chatbot and the authoring wizard |
 | `src/components/ChatBot/ChatBot.tsx` | Floating chat widget (React) |
 | `src/components/VectorSearch/VectorSearch.tsx` | Semantic search bar (React) |
 | `SmartWinnr-Help-Style-Guide.md` | Content authoring standards |
@@ -765,7 +845,11 @@ ensures accuracy through:
 
 ### 10.5 Cost + operational efficiency
 
-14. **Incremental indexing.** Only new/changed documents incur embedding API
+14. **Tiered models per concern.** Customer-visible generation (chat
+    answers, authored articles) runs on `gpt-5.4-mini`; the invisible
+    query-condensing call runs on `gpt-5.4-nano`. Each is an independent
+    env var, so cost and quality can be tuned per concern (§3.4).
+15. **Incremental indexing.** Only new/changed documents incur embedding API
     costs. Full re-index is available via `FORCE_FULL_REINDEX=true` but rarely
     needed.
 
