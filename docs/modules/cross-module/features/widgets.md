@@ -13,9 +13,10 @@ source:
   helpscout_id: 60deaa9261c60c534bd6b92e
   helpscout_url: 'https://help.smartwinnr.com/article/257-widgets'
 customProps:
+  owner: jazz.k@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: []
-draft: true
+draft: false
 ---
 SmartWinnr provides various types of performance analytics on your sales performance in the form of Widgets.
 
