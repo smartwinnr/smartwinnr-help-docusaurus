@@ -1,14 +1,14 @@
 ---
 id: 69721470ddd77241ca3daa61
-title: Understanding the feedback screen
+title: "How to read your AI coaching feedback screen"
 description: >-
   The Analytics section allows you to watch your recorded AI coaching attempt
   and review your actual performance.
 slug: understanding-the-feedback-screen
 sidebar_position: 333
 last_update:
-  date: 2026-08-31
-  author: Aswani TK
+  date: 2026-09-07
+  author: Anagha Isal
 source:
   helpscout_id: 69721470ddd77241ca3daa61
   helpscout_url: 'https://help.smartwinnr.com/article/333-understanding-the-feedback-screen'
@@ -115,6 +115,29 @@ The **Analytics** tab provides data-driven insights into your performance trends
 The Analytics tab is especially useful if you've made multiple attempts, as it shows your learning progression.
 
 ![Analytics tab showing performance trends](/img/helpscout/managers-and-team-members/understanding-the-feedback-screen-5.png)
+
+### G. Soft Skills Tab
+
+The Soft Skills Assessment section helps you understand how effectively you communicated during your coaching interaction. It evaluates different aspects of your voice, speech, facial expressions, and body language and provides a score out of 10 for each skill.
+
+Use these scores and the feedback to identify your strengths and areas where you can improve your communication and presentation skills.
+
+![Soft skill part 1](/img/helpscout/authored/understanding-the-feedback-screen-mtr79n21.png)
+![Soft skill part 2](/img/helpscout/authored/understanding-the-feedback-screen-mtr7a4pk.png)
+
+The assessment evaluates 10 soft skills based on your coaching interaction:
+
+- **Monotony (Voice Variation)**: Measures how much you vary your tone and pitch while speaking. A higher score indicates more engaging voice modulation.
+- **Pace (Speaking Speed)**: Evaluates whether you speak at an appropriate speed. A higher score indicates a well-paced and easy-to-follow delivery.
+- **Fluency (Speech Smoothness)**: Measures how smoothly you communicate. A higher score indicates more natural and flowing speech.
+- **Clarity (Clear Articulation)**: Measures how clearly you pronounce your words. A higher score indicates clear and understandable speech.
+- **Audibility (Volume Level)**: Evaluates whether your voice can be heard clearly. A higher score indicates an appropriate speaking volume.
+- **Articulation (Message Delivery)**: Measures how effectively you communicate your message and ideas. A higher score indicates stronger message delivery.
+- **Filler Words (Um, Uh, Like Usage)**: Measures the use of unnecessary filler words such as “um,” “uh,” and “like.” A higher score indicates more professional speech with fewer fillers.
+- **Expressions (Facial Expressions)**: Evaluates your facial expressions and emotional engagement while communicating. A higher score indicates appropriate and engaging expressions.
+- **Gesture (Body Language)**: Measures how naturally and appropriately you use hand movements and body language while communicating.
+- Eye Contact (Gaze Maintenance): Evaluates how consistently you maintain eye contact with the AI avatar during the interaction.
+
 
 ## Viewing Manager Feedback
 
