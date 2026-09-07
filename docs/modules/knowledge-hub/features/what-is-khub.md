@@ -7,7 +7,7 @@ description: >-
 slug: what-is-khub
 sidebar_position: 145
 last_update:
-  date: 2026-08-18
+  date: 2026-09-07
   author: Sruthi Suresh
 source:
   helpscout_id: 5fdae88db624c71b7985a587
@@ -42,6 +42,3 @@ Are your documents in different languages? Don't worry. SmartWinnr supports docu
 
 SmartWinnr is powered by a highly intelligent, intuitive, and accurate search. It helps your teams search through a vast number of documents quickly and easily.
 
-## Offline Access
-
-SmartWinnr provides offline access to these documents, but only for documents that you select. This feature ensures that it won’t consume more space on your phone than necessary.
