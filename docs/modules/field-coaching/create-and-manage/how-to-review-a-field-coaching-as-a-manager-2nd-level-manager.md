@@ -16,5 +16,6 @@ customProps:
 tags:
   - video-coaching
   - admin
+draft: true
 ---
 
