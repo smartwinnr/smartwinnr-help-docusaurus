@@ -64,8 +64,9 @@ This is the unified entry — serves the built site and every `/api/*` route.
 ```bash
 NODE_ENV=production            # toggles dev-login, ?as= preview, login-page DEV strip
 OPENAI_API_KEY=sk-...
-CHAT_MODEL=gpt-4o-mini         # or your preferred OpenAI chat model
-EMBEDDING_MODEL=text-embedding-3-small
+CHAT_MODEL=gpt-5.4-mini        # Ally answers; default if unset (lib/llm-config.js)
+QUERY_CONDENSING_MODEL=gpt-5.4-nano   # follow-up -> standalone retrieval query; default if unset
+EMBEDDING_MODEL=text-embedding-3-small   # do not change without a full re-embed
 INTERNAL_API_KEY=...           # guards POST /api/vector/embed (indexer-only)
 ```
 
@@ -105,7 +106,7 @@ GIT_PUSH_TOKEN=<fine-grained GitHub PAT>             # Contents R/W on this repo
 GITHUB_REPO=smartwinnr/smartwinnr-help-docusaurus
 GIT_PUBLISH_BRANCH=main
 GITHUB_API=https://api.github.com                    # override only for GHES
-AUTHORING_MODEL=gpt-4o                               # wizard generate model
+AUTHORING_MODEL=gpt-5.4-mini                         # wizard generate / refine / field model; default if unset
 AUTHORING_RATE_LIMIT=10                              # generates / superadmin / 60 min
 AUTHORING_DEPLOY_DEBOUNCE_MS=1800000                 # 30 min burst window
 AUTHORING_DEPLOY_MIN_INTERVAL_MS=3600000             # min 60 min between deploys

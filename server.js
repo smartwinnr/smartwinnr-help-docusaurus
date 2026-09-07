@@ -18,6 +18,7 @@ const digestStore = require('./db/digest-store');
 const { sendDigest, previewDigest, urlForRegion } = require('./db/digest-send');
 const { gradeMarkdown } = require('./db/article-audit');
 const { isAllowed } = require('./shared/access-policy.cjs');
+const { resolveLlmModels, chatCompletionBody, describeLlmModels } = require('./lib/llm-config');
 const matter = require('gray-matter');
 const fsSync = require('fs');
 // Shared docs-path -> live-route resolver (also used by the internal indexer).
@@ -890,8 +891,12 @@ const chromaClient = new ChromaClient({
 });
 
 const COLLECTION_NAME = process.env.COLLECTION_NAME || 'smartwinnr_docs';
-const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || 'text-embedding-3-small';
-const CHAT_MODEL = process.env.CHAT_MODEL || 'gpt-3.5-turbo';
+// All model names come from the environment via lib/llm-config.js
+// (CHAT_MODEL, QUERY_CONDENSING_MODEL, AUTHORING_MODEL, EMBEDDING_MODEL).
+const LLM_MODELS = resolveLlmModels();
+const EMBEDDING_MODEL = LLM_MODELS.embedding;
+const CHAT_MODEL = LLM_MODELS.chat;
+const QUERY_CONDENSING_MODEL = LLM_MODELS.queryCondensing;
 
 // Get OpenAI API key
 const getOpenAIKey = () => {
@@ -1185,7 +1190,7 @@ async function generateAIResponse(query, context, history = []) {
 
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
-      {
+      chatCompletionBody({
         model: CHAT_MODEL,
         messages: [
           { role: 'system', content: systemPrompt },
@@ -1193,8 +1198,8 @@ async function generateAIResponse(query, context, history = []) {
           { role: 'user', content: query }
         ],
         temperature: 0.5,
-        max_tokens: 750
-      },
+        maxOutputTokens: 750,
+      }),
       {
         headers: {
           'Authorization': `Bearer ${openaiApiKey}`,
@@ -1240,8 +1245,8 @@ async function condenseQueryForRetrieval(message, priorTurns) {
 
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
-      {
-        model: CHAT_MODEL,
+      chatCompletionBody({
+        model: QUERY_CONDENSING_MODEL,
         messages: [
           {
             role: 'system',
@@ -1257,8 +1262,8 @@ async function condenseQueryForRetrieval(message, priorTurns) {
           },
         ],
         temperature: 0,
-        max_tokens: 120,
-      },
+        maxOutputTokens: 120,
+      }),
       {
         headers: {
           'Authorization': `Bearer ${openaiApiKey}`,
@@ -1273,7 +1278,7 @@ async function condenseQueryForRetrieval(message, priorTurns) {
     if (!rewritten || rewritten.length > MAX_QUERY_CHARS) return message;
     return rewritten;
   } catch (error) {
-    console.error('⚠️  Query condense failed, retrieving with raw message:', error.message);
+    console.error(`⚠️  Query condense failed (model ${QUERY_CONDENSING_MODEL}), retrieving with raw message:`, error.message);
     return message;
   }
 }
@@ -2026,7 +2031,7 @@ function canonicalSubfolderError(sub) {
   if (CANONICAL_SUBFOLDERS.has(sub)) return null;
   return `"${sub}" is not a standard module folder. Modules use a fixed set: ${CANONICAL_SUBFOLDER_LIST}.`;
 }
-const AUTHORING_MODEL = process.env.AUTHORING_MODEL || 'gpt-4o-mini';
+const AUTHORING_MODEL = LLM_MODELS.authoring;
 const AUTHOR_PROMPT_PATH = path.join(__dirname, 'prompts', 'author-article.md');
 // Refine-only overlay. Appended AFTER the base prompt so its
 // preserve-all-content rules dominate the base prompt's strip/compact rules
@@ -2264,8 +2269,8 @@ async function generateHandler(req, res) {
 
     // Long articles must not be truncated when refine preserves their length.
     // Scale the cap to the source size (~/3 chars-per-token with headroom),
-    // capped at gpt-4o-mini's 16384-token output ceiling. Fresh-generate keeps
-    // the original 4000 cap.
+    // capped at 16000 output tokens (well under the configured model's ceiling
+    // but enough for the longest articles). Fresh-generate keeps the 4000 cap.
     const maxTokens = isRefine
       ? Math.min(16000, Math.max(4000, Math.ceil(String(previousMarkdown).length / 3)))
       : 4000;
@@ -2273,12 +2278,12 @@ async function generateHandler(req, res) {
     const openaiApiKey = getOpenAIKey();
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
-      {
+      chatCompletionBody({
         model: AUTHORING_MODEL,
         messages,
         temperature: 0.4,
-        max_tokens: maxTokens,
-      },
+        maxOutputTokens: maxTokens,
+      }),
       {
         headers: { Authorization: `Bearer ${openaiApiKey}`, 'Content-Type': 'application/json' },
         timeout: 60000,
@@ -2348,7 +2353,7 @@ app.post('/api/admin/authoring/generate', requireRole('superadmin'), generateHan
  *  Returns: { field, value, tokens }
  *
  *  Same per-superadmin rate limit as /generate (a per-field call costs a
- *  token call too, even if it's tiny). Tight max_tokens (200) so a misbehaving
+ *  token call too, even if it's tiny). Tight output cap (200 tokens) so a misbehaving
  *  prompt can't burn budget.
  */
 app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async (req, res) => {
@@ -2405,7 +2410,7 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
         `Mirror the topic of the article body; complete the unspoken phrase "This article shows you how to ..." but without those leading words.`;
 
     // Provide all available context. Truncate the body so we don't blow
-    // through max_tokens on an edge-case 30-page draft.
+    // through the output cap on an edge-case 30-page draft.
     const userParts = [
       dir ? `Destination folder: ${dir}` : null,
       subFolder ? `Sub-folder: ${subFolder}` : null,
@@ -2418,15 +2423,15 @@ app.post('/api/admin/authoring/suggest-field', requireRole('superadmin'), async 
     const openaiApiKey = getOpenAIKey();
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
-      {
+      chatCompletionBody({
         model: AUTHORING_MODEL,
         messages: [
           { role: 'system', content: sys },
           { role: 'user', content: userParts.join('\n\n') },
         ],
         temperature: 0.4,
-        max_tokens: 200,
-      },
+        maxOutputTokens: 200,
+      }),
       {
         headers: { Authorization: `Bearer ${openaiApiKey}`, 'Content-Type': 'application/json' },
         timeout: 30000,
@@ -6373,6 +6378,7 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
   console.log(`💬 Chat endpoint: http://localhost:${PORT}/api/chat`);
   console.log(`📚 Documentation: http://localhost:${PORT}/`);
+  console.log(`🧠 LLM models - ${describeLlmModels(LLM_MODELS)}`);
   console.log('');
   console.log('🎉 No more CORS issues - ChatBot API is now integrated!');
 

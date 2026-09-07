@@ -252,7 +252,7 @@ User Question
 │     └─ Inject into system prompt             │
 │                                              │
 │  3. GENERATE: OpenAI Chat Completion         │
-│     ├─ Model: gpt-3.5-turbo                  │
+│     ├─ Model: CHAT_MODEL (gpt-5.4-mini)      │
 │     ├─ System: context + guidelines          │
 │     ├─ User: original question               │
 │     ├─ Temperature: 0.7                      │
@@ -331,7 +331,7 @@ Guidelines:
 - Use a friendly, professional tone`;
 
 const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-  model: 'gpt-3.5-turbo',
+  model: CHAT_MODEL, // env-driven, default gpt-5.4-mini (lib/llm-config.js)
   messages: [
     { role: 'system', content: systemPrompt },
     { role: 'user', content: userQuestion }
@@ -569,8 +569,9 @@ OFFLINE PIPELINES:
 | `ANTHROPIC_API_KEY` | Freshdesk `cluster-queries.js` | (optional) | Claude API for semantic clustering fallback |
 | `CHROMA_HOST` / `CHROMA_PORT` / `CHROMA_SSL` | server.js, indexer | `localhost` / `8000` / `false` | ChromaDB connection |
 | `COLLECTION_NAME` | server.js, indexer | `smartwinnr_docs` | Override the default collection |
-| `EMBEDDING_MODEL` | server.js, indexer | `text-embedding-3-small` | Rarely changed |
-| `CHAT_MODEL` | server.js | model id (OpenAI) | Chatbot generation model |
+| `EMBEDDING_MODEL` | server.js, indexer | `text-embedding-3-small` | Rarely changed; requires a full re-embed |
+| `CHAT_MODEL` | server.js (`lib/llm-config.js`) | `gpt-5.4-mini` | Ally chatbot answer model |
+| `QUERY_CONDENSING_MODEL` | server.js (`lib/llm-config.js`) | `gpt-5.4-nano` | Rewrites follow-ups into standalone retrieval queries |
 | `INTERNAL_API_KEY` | server.js (`/api/vector/embed`) | (required) | Guards the embed endpoint so only the indexer can call it |
 | `PORT` | server.js | `3001` locally, set by Railway in prod | Express listen port |
 | `NODE_ENV` | server.js, auth/* | `development` | Toggles `/auth/dev-login`, `?as=` preview gate, login-page DEV strip |
@@ -581,7 +582,7 @@ OFFLINE PIPELINES:
 | `CHAT_LOG_DB_PATH` | db/chat-logger.js | `./data/chat-logs.db` | SQLite path for chat logs |
 | `CHAT_LOG_RETENTION_DAYS` | db/chat-logger.js | (set in prod) | Row TTL; older rows purged by retention job |
 | `CRON_SECRET` | digest cron services | (required if using digests) | Auth header for `/api/admin/digests/send` |
-| `AUTHORING_MODEL` | wizard `/generate` | `gpt-4o` | Override the wizard's LLM |
+| `AUTHORING_MODEL` | wizard `/generate`, `/suggest-field` (`lib/llm-config.js`) | `gpt-5.4-mini` | Override the wizard's LLM |
 | `AUTHORING_RATE_LIMIT` | wizard | `10` | Generates per superadmin per 60-min window |
 | `AUTHORING_GIT_PUSH` | wizard publish | `false` | Master switch for auto-deploy via GitHub Git Data API |
 | `GIT_PUSH_TOKEN` / `GITHUB_REPO` / `GIT_PUBLISH_BRANCH` | wizard publish | — / — / `main` | Auto-deploy push target |
@@ -792,7 +793,9 @@ CHROMA_HOST=localhost                # ChromaDB on same machine
 CHROMA_PORT=8000                     # Default ChromaDB port
 COLLECTION_NAME=smartwinnr_docs      # Vector collection name
 EMBEDDING_MODEL=text-embedding-3-small
-CHAT_MODEL=gpt-4o-mini              # Or gpt-3.5-turbo for lower cost
+CHAT_MODEL=gpt-5.4-mini             # Ally answers (default)
+QUERY_CONDENSING_MODEL=gpt-5.4-nano # Follow-up condensing (default)
+AUTHORING_MODEL=gpt-5.4-mini        # Authoring wizard (default)
 ```
 
 ### 11.3 Starting the Local Stack

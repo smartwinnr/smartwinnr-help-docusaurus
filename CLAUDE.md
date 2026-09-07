@@ -524,8 +524,13 @@ staying silent.
 ## Key environment variables
 
 `OPENAI_API_KEY` (required), `INTERNAL_API_KEY` (guards `/api/vector/embed`),
-`CHROMA_HOST`/`CHROMA_PORT`/`CHROMA_SSL`/`COLLECTION_NAME`, `EMBEDDING_MODEL`,
-`PORT`. Auth (required in production): `HELP_JWT_SECRET`, `HELP_SITE_URL`,
+`CHROMA_HOST`/`CHROMA_PORT`/`CHROMA_SSL`/`COLLECTION_NAME`, `PORT`. LLM models
+(all resolved in `lib/llm-config.js`, each optional): `CHAT_MODEL` (default
+`gpt-5.4-mini`), `QUERY_CONDENSING_MODEL` (`gpt-5.4-nano`), `AUTHORING_MODEL`
+(`gpt-5.4-mini`), `EMBEDDING_MODEL` (`text-embedding-3-small`, never change
+without a full re-embed). Chat-completion bodies must be built via
+`chatCompletionBody()` there: the gpt-5.x family rejects `max_tokens`.
+Auth (required in production): `HELP_JWT_SECRET`, `HELP_SITE_URL`,
 `LAMBDA_MAGIC_LINK_URL`. Chat logging: `CHAT_LOG_DB_PATH`, `CHAT_LOG_RETENTION_DAYS`,
 `CHAT_LOGGING_ENABLED`. Release-draft pipeline (see that section above):
 `RELEASE_DRAFTS_SECRET` (auth for incoming dispatches), `MAIN_APP_SHARED_SECRET`

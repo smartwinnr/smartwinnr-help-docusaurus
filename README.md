@@ -91,7 +91,10 @@ Copy `.env.example` → `.env`. Minimum to run anything useful locally:
 | `INTERNAL_API_KEY` | Guards `POST /api/vector/embed` (indexer-only) | Always |
 | `CHROMA_HOST` / `CHROMA_PORT` / `CHROMA_SSL` | Where Chroma lives | Always (default `localhost:8000`) |
 | `COLLECTION_NAME` | Override the default collection (`smartwinnr_docs`) | If splitting corpora |
-| `EMBEDDING_MODEL` | Override `text-embedding-3-small` | Rarely |
+| `EMBEDDING_MODEL` | Override `text-embedding-3-small` (changing it requires a full re-embed) | Rarely |
+| `CHAT_MODEL` | Ally chatbot answer model (default `gpt-5.4-mini`) | If non-default |
+| `QUERY_CONDENSING_MODEL` | Rewrites follow-ups into standalone retrieval queries (default `gpt-5.4-nano`) | If non-default |
+| `AUTHORING_MODEL` | Authoring wizard generate / refine / field regeneration (default `gpt-5.4-mini`) | If non-default |
 | `PORT` | Server listen port | Railway sets this; local default is `3001` |
 | `HELP_JWT_SECRET` | Signs the `swhelp_session` cookie | Production |
 | `HELP_SITE_URL` | Used by the magic-link redirect | Production |

@@ -89,8 +89,10 @@ CHROMA_HOST=chroma.railway.internal
 CHROMA_PORT=8000
 CHROMA_SSL=false               # internal traffic is plain HTTP
 COLLECTION_NAME=smartwinnr_docs
-EMBEDDING_MODEL=text-embedding-3-small
-CHAT_MODEL=gpt-4o-mini         # or your preferred OpenAI chat model
+EMBEDDING_MODEL=text-embedding-3-small   # do not change without a full re-embed
+CHAT_MODEL=gpt-5.4-mini                  # Ally answers (default if unset)
+QUERY_CONDENSING_MODEL=gpt-5.4-nano      # follow-up -> standalone query (default if unset)
+AUTHORING_MODEL=gpt-5.4-mini             # authoring wizard (default if unset)
 
 # Auth (magic-link)
 HELP_JWT_SECRET=<32+ random bytes>
