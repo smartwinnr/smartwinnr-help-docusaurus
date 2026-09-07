@@ -7,30 +7,30 @@ description: >-
 slug: how-to-enable-the-streaming-links-for-video-coaching
 sidebar_position: 241
 last_update:
-  date: 2021-06-01T00:00:00.000Z
-  author: HelpScout Migration
-source:
-  helpscout_id: 60a63037eb3af44cc120a9d0
-  helpscout_url: >-
-    https://help.smartwinnr.com/article/241-how-to-enable-the-streaming-links-for-coaching-video
+  date: 2026-09-07
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: coaching
 tags:
   - video-coaching
   - settings
+draft: false
 ---
-Go to Editor > Coaching > Video Coaching > View Coaching.  _Click_ on 'Create Coaching' button.
 
-![Go to Editor > Coaching > Video Coaching > View Coaching. Click on 'Create Coaching' button.](/img/helpscout/editors/how-to-enable-the-streaming-links-for-video-coaching-1.png)
+> **At a glance** - This article explains how to enable Streaming Links for Video Coaching in the SmartWinnr platform.
 
-Below the Start Date option, there is an Advanced icon, click on it and here we can see the response types as shown in the above picture.
+Go to **Editor > Coaching > Video Coaching > View Coaching**. Click on the **Create Coaching** button.
 
-Select the box with Streaming Links and now the user can upload his video coaching through video upload and Streaming links.
+![coaching](/img/helpscout/authored/how-to-enable-the-streaming-links-for-video-coaching-mtr2b01j.png)
 
-When a user is assigned a video coaching then this is how it will look from the user's view.
+Below the **Rating scales and bands** option, there is an **Advanced** icon. Click on it, and you will see the response types.
 
-![When a user is assigned a video coaching then this is how it will look from the user's view.](/img/helpscout/editors/how-to-enable-the-streaming-links-for-video-coaching-2.jpg)
+Select the box with **Streaming Links**. Now, users can upload their video coaching through video upload and Streaming Links.
+
+When a user is assigned a video coaching, this is how it will look from the user's view.
+
+![user](/img/helpscout/authored/how-to-enable-the-streaming-links-for-video-coaching-mtr2l4z1.png)
 
 From the user's view, this is how it looks after adding the video link.
 
