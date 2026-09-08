@@ -5,7 +5,7 @@ description: "This article compares the five coaching types available in SmartWi
 slug: understanding-coaching-types-in-smartwinnr
 sidebar_position: 319
 last_update:
-  date: 2026-09-04
+  date: 2026-09-08
   author: Anagha Isal
 customProps:
   owner: anagha.isal@smartwinnr.com
@@ -54,7 +54,6 @@ How Video Coaching works:
 
 When to use Video Coaching:
 - Practicing sales pitches and product messaging.
-- Handling customer objections.
 - Practicing new product introductions.
 - Evaluating communication and presentation skills.
 - Reinforcing sales scripts and key messages.
@@ -85,7 +84,7 @@ When to use Audio Coaching:
 
 **Conversational AI Role Play** allows learners to practice a realistic, two-way conversation with an AI-powered customer or other defined persona. Unlike a recorded response, the conversation is interactive. The AI can respond to what the learner says, ask questions, raise objections, and adapt the conversation based on the learner's responses.
 
-SmartWinnr's AI Roleplay platform is designed for realistic conversations with personas such as physicians, pharmacists, and other healthcare decision-makers. Conversations can be evaluated for areas such as tone, empathy, objection handling, clarity, and compliance.
+SmartWinnr's AI Roleplay platform is designed for realistic conversations with personas such as physicians, pharmacists, and other healthcare decision-makers. Conversations can be evaluated for areas such as tone, empathy, objection handling, clarity, compliance,opening the call, presenting product knowledge and clinical evidence, handling the conversation effectively, and closing the call with clear next steps.
 
 How Conversational AI Role Play works:
 - The learner starts an assigned AI role-play scenario.
@@ -113,6 +112,8 @@ For example, a manager may conduct a joint field visit with a sales representati
 
 SmartWinnr's Live coaching workflow supports shared coaching forms, weighted criteria, manager notes, observations, feedback, and follow-up assignments.
 
+Please note that the live coaching can be used only under SmartPaths
+
 How Live Coaching works:
 - A coaching activity is planned or assigned.
 - The coach and learner participate in the live coaching activity.
@@ -131,7 +132,7 @@ When to use Live Coaching:
 
 ### 5. Presentation Coaching
 
-**Presentation Coaching** focuses on helping learners improve their ability to deliver structured presentations. It can be used when learners need to practice presenting a product, solution, proposal, or other business content clearly and effectively.
+**Presentation Coaching** focuses on helping learners improve their ability to deliver structured presentations. It can be used when learners need to practice presenting a product, solution, proposal, or other business content clearly and effectively, either by using a source document as a reference or by directly presenting the document/content.
 
 How Presentation Coaching works:
 - A learner prepares and delivers a presentation based on the assigned coaching activity.
