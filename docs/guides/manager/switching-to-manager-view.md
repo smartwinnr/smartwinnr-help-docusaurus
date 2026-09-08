@@ -5,7 +5,7 @@ description: How To Enable Manager View In SmartWinnr
 slug: switching-to-manager-view
 sidebar_position: 96
 last_update:
-  date: 2026-07-31
+  date: 2026-09-08
   author: Sandeep Bhuthagaddala
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -43,3 +43,19 @@ You will see a toggle button on the screen to change between the Manager View an
 When you toggle it to the manager's side, you will enter the Manager View in SmartWinnr. The left menu will change to reflect the content available in Manager View.
 
 ![The left menu changes based on the Manager View content](/img/helpscout/managers-and-team-members/switching-to-manager-view-2.png)
+
+
+### What can managers do in Manager View?
+Once you switch to Manager View, you can access several features to monitor and manage your team's performance.
+### View team quiz performance
+Managers can view the quiz performance of their team to understand how team members are performing across quizzes and identify areas that may need attention.
+### Track team quiz progress
+Managers can check the progress of their team's quizzes, including how team members are progressing through assigned quizzes and activities.
+### Review field coaching
+Managers can review field coaching activities to monitor coaching performed with team members and gain visibility into field-level coaching efforts.
+### Review coaching submissions
+Managers can review coaching submissions made by users. This allows managers to evaluate submitted coaching activities and provide feedback or take necessary follow-up actions.
+### Track KPI scorecard results
+Managers can track KPI scorecard results to monitor their team's performance against defined key performance indicators (KPIs) and understand overall team performance.
+
+
