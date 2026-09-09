@@ -5,7 +5,7 @@
     "quiz": {
       "label": "Quiz",
       "tagline": "Knowledge checks, auto-quiz pools, and topic-wise mastery tracking.",
-      "description": "Quiz lets editors build assessments and learners take them. Eight question types — including multi-choice, hotspot, drag-and-drop, fill-in-the-blank, and matching — combine into manual or auto-generated quizzes. Managers track team performance through topic-, country-, and learner-wise analytics.",
+      "description": "SmartWinnr's knowledge-testing engine. Editors build quizzes — manual, automatic, event-based, or proctored — by pulling questions from a central Question Bank that supports many formats (multiple-choice, fill-in-the-blank, matching, hotspot, drag-and-drop, long/short answer, numeric, and re-order). Questions can include images, audio, or video, and can be organized by topic for easy reuse across campaigns via duplication or bulk import. Editors and managers get detailed reporting — score trends, participation, team comparisons, and question-level breakdowns — to see exactly where knowledge is strong or weak, and whether it's improving over time.",
       "keyFeatures": [
         "8 question types incl. drag-drop and hotspot",
         "Auto-quiz pools with randomised question selection",
@@ -20,7 +20,7 @@
     "smartpath": {
       "label": "SmartPath",
       "tagline": "Curated learning journeys that combine quizzes, content, coaching, and live sessions.",
-      "description": "SmartPath lets editors stitch together quizzes, SmartFeed content, video coachings, surveys, and instructor-led learning sessions into a single ordered journey. Learners follow the path at their own pace; managers track completion and segment-wise time-on-task.",
+      "description": "The structured learning-journey builder — essentially a curriculum tool that strings multiple activities (quizzes, SmartFeeds, surveys, coaching, learning sessions, assignments, even external/SCORM content) into one guided path per learner. Editors define the modules and segments in a path and set unlock rules based on completion, score, or time elapsed, so learners move through training in the right order. Paths can be gamified with an attached competition, support instructor-led “Learning Sessions” (classroom or virtual) with attendance tracking, and award a certificate on completion. Reporting covers learner progress, module-level performance, and overall engagement across the full journey.",
       "keyFeatures": [
         "Mix quizzes, content, coachings, surveys, and live sessions",
         "Per-segment duration tracking",
@@ -35,7 +35,7 @@
     "smartfeed": {
       "label": "SmartFeed",
       "tagline": "Bite-sized video and article content delivered to the right audience.",
-      "description": "SmartFeed is a micro-learning feature that delivers bite-sized learning content to the right users at the right time.\n\nIt allows Editors to share short-form learning content such as videos, images, PowerPoint presentations, PDFs, and recordings through a personalized feed. Learners can access the content directly from their SmartFeed and engage with it by watching, liking, and commenting.\n\nSmartFeed can be used to provide continuous learning and reinforcement outside of formal training programs. It is particularly useful for sharing:\n\n- Product updates and announcements\n- Sales tips and best practices\n- Quick learning resources\n- Important business updates\n- Ongoing training and reinforcement content\n\nBy providing relevant content in a short and easy-to-consume format, SmartFeed helps keep learners engaged, informed, and continuously learning.",
+      "description": "A short-form content feed for quick, frequent knowledge nudges. Editors push bite-sized content — videos, images, PDFs, PPTs, audio, or recordings — directly to a team's feed, and can create, edit, resend, or expire posts as needed, targeted to specific groups or teams. Learners can like and comment on feeds, and editors get view/engagement analytics on every post sent, so they know what content is actually landing.",
       "keyFeatures": [
         "Video, article, and PPT formats",
         "Episode-style series with auto-thumbnails",
@@ -50,7 +50,7 @@
     "video-coaching": {
       "label": "Video Coaching",
       "tagline": "Submit a recorded pitch, get scored by managers against a rubric.",
-      "description": "Video Coaching lets learners record themselves performing a sales pitch, product demo, or skill check; managers review the recording against a competency rubric and leave structured feedback. Audio-only and screen-recording variants are supported for non-video scenarios.",
+      "description": "Lets reps submit a recorded pitch or roleplay (video, audio, or screen recording) for a manager to review and score against a defined rubric or set of competencies. Managers can leave written feedback, flag standout submissions as “top videos” so the rest of the team can learn from them, and track submission status across their whole team. This is best suited to real sales/field scenarios where a manager's own judgment needs to be central to the evaluation.",
       "keyFeatures": [
         "Video, audio, and screen-recording submissions",
         "Manager-defined competency rubrics",
@@ -65,7 +65,7 @@
     "ai-coaching": {
       "label": "AI Coaching",
       "tagline": "Practice real-world conversations against an AI character that scores you.",
-      "description": "AI Coaching is a roleplay simulator. Editors configure an AI character — its persona, the scenario, and the skill rubric — and learners practice conversations until they feel ready for the real thing. The AI scores each attempt against the rubric and gives structured feedback. One-way and two-way conversation modes are supported.",
+      "description": "The AI-powered coaching module. Learners practice a roleplay (e.g., a sales call with an HCP or customer) against a configurable AI persona, and the AI evaluates and scores the conversation automatically — typically within minutes. Admins can define the AI's role, persona, voice/avatar, difficulty level, and number of allowed attempts. After each session, learners see a feedback screen with their recorded attempt plus a detailed evaluation (strengths, gaps, objection-handling analysis), and managers can still add their own review and feedback on top of the AI's score (blended scoring). Reporting includes attempt-wise and coaching-wise reports, competency/skill dashboards, and team-level improvement tracking — so gaps that show up repeatedly across a learner, a team, or a cohort are easy to spot.",
       "keyFeatures": [
         "AI characters with custom personas and scenarios",
         "One-way and two-way roleplay modes",
@@ -80,7 +80,7 @@
     "field-coaching": {
       "label": "Field Coaching",
       "tagline": "Structured ride-along coaching with competency-based scoring.",
-      "description": "Field Coaching is for in-person coaching moments — sales ride-alongs, store walks, on-floor observations. Editors set the competencies and the rubric; managers fill them out on mobile during or right after the visit. The mobile-first design works offline and syncs when the manager reconnects.",
+      "description": "Digitizes the traditional in-field “ride-along,” where a manager accompanies a rep on a real client visit and scores their performance live. Admins build coaching templates that define exactly which competencies get scored, and managers use these templates to evaluate reps during or right after a field visit. It's built around structured, competency-based scoring tied to a real-time, in-person observation, covering live, unscripted, real customer interactions.",
       "keyFeatures": [
         "Mobile-first form designed for in-the-field use",
         "Competency-based rubric per coaching template",
@@ -95,7 +95,7 @@
     "survey": {
       "label": "Survey",
       "tagline": "Collect structured feedback with templates, sections, and response analytics.",
-      "description": "Survey lets editors design feedback instruments — from quick pulse checks to full 360s — with reusable templates, sectioned questionnaires, and a range of question types. Responses are auto-analysed with response-rate, distribution, and trend charts.",
+      "description": "The structured feedback-collection module. Editors build surveys or reusable templates using any of eight supported question types, organize questions into sections, and choose how respondents see them — one question at a time, section-by-section, or all at once. Surveys can be assigned to a specific audience or distributed via QR code for anonymous, event-style feedback, with scheduled reminders to boost response rates. Reporting covers both aggregate results (at the survey or template level) and individual response drill-downs, with anonymity settings controlling how much identifying detail is visible.",
       "keyFeatures": [
         "Multi-section questionnaires",
         "Reusable survey templates",
@@ -110,7 +110,7 @@
     "knowledge-hub": {
       "label": "Knowledge Hub",
       "tagline": "A searchable library of reference content for in-the-moment lookup.",
-      "description": "Knowledge Hub (KHub) is the always-on reference shelf — product datasheets, FAQs, objection handlers, competitor briefs. Editors organise content into folders; learners search and read on the SmartWinnr app. KHub items can also be cited from coaching feedback and AI responses.",
+      "description": "A searchable content repository — the organization's reference library inside SmartWinnr — where editors organize documents and materials (product info, policies, playbooks, etc.) into folders and items. It's built for on-demand lookup: users browse or search recent, trending, and latest items. Editors manage folders/items directly, and usage analytics show what content people are actually going to look up in the field.",
       "keyFeatures": [
         "Folder-organised content library",
         "Full-text search from the mobile app",
@@ -125,7 +125,7 @@
     "forms": {
       "label": "Forms",
       "tagline": "Custom data-collection forms with manager approval workflows.",
-      "description": "Forms let editors build short data-capture experiences — service requests, expense reports, customer-visit logs, anything that needs a structured response. Submissions can require manager approval before they're final.",
+      "description": "A custom data-collection module for structured submissions — field reports, expense claims, activity logs, and similar — with a built-in manager approval workflow. Editors build the form and can add designated approvers; a form can even be submitted on a user's behalf. If approval is required, the submitter only earns points once an approver signs off. Submissions can come from the app, the left menu, or via chat (if the form is shared to a chat group), and managers can review, edit, or approve/reject submissions from their team. Form Analytics gives a rollup view of all submission activity.",
       "keyFeatures": [
         "Build custom forms with mixed input types",
         "Submit from the left menu or the chat",
@@ -140,7 +140,7 @@
     "kpi-gamification": {
       "label": "KPI & Gamification",
       "tagline": "Scorecards, competitions, achievements, and engagement leaderboards.",
-      "description": "Track real-world performance with KPI scorecards and drive engagement through competitions, badges, and leaderboards. Editors map external data into KPIs; managers see team standings; learners chase their score.",
+      "description": "Turns real organizational performance metrics into a game layer. Admins define KPIs and map them to actual data sources (“Field Mappings”), then build scorecards to measure reps against targets on a daily, weekly, monthly, quarterly, or yearly basis. On top of that, admins can run competitions, challenges (individual, group, or manager-led), and brackets to drive engagement around those KPIs, plus award achievements — badges and certificates — on task completion, with leaderboards (individual or team) showing standings during a competition. Detailed KPI reports let managers slice performance by rep, team, or time period.",
       "keyFeatures": [
         "KPI scorecards with custom field mapping",
         "Team and individual competitions",
@@ -159,7 +159,7 @@
     "notifications": {
       "label": "Notifications & Chat",
       "tagline": "Custom, scheduled, and triggered notifications plus in-app chat.",
-      "description": "Notifications & Chat in SmartWinnr keep learners informed, engaged, and connected throughout their learning and performance journey.\n\nSmartWinnr provides custom notifications, scheduled notifications, and activity-based notifications to ensure users receive timely updates and reminders about their assigned activities, tasks, and events.\n\nIt also provides group chat capabilities, allowing users to communicate with their peers, trainers, managers, or other members of their organization.\n\nKey capabilities:\n\n- Custom Notifications: Create notifications with relevant messages and information for users.\n- Scheduled Notifications: Schedule notifications to be delivered at a specific date and time.\n- Triggered Notifications: Send notifications based on specific activities or events in SmartWinnr.\n- Group Chat: Enable communication and collaboration among members of a group.\n- Push Notifications: Deliver timely updates and reminders directly to users through their devices.\n\nNotifications and Chat help organizations communicate important information, remind users about pending activities, and facilitate collaboration and peer interaction within SmartWinnr.",
+      "description": "Handles automated engagement and communication across the platform. At its core are nudge rules — automated triggers, fired either by an activity event or a schedule, that send a notification/email/in-app action such as assigning a quiz, SmartPath, or survey, or awarding points/badges — targeted at specific users, groups, or attributes. It also covers scheduled reminders for quizzes, surveys, and coaching tasks, and escalation matrices that automatically bump overdue tasks or unanswered queries up the chain of responsibility, so nothing important quietly falls through the cracks.",
       "keyFeatures": [
         "Custom notification templates",
         "Scheduled drip campaigns",
@@ -178,7 +178,7 @@
     "cross-module": {
       "label": "Cross-Module Features",
       "tagline": "Behaviour that spans multiple modules — query, app updates, navigation.",
-      "description": "Cross-module features are pieces of SmartWinnr that aren't tied to one module. Cross-Module Features in SmartWinnr are capabilities that work across multiple modules, enabling organizations to connect learning, coaching, engagement, performance, and analytics into a unified experience. These features help create a seamless learning journey, provide consistent tracking across activities, and enable admins and trainers to gain a more comprehensive view of user participation and performance.\n\nCross-module capabilities can help you combine different SmartWinnr activities, track progress and outcomes, and use insights from one module to support activities in another, creating a more connected and effective learning and performance experience.",
+      "description": "A catch-all for capabilities that cut across every module. This includes shared content tools (attaching images, videos, audio, PDFs, or external links to any activity), platform-wide conveniences like “My Tasks” (a single pending-task list spanning quizzes, surveys, SmartFeeds, coaching, SmartPaths, and forms), QResolve (the in-app query/Q&A system for asking and answering questions), Sales TV, widgets, reminders, and general app navigation and update behavior.",
       "keyFeatures": [
         "QResolve — ask the support team a question",
         "SCORM course access from the app",
@@ -192,7 +192,7 @@
     "competition": {
       "label": "Competition",
       "tagline": "Gamified challenges scored on learning activities, KPIs, brackets, and leagues.",
-      "description": "A Competition engages users through challenges and tracks their performance against defined activities, learning tasks, or performance metrics. You configure participants, teams, scoring criteria, and duration, so people compete individually or as teams. Competitions motivate users to finish assigned learning, reinforce it through practice, and recognize top performers on leaderboards.",
+      "description": "The engagement layer that lets teams or individuals compete against each other using activities from any other module — quizzes, surveys, forms, scorecards, video coaching, SmartFeeds — as the “tasks” being competed on. It supports several formats: standard, bracket-style (paired knockout rounds), video-coaching-level, and activity-progress competitions, each suited to a different use case, plus leaderboards (individual or team) and optional observers who can watch results without taking part themselves.",
       "keyFeatures": [
         "LMS-based competitions scored on SmartFeeds, quizzes, surveys, and SmartPaths",
         "Performance-based competitions that rank participants against selected KPIs",
@@ -207,7 +207,7 @@
     "authoringtools": {
       "label": "Authoring Tools",
       "tagline": "Create podcasts and audio narrations for your learning content.",
-      "description": "Authoring Tools - SmartWinnr module.",
+      "description": "A newer, AI-assisted content-creation module that helps editors produce learning content faster, without a production studio. It has two components: Video Lab, which turns a slide deck into a narrated training video — upload the PDF, edit the per-slide narration script, choose an AI voice, and generate a video that can be reused elsewhere (e.g., inside a SmartFeed) — and Question Studio (also called Quiz Master), which uses AI to draft quiz questions straight from uploaded source documents, then routes them through a human review queue (approve, edit, reject, or tag) before they're published into the Question Bank for use in quizzes.",
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
