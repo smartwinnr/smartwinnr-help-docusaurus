@@ -5,7 +5,7 @@ description: 'Follow the below steps to upload your coaching video in the SmartW
 slug: how-do-i-upload-a-coaching-video
 sidebar_position: 86
 last_update:
-  date: 2026-09-02
+  date: 2026-09-09
   author: Sruthi Suresh
 source:
   helpscout_id: 5fd728293d1d2a5b1c5ea4c8
@@ -18,12 +18,12 @@ tags:
 draft: false
 ---
 
-> **At a glance** - This article provides step-by-step instructions for uploading a coaching video in the SmartWinnr app, both via mobile and web.
+> **At a glance** - Upload a coaching video from your gallery or record one in SmartWinnr, then preview and submit it.
 
-Follow the steps below to upload your coaching video in the SmartWinnr app.
+Upload your coaching video in the SmartWinnr app by selecting an assignment, choosing a recording option, and submitting the final video. You can record a new video or upload one from your gallery, then preview it before you submit it.
 
 ## When to use this
-Use this guide when you need to upload a coaching video for an assignment in the SmartWinnr app. 
+Use this guide when you need to upload a coaching video for an assignment in the SmartWinnr app.
 
 - You have a coaching assignment that requires a video submission.
 - You want to record a video response using your device.
@@ -31,41 +31,41 @@ Use this guide when you need to upload a coaching video for an assignment in the
 
 ## Steps
 
-### 1. Access the Coaching Assignment
+### 1. Access the coaching assignment
 Go to the **Left menu** > **Coachings**. Select the coaching assignment.
 
 ![assignment](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjszh0x.jpg)
 
-After opening the coaching, you will be able to see all the coaching details along with the disclaimer. This is how the disclaimer looks when added as a footer.
+After you open the coaching, you can see all the coaching details along with the disclaimer. This is how the disclaimer looks when it is added as a footer.
 
 ![footer](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjst0o2.jpg)
 
-You can also see the disclaimer as a popup. Click on **AGREE** to open the coaching.
+You can also see the disclaimer as a popup. Click **AGREE** to open the coaching. It depends on how the editor sets the disclaimer, either as a popup or a footer.
 
 ![agree](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjsxegw.jpg)
 
-### 2. Choose Video Upload Option
+### 2. Choose a video upload option
 On the coaching details page, you have two options for video submission:
 
-1. Click on the **Upload Video** button to select your video from the gallery.
- 
+1. Click **Upload Video** to select your video from the gallery.
+
 ![gallery](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjt0jab.jpg)
-   
-2. Click on the **Record Video** button. This will prompt you to provide microphone and camera access permissions to record the video. Ensure you enable access.
 
-When you record the video, it will be stored in your phone's gallery, allowing you to make multiple attempts. You can upload your best recording from the gallery.
+2. Click **Record Video**. This prompts you to provide microphone and camera access permissions to record the video. Make sure you enable access.
 
-### 3. Preview and Submit the Video
-You can preview your video on the same page. After confirming it is satisfactory, click on the **Upload Video** button to submit.
+When you record the video, SmartWinnr stores it in your phone's gallery. This lets you make multiple attempts. You can upload your best recording from the gallery.
 
-You will see a confirmation screen indicating that your video has been uploaded successfully.
+### 3. Preview and submit the video
+You can preview your video on the same page. After you confirm that it looks right, click **Upload Video** to submit.
+
+You see a confirmation screen that indicates your video has been uploaded successfully.
 
 ![uploaded](/img/helpscout/authored/how-do-i-upload-a-coaching-video-mtjt1eie.jpg)
 
-### Additional Upload Options
-Apart from the standard video upload, SmartWinnr provides additional ways to submit responses to coaching assignments:
+### 4. Use other upload options
+SmartWinnr also provides additional ways to submit responses to coaching assignments:
 
-- **Record Audio**: SmartWinnr allows you to record your voice using a microphone and upload it as your coaching response.  
+- **Record Audio**: SmartWinnr lets you record your voice using a microphone and upload it as your coaching response.  
   [Learn how to upload audio recording for coaching](/modules/video-coaching/for-learners/how-to-upload-audio-recording-for-coaching).
 
 - **Record Screen**: You can record your screen using the screen share option and upload it as your coaching response.  

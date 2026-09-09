@@ -1,12 +1,12 @@
 ---
 id: 6778cfe33656557cafadaee0
-title: "understanding field coaching creation"
+title: "Understanding field coaching creation"
 description: ''
 slug: create-a-coaching
 sidebar_position: 294
 last_update:
-  date: 2026-07-10
-  author: HelpScout Migration
+  date: 2026-09-09
+  author: Aswani TK
 source:
   helpscout_id: 6778cfe33656557cafadaee0
   helpscout_url: 'https://help.smartwinnr.com/article/294-create-a-coaching'
