@@ -7,7 +7,7 @@ description: >-
 slug: how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team
 sidebar_position: 229
 last_update:
-  date: 2026-09-09
+  date: 2026-09-10
   author: Aswani TK
 source:
   helpscout_id: 603748758502d1120e90b0ed
@@ -52,12 +52,12 @@ Switch the tab to **All Coachings**. This shows the list of coachings assigned t
 ### 4. Open a coaching assignment
 Select the coaching assignment you want to review. You can then see the response status of each member assigned to that coaching.
 
-![list of users and their coaching status](/img/helpscout/authored/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-mttxe86i.png)
+![list of users and their coaching status](/img/helpscout/authored/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-mtvg1erk.jpg)
 
 ### 5. Filter by completion status
 Filter the completion status as **Completed** or **Not Completed**. This helps you find users who have submitted response videos and users who have not submitted response videos for the selected coaching assignment.
 
-![filter the status](/img/helpscout/authored/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-mttxfimw.png)
+![filter the status](/img/helpscout/authored/how-manager-can-check-the-status-of-the-coachings-assigned-to-my-team-mtvg1y2j.jpg)
 
 ### 6. Review a submitted response
 Click any user who has submitted a response video. You can view the response video, ratings, and feedback provided by the reviewer.
