@@ -10,7 +10,7 @@ last_update:
 customProps:
   owner: anagha.isal@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-draft: false
+draft: true
 tags: ["video-coaching", "ai-coaching"]
 ---
 

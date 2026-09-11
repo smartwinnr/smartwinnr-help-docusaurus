@@ -8,7 +8,7 @@ description: >-
 slug: how-to-review-ai-coaching-submissions-as-a-manager
 sidebar_position: 318
 last_update:
-  date: 2026-09-09
+  date: 2026-09-11
   author: Sruthi Suresh
 source:
   helpscout_id: 6970fbe61252a7004208b915
@@ -87,7 +87,7 @@ Some competency rows may show a blue information icon and a percentage, such as 
 
 You can also add timeline feedback.
 
-**Note:** When this setting is enabled, you see a toggle option to allow timestamped video feedback when you create a coaching scenario in the admin portal. If you enable this option for a specific coaching scenario, managers reviewing the submission can click specific moments in the video playback to leave pinned comments at those timestamps. This feature works like comment markers on a video timeline, making it easier to reference exact moments in the submission when you give feedback. To use this feature, ensure that the toggle is enabled when you set up the coaching. Managers then have the ability to add timeline feedback during their review of coaching videos. This option can be enabled by the editor who is creating the coaching. If it is off, managers can't  give timed feedback.
+**Note:** When this setting is enabled, you see a toggle option to allow timestamped video feedback when you create a coaching scenario in the admin portal. If you enable this option for a specific coaching scenario, managers reviewing the submission can click specific moments in the video playback to leave pinned comments at those timestamps. This feature works like comment markers on a video timeline, making it easier to reference exact moments in the submission when you give feedback. To use this feature, ensure that the toggle is enabled when you set up the coaching. Managers then have the ability to add timeline feedback during their review of coaching videos. This option can be enabled by the editor who is creating the coaching. If it is off, managers can't give timed feedback.
 
 ![Add timeline feedback](/img/helpscout/authored/how-to-review-ai-coaching-submissions-as-a-manager-mtjzeagk.png)
 

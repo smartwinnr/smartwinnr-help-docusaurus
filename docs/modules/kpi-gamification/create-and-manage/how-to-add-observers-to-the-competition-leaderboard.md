@@ -7,7 +7,7 @@ description: >-
 slug: how-to-add-observers-to-the-competition-leaderboard
 sidebar_position: 999
 last_update:
-  date: 2026-08-20
+  date: 2026-09-11
   author: Sandeep Bhuthagaddala
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -62,7 +62,7 @@ Click on the **Save** icon at the bottom to complete the activity. A confirmatio
 Click on the **Yes** button to add them as observers.
 
 ### 6. Confirm Observer Addition
-Once saved, the selected observers will be displayed on the **Observers** button corresponding to that leaderboard.
+Once saved, the selected observers will be displayed on the **Observers** button corresponding to that leaderboard. 
 
 ![Confirm Observer Addition](/img/helpscout/editors/leaderboards-of-a-competition-13.png)
 
