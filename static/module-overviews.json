@@ -212,6 +212,15 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "authoringTools"
+    },
+    "rewards-and-recognition": {
+      "label": "Rewards",
+      "tagline": "Rewards - SmartWinnr module.",
+      "description": "Rewards - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "rewards"
     }
   }
 }

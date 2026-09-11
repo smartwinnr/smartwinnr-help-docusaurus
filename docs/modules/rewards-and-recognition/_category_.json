@@ -1,0 +1,17 @@
+{
+  "label": "Rewards",
+  "position": 150,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}
