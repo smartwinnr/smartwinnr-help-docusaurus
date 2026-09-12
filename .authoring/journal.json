@@ -332,6 +332,12 @@
       "ts": 1789188932117,
       "seq": 1,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/rewards-and-recognition/features/understanding-the-rewards-program.md": {
+      "action": "upsert",
+      "ts": 1789195632303,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
