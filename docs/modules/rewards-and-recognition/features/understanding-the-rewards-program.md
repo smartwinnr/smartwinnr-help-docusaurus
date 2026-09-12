@@ -17,32 +17,56 @@ draft: true
 
 The Rewards Program helps you motivate learners with points and rewards. Learners earn points from configured activities, then use those points to browse and request rewards from the catalogue. Admins manage the available rewards and review redemption requests.
 
-## When to use this
+How the Rewards Program Works
 
-Use the Rewards Program when you want to recognize learner activity with redeemable points.
+The Rewards Program consists of four main steps:
 
-- You want learners to earn points for completing configured activities.
-- You want to offer vouchers, products, or other rewards.
-- You want admins to review and process reward requests.
-- You want a single catalogue for available rewards.
+Learners earn points based on configured point-earning sources.
+Points accumulate in the learner's rewards account.
+Learners browse the rewards catalogue to view available vouchers and products.
+Learners submit redemption requests, which are reviewed and processed by the designated admins.
 
-## How it works
+Admins can configure the program, manage the rewards catalogue, and process redemption requests based on the organization's requirements.
 
-### 1. Earn points
-Learners earn points from the sources you configure for the program. These sources can include activities such as quizzes or other outcomes you choose.
+Earning Points
 
-The points are added to the learner's rewards balance.
+Learners can earn reward points through the activities and sources configured by the organization.
 
-### 2. Browse the catalogue
-Learners open the rewards catalogue to see the rewards available to them. They can review the points required for each reward before choosing one.
+Depending on the program configuration, points may be awarded for actions such as completing quizzes, participating in activities, or achieving specific outcomes.
 
-The catalogue can include vouchers, products, and other rewards your organization sets up.
+The points earned by a learner are added to their rewards balance and can later be used to redeem available rewards.
 
-### 3. Submit a redemption request
-When learners choose a reward, they submit a redemption request using their available points. The request goes to the designated admin for review.
+Note: The sources through which learners can earn points depend on how the Rewards Program is configured by the administrator.
 
-### 4. Review and process requests
-Admins review redemption requests and process them based on the organization's fulfilment process. After processing, the learner receives the reward through the configured delivery method.
+Rewards Catalogue
+
+The Rewards Catalogue contains the rewards that learners can redeem using their accumulated points.
+
+The catalogue may include:
+
+Vouchers
+Products
+Other rewards configured by the organization
+
+Learners can browse the available rewards and check the points required for redemption. They can select a reward based on their available points and submit a redemption request.
+
+Admins are responsible for maintaining the rewards available in the catalogue and ensuring that the required reward details are configured correctly.
+
+Redemption Requests
+
+When a learner selects a reward, they can submit a redemption request using their available points.
+
+The request is then available to the designated admin for review and processing.
+
+Admins can manage redemption requests and take the appropriate action based on the organization's reward fulfilment process.
+
+The redemption process generally involves:
+
+Learner selects a reward.
+Learner submits a redemption request.
+Admin reviews the request.
+Admin processes the request.
+The learner receives the reward according to the configured fulfilment process.
 
 ## Things to know
 
