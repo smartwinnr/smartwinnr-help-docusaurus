@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "baseMainSha": "169faf25eefbaeea992296836cef563a6eba2ad3",
+  "rebasedTs": 1789192655592,
+  "entries": {
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/reference/help-support/which-report-should-i-use.md": {
+      "action": "upsert",
+      "ts": 1788934207144,
+      "seq": 40,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/fold-role-play-inventory-into-coachings-expand-its-search.md": {
+      "action": "upsert",
+      "ts": 1788771874533,
+      "seq": 1,
+      "author": "sai.charanreddyt+apsouth1@smartwinnr.com"
+    },
+    "docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-in-smartpath-progress.md": {
+      "action": "upsert",
+      "ts": 1789014445130,
+      "seq": 12,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0rp6j.png": {
+      "action": "upsert",
+      "ts": 1788953575484,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0t2uc.png": {
+      "action": "upsert",
+      "ts": 1788953639844,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0wkrb.png": {
+      "action": "upsert",
+      "ts": 1788953803031,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0zsd4.png": {
+      "action": "upsert",
+      "ts": 1788953952856,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu114p3.png": {
+      "action": "upsert",
+      "ts": 1788954015495,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu126i9.png": {
+      "action": "upsert",
+      "ts": 1788954064497,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu18bh1.png": {
+      "action": "upsert",
+      "ts": 1788954350870,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu1bses.png": {
+      "action": "upsert",
+      "ts": 1788954512788,
+      "seq": 7,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/fix-attempt-counts-and-territory-lookup-in-attempts-summary.md": {
+      "action": "upsert",
+      "ts": 1789049040171,
+      "seq": 6,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtugffg9.png": {
+      "action": "upsert",
+      "ts": 1788979876858,
+      "seq": 11,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/features/understanding-assessment-and-certification-coaching.md": {
+      "action": "upsert",
+      "ts": 1789039044048,
+      "seq": 26,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/set-a-separate-timer-for-each-quiz-question.md": {
+      "action": "upsert",
+      "ts": 1789049037743,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-coaching-self-registration-and-show-lms-coachings-in-the-app.md": {
+      "action": "upsert",
+      "ts": 1789049034755,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/features/what-is-scenario-lifecycle-management.md": {
+      "action": "upsert",
+      "ts": 1789040074981,
+      "seq": 38,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-scenario-lifecycle-management-mtvg2sdn.jpg": {
+      "action": "upsert",
+      "ts": 1789039753260,
+      "seq": 34,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-scenario-lifecycle-management-mtvg58el.jpg": {
+      "action": "upsert",
+      "ts": 1789039867341,
+      "seq": 35,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-scenario-lifecycle-management-mtvg996f.jpg": {
+      "action": "upsert",
+      "ts": 1789040054968,
+      "seq": 36,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtvg9c8j.png": {
+      "action": "upsert",
+      "ts": 1789040058932,
+      "seq": 37,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtvgbyjn.png": {
+      "action": "upsert",
+      "ts": 1789040181155,
+      "seq": 39,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtvgf16q.png": {
+      "action": "upsert",
+      "ts": 1789040324547,
+      "seq": 40,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mtvieqq8.png": {
+      "action": "upsert",
+      "ts": 1789043670224,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/for-learners/how-to-plan-field-coaching-sessions-for-your-team.md": {
+      "action": "upsert",
+      "ts": 1789043857862,
+      "seq": 3,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/smartpath/for-learners/how-to-join-a-learning-session.md": {
+      "action": "upsert",
+      "ts": 1789103698809,
+      "seq": 18,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwgvfu3.png": {
+      "action": "upsert",
+      "ts": 1789101556206,
+      "seq": 8,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwh0dzj.png": {
+      "action": "upsert",
+      "ts": 1789101787089,
+      "seq": 9,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhedjd.png": {
+      "action": "upsert",
+      "ts": 1789102439690,
+      "seq": 10,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhnbo4.png": {
+      "action": "upsert",
+      "ts": 1789102857173,
+      "seq": 11,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhom6n.png": {
+      "action": "upsert",
+      "ts": 1789102917456,
+      "seq": 12,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhq2la.png": {
+      "action": "upsert",
+      "ts": 1789102985374,
+      "seq": 13,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhqrhx.png": {
+      "action": "upsert",
+      "ts": 1789103017654,
+      "seq": 14,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhxdnr.png": {
+      "action": "upsert",
+      "ts": 1789103326311,
+      "seq": 15,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-join-a-learning-session-mtwhxobo.png": {
+      "action": "upsert",
+      "ts": 1789103340133,
+      "seq": 16,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/smartpath/create-and-manage/how-to-upload-attendance-in-bulk-for-learning-sessions.md": {
+      "action": "upsert",
+      "ts": 1789118972106,
+      "seq": 28,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr1ev2.png": {
+      "action": "upsert",
+      "ts": 1789118631038,
+      "seq": 22,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr2ez2.png": {
+      "action": "upsert",
+      "ts": 1789118677839,
+      "seq": 23,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr3a1k.png": {
+      "action": "upsert",
+      "ts": 1789118718105,
+      "seq": 24,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr52me.png": {
+      "action": "upsert",
+      "ts": 1789118801800,
+      "seq": 25,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr7p44.png": {
+      "action": "upsert",
+      "ts": 1789118924260,
+      "seq": 26,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-upload-attendance-in-bulk-for-learning-sessions-mtwr8bxl.png": {
+      "action": "upsert",
+      "ts": 1789118953834,
+      "seq": 27,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/features/how-to-read-competition-leaderboard-data.md": {
+      "action": "upsert",
+      "ts": 1789124327952,
+      "seq": 9,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-read-competition-leaderboard-data-mtwu8pky.png": {
+      "action": "upsert",
+      "ts": 1789124010370,
+      "seq": 6,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-read-competition-leaderboard-data-mtwu9xa9.png": {
+      "action": "upsert",
+      "ts": 1789124067009,
+      "seq": 7,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/cross-module/create-and-manage/understanding-multi-language-content-in-smartwinnr-for-ediotors.md": {
+      "action": "upsert",
+      "ts": 1789125624297,
+      "seq": 20,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/fix-duplicate-scoring-in-ai-coaching-leaderboard-calculations.md": {
+      "action": "upsert",
+      "ts": 1789125218719,
+      "seq": 13,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-multi-language-content-in-smartwinnr-for-ediotors-mtwv47nn.png": {
+      "action": "upsert",
+      "ts": 1789125480131,
+      "seq": 15,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-multi-language-content-in-smartwinnr-for-ediotors-mtwv4r0f.png": {
+      "action": "upsert",
+      "ts": 1789125505215,
+      "seq": 16,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-multi-language-content-in-smartwinnr-for-ediotors-mtwv5ln5.png": {
+      "action": "upsert",
+      "ts": 1789125544913,
+      "seq": 17,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-multi-language-content-in-smartwinnr-for-ediotors-mtwv5yu2.png": {
+      "action": "upsert",
+      "ts": 1789125562011,
+      "seq": 18,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-multi-language-content-in-smartwinnr-for-ediotors-mtwv73ar.png": {
+      "action": "upsert",
+      "ts": 1789125614451,
+      "seq": 19,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/features/what-is-action-planning.md": {
+      "action": "upsert",
+      "ts": 1789127880524,
+      "seq": 24,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/smartpath/features/what-is-a-learning-session.md": {
+      "action": "upsert",
+      "ts": 1789188932117,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    }
+  }
+}
