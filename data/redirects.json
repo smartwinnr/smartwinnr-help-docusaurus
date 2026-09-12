@@ -1980,6 +1980,10 @@
     {
       "from": "/modules/ai-coaching/for-learners/create-coaching-folder",
       "to": "/modules/ai-coaching/create-and-manage/create-coaching-folder"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/how-to-process-reward-redemption-requests",
+      "to": "/modules/rewards-and-recognition/create-and-manage/how-to-process-reward-redemption-requests"
     }
   ]
 }
