@@ -362,6 +362,12 @@
       "ts": 1789459913923,
       "seq": 7,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/rewards-and-recognition/for-learners/how-to-redeem-your-reward-points.md": {
+      "action": "upsert",
+      "ts": 1789460092435,
+      "seq": 8,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
