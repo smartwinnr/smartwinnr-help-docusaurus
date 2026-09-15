@@ -488,6 +488,12 @@
       "ts": 1789476067733,
       "seq": 32,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mu2nuvn1.png": {
+      "action": "upsert",
+      "ts": 1789476084398,
+      "seq": 33,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
