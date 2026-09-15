@@ -36,7 +36,7 @@ Log in to your user account and select **Scratchcard** from the left menu.
 ### 2. Review your available scratchcards
 Under **My Rewards**, view the scratchcards available to you for the selected month. Select a date to see the scratchcards earned on that day. You can also move to a previous month to review earlier scratchcards.
 
-![Scratch card available in a day](/img/helpscout/authored/authored-mu2hp6nq.png)
+![Scratch card available in a day](/img/helpscout/authored/how-to-scratch-your-scratchcards-and-view-history-mu2ij7cc.png)
 
 ### 3. Scratch a card
 Select a scratchcard and scratch it to reveal the points.
