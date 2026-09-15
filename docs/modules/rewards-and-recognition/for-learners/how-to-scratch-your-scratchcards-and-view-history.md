@@ -58,6 +58,6 @@ Select **Reward History** to see the scratchcard points you have won.
 ![This will show all the scratchcard which used by the user](/img/helpscout/authored/authored-mu2iar2x.png)
 
 ### 6. Open **Scratchcard parameters**
-Select **Scratchcard parameters** to see the parameters you achieved to win the scratchcards.
+Select **Scratchcard parameters** to see the KPI parameters you achieved to win the scratchcards.
 
 ![Scratchcard parameters](/img/helpscout/authored/authored-mu2id7fx.png)
