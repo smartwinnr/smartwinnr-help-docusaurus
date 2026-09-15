@@ -428,6 +428,12 @@
       "ts": 1789466861806,
       "seq": 18,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/rewards-and-recognition/for-learners/how-to-scratch-your-scratchcards-and-view-history.md": {
+      "action": "upsert",
+      "ts": 1789467059658,
+      "seq": 19,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
