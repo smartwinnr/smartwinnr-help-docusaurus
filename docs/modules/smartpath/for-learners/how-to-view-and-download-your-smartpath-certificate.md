@@ -9,7 +9,7 @@ last_update:
   author: Manaswini V
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
-tags: ["smartpath"]
+tags: ["smartpath", "certificate"]
 draft: true
 ---
 
@@ -31,17 +31,18 @@ Use this when you have completed a SmartPath or module and want to:
 ### 1. Open **My SmartPaths**
 
 Log in to the **User Portal** and go to **Learning > SmartPath > My SmartPaths**.
-
+![login to user view](/img/helpscout/authored/how-to-view-and-download-your-smartpath-certificate-mu2nsra8.png)
 ### 2. Select the SmartPath
 
 Select the SmartPath that contains the assignment you need to complete.
-
+![kindly select the smartpath](/img/helpscout/authored/how-to-view-and-download-your-smartpath-certificate-mu2nuis4.png)
 ### 3. Complete the required activities
 
 Complete all required modules and learning activities in the SmartPath. When you meet the completion requirements, the SmartPath is marked as **Completed**, and the certificate is awarded if one is configured.
-
+![kindly complete the assignment](/img/helpscout/authored/how-to-view-and-download-your-smartpath-certificate-mu2nzf26.png)
 ### 4. Download the certificate
 
 After you complete the SmartPath, click **Download** to save your certificate.
-
+![kindly click on download button to download the certificate](/img/helpscout/authored/how-to-view-and-download-your-smartpath-certificate-mu2o1qa7.png)
 You can also open the certificate from **Notifications**. Open the certificate notification, click **View**, and then download the certificate.
+![click on view to view and download the certificate](/img/helpscout/authored/how-to-view-and-download-your-smartpath-certificate-mu2o5m24.png)
