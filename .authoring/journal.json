@@ -320,6 +320,12 @@
       "ts": 1789196323467,
       "seq": 3,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mu2do3yq.png": {
+      "action": "upsert",
+      "ts": 1789458972436,
+      "seq": 1,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
