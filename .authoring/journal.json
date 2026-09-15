@@ -452,6 +452,12 @@
       "ts": 1789472330551,
       "seq": 26,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/smartpath/for-learners/how-to-view-and-download-your-smartpath-certificate.md": {
+      "action": "upsert",
+      "ts": 1789475729374,
+      "seq": 27,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
