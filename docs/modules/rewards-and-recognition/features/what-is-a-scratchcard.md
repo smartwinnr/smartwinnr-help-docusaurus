@@ -13,6 +13,8 @@ tags: ["gamification"]
 draft: true
 ---
 
+> **At a glance** - Scratchcards let you reveal rewards in SmartWinnr. When you are eligible, the scratchcard appears in your account, and you can scratch it to see your reward.
+
 Scratchcards let you win rewards by scratching a virtual card in SmartWinnr. When you become eligible, the scratchcard appears in your account. You can then scratch it to reveal your reward and track it against the configured program.
 
 ## When to use this
