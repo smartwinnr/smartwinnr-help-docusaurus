@@ -536,6 +536,12 @@
       "ts": 1789476927894,
       "seq": 40,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/competition/faqs-and-troubleshooting/fix-manager-leaderboard-filtering-to-respect-viewtype-parameter.md": {
+      "action": "upsert",
+      "ts": 1789482343224,
+      "seq": 41,
+      "author": "release-pipeline@smartwinnr.com"
     }
   }
 }
