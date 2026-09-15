@@ -446,6 +446,12 @@
       "ts": 1789470062776,
       "seq": 23,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/rewards-and-recognition/features/what-is-a-scratchcard.md": {
+      "action": "upsert",
+      "ts": 1789472097393,
+      "seq": 24,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
