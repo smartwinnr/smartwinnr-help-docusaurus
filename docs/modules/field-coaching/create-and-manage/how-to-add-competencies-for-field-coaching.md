@@ -9,7 +9,6 @@ last_update:
   author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-  privilege: fCoaching
 tags:
   - field-coaching
 draft: false

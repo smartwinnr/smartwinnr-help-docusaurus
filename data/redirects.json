@@ -559,7 +559,7 @@
     },
     {
       "from": "/administration/field-coaching-module/how-to-add-competencies-for-field-coaching",
-      "to": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching"
+      "to": "/modules/field-coaching/create-and-manage/how-to-add-competencies-for-field-coaching"
     },
     {
       "from": "/administration/field-coaching-module/how-to-create-field-coaching-template",
@@ -1063,7 +1063,7 @@
     },
     {
       "from": "/modules/field-coaching/how-to-add-competencies-for-field-coaching",
-      "to": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching"
+      "to": "/modules/field-coaching/create-and-manage/how-to-add-competencies-for-field-coaching"
     },
     {
       "from": "/modules/field-coaching/how-to-create-field-coaching-template",
@@ -1984,6 +1984,10 @@
     {
       "from": "/modules/cross-module/create-and-manage/how-to-process-reward-redemption-requests",
       "to": "/modules/rewards-and-recognition/create-and-manage/how-to-process-reward-redemption-requests"
+    },
+    {
+      "from": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching",
+      "to": "/modules/field-coaching/create-and-manage/how-to-add-competencies-for-field-coaching"
     }
   ]
 }
