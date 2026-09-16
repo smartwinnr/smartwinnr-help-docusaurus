@@ -5,7 +5,7 @@ description: "View competition rankings, participation, and scores, and download
 slug: how-to-read-competition-leaderboard-data
 sidebar_position: 10
 last_update:
-  date: 2026-09-11
+  date: 2026-09-16
   author: Sandeep Bhuthagaddala
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -77,11 +77,5 @@ Use the downloaded file for analysis, reporting, or sharing.
 
 
 ## Things to know
-
-:::note
-There is no separate **Analytics** button on the competition leaderboard. Use **Analytics** on an individual test when you need test-level details.
-:::
-
-:::note
-The available download format and options depend on your SmartWinnr configuration.
-:::
+**Note :**
+- There is no separate **Analytics** button on the competition leaderboard. Use **Analytics** on an individual test when you need test-level details.

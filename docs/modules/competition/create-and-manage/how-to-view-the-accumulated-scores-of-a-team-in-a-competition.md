@@ -5,7 +5,7 @@ description: "Learn how to track team performance by viewing accumulated scores 
 slug: view-accumulated-scores-team-competition
 sidebar_position: 999
 last_update:
-  date: 2026-09-09
+  date: 2026-09-16
   author: Sandeep Bhuthagaddala
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -44,7 +44,7 @@ Select between the **Participants Leaderboard** and the **Team Wise Leaderboard*
 
 ### 3. Monitor Scores and Rankings
 
-Observe the scores and rankings displayed in your chosen leaderboard view. The **Team Wise Leaderboard** automatically updates to reflect the total score of all team members as they earn points.
+Observe the scores and rankings displayed in your chosen leaderboard view. The **Team Wise Leaderboard** automatically updates to reflect the total score of all team members as they earn points. 
 
 ## Important Notes 
 
