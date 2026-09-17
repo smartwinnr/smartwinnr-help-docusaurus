@@ -5,7 +5,7 @@ description: "Learn how quizzes can be automatically reassigned based on score t
 slug: understanding-automatic-reassignment-in-quizzes
 sidebar_position: 55
 last_update:
-  date: 2026-09-03
+  date: 2026-09-17
   author: Sruthi Suresh
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -22,7 +22,7 @@ Quizzes may automatically reassign if your score falls below the set pass thresh
 You may encounter automatic reassignment in the following scenarios:
 - You completed a quiz but scored below the pass threshold.
 - You want to understand why a quiz has reappeared in your list.
-- You need guidance on retaking the quiz.
+- You need guidance on retaking the quiz
 
 ## Steps
 
