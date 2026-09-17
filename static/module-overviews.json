@@ -221,6 +221,51 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "rewards"
+    },
+    "audiolabs": {
+      "label": "\"Audio Labs\"",
+      "tagline": "\"Audio Labs\" - SmartWinnr module.",
+      "description": "\"Audio Labs\" - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
+    },
+    "videolabs": {
+      "label": "Video Labs",
+      "tagline": "Video Labs - SmartWinnr module.",
+      "description": "Video Labs - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
+    },
+    "zappy": {
+      "label": "Zappy",
+      "tagline": "Zappy - SmartWinnr module.",
+      "description": "Zappy - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
+    },
+    "questionstudio": {
+      "label": "Question Studio",
+      "tagline": "Question Studio - SmartWinnr module.",
+      "description": "Question Studio - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
+    },
+    "imagelab": {
+      "label": "Image Lab",
+      "tagline": "Image Lab - SmartWinnr module.",
+      "description": "Image Lab - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "authoringtools"
     }
   }
 }

@@ -5,8 +5,8 @@ description: "As AI Role Play becomes a bigger part of training, it matters more
 slug: what-is-scenario-lifecycle
 sidebar_position: 999
 last_update:
-  date: 2026-06-17
-  author: Sheri Deekshith Reddy
+  date: 2026-09-17
+  author: Anagha Isal
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: coaching
@@ -14,7 +14,9 @@ tags: [video-coaching, ai-coaching]
 draft: false
 ---
 
-> **At a glance** - The Scenario Lifecycle ensures that only the right versions of AI Role Play scenarios reach learners, providing clarity and control throughout the creation process.
+> **At a glance** - The Scenario Lifecycle ensures that only the right versions of AI Role Play scenarios reach learners, providing clarity and control throughout the creation process. Scenario Lifecycle Management helps you move an AI Coaching scenario through review, publishing, and archiving. It also keeps version history so you can review earlier edits.
+
+
 
 The Scenario Lifecycle is a structured process that governs how AI Role Play scenarios move from initial draft to live experience. It tracks every change, maintains a clear status at all times, and enforces assignment rules to protect learners from unfinished content. The same lifecycle applies to every video coaching type in SmartWinnr so drafting, reviewing, publishing, and archiving a coaching works the same way across the board.
 
@@ -26,6 +28,8 @@ Use the Scenario Lifecycle when creating or managing AI Role Play scenarios in S
 - You need to track changes and decisions made throughout the scenario's lifecycle.
 - You want to ensure that only finished scenarios are assigned to learners.
 - You are involved in reviewing or approving scenarios.
+- You need to archive a scenario without affecting existing learner assignments.
+
 
 ## Why the Scenario Lifecycle exists
 
@@ -37,11 +41,55 @@ The Scenario Lifecycle introduces a **governed journey**. Each scenario carries 
 
 The Scenario Lifecycle Management page is the single place to manage your scenarios. You can submit, approve or request changes, publish, archive or unarchive, and view both Version and Status History. Access this page from the scenario's **⋮ menu** to see all the lifecycle actions in one convenient location.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1adpa.png)
+![Scenario Lifecycle Management page](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1adpa.png)
 
 ## The five statuses, explained
 
-A scenario is always in exactly one status and moves through them **in order** — it cannot jump ahead. For example, a Draft cannot become Published without being submitted, reviewed, and approved first.
+A scenario is always in exactly one status and moves through them **in order** — it cannot jump ahead. For example, a Draft cannot become Published without being reviewed and approved first.
+
+## Lifecycle Stages
+
+**1. Draft**
+
+- Every newly created scenario will automatically be created in the Draft state.
+- This is the initial stage where the scenario creator builds and tests the scenario.
+- The scenario is fully editable.
+- It can only be assigned to demo users.
+- Available Action: **Submit for Review → Moves the scenario to In Review.**
+
+![draft stage](/img/helpscout/authored/what-is-scenario-lifecycle-management-mtvg2sdn.jpg)
+
+**2. In Review**
+
+- The scenario has been submitted for review.
+- It is locked while under review and remains available only for demo users.
+- Available Actions: 
+   - **Approve → Moves the scenario to Approved.** (If everything is as expected)
+   - **Request Changes → Moves the scenario back to Draft. A comment can be added explaining the required changes.**
+
+![In review stage](/img/helpscout/authored/what-is-scenario-lifecycle-management-mtvg58el.jpg)
+
+**3. Approved** 
+
+- The review is complete, and the scenario has been approved.
+- Confirm the scenario at this stage.
+- Available Actions:
+    - **Publish → Moves the scenario to Published.**
+    - **Send Back → Moves the scenario back to In Review if additional review is needed.**
+
+**4. Published**
+
+- The scenario is now live and can be assigned to all learners.
+- **Available Action: Archive → Moves the scenario to Archived.**
+
+**Note:** If you duplicate a published scenario, the duplicated scenario will also be created in the Draft state.
+
+**5. Archived**
+
+- The scenario is retired and cannot be assigned to new learners.
+- Existing learner assignments will continue to work.
+- Available Action: **Republish → Moves the scenario back to Published.**
+
 
 | Status | What it really means | Can it be edited? | Who can be assigned to it |
 |--------|----------------------|-------------------|---------------------------|
@@ -56,7 +104,7 @@ A scenario is always in exactly one status and moves through them **in order** �
 - **Demo users.** A *demo user* is a practice account. Assigning a not-yet-published scenario to a demo user allows you and your reviewers to run the role play and experience it as a learner would — without it counting for real people or appearing in real reporting. Think of it as a dress rehearsal. (See *Setting up demo users* below for how to create them.)
 - **The "live" version.** Once a scenario is published, the **published version** is the single source of truth for learners. Even if you keep editing afterward, the most recent published version is what they see, ensuring ongoing edits do not disrupt learners who are mid-way through.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1b0kd.png)
+![How to set demo user](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1b0kd.png)
 
 ## Setting up demo users
 
@@ -75,7 +123,7 @@ A few helpful details:
 
 > **Tip:** Keep a small, dedicated set of demo accounts for testing. This keeps your rehearsals separate from real learners and maintains clean reporting.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1bwrb.png)
+![demo user](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1bwrb.png)
 
 ## Who can approve a scenario?
 
@@ -125,7 +173,7 @@ While it's still a Draft, assign it to a **demo user** and run through it yourse
 
 When you're happy with it, open the scenario's **⋮ menu** and choose **Submit for Review**. You'll be asked to confirm. Submitting moves the scenario to **In Review** and signals to your team that it's ready for a check. At this moment, SmartWinnr also locks in a clean snapshot of the scenario, so the reviewer always looks at a known version.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwhnd4.png)
+![submit for review](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwhnd4.png)
 
 ### Step 4 — Review and decide
 
@@ -136,7 +184,7 @@ A reviewer — someone who holds an Editor/Admin/Org Admin role **and** is the c
 
 Leaving a clear comment when requesting changes is strongly encouraged — it's captured in the Status History and tells the author exactly what to fix.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwivl7.png)
+![approve stage](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwivl7.png)
 
 ### Step 5 — Publish it
 
@@ -146,7 +194,7 @@ Once a scenario is **Approved**, publish it. Publishing is the moment it truly g
 - You can now assign it to **anyone**: individuals, groups, or meta-tags.
 - It's clearly marked so everyone knows it's the active, official version.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwj6ge.png)
+![publish stage](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwj6ge.png)
 
 ### Step 6 — Maintain it over time
 
@@ -159,7 +207,7 @@ Publishing isn't the end. Scenarios evolve, and the lifecycle is built for that:
 
 When a scenario has served its purpose, **archive** it. Archived scenarios are kept for your records and reporting history, but they can't be assigned to anyone new. If you ever need it again, an authorized owner can bring it back by unarchiving it (which returns it to a published state).
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwjvto.png)
+![archieve](/img/helpscout/authored/what-is-scenario-lifecycle-mqiwjvto.png)
 
 ## Assigning scenarios to learners
 
@@ -182,7 +230,7 @@ The lifecycle's most important safety feature is how it controls assignment. The
 
 A major benefit of the lifecycle is that **you never have to wonder what happened to a scenario.** Open **Scenario Lifecycle Management** from the scenario's **⋮ menu** to see its full history.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1pmqa.png)
+![version and history](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1pmqa.png)
 
 ### Version History — what changed in the content
 
@@ -202,7 +250,7 @@ You can click **View** on any version to open a **read-only snapshot** of exactl
 
 So the version number itself tells a story: a jump from v2.x to v3.0 signals a significant rework, while v3.1, v3.2 are gentle refinements.
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1q9tu.png)
+![version number](/img/helpscout/authored/what-is-scenario-lifecycle-mqj1q9tu.png)
 
 ### Status History — the scenario's journey
 
@@ -210,7 +258,7 @@ This is the timeline of the scenario's *journey* (as opposed to its content). It
 
 Because approval is tied to each scenario's owners, this history is your accountability record: it always answers "who approved this, and when?"
 
-![](/img/helpscout/authored/what-is-scenario-lifecycle-mqj16y37.png)
+![status history](/img/helpscout/authored/what-is-scenario-lifecycle-mqj16y37.png)
 
 ## Duplicating a scenario
 
