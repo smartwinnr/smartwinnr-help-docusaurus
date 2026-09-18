@@ -19,7 +19,7 @@
     ],
     "privilege": "managerView",
     "allPrivileges": [
-      "authoringtools"
+      "authoringTools"
     ]
   }
 }

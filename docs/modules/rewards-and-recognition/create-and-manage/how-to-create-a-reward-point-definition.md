@@ -11,7 +11,7 @@ customProps:
   owner: jazz.k@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["rewards"]
-draft: false
+draft: true
 ---
 
 > **At a glance** - Use point definitions to set up reward points, choose how users earn them, and add expiry reminders.
