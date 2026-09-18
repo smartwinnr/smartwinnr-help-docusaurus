@@ -2058,8 +2058,16 @@ function isValidSlug(s) { return /^[a-z0-9][a-z0-9-]{0,120}$/.test(String(s || '
  *  shapes get reduced to the root-relative path Docusaurus actually serves.
  */
 function stripBogusImageOrigins(markdown) {
-  // Pass 1: well-formed bogus origin. e.g. https://help.smartwinnr.com/img/X.png
+  // Pass 0: JSON-style escaped slashes. e.g. ](\/img\/helpscout\/authored\/X.png)
+  // Docusaurus unescapes these and requires the image, but every scanner
+  // that bundles/journals screenshots keys on `/img/`, so an escaped article
+  // once shipped without its images and broke the production build.
   let result = markdown.replace(
+    /(!\[[^\]]*\]\(\s*)(\\?\/img\\\/[^\s)]+)/g,
+    (_m, pre, url) => pre + url.replace(/\\\//g, '/'),
+  );
+  // Pass 1: well-formed bogus origin. e.g. https://help.smartwinnr.com/img/X.png
+  result = result.replace(
     /!\[([^\]]*)\]\(https?:\/\/[^/)]+(\/img\/[^\s)]+)\)/g,
     '![$1]($2)',
   );
@@ -2725,7 +2733,9 @@ const PENDING_FILES_DIR = path.join(__dirname, 'data', 'pending-files');
 // Tolerate whitespace inside the parens - `]( /img/...)` is valid CommonMark
 // (Docusaurus resolves it), so a scanner that misses it ships articles
 // without their screenshots and breaks every subsequent production build.
-const AUTHORED_IMAGE_PATTERN = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
+// Same for `\/` escapes: `](\/img\/...)` also resolves in Docusaurus, so
+// matches are unescaped before use (see imagesReferencedBy).
+const AUTHORED_IMAGE_PATTERN = /!\[[^\]]*\]\(\s*(\\?\/img\\?\/helpscout\\?\/authored\\?\/[^)\s]+)\s*\)/g;
 
 function snapshotQueuedFile(relPath) {
   try {
@@ -2736,8 +2746,8 @@ function snapshotQueuedFile(relPath) {
     fsSync.copyFileSync(src, dst);
     if (/\.(md|mdx)$/i.test(relPath)) {
       const body = fsSync.readFileSync(src, 'utf8');
-      for (const m of body.matchAll(AUTHORED_IMAGE_PATTERN)) {
-        const imgRel = 'static' + m[1];
+      for (const imgUrl of imagesReferencedBy(body)) {
+        const imgRel = 'static' + imgUrl;
         const imgSrc = path.join(__dirname, imgRel);
         if (!fsSync.existsSync(imgSrc)) continue;
         const imgDst = path.join(PENDING_FILES_DIR, imgRel);
@@ -3097,7 +3107,9 @@ function journalReferencedAuthoredImages() {
       if (!/\.(md|mdx)$/i.test(item.name)) continue;
       let text = '';
       try { text = fsSync.readFileSync(abs, 'utf8'); } catch { continue; }
-      for (const m of text.matchAll(/\/img\/helpscout\/authored\/([A-Za-z0-9._-]+)/g)) {
+      // `\/`-tolerant: an escaped reference is still a live one, and missing
+      // it drops the screenshot from the journal as "abandoned".
+      for (const m of text.matchAll(/\\?\/img\\?\/helpscout\\?\/authored\\?\/([A-Za-z0-9._-]+)/g)) {
         refs.add(`static/img/helpscout/authored/${m[1]}`);
       }
     }
@@ -3533,7 +3545,10 @@ function knownPrivilegesSet() {
 }
 
 async function ensureKnownPrivilegesSeeded() {
-  if (fsSync.existsSync(KNOWN_PRIVILEGES_PATH)) return;
+  if (fsSync.existsSync(KNOWN_PRIVILEGES_PATH)) {
+    dropCaseDuplicatePrivileges();
+    return;
+  }
   if (!GIT_PUSH_ENABLED || !GIT_PUSH_TOKEN || !GITHUB_REPO) return;
   try {
     const content = await ghFetchFile('data/known-privileges.json');
@@ -3546,6 +3561,25 @@ async function ensureKnownPrivilegesSeeded() {
   }
 }
 ensureKnownPrivilegesSeeded();
+
+/** The volume copy is seeded once and never re-synced, so a key the repo
+ *  has since deduped survives there: "authoringtools" outlived its July
+ *  removal, passed the pre-flight privilege check, and got stamped onto five
+ *  new modules. Drop any all-lowercase key that has a mixed-case sibling. */
+function dropCaseDuplicatePrivileges() {
+  try {
+    const doc = JSON.parse(fsSync.readFileSync(KNOWN_PRIVILEGES_PATH, 'utf8'));
+    const list = doc.privileges || [];
+    const mixedLower = new Set(list.filter((k) => k !== k.toLowerCase()).map((k) => k.toLowerCase()));
+    const kept = list.filter((k) => k !== k.toLowerCase() || !mixedLower.has(k));
+    if (kept.length === list.length) return;
+    console.log(`[audit] dropped case-duplicate privilege key(s): ${list.filter((k) => !kept.includes(k)).join(', ')}`);
+    doc.privileges = kept;
+    fsSync.writeFileSync(KNOWN_PRIVILEGES_PATH, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  } catch (e) {
+    console.warn('[audit] could not dedupe known-privileges.json:', e.message);
+  }
+}
 
 /** Options bundle wiring the build-physics checks into gradeMarkdown. An
  *  empty privilege set disables that check rather than flagging everything. */
@@ -3647,9 +3681,8 @@ async function fireDeploy() {
     // articles with such references are held back in the queue instead of
     // committed. Re-uploading the screenshot (or removing the reference)
     // unblocks them on the next deploy.
-    // Whitespace-tolerant (`]( /img/...)` is valid CommonMark) - a miss here
-    // means the image is neither bundled nor held back, and CI breaks.
-    const IMAGE_PATTERN = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
+    // Scanned via imagesReferencedBy (whitespace- and `\/`-tolerant) - a miss
+    // here means the image is neither bundled nor held back, and CI breaks.
     const repoHasCache = new Map();
     async function repoHasFile(rel) {
       if (repoHasCache.has(rel)) return repoHasCache.get(rel);
@@ -3677,9 +3710,9 @@ async function fireDeploy() {
       perFile.set(f.rel, status);
       const relNorm = f.rel.replace(/\\/g, '/');
       if (/^docs\/.+\.(md|mdx)$/i.test(relNorm)) {
-        for (const m of f.content.matchAll(IMAGE_PATTERN)) {
+        for (const imgUrl of imagesReferencedBy(f.content)) {
           // /img/helpscout/authored/X → static/img/helpscout/authored/X
-          const rel = 'static' + m[1];
+          const rel = 'static' + imgUrl;
           if (fsSync.existsSync(path.join(__dirname, rel))) {
             status.bundle.push(rel);
           } else if (!(await repoHasFile(rel))) {
@@ -4746,7 +4779,7 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     // would reject them on the next deploy commit anyway; doing it here
     // keeps the saved file consistent with what /save produces and the
     // audit result reflects the on-disk state.
-    const cleaned = stripDecorativeEmojis(markdown);
+    const cleaned = stripDecorativeEmojis(stripBogusImageOrigins(markdown));
     // Audit runs advisory for STYLE - the raw editor surfaces those findings
     // as warnings, not blockers; the wizard's /save is the strict gate and
     // raw edits trust the superadmin's judgment for surgical fixes. Build-
@@ -5185,9 +5218,8 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
 /** Scan an article body for /img/helpscout/authored/... image URLs.
  *  Returns a Set of root-relative URLs (e.g. "/img/helpscout/authored/foo.png"). */
 function imagesReferencedBy(markdown) {
-  const re = /!\[[^\]]*\]\(\s*(\/img\/helpscout\/authored\/[^)\s]+)\s*\)/g;
   const out = new Set();
-  for (const m of markdown.matchAll(re)) out.add(m[1]);
+  for (const m of markdown.matchAll(AUTHORED_IMAGE_PATTERN)) out.add(m[1].replace(/\\\//g, '/'));
   return out;
 }
 
@@ -5203,7 +5235,8 @@ function isImageReferencedElsewhere(imgUrl, excludeAbs) {
         if (walk(p)) return true;
       } else if (entry.isFile() && /\.(md|mdx)$/.test(entry.name) && p !== excludeAbs) {
         try {
-          if (fsSync.readFileSync(p, 'utf8').includes(imgUrl)) return true;
+          const text = fsSync.readFileSync(p, 'utf8');
+          if (text.includes(imgUrl) || text.includes(imgUrl.replace(/\//g, '\\/'))) return true;
         } catch {/* ignore */}
       }
     }
@@ -5375,6 +5408,16 @@ function modulesFromOverviews(doc) {
 function loadKnownPrivileges() {
   if (!fsSync.existsSync(KNOWN_PRIVILEGES_PATH)) return { privileges: [] };
   return JSON.parse(fsSync.readFileSync(KNOWN_PRIVILEGES_PATH, 'utf8'));
+}
+
+/** The known key matching `key` case-insensitively, or undefined. When the
+ *  list holds several casings (a stale volume copy with both "authoringtools"
+ *  and "authoringTools"), the camelCase one wins - LMS keys are camelCase,
+ *  and the all-lowercase variant sorts first, so a plain find() picked it. */
+function canonicalPrivilegeKey(key, list) {
+  const lower = String(key).toLowerCase();
+  const matches = list.filter((k) => k.toLowerCase() === lower);
+  return matches.find((k) => k !== k.toLowerCase()) || matches[0];
 }
 
 function saveKnownPrivileges(doc) {
@@ -6093,13 +6136,22 @@ app.get('/api/admin/authoring/stats', requireRole('superadmin'), async (req, res
 
 app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) => {
   try {
-    const { slug, label, anyPrivilege, description } = req.body || {};
-    let { privilege } = req.body || {};
+    const { slug, label, description } = req.body || {};
+    let { privilege, anyPrivilege } = req.body || {};
     if (!isValidSlug(slug)) {
       return res.status(400).json({ error: 'slug must be kebab-case (a-z, 0-9, hyphen)' });
     }
-    if (!label || typeof label !== 'string' || !label.trim()) {
+    // Authors sometimes type the label in quotes ("Audio Labs"), which then
+    // renders literally in the sidebar and overview card.
+    const labelTrim = typeof label === 'string'
+      ? label.trim().replace(/^["'“‘]+|["'”’]+$/g, '').trim()
+      : '';
+    if (!labelTrim) {
       return res.status(400).json({ error: 'label required' });
+    }
+    if (Array.isArray(anyPrivilege)) {
+      const known = loadKnownPrivileges().privileges || [];
+      anyPrivilege = anyPrivilege.map((k) => (typeof k === 'string' && canonicalPrivilegeKey(k, known)) || k);
     }
 
     const overviews = loadOverviews();
@@ -6121,7 +6173,7 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
       // canonical key, not a new privilege - "authoringtools" once minted
       // a novel key beside the real "authoringTools" and gated a whole
       // module on a privilege no org has.
-      const canonical = list.find((k) => k.toLowerCase() === privilege.toLowerCase());
+      const canonical = canonicalPrivilegeKey(privilege, list);
       if (canonical && canonical !== privilege) {
         privilegeCorrected = { from: privilege, to: canonical };
         privilege = canonical;
@@ -6138,7 +6190,6 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
     }
 
     const position = maxModulePositionOnDisk() + 10 || 10;
-    const labelTrim = label.trim();
     const tagline = (description && String(description).trim()) || `${labelTrim} - SmartWinnr module.`;
 
     const written = writeModuleSkeleton({
