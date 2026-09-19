@@ -308,6 +308,12 @@
       "ts": 1789739397812,
       "seq": 1,
       "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/for-learners/what-are-coaching-deep-links.md": {
+      "action": "upsert",
+      "ts": 1789802092738,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
