@@ -1,7 +1,7 @@
 ---
 id: use-smart-links-to-open-the-app-store-or-web-on-any-device
-title: "Use Deep Links to open the app, store, or web on any device"
-description: "Use Smart Links to send one link that opens the app, app store, or web experience based on the user's device."
+title: "Use deep links to open SmartWinnr on any device"
+description: "Use a single deep Link to open the SmartWinnr app, app store, or web experience based on the user’s device."
 slug: use-smart-links-to-open-the-app-store-or-web-on-any-device
 sidebar_position: 20
 last_update:
@@ -9,11 +9,11 @@ last_update:
   author: Manaswini V
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
-tags: ["smart-links"]
+tags: ["deep-links"]
 draft: true
 ---
 
-> **At a glance** Deep Links send users to the right SmartWinnr experience based on their device and app availability.
+> **At a glance** - Deep Links send users to the right SmartWinnr experience based on their device and app availability.
 
 Deep Links give you one shareable link for mobile and desktop users. The link opens the SmartWinnr app when it is installed, sends users to the app store when it is not, and opens the web application on desktop or laptop.
 
@@ -43,3 +43,4 @@ A Deep Link detects the user's device and whether the SmartWinnr app is installe
 **Deep Link → Device & App Detection → Appropriate Destination**
 
 ## Things to know
+Deep Links use the **links.smartwinnr.com** domain. Users may see this domain when they receive or share a Deep Link.
