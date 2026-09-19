@@ -13,38 +13,32 @@ tags: ["video-coaching", "deep-links"]
 draft: true
 ---
 
-> **At a glance** - Coaching Deep Links give assigned users one shareable link for a Coaching activity. The link opens the right experience on mobile or desktop.
+***At a glance*** - Coaching provides **Copy Smart Link** and **Coaching Universal Link** options to share a Coaching activity with assigned users. These links help users access the Coaching activity from supported devices and experiences.
 
-Coaching Deep Links let you share a Coaching activity with assigned users through one link. SmartWinnr opens the activity in the best available experience based on the user’s device and app availability.
+Coaching links let you share a Coaching activity with users. **Copy Smart Link** provides a device-aware link that directs users to the appropriate SmartWinnr experience based on their device and app availability. **Coaching Universal Link** provides a shareable link for accessing the Coaching activity it provides he access for everyone
 
 ## When to use this
 
-Use Coaching Deep Links when you want to share one Coaching activity link with assigned users.
+Use Coaching links when you want to:
 
-- Share a Coaching activity with a single link.
-- Let users open the activity on mobile or desktop.
-- Open the activity in the SmartWinnr app when it is installed.
-- Send users to the app store when the app is not installed.
-- Open the activity in the SmartWinnr web application on a desktop or laptop.
+* Share a Coaching activity with assigned users.
+* Use **Copy Smart Link** to provide a device-aware link that opens the appropriate SmartWinnr experience.
+* Use the **Coaching Universal Link** to share a link to the Coaching activity.
+* Allow users to access the activity from mobile or desktop.
 
-## How Coaching Deep Links work
+## How Coaching links work
 
-### 1. Copy the deep link
+### Copy Smart Link
 
-On the **Coaching View** page, use **Copy Deep Link** to get a shareable link for the activity.
+On the **Coaching View** page, use **Copy Smart Link** to get a shareable link for the Coaching activity.
 
-### 2. Share the link
+When an assigned user opens the Smart Link:
 
-Send the link to the users assigned to the Coaching activity. Only assigned users can use the link.
+* **Mobile + SmartWinnr app installed:** Opens the Coaching activity in the SmartWinnr app.
+* **Mobile + app not installed:** Redirects the user to the appropriate app store.
+* **Desktop/Laptop:** Opens the Coaching activity in the SmartWinnr web application.
 
-### 3. Open the right experience
+### Coaching Universal Link
 
-When a user opens the link, SmartWinnr checks the device and app availability.
+The **Coaching Universal Link** provides a shareable link to the Coaching activity. You can share this link with users who need to access the activity.
 
-- On mobile with the app installed, the link opens the Coaching activity in the SmartWinnr app.
-- On mobile without the app installed, the link opens the appropriate app store.
-- On desktop or laptop, the link opens the Coaching activity in the SmartWinnr web application.
-
-:::note
-Coaching Deep Links work only for users assigned to the Coaching activity.
-:::
