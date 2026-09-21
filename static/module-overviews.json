@@ -223,13 +223,13 @@
       "privilege": "rewards"
     },
     "audiolabs": {
-      "label": "\"Audio Labs\"",
-      "tagline": "\"Audio Labs\" - SmartWinnr module.",
-      "description": "\"Audio Labs\" - SmartWinnr module.",
+      "label": "Audio Labs",
+      "tagline": "Audio Labs - SmartWinnr module.",
+      "description": "Audio Labs - SmartWinnr module.",
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "authoringtools"
+      "privilege": "authoringTools"
     },
     "videolabs": {
       "label": "Video Labs",
@@ -238,7 +238,7 @@
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "authoringtools"
+      "privilege": "authoringTools"
     },
     "zappy": {
       "label": "Zappy",
@@ -247,7 +247,7 @@
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "authoringtools"
+      "privilege": "authoringTools"
     },
     "questionstudio": {
       "label": "Question Studio",
@@ -256,7 +256,7 @@
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "authoringtools"
+      "privilege": "authoringTools"
     },
     "imagelab": {
       "label": "Image Lab",
@@ -265,16 +265,16 @@
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "authoringtools"
+      "privilege": "authoringTools"
     },
-    "actionplanning": {
-      "label": "Action Planning",
-      "tagline": "Action Planning - SmartWinnr module.",
-      "description": "Action Planning - SmartWinnr module.",
+    "content-center": {
+      "label": "Content Center",
+      "tagline": "Content Centre is a central repository for managing SmartWinnr content, supporting its creation, review, publishing, archiving, versioning, and use across different experiences.",
+      "description": "Content Centre is a central repository for managing SmartWinnr content, supporting its creation, review, publishing, archiving, versioning, and use across different experiences.",
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
-      "privilege": "actionPlanning"
+      "privilege": "contentCenter"
     }
   }
 }

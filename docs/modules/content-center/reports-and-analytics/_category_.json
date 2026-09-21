@@ -1,0 +1,21 @@
+{
+  "label": "Reports & Analytics",
+  "position": 6,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Reports & Analytics",
+    "slug": "/modules/content-center/reports-and-analytics"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "contentCenter"
+  }
+}

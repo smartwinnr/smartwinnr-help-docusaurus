@@ -6,7 +6,7 @@ description: >-
 slug: how-to-add-a-survey-to-a-competition
 sidebar_position: 104
 last_update:
-  date: 2026-08-19
+  date: 2026-09-21
   author: Sandeep Bhuthagaddala
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -50,7 +50,7 @@ Check the **“Choose Participants Manually”** checkbox to manually select the
 ### 6. Create the Survey
 Click the **“Create”** button. You will be redirected to a page where you can **create a new survey** and add it to the competition.
 
-[How can I create a survey?](/modules/survey/create-and-manage/how-to-create-a-survey)
+[How can I create a survey?](/modules/survey/create-and-manage/how-to-create-a-survey) 
 
 [What are the different question types in a survey?](/modules/survey/features/what-are-the-different-question-types-in-a-survey-survey-template)
 

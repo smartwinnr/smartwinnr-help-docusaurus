@@ -1,0 +1,17 @@
+{
+  "label": "Content Center",
+  "position": 210,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}
