@@ -9,7 +9,7 @@ last_update:
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
-  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
+  roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["video-coaching", "deep-links"]
 draft: false
 ---

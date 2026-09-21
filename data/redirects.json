@@ -1988,6 +1988,10 @@
     {
       "from": "/modules/field-coaching/features/how-to-add-competencies-for-field-coaching",
       "to": "/modules/field-coaching/create-and-manage/how-to-add-competencies-for-field-coaching"
+    },
+    {
+      "from": "/modules/video-coaching/for-learners/what-are-coaching-deep-links",
+      "to": "/modules/video-coaching/create-and-manage/what-are-coaching-deep-links"
     }
   ]
 }
