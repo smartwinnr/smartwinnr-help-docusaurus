@@ -5,7 +5,7 @@ description: "Learn how to enable proctoring features to maintain assessment int
 slug: setup-quiz-proctoring
 sidebar_position: 999
 last_update:
-  date: 2026-09-02
+  date: 2026-09-22
   author: Sruthi Suresh
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -15,7 +15,7 @@ tags: ["quiz"]
 
 > **At a glance** - This article explains how to enable proctoring for quizzes to ensure assessment integrity.
 
-You can set up proctoring for your quizzes to reduce the chances of malpractice and maintain a secure testing environment. Proctoring allows for webcam and screen monitoring during quiz attempts, which is essential for high-stakes assessments.
+You can set up proctoring for your quizzes to reduce the chances of malpractice and maintain a secure testing environment. Proctoring allows for webcam and screen monitoring during quiz attempts, which is essential for high-stakes assessments
 
 ## When to use this
 
