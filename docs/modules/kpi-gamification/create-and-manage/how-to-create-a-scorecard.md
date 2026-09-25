@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-scorecard
 sidebar_position: 176
 last_update:
-  date: 2026-08-17
-  author: Sruthi Suresh
+  date: 2026-09-25
+  author: Anagha Isal
 source:
   helpscout_id: 5fdb13f67129911ba1b21e6b
   helpscout_url: 'https://help.smartwinnr.com/article/176-how-to-create-a-scorecard'
@@ -24,14 +24,69 @@ draft: false
 
 > **At a glance** - This article explains how to create a scorecard to measure sales reps against set KPIs, including detailed steps for adding KPIs and selecting users.
 
-Scorecards are a way to measure sales reps against set KPIs, along with scores and leaderboards. [Read more](/modules/kpi-gamification/features/what-are-scorecards) about Scorecards.
+A Scorecard helps you measure sales representatives against defined KPIs. You can configure how each KPI is measured, assign scores based on performance, add users to the Scorecard, and use leaderboards to track performance.[Read more](/modules/kpi-gamification/features/what-are-scorecards) about Scorecards.
 
-Here is how to fill each field to create a scorecard:
 
 ## When to use this
-Use this feature when you want to track the performance of sales representatives against defined KPIs. Scorecards help in evaluating their achievements and ranking them on leaderboards.
+
+Use a Scorecard when you want to:
+
+- Track sales representatives against defined KPIs.
+- Assign points based on KPI performance.
+- Measure performance at different levels or against targets.
+- Combine multiple KPIs into a single KPI Collection.
+- Rank users on a leaderboard.
+- Track KPI performance over a defined measurement frequency.
 
 ## Steps
+
+### 1. Configure the Scorecard
+
+Go to **Editor > KPI Scorecards > Scorecards** and create a new Scorecard.
+
+The first step is to configure the basic details of the Scorecard.
+
+![Select Measurement Frequency and KPIs](/img/helpscout/authored/how-to-create-a-scorecard-mswu8sgl.png)
+
+**Business Unit**: Select the Business Unit for which you want to create the Scorecard.
+
+**Measurement Frequency**: Select how the KPIs should be measured, such as Daily basis, Weekly basis, Monthly basis, Quarterly basis, or Annually. Also, the target you define for each KPI will be the target for the selected frequency. Thus if you choose **frequency as Weekly, the target you set against each KPI will be the weekly target**.
+
+**Visibility**: Choose whether the Scorecard should be visible to users.
+
+**Priority**: Set the display priority of the Scorecard. A lower number gives the Scorecard a higher display position.
+
+For example:
+- 1 — displayed first
+- 2 — displayed second
+- 3 — displayed third
+
+**Scorecard Name**: Enter a name for the Scorecard.
+
+**Scorecard Description**: Add a short description explaining the purpose of the Scorecard.
+
+**Activation and End Date**: Set the Activation Date and End Date to define when the Scorecard is active. The data get recording in the scorecard for this date range.
+
+Data Visibility Date
+
+Configure when KPI data becomes visible to:
+
+User
+Manager
+Time Zone
+
+Select the time zone in which the Scorecard should operate.
+
+
+
+
+
+
+
+
+
+
+
 
 ### 1. Select Measurement Frequency and KPIs
 **Business Unit:** Select the business unit for which you would like to create the scorecard. In most cases, you might not see this field at all.
@@ -44,7 +99,6 @@ Use this feature when you want to track the performance of sales representatives
 
 **Priority:** Assign a priority to the scorecard. According to this priority, it will be displayed in the report. For example, if you give "1" here, it will be displayed in the first position. If you give "2," it will be displayed in the second position.
 
-![Select Measurement Frequency and KPIs](/img/helpscout/authored/how-to-create-a-scorecard-mswu8sgl.png)
 
 **Scorecard Name:** Give a name to the scorecard.
 
@@ -53,7 +107,7 @@ Use this feature when you want to track the performance of sales representatives
 
 **KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the **Add KPI** button.
 
-![describe this screenshot](/img/helpscout/authored/how-to-create-a-scorecard-mswuqjpo.png)
+![Choose KPI or KPI collection](/img/helpscout/authored/how-to-create-a-scorecard-mswuqjpo.png)
 
 ### 2. Fill in KPI Details
 Here is how to fill the fields to add KPIs:
