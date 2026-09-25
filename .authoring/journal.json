@@ -470,6 +470,12 @@
       "ts": 1790332083266,
       "seq": 137,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-scorecard-mugtjuap.png": {
+      "action": "upsert",
+      "ts": 1790332173602,
+      "seq": 138,
+      "author": "anagha.isal@smartwinnr.com"
     }
   }
 }
