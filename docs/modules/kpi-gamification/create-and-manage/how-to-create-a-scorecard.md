@@ -38,9 +38,30 @@ Use a Scorecard when you want to:
 - Rank users on a leaderboard.
 - Track KPI performance over a defined measurement frequency.
 
+## Before you create a Scorecard
+
+Before creating a Scorecard, make sure the required KPIs have been configured.
+
+The typical KPI setup process in SmartWinnr is:
+
+1. **Define KPIs**
+2. **Configure Field Mappings**
+3. **Create Scorecards**
+
+Scorecards use the KPI data received through the configured data source and field mappings to measure performance and calculate scores.
+
+You can configure Scorecards to measure performance at different frequencies, such as:
+
+- Daily
+- Weekly
+- Monthly
+- Quarterly
+- Annually
+- Custom Date Range
+
 ## Steps
 
-### 1. Configure the Scorecard
+## 1. Configure the Scorecard
 
 Go to **Editor > KPI Scorecards > Scorecards** and create a new Scorecard.
 
@@ -67,47 +88,213 @@ For example:
 
 **Activation and End Date**: Set the Activation Date and End Date to define when the Scorecard is active. The data get recording in the scorecard for this date range.
 
-Data Visibility Date
+**Data Visibility Date**: Configure when KPI data becomes visible to:
+- User
+- Manager
 
-Configure when KPI data becomes visible to:
-
-User
-Manager
-Time Zone
-
-Select the time zone in which the Scorecard should operate.
+**Time Zone**: Select the time zone in which the Scorecard should operate.
 
 
+## 2. Configure Scorecard Settings
+
+SmartWinnr provides additional settings that control how Scorecard data is initialized, stored, displayed, and used.
+
+These options can be enabled based on the requirements of your Scorecard.
+
+### 1. Add Leaderboard
+
+**Enabled by default**
+
+The **Add Leaderboard** option adds a leaderboard view to the Scorecard.
+
+When enabled, users can view how they rank compared to other users based on their Scorecard performance.
+
+Use this option when you want the Scorecard to support performance visibility and comparison between users.
+
+---
+
+### 2. Initialize Data Automatically
+
+**Disabled by default**
+
+When **Initialize Data Automatically** is enabled, SmartWinnr automatically creates Scorecard records for every user.
+
+The records are created with:
+
+- Achievement set to **zero**.
+- The default target pre-filled.
+
+This removes the need to manually create or upload the initial Scorecard data.
+
+For example, if a Scorecard is created for 100 users, enabling this option automatically creates the initial Scorecard records for those users.
+
+---
+
+### 3. Store Previous Achievement
+
+**Disabled by default**
+
+The **Store Previous Achievement** option stores the achievement value from the previous measurement period along with the current period's data.
+
+For example, for a monthly Scorecard:
+
+- Current period → September achievement
+- Previous achievement → August achievement
+
+This is useful when the previous period's achievement is required for comparison or further calculations.
+
+---
+
+### 4. Consider Previous Target
+
+**Disabled by default**
+
+When **Consider Previous Target** is enabled, SmartWinnr uses the target from the previous measurement period if a target has not been configured for the current period.
+
+For example:
+
+- August target = 100
+- September target is not available
+- Previous target is considered → 100
+
+This option applies to recurring measurement frequencies.
+
+> **Note:** This option does not apply to custom date ranges.
+
+---
+
+### 5. Sync with Competition Attributes
+
+**Disabled by default**
+
+The **Sync with Competition Attributes** option links the Scorecard settings with the attributes configured for a Competition.
+
+When enabled, changes made to the Competition configuration are reflected in the Scorecard automatically.
+
+This can be useful when the Scorecard and Competition are expected to use the same configuration.
+
+---
+
+### 6. Maintain History By Frequency
+
+**Disabled by default**
+
+The **Maintain History By Frequency** option keeps a historical snapshot of Scorecard data whenever a new measurement period begins.
+
+For example, if the Scorecard is configured with a monthly frequency, historical data can be maintained for each month.
+
+This allows you to look back at the Scorecard data for previous periods even after the current data has been updated.
+
+> **Note:** This option does not apply to custom date ranges.
+
+---
+
+### 7. Store Organizational Achievement
+
+**Disabled by default**
+
+The **Store Organizational Achievement** option calculates and stores an achievement value at the organisation level.
+
+The organisational achievement can be:
+
+- Summed across all users.
+- Grouped using an organisation metatag, such as **Region** or **Division**.
+
+For example, instead of storing achievement only for individual users, the Scorecard can maintain an organisation-level achievement or achievement grouped by a relevant metatag.
+
+> **Note:** An organisation-level target must be configured for each KPI when using this option.
+
+---
+
+### 8. Store Team Wise KPI Data
+
+**Disabled by default**
+
+> **Note:** This option is available only when the required tenant-level configuration is enabled.
+
+The **Store Team Wise KPI Data** option aggregates individual user KPI data at the team or group level and stores it separately.
+
+You can specify the teams to be considered using a **group type or organisation metatag**.
+
+The resulting team-level data includes the team's achievement and member count.
+
+For example, individual KPI achievements can be aggregated to create a KPI achievement record for each configured team.
+
+---
+
+### 9. Custom Scorecard
+
+**Disabled by default**
+
+The **Custom Scorecard** option allows you to customize how the Scorecard is displayed in the application.
+
+When enabled, you can:
+
+- Give the Scorecard tab a custom display name.
+- Choose whether the tab appears at the beginning or end of the tab list.
+
+If this option is not enabled, the Scorecard uses the default display name and position.
+
+---
+
+### 10. Allow Navigation
+
+**Enabled by default**
+
+The **Allow Navigation** option controls whether users can navigate between the different sections or tabs within the Scorecard.
+
+When enabled, users can navigate between the available Scorecard views.
+
+When disabled, users see only the default Scorecard view and cannot switch between the available sections.
 
 
+## 3. Add KPIs to the Scorecard
 
+Once the Scorecard configuration is complete, add the KPIs that you want to measure.
 
+Under **KPIs Added to this Scorecard**, you can:
 
-
-
-
-
-
-### 1. Select Measurement Frequency and KPIs
-**Business Unit:** Select the business unit for which you would like to create the scorecard. In most cases, you might not see this field at all.
-
-**Measurement Frequency:** Specify how frequently you want to measure the KPIs, such as daily, weekly, monthly, quarterly, or annually.
-
-**Status:** Select the status of the scorecard here: Active or Inactive.
-
-**Visibility:** Choose if you want to make this visible to the users or hide it.
-
-**Priority:** Assign a priority to the scorecard. According to this priority, it will be displayed in the report. For example, if you give "1" here, it will be displayed in the first position. If you give "2," it will be displayed in the second position.
-
-
-**Scorecard Name:** Give a name to the scorecard.
-
-**Scorecard Description:** Write a short description of the scorecard.
-
-
-**KPIs Added to this Scorecard:** In this section, add the KPIs that you would like to measure in the scorecard by clicking on the **Add KPI** button.
+- Add an individual KPI.
+- Add a KPI Collection.
+- Change the sequence in which KPIs are displayed.
 
 ![Choose KPI or KPI collection](/img/helpscout/authored/how-to-create-a-scorecard-mswuqjpo.png)
+
+Click Add KPI to add an individual KPI to the Scorecard.
+
+You can then configure the KPI's visibility, position, measurement type, target, and scoring rules.
+
+Add KPI Collection
+
+Click Add KPI Collection to create a new KPI by combining multiple existing KPIs.
+
+A KPI Collection allows you to select multiple KPIs and combine their data into a newly created KPI.
+
+When creating a KPI Collection, you can configure:
+
+KPI Name: Enter the name of the KPI Collection.
+Abbreviation: Enter a short abbreviation for the KPI Collection.
+Priority: Set the display priority.
+KPI Description: Add a description explaining what the KPI Collection represents.
+Display Properties: Add display properties if required.
+Select KPIs: Select the existing KPIs that you want to include in the collection.
+
+For example, you can create a KPI Collection named Performance Improvement and select multiple existing KPIs such as % Improvement for scenario attempt and Your LinkedIn profile.
+
+The selected KPIs are combined into the KPI Collection, and their data contributes to the newly created KPI.
+
+Screenshot: Add KPI Collection
+
+
+
+
+
+
+
+
+
+
+
 
 ### 2. Fill in KPI Details
 Here is how to fill the fields to add KPIs:
