@@ -260,33 +260,178 @@ Under **KPIs Added to this Scorecard**, you can:
 
 ![Choose KPI or KPI collection](/img/helpscout/authored/how-to-create-a-scorecard-mswuqjpo.png)
 
-Click Add KPI to add an individual KPI to the Scorecard.
+**Add KPI**
 
-You can then configure the KPI's visibility, position, measurement type, target, and scoring rules.
+Click **Add KPI** to add an individual KPI to the Scorecard.
 
-Add KPI Collection
+For each KPI, you can configure:
 
-Click Add KPI Collection to create a new KPI by combining multiple existing KPIs.
+- **Visibility** — Choose whether the KPI and its data is displayed to users.
+- **Position** — Define the order in which the KPI appears.
+- **Target** — Use a target from another KPI (if applicable).
+- **Measurement Type** — Define how the KPI score should be scored.
+- **Target** — Configure the target value of the KPI. Target is based on the frequency selected for the scorecard.
 
-A KPI Collection allows you to select multiple KPIs and combine their data into a newly created KPI.
+**Add KPI Collection**
+
+A KPI Collection allows you to combine multiple existing KPIs into a single KPI. This is useful when you want to group related KPIs and use their combined data as one KPI within a Scorecard.
+
+Click **Add KPI Collection** to combine multiple existing KPIs into a new KPI.
+
+Any data associated with the selected KPIs contributes to the KPI Collection.
 
 When creating a KPI Collection, you can configure:
 
-KPI Name: Enter the name of the KPI Collection.
-Abbreviation: Enter a short abbreviation for the KPI Collection.
-Priority: Set the display priority.
-KPI Description: Add a description explaining what the KPI Collection represents.
-Display Properties: Add display properties if required.
-Select KPIs: Select the existing KPIs that you want to include in the collection.
+- KPI Name: Enter the name of the KPI Collection.
+- Abbreviation: Enter a short abbreviation for the KPI Collection.
+- Priority: Set the display priority.
+- KPI Description: Add a description explaining what the KPI Collection represents.
+- Display Properties: Add display properties if required.
+- Select KPIs: Select the existing KPIs that you want to include in the collection.
 
-For example, you can create a KPI Collection named Performance Improvement and select multiple existing KPIs such as % Improvement for scenario attempt and Your LinkedIn profile.
+![KPI collection creation](/img/helpscout/authored/how-to-create-a-scorecard-mugovbo5.png)
 
-The selected KPIs are combined into the KPI Collection, and their data contributes to the newly created KPI.
+For example, you can select **Health and Life** to include both KPIs in the **Total Policy Sold** KPI Collection.
 
-Screenshot: Add KPI Collection
+    **Note:** A KPI Collection is useful when you want to group related KPIs and use them together within a Scorecard.
 
 
+## 4. Select a Measurement Type
 
+The **Measurement Type** determines how SmartWinnr calculates the score for the KPI.
+
+The available measurement types include:
+
+- Actual
+- Level
+- Individual Level
+- Target Actual
+- Target Level
+- Formula
+- Grid
+- Level with Filter
+
+Each measurement type supports a different scoring approach.
+
+### a) Actual
+
+The **Actual** measurement type allows you to assign points based on a specific KPI value. Points are awarded each time the user achieves the configured KPI value.
+
+For example, suppose you configure:
+
+| KPI Value | Points |
+|---:|---:|
+| 5 New Leads | 100 points |
+
+![Actual scoring rule](/img/helpscout/authored/how-to-create-a-scorecard-mugpq3yh.png)
+
+The user receives **100 points for every 5 New Leads** achieved within the Scorecard's measurement frequency.
+
+With this scoring rule, if the Scorecard frequency is Quarterly and the user achieves **15 New Leads, they will receive 300 points**.
+
+You can also configure:
+
+**Target**: The target KPI value.
+
+**Floor**: The minimum KPI value required to earn points. Points are awarded only when the KPI value meets or exceeds the configured floor.
+
+**Ceiling**: The maximum KPI value considered for scoring. If the KPI value exceeds the ceiling, no additional points are awarded for the value above the ceiling.
+
+For example, if:
+
+- 5 New Leads = 100 points
+- Floor = 5
+- Ceiling = 20
+
+A user achieving **15 New Leads** receives **300 points**. If they achieve **25 New Leads, points are calculated only up to the configured Ceiling of 20**, and no additional points are awarded for the 5 leads above the Ceiling.
+
+---
+
+### b) Level
+
+The **Level** measurement type allows you to define different KPI levels and assign a score to each level.
+
+For example:
+
+| KPI Level | Score |
+|---:|---:|
+| 1 | 10 points |
+| 5 | 50 points |
+| 10 | 120 points |
+
+Based on these levels:
+
+- **1–4 New Leads** → 10 points
+- **5–9 New Leads** → 50 points
+- **10 or more New Leads** → 120 points
+
+![Level scoring rule](/img/helpscout/authored/how-to-create-a-scorecard-mugpqrsj.png)
+
+The user receives the score associated with the level achieved.
+
+Unlike **Actual** scoring, points are not repeatedly awarded for every configured KPI value. Instead, the score is based on the level achieved for the total KPI data.
+
+---
+
+### c) Individual Level
+
+The **Individual Level** measurement type works similarly to Level scoring, but the score is calculated separately for each individual data submission or upload.
+
+For example, configure:
+
+| KPI Level | Score |
+|---:|---:|
+| 1 | 10 points |
+| 5 | 50 points |
+| 10 | 120 points |
+
+![Individual scoring rule](/img/helpscout/authored/how-to-create-a-scorecard-mugptbl0.png)
+
+If a user has:
+
+- **Day 1:** 2 New Leads
+- **Day 2:** 5 New Leads
+
+The scores are calculated separately:
+
+- Day 1 → 10 points
+- Day 2 → 50 points
+
+**Total = 60 points**
+
+With standard **Level** scoring, the total KPI value would be 7 New Leads. This would fall within the 5–9 level and result in 50 points.
+
+The key difference is:
+
+| Measurement Type | How scoring is calculated |
+|---|---|
+| **Level** | Evaluates the combined KPI value for the Scorecard frequency. |
+| **Individual Level** | Evaluates each individual data submission separately and adds the resulting scores. |
+
+
+### d) Target Actual
+
+The **Target Actual** measurement type assigns points based on the **percentage of the target achieved**, rather than the actual KPI value.
+
+It works similarly to Actual scoring, but instead of awarding points for a specific KPI value, points are awarded for achieving a configured percentage of the target.
+
+For example, if the target is **25 New Leads**, you can configure:
+
+| % of Target Achieved | Points |
+|---:|---:|
+| 20% | 10 points |
+
+![Target actual scoring rule](/img/helpscout/authored/how-to-create-a-scorecard-mugpxf5j.png)
+
+You can also configure:
+
+**Target**: The target KPI value.
+
+**Floor**: The minimum target-achievement percentage considered for scoring.Points are awarded only when the target-achievement percentage meets or exceeds the configured floor.
+
+**Ceiling**: The maximum target-achievement percentage considered for scoring. If the target-achievement percentage exceeds the ceiling, no additional points are awarded for the value above the ceiling.
+
+---
 
 
 
