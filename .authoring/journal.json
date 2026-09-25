@@ -452,6 +452,12 @@
       "ts": 1790331615923,
       "seq": 134,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-scorecard-mugtf71r.png": {
+      "action": "upsert",
+      "ts": 1790331956848,
+      "seq": 135,
+      "author": "anagha.isal@smartwinnr.com"
     }
   }
 }
