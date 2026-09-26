@@ -488,6 +488,12 @@
       "ts": 1790357309909,
       "seq": 140,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-the-content-lifecycle-stages-muhxxx90.png": {
+      "action": "upsert",
+      "ts": 1790400015256,
+      "seq": 142,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
