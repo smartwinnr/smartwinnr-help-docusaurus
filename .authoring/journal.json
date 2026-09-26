@@ -548,6 +548,12 @@
       "ts": 1790407829828,
       "seq": 157,
       "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-brand-a-competition-with-themes-mui2rw95.png": {
+      "action": "upsert",
+      "ts": 1790408132106,
+      "seq": 159,
+      "author": "sandeep.b@smartwinnr.com"
     }
   }
 }
