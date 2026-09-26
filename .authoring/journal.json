@@ -560,6 +560,18 @@
       "ts": 1790419926949,
       "seq": 161,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-verbal-assessment-image-tasks-and-html-sharable-resources.md": {
+      "action": "upsert",
+      "ts": 1790425971650,
+      "seq": 162,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-download-coaching-response-videos.md": {
+      "action": "upsert",
+      "ts": 1790425974300,
+      "seq": 163,
+      "author": "release-pipeline@smartwinnr.com"
     }
   }
 }

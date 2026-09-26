@@ -3,15 +3,16 @@ id: download-coaching-submission-videos
 title: "How to download coaching response videos"
 description: "Learn how to download response videos submitted for coaching in SmartWinnr."
 slug: download-coaching-submission-videos
-sidebar_position: 999
+sidebar_position: 336
 last_update:
-  date: 2026-07-31
-  author: Anagha Isal
+  date: 2026-09-26
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-draft: false
+draft: true
 tags: ["video-coaching", "ai-coaching", "reports"]
 ---
+{/* release-draft: tag=v3.59.39 issue=9704 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9704 */}
 
 > **At a glance** - Only the editor who created or has access to the coaching can download a response video submitted for the coaching.
 
@@ -42,8 +43,9 @@ On the **Analytics** page, scroll down to the **Coaching Status** tab and select
 ### 3. Download the coaching video
 
 Once you open the video page, click on the **hamburger menu** at the top right and then select the **Download Video** option to download the response video.
+
 ![download video](/img/helpscout/authored/how-to-download-coaching-response-videos-ms962694.png)
 
-This will open the video in a different tab. Go to the **hamburger menu** at the bottom of the video and choose **Download**. This will successfully download the video.
+This opens the video in a different tab. Go to the **hamburger menu** at the bottom of the video and choose **Download**. This downloads the video.
 
 ![Download video](/img/helpscout/authored/how-to-download-coaching-response-videos-ms963jev.png)
