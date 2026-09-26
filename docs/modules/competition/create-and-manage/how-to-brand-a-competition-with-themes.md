@@ -48,8 +48,8 @@ Use **Logo Change** to replace the default logo with your own logo. Use **Backgr
 Use **Mobile Background Change** to upload a separate background image for mobile devices. Use **Tablet Background Change** if you want a separate tablet background.
 
 ### 4. Save the competition
-Save the competition after you finish your theme and branding changes. The selected theme and branding settings apply to the competition and appear in the user view.
-
+Save the competition after you finish your theme and branding changes. The selected theme and branding settings apply to the competition and appear in the user view as shown below.
+![Competition theme from user view](/img/helpscout/authored/how-to-brand-a-competition-with-themes-mui2rw95.png)
 ## Tips
 
 - Choose a theme that matches the competition’s purpose or style.
