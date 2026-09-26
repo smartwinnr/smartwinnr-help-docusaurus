@@ -82,12 +82,13 @@ Approved → Publish or Send Back
 ## 4. Published
 Click **Publish** to publish the content.
 ![kindly click on publish to publish the content](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufd1pcs.png)
-The **Send Back** option allows the approved content to be returned for further changes instead of publishing it. Use **Send Back** when the content needs additional updates before it can be published.
 
 Enter the required **Comment** explaining why the status is changing, and click **Publish**.
 ![kindly write the comment and click on publish](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufdezjc.png)
 The content is now **published**.
 
+The **Send Back** option allows the approved content to be returned for further changes instead of publishing it. Use **Send Back** when the content needs additional updates before it can be published.
+![kindly click on send back](/img/helpscout/authored/understanding-the-content-lifecycle-stages-muhxxx90.png)
 ![the content is now published](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufd08oi.png)
 Only published content items can be attached to modules such as SmartFeed, K-Hub, and SmartPath.
 
