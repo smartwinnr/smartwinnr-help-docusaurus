@@ -52,7 +52,7 @@ After the file is selected, its name appears under **The file learners will be s
 Under **Categories**, select the category values that apply to the item. Categories help you classify content in Content Center.
 
 ### 7. Add tags and competencies
-Under **Tags and Competencies**, select the relevant **Tags** and **Competencies** for the item. You can select tags individually or use auto-tagging.
+Under **Tags and Competencies**, select the relevant **Tags** and **Competencies** for the content item.
 
 ### 8. Create the item
 Review the details, then select **Create**.
