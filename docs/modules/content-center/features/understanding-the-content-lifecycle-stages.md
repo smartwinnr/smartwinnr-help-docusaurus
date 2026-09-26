@@ -5,7 +5,7 @@ description: "Learn how content moves from Draft to Archived and what actions ar
 slug: understanding-the-content-lifecycle-stages
 sidebar_position: 20
 last_update:
-  date: 2026-09-24
+  date: 2026-09-26
   author: Manaswini V
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -67,7 +67,7 @@ The **Reviewer** is responsible for reviewing the content and deciding whether i
 
 If the reviewer wants to approve the item, they add a **Comment** and click **Approve**.
 ![kindly write the comment and click on approval](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufc4qkx.png)
-If the reviewer wants changes to be made, they can **request changes**, specify what needs to be updated, and click **Request Changes**.
+If the reviewer wants changes to be made, they can click **Request Changes** and specify what needs to be updated.
 ![requesting changes](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufc7qo2.png)
  If the reviewer requests changes, the **Rejected** status is recorded in **Status History**, and the item moves back to the **Draft** stage. The content can then be updated and **submitted for review again**.
 ![the item moves back to the Draft stage.](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufbf8qa.png)
