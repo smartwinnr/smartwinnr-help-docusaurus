@@ -30,10 +30,10 @@ Use this when you want to:
 
 ### 1. Open Content Center
 Log in to the Editor Portal and go to **Content Management → Content Center → All Content Center**. Open the folder where you want to create the item, then select **New** and **Create Item**.
-
+![kindly click on create item](/img/helpscout/authored/how-to-create-a-content-item-mui1ljkv.png)
 ### 2. Select a content type
 On the **Create Content Item** screen, choose the **Content Type** for the file you want to upload. Content Center supports PDFs, videos, audio files, and images.
-
+![select the content type](/img/helpscout/authored/how-to-create-a-content-item-mui1n323.png)
 ### 3. Review version details
 Check the **Version** field and the **Content Code**. The first version appears as **Version 1**. The **Content Code** is generated automatically, and you can enter a client-provided code if needed.
 
@@ -41,12 +41,12 @@ Check the **Version** field and the **Content Code**. The first version appears 
 Under **Title and Description**, enter the **Title**. This field is required. Add a **Description** if you want to provide more context.
 
 Select **Add Translation** to add the title and description in another language. Enter the translated text in the matching fields.
-
+![kindly add traslation](/img/helpscout/authored/how-to-create-a-content-item-mui1olu8.png)
 ### 5. Upload the content file
 In **Upload the content file**, add the file learners will receive. You can drag and drop the file or browse your computer to select it.
 
 After you upload the file, its name appears under **Upload the content file**. Select **Remove Selected File** if you want to replace it.
-
+![kindly fill the details](/img/helpscout/authored/how-to-create-a-content-item-mui1phe0.png)
 ### 6. Add categories
 Under **Categories**, select the category values that apply to the item. Categories help you classify content in Content Center.
 
@@ -54,6 +54,8 @@ Under **Categories**, select the category values that apply to the item. Categor
 Under **Tags and Competencies**, select the relevant **Tags** and **Competencies** for the item. You can select tags individually or use auto-tagging.
 
 ### 8. Create the item
-Review the details, then select **Create**. The content item is created in the **Draft** stage.
+Review the details, then select **Create**.
+![kindly click on create](/img/helpscout/authored/how-to-create-a-content-item-mui1qef8.png)
+ The content item is created in the **Draft** stage.
 
 From there, you can submit the item for review to move it to **In Review**.
