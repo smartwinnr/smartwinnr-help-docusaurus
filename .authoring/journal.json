@@ -512,6 +512,12 @@
       "ts": 1790406228029,
       "seq": 147,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-create-a-content-item-mui1olu8.png": {
+      "action": "upsert",
+      "ts": 1790406299025,
+      "seq": 148,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
