@@ -43,9 +43,10 @@ Under **Title and Description**, enter the **Title**. This field is required. Ad
 Select **Add Translation** to add the title and description in another language. Enter the translated text in the matching fields.
 ![kindly add traslation](/img/helpscout/authored/how-to-create-a-content-item-mui1olu8.png)
 ### 5. Upload the content file
-In **Upload the content file**, add the file learners will receive. You can drag and drop the file or browse your computer to select it.
+In the **File** section, upload the file that learners will be served. You can drag and drop the file into the upload area or click **Drop file here or click to browse** to select a file from your computer.
 
-After you upload the file, its name appears under **Upload the content file**. Select **Remove Selected File** if you want to replace it.
+After the file is selected, its name appears under **The file learners will be served**. Click **Remove Selected File** if you want to remove the selected file and upload a different one.
+
 ![kindly fill the details](/img/helpscout/authored/how-to-create-a-content-item-mui1phe0.png)
 ### 6. Add categories
 Under **Categories**, select the category values that apply to the item. Categories help you classify content in Content Center.
