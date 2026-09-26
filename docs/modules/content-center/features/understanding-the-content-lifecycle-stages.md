@@ -89,6 +89,8 @@ The content is now **published**.
 
 The **Send Back** option allows the approved content to be returned for further changes instead of publishing it. Use **Send Back** when the content needs additional updates before it can be published.
 ![kindly click on send back](/img/helpscout/authored/understanding-the-content-lifecycle-stages-muhxxx90.png)
+The **Published** status indicates that the content has been approved and is now live and available for use.
+
 ![the content is now published](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufd08oi.png)
 Only published content items can be attached to modules such as SmartFeed, K-Hub, and SmartPath.
 
