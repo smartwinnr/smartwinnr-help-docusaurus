@@ -60,3 +60,5 @@ Review the details, then select **Create**.
  The content item is created in the **Draft** stage.
 
 From there, you can submit the item for review to move it to **In Review**.
+
+ **Note:** Only one file can be added to a content item.
