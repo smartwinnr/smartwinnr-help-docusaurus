@@ -36,8 +36,11 @@ If you are creating a new competition, you can configure the theme during creati
 
 ### 2. Select a competition theme
 In the **Competition Themes** section, choose a theme from the available predefined themes. SmartWinnr includes themes such as **Default**, **IPL**, **NFL**, **Olympics**, **Brackets Competition**, **Formula One**, **Christmas**, **FPL**, **Space**, **Holiday Theme 1**, and **Holiday Theme 2**.
+![Themes image to select](/img/helpscout/authored/how-to-brand-a-competition-with-themes-mui2kj26.png)
 
-After you select a theme, it appears in the **Selected Theme** field.
+After you select a theme, it appears in the **Selected Theme** field like below.
+
+![Selected Theme](/img/helpscout/authored/how-to-brand-a-competition-with-themes-mui2lf0k.png)
 
 ### 3. Add your branding
 Use **Logo Change** to replace the default logo with your own logo. Use **Background Change** to upload a custom background image for the competition.
