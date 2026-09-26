@@ -530,6 +530,12 @@
       "ts": 1790406382724,
       "seq": 150,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/how-to-brand-a-competition-with-themes.md": {
+      "action": "upsert",
+      "ts": 1790407628103,
+      "seq": 155,
+      "author": "sandeep.b@smartwinnr.com"
     }
   }
 }
