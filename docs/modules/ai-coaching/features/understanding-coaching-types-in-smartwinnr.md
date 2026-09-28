@@ -8,9 +8,9 @@ last_update:
   date: 2026-09-08
   author: Anagha Isal
 customProps:
-  owner: anagha.isal@smartwinnr.com
+  owner: jazz.k@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-draft: true
+draft: false
 tags: ["video-coaching", "ai-coaching"]
 ---
 
