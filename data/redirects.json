@@ -1975,7 +1975,7 @@
     },
     {
       "from": "/modules/cross-module/create-and-manage/create-zappi-coaching-scenario",
-      "to": "/modules/cross-module/create-and-manage/create-zappy-coaching-scenario"
+      "to": "/modules/authoringtools/zappy/create-zappy-coaching-scenario"
     },
     {
       "from": "/modules/ai-coaching/for-learners/create-coaching-folder",
@@ -2007,11 +2007,11 @@
     },
     {
       "from": "/modules/zappy",
-      "to": "/modules/authoringtools"
+      "to": "/modules/authoringtools/zappy"
     },
     {
       "from": "/modules/imagelab",
-      "to": "/modules/authoringtools"
+      "to": "/modules/authoringtools/image-lab"
     },
     {
       "from": "/modules/authoringtools/create-and-manage",
@@ -2044,6 +2044,14 @@
     {
       "from": "/modules/authoringtools/features/what-is-question-studio",
       "to": "/modules/authoringtools/question-studio/what-is-question-studio"
+    },
+    {
+      "from": "/modules/cross-module/create-and-manage/create-zappy-coaching-scenario",
+      "to": "/modules/authoringtools/zappy/create-zappy-coaching-scenario"
+    },
+    {
+      "from": "/modules/ai-coaching/create-and-manage/how-to-create-a-coaching-with-zappy",
+      "to": "/modules/authoringtools/zappy/how-to-create-a-coaching-with-zappy"
     }
   ]
 }
