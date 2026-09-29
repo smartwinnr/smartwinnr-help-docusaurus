@@ -5,8 +5,8 @@ description: "Plan field coaching sessions by frequency, use grace periods, and 
 slug: how-to-plan-field-coaching-sessions-for-your-team
 sidebar_position: 254
 last_update:
-  date: 2026-09-15
-  author: Aswani TK
+  date: 2026-09-29
+  author: Sruthi Suresh
 customProps:
   owner: jazz.k@smartwinnr.com
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -14,7 +14,7 @@ tags: ["field-coaching"]
 draft: false
 ---
 
-> **At a glance** - Field coaching sessions can follow a set frequency, such as once, monthly, quarterly, or yearly. You can also use a grace period or submit ad hoc sessions when your coaching plan allows it.
+> **At a glance** - Field coaching sessions can follow a set frequency, such as once, weekly, monthly, quarterly, half-yearly, or yearly. You can also use a grace period or submit ad hoc sessions when your coaching plan allows it.
 
 Use field coaching planning when you need to submit coaching on a regular schedule. The planner changes based on the frequency your coach sets, so you see the right session window for your team.
 
@@ -23,14 +23,14 @@ Use field coaching planning when you need to submit coaching on a regular schedu
 Use this when you need to submit field coaching for a specific schedule.
 
 - Submit a one-time coaching session.
-- Work through a quarterly, monthly, weekly, half-yearly, or yearly plan.
+- Work through a once, weekly, monthly, quarterly, half-yearly, or yearly plan.
 - Submit a missed session during an allowed grace period.
 - Add more than one session within the same frequency when ad hoc sessions are enabled.
 
 ## Steps
 
 ### 1. Open the planner for your frequency
-Choose the planner that matches your coaching schedule. You may see a one-time planner, or a planner for a recurring frequency such as monthly or quarterly.
+Choose the planner that matches your coaching schedule. You may see a one-time planner, or a planner for a recurring frequency such as once, weekly, monthly, quarterly, half-yearly, or yearly.
 
 ![Annual freequnecy](/img/helpscout/authored/authored-mtvg9c8j.png)
 
@@ -38,7 +38,7 @@ Choose the planner that matches your coaching schedule. You may see a one-time p
 Use a one-time planner when you only need to submit coaching once. After you submit it, the activity stays complete as a single submission.
 
 ### 3. Submit recurring sessions
-Use the recurring planner for schedules such as quarterly or monthly coaching. Quarterly planners open on the first day of each quarter. Monthly planners let you submit one session each month.
+Use the recurring planner for schedules such as once, weekly, monthly, quarterly, half-yearly, or yearly coaching. Quarterly planners open on the first day of each quarter. Monthly planners let you submit one session each month.like the same way other frequecies also work weekly planners open on the first day of each week .
 
 ![Quarterly Frequency](/img/helpscout/authored/authored-mtvgbyjn.png)
 
@@ -51,3 +51,4 @@ If your coach allows a grace period, you can still submit a previous session aft
 Use an ad hoc session when you need to submit more than one session in the same frequency. This gives you an extra submission option within the same coaching cycle.
 
 ![Adhoc sessions](/img/helpscout/authored/authored-mtvieqq8.png)
+![ss](/img/helpscout/authored/how-to-plan-field-coaching-sessions-for-your-team-mumfhqm3.png)
