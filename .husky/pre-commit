@@ -4,6 +4,9 @@ echo "🔍 Running pre-commit checks..."
 
 # Run markdown linting and fix what can be auto-fixed
 echo "📝 Running markdown linting with auto-fix..."
+# Captured before the fixer runs: only these get re-staged below, so the
+# repo-wide auto-fix can't sweep unrelated docs into this commit.
+STAGED_DOCS=$(git diff --cached --name-only --diff-filter=ACMR -- 'docs/*.md')
 npm run lint:docs:fix || echo "Some linting issues found, continuing with emoji check..."
 
 # Check specifically for emoji violations (this should block the commit)
@@ -21,7 +24,11 @@ if [ -n "$EMOJI_VIOLATIONS" ]; then
   exit 1
 fi
 
-# Add any automatically fixed files back to staging
-git add docs/**/*.md
+# Re-stage auto-fixes for the docs already in this commit. (The old
+# `git add docs/**/*.md` has no globstar under sh, so it staged whatever
+# docs/*/*.md the fixer touched - often files nobody meant to commit.)
+if [ -n "$STAGED_DOCS" ]; then
+  echo "$STAGED_DOCS" | while IFS= read -r f; do git add -- "$f"; done
+fi
 
 echo "✅ Pre-commit checks passed!"

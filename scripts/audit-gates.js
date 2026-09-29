@@ -192,7 +192,17 @@ function audit() {
   for (const mod of modules) {
     const moduleDir = path.join(MODULES_DIR, mod);
     checkModuleRoot(moduleDir, mod);
-    const meta = overviews[mod] || {};
+    // No registry entry means every sub-folder's expected gate would be
+    // derived from "no privilege" - one clear failure beats N misleading
+    // gate mismatches (how eaca9598 dropping `actionplanning` surfaced).
+    if (!Object.prototype.hasOwnProperty.call(overviews, mod)) {
+      failures.push(
+        `docs/modules/${mod}/: no "${mod}" entry in static/module-overviews.json - ` +
+          `the module's privilege identity is missing (restore the entry; check git log -p on that file)`,
+      );
+      continue;
+    }
+    const meta = overviews[mod];
     const parentPrivilege = meta.privilege || null;
     const parentAnyPrivilege = Array.isArray(meta.anyPrivilege) ? meta.anyPrivilege : null;
     const subs = fs

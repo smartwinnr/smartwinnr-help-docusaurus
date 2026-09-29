@@ -28,6 +28,7 @@ const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate, setFront
 const { toIndexableText, toSnippet } = require('./lib/doc-text');
 const { isKnownAuthor, recordAuthor } = require('./lib/authors-registry');
 const { isEmailApproved, listApprovedEmails, addApprovedEmail, removeApprovedEmail } = require('./lib/email-allowlist');
+const { mergeModuleOverviews } = require('./lib/module-overviews-merge');
 
 const PRIVACY_NOTICE_VERSION = '1.0';
 
@@ -3670,6 +3671,43 @@ async function fireDeploy() {
       return { ok: false, reason: 'no-files' };
     }
 
+    // Pass 0 - module registry. A stale server-disk copy of
+    // module-overviews.json must not revert the publish branch (eaca9598
+    // dropped `actionplanning` this way). Ship the branch's copy plus only
+    // the modules this server added; see lib/module-overviews-merge.js.
+    let overviewsRepair = null;
+    {
+      const ov = files.find((f) => f.rel.replace(/\\/g, '/') === 'static/module-overviews.json');
+      if (ov) {
+        let merged;
+        try {
+          merged = mergeModuleOverviews(ov.content, await ghFetchFile('static/module-overviews.json'));
+        } catch (e) {
+          if (e.response) throw e; // GitHub error → outer catch, queue intact
+          deployInFlight = false;
+          lastValidationError = { ts: Date.now(), errors: [{ check: 'module-overviews', message: e.message }] };
+          persistDeployState();
+          return {
+            ok: false,
+            reason: 'validation-failed',
+            message: `${e.message} - fix it, then deploy again. Nothing was committed.`,
+            errors: lastValidationError.errors,
+          };
+        }
+        if (merged.restored.length || merged.kept.length) {
+          overviewsRepair = { restored: merged.restored, kept: merged.kept };
+          console.warn(
+            `[deploy] module-overviews.json on disk is stale vs ${GIT_PUBLISH_BRANCH} - ` +
+            `restored: [${merged.restored.join(', ')}], kept branch entry for: [${merged.kept.join(', ')}]`,
+          );
+          // Heal the disk copy too, so the next add-module starts from it.
+          fsSync.writeFileSync(OVERVIEWS_JSON_PATH, merged.content, 'utf8');
+          journalRecordUpsert('static/module-overviews.json');
+        }
+        ov.content = merged.content;
+      }
+    }
+
     // Scan upsert article bodies for image references and pull any locally-
     // existing files into the commit. Without this, articles publish but
     // their screenshots stay on the container's ephemeral disk and never
@@ -4059,6 +4097,7 @@ async function fireDeploy() {
       images: images.length,
       sha: commitResp.data.sha,
       held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing, errors: h.errors })),
+      ...(overviewsRepair ? { overviewsRepair } : {}),
     };
   } catch (e) {
     const ghMsg = e.response?.data?.message || e.message;
