@@ -563,7 +563,7 @@
     },
     {
       "from": "/administration/field-coaching-module/how-to-create-field-coaching-template",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/administration/field-coaching-module/how-to-create-field-mapping",
@@ -1067,7 +1067,7 @@
     },
     {
       "from": "/modules/field-coaching/how-to-create-field-coaching-template",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/modules/field-coaching/how-to-create-field-mapping",
@@ -1843,7 +1843,7 @@
     },
     {
       "from": "/modules/field-coaching/reports-analytics/create-field-coaching-templates",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/modules/field-coaching/reports-analytics",
@@ -2052,6 +2052,10 @@
     {
       "from": "/modules/ai-coaching/create-and-manage/how-to-create-a-coaching-with-zappy",
       "to": "/modules/authoringtools/zappy/how-to-create-a-coaching-with-zappy"
+    },
+    {
+      "from": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template",
+      "to": "/modules/field-coaching"
     }
   ]
 }
