@@ -1,0 +1,21 @@
+{
+  "label": "Audio Labs",
+  "position": 1.1,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Audio Labs",
+    "slug": "/modules/authoringtools/audio-labs"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "authoringTools"
+  }
+}

@@ -376,6 +376,13 @@ Notes / gotchas:
   leaves; a leaf appears when its first article lands. Uniformity is enforced
   at authoring time (the wizard offers the canonical leaves) and audited by
   `npm run audit:gates`, not by stamping empty folders.
+- **A module may declare extra sections** beside the leaves via
+  `modules.<m>.subSections: [{slug, label, position?, roles?}]` in
+  `static/module-overviews.json` - Authoring Tools uses this for its
+  per-tool folders (`audio-labs`, `video-labs`, `zappy`, `question-studio`,
+  `image-lab`). Gate: `roles` (default editor+) + the module's privilege.
+  server.js (`isModuleSubfolder`) and `audit-gates` both honor it; add a
+  section there, never as an ad-hoc folder.
 - **Module identity lives in `static/module-overviews.json`**, not the module
   root `_category_.json`. The root stays open (all roles, NO privilege) so the
   overview/upsell page is reachable; `cascade-module-privilege.js` pushes the

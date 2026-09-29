@@ -1,0 +1,21 @@
+{
+  "label": "Video Labs",
+  "position": 1.2,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Video Labs",
+    "slug": "/modules/authoringtools/video-labs"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "authoringTools"
+  }
+}

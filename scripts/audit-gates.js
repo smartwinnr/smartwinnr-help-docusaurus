@@ -88,8 +88,8 @@ function gatesEqual(actual, expected) {
  * modules, or carry the parent's `anyPrivilege` forward as an AND'd
  * OR-group for modules that use anyPrivilege.
  */
-function expectedGateFor(subName, parentPrivilege, parentAnyPrivilege) {
-  const base = SUBFOLDER_GATES[subName];
+function expectedGateFor(subName, parentPrivilege, parentAnyPrivilege, subSections) {
+  const base = SUBFOLDER_GATES[subName] || declaredSectionGate(subName, subSections);
   if (!base) return null;
   if (subName === 'for-managers') {
     const out = {roles: base.roles, privilege: 'managerView'};
@@ -105,6 +105,19 @@ function expectedGateFor(subName, parentPrivilege, parentAnyPrivilege) {
     out.anyPrivilege = parentAnyPrivilege;
   }
   return out;
+}
+
+/**
+ * Module-declared sections (static/module-overviews.json
+ * modules.<m>.subSections) sit beside the canonical leaves - e.g. Authoring
+ * Tools groups articles per tool. Default gate: editor+ and the module's
+ * privilege; a section may override `roles`. Mirrors server.js
+ * moduleSubSection().
+ */
+function declaredSectionGate(subName, subSections) {
+  const s = (Array.isArray(subSections) ? subSections : []).find((x) => x && x.slug === subName);
+  if (!s) return null;
+  return {roles: Array.isArray(s.roles) && s.roles.length ? s.roles : EDITOR_PLUS_ROLES};
 }
 
 function describeGate(g) {
@@ -145,7 +158,7 @@ function checkModuleRoot(moduleDir, moduleName) {
   }
 }
 
-function checkSubfolder(moduleDir, moduleName, subName, parentPrivilege, parentAnyPrivilege) {
+function checkSubfolder(moduleDir, moduleName, subName, parentPrivilege, parentAnyPrivilege, subSections) {
   const catFile = path.join(moduleDir, subName, '_category_.json');
   if (!fs.existsSync(catFile)) {
     // No _category_.json - sub-folder exists but has no gate. That's a gap.
@@ -154,7 +167,7 @@ function checkSubfolder(moduleDir, moduleName, subName, parentPrivilege, parentA
   }
   const cat = JSON.parse(fs.readFileSync(catFile, 'utf8'));
   const cp = cat.customProps;
-  const expected = expectedGateFor(subName, parentPrivilege, parentAnyPrivilege);
+  const expected = expectedGateFor(subName, parentPrivilege, parentAnyPrivilege, subSections);
   if (!expected) {
     warnings.push(`docs/modules/${moduleName}/${subName}/: unknown sub-folder name (not in canonical table)`);
     return;
@@ -210,7 +223,7 @@ function audit() {
       .filter((e) => e.isDirectory())
       .map((e) => e.name);
     for (const sub of subs) {
-      checkSubfolder(moduleDir, mod, sub, parentPrivilege, parentAnyPrivilege);
+      checkSubfolder(moduleDir, mod, sub, parentPrivilege, parentAnyPrivilege, meta.subSections);
     }
   }
 

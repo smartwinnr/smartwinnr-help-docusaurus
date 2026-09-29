@@ -398,7 +398,7 @@ function findMatchingArticle(change, dest) {
 
   var subFolders;
   try {
-    subFolders = fsSync.readdirSync(moduleDir).filter((d) => CANONICAL_SUBFOLDERS.has(d));
+    subFolders = fsSync.readdirSync(moduleDir).filter((d) => isModuleSubfolder(dest.module, d));
   } catch (e) {
     return null;
   }
@@ -611,7 +611,7 @@ function moduleHasAnyArticles(moduleSlug) {
   if (!fsSync.existsSync(moduleDir)) return false;
   var subFolders;
   try {
-    subFolders = fsSync.readdirSync(moduleDir).filter((d) => CANONICAL_SUBFOLDERS.has(d));
+    subFolders = fsSync.readdirSync(moduleDir).filter((d) => isModuleSubfolder(moduleSlug, d));
   } catch (e) {
     return false;
   }
@@ -2021,16 +2021,49 @@ const CANONICAL_SUBFOLDERS = new Set([
   'features', 'reports-and-analytics', 'settings-and-permissions',
   'best-practices', 'faqs-and-troubleshooting',
 ]);
-// Human-readable list for error messages, in template order.
-const CANONICAL_SUBFOLDER_LIST = [...CANONICAL_SUBFOLDERS].join(', ');
 /** Reason string when a module sub-folder is not canonical, or null when it
  *  is. Modules draw ALL their leaves from CANONICAL_SUBFOLDERS - custom
  *  folders (e.g. `editors`, `reports-analytics`) are rejected so the tree
  *  stays uniform and audit-gates.js stays clean. Sections (docs/<section>/)
  *  are NOT subject to this - they may have arbitrary sub-folders. */
-function canonicalSubfolderError(sub) {
-  if (CANONICAL_SUBFOLDERS.has(sub)) return null;
-  return `"${sub}" is not a standard module folder. Modules use a fixed set: ${CANONICAL_SUBFOLDER_LIST}.`;
+function canonicalSubfolderError(sub, moduleSlug) {
+  if (isModuleSubfolder(moduleSlug, sub)) return null;
+  const declared = moduleSubSections(moduleSlug).map((x) => x.slug);
+  return `"${sub}" is not a standard module folder. Modules use a fixed set: ${[...CANONICAL_SUBFOLDERS, ...declared].join(', ')}.`;
+}
+/** Sections a module declares beside the canonical leaves
+ *  (static/module-overviews.json modules.<m>.subSections[]: {slug, label,
+ *  position?, roles?}) - e.g. Authoring Tools groups its articles per tool.
+ *  Gate: `roles` (default editor+) + the module's privilege. Mirrors
+ *  scripts/audit-gates.js declaredSectionGate(). */
+function moduleSubSections(moduleSlug) {
+  if (!moduleSlug) return [];
+  try {
+    const list = ((loadOverviews().modules || {})[moduleSlug] || {}).subSections;
+    return Array.isArray(list) ? list.filter((x) => x && isValidSlug(x.slug) && x.label) : [];
+  } catch {
+    return [];
+  }
+}
+function moduleSubSection(moduleSlug, sub) {
+  return moduleSubSections(moduleSlug).find((x) => x.slug === sub) || null;
+}
+/** Canonical leaf, or a section this module declares. */
+function isModuleSubfolder(moduleSlug, sub) {
+  return CANONICAL_SUBFOLDERS.has(sub) || !!moduleSubSection(moduleSlug, sub);
+}
+/** SUBFOLDER_TEMPLATE-shaped entry for a canonical leaf or declared section. */
+function subfolderTemplate(moduleSlug, sub) {
+  const tmpl = SUBFOLDER_TEMPLATE.find((x) => x.slug === sub);
+  if (tmpl) return tmpl;
+  const d = moduleSubSection(moduleSlug, sub);
+  if (!d) return null;
+  return {
+    slug: d.slug,
+    label: d.label,
+    position: typeof d.position === 'number' ? d.position : 1,
+    roles: Array.isArray(d.roles) && d.roles.length ? d.roles : EDITOR_PLUS,
+  };
 }
 const AUTHORING_MODEL = LLM_MODELS.authoring;
 const AUTHOR_PROMPT_PATH = path.join(__dirname, 'prompts', 'author-article.md');
@@ -2170,7 +2203,7 @@ function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
   // Only canonical module sub-folders are allowed - reject anything else even
   // if a stray directory already exists on disk (belt-and-suspenders with the
   // /folders creation guard).
-  const subErr = canonicalSubfolderError(subFolder);
+  const subErr = canonicalSubfolderError(subFolder, moduleSlug);
   if (subErr) throw new Error(subErr);
   return real;
 }
@@ -2256,8 +2289,8 @@ async function generateHandler(req, res) {
       if (!inputs.module || !inputs.subFolder) {
         return res.status(400).json({ error: 'Pick a destination folder first.' });
       }
-      if (!CANONICAL_SUBFOLDERS.has(inputs.subFolder)) {
-        return res.status(400).json({ error: `subFolder must be one of: ${[...CANONICAL_SUBFOLDERS].join(', ')}` });
+      if (!isModuleSubfolder(inputs.module, inputs.subFolder)) {
+        return res.status(400).json({ error: canonicalSubfolderError(inputs.subFolder, inputs.module) });
       }
     }
 
@@ -2697,6 +2730,11 @@ const JOURNAL_ORPHAN_TTL_MS = parseInt(process.env.AUTHORING_JOURNAL_ORPHAN_TTL_
 // deployQueue tracks per-path actions so the same pipeline that publishes
 // an upserted article can also commit a delete. Map<relPath, 'upsert' | 'delete'>.
 const deployQueue = new Map();
+// Module slugs POST /api/admin/authoring/modules created that haven't shipped
+// yet. The deploy-time module-overviews merge adds ONLY these to the publish
+// branch's copy - any other key missing from the branch was removed there on
+// purpose and must not be resurrected from this server's stale disk copy.
+const pendingModuleAdds = new Set();
 let lastDeployTs = 0;
 let debounceTimer = null;
 let deployInFlight = false;
@@ -2884,6 +2922,7 @@ function loadDeployState() {
         deletedRouteHints.set(rel, route);
       }
       lastValidationError = s.lastValidationError || null;
+      for (const slug of (s.pendingModuleAdds || [])) pendingModuleAdds.add(slug);
       console.log(`📦 deploy-state: queue=${deployQueue.size}, lastDeployTs=${lastDeployTs ? new Date(lastDeployTs).toISOString() : 'never'}`);
     }
   } catch (e) {
@@ -2898,6 +2937,7 @@ function persistDeployState() {
       queue: [...deployQueue].map(([p, action]) => ({ path: p, action })),
       deletedRoutes: Object.fromEntries(deletedRouteHints),
       lastValidationError,
+      pendingModuleAdds: [...pendingModuleAdds],
     }, null, 2), 'utf8');
   } catch (e) {
     console.warn('[deploy] failed to persist state:', e.message);
@@ -3676,12 +3716,13 @@ async function fireDeploy() {
     // dropped `actionplanning` this way). Ship the branch's copy plus only
     // the modules this server added; see lib/module-overviews-merge.js.
     let overviewsRepair = null;
+    let overviewsShipsAdds = [];
     {
       const ov = files.find((f) => f.rel.replace(/\\/g, '/') === 'static/module-overviews.json');
       if (ov) {
         let merged;
         try {
-          merged = mergeModuleOverviews(ov.content, await ghFetchFile('static/module-overviews.json'));
+          merged = mergeModuleOverviews(ov.content, await ghFetchFile('static/module-overviews.json'), { onlyAdd: pendingModuleAdds });
         } catch (e) {
           if (e.response) throw e; // GitHub error → outer catch, queue intact
           deployInFlight = false;
@@ -3694,11 +3735,13 @@ async function fireDeploy() {
             errors: lastValidationError.errors,
           };
         }
-        if (merged.restored.length || merged.kept.length) {
-          overviewsRepair = { restored: merged.restored, kept: merged.kept };
+        overviewsShipsAdds = merged.added;
+        if (merged.restored.length || merged.kept.length || merged.ignored.length) {
+          overviewsRepair = { restored: merged.restored, kept: merged.kept, ignored: merged.ignored };
           console.warn(
             `[deploy] module-overviews.json on disk is stale vs ${GIT_PUBLISH_BRANCH} - ` +
-            `restored: [${merged.restored.join(', ')}], kept branch entry for: [${merged.kept.join(', ')}]`,
+            `restored: [${merged.restored.join(', ')}], kept branch entry for: [${merged.kept.join(', ')}], ` +
+            `not resurrected: [${merged.ignored.join(', ')}]`,
           );
           // Heal the disk copy too, so the next add-module starts from it.
           fsSync.writeFileSync(OVERVIEWS_JSON_PATH, merged.content, 'utf8');
@@ -4055,6 +4098,7 @@ async function fireDeploy() {
       }
     }
     lastValidationError = null;
+    for (const slug of overviewsShipsAdds) pendingModuleAdds.delete(slug);
     // Re-base rule: once the batch's accumulated redirects.json ships, drop
     // the local copy so the next batch layers onto fresh publish-branch
     // state (loadRedirectsBase re-fetches it, picking up this push plus any
@@ -4594,7 +4638,7 @@ function resolveArticlePath(relPath) {
   // Canonical sub-folders always resolve; author-created custom folders
   // resolve once they exist on disk (created via POST /folders, which
   // guarantees a licensing-correct _category_.json).
-  if (!CANONICAL_SUBFOLDERS.has(subFolder) && !fsSync.existsSync(path.dirname(target))) {
+  if (!isModuleSubfolder(moduleSlug, subFolder) && !fsSync.existsSync(path.dirname(target))) {
     throw new Error('Sub-folder not found');
   }
   return target;
@@ -4639,7 +4683,7 @@ function resolveAnyDocPath(relPath) {
 function ensureCanonicalModuleLeaf(dirRel) {
   const m = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(String(dirRel || '').replace(/\\/g, '/'));
   if (!m) return false;
-  if (!CANONICAL_SUBFOLDERS.has(m[2])) return false;
+  if (!isModuleSubfolder(m[1], m[2])) return false;
   if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) return false;  // unknown module
   if (fsSync.existsSync(path.join(MODULES_ROOT, m[1], m[2]))) return false;
   return ensureSubfolderCategory(m[1], m[2]);
@@ -4659,7 +4703,7 @@ function resolveAnyDocDir(dir) {
     target = path.resolve(__dirname, norm);
     if (!target.startsWith(MODULES_ROOT + path.sep)) throw new Error('Path escapes docs/modules/');
     // Modules only accept canonical sub-folders - reject custom names outright.
-    const subErr = canonicalSubfolderError(modMatch[2]);
+    const subErr = canonicalSubfolderError(modMatch[2], modMatch[1]);
     if (subErr) throw new Error(subErr);
   } else {
     const m = /^docs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(norm);
@@ -4693,7 +4737,7 @@ app.get('/api/admin/authoring/articles', requireRole('superadmin'), (req, res) =
       dir = resolveAnyDocDir(dirIn);
     } else {
       if (!isValidSlug(moduleSlug)) return res.status(400).json({ error: 'Invalid module' });
-      if (!CANONICAL_SUBFOLDERS.has(subFolder)) return res.status(400).json({ error: 'Invalid sub-folder' });
+      if (!isModuleSubfolder(moduleSlug, subFolder)) return res.status(400).json({ error: 'Invalid sub-folder' });
       dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
       if (!fsSync.existsSync(dir)) return res.json({ articles: [] });
     }
@@ -5067,9 +5111,9 @@ function findSlugOrIdCollision(targetAbs, markdown) {
  *  declares roles, return null and the article keeps its own audience. */
 function destinationRoles(toDirRel) {
   const norm = toDirRel.replace(/\\/g, '/');
-  const modMatch = /^docs\/modules\/[a-z0-9-]+\/([a-z0-9-]+)$/.exec(norm);
+  const modMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(norm);
   if (modMatch) {
-    const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === modMatch[1]);
+    const tmpl = subfolderTemplate(modMatch[1], modMatch[2]);
     return (tmpl && tmpl.roles) || ALL_ROLES;
   }
   const candidates = [norm];
@@ -5150,7 +5194,7 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
       if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) {
         return res.status(400).json({ error: `Unknown module: ${m[1]}` });
       }
-      if (!CANONICAL_SUBFOLDERS.has(m[2]) && !fsSync.existsSync(path.join(__dirname, toDirRel))) {
+      if (!isModuleSubfolder(m[1], m[2]) && !fsSync.existsSync(path.join(__dirname, toDirRel))) {
         return res.status(400).json({ error: 'That folder does not exist in this module.' });
       }
       toDirAbs = path.join(__dirname, toDirRel);
@@ -5563,7 +5607,7 @@ function ensureSubfolderCategory(moduleSlug, subFolder) {
   const target = path.join(dir, '_category_.json');
   if (fsSync.existsSync(target)) return false;
 
-  const tmpl = SUBFOLDER_TEMPLATE.find((s) => s.slug === subFolder);
+  const tmpl = subfolderTemplate(moduleSlug, subFolder);
   if (!tmpl) return false;  // unknown sub-folder name; leave alone
 
   const overviews = loadOverviews();
@@ -5675,7 +5719,7 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
     // For a module, the canonical picker sends the exact canonical slug via
     // `subFolder`. Prefer it: display labels like "Settings & Permissions"
     // slugify to "settings-permissions", missing the canonical "-and-".
-    const slug = (modMatch && subFolder && CANONICAL_SUBFOLDERS.has(subFolder))
+    const slug = (modMatch && subFolder && isModuleSubfolder(modMatch[1], subFolder))
       ? subFolder
       : cleanLabel.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
     if (!isValidSlug(slug)) {
@@ -5703,9 +5747,9 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
       // Modules use a fixed set of canonical folders - reject custom names so
       // the tree stays uniform and audit-gates.js stays clean. (Sections, the
       // isSection branch below, are unaffected and may have custom folders.)
-      if (!CANONICAL_SUBFOLDERS.has(slug)) {
+      if (!isModuleSubfolder(moduleSlug, slug)) {
         return res.status(400).json({
-          error: `Modules use a fixed set of folders and "${cleanLabel}" isn't one of them. Choose a standard folder: ${CANONICAL_SUBFOLDER_LIST}.`,
+          error: `Modules use a fixed set of folders and "${cleanLabel}" isn't one of them. Choose a standard folder: ${[...CANONICAL_SUBFOLDERS, ...moduleSubSections(moduleSlug).map((x) => x.slug)].join(', ')}.`,
         });
       }
       // Canonical name: the gate audit demands the exact template gate -
@@ -5713,7 +5757,7 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
       if (!ensureSubfolderCategory(moduleSlug, slug)) {
         return res.status(400).json({ error: 'Could not create the standard folder - check the module setup.' });
       }
-      roles = (SUBFOLDER_TEMPLATE.find((s) => s.slug === slug)?.roles) || ALL_ROLES;
+      roles = subfolderTemplate(moduleSlug, slug)?.roles || ALL_ROLES;
       catRel = `docs/modules/${moduleSlug}/${slug}/_category_.json`;
       // ensureSubfolderCategory wrote + created; journal it for durability.
       journalRecordUpsert(catRel, req.user?.email);
@@ -5805,7 +5849,10 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
         // (that's the canonical template), but the wizard has to know: picking
         // an absent one used to 400 with "Folder not found" at Generate, after
         // the author had already typed their brain dump, with no way back.
-        const subs = SUBFOLDER_TEMPLATE.map((sf) => ({
+        // Declared sections (Authoring Tools' per-tool folders) lead, then the
+        // canonical leaves - offered even before they exist, same as leaves.
+        const declared = moduleSubSections(m.slug).map((d) => subfolderTemplate(m.slug, d.slug));
+        const subs = [...declared, ...SUBFOLDER_TEMPLATE].map((sf) => ({
           dir: `docs/modules/${m.slug}/${sf.slug}`,
           label: sf.label,
           roles: sf.roles,
@@ -5816,7 +5863,7 @@ app.get('/api/admin/authoring/sections', requireRole('superadmin'), (req, res) =
         const modAbs = path.join(MODULES_ROOT, m.slug);
         if (fsSync.existsSync(modAbs)) {
           for (const child of fsSync.readdirSync(modAbs, { withFileTypes: true })) {
-            if (!child.isDirectory() || CANONICAL_SUBFOLDERS.has(child.name)) continue;
+            if (!child.isDirectory() || isModuleSubfolder(m.slug, child.name)) continue;
             const meta = categoryMeta(path.join(modAbs, child.name));
             subs.push({
               dir: `docs/modules/${m.slug}/${child.name}`,
@@ -6271,6 +6318,7 @@ app.post('/api/admin/authoring/modules', requireRole('superadmin'), (req, res) =
     // used to leave /modules/<slug> a 404 on the live site while the tile in
     // module-overviews.json (which did ship) advertised it.
     for (const rel of written) enqueueUpsert(rel);
+    pendingModuleAdds.add(slug);
     persistDeployState();
 
     res.json({ ok: true, slug, privilegeAdded, novelPrivilege, privilegeCorrected, paths: written });

@@ -1992,6 +1992,58 @@
     {
       "from": "/modules/video-coaching/for-learners/what-are-coaching-deep-links",
       "to": "/modules/video-coaching/create-and-manage/what-are-coaching-deep-links"
+    },
+    {
+      "from": "/modules/audiolabs",
+      "to": "/modules/authoringtools/audio-labs"
+    },
+    {
+      "from": "/modules/videolabs",
+      "to": "/modules/authoringtools/video-labs"
+    },
+    {
+      "from": "/modules/questionstudio",
+      "to": "/modules/authoringtools/question-studio"
+    },
+    {
+      "from": "/modules/zappy",
+      "to": "/modules/authoringtools"
+    },
+    {
+      "from": "/modules/imagelab",
+      "to": "/modules/authoringtools"
+    },
+    {
+      "from": "/modules/authoringtools/create-and-manage",
+      "to": "/modules/authoringtools"
+    },
+    {
+      "from": "/modules/authoringtools/features",
+      "to": "/modules/authoringtools"
+    },
+    {
+      "from": "/modules/authoringtools/create-and-manage/create-and-download-a-podcast",
+      "to": "/modules/authoringtools/audio-labs/create-and-download-a-podcast"
+    },
+    {
+      "from": "/modules/authoringtools/create-and-manage/create-audio-narration",
+      "to": "/modules/authoringtools/audio-labs/create-audio-narration"
+    },
+    {
+      "from": "/modules/authoringtools/create-and-manage/how-to-create-a-video-with-video-lab",
+      "to": "/modules/authoringtools/video-labs/how-to-create-a-video-with-video-lab"
+    },
+    {
+      "from": "/modules/authoringtools/features/what-is-video-lab",
+      "to": "/modules/authoringtools/video-labs/what-is-video-lab"
+    },
+    {
+      "from": "/modules/authoringtools/create-and-manage/how-to-generate-quiz-questions-with-question-studio",
+      "to": "/modules/authoringtools/question-studio/how-to-generate-quiz-questions-with-question-studio"
+    },
+    {
+      "from": "/modules/authoringtools/features/what-is-question-studio",
+      "to": "/modules/authoringtools/question-studio/what-is-question-studio"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "label": "Zappy",
+  "position": 1.3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Zappy",
+    "slug": "/modules/authoringtools/zappy"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "authoringTools"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "label": "Image Lab",
+  "position": 1.5,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Image Lab",
+    "slug": "/modules/authoringtools/image-lab"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "authoringTools"
+  }
+}

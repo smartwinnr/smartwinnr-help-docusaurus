@@ -1,0 +1,21 @@
+{
+  "label": "Question Studio",
+  "position": 1.4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Question Studio",
+    "slug": "/modules/authoringtools/question-studio"
+  },
+  "customProps": {
+    "roles": [
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ],
+    "privilege": "authoringTools"
+  }
+}
