@@ -3,7 +3,7 @@ id: download-field-coaching-completion-report
 title: "How to download the Field Coaching Completion Report"
 description: "This article shows you how to download various field coaching completion reports."
 slug: download-field-coaching-completion-report
-sidebar_position: 40
+sidebar_position: 20
 last_update:
   date: 2026-09-29
   author: Sruthi Suresh

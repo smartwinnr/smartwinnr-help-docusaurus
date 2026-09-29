@@ -3,7 +3,7 @@ id: 60a4febd13fd125a39b4516e
 title: How to create Field Coaching
 description: Only the user with editor role can create a field coaching
 slug: how-to-create-field-coaching
-sidebar_position: 20
+sidebar_position: 10
 last_update:
   date: 2026-08-18
   author: Aswani TK
