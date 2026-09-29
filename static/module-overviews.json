@@ -275,6 +275,15 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "contentCenter"
+    },
+    "actionplanning": {
+      "label": "Action Planning",
+      "tagline": "Action Planning - SmartWinnr module.",
+      "description": "Action Planning - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "actionPlanning"
     }
   }
 }

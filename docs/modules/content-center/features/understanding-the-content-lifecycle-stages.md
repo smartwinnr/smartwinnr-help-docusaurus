@@ -28,6 +28,7 @@ Use this article when you want to understand how content moves through review an
 - Track content from creation through archival.
 
 ## 1. Start in Draft
+
 When you create a content item, it starts in **Draft**. Use this stage to prepare the content before review.
 
 ### Manage the Draft
@@ -40,6 +41,7 @@ When you create a content item, it starts in **Draft**. Use this stage to prepar
 4. Select a **reviewer**.
 5. Set **Remind the Reviewer**, add the required **Note for Reviewer**, and click **Submit for Review**.
 ![kindly fill the details and click on submit for review](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufb52q1.png)
+
 ### Status History
 
  section records each change to the content item, including **Change**, **Changed By**, **Changed On**, and **Comment**.
@@ -50,20 +52,21 @@ The **content creator or editor** prepares the content and submits it for review
 
 You can set **Archive Rules** to automatically archive published content based on a defined schedule. You can choose to:
 
-* **Never archive automatically**
-* Archive after a **set period** from the date it is published
-* Archive on a **specific date**
-* Set a **reminder** before the content is archived
-* Enable **Hold off while it is still in use** to prevent archival while the content is being referenced.
+- **Never archive automatically**
+- Archive after a **set period** from the date it is published
+- Archive on a **specific date**
+- Set a **reminder** before the content is archived
+- Enable **Hold off while it is still in use** to prevent archival while the content is being referenced.
 
 Draft → Submit for Review
 
 ## 2. Review the content
+
 After submission, the content moves to **In Review**. The selected reviewer checks the content and decides whether it is ready to move forward.
 
 Reviewer:
 The page shows **Approve** and **Request Changes** for the reviewer.
-![reviewer reviews the draft![describe this screenshot](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufbeq41.png)](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufbblnb.png)
+![reviewer reviews the draft](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufbblnb.png)
 The **Reviewer** is responsible for reviewing the content and deciding whether it is ready for approval.
 
 If the reviewer wants to approve the item, they add a **Comment** and click **Approve**.
@@ -75,12 +78,15 @@ If the reviewer wants changes to be made, they can click **Request Changes** and
 In Review → Approve or Request Changes
 
 ## 3. Approve the content
+
 When the reviewer approves the content, it moves to **Approved Stage**. The content is ready to be published and used in supported modules.
 ![reviewer approved the content](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufbfwkc.png)
 The **Reviewer** approves the content, and the **editor or content manager** publishes the approved content.
 
 Approved → Publish or Send Back
+
 ## 4. Published
+
 Click **Publish** to publish the content.
 ![kindly click on publish to publish the content](/img/helpscout/authored/understanding-the-content-lifecycle-stages-mufd1pcs.png)
 
@@ -96,6 +102,7 @@ The **Published** status indicates that the content has been approved and is now
 Only published content items can be attached to modules such as SmartFeed, K-Hub, and SmartPath.
 
 Published → Archive
+
 ## 5. Archived
 
 Once published, you can **archive** the content when it is no longer required for active use. Archived content cannot be attached to **new modules**, while any existing module attachments remain intact.

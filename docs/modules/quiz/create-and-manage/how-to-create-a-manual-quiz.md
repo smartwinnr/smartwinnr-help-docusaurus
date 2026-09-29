@@ -46,10 +46,10 @@ You can create three types of manual quizzes.
 
 Use a manual quiz when you want to control quiz timing, scoring, and participant access.
 
-- Schedule a quiz for a specific date and time.
-- Run an assessment that only affects the **Quiz Leaderboard**.
-- Host a live event quiz that opens and closes with the event.
-- Assign the quiz to selected users or groups.
+* Schedule a quiz for a specific date and time.
+* Run an assessment that only affects the **Quiz Leaderboard**.
+* Host a live event quiz that opens and closes with the event.
+* Assign the quiz to selected users or groups.
 
 ### Quiz Details
 
@@ -106,7 +106,7 @@ Here you can set the quiz cover image and thumbnail image.
   * Add scores **only to the quiz leaderboard**
   * **Exclude** the quiz from all leaderboards
 
-![Leaderboard Display Settings](/img/helpscout/editors/how-to-create-a-automatic-quiz-5.png)
+![Leaderboard Display Settings](/img/helpscout/editors/how-to-create-an-automatic-quiz-5.png)
 
 * **Send Notification on Assignment:** Enable this option to send a notification to users when a quiz is assigned to them.
 * **Custom Email Subject:** This option lets you define a custom subject line for the email notification sent to quiz participants. When enabled, you are prompted to enter the subject text. By default, the email subject is **New Quiz Assigned**.
