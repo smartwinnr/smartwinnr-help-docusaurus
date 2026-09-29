@@ -291,7 +291,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   async function remove(d: Draft) {
     const ok = await notify.confirm({
       title: `Delete "${d.title}"?`,
-      message: `Deletes the draft "${d.title}". Readers never saw it. An admin can recover it from the trash for up to 30 days.`,
+      message: `Deletes the draft "${d.title}". If it is unpublished changes to a live article, only the changes are discarded and the live version stays. An admin can recover the draft from the trash for up to 30 days.`,
       confirmLabel: 'Delete draft',
       cancelLabel: 'Keep it',
       danger: true,
@@ -311,8 +311,11 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         const data = await res.json();
         notify.error(data.error || 'Delete failed');
       } else {
+        const data = await res.json().catch(() => ({}));
         if (wizardKey) clearWizardStateIfTargets(wizardKey);
-        notify.success(`Deleted "${d.title}". (Recoverable by an admin for 30 days.)`);
+        notify.success(data.restoredPublished
+          ? `Discarded the draft changes to "${d.title}". The live version is back in Published.`
+          : `Deleted "${d.title}". (Recoverable by an admin for 30 days.)`);
         await refresh();
       }
     } finally {

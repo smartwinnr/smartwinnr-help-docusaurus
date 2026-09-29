@@ -13,6 +13,10 @@ import {
   Award,
   Bell,
   Puzzle,
+  WandSparkles,
+  Library,
+  Target,
+  Gift,
 } from 'lucide-react';
 
 /** Single source of truth for "module slug → Lucide icon".
@@ -32,6 +36,10 @@ export const MODULE_ICON_BY_SLUG: Record<string, LucideIcon> = {
   competition: Award,
   notifications: Bell,
   'cross-module': Puzzle,
+  authoringtools: WandSparkles,
+  'content-center': Library,
+  actionplanning: Target,
+  'rewards-and-recognition': Gift,
 };
 
 /** Match `/modules/<slug>/` or `/modules/<slug>` and return the slug. */

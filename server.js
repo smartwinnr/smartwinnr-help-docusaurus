@@ -369,6 +369,17 @@ function titleWords(text) {
   return new Set(String(text || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 3));
 }
 
+/** Significant words of a module's slug and registry label (e.g.
+ *  field-coaching -> {field, coaching}). */
+function moduleNameWords(moduleSlug) {
+  let label = '';
+  try {
+    const doc = JSON.parse(fsSync.readFileSync(path.join(__dirname, 'static', 'module-overviews.json'), 'utf8'));
+    label = (doc.modules && doc.modules[moduleSlug] && doc.modules[moduleSlug].label) || '';
+  } catch { /* slug words alone still apply */ }
+  return titleWords(`${String(moduleSlug).replace(/-/g, ' ')} ${label}`);
+}
+
 /**
  * Finds an existing article this change should UPDATE rather than duplicate.
  * Two passes, most-confident first:
@@ -394,7 +405,13 @@ function findMatchingArticle(change, dest) {
   var byProvenance = null;
   var byKeyword = null;
   var bestOverlap = 0;
-  const changeWords = titleWords(change.subject);
+  // Every title in a module tends to name the module ("field coaching"), so
+  // those words are shared by construction and prove nothing. Counting them
+  // matched a star-ratings bug fix to "How to create Field Coaching
+  // Template" and overwrote that published article.
+  const moduleWords = moduleNameWords(dest.module);
+  const withoutModuleWords = (words) => new Set([...words].filter((w) => !moduleWords.has(w)));
+  const changeWords = withoutModuleWords(titleWords(change.subject));
 
   var subFolders;
   try {
@@ -426,7 +443,7 @@ function findMatchingArticle(change, dest) {
         break outer; // exact match - no need to keep scanning
       }
       const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(markdown);
-      const existingWords = titleWords(titleMatch ? titleMatch[1] : file);
+      const existingWords = withoutModuleWords(titleWords(titleMatch ? titleMatch[1] : file));
       if (changeWords.size === 0 || existingWords.size === 0) continue;
       var shared = 0;
       changeWords.forEach((w) => { if (existingWords.has(w)) shared++; });
@@ -3649,6 +3666,28 @@ function buildLocalDocEntries() {
   return docRoutes.buildLocalDocEntries(__dirname);
 }
 
+/** Routes of published articles that exist on the publish branch but not on
+ *  this server's disk, and that this deploy isn't deleting - they stay live
+ *  after the commit, so a redirect targeting one is not dangling. Fetches
+ *  only the few files missing locally. A GitHub error throws, which aborts
+ *  the deploy with the queue intact (same policy as repoHasFile). */
+async function publishBranchOnlyRoutes(localEntries, deletes) {
+  const routes = new Set();
+  const mainSha = await ghGetRef(GIT_PUBLISH_BRANCH);
+  if (!mainSha) return routes;
+  const mainTree = await ghGetTreeRecursive(mainSha);
+  const local = new Set(localEntries.map((e) => e.rel));
+  const deleting = new Set(deletes.map((d) => d.replace(/\\/g, '/')));
+  for (const rel of mainTree.keys()) {
+    if (!/^docs\/.+\.(md|mdx)$/i.test(rel) || local.has(rel) || deleting.has(rel)) continue;
+    const content = await ghFetchFile(rel);
+    if (content === null) continue;
+    const resolved = docRoutes.resolveDocRoute(path.join(__dirname, rel), DOCS_ROOT, content);
+    if (!resolved.isDraft) routes.add(resolved.route);
+  }
+  return routes;
+}
+
 /** Non-doc routes a redirect may legitimately target: custom pages under
  *  src/pages, category landings declared via _category_.json `link`, and
  *  the site root. Generated listings (tags, search) are deliberately
@@ -3931,6 +3970,17 @@ async function fireDeploy() {
           // before they reach the plugin's target-exists check.
           if (validRoutes.has(to) || draftRoutes.has(to) || nonDocRoutes.has(to)) continue;
           badTargets.push({ from: r.from, to: r.to });
+        }
+        // The route set above is built from this server's disk. A published
+        // article can be missing from disk without leaving the site - a
+        // draft that shadowed it was deleted, so nothing queued a delete -
+        // and main keeps serving it after this commit. Only when something
+        // looks dangling, count those still-live routes before aborting.
+        if (badTargets.length > 0) {
+          const liveRoutes = await publishBranchOnlyRoutes(docEntries, deletes);
+          for (let i = badTargets.length - 1; i >= 0; i--) {
+            if (liveRoutes.has(normRoute(badTargets[i].to.split(/[?#]/)[0]))) badTargets.splice(i, 1);
+          }
         }
         if (badTargets.length > 0) {
           deployInFlight = false;
@@ -4576,7 +4626,18 @@ function pruneTrash() {
 }
 pruneTrash();
 
-app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) => {
+/** The publish branch's copy of `rel` when it is a live (non-draft) article
+ *  there, else null. Saving re-drafts an article in place, so a "draft" on
+ *  disk can be pending edits to a page readers still see. Null when git push
+ *  is off (local dev) - there is no publish branch to consult. */
+async function livePublishedCopy(rel) {
+  if (!GIT_PUSH_ENABLED || !GIT_PUSH_TOKEN || !GITHUB_REPO) return null;
+  const content = await ghFetchFile(rel.replace(/\\/g, '/'));
+  if (content === null || /^draft:\s*true\b/m.test(content)) return null;
+  return content;
+}
+
+app.delete('/api/admin/authoring/draft', requireRole('superadmin'), async (req, res) => {
   try {
     const { module: moduleSlug, subFolder, slug, path: relIn } = req.query;
     const target = relIn ? resolveAnyDocPath(relIn) : resolveDraftPath(moduleSlug, subFolder, slug);
@@ -4585,14 +4646,26 @@ app.delete('/api/admin/authoring/draft', requireRole('superadmin'), (req, res) =
     if (!/^draft:\s*true\b/m.test(text)) {
       return res.status(400).json({ error: 'Refusing to delete - frontmatter is not marked draft:true' });
     }
-    const imageRefs = imagesReferencedBy(text);
+    const targetRel = path.relative(__dirname, target);
     const opDir = trashOpDir(path.basename(target).replace(/\.(md|mdx)$/, ''));
+    // Unpublished edits to a live article: discard the edits, not the page.
+    // Unlinking here used to drop a published article from disk with no
+    // queued delete and no redirect cleanup - the site kept serving it, but
+    // every later deploy's redirect pre-flight saw its route as gone.
+    const live = await livePublishedCopy(targetRel);
+    if (live !== null) {
+      trashFile(target, opDir);
+      fsSync.writeFileSync(target, live, 'utf8');
+      journalRecordUpsert(targetRel, req.user?.email);
+      return res.json({ ok: true, restoredPublished: true, imagesRemoved: 0 });
+    }
+    const imageRefs = imagesReferencedBy(text);
     trashFile(target, opDir);
     fsSync.unlinkSync(target);
     // Drafts never reach the publish branch, so cleanup skips the deploy
     // queue - but the journal must drop its copies or a restart resurrects
     // the deleted draft.
-    journalRecordDelete(path.relative(__dirname, target), req.user?.email);
+    journalRecordDelete(targetRel, req.user?.email);
     let imagesRemoved = 0;
     for (const imgUrl of imageRefs) {
       if (isImageReferencedElsewhere(imgUrl, target)) continue;
@@ -5347,6 +5420,18 @@ app.delete('/api/admin/authoring/article', requireRole('superadmin'), async (req
       const routeDir = '/' + path.relative(DOCS_ROOT, path.dirname(target)).split(path.sep).join('/');
       deletedRoute = normRoute(slug.startsWith('/') ? slug : `${routeDir}/${slug}`);
     } catch {/* if unreadable, assume published - safer to over-deploy */ wasPublished = true; }
+    // A draft on disk may be pending edits to a page that is still live.
+    // The route being vacated is the live copy's, which a draft edit to the
+    // slug may not match.
+    if (!wasPublished) {
+      const live = await livePublishedCopy(path.relative(__dirname, target));
+      if (live !== null) {
+        wasPublished = true;
+        const slug = articleIdentity(live, path.basename(target)).slug;
+        const routeDir = '/' + path.relative(DOCS_ROOT, path.dirname(target)).split(path.sep).join('/');
+        deletedRoute = normRoute(slug.startsWith('/') ? slug : `${routeDir}/${slug}`);
+      }
+    }
 
     // Reconcile redirects BEFORE the route disappears: any entry still
     // targeting it would hard-fail the next production build. Retarget

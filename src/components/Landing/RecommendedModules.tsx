@@ -36,8 +36,12 @@ const MODULE_ORDER: string[] = [
   'survey',
   'smartpath',
   'knowledge-hub',
+  'content-center',
+  'authoringtools',
   'kpi-gamification',
   'competition',
+  'rewards-and-recognition',
+  'actionplanning',
   'notifications',
   'cross-module',
 ];
@@ -170,6 +174,8 @@ if (typeof document !== 'undefined' && !document.getElementById('sw-module-strip
       gap: var(--space-2);
     }
     .sw-module-tile {
+      /* Drop the site-wide tnum: Inter's tabular hyphen renders "ride - along". */
+      font-feature-settings: "cv11", "ss03", "ss01", "calt", "kern", "liga";
       background: var(--ifm-color-emphasis-100);
       border: 1px solid var(--ifm-color-emphasis-200);
       border-radius: 8px;
@@ -216,6 +222,13 @@ if (typeof document !== 'undefined' && !document.getElementById('sw-module-strip
     }
     .sw-module-title-locked { color: var(--ifm-color-content-secondary); }
     .sw-module-desc {
+      /* Block + clamp: as an inline span it inherited the body line box
+         (~28px per line), and one long tagline stretched the whole row. */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      margin-top: 2px;
       font-size: var(--text-caption);
       line-height: var(--lh-caption);
       color: var(--ifm-color-content-secondary);

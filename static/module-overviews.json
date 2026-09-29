@@ -206,7 +206,7 @@
     },
     "authoringtools": {
       "label": "Authoring Tools",
-      "tagline": "Create podcasts and audio narrations for your learning content.",
+      "tagline": "AI tools that turn source material into audio, video, images, and quiz questions.",
       "description": "A newer, AI-assisted content-creation module that helps editors produce learning content faster, without a production studio. It has two components: Video Lab, which turns a slide deck into a narrated training video — upload the PDF, edit the per-slide narration script, choose an AI voice, and generate a video that can be reused elsewhere (e.g., inside a SmartFeed) — and Question Studio (also called Quiz Master), which uses AI to draft quiz questions straight from uploaded source documents, then routes them through a human review queue (approve, edit, reject, or tag) before they're published into the Question Bank for use in quizzes.",
       "keyFeatures": [],
       "who": "",
@@ -242,8 +242,8 @@
     },
     "rewards-and-recognition": {
       "label": "Rewards",
-      "tagline": "Rewards - SmartWinnr module.",
-      "description": "Rewards - SmartWinnr module.",
+      "tagline": "Points, scratchcards, and a rewards catalog learners redeem for recognition.",
+      "description": "Recognize and motivate learners with reward points. Editors define point rules for leaderboards, quizzes, surveys, and coaching, and learners earn points and scratchcards they can redeem from a rewards catalog. Editors review and process redemption requests.",
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
@@ -251,7 +251,7 @@
     },
     "content-center": {
       "label": "Content Center",
-      "tagline": "Content Centre is a central repository for managing SmartWinnr content, supporting its creation, review, publishing, archiving, versioning, and use across different experiences.",
+      "tagline": "One repository to create, review, publish, and version learning content.",
       "description": "Content Centre is a central repository for managing SmartWinnr content, supporting its creation, review, publishing, archiving, versioning, and use across different experiences.",
       "keyFeatures": [],
       "who": "",
@@ -260,8 +260,8 @@
     },
     "actionplanning": {
       "label": "Action Planning",
-      "tagline": "Action Planning - SmartWinnr module.",
-      "description": "Action Planning - SmartWinnr module.",
+      "tagline": "Quarterly plans built from past performance, with manager review.",
+      "description": "Helps learners build quarterly action plans grounded in their past performance. Managers review each plan and track progress against it through the quarter.",
       "keyFeatures": [],
       "who": "",
       "ctaEmail": "admin@your-org.com",
