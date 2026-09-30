@@ -142,7 +142,7 @@ The **Field Type** options include **Text, Long Text, Formatted Text, Number, Da
 * When enabled, **Who can submit** appears. Select **Coach** or **Coachee**.
 * **Allow custom statuses:** Adds custom statuses to **Not Started**, **In Progress**, and **Completed**.
 * **Grace Period:** Set how long the session remains open after its scheduled period using **Days**, **Weeks**, or **Hours**.
-![kindly set submission & Workflow settings](/img/helpscut/authored/how-to-create-field-coaching-mumk9zqr.png)
+![kindly set Submission & Workflow settings](/img/helpscout/authored/how-to-create-field-coaching-munzc9rm.png)
 ### 7. Completion & Sign-off
 
 * **Require coachee acknowledgement:** Requires the coachee to confirm the **Acknowledgement Text** before the session is closed.

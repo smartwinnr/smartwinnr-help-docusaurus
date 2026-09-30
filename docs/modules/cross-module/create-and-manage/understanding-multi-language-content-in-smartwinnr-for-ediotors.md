@@ -1,11 +1,11 @@
 ---
 id: understanding-multi-language-content-in-smartwinnr-for-ediotors
-title: "Understanding Multi-Language Content in SmartWinnr for ediotors"
+title: "Understanding Multi-Language Content in SmartWinnr for editors"
 description: "Create and manage content in multiple languages, and SmartWinnr shows each user the version that matches their language preference."
 slug: understanding-multi-language-content-in-smartwinnr-for-ediotors
 sidebar_position: 330
 last_update:
-  date: 2026-09-11
+  date: 2026-09-30
   author: Sandeep Bhuthagaddala
 customProps:
   owner: sandeep.b@smartwinnr.com
