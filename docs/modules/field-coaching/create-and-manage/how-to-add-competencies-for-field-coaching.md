@@ -1,44 +1,37 @@
 ---
-id: 60a50e711df47a61c5ad2f4d
+id: how-to-add-competencies-for-field-coaching
 title: How to add Competencies for Field Coaching
 description: A user who is having admin access can add the competencies for field coaching.
 slug: how-to-add-competencies-for-field-coaching
-sidebar_position: 237
+sidebar_position: 50
 last_update:
-  date: 2026-08-18
-  author: Aswani TK
+  date: 2026-09-29
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
   - field-coaching
-draft: false
+draft: true
 ---
+{/* release-draft: tag=v3.59.45 issue=9708 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9708 */}
 
-> **At a glance** - This article outlines the steps to add competencies for field coaching by users with admin access.
+> **At a glance** - Star ratings in field coaching sessions save correctly and appear again when you reopen the session.
 
-A user with admin access can add competencies for field coaching. Competencies help define the skills and knowledge required for effective field coaching.
+Star ratings now save and display again for coachings created in the new field coaching setup screen. When you rate competencies and select **Save** or **Complete Coaching**, the session keeps those ratings. Reopening the session with **View** shows the saved stars and the **Average** section, and the coaching planner shows each session's average rating.
 
 ## When to use this
-Use this feature when you need to:
-- Define specific competencies for your field coaching program.
-- Organize competencies into groups for better management.
-- Ensure that your coaching staff has the necessary skills and knowledge.
+Use this when you want to confirm that field coaching ratings are saved and shown correctly.
 
-## Steps
+- You rate competencies in a field coaching session and want to reopen the same session later.
+- You want the session to show the saved stars and the **Average** section.
+- You want the coaching planner to show each session's average rating.
+- You work with Inline Rating or Self-Assessment coachings created in the new field coaching setup screen.
 
-### 1. Access Field Coaching Settings
-Select the left menu, then navigate to **ADMIN** > **Field Coaching Settings** > **Competencies**.
+## Things to know
+Ratings saved before this fix were not stored and cannot be recovered. Coaches need to rate those sessions again.
 
-![Step 1: Select the left menu>>Go to ADMIN>>Field Coaching Settings>>Competencies.](/img/helpscout/admins/how-to-add-competencies-for-field-coaching-1.jpg)
+Coachings created from a template are unaffected and keep storing the template reference.
 
-### 2. Create a Competency Group
-Add competencies by creating a group. Click on the **Add New** icon.
-
-![Competency Group Name](/img/helpscout/authored/how-to-add-competencies-for-field-coaching-msylt56c.png)
-
-![Competencies](/img/helpscout/authored/how-to-add-competencies-for-field-coaching-msylrv8v.png)
-
-### 3. Enter Group and Competency Names
-Enter the group name and competency names. Click on the **Save** icon at the end of the page to finalize your entries.
-
-By following these steps, you will successfully create competencies for field coaching.
+:::note
+If you do not see this behavior in Field Coaching, contact SmartWinnr support.
+:::
