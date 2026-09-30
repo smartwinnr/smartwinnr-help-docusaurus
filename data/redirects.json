@@ -527,7 +527,7 @@
     },
     {
       "from": "/administration/video-coaching-module/how-to-create-field-coaching",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/administration/video-coaching-module/how-to-enable-the-streaming-links-for-video-coaching",
@@ -1611,7 +1611,7 @@
     },
     {
       "from": "/modules/video-coaching/how-to-create-field-coaching",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/modules/video-coaching/how-to-enable-the-streaming-links-for-video-coaching",
@@ -1895,7 +1895,7 @@
     },
     {
       "from": "/modules/video-coaching/create-and-manage/how-to-create-field-coaching",
-      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
+      "to": "/modules/field-coaching"
     },
     {
       "from": "/modules/video-coaching/create-and-manage/how-to-review-a-field-coaching-as-a-manager-2nd-level-manager",
@@ -2056,6 +2056,10 @@
     {
       "from": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching-template",
       "to": "/modules/field-coaching"
+    },
+    {
+      "from": "/modules/content-center/create-and-manage/how-to-create-field-coaching",
+      "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
     }
   ]
 }
