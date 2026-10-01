@@ -356,6 +356,12 @@
       "ts": 1790856965172,
       "seq": 24,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-set-auto-archival-rules-for-a-content-item-mupi0eq2.png": {
+      "action": "upsert",
+      "ts": 1790856986763,
+      "seq": 25,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
