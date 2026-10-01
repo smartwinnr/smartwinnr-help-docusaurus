@@ -87,20 +87,9 @@ You can also switch back to **Never archive automatically** if you no longer wan
 Once you click **Save rules**, a confirmation pop-up appears stating that the **archive rule has been saved** and showing the scheduled archival date.
 ![confirmation pop-up](/img/helpscout/authored/how-to-set-auto-archival-rules-for-a-content-item-mupir9nv.png)
 
-## Things to know
+**Things to know:**
 
-:::note
-If you choose **After a set period**, the archival date is calculated from the publication date.
-:::
-
-:::note
-If a new version is published, the archival period starts again from that version’s publication date.
-:::
-
-:::note
-Archived content is no longer available as an active published item.
-:::
-
-:::note
-You can republish an archived content item through the lifecycle process.
-:::
+* If you choose **After a set period**, the archival date is calculated from the publication date.
+* If a **new version is published**, the archival period starts again from that version’s publication date.
+* **Archived content** is no longer available as an active published item.
+* You can **republish archived content** through the lifecycle process.
