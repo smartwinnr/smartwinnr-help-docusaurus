@@ -41,12 +41,32 @@ Each competition type is designed for a different competition format and use cas
 ## Steps
 
 ### 1. Choose a standard competition
-Use a Standard Competition when you want participants to compete across multiple activities. You can include SmartFeeds, quizzes, surveys, forms, scorecards, video coaching, SmartPaths, and other supported learning or performance activities.
+A Standard Competition is a flexible competition format where participants compete based on the activities configured for the competition.
+
+You can include different types of activities as competition tasks, such as:
+
+- SmartFeeds
+- Quizzes
+- Surveys
+- Forms
+- Scorecards
+- Video Coaching
+- SmartPaths
 
 Participants earn scores from the activities you include, and those scores appear on the leaderboard. This format works well when you want to track individual performance or team totals across several tasks.
 
 ### 2. Choose a bracket challenge
 Use a Bracket Challenge when you want a tournament-style competition. Participants face off in rounds such as qualifiers, quarter finals, semi finals, and finals.
+
+The competition runs on one predefined KPI, such as number of products sold or total sales value. You select that KPI during setup.
+
+- The same KPI applies throughout the competition.
+- Participants are evaluated against the selected KPI.
+- Performance is compared between the two participants in each matchup.
+- The participant with the higher performance advances to the next round.
+- The process continues until the final round determines the winner.
+
+This format creates a tournament-style experience while measuring participants against a clearly defined performance metric.
 
 Each matchup uses one KPI for the full competition. The participant with the higher performance advances to the next round. This format works well when you want direct competition instead of a single ranked list.
 
