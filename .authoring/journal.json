@@ -302,6 +302,12 @@
       "ts": 1790847439983,
       "seq": 11,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/understanding-competition-types.md": {
+      "action": "upsert",
+      "ts": 1790847465239,
+      "seq": 12,
+      "author": "sandeep.b@smartwinnr.com"
     }
   }
 }
