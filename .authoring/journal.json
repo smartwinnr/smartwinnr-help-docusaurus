@@ -236,6 +236,12 @@
       "ts": 1790761813376,
       "seq": 29,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/assign-and-schedule/how-to-assign-users-to-field-coaching.md": {
+      "action": "upsert",
+      "ts": 1790845742649,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
