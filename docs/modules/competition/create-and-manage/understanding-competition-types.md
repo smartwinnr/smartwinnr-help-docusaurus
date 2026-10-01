@@ -13,6 +13,8 @@ tags: ["competition"]
 draft: true
 ---
 
+> **At a glance** - SmartWinnr competitions let you choose the format that matches your goal. Use a standard competition for multiple activities, a bracket challenge for tournament play, or a video coaching level competition for coaching scenarios.
+
 SmartWinnr competitions let you turn learning and coaching activities into structured challenges. You can choose the competition type that matches your goal, from broad activity-based contests to tournament-style matchups.
 
 Each type uses a different scoring format. That helps you match the competition to the experience you want to create.
@@ -25,6 +27,16 @@ Use this when you are deciding how to structure a competition.
 - You want participants to compete on a single leaderboard.
 - You want a knockout-style tournament with rounds and matchups.
 - You want to build a competition around video coaching performance.
+
+SmartWinnr supports three competition types:
+
+**1. Standard**
+
+**2. Brackets**
+
+**3. Video Coaching Level**
+
+Each competition type is designed for a different competition format and use case.
 
 ## Steps
 
