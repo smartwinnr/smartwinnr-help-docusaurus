@@ -84,7 +84,8 @@ Open **Archive Rules** again whenever you need to change the period, date, remin
 You can also switch back to **Never archive automatically** if you no longer want automatic archival.
 ### Archive Rules Saved
 
-Once you click **Save rules**, a confirmation pop-up appears stating that the **archive rule has been saved** and showing the scheduled archival date.
+Once you click **Save rules**, a confirmation pop-up appears in the **top-right corner**, stating that the **archive rule has been saved** and displaying the scheduled archival date.
+
 ![confirmation pop-up](/img/helpscout/authored/how-to-set-auto-archival-rules-for-a-content-item-mupir9nv.png)
 
 **Things to know:**

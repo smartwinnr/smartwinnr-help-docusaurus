@@ -239,8 +239,8 @@
     },
     "docs/modules/field-coaching/assign-and-schedule/how-to-assign-users-to-field-coaching.md": {
       "action": "upsert",
-      "ts": 1790848264108,
-      "seq": 18,
+      "ts": 1790858875213,
+      "seq": 36,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupbfzgk.png": {
@@ -323,8 +323,8 @@
     },
     "docs/modules/content-center/create-and-manage/how-to-set-auto-archival-rules-for-a-content-item.md": {
       "action": "upsert",
-      "ts": 1790858438654,
-      "seq": 35,
+      "ts": 1790858877564,
+      "seq": 37,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/how-to-set-auto-archival-rules-for-a-content-item-muphvv2b.png": {

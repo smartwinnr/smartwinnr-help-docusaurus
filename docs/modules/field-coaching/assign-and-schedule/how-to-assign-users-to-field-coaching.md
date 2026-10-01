@@ -59,7 +59,8 @@ Open the **Selected** tab to review the users, groups, or metatag values you cho
 Use **Search selected users** to find a specific user. Remove any selection you do not want to keep, then click **Save and continue**.
 
 ![kindly click on Save and continue.](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupcbsdr.png)
-Once the users are assigned, a confirmation pop-up appears indicating that the assignment was successful.
+Once the users are assigned, a confirmation pop-up appears in the **top-right corner**, indicating that the **assignment was successful**.
+
 ![confirmation pop-up](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupcgohm.png)
 ### 5. Assign coaches
 After you save the coachees, move to the **Coaches** step.
