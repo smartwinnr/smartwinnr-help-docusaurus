@@ -266,6 +266,12 @@
       "ts": 1790846798318,
       "seq": 5,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupbzqhk.png": {
+      "action": "upsert",
+      "ts": 1790846877657,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
