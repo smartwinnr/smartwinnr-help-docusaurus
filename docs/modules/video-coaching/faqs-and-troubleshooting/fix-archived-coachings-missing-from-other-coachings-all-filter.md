@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.51 issue=9720 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9720 */}
+{/* release-draft: tag=v3.59.53 issue=9720 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9720 */}
 
 On the **Coaching List** page, the **Other Coaching** tab includes archived coachings when you select **All** in **Scenario Status**. Archived coachings still show with the red **Archived** label, and you can find them with **Coaching Title** or **Code** search.
 
