@@ -60,9 +60,9 @@ Choose the participants for the competition. After you save the participants, yo
 ### 7. Add video coaching tasks
 
 Click **Add New Task** to add the video coaching.
-
+![Add new task](/img/helpscout/authored/how-to-create-a-detailing-contest-muv51g7i.png)
 This takes you to the next page, where you can create the coaching by adding the details.
-
+![Scoring and point distribution image](/img/helpscout/authored/how-to-create-a-detailing-contest-muv54ly7.png)
 Give the name of the coaching, add score for submitting the coaching, add multiplier to the competencies, add score for the top video. Also, select the start date and time and end date and time of the coaching.
 
 **On Response Submission:** This is the point we award users when they submit the coaching.
@@ -73,14 +73,21 @@ This helps you manage the total score of the coaching, whether it should be out 
 
 **Marked As Top Video:** This is the point given when the manager selects this submission as the top video.
 
+**AI Score Multiplier:** Multiplier applied to the AI score before adding to leaderboard. Default is 1(no change)
+
 Once you duplicate the coaching scenario, click **Save and Assign User** to go to the next page.
+![save and assgin users](/img/helpscout/authored/how-to-create-a-detailing-contest-muv4wb2s.png)
 
 After you click this button, you move to the coach assignment page, where you can select the coaches for all users. If you want to assign the direct manager as coach, select **Respective Manager** from the coach dropdown as shown below.
+![select coaches](/img/helpscout/authored/how-to-create-a-detailing-contest-muv4uyot.png)
+
 
 Click **Save** once you select the coaches for the users. Then the pop-up appears, and you click **YES** to save the changes.
 
 **Review and Select the video for next level by Manager:** Once the users are assigned to the coaching, they submit the coaching, and the manager can rate it.
+![REview and select video for next level by manager](/img/helpscout/authored/how-to-create-a-detailing-contest-muv4t762.png)
 
 ### 8. Review and move to the next round
-
+![Move to the next round](/img/helpscout/authored/how-to-create-a-detailing-contest-muv4rhpd.png)
 After the review, coaches can move a particular coaching video to the next level using **Move to Next Round**. The next-level coach then reviews and advances the top coaching video until the final selection is made.
+![Graded detailing contest sample view](/img/helpscout/authored/how-to-create-a-detailing-contest-muv4pwyz.png)
