@@ -7,7 +7,7 @@ description: >-
 slug: how-to-create-a-scorecard
 sidebar_position: 176
 last_update:
-  date: 2026-09-25
+  date: 2026-10-06
   author: Anagha Isal
 source:
   helpscout_id: 5fdb13f67129911ba1b21e6b
@@ -159,7 +159,7 @@ For example:
 
 This option applies to recurring measurement frequencies.
 
-> **Note:** This option does not apply to custom date ranges.
+    Note: This option does not apply to custom date ranges.
 
 ---
 
@@ -185,7 +185,7 @@ For example, if the Scorecard is configured with a monthly frequency, historical
 
 This allows you to look back at the Scorecard data for previous periods even after the current data has been updated.
 
-> **Note:** This option does not apply to custom date ranges.
+    Note: This option does not apply to custom date ranges.
 
 ---
 
@@ -202,7 +202,7 @@ The organisational achievement can be:
 
 For example, instead of storing achievement only for individual users, the Scorecard can maintain an organisation-level achievement or achievement grouped by a relevant metatag.
 
-> **Note:** An organisation-level target must be configured for each KPI when using this option.
+    Note: An organisation-level target must be configured for each KPI when using this option.
 
 ---
 
@@ -210,7 +210,7 @@ For example, instead of storing achievement only for individual users, the Score
 
 **Disabled by default**
 
-> **Note:** This option is available only when the required tenant-level configuration is enabled.
+    Note: This option is available only when the required tenant-level configuration is enabled.
 
 The **Store Team Wise KPI Data** option aggregates individual user KPI data at the team or group level and stores it separately.
 
@@ -433,65 +433,170 @@ You can also configure:
 
 ---
 
+### e) Target Level
+
+The **Target Level** measurement type allows you to define different scoring levels based on the **percentage of the target achieved**.
+
+It is similar to Level scoring, but instead of awarding points based on a specific KPI value, points are awarded based on the percentage of the target achieved.
+
+For example:
+
+| % of Target Achieved | Score |
+|---:|---:|
+| 25% | 10 points |
+| 50% | 20 points |
+| 100% | 50 points |
+
+![target level scoring](/img/helpscout/authored/how-to-create-a-scorecard-muwhxq84.png)
+
+Based on these levels:
+
+- **25%–50% of the target** → 10 points
+- **50%–100% of the target** → 20 points
+- **More than 100% of the target** → 50 points
+
+This allows you to award different scores as users progress toward or exceed their targets.
+
+---
+
+### f) Formula
+
+The **Formula** measurement type allows you to calculate a score using a formula based on the values of selected KPIs.
+
+You can enter a formula directly or use **Build Formula** to construct the calculation.
+
+For example, suppose you have a KPI named **Sales Performance Score** and want to calculate its score using two KPIs with weightage as follows:
+
+- New Leads → 40% weight
+- Sales Vol (in m) → 60% weight
+
+The formula can be:
+
+![sample formula](/img/helpscout/authored/how-to-create-a-scorecard-munxbung.png)
+
+To use this formula, add the following KPIs to the Scorecard:
+- Sales Performance Score
+- New Leads
+- Sales Vol (in m)
+
+You can then use **Build Formula** to select the required KPI columns, operators, and functions to construct the calculation as follows.
+
+![Build formula](/img/helpscout/authored/how-to-create-a-scorecard-muwi0usm.png)
+
+This allows the Scorecard to calculate the score for a KPI based on the relationship between the values of the selected KPIs and their corresponding targets.
+
+![formula scoring rule](/img/helpscout/authored/how-to-create-a-scorecard-muwhz28w.png)
 
 
+---
 
+### g) Grid
 
+The **Grid** measurement type allows you to define scoring using a configurable grid.
 
+A Grid can use the data from another KPI to define **slabs** and assign different scores based on the combination of KPI values.
 
+You can configure:
 
+- **Rows** — Define values or ranges for the primary KPI.
+- **Slabs** — Define values or ranges based on another KPI.
+- **Points** — Assign a score for each combination of row and slab values.
+- **Filters** — Add conditions to determine when a specific grid rule should apply.
 
-### 2. Fill in KPI Details
-Here is how to fill the fields to add KPIs:
+### Add a KPI as a Slab
 
-**Visibility:** Choose if you want to make this KPI visible to the users.
+Click **Click to define column** to select a KPI for the slab.
 
-**Position:** This determines the position of the KPI in the chart. If you give "1" here, it shows the KPI in the first position; "2" shows it in the second position, and so on.
+![Define slab](/img/helpscout/authored/how-to-create-a-scorecard-muwi25xz.png)
 
-**Measurement Type:** This field accepts two types of values: Actual and Level.
+![Add slab KPI](/img/helpscout/authored/how-to-create-a-scorecard-muwi2whp.png)
 
-- **Actual:** This value allows you to assign a KPI value and points for that value. Every time a rep achieves the KPI, they will be allotted points. For example, in the below screenshot, for every 20 calls made, the rep will be allotted 10 points.
+For example, you can select **New Leads** and configure slabs such as:
 
-![Actual Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-4.jpg)
+- **Between 5–10 New Leads**
+- **10 or more New Leads**
 
-**Target:** Set a target for the KPI.
+You can then assign different points for each combination of the primary KPI (Perfomance Improvement in the above example) and New Leads slab.
 
-**Floor:** This is the minimum KPI value to achieve in order to receive a score.
+![Slab rule](/img/helpscout/authored/how-to-create-a-scorecard-muwi3opm.png)
 
-**Ceiling:** This is the maximum KPI value after which the score will not be awarded.
+### Add a Metatag Filter
 
-- **Level:** This allows you to set a KPI level and a score. The score will be allotted only once the rep achieves that level. In the screenshot below, three levels have been defined. If the rep makes up to 5 calls, they get 10 points; if they make between 5 and 10 calls, they get 50 points; and if they exceed 10 calls, they get 120 points.
+You can also add an organisation **Metatag** as a filter.
 
-![Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-5.jpg)
+For example, if **Territory** is an organisation metatag, you can use Territory as a filter and define different grid scoring rules for each territory value.
 
-- **Individual Level:** This is similar to Level scoring, allowing you to set scoring for each data uploaded individually. The score will be allotted only once the rep achieves that level. In the screenshot below, three levels have been defined. If the rep makes up to 5 calls, they get 10 points; if they make between 5 and 10 calls, they get 50 points; and if they exceed 10 calls, they get 120 points.
+For example:
 
-![Individual Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-6.jpg)
+| Performance Improvement | New Leads: 5–10 | New Leads: ≥10 | Territory |
+|---:|---:|---:|---|
+| 50 | 100 points | 200 points | NorthEast |
+| 75 | 200 points | 500 points | NorthEast |
+| 50 | 150 points | 250 points | East |
+| 75 | 250 points | 550 points | East |
 
-- **Target Actual:** This is similar to the Actual type, but the difference is that this value is based on the target percentage and not directly on the uploaded data. Every time a rep reaches a certain percentage, they will be allotted points. For example, in the below screenshot, when they reach 20 percent of their target, they receive 10 points.
+In this example, the score depends on the combination of:
 
-![Target Actual Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-7.jpg)
+- Performance Improvement
+- New Leads
+- Territory
 
-**Target:** Set a target percentage for the KPI.
+![Grid with filter](/img/helpscout/authored/how-to-create-a-scorecard-muwi74lf.png)
 
-**Floor:** This is the minimum KPI percentage to achieve in order to receive a score.
+This allows you to create multi-dimensional scoring rules based on KPI values and organisation-specific metatag values.
 
-**Ceiling:** This is the maximum KPI percentage after which the score will not be awarded.
+---
 
-- **Target Level:** This is similar to the Level type, but it allows you to set a KPI level percentage and a score. The score will be allotted only once the rep crosses that percentage level. In the screenshot below, three levels have been defined. If the rep reaches 30% of the target, they get 10 points; if they reach between 30% and 60% of the target percentage, they get 20 points; and if they exceed 60%, they get 30 points.
+### h) Level with Filter
 
-![Target Level Measurement Type](/img/helpscout/editors/how-to-create-a-scorecard-8.jpg)
+The **Level with Filter** measurement type works like the **Level** measurement type, where you define different KPI levels and assign a score to each level. It also allows you to apply a **Metatag filter** to define different scoring rules based on the selected metatag value.
 
-### 3. Select the Sales Reps for the Scorecard
-Once you have filled all the fields, click on the **Create Scorecard** button to successfully create the scorecard. This will take you to the next page where users need to be added to this scorecard.
+For example:
+
+| Performance Improvement | Points | Territory |
+|---:|---:|---|
+| 50 | 100 points | NorthEast |
+| 75 | 200 points | NorthEast |
+| 50 | 50 points | East |
+| 75 | 100 points | East |
+
+In this example:
+
+- For **NorthEast**, 50 → 100 points and 75 → 200 points.
+- For **East**, 50 → 50 points and 75 → 100 points.
+
+This allows you to use the same Level-based scoring approach while applying different scoring rules for different values of an organisation metatag.
+
+![Level with filter](/img/helpscout/authored/how-to-create-a-scorecard-muwi8h1q.png)
+
+## 5. Select the Sales Reps for the Scorecard
+
+Once you have configured the Scorecard and added the required KPIs, click **Create Scorecard**. 
+
+You will then be taken to the user selection screen. You can add users individually or in bulk.
+
+#### Add users individually:
+
+Use the available filters to find the required users.
+Depending on your organisation's configuration, you can filter users using fields such as:
+- Business Unit
+- Zone
+- Group
+- Name
+- Email
+- Metatags
 
 ![Select Sales Reps](/img/helpscout/authored/how-to-create-a-scorecard-mswucd4z.png)
 
-Here, you can search for users based on Business Unit, Zone, Group, Name, Email, and Meta tags, and then add them to the scorecard.
+Select the required users and add them to the Scorecard.
 
-Click on the **Save** button once you have selected the users.
+#### Add users in bulk:
 
-Alternatively, you can upload bulk users and add them to the scorecard. To bulk upload users, click on the **Upload Users** button. It opens the following screen where you can upload a CSV file that contains your user details:
+You can upload users using a CSV file. To bulk upload users, click on the **Upload Users** button.
+
+![Upload users option](/img/helpscout/authored/how-to-create-a-scorecard-muwilxg8.png)
+
+It opens the following screen where you can upload a CSV file that contains your user details:
 
 ![Bulk Upload Users](/img/helpscout/authored/how-to-create-a-scorecard-mswuimvi.png)
 
@@ -503,11 +608,28 @@ Alternatively, you can upload bulk users and add them to the scorecard. To bulk 
 
 **Choose File:** Click on this button and upload your user CSV file.
 
-### 4. Change Targets
-The third step in this process is to view each participant's targets. Here is how you will see the targets of each user:
+![Bulk Upload Users](/img/helpscout/authored/how-to-create-a-scorecard-mswuimvi.png)
+
+## 6. Review and Configure Targets
+
+After adding users, review the targets configured for each user and KPI. Here is how you will see the targets of each user:
 
 ![Change Targets](/img/helpscout/authored/how-to-create-a-scorecard-mswukoko.png)
 
+Depending on the Scorecard configuration, targets may be:
+
+- Entered manually.
+- Obtained from another KPI.
+- Automatically initialized.
+- Carried forward from the previous period.
+
+Review the target values and make any required changes before saving the Scorecard.
+
 You can choose to change targets for the entire team by editing in the line of the **Target**. Refer to [How to add/change targets?](/modules/kpi-gamification/create-and-manage/how-to-add-change-targets) to learn more about editing the targets.
 
-Once all the changes are done, click on **Save**, and the scorecard will be activated.
+Once all the changes are done, click on **Save**, and the scorecard will be activated. The Scorecard will become active based on the configured activation settings.
+
+### Scorecard Creation Flow
+The overall process can be summarized as:
+
+**Configure Scorecard → Configure Scorecard Settings → Add KPIs/KPI Collections → Select Measurement Type for selected KPIs → Configure Scoring Rules → Add Users → Review Targets → Save**
