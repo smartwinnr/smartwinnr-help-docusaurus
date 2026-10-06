@@ -5,7 +5,7 @@ description: "Classify content with categories, tags, and competencies to organi
 slug: how-to-tag-content-with-categories-tags-and-competencies
 sidebar_position: 70
 last_update:
-  date: 2026-10-05
+  date: 2026-10-06
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -14,7 +14,7 @@ tags: ["content-center"]
 draft: false
 ---
 
-> **At a glance** - Use categories, tags, and competencies to classify content and connect it to the right business units, topics, and skills.
+> **At a glance** -Classify a content item with categories, tags, and competencies so it can be found and retrieved.
 
 Content metadata helps you organize a content item in the Editor Portal. Use categories to classify it by business unit, tags to describe it, and competencies to connect it to skills and proficiency levels.
 
@@ -62,4 +62,12 @@ Once you click **Auto-generate competencies**, a pop-up appears in the **bottom-
 Click **Edit** on the **Content Item** page. Update the metadata as needed, including **Categories, Tags, Tag Groups, or Competencies** and their **Proficiency Levels**.
 
 ### 6. How metadata is used
-Categories, Tags, and Competencies provide classification information that can be used to organize and find content.
+
+**Categories, Tags, and Competencies** provide classification information that helps to **organize, classify, find, and retrieve content** in Content Center.
+
+* **Categories** help group and classify content by relevant business units or subject areas.
+* **Tags** and **Tag Groups** add keywords and characteristics that describe the content and make it easier to search and organize.
+* **Competencies** associate content with the skills or competencies it supports and their assigned proficiency levels.
+* The **Search bar** uses these metadata fields, along with the **content item title, description, and content within uploaded documents**, to help users find relevant **folders and content items**. For example, if a keyword appears in an uploaded PDF, searching for that keyword can return the associated content item.
+![use Search bar to find folders and content items using relevant keywords. ](/img/helpscout/authored/how-to-tag-content-with-categories-tags-and-competencies-muw9n41w.png)
+Using metadata makes content **easier to organize, search, and retrieve** in Content Center.
