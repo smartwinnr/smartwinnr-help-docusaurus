@@ -5,7 +5,7 @@ description: "Learn how competition ranking modes work and how global, quarterly
 slug: understanding-leaderboard-ranking-modes
 sidebar_position: 203
 last_update:
-  date: 2026-09-26
+  date: 2026-10-07
   author: Anagha Isal
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -14,78 +14,130 @@ tags: ["gamification"]
 draft: false
 ---
 
-> **At a glance** - Use ranking modes to control how tied scores are ordered in competition leaderboards. Use leaderboard types to show different kinds of performance and points.
+> **At a glance** - SmartWinnr offers different ranking modes for Competition Leaderboards to determine how users with the same score are ranked. SmartWinnr also offers multiple leaderboard types to show different kinds of performance and points.
 
-SmartWinnr includes ranking modes for competition leaderboards and organization-level leaderboard views for users. Ranking modes control how tied scores are ranked. Leaderboard types control what performance or points you see.
+SmartWinnr includes ranking modes for competition leaderboards and organization-level leaderboard views for users. Organizations can choose different ranking modes for their competitions depending on how they want ties and positions to be displayed. Ranking modes are applicable only to Competition Leaderboards.
 
 ## When to use this
 
-Use these leaderboard options when you want to compare performance across users or activities.
+Organizations can configure different org-level leaderboards to show users' overall performance, including Global, Quarterly, Division-wise Global Points, and Quiz leaderboards.
 
+- Use a global leaderboard when you want to track points across multiple SmartWinnr activities.
+- Use a quarterly leaderboard when you want to review quiz performance over a quarter.
+- Use a quiz leaderboard when you want to show ranking for specific quiz.
 - Choose a ranking mode when users can earn the same score in a competition.
-- Use a global view when you want to track points across multiple SmartWinnr activities.
-- Use a quarterly view when you want to review quiz performance over a quarter.
-- Use a quiz view when you want to show ranking for one quiz.
 
-## Things to know
+For Competition Leaderboards, organizations can choose how ranks are assigned when users have the same score:
+- Normal Ranking
+- Tie Ranking
+- Competition Ranking
 
-:::note
-Organization-level leaderboards are controlled at the organization level.
-:::
+## Ranking Modes for Competition Leaderboards
 
-Competition leaderboards support three ranking modes when users have the same score.
+Ranking modes determine how users are ranked on a **Competition Leaderboard**, particularly when multiple users have the same score.
 
-### Normal ranking
+### 1. Normal Ranking
 
-Normal ranking gives each user a separate rank, even when scores match.
+In **Normal Ranking**, each user is assigned a unique rank based on their score.
 
-For example, scores of 20, 20, and 10 produce ranks 1, 2, and 3.
+Even when two users have the same score, they receive different ranks. First person who achieve the score comes in the higher rank.
 
-### Tie ranking
+**Example:**
 
-Tie ranking gives users with the same score the same rank.
+| User | Score | Rank |
+|---|---:|---:|
+| User A | 100 | 1 |
+| User B | 90 | 2 |
+| User C | 90 | 3 |
+| User D | 80 | 4 |
 
-The next user gets the next consecutive rank.
+Here, Users B and C have the same score, but they are assigned different ranks.
 
-For example, scores of 20, 20, and 10 produce ranks 1, 1, and 2.
+### 2. Tie Ranking
 
-### Competition ranking
+In **Tie Ranking**, users with the same score receive the **same rank**.
 
-Competition ranking gives users with the same score the same rank.
+**Example:**
 
-The next rank skips ahead based on how many users share the previous rank.
+| User | Score | Rank |
+|---|---:|---:|
+| User A | 100 | 1 |
+| User B | 90 | 2 |
+| User C | 90 | 2 |
+| User D | 80 | 3 |
 
-For example, scores of 20, 20, and 10 produce ranks 1, 1, and 3.
+Users B and C have the same score, so both receive Rank 2. The next user receives Rank 3.
 
-Organization-level leaderboards are available at the user level.
+### 3. Competition Ranking
 
-### Global leaderboard
+In **Competition Ranking**, users with the same score receive the same rank, and the next rank is skipped.
 
-The Global Leaderboard shows overall points from configured SmartWinnr activities.
+**Example:**
 
-By default, it can include points from quizzes, SmartPath, coaching, and competitions.
+| User | Score | Rank |
+|---|---:|---:|
+| User A | 100 | 1 |
+| User B | 90 | 2 |
+| User C | 90 | 2 |
+| User D | 80 | 4 |
 
-Your organization can also include additional activities, such as first login and profile image upload.
+Users B and C share Rank 2. Since two users occupy Rank 2, the next user is ranked 4th.
 
-### Quarterly leaderboard
+### Ranking Modes at a Glance
 
-The Quarterly Leaderboard shows quiz performance across all quizzes completed during a quarter.
+| Ranking Mode | How users with the same score are ranked | Example |
+|---|---|---|
+| **Normal Ranking** | Each user receives a different rank | 1, 2, 3, 4 |
+| **Tie Ranking** | Users with the same score receive the same rank | 1, 2, 2, 3 |
+| **Competition Ranking** | Users with the same score receive the same rank and the next rank is skipped | 1, 2, 2, 4 |
 
-It helps you review performance for a time period instead of one quiz at a time.
+## Org-Level Leaderboards
 
-### Quiz leaderboard
+Org-level leaderboards provide broader views of user performance beyond an individual competition.
 
-The Quiz Leaderboard is created automatically for each quiz created by a Trainer or Editor.
+### Global Points Leaderboard
 
-It shows ranking for that specific quiz.
+The **Global Points** leaderboard provides an overall view of points accumulated by users over a selected period. You can find the global leaderboard with total points and ranks under Admin > Global points. 
 
-Your organization can disable it for a quiz when needed.
+![Global points](/img/helpscout/authored/understanding-leaderboard-ranking-modes-muydcq7o.png)
 
-### Ranking mode vs. leaderboard type
+Here, goto Hamburger menu and choose **View Aggregated Ranks** to find the total points and rank obtained at global level for each user.
 
-Ranking mode and leaderboard type serve different purposes.
+![Aggregated rank](/img/helpscout/authored/understanding-leaderboard-ranking-modes-muyecyye.png)
 
-- Ranking mode controls how users are ordered when scores match.
-- Leaderboard type controls what points or performance the leaderboard displays.
+You can also view the division wise global points here. Filter with the required Business Unit and you can find the **Division-wise Global Points Leaderboard** which provides users' global points and rankings within the selected division.
 
-Use ranking mode for competition ordering. Use leaderboard type for the score source or time period you want to track.
+This provides a way to compare performance within a specific organizational division rather than only looking at the overall organization.
+
+### Quarterly Leaderboard
+
+The **Quarterly Leaderboard** displays user's total quiz performance for each quarter. This is available under **Editor >> Questions and Quizzes > Reports > Team Analytics**
+
+![Quaterly leaderboard](/img/helpscout/authored/understanding-leaderboard-ranking-modes-muyd9i76.png)
+
+Users can navigate between quarters to view the leaderboard for the selected period. For example, the leaderboard can display **Q3 2026**, with options to move to the previous or next quarter.
+
+The leaderboard can display information such as:
+
+- Rank
+- User name
+- Country (Sub BU)
+- Score
+- Analytics, which takes you to the details report of the quizzes completed by the selected user.
+
+### Quiz Leaderboard
+
+The **Quiz Leaderboard** displays rankings based on quiz performance. It is created by default when a quiz is setup in SmartWinnr. You can find the quiz leaderboard under the quiz analytics page.
+
+Depending on the configuration, the leaderboard can display information such as:
+
+- Rank
+- User name
+- Country
+- Completion time (for timed quiz)
+- Score
+- Analytics
+
+![Quiz leaderboard](/img/helpscout/authored/understanding-leaderboard-ranking-modes-muyenszz.png)
+
+The quiz leaderboard can therefore be used to compare users based on their quiz scores and, where enabled, the time taken to complete the quiz.
