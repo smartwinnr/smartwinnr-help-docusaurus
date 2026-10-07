@@ -5,8 +5,8 @@ description: A user who is having admin access can add the competencies for fiel
 slug: how-to-add-competencies-for-field-coaching
 sidebar_position: 237
 last_update:
-  date: 2026-08-18
-  author: Aswani TK
+  date: 2026-10-07
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags:
@@ -41,4 +41,4 @@ Add competencies by creating a group. Click on the **Add New** icon.
 ### 3. Enter Group and Competency Names
 Enter the group name and competency names. Click on the **Save** icon at the end of the page to finalize your entries.
 
-By following these steps, you will successfully create competencies for field coaching.
+By following these steps, you will successfully create competencies for field coaching
