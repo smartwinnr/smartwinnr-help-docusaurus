@@ -29,13 +29,18 @@ Use this when you need to:
 ## Steps
 
 ### 1. Open Field Coaching
+
 Go to **Editor > Coaching > Field Coaching > Coaching** from the left menu.
 ![Open Field Coaching](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupbpo2p.png)
 On the **Field Coaching** page, select the coaching you want to assign.
+
 ### 2. Open the coaching assignment
+
  On the coaching details page, click **Assignment** in the top right.
 ![open the coaching assignment](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupbv7go.png)
+
 ### 3. Edit the assignment
+
 After clicking **Assignment**, the assignment page opens. Click **Edit** in the top-right corner to configure the users for the Field Coaching.
 ![kindly click on edit](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupby19p.png)
 Under **Assign by**, choose how you want to select coachees:
@@ -54,6 +59,7 @@ For **Metatag**, choose a **Metatag type** and then select the metatag value tha
 ![metatag](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupc77l0.png)
 
 ### 4. Review the selected coachees
+
 ![Review the selected coachees](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupcbixg.png)
 Open the **Selected** tab to review the users, groups, or metatag values you chose.
 
@@ -63,7 +69,9 @@ Use **Search selected users** to find a specific user. Remove any selection you 
 Once the users are assigned, a confirmation pop-up appears in the **top-right corner**, indicating that the **assignment was successful**.
 
 ![confirmation pop-up](/img/helpscout/authored/how-to-assign-users-to-field-coaching-mupcgohm.png)
+
 ### 5. Assign coaches
+
 After you save the coachees, move to the **Coaches** step.
 
 Select the coach for the assigned coachees, then click **Save coaches**.

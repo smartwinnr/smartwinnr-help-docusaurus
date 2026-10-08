@@ -2060,6 +2060,10 @@
     {
       "from": "/modules/content-center/create-and-manage/how-to-create-field-coaching",
       "to": "/modules/field-coaching/create-and-manage/how-to-create-field-coaching"
+    },
+    {
+      "from": "/modules/field-coaching/assign-and-schedule/how-to-assign-users-to-field-coaching",
+      "to": "/modules/field-coaching/create-and-manage/how-to-assign-users-to-field-coaching"
     }
   ]
 }
