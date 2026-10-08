@@ -2038,12 +2038,23 @@ const CANONICAL_SUBFOLDERS = new Set([
   'features', 'reports-and-analytics', 'settings-and-permissions',
   'best-practices', 'faqs-and-troubleshooting',
 ]);
+/** Canonical leaves being phased out: articles already in one keep
+ *  resolving, but no module may START one. The wizard UI hides these, yet
+ *  33618965 still opened field-coaching/assign-and-schedule server-side. */
+const DEPRECATED_SUBFOLDERS = new Set(['assign-and-schedule']);
+function isDeprecatedNewLeaf(moduleSlug, sub) {
+  return DEPRECATED_SUBFOLDERS.has(sub)
+    && !fsSync.existsSync(path.join(MODULES_ROOT, String(moduleSlug || ''), sub));
+}
 /** Reason string when a module sub-folder is not canonical, or null when it
  *  is. Modules draw ALL their leaves from CANONICAL_SUBFOLDERS - custom
  *  folders (e.g. `editors`, `reports-analytics`) are rejected so the tree
  *  stays uniform and audit-gates.js stays clean. Sections (docs/<section>/)
  *  are NOT subject to this - they may have arbitrary sub-folders. */
 function canonicalSubfolderError(sub, moduleSlug) {
+  if (isDeprecatedNewLeaf(moduleSlug, sub)) {
+    return `"${sub}" is being retired and can't be started in a new module. Use create-and-manage or features instead.`;
+  }
   if (isModuleSubfolder(moduleSlug, sub)) return null;
   const declared = moduleSubSections(moduleSlug).map((x) => x.slug);
   return `"${sub}" is not a standard module folder. Modules use a fixed set: ${[...CANONICAL_SUBFOLDERS, ...declared].join(', ')}.`;
@@ -2297,7 +2308,7 @@ async function generateHandler(req, res) {
       try {
         // A canonical module leaf with no articles yet is a valid destination -
         // scaffold it rather than dead-ending the author's brain dump.
-        ensureCanonicalModuleLeaf(inputs.dir);
+        ensureCanonicalModuleLeaf(inputs.dir, req.user?.email);
         resolveAnyDocDir(inputs.dir);
       } catch (e) {
         return res.status(400).json({ error: "That folder doesn't exist any more - pick another destination." });
@@ -2552,7 +2563,7 @@ async function saveHandler(req, res) {
     if (dir) {
       if (!isValidSlug(slug)) return res.status(400).json({ error: 'Invalid slug' });
       // Materialize a canonical module leaf on first use so it isn't a dead end.
-      ensureCanonicalModuleLeaf(dir);
+      ensureCanonicalModuleLeaf(dir, req.user?.email);
       target = path.join(resolveAnyDocDir(dir), `${slug}.md`);
     } else {
       target = resolveDraftPath(moduleSlug, subFolder, slug);
@@ -2645,12 +2656,9 @@ async function saveHandler(req, res) {
     // existence), so this correctly no-ops for them.
     const targetRel = path.relative(__dirname, target).replace(/\\/g, '/');
     const modMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)\//.exec(targetRel);
-    const subfolderCreated = modMatch ? ensureSubfolderCategory(modMatch[1], modMatch[2]) : false;
+    const subfolderCreated = modMatch ? ensureSubfolderCategory(modMatch[1], modMatch[2], req.user?.email) : false;
     fsSync.writeFileSync(target, finalText, 'utf8');
     journalRecordUpsert(targetRel, req.user?.email);
-    if (subfolderCreated && modMatch) {
-      journalRecordUpsert(path.join('docs', 'modules', modMatch[1], modMatch[2], '_category_.json'), req.user?.email);
-    }
 
     // The title changed enough to move the article: retire the old file and
     // leave a redirect behind, the way /save-raw already handles a slug edit.
@@ -3825,6 +3833,7 @@ async function fireDeploy() {
     // shared redirects.json ABORT the whole deploy - there is no way to
     // ship "part of" that file safely.
     const perFile = new Map(); // rel → {missingImages, errors, bundle}
+    const batchRels = new Set(files.map((f) => f.rel.replace(/\\/g, '/')));
     for (const f of files) {
       const status = { missingImages: [], errors: [], bundle: [] };
       perFile.set(f.rel, status);
@@ -3839,6 +3848,20 @@ async function fireDeploy() {
             status.missingImages.push(rel);
           }
           // else: not on disk but already in the repo - nothing to upload.
+        }
+        // A module article needs its sub-folder's gate on the branch, or
+        // audit-gates fails the build (33618965 shipped one into a folder
+        // whose _category_.json a redeploy had wiped). Bundle it from disk -
+        // re-scaffolding if lost - so it ships only if the article does.
+        const leaf = /^docs\/modules\/([^/]+)\/([^/]+)\/[^/]+\.(md|mdx)$/i.exec(relNorm);
+        const catRel = leaf && `docs/modules/${leaf[1]}/${leaf[2]}/_category_.json`;
+        if (catRel && !batchRels.has(catRel) && !(await repoHasFile(catRel))) {
+          ensureSubfolderCategory(leaf[1], leaf[2]);
+          if (fsSync.existsSync(path.join(__dirname, catRel))) {
+            status.bundle.push(catRel);
+          } else {
+            status.errors.push(`Folder docs/modules/${leaf[1]}/${leaf[2]}/ has no _category_.json (fails the gate audit) - move the article to a standard folder`);
+          }
         }
         // Build-physics: anything gradeMarkdown marks buildBreaking (bad
         // YAML, uncompilable MDX, unknown privilege key) hard-fails the
@@ -4108,14 +4131,17 @@ async function fireDeploy() {
     // actually changed (readers summed them into "lots of new articles").
     const isArticleRel = (rel) => /^docs\/.+\.(md|mdx)$/i.test(String(rel).replace(/\\/g, '/'));
     const articleUpserts = shippable.filter((f) => isArticleRel(f.rel));
-    const otherUpserts = shippable.length - articleUpserts.length;
+    // Gate files bundled by the pre-flight ride in `images`; count them as files.
+    const bundledGates = images.filter((i) => /_category_\.json$/.test(i.rel)).length;
+    const imageCount = images.length - bundledGates;
+    const otherUpserts = shippable.length - articleUpserts.length + bundledGates;
     const changedSlugs = [...articleUpserts.map((f) => path.basename(f.rel).replace(/\.(md|mdx)$/, '')),
                          ...deletes.filter(isArticleRel).map((d) => '-' + path.basename(d).replace(/\.(md|mdx)$/, ''))].slice(0, 3);
     const parts = [];
     if (articleUpserts.length) parts.push(`${articleUpserts.length} article${articleUpserts.length === 1 ? '' : 's'}`);
     if (otherUpserts) parts.push(`${otherUpserts} file${otherUpserts === 1 ? '' : 's'}`);
     if (deletes.length) parts.push(`${deletes.length} delete${deletes.length === 1 ? '' : 's'}`);
-    if (images.length) parts.push(`${images.length} image${images.length === 1 ? '' : 's'}`);
+    if (imageCount) parts.push(`${imageCount} image${imageCount === 1 ? '' : 's'}`);
     const totalChanges = articleUpserts.length + deletes.length;
     // Category-only or image-only batches have no article slugs to name.
     if (!changedSlugs.length && shippable.length) {
@@ -4136,7 +4162,7 @@ async function fireDeploy() {
       force: false,
     });
 
-    console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${images.length} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with build-breaking problems` : ''}`);
+    console.log(`[deploy] pushed ${shippable.length} upsert(s) + ${deletes.length} delete(s) + ${imageCount} image(s) → ${GITHUB_REPO}@${GIT_PUBLISH_BRANCH} (${commitResp.data.sha.slice(0, 7)})${heldBack.length ? `; held back ${heldBack.length} article(s) with build-breaking problems` : ''}`);
     // Remove ONLY what this deploy snapshotted - and only if the queued
     // action hasn't changed since. A publish/delete that arrived during the
     // multi-second GitHub round-trips stays queued for the next batch;
@@ -4188,7 +4214,7 @@ async function fireDeploy() {
       ok: true,
       committed: shippable.length,
       deleted: deletes.length,
-      images: images.length,
+      images: imageCount,
       sha: commitResp.data.sha,
       held: heldBack.map((h) => ({ path: h.rel, missingImages: h.missing, errors: h.errors })),
       ...(overviewsRepair ? { overviewsRepair } : {}),
@@ -4252,7 +4278,10 @@ async function publishHandler(req, res) {
     // Ship the folder's gate file together with the article. For a freshly
     // author-created folder this is its first trip to the publish branch
     // (an empty category alone could break the site build); for existing
-    // folders it's an identical-content no-op in the commit.
+    // folders it's an identical-content no-op in the commit. Re-scaffold a
+    // module leaf's gate first in case a redeploy dropped it from disk.
+    const pubMod = /^docs\/modules\/([^/]+)\/([^/]+)\//.exec(relPath.replace(/\\/g, '/'));
+    if (pubMod) ensureSubfolderCategory(pubMod[1], pubMod[2], publisherEmail);
     const catAbs = path.join(path.dirname(target), '_category_.json');
     if (fsSync.existsSync(catAbs)) {
       enqueueUpsert(path.relative(__dirname, catAbs));
@@ -4753,13 +4782,13 @@ function resolveAnyDocPath(relPath) {
  *  ("Folder not found") *after* the author had written their brain dump.
  *  Scaffold the gate instead, which is what /save did a moment later anyway.
  *  Returns true when it created the folder. Write paths only. */
-function ensureCanonicalModuleLeaf(dirRel) {
+function ensureCanonicalModuleLeaf(dirRel, author) {
   const m = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(String(dirRel || '').replace(/\\/g, '/'));
   if (!m) return false;
-  if (!isModuleSubfolder(m[1], m[2])) return false;
+  if (canonicalSubfolderError(m[2], m[1])) return false;  // custom or retired leaf
   if (!fsSync.existsSync(path.join(MODULES_ROOT, m[1]))) return false;  // unknown module
   if (fsSync.existsSync(path.join(MODULES_ROOT, m[1], m[2]))) return false;
-  return ensureSubfolderCategory(m[1], m[2]);
+  return ensureSubfolderCategory(m[1], m[2], author);
 }
 
 function resolveAnyDocDir(dir) {
@@ -4993,11 +5022,10 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     fsSync.mkdirSync(path.dirname(target), { recursive: true });
     // Same gate-protection as /save: derive {module, subFolder} from the
     // validated path and write the sub-folder _category_.json if missing.
-    let subfolderCreated = false;
     const m = /^docs\/modules\/([^/]+)\/([^/]+)\/[^/]+\.(md|mdx)$/.exec(
       path.relative(__dirname, target).replace(/\\/g, '/')
     );
-    if (m) subfolderCreated = ensureSubfolderCategory(m[1], m[2]);
+    const subfolderCreated = m ? ensureSubfolderCategory(m[1], m[2], req.user?.email) : false;
     // Same reasoning as /save: a hand-edit in the raw editor is a content
     // change and must move the "Updated" chip. Stamped at the write, not on
     // `cleaned`, so the audit, draft flag and slug/id collision checks above
@@ -5005,9 +5033,6 @@ app.post('/api/admin/authoring/save-raw', requireRole('superadmin'), async (req,
     const finalText = stampIfContentChanged(cleaned, target, req.user);
     fsSync.writeFileSync(target, finalText, 'utf8');
     journalRecordUpsert(path.relative(__dirname, target), req.user?.email);
-    if (subfolderCreated && m) {
-      journalRecordUpsert(path.join('docs', 'modules', m[1], m[2], '_category_.json'), req.user?.email);
-    }
 
     // If this is a published article (draft:false), the raw save needs to
     // reach production. Without enqueueing, the change sits on the
@@ -5270,6 +5295,9 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
       if (!isModuleSubfolder(m[1], m[2]) && !fsSync.existsSync(path.join(__dirname, toDirRel))) {
         return res.status(400).json({ error: 'That folder does not exist in this module.' });
       }
+      if (isDeprecatedNewLeaf(m[1], m[2])) {
+        return res.status(400).json({ error: canonicalSubfolderError(m[2], m[1]) });
+      }
       toDirAbs = path.join(__dirname, toDirRel);
     } else {
       toDirAbs = resolveAnyDocDir(toDirRel);
@@ -5306,16 +5334,13 @@ app.post('/api/admin/authoring/move', requireRole('superadmin'), async (req, res
     // Gate a brand-new module sub-folder before the file lands there
     // (no-ops for section destinations, which must already exist).
     const destModMatch = /^docs\/modules\/([a-z0-9-]+)\/([a-z0-9-]+)$/.exec(toDirRel);
-    const created = destModMatch ? ensureSubfolderCategory(destModMatch[1], destModMatch[2]) : false;
+    const created = destModMatch ? ensureSubfolderCategory(destModMatch[1], destModMatch[2], req.user?.email) : false;
 
     fsSync.mkdirSync(path.dirname(toAbs), { recursive: true });
     fsSync.writeFileSync(toAbs, next, 'utf8');
     fsSync.unlinkSync(fromAbs);
     journalRecordUpsert(toRel, req.user?.email);
     journalRecordDelete(fromRel, req.user?.email);
-    if (created && destModMatch) {
-      journalRecordUpsert(path.join('docs', 'modules', destModMatch[1], destModMatch[2], '_category_.json'), req.user?.email);
-    }
 
     let queuedForDeploy = false;
     let redirectsUpdated = false;
@@ -5685,8 +5710,14 @@ function writeModuleSkeleton({ slug, label, privilege, anyPrivilege, position, t
  *  when an article lands in a previously-unused sub-folder) doesn't ship
  *  ungated. Derives the gate from SUBFOLDER_TEMPLATE + the module's
  *  privilege/anyPrivilege in static/module-overviews.json. Returns true if
- *  it wrote a new file, false otherwise. */
-function ensureSubfolderCategory(moduleSlug, subFolder) {
+ *  it wrote a new file, false otherwise.
+ *
+ *  Journals the file itself: an unjournaled gate lives only on the
+ *  ephemeral disk, the next redeploy drops it while the journal restores
+ *  the article, and the publish then ships an ungated sub-folder that
+ *  fails audit-gates (33618965). Callers must not rely on the return value
+ *  to journal - a scaffold by an earlier call returns false here. */
+function ensureSubfolderCategory(moduleSlug, subFolder, author) {
   if (!moduleSlug || !subFolder) return false;
   const dir = path.join(MODULES_ROOT, moduleSlug, subFolder);
   const target = path.join(dir, '_category_.json');
@@ -5723,6 +5754,7 @@ function ensureSubfolderCategory(moduleSlug, subFolder) {
 
   fsSync.mkdirSync(dir, { recursive: true });
   fsSync.writeFileSync(target, JSON.stringify(cat, null, 2) + '\n', 'utf8');
+  journalRecordUpsert(path.relative(__dirname, target), author);
   console.log(`[authoring] ensureSubfolderCategory: wrote ${path.relative(__dirname, target)}`);
   return true;
 }
@@ -5837,15 +5869,17 @@ app.post('/api/admin/authoring/folders', requireRole('superadmin'), (req, res) =
           error: `Modules use a fixed set of folders and "${cleanLabel}" isn't one of them. Choose a standard folder: ${[...CANONICAL_SUBFOLDERS, ...moduleSubSections(moduleSlug).map((x) => x.slug)].join(', ')}.`,
         });
       }
+      if (isDeprecatedNewLeaf(moduleSlug, slug)) {
+        return res.status(400).json({ error: canonicalSubfolderError(slug, moduleSlug) });
+      }
       // Canonical name: the gate audit demands the exact template gate -
-      // reuse the canonical scaffolder (template roles + module privilege).
-      if (!ensureSubfolderCategory(moduleSlug, slug)) {
+      // reuse the canonical scaffolder (template roles + module privilege),
+      // which also journals it.
+      if (!ensureSubfolderCategory(moduleSlug, slug, req.user?.email)) {
         return res.status(400).json({ error: 'Could not create the standard folder - check the module setup.' });
       }
       roles = subfolderTemplate(moduleSlug, slug)?.roles || ALL_ROLES;
       catRel = `docs/modules/${moduleSlug}/${slug}/_category_.json`;
-      // ensureSubfolderCategory wrote + created; journal it for durability.
-      journalRecordUpsert(catRel, req.user?.email);
     } else {
       // Section folder: inherit the section's audience.
       const sectionCat = readCat(parentAbs);
