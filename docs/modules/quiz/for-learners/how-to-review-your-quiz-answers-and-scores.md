@@ -5,7 +5,7 @@ description: "This article shows you how to review your quiz answers and scores 
 slug: how-to-review-your-quiz-answers-and-scores
 sidebar_position: 281
 last_update:
-  date: 2026-09-03
+  date: 2026-10-09
   author: Aswani TK
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -29,22 +29,22 @@ Use the quiz review feature when you want to:
 ### 1. Click the **Review** button
 Once you complete the quiz, you will reach a page where you can click the **Review** button to check your answers.
 
-![Review Button to check the answers](/img/helpscout/authored/authored-mtle32k0.png)
+![Click on the review button](/img/helpscout/authored/how-to-review-your-quiz-answers-and-scores-mv0oncyj.png)
 
 ### 2. View your answers
 In the first tab, **All Answers**, you will see the answers you provided and the correct answer for each question.
 
-![Answer of all the question](/img/helpscout/authored/authored-mtle5o9l.png)
+![All answers tab](/img/helpscout/authored/how-to-review-your-quiz-answers-and-scores-mv0oo7rh.png)
 
 ### 3. Check correct answers
 In the **Correct Answers** tab, you can see all questions which you have selected the correct answers.
 
-![correct answers tab](/img/helpscout/authored/authored-mtlg9poh.png)
+![Correct answer tab](/img/helpscout/authored/how-to-review-your-quiz-answers-and-scores-mv0ooui1.png)
 
 ### 5. Analyze your mistakes
 In the **Incorrect Answers** tab, you can review which answers were incorrect and learn from your mistakes.
 
-![Incorrect answer tab](/img/helpscout/authored/authored-mtlgdr8e.png)
+![Incorrect tab](/img/helpscout/authored/how-to-review-your-quiz-answers-and-scores-mv0opjav.png)
 
 ## Tips
 - Take notes on the questions you missed to improve your understanding.
