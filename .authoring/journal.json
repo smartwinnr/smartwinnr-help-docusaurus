@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "baseMainSha": "2b9fbf4c4d052f68d70a8d3be2937804440278f7",
+  "rebasedTs": 1791556106743,
+  "entries": {
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/fold-role-play-inventory-into-coachings-expand-its-search.md": {
+      "action": "upsert",
+      "ts": 1788771874533,
+      "seq": 1,
+      "author": "sai.charanreddyt+apsouth1@smartwinnr.com"
+    },
+    "docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-in-smartpath-progress.md": {
+      "action": "upsert",
+      "ts": 1790601781320,
+      "seq": 186,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0rp6j.png": {
+      "action": "upsert",
+      "ts": 1788953575484,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0t2uc.png": {
+      "action": "upsert",
+      "ts": 1788953639844,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0wkrb.png": {
+      "action": "upsert",
+      "ts": 1788953803031,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0zsd4.png": {
+      "action": "upsert",
+      "ts": 1788953952856,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu114p3.png": {
+      "action": "upsert",
+      "ts": 1788954015495,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu126i9.png": {
+      "action": "upsert",
+      "ts": 1788954064497,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu18bh1.png": {
+      "action": "upsert",
+      "ts": 1788954350870,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu1bses.png": {
+      "action": "upsert",
+      "ts": 1788954512788,
+      "seq": 7,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/set-a-separate-timer-for-each-quiz-question.md": {
+      "action": "upsert",
+      "ts": 1789049037743,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-coaching-self-registration-and-show-lms-coachings-in-the-app.md": {
+      "action": "upsert",
+      "ts": 1789049034755,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-verbal-assessment-image-tasks-and-html-sharable-resources.md": {
+      "action": "upsert",
+      "ts": 1790425971650,
+      "seq": 162,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-download-coaching-response-videos.md": {
+      "action": "upsert",
+      "ts": 1790425974300,
+      "seq": 163,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/how-to-manually-update-competition-leaderboard-scores.md": {
+      "action": "upsert",
+      "ts": 1791206067782,
+      "seq": 13,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-lifecycle-and-include-archived-filters-to-coaching-report-downloads.md": {
+      "action": "upsert",
+      "ts": 1790687561652,
+      "seq": 17,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/faqs-and-troubleshooting/fix-metatag-effective-date-skipping-first-day-joiners-for-us-tenants.md": {
+      "action": "upsert",
+      "ts": 1791370858430,
+      "seq": 75,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/understanding-competition-types.md": {
+      "action": "upsert",
+      "ts": 1790847982843,
+      "seq": 17,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/fix-archived-coachings-missing-from-other-coachings-all-filter.md": {
+      "action": "upsert",
+      "ts": 1791551220004,
+      "seq": 6,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-muv9i40u.png": {
+      "action": "upsert",
+      "ts": 1791205493216,
+      "seq": 5,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-muv9nupb.png": {
+      "action": "upsert",
+      "ts": 1791205761071,
+      "seq": 7,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-zip-file-structure-validation-on-presentation-upload.md": {
+      "action": "upsert",
+      "ts": 1791551211785,
+      "seq": 2,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-submitted-for-review-columns-to-coaching-reports.md": {
+      "action": "upsert",
+      "ts": 1791551213821,
+      "seq": 3,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/use-the-smartpath-batch-end-date-for-smartpath-coaching-retake-and-end-date.md": {
+      "action": "upsert",
+      "ts": 1791551217983,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/show-the-real-rating-scale-and-org-logo-on-the-feedback-pdf.md": {
+      "action": "upsert",
+      "ts": 1791551209215,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/allow-saving-a-coaching-whose-learners-already-exceed-its-attempt-limit.md": {
+      "action": "upsert",
+      "ts": 1791551215808,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-custom-report-headers-and-new-columns-to-role-play-inventory-report.md": {
+      "action": "upsert",
+      "ts": 1791551222376,
+      "seq": 7,
+      "author": "release-pipeline@smartwinnr.com"
+    }
+  }
+}
