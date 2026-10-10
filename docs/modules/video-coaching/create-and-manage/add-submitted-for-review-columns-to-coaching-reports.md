@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9767 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9767 */}
+{/* release-draft: tag=v3.59.69 issue=9767 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9767 */}
 
 > **At a glance** - Coaching report exports can include **Submitted For Review** and **Total Submitted For Review**. Use them to see which attempts were sent for manager review and how many submissions each coaching has.
 

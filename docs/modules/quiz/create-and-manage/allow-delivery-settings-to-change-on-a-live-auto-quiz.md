@@ -12,9 +12,9 @@ customProps:
 tags: [quiz]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9794 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9794 */}
+{/* release-draft: tag=v3.59.69 issue=9794 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9794 */}
 
-> **At a glance** - You can update two delivery settings on a live Auto Quiz: delivery frequency and questions per delivery. Learners keep their progress, and future deliveries use the new values.
+> **At a glance** - You can update **Frequency of quiz delivery (days)** and **Number of questions per quiz** on a live Auto Quiz. Learners keep their progress, and future deliveries use the new values.
 
 Use this when you need to adjust an Auto Quiz without starting over. It helps you change the delivery cadence or quiz size while keeping assigned learners and past deliveries intact.
 
@@ -33,7 +33,7 @@ Use these settings when your quiz rollout needs a different pace or question cou
 Open the quiz, then select **Edit**. On the **Edit Quiz** screen, find the auto mode settings table.
 
 ### 2. Change the delivery settings
-Update **Frequency of quiz delivery (days)** or **Number of questions per quiz**. These are the only auto mode settings you can change on a live quiz.
+Update **Frequency of quiz delivery (days)** or **Number of questions per quiz**. These are the only auto mode settings you can change on a live quiz with learners assigned.
 
 ![Open the Auto Quiz, click Edit, and change Frequency of quiz delivery (days) and Number of questions per quiz in the auto mode settings table](/img/helpscout/authored/allow-delivery-settings-to-change-on-a-live-auto-quiz-1.png)
 
@@ -45,18 +45,38 @@ Open **Step 2: Questions**, then **Mandatory Categories**, then **Configure**. R
 
 ![Open Step 2: Questions, Mandatory Categories, Configure, and raise the per-category count](/img/helpscout/authored/allow-delivery-settings-to-change-on-a-live-auto-quiz-2.png)
 
+## Tips
+
+- The new question count applies from each learner's next delivery.
+- The new frequency applies after each learner's next completion.
+- Learners already scheduled keep their current date.
+- Earlier deliveries keep their original question count.
+- The learner quiz list shows the number of questions each delivery actually contained.
+
 ## Things to know
 
 :::note
-The new question count applies from each learner's next delivery. Earlier deliveries keep their original question count.
+All other auto mode settings stay locked on a live quiz with learners assigned.
 :::
 
 :::note
-The new frequency applies after each learner's next completion. Learners already scheduled keep their current date.
+Sequence mode quizzes stay fully locked.
 :::
 
 :::note
-Open deliveries are not changed, and pending delivery dates are not rescheduled.
+The Mandatory Categories modal also saves on an automatic quiz whose deliveries have not been opened yet.
+:::
+
+:::note
+Open deliveries are not changed.
+:::
+
+:::note
+Pending delivery dates are not rescheduled.
+:::
+
+:::note
+Competition points per delivery rise with the delivery size.
 :::
 
 :::note

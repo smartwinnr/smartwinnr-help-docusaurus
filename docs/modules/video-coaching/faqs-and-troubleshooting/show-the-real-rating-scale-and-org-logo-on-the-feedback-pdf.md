@@ -3,7 +3,7 @@ id: show-the-real-rating-scale-and-org-logo-on-the-feedback-pdf
 title: "Show the real rating scale and org logo on the feedback PDF"
 description: "Downloaded AI coaching feedback PDFs now match the coaching rating scale and include your organization logo."
 slug: show-the-real-rating-scale-and-org-logo-on-the-feedback-pdf
-sidebar_position: 150
+sidebar_position: 190
 last_update:
   date: 2026-10-10
   author: release-pipeline@smartwinnr.com
@@ -12,7 +12,7 @@ customProps:
   tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9772 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9772 */}
+{/* release-draft: tag=v3.59.69 issue=9772 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9772 */}
 
 Downloaded AI coaching feedback PDFs show **Smart Skills** and **Evaluation Criteria** scores out of the rating scale the coaching was graded on. The score colors follow the same scale, so a 4 out of 5 reads as a good score rather than a poor one.
 

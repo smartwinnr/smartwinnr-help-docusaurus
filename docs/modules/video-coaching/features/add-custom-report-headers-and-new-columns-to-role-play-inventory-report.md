@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9699 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9699 */}
+{/* release-draft: tag=v3.59.69 issue=9699 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9699 */}
 
 The Role Play Inventory report includes more coaching details and supports custom report headers. You can reorder, rename, show, or hide columns to match the report layout you need.
 

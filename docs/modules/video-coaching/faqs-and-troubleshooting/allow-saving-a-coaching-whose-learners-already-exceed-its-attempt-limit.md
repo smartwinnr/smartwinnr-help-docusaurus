@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9764 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9764 */}
+{/* release-draft: tag=v3.59.69 issue=9764 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9764 */}
 
 Saving the **Edit Coaching** page for a 2-way conversational coaching succeeds when you keep **Maximum Attempt Count** unchanged or raise it. The limit check runs only when you lower the value below the highest number of attempts a learner has already taken.
 

@@ -3,7 +3,7 @@ id: add-zip-file-structure-validation-on-presentation-upload
 title: "Add zip file structure validation on presentation upload"
 description: "Validate presentation-mode coaching zip files as soon as you select them."
 slug: add-zip-file-structure-validation-on-presentation-upload
-sidebar_position: 20
+sidebar_position: 40
 last_update:
   date: 2026-10-10
   author: release-pipeline@smartwinnr.com
@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
+{/* release-draft: tag=v3.59.69 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
 
 > **At a glance** - When you upload a zip file for presentation-mode coaching, SmartWinnr checks its structure right away. If the file is invalid, you see an error and the file is cleared before you save.
 

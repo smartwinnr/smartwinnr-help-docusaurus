@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.67 issue=9780 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9780 */}
+{/* release-draft: tag=v3.59.69 issue=9780 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9780 */}
 
 When you schedule coaching scenarios, surveys, SmartFeeds, or competition tasks during Daylight Saving Time, the saved start and end times match what you enter. This keeps scheduled content aligned with the time you typed in the editor.
 
