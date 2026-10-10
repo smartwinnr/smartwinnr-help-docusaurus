@@ -119,8 +119,8 @@
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/fix-archived-coachings-missing-from-other-coachings-all-filter.md": {
       "action": "upsert",
-      "ts": 1791616217732,
-      "seq": 8,
+      "ts": 1791638738600,
+      "seq": 17,
       "author": "release-pipeline@smartwinnr.com"
     },
     "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-muv9i40u.png": {
@@ -137,44 +137,50 @@
     },
     "docs/modules/video-coaching/features/add-zip-file-structure-validation-on-presentation-upload.md": {
       "action": "upsert",
-      "ts": 1791616209121,
-      "seq": 4,
+      "ts": 1791638730320,
+      "seq": 13,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/create-and-manage/add-submitted-for-review-columns-to-coaching-reports.md": {
       "action": "upsert",
-      "ts": 1791616211799,
-      "seq": 5,
+      "ts": 1791638732792,
+      "seq": 14,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/use-the-smartpath-batch-end-date-for-smartpath-coaching-retake-and-end-date.md": {
       "action": "upsert",
-      "ts": 1791616216053,
-      "seq": 7,
+      "ts": 1791638736785,
+      "seq": 16,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/show-the-real-rating-scale-and-org-logo-on-the-feedback-pdf.md": {
       "action": "upsert",
-      "ts": 1791616206668,
-      "seq": 3,
+      "ts": 1791638728099,
+      "seq": 12,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/allow-saving-a-coaching-whose-learners-already-exceed-its-attempt-limit.md": {
       "action": "upsert",
-      "ts": 1791616214130,
-      "seq": 6,
+      "ts": 1791638734799,
+      "seq": 15,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/features/add-custom-report-headers-and-new-columns-to-role-play-inventory-report.md": {
       "action": "upsert",
-      "ts": 1791616220189,
-      "seq": 9,
+      "ts": 1791638741060,
+      "seq": 18,
       "author": "release-pipeline@smartwinnr.com"
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/fix-coaching-survey-and-smartfeed-tasks-scheduling-1-hour-late-during-dst.md": {
       "action": "upsert",
-      "ts": 1791616204146,
-      "seq": 2,
+      "ts": 1791638725998,
+      "seq": 11,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/quiz/create-and-manage/allow-delivery-settings-to-change-on-a-live-auto-quiz.md": {
+      "action": "upsert",
+      "ts": 1791638724024,
+      "seq": 10,
       "author": "release-pipeline@smartwinnr.com"
     }
   }

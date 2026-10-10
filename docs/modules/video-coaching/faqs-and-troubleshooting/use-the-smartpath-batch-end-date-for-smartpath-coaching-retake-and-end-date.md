@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.66 issue=9751 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9751 */}
+{/* release-draft: tag=v3.59.67 issue=9751 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9751 */}
 
 SmartPath coachings use the learner’s own SmartPath batch end date on the coaching feedback screen and the coaching start screen. The **Retake** button stays visible while the learner’s batch is open and attempts remain under **Maximum Attempt Count**. The **End date** on the coaching start screen matches the batch end date.
 

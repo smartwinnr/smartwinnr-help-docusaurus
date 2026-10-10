@@ -12,7 +12,7 @@ customProps:
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.66 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
+{/* release-draft: tag=v3.59.67 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
 
 > **At a glance** - When you upload a zip file for presentation-mode coaching, SmartWinnr checks its structure right away. If the file is invalid, you see an error and the file is cleared before you save.
 

@@ -12,9 +12,9 @@ customProps:
   tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.66 issue=9772 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9772 */}
+{/* release-draft: tag=v3.59.67 issue=9772 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9772 */}
 
-Downloaded AI coaching feedback PDFs show Smart Skills and Evaluation Criteria scores out of the rating scale the coaching was graded on. The score colors follow the same scale, so a 4 out of 5 reads as a good score rather than a poor one.
+Downloaded AI coaching feedback PDFs show **Smart Skills** and **Evaluation Criteria** scores out of the rating scale the coaching was graded on. The score colors follow the same scale, so a 4 out of 5 reads as a good score rather than a poor one.
 
 The PDF header also shows your company logo in the top left when your logo file is an SVG. Existing PDFs you already downloaded are not affected.
 
