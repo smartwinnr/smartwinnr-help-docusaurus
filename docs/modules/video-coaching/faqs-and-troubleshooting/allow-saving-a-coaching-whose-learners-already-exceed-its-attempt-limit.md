@@ -3,16 +3,16 @@ id: saving-a-2-way-conversational-coaching-with-existing-attempts
 title: "Saving a 2-way conversational coaching with existing attempts"
 description: "Save coaching changes even when learners have already taken more attempts than the current limit."
 slug: saving-a-2-way-conversational-coaching-with-existing-attempts
-sidebar_position: 110
+sidebar_position: 160
 last_update:
-  date: 2026-10-09
+  date: 2026-10-10
   author: release-pipeline@smartwinnr.com
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.65 issue=9764 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9764 */}
+{/* release-draft: tag=v3.59.66 issue=9764 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9764 */}
 
 Saving the **Edit Coaching** page for a 2-way conversational coaching succeeds when you keep **Maximum Attempt Count** unchanged or raise it. The limit check runs only when you lower the value below the highest number of attempts a learner has already taken.
 

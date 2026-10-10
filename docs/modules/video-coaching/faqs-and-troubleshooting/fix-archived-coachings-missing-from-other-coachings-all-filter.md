@@ -1,19 +1,20 @@
 ---
-id: fix-archived-coachings-missing-from-other-coachings-all-filter
+id: why-do-archived-coachings-appear-in-other-coaching-when-all-is-selected
 title: "Why do archived coachings appear in Other Coaching when All is selected?"
-description: "Archived coachings now appear in the Other Coaching tab when you select **All** in **Scenario Status**."
-slug: fix-archived-coachings-missing-from-other-coachings-all-filter
-sidebar_position: 130
+description: "Archived coachings appear in **Other Coaching** when you select **All** in **Scenario Status**."
+slug: why-do-archived-coachings-appear-in-other-coaching-when-all-is-selected
+sidebar_position: 180
 last_update:
   date: 2026-10-10
-  author: Manaswini V
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching, troubleshooting]
 draft: true
 ---
+{/* release-draft: tag=v3.59.66 issue=9720 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9720 */}
 
-> **At a glance** - On the **Coaching List** page, the **Other Coaching** tab includes archived coachings when you select **All** in **Scenario Status**. Archived coachings still show with the red **Archived** label, and you can find them with **Coaching Title** or **Code** search.
+On the **Coaching List** page, the **Other Coaching** tab includes archived coachings when you select **All** in **Scenario Status**. Archived coachings show with the red **Archived** label, and you can find them with **Coaching Title** or **Code** search.
 
 ## When to use this
 

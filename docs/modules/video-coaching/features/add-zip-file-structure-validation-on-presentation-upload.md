@@ -5,14 +5,14 @@ description: "Validate presentation-mode coaching zip files as soon as you selec
 slug: add-zip-file-structure-validation-on-presentation-upload
 sidebar_position: 20
 last_update:
-  date: 2026-10-09
+  date: 2026-10-10
   author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.65 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
+{/* release-draft: tag=v3.59.66 issue=9770 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9770 */}
 
 > **At a glance** - When you upload a zip file for presentation-mode coaching, SmartWinnr checks its structure right away. If the file is invalid, you see an error and the file is cleared before you save.
 

@@ -5,14 +5,14 @@ description: "See submitted-for-review status and totals in coaching report expo
 slug: add-submitted-for-review-columns-to-coaching-reports
 sidebar_position: 346
 last_update:
-  date: 2026-10-09
+  date: 2026-10-10
   author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching]
 draft: true
 ---
-{/* release-draft: tag=v3.59.65 issue=9767 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9767 */}
+{/* release-draft: tag=v3.59.66 issue=9767 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9767 */}
 
 > **At a glance** - Coaching report exports can include **Submitted For Review** and **Total Submitted For Review**. Use them to see which attempts were sent for manager review and how many submissions each coaching has.
 
@@ -35,7 +35,7 @@ Make sure the submission columns are enabled for your tenant and for the coachin
 ## Steps
 
 ### 1. Enable the report columns
-Turn on the submission-column setting for your tenant, and enable the matching setting on each coaching you want included.
+Turn on the submission-column setting for your tenant, and turn on the matching setting on each coaching you want included.
 
 ### 2. Download a coaching report
 Export any coaching report that supports these columns. They appear in overall coaching reports, reportee-wise completion reports, archive reports, coaching instance reports, attempt-wise reports, and custom reports.
