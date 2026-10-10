@@ -119,9 +119,9 @@
     },
     "docs/modules/video-coaching/faqs-and-troubleshooting/fix-archived-coachings-missing-from-other-coachings-all-filter.md": {
       "action": "upsert",
-      "ts": 1791551220004,
-      "seq": 6,
-      "author": "release-pipeline@smartwinnr.com"
+      "ts": 1791607790421,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-muv9i40u.png": {
       "action": "upsert",

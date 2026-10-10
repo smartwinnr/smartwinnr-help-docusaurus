@@ -1,20 +1,19 @@
 ---
 id: fix-archived-coachings-missing-from-other-coachings-all-filter
-title: "Fix archived coachings missing from Other Coachings \"All\" filter"
+title: "Why do archived coachings appear in Other Coaching when All is selected?"
 description: "Archived coachings now appear in the Other Coaching tab when you select **All** in **Scenario Status**."
 slug: fix-archived-coachings-missing-from-other-coachings-all-filter
 sidebar_position: 130
 last_update:
-  date: 2026-10-09
-  author: release-pipeline@smartwinnr.com
+  date: 2026-10-10
+  author: Manaswini V
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: [video-coaching, troubleshooting]
 draft: true
 ---
-{/* release-draft: tag=v3.59.65 issue=9720 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9720 */}
 
-On the **Coaching List** page, the **Other Coaching** tab includes archived coachings when you select **All** in **Scenario Status**. Archived coachings still show with the red **Archived** label, and you can find them with **Coaching Title** or **Code** search.
+> **At a glance** - On the **Coaching List** page, the **Other Coaching** tab includes archived coachings when you select **All** in **Scenario Status**. Archived coachings still show with the red **Archived** label, and you can find them with **Coaching Title** or **Code** search.
 
 ## When to use this
 
