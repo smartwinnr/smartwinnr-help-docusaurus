@@ -416,6 +416,18 @@
       "ts": 1792058323081,
       "seq": 2,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv9dfu60.png": {
+      "action": "upsert",
+      "ts": 1792058632057,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv9dfxxh.png": {
+      "action": "upsert",
+      "ts": 1792058636933,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
