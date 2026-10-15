@@ -458,6 +458,12 @@
       "ts": 1792061375561,
       "seq": 9,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-adaptive-roleplay-mv9f3vnm.png": {
+      "action": "upsert",
+      "ts": 1792061433346,
+      "seq": 10,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
