@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "baseMainSha": "aa1756b28e23cbb5c3537787077113d1c438bcd6",
+  "rebasedTs": 1792044680186,
+  "entries": {
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/fold-role-play-inventory-into-coachings-expand-its-search.md": {
+      "action": "upsert",
+      "ts": 1788771874533,
+      "seq": 1,
+      "author": "sai.charanreddyt+apsouth1@smartwinnr.com"
+    },
+    "docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-in-smartpath-progress.md": {
+      "action": "upsert",
+      "ts": 1790601781320,
+      "seq": 186,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0rp6j.png": {
+      "action": "upsert",
+      "ts": 1788953575484,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0t2uc.png": {
+      "action": "upsert",
+      "ts": 1788953639844,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0wkrb.png": {
+      "action": "upsert",
+      "ts": 1788953803031,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0zsd4.png": {
+      "action": "upsert",
+      "ts": 1788953952856,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu114p3.png": {
+      "action": "upsert",
+      "ts": 1788954015495,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu126i9.png": {
+      "action": "upsert",
+      "ts": 1788954064497,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu18bh1.png": {
+      "action": "upsert",
+      "ts": 1788954350870,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu1bses.png": {
+      "action": "upsert",
+      "ts": 1788954512788,
+      "seq": 7,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/set-a-separate-timer-for-each-quiz-question.md": {
+      "action": "upsert",
+      "ts": 1789049037743,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-coaching-self-registration-and-show-lms-coachings-in-the-app.md": {
+      "action": "upsert",
+      "ts": 1789049034755,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-verbal-assessment-image-tasks-and-html-sharable-resources.md": {
+      "action": "upsert",
+      "ts": 1791872542545,
+      "seq": 7,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-download-coaching-response-videos.md": {
+      "action": "upsert",
+      "ts": 1790425974300,
+      "seq": 163,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-lifecycle-and-include-archived-filters-to-coaching-report-downloads.md": {
+      "action": "upsert",
+      "ts": 1790687561652,
+      "seq": 17,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/faqs-and-troubleshooting/fix-metatag-effective-date-skipping-first-day-joiners-for-us-tenants.md": {
+      "action": "upsert",
+      "ts": 1791370858430,
+      "seq": 75,
+      "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/understanding-competition-types.md": {
+      "action": "upsert",
+      "ts": 1790847982843,
+      "seq": 17,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/fix-archived-coachings-missing-from-other-coachings-all-filter.md": {
+      "action": "upsert",
+      "ts": 1791808606847,
+      "seq": 5,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-zip-file-structure-validation-on-presentation-upload.md": {
+      "action": "upsert",
+      "ts": 1791796616855,
+      "seq": 55,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-submitted-for-review-columns-to-coaching-reports.md": {
+      "action": "upsert",
+      "ts": 1791796618872,
+      "seq": 56,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/use-the-smartpath-batch-end-date-for-smartpath-coaching-retake-and-end-date.md": {
+      "action": "upsert",
+      "ts": 1791796622761,
+      "seq": 58,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/show-the-real-rating-scale-and-org-logo-on-the-feedback-pdf.md": {
+      "action": "upsert",
+      "ts": 1791796614491,
+      "seq": 54,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/allow-saving-a-coaching-whose-learners-already-exceed-its-attempt-limit.md": {
+      "action": "upsert",
+      "ts": 1791796620920,
+      "seq": 57,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-custom-report-headers-and-new-columns-to-role-play-inventory-report.md": {
+      "action": "upsert",
+      "ts": 1791796627269,
+      "seq": 60,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/faqs-and-troubleshooting/fix-coaching-survey-and-smartfeed-tasks-scheduling-1-hour-late-during-dst.md": {
+      "action": "upsert",
+      "ts": 1791796612137,
+      "seq": 53,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/quiz/create-and-manage/allow-delivery-settings-to-change-on-a-live-auto-quiz.md": {
+      "action": "upsert",
+      "ts": 1791796610146,
+      "seq": 52,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv4wta7c.png": {
+      "action": "upsert",
+      "ts": 1791788841194,
+      "seq": 37,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv4wx0jh.png": {
+      "action": "upsert",
+      "ts": 1791789015294,
+      "seq": 38,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv50tykp.png": {
+      "action": "upsert",
+      "ts": 1791795591245,
+      "seq": 49,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv518x51.png": {
+      "action": "upsert",
+      "ts": 1791796289224,
+      "seq": 50,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv5190d5.png": {
+      "action": "upsert",
+      "ts": 1791796293402,
+      "seq": 51,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv51o6gl.png": {
+      "action": "upsert",
+      "ts": 1791797001143,
+      "seq": 61,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv51pmhz.png": {
+      "action": "upsert",
+      "ts": 1791797068584,
+      "seq": 62,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/administration/access-permissions/how-to-configure-admin-and-editor-side-menus.md": {
+      "action": "upsert",
+      "ts": 1792040584507,
+      "seq": 37,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/fix-archived-coachings-missing-from-other-coachings-all-filter-mv53qmg2.png": {
+      "action": "upsert",
+      "ts": 1791800474404,
+      "seq": 65,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/fix-archived-coachings-missing-from-other-coachings-all-filter-mv57dxpz.png": {
+      "action": "upsert",
+      "ts": 1791806600953,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/fix-archived-coachings-missing-from-other-coachings-all-filter-mv57gf4n.png": {
+      "action": "upsert",
+      "ts": 1791806716823,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/fix-archived-coachings-missing-from-other-coachings-all-filter-mv58ki2v.png": {
+      "action": "upsert",
+      "ts": 1791808586888,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv69qw7i.png": {
+      "action": "upsert",
+      "ts": 1791871030929,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6che9i.png": {
+      "action": "upsert",
+      "ts": 1791875626618,
+      "seq": 8,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6ci5uw.png": {
+      "action": "upsert",
+      "ts": 1791875662376,
+      "seq": 9,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6csyla.png": {
+      "action": "upsert",
+      "ts": 1791876166175,
+      "seq": 10,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hroiw.png": {
+      "action": "upsert",
+      "ts": 1791884504557,
+      "seq": 11,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6htkj7.png": {
+      "action": "upsert",
+      "ts": 1791884592692,
+      "seq": 12,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwt6z.png": {
+      "action": "upsert",
+      "ts": 1791884743883,
+      "seq": 13,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwt9p.png": {
+      "action": "upsert",
+      "ts": 1791884743982,
+      "seq": 14,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwtcv.png": {
+      "action": "upsert",
+      "ts": 1791884744096,
+      "seq": 15,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwtgu.png": {
+      "action": "upsert",
+      "ts": 1791884744239,
+      "seq": 16,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/integrations/what-is-single-sign-on-sso-in-smartwinnr.md": {
+      "action": "upsert",
+      "ts": 1791957365445,
+      "seq": 20,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-single-sign-on-sso-in-smartwinnr-mv7p0ylz.png": {
+      "action": "upsert",
+      "ts": 1791957161019,
+      "seq": 18,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-single-sign-on-sso-in-smartwinnr-mv7p3pkx.png": {
+      "action": "upsert",
+      "ts": 1791957289282,
+      "seq": 19,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv7w1evk.png": {
+      "action": "upsert",
+      "ts": 1791968939410,
+      "seq": 21,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv7w4q8m.png": {
+      "action": "upsert",
+      "ts": 1791969094103,
+      "seq": 22,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv7wsscx.png": {
+      "action": "upsert",
+      "ts": 1791970216597,
+      "seq": 24,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv7xpprb.png": {
+      "action": "upsert",
+      "ts": 1791971752875,
+      "seq": 25,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv7xsxla.png": {
+      "action": "upsert",
+      "ts": 1791971902991,
+      "seq": 26,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv7xwq68.png": {
+      "action": "upsert",
+      "ts": 1791972080001,
+      "seq": 27,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv7yj08k.png": {
+      "action": "upsert",
+      "ts": 1791973119477,
+      "seq": 28,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv81ewdk.png": {
+      "action": "upsert",
+      "ts": 1791977966697,
+      "seq": 29,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv81lcsg.png": {
+      "action": "upsert",
+      "ts": 1791978267905,
+      "seq": 30,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv820k6x.png": {
+      "action": "upsert",
+      "ts": 1791978977338,
+      "seq": 31,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv822yyj.png": {
+      "action": "upsert",
+      "ts": 1791979089788,
+      "seq": 32,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv8248li.png": {
+      "action": "upsert",
+      "ts": 1791979148934,
+      "seq": 33,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv8248ni.png": {
+      "action": "upsert",
+      "ts": 1791979149007,
+      "seq": 34,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/for-managers/how-to-analyse-the-coaching-dashboard.md": {
+      "action": "upsert",
+      "ts": 1791979407025,
+      "seq": 35,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv92gs2z.png": {
+      "action": "upsert",
+      "ts": 1792040200238,
+      "seq": 36,
+      "author": "manaswini.v@smartwinnr.com"
+    }
+  }
+}
