@@ -238,63 +238,63 @@
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv69qw7i.png": {
-      "action": "upsert",
-      "ts": 1791871030929,
-      "seq": 6,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6che9i.png": {
-      "action": "upsert",
-      "ts": 1791875626618,
-      "seq": 8,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6ci5uw.png": {
-      "action": "upsert",
-      "ts": 1791875662376,
-      "seq": 9,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6csyla.png": {
-      "action": "upsert",
-      "ts": 1791876166175,
-      "seq": 10,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6hroiw.png": {
-      "action": "upsert",
-      "ts": 1791884504557,
-      "seq": 11,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6htkj7.png": {
-      "action": "upsert",
-      "ts": 1791884592692,
-      "seq": 12,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6hwt6z.png": {
-      "action": "upsert",
-      "ts": 1791884743883,
-      "seq": 13,
-      "author": "manaswini.v@smartwinnr.com"
-    },
-    "static/img/helpscout/authored/authored-mv6hwt9p.png": {
-      "action": "upsert",
-      "ts": 1791884743982,
+      "action": "delete",
+      "ts": 1792066798265,
       "seq": 14,
       "author": "manaswini.v@smartwinnr.com"
     },
-    "static/img/helpscout/authored/authored-mv6hwtcv.png": {
-      "action": "upsert",
-      "ts": 1791884744096,
+    "static/img/helpscout/authored/authored-mv6che9i.png": {
+      "action": "delete",
+      "ts": 1792066798276,
       "seq": 15,
       "author": "manaswini.v@smartwinnr.com"
     },
-    "static/img/helpscout/authored/authored-mv6hwtgu.png": {
-      "action": "upsert",
-      "ts": 1791884744239,
+    "static/img/helpscout/authored/authored-mv6ci5uw.png": {
+      "action": "delete",
+      "ts": 1792066798288,
       "seq": 16,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6csyla.png": {
+      "action": "delete",
+      "ts": 1792066798297,
+      "seq": 17,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hroiw.png": {
+      "action": "delete",
+      "ts": 1792066798309,
+      "seq": 18,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6htkj7.png": {
+      "action": "delete",
+      "ts": 1792066798319,
+      "seq": 19,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwt6z.png": {
+      "action": "delete",
+      "ts": 1792066798329,
+      "seq": 20,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwt9p.png": {
+      "action": "delete",
+      "ts": 1792066798339,
+      "seq": 21,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwtcv.png": {
+      "action": "delete",
+      "ts": 1792066798349,
+      "seq": 22,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mv6hwtgu.png": {
+      "action": "delete",
+      "ts": 1792066798360,
+      "seq": 23,
       "author": "manaswini.v@smartwinnr.com"
     },
     "docs/integrations/what-is-single-sign-on-sso-in-smartwinnr.md": {
@@ -328,75 +328,75 @@
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv7wsscx.png": {
-      "action": "upsert",
-      "ts": 1791970216597,
+      "action": "delete",
+      "ts": 1792066798372,
       "seq": 24,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv7xpprb.png": {
-      "action": "upsert",
-      "ts": 1791971752875,
+      "action": "delete",
+      "ts": 1792066798383,
       "seq": 25,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv7xsxla.png": {
-      "action": "upsert",
-      "ts": 1791971902991,
+      "action": "delete",
+      "ts": 1792066798393,
       "seq": 26,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv7xwq68.png": {
-      "action": "upsert",
-      "ts": 1791972080001,
+      "action": "delete",
+      "ts": 1792066798405,
       "seq": 27,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv7yj08k.png": {
-      "action": "upsert",
-      "ts": 1791973119477,
+      "action": "delete",
+      "ts": 1792066798418,
       "seq": 28,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv81ewdk.png": {
-      "action": "upsert",
-      "ts": 1791977966697,
+      "action": "delete",
+      "ts": 1792066798430,
       "seq": 29,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv81lcsg.png": {
-      "action": "upsert",
-      "ts": 1791978267905,
+      "action": "delete",
+      "ts": 1792066798441,
       "seq": 30,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv820k6x.png": {
-      "action": "upsert",
-      "ts": 1791978977338,
+      "action": "delete",
+      "ts": 1792066798450,
       "seq": 31,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv822yyj.png": {
-      "action": "upsert",
-      "ts": 1791979089788,
+      "action": "delete",
+      "ts": 1792066798463,
       "seq": 32,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv8248li.png": {
-      "action": "upsert",
-      "ts": 1791979148934,
+      "action": "delete",
+      "ts": 1792066798473,
       "seq": 33,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/authored-mv8248ni.png": {
-      "action": "upsert",
-      "ts": 1791979149007,
+      "action": "delete",
+      "ts": 1792066798484,
       "seq": 34,
       "author": "manaswini.v@smartwinnr.com"
     },
     "docs/modules/ai-coaching/for-managers/how-to-analyse-the-coaching-dashboard.md": {
-      "action": "upsert",
-      "ts": 1791979407025,
-      "seq": 35,
+      "action": "delete",
+      "ts": 1792066798238,
+      "seq": 13,
       "author": "manaswini.v@smartwinnr.com"
     },
     "static/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv92gs2z.png": {
