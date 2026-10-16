@@ -1,6 +1,6 @@
 ---
 id: understanding-dashboards-and-reports
-title: "Understanding dashboards and reports"
+title: "Different types of Dashboards"
 description: "Review module dashboards to track participation, performance, coaching activity, content usage, and lifecycle status."
 slug: understanding-dashboards-and-reports
 sidebar_position: 265
@@ -27,7 +27,7 @@ Use dashboards when you want to review trends, compare results, or check progres
 - Review content usage, references, and lifecycle status.
 - Compare results for a selected date range or organizational group.
 
-## Quiz Dashboard
+# 1 Quiz Dashboard
 
 Use the Quiz Dashboard to review quiz activity, learner participation, and performance. It includes four tabs: **Overview**, **Participation**, **Learner Management**, and **Performance**.
 
@@ -49,7 +49,7 @@ Use **Performance** to review quiz results and performance patterns. It includes
 
 The heatmap supports **Zone**, **Region**, **Team**, and custom tag filters.
 
-## SmartPath Dashboard
+# 2.SmartPath Dashboard
 
 Use the SmartPath Dashboard to review learner participation, learning progress, module-wise performance, and SmartPath completion. It includes three tabs: **Overview**, **Module Wise Analysis**, and **Participation Insights**.
 
@@ -75,7 +75,7 @@ Use **Participation Insights** to review learner participation, SmartPath comple
 
 The **Learner Progress** section shows learner name, SmartPath, status, progress, score, time spent, and last activity. It also provides filtering and reporting options.
 
-## Content Centre Dashboard
+# 3.Content Centre Dashboard
 
 Use the Content Centre Dashboard to review content availability, usage, effectiveness, references, and lifecycle status. It includes four tabs: **Overview**, **Effectiveness**, **All Content**, and **Lifecycle**.
 
@@ -113,7 +113,7 @@ Archived content cannot be newly attached to modules, but existing attachments r
 Archived content can be republished where permitted.
 :::
 
-## AI Coaching Dashboard
+# 4. AI Coaching Dashboard
 
 Use the AI Coaching Dashboard to review coaching participation, competency development, and learner progress. It includes three tabs: **Overview Analysis**, **Competency & Skills Insights**, and **Participation Insights**.
 
@@ -141,7 +141,7 @@ The **Soft Skills Assessment** includes skills such as fluency, clarity, pace, a
 
 Use **Participation Insights** to review participation-related coaching information for the selected filters and period. Refer to the labels shown in the dashboard for the available metrics and visualizations.
 
-## Field Coaching Dashboard
+# 5. Field Coaching Dashboard
 
 Use the Field Coaching Dashboard to review coaching participation, manager performance, session completion, and competency development. It includes three tabs: **Participation**, **Manager View**, and **Competency Analysis**.
 
