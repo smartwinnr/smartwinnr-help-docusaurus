@@ -49,6 +49,12 @@ Use **Performance** to review quiz results and performance patterns. It includes
 
 The heatmap supports **Zone**, **Region**, **Team**, and custom tag filters.
 
+Please review the following articles for a clear understanding of the Quiz Dashboard tabs:
+
+- [Understanding the Overview Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard/?utm_source=chatgpt.com)
+- [Understanding the Performance Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+- [Understanding the Participation Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+- [Understanding the Learner Management Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
 # 2.SmartPath Dashboard
 
 Use the SmartPath Dashboard to review learner participation, learning progress, module-wise performance, and SmartPath completion. It includes three tabs: **Overview**, **Module Wise Analysis**, and **Participation Insights**.
