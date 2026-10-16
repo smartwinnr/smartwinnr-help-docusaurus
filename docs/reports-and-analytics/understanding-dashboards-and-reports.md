@@ -114,19 +114,11 @@ Use **Lifecycle** to monitor content as it moves through the approval and publis
 
 The lifecycle stages include **Draft**, **In Review**, **Approved**, **Published**, and **Archived**.
 
-:::note
-Only published content can be attached to modules.
-:::
+For more information, refer to the following article:
 
-:::note
-Archived content cannot be newly attached to modules, but existing attachments remain.
-:::
+- [Understanding the Content Centre Dashboard](https://help.smartwinnr.com/modules/content-center/reports-and-analytics/understanding-the-content-centre-dashboard?utm_source=chatgpt.com)
 
-:::note
-Archived content can be republished where permitted.
-:::
-
-# 4. AI Coaching Dashboard
+# 4. Coaching Dashboard
 
 Use the AI Coaching Dashboard to review coaching participation, competency development, and learner progress. It includes three tabs: **Overview Analysis**, **Competency & Skills Insights**, and **Participation Insights**.
 
@@ -136,6 +128,9 @@ Use **coaching type**, **business unit**, and **region** filters, then select **
 
 Use **Overview Analysis** to review coaching participation and the main coaching metrics. It includes **Active Learners**, **Average Attempts**, **Skill Improvement**, **Session Duration**, **Engagement Trends**, and **AI-generated insights**.
 
+For more information, refer to the following article:
+
+- [How to Read the Overview Analysis Tab on the AI Coaching Dashboard](https://help.smartwinnr.com/modules/ai-coaching/reports-and-analytics/understanding-the-overview-analysis-tab-on-the-ai-coaching-dashboard?utm_source=chatgpt.com)
 ### Competency & Skills Insights
 
 Use **Competency & Skills Insights** to review competency development and skill performance.
@@ -150,10 +145,15 @@ The charts cover skill groups such as **Call Closing**, **Objection Handling**, 
 
 The **Soft Skills Assessment** includes skills such as fluency, clarity, pace, and gestures.
 
+For more information, refer to the following article:
+- [How to Read the Competency & Skills Insights Tab on the AI Coaching Dashboard](https://help.smartwinnr.com/modules/ai-coaching/reports-and-analytics/understanding-the-competency-skills-insights-tab-on-the-ai-coaching-dashboard?utm_source=chatgpt.com)
 ### Participation Insights
 
 Use **Participation Insights** to review participation-related coaching information for the selected filters and period. Refer to the labels shown in the dashboard for the available metrics and visualizations.
 
+For more information, refer to the following article:
+
+- [How to Read the Participation Insights Tab on the AI Coaching Dashboard](https://help.smartwinnr.com/modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard?utm_source=chatgpt.com)
 # 5. Field Coaching Dashboard
 
 Use the Field Coaching Dashboard to review coaching participation, manager performance, session completion, and competency development. It includes three tabs: **Participation**, **Manager View**, and **Competency Analysis**.
@@ -181,16 +181,6 @@ It includes **Competency Score Distribution**, **Competency Score Trend**, **Com
 :::note
 Some sections may show **No data available** when the selected filters or period return no results.
 :::
-
-## Using dashboard filters and date ranges
-
-Use the filters available on each dashboard to focus the data on the right period, group, or category.
-
-- In **AI Coaching Dashboard**, select the applicable coaching types, business units, and regions, then select **Apply Filters**.
-- In **Content Centre Dashboard**, select **30-day**, **90-day**, or **custom** date ranges.
-- In **Quiz Dashboard**, use the available segment and organizational filters, including **Zone**, **Region**, **Team**, and custom tags where shown.
-
-The available filters depend on the dashboard and the tab you are viewing. Check the labels on screen to confirm which filters apply.
 
 ## Interpreting dashboard information
 
