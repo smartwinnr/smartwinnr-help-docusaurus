@@ -476,6 +476,12 @@
       "ts": 1792154161614,
       "seq": 42,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mvayc30o.png": {
+      "action": "upsert",
+      "ts": 1792154195017,
+      "seq": 43,
+      "author": "anagha.isal@smartwinnr.com"
     }
   }
 }
