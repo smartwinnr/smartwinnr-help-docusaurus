@@ -35,26 +35,29 @@ Use the Quiz Dashboard to review quiz activity, learner participation, and perfo
 
 Use **Overview** to review the main quiz activity and performance metrics. It includes **Active Learners**, **Completion Rate**, **Quiz Attempts**, **Avg Score**, **Performance Trend**, **Popular Quizzes**, and **Recent Activity**.
 
+For more information, refer to the following article:
+- [Understanding the Overview Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard/?utm_source=chatgpt.com)
 ### Participation
 
 Use **Participation** to review learner activity, participation patterns, and submissions. It includes **Daily Active Users**, **Peak Usage Time**, **Participation Completion**, **Total Participation**, **Participation Over Time**, **Quiz Completion Status**, **Submissions**, and **Participation Heatmap**.
 
+For more information, refer to the following article:
+- [Understanding the Performance Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
 ### Learner Management
 
 Use **Learner Management** to review learner engagement and performance. It includes **New Learners**, **High Performers**, **At-Risk Users**, **Certification Due**, **User Engagement Trend**, **User Segmentation**, and **User Performance Overview**.
 
+For more information, refer to the following article:
+- [Understanding the Participation Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
 ### Performance
 
 Use **Performance** to review quiz results and performance patterns. It includes **Certification Pass Rate**, **Average Attempts**, **Avg Completion Time**, **Retry Success Rate**, score-distribution charts, a pass/fail donut chart, and an organizational heatmap.
 
 The heatmap supports **Zone**, **Region**, **Team**, and custom tag filters.
 
-Please review the following articles for a clear understanding of the Quiz Dashboard tabs:
-
-- [Understanding the Overview Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard/?utm_source=chatgpt.com)
-- [Understanding the Performance Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
-- [Understanding the Participation Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+For more information, refer to the following article:
 - [Understanding the Learner Management Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+
 # 2.SmartPath Dashboard
 
 Use the SmartPath Dashboard to review learner participation, learning progress, module-wise performance, and SmartPath completion. It includes three tabs: **Overview**, **Module Wise Analysis**, and **Participation Insights**.
@@ -63,6 +66,9 @@ Use the SmartPath Dashboard to review learner participation, learning progress, 
 
 Use **Overview** to review overall SmartPath activity, learner engagement, completion trends, and learning component distribution. It includes **Active Courses**, **Active Learners**, **Learning Hours**, **Avg Learning Hours**, **Completion Over Time**, **Learning Component Distribution**, **Top SmartPaths by Completion**, **Top Learners by Score**, and **Certification Overview**.
 
+For more information, refer to the following article:
+
+- [Understanding the Overview Tab on the SmartPath Dashboard](https://help.smartwinnr.com/modules/smartpath/reports-and-analytics/understanding-the-overview-tab-on-the-smartpath-dashboard/?utm_source=chatgpt.com)
 ### Module Wise Analysis
 
 Use **Module Wise Analysis** to review participation and performance across learning component types in SmartPaths.
@@ -75,6 +81,8 @@ It includes these sections:
 
 Each section shows the metrics available for that component type, such as active items, active learners, participation, average score, time spent, and completion status.
 
+For more information, refer to the following article:
+- [Understanding the Module Wise Analysis Tab on the SmartPath Dashboard](https://help.smartwinnr.com/modules/smartpath/reports-and-analytics/understanding-the-module-wise-analysis-tab-on-the-smartpath-dashboard?utm_source=chatgpt.com)
 ### Participation Insights
 
 Use **Participation Insights** to review learner participation, SmartPath completion, progress, and scores for the selected period. It includes **Total Participants**, **Total Completed**, **Average Progress**, **Average Score**, **Completion Over Time**, and **Learner Progress**.
@@ -85,7 +93,6 @@ The **Learner Progress** section shows learner name, SmartPath, status, progress
 
 Use the Content Centre Dashboard to review content availability, usage, effectiveness, references, and lifecycle status. It includes four tabs: **Overview**, **Effectiveness**, **All Content**, and **Lifecycle**.
 
-Use the date range options to view the last 30 days, the last 90 days, or a custom period. The selected range affects the dashboard data.
 
 ### Overview
 
