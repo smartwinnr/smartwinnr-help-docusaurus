@@ -15,7 +15,7 @@ draft: true
 
 > **At a glance** - SmartWinnr dashboards help you review participation, performance, coaching activity, and content usage. Each dashboard focuses on one module and shows the metrics, charts, and tables available for that area.
 
-Use dashboards to understand activity across quizzes, coaching, SmartPaths, and content. Each dashboard shows the information for its module, and the available metrics depend on the tab you open.
+Use dashboards to understand activity across quizzes, ai coaching, field coaching, SmartPaths, and content center. Each dashboard shows the information for its module, and the available metrics depend on the tab you open.
 
 ## When to use this
 
@@ -29,7 +29,7 @@ Use dashboards when you want to review trends, compare results, or check progres
 
 # 1 Quiz Dashboard
 
-Use the Quiz Dashboard to review quiz activity, learner participation, and performance. It includes four tabs: **Overview**, **Participation**, **Learner Management**, and **Performance**.
+Use the Quiz Dashboard to review quiz activity, learner participation, and performance. It includes four tabs: **Overview**, **Performance**, **Participation** and **Learner Management**.
 
 ## Overview
 
@@ -37,23 +37,26 @@ Use **Overview** to review the main quiz activity and performance metrics. It in
 
 For more information, refer to the following article:
 - [Understanding the Overview Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-overview-tab-on-the-quiz-dashboard/?utm_source=chatgpt.com)
+
+## Performance
+
+Use **Performance** to review quiz results and performance patterns. It includes **Certification Pass Rate**, **Average Attempts**, **Avg Completion Time**, **Retry Success Rate**, score-distribution charts, a pass/fail donut chart, and an organizational heatmap.
+
+The heatmap supports multiple filters, including Zone, Region, Team, and custom tags.
+For more information, refer to the following article:
+- [Understanding the Performance Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+
 ## Participation
 
 Use **Participation** to review learner activity, participation patterns, and submissions. It includes **Daily Active Users**, **Peak Usage Time**, **Participation Completion**, **Total Participation**, **Participation Over Time**, **Quiz Completion Status**, **Submissions**, and **Participation Heatmap**.
 
 For more information, refer to the following article:
-- [Understanding the Performance Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-performance-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+- [Understanding the Participation Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
+
+
 ## Learner Management
 
 Use **Learner Management** to review learner engagement and performance. It includes **New Learners**, **High Performers**, **At-Risk Users**, **Certification Due**, **User Engagement Trend**, **User Segmentation**, and **User Performance Overview**.
-
-For more information, refer to the following article:
-- [Understanding the Participation Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-participation-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
-## Performance
-
-Use **Performance** to review quiz results and performance patterns. It includes **Certification Pass Rate**, **Average Attempts**, **Avg Completion Time**, **Retry Success Rate**, score-distribution charts, a pass/fail donut chart, and an organizational heatmap.
-
-The heatmap supports **Zone**, **Region**, **Team**, and custom tag filters.
 
 For more information, refer to the following article:
 - [Understanding the Learner Management Tab on the Quiz Dashboard](https://help.smartwinnr.com/modules/quiz/reports-and-analytics/understanding-the-learner-management-tab-on-the-quiz-dashboard?utm_source=chatgpt.com)
@@ -139,7 +142,7 @@ It includes:
 - **Competency Performance by Attempt**
 - **Soft Skills Assessment**
 
-The charts cover skill groups such as **Call Closing**, **Objection Handling**, **Product Knowledge**, **Trust Building**, **Probing**, **Engagement**, and **Communicating Skills**.
+The charts display different skill groups based on the selected chart and available data.
 
 The **Soft Skills Assessment** includes skills such as fluency, clarity, pace, and gestures.
 
@@ -168,7 +171,7 @@ The **Participation Report** includes manager name, division, coachees assigned,
 
 Use **Manager View** to review coaching activity and competency ratings for one manager and their reportees. Select a manager from the **Manager** dropdown.
 
-It includes **Coachees Assigned**, **Completed Sessions**, **Completion %**, **Total Sessions**, **Session Completion Trend**, **Reportee Sessions**, **Gap by Reportee**, **Gap by Competency**, and **Competency Heatmap — Reportees**.
+It includes **Coachees Assigned**, **Completed Sessions**, **Completion %**, **Total Sessions**, **Session Completion Trend**, **Reportee Sessions** and **Competency Heatmap — Reportees**.
 
 ## Competency Analysis
 
