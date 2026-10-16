@@ -122,8 +122,6 @@ For more information, refer to the following article:
 
 Use the AI Coaching Dashboard to review coaching participation, competency development, and learner progress. It includes three tabs: **Overview Analysis**, **Competency & Skills Insights**, and **Participation Insights**.
 
-Use **coaching type**, **business unit**, and **region** filters, then select **Apply Filters** to refresh the dashboard. The dashboard also supports 30-day and 90-day comparisons.
-
 ## Overview Analysis
 
 Use **Overview Analysis** to review coaching participation and the main coaching metrics. It includes **Active Learners**, **Average Attempts**, **Skill Improvement**, **Session Duration**, **Engagement Trends**, and **AI-generated insights**.
