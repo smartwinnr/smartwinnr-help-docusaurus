@@ -92,6 +92,17 @@ test('chatCompletionBody omits undefined optional fields', () => {
   assert.equal(zero.max_completion_tokens, 0);
 });
 
+test('chatCompletionBody drops temperature for the gpt-6 family', () => {
+  const messages = [{ role: 'user', content: 'hi' }];
+  const body = chatCompletionBody({ model: 'gpt-6-luna', messages, temperature: 0.5, maxOutputTokens: 750 });
+  assert.deepEqual(body, { model: 'gpt-6-luna', messages, max_completion_tokens: 750 });
+  // gpt-5.x and gpt-4o keep accepting an explicit temperature.
+  assert.equal(chatCompletionBody({ model: 'gpt-5.4-nano', messages, temperature: 0 }).temperature, 0);
+  assert.equal(chatCompletionBody({ model: 'gpt-4o-mini', messages, temperature: 0.5 }).temperature, 0.5);
+  // A hypothetical gpt-60 model is not the gpt-6 family.
+  assert.equal(chatCompletionBody({ model: 'gpt-60', messages, temperature: 0.5 }).temperature, 0.5);
+});
+
 test('chatCompletionBody rejects missing model or messages', () => {
   assert.throws(() => chatCompletionBody({ messages: [] }), /model is required/);
   assert.throws(() => chatCompletionBody({ model: 'm' }), /messages must be an array/);
