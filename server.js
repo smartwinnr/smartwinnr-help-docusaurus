@@ -27,6 +27,11 @@ const { normRoute, resolveLiveUrl } = docRoutes;
 const { setFrontmatterRoles, removeFrontmatterPrivilege, setLastUpdate, setFrontmatterOwner, getFrontmatterOwner } = require('./lib/frontmatter');
 const { toIndexableText, toSnippet } = require('./lib/doc-text');
 const { isKnownAuthor, recordAuthor } = require('./lib/authors-registry');
+const releaseEvents = require('./db/release-events');
+const {
+  deterministicVerdict, buildRelevanceMessages, parseRelevanceVerdict,
+  parseRelevanceComment, stripRelevanceComments, injectRelevanceComment,
+} = require('./lib/release-relevance');
 const { isEmailApproved, listApprovedEmails, addApprovedEmail, removeApprovedEmail } = require('./lib/email-allowlist');
 const { mergeModuleOverviews } = require('./lib/module-overviews-merge');
 
@@ -164,7 +169,9 @@ const RELEASE_DRAFTS_MAX_CHANGES = 20; // defensive cap - one deploy should neve
 
 function requireReleaseSecret(req, res, next) {
   const provided = req.headers['x-release-shared-secret'];
-  if (!RELEASE_DRAFTS_SECRET || !provided || provided !== RELEASE_DRAFTS_SECRET) {
+  // constantTimeEq (defined later in this file, resolved at call time) -
+  // a plain !== comparison leaks the match length through timing.
+  if (!RELEASE_DRAFTS_SECRET || !provided || !constantTimeEq(String(provided), RELEASE_DRAFTS_SECRET)) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   next();
@@ -678,6 +685,43 @@ async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
 }
 
 /**
+ * Classifies a dispatched change as customer-relevant article material vs
+ * internal noise, BEFORE any drafting spend. Same never-throw contract as
+ * llmPickMatchingArticle: every failure path returns an object the caller
+ * treats as "unknown - draft as usual" (fail open; the human drafts queue
+ * is the backstop). Pure logic lives in lib/release-relevance.js.
+ *
+ * Returns { verdict, confidence, reason, source } | { skipped: true } |
+ * { error }.
+ */
+async function llmClassifyRelevance(change, title) {
+  // Deterministic checks cost nothing and hold even when the LLM is
+  // disabled: a refactor, or a change touching only non-product areas,
+  // is internal by construction.
+  const det = deterministicVerdict(change);
+  if (det) return det;
+  if (process.env.RELEASE_RELEVANCE_LLM_DISABLED === '1') return { skipped: true };
+  try {
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      chatCompletionBody({
+        model: AUTHORING_MODEL,
+        messages: buildRelevanceMessages(change, title),
+        temperature: 0,
+        maxOutputTokens: 200,
+      }),
+      { headers: { Authorization: `Bearer ${getOpenAIKey()}`, 'Content-Type': 'application/json' }, timeout: 20000 },
+    );
+    const verdict = parseRelevanceVerdict(response.data?.choices?.[0]?.message?.content);
+    if (!verdict) return { error: 'unparseable relevance verdict' };
+    return verdict;
+  } catch (e) {
+    console.error('release-drafts: relevance-LLM failed, drafting anyway:', e.message);
+    return { error: e.message };
+  }
+}
+
+/**
  * Goes to the shared distribution address (RELEASE_OWNER_NOTIFY_DISTRO_EMAIL),
  * not the owner's personal inbox - the owner's manager and anyone else on
  * that list sees it too, and the article's owner is named in the body
@@ -875,35 +919,103 @@ function notifyMissingFoundationalArticle(pending) {
     .catch((e) => console.error('missing-foundational-article channel notify failed (draft unaffected):', e.message));
 }
 
+/**
+ * The human-rescue path for the relevance classifier: a change rejected as
+ * not customer-relevant is NOT drafted and will NOT retry (its marker
+ * advances), so this card is the only push notification a false negative
+ * gets. Unlike the author-facing cards it deliberately includes issue ids
+ * and reasons - whoever reads it needs enough to judge each rejection.
+ */
+function notifyRejectedChanges(rejected) {
+  const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
+  if (!webhook || rejected.length === 0) return;
+  const shown = rejected.slice(0, 10);
+  const lines = shown.map((c) => `- #${c.issueId} ${c.title}: ${c.reason}`);
+  if (rejected.length > shown.length) lines.push(`…and ${rejected.length - shown.length} more`);
+  const card = {
+    type: 'AdaptiveCard',
+    '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
+    version: '1.4',
+    body: [
+      { type: 'TextBlock', text: `${rejected.length} release change(s) skipped - classified not customer-relevant`, weight: 'Bolder', size: 'Medium', wrap: true },
+      { type: 'TextBlock', text: lines.join('\n\n'), wrap: true, spacing: 'Small' },
+      { type: 'TextBlock', text: 'These were not drafted and will not retry. If one is genuinely customer-facing, author it manually at /admin/authoring or re-ship it with a corrected commit message.', wrap: true, spacing: 'Small', isSubtle: true },
+    ],
+  };
+  axios.post(webhook, card, { timeout: 10000 })
+    .catch((e) => console.error('rejected-changes channel notify failed (dispatch unaffected):', e.message));
+}
+
 app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
+  // Everything below writes release_events rows (db/release-events.js) -
+  // the durable audit trail behind /admin/release-events. Event writes
+  // never throw and never fail a dispatch.
+  const dispatchId = uuidv4();
+  const dispatchStartedAt = Date.now();
+  const { tag, deployedAt, deployer, audience, changes } = req.body || {};
+  const badRequest = (error) => {
+    releaseEvents.recordEvent({ dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'bad-request', error });
+    return res.status(400).json({ error });
+  };
   try {
     // Mirror the /api/admin/authoring journal gate: never scan the disk for
     // existing articles before the boot reconcile has re-materialized
     // journaled drafts - a dispatch arriving seconds after a restart would
     // otherwise miss them and create duplicates. Both settle paths proceed.
     await journalBootPromise.catch(() => {});
-    const { tag, deployedAt, deployer, audience, changes } = req.body || {};
     if (audience !== 'client') {
-      return res.status(400).json({ error: `This destination only accepts audience "client" (got "${audience}")` });
+      return badRequest(`This destination only accepts audience "client" (got "${audience}")`);
     }
     if (!Array.isArray(changes) || changes.length === 0) {
-      return res.status(400).json({ error: 'changes must be a non-empty array' });
+      return badRequest('changes must be a non-empty array');
     }
     if (changes.length > RELEASE_DRAFTS_MAX_CHANGES) {
-      return res.status(400).json({ error: `Too many changes in one dispatch (${changes.length} > ${RELEASE_DRAFTS_MAX_CHANGES})` });
+      return badRequest(`Too many changes in one dispatch (${changes.length} > ${RELEASE_DRAFTS_MAX_CHANGES})`);
     }
 
     const results = [];
     const newlyCreated = [];
     const missingFoundational = [];
+    const rejectedNotRelevant = [];
+    // One 'change' event row per change, sharing the dispatch's identity.
+    const recordChangeEvent = (change, fields) => releaseEvents.recordEvent({
+      dispatchId, kind: 'change', tag, deployer, audience,
+      issueId: change.issueId, issueUrl: change.issueUrl,
+      changeType: change.changeType, subject: change.subject,
+      ...fields,
+    });
     for (const change of changes) {
+      const changeStartedAt = Date.now();
       const dest = mapChangeToDestination(change);
       if (!dest) {
-        results.push({ issueId: change.issueId, status: 'error', error: `No module mapping for files: ${(change.files || []).join(', ') || '(none)'}` });
+        const error = `No module mapping for files: ${(change.files || []).join(', ') || '(none)'}`;
+        results.push({ issueId: change.issueId, status: 'error', error });
+        recordChangeEvent(change, { status: 'error', error, durationMs: Date.now() - changeStartedAt });
         continue;
       }
 
       const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
+
+      // Relevance gate - BEFORE the matcher, so a high-confidence rejection
+      // skips the match-LLM and generate spend too. Confidence-tiered:
+      // high-confidence not-relevant skips drafting entirely (Teams card +
+      // event are the human-rescue path); medium/low drafts but flags the
+      // article for the drafts queue; classifier error/disabled drafts as
+      // usual (fail open - the human review queue is the backstop).
+      const relevance = await llmClassifyRelevance(change, title);
+      if (relevance.verdict === 'not-relevant' && relevance.confidence === 'high') {
+        console.log(`release-drafts: issue ${change.issueId} -> SKIPPED not-relevant (${relevance.source}): ${relevance.reason}`);
+        // A deliberately NEW status: the dispatcher's failure filter only
+        // holds the marker for 'error'/'needs-foundational-article', so
+        // this advances the marker and is never retried - correct, because
+        // re-dispatching the same commit would be rejected again.
+        results.push({ issueId: change.issueId, status: 'skipped-not-relevant', module: dest.module, reason: relevance.reason, relevance });
+        rejectedNotRelevant.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, reason: relevance.reason });
+        recordChangeEvent(change, { status: 'skipped-not-relevant', module: dest.module, relevance, durationMs: Date.now() - changeStartedAt });
+        continue;
+      }
+      const relevanceFlag = relevance.verdict === 'not-relevant' ? relevance : null;
+
       const { match, decision } = await findMatchingArticle(change, dest);
       if (match) {
         console.log(`release-drafts: issue ${change.issueId} -> MATCHED via ${decision.method}`
@@ -935,13 +1047,15 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       // for marker purposes - held back and retried every deploy until
       // resolved, same pattern as an unconfigured destination.
       if (!match && !moduleHasAnyArticles(dest.module)) {
+        const error = `No existing article documents the ${dest.module} module at all - write a foundational/overview article first, then this change will draft normally.`;
         results.push({
           issueId: change.issueId,
           status: 'needs-foundational-article',
           module: dest.module,
-          error: `No existing article documents the ${dest.module} module at all - write a foundational/overview article first, then this change will draft normally.`,
+          error,
         });
         missingFoundational.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, module: dest.module });
+        recordChangeEvent(change, { status: 'needs-foundational-article', module: dest.module, error, relevance: relevanceFlag || relevance, durationMs: Date.now() - changeStartedAt });
         continue;
       }
 
@@ -964,22 +1078,38 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       // produces "Pick a destination folder first." even in refine mode.
       const genReq = {
         body: match
-          ? { inputs: { module: matchedModule, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: stripProvenanceComments(match.markdown) }
+          ? { inputs: { module: matchedModule, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: stripRelevanceComments(stripProvenanceComments(match.markdown)) }
           : { inputs: { module: dest.module, subFolder: dest.subFolder, roughExplanation: buildRoughExplanation(change), title } },
         user: RELEASE_SERVICE_USER,
       };
       const genRes = makeResShim();
       await generateHandler(genReq, genRes);
       if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
-        results.push({ issueId: change.issueId, status: 'error', error: (genRes.body && genRes.body.error) || 'generate failed', detail: genRes.body, match: matchInfo });
+        const error = (genRes.body && genRes.body.error) || 'generate failed';
+        results.push({ issueId: change.issueId, status: 'error', error, detail: genRes.body, match: matchInfo });
+        // The result stays 'error' so the dispatcher holds its marker and
+        // retries next deploy - but the EVENT distinguishes rate-limit
+        // exhaustion from real failures, so the dashboard can tell "burned
+        // through the hourly generate budget" apart from "generation broke".
+        recordChangeEvent(change, {
+          status: genRes.statusCode === 429 ? 'rate-limited' : 'error',
+          module: dest.module, matchMethod: decision.method, match: matchInfo,
+          relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt,
+        });
         continue;
       }
 
       // Strip again before injecting - the model may have copied or invented
-      // a provenance comment despite the overlay's instruction not to.
-      const markdown = injectProvenanceComments(
-        stripProvenanceComments(genRes.body.markdown),
-        [{ tag, issueId: change.issueId, url: change.issueUrl }, ...priorProvenances],
+      // a provenance or relevance comment despite the overlay's instruction
+      // not to. The relevance flag (medium/low-confidence not-relevant) is
+      // injected alongside the provenance stack so the drafts queue can
+      // badge the article until a human resolves it.
+      const markdown = injectRelevanceComment(
+        injectProvenanceComments(
+          stripRelevanceComments(stripProvenanceComments(genRes.body.markdown)),
+          [{ tag, issueId: change.issueId, url: change.issueUrl }, ...priorProvenances],
+        ),
+        relevanceFlag,
       );
       // saveHandler always computes its write target from module/subFolder/slug -
       // fromPath only enables the "editing an existing article" comparison
@@ -1002,25 +1132,49 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       const saveRes = makeResShim();
       await saveHandler(saveReq, saveRes);
       if (saveRes.statusCode !== 200) {
-        results.push({ issueId: change.issueId, status: 'error', error: (saveRes.body && (saveRes.body.error || saveRes.body.message)) || 'save failed', detail: saveRes.body, match: matchInfo });
+        const error = (saveRes.body && (saveRes.body.error || saveRes.body.message)) || 'save failed';
+        results.push({ issueId: change.issueId, status: 'error', error, detail: saveRes.body, match: matchInfo });
+        recordChangeEvent(change, {
+          status: 'error', module: match ? matchedModule : dest.module,
+          matchMethod: decision.method, match: matchInfo,
+          relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt,
+        });
         continue;
       }
 
       const savedPath = saveRes.body && saveRes.body.path;
       if (match) {
-        results.push({ issueId: change.issueId, status: 'updated', path: savedPath, module: matchedModule, subFolder: matchedSubFolder, previousOwner: match.previousOwner, match: matchInfo });
+        results.push({ issueId: change.issueId, status: 'updated', path: savedPath, module: matchedModule, subFolder: matchedSubFolder, previousOwner: match.previousOwner, match: matchInfo, ...(relevanceFlag ? { relevance: relevanceFlag } : {}) });
         if (match.previousOwner) notifyExistingOwner(change, dest, match.path, match.previousOwner);
       } else {
-        results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug, match: matchInfo });
+        results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug, match: matchInfo, ...(relevanceFlag ? { relevance: relevanceFlag } : {}) });
         newlyCreated.push({ title, issueId: change.issueId, issueUrl: change.issueUrl });
       }
+      recordChangeEvent(change, {
+        status: match ? 'updated' : 'created',
+        module: match ? matchedModule : dest.module, articlePath: savedPath,
+        matchMethod: decision.method, match: matchInfo,
+        relevance: relevanceFlag || relevance, durationMs: Date.now() - changeStartedAt,
+      });
     }
 
     notifyNewArticleChannel(newlyCreated);
     notifyMissingFoundationalArticle(missingFoundational);
+    notifyRejectedChanges(rejectedNotRelevant);
+    const counts = {};
+    for (const r of results) counts[r.status] = (counts[r.status] || 0) + 1;
+    releaseEvents.recordEvent({
+      dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'ok',
+      durationMs: Date.now() - dispatchStartedAt,
+      meta: { changesCount: changes.length, counts },
+    });
     res.json({ ok: true, tag, deployedAt, deployer, results });
   } catch (error) {
     console.error('release-drafts dispatch failed:', error.message);
+    releaseEvents.recordEvent({
+      dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'failed',
+      durationMs: Date.now() - dispatchStartedAt, error: error.message,
+    });
     res.status(500).json({ error: error.message });
   }
 });
@@ -1984,6 +2138,46 @@ app.get('/api/admin/chat-logs/dashboard', (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// Release-pipeline event log (db/release-events.js): the audit trail behind
+// /admin/release-events. Superadmin-only, same gating pattern as chat-logs.
+// ---------------------------------------------------------------------------
+app.use('/api/admin/release-events', requireRole('superadmin'));
+
+app.get('/api/admin/release-events', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_release_events');
+    const days = clampIntParam(req.query.days, 30, 1, 365);
+    const limit = clampIntParam(req.query.limit, 50, 1, 200);
+    const offset = clampIntParam(req.query.offset, 0, 0, Number.MAX_SAFE_INTEGER);
+    const status = (req.query.status && String(req.query.status).trim()) || undefined;
+    const tag = (req.query.tag && String(req.query.tag).trim()) || undefined;
+    const kind = (req.query.kind && String(req.query.kind).trim()) || undefined;
+    const issueId = (req.query.issueId && String(req.query.issueId).trim()) || undefined;
+    res.json({ ok: true, events: releaseEvents.listEvents({ days, status, tag, kind, issueId, limit, offset }) });
+  } catch (error) {
+    console.error('❌ Error fetching release events:', error);
+    res.status(500).json({ ok: false, error: 'Failed to fetch release events' });
+  }
+});
+
+app.get('/api/admin/release-events/summary', (req, res) => {
+  try {
+    chatLogger.auditLog(req, 'view_release_events_summary');
+    const days = clampIntParam(req.query.days, 30, 1, 365);
+    res.json({
+      ok: true,
+      windowDays: days,
+      summary: releaseEvents.getSummary({ days }),
+      recent: releaseEvents.listEvents({ days, limit: 100 }),
+      health: chatLogger.getHealth(),
+    });
+  } catch (error) {
+    console.error('❌ Error fetching release events summary:', error);
+    res.status(500).json({ ok: false, error: 'Failed to fetch release events summary' });
+  }
+});
+
 // Health & metrics
 app.get('/api/admin/chat-logs/health', (req, res) => {
   try {
@@ -2486,16 +2680,26 @@ function resolveDraftPath(moduleSlug, subFolder, articleSlug) {
 const RATE_LIMIT = parseInt(process.env.AUTHORING_RATE_LIMIT || '10', 10);
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const generateHits = new Map();
+// The release pipeline's service account gets its own, higher ceiling: a
+// single dispatch can legitimately carry up to RELEASE_DRAFTS_MAX_CHANGES
+// (20) generates, so the human limit of 10/hour would 429 half of every
+// full dispatch. 30 keeps one full dispatch clean while still bounding a
+// runaway marker loop; a second back-to-back deploy within the hour
+// partially defers to the next deploy (the 'error' status holds the
+// dispatcher's marker, so deferred changes retry).
+const RELEASE_SERVICE_RATE_LIMIT = parseInt(process.env.RELEASE_SERVICE_RATE_LIMIT || '30', 10);
+
 function checkRate(email) {
   const key = email || 'anon';
+  const limit = key === RELEASE_SERVICE_USER.email ? RELEASE_SERVICE_RATE_LIMIT : RATE_LIMIT;
   const now = Date.now();
   const arr = (generateHits.get(key) || []).filter((t) => now - t < RATE_WINDOW_MS);
-  if (arr.length >= RATE_LIMIT) {
+  if (arr.length >= limit) {
     return {ok: false, retryAfterMs: RATE_WINDOW_MS - (now - arr[0]), used: arr.length};
   }
   arr.push(now);
   generateHits.set(key, arr);
-  return {ok: true, remaining: RATE_LIMIT - arr.length};
+  return {ok: true, remaining: limit - arr.length};
 }
 
 // Hold authoring requests until the boot reconcile has put journaled content
@@ -4498,6 +4702,9 @@ async function publishHandler(req, res) {
     if (next === raw) {
       return res.status(400).json({ error: 'No draft: true flag found in frontmatter' });
     }
+    // The relevance flag is a review aid for the drafts queue; publishing IS
+    // the review resolving it, so it never ships to a live article.
+    next = stripRelevanceComments(next);
     // Ownership transfers to whoever just approved this - the person taking
     // responsibility for what's live is whoever reviewed it, not whoever
     // (human or the release pipeline's service account) happened to draft
@@ -4825,6 +5032,9 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
             origin: provenance ? 'pipeline' : 'human',
             releaseTag: provenance ? provenance.tag : null,
             issueUrl: provenance ? provenance.url : null,
+            // Set when the relevance classifier drafted this with doubts
+            // (medium/low-confidence not-relevant) - the queue badges it.
+            relevanceFlag: parseRelevanceComment(text),
           });
         }
       }

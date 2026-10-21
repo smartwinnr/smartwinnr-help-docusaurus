@@ -741,6 +741,15 @@
   vertical-align: middle;
   white-space: nowrap;
 }
+
+/* Amber variant: the relevance classifier drafted this with doubts -
+   review whether it belongs on the help site at all. */
+.relevanceBadge {
+  composes: originBadge;
+  background: var(--ifm-color-warning-contrast-background, #fff8e1);
+  color: var(--ifm-color-warning-contrast-foreground, #7a5200);
+  border: 1px solid var(--ifm-color-warning-dark, #e6a700);
+}
 .selectorRow {
   display: flex;
   gap: var(--space-3);

@@ -182,6 +182,35 @@ function getDb() {
       added_at TEXT NOT NULL,
       added_by TEXT
     );
+
+    -- Release-draft pipeline audit trail (see db/release-events.js). One
+    -- 'dispatch' row per POST /api/release-drafts plus one 'change' row per
+    -- change inside it. Lives here (not a JSONL under __dirname) because
+    -- this DB sits on the Railway volume and survives deploys - the exact
+    -- flaw that wipes release-publish-log.jsonl on every deploy. Future
+    -- columns must be added via REQUIRED_COLUMNS like every other table.
+    CREATE TABLE IF NOT EXISTS release_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      created_at TEXT NOT NULL,
+      dispatch_id TEXT NOT NULL,
+      kind TEXT NOT NULL,
+      tag TEXT,
+      deployer TEXT,
+      audience TEXT,
+      issue_id TEXT,
+      issue_url TEXT,
+      change_type TEXT,
+      subject TEXT,
+      status TEXT NOT NULL,
+      module TEXT,
+      article_path TEXT,
+      match_method TEXT,
+      match_json TEXT,
+      relevance_json TEXT,
+      duration_ms INTEGER,
+      error TEXT,
+      meta_json TEXT
+    );
   `);
 
   // Create indexes (IF NOT EXISTS is implicit with CREATE INDEX IF NOT EXISTS)
@@ -201,6 +230,9 @@ function getDb() {
     CREATE INDEX IF NOT EXISTS idx_digest_send_log_sent_at ON digest_send_log(sent_at);
     CREATE INDEX IF NOT EXISTS idx_approved_notify_emails_email ON approved_notify_emails(email);
     CREATE INDEX IF NOT EXISTS idx_search_queries_created_at ON search_queries(created_at);
+    CREATE INDEX IF NOT EXISTS idx_release_events_created_at ON release_events(created_at);
+    CREATE INDEX IF NOT EXISTS idx_release_events_dispatch ON release_events(dispatch_id);
+    CREATE INDEX IF NOT EXISTS idx_release_events_status ON release_events(status);
   `);
 
   // Self-heal: ensure every column we depend on exists, regardless of what
@@ -221,6 +253,9 @@ function getDb() {
   // Periodic maintenance (every 6 hours): WAL checkpoint + retention sweep.
   // Retention used to run only at first DB touch, so a long-lived container
   // never enforced it between deploys.
+  // unref: the timer must never be what keeps the process alive - the
+  // server's HTTP listener does that, and short-lived users of this DB
+  // (tests, scripts) should be able to exit naturally.
   setInterval(() => {
     try {
       _db.pragma('wal_checkpoint(TRUNCATE)');
@@ -228,7 +263,7 @@ function getDb() {
       console.error('[chat-logger] WAL checkpoint failed:', e.message);
     }
     cleanOldRecords(RETENTION_DAYS);
-  }, 6 * 60 * 60 * 1000);
+  }, 6 * 60 * 60 * 1000).unref();
 
   console.log(`[chat-logger] SQLite initialised at ${DB_PATH}`);
   return _db;
@@ -1183,6 +1218,16 @@ function cleanOldRecords(retentionDays) {
           AND id NOT IN (SELECT DISTINCT conversation_id FROM chat_exchanges)
       `).run(cutoff);
       db.prepare('DELETE FROM search_queries WHERE created_at < ?').run(cutoff);
+      // Release events keep their own, longer window: they are the audit
+      // trail for automated article creation, and a quarterly review must
+      // still find last quarter's dispatches. The durable relevance flag
+      // lives in the article file itself, so losing a row past the window
+      // never loses the flag.
+      const releaseRetentionDays = parseInt(process.env.RELEASE_EVENTS_RETENTION_DAYS || '365', 10);
+      if (releaseRetentionDays > 0) {
+        const releaseCutoff = new Date(Date.now() - releaseRetentionDays * 24 * 60 * 60 * 1000).toISOString();
+        db.prepare('DELETE FROM release_events WHERE created_at < ?').run(releaseCutoff);
+      }
       if (ex.changes > 0 || result.changes > 0) {
         console.log(`[chat-logger] Cleaned ${ex.changes} exchanges / ${result.changes} conversations older than ${retentionDays} days`);
       }

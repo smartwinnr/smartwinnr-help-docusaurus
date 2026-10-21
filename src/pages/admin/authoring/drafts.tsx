@@ -37,6 +37,7 @@ type Draft = {
   origin?: 'pipeline' | 'human';
   releaseTag?: string | null;
   issueUrl?: string | null;
+  relevanceFlag?: {verdict: string; confidence: string; reason: string} | null;
 };
 
 type Article = Draft & { draft: boolean; position?: number | null };
@@ -143,7 +144,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   const [deployState, setDeployState] = useState<DeployState | null>(null);
   const [deploying, setDeploying] = useState(false);
   const [locations, setLocations] = useState<SectionEntry[]>([]);
-  const [originFilter, setOriginFilter] = useState<'all' | 'pipeline' | 'human'>('all');
+  const [originFilter, setOriginFilter] = useState<'all' | 'pipeline' | 'human' | 'flagged'>('all');
 
   useEffect(() => {
     (async () => {
@@ -458,9 +459,10 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
       <div className={styles.tabToolbar}>
         <span className={styles.hint}>
           Drafts are only visible here - readers never see them until you publish.
+          {' '}Pipeline activity: <Link to="/admin/release-events">release events</Link>.
         </span>
         <div className={styles.filterGroup} role="group" aria-label="Filter by origin">
-          {(['all', 'pipeline', 'human'] as const).map((f) => (
+          {(['all', 'pipeline', 'human', 'flagged'] as const).map((f) => (
             <button
               key={f}
               type="button"
@@ -468,6 +470,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
               onClick={() => setOriginFilter(f)}>
               {f === 'all' ? `All (${drafts.length})`
                 : f === 'pipeline' ? `Release pipeline (${drafts.filter((d) => d.origin === 'pipeline').length})`
+                : f === 'flagged' ? `Flagged (${drafts.filter((d) => d.relevanceFlag).length})`
                 : `Hand-authored (${drafts.filter((d) => d.origin !== 'pipeline').length})`}
             </button>
           ))}
@@ -482,7 +485,11 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
         <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring" onClick={clearWizardState}>authoring wizard</Link>.</p>
       )}
       {(() => {
-        const filtered = drafts.filter((d) => originFilter === 'all' || (originFilter === 'pipeline' ? d.origin === 'pipeline' : d.origin !== 'pipeline'));
+        const filtered = drafts.filter((d) =>
+          originFilter === 'all' ? true
+          : originFilter === 'pipeline' ? d.origin === 'pipeline'
+          : originFilter === 'flagged' ? !!d.relevanceFlag
+          : d.origin !== 'pipeline');
         if (!loading && drafts.length > 0 && filtered.length === 0) {
           return <p className={styles.hint}>No drafts match this filter.</p>;
         }
@@ -508,6 +515,13 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
                       className={styles.originBadge}
                       title={d.issueUrl ? `Drafted by the release pipeline${d.releaseTag ? ` (${d.releaseTag})` : ''} - open the source issue: ${d.issueUrl}` : 'Drafted by the release pipeline'}>
                       Release pipeline
+                    </span>
+                  )}
+                  {d.relevanceFlag && (
+                    <span
+                      className={styles.relevanceBadge}
+                      title={`The relevance classifier doubts this belongs on the help site (${d.relevanceFlag.confidence} confidence): ${d.relevanceFlag.reason}. Publish it to clear the flag, or delete the draft.`}>
+                      Relevance?
                     </span>
                   )}
                 </td>

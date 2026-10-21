@@ -24,6 +24,13 @@
  *   multi-module files spanning competitions+quizzes -> no file created in
  *                the wrong module
  *   empty-tag    tag:'' -> saved file carries tag=untagged and parses
+ *   irrelevant   changeType refactor -> skipped-not-relevant (deterministic)
+ *   flagged      ambiguous internal-sounding change -> drafted + relevance
+ *                flag (soft - depends on model judgment)
+ *   relevance-kill-switch  run the SERVER with RELEASE_RELEVANCE_LLM_DISABLED=1;
+ *                deterministic skip still fires, nothing gets flagged
+ *   rate-limit   run the SERVER with RELEASE_SERVICE_RATE_LIMIT=1; second
+ *                change errors (retries next deploy), event says rate-limited
  */
 
 const path = require('path');
@@ -174,6 +181,85 @@ const scenarios = {
     }
   },
 
+  async irrelevant() {
+    // changeType refactor trips the deterministic pre-check - no LLM needed,
+    // so this scenario also passes with RELEASE_RELEVANCE_LLM_DISABLED=1.
+    const r = await dispatch([change({
+      issueId: 990007,
+      changeType: 'refactor',
+      subject: 'Refactor session-lock retry into a shared service (#990007)',
+      files: ['modules/quizzes'],
+    })]);
+    const res = r.results[0];
+    check(res.status === 'skipped-not-relevant', 'refactor -> skipped-not-relevant', JSON.stringify(res));
+    check(res.relevance && res.relevance.source === 'deterministic', 'deterministic verdict recorded', JSON.stringify(res.relevance));
+    check(!res.path, 'no draft file written', JSON.stringify(res));
+  },
+
+  async flagged() {
+    // Internal-sounding change in a product module: the LLM should judge it
+    // not-relevant but (usually) below high confidence -> drafted + flagged.
+    // Soft assertion - depends on model judgment.
+    const r = await dispatch([change({
+      issueId: 990008,
+      changeType: 'bug',
+      subject: 'Fix quiz leaderboard cache warming running twice on deploy (#990008)',
+      files: ['modules/quizzes'],
+      whatChanged: 'The leaderboard cache warm-up job ran twice after each deploy, doubling load briefly.',
+      howToUse: 'No user action. Leaderboards behave exactly as before; the duplicate warm-up simply no longer happens behind the scenes.',
+    })]);
+    const res = r.results[0];
+    console.log(`  info  status=${res.status} relevance=${JSON.stringify(res.relevance || null)}`);
+    if (res.status === 'skipped-not-relevant') {
+      console.log('  info  model judged it high-confidence irrelevant - acceptable alternative outcome');
+      check(true, 'classified not-relevant (skipped at high confidence)');
+      return;
+    }
+    check(res.status === 'created' || res.status === 'updated', 'ambiguous change still drafts', JSON.stringify(res));
+    check(res.relevance && res.relevance.verdict === 'not-relevant', 'flagged not-relevant on the result (soft - model judgment)', JSON.stringify(res.relevance));
+    if (res.path && res.relevance) {
+      const text = fs.readFileSync(path.join(ROOT, res.path), 'utf8');
+      check(/release-relevance:/.test(text), 'relevance comment present in the draft file');
+      const drafts = await (await fetch(`${SERVER}/api/admin/authoring/drafts`, { headers: { Cookie: process.env.TEST_ADMIN_COOKIE || '' } })).json().catch(() => null);
+      if (drafts && drafts.drafts) {
+        const row = drafts.drafts.find((d) => d.path === res.path);
+        check(row && row.relevanceFlag, 'drafts API surfaces relevanceFlag', JSON.stringify(row));
+      } else {
+        console.log('  info  drafts API check skipped (set TEST_ADMIN_COOKIE to a superadmin swhelp_session cookie to enable)');
+      }
+    }
+  },
+
+  async 'relevance-kill-switch'() {
+    // Server must be running with RELEASE_RELEVANCE_LLM_DISABLED=1.
+    const refactor = await dispatch([change({
+      issueId: 990009,
+      changeType: 'refactor',
+      subject: 'Refactor survey mailer configuration loading (#990009)',
+      files: ['modules/surveys'],
+    })]);
+    check(refactor.results[0].status === 'skipped-not-relevant', 'deterministic check still skips with LLM disabled', JSON.stringify(refactor.results[0]));
+    const normal = await dispatch([change({
+      issueId: 990010,
+      subject: 'Add a shimmer-finish theme option to quiz certificates (#990010)',
+      files: ['modules/quizzes'],
+    })]);
+    const res = normal.results[0];
+    check(res.status === 'created' || res.status === 'updated', 'non-refactor drafts normally', JSON.stringify(res));
+    check(!res.relevance, 'no flag attached while the relevance LLM is disabled', JSON.stringify(res.relevance || null));
+  },
+
+  async 'rate-limit'() {
+    // Server must be running with RELEASE_SERVICE_RATE_LIMIT=1.
+    const r = await dispatch([
+      change({ issueId: 990011, subject: 'Add aurora borealis backdrop to the forms gallery (#990011)', files: ['modules/forms'] }),
+      change({ issueId: 990012, subject: 'Add tectonic-drift animation to the forms gallery (#990012)', files: ['modules/forms'] }),
+    ]);
+    const statuses = r.results.map((x) => x.status).sort();
+    check(statuses.includes('error'), 'second change rate-limits as error (marker will retry it)', JSON.stringify(r.results));
+    check(statuses.includes('created') || statuses.includes('updated'), 'first change still drafts', JSON.stringify(r.results));
+  },
+
   async 'empty-tag'() {
     const r = await dispatch([change({
       issueId: 990006,
@@ -192,7 +278,7 @@ const scenarios = {
 
 (async () => {
   const requested = process.argv.slice(2);
-  const toRun = requested.length ? requested : ['create', 'provenance', 'empty-tag', 'multi-module'];
+  const toRun = requested.length ? requested : ['create', 'provenance', 'empty-tag', 'multi-module', 'irrelevant'];
   for (const name of toRun) {
     if (!scenarios[name]) {
       console.error(`Unknown scenario "${name}". Available: ${Object.keys(scenarios).join(', ')}`);
