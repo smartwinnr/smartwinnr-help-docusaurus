@@ -241,15 +241,43 @@ function subFolderForChangeType(changeType) {
   return 'features'; // enhancement, refactor (defensive), anything else
 }
 
+// Modules whose articles overlap in subject matter enough that a change
+// routed to one should also SEARCH the other for an existing article to
+// update. modules/coachings code (routed to video-coaching) regularly
+// touches features documented under ai-coaching (e.g. coaching reports
+// live in ai-coaching/reports-and-analytics) - searching only the mapped
+// module made those updates impossible and every such change drafted a
+// duplicate-topic article. Affects match scope ONLY, never where a fresh
+// article is created.
+const RELATED_SEARCH_MODULES = {
+  'video-coaching': ['ai-coaching'],
+  'ai-coaching': ['video-coaching'],
+};
+
 function mapChangeToDestination(change) {
   const files = Array.isArray(change.files) ? change.files : [];
+  // Collect EVERY mapped module (ordered, unique), not just the first hit -
+  // a multi-module commit used to land wherever its first listed file
+  // pointed, and the match search never saw the other modules at all.
+  const modules = [];
   for (const f of files) {
     const module = RELEASE_SOURCE_ALIASES[f] || RELEASE_MODULE_MAP[f];
-    if (module) {
-      return { module, subFolder: subFolderForChangeType(change.changeType) };
+    if (module && !modules.includes(module)) modules.push(module);
+  }
+  if (modules.length === 0) return null;
+  const searchModules = [...modules];
+  for (const m of modules) {
+    for (const related of RELATED_SEARCH_MODULES[m] || []) {
+      if (!searchModules.includes(related)) searchModules.push(related);
     }
   }
-  return null;
+  return {
+    // Where a FRESH article is created: the first mapped module (unchanged
+    // contract). Where the matcher LOOKS: all of them, plus related modules.
+    module: modules[0],
+    subFolder: subFolderForChangeType(change.changeType),
+    searchModules,
+  };
 }
 
 function releaseSlugify(s) {
@@ -303,26 +331,58 @@ function buildRoughExplanation(change) {
   return parts.join('\n\n');
 }
 
-/** Marks a draft as release-pipeline-generated and traces it back to the
- *  commit that produced it, without touching the frontmatter schema -
- *  inserted as a comment right after the closing frontmatter fence so it
- *  never renders and never confuses the strict frontmatter parser. */
-function injectProvenanceComment(markdown, change, tag) {
-  // MDX has no HTML-comment syntax - <!-- --> is a build-breaking parse
-  // error there, not a no-op like in plain markdown. {/* */} is the MDX form.
-  const comment = `{/* release-draft: tag=${tag} issue=${change.issueId} url=${change.issueUrl} */}`;
+/** Release-draft provenance comments trace an article back to every commit
+ *  that produced or refined it - one comment per absorbed issue, stacked
+ *  right after the closing frontmatter fence. The SERVER is the sole owner
+ *  of these comments: they are stripped before markdown is sent to the LLM
+ *  and the merged set is re-injected after generation, so the model can
+ *  never drop or garble them (it used to - refine buried older issue ids
+ *  and the matcher then missed them).
+ *  `tag=(\S*?)` (not \S+) so a legacy malformed `tag= issue=...` comment
+ *  from an empty deploy tag still parses instead of being invisible. */
+const PROVENANCE_RE = /\{\/\*\s*release-draft:\s*tag=(\S*?)\s+issue=(\S+)\s+url=(\S+)\s*\*\/\}/g;
+
+/** ALL provenance comments in the article, in file order (newest first by
+ *  construction - injectProvenanceComments writes them that way). */
+function parseProvenanceComments(markdown) {
+  const out = [];
+  for (const m of String(markdown || '').matchAll(PROVENANCE_RE)) {
+    out.push({ tag: m[1] || null, issueId: m[2], url: m[3] });
+  }
+  return out;
+}
+
+/** The newest provenance comment, or null - kept with its original
+ *  single-comment signature for the drafts list and the publish log. */
+function parseProvenanceComment(markdown) {
+  return parseProvenanceComments(markdown)[0] || null;
+}
+
+/** Removes every provenance comment (and its trailing newline) so the LLM
+ *  never sees machine-managed metadata it might copy, move, or mangle. */
+function stripProvenanceComments(markdown) {
+  return String(markdown || '').replace(new RegExp(PROVENANCE_RE.source + '[ \\t]*\\n?', 'g'), '');
+}
+
+/** Injects the full provenance set (deduped by issue id, first entry wins -
+ *  callers pass newest first) right after the closing frontmatter fence.
+ *  MDX has no HTML-comment syntax - <!-- --> is a build-breaking parse
+ *  error there, not a no-op like in plain markdown. {/* *\/} is the MDX form. */
+function injectProvenanceComments(markdown, provenances) {
+  const seen = new Set();
+  const lines = [];
+  for (const p of provenances || []) {
+    const id = String(p.issueId);
+    if (seen.has(id)) continue;
+    seen.add(id);
+    // Normalize an empty tag to 'untagged' so the comment always parses.
+    lines.push(`{/* release-draft: tag=${p.tag || 'untagged'} issue=${p.issueId} url=${p.url} */}`);
+  }
+  if (lines.length === 0) return markdown;
   const fenceEnd = markdown.indexOf('\n---', markdown.indexOf('---') + 3);
   if (fenceEnd === -1) return markdown;
   const insertAt = fenceEnd + 4;
-  return markdown.slice(0, insertAt) + '\n' + comment + markdown.slice(insertAt);
-}
-
-/** Pulls {tag, issueId, url} out of a release-draft provenance comment if
- *  the article has one (see injectProvenanceComment), else null. */
-function parseProvenanceComment(markdown) {
-  const m = /\{\/\*\s*release-draft:\s*tag=(\S+)\s+issue=(\S+)\s+url=(\S+)\s*\*\/\}/.exec(markdown);
-  if (!m) return null;
-  return { tag: m[1], issueId: m[2], url: m[3] };
+  return markdown.slice(0, insertAt) + '\n' + lines.join('\n') + markdown.slice(insertAt);
 }
 
 const PUBLISH_LOG_PATH = path.join(__dirname, 'release-publish-log.jsonl');
@@ -360,13 +420,39 @@ function makeResShim() {
   return shim;
 }
 
-/** Words scored for a lightweight keyword-overlap match - not real
- *  semantic search (the repo's existing Chroma index is the natural
- *  upgrade path once someone's ready to wire it in), but deterministic,
- *  explainable, and safe: only ever compares within the SAME mapped
- *  module+subFolder, so it can't accidentally match an unrelated area. */
+/** Words that are frequent in BOTH commit subjects and article titles but
+ *  carry no topical signal - counting them produced shared-word scores
+ *  that meant nothing. Small and explicit on purpose. */
+const MATCH_STOPWORDS = new Set([
+  'with', 'from', 'when', 'that', 'this', 'those', 'these', 'then', 'than',
+  'after', 'before', 'into', 'onto', 'over', 'under', 'between', 'their',
+  'your', 'allow', 'allows', 'show', 'shows', 'make', 'makes', 'made',
+  'user', 'users', 'page', 'pages', 'view', 'views', 'using', 'what',
+  'where', 'which', 'while', 'will', 'should', 'does', 'have', 'been',
+  'each', 'every', 'more', 'also', 'only',
+]);
+
+/** Cheap suffix stemmer so `reports` matches `report` and `scheduling`
+ *  matches `schedule`-ish forms. Exactness doesn't matter - only that BOTH
+ *  sides of a comparison pass through the same function. */
+function stemWord(w) {
+  let s = w;
+  if (s.length > 5 && s.endsWith('ing')) s = s.slice(0, -3);
+  else if (s.length > 4 && s.endsWith('ed')) s = s.slice(0, -2);
+  if (s.length > 3 && s.endsWith('s') && !s.endsWith('ss')) s = s.slice(0, -1);
+  return s;
+}
+
+/** Words scored for the keyword-overlap shortlist - not real semantic
+ *  search (that's the LLM pick's job; the Chroma index is a further
+ *  upgrade path), but deterministic and explainable. Lowercased, stripped
+ *  of punctuation, stopworded, and stemmed. */
 function titleWords(text) {
-  return new Set(String(text || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 3));
+  return new Set(
+    String(text || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/)
+      .filter((w) => w.length > 3 && !MATCH_STOPWORDS.has(w))
+      .map(stemWord),
+  );
 }
 
 /** Significant words of a module's slug and registry label (e.g.
@@ -382,92 +468,213 @@ function moduleNameWords(moduleSlug) {
 
 /**
  * Finds an existing article this change should UPDATE rather than duplicate.
- * Two passes, most-confident first:
- *   1. Exact provenance match - a prior pipeline dispatch already created
- *      an article for this exact issue id. Always correct when found.
- *   2. Keyword overlap - the article's title shares enough significant
- *      words with this change's subject, scoped to the same destination
- *      folder. Conservative threshold (>=40% overlap of the shorter title's
- *      words) so it only fires on genuine near-duplicates.
- * Returns { path, markdown, previousOwner } or null.
+ * Three tiers, most-confident first:
+ *   1. Provenance - a prior pipeline dispatch already created/updated an
+ *      article for this exact issue id. Always correct when found.
+ *   2. Keyword shortlist - stemmed-word overlap between the change's
+ *      subject and each article's title/description builds a candidate
+ *      list. This tier no longer auto-matches (commit-style subjects and
+ *      help-style titles share too few literal words - live data showed it
+ *      essentially never fired); it feeds tier 3.
+ *   3. LLM pick - one small AUTHORING_MODEL call decides which candidate
+ *      (if any) documents the same user-facing feature. On LLM failure or
+ *      RELEASE_MATCH_LLM_DISABLED=1 the old strict keyword gate
+ *      (overlap >= 0.4 && shared >= 2) is the fail-safe, preserving the
+ *      previous behavior exactly.
+ * Searches every sub-folder of every module in dest.searchModules - not
+ * just the Change-Type's target sub-folder, because subFolderForChangeType
+ * can route the same issue to different sub-folders across commits, and
+ * related modules (e.g. video-coaching/ai-coaching) share subject matter.
+ * Returns { match: {path, markdown, previousOwner} | null,
+ *           decision: {method, score?, candidatesConsidered, llm?} }.
  */
-function findMatchingArticle(change, dest) {
-  // Search every sub-folder under the module, not just the one THIS
-  // dispatch's Change-Type would create in. subFolderForChangeType means
-  // the same issue can legitimately land in different sub-folders across
-  // separate commits over time (e.g. its first commit was a `feature` ->
-  // create-and-manage, a later one for the same issue is a `bug` fix ->
-  // faqs-and-troubleshooting) - searching only the current Change-Type's
-  // folder would miss the real article and wrongly create a duplicate.
-  const moduleDir = path.join(MODULES_ROOT, dest.module);
-  if (!fsSync.existsSync(moduleDir)) return null;
+async function findMatchingArticle(change, dest) {
+  const decision = { method: 'none', candidatesConsidered: 0 };
+  const searchModules = (Array.isArray(dest.searchModules) && dest.searchModules.length > 0)
+    ? dest.searchModules
+    : [dest.module];
+  // The (#NNNN) suffix on commit subjects is noise that can never match a
+  // title word - strip it before tokenizing (same strip the handler uses
+  // for the article title).
+  const cleanedSubject = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
 
-  var byProvenance = null;
-  var byKeyword = null;
-  var bestOverlap = 0;
-  // Every title in a module tends to name the module ("field coaching"), so
-  // those words are shared by construction and prove nothing. Counting them
-  // matched a star-ratings bug fix to "How to create Field Coaching
-  // Template" and overwrote that published article.
-  const moduleWords = moduleNameWords(dest.module);
-  const withoutModuleWords = (words) => new Set([...words].filter((w) => !moduleWords.has(w)));
-  const changeWords = withoutModuleWords(titleWords(change.subject));
+  const candidates = [];
+  var conservative = null;
+  var conservativeOverlap = 0;
 
-  var subFolders;
-  try {
-    subFolders = fsSync.readdirSync(moduleDir).filter((d) => isModuleSubfolder(dest.module, d));
-  } catch (e) {
-    return null;
-  }
+  for (const moduleSlug of searchModules) {
+    const moduleDir = path.join(MODULES_ROOT, moduleSlug);
+    if (!fsSync.existsSync(moduleDir)) continue;
 
-  outer:
-  for (const sf of subFolders) {
-    const dir = path.join(moduleDir, sf);
-    var files;
+    // Every title in a module tends to name the module ("field coaching"), so
+    // those words are shared by construction and prove nothing. Counting them
+    // matched a star-ratings bug fix to "How to create Field Coaching
+    // Template" and overwrote that published article.
+    const moduleWords = moduleNameWords(moduleSlug);
+    const withoutModuleWords = (words) => new Set([...words].filter((w) => !moduleWords.has(w)));
+    const changeWords = withoutModuleWords(titleWords(cleanedSubject));
+
+    var subFolders;
     try {
-      files = fsSync.readdirSync(dir).filter((f) => f.endsWith('.md'));
+      subFolders = fsSync.readdirSync(moduleDir).filter((d) => isModuleSubfolder(moduleSlug, d));
     } catch (e) {
       continue;
     }
-    for (const file of files) {
-      const full = path.join(dir, file);
-      var markdown;
+
+    for (const sf of subFolders) {
+      const dir = path.join(moduleDir, sf);
+      var files;
       try {
-        markdown = fsSync.readFileSync(full, 'utf8');
+        files = fsSync.readdirSync(dir).filter((f) => f.endsWith('.md'));
       } catch (e) {
         continue;
       }
-      const provenance = parseProvenanceComment(markdown);
-      if (provenance && String(provenance.issueId) === String(change.issueId)) {
-        byProvenance = { path: full, markdown: markdown };
-        break outer; // exact match - no need to keep scanning
-      }
-      const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(markdown);
-      const existingWords = withoutModuleWords(titleWords(titleMatch ? titleMatch[1] : file));
-      if (changeWords.size === 0 || existingWords.size === 0) continue;
-      var shared = 0;
-      changeWords.forEach((w) => { if (existingWords.has(w)) shared++; });
-      const overlap = shared / Math.min(changeWords.size, existingWords.size);
-      // Live-verified false positive: a short real title ("How to edit a
-      // question" - 2 significant words) only needs ONE shared word
-      // ("question") to clear a 40%-of-the-shorter-title ratio, which
-      // false-matched and nearly overwrote unrelated real content. Require
-      // a minimum absolute overlap too, so a single generic shared word
-      // can never be enough on its own.
-      if (overlap >= 0.4 && shared >= 2 && overlap > bestOverlap) {
-        bestOverlap = overlap;
-        byKeyword = { path: full, markdown: markdown };
+      for (const file of files) {
+        const full = path.join(dir, file);
+        var markdown;
+        try {
+          markdown = fsSync.readFileSync(full, 'utf8');
+        } catch (e) {
+          continue;
+        }
+        // Tier 1: ANY absorbed issue id matches (an article refined across
+        // several releases carries one provenance comment per issue).
+        if (parseProvenanceComments(markdown).some((p) => String(p.issueId) === String(change.issueId))) {
+          decision.method = 'provenance';
+          return {
+            match: { path: full, markdown, previousOwner: getFrontmatterOwner(markdown) },
+            decision,
+          };
+        }
+        // Tier 2: score against the title AND the frontmatter description
+        // (descriptions are prose and overlap commit subjects far more
+        // often than titles do) - take the better of the two.
+        const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(markdown);
+        const descMatch = /^description:\s*["']?(.*?)["']?\s*$/m.exec(markdown);
+        var bestShared = 0;
+        var bestOverlap = 0;
+        for (const fieldText of [titleMatch ? titleMatch[1] : file, descMatch ? descMatch[1] : '']) {
+          const existingWords = withoutModuleWords(titleWords(fieldText));
+          if (changeWords.size === 0 || existingWords.size === 0) continue;
+          var shared = 0;
+          changeWords.forEach((w) => { if (existingWords.has(w)) shared++; });
+          const overlap = shared / Math.min(changeWords.size, existingWords.size);
+          if (shared > bestShared || (shared === bestShared && overlap > bestOverlap)) {
+            bestShared = shared;
+            bestOverlap = overlap;
+          }
+        }
+        if (bestShared >= 1) {
+          candidates.push({ path: full, markdown, shared: bestShared, score: bestOverlap });
+        }
+        // Live-verified false positive: a short real title ("How to edit a
+        // question" - 2 significant words) only needs ONE shared word
+        // ("question") to clear a 40%-of-the-shorter-title ratio, which
+        // false-matched and nearly overwrote unrelated real content. The
+        // strict gate (kept as the LLM-failure fallback) requires a
+        // minimum absolute overlap too.
+        if (bestOverlap >= 0.4 && bestShared >= 2 && bestOverlap > conservativeOverlap) {
+          conservativeOverlap = bestOverlap;
+          conservative = { path: full, markdown };
+        }
       }
     }
   }
 
-  const found = byProvenance || byKeyword;
-  if (!found) return null;
-  return {
-    path: found.path,
-    markdown: found.markdown,
-    previousOwner: getFrontmatterOwner(found.markdown),
-  };
+  candidates.sort((a, b) => (b.shared - a.shared) || (b.score - a.score));
+  const shortlist = candidates.slice(0, 8);
+  decision.candidatesConsidered = shortlist.length;
+
+  if (shortlist.length > 0) {
+    const llm = await llmPickMatchingArticle(change, cleanedSubject, shortlist);
+    decision.llm = {
+      confidence: llm.confidence,
+      reason: llm.reason,
+      error: llm.error,
+      skipped: llm.skipped || undefined,
+    };
+    if (llm.picked) {
+      decision.method = 'llm';
+      decision.score = llm.picked.score;
+      return {
+        match: { path: llm.picked.path, markdown: llm.picked.markdown, previousOwner: getFrontmatterOwner(llm.picked.markdown) },
+        decision,
+      };
+    }
+    // The LLM confidently said "none": trust it over the keyword gate. Only
+    // when the LLM was unavailable (error/disabled) does the old strict
+    // keyword match apply - that preserves pre-LLM behavior as the fail-safe.
+    if ((llm.error || llm.skipped) && conservative) {
+      decision.method = 'keyword-fallback';
+      decision.score = conservativeOverlap;
+      return {
+        match: { path: conservative.path, markdown: conservative.markdown, previousOwner: getFrontmatterOwner(conservative.markdown) },
+        decision,
+      };
+    }
+  }
+
+  return { match: null, decision };
+}
+
+/**
+ * One small LLM call that decides whether this change updates one of the
+ * shortlisted candidate articles or is a genuinely new topic. Never throws
+ * and never blocks a dispatch: every failure path returns an object the
+ * caller treats as "LLM unavailable, use the conservative fallback".
+ * RELEASE_MATCH_LLM_DISABLED=1 is the kill switch (and the clean way to
+ * exercise the fallback path in tests).
+ */
+async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
+  if (process.env.RELEASE_MATCH_LLM_DISABLED === '1') return { picked: null, skipped: true };
+  try {
+    const list = candidates.map((c, i) => {
+      const body = stripProvenanceComments(c.markdown);
+      const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(body);
+      const descMatch = /^description:\s*["']?(.*?)["']?\s*$/m.exec(body);
+      const fenceEnd = body.indexOf('\n---', body.indexOf('---') + 3);
+      const excerpt = (fenceEnd === -1 ? body : body.slice(fenceEnd + 4)).trim().slice(0, 400);
+      return {
+        id: i + 1,
+        title: titleMatch ? titleMatch[1] : path.basename(c.path),
+        description: descMatch ? descMatch[1] : '',
+        folder: path.relative(MODULES_ROOT, path.dirname(c.path)).replace(/\\/g, '/'),
+        excerpt,
+      };
+    });
+    const messages = [
+      {
+        role: 'system',
+        content:
+          'You decide whether a code change to the SmartWinnr platform is an update to an EXISTING help article or a NEW topic. ' +
+          'Match only if one candidate documents the same user-facing feature or workflow the change modifies - a shared module or vague thematic similarity is NOT a match. ' +
+          'Respond with ONLY a JSON object: {"match": <candidate id number or "none">, "confidence": "high"|"medium"|"low", "reason": "<one sentence>"}.',
+      },
+      {
+        role: 'user',
+        content: JSON.stringify({
+          change: { subject: cleanedSubject, changeType: change.changeType, sections: change.sections || {} },
+          candidates: list,
+        }, null, 2),
+      },
+    ];
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      chatCompletionBody({ model: AUTHORING_MODEL, messages, temperature: 0, maxOutputTokens: 300 }),
+      { headers: { Authorization: `Bearer ${getOpenAIKey()}`, 'Content-Type': 'application/json' }, timeout: 20000 },
+    );
+    let text = (response.data?.choices?.[0]?.message?.content || '').trim()
+      .replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
+    const parsed = JSON.parse(text);
+    const idx = Number(parsed.match); // "none" -> NaN -> falls through
+    if (Number.isInteger(idx) && idx >= 1 && idx <= candidates.length && parsed.confidence !== 'low') {
+      return { picked: candidates[idx - 1], confidence: parsed.confidence, reason: parsed.reason };
+    }
+    return { picked: null, confidence: parsed.confidence, reason: parsed.reason };
+  } catch (e) {
+    console.error('release-drafts: match-LLM failed, using conservative fallback:', e.message);
+    return { picked: null, error: e.message };
+  }
 }
 
 /**
@@ -670,6 +877,11 @@ function notifyMissingFoundationalArticle(pending) {
 
 app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
   try {
+    // Mirror the /api/admin/authoring journal gate: never scan the disk for
+    // existing articles before the boot reconcile has re-materialized
+    // journaled drafts - a dispatch arriving seconds after a restart would
+    // otherwise miss them and create duplicates. Both settle paths proceed.
+    await journalBootPromise.catch(() => {});
     const { tag, deployedAt, deployer, audience, changes } = req.body || {};
     if (audience !== 'client') {
       return res.status(400).json({ error: `This destination only accepts audience "client" (got "${audience}")` });
@@ -692,7 +904,27 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       }
 
       const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
-      const match = findMatchingArticle(change, dest);
+      const { match, decision } = await findMatchingArticle(change, dest);
+      if (match) {
+        console.log(`release-drafts: issue ${change.issueId} -> MATCHED via ${decision.method}`
+          + (decision.llm && decision.llm.confidence ? ` (confidence=${decision.llm.confidence})` : '')
+          + ` ${path.relative(__dirname, match.path)}; ${decision.candidatesConsidered} candidate(s) considered`);
+      } else {
+        console.log(`release-drafts: issue ${change.issueId} -> NO MATCH (${decision.candidatesConsidered} candidate(s) considered`
+          + (decision.llm && decision.llm.reason ? `; llm: "${decision.llm.reason}"` : '')
+          + (decision.llm && decision.llm.error ? `; llm error: ${decision.llm.error}` : '')
+          + ')');
+      }
+      // Additive decision record for the results payload - the dispatcher
+      // (push-article-drafts.js) prints results, so match decisions become
+      // visible at deploy time without any change on that side.
+      const matchInfo = {
+        method: decision.method,
+        matchedPath: match ? path.relative(__dirname, match.path) : undefined,
+        score: decision.score,
+        candidatesConsidered: decision.candidatesConsidered,
+        llm: decision.llm,
+      };
 
       // No existing article to update AND the module has no article at
       // all - an incremental change like this would publish with nothing
@@ -713,10 +945,17 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
         continue;
       }
 
-      // The matched file's own real sub-folder (it can differ from
-      // dest.subFolder - see findMatchingArticle's comment); null when
-      // there's no match, in which case dest.subFolder is used to create.
+      // The matched file's own real module AND sub-folder (both can differ
+      // from dest - findMatchingArticle searches related modules and every
+      // sub-folder); null when there's no match, in which case dest is
+      // used to create.
       const matchedSubFolder = match ? path.basename(path.dirname(match.path)) : null;
+      const matchedModule = match ? path.basename(path.dirname(path.dirname(match.path))) : null;
+
+      // Provenance comments are machine-managed: capture the matched
+      // article's absorbed issues, strip every comment before the LLM sees
+      // the markdown, and re-inject the merged set after generation.
+      const priorProvenances = match ? parseProvenanceComments(match.markdown) : [];
 
       // generateHandler's destination check runs unconditionally (not only
       // in fresh-generate mode) - refine-mode requests need inputs.module/
@@ -725,18 +964,23 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       // produces "Pick a destination folder first." even in refine mode.
       const genReq = {
         body: match
-          ? { inputs: { module: dest.module, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: match.markdown }
+          ? { inputs: { module: matchedModule, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: stripProvenanceComments(match.markdown) }
           : { inputs: { module: dest.module, subFolder: dest.subFolder, roughExplanation: buildRoughExplanation(change), title } },
         user: RELEASE_SERVICE_USER,
       };
       const genRes = makeResShim();
       await generateHandler(genReq, genRes);
       if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
-        results.push({ issueId: change.issueId, status: 'error', error: (genRes.body && genRes.body.error) || 'generate failed', detail: genRes.body });
+        results.push({ issueId: change.issueId, status: 'error', error: (genRes.body && genRes.body.error) || 'generate failed', detail: genRes.body, match: matchInfo });
         continue;
       }
 
-      const markdown = injectProvenanceComment(genRes.body.markdown, change, tag);
+      // Strip again before injecting - the model may have copied or invented
+      // a provenance comment despite the overlay's instruction not to.
+      const markdown = injectProvenanceComments(
+        stripProvenanceComments(genRes.body.markdown),
+        [{ tag, issueId: change.issueId, url: change.issueUrl }, ...priorProvenances],
+      );
       // saveHandler always computes its write target from module/subFolder/slug -
       // fromPath only enables the "editing an existing article" comparison
       // logic (concurrency check, skips the article-exists 409), it does NOT
@@ -751,23 +995,23 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       const slug = match ? path.basename(match.path, '.md') : (releaseSlugify(title) || `issue-${change.issueId}`);
       const saveReq = {
         body: match
-          ? { markdown, module: dest.module, subFolder: matchedSubFolder, slug, fromPath: path.relative(__dirname, match.path) }
+          ? { markdown, module: matchedModule, subFolder: matchedSubFolder, slug, fromPath: path.relative(__dirname, match.path) }
           : { markdown, module: dest.module, subFolder: dest.subFolder, slug },
         user: RELEASE_SERVICE_USER,
       };
       const saveRes = makeResShim();
       await saveHandler(saveReq, saveRes);
       if (saveRes.statusCode !== 200) {
-        results.push({ issueId: change.issueId, status: 'error', error: (saveRes.body && (saveRes.body.error || saveRes.body.message)) || 'save failed', detail: saveRes.body });
+        results.push({ issueId: change.issueId, status: 'error', error: (saveRes.body && (saveRes.body.error || saveRes.body.message)) || 'save failed', detail: saveRes.body, match: matchInfo });
         continue;
       }
 
       const savedPath = saveRes.body && saveRes.body.path;
       if (match) {
-        results.push({ issueId: change.issueId, status: 'updated', path: savedPath, module: dest.module, subFolder: matchedSubFolder, previousOwner: match.previousOwner });
+        results.push({ issueId: change.issueId, status: 'updated', path: savedPath, module: matchedModule, subFolder: matchedSubFolder, previousOwner: match.previousOwner, match: matchInfo });
         if (match.previousOwner) notifyExistingOwner(change, dest, match.path, match.previousOwner);
       } else {
-        results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug });
+        results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug, match: matchInfo });
         newlyCreated.push({ title, issueId: change.issueId, issueUrl: change.issueUrl });
       }
     }

@@ -65,6 +65,12 @@ shortening the article, or changing the described approach** - ONLY when the
 editor's refinement note explicitly asks for it. Absent such an instruction,
 default to preserving everything.
 
+## Machine-managed metadata
+
+Any `{/* release-draft: ... */}` comment is machine-managed metadata - never
+reproduce, edit, or invent one. The server strips and re-inserts these
+comments itself; your output must not contain any.
+
 ## Frontmatter
 
 Preserve the existing frontmatter values verbatim - title, description, slug,
