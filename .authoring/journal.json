@@ -242,6 +242,12 @@
       "ts": 1792588612501,
       "seq": 12,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/smartpath/for-managers/how-to-analyse-a-smartpath-dashboard.md": {
+      "action": "upsert",
+      "ts": 1792749851462,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
