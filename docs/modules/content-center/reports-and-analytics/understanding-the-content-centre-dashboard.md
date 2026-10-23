@@ -5,7 +5,7 @@ description: "See content library size, storage usage, upload activity, usage, a
 slug: understanding-the-content-centre-dashboard
 sidebar_position: 40
 last_update:
-  date: 2026-10-08
+  date: 2026-10-22
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -32,8 +32,8 @@ Use the Content Centre Dashboard to:
 - See which users contribute the most content.
 - Understand how content is distributed across folders.
 
-## Steps
-
+# 1. Overview Tab
+The Overview tab provides a snapshot of your Content Centre library, including content volume, storage usage, upload trends, and content references. It helps you understand how your content is organized, used, and contributed to across the selected reporting period.
 ### 1. Review the Overview tab
 
 The **Overview** tab gives you a summary of your content library and its usage.
@@ -109,4 +109,18 @@ This helps you review content activity for the time frame that matters to you.
 ## Things to know
 
 * The dashboard data reflects the **selected date range**. Change the date range to compare short-term and long-term activity.
-* The module names shown under **References by Module** may vary based on your SmartWinnr setup.
+
+# 2. Effectiveness
+The Effectiveness Dashboard helps you analyze how content is viewed and used across your organization. It provides insights into content views, active viewers, folder usage, business-unit adoption, and most- and least-viewed content, helping you identify engagement trends and content that may need review or improvement.
+
+ For more information, refer to [How to Measure Content Effectiveness and Usage](https://help.smartwinnr.com/modules/content-center/reports-and-analytics/how-to-measure-content-effectiveness-and-usage?utm_source=chatgpt.com).
+
+# 3. All Content
+The All Content Dashboard helps you search for content items, review content usage and details, filter results by type, status, or creator, and explore content highlights such as most referenced, most recent, and most popular items. You can also open individual content details and download the All Content report for further analysis.
+
+For more information, refer to [How to Find a Content Item and Download the All Content Report](https://help.smartwinnr.com/modules/content-center/reports-and-analytics/how-to-find-a-content-item-and-download-the-all-content-report?utm_source=chatgpt.com)
+
+# 4.  lifecycle
+For more information, refer to [How to Review the Content Lifecycle Pipeline and Upcoming Expiries](https://help.smartwinnr.com/modules/content-center/reports-and-analytics/how-to-review-the-content-lifecycle-pipeline-and-upcoming-expiries?utm_source=chatgpt.com)
+
+The Lifecycle Dashboard helps you monitor the content lifecycle, including pending approvals, upcoming expiries, and content freshness. It provides insights into lifecycle stages, approval turnaround time, items awaiting review, and older content that may need updating, versioning, or archiving.
