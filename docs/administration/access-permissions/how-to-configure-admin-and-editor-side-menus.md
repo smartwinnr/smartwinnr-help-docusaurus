@@ -5,18 +5,17 @@ description: "Customize Admin and Editor side menus with sections, access restri
 slug: how-to-configure-admin-and-editor-side-menus
 sidebar_position: 206
 last_update:
-  date: 2026-10-15
-  author: Manaswini V
+  date: 2026-10-21
+  author: Anagha Isal
 customProps:
-  owner: jazz.k@smartwinnr.com
   roles: [admin, orgadmin, lamadmin, superadmin]
 tags: ["admin", "editor", "configure-menus"]
-draft: false
+draft: true
 ---
 
-> **At a glance** - Use menu configuration to customize the side menu for Admin and Editor users. You can group items into sections, apply division restrictions, choose supported sub-menu items, and add restricted links.
+> **At a glance** - Menu Configuration lets you customize the side menus for Admin and Editor users in SmartWinnr. You can organize menu items into sections, apply division and sub-division restrictions, configure supported sub-menu items, and add restricted links for specific organizational units or meta-tag values.
 
-Use menu configuration when you want different side menus for Admin and Editor roles. If you do not create a custom menu for a role, SmartWinnr keeps that role’s default menu.
+Use menu configuration when you want to customize left menus for Admin and Editor roles. If you do not create a custom menu for a role, SmartWinnr keeps that role’s default menu.
 
 ## When to use this
 
@@ -24,7 +23,6 @@ Use this when you need to:
 
 - Customize the side menu for Admin or Editor users.
 - Control menu access by division and sub-division.
-- Group menu items into sections.
 - Choose supported sub-menu items for specific modules.
 - Rename default Admin menu items.
 - Add restricted links for specific organizational units or meta tags.
@@ -33,49 +31,82 @@ Use this when you need to:
 
 ### 1. Open menu configuration
 
-Log in to the SmartWinnr Portal, then go to **Company Settings > Menu Configuration**. Open the option to create a menu.
+Log in to the SmartWinnr Portal, then go to **Admin > Company Settings > Menu Configuration**. 
 
 ![Menu configuration](/img/helpscout/authored/authored-mv4wta7c.png)
 
 ### 2. Enter the menu details
-Click Add Menu to add a menu item.
+Click **Add Menu** at top right corner to create a new Menu for the required role.
 ![Add menu](/img/helpscout/authored/authored-mv4wx0jh.png)
-Enter the details that define the custom menu. Choose **Admin** or **Editor** in **Select Role** so the menu applies to the right users.
 
-Add a **Menu Title** and **Description** if needed. Use **Manage Translation** to configure the menu title and other supported text in the required languages.
-![ Enter the menu details](/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv92gs2z.png)
+Enter the basic details for setting up a new menu configuration:
+
+**Menu Title**: Enter the title for the menu. 
+
+**Select Role**: Choose Admin or Editor to specify which role the menu applies to. Depending on the role you choose, you can find the menu items that can be added to your new menu configuration.
+
+**Description**: Add a description, if required.
+
+**Manage Translation**: Configure the menu items and sub-menus in the required languages. If the menu is configured in multiple languages, the left menu will be displayed in the language selected by the user, provided the corresponding translations have been configured.
+
+![Menu Title, Description and manage translation](/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv7w1evk.png)
+
 ### 3. Set organizational restrictions
 
-Add division and sub-division restrictions when the menu should apply only to specific organizational units.
+If you want the new menu to be available only for a specific division or subdivision, you can add the required division and sub-division restrictions. If no restriction is added, the new menu gets applied to everyone with the specific role.
 
-For both Admin and Editor menus, click Click here to add divisional and sub-divisional access to configure the required access restrictions.
+Select **Click here** to add divisional and sub-divisional access. Do the same for Editor menus when needed.
 
-If a user has both roles, configure each menu separately. Each role follows its own restrictions and menu setup.
 ![divisional and sub-divisional access](/img/helpscout/authored/how-to-configure-admin-and-editor-side-menus-mv7w4q8m.png)
 
 
 ### 4. Add sections
 
-Use sections to group related menu items and make the side menu easier to scan.
+Sections help organize related menu items into logical groups, making the side menu easier to navigate.
 
-Select **Add Section**, enter the **Section Name**, and add a **Description** if needed. Repeat this for each section you want to create.
+To add a section:
 
-To remove a section, select its red **Delete** icon. Review the section and its menu items before you delete it.
+1. Select **Add Section**.
+2. Enter the **Section Name**.
+3. Add a **Description**, if required.
 
-### 5. Add menu items
-
-1.	Click Add Section.
-2.	Enter the Section Name.
-3.	Add a Description, if required.
-4.	Repeat these steps to create additional sections.
-
-To remove a section, click the red Delete (trash) icon associated with it. Review the section and its associated menu items before deleting it.
+Repeat these steps to create additional sections.
 
 ![Configure menu items](/img/helpscout/authored/authored-mv50tykp.png)
 
-You can set fields such as **Type**, **Privilege**, **Sections**, **Menu Item Title**, **Menu State**, **Display Icon**, **Description**, **Metatag**, and **Allowed Values**.
+You can organize menu items under the appropriate sections when configuring the menu.
 
-The Admin menu includes three default items: **Manage Users**, **Company Settings**, and **Manage Divisions**. You cannot remove them, but you can change their titles.
+To remove a section, click the red Delete (trash) icon associated with it. Review the section and its associated menu items before deleting it.
+
+### 5. Configure Menu Items
+
+Menu items determine which modules are available in the custom left menu.
+
+You can configure fields such as:
+
+**Type**: Specifies the menu item type. (Page, External Link, PDF)
+
+**Privilege**: If you choose the type as **Page**, privilege will list down the modules (menus) that you can add in your left menu.
+
+**Sections**: Determines the section under which this menu item is organized.
+
+**Menu Item Title**: Defines the title displayed for the menu item.
+
+**Description**: Provides additional information about the menu item. (Optional)
+
+**Metatag**: If you want to display a specific left menu item only to users associated with certain metatag values, select the relevant metatag here. Then, choose the permitted values for that metatag in the Allowed Values field.
+
+**Allowed Values** : Choose the permitted values for the selected metatag.
+
+### Default Admin menu items:
+
+The Admin menu includes three default items:
+- Manage Users
+- Company Settings
+- Manage Divisions
+
+These items cannot be removed from the Admin menu, but their titles can be changed.
+
 ![Configure menu items](/img/helpscout/authored/authored-mv518x51.png)
 
 ![Configure menu items](/img/helpscout/authored/authored-mv5190d5.png)
