@@ -254,6 +254,12 @@
       "ts": 1792823680888,
       "seq": 2,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-prepare-a-bulk-import-package-mvm0y0f0.png": {
+      "action": "upsert",
+      "ts": 1792823705245,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
     }
   }
 }
