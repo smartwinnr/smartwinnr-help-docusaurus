@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const matter = require('gray-matter');
 const { ChromaClient } = require('chromadb');
 const { resolveDocRoute } = require('../lib/doc-routes');
-const { toIndexableText, synthesizeFromFrontmatter, chunkIndexableText } = require('../lib/doc-text');
+const { toIndexableText, synthesizeFromFrontmatter, chunkIndexableText, chunkMarkdownSections } = require('../lib/doc-text');
 
 const REPO_ROOT = path.join(__dirname, '..');
 const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
@@ -15,6 +15,41 @@ const DOCS_ROOT = path.join(REPO_ROOT, 'docs');
 // stricter than intended. Applies on collection CREATION only - an existing
 // L2 collection keeps its space until FORCE_FULL_REINDEX recreates it.
 const COLLECTION_METADATA = { 'hnsw:space': 'cosine' };
+
+// Bump when the chunking or the embedded text changes. It is part of every
+// doc's content hash, so the next incremental run re-embeds the whole corpus
+// without anyone having to remember FORCE_FULL_REINDEX.
+//   v2: chunks split at ##/### headings; embedded text carries the sidebar
+//       breadcrumb and section heading.
+const INDEX_FORMAT = 'v2';
+
+// Sidebar labels from _category_.json, cached per directory.
+const categoryLabelCache = new Map();
+function categoryLabel(dir) {
+  if (categoryLabelCache.has(dir)) return categoryLabelCache.get(dir);
+  let label = null;
+  try {
+    label = JSON.parse(fs.readFileSync(path.join(dir, '_category_.json'), 'utf8')).label || null;
+  } catch (e) {
+    // No category file: fall back to the humanized folder name.
+  }
+  if (!label) {
+    label = path.basename(dir).replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  categoryLabelCache.set(dir, label);
+  return label;
+}
+
+/** "Modules > Video Coaching > Features" for docs/modules/video-coaching/features/x.md */
+function breadcrumbFor(filePath) {
+  const parts = [];
+  let dir = path.dirname(filePath);
+  while (dir.startsWith(DOCS_ROOT) && dir !== DOCS_ROOT) {
+    parts.unshift(categoryLabel(dir));
+    dir = path.dirname(dir);
+  }
+  return parts.join(' > ');
+}
 
 /**
  * Internal Document Indexer
@@ -175,13 +210,18 @@ class InternalIndexer {
     // One vector per ~1500-char chunk, not per article: a whole-article
     // embedding averages every topic the article covers, so specific
     // questions matched long articles poorly, and the chat handler could only
-    // forward a truncated head of the matched text.
-    const chunks = chunkIndexableText(cleanContent);
+    // forward a truncated head of the matched text. Chunks follow the
+    // article's ##/### sections (see chunkMarkdownSections).
+    const chunks = synthesized
+      ? chunkIndexableText(cleanContent).map((text) => ({ heading: '', text }))
+      : chunkMarkdownSections(body);
+    if (chunks.length === 0) chunks.push({ heading: '', text: cleanContent });
+    const breadcrumb = breadcrumbFor(filePath);
 
     // Hash body AND the identity we store alongside it. Hashing the body alone
     // meant a re-slug or re-title never re-embedded the doc, so a stale URL
     // survived every incremental run until someone forced a full reindex.
-    const contentHash = this.generateContentHash([cleanContent, title, url].join('\u0000'));
+    const contentHash = this.generateContentHash([INDEX_FORMAT, cleanContent, title, url, breadcrumb].join('\u0000'));
 
     return {
       id: `doc_${Buffer.from(relativePath).toString('base64')}`, // Use relative path for cross-machine consistency
@@ -189,6 +229,7 @@ class InternalIndexer {
       chunks,
       hash: contentHash,
       filePath: relativePath, // Store relative path for tracking
+      breadcrumb,
       metadata: {
         title,
         source: relativePath,
@@ -362,7 +403,7 @@ class InternalIndexer {
       console.log(`📄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(documents.length/batchSize)}`);
 
       for (const doc of batch) {
-        const chunks = (doc.chunks && doc.chunks.length) ? doc.chunks : [doc.content];
+        const chunks = (doc.chunks && doc.chunks.length) ? doc.chunks : [{ heading: '', text: doc.content }];
         try {
           // Embed every chunk before queuing any of them (see all-or-nothing
           // note above). The embedded text is title-prefixed while the STORED
@@ -371,17 +412,22 @@ class InternalIndexer {
           // feature it belongs to, so without its title it drifts away from
           // queries like "how to create video coaching" that its article
           // should win.
+          // The breadcrumb and section heading go in front too: "Video
+          // Coaching > Features > What is Scenario Lifecycle? > Duplicating a
+          // scenario - ..." says what the chunk is about even when its own
+          // sentences don't name the feature.
           const title = doc.metadata && doc.metadata.title ? String(doc.metadata.title).trim() : '';
           const embeddings = [];
           for (const chunk of chunks) {
-            embeddings.push(await this.generateEmbedding(title ? `${title} - ${chunk}` : chunk));
+            const prefix = [doc.breadcrumb, title, chunk.heading].filter(Boolean).join(' > ');
+            embeddings.push(await this.generateEmbedding(prefix ? `${prefix} - ${chunk.text}` : chunk.text));
             await this.pace();
           }
 
           chunks.forEach((chunk, ci) => {
-            batchDocuments.push(chunk);
+            batchDocuments.push(chunk.text);
             batchEmbeddings.push(embeddings[ci]);
-            batchMetadatas.push({ ...doc.metadata, chunkIndex: ci, chunkCount: chunks.length });
+            batchMetadatas.push({ ...doc.metadata, heading: chunk.heading || '', chunkIndex: ci, chunkCount: chunks.length });
             batchIds.push(`${doc.id}::c${ci}`);
           });
           if (doc.stale) staleSources.push(doc.filePath);

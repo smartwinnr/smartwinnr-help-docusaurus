@@ -1,0 +1,197 @@
+{
+  "_about": "Ally retrieval/answer eval set, run by scripts/eval-chat.js. expect: docs/-relative article paths; a case passes retrieval when ANY of them reaches the model. facts: regexes (case-insensitive) the answer must ALL match. banned: regexes the answer must NOT match. gap: true marks a question the docs don't answer yet (Oct 2026 team sheet) - it is reported but not counted in the retrieval score. as: optional viewer {roles, privileges} for the gate filter; omitted = superadmin (no privilege filter).",
+  "bannedEverywhere": [
+    "docs (?:confirm|say)",
+    "according to the documentation",
+    "based on the (?:context|documentation)"
+  ],
+  "cases": [
+    {
+      "id": "duplicate-scenario-1",
+      "question": "how to duplicate the scenario",
+      "expect": ["modules/video-coaching/features/what-is-scenario-lifecycle.md", "modules/ai-coaching/features/what-is-scenario-lifecycle-management.md"],
+      "facts": ["draft"],
+      "banned": ["open (?:the )?scenario lifecycle management"]
+    },
+    {
+      "id": "duplicate-scenario-2",
+      "question": "how to duplicate a scenario?",
+      "expect": ["modules/video-coaching/features/what-is-scenario-lifecycle.md", "modules/ai-coaching/features/what-is-scenario-lifecycle-management.md"],
+      "facts": ["draft"],
+      "banned": ["open (?:the )?scenario lifecycle management"]
+    },
+    {
+      "id": "duplicate-scenario-3",
+      "question": "Can I make a copy of an existing AI role play so I don't have to build it again from scratch?",
+      "expect": ["modules/video-coaching/features/what-is-scenario-lifecycle.md", "modules/ai-coaching/features/what-is-scenario-lifecycle-management.md"],
+      "facts": ["draft"],
+      "banned": ["open (?:the )?scenario lifecycle management"]
+    },
+    {
+      "id": "sheet-file-size",
+      "question": "File Size limitation of 2mb. Many of our PPT files exceed this limit and the file compression process is time consuming - furthermore with the volume of assets we have globally this will be a serious pain point for team as they work to transition.",
+      "expect": ["modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md", "modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md"],
+      "facts": ["2 ?mb"],
+      "banned": ["support@smartwinnr\\.com"]
+    },
+    {
+      "id": "sheet-learner-uploads",
+      "question": "Learners do not have the ability to upload a PPT or video. Mentor and BWI use this heavily for their behavioural training whereas learners upload a video of themselves speaking to the product so that trainers/coaches/managers can evaluate and provide feedback. Mentor also has interactive PDFs the reps must fill out (workbook) and then upload to demonstrate understanding of concepts/proof of completion. This may be a showstopper for some teams.",
+      "expect": ["modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video.md", "modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath.md", "modules/forms/create-and-manage/how-to-create-a-form.md", "modules/ai-coaching/features/what-is-ai-coaching.md"],
+      "facts": ["video", "pdf"],
+      "banned": ["support@smartwinnr\\.com"]
+    },
+    {
+      "id": "sheet-content-organisation",
+      "question": "Content organization is starting to look alarming as with tagging and grouping the thought this will get very messy over time. We can discuss more and it just may be an opportunity for us the business to establish structure through naming conventions, etc. but let's explore more.",
+      "expect": ["modules/content-center/create-and-manage/how-to-create-and-organise-folders.md", "modules/content-center/create-and-manage/how-to-tag-content-with-categories-tags-and-competencies.md"],
+      "facts": ["folder", "tag"]
+    },
+    {
+      "id": "sheet-branding",
+      "question": "Branding options, many of the links on the left-hand side of the learner interface are confusing - is there an option to rename those and further brand the site?",
+      "expect": ["administration/system-management/how-to-change-company-logo.md", "administration/access-permissions/how-to-configure-admin-and-editor-side-menus.md"],
+      "facts": ["logo"],
+      "gap": true
+    },
+    {
+      "id": "sheet-time-zones",
+      "question": "Time zone issues loading learners? Has that been resolved?",
+      "expect": ["administration/system-management/create-users-in-bulk.md"],
+      "facts": ["time ?zone"],
+      "gap": true
+    },
+    {
+      "id": "file-size-keyword",
+      "question": "What is the maximum file size for SmartFeed uploads?",
+      "expect": ["modules/smartfeed/create-and-manage/how-to-create-a-smartfeed.md"],
+      "facts": ["2 ?mb", "250 ?mb"]
+    },
+    {
+      "id": "ppt-smartfeed",
+      "question": "How do I add a PowerPoint to a SmartFeed?",
+      "expect": ["modules/smartfeed/create-and-manage/how-to-add-a-powerpoint-presentation-ppt-to-smartfeed.md"],
+      "facts": ["presentation"]
+    },
+    {
+      "id": "learner-upload-video",
+      "question": "How does a learner upload a coaching video?",
+      "expect": ["modules/video-coaching/for-learners/how-do-i-upload-a-coaching-video.md"],
+      "facts": ["upload"]
+    },
+    {
+      "id": "smartpath-assignment",
+      "question": "How do I create an assignment in a SmartPath where learners upload a PDF?",
+      "expect": ["modules/smartpath/create-and-manage/how-to-create-assignment-in-smartpath.md"],
+      "facts": ["pdf"]
+    },
+    {
+      "id": "duplicate-quiz",
+      "question": "How can I duplicate a quiz?",
+      "expect": ["modules/quiz/create-and-manage/how-can-i-duplicate-a-quiz.md"],
+      "facts": ["duplicate"]
+    },
+    {
+      "id": "duplicate-survey",
+      "question": "how do i copy a survey",
+      "expect": ["modules/survey/create-and-manage/how-to-duplicate-a-survey-and-survey-template.md"],
+      "facts": ["duplicate"]
+    },
+    {
+      "id": "automatic-quiz",
+      "question": "How do I set up an automatic quiz?",
+      "expect": ["modules/quiz/create-and-manage/how-to-create-an-automatic-quiz.md"],
+      "facts": ["automatic"]
+    },
+    {
+      "id": "bulk-questions",
+      "question": "Can I upload quiz questions in bulk from Excel?",
+      "expect": ["modules/quiz/create-and-manage/how-to-upload-questions-in-bulk-using-import-questions.md"],
+      "facts": ["import"]
+    },
+    {
+      "id": "retake-quiz",
+      "question": "I failed a quiz, can I take it again?",
+      "expect": ["modules/quiz/for-learners/how-to-retake-a-quiz.md"],
+      "facts": ["retake|attempt"]
+    },
+    {
+      "id": "create-smartpath",
+      "question": "How do I create a SmartPath?",
+      "expect": ["modules/smartpath/create-and-manage/how-to-create-a-smartpath.md"],
+      "facts": ["smartpath"]
+    },
+    {
+      "id": "smartpath-certificate",
+      "question": "How do I design the certificate learners get when they complete a learning path?",
+      "expect": ["modules/smartpath/create-and-manage/how-to-design-a-completion-certificate.md"],
+      "facts": ["certificate"]
+    },
+    {
+      "id": "new-joiners",
+      "question": "Can new joiners be automatically enrolled into onboarding training?",
+      "expect": ["modules/smartpath/create-and-manage/how-to-auto-enroll-new-joiners-into-a-smartpath.md"],
+      "facts": ["new joiner|auto"]
+    },
+    {
+      "id": "create-competition",
+      "question": "How to create a competition?",
+      "expect": ["modules/kpi-gamification/create-and-manage/how-to-create-a-competition.md"],
+      "facts": ["competition"]
+    },
+    {
+      "id": "upload-kpi",
+      "question": "How do we upload sales KPI data for the leaderboard?",
+      "expect": ["modules/kpi-gamification/create-and-manage/how-to-upload-kpi-data.md"],
+      "facts": ["kpi"]
+    },
+    {
+      "id": "reset-coaching-video",
+      "question": "A rep submitted the wrong video for their role play, how do I let them redo it?",
+      "expect": ["modules/video-coaching/create-and-manage/how-to-reset-a-coaching-video.md"],
+      "facts": ["reset"]
+    },
+    {
+      "id": "forgot-password",
+      "question": "I forgot my password",
+      "expect": ["get-started/onboarding/what-if-i-ve-forgotten-my-password.md"],
+      "facts": ["password"]
+    },
+    {
+      "id": "admin-change-password",
+      "question": "How can an admin change a user's password?",
+      "expect": ["administration/system-management/how-can-an-admin-change-anyone-s-password.md", "administration/system-management/how-can-i-change-the-password-for-a-user-account.md"],
+      "facts": ["password"]
+    },
+    {
+      "id": "create-user",
+      "question": "How do I add a new user?",
+      "expect": ["administration/system-management/create-users-individually.md", "administration/system-management/create-users-in-bulk.md"],
+      "facts": ["user"]
+    },
+    {
+      "id": "company-logo",
+      "question": "How do I change the company logo?",
+      "expect": ["administration/system-management/how-to-change-company-logo.md"],
+      "facts": ["logo"]
+    },
+    {
+      "id": "khub-folders",
+      "question": "How do I create folders in the knowledge hub?",
+      "expect": ["modules/knowledge-hub/create-and-manage/how-can-i-create-folders-and-items-in-khub.md"],
+      "facts": ["folder"]
+    },
+    {
+      "id": "field-coaching-create",
+      "question": "How do I create a field coaching?",
+      "expect": ["modules/field-coaching/create-and-manage/how-to-create-field-coaching.md"],
+      "facts": ["field coaching"]
+    },
+    {
+      "id": "content-center-tags",
+      "question": "How should I organise our content library with categories and tags?",
+      "expect": ["modules/content-center/create-and-manage/how-to-tag-content-with-categories-tags-and-competencies.md", "modules/content-center/create-and-manage/how-to-create-and-organise-folders.md"],
+      "facts": ["categor", "tag"]
+    }
+  ]
+}

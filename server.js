@@ -1469,7 +1469,10 @@ app.post('/api/vector/search', async (req, res) => {
 // chunk of an article. Pass uniqueByUrl to collapse to one hit per article
 // (best chunk wins) - the search bar wants distinct articles, while chat
 // benefits from multiple chunks of the same doc as extra context.
-async function searchDocuments(query, limit = 5, user = null, { uniqueByUrl = false } = {}) {
+//
+// Pass `trace` (an array) to collect the chunks the gate filter dropped, so the
+// chat log can show what retrieval found but the viewer wasn't allowed to see.
+async function searchDocuments(query, limit = 5, user = null, { uniqueByUrl = false, trace = null } = {}) {
   try {
     // Generate embedding for the query
     const embeddingResponse = await axios.post(`http://localhost:${PORT}/api/vector/embed`, {
@@ -1526,7 +1529,9 @@ async function searchDocuments(query, limit = 5, user = null, { uniqueByUrl = fa
       ? documents.filter((d) => {
           const url = d.liveUrl || (d.metadata && d.metadata.url);
           if (!url) return true; // no URL means we can't gate; pass through
-          return isUrlAllowedForUser(url, user);
+          const allowed = isUrlAllowedForUser(url, user);
+          if (!allowed && trace) trace.push(retrievalTraceEntry(d, 'gate'));
+          return allowed;
         })
       : documents;
 
@@ -1588,6 +1593,17 @@ function getAllyPromptTemplate() {
 // ("step 2 didn't work") without ballooning prompt-token cost.
 const CHAT_HISTORY_TURNS = 6;
 
+// Answer-call knobs. The seed is the only determinism lever on models that
+// force temperature 1 (gpt-6); CHAT_SEED=off sends none. The output cap was
+// 750, which a reasoning model can spend before writing a word of the answer.
+const CHAT_SEED = (() => {
+  const raw = String(process.env.CHAT_SEED ?? '42').trim();
+  if (/^(off|none)?$/i.test(raw)) return null;
+  const n = Number(raw);
+  return Number.isInteger(n) ? n : null;
+})();
+const CHAT_MAX_OUTPUT_TOKENS = Number(process.env.CHAT_MAX_OUTPUT_TOKENS) || 1500;
+
 // Generate AI response using OpenAI. `history` is the running array of
 // {role, content} turns for the conversation; we forward only the tail so
 // follow-ups read as a thread instead of isolated answers.
@@ -1614,7 +1630,8 @@ async function generateAIResponse(query, context, history = []) {
           { role: 'user', content: query }
         ],
         temperature: 0.5,
-        maxOutputTokens: 750,
+        maxOutputTokens: CHAT_MAX_OUTPUT_TOKENS,
+        seed: CHAT_SEED,
       }),
       {
         headers: {
@@ -1643,7 +1660,18 @@ async function generateAIResponse(query, context, history = []) {
 // the user's original words are what the model answers, the widget shows, and
 // the logger records. Best-effort: any failure falls back to the raw message,
 // which is exactly the pre-rewrite behavior.
+//
+// Long first messages get rewritten too. A customer pasting a 60-word
+// business concern ("our PPT files exceed the 2 MB limit and compressing them
+// is a pain for the team...") embeds as one vector dominated by the
+// complaint, not the feature, so it matched nothing a keyword-phrased
+// question would have found. Those are turned into up to
+// CHAT_MAX_RETRIEVAL_QUERIES short capability questions, each searched
+// separately alongside the original message (see retrieveChatContext).
+// Short first messages skip the call.
 const CONDENSE_TURN_CHARS = 500; // per-turn cap keeps the rewrite call cheap
+const REWRITE_MIN_WORDS = Number(process.env.CHAT_REWRITE_MIN_WORDS) || 25;
+const CHAT_MAX_RETRIEVAL_QUERIES = 2;
 
 async function condenseQueryForRetrieval(message, priorTurns) {
   const turns = Array.isArray(priorTurns)
@@ -1651,7 +1679,12 @@ async function condenseQueryForRetrieval(message, priorTurns) {
         .slice(-CHAT_HISTORY_TURNS)
         .filter((t) => t && (t.role === 'user' || t.role === 'assistant') && typeof t.content === 'string')
     : [];
-  if (turns.length === 0) return message; // first message is already standalone
+  const isFollowUp = turns.length > 0;
+  const wordCount = message.trim().split(/\s+/).filter(Boolean).length;
+  // A short first message is already standalone and keyword-dense.
+  if (!isFollowUp && (wordCount < REWRITE_MIN_WORDS || process.env.CHAT_QUERY_REWRITE_DISABLED === '1')) {
+    return [message];
+  }
 
   try {
     const openaiApiKey = getOpenAIKey();
@@ -1659,23 +1692,28 @@ async function condenseQueryForRetrieval(message, priorTurns) {
       .map((t) => `${t.role === 'user' ? 'User' : 'Assistant'}: ${t.content.slice(0, CONDENSE_TURN_CHARS)}`)
       .join('\n');
 
+    const systemPrompt = isFollowUp
+      ? 'Rewrite the latest user message as one standalone question about SmartWinnr, ' +
+        'resolving pronouns and references ("it", "that", "step 2") from the conversation. ' +
+        'If it is already standalone, return it unchanged. ' +
+        'Reply with the question only - no preamble, no quotes.'
+      : 'The user message is a long question or concern about SmartWinnr, a sales training ' +
+        'platform. Turn it into at most two short search questions (under 15 words each) ' +
+        'about the SmartWinnr capability it asks about, e.g. "What is the file upload size ' +
+        'limit?". Keep the user\'s own feature words; do not name a module the message ' +
+        'does not mention, and drop their business context. ' +
+        'One question per line - no numbering, no preamble, no quotes.';
+    const userContent = isFollowUp
+      ? `Conversation so far:\n${transcript}\n\nLatest user message: ${message}`
+      : message;
+
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       chatCompletionBody({
         model: QUERY_CONDENSING_MODEL,
         messages: [
-          {
-            role: 'system',
-            content:
-              'Rewrite the latest user message as one standalone question about SmartWinnr, ' +
-              'resolving pronouns and references ("it", "that", "step 2") from the conversation. ' +
-              'If it is already standalone, return it unchanged. ' +
-              'Reply with the question only - no preamble, no quotes.',
-          },
-          {
-            role: 'user',
-            content: `Conversation so far:\n${transcript}\n\nLatest user message: ${message}`,
-          },
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userContent },
         ],
         temperature: 0,
         maxOutputTokens: 120,
@@ -1691,12 +1729,85 @@ async function condenseQueryForRetrieval(message, priorTurns) {
 
     const rewritten = response.data.choices?.[0]?.message?.content?.trim();
     // An empty, refused, or runaway rewrite is worse than the original.
-    if (!rewritten || rewritten.length > MAX_QUERY_CHARS) return message;
-    return rewritten;
+    if (!rewritten || rewritten.length > MAX_QUERY_CHARS) return [message];
+    const queries = (isFollowUp ? [rewritten] : rewritten.split('\n'))
+      .map((q) => q.replace(/^\s*(?:[-*\u2022]|\d+[.)])\s*/, '').replace(/^["']|["']$/g, '').trim())
+      .filter(Boolean)
+      .slice(0, CHAT_MAX_RETRIEVAL_QUERIES);
+    if (!queries.length) return [message];
+    // A first message is also searched as typed: the rewrites can only add
+    // matches, never lose one the raw words would have found (a rewrite that
+    // guessed the wrong module did exactly that in the eval).
+    return isFollowUp ? queries : [...queries, message];
   } catch (error) {
     console.error(`⚠️  Query condense failed (model ${QUERY_CONDENSING_MODEL}), retrieving with raw message:`, error.message);
-    return message;
+    return [message];
   }
+}
+
+// What reaches the model. Every chunk used to go in whatever its distance, so
+// a weak match from an unrelated article sat beside the real answer and the
+// model blended them; and one long article could fill all 8 slots with its
+// own chunks. Distances are cosine (0 = identical); 0.8 is the same bar the
+// citation and is_refusal logic already used.
+const CHAT_CONTEXT_CHUNKS = 8;
+const CHAT_MAX_DISTANCE = Number(process.env.CHAT_MAX_DISTANCE) || 0.8;
+const CHAT_MAX_CHUNKS_PER_ARTICLE = Number(process.env.CHAT_MAX_CHUNKS_PER_ARTICLE) || 3;
+
+function retrievalTraceEntry(doc, status) {
+  return {
+    source: doc.metadata?.source || null,
+    chunk: Number(doc.metadata?.chunkIndex) || 0,
+    distance: typeof doc.distance === 'number' ? Math.round(doc.distance * 1000) / 1000 : null,
+    status,
+  };
+}
+
+// Search once per retrieval query and fuse the rankings (reciprocal rank
+// fusion: each list adds 1 / (RRF_K + rank) per chunk), then apply the
+// distance cutoff and the per-article cap. Fusing by rank rather than by best
+// distance means a chunk several queries agree on outranks one that a single
+// rewrite happened to match closely (the eval's "tagging and grouping"
+// question pulled user-Groups articles in that way). Returns the chunks for
+// the model plus a trace of every chunk considered, for the chat log.
+const RRF_K = 60;
+
+async function retrieveChatContext(queries, user) {
+  const trace = [];
+  const perQuery = await Promise.all(
+    queries.map((q) => searchDocuments(q, CHAT_CONTEXT_CHUNKS * 2, user, { trace }))
+  );
+
+  const byChunk = new Map();
+  for (const results of perQuery) {
+    results.forEach((doc, rank) => {
+      const key = `${doc.metadata?.source || doc.liveUrl}::${doc.metadata?.chunkIndex ?? 0}`;
+      const seen = byChunk.get(key) || { doc, score: 0 };
+      if (doc.distance < seen.doc.distance) seen.doc = doc;
+      seen.score += 1 / (RRF_K + rank + 1);
+      byChunk.set(key, seen);
+    });
+  }
+  const candidates = [...byChunk.values()]
+    .sort((a, b) => b.score - a.score || a.doc.distance - b.doc.distance)
+    .map((c) => c.doc);
+
+  const used = [];
+  const perArticle = new Map();
+  for (const doc of candidates) {
+    const article = doc.metadata?.source || doc.liveUrl;
+    const count = perArticle.get(article) || 0;
+    let status = 'used';
+    if (typeof doc.distance === 'number' && doc.distance > CHAT_MAX_DISTANCE) status = 'distance';
+    else if (count >= CHAT_MAX_CHUNKS_PER_ARTICLE) status = 'cap';
+    else if (used.length >= CHAT_CONTEXT_CHUNKS) status = 'limit';
+    if (status === 'used') {
+      used.push(doc);
+      perArticle.set(article, count + 1);
+    }
+    trace.push(retrievalTraceEntry(doc, status));
+  }
+  return { results: used, trace };
 }
 
 // Chat endpoint
@@ -1738,21 +1849,22 @@ app.post('/api/chat', async (req, res) => {
 
     // Search for relevant documents. An index outage is NOT a content gap:
     // answer honestly instead of letting Ally say the docs don't cover it.
-    // Follow-ups retrieve with a history-aware standalone rewrite of the
-    // message (see condenseQueryForRetrieval); first messages skip the extra
-    // call and embed as-is.
+    // Follow-ups and long first messages retrieve with rewritten queries (see
+    // condenseQueryForRetrieval); short first messages embed as-is.
     console.log('🔍 Searching for relevant documents...');
-    const retrievalQuery = await condenseQueryForRetrieval(message, priorHistory);
+    const retrievalQueries = await condenseQueryForRetrieval(message, priorHistory);
+    const retrievalQuery = retrievalQueries.join('\n');
     if (retrievalQuery !== message) {
-      console.log(`🔁 Retrieval query rewritten to: "${retrievalQuery}"`);
+      console.log(`🔁 Retrieval query rewritten to: ${JSON.stringify(retrievalQueries)}`);
     }
     // 8 chunks, not 5: modules with many sibling articles (coaching's
     // upload/share/record how-tos) crowd the top ranks, pushing the one
     // article that actually answers "how do I create X" out of a 5-slot
     // context. Chunks are ~1500 chars, so 8 still fits comfortably.
     let searchResults;
+    let retrievalTrace = [];
     try {
-      searchResults = await searchDocuments(retrievalQuery, 8, req.user);
+      ({ results: searchResults, trace: retrievalTrace } = await retrieveChatContext(retrievalQueries, req.user));
     } catch (searchError) {
       if (!(searchError instanceof SearchUnavailableError)) throw searchError;
       const outageMessage = "I can't reach the documentation index right now, so I don't want to guess. Please try again in a moment - if it keeps happening, let your SmartWinnr admin know.";
@@ -1829,8 +1941,12 @@ app.post('/api/chat', async (req, res) => {
         const partLabel = chunkCount > 1
           ? ` (part ${(Number(result.metadata?.chunkIndex) || 0) + 1} of ${chunkCount})`
           : '';
+        // The section heading keeps a mid-article chunk tied to its topic:
+        // without it, "Duplicating a scenario" and the paragraph above it
+        // about the lifecycle page read as one instruction.
+        const sectionLine = result.metadata?.heading ? `\nSection: ${result.metadata.heading}` : '';
         return `Document ${index + 1}:
-Title: ${result.metadata?.title || 'Untitled'}${partLabel}
+Title: ${result.metadata?.title || 'Untitled'}${partLabel}${sectionLine}
 Content: ${clean.substring(0, 2500)}
 ---`;
       }).join('\n\n');
@@ -1929,6 +2045,8 @@ Content: ${clean.substring(0, 2500)}
         userAgent: req.headers['user-agent'] || null,
         chatModel: CHAT_MODEL,
         consentVersion: PRIVACY_NOTICE_VERSION,
+        retrievalQuery,
+        retrieved: retrievalTrace,
       });
     });
 
@@ -2089,6 +2207,44 @@ app.get('/api/admin/chat-logs/low-confidence', (req, res) => {
   } catch (error) {
     console.error('❌ Error fetching low-confidence logs:', error);
     res.status(500).json({ error: 'Failed to fetch low-confidence logs' });
+  }
+});
+
+// Retrieval preview: what Ally would put in front of the model for a first
+// message, without the answer call. `as` previews another viewer's gates
+// ({ roles, privileges }); omitted, it runs as the superadmin (no privilege
+// filter). Used by scripts/eval-chat.js and for diagnosing "why did Ally say
+// that" against the live index.
+app.post('/api/admin/chat-logs/retrieval-preview', async (req, res) => {
+  try {
+    const { message, as } = req.body || {};
+    if (typeof message !== 'string' || !message.trim() || message.length > MAX_QUERY_CHARS) {
+      return res.status(400).json({ error: `message must be a non-empty string of at most ${MAX_QUERY_CHARS} characters` });
+    }
+    chatLogger.auditLog(req, 'retrieval_preview');
+    const viewer = as && Array.isArray(as.roles)
+      ? { ...req.user, roles: as.roles, privileges: Array.isArray(as.privileges) ? as.privileges : [] }
+      : req.user;
+    const queries = await condenseQueryForRetrieval(message, []);
+    const { results, trace } = await retrieveChatContext(queries, viewer);
+    res.json({
+      queries,
+      results: results.map((r) => ({
+        title: r.metadata?.title || null,
+        source: r.metadata?.source || null,
+        heading: r.metadata?.heading || '',
+        chunk: Number(r.metadata?.chunkIndex) || 0,
+        distance: r.distance,
+        url: r.liveUrl,
+      })),
+      trace,
+    });
+  } catch (error) {
+    if (error instanceof SearchUnavailableError) {
+      return res.status(503).json({ error: 'Documentation search is temporarily unavailable' });
+    }
+    console.error('❌ Error in retrieval preview:', error);
+    res.status(500).json({ error: 'Retrieval preview failed' });
   }
 });
 

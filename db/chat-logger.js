@@ -119,6 +119,8 @@ function getDb() {
       chat_model TEXT,
       is_refusal INTEGER DEFAULT 0,
       citation_clicks_json TEXT,
+      retrieval_query TEXT,
+      retrieved_json TEXT,
       FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE
     );
 
@@ -303,6 +305,9 @@ const REQUIRED_COLUMNS = {
     ['citation_clicks_json', 'TEXT'],
     // v4 (failure-event capture: index outage / handler 500)
     ['is_error',             'INTEGER DEFAULT 0'],
+    // v5 (retrieval trace: what the model was actually shown)
+    ['retrieval_query',      'TEXT'],
+    ['retrieved_json',       'TEXT'],
   ],
 };
 
@@ -405,6 +410,18 @@ const MIGRATIONS = [
     version: 4,
     statements: [
       "ALTER TABLE chat_exchanges ADD COLUMN is_error INTEGER DEFAULT 0",
+    ],
+  },
+  // Version 5 - retrieval trace. Without it a wrong answer can't be told apart
+  // from a retrieval miss: retrieval_query is the text actually embedded (the
+  // condensed/rewritten query, newline-joined when there were several) and
+  // retrieved_json lists every chunk considered, with its distance and
+  // whether it reached the model or why it was dropped (gate, distance, cap).
+  {
+    version: 5,
+    statements: [
+      "ALTER TABLE chat_exchanges ADD COLUMN retrieval_query TEXT",
+      "ALTER TABLE chat_exchanges ADD COLUMN retrieved_json  TEXT",
     ],
   },
 ];
@@ -544,8 +561,9 @@ function logExchange(data) {
           id, conversation_id, user_query, ai_response, confidence, relevance_score,
           citations_json, num_docs_retrieved, top_doc_distance, page_url,
           created_at, response_time_ms, is_fallback, prompt_tokens, completion_tokens,
-          user_rating, contains_pii, is_duplicate, query_type, chat_model, is_refusal, is_error
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?, ?, ?)
+          user_rating, contains_pii, is_duplicate, query_type, chat_model, is_refusal, is_error,
+          retrieval_query, retrieved_json
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 0, ?, ?, ?, ?, ?, ?, ?)
       `).run(
         exchangeId,
         data.conversationId,
@@ -566,7 +584,9 @@ function logExchange(data) {
         classifyQuery(data.userQuery),
         data.chatModel || null,
         data.isRefusal ? 1 : 0,
-        data.isError ? 1 : 0
+        data.isError ? 1 : 0,
+        data.retrievalQuery || null,
+        data.retrieved ? JSON.stringify(data.retrieved) : null
       );
     })();
 
@@ -1161,6 +1181,8 @@ function exportToJSON(startDate, endDate, anonymize = false) {
       citation_clicks_json: null,
       user_query: '[REDACTED]',
       ai_response: '[REDACTED]',
+      // A rewrite of the user's words is still the user's words.
+      retrieval_query: row.retrieval_query == null ? null : '[REDACTED]',
     }));
   }
   return rows;

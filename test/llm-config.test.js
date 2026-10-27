@@ -103,6 +103,14 @@ test('chatCompletionBody drops temperature for the gpt-6 family', () => {
   assert.equal(chatCompletionBody({ model: 'gpt-60', messages, temperature: 0.5 }).temperature, 0.5);
 });
 
+test('chatCompletionBody passes seed through for every model family', () => {
+  const messages = [{ role: 'user', content: 'hi' }];
+  assert.equal(chatCompletionBody({ model: 'gpt-6-luna', messages, seed: 7 }).seed, 7);
+  assert.equal(chatCompletionBody({ model: 'gpt-5.4-mini', messages, seed: 0 }).seed, 0);
+  assert.equal('seed' in chatCompletionBody({ model: 'm', messages }), false);
+  assert.equal('seed' in chatCompletionBody({ model: 'm', messages, seed: null }), false);
+});
+
 test('chatCompletionBody rejects missing model or messages', () => {
   assert.throws(() => chatCompletionBody({ messages: [] }), /model is required/);
   assert.throws(() => chatCompletionBody({ model: 'm' }), /messages must be an array/);
