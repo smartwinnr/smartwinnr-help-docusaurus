@@ -5,7 +5,7 @@ description: "Use Coach With Clara to draft coaching form values, review them, a
 slug: how-to-plan-field-coaching-sessions-for-your-team-using-coach-with-clara
 sidebar_position: 264
 last_update:
-  date: 2026-10-07
+  date: 2026-10-27
   author: Aswani TK
 customProps:
   owner: aswani.tk@smartwinnr.com
@@ -16,7 +16,9 @@ draft: false
 
 > **At a glance** - Open a field coaching session, use **Coach With Clara** to draft the form, review the values, and submit the coaching.
 
-Use **Coach With Clara** to speed up field coaching setup for your team. You can speak the details or type them into the textbox, then review the captured values before you apply them to the coaching form. After that, complete and confirm the coaching submission.
+**Coach With Clara** helps managers quickly prepare and submit field coaching sessions. You can speak or type
+coaching details, have Clara draft the coaching form values, review the captured information, and apply it to the
+coaching form before submission.
 
 ## When to use this
 
@@ -26,14 +28,14 @@ Use this when you want to fill a coaching form with help from Clara instead of e
 - You want to dictate the form values instead of typing them.
 - You want to review and adjust the drafted values before submission.
 
-## Steps
+## Steps to complete a coaching session:
 
 ### 1. Open Field coaching
-Go to the left menu and select **Field coaching**.
+In the Manager view, select **Field Coaching** from the left menu.
 
 ![Select Field coaching from left menu](/img/helpscout/authored/authored-muxxx4xt.png)
 
-### 2. Select the coaching
+### 2. Select the coaching Session
 Choose the field coaching session you want to submit.
 
 ![Select the required coaching](/img/helpscout/authored/authored-muxxyov1.png)
@@ -43,7 +45,7 @@ Pick the participant for the coaching session.
 
 ![Select the participant](/img/helpscout/authored/authored-muxy4w80.png)
 
-### 4. Open the planner
+### 4. Open the Coaching planner
 Select **View** in the planner to open the coaching.
 
 ![Click on the view button to submit the coaching](/img/helpscout/authored/authored-muxy6c3f.png)
@@ -64,17 +66,17 @@ You can also type the script directly into the textbox.
 
 ![Write the script in the textbox](/img/helpscout/authored/authored-muxyit9t.png)
 
-### 7. Assess the draft
-Select **Assess Coach With Clara** to send the script to Clara.
+### 7. Assess the Coaching Details
+Select **Assess Coach With Clara** to have Clara process the information provided.
 
 ![Click on the button "Assess Coach With Clara"](/img/helpscout/authored/authored-muxylrpj.png)
 
-### 8. Review the prompt
+### 8. Review Clara's Draft
 Review the message that appears after Clara processes the draft.
 
 ![Processing the script](/img/helpscout/authored/how-to-plan-field-coaching-sessions-for-your-team-using-coach-with-clara-muy0su24.png)
 
-### 9. Check the filled values
+### 9. Update the Draft if Required
 Review the values Clara added to each field. 
 
 ![Rating added for the competencies](/img/helpscout/authored/authored-muxyovin.png)
@@ -85,7 +87,7 @@ After reviewing every value added to each field, if you want to update the value
 
 ![Update the values](/img/helpscout/authored/authored-muxyqhl1.png)
 
-### 10. Apply the draft to the form
+### 10. Apply the draft to the coaching form
 Select **Apply to coaching form** to add the values to the coaching form.
 
 ![Apply to coaching form](/img/helpscout/authored/authored-muy0bmkx.png)
@@ -95,7 +97,7 @@ In the confirmation popup, select **Ok**.
 
 ![Confirm the submission](/img/helpscout/authored/authored-muy0cc94.png)
 
-### 12. Complete the coaching
+### 12. Review and Complete the Coaching
 Review the coaching form values, then select **Complete Coaching**.
 
 ![Complete the coaching](/img/helpscout/authored/authored-muy0em5x.png)
