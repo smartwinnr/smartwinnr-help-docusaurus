@@ -1488,6 +1488,7 @@ async function searchDocuments(query, limit = 5, user = null, { uniqueByUrl = fa
 
     // Get the collection
     const collection = await chromaClient.getCollection({ name: COLLECTION_NAME });
+    collectionDistanceSpace = (collection.metadata && collection.metadata['hnsw:space']) || 'l2';
 
     // Over-fetch: gate-filtering drops results the viewer can't open, and
     // since each vector is one chunk, several results can be the same article
@@ -1754,6 +1755,14 @@ const CHAT_CONTEXT_CHUNKS = 8;
 const CHAT_MAX_DISTANCE = Number(process.env.CHAT_MAX_DISTANCE) || 0.8;
 const CHAT_MAX_CHUNKS_PER_ARTICLE = Number(process.env.CHAT_MAX_CHUNKS_PER_ARTICLE) || 3;
 
+// The cutoff is a cosine distance. A collection created before the indexer
+// switched to cosine still uses Chroma's default squared-L2 (values well
+// above 1 for good matches), where 0.8 would drop every chunk and turn every
+// answer into a refusal - so it only applies once the collection is cosine
+// (any FORCE_FULL_REINDEX recreates it that way). Set by searchDocuments.
+let collectionDistanceSpace = null;
+let warnedNonCosine = false;
+
 function retrievalTraceEntry(doc, status) {
   return {
     source: doc.metadata?.source || null,
@@ -1792,13 +1801,18 @@ async function retrieveChatContext(queries, user) {
     .sort((a, b) => b.score - a.score || a.doc.distance - b.doc.distance)
     .map((c) => c.doc);
 
+  if (collectionDistanceSpace !== 'cosine' && !warnedNonCosine) {
+    warnedNonCosine = true;
+    console.warn(`⚠️  Collection ${COLLECTION_NAME} uses "${collectionDistanceSpace}" distance, not cosine - chat distance cutoff disabled until a FORCE_FULL_REINDEX recreates it`);
+  }
+
   const used = [];
   const perArticle = new Map();
   for (const doc of candidates) {
     const article = doc.metadata?.source || doc.liveUrl;
     const count = perArticle.get(article) || 0;
     let status = 'used';
-    if (typeof doc.distance === 'number' && doc.distance > CHAT_MAX_DISTANCE) status = 'distance';
+    if (collectionDistanceSpace === 'cosine' && typeof doc.distance === 'number' && doc.distance > CHAT_MAX_DISTANCE) status = 'distance';
     else if (count >= CHAT_MAX_CHUNKS_PER_ARTICLE) status = 'cap';
     else if (used.length >= CHAT_CONTEXT_CHUNKS) status = 'limit';
     if (status === 'used') {
