@@ -266,6 +266,15 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "actionPlanning"
+    },
+    "conversation-intelligence": {
+      "label": "Conversation Intelligence",
+      "tagline": "Conversation Intelligence records a live conversation between a sales representative and a healthcare professional (HCP), transcribes it, and generates AI feedback on what was discussed, how the representative performed, and whether the conversation stayed compliant.",
+      "description": "Conversation Intelligence records a live conversation between a sales representative and a healthcare professional (HCP), transcribes it, and generates AI feedback on what was discussed, how the representative performed, and whether the conversation stayed compliant.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "conversationintelligence"
     }
   }
 }

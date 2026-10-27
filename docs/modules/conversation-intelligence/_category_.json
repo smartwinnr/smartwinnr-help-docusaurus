@@ -1,0 +1,17 @@
+{
+  "label": "Conversation Intelligence",
+  "position": 220,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "roles": [
+      "user",
+      "manager",
+      "editor",
+      "admin",
+      "orgadmin",
+      "lamadmin",
+      "superadmin"
+    ]
+  }
+}
