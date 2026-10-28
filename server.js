@@ -946,34 +946,188 @@ function notifyRejectedChanges(rejected) {
     .catch((e) => console.error('rejected-changes channel notify failed (dispatch unaffected):', e.message));
 }
 
-app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
+// ---------------------------------------------------------------------------
+// Async dispatch. POST validates and answers 202 at once; the batch then runs
+// on a serial in-process chain and GET /api/release-drafts/:dispatchId serves
+// progress and, at the end, the same per-change results[] the deployer used
+// to get synchronously. Why: a dispatch is up to 20 changes x 3 LLM calls,
+// far past any sane request timeout (the deployer's curl once gave up at
+// 20 s while this handler kept drafting). Why serial: the deployer sends a
+// large deploy as several chunks, and chunk 2's provenance match needs chunk
+// 1's files on disk - interleaved runs would draft duplicates. One durable
+// 'dispatch' row per job (queued at enqueue, terminal at the end) means a
+// restart mid-run shows up as 'lost' instead of a job that never answers.
+// ---------------------------------------------------------------------------
+const RELEASE_DISPATCH_MAX_QUEUED = parseInt(process.env.RELEASE_DISPATCH_MAX_QUEUED || '10', 10);
+const RELEASE_DISPATCH_RETAIN_MS = 60 * 60 * 1000; // finished jobs stay in memory this long; the DB row answers after
+const RELEASE_DISPATCH_UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const releaseDispatchJobs = new Map();
+let releaseDispatchChain = Promise.resolve();
+
+function releaseDispatchCounts(results) {
+  const counts = {};
+  let rateLimited = 0;
+  for (const r of results || []) {
+    counts[r.status] = (counts[r.status] || 0) + 1;
+    if (r.rateLimited) rateLimited++;
+  }
+  return { counts, rateLimited };
+}
+
+function releaseDispatchMeta(job) {
+  const { counts, rateLimited } = releaseDispatchCounts(job.results);
+  return {
+    deployedAt: job.deployedAt, changesCount: job.changes.length, chunk: job.chunk || null,
+    counts, rateLimited, completed: job.completed,
+    queuedAt: new Date(job.queuedAt).toISOString(),
+    startedAt: job.startedAt ? new Date(job.startedAt).toISOString() : null,
+    finishedAt: job.finishedAt ? new Date(job.finishedAt).toISOString() : null,
+  };
+}
+
+function dispatchStatusPayload(job) {
+  const { counts, rateLimited } = releaseDispatchCounts(job.results);
+  return {
+    ok: true,
+    dispatchId: job.dispatchId,
+    status: job.status,
+    tag: job.tag, deployedAt: job.deployedAt, deployer: job.deployer, audience: job.audience,
+    changesCount: job.changes.length,
+    progress: { completed: job.completed, total: job.changes.length },
+    queuedAt: new Date(job.queuedAt).toISOString(),
+    startedAt: job.startedAt ? new Date(job.startedAt).toISOString() : null,
+    finishedAt: job.finishedAt ? new Date(job.finishedAt).toISOString() : null,
+    durationMs: job.startedAt && job.finishedAt ? job.finishedAt - job.startedAt : null,
+    counts, rateLimited,
+    error: job.error || null,
+    results: job.results,
+  };
+}
+
+// Answer from the durable row when the in-memory job is gone: evicted after
+// RELEASE_DISPATCH_RETAIN_MS, or the process restarted. A row still marked
+// in flight with no job behind it can only mean a restart, so it reads as
+// lost (the boot sweep stamps that too; this covers the window before it).
+function dispatchStatusFromRow(row) {
+  const meta = row.meta || {};
+  let status;
+  if (row.status === 'ok') status = 'done';
+  else if (row.status === 'queued' || row.status === 'running') status = 'lost';
+  else if (row.status === 'lost') status = 'lost';
+  else status = 'failed';
+  const { counts, rateLimited } = releaseDispatchCounts(row.results);
+  const total = Number.isFinite(meta.changesCount) ? meta.changesCount : row.results.length;
+  return {
+    ok: true,
+    dispatchId: row.dispatchId,
+    status,
+    tag: row.tag, deployedAt: meta.deployedAt || null, deployer: row.deployer, audience: row.audience,
+    changesCount: total,
+    progress: { completed: Number.isFinite(meta.completed) ? meta.completed : row.results.length, total },
+    queuedAt: meta.queuedAt || row.createdAt,
+    startedAt: meta.startedAt || null,
+    finishedAt: meta.finishedAt || null,
+    durationMs: row.durationMs,
+    counts, rateLimited,
+    error: row.error || (status === 'lost' ? 'server restarted mid-dispatch' : null),
+    results: row.results,
+  };
+}
+
+function enqueueReleaseDispatch(job) {
+  releaseDispatchJobs.set(job.dispatchId, job);
+  releaseEvents.recordEvent({
+    dispatchId: job.dispatchId, kind: 'dispatch', tag: job.tag, deployer: job.deployer, audience: job.audience,
+    status: 'queued', meta: releaseDispatchMeta(job),
+  });
+  // The chain never rejects (runReleaseDispatchSafely is total), the trailing
+  // catch is belt and braces so one bad link can never stall every later job.
+  releaseDispatchChain = releaseDispatchChain
+    .then(() => runReleaseDispatchSafely(job))
+    .catch(() => {});
+}
+
+async function runReleaseDispatchSafely(job) {
+  job.status = 'running';
+  job.startedAt = Date.now();
+  releaseEvents.updateDispatch(job.dispatchId, { status: 'running', meta: releaseDispatchMeta(job) });
+  try {
+    await runReleaseDispatch(job);
+    job.status = 'done';
+  } catch (error) {
+    console.error('release-drafts dispatch failed:', error.message);
+    job.status = 'failed';
+    job.error = error.message;
+  } finally {
+    job.finishedAt = Date.now();
+    releaseEvents.updateDispatch(job.dispatchId, {
+      status: job.status === 'done' ? 'ok' : 'failed',
+      durationMs: job.finishedAt - job.startedAt,
+      error: job.error,
+      meta: releaseDispatchMeta(job),
+      results: job.results,
+      tag: job.tag, deployer: job.deployer, audience: job.audience,
+    });
+    setTimeout(() => releaseDispatchJobs.delete(job.dispatchId), RELEASE_DISPATCH_RETAIN_MS).unref();
+  }
+}
+
+app.post('/api/release-drafts', requireReleaseSecret, (req, res) => {
   // Everything below writes release_events rows (db/release-events.js) -
   // the durable audit trail behind /admin/release-events. Event writes
   // never throw and never fail a dispatch.
   const dispatchId = uuidv4();
-  const dispatchStartedAt = Date.now();
-  const { tag, deployedAt, deployer, audience, changes } = req.body || {};
+  const { tag, deployedAt, deployer, audience, changes, chunk } = req.body || {};
   const badRequest = (error) => {
     releaseEvents.recordEvent({ dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'bad-request', error });
     return res.status(400).json({ error });
   };
-  try {
-    // Mirror the /api/admin/authoring journal gate: never scan the disk for
-    // existing articles before the boot reconcile has re-materialized
-    // journaled drafts - a dispatch arriving seconds after a restart would
-    // otherwise miss them and create duplicates. Both settle paths proceed.
-    await journalBootPromise.catch(() => {});
-    if (audience !== 'client') {
-      return badRequest(`This destination only accepts audience "client" (got "${audience}")`);
-    }
-    if (!Array.isArray(changes) || changes.length === 0) {
-      return badRequest('changes must be a non-empty array');
-    }
-    if (changes.length > RELEASE_DRAFTS_MAX_CHANGES) {
-      return badRequest(`Too many changes in one dispatch (${changes.length} > ${RELEASE_DRAFTS_MAX_CHANGES})`);
-    }
+  if (audience !== 'client') {
+    return badRequest(`This destination only accepts audience "client" (got "${audience}")`);
+  }
+  if (!Array.isArray(changes) || changes.length === 0) {
+    return badRequest('changes must be a non-empty array');
+  }
+  if (changes.length > RELEASE_DRAFTS_MAX_CHANGES) {
+    return badRequest(`Too many changes in one dispatch (${changes.length} > ${RELEASE_DRAFTS_MAX_CHANGES})`);
+  }
+  let queued = 0;
+  for (const j of releaseDispatchJobs.values()) if (j.status === 'queued' || j.status === 'running') queued++;
+  if (queued >= RELEASE_DISPATCH_MAX_QUEUED) {
+    return res.status(503).json({ error: `dispatch queue full (${queued} in flight)`, queued });
+  }
+  const job = {
+    dispatchId, tag, deployedAt, deployer, audience, changes,
+    chunk: chunk && typeof chunk === 'object' ? { index: chunk.index, total: chunk.total } : null,
+    status: 'queued', results: [], completed: 0,
+    queuedAt: Date.now(), startedAt: null, finishedAt: null, error: null,
+  };
+  enqueueReleaseDispatch(job);
+  res.status(202).json({
+    ok: true, dispatchId, status: 'queued', queuePosition: queued + 1,
+    statusUrl: `/api/release-drafts/${dispatchId}`, pollAfterMs: 3000,
+    tag, deployedAt, deployer, changesCount: changes.length,
+  });
+});
 
-    const results = [];
+app.get('/api/release-drafts/:dispatchId', requireReleaseSecret, (req, res) => {
+  const { dispatchId } = req.params;
+  if (!RELEASE_DISPATCH_UUID_RE.test(dispatchId)) return res.status(400).json({ error: 'dispatchId must be a UUID' });
+  const job = releaseDispatchJobs.get(dispatchId);
+  if (job) return res.json(dispatchStatusPayload(job));
+  const row = releaseEvents.getDispatch(dispatchId);
+  if (!row) return res.status(404).json({ error: 'Unknown dispatchId' });
+  return res.json(dispatchStatusFromRow(row));
+});
+
+async function runReleaseDispatch(job) {
+  const { dispatchId, tag, deployer, audience, changes, results } = job;
+  // Mirror the /api/admin/authoring journal gate: never scan the disk for
+  // existing articles before the boot reconcile has re-materialized
+  // journaled drafts - a dispatch arriving seconds after a restart would
+  // otherwise miss them and create duplicates. Both settle paths proceed.
+  await journalBootPromise.catch(() => {});
+  {
     const newlyCreated = [];
     const missingFoundational = [];
     const rejectedNotRelevant = [];
@@ -985,6 +1139,7 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       ...fields,
     });
     for (const change of changes) {
+      job.completed = results.length; // every path below pushes exactly one result, so this is "changes finished so far"
       const changeStartedAt = Date.now();
       const dest = mapChangeToDestination(change);
       if (!dest) {
@@ -1086,7 +1241,13 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       await generateHandler(genReq, genRes);
       if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
         const error = (genRes.body && genRes.body.error) || 'generate failed';
-        results.push({ issueId: change.issueId, status: 'error', error, detail: genRes.body, match: matchInfo });
+        // rateLimited rides on the result so the deployer can say "deferred
+        // by the hourly budget" instead of "broken"; status stays 'error'
+        // because the marker must still hold.
+        results.push({
+          issueId: change.issueId, status: 'error', error, detail: genRes.body, match: matchInfo,
+          ...(genRes.statusCode === 429 ? { rateLimited: true, retryAfterMs: genRes.body && genRes.body.retryAfterMs } : {}),
+        });
         // The result stays 'error' so the dispatcher holds its marker and
         // retries next deploy - but the EVENT distinguishes rate-limit
         // exhaustion from real failures, so the dashboard can tell "burned
@@ -1158,26 +1319,12 @@ app.post('/api/release-drafts', requireReleaseSecret, async (req, res) => {
       });
     }
 
+    job.completed = results.length;
     notifyNewArticleChannel(newlyCreated);
     notifyMissingFoundationalArticle(missingFoundational);
     notifyRejectedChanges(rejectedNotRelevant);
-    const counts = {};
-    for (const r of results) counts[r.status] = (counts[r.status] || 0) + 1;
-    releaseEvents.recordEvent({
-      dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'ok',
-      durationMs: Date.now() - dispatchStartedAt,
-      meta: { changesCount: changes.length, counts },
-    });
-    res.json({ ok: true, tag, deployedAt, deployer, results });
-  } catch (error) {
-    console.error('release-drafts dispatch failed:', error.message);
-    releaseEvents.recordEvent({
-      dispatchId, kind: 'dispatch', tag, deployer, audience, status: 'failed',
-      durationMs: Date.now() - dispatchStartedAt, error: error.message,
-    });
-    res.status(500).json({ error: error.message });
   }
-});
+}
 
 // Auth routes (public) + auth middleware (protects everything below)
 initAuth(app);
@@ -4194,6 +4341,10 @@ async function journalBootReconcile() {
   }
   journalStatus.bootCompleted = true;
 }
+
+// Any release dispatch still queued/running in the DB died with the previous
+// process (single replica): stamp it lost before anything can poll it.
+releaseEvents.markStaleDispatchesLost();
 
 // Runs at module load, right after the pending-files restore above (file
 // order), and before app.listen - the /api/admin/authoring gate awaits it.

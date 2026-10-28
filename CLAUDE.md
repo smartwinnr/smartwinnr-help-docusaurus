@@ -423,12 +423,25 @@ which is stale and not the script actually run for production deploys).
 2. At deploy time, `deploy_git_actions.py` calls
    `tools/release/push-article-drafts.js <prevTag> <newTag> <masterCommit>`,
    which collects every `Audience: client` commit since its own marker
-   (`refs/smartwinnr/last-article-dispatch`, held back on any per-change
-   failure - never advances past something that didn't actually draft) and
-   POSTs to this repo's `POST /api/release-drafts`, authenticated by
-   `x-release-shared-secret` (`RELEASE_DRAFTS_SECRET`). That route is
-   registered in the public zone, **before** `initAuth(app)` - it does its
-   own auth, not session-cookie auth.
+   (`refs/smartwinnr/last-article-dispatch-client`, held back on any
+   per-change failure - never advances past something that didn't actually
+   draft), splits them into chunks of 20 (`RELEASE_DRAFTS_MAX_CHANGES` -
+   the two constants must agree) and POSTs each to this repo's
+   `POST /api/release-drafts`, authenticated by `x-release-shared-secret`
+   (`RELEASE_DRAFTS_SECRET`, sent through a curl config file so it never
+   appears in a process list or an error message). The route validates
+   and answers **202** `{dispatchId, statusUrl}` at once; the batch runs
+   on a serial in-process chain (chunks never interleave - chunk 2's
+   provenance match needs chunk 1's files on disk) and the dispatcher polls
+   `GET /api/release-drafts/:dispatchId` (same secret) until `status` is
+   `done`, `failed` or `lost`, then reads the same per-change `results[]`.
+   One `dispatch` row per job in `release_events` (`queued` at enqueue,
+   `ok`/`failed` at the end, `results_json` filled) so a restart mid-run
+   is stamped `lost` at boot and the deployer holds its marker. Both
+   routes are registered in the public zone, **before** `initAuth(app)` -
+   they do their own auth, not session-cookie auth. Never deploy a server
+   that answers 202 to a dispatcher older than the one that polls: it would
+   read "no results" as success and advance its marker on acceptance.
 3. `findMatchingArticle` searches every canonical sub-folder under the
    target module for an existing article on the same issue (provenance
    comment `{/* release-draft: tag=... issue=... url=... */}`, injected
@@ -503,6 +516,17 @@ DRY_RUN=1 node tools/release/push-article-drafts.js <prevCommit> <fakeTag> <head
 node tools/release/push-article-drafts.js <prevCommit> <fakeTag> <headCommit>             # actually dispatches
 ```
 
+If the `smartwinnr_9543` checkout is a git **worktree** of `smartwinnr_prd`
+(check `git rev-parse --git-common-dir`), do NOT `git config` there: the two
+share one config, and `smartwinnr_prd`'s `articleDestClient` is the live
+help site. Pass the values through the environment instead
+(`GIT_CONFIG_COUNT=2 GIT_CONFIG_KEY_0=smartwinnr.articleDestClient
+GIT_CONFIG_VALUE_0=http://localhost:3000 GIT_CONFIG_KEY_1=smartwinnr.articleSecretClient
+GIT_CONFIG_VALUE_1=<secret> node tools/release/push-article-drafts.js ...`),
+and run from a throwaway repo with its own bare `origin` so the marker push
+below stays local. `DRAFTS_POLL_SEC=1` shortens the 15 s poll interval and
+`DRAFTS_DEADLINE_MIN` the 25 min per-chunk deadline.
+
 **On a real (non-`DRY_RUN`) success, this pushes
 `refs/smartwinnr/last-article-dispatch` to `smartwinnr_9543`'s real
 `origin`** (`release-marker.js`'s `advance()`) - a genuine write to shared
@@ -542,6 +566,10 @@ Auth (required in production): `HELP_JWT_SECRET`, `HELP_SITE_URL`,
 `CHAT_LOGGING_ENABLED`. Release-draft pipeline (see that section above):
 `RELEASE_DRAFTS_SECRET` (auth for incoming dispatches), `MAIN_APP_SHARED_SECRET`
 (reused from the digest-email path), `RELEASE_OWNER_EMAILS_ENABLED` (default
-off), `RELEASE_OWNER_NOTIFY_DISTRO_EMAIL`, `RELEASE_DRAFTS_TEAMS_WEBHOOK`.
+off), `RELEASE_OWNER_NOTIFY_DISTRO_EMAIL`, `RELEASE_DRAFTS_TEAMS_WEBHOOK`,
+`RELEASE_DISPATCH_MAX_QUEUED` (dispatches allowed in flight before the POST
+answers 503, default 10), `RELEASE_SERVICE_RATE_LIMIT` (generates per hour
+for the pipeline's service account, default 30; a backlog beyond it comes
+back as `error` + `rateLimited: true` and retries next deploy).
 Copy `.env.example` → `.env` to start. Deployment is Railway
 (see `RAILWAY_DEPLOYMENT.md`); `Dockerfile.docusaurus` is the production image.

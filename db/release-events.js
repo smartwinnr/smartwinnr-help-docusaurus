@@ -24,11 +24,22 @@ const CHANGE_STATUSES = new Set([
   'created', 'updated', 'skipped-not-relevant', 'needs-foundational-article',
   'rate-limited', 'error',
 ]);
-const DISPATCH_STATUSES = new Set(['ok', 'failed', 'bad-request']);
+// 'queued' and 'running' are the in-flight states of an async dispatch (one
+// row per dispatch, inserted at enqueue and updated at the end); 'ok' stays
+// the terminal success value so existing dashboard logic keeps working.
+// 'lost' = the row was still in flight when the server booted, so the job
+// died with the previous process.
+const DISPATCH_STATUSES = new Set(['queued', 'running', 'ok', 'failed', 'bad-request', 'lost']);
+const DISPATCH_IN_FLIGHT = new Set(['queued', 'running']);
 
 function jsonOrNull(value) {
   if (value === undefined || value === null) return null;
   try { return JSON.stringify(value); } catch { return null; }
+}
+
+function parseOrNull(text) {
+  if (!text) return null;
+  try { return JSON.parse(text); } catch { return null; }
 }
 
 /**
@@ -80,6 +91,88 @@ function recordEvent(fields) {
   } catch (err) {
     console.error('[release-events] recordEvent failed (dispatch unaffected):', err.message);
     return { ok: false, error: err.message };
+  }
+}
+
+/**
+ * Move a dispatch row written at enqueue to its next state. Never throws.
+ * fields: { status, durationMs?, error?, meta?, results? } - results is the
+ * per-change results[] array the deployer reads back through GET.
+ */
+function updateDispatch(dispatchId, fields) {
+  try {
+    const f = fields || {};
+    if (!dispatchId || !DISPATCH_STATUSES.has(f.status)) {
+      return { ok: false, error: 'dispatchId and a valid dispatch status are required' };
+    }
+    const info = getDb().prepare(`
+      UPDATE release_events
+      SET status = ?, duration_ms = ?, error = ?, meta_json = ?, results_json = ?
+      WHERE kind = 'dispatch' AND dispatch_id = ?
+    `).run(
+      f.status,
+      Number.isFinite(f.durationMs) ? Math.round(f.durationMs) : null,
+      f.error != null ? String(f.error).slice(0, 2000) : null,
+      jsonOrNull(f.meta),
+      jsonOrNull(f.results),
+      String(dispatchId),
+    );
+    if (info.changes === 0) {
+      // The enqueue insert never landed (events outage at the time) - write
+      // the terminal row now so the audit trail still has the dispatch.
+      return recordEvent({ dispatchId, kind: 'dispatch', status: f.status, durationMs: f.durationMs, error: f.error, meta: f.meta, ...(f.audience ? { audience: f.audience } : {}), ...(f.tag ? { tag: f.tag } : {}), ...(f.deployer ? { deployer: f.deployer } : {}) });
+    }
+    return { ok: true };
+  } catch (err) {
+    console.error('[release-events] updateDispatch failed (dispatch unaffected):', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+/** The dispatch row (latest, if several) with meta/results parsed, or null. */
+function getDispatch(dispatchId) {
+  try {
+    const row = getDb().prepare(`
+      SELECT * FROM release_events
+      WHERE kind = 'dispatch' AND dispatch_id = ?
+      ORDER BY id DESC LIMIT 1
+    `).get(String(dispatchId));
+    if (!row) return null;
+    return {
+      dispatchId: row.dispatch_id,
+      status: row.status,
+      tag: row.tag,
+      deployer: row.deployer,
+      audience: row.audience,
+      createdAt: row.created_at,
+      durationMs: row.duration_ms,
+      error: row.error,
+      meta: parseOrNull(row.meta_json) || {},
+      results: parseOrNull(row.results_json) || [],
+    };
+  } catch (err) {
+    console.error('[release-events] getDispatch failed:', err.message);
+    return null;
+  }
+}
+
+/**
+ * Boot sweep: any dispatch still queued/running belongs to a process that
+ * no longer exists (single replica), so mark it lost. The deployer polling
+ * it then gets a terminal answer, holds its marker, and retries next deploy.
+ * @returns number of rows marked
+ */
+function markStaleDispatchesLost() {
+  try {
+    const info = getDb().prepare(`
+      UPDATE release_events SET status = 'lost', error = 'server restarted mid-dispatch'
+      WHERE kind = 'dispatch' AND status IN ('queued', 'running')
+    `).run();
+    if (info.changes > 0) console.log(`[release-events] marked ${info.changes} in-flight dispatch(es) lost after restart`);
+    return info.changes;
+  } catch (err) {
+    console.error('[release-events] markStaleDispatchesLost failed:', err.message);
+    return 0;
   }
 }
 
@@ -137,6 +230,7 @@ function getSummary({ days = 30 } = {}) {
     WHERE kind = 'dispatch'
     ORDER BY created_at DESC, id DESC LIMIT 20
   `).all()) {
+    if (DISPATCH_IN_FLIGHT.has(d.status)) continue; // not decided yet - neither breaks nor extends the streak
     let hasErrors = d.status !== 'ok';
     if (!hasErrors && d.meta_json) {
       try {
@@ -165,4 +259,4 @@ function getSummary({ days = 30 } = {}) {
   };
 }
 
-module.exports = { recordEvent, listEvents, getSummary };
+module.exports = { recordEvent, updateDispatch, getDispatch, markStaleDispatchesLost, listEvents, getSummary };

@@ -55,7 +55,11 @@ function check(ok, label, detail) {
   }
 }
 
-async function dispatch(changes, tag = 'vtest.0.1') {
+const POLL_MS = parseInt(process.env.TEST_POLL_MS || '2000', 10);
+const POLL_DEADLINE_MS = 10 * 60 * 1000;
+
+/** POST only: 202 + {dispatchId, statusUrl}. Throws on any other status. */
+async function post(changes, tag = 'vtest.0.1', extra = {}) {
   const res = await fetch(`${SERVER}/api/release-drafts`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-release-shared-secret': SECRET },
@@ -65,11 +69,41 @@ async function dispatch(changes, tag = 'vtest.0.1') {
       deployer: 'test-release-drafts.js',
       audience: 'client',
       changes,
+      ...extra,
     }),
   });
   const body = await res.json();
-  if (!res.ok) throw new Error(`dispatch HTTP ${res.status}: ${JSON.stringify(body)}`);
+  if (res.status !== 202) throw new Error(`dispatch HTTP ${res.status}: ${JSON.stringify(body)}`);
   return body;
+}
+
+async function status(dispatchId, secret = SECRET) {
+  const res = await fetch(`${SERVER}/api/release-drafts/${dispatchId}`, {
+    headers: secret ? { 'x-release-shared-secret': secret } : {},
+  });
+  return { status: res.status, body: await res.json().catch(() => null) };
+}
+
+/** Poll until terminal. Resolves the final status body (results[] included);
+ *  throws on failed/lost/timeout. */
+async function pollDispatch(dispatchId) {
+  const started = Date.now();
+  while (Date.now() - started < POLL_DEADLINE_MS) {
+    await new Promise((r) => setTimeout(r, POLL_MS));
+    const { status: code, body } = await status(dispatchId);
+    if (code !== 200) throw new Error(`status HTTP ${code}: ${JSON.stringify(body)}`);
+    if (body.status === 'done') return body;
+    if (body.status === 'failed' || body.status === 'lost') {
+      throw new Error(`dispatch ${body.status}: ${body.error || ''} ${JSON.stringify(body.results)}`);
+    }
+  }
+  throw new Error(`dispatch ${dispatchId} not terminal after ${POLL_DEADLINE_MS / 1000}s`);
+}
+
+/** The contract the deployer follows: POST -> 202 -> poll -> results[]. */
+async function dispatch(changes, tag = 'vtest.0.1') {
+  const accepted = await post(changes, tag);
+  return pollDispatch(accepted.dispatchId);
 }
 
 function change(overrides) {
@@ -258,6 +292,47 @@ const scenarios = {
     const statuses = r.results.map((x) => x.status).sort();
     check(statuses.includes('error'), 'second change rate-limits as error (marker will retry it)', JSON.stringify(r.results));
     check(statuses.includes('created') || statuses.includes('updated'), 'first change still drafts', JSON.stringify(r.results));
+    const limited = r.results.find((x) => x.status === 'error');
+    check(limited && limited.rateLimited === true, 'rate-limited result carries rateLimited: true', JSON.stringify(limited));
+    check(r.rateLimited === 1, 'status body counts rateLimited === 1', JSON.stringify({ rateLimited: r.rateLimited, counts: r.counts }));
+  },
+
+  async 'async-contract'() {
+    const accepted = await post([change({
+      issueId: 990013,
+      subject: 'Add a gravity-well sorting option to the forms list (#990013)',
+      files: ['modules/forms'],
+    })]);
+    check(accepted.ok === true && typeof accepted.dispatchId === 'string', '202 carries dispatchId', JSON.stringify(accepted));
+    check(accepted.status === 'queued' && accepted.statusUrl === `/api/release-drafts/${accepted.dispatchId}`, '202 carries queued + statusUrl', JSON.stringify(accepted));
+    check(accepted.changesCount === 1 && typeof accepted.pollAfterMs === 'number', '202 carries changesCount + pollAfterMs', JSON.stringify(accepted));
+    const first = await status(accepted.dispatchId);
+    check(first.status === 200 && ['queued', 'running', 'done'].includes(first.body.status), 'first poll answers with a live status', JSON.stringify(first));
+    check(first.body.progress && first.body.progress.total === 1, 'progress.total is the change count', JSON.stringify(first.body.progress));
+    const done = await pollDispatch(accepted.dispatchId);
+    check(done.status === 'done' && done.finishedAt && typeof done.durationMs === 'number', 'terminal done with finishedAt + durationMs', JSON.stringify({ s: done.status, f: done.finishedAt, d: done.durationMs }));
+    check(done.progress.completed === 1 && done.results.length === 1, 'completed == results.length == 1', JSON.stringify(done.progress));
+    check(done.counts && Object.values(done.counts).reduce((a, b) => a + b, 0) === 1, 'counts sum to the result count', JSON.stringify(done.counts));
+    const unknown = await status('00000000-0000-4000-8000-000000000000');
+    check(unknown.status === 404, 'unknown dispatchId -> 404', JSON.stringify(unknown));
+    const notUuid = await status('not-a-uuid');
+    check(notUuid.status === 400, 'non-UUID dispatchId -> 400', JSON.stringify(notUuid));
+    const noSecret = await status(accepted.dispatchId, '');
+    check(noSecret.status === 401, 'status without secret -> 401', JSON.stringify(noSecret));
+  },
+
+  async 'queue-order'() {
+    // Two chunks back to back: the second must wait for the first (chunk 2's
+    // provenance match needs chunk 1's files on disk).
+    const a = await post([change({ issueId: 990014, subject: 'Add a lunar-phase reminder cadence to surveys (#990014)', files: ['modules/surveys'] })], 'vtest.0.3', { chunk: { index: 1, total: 2 } });
+    const b = await post([change({ issueId: 990015, subject: 'Add a solar-flare reminder cadence to surveys (#990015)', files: ['modules/surveys'] })], 'vtest.0.3', { chunk: { index: 2, total: 2 } });
+    const bFirst = await status(b.dispatchId);
+    const aFirst = await status(a.dispatchId);
+    check(bFirst.body.status === 'queued' || aFirst.body.status === 'done', 'second dispatch waits while the first runs', JSON.stringify({ a: aFirst.body.status, b: bFirst.body.status }));
+    const aDone = await pollDispatch(a.dispatchId);
+    const bDone = await pollDispatch(b.dispatchId);
+    check(new Date(bDone.startedAt) >= new Date(aDone.finishedAt), 'second starts only after the first finishes', JSON.stringify({ aFinished: aDone.finishedAt, bStarted: bDone.startedAt }));
+    check(aDone.results[0].status !== 'error' && bDone.results[0].status !== 'error', 'both chunks draft', JSON.stringify([aDone.results[0], bDone.results[0]]));
   },
 
   async 'empty-tag'() {

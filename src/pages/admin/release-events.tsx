@@ -49,7 +49,7 @@ type Summary = {
   rejectionsByModule: {module: string; n: number}[];
 };
 
-const STATUS_FILTERS = ['all', 'created', 'updated', 'skipped-not-relevant', 'rate-limited', 'error'] as const;
+const STATUS_FILTERS = ['all', 'created', 'updated', 'skipped-not-relevant', 'rate-limited', 'error', 'lost'] as const;
 
 function relTime(iso: string | null | undefined): string {
   if (!iso) return '-';

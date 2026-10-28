@@ -211,7 +211,8 @@ function getDb() {
       relevance_json TEXT,
       duration_ms INTEGER,
       error TEXT,
-      meta_json TEXT
+      meta_json TEXT,
+      results_json TEXT
     );
   `);
 
@@ -308,6 +309,10 @@ const REQUIRED_COLUMNS = {
     // v5 (retrieval trace: what the model was actually shown)
     ['retrieval_query',      'TEXT'],
     ['retrieved_json',       'TEXT'],
+  ],
+  release_events: [
+    // async dispatch: the final per-change results[] a deployer polls for
+    ['results_json',         'TEXT'],
   ],
 };
 
