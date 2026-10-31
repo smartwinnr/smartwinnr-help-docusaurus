@@ -9,7 +9,7 @@ last_update:
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
-  roles: [editor, admin, orgadmin, lamadmin, superadmin]
+  roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["conversation-intelligence"]
 draft: false
 ---

@@ -2064,6 +2064,10 @@
     {
       "from": "/modules/field-coaching/assign-and-schedule/how-to-assign-users-to-field-coaching",
       "to": "/modules/field-coaching/create-and-manage/how-to-assign-users-to-field-coaching"
+    },
+    {
+      "from": "/modules/conversation-intelligence/features/how-to-record-conversation-intelligence",
+      "to": "/modules/conversation-intelligence/for-learners/how-to-record-conversation-intelligence"
     }
   ]
 }
