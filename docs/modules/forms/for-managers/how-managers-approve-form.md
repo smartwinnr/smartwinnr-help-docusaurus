@@ -5,19 +5,19 @@ description: Follow the below steps to approve a form in SmartWinnr.
 slug: how-managers-approve-form
 sidebar_position: 224
 last_update:
-  date: 2026-09-02
-  author: Sruthi Suresh
+  date: 2026-10-30
+  author: release-pipeline@smartwinnr.com
 source:
   helpscout_id: 600868c4cfe30d219ccd9aa9
   helpscout_url: >-
     https://help.smartwinnr.com/article/224-how-managers-approve-kpi-submission-form
 customProps:
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
-  privilege: managerView
 tags:
   - forms
-draft: false
+draft: true
 ---
+{/* release-draft: tag=v3.60.08 issue=9807 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9807 */}
 
 > **At a glance** - Approving a form in SmartWinnr involves navigating to the forms section, selecting the desired submission, changing its status, and saving the changes.
 

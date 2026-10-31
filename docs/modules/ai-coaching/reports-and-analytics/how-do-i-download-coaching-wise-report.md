@@ -1,24 +1,22 @@
 ---
-id: 6970ebe71252a7004208b8b8
+id: how-do-i-download-coaching-wise-report
 title: How do I download Coaching-wise Report?
 description: This report focuses on one specific coaching.
 slug: how-do-i-download-coaching-wise-report
-sidebar_position: 60
+sidebar_position: 340
 last_update:
-  date: 2026-08-21
-  author: Anagha Isal
+  date: 2026-10-30
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-  privilege: aiCoaching
-tags:
-  - ai-coaching
-  - reports
-draft: false
+tags: [ai-coaching, reports]
+draft: true
 ---
+{/* release-draft: tag=v3.60.08 issue=9871 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9871 */}
 
-> **At a glance** - SmartWinnr provides multiple reports for your AI coachings. You can download the overall coaching-wise Report to analyze the performance of a specific coaching scenario.
+> **At a glance** - Downloaded coaching reports keep commas inside quoted values. Coach feedback, names, and addresses appear exactly as entered.
 
-The Coaching-wise overall Report provides insights into a particular coaching scenario, allowing you to evaluate its effectiveness and make informed decisions. You can easily download this report by following the steps below.
+The Coaching-wise overall Report provides insights into a particular coaching scenario, allowing you to evaluate its effectiveness and make informed decisions. You can download this report to review coaching outcomes and analyze performance for a specific coaching scenario.
 
 ## When to use this
 
@@ -30,44 +28,24 @@ Use the Coaching-wise Report when you want to:
 
 ## Steps
 
-### 1. Navigate to the Coaching Section
+Download any coaching report from the **Coaching Reports** page. Values that contain commas, such as coach feedback or multi-part names, appear exactly as entered instead of having commas replaced with spaces.
 
-Go to **Editor → Coaching → View Coachings** in the SmartWinnr platform. This section contains all the coaching scenarios available to you.
+The report downloads immediately, providing the data you need for analysis.
 
-![Coaching list](/img/helpscout/authored/how-do-i-download-coaching-wise-report-msa61w0h.png)
+The Overall Coaching Report provides a comprehensive view of learner coaching submissions, evaluation results, coach feedback, and coaching configuration details. It helps you monitor learner participation, review evaluation outcomes, and analyze coaching performance across the organization.
 
-### 2. Locate the Desired Coaching Scenario
-
-Scroll through the list to find the coaching scenario you want to report on.
-
-### 3. Click the Download Icon
-
-Click the **Download icon** directly next to the coaching name. 
-
-![Click Download Icon](/img/helpscout/editors/how-do-i-download-coaching-wise-report-1.png)
-
-The following pop-up will appear. If you want to retain the coaching data of demo users, select the checkbox. Otherwise, uncheck the checkbox and click the “YES” button.
-
-![confirmation pop up](/img/helpscout/authored/how-do-i-download-coaching-wise-report-mt2jniak.png)
-
-This action will initiate the download of the Coaching-wise Report.
-
-The report will download immediately, providing you with the necessary data for your analysis.
-
-The Overall Coaching Report provides a comprehensive view of learner coaching submissions, evaluation results, coach feedback, and coaching configuration details. It enables you to monitor learner participation, review evaluation outcomes, and analyze coaching performance across the organization.
-
-The report consists of the following worksheets:
+The report includes these worksheets:
 
 ### 1. Overall Coaching Report
 
 This worksheet provides an overall summary of each learner's coaching submission, including:
 
-- Learner information (Name, Email, Employee ID, Org User Identifier)
-- Coaching response status, Submission date and total time spent, Overall score etc - Coach review status, score, review date, and feedback
+- Learner information, such as name, email, employee ID, and org user identifier
+- Coaching response status, submission date, total time spent, overall score, coach review status, score, review date, and feedback
 - Average coach score
 - Device and application information
 
-This worksheet is useful for tracking learner participation, submission status, coaching progress, and evaluation results.
+This worksheet helps you track learner participation, submission status, coaching progress, and evaluation results.
 
 ### 2. Coach Report
 
@@ -85,7 +63,7 @@ This worksheet helps you analyze individual coach evaluations and review compete
 
 ### 3. Coaching Details
 
-This worksheet contains the configuration details of the coaching activity, including:Coaching title, Coaching duration etc
+This worksheet contains the configuration details of the coaching activity, including coaching title and coaching duration.
 
 This information serves as a reference for the coaching activity included in the report.
 
@@ -95,10 +73,10 @@ This worksheet provides the competency framework used for evaluating learner sub
 
 ## Tips
 
-- Ensure you have the necessary permissions to access and download reports.
 - Check your downloads folder for the report file after initiating the download.
 - Review the report format to ensure it meets your reporting needs.
+- Download separate reports for each coaching scenario you want to review.
 
 ## Things to know
 
-The Coaching-wise Report is specific to the selected coaching scenario. If you need reports for multiple scenarios, you will need to repeat the download process for each one.
+The Coaching-wise Report is specific to the selected coaching scenario. If you need reports for multiple scenarios, you need to repeat the download process for each one.
