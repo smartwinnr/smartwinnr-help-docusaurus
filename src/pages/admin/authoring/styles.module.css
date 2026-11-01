@@ -750,6 +750,40 @@
   color: var(--ifm-color-warning-contrast-foreground, #7a5200);
   border: 1px solid var(--ifm-color-warning-dark, #e6a700);
 }
+.updateBadge {
+  composes: originBadge;
+  background: var(--ifm-color-info-contrast-background, #eef9fd);
+  color: var(--ifm-color-info-contrast-foreground, #193c47);
+  border: 1px solid var(--ifm-color-info-dark, #4cb3d4);
+}
+.diffPanel {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+.diffHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+.diffBody {
+  max-height: 60vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.diffAdd {
+  display: block;
+  background: var(--ifm-color-success-contrast-background, #e6f6e6);
+  color: var(--ifm-color-success-contrast-foreground, #003100);
+}
+.diffRemove {
+  display: block;
+  background: var(--ifm-color-danger-contrast-background, #ffebec);
+  color: var(--ifm-color-danger-contrast-foreground, #4b1113);
+}
 .selectorRow {
   display: flex;
   gap: var(--space-3);

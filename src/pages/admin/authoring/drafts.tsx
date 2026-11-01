@@ -38,6 +38,16 @@ type Draft = {
   releaseTag?: string | null;
   issueUrl?: string | null;
   relevanceFlag?: {verdict: string; confidence: string; reason: string} | null;
+  changeKind?: 'update' | 'new' | null;
+};
+
+/** GET /draft-diff: what a draft changes against the live article. */
+type DraftDiff = {
+  path: string;
+  isNew: boolean;
+  notes: {issueId: string; summary: string}[];
+  lines: {type: 'same' | 'add' | 'remove'; text: string}[];
+  stats: {added: number; removed: number};
 };
 
 type Article = Draft & { draft: boolean; position?: number | null };
@@ -144,7 +154,20 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
   const [deployState, setDeployState] = useState<DeployState | null>(null);
   const [deploying, setDeploying] = useState(false);
   const [locations, setLocations] = useState<SectionEntry[]>([]);
-  const [originFilter, setOriginFilter] = useState<'all' | 'pipeline' | 'human' | 'flagged'>('all');
+  const [originFilter, setOriginFilter] = useState<'all' | 'pipeline' | 'update' | 'new' | 'human' | 'flagged'>('all');
+  const [diff, setDiff] = useState<{title: string; data: DraftDiff | null; error: string | null} | null>(null);
+
+  async function reviewChanges(d: Draft) {
+    setDiff({title: d.title, data: null, error: null});
+    try {
+      const res = await fetch(`/api/admin/authoring/draft-diff?${new URLSearchParams({path: d.path}).toString()}`, {credentials: 'same-origin'});
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Could not load the changes.');
+      setDiff({title: d.title, data, error: null});
+    } catch (err) {
+      setDiff({title: d.title, data: null, error: (err as Error).message});
+    }
+  }
 
   useEffect(() => {
     (async () => {
@@ -462,7 +485,7 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
           {' '}Pipeline activity: <Link to="/admin/release-events">release events</Link>.
         </span>
         <div className={styles.filterGroup} role="group" aria-label="Filter by origin">
-          {(['all', 'pipeline', 'human', 'flagged'] as const).map((f) => (
+          {(['all', 'pipeline', 'update', 'new', 'human', 'flagged'] as const).map((f) => (
             <button
               key={f}
               type="button"
@@ -470,6 +493,8 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
               onClick={() => setOriginFilter(f)}>
               {f === 'all' ? `All (${drafts.length})`
                 : f === 'pipeline' ? `Release pipeline (${drafts.filter((d) => d.origin === 'pipeline').length})`
+                : f === 'update' ? `Updates to live articles (${drafts.filter((d) => d.changeKind === 'update').length})`
+                : f === 'new' ? `New articles (${drafts.filter((d) => d.changeKind === 'new').length})`
                 : f === 'flagged' ? `Flagged (${drafts.filter((d) => d.relevanceFlag).length})`
                 : `Hand-authored (${drafts.filter((d) => d.origin !== 'pipeline').length})`}
             </button>
@@ -484,10 +509,39 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
       {!loading && drafts.length === 0 && (
         <p className={styles.hint}>No drafts. Start one from the <Link to="/admin/authoring" onClick={clearWizardState}>authoring wizard</Link>.</p>
       )}
+      {diff && (
+        <section className={styles.diffPanel} aria-label="Changes against the live article">
+          <div className={styles.diffHeader}>
+            <strong>Changes in {diff.title}</strong>
+            <button type="button" className={styles.btnGhost} onClick={() => setDiff(null)}>Close</button>
+          </div>
+          {!diff.data && !diff.error && <p className={styles.hint}>Loading…</p>}
+          {diff.error && <div className={styles.error}>{diff.error}</div>}
+          {diff.data?.isNew && <p className={styles.hint}>This is a new article. There is no live version to compare with.</p>}
+          {diff.data && !diff.data.isNew && (
+            <>
+              <p className={styles.hint}>{diff.data.stats.added} line(s) added, {diff.data.stats.removed} removed.</p>
+              {diff.data.notes.map((n) => (
+                <p key={n.issueId} className={styles.hint}><strong>#{n.issueId}:</strong> {n.summary}</p>
+              ))}
+              <pre className={styles.diffBody}>
+                {diff.data.lines.map((l, i) => (
+                  <span
+                    key={i}
+                    className={l.type === 'add' ? styles.diffAdd : l.type === 'remove' ? styles.diffRemove : undefined}>
+                    {`${l.type === 'add' ? '+ ' : l.type === 'remove' ? '- ' : '  '}${l.text}\n`}
+                  </span>
+                ))}
+              </pre>
+            </>
+          )}
+        </section>
+      )}
       {(() => {
         const filtered = drafts.filter((d) =>
           originFilter === 'all' ? true
           : originFilter === 'pipeline' ? d.origin === 'pipeline'
+          : originFilter === 'update' || originFilter === 'new' ? d.changeKind === originFilter
           : originFilter === 'flagged' ? !!d.relevanceFlag
           : d.origin !== 'pipeline');
         if (!loading && drafts.length > 0 && filtered.length === 0) {
@@ -517,6 +571,12 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
                       Release pipeline
                     </span>
                   )}
+                  {d.changeKind === 'update' && (
+                    <span className={styles.updateBadge} title="The release pipeline edited a live article. Use Review changes to see exactly what it added.">
+                      Update to live article
+                    </span>
+                  )}
+                  {d.changeKind === 'new' && <span className={styles.originBadge}>New article</span>}
                   {d.relevanceFlag && (
                     <span
                       className={styles.relevanceBadge}
@@ -536,6 +596,13 @@ function DraftsTab({notify}: {notify: Notify}): ReactNode {
                       title="Open the editor: AI refine, hand-edit text, upload images, edit metadata.">
                       Edit
                     </Link>
+                    <button
+                      type="button"
+                      className={styles.btnGhost}
+                      title="Compare this draft with the live article."
+                      onClick={() => reviewChanges(d)}>
+                      Review changes
+                    </button>
                     <button
                       type="button"
                       className={styles.btnPrimary}

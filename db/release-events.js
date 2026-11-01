@@ -21,7 +21,7 @@ const { getDb } = require('./chat-logger');
 
 const KINDS = new Set(['dispatch', 'change']);
 const CHANGE_STATUSES = new Set([
-  'created', 'updated', 'skipped-not-relevant', 'needs-foundational-article',
+  'created', 'updated', 'skipped-not-relevant', 'skipped-bug-no-article', 'skipped-no-module', 'already-drafted', 'no-content-change', 'update-rejected', 'needs-foundational-article',
   'rate-limited', 'error',
 ]);
 // 'queued' and 'running' are the in-flight states of an async dispatch (one

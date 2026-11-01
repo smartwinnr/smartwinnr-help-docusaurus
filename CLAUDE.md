@@ -446,11 +446,23 @@ which is stale and not the script actually run for production deploys).
    target module for an existing article on the same issue (provenance
    comment `{/* release-draft: tag=... issue=... url=... */}`, injected
    into every pipeline-created/updated article) or close keyword overlap.
-   Match -> refines that article in place (no duplicate). No match ->
+   The LLM pick must be high confidence. Match -> the model proposes edit
+   operations and `lib/release-merge.js` applies them, so frontmatter,
+   headings, steps and images cannot be lost; `no-content-change` and
+   `update-rejected` write nothing. No match -> a `bug` is declined as
+   `skipped-bug-no-article` (listed on the Teams card); anything else gets a
    fresh draft via `subFolderForChangeType` (`feature` -> create-and-manage,
-   `bug` -> faqs-and-troubleshooting, else -> features).
+   else -> features), titled by the model rather than the commit subject.
+   All three new statuses are final and advance the dispatcher's marker.
+   Two checks run first, before any LLM call: an issue whose provenance
+   comment carries the same commit fingerprint (`rev=`, or no `rev` on older
+   comments) is `already-drafted` and nothing is written, because the
+   dispatcher re-sends its whole range until the marker moves; a change with
+   no doc module is `skipped-no-module` (listed on the Teams card). Both are
+   final too. A different `rev` is a newer commit and updates the article.
 4. Always lands as `draft: true`. A human opens `/admin/authoring/drafts`
-   (badged + filterable by `origin: pipeline` vs hand-authored, with a
+   (badged + filterable by `origin: pipeline` vs hand-authored and update vs
+   new, a **Review changes** diff against the live article, with a
    "Location" column showing the resolved module/sub-folder) and publishes
    like any other draft.
 

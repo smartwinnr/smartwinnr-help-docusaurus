@@ -25,6 +25,12 @@
  *                the wrong module
  *   empty-tag    tag:'' -> saved file carries tag=untagged and parses
  *   irrelevant   changeType refactor -> skipped-not-relevant (deterministic)
+ *   no-module    code area with no doc module -> final skipped-no-module
+ *   already-drafted  re-send the same commit -> nothing written, no LLM; a
+ *                newer commit on the issue -> updated; a comment with no rev
+ *                -> treated as drafted
+ *   bug-no-article  bug fix on a topic no article covers -> no draft, final
+ *                status skipped-bug-no-article
  *   flagged      ambiguous internal-sounding change -> drafted + relevance
  *                flag (soft - depends on model judgment)
  *   relevance-kill-switch  run the SERVER with RELEASE_RELEVANCE_LLM_DISABLED=1;
@@ -124,8 +130,8 @@ function change(overrides) {
 
 function provenanceComments(relPath) {
   const text = fs.readFileSync(path.join(ROOT, relPath), 'utf8');
-  const re = /\{\/\*\s*release-draft:\s*tag=(\S*?)\s+issue=(\S+)\s+url=(\S+)\s*\*\/\}/g;
-  return [...text.matchAll(re)].map((m) => ({ tag: m[1], issueId: m[2], url: m[3] }));
+  const re = /\{\/\*\s*release-draft:\s*tag=(\S*?)\s+issue=(\S+)\s+url=(\S+?)(?:\s+rev=(\S+?))?\s*\*\/\}/g;
+  return [...text.matchAll(re)].map((m) => ({ tag: m[1], issueId: m[2], url: m[3], rev: m[4] }));
 }
 
 const scenarios = {
@@ -213,6 +219,41 @@ const scenarios = {
     } else {
       check(res.module === 'competition', 'fresh create lands in the first mapped module', JSON.stringify(res));
     }
+  },
+
+  async 'bug-no-article'() {
+    const { results: [res] } = await dispatch([change({ issueId: '990020', changeType: 'bug', subject: 'Fix zxqv grommet frobnication on the wibble panel (#990020)', files: ['modules/quizzes'] })]);
+    check(res.status === 'skipped-bug-no-article', 'bug with no article -> skipped-bug-no-article', JSON.stringify(res));
+    check(!res.path, 'no draft file written', JSON.stringify(res));
+  },
+
+  async 'no-module'() {
+    const { results: [res] } = await dispatch([change({ issueId: 990021, subject: 'Add a retry to the zxqv maintenance script (#990021)', files: ['scripts', 'modules/common'] })]);
+    check(res.status === 'skipped-no-module', 'unmapped area -> skipped-no-module', JSON.stringify(res));
+    check(/modules\/common/.test(res.reason), 'reason names the files', JSON.stringify(res));
+    check(!res.path, 'no draft file written', JSON.stringify(res));
+  },
+
+  async 'already-drafted'() {
+    const original = change({ issueId: 990022, subject: 'Add stratospheric balloon mode for survey reminders (#990022)', files: ['modules/surveys'] });
+    const { results: [created] } = await dispatch([original]);
+    check(created.status === 'created', 'first send -> created', JSON.stringify(created));
+    const file = path.join(ROOT, created.path);
+    const before = fs.readFileSync(file, 'utf8');
+    check(/ rev=[0-9a-f]{12} /.test(before), 'comment carries the commit fingerprint', before.slice(0, 500));
+
+    const { results: [resent] } = await dispatch([original]);
+    check(resent.status === 'already-drafted', 'same commit re-sent -> already-drafted', JSON.stringify(resent));
+    check(fs.readFileSync(file, 'utf8') === before, 'draft byte-identical after the re-send');
+
+    const { results: [newer] } = await dispatch([change({ ...original, subject: 'Let survey balloons carry a reminder note (#990022)', whatChanged: 'Each balloon can now carry a short reminder note.' })]);
+    check(newer.status === 'updated' || newer.status === 'no-content-change', 'newer commit on the issue goes through', JSON.stringify(newer));
+
+    fs.writeFileSync(file, before.replace(/ rev=[0-9a-f]{12}/, ''));
+    const legacyBefore = fs.readFileSync(file, 'utf8');
+    const { results: [legacy] } = await dispatch([original]);
+    check(legacy.status === 'already-drafted', 'comment with no rev -> already-drafted', JSON.stringify(legacy));
+    check(fs.readFileSync(file, 'utf8') === legacyBefore, 'legacy draft byte-identical');
   },
 
   async irrelevant() {

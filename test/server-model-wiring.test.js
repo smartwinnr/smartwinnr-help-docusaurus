@@ -55,13 +55,19 @@ test('every chat-completion request body is built by chatCompletionBody', () => 
   const chatCalls = SERVER.split(`${OPENAI_URL}chat/completions`).length - 1;
   const helperCalls = SERVER.split('chatCompletionBody(').length - 1;
   // chat answer, query condensing, authoring generate, suggest-field,
-  // release-draft article matching, release-draft relevance classifier.
-  assert.equal(chatCalls, 6, 'expected exactly six chat-completion call sites');
+  // release-draft article matching, relevance classifier, article patching.
+  assert.equal(chatCalls, 7, 'expected exactly seven chat-completion call sites');
   assert.equal(helperCalls, chatCalls);
 });
 
 test('release-draft article matching uses AUTHORING_MODEL', () => {
   const w = callWindow('async function llmPickMatchingArticle(');
+  assert.match(w, /model:\s*AUTHORING_MODEL\b/);
+  assert.doesNotMatch(w, /model:\s*CHAT_MODEL\b/);
+});
+
+test('release-draft article patching uses AUTHORING_MODEL', () => {
+  const w = callWindow('async function llmPatchArticle(');
   assert.match(w, /model:\s*AUTHORING_MODEL\b/);
   assert.doesNotMatch(w, /model:\s*CHAT_MODEL\b/);
 });

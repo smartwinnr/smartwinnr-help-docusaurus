@@ -32,6 +32,10 @@ const {
   deterministicVerdict, buildRelevanceMessages, parseRelevanceVerdict,
   parseRelevanceComment, stripRelevanceComments, injectRelevanceComment,
 } = require('./lib/release-relevance');
+const {
+  splitFrontmatter, listHeadings, parsePatchReply, applyPatch, buildPatchMessages,
+  parseUpdateComments, stripUpdateComments, injectUpdateComments, lineDiff, diffStats, NEW_ARTICLE_NOTE, changeRevision,
+} = require('./lib/release-merge');
 const { isEmailApproved, listApprovedEmails, addApprovedEmail, removeApprovedEmail } = require('./lib/email-allowlist');
 const { mergeModuleOverviews } = require('./lib/module-overviews-merge');
 
@@ -181,12 +185,12 @@ const RELEASE_SERVICE_USER = { email: 'release-pipeline@smartwinnr.com', roles: 
 
 /** Minimal heuristic map from the code module a commit touched to a real
  *  Docusaurus module + sub-folder. Deliberately small and explicit rather
- *  than a fuzzy guess - an unmapped module is reported back as a per-change
- *  error rather than silently misfiled. Extend this table as real deploys
+ *  than a fuzzy guess - an unmapped module is reported back as
+ *  skipped-no-module rather than silently misfiled. Extend this table as real deploys
  *  surface modules it doesn't cover yet. */
 // Which real Docusaurus module a code module maps to. Deliberately small
-// and explicit - an unmapped module is reported back as a per-change
-// error rather than silently misfiled. subFolder is NOT hardcoded here
+// and explicit - an unmapped module is reported back as skipped-no-module
+// rather than silently misfiled. subFolder is NOT hardcoded here
 // any more (see subFolderForChangeType) - it used to force every article
 // into "features" regardless of what kind of change it actually was.
 const RELEASE_MODULE_MAP = {
@@ -228,6 +232,9 @@ const RELEASE_SOURCE_ALIASES = {
   'modules/surveytakenbyusers': 'survey',
   'modules/competitions': 'competition',
   'modules/k-hub': 'knowledge-hub',
+  'modules/conversation-intelligence': 'conversation-intelligence',
+  'modules/content-center': 'content-center',
+  'modules/authoringTools': 'authoringtools',
 };
 
 /** The house style's own title-shape table distinguishes "How to..."
@@ -346,15 +353,17 @@ function buildRoughExplanation(change) {
  *  never drop or garble them (it used to - refine buried older issue ids
  *  and the matcher then missed them).
  *  `tag=(\S*?)` (not \S+) so a legacy malformed `tag= issue=...` comment
- *  from an empty deploy tag still parses instead of being invisible. */
-const PROVENANCE_RE = /\{\/\*\s*release-draft:\s*tag=(\S*?)\s+issue=(\S+)\s+url=(\S+)\s*\*\/\}/g;
+ *  from an empty deploy tag still parses instead of being invisible.
+ *  `rev=` fingerprints the commit message that produced the comment (see
+ *  changeRevision); comments written before it existed have none. */
+const PROVENANCE_RE = /\{\/\*\s*release-draft:\s*tag=(\S*?)\s+issue=(\S+)\s+url=(\S+?)(?:\s+rev=(\S+?))?\s*\*\/\}/g;
 
 /** ALL provenance comments in the article, in file order (newest first by
  *  construction - injectProvenanceComments writes them that way). */
 function parseProvenanceComments(markdown) {
   const out = [];
   for (const m of String(markdown || '').matchAll(PROVENANCE_RE)) {
-    out.push({ tag: m[1] || null, issueId: m[2], url: m[3] });
+    out.push({ tag: m[1] || null, issueId: m[2], url: m[3], rev: m[4] || null });
   }
   return out;
 }
@@ -383,7 +392,7 @@ function injectProvenanceComments(markdown, provenances) {
     if (seen.has(id)) continue;
     seen.add(id);
     // Normalize an empty tag to 'untagged' so the comment always parses.
-    lines.push(`{/* release-draft: tag=${p.tag || 'untagged'} issue=${p.issueId} url=${p.url} */}`);
+    lines.push(`{/* release-draft: tag=${p.tag || 'untagged'} issue=${p.issueId} url=${p.url}${p.rev ? ` rev=${p.rev}` : ''} */}`);
   }
   if (lines.length === 0) return markdown;
   const fenceEnd = markdown.indexOf('\n---', markdown.indexOf('---') + 3);
@@ -520,6 +529,10 @@ async function findMatchingArticle(change, dest) {
     const moduleWords = moduleNameWords(moduleSlug);
     const withoutModuleWords = (words) => new Set([...words].filter((w) => !moduleWords.has(w)));
     const changeWords = withoutModuleWords(titleWords(cleanedSubject));
+    // Commit subjects name the change, not the screen, so a candidate that
+    // only shares words with What changed still reaches the LLM. These words
+    // rank below subject words and never feed the conservative fallback.
+    const detailWords = withoutModuleWords(titleWords(String((change.sections || {})['What changed'] || '')));
 
     var subFolders;
     try {
@@ -560,6 +573,7 @@ async function findMatchingArticle(change, dest) {
         const descMatch = /^description:\s*["']?(.*?)["']?\s*$/m.exec(markdown);
         var bestShared = 0;
         var bestOverlap = 0;
+        var detailShared = 0;
         for (const fieldText of [titleMatch ? titleMatch[1] : file, descMatch ? descMatch[1] : '']) {
           const existingWords = withoutModuleWords(titleWords(fieldText));
           if (changeWords.size === 0 || existingWords.size === 0) continue;
@@ -570,9 +584,12 @@ async function findMatchingArticle(change, dest) {
             bestShared = shared;
             bestOverlap = overlap;
           }
+          var fieldDetail = 0;
+          detailWords.forEach((w) => { if (existingWords.has(w)) fieldDetail++; });
+          detailShared = Math.max(detailShared, fieldDetail);
         }
-        if (bestShared >= 1) {
-          candidates.push({ path: full, markdown, shared: bestShared, score: bestOverlap });
+        if (bestShared >= 1 || detailShared >= 2) {
+          candidates.push({ path: full, markdown, shared: bestShared, detailShared, score: bestOverlap });
         }
         // Live-verified false positive: a short real title ("How to edit a
         // question" - 2 significant words) only needs ONE shared word
@@ -588,8 +605,8 @@ async function findMatchingArticle(change, dest) {
     }
   }
 
-  candidates.sort((a, b) => (b.shared - a.shared) || (b.score - a.score));
-  const shortlist = candidates.slice(0, 8);
+  candidates.sort((a, b) => (b.shared - a.shared) || (b.detailShared - a.detailShared) || (b.score - a.score));
+  const shortlist = candidates.slice(0, 10);
   decision.candidatesConsidered = shortlist.length;
 
   if (shortlist.length > 0) {
@@ -636,16 +653,17 @@ async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
   if (process.env.RELEASE_MATCH_LLM_DISABLED === '1') return { picked: null, skipped: true };
   try {
     const list = candidates.map((c, i) => {
-      const body = stripProvenanceComments(c.markdown);
+      const body = stripUpdateComments(stripRelevanceComments(stripProvenanceComments(c.markdown)));
       const titleMatch = /^title:\s*"?(.*?)"?\s*$/m.exec(body);
       const descMatch = /^description:\s*["']?(.*?)["']?\s*$/m.exec(body);
-      const fenceEnd = body.indexOf('\n---', body.indexOf('---') + 3);
-      const excerpt = (fenceEnd === -1 ? body : body.slice(fenceEnd + 4)).trim().slice(0, 400);
+      const articleBody = splitFrontmatter(body).body;
+      const excerpt = articleBody.trim().slice(0, 1200);
       return {
         id: i + 1,
         title: titleMatch ? titleMatch[1] : path.basename(c.path),
         description: descMatch ? descMatch[1] : '',
         folder: path.relative(MODULES_ROOT, path.dirname(c.path)).replace(/\\/g, '/'),
+        headings: listHeadings(articleBody).map((h) => h.text).slice(0, 25),
         excerpt,
       };
     });
@@ -654,7 +672,9 @@ async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
         role: 'system',
         content:
           'You decide whether a code change to the SmartWinnr platform is an update to an EXISTING help article or a NEW topic. ' +
-          'Match only if one candidate documents the same user-facing feature or workflow the change modifies - a shared module or vague thematic similarity is NOT a match. ' +
+          'Match only if one candidate already documents the exact screen, report, or workflow the change modifies, so that a reader of that article would be affected by the change. ' +
+          'A shared module, a shared verb such as "download", or vague thematic similarity is NOT a match: an article on downloading videos does not cover a change to a report download. ' +
+          'Use "high" confidence only when the candidate names the same screen, report, or setting as the change. If unsure, answer "none". ' +
           'Respond with ONLY a JSON object: {"match": <candidate id number or "none">, "confidence": "high"|"medium"|"low", "reason": "<one sentence>"}.',
       },
       {
@@ -674,7 +694,7 @@ async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
       .replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
     const parsed = JSON.parse(text);
     const idx = Number(parsed.match); // "none" -> NaN -> falls through
-    if (Number.isInteger(idx) && idx >= 1 && idx <= candidates.length && parsed.confidence !== 'low') {
+    if (Number.isInteger(idx) && idx >= 1 && idx <= candidates.length && parsed.confidence === 'high') {
       return { picked: candidates[idx - 1], confidence: parsed.confidence, reason: parsed.reason };
     }
     return { picked: null, confidence: parsed.confidence, reason: parsed.reason };
@@ -682,6 +702,45 @@ async function llmPickMatchingArticle(change, cleanedSubject, candidates) {
     console.error('release-drafts: match-LLM failed, using conservative fallback:', e.message);
     return { picked: null, error: e.message };
   }
+}
+
+/**
+ * Applies a change to a matched article as a patch (lib/release-merge.js).
+ * Invalid replies get one retry. Returns one of:
+ *   { markdown, summary, applied }  - patched
+ *   { noChange: true, reason }      - the article needs no edit
+ *   { rejected: true, error }       - the model could not produce a valid patch
+ *   { failed: true, error }         - the LLM was unreachable; retry next deploy
+ */
+async function llmPatchArticle(change, title, article) {
+  const { body } = splitFrontmatter(article);
+  let lastError = null;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    let text;
+    try {
+      const response = await axios.post(
+        'https://api.openai.com/v1/chat/completions',
+        chatCompletionBody({
+          model: AUTHORING_MODEL,
+          messages: buildPatchMessages(change, title, body, lastError),
+          temperature: 0,
+          maxOutputTokens: 2000,
+        }),
+        { headers: { Authorization: `Bearer ${getOpenAIKey()}`, 'Content-Type': 'application/json' }, timeout: 60000 },
+      );
+      text = response.data?.choices?.[0]?.message?.content;
+    } catch (e) {
+      console.error('release-drafts: patch-LLM failed:', e.message);
+      return { failed: true, error: e.message };
+    }
+    const reply = parsePatchReply(text);
+    if (!reply) { lastError = 'the reply was not valid JSON'; continue; }
+    if (reply.operations.length === 0) return { noChange: true, reason: reply.summary };
+    const result = applyPatch(article, reply.operations);
+    if (result.ok) return { markdown: result.markdown, summary: reply.summary, applied: result.applied };
+    lastError = result.error;
+  }
+  return { rejected: true, error: lastError };
 }
 
 /**
@@ -926,7 +985,7 @@ function notifyMissingFoundationalArticle(pending) {
  * gets. Unlike the author-facing cards it deliberately includes issue ids
  * and reasons - whoever reads it needs enough to judge each rejection.
  */
-function notifyRejectedChanges(rejected) {
+function notifyRejectedChanges(rejected, headline = 'skipped - classified not customer-relevant') {
   const webhook = process.env.RELEASE_DRAFTS_TEAMS_WEBHOOK;
   if (!webhook || rejected.length === 0) return;
   const shown = rejected.slice(0, 10);
@@ -937,7 +996,7 @@ function notifyRejectedChanges(rejected) {
     '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
     version: '1.4',
     body: [
-      { type: 'TextBlock', text: `${rejected.length} release change(s) skipped - classified not customer-relevant`, weight: 'Bolder', size: 'Medium', wrap: true },
+      { type: 'TextBlock', text: `${rejected.length} release change(s): ${headline}`, weight: 'Bolder', size: 'Medium', wrap: true },
       { type: 'TextBlock', text: lines.join('\n\n'), wrap: true, spacing: 'Small' },
       { type: 'TextBlock', text: 'These were not drafted and will not retry. If one is genuinely customer-facing, author it manually at /admin/authoring or re-ship it with a corrected commit message.', wrap: true, spacing: 'Small', isSubtle: true },
     ],
@@ -1120,6 +1179,27 @@ app.get('/api/release-drafts/:dispatchId', requireReleaseSecret, (req, res) => {
   return res.json(dispatchStatusFromRow(row));
 });
 
+/** issueId -> {path, rev} for every article carrying a provenance comment,
+ *  drafts and published alike. The first comment for an issue wins, which is
+ *  the newest by construction. */
+function indexDraftedIssues() {
+  const index = new Map();
+  const walk = (dir) => {
+    for (const entry of fsSync.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else if (entry.name.endsWith('.md')) {
+        for (const p of parseProvenanceComments(fsSync.readFileSync(full, 'utf8'))) {
+          if (!index.has(String(p.issueId))) index.set(String(p.issueId), { path: path.relative(__dirname, full), rev: p.rev });
+        }
+      }
+    }
+  };
+  walk(MODULES_ROOT);
+  return index;
+}
+
 async function runReleaseDispatch(job) {
   const { dispatchId, tag, deployer, audience, changes, results } = job;
   // Mirror the /api/admin/authoring journal gate: never scan the disk for
@@ -1131,6 +1211,11 @@ async function runReleaseDispatch(job) {
     const newlyCreated = [];
     const missingFoundational = [];
     const rejectedNotRelevant = [];
+    const rejectedBugs = [];
+    const rejectedNoModule = [];
+    const needsHumanUpdate = [];
+    // Rebuilt per dispatch, so chunk 2 sees what chunk 1 wrote.
+    const drafted = indexDraftedIssues();
     // One 'change' event row per change, sharing the dispatch's identity.
     const recordChangeEvent = (change, fields) => releaseEvents.recordEvent({
       dispatchId, kind: 'change', tag, deployer, audience,
@@ -1141,15 +1226,35 @@ async function runReleaseDispatch(job) {
     for (const change of changes) {
       job.completed = results.length; // every path below pushes exactly one result, so this is "changes finished so far"
       const changeStartedAt = Date.now();
-      const dest = mapChangeToDestination(change);
-      if (!dest) {
-        const error = `No module mapping for files: ${(change.files || []).join(', ') || '(none)'}`;
-        results.push({ issueId: change.issueId, status: 'error', error });
-        recordChangeEvent(change, { status: 'error', error, durationMs: Date.now() - changeStartedAt });
+      const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
+      const revision = changeRevision(change);
+
+      // The dispatcher re-sends its whole unconfirmed range on every deploy,
+      // so a change already drafted must cost nothing and write nothing: no
+      // LLM call, no rate token, and the pending draft (with any hand edits)
+      // stays as it is. Checked first for that reason. A comment with no rev
+      // predates fingerprints and counts as drafted; a different rev is a
+      // newer commit on the issue and carries on to update the article.
+      const existing = drafted.get(String(change.issueId));
+      if (existing && (!existing.rev || existing.rev === revision)) {
+        const reason = `Already drafted in ${existing.path}.`;
+        results.push({ issueId: change.issueId, status: 'already-drafted', path: existing.path, reason });
+        recordChangeEvent(change, { status: 'already-drafted', articlePath: existing.path, durationMs: Date.now() - changeStartedAt });
         continue;
       }
 
-      const title = String(change.subject || '').replace(/\s*\(#\d+\)\s*$/, '').trim();
+      // Final, like not-relevant: a code area with no doc module fails the
+      // same way on every deploy, so as an error it held the marker forever
+      // and the whole range was re-sent each time. The Teams card is the
+      // human-rescue path, and a new alias can't reach a change already past.
+      const dest = mapChangeToDestination(change);
+      if (!dest) {
+        const reason = `No module mapping for files: ${(change.files || []).join(', ') || '(none)'}`;
+        results.push({ issueId: change.issueId, status: 'skipped-no-module', reason });
+        rejectedNoModule.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, reason });
+        recordChangeEvent(change, { status: 'skipped-no-module', durationMs: Date.now() - changeStartedAt });
+        continue;
+      }
 
       // Relevance gate - BEFORE the matcher, so a high-confidence rejection
       // skips the match-LLM and generate spend too. Confidence-tiered:
@@ -1193,6 +1298,26 @@ async function runReleaseDispatch(job) {
         llm: decision.llm,
       };
 
+      // A bug fix only reaches the help site by correcting an article that
+      // already covers the area. On its own it describes a defect that no
+      // longer exists, which is a release note, not a help topic (v3.60.08:
+      // 11 of 21 new drafts). Declined for good, like not-relevant, and listed
+      // on the Teams card. The exception is a failed match LLM: "no match" is
+      // then unknown, so the marker holds and the next deploy retries.
+      if (!match && change.changeType === 'bug') {
+        if (decision.llm && decision.llm.error) {
+          const error = `Could not check for an existing article: ${decision.llm.error}`;
+          results.push({ issueId: change.issueId, status: 'error', error, match: matchInfo });
+          recordChangeEvent(change, { status: 'error', module: dest.module, matchMethod: decision.method, match: matchInfo, relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt });
+          continue;
+        }
+        const reason = 'Bug fix with no existing article to correct - no standalone article drafted.';
+        results.push({ issueId: change.issueId, status: 'skipped-bug-no-article', module: dest.module, reason, match: matchInfo });
+        rejectedBugs.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, reason });
+        recordChangeEvent(change, { status: 'skipped-bug-no-article', module: dest.module, matchMethod: decision.method, match: matchInfo, relevance: relevanceFlag || relevance, durationMs: Date.now() - changeStartedAt });
+        continue;
+      }
+
       // No existing article to update AND the module has no article at
       // all - an incremental change like this would publish with nothing
       // giving a reader the context of what the module even is. Don't
@@ -1226,49 +1351,88 @@ async function runReleaseDispatch(job) {
       // the markdown, and re-inject the merged set after generation.
       const priorProvenances = match ? parseProvenanceComments(match.markdown) : [];
 
-      // generateHandler's destination check runs unconditionally (not only
-      // in fresh-generate mode) - refine-mode requests need inputs.module/
-      // subFolder too, even though the real destination is really implied
-      // by the matched file's own location. Found live: omitting them
-      // produces "Pick a destination folder first." even in refine mode.
-      const genReq = {
-        body: match
-          ? { inputs: { module: matchedModule, subFolder: matchedSubFolder }, refinement: buildRoughExplanation(change), previousMarkdown: stripRelevanceComments(stripProvenanceComments(match.markdown)) }
-          : { inputs: { module: dest.module, subFolder: dest.subFolder, roughExplanation: buildRoughExplanation(change), title } },
-        user: RELEASE_SERVICE_USER,
-      };
-      const genRes = makeResShim();
-      await generateHandler(genReq, genRes);
-      if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
-        const error = (genRes.body && genRes.body.error) || 'generate failed';
-        // rateLimited rides on the result so the deployer can say "deferred
-        // by the hourly budget" instead of "broken"; status stays 'error'
-        // because the marker must still hold.
-        results.push({
-          issueId: change.issueId, status: 'error', error, detail: genRes.body, match: matchInfo,
-          ...(genRes.statusCode === 429 ? { rateLimited: true, retryAfterMs: genRes.body && genRes.body.retryAfterMs } : {}),
-        });
-        // The result stays 'error' so the dispatcher holds its marker and
-        // retries next deploy - but the EVENT distinguishes rate-limit
-        // exhaustion from real failures, so the dashboard can tell "burned
-        // through the hourly generate budget" apart from "generation broke".
-        recordChangeEvent(change, {
-          status: genRes.statusCode === 429 ? 'rate-limited' : 'error',
-          module: dest.module, matchMethod: decision.method, match: matchInfo,
-          relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt,
-        });
-        continue;
+      // Updates are patches: the model proposes edits and the server applies
+      // them, so the article's frontmatter, steps and images can't be lost.
+      // The whole-article generate path below is for new articles only.
+      var markdown;
+      var updateSummary = null;
+      var generatedTitle = title;
+      if (match) {
+        const rate = checkRate(RELEASE_SERVICE_USER.email);
+        if (!rate.ok) {
+          const error = 'Rate limit';
+          results.push({ issueId: change.issueId, status: 'error', error, match: matchInfo, rateLimited: true, retryAfterMs: rate.retryAfterMs });
+          recordChangeEvent(change, { status: 'rate-limited', module: dest.module, matchMethod: decision.method, match: matchInfo, relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt });
+          continue;
+        }
+        const clean = stripUpdateComments(stripRelevanceComments(stripProvenanceComments(match.markdown)));
+        const patch = await llmPatchArticle(change, title, clean);
+        if (patch.failed) {
+          results.push({ issueId: change.issueId, status: 'error', error: patch.error, match: matchInfo });
+          recordChangeEvent(change, { status: 'error', module: matchedModule, matchMethod: decision.method, match: matchInfo, relevance: relevanceFlag || relevance, error: patch.error, durationMs: Date.now() - changeStartedAt });
+          continue;
+        }
+        if (patch.noChange || patch.rejected) {
+          // Nothing is written, so a live article never turns into a pending
+          // draft for a change it doesn't need. Both are final for this commit.
+          const status = patch.noChange ? 'no-content-change' : 'update-rejected';
+          const reason = patch.noChange ? (patch.reason || 'The article needs no edit for this change.') : `Could not build a valid patch: ${patch.error}`;
+          const articlePath = path.relative(__dirname, match.path);
+          console.log(`release-drafts: issue ${change.issueId} -> ${status} ${articlePath}: ${reason}`);
+          results.push({ issueId: change.issueId, status, module: matchedModule, path: articlePath, reason, match: matchInfo });
+          recordChangeEvent(change, { status, module: matchedModule, articlePath, matchMethod: decision.method, match: matchInfo, relevance: relevanceFlag || relevance, error: patch.rejected ? reason : undefined, durationMs: Date.now() - changeStartedAt });
+          if (patch.rejected) needsHumanUpdate.push({ title, issueId: change.issueId, issueUrl: change.issueUrl, reason, articlePath });
+          continue;
+        }
+        updateSummary = patch.summary;
+        markdown = patch.markdown;
+      } else {
+        // No title input: the commit subject names the change, not the help
+        // topic, so the model writes the title under the prompt's title rules.
+        const genReq = {
+          body: { inputs: { module: dest.module, subFolder: dest.subFolder, roughExplanation: buildRoughExplanation(change) } },
+          user: RELEASE_SERVICE_USER,
+        };
+        const genRes = makeResShim();
+        await generateHandler(genReq, genRes);
+        if (genRes.statusCode !== 200 || !genRes.body || !genRes.body.markdown) {
+          const error = (genRes.body && genRes.body.error) || 'generate failed';
+          // rateLimited rides on the result so the deployer can say "deferred
+          // by the hourly budget" instead of "broken"; status stays 'error'
+          // because the marker must still hold.
+          results.push({
+            issueId: change.issueId, status: 'error', error, detail: genRes.body, match: matchInfo,
+            ...(genRes.statusCode === 429 ? { rateLimited: true, retryAfterMs: genRes.body && genRes.body.retryAfterMs } : {}),
+          });
+          // The result stays 'error' so the dispatcher holds its marker and
+          // retries next deploy - but the EVENT distinguishes rate-limit
+          // exhaustion from real failures, so the dashboard can tell "burned
+          // through the hourly generate budget" apart from "generation broke".
+          recordChangeEvent(change, {
+            status: genRes.statusCode === 429 ? 'rate-limited' : 'error',
+            module: dest.module, matchMethod: decision.method, match: matchInfo,
+            relevance: relevanceFlag || relevance, error, durationMs: Date.now() - changeStartedAt,
+          });
+          continue;
+        }
+        markdown = genRes.body.markdown;
+        const titleLine = /^title:\s*"?(.*?)"?\s*$/m.exec(markdown);
+        if (titleLine && titleLine[1]) generatedTitle = titleLine[1];
       }
 
       // Strip again before injecting - the model may have copied or invented
       // a provenance or relevance comment despite the overlay's instruction
       // not to. The relevance flag (medium/low-confidence not-relevant) is
       // injected alongside the provenance stack so the drafts queue can
-      // badge the article until a human resolves it.
-      const markdown = injectRelevanceComment(
+      // badge the article until a human resolves it. Update notes stack per
+      // issue, so an unpublished draft keeps what earlier dispatches added.
+      const updateNotes = match
+        ? [{ issueId: change.issueId, summary: updateSummary }, ...parseUpdateComments(match.markdown)]
+        : [{ issueId: change.issueId, summary: NEW_ARTICLE_NOTE }];
+      markdown = injectRelevanceComment(
         injectProvenanceComments(
-          stripRelevanceComments(stripProvenanceComments(genRes.body.markdown)),
-          [{ tag, issueId: change.issueId, url: change.issueUrl }, ...priorProvenances],
+          injectUpdateComments(stripUpdateComments(stripRelevanceComments(stripProvenanceComments(markdown))), updateNotes),
+          [{ tag, issueId: change.issueId, url: change.issueUrl, rev: revision }, ...priorProvenances],
         ),
         relevanceFlag,
       );
@@ -1283,7 +1447,10 @@ async function runReleaseDispatch(job) {
       // live somewhere other than what this dispatch's Change-Type would
       // use. Getting this wrong writes a NEW file instead of updating the
       // matched one - the exact bug already fixed once today.
-      const slug = match ? path.basename(match.path, '.md') : (releaseSlugify(title) || `issue-${change.issueId}`);
+      // A generated title can collide with an existing article, which would
+      // fail the save on every deploy, so a taken slug gets the issue id.
+      var slug = match ? path.basename(match.path, '.md') : (releaseSlugify(generatedTitle) || `issue-${change.issueId}`);
+      if (!match && fsSync.existsSync(path.join(MODULES_ROOT, dest.module, dest.subFolder, `${slug}.md`))) slug = `${slug}-${change.issueId}`;
       const saveReq = {
         body: match
           ? { markdown, module: matchedModule, subFolder: matchedSubFolder, slug, fromPath: path.relative(__dirname, match.path) }
@@ -1309,7 +1476,7 @@ async function runReleaseDispatch(job) {
         if (match.previousOwner) notifyExistingOwner(change, dest, match.path, match.previousOwner);
       } else {
         results.push({ issueId: change.issueId, status: 'created', path: savedPath, module: dest.module, subFolder: dest.subFolder, slug, match: matchInfo, ...(relevanceFlag ? { relevance: relevanceFlag } : {}) });
-        newlyCreated.push({ title, issueId: change.issueId, issueUrl: change.issueUrl });
+        newlyCreated.push({ title: generatedTitle, issueId: change.issueId, issueUrl: change.issueUrl });
       }
       recordChangeEvent(change, {
         status: match ? 'updated' : 'created',
@@ -1323,6 +1490,9 @@ async function runReleaseDispatch(job) {
     notifyNewArticleChannel(newlyCreated);
     notifyMissingFoundationalArticle(missingFoundational);
     notifyRejectedChanges(rejectedNotRelevant);
+    notifyRejectedChanges(rejectedBugs, 'bug fixes skipped - no existing article covers them');
+    notifyRejectedChanges(rejectedNoModule, 'skipped - no help module covers the code they touch');
+    notifyRejectedChanges(needsHumanUpdate, 'updates need a person - the bot left the article unchanged');
   }
 }
 
@@ -5025,7 +5195,7 @@ async function publishHandler(req, res) {
     }
     // The relevance flag is a review aid for the drafts queue; publishing IS
     // the review resolving it, so it never ships to a live article.
-    next = stripRelevanceComments(next);
+    next = stripUpdateComments(stripRelevanceComments(next));
     // Ownership transfers to whoever just approved this - the person taking
     // responsibility for what's live is whoever reviewed it, not whoever
     // (human or the release pipeline's service account) happened to draft
@@ -5328,6 +5498,12 @@ app.post('/api/admin/authoring/upload', requireRole('superadmin'), (req, res) =>
   }
 });
 
+function draftChangeKind(markdown) {
+  const notes = parseUpdateComments(markdown);
+  if (notes.length === 0) return null;
+  return notes.every((n) => n.summary === NEW_ARTICLE_NOTE) ? 'new' : 'update';
+}
+
 app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => {
   try {
     const drafts = [];
@@ -5356,6 +5532,10 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
             // Set when the relevance classifier drafted this with doubts
             // (medium/low-confidence not-relevant) - the queue badges it.
             relevanceFlag: parseRelevanceComment(text),
+            // Update notes mean a patch to a live article; the queue labels
+            // it so a reviewer knows to check the diff. No notes means an older
+            // draft of unknown kind: no label, and Review changes still works.
+            changeKind: draftChangeKind(text),
           });
         }
       }
@@ -5372,6 +5552,27 @@ app.get('/api/admin/authoring/drafts', requireRole('superadmin'), (req, res) => 
   } catch (error) {
     console.error('❌ authoring/drafts failed:', error.message);
     res.status(500).json({ error: error.message });
+  }
+});
+
+// What a draft changes against the live article, for the reviewer. Machine
+// comments are dropped from both sides. live: null means a brand-new article.
+app.get('/api/admin/authoring/draft-diff', requireRole('superadmin'), async (req, res) => {
+  try {
+    const target = resolveAnyDocPath(req.query.path);
+    if (!fsSync.existsSync(target)) return res.status(404).json({ error: 'Draft not found' });
+    const rel = path.relative(__dirname, target).replace(/\\/g, '/');
+    const draft = fsSync.readFileSync(target, 'utf8');
+    const live = await ghFetchFile(rel);
+    const notes = parseUpdateComments(draft).filter((n) => n.summary !== NEW_ARTICLE_NOTE);
+    // Body only: the frontmatter always differs (date, author, draft flag), and
+    // those lines hid the real edits from reviewers.
+    const body = (md) => splitFrontmatter(stripUpdateComments(stripRelevanceComments(stripProvenanceComments(md)))).body;
+    const lines = live === null ? [] : lineDiff(body(live), body(draft));
+    res.json({ path: rel, isNew: live === null, notes, lines, stats: diffStats(lines) });
+  } catch (error) {
+    console.error('❌ authoring/draft-diff failed:', error.message);
+    res.status(502).json({ error: 'Could not load the live version to compare against.' });
   }
 });
 
