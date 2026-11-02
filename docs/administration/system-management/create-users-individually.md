@@ -7,8 +7,8 @@ description: >-
 slug: create-users-individually
 sidebar_position: 119
 last_update:
-  date: 2026-08-22
-  author: Sruthi Suresh
+  date: 2026-11-02
+  author: Manaswini V
 source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
   helpscout_url: 'https://help.smartwinnr.com/article/119-create-users-individually'
@@ -60,7 +60,7 @@ On the **Create User** page, provide the following information:
 * Role
 
 Ensure all mandatory fields are completed for successful user creation. Additional optional fields may be filled in based on organizational requirements.
-
+![fill the details of the user](/img/helpscout/authored/create-users-individually-mvytkyx5.png)
 ### 4. Assign Role and Permissions
 
 Select the appropriate **role** for the user. Role selection determines the features, modules, and access levels available to the user within SmartWinnr.
@@ -86,7 +86,7 @@ Select the appropriate **role** for the user. Role selection determines the feat
 
 * **Who:** System administrators.
 * **Purpose:** Responsible for user management and administration.
-
+![select the roles and permissions, language and time zone and user tags](/img/helpscout/authored/create-users-individually-mvytm578.png)
 ### 5. Set Login Method
 
 SmartWinnr supports multiple authentication methods to ensure secure and flexible access. Choose the appropriate login method based on your organization’s setup.
@@ -110,9 +110,7 @@ When SAML login is enabled:
 ### 6. Save the User
 
 After entering all required details and selecting the login method, click **Create User** to create the user account successfully.
-
-![After entering all required details and selecting the login method, click Create User to create the user account successfully.](/img/helpscout/admins/create-users-individually-1.png)
-
+![after filling all the details,click on create user](/img/helpscout/authored/create-users-individually-mvytahvi.png)
 ### After Creating the User
 
 Once the user account is successfully created:
@@ -123,4 +121,4 @@ Once the user account is successfully created:
 
 > **Note:** If invitation emails are disabled, administrators must share login details or activation instructions with users manually.
 
-![describe this screenshot](/img/helpscout/authored/create-users-individually-mt421q7s.png)
+![email invitation](/img/helpscout/authored/create-users-individually-mt421q7s.png)
