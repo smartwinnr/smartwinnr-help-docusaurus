@@ -7,7 +7,7 @@ description: >-
 slug: create-users-individually
 sidebar_position: 119
 last_update:
-  date: 2026-11-02
+  date: 2026-11-03
   author: Manaswini V
 source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
@@ -48,7 +48,7 @@ Go to:
 
 ### 3. Enter User Details
 
-On the **Create User** page, provide the following information:
+On the **Create** page, provide the following information:
 
 **Mandatory Fields**
 
@@ -61,6 +61,7 @@ On the **Create User** page, provide the following information:
 
 Ensure all mandatory fields are completed for successful user creation. Additional optional fields may be filled in based on organizational requirements.
 ![fill the details of the user](/img/helpscout/authored/create-users-individually-mvytkyx5.png)
+
 ### 4. Assign Role and Permissions
 
 Select the appropriate **role** for the user. Role selection determines the features, modules, and access levels available to the user within SmartWinnr.
