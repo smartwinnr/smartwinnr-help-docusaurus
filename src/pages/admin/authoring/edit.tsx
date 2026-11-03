@@ -43,6 +43,11 @@ type AuditFinding = {
   label: string;
   detail?: string;
   blocking?: boolean;
+  /** Would hard-fail the production build - the only findings that refuse a save. */
+  buildBreaking?: boolean;
+  /** 1-based position in the full markdown (frontmatter included). */
+  line?: number;
+  column?: number;
 };
 type Audit = { score: number; findings: AuditFinding[] };
 
@@ -124,6 +129,22 @@ function EditorPanel(): ReactNode {
         ta.setSelectionRange(pos, pos);
       }
     });
+  }
+
+  /** Select line `line` (1-based) in the textarea and scroll it into view,
+   *  so an author can see exactly which line a build-breaking finding means. */
+  function jumpToLine(line: number) {
+    const ta = textareaRef.current;
+    if (!ta || !line) return;
+    const lines = ta.value.split('\n');
+    const idx = Math.min(Math.max(line, 1), lines.length) - 1;
+    let start = 0;
+    for (let i = 0; i < idx; i++) start += lines[i].length + 1;
+    const end = start + lines[idx].length;
+    ta.focus();
+    ta.setSelectionRange(start, end);
+    const lh = parseFloat(getComputedStyle(ta).lineHeight) || 20;
+    ta.scrollTop = Math.max(0, idx * lh - ta.clientHeight / 3);
   }
 
   async function uploadImageFile(file: File) {
@@ -367,7 +388,20 @@ function EditorPanel(): ReactNode {
         if (ok) { setSaving(false); return save(true); }
         return;
       }
-      if (!res.ok) { notify.error(data.error || 'Save failed'); return; }
+      if (!res.ok) {
+        // A build-breaking refusal carries the audit: show WHICH finding
+        // fired and on which line, and put the caret on it - the bare
+        // "would break the build" message left authors hunting.
+        const blockers: AuditFinding[] = (data.audit?.findings || []).filter((f: AuditFinding) => f.buildBreaking);
+        if (data.audit) setAudit(data.audit);
+        const detail = blockers.length
+          ? ' - ' + blockers.map((f) => f.label + (f.detail ? ` (${f.detail})` : '')).join('; ')
+          : '';
+        notify.error((data.error || 'Save failed') + detail);
+        const first = blockers.find((f) => f.line);
+        if (first?.line) jumpToLine(first.line);
+        return;
+      }
       setOriginal(markdown);
       setAudit(data.audit || null);
       setServerHash(data.hash || '');
@@ -575,14 +609,33 @@ function EditorPanel(): ReactNode {
           </div>
           {audit && audit.findings.length > 0 && (
             <div className={styles.auditPanel}>
-              <h3>Audit · score {audit.score} <span className={styles.hint}>(advisory only)</span></h3>
+              <h3>
+                Audit · score {audit.score}{' '}
+                {!audit.findings.some((f) => f.buildBreaking) && <span className={styles.hint}>(advisory only)</span>}
+              </h3>
               <ul>
-                {audit.findings.map((f, idx) => (
-                  <li key={f.key + '-' + idx} className={styles.findWarn}>
-                    <strong>{f.label}</strong>
-                    {f.detail && <span className={styles.findDetail}> - {f.detail}</span>}
-                  </li>
-                ))}
+                {audit.findings.map((f, idx) => {
+                  const src = f.buildBreaking && f.line ? markdown.split('\n')[f.line - 1] : undefined;
+                  return (
+                    <li key={f.key + '-' + idx} className={f.buildBreaking ? styles.findBlock : styles.findWarn}>
+                      <strong>{f.label}</strong>
+                      {f.detail && <span className={styles.findDetail}> - {f.detail}</span>}
+                      {f.buildBreaking && <span className={styles.findBadge}>blocks save</span>}
+                      {f.line && (
+                        <button
+                          type="button"
+                          className={styles.findJump}
+                          onClick={() => jumpToLine(f.line!)}
+                          title="Select this line in the editor">
+                          Go to line {f.line}
+                        </button>
+                      )}
+                      {src !== undefined && src.trim() !== '' && (
+                        <code className={styles.findSource}>{src}</code>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}

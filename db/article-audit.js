@@ -63,13 +63,15 @@ const BOILERPLATE_OPENERS = [
  * @param {Set<string>} [opts.knownPrivileges] If set (non-empty), frontmatter
  *   `customProps.privilege`/`anyPrivilege` keys outside the set fire
  *   `unknownPrivilege`.
- * @returns {{score: number, findings: Array<{key:string,label:string,detail?:string,blocking:boolean,buildBreaking:boolean}>}}
+ * @returns {{score: number, findings: Array<{key:string,label:string,detail?:string,blocking:boolean,buildBreaking:boolean,line?:number,column?:number}>}}
+ *   `line`/`column` (1-based) are positions in the FULL `text` (frontmatter
+ *   included), so editors can jump straight to the offending line.
  */
 function gradeMarkdown(text, opts = {}) {
   const findings = [];
   let score = 0;
 
-  function flag(key, detail) {
+  function flag(key, detail, pos) {
     const def = DEFECTS[key];
     if (!def) return;
     score += def.weight;
@@ -79,21 +81,38 @@ function gradeMarkdown(text, opts = {}) {
       detail: detail || undefined,
       blocking: !!def.blocking,
       buildBreaking: !!def.build,
+      ...(pos && pos.line ? {line: pos.line, ...(pos.column ? {column: pos.column} : {})} : {}),
     });
   }
 
   let fm = {};
   let body = '';
+  // Lines in `text` that precede the trimmed body, so a body-relative MDX
+  // error line can be reported as the line the author sees in the editor.
+  let bodyLineOffset = 0;
   try {
     const parsed = matter(text);
     fm = parsed.data || {};
-    body = (parsed.content || '').trim();
-  } catch {
+    const content = parsed.content || '';
+    body = content.trim();
+    let bodyStart = text.endsWith(content)
+      ? text.length - content.length + (content.length - content.trimStart().length)
+      : text.indexOf(body);
+    if (bodyStart < 0) bodyStart = 0;
+    bodyLineOffset = (text.slice(0, bodyStart).match(/\n/g) || []).length;
+  } catch (e) {
+    // js-yaml marks are 0-based within the YAML block, which starts on the
+    // line after the opening `---` (file line 2).
+    const mark = e && e.mark;
+    const line = mark && Number.isInteger(mark.line) ? mark.line + 2 : undefined;
+    const reason = (e && (e.reason || e.message)) || '';
     findings.push({
       key: 'malformedFrontmatter',
       label: 'Malformed frontmatter (could not parse YAML)',
+      detail: reason ? `${reason}${line ? ` (line ${line})` : ''}` : undefined,
       blocking: true,
       buildBreaking: true,
+      ...(line ? {line, ...(Number.isInteger(mark.column) ? {column: mark.column + 1} : {})} : {}),
     });
     return {score: 100, findings};
   }
@@ -104,8 +123,10 @@ function gradeMarkdown(text, opts = {}) {
     try {
       opts.compileMdx(body);
     } catch (e) {
-      const place = e.line ? ` (line ${e.line}${e.column ? `:${e.column}` : ''})` : '';
-      flag('mdxCompileError', `${e.reason || e.message}${place}`);
+      const line = e.line ? e.line + bodyLineOffset : undefined;
+      const column = line && e.column ? e.column : undefined;
+      const place = line ? ` (line ${line}${column ? `:${column}` : ''})` : '';
+      flag('mdxCompileError', `${e.reason || e.message}${place}`, {line, column});
     }
   }
   if (opts.knownPrivileges instanceof Set && opts.knownPrivileges.size > 0) {
@@ -115,7 +136,16 @@ function gradeMarkdown(text, opts = {}) {
       ...(Array.isArray(cp.anyPrivilege) ? cp.anyPrivilege : []),
     ];
     const unknown = keys.filter((k) => !opts.knownPrivileges.has(String(k)));
-    if (unknown.length > 0) flag('unknownPrivilege', unknown.join(', '));
+    if (unknown.length > 0) {
+      // Point at the frontmatter line that declares the privilege.
+      const fmEnd = bodyLineOffset;
+      const lines = text.split('\n');
+      let line;
+      for (let i = 1; i < Math.min(fmEnd, lines.length); i++) {
+        if (/^\s*(privilege|anyPrivilege)\s*:/.test(lines[i])) { line = i + 1; break; }
+      }
+      flag('unknownPrivilege', unknown.join(', ') + (line ? ` (line ${line})` : ''), {line});
+    }
   }
 
   // Frontmatter checks
