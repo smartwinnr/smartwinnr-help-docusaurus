@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-smartpath
 sidebar_position: 78
 last_update:
-  date: 2026-07-17
-  author: Charan
+  date: 2026-11-05
+  author: Manaswini V
 source:
   helpscout_id: 5fd711e636980410c9123b73
   helpscout_url: 'https://help.smartwinnr.com/article/78-how-can-i-create-a-smartpath'
@@ -92,6 +92,23 @@ Click **Save SmartPath** to move to the next step.
 * **By Score:** Choose a module, a **Score**, and a **Comparator** (**Less than**, **Greater than**, **Equal to**). Learners unlock this module only when they meet the threshold.
 
 ![By Score rule](/img/helpscout/editors/how-to-create-a-smartpath-10.png)
+
+
+
+### Combining Rules using AND
+
+You can add multiple access rules to a module. When multiple rules are combined using AND, learners must meet all the configured conditions before the module becomes accessible.
+
+For example, you can configure the following rules for a module:
+
+- On Completion: Complete the prerequisite module.
+- By Score: Achieve a score greater than 30 in the prerequisite module.
+- By Day: The module becomes available on Day 1 at the specified time.
+
+The next module unlocks only when all three conditions are met. If any one condition is not satisfied, the module remains locked.
+
+Click Add Rule to add each condition, then click Save to apply the rules.
+![Combine Rules using AND](/img/helpscout/authored/how-to-create-a-smartpath-mw35krmd.png)
 
 5. Optionally assign **milestones** - badges or certificates awarded when a learner completes a module. Click **Manage Milestone** next to the module:
 
