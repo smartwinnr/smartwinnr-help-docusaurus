@@ -5,7 +5,7 @@ description: "Create a single content item in Content Center by choosing a type,
 slug: how-to-create-a-content-item
 sidebar_position: 10
 last_update:
-  date: 2026-09-26
+  date: 2026-11-06
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -41,14 +41,39 @@ Check the **Version** field and the **Content Code**. The first version appears 
 ### 4. Add the title and description
 Under **Title and Description**, enter the **Title**. This field is required. Add a **Description** if you want to provide more context.
 
-Select **Add Translation** to add the title and description in another language. Enter the translated text in the matching fields.
-![kindly add traslation](/img/helpscout/authored/how-to-create-a-content-item-mui1olu8.png)
-### 5. Upload the content file
-In the **File** section, upload the file that learners will be served. You can drag and drop the file into the upload area or click **Drop file here or click to browse** to select a file from your computer.
+Select **Add Translation** to add the title and description in another language. The default language is displayed in the **English** tab.
+![Add the title and description.](/img/helpscout/authored/how-to-create-a-content-item-mw4vlp5j.png)
+After adding a translation, a separate tab appears for the selected language.Switch between the language tabs to enter or view the title and description in the corresponding language. 
+![A separate translation tab appears when you add another language](/img/helpscout/authored/how-to-create-a-content-item-mw4wvsx8.png)
+**Note:** Translations must be added manually, as the system does not automatically translate the content.
 
-After the file is selected, its name appears under **The file learners will be served**. Click **Remove Selected File** if you want to remove the selected file and upload a different one.
+The supported languages are: **[1. Spanish
+2. Japanese
+3. French
+4. Czech
+5. Portuguese
+6. Chinese (Traditional)
+7. German
+8. Vietnamese
+9. Korean
+10. Tamil
+11. Telugu
+12. Marathi
+13. Bangla
+14. Russian].**
+
+![Select the required language.](/img/helpscout/authored/how-to-create-a-content-item-mw4vjk2i.png)
+
+### 5. Upload the content file
+In the File section, upload the file that learners will be served by dragging and dropping it into the upload area or clicking Drop file here or click to browse. To replace the selected file, upload another file using the same method. The new file will replace the current one.
+
+After the file is selected, its name appears under **Current File** as a clickable link. 
+
+For example, the file name appears as shown in the picture below.
+![The uploaded file name appears as shown here](/img/helpscout/authored/how-to-create-a-content-item-mw4z6pzm.png)
 
 ![kindly fill the details](/img/helpscout/authored/how-to-create-a-content-item-mui1phe0.png)
+
 ### 6. Add categories
 Under **Categories**, select the category values that apply to the item. Categories help you classify content in Content Center.
 
@@ -57,7 +82,7 @@ Under **Tags and Competencies**, select the relevant **Tags** and **Competencies
 
 ### 8. Create the item
 Review the details, then select **Create**.
-![kindly click on create](/img/helpscout/authored/how-to-create-a-content-item-mui1qef8.png)
+![Click Create](/img/helpscout/authored/how-to-create-a-content-item-mui1qef8.png)
  The content item is created in the **Draft** stage.
 
 From there, you can submit the item for review to move it to **In Review**.
