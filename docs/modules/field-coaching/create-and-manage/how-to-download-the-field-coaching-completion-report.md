@@ -5,13 +5,15 @@ description: "This article shows you how to download various field coaching comp
 slug: download-field-coaching-completion-report
 sidebar_position: 20
 last_update:
-  date: 2026-09-29
-  author: Sruthi Suresh
+  date: 2026-11-06
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-draft: false
+draft: true
 tags: ["field-coaching"]
 ---
+{/* release-draft: tag=v3.60.32 issue=9925 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9925 rev=4bba447fb75f */}
+{/* release-update: issue=9925 summary="Adds the new **Download Multiple Reports** option and explains how to use it from the completion report page." */}
 
 > **At a glance** - Learn how to download different types of field coaching completion reports for analysis and tracking.
 
@@ -38,6 +40,8 @@ Log in to your Editor Account. In the left menu, go to **Field Coaching → Comp
 On the report selection page, choose the **Field Coaching**, **Manager** (if applicable), **Frequency of Coaching**, and **Date Range** for the reports you want to download. After selecting the options, click on the **Hamburger Menu** to view the available reports.
 
 ![Download the completion report](/img/helpscout/authored/how-to-download-the-field-coaching-completion-report-mruphxhi.png)
+
+The download menu also includes **Download Multiple Reports** between **Download Report As CSV** and **Download Combined Report as CSV**. Select it to open a modal where you choose which reports to include in the download.
 
 ### 3. Download Count Report
 
