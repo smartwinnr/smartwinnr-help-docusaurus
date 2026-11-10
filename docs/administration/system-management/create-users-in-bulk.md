@@ -5,14 +5,14 @@ description: "Upload a CSV file in SmartWinnr to create or update multiple user 
 slug: create-users-in-bulk
 sidebar_position: 118
 last_update:
-  date: 2026-08-19
-  author: Anagha Isal
+  date: 2026-11-10
+  author: Sruthi Suresh
 source:
   helpscout_id: 5fda4abb27288b7f895d61dd
   helpscout_url: 'https://help.smartwinnr.com/article/118-create-users-in-bulk'
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]
-tags: ["admin", "settings", "onboarding"]
+tags: ["admin", "settings", "onboarding", "user-details-updation", "personal-details-updation"]
 draft: false
 ---
 > **At a glance** - SmartWinnr enables you to upload a CSV file for bulk user creation or modification, streamlining the process for large groups of users.

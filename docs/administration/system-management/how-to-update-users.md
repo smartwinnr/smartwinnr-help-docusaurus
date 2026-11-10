@@ -5,8 +5,8 @@ description: "Update user details in SmartWinnr, either individually or in bulk 
 slug: how-to-update-users
 sidebar_position: 298
 last_update:
-  date: 2026-08-19
-  author: Anagha Isal
+  date: 2026-11-10
+  author: Sruthi Suresh
 source:
   helpscout_id: 696cf34e0ef05b444cde8d3c
   helpscout_url: 'https://help.smartwinnr.com/article/298-how-to-update-users'
@@ -56,6 +56,7 @@ Once the user profile opens, click on the **Edit** option and update the require
   * Last Name
   * Email ID (if editable)
   * User Identifier
+  * Manager Name
 
 * **Organizational Details**
   * Business Unit / Division
