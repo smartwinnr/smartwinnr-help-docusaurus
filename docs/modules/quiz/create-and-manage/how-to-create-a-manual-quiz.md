@@ -8,7 +8,7 @@ slug: how-to-create-a-manual-quiz
 sidebar_position: 50
 last_update:
   date: 2026-11-12
-  author: Manaswini V
+  author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
@@ -98,7 +98,7 @@ Here you can set the quiz cover image and thumbnail image.
 * **Integrate with LMS (xAPI):** Enable this option to integrate the quiz with an LMS using the **xAPI** standard.
 * **Send by Generic Name:** Select this option to distribute the quiz using a **generic sender name** instead of a specific user or entity.
 * **Allow Self-Registration:** Enable this option so that anyone with the quiz link can access the quiz.
-* **Shuffle Answer Options:** Activate this setting to **randomize the order of answer options** for questions within the quiz.
+* **Shuffle Answer Options:** Activate this setting to **shuffle the order of answer options** for questions within the quiz. It helps to randomize the answer options of the questions within the quiz.
 * **Enable Completion Notification:** Turn on this option to send a **notification upon quiz completion**.
 * **Enable Question Skipping:** Allow participants to **skip questions** and return to them later during the quiz.
 * **Leaderboard Display Settings:** Configure how quiz results appear on leaderboards. You can choose to:

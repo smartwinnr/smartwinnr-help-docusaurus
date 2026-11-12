@@ -5,7 +5,7 @@ description: "This article shows you how to review your quiz answers and scores 
 slug: how-to-review-your-quiz-answers-and-scores
 sidebar_position: 281
 last_update:
-  date: 2026-10-09
+  date: 2026-11-12
   author: Aswani TK
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -16,7 +16,7 @@ tags: ["quiz"]
 
 > **At a glance** - Review your quiz answers and scores to understand your performance and learn from your mistakes.
 
-After completing a quiz, you can review your answers and scores to see how you performed. This helps you identify areas for improvement and reinforces your learning.
+After completing a quiz, you can review your answers and scores to see how you performed. This helps you identify areas for improvement and reinforces your learning. This option helps to review the quiz question and answer key to verify whether the answer was marked incorrectly.
 
 ## When to use this
 Use the quiz review feature when you want to:

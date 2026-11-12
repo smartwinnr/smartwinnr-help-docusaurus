@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-form
 sidebar_position: 999
 last_update:
-  date: 2026-09-03
-  author: Sruthi Suresh
+  date: 2026-11-12
+  author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: forms
@@ -275,7 +275,7 @@ After adding those, click on the **Save** button.
 
 ### Step 3: Assign Users to the Form
 
-The next step is to assign users to the form. Select the desired participants and add them to the form.
+The next step is to assign users to the form. Select the desired participants and add them to the form. This is the way you can give the specific form access to the users.
 
 ![Assign to the users](/img/helpscout/authored/how-to-create-a-form-mt48hxww.png)
 
