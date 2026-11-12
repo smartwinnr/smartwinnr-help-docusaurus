@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-manual-quiz
 sidebar_position: 50
 last_update:
-  date: 2026-09-18
-  author: Sruthi Suresh
+  date: 2026-11-12
+  author: Manaswini V
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
@@ -85,15 +85,15 @@ Here you can set the quiz cover image and thumbnail image.
 
 ![Lock Review Option](/img/helpscout/editors/how-to-create-a-manual-quiz-5.png)
 
-* **Randomly Assign Questions:** Enable this option to assign a random set of questions to each quiz participant. Once selected, you are prompted to specify the **Number of Questions per Quiz**.
+* **Randomly Assign Questions:** Enable this option to assign a random/shuffled set of questions to each quiz participant. Once selected, you are prompted to specify the **Number of Questions per Quiz**.
 
-  For example, if the number of questions per quiz is set to **10** and the quiz contains **30** questions in total, the system presents **10 randomly selected questions** from the available pool to each participant.
+  For example, if the number of questions per quiz is set to 10 and the quiz contains 30 questions in total, the system presents 10 randomly selected/shuffled questions from the available pool to each participant.
 
   If you choose the **Randomize Question by tag** option, you can customize the number of questions from each tag.
 
 * **Question skip in Quiz:** Check this option if you want to allow quiz takers to skip questions in this quiz.
 
-![Randomize Question by Tag](/img/helpscout/editors/how-to-create-a-manual-quiz-6.png)
+![Randomize/shuffle Question by Tag](/img/helpscout/editors/how-to-create-a-manual-quiz-6.png)
 
 * **Integrate with LMS (xAPI):** Enable this option to integrate the quiz with an LMS using the **xAPI** standard.
 * **Send by Generic Name:** Select this option to distribute the quiz using a **generic sender name** instead of a specific user or entity.

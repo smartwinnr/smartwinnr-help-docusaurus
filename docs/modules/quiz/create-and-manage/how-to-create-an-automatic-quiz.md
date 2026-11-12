@@ -5,8 +5,8 @@ description: "Create an automatic quiz that delivers multiple assessments at spe
 slug: create-automatic-quiz
 sidebar_position: 999
 last_update:
-  date: 2026-09-04
-  author: Sruthi Suresh
+  date: 2026-11-12
+  author: Manaswini V
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 draft: false
@@ -126,11 +126,11 @@ Different quiz settings include:
 
 - **Show Immediate Answer Feedback**: Enable this option to display the answer along with feedback after submission of each question response in the quiz.
 
-- **Randomize Question by Tag**: Enable this option if you would like to randomize the questions by question tags. This ensures balanced coverage of topics while maintaining question variety. This also ensures learners receive questions across all relevant subject areas.
+- **Randomize Question by Tag**: Enable this option if you would like to randomize/shuffle the questions by question tags. This ensures balanced coverage of topics while maintaining question variety. This also ensures learners receive questions across all relevant subject areas.
 
   When this option is enabled, after selecting the questions for the quiz, a pop-up will appear (as shown below). In this pop-up, you need to specify how many questions should be included from each tag in the quiz.
 
-![Randomize Question by Tag](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4t7zvj.png)
+![Randomize/shuffle Question by Tag](/img/helpscout/authored/how-to-create-an-automatic-quiz-mr4t7zvj.png)
 
 - **Mandatory Category Selection**: Enable this option if you want to specify a set of question tags that must appear in every auto quiz delivery. Configure tag counts on the Questions page (Step 2) once the quiz is created.
 
