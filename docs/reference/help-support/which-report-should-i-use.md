@@ -5,8 +5,8 @@ description: "SmartWinnr provides various report families to track learner activ
 slug: which-report-should-i-use
 sidebar_position: 67
 last_update:
-  date: 2026-09-16
-  author: Manaswini V
+  date: 2026-11-13
+  author: Aswani TK
 customProps:
   owner: jazz.k@smartwinnr.com
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -303,4 +303,8 @@ Points Reports provide an overview of points earned by users through different a
 \- **Global Points Report:** provides an overview of points awarded to users, showing the related activity, object, points received, and the date they were awarded.
 
 ***Note:*** **Generated Reports** displays all generated reports that are available to download from SmartWinnr.
+
+Reports are designed to display accurate data. However, if you notice any discrepancies, such as missing users in the Completion or Analytics Reports or a mismatch between the report data and actual submissions, please contact the SmartWinnr team.
+
+Our team will investigate the issue, analyze the discrepancies, and provide you with an appropriate resolution.
 

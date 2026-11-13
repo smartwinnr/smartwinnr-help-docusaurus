@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-manual-quiz
 sidebar_position: 50
 last_update:
-  date: 2026-11-12
-  author: Aswani TK
+  date: 2026-11-13
+  author: Manaswini V
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
@@ -32,7 +32,9 @@ You can create three types of manual quizzes.
 
 * **Regular:**
 
-  This is a standard quiz that you can schedule for the current date and time or for a future date and time. Scores from a Regular quiz can be added to both the **Quiz Leaderboard** and **Competition Leaderboards**.
+  This is a standard quiz that can be scheduled for the current date and time or for a future date and time.
+  Scores from a Regular Quiz can be included in both the **Quiz Leaderboard** and **Competition Leaderboards**.
+
 
 * **Exam:**
 
@@ -42,6 +44,7 @@ You can create three types of manual quizzes.
 
   This quiz type is intended for live or time-bound events. You can manually open the quiz at the start of the event and close it when the event concludes. This keeps participation limited to the event duration.
 
+  **note**: If a learner is on leave or PTO, scheduled quizzes cannot be paused. Learners cannot revisit or attempt quizzes they missed during their absence. The missed quiz will not be visible in either the **Assigned** or **Completed** tab in the User Portal.
 ## When to use this
 
 Use a manual quiz when you want to control quiz timing, scoring, and participant access.

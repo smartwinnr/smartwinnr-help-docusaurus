@@ -5,8 +5,8 @@ description: Only users with editor role can create competitions.
 slug: how-to-create-a-competition
 sidebar_position: 103
 last_update:
-  date: 2026-08-24
-  author: Sruthi Suresh
+  date: 2026-11-13
+  author: Aswani TK
 source:
   helpscout_id: 5fd9ba357129911ba1b21757
   helpscout_url: 'https://help.smartwinnr.com/article/103-how-to-create-a-competition'
@@ -40,7 +40,7 @@ Give a catchy name to your competition and add a description. Every competition 
 
 Once you have entered these details, click on the **Save** button.
 
-![describe this screenshot](/img/helpscout/authored/how-to-create-a-competition-ms8xxfsn.png)
+![create a competiiton](/img/helpscout/authored/how-to-create-a-competition-ms8xxfsn.png)
 
 ### 2. Add Participants to the Competition
 
@@ -97,7 +97,7 @@ Go to the third step and click on the **Add** button. This opens a pop-up:
 
 If you are creating an individual leaderboard (if you selected **Type** as **By Participants**), you will next select the participants that will be displayed on the leaderboard.
 
-![describe this screenshot](/img/helpscout/authored/how-to-create-a-competition-mt6udf0f.png)
+![create a competiiton](/img/helpscout/authored/how-to-create-a-competition-mt6udf0f.png)
 
 You can filter and choose these participants based on **Business Unit**, **Country**, **Group**, **Name**, **Email**, and **Meta Tags**. Once you have entered the required information and selected the desired participants, click on the **Save** button. This will successfully create the leaderboard and add it to the competition.
 
@@ -111,3 +111,5 @@ The final step in creating a competition is to add tasks. You can add various ta
 - [How to add a Video Coaching to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-video-coaching-to-the-competition)
 - [How to add a Challenge to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-challenge-to-the-competition)
 - [How to add a Form to a Competition?](/modules/kpi-gamification/create-and-manage/how-to-add-a-form-to-competition)
+
+Note: You can explore or test the gamification modules by creating and assigning the sample games to a test user. 
