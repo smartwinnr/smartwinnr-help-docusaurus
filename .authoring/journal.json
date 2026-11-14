@@ -332,6 +332,12 @@
       "ts": 1794547857992,
       "seq": 1,
       "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-add-suggested-learning-to-bucket-definitions.md": {
+      "action": "upsert",
+      "ts": 1794657300760,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
     }
   }
 }
