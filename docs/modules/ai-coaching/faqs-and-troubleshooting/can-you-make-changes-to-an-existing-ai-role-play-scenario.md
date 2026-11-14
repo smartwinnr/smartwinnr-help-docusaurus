@@ -5,8 +5,8 @@ description: "Edit an existing AI role-play scenario to update its flow, content
 slug: can-you-make-changes-to-an-existing-ai-role-play-scenario
 sidebar_position: 352
 last_update:
-  date: 2026-10-21
-  author: Manaswini V
+  date: 2026-11-14
+  author: Anagha Isal
 customProps:
   owner: jazz.k@smartwinnr.com
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
@@ -14,7 +14,7 @@ tags: ["ai-coaching"]
 draft: false
 ---
 
-> **At a glance** - Yes,you can edit an existing AI role-play scenario to keep it aligned with your coaching goals. Update the scenario flow, wording, AI persona, scoring, schedule, visibility, and supporting resources as needed.
+> **At a glance** - Yes,you can edit an existing AI role-play scenario to keep it aligned with your coaching goals. Update the scenario flow, wording, AI persona, scoring, schedule, visibility, and supporting resources as needed.You can write to SmartWinnr support team at supprt@smartwinnr.com to help you update your role play scenario to align with your goals.
 
 ## When to use this
 Use this when you want to refine an existing scenario instead of creating a new one.
