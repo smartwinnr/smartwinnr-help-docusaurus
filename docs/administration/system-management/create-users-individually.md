@@ -7,8 +7,8 @@ description: >-
 slug: create-users-individually
 sidebar_position: 119
 last_update:
-  date: 2026-11-03
-  author: Manaswini V
+  date: 2026-11-15
+  author: Aswani TK
 source:
   helpscout_id: 5fda4f4a0b11ce44f6392e62
   helpscout_url: 'https://help.smartwinnr.com/article/119-create-users-individually'
@@ -24,7 +24,7 @@ draft: false
 
 SmartWinnr allows administrators to create users individually through the backend portal. This option is ideal when onboarding a small number of users or when quick updates are required for specific user accounts.
 
-> **Note:** Only users with the appropriate **administrative privileges** can create new users.
+> **Note:** Only users with the appropriate **administrative privileges** can create new users. Only admins have the permission to create new users or modify a colleague’s access rights, such as changing their Admin, Editor, or Manager roles.
 
 ## When to use this
 

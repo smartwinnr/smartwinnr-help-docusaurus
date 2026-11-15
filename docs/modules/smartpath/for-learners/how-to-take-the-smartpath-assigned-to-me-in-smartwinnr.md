@@ -8,8 +8,8 @@ description: >-
 slug: how-to-take-the-smartpath-assigned-to-me-in-smartwinnr
 sidebar_position: 265
 last_update:
-  date: 2026-08-22
-  author: Sandeep Bhuthagaddala
+  date: 2026-11-15
+  author: Aswani TK
 customProps:
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags:
@@ -48,7 +48,9 @@ Clicking on the SmartPath will take you inside the SmartPath, where you can find
 Tap on the first activity to start attending the SmartPath. This will take you inside the first activity. For example, in the above picture, the first activity of the SmartPath is to complete a SmartFeed called 'Great Resources'. This will take you to the SmartFeed, which you should read through or watch to complete this activity.
 
 ### 4. Proceed to the next activity
-Tap on the **Next Button** at the top right corner after completing the first activity. This will take you to the next activity in the module.
+Tap on the **Next Button** at the top right corner after completing the first activity. This will take you to the next activity in the module. You can skip an activity, whether it is a video, PDF, or PPT, if you wish to proceed to the next one without viewing it.
+
+Please note that skipped activities will not be marked as complete, and your overall SmartPath status will remain Incomplete until all activities are completed.
 
 ![Tap on the Next Button at the top right corner after completing the first activity. This will take you to the next activity in the module.](/img/helpscout/managers-and-team-members/how-to-take-the-smartpath-assigned-to-me-in-smartwinnr-3.png)
 
