@@ -3,20 +3,19 @@ id: how-to-redeem-your-reward-points
 title: "How to redeem your reward points"
 description: "Redeem available rewards, confirm the purchase, and review your points and redemption history."
 slug: how-to-redeem-your-reward-points
-sidebar_position: 10
+sidebar_position: 999
 last_update:
-  date: 2026-09-15
+  date: 2026-11-16
   author: Aswani TK
 customProps:
-  owner: jazz.k@smartwinnr.com
   roles: [user, manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["rewards"]
 draft: false
 ---
 
-> **At a glance** - Open the rewards catalog, choose an available reward, and confirm the redemption. You can also review your remaining points and redemption status.
+> **At a glance** - Open **Rewards**, review the rewards you can redeem, and confirm the redemption. You can also check your points history and redemption history.
 
-Use the rewards catalog to exchange your points for available rewards. After you redeem a reward, you can check your remaining balance and track past redemption requests.
+Use the rewards catalog to exchange your points for available rewards. After you redeem a reward, you can review your remaining balance and track past redemption requests.
 
 ## When to use this
 
@@ -63,3 +62,5 @@ Open the **Points History** tab to see your remaining points.
 Open the **Redemption History** tab to see your redemption requests and their status.
 
 ![Redemption History](/img/helpscout/authored/authored-mu2e8af5.png)
+
+Note: Once your request has been received, your admin sends the reward to your email. If your request is processed and you still do not receive the reward, check with your organization's administrator.

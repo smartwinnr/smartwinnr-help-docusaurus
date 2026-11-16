@@ -5,8 +5,8 @@ description: "View video coaching submissions in real time, monitor user activit
 slug: how-do-i-view-submissions-as-they-happen
 sidebar_position: 20
 last_update:
-  date: 2026-09-01
-  author: Anagha Isal
+  date: 2026-11-16
+  author: Aswani TK
 source:
   helpscout_id: 6970aecda77dc93e2023576b
   helpscout_url: >-
@@ -35,7 +35,9 @@ Use this feature when you need to:
 
 ## Before you start
 
-Ensure you have the appropriate access rights as an editor to view submissions in real time.
+1. Ensure that you have the appropriate Editor access rights to view user submissions in real time.
+
+2. Ensure that the timezone selected in the coaching scenario matches the user's timezone. Users receive the coaching based on the timezone configured during scenario setup. If the selected timezone does not match the user's timezone, the coaching may be delivered at an incorrect time and it can affect their participation.
 
 ## Steps
 
