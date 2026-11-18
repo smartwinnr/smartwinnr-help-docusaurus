@@ -5,8 +5,8 @@ description: "Understand the purpose of notifications in SmartWinnr and keep use
 slug: what-is-the-purpose-of-notifications
 sidebar_position: 163
 last_update:
-  date: 2026-08-20
-  author: Anagha Isal
+  date: 2026-11-18
+  author: Sruthi Suresh
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: customNotifications
@@ -17,7 +17,7 @@ draft: false
 
 > **At a glance** - Notifications in SmartWinnr keep users informed and engaged with their assigned activities, tasks, and events.
 
-Notifications in SmartWinnr help keep users (learners) informed and engaged with their assigned activities, tasks, and events. They provide timely information about an activity and encourage users to take the required action. A well-designed notification should provide enough information for the user to understand what the notification is about, what action is required, and when it needs to be completed.
+Notifications in SmartWinnr help keep users (learners) informed and engaged with their assigned activities, tasks, and events. They provide timely updates about assigned activities and encourage users to take the required actions. A well-designed notification should provide sufficient information for users to understand what the notification is about, what action is required, and when it needs to be completed. If notifications are not enabled at the organization level, users will not receive notifications when content is assigned to them.
 
 ## When to use this
 Use notifications to:
