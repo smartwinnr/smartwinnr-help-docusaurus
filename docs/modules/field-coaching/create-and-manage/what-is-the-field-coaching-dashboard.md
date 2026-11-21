@@ -88,17 +88,6 @@ The Participation tab tells you whether coaching is happening as planned across 
 
 ![Participation tab](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmzdgt.png)
 
-Read the "vs prior period" comparison. Many figures show a change against the prior period, which is a window of the same length ending the day before the selected period starts. For example, the last 90 days is compared with the 90 days before that.
-
-Green means an increase, red means a decrease, and grey means no change. Percentages change in percentage points.
-
-Data freshness:
-- Assigned sessions, the manager list, and team structure are read live, so a newly created session appears straight away.
-- Completed sessions, final scores, and competency ratings come from the analytics store, which refreshes regularly through the day. A session completed in the last hour may only show as completed after the next refresh.
-- The analytics store holds coaching data from 1 January 2025 onward.
-- Each session and rating is counted once, with its latest status, score, or edited value.
-- People who have left or been deactivated still count in the periods when they were coached.
-
 ### 5.1 Check the summary cards. 
 
 Five cards sit across the top. Each shows the value for the selected period and the change against the prior period.
@@ -109,6 +98,17 @@ Five cards sit across the top. Each shows the value for the selected period and 
 4. **Completion %**: How much of the assigned coaching is done. This is **Completed Sessions** divided by all sessions assigned in the period, to one decimal place.
 5. **Total Sessions**: The size of the coaching plan. This includes all sessions assigned in the period, whatever their status.
 6. **Avg Final Score**: Overall session quality, for forms with scoring only. This is the average final score of completed, scored sessions assigned in the period. It replaces **Total Sessions** on forms with scoring.
+
+Read the "vs prior period" comparison. Many figures show a change against the prior period, which is a window of the same length ending the day before the selected period starts. For example, the last 90 days is compared with the 90 days before that.
+
+Green means an increase, red means a decrease, and grey means no change. Percentages change in percentage points.
+
+Data freshness:
+- Assigned sessions, the manager list, and team structure are read live, so a newly created session appears straight away.
+- Completed sessions, final scores, and competency ratings come from the analytics store, which refreshes regularly through the day. A session completed in the last hour may only show as completed after the next refresh.
+- The analytics store holds coaching data from 1 January 2025 onward.
+- Each session and rating is counted once, with its latest status, score, or edited value.
+- People who have left or been deactivated still count in the periods when they were coached.
 
 ![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmt5bu.png)
 
