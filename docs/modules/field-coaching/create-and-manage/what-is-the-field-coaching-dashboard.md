@@ -84,7 +84,7 @@ There are 3 tabs in the dashboard:
 
 ![Tabs in field coaching dashboard](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqfr2u8.png)
 
-### 5. Review the Participation tab
+### 1. Review the Participation tab
 
 The Participation tab tells you whether coaching is happening as planned across the organization. Click **Participation** under the page title to open it.
 
@@ -120,20 +120,16 @@ Check **Completion % by Manager**.
 
 ![Completion %](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgpet9.png)
 
-Check **Final Score Analytics** for forms with scoring only.
+### Review the Participation Report
 
-These three charts cover sessions completed in the selected period that have a final score.
-
-1. **Final Score Trend**: Check the average final score of sessions completed in each month to see whether session quality is improving.
-2. **Final Score Distribution**: Check how many sessions fall into each of six equal score ranges, from the lowest score in the period to the highest.
-3. **Final Score by Coach**: Check each coach's average final score, highest first. The top third of coaches are green, the middle third blue, and the bottom third red, relative to this group.
-
-Note: The **Avg Final Score** card counts sessions assigned in the period, while these charts count sessions completed in the period, so the two can differ slightly.
+To work with the table:
+1.  Use the All Statuses dropdown to filter by status, for example to list only managers who are At Risk.
+2.  Click any column header to sort by that column.
+3.  Click Manage columns to show or hide columns.
+4.  Click Download Report to export every manager for the current filters to Excel. The file is prepared in the background and appears in the Generated Reports section. It includes all managers, whatever status filter, sort or page is shown on screen.
 
 ![participation status](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgzil9.png)
 ![participation status](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgzxq9.png)
-
-### 6. Review the Participation Report
 
 Below are the attributes of the **Participation Report** table.
 
