@@ -215,3 +215,24 @@ Due Soon: The most recent session in the period is assigned or in progress.
 Not Started: No session for this person in the period.
 
 ![Reportee Sessions](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqirgpe.png)
+
+Check the Coach vs Self-Assessment Gap (forms with competency ratings and self-assessment only)
+
+This section compares how the manager rates each person with how those people rate themselves. It covers all ratings on the selected form, not only the selected period.
+1.  Gap by Reportee: check each person's average difference between their own rating and the manager's rating, across competencies where both exist.
+    ◦ Positive means the person rates themselves higher than the manager does; negative means lower.
+    ◦ Within 0.5 either way is aligned (green); above +0.5 is amber; below -0.5 is purple.
+2.  Gap by Competency: compare the average manager rating with the average self rating for each competency across the team.
+What to look for: large gaps point to development conversations where a person sees their skills differently from their manager.
+
+![Coach vs Self-Assessment Gap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj3ifn.png)
+
+Check the Competency Heatmap - Reportees (forms with competency ratings only)
+
+1.  Read the grid: one column per person, one row per competency. Each cell is that person's average rating for that competency from this manager's sessions.
+2.  Use the competency group dropdown (top right of the heatmap) to narrow the grid to one group of competencies.
+3.  Read the cell colors using the rating color scale in the Quick reference section.
+4.  Check the column labels: "no sessions yet" means no ratings so far, "now in another team" means the person moved team, and "no longer active" means the user was deleted.
+The heatmap uses the final saved rating from each session, across all of this manager's sessions on the form (not limited to the selected period). Self-ratings, where collected, are included in the average.
+
+![Competency Heatmap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj4shz.png)
