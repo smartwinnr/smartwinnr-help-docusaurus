@@ -120,7 +120,7 @@ Check **Completion % by Manager**.
 
 ![Completion %](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgpet9.png)
 
-### 2. Review the Participation Report
+### Review the Participation Report
 
 To work with the table:
 
@@ -153,86 +153,95 @@ Different **Completion %** values and their status:
 ### 2. Review the Manager View tab
 
 The Manager View shows one manager and the people they coach. Every section uses the same period and filters as the rest of the dashboard.
-Step 1: Select the manager
-1.  Click Manager View under the page title.
-2.  Open the Manager dropdown at the top.
-3.  Choose a manager. The list comes from the Participation Report and starts with the highest completion rate.
+
+#### 2.1 Select the manager
+
+1. Click **Manager View** under the page title.
+2. Open the **Manager** dropdown at the top.
+3. Choose a manager. The list comes from the Participation Report and starts with the highest completion rate.
 
 ![Manager View](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqigez3.png)
 
-Check the manager's summary cards
+#### 2.2 Check the manager's summary cards
 
-The cards are the same as on the Participation tab (Coachees Assigned, Completed Sessions, Completion %, Total Sessions and, for forms with scoring, Avg Final Score), calculated only for the sessions this manager runs. Number of Managers is not shown.
+The cards are the same as on the Participation tab (**Coachees Assigned**, **Completed Sessions**, **Completion %**, **Total Sessions**, and, for forms with scoring, **Avg Final Score**), calculated only for the sessions this manager runs. **Number of Managers** is not shown.
+
 What to look for: whether this manager is keeping up with their own coaching plan.
 
 ![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqihj1e.png)
 
-Check the manager's Session Completion Trend
-Read the monthly Assigned and Completed lines in the same way as on the Participation tab, for this manager only. A gap shows sessions from that month still outstanding.
+#### 2.3 Check the manager's Session Completion Trend
+
+Read the monthly **Assigned** and **Completed** lines in the same way as on the Participation tab, for this manager only. A gap shows sessions from that month still outstanding.
 
 ![Session Completion Trend](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqijkac.png)
 
-Check Reportee Sessions
+#### 2.4 Check Reportee Sessions
+
 This table has one row for every person the manager has coached on the selected form.
-1.  Note who is listed: everyone the manager has ever coached on this form, not only people coached in the period. Anyone with no session in the period appears as Not Started.
-2.  Scroll to the end of the list for greyed-out rows:
-    ◦ "No longer in this team. Now reports to [name]" means the person now reports to a different manager. People who report to someone further down this manager's team still count as part of the team.
-    ◦ "No longer active. This user has been deleted." means the account was deleted. The person stays on the list because their past sessions still happened.
-3.  Read each column:
+
+1. Note who is listed: everyone the manager has ever coached on this form, not only people coached in the period. Anyone with no session in the period appears as **Not Started**.
+2. Scroll to the end of the list for greyed-out rows:
+   - "No longer in this team. Now reports to [name]" means the person now reports to a different manager. People who report to someone further down this manager's team still count as part of the team.
+   - "No longer active. This user has been deleted." means the account was deleted. The person stays on the list because their past sessions still happened.
+3. Read each column:
 
 Column: Meaning
 
-Coachee: The person's name, plus the moved-team or deleted note where it applies.
+**Coachee**: The person's name, plus the moved-team or deleted note where it applies.
 
-Sessions: Sessions assigned to this person by this manager in the period, whatever their status.
+**Sessions**: Sessions assigned to this person by this manager in the period, whatever their status.
 
-Latest Score: Score of the most recently assigned session in the period: its final score, or its average rating where there is no final score.
+**Latest Score**: Score of the most recently assigned session in the period: its final score, or its average rating where there is no final score.
 
-Last Coached: Date the most recent session was completed. Blank if that session is not completed yet.
+**Last Coached**: Date the most recent session was completed. Blank if that session is not completed yet.
 
-Final Scores: Forms with scoring only. Final scores of completed sessions in the period, oldest first, e.g. 62 > 70 > 78.
+**Final Scores**: Forms with scoring only. Final scores of completed sessions in the period, oldest first, e.g. 62 > 70 > 78.
 
-Score Trend: Forms with scoring only. Compares the first and last of those scores.
+**Score Trend**: Forms with scoring only. Compares the first and last of those scores.
 
-Status: Based on the most recently assigned session in the period.
+**Status**: Based on the most recently assigned session in the period.
 
 Score Trend: Rule
 
-Improving: Latest final score is more than 5 points above the first one in the period.
+**Improving**: Latest final score is more than 5 points above the first one in the period.
 
-Declining: Latest final score is more than 5 points below the first one.
+**Declining**: Latest final score is more than 5 points below the first one.
 
-Flat: The two are within 5 points of each other.
+**Flat**: The two are within 5 points of each other.
 
-Baseline: Only one scored session so far, so nothing to compare yet.
+**Baseline**: Only one scored session so far, so nothing to compare yet.
 
 Status: Rule
 
-Complete: The most recent session in the period is completed.
+**Complete**: The most recent session in the period is completed.
 
-Due Soon: The most recent session in the period is assigned or in progress.
+**Due Soon**: The most recent session in the period is assigned or in progress.
 
-Not Started: No session for this person in the period.
+**Not Started**: No session for this person in the period.
 
 ![Reportee Sessions](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqirgpe.png)
 
-Check the Coach vs Self-Assessment Gap (forms with competency ratings and self-assessment only)
+#### 2.5 Check the Coach vs Self-Assessment Gap
 
 This section compares how the manager rates each person with how those people rate themselves. It covers all ratings on the selected form, not only the selected period.
-1.  Gap by Reportee: check each person's average difference between their own rating and the manager's rating, across competencies where both exist.
-    ◦ Positive means the person rates themselves higher than the manager does; negative means lower.
-    ◦ Within 0.5 either way is aligned (green); above +0.5 is amber; below -0.5 is purple.
-2.  Gap by Competency: compare the average manager rating with the average self rating for each competency across the team.
+
+1. **Gap by Reportee**: Check each person's average difference between their own rating and the manager's rating, across competencies where both exist.
+   - Positive means the person rates themselves higher than the manager does; negative means lower.
+   - Within 0.5 either way is aligned (green); above +0.5 is amber; below -0.5 is purple.
+2. **Gap by Competency**: Compare the average manager rating with the average self rating for each competency across the team.
+
 What to look for: large gaps point to development conversations where a person sees their skills differently from their manager.
 
 ![Coach vs Self-Assessment Gap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj3ifn.png)
 
-Check the Competency Heatmap - Reportees (forms with competency ratings only)
+#### 2.6 Check the Competency Heatmap - Reportees
 
-1.  Read the grid: one column per person, one row per competency. Each cell is that person's average rating for that competency from this manager's sessions.
-2.  Use the competency group dropdown (top right of the heatmap) to narrow the grid to one group of competencies.
-3.  Read the cell colors using the rating color scale in the Quick reference section.
-4.  Check the column labels: "no sessions yet" means no ratings so far, "now in another team" means the person moved team, and "no longer active" means the user was deleted.
-The heatmap uses the final saved rating from each session, across all of this manager's sessions on the form (not limited to the selected period). Self-ratings, where collected, are included in the average.
+1. Read the grid: one column per person, one row per competency. Each cell is that person's average rating for that competency from this manager's sessions.
+2. Use the competency group dropdown at the top right of the heatmap to narrow the grid to one group of competencies.
+3. Read the cell colors using the rating color scale in the Quick reference section.
+4. Check the column labels: "no sessions yet" means no ratings so far, "now in another team" means the person moved team, and "no longer active" means the user was deleted.
+
+The heatmap uses the final saved rating from each session, across all of this manager's sessions on the form, not limited to the selected period. Self-ratings, where collected, are included in the average.
 
 ![Competency Heatmap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj4shz.png)
