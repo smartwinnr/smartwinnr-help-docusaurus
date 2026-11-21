@@ -674,6 +674,12 @@
       "ts": 1795248845556,
       "seq": 93,
       "author": "sruthi.suresh@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwq4vjqd.png": {
+      "action": "upsert",
+      "ts": 1795248955814,
+      "seq": 94,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
