@@ -62,8 +62,7 @@ The **Applied Filters** bar under the page title shows what is active. Filters a
 
 ![Select the applicable filters](/img/helpscout/authored/authored-mwq4w11b.png)
 
-## Things to know
-
+}\
 :::note
 All filters except **Division** apply to the coachee. A manager appears only when at least one coachee still matches the filters.
 :::
@@ -186,7 +185,7 @@ This table has one row for every person the manager has coached on the selected 
    - "No longer active. This user has been deleted." means the account was deleted. The person stays on the list because their past sessions still happened.
 3. Read each column:
 
-Column: Meaning
+### Attributes and its meaning:
 
 **Coachee**: The person's name, plus the moved-team or deleted note where it applies.
 
@@ -289,7 +288,7 @@ What to look for: rising lines show coaching is building that skill; a falling l
 
 What to look for: use **Responses** to judge how much evidence sits behind each average, and **Change vs Prior** to see which skills are improving or slipping.
 
-### Column: Meaning
+### Attributes and its meaning:
 
 **Competency**: The skill being rated.
 
