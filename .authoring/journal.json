@@ -776,6 +776,12 @@
       "ts": 1795273578959,
       "seq": 119,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjkesc.png": {
+      "action": "upsert",
+      "ts": 1795273630429,
+      "seq": 120,
+      "author": "aswani.tk@smartwinnr.com"
     }
   }
 }
