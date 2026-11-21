@@ -315,3 +315,10 @@ Below -0.5: Under-raters (rate themselves lower than their coach does)
 
 ![Self-Assessment Gap Analysis](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkunyj.png)
 ![Perception Gap by Competency](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkvx1i.png)
+
+### 6. Check the Score vs Rating Scatter (forms with scoring only)
+1.  Read one dot per coachee, placing their average final score against their average competency rating.
+2.  Final score is the average of the coachee's completed, scored sessions completed in the period.
+3.  Competency rating is the average of ratings their coaches gave them in the period. Self-ratings are not included.
+4.  Only coachees with both a final score and coach ratings in the period appear.
+What to look for: a clear upward pattern means the session score and the competency ratings tell the same story; scattered dots suggest they measure different things.
