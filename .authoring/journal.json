@@ -668,6 +668,12 @@
       "ts": 1795248683665,
       "seq": 92,
       "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/authoringtools/settings-and-permissions/what-is-view-coaching-for-roleplay-inventory.md": {
+      "action": "upsert",
+      "ts": 1795248845556,
+      "seq": 93,
+      "author": "sruthi.suresh@smartwinnr.com"
     }
   }
 }
