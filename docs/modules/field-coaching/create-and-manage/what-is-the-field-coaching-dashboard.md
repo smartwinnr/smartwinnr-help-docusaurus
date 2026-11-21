@@ -62,7 +62,6 @@ The **Applied Filters** bar under the page title shows what is active. Filters a
 
 ![Select the applicable filters](/img/helpscout/authored/authored-mwq4w11b.png)
 
-}\
 :::note
 All filters except **Division** apply to the coachee. A manager appears only when at least one coachee still matches the filters.
 :::
@@ -83,20 +82,22 @@ There are 3 tabs in the dashboard:
 
 ![Tabs in field coaching dashboard](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqfr2u8.png)
 
-### 1. Review the Participation tab
+### 5. Review the Participation tab
 
 The Participation tab tells you whether coaching is happening as planned across the organization. Click **Participation** under the page title to open it.
 
-Read the "vs prior period" comparison
-Many figures show a change against the prior period, which is a window of the same length ending the day before the selected period starts. For example, the last 90 days is compared with the 90 days before that.
-• Green means an increase, red a decrease, and grey no change.
-• Percentages change in percentage points (pts).
-Data freshness
-• Assigned sessions, the manager list and team structure are read live, so a newly created session appears straight away.
-• Completed sessions, final scores and competency ratings come from the analytics store, refreshed regularly through the day. A session completed in the last hour may only show as completed after the next refresh.
-• The analytics store holds coaching data from 1 January 2025 onwards.
-• Each session and rating is counted once, with its latest status, score or edited value.
-• People who have left or been deactivated still count in the periods when they were coached.
+![Participation tab](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmzdgt.png)
+
+Read the "vs prior period" comparison. Many figures show a change against the prior period, which is a window of the same length ending the day before the selected period starts. For example, the last 90 days is compared with the 90 days before that.
+
+Green means an increase, red means a decrease, and grey means no change. Percentages change in percentage points.
+
+Data freshness:
+- Assigned sessions, the manager list, and team structure are read live, so a newly created session appears straight away.
+- Completed sessions, final scores, and competency ratings come from the analytics store, which refreshes regularly through the day. A session completed in the last hour may only show as completed after the next refresh.
+- The analytics store holds coaching data from 1 January 2025 onward.
+- Each session and rating is counted once, with its latest status, score, or edited value.
+- People who have left or been deactivated still count in the periods when they were coached.
 
 Check the summary cards. Five cards sit across the top. Each shows the value for the selected period and the change against the prior period.
 
@@ -109,7 +110,7 @@ Check the summary cards. Five cards sit across the top. Each shows the value for
 
 ![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmt5bu.png)
 
-Another example of cards with decreesing count.
+Another example of cards with decreasing count.
 
 ![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmqp3b.png)
 
@@ -134,7 +135,7 @@ Check **Completion % by Manager**.
 
 ![Completion %](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgpet9.png)
 
-### Review the Participation Report
+### 6. Review the Participation Report
 
 To work with the table:
 
@@ -164,11 +165,11 @@ Different **Completion %** values and their status:
 - **50% to under 80%**: **Behind**
 - **Under 50%**: **At Risk**
 
-### 2. Review the Manager View tab
+### 7. Review the Manager View tab
 
 The Manager View shows one manager and the people they coach. Every section uses the same period and filters as the rest of the dashboard.
 
-#### 2.1 Select the manager
+#### 7.1 Select the manager
 
 1. Click **Manager View** under the page title.
 2. Open the **Manager** dropdown at the top.
@@ -176,7 +177,7 @@ The Manager View shows one manager and the people they coach. Every section uses
 
 ![Manager View](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqigez3.png)
 
-#### 2.2 Check the manager's summary cards
+#### 7.2 Check the manager's summary cards
 
 The cards are the same as on the Participation tab (**Coachees Assigned**, **Completed Sessions**, **Completion %**, **Total Sessions**, and, for forms with scoring, **Avg Final Score**), calculated only for the sessions this manager runs. **Number of Managers** is not shown.
 
@@ -184,13 +185,13 @@ What to look for: whether this manager is keeping up with their own coaching pla
 
 ![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqihj1e.png)
 
-#### 2.3 Check the manager's Session Completion Trend
+#### 7.3 Check the manager's Session Completion Trend
 
 Read the monthly **Assigned** and **Completed** lines in the same way as on the Participation tab, for this manager only. A gap shows sessions from that month still outstanding.
 
 ![Session Completion Trend](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqijkac.png)
 
-#### 2.4 Check Reportee Sessions
+#### 7.4 Check Reportee Sessions
 
 This table has one row for every person the manager has coached on the selected form.
 
@@ -236,7 +237,7 @@ Status: Rule
 
 ![Reportee Sessions](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqirgpe.png)
 
-#### 2.5 Check the Coach vs Self-Assessment Gap
+#### 7.5 Check the Coach vs Self-Assessment Gap
 
 This section compares how the manager rates each person with how those people rate themselves. It covers all ratings on the selected form, not only the selected period.
 
@@ -249,7 +250,7 @@ What to look for: large gaps point to development conversations where a person s
 
 ![Coach vs Self-Assessment Gap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj3ifn.png)
 
-#### 2.6 Check the Competency Heatmap - Reportees
+#### 7.6 Check the Competency Heatmap - Reportees
 
 1. Read the grid: one column per person, one row per competency. Each cell is that person's average rating for that competency from this manager's sessions.
 2. Use the competency group dropdown at the top right of the heatmap to narrow the grid to one group of competencies.
@@ -260,7 +261,7 @@ The heatmap uses the final saved rating from each session, across all of this ma
 
 ![Competency Heatmap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj4shz.png)
 
-### 3. How to check the Competency Analysis tab
+### 8. How to check the Competency Analysis tab
 
 The Competency Analysis tab shows what coaching reveals about skills. Click **Competency Analysis** under the page title to open it. The tab is not shown for forms that do not collect competency ratings.
 
@@ -268,7 +269,7 @@ Every section uses competency ratings (1 to 5) given on the selected form during
 
 ![Competency Analysis tab](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjhnpu.png)
 
-#### 3.1 Check the Competency Score Distribution
+#### 8.1 Check the Competency Score Distribution
 
 1. Use the attribute dropdown, such as **Designation**, to choose which people attribute forms the columns, such as **Designation** or **Region**.
 2. Use the **All Competency Groups** dropdown to narrow the rows to one competency group.
@@ -281,7 +282,7 @@ What to look for: whether a skill gap is specific to one role, region, or group,
 
 ![Competency Score Distribution](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjjb2m.png)
 
-#### 3.2 Check the Competency Score Trend
+#### 8.2 Check the Competency Score Trend
 
 1. Read one line per competency, showing its average rating in each month.
 2. Use the competency group dropdown to narrow the chart to one group.
@@ -291,7 +292,7 @@ What to look for: rising lines show coaching is building that skill; a falling l
 
 ![Competency Score Trend](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjkesc.png)
 
-#### 3.3 Check the Competency Snapshot
+#### 8.3 Check the Competency Snapshot
 
 1. Read one bar per competency, showing its average rating for the selected period.
 2. Bars are ordered highest first, so the strongest skills are at the top and the weakest are at the bottom.
@@ -299,7 +300,7 @@ What to look for: rising lines show coaching is building that skill; a falling l
 
 ![Competency Snapshot](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjlnqe.png)
 
-#### 3.4 Check the Competency Detail table
+#### 8.4 Check the Competency Detail table
 
 What to look for: use **Responses** to judge how much evidence sits behind each average, and **Change vs Prior** to see which skills are improving or slipping.
 
@@ -317,7 +318,7 @@ What to look for: use **Responses** to judge how much evidence sits behind each 
 
 ![Competency Detail table](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjsy8d.png)
 
-#### 3.5 Check the Self-Assessment Gap Analysis
+#### 8.5 Check the Self-Assessment Gap Analysis
 
 This section compares coachees' self-ratings with their coaches' ratings across the whole organization.
 
@@ -334,7 +335,7 @@ This section compares coachees' self-ratings with their coaches' ratings across 
 ![Self-Assessment Gap Analysis](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkunyj.png)
 ![Perception Gap by Competency](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkvx1i.png)
 
-#### 3.6 Check the Score vs Rating Scatter
+#### 8.6 Check the Score vs Rating Scatter
 
 1. Read one dot per coachee, placing their average final score against their average competency rating.
 2. Final score is the average of the coachee's completed, scored sessions completed in the period.
