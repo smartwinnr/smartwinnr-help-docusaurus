@@ -87,6 +87,17 @@ There are 3 tabs in the dashboard:
 
 The Participation tab tells you whether coaching is happening as planned across the organization. Click **Participation** under the page title to open it.
 
+Read the "vs prior period" comparison
+Many figures show a change against the prior period, which is a window of the same length ending the day before the selected period starts. For example, the last 90 days is compared with the 90 days before that.
+• Green means an increase, red a decrease, and grey no change.
+• Percentages change in percentage points (pts).
+Data freshness
+• Assigned sessions, the manager list and team structure are read live, so a newly created session appears straight away.
+• Completed sessions, final scores and competency ratings come from the analytics store, refreshed regularly through the day. A session completed in the last hour may only show as completed after the next refresh.
+• The analytics store holds coaching data from 1 January 2025 onwards.
+• Each session and rating is counted once, with its latest status, score or edited value.
+• People who have left or been deactivated still count in the periods when they were coached.
+
 Check the summary cards. Five cards sit across the top. Each shows the value for the selected period and the change against the prior period.
 
 1. **Number of Managers**: How many managers are coaching. Managers with at least one session assigned in the period count once.
@@ -96,7 +107,11 @@ Check the summary cards. Five cards sit across the top. Each shows the value for
 5. **Total Sessions**: The size of the coaching plan. This includes all sessions assigned in the period, whatever their status.
 6. **Avg Final Score**: Overall session quality, for forms with scoring only. This is the average final score of completed, scored sessions assigned in the period. It replaces **Total Sessions** on forms with scoring.
 
-![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqg0yzc.png)
+![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmt5bu.png)
+
+Another example of cards with decreesing count.
+
+![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqmqp3b.png)
 
 Check the **Session Completion Trend**.
 
