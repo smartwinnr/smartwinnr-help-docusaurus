@@ -5,14 +5,16 @@ description: "Update participant or team scores on a competition leaderboard whe
 slug: how-to-manually-update-competition-leaderboard-scores
 sidebar_position: 30
 last_update:
-  date: 2026-10-15
+  date: 2026-11-10
   author: Sandeep Bhuthagaddala
 customProps:
   owner: sandeep.b@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["competition"]
-draft: false
+draft: true
 ---
+{/* release-draft: tag=v3.60.34 issue=9919 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9919 rev=b3abdfe4b20b */}
+{/* release-update: issue=9919 summary="Adds the SmartPath quiz leaderboard scoring rule and the regrade behavior for competition leaderboards." */}
 
 > **At a glance** - Use **Fix Leaderboard** to correct a competition score for one participant or one team. Choose the competition, pick the leaderboard view, update the score, and save.
 
@@ -33,7 +35,11 @@ In SmartWinnr, competition scores are generally calculated and updated automatic
 
 As participants complete the relevant activities and earn points, their scores are reflected on the competition leaderboard. 
 
-SmartWinnr provides two leaderboard views: 
+SmartWinnr provides two leaderboard views:
+
+SmartPath quiz tasks on competition leaderboards use the same scoring formula as the SmartPath segment: **Points per Correct Answer x correct answers + On Completion points**. The quiz's own per-question marks are not added on top when **Points per Correct Answer** is 0.
+
+If you regrade a question from the editor, that change does not update the leaderboard for a completion-only SmartPath quiz. 
 
 ## Participants Leaderboard 
 
@@ -108,6 +114,7 @@ Under Leaderboard, you will find the available leaderboard views for the selecte
 **By Participants–** used to manage individual participant scores 
 
 **By Team–** used to manage team-level scores 
+![2leaderboard selections](/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwai4ft1.png)
 
 To update an individual participant's score,  
 
@@ -116,7 +123,7 @@ select: By Participants
 Step 4: Select the Participant
 
 After selecting Participants Leaderboard, the list of participants associated with the competition will be displayed. 
-
+![selecting leaderboard to update score](/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajee0b.png)
 Select the participant whose score needs to be updated by clicking the edit next to the user name. 
 
 After selecting the participant, the Edit Leaderboard – [Participant Name] section will be displayed. 
@@ -127,6 +134,8 @@ The available fields include:
 - **Operation Type**
 - **Data Operation Type**
 
+![Selecting Operation type](/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajgd79.png)
+![Selecting Data operation type](/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajhpc7.png)
 Select the appropriate operation based on the required score correction. 
 
 For example: 
@@ -210,6 +219,7 @@ For example:
 **Operation Type - Update**
 
 **Data Operation Type - Update Score** 
+![Operation type - Update](/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajlm0y.png)
 
 Step 7: Update the Team Score
 
