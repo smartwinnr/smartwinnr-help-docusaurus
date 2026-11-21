@@ -34,7 +34,7 @@ Use this when you need to work with coachings across divisions and you have the 
 ## Steps
 
 ### 1. Open Roleplay Inventory
-Go to **COACHING>Video Coaching>View Coaching** then you will be able to see coaching list page then go to hamburger from top right side and select **Roleplay Inventory**. The page shows the available coachings, including coachings you may not directly access.
+Go to **COACHING > Video Coaching > View Coaching**, then you can see the coaching list page. From the hamburger menu in the top-right corner, select **Roleplay Inventory**. The page shows the available coachings, including coachings you may not directly access.
 
 ![go to view coaching](/img/helpscout/authored/authored-mwq4d7au.png)
 
@@ -52,4 +52,3 @@ On the preview page, select **View**. This opens the coaching’s page directly.
 Make the updates you need on the coaching page, then save your changes.
 
 ![u will get into the settings page here u can edit what u needed](/img/helpscout/authored/authored-mwq4jorn.png)
-
