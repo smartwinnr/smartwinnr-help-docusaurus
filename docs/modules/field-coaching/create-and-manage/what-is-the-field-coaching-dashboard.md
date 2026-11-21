@@ -120,13 +120,14 @@ Check **Completion % by Manager**.
 
 ![Completion %](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgpet9.png)
 
-### Review the Participation Report
+### 2. Review the Participation Report
 
 To work with the table:
-1.  Use the All Statuses dropdown to filter by status, for example to list only managers who are At Risk.
-2.  Click any column header to sort by that column.
-3.  Click Manage columns to show or hide columns.
-4.  Click Download Report to export every manager for the current filters to Excel. The file is prepared in the background and appears in the Generated Reports section. It includes all managers, whatever status filter, sort or page is shown on screen.
+
+1. Use the **All Statuses** dropdown to filter by status, for example to list only managers who are **At Risk**.
+2. Click any column header to sort by that column.
+3. Click **Manage columns** to show or hide columns.
+4. Click **Download Report** to export every manager for the current filters to Excel. The file is prepared in the background and appears in the **Generated Reports** section. It includes all managers, whatever status filter, sort, or page is shown on screen.
 
 ![participation status](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgzil9.png)
 ![participation status](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqgzxq9.png)
