@@ -245,3 +245,73 @@ What to look for: large gaps point to development conversations where a person s
 The heatmap uses the final saved rating from each session, across all of this manager's sessions on the form, not limited to the selected period. Self-ratings, where collected, are included in the average.
 
 ![Competency Heatmap](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqj4shz.png)
+
+### 3. How to check the Competency Analysis tab
+
+The Competency Analysis tab shows what coaching reveals about skills. Click Competency Analysis under the page title to open it. The tab is not shown for forms that do not collect competency ratings.
+
+Every section uses competency ratings (1 to 5) given on the selected form during the selected period, based on the date each rating was given. Only the final saved version of each rating counts, once. Where the form collects self-assessments, averages include them alongside coach ratings, except in the Score vs Rating Scatter.
+
+![Competency Analysis tab](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjhnpu.png)
+
+### 1: Check the Competency Score Distribution
+1.  Use the attribute dropdown (for example Designation) to choose which people attribute forms the columns, such as Designation or Region.
+2.  Use the All Competency Groups dropdown to narrow the rows to one competency group.
+3.  Read each cell: the average of all ratings for that competency given to coachees with that attribute value in the period.
+4.  Read the cell colors using the rating color scale in the Quick reference section.
+The attribute value used is the one recorded for the coachee when the rating was given.
+What to look for: whether a skill gap is specific to one role, region or group, so training can be targeted.
+
+![Competency Score Distribution](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjjb2m.png)
+
+### 2: Check the Competency Score Trend
+1.  Read one line per competency, showing its average rating in each month.
+2.  Use the competency group dropdown to narrow the chart to one group.
+3.  Use the legend below the chart to identify each competency's line.
+What to look for: rising lines show coaching is building that skill; a falling line is an early warning.
+
+![Competency Score Trend](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjkesc.png)
+
+### 3: Check the Competency Snapshot
+
+1.  Read one bar per competency, showing its average rating for the selected period.
+2.  Bars are ordered highest first, so the strongest skills are at the top and the weakest at the bottom.
+3.  Use the competency group dropdown to narrow the list.
+
+![Competency Snapshot](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjlnqe.png)
+
+### 4: Check the Competency Detail table
+
+What to look for: use Responses to judge how much evidence sits behind each average, and Change vs Prior to see which skills are improving or slipping.
+
+### Column: Meaning
+
+Competency: The skill being rated.
+
+Group: The competency group it belongs to.
+
+Avg Score: Average rating in the selected period, to two decimal places.
+
+Responses: How many ratings were given for this competency in the period.
+
+Change vs Prior: Avg Score minus the average in the prior period. Green with an upward arrow for an increase, red with a downward arrow for a decrease. "No prior data" when the competency was not rated in the prior period.
+
+![Competency Detail table](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqjsy8d.png)
+
+### 5: Check the Self-Assessment Gap Analysis (forms with self-assessment only)
+
+This section compares coachees' self ratings with their coaches' ratings across the whole organization.
+1.  Self-Awareness Distribution: check the donut, which counts coachees in three groups based on their average gap (self rating minus coach rating) across competencies.
+2.  Gap Trend Over Time: check the average size of the gap, ignoring direction, in each month. A falling line means coachees' view of their skills is moving closer to their coaches' view.
+3.  Perception Gap by Competency: check the average of self rating minus coach rating per competency. Positive means coachees rate themselves higher; negative means lower. Bars closer to zero are greener; larger gaps are more orange.
+
+### Average gap: Group
+
+Between -0.5 and +0.5: Aligned
+
+Above +0.5: Over-raters (rate themselves higher than their coach does)
+
+Below -0.5: Under-raters (rate themselves lower than their coach does)
+
+![Self-Assessment Gap Analysis](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkunyj.png)
+![Perception Gap by Competency](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqkvx1i.png)
