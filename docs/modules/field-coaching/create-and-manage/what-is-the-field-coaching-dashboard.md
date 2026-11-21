@@ -149,3 +149,69 @@ Different **Completion %** values and their status:
 - **80% to under 100%**: **On Track**
 - **50% to under 80%**: **Behind**
 - **Under 50%**: **At Risk**
+
+### 2. Review the Manager View tab
+
+The Manager View shows one manager and the people they coach. Every section uses the same period and filters as the rest of the dashboard.
+Step 1: Select the manager
+1.  Click Manager View under the page title.
+2.  Open the Manager dropdown at the top.
+3.  Choose a manager. The list comes from the Participation Report and starts with the highest completion rate.
+
+![Manager View](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqigez3.png)
+
+Check the manager's summary cards
+
+The cards are the same as on the Participation tab (Coachees Assigned, Completed Sessions, Completion %, Total Sessions and, for forms with scoring, Avg Final Score), calculated only for the sessions this manager runs. Number of Managers is not shown.
+What to look for: whether this manager is keeping up with their own coaching plan.
+
+![cards](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqihj1e.png)
+
+Check the manager's Session Completion Trend
+Read the monthly Assigned and Completed lines in the same way as on the Participation tab, for this manager only. A gap shows sessions from that month still outstanding.
+
+![Session Completion Trend](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqijkac.png)
+
+Check Reportee Sessions
+This table has one row for every person the manager has coached on the selected form.
+1.  Note who is listed: everyone the manager has ever coached on this form, not only people coached in the period. Anyone with no session in the period appears as Not Started.
+2.  Scroll to the end of the list for greyed-out rows:
+    ◦ "No longer in this team. Now reports to [name]" means the person now reports to a different manager. People who report to someone further down this manager's team still count as part of the team.
+    ◦ "No longer active. This user has been deleted." means the account was deleted. The person stays on the list because their past sessions still happened.
+3.  Read each column:
+
+Column: Meaning
+
+Coachee: The person's name, plus the moved-team or deleted note where it applies.
+
+Sessions: Sessions assigned to this person by this manager in the period, whatever their status.
+
+Latest Score: Score of the most recently assigned session in the period: its final score, or its average rating where there is no final score.
+
+Last Coached: Date the most recent session was completed. Blank if that session is not completed yet.
+
+Final Scores: Forms with scoring only. Final scores of completed sessions in the period, oldest first, e.g. 62 > 70 > 78.
+
+Score Trend: Forms with scoring only. Compares the first and last of those scores.
+
+Status: Based on the most recently assigned session in the period.
+
+Score Trend: Rule
+
+Improving: Latest final score is more than 5 points above the first one in the period.
+
+Declining: Latest final score is more than 5 points below the first one.
+
+Flat: The two are within 5 points of each other.
+
+Baseline: Only one scored session so far, so nothing to compare yet.
+
+Status: Rule
+
+Complete: The most recent session in the period is completed.
+
+Due Soon: The most recent session in the period is assigned or in progress.
+
+Not Started: No session for this person in the period.
+
+![Reportee Sessions](/img/helpscout/authored/what-is-the-field-coaching-dashboard-mwqirgpe.png)
