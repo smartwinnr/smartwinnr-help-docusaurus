@@ -64,13 +64,9 @@ The **Applied Filters** bar under the page title shows what is active. Filters a
 
 :::note
 All filters except **Division** apply to the coachee. A manager appears only when at least one coachee still matches the filters.
-:::
 
-:::note
 For **Business Unit**, administrators can only see divisions they already have access to. The filter can narrow results, but it cannot widen access.
-:::
 
-:::note
 For meta tags, multiple values of the same tag work as an OR match. Different tags must all match.
 :::
 
