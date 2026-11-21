@@ -5,12 +5,12 @@ description: "Assign video coaching to selected users and map one or more coache
 slug: how-to-assign-video-coaching-to-users
 sidebar_position: 98
 last_update:
-  date: 2026-11-05
+  date: 2026-11-21
   author: Sandeep Bhuthagaddala
 customProps:
   owner: jazz.k@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-tags: ["video-coaching", "ai-coaching", "assign-coaching", "coaching-assignment", "assign-users"]
+tags: ["video-coaching", "ai-coaching", "assign-coaching", "assign-users", "assign-reviewer-coach"]
 draft: false
 ---
 
