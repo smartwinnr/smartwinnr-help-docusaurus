@@ -2068,6 +2068,10 @@
     {
       "from": "/modules/conversation-intelligence/features/how-to-record-conversation-intelligence",
       "to": "/modules/conversation-intelligence/for-learners/how-to-record-conversation-intelligence"
+    },
+    {
+      "from": "/modules/authoringtools/settings-and-permissions/what-is-view-coaching-for-roleplay-inventory",
+      "to": "/modules/ai-coaching/settings-and-permissions/what-is-view-coaching-for-roleplay-inventory"
     }
   ]
 }

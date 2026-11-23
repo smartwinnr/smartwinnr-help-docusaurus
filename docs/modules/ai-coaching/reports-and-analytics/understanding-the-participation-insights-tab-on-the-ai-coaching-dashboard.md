@@ -5,15 +5,15 @@ description: "Learn to interpret the Participation Insights tab, focusing on key
 slug: understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 sidebar_position: 110
 last_update:
-  date: 2026-08-18
-  author: Anagha Isal
+  date: 2026-11-10
+  author: Manaswini V
 source:
   helpscout_id: 6971e1b1015ae02ac002197d
   helpscout_url: >-
     /modules/ai-coaching/reports-and-analytics/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard
 customProps:
+  owner: jazz.k@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-  privilege: aiCoaching
 tags:
   - ai-coaching
   - reports
@@ -54,12 +54,14 @@ All metrics on the dashboard update based on the selected time period.
 ### 3. Review Participation Summary Metrics
 The top section provides a quick summary of learner participation during the selected period.
 
-- **Total Participants**: Shows the total number of unique users who have been assigned coaching during the selected period.
+- **Total Participants**: Shows the total number of unique users who have been assigned coaching.
 - **Total Completed**: Displays the number of participants who have successfully completed the assigned coaching activity.
 - **Average Score**: Indicates the average score achieved across all coaching attempts during the selected period.
 - **Average Attempts**: Reflects the average number of coaching attempts made per user.
 
 ![Summary Metrics](/img/helpscout/authored/understanding-the-participation-insights-tab-on-the-ai-coaching-dashboard-msy76fwk.png)
+
+Each summary card includes an **i** icon with a short description of what the card counts. Click the icon to see the definition for that metric.
 
 
 ### 4. Analyze Submission Trends Over Time

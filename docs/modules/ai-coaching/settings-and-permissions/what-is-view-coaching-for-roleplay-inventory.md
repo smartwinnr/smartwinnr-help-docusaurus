@@ -1,11 +1,11 @@
 ---
 id: what-is-view-coaching-for-roleplay-inventory
-title: "Global Editor Access: Viewing and Editing Coaching"
+title: "Roleplay Inventory Page: Viewing and Editing Coaching"
 description: "See how Global Editors open a coaching from Roleplay Inventory, review its details, and edit it when they have access."
 slug: what-is-view-coaching-for-roleplay-inventory
 sidebar_position: 10
 last_update:
-  date: 2026-11-21
+  date: 2026-11-23
   author: Sruthi Suresh
 customProps:
   owner: sruthi.suresh@smartwinnr.com
