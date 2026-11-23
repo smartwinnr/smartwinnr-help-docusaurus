@@ -117,7 +117,6 @@ Click **View Contents** to see the details of a specific import, including the r
 
 
 ## Things to know
-
 ## Tips
 
 * Keep the ZIP package structure simple and consistent.
