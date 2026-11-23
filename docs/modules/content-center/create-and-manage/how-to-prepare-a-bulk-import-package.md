@@ -5,7 +5,7 @@ description: "Prepare a ZIP package with metadata and assets for creating, updat
 slug: how-to-prepare-a-bulk-import-package
 sidebar_position: 40
 last_update:
-  date: 2026-09-30
+  date: 2026-11-23
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -124,5 +124,3 @@ Click **View Contents** to see the details of a specific import, including the r
 * Ensure each file path in `metadata.csv` matches the corresponding file in `data/assets/`.
 * Use **Validate only** to identify package issues before running the import.
 * For updates, leave fields blank when you do not want to change the existing content.
-
-Available next action: Create a downloadable DOCX file here in this chat containing the editable prose above
