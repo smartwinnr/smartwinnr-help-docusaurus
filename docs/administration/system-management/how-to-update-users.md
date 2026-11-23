@@ -6,13 +6,13 @@ slug: how-to-update-users
 sidebar_position: 298
 last_update:
   date: 2026-11-10
-  author: Sruthi Suresh
+  author: Sandeep Bhuthagaddala
 source:
   helpscout_id: 696cf34e0ef05b444cde8d3c
   helpscout_url: 'https://help.smartwinnr.com/article/298-how-to-update-users'
 customProps:
   roles: [admin, orgadmin, lamadmin, superadmin]
-tags: ["admin", "onboarding"]
+tags: ["admin", "onboarding", "assign-roles", "update-users", "admin-editor"]
 draft: false
 ---
 
@@ -66,6 +66,20 @@ Once the user profile opens, click on the **Edit** option and update the require
 
 * **Role and Permissions**
   * Update the user’s **role** based on responsibilities.
+Role and Permissions
+
+  * SmartWinnr provides four main user roles, each with different access permissions:
+
+**Admin:** Has administrative access to manage users, update user details, and assign roles and permissions to other users.
+
+**Editor:** Can access content creation and management features based on the permissions provided.
+
+**Manager:** Can access team-related features, monitor user activities, and review team performance.
+
+**User:** Can access assigned learning content, quizzes, surveys, coaching, and other activities based on their permissions.
+
+You can update a user's role based on their responsibilities. Changing the role will update the user's access permissions accordingly.
+
   * Role changes will automatically update the user’s access permissions.
 
 * **Login Method**
@@ -129,6 +143,7 @@ This is designed to ensure that user information can be updated through bulk upl
 * Updated users can immediately access SmartWinnr based on their revised roles and permissions.
 
 ## Important Notes
+* Only users with the Admin role can update user details and manage role assignments. Admins can assign any of the four roles — Admin, Editor, Manager, or User — to other users. Users with Editor, Manager, or User roles cannot update user profiles or assign roles.
 * Mandatory fields must not be left blank while updating.
 * Changes to roles or divisions may impact the user’s access to quizzes, surveys, SmartFeeds, and reports.
 * Email notifications are not sent automatically for profile updates unless explicitly configured.

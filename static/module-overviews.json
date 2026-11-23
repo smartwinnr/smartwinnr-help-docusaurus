@@ -275,6 +275,15 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "conversationintelligence"
+    },
+    "dashboard": {
+      "label": "Dashboard Config",
+      "tagline": "We will use banners in dashboard creation",
+      "description": "We will use banners in dashboard creation",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "banner"
     }
   }
 }
