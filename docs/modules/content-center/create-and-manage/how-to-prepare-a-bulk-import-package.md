@@ -5,7 +5,7 @@ description: "Prepare a ZIP package with metadata and assets for creating, updat
 slug: how-to-prepare-a-bulk-import-package
 sidebar_position: 40
 last_update:
-  date: 2026-11-23
+  date: 2026-11-25
   author: Manaswini V
 customProps:
   owner: jazz.k@smartwinnr.com
@@ -116,10 +116,9 @@ Click **View Contents** to see the details of a specific import, including the r
  **Note:** If an item fails, review the error shown in **Details**, correct the issue, and run the import again.
 
 
-## Things to know
-## Tips
+## **Things to Know**
 
-* Keep the ZIP package structure simple and consistent.
-* Ensure each file path in `metadata.csv` matches the corresponding file in `data/assets/`.
-* Use **Validate only** to identify package issues before running the import.
-* For updates, leave fields blank when you do not want to change the existing content.
+- Keep the ZIP package structure simple and consistent.
+- Ensure that every file path specified in `metadata.csv` matches the corresponding file in the `data/assets/` folder.
+- Select **Validate Only** to identify and resolve package issues before starting the import.
+- When updating existing content, leave fields blank if you do not want to modify their current values.
