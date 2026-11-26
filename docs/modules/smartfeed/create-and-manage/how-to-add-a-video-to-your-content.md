@@ -8,8 +8,8 @@ description: >-
 slug: how-to-add-a-video-to-your-content
 sidebar_position: 68
 last_update:
-  date: 2026-08-06
-  author: Sruthi Suresh
+  date: 2026-11-26
+  author: Aswani TK
 source:
   helpscout_id: 5fd4e5ddc868cb6df3a8109f
   helpscout_url: 'https://help.smartwinnr.com/article/68-how-to-add-a-video-to-your-content'
@@ -86,12 +86,14 @@ Ensure you have the necessary permissions to add videos to your content in Smart
 
 * * *
 
-Kindly note that the video format should be MP4.
+Kindly note that the video file must be in MP4 format. The default video upload size limit is 20 MB, which can be increased up to 250 MB based on the customer's requirements.
+
+Once the upload limit is updated from the backend, you will be able to upload video files of up to 250 MB.
 
 **How a YouTube Video SmartFeed Appears in the User View** (Science Behind Sleep)
 
-![describe this screenshot](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiq3vo.jpg)
+![How a YouTube Video SmartFeed Appears in the User View](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiq3vo.jpg)
 
 **How a Video SmartFeed Appears in the User View** (How to use Guide)
 
-![describe this screenshot](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiv2fs.jpg)
+![How a Video SmartFeed Appears in the User View](/img/helpscout/authored/how-to-add-a-video-to-your-content-mshiv2fs.jpg)

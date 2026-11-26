@@ -284,6 +284,15 @@
       "who": "",
       "ctaEmail": "admin@your-org.com",
       "privilege": "banner"
+    },
+    "readiness-index": {
+      "label": "Readiness Index",
+      "tagline": "Readiness Index - SmartWinnr module.",
+      "description": "Readiness Index - SmartWinnr module.",
+      "keyFeatures": [],
+      "who": "",
+      "ctaEmail": "admin@your-org.com",
+      "privilege": "readinessIndex"
     }
   }
 }
