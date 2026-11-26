@@ -7,7 +7,7 @@ description: >-
 slug: how-to-create-a-form
 sidebar_position: 999
 last_update:
-  date: 2026-11-12
+  date: 2026-11-26
   author: Aswani TK
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -32,7 +32,7 @@ You will be directed to the following screen where you will fill in the details 
 
 Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive and not be visible to users once the end date has passed.
 
-![Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive an](/img/helpscout/editors/how-to-create-a-form-2.png)
+![Give a catchy name to your form and add a description. Also, set the start date and end date for your form. The form will become inactive an](/img/helpscout/authored/how-to-create-a-form-mwxd8sdt.jpg)
 
 ## Form Type
 
@@ -280,3 +280,22 @@ The next step is to assign users to the form. Select the desired participants an
 ![Assign to the users](/img/helpscout/authored/how-to-create-a-form-mt48hxww.png)
 
 You can filter these users based on the Business Unit, Country, Group, Name, Email, and Meta Tags. Once you have selected the users, click on the **Send to Selected People** button.
+
+### Editing the form fields after creating a form.
+
+If the editor needs to update any fields after saving the form setup, they can open the form and navigate directly to the second page, where the fields are configured. Click the “Edit” button in the top-right corner to make the necessary changes.
+
+![Form edit page](/img/helpscout/authored/how-to-create-a-form-mwxe1bwk.png)
+
+Click on the "+" button to open that field as given below.
+
+![plus button to open the field](/img/helpscout/authored/how-to-create-a-form-mwxe7h00.png)
+
+The configured fields will be displayed as shown below. You can now make the necessary changes to the field values. You can also add new fields by clicking on the "Add Field" button.
+
+![Add new values](/img/helpscout/authored/how-to-create-a-form-mwxea8ea.png)
+
+Once you have updated the fields, click the “Save” button at the bottom of the form to save the changes.
+
+![Save the changes](/img/helpscout/authored/how-to-create-a-form-mwxebdk2.png)
+

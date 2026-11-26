@@ -5,8 +5,8 @@ description: "Create and manage content in multiple languages, and SmartWinnr sh
 slug: understanding-multi-language-content-in-smartwinnr-for-ediotors
 sidebar_position: 330
 last_update:
-  date: 2026-09-30
-  author: Sandeep Bhuthagaddala
+  date: 2026-11-26
+  author: Aswani TK
 customProps:
   owner: sandeep.b@smartwinnr.com
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
@@ -60,5 +60,6 @@ Assign the module to users as you normally would.
 ## Things to know
 
 :::note
-The exact language options and steps depend on the module you are using.
-:::
+The exact language options and steps depend on the module you are using. :::
+
+:::Please note that the language of the Admin/Editor portal cannot be changed. For example, even if an editor is based in France and speaks French, the portal interface will still be displayed in English. The Admin/Editor portal is currently available only in English. :::
