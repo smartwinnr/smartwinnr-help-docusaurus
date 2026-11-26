@@ -69,17 +69,22 @@ If you cannot log in or see an error on the SSO login page, contact your organiz
 ### 5. Confirm your home screen
 After you log in successfully, you are directed to the home screen of the SmartWinnr app. This screen includes a dashboard, as shown below.
 
-![SmartWinnr home screen](/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-ms75ggog.png)
+![Smartwinnr Home screen](/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-mwx9xdcb.png)
 
 If you have a system-generated password for your account, change it for security purposes. [Learn how to change the password for your SmartWinnr account](/get-started/onboarding/how-can-i-change-my-password-for-smartwinnr).
 
+### 6. Check the left menu and see the features
+Go through the left menu and check whether all the options are available to you. If the Dashboard menu does not open or the expected content is not visible after logging in, contact the SmartWinnr support team to troubleshoot the issue and resolve it.
+
+![Checking the features](/img/helpscout/authored/how-can-i-login-to-smartwinnr-app-mwxa0klv.png)
+
 ## Things to know
 
-If you experience issues such as the app crashing, taking longer than usual to load, or displaying a blank screen or a “Page Not Found” error on your phone, tablet, or PC, please wait for a few minutes and try logging out and logging back in.
+If you experience issues such as the app crashing, taking longer than usual to load, or displaying a blank screen or a “Page Not Found” error on your phone, tablet, or PC, wait a few minutes and try logging out and logging back in.
 
-If the issue persists, you may also try uninstalling and reinstalling the app before logging in again. In some cases, these issues may be caused by temporary server outages or connectivity problems.
+If the issue persists, you can also try uninstalling and reinstalling the app before logging in again. In some cases, these issues may be caused by temporary server outages or connectivity problems.
 
-If you are still unable to access the app after trying these troubleshooting steps, please contact Customer Support. Our support team will coordinate with the core team to investigate the issue, provide the necessary troubleshooting assistance, and help resolve it as soon as possible.
+If you are still unable to access the app after trying these troubleshooting steps, contact Customer Support. The support team will coordinate with the core team to investigate the issue, provide the necessary troubleshooting assistance, and help resolve it as soon as possible.
 
 :::note
 If you use SSO, you log in with your organization's credentials instead of a separate SmartWinnr password.
