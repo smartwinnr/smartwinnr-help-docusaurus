@@ -338,6 +338,12 @@
       "ts": 1795763532282,
       "seq": 278,
       "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/faqs-and-troubleshooting/can-an-attempt-be-reset-or-reopened-or-can-a-retake-be-allowed-for-a-coaching.md": {
+      "action": "upsert",
+      "ts": 1795778848737,
+      "seq": 284,
+      "author": "anagha.isal@smartwinnr.com"
     }
   }
 }
