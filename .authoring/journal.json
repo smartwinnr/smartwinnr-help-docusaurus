@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "baseMainSha": "0acce24fcdb95b73ccb482bd3a8ab57a931296b3",
+  "rebasedTs": 1795774784370,
+  "entries": {
+    "static/img/helpscout/authored/how-to-download-coaching-response-videos-ms9604of.jpg": {
+      "action": "upsert",
+      "ts": 1785515794863,
+      "seq": 5,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/fold-role-play-inventory-into-coachings-expand-its-search.md": {
+      "action": "upsert",
+      "ts": 1793509243068,
+      "seq": 13,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/reports-and-analytics/how-can-i-track-improvement-in-smartpath-progress.md": {
+      "action": "upsert",
+      "ts": 1790601781320,
+      "seq": 186,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0rp6j.png": {
+      "action": "upsert",
+      "ts": 1788953575484,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0t2uc.png": {
+      "action": "upsert",
+      "ts": 1788953639844,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0wkrb.png": {
+      "action": "upsert",
+      "ts": 1788953803031,
+      "seq": 1,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu0zsd4.png": {
+      "action": "upsert",
+      "ts": 1788953952856,
+      "seq": 2,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu114p3.png": {
+      "action": "upsert",
+      "ts": 1788954015495,
+      "seq": 3,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu126i9.png": {
+      "action": "upsert",
+      "ts": 1788954064497,
+      "seq": 4,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu18bh1.png": {
+      "action": "upsert",
+      "ts": 1788954350870,
+      "seq": 6,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-can-i-track-improvement-in-smartpath-progress-mtu1bses.png": {
+      "action": "upsert",
+      "ts": 1788954512788,
+      "seq": 7,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/set-a-separate-timer-for-each-quiz-question.md": {
+      "action": "upsert",
+      "ts": 1789049037743,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-coaching-self-registration-and-show-lms-coachings-in-the-app.md": {
+      "action": "upsert",
+      "ts": 1789049034755,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/add-verbal-assessment-image-tasks-and-html-sharable-resources.md": {
+      "action": "upsert",
+      "ts": 1794293151897,
+      "seq": 4,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-lifecycle-and-include-archived-filters-to-coaching-report-downloads.md": {
+      "action": "upsert",
+      "ts": 1793345241107,
+      "seq": 24,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/add-zip-file-structure-validation-on-presentation-upload.md": {
+      "action": "upsert",
+      "ts": 1793345214572,
+      "seq": 17,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/administration/access-permissions/how-to-configure-admin-and-editor-side-menus.md": {
+      "action": "upsert",
+      "ts": 1794228892691,
+      "seq": 22,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/create-and-manage/let-an-organization-choose-which-coachings-a-manager-dashboard-offers.md": {
+      "action": "upsert",
+      "ts": 1793509246064,
+      "seq": 14,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/reports-and-analytics/how-do-i-download-overall-coaching-report.md": {
+      "action": "upsert",
+      "ts": 1793345219184,
+      "seq": 18,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/create-and-manage/how-to-manage-segment-unlock-rules.md": {
+      "action": "upsert",
+      "ts": 1793345223956,
+      "seq": 19,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/show-export-as-scorm-package-to-editors-on-role-plays.md": {
+      "action": "upsert",
+      "ts": 1795029092375,
+      "seq": 37,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartfeed/create-and-manage/how-to-add-itube-videos-to-smartfeeds.md": {
+      "action": "upsert",
+      "ts": 1793511868493,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/content-center/create-and-manage/how-to-submit-a-content-center-item-for-review.md": {
+      "action": "upsert",
+      "ts": 1793511899158,
+      "seq": 2,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/authoringtools/create-and-manage/how-to-create-and-manage-zappy-coachings.md": {
+      "action": "upsert",
+      "ts": 1793511906431,
+      "seq": 3,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/create-and-manage/how-to-create-a-field-coaching-dashboard.md": {
+      "action": "upsert",
+      "ts": 1793511913189,
+      "seq": 4,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/conversation-intelligence/features/what-is-conversation-intelligence-talk-ratio.md": {
+      "action": "upsert",
+      "ts": 1793511921412,
+      "seq": 5,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-re-evaluate-competencies.md": {
+      "action": "upsert",
+      "ts": 1793511947227,
+      "seq": 7,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/what-is-zappy-roleplay-fidelity.md": {
+      "action": "upsert",
+      "ts": 1793639852832,
+      "seq": 14,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/field-coaching/create-and-manage/how-to-create-a-field-coaching-insights-widget.md": {
+      "action": "upsert",
+      "ts": 1794220626723,
+      "seq": 18,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/competition/create-and-manage/how-to-manually-update-competition-leaderboard-scores.md": {
+      "action": "upsert",
+      "ts": 1795433390680,
+      "seq": 188,
+      "author": "jazz.k@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/what-is-view-on-the-coaching-preview-page.md": {
+      "action": "upsert",
+      "ts": 1794291245025,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwai4ft1.png": {
+      "action": "upsert",
+      "ts": 1794303746826,
+      "seq": 1,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajee0b.png": {
+      "action": "upsert",
+      "ts": 1794305890686,
+      "seq": 3,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajgd79.png": {
+      "action": "upsert",
+      "ts": 1794305982933,
+      "seq": 4,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajhpc7.png": {
+      "action": "upsert",
+      "ts": 1794306045320,
+      "seq": 5,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/how-to-manually-update-competition-leaderboard-scores-mwajlm0y.png": {
+      "action": "upsert",
+      "ts": 1794306227651,
+      "seq": 6,
+      "author": "sandeep.b@smartwinnr.com"
+    },
+    "docs/modules/smartpath/create-and-manage/how-to-create-a-smartpath-journey-view.md": {
+      "action": "upsert",
+      "ts": 1794547857992,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/create-and-manage/how-to-add-suggested-learning-to-bucket-definitions.md": {
+      "action": "upsert",
+      "ts": 1794657300760,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/faqs-and-troubleshooting/how-many-type-of-coaching-reports-are-available-on-smartwinnr.md": {
+      "action": "upsert",
+      "ts": 1794800703266,
+      "seq": 2,
+      "author": "aswani.tk@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/what-is-coaching-theme-voice-and-avatar-settings.md": {
+      "action": "upsert",
+      "ts": 1794821784939,
+      "seq": 1,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/what-is-the-combined-objective-coaching-report.md": {
+      "action": "upsert",
+      "ts": 1795157168211,
+      "seq": 73,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/notifications/features/what-is-completion-email-greeting-by-recipient-name.md": {
+      "action": "upsert",
+      "ts": 1795511635762,
+      "seq": 189,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/smartpath/for-managers/how-to-analyse-a-smartpath-dashboard.md": {
+      "action": "upsert",
+      "ts": 1795511639646,
+      "seq": 190,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "docs/modules/readiness-index/features/what-is-sales-readiness-index.md": {
+      "action": "upsert",
+      "ts": 1795763592611,
+      "seq": 280,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwx8czbv.png": {
+      "action": "upsert",
+      "ts": 1795678071262,
+      "seq": 239,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwx8jcgf.png": {
+      "action": "upsert",
+      "ts": 1795678368211,
+      "seq": 240,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwxbl0zo.png": {
+      "action": "upsert",
+      "ts": 1795683485511,
+      "seq": 247,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwxbz31j.png": {
+      "action": "upsert",
+      "ts": 1795684141353,
+      "seq": 251,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/authored-mwxbz34f.png": {
+      "action": "upsert",
+      "ts": 1795684141456,
+      "seq": 252,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/readiness-index/reports-and-analytics/understanding-the-sales-readiness-index-report.md": {
+      "action": "upsert",
+      "ts": 1795688388040,
+      "seq": 266,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/understanding-the-sales-readiness-index-report-mwxehh6a.png": {
+      "action": "upsert",
+      "ts": 1795688358706,
+      "seq": 265,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "docs/modules/ai-coaching/faqs-and-troubleshooting/troubleshooting-video-or-ai-conversation-freezes-buffers-or-distorted-ai-voice.md": {
+      "action": "upsert",
+      "ts": 1795771219200,
+      "seq": 281,
+      "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/smartpath/create-and-manage/how-to-manage-smartpath-batches.md": {
+      "action": "upsert",
+      "ts": 1795693274124,
+      "seq": 269,
+      "author": "release-pipeline@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-sales-readiness-index-mwyn3ipe.png": {
+      "action": "upsert",
+      "ts": 1795763290231,
+      "seq": 276,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-sales-readiness-index-mwyn6dws.png": {
+      "action": "upsert",
+      "ts": 1795763423983,
+      "seq": 277,
+      "author": "manaswini.v@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/what-is-sales-readiness-index-mwyn8ph5.png": {
+      "action": "upsert",
+      "ts": 1795763532282,
+      "seq": 278,
+      "author": "manaswini.v@smartwinnr.com"
+    }
+  }
+}

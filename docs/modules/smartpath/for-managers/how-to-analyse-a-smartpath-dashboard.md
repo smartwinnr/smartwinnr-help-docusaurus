@@ -5,14 +5,16 @@ description: "Use the SmartPath Dashboard to review participation, progress, com
 slug: how-to-analyse-a-smartpath-dashboard
 sidebar_position: 274
 last_update:
-  date: 2026-10-30
-  author: Manaswini V
+  date: 2026-11-24
+  author: release-pipeline@smartwinnr.com
 customProps:
   owner: jazz.k@smartwinnr.com
   roles: [manager, editor, admin, orgadmin, lamadmin, superadmin]
 tags: ["smartpath", "reports"]
-draft: false
+draft: true
 ---
+{/* release-draft: tag=v3.60.72 issue=10011 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/10011 rev=cc86fdc64539 */}
+{/* release-update: issue=10011 summary="Adds guidance that SmartPath filters can include any number of selections and that the dashboard loads all panels and the learner progress report for the full selection." */}
 
 > **At a glance** - Use the SmartPath Dashboard to review overall activity, drill into module-level analysis, and inspect learner participation.
 
@@ -37,6 +39,8 @@ Select a preset range such as **30D** or **90D**, or use the calendar icon to ch
 
 ### 3. Apply filters
 Click **Filters** in the upper-right corner to narrow the data by organizational fields such as **Zone**, **Designation**, **Product Line**, **Territory**, and **Therapeutic Area**, where configured. Apply your selections to update the dashboard.
+
+You can select any number of SmartPaths, including **All**. The dashboard loads all panels and the learner progress report for the full selection.
 
 ### 4. Review the Overview tab
 Use **Overview** to check summary metrics, charts, learner performance details, completion trends, learning component distribution, top-performing SmartPaths, and certification progress.
@@ -75,4 +79,8 @@ Learners can show partial progress before they complete a SmartPath.
 
 :::note
 The completion chart and learner table show different views of the same activity. The chart shows trends over time, and the table shows learner-level details.
+:::
+
+:::note
+The dashboard sends filter selections in the request body, so large SmartPath selections still load successfully.
 :::

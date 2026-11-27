@@ -3,19 +3,18 @@ id: manage-segment-unlock-rules
 title: "How to manage Segment Unlock Rules"
 description: "This article shows you how to configure Segment Unlock Rules in SmartPath to control learner access."
 slug: manage-segment-unlock-rules
-sidebar_position: 999
+sidebar_position: 374
 last_update:
-  date: 2026-07-23
-  author: Sandeep Bhuthagaddala
+  date: 2026-10-30
+  author: release-pipeline@smartwinnr.com
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
-draft: false
+draft: true
 tags: ["smartpath"]
 ---
+{/* release-draft: tag=v3.60.08 issue=9765 url=https://git.mobillionlabs.com/quizprompt/newquiz/-/issues/9765 */}
 
-> **At a glance** - Configure Segment Unlock Rules in SmartPath to guide learner access through structured learning journeys.
-
-SmartPath allows organizations to create structured learning journeys by organizing content into Modules and Segments. You can control when learners access each segment by configuring Segment Unlock Rules, ensuring they complete prerequisites or meet specific conditions before moving on.
+SmartPath organizes learning journeys into Modules and Segments. Segment Unlock Rules control when each Segment becomes available. You use them to release content in sequence, on a schedule, or based on score.
 
 ## When to use this
 
@@ -25,11 +24,15 @@ Use Segment Unlock Rules when you want to:
 - Release segments based on time schedules.
 - Personalize learning paths based on assessment scores.
 
-## Steps
+## Things to know
 
-***Note:** Unlock rules are available only at the Segment level and cannot be configured for an entire Module.*
+SmartPath segment unlock times in the app display in the batch-configured timezone. Locked segments show the unlock date and time that the admin set in the portal rule configuration screen.
 
-### What are Segments?
+Open any SmartPath with dayWise activation rules to see the correct unlock time for that batch-configured timezone. The time does not shift to the device's local timezone.
+
+Legacy rules that do not include startHours and startMinutes also display the correct unlock time.
+
+## What are Segments?
 
 A Segment is an individual learning activity within a Module.
 
@@ -50,7 +53,7 @@ A Segment can contain one of the following learning resources:
 
 Each Segment represents a single learning activity that learners complete during their learning journey.
 
-Configuring Segment Unlock Rules
+## Configuring Segment Unlock Rules
 
 Unlock Rules determine when a Segment becomes available to learners.
 
@@ -62,7 +65,7 @@ There are three available rule types:
 - By Day
 - By Score
 
-**Rule Type: On Completion**
+### Rule Type: On Completion
 
 This rule unlocks the next Segment only after the learner completes the previous Segment.
 
@@ -75,6 +78,7 @@ Segment 2 -> Unlocked
 Segment 3 -> Locked
 
 Once Segment 2 is completed, Segment 3 becomes available automatically.
+
 ![You can follow the below steps to check on completion rules in SmartWinnr.](/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxi6f1v.jpg)
 
 Use this rule when learners must complete content in sequence.
@@ -84,6 +88,7 @@ Use this rule when learners must complete content in sequence.
 This rule releases Segments on specific days and times after the learner starts the SmartPath.
 
 While configuring this rule, specify:
+
 ![You can follow the below steps to check By Day rules in SmartWinnr.](/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxi5o86.jpg)
 
 This rule is useful for instructor-led programs, onboarding journeys, and scheduled learning plans.
@@ -99,11 +104,12 @@ Available comparators include:
 - Equal To
 
 The administrator specifies:
+
 ![You can follow the below steps to check By Score rules in SmartWinnr.](/img/helpscout/authored/how-to-manage-segment-unlock-rules-mrxhynxu.png)
 
 This rule enables personalized learning paths based on learner performance.
 
-### Important Notes
+## Important Notes
 
 - Unlock Rules can only be configured from the second Segment onward within a Module.
 - The first Segment of every Module is always available by default and cannot have an Unlock Rule.
