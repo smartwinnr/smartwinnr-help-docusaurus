@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-smartpath
 sidebar_position: 999
 last_update:
-  date: 2026-11-16
-  author: Sandeep Bhuthagaddala
+  date: 2026-11-27
+  author: Anagha Isal
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: smartpaths
@@ -141,7 +141,7 @@ Select **Create Batch**.
 Fill in the batch details:
 
 * **Batch Name**
-* **Duration of the batch** - start date and time, end date and time, and the timezone. You can change the timezone with **Change**. This is where the SmartPath's schedule lives. Each batch has its own window.
+* **Duration of the batch** - start date and time, end date and time, and the timezone. You can change the timezone with **Change**. This is where the SmartPath's schedule lives. Each batch has its own window. You can change the batch end date whenever required to extend its availability and give participants additional time to complete it.
 * **Due Date of the batch** - shown on the learner's calendar as the deadline to complete the SmartPath. Availability can depend on your organization's configuration.
 
 ![Batch details form](/img/helpscout/editors/how-to-create-a-smartpath-15.png)

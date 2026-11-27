@@ -7,8 +7,8 @@ description: >-
 slug: how-to-create-a-manual-quiz
 sidebar_position: 50
 last_update:
-  date: 2026-11-13
-  author: Manaswini V
+  date: 2026-11-27
+  author: Anagha Isal
 customProps:
   roles: [editor, admin, orgadmin, lamadmin, superadmin]
   privilege: quiz
@@ -62,7 +62,8 @@ Use a manual quiz when you want to control quiz timing, scoring, and participant
 ![Quiz Details](/img/helpscout/editors/how-to-create-an-automatic-quiz-3.png)
 
 * **Start Date:** Click the calendar icon to select the start date and time of the quiz. The quiz is available to participants from this date and time.
-* **End Date:** Click the calendar icon to select the end date and time. After this date and time, the quiz is no longer accessible to participants.
+* **End Date:** Click the calendar icon to select the end date and time. After this date and time, the quiz is no longer accessible to participants. You can edit the end date at any time, even after the initially configured end date has passed, to extend the quiz availability and allow participants to access and complete it for a longer period.
+
 * **Time Zone:** By default, this uses the timezone of the logged-in editor. To set a different timezone, click **Change** and update it.
 
 ### Quiz Cover and Thumbnail Images
