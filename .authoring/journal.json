@@ -344,6 +344,12 @@
       "ts": 1795778848737,
       "seq": 284,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "static/img/helpscout/authored/can-an-attempt-be-reset-or-reopened-or-can-a-retake-be-allowed-for-a-coaching-mwz98eat.png": {
+      "action": "upsert",
+      "ts": 1795800469354,
+      "seq": 285,
+      "author": "anagha.isal@smartwinnr.com"
     }
   }
 }
