@@ -392,6 +392,12 @@
       "ts": 1795802795363,
       "seq": 292,
       "author": "anagha.isal@smartwinnr.com"
+    },
+    "docs/modules/video-coaching/features/what-is-the-cover-image-upload-modal-redesign.md": {
+      "action": "upsert",
+      "ts": 1795856464119,
+      "seq": 294,
+      "author": "release-pipeline@smartwinnr.com"
     }
   }
 }
